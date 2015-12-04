@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, December 04, 2015 10:40:13}
+%TCIDATA{LastRevised=Friday, December 04, 2015 13:31:20}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -804,7 +804,7 @@ at integers are integers) if and only if these rationals $c_{0},c_{1}%
 \textquotedblleft if\textquotedblright\ part of Proposition
 \ref{prop.hartshorne} \textbf{(b)} follows from (\ref{eq.binom.int}).)
 
-We shall now prove some facts and solve some exercises about binomial
+We shall now prove some facts and give some exercises about binomial
 coefficients; but let us first prove a fundamental property of polynomials:
 
 \begin{lemma}
@@ -5180,12 +5180,12 @@ $5$ to $3$. (In other words, it is the permutation which is $\left(
 \textbf{(e)} If $k\in\left\{  1,2,\ldots,n\right\}  $, and if $i_{1}%
 ,i_{2},\ldots,i_{k}$ are $k$ pairwise distinct elements of $\left[  n\right]
 $, then%
-\begin{align*}
-\operatorname*{cyc}\nolimits_{i_{1},i_{2},\ldots,i_{k}}  &
-=\operatorname*{cyc}\nolimits_{i_{2},i_{3},\ldots,i_{k},i_{1}}%
-=\operatorname*{cyc}\nolimits_{i_{3},i_{4},\ldots,i_{k},i_{1},i_{2}}\\
-&  =\cdots=\operatorname*{cyc}\nolimits_{i_{k},i_{1},i_{2},\ldots,i_{k-1}}.
-\end{align*}
+\[
+\operatorname*{cyc}\nolimits_{i_{1},i_{2},\ldots,i_{k}}=\operatorname*{cyc}%
+\nolimits_{i_{2},i_{3},\ldots,i_{k},i_{1}}=\operatorname*{cyc}\nolimits_{i_{3}%
+,i_{4},\ldots,i_{k},i_{1},i_{2}}=\cdots=\operatorname*{cyc}\nolimits_{i_{k}%
+,i_{1},i_{2},\ldots,i_{k-1}}.
+\]
 (In less formal words: The $k$-cycle $\operatorname*{cyc}\nolimits_{i_{1}%
 ,i_{2},\ldots,i_{k}}$ does not change when we can cyclically rotate the list
 $\left(  i_{1},i_{2},\ldots,i_{k}\right)  $.)
@@ -6742,6 +6742,8 @@ j & i & h & g
 \end{matrix}
 \right)  .
 \]
+
+
 \textbf{(b)} Find a simple formula for the determinant%
 \[
 \det\left(
@@ -8179,9 +8181,7 @@ for every integer $n>k$.
 We notice that (\ref{eq.exam.det(AB).fibo.1}) can be obtained by applying
 (\ref{eq.det.fibo.claim}) to $a=1$, $b=1$, $x_{i}=f_{i}$ and $k=0$. Thus,
 (\ref{eq.det.fibo.claim}) is a generalization of (\ref{eq.exam.det(AB).fibo.1}%
-). We shall solve Exercise \ref{exe.ps4.det.fibo} more or less as you would
-expect, by modifying our proof of (\ref{eq.exam.det(AB).fibo.1}) in some
-places. Notice that you could have easily come up with the identity
+). Notice that you could have easily come up with the identity
 (\ref{eq.det.fibo.claim}) by trying to generalize the proof of
 (\ref{eq.exam.det(AB).fibo.1}) we gave; in contrast, it is not that
 straightforward to guess the general formula (\ref{eq.det.fibo.claim}) from
@@ -8223,7 +8223,7 @@ y_{1} & y_{2} & y_{3} & \cdots & y_{n}\\
 The second row of $C$ consists of zeroes (and this second row indeed exists,
 because $n\geq2$). Thus, Exercise \ref{exe.ps4.6} \textbf{(c)} (applied to $C$
 instead of $A$) yields $\det C=0$. Similarly, using Exercise \ref{exe.ps4.6}
-\textbf{(b)}, we can show that $\det B=0$. Now, Theorem \ref{thm.det(AB)}
+\textbf{(d)}, we can show that $\det B=0$. Now, Theorem \ref{thm.det(AB)}
 (applied to $B$ and $C$ instead of $A$ and $B$) yields $\det\left(  BC\right)
 =\det B\cdot\underbrace{\det C}_{=0}=0$. But what is $BC$ ?
 
@@ -12312,7 +12312,7 @@ U$-matrix does not change if we subtract a multiple of one of its columns from
 another column. Now, let us subtract $x_{U}$ times the $2$-nd column of
 $A_{U}$ from the $1$-st column, then subtract $x_{U}$ times the $3$-rd column
 of the resulting matrix from the $2$-nd column, and so on, all the way until
-we finally subtract $x_{U}$ times the $U$-th column of $A_{U}$ from the
+we finally subtract $x_{U}$ times the $U$-th column of the matrix from the
 $\left(  U-1\right)  $-st column\footnote{So, all in all, we subtract the
 $x_{U}$-multiple of each column from its neighbor to its left, but the order
 in which we are doing it (namely, from left to right) is important: It means
@@ -14070,9 +14070,9 @@ m}$. Thus, the definition of $\operatorname*{sub}\nolimits_{1,2,\ldots
 \begin{align*}
 \operatorname*{sub}\nolimits_{1,2,\ldots,n}^{1,2,\ldots,m}A  &  =\left(
 a_{x,y}\right)  _{1\leq x\leq n,\ 1\leq y\leq m}=\left(  a_{i,j}\right)
-_{1\leq i\leq n,\ 1\leq j\leq m}\ \ \ \ \ \ \ \ \ \ \left(  \text{here, we
-renamed the index }\left(  x,y\right)  \text{ as }\left(  i,j\right)  \right)
-\\
+_{1\leq i\leq n,\ 1\leq j\leq m}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we renamed the index }\left(
+x,y\right)  \text{ as }\left(  i,j\right)  \right) \\
 &  =A.
 \end{align*}
 This proves Proposition \ref{prop.submatrix.easy} \textbf{(a)}.
@@ -17078,7 +17078,7 @@ c & d
 d & -b\\
 -c & a
 \end{array}
-\right)  $. Thus, Theorem \ref{thm.adj.inverse} (applied to $n=3$) yieldsd%
+\right)  $. Thus, Theorem \ref{thm.adj.inverse} (applied to $n=3$) yields%
 \begin{align*}
 \left(
 \begin{array}
@@ -19817,7 +19817,7 @@ XXX
 
 This section contains solutions (or, sometimes, solution sketches) to some of
 the exercises in the text, as well as occasional remarks. I do not recommend
-reading it before trying to solve the problem on your own.
+reading them before trying to solve the problem on your own.
 
 \subsection{Solution to Exercise \ref{exe.ps1.1.1}}
 
@@ -28814,6 +28814,9 @@ This solves Exercise \ref{exe.ps4.6k} \textbf{(b)}.
 
 \subsection{Solution to Exercise \ref{exe.ps4.det.fibo}}
 
+We shall solve Exercise \ref{exe.ps4.det.fibo} more or less as you would
+expect, by modifying our proof of (\ref{eq.exam.det(AB).fibo.1}) in some places.
+
 \begin{proof}
 [Solution to Exercise \ref{exe.ps4.det.fibo}.]Let $B$ be the $2\times2$-matrix
 $\left(
@@ -29132,9 +29135,9 @@ This solves Exercise \ref{exe.ps4.pascal}.
 
 \begin{verlong}
 \begin{proof}
-\item[First solution to Exercise \ref{exe.vander-det.s1}.] Our solution will
-imitate the above proof of Theorem \ref{thm.vander-det} \textbf{(a)} (but it
-will involve some additional complications).
+[First solution to Exercise \ref{exe.vander-det.s1}.]Our solution will imitate
+the above proof of Theorem \ref{thm.vander-det} \textbf{(a)} (but it will
+involve some additional complications).
 
 For every $u\in\left\{  0,1,\ldots,n\right\}  $ and $\left(  i,j\right)
 \in\left\{  1,2,\ldots,n\right\}  ^{2}$, define $a_{i,j,u}\in\mathbb{K}$ by%
@@ -29230,7 +29233,7 @@ U,\ 1\leq j\leq U}$. Here is how $B$ looks like:%
 B=\left(
 \begin{array}
 [c]{cccccc}%
-x_{1}^{U}-x_{U}^{2}x_{1}^{U-2} & x_{1}^{U-2}-x_{U}x_{2}^{U-3} & x_{1}%
+x_{1}^{U}-x_{U}^{2}x_{1}^{U-2} & x_{1}^{U-2}-x_{U}x_{1}^{U-3} & x_{1}%
 ^{U-3}-x_{U}x_{1}^{U-4} & \cdots & x_{1}-x_{U} & 1\\
 x_{2}^{U}-x_{U}^{2}x_{2}^{U-2} & x_{2}^{U-2}-x_{U}x_{2}^{U-3} & x_{2}%
 ^{U-3}-x_{U}x_{2}^{U-4} & \cdots & x_{2}-x_{U} & 1\\
@@ -29239,7 +29242,7 @@ x_{3}^{U}-x_{U}^{2}x_{3}^{U-2} & x_{3}^{U-2}-x_{U}x_{3}^{U-3} & x_{3}%
 x_{4}^{U}-x_{U}^{2}x_{4}^{U-2} & x_{4}^{U-2}-x_{U}x_{4}^{U-3} & x_{4}%
 ^{U-3}-x_{U}x_{4}^{U-4} & \cdots & x_{4}-x_{U} & 1\\
 \vdots & \vdots & \vdots & \ddots & \vdots & \vdots\\
-x_{U}^{U}-x_{U}^{2}x_{U}^{U-2} & x_{U}^{U-2}-x_{U}x_{4}^{U-3} & x_{U}%
+x_{U}^{U}-x_{U}^{2}x_{U}^{U-2} & x_{U}^{U-2}-x_{U}x_{U}^{U-3} & x_{U}%
 ^{U-3}-x_{U}x_{U}^{U-4} & \cdots & x_{U}-x_{U} & 1
 \end{array}
 \right)  .
@@ -29250,18 +29253,27 @@ to prove this:
 \textit{First proof of }$\det B=\det\left(  A_{U}\right)  $\textit{:} Exercise
 \ref{exe.ps4.6k} \textbf{(b)} shows that the determinant of a $U\times
 U$-matrix does not change if we subtract a multiple of one of its columns from
-another column. Now, let us subtract $x_{U}$ times the $\left(  U-1\right)
-$-st column of $A_{U}$ from the $U$-th column, then subtract $x_{U}$ times the
-$\left(  U-2\right)  $-st column of the resulting matrix from the $\left(
-U-1\right)  $-th column, and so on, until we finally subtract $x_{U}$ times
-the $3$-rd column from the $2$-nd column, and then we subtract $x_{U}^{2}$
-times the $2$-nd column from the $1$-st column. Yes, you are reading this
-right: At the last step we subtract $x_{U}^{2}$ times (not $x_{U}$ times) the
-$2$-nd column from the $1$-st column (but at all earlier steps, we subtract
-$x_{U}$ times a column from another). Having done all this, the resulting
-matrix is $B$ (according to our definition of $B$). Thus, $\det B=\det\left(
-A_{U}\right)  $ (since our subtractions never change the determinant). This
-proves $\det B=\det\left(  A_{U}\right)  $.
+another column. Now, let us do the following steps (in this order):
+
+\begin{itemize}
+\item subtract $x_{U}^{2}$ times the $2$-nd column of $A_{U}$ from the $1$-st column;
+
+\item subtract $x_{U}$ times the $3$-rd column of the resulting matrix from
+the $2$-nd column;
+
+\item subtract $x_{U}$ times the $4$-rd column of the resulting matrix from
+the $3$-nd column;
+
+\item and so on, all the way until we finally subtract $x_{U}$ times the
+$U$-th column of the matrix from the $\left(  U-1\right)  $-st column.
+\end{itemize}
+
+Yes, you are reading this right: At the first step we subtract $x_{U}^{2}$
+times (not $x_{U}$ times) the $2$-nd column from the $1$-st column (but at all
+further steps, we subtract $x_{U}$ times a column from another). Having done
+all this, the resulting matrix is $B$ (according to our definition of $B$).
+Thus, $\det B=\det\left(  A_{U}\right)  $ (since our subtractions never change
+the determinant). This proves $\det B=\det\left(  A_{U}\right)  $.
 
 \textit{Second proof of }$\det B=\det\left(  A_{U}\right)  $\textit{:} Here is
 another way to prove that $\det B=\det\left(  A_{U}\right)  $, with some less handwaving.
@@ -29520,12 +29532,12 @@ q_{i,j}\right)  _{1\leq i\leq U-1,\ 1\leq j\leq U-1}$. We now make the
 following observations:
 
 \begin{itemize}
-\item The rows of the matrix $Q$ equal the corresponding rows of $P$ except
-(perhaps) the $1$-st row. The matrix $G$ is the $\left(  U-1\right)
-\times\left(  U-1\right)  $-matrix obtained from $P$ by adding the $1$-st row
-of $Q$ to the $1$-st row of $P$. Thus, Exercise \ref{exe.ps4.6} \textbf{(i)}
-(applied to $U-1$, $1$, $P$, $Q$ and $G$ instead of $n$, $k$, $A$, $A^{\prime
-}$ and $B$) yields $\det G=\det P+\det Q$.
+\item The columns of the matrix $Q$ equal the corresponding columns of $P$
+except (perhaps) the $1$-st column. The matrix $G$ is the $\left(  U-1\right)
+\times\left(  U-1\right)  $-matrix obtained from $P$ by adding the $1$-st
+column of $Q$ to the $1$-st column of $P$. Thus, Exercise \ref{exe.ps4.6}
+\textbf{(j)} (applied to $U-1$, $1$, $P$, $Q$ and $G$ instead of $n$, $k$,
+$A$, $A^{\prime}$ and $B$) yields $\det G=\det P+\det Q$.
 
 \item We have $P=\left(  p_{i,j}\right)  _{1\leq i\leq U-1,\ 1\leq j\leq U-1}$
 and $A_{U-1}=\left(  a_{i,j,U-1}\right)  _{1\leq i\leq U-1,\ 1\leq j\leq U-1}%
@@ -32402,8 +32414,9 @@ This solves Exercise \ref{exe.block2x2.mult}.
 \subsection{Solution to Exercise \ref{exe.block2x2.tridet}}
 
 \begin{vershort}
-\begin{proof}[Solution to Exercise \ref{exe.block2x2.tridet}.]
-We shall prove Exercise \ref{exe.block2x2.tridet} by induction over $m$:
+\begin{proof}
+[Solution to Exercise \ref{exe.block2x2.tridet}.]We shall prove Exercise
+\ref{exe.block2x2.tridet} by induction over $m$:
 
 \textit{Induction base:} Let $n\in\mathbb{N}$. Let $A$ be an $n\times
 n$-matrix. Let $B$ be an $n\times0$-matrix\footnote{Of course, there is only
@@ -32626,7 +32639,8 @@ A\cdot\det\left(  D_{\sim M,\sim q}\right)  \\\text{(by
 D_{\sim M,\sim q}\right)  =\det A\cdot\underbrace{\sum_{q=1}^{M}\left(
 -1\right)  ^{M+q}d_{M,q}\det\left(  D_{\sim M,\sim q}\right)  }%
 _{\substack{=\det D\\\text{(by (\ref{sol.block2x2.tridet.short.indstep.detD}%
-))}}}=\det A\cdot\det D.
+))}}}\\
+&  =\det A\cdot\det D.
 \end{align*}
 
 
