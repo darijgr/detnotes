@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, December 04, 2015 13:50:58}
+%TCIDATA{LastRevised=Friday, December 04, 2015 14:14:31}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -84,8 +84,12 @@
 \fi
 \let\sumnonlimits\sum
 \let\prodnonlimits\prod
+\let\cupnonlimits\bigcup
+\let\capnonlimits\bigcap
 \renewcommand{\sum}{\sumnonlimits\limits}
 \renewcommand{\prod}{\prodnonlimits\limits}
+\renewcommand{\bigcup}{\cupnonlimits\limits}
+\renewcommand{\bigcap}{\capnonlimits\limits}
 \voffset=0cm
 \hoffset=-0.7cm
 \setlength\textheight{22.5cm}
@@ -4585,9 +4589,13 @@ check that $S_{\left(  \infty\right)  }=\bigcup_{n\in\mathbb{N}}\mathbf{i}%
 _{n}\left(  S_{n}\right)  =\mathbf{i}_{0}\left(  S_{0}\right)  \cup
 \mathbf{i}_{1}\left(  S_{1}\right)  \cup\mathbf{i}_{2}\left(  S_{2}\right)
 \cup\cdots$. Therefore, many properties of $S_{\left(  \infty\right)  }$ can
-be derived from analogous properties of $S_{n}$ for finite $n$. We did not
-take this way in our above arguments (because we found it easier to just copy
-the proofs from the $S_{n}$ situation), but we could have done so.
+be derived from analogous properties of $S_{n}$ for finite $n$. For example,
+using this tactic, we could easily derive Exercise \ref{exe.ps2.2.5'} from
+Exercise \ref{exe.ps2.2.5}, and derive Exercise \ref{exe.ps2.2.6'} from
+Exercise \ref{exe.ps2.2.6}. (However, we can just as well solve Exercises
+\ref{exe.ps2.2.5'} and \ref{exe.ps2.2.6'} by copying the solutions of
+Exercises \ref{exe.ps2.2.5} and \ref{exe.ps2.2.6} and making the necessary
+changes; this is how I solve these exercises further below.)
 \end{remark}
 
 \subsection{More on lengths of permutations}
@@ -13639,8 +13647,8 @@ a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  .
 
 \end{exercise}
 
-Exercise \ref{exe.cauchy-det-lem} is known as the
-\textit{Chi\'o pivotal condensation theorem}.
+Exercise \ref{exe.cauchy-det-lem} is known as the \textit{Chi\'o pivotal
+condensation theorem}.
 
 \begin{remark}
 Exercise \ref{exe.cauchy-det-lem} gives a way to reduce the computation of an
@@ -29650,15 +29658,14 @@ Section \ref{sect.sols.vander-det.s1.sol2}).
 
 \subsection{Solution to Exercise \ref{exe.cauchy-det}}
 
-Exercise \ref{exe.cauchy-det} is obtained from
-\cite[Exercise 2.66(a)]{Reiner} by setting $a_i = x_i$ and
-$b_j = -y_j$. (See the ancillary PDF file of the arXiv
-version of \cite{Reiner} for the solutions to the exercises.)
+Exercise \ref{exe.cauchy-det} is obtained from \cite[Exercise 2.66(a)]{Reiner}
+by setting $a_{i} = x_{i}$ and $b_{j} = -y_{j}$. (See the ancillary PDF file
+of the arXiv version of \cite{Reiner} for the solutions to the exercises.)
 
 \subsection{Solution to Exercise \ref{exe.cauchy-det-lem}}
 
-Exercise \ref{exe.cauchy-det-lem} is the equality (11.218) in
-\cite[ancillary PDF file]{Reiner}.
+Exercise \ref{exe.cauchy-det-lem} is the equality (11.218) in \cite[ancillary
+PDF file]{Reiner}.
 
 \subsection{Solution to Exercise \ref{exe.det.schur-lem}}
 
