@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, December 04, 2015 14:14:31}
+%TCIDATA{LastRevised=Friday, December 04, 2015 14:21:58}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -357,6 +357,8 @@ written about them (let me mention \cite[Chapter 5]{GKP} as a highly readable
 introduction; but, e.g., \href{http://www.math.wvu.edu/~gould/}{Henry W.
 Gould's website} goes far further down the rabbit hole). We shall only study a
 few of these identities.
+
+\subsection{Definitions and basic properties}
 
 Recall that for every $n\in\mathbb{N}$, the binomial coefficient $\dbinom
 {X}{n}$ is a polynomial in $X$ of degree $n$, with rational coefficients. It
@@ -734,7 +736,7 @@ this yields $\dbinom{X}{n}=\dfrac{X}{n}\dbinom{X-1}{n-1}$. This proves
 
 \item If $a\in\mathbb{N}$ and $i\in\mathbb{N}$ are such that $i\geq a$, then%
 \begin{equation}
-\dbinom{X}{i}\dbinom{i}{a}=\dbinom{X}{a}\dbinom{X-a}{i-a}
+\dbinom{X}{i}\dbinom{i}{a}=\dbinom{X}{a}\dbinom{X-a}{i-a}%
 \label{eq.binom.trinom-rev}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{eq.binom.trinom-rev}):} Let $a\in\mathbb{N}$
@@ -781,7 +783,7 @@ expressions is a polynomial indeterminate, and (\ref{eq.binom.formula}) cannot
 be applied to it!}. In particular, if $m\in\mathbb{Z}$, $a\in\mathbb{N}$ and
 $i\in\mathbb{N}$ are such that $i\geq a$, then%
 \begin{equation}
-\dbinom{m}{i}\dbinom{i}{a}=\dbinom{m}{a}\dbinom{m-a}{i-a}
+\dbinom{m}{i}\dbinom{i}{a}=\dbinom{m}{a}\dbinom{m-a}{i-a}%
 \label{eq.binom.trinom-rev.m}%
 \end{equation}
 \footnote{This formula is obtained from (\ref{eq.binom.trinom-rev}) by
@@ -790,13 +792,29 @@ which Graham, Knuth and Patashnik call \textit{trinomial revision} in
 \cite[Table 174]{GKP}.
 \end{itemize}
 
-It is not hard to check the following:
+\subsection{Binomial coefficients and polynomials}
+
+Recall that any polynomial $P\in\mathbb{Q}\left[  X\right]  $ (that is, any
+polynomial in the indeterminate $X$ with rational coefficients) can be
+quasi-uniquely written in the form $P\left(  X\right)  =\sum_{i=0}^{d}%
+c_{i}X^{i}$ with rational $c_{0},c_{1},\ldots,c_{d}$. The word
+\textquotedblleft quasi-uniquely\textquotedblright\ here means that the
+coefficients $c_{0},c_{1},\ldots,c_{d}$ are uniquely determined when
+$d\in\mathbb{N}$ is specified; they are not literally unique because we can
+always increase $d$ by adding new $0$ coefficients (for example, the
+polynomial $\left(  1+X\right)  ^{2}$ can be written both as $1+2X+X^{2}$ and
+as $1+2X+X^{2}+0X^{3}+0X^{4}$).
+
+It is not hard to check that an analogue of this statement holds with the
+$X^{i}$ replaced by the $\dbinom{X}{i}$:
 
 \begin{proposition}
 \label{prop.hartshorne}\textbf{(a)} Any polynomial $P\in\mathbb{Q}\left[
-X\right]  $ can be uniquely written in the form $P\left(  X\right)
-=\sum_{i=0}^{d}c_{i}\dbinom{X}{i}$ with rational $c_{0},c_{1},\ldots,c_{d}$
-(of course, one can increase $d$ at the cost of adding new $0$ coefficients).
+X\right]  $ can be quasi-uniquely written in the form $P\left(  X\right)
+=\sum_{i=0}^{d}c_{i}\dbinom{X}{i}$ with rational $c_{0},c_{1},\ldots,c_{d}$.
+(Again, \textquotedblleft quasi-uniquely\textquotedblright\ means that we can
+always increase $d$ by adding new $0$ coefficients, but apart from this the
+$c_{0},c_{1},\ldots,c_{d}$ are uniquely determined.)
 
 \textbf{(b)} The polynomial $P$ is \textit{integer-valued} (i.e., its values
 at integers are integers) if and only if these rationals $c_{0},c_{1}%
@@ -911,6 +929,8 @@ essentially suggests how to prove this generalization by induction over the
 number of variables) and to polynomials with coefficients from other
 commutative rings (e.g., from $\mathbb{R}$ or $\mathbb{C}$) as long as these
 rings contain $\mathbb{N}$ (and not just a quotient of $\mathbb{N}$) as a subset.
+
+\subsection{The Chu-Vandermonde identity}
 
 The following fact is known as the \textit{Chu-Vandermonde identity}%
 \footnote{See
@@ -1645,13 +1665,15 @@ numbers appear in Proposition \ref{prop.vandermonde.consequences}
 $y$.
 \end{remark}
 
+\subsection{Further results}
+
 \begin{exercise}
 \label{exe.ps1.1.2}Let $n$ be a nonnegative integer. Prove that there exist
 \textbf{nonnegative} integers $c_{i,j}$ for all $0\leq i\leq n$ and $0\leq
 j\leq n$ such that%
 \begin{equation}
-\dbinom{XY}{n}=\sum_{i=0}^{n}\sum_{j=0}^{n}c_{i,j}\dbinom{X}{i}\dbinom{Y}{j}
-\label{eq.exe.1.2.claim}%
+\dbinom{XY}{n}=\sum_{i=0}^{n}\sum_{j=0}^{n}c_{i,j}\dbinom{X}{i}\dbinom{Y}%
+{j}\label{eq.exe.1.2.claim}%
 \end{equation}
 (an equality between polynomials in two variables $X$ and $Y$).
 \end{exercise}
@@ -2232,16 +2254,17 @@ instead of $x$) shows that%
 {b+x}{b}\nonumber\\
 &  =\underbrace{\left(  -1\right)  ^{a}\left(  -1\right)  ^{b}}_{=\left(
 -1\right)  ^{a+b}}\dbinom{a+x}{a}\dbinom{b+x}{b}=\left(  -1\right)
-^{a+b}\dbinom{a+x}{a}\dbinom{b+x}{b}. \label{pf.prop.binom.bin-id.g.3}%
+^{a+b}\dbinom{a+x}{a}\dbinom{b+x}{b}.\label{pf.prop.binom.bin-id.g.3}%
 \end{align}
 But every $i\in\left\{  0,1,\ldots,b\right\}  $ satisfies%
 \begin{align*}
-\dbinom{\left(  -x-1\right)  +i}{a+b}  &  =\left(  -1\right)  ^{a+b}%
+\dbinom{\left(  -x-1\right)  +i}{a+b} &  =\left(  -1\right)  ^{a+b}%
 \dbinom{a+b-\left(  \left(  -x-1\right)  +i\right)  -1}{a+b}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{eq.binom.upper-neg}), applied to
-}m=\left(  -x-1\right)  +i\text{ and }n=a+b\right) \\
-&  =\left(  -1\right)  ^{a+b}\dbinom{a+b+x-i}{a+b}\ \ \ \ \ \ \ \ \ \ \left(
-\text{since }a+b-\left(  \left(  -x-1\right)  +i\right)  -1=a+b+x-i\right)  .
+}m=\left(  -x-1\right)  +i\text{ and }n=a+b\right)  \\
+&  =\left(  -1\right)  ^{a+b}\dbinom{a+b+x-i}{a+b}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }a+b-\left(  \left(  -x-1\right)
++i\right)  -1=a+b+x-i\right)  .
 \end{align*}
 Hence,%
 \begin{align*}
@@ -2254,8 +2277,7 @@ Hence,%
 Comparing this with (\ref{pf.prop.binom.bin-id.g.3}), we obtain%
 \[
 \left(  -1\right)  ^{a+b}\sum_{i=0}^{b}\dbinom{a}{i}\dbinom{b}{i}%
-\dbinom{a+b+x-i}{a+b}=\left(  -1\right)  ^{a+b}\dbinom{a+x}{a}\dbinom{b+x}%
-{b}.
+\dbinom{a+b+x-i}{a+b}=\left(  -1\right)  ^{a+b}\dbinom{a+x}{a}\dbinom{b+x}{b}.
 \]
 We can cancel $\left(  -1\right)  ^{a+b}$ from this equality (since $\left(
 -1\right)  ^{a+b}\neq0$), and thus obtain $\sum_{i=0}^{b}\dbinom{a}{i}%
