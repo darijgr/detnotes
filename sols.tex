@@ -29133,7 +29133,6 @@ This solves Exercise \ref{exe.ps4.pascal}.
 
 \subsection{Solution to Exercise \ref{exe.vander-det.s1}}
 
-\begin{verlong}
 \begin{proof}
 [First solution to Exercise \ref{exe.vander-det.s1}.]Our solution will imitate
 the above proof of Theorem \ref{thm.vander-det} \textbf{(a)} (but it will
@@ -29645,7 +29644,6 @@ This solves Exercise \ref{exe.vander-det.s1}.
 
 We shall give a second solution for Exercise \ref{exe.vander-det.s1} later (in
 Section \ref{sect.sols.vander-det.s1.sol2}).
-\end{verlong}
 
 \subsection{Solution to Exercise \ref{exe.det.schur-lem}}
 
@@ -29791,10 +29789,144 @@ This solves Exercise \ref{exe.det.schur-lem}.
 \subsection{\label{sect.sols.vander-det.s1.sol2}Second solution to Exercise
 \ref{exe.vander-det.s1}}
 
-\begin{verlong}
 Exercise \ref{exe.det.schur-lem} can be used to give a new (and simpler)
 solution to Exercise \ref{exe.vander-det.s1}, suggested by Karthik Karnik:
 
+\begin{vershort}
+\begin{proof}
+[Second solution to Exercise \ref{exe.vander-det.s1}.]Exercise
+\ref{exe.det.schur-lem} (applied to $a_{i,j}=x_{i}^{n-j}$ and $b_{i}=x_{i}$)
+shows that%
+\begin{align}
+\sum\limits_{k=1}^{n}\det\left(  \left(  x_{i}^{n-j}x_{i}^{\delta_{j,k}%
+}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)   &  =\left(  x_{1}%
++x_{2}+\cdots+x_{n}\right)  \underbrace{\det\left(  \left(  x_{i}%
+^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  }_{\substack{=\prod
+_{1\leq i<j\leq n}\left(  x_{i}-x_{j}\right)  \\\text{(by Theorem
+\ref{thm.vander-det} \textbf{(a)})}}}\nonumber\\
+&  =\left(  x_{1}+x_{2}+\cdots+x_{n}\right)  \prod_{1\leq i<j\leq n}\left(
+x_{i}-x_{j}\right)  .\label{sol.vander-det.s1.sol2.short.1}%
+\end{align}
+
+
+The left hand side of this equality is a sum of $n$ determinants. We shall now
+show that $n-1$ of these determinants (namely, the ones that appear as addends
+for $k>1$ in the sum) are $0$.
+
+Indeed, every $k\in\left\{  2,3,\ldots,n\right\}  $ satisfies%
+\begin{equation}
+\det\left(  \left(  x_{i}^{n-j}x_{i}^{\delta_{j,k}}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}\right)  =0\label{sol.vander-det.s1.sol2.short.2}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.vander-det.s1.sol2.short.2}):} Let
+$k\in\left\{  2,3,\ldots,n\right\}  $. Let $A$ be the $n\times n$-matrix
+$\left(  x_{i}^{n-j}x_{i}^{\delta_{j,k}}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}$.
+\par
+Let $h\in\left\{  1,2,\ldots,n\right\}  $. Since $A=\left(  x_{i}^{n-j}%
+x_{i}^{\delta_{j,k}}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$, we have%
+\begin{equation}
+\left(  \text{the }\left(  h,k\right)  \text{-th entry of }A\right)
+=x_{h}^{n-k}\underbrace{x_{h}^{\delta_{k,k}}}_{\substack{=x_{h}^{1}%
+\\\text{(since }\delta_{k,k}=1\text{)}}}=x_{h}^{n-k}x_{h}^{1}=x_{h}%
+^{n-k+1}.\label{sol.vander-det.s1.sol2.short.2.pf.0}%
+\end{equation}
+On the other hand, $k-1\in\left\{  1,2,\ldots,n\right\}  $ (since
+$k\in\left\{  2,3,\ldots,n\right\}  $), and thus the $\left(  h,k-1\right)
+$-th entry of $A$ exists. Since $A=\left(  x_{i}^{n-j}x_{i}^{\delta_{j,k}%
+}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$, this entry satisfies%
+\[
+\left(  \text{the }\left(  h,k-1\right)  \text{-th entry of }A\right)
+=x_{h}^{n-\left(  k-1\right)  }\underbrace{x_{h}^{\delta_{k-1,k}}%
+}_{\substack{=x_{h}^{0}\\\text{(since }\delta_{k-1,k}=1\text{)}}%
+}=x_{h}^{n-\left(  k-1\right)  }x_{h}^{0}=x_{h}^{n-\left(  k-1\right)  }%
+=x_{h}^{n-k+1}.
+\]
+Comparing this with (\ref{sol.vander-det.s1.sol2.short.2.pf.0}), we obtain%
+\[
+\left(  \text{the }\left(  h,k\right)  \text{-th entry of }A\right)  =\left(
+\text{the }\left(  h,k-1\right)  \text{-th entry of }A\right)  .
+\]
+\par
+Now, let us forget that we fixed $h$. We thus have shown that $\left(
+\text{the }\left(  h,k\right)  \text{-th entry of }A\right)  =\left(
+\text{the }\left(  h,k-1\right)  \text{-th entry of }A\right)  $ for every
+$h\in\left\{  1,2,\ldots,k\right\}  $. In other words, the $k$-th column of
+$A$ equals the $\left(  k-1\right)  $-st column of $A$. Thus, the matrix $A$
+has two equal columns (since $k-1\neq k$). Therefore, Exercise \ref{exe.ps4.6}
+\textbf{(f)} shows that $\det A=0$. Since $A=\left(  x_{i}^{n-j}x_{i}%
+^{\delta_{j,k}}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$, this rewrites as
+$\det\left(  \left(  x_{i}^{n-j}x_{i}^{\delta_{j,k}}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}\right)  =0$. Qed.}. Furthermore, every $\left(  i,j\right)
+\in\left\{  1,2,\ldots,n\right\}  ^{2}$ satisfies%
+\begin{equation}
+x_{i}^{n-j}x_{i}^{\delta_{j,1}}=%
+\begin{cases}
+x_{i}^{n-j}, & \text{if }j>1;\\
+x_{i}^{n}, & \text{if }j=1
+\end{cases}
+\label{sol.vander-det.s1.sol2.short.4}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.vander-det.s1.sol2.short.4}):} Let
+$\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}$. We need to prove
+the equality (\ref{sol.vander-det.s1.sol2.short.4}). To do so, it clearly
+satisfies to prove the following two claims:
+\par
+\textit{Claim 1:} If $j>1$, then $x_{i}^{n-j}x_{i}^{\delta_{j,1}}=x_{i}^{n-j}%
+$.
+\par
+\textit{Claim 2:} If $j=1$, then $x_{i}^{n-j}x_{i}^{\delta_{j,1}}=x_{i}^{n}$.
+\par
+\textit{Proof of Claim 1:} Assume that $j>1$. Thus, $j\neq1$, so that
+$\delta_{j,1}=0$, so that $x_{i}^{\delta_{j,1}}=x_{i}^{0}=1$. Hence,
+$x_{i}^{n-j}\underbrace{x_{i}^{\delta_{j,1}}}_{=1}=x_{i}^{n-j}$, and thus
+Claim 1 is proven.
+\par
+\textit{Proof of Claim 2:} Assume that $j=1$. Thus, $\delta_{j,1}=1$, so that
+$x_{i}^{\delta_{j,1}}=x_{i}^{1}$ and thus $x_{i}^{n-j}\underbrace{x_{i}%
+^{\delta_{j,1}}}_{=x_{i}^{1}}=x_{i}^{n-j}x_{i}^{1}=x_{i}^{\left(  n-j\right)
++1}=x_{i}^{\left(  n-1\right)  +1}$ (since $j=1$), so that $x_{i}^{n-j}%
+x_{i}^{\delta_{j,1}}=x_{i}^{\left(  n-1\right)  +1}=x_{i}^{n}$. This proves
+Claim 2.
+\par
+Hence, (\ref{sol.vander-det.s1.sol2.short.4}) is proven (since we have proven
+Claims 1 and 2).}. Now, (\ref{sol.vander-det.s1.sol2.short.1}) shows that%
+\begin{align*}
+&  \left(  x_{1}+x_{2}+\cdots+x_{n}\right)  \prod_{1\leq i<j\leq n}\left(
+x_{i}-x_{j}\right)  \\
+&  =\sum\limits_{k=1}^{n}\det\left(  \left(  x_{i}^{n-j}x_{i}^{\delta_{j,k}%
+}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  \\
+&  =\det\left(  \left(  \underbrace{x_{i}^{n-j}x_{i}^{\delta_{j,1}}%
+}_{\substack{=%
+\begin{cases}
+x_{i}^{n-j}, & \text{if }j>1;\\
+x_{i}^{n}, & \text{if }j=1
+\end{cases}
+\\\text{(by (\ref{sol.vander-det.s1.sol2.short.4}))}}}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}\right)  +\sum\limits_{k=2}^{n}\underbrace{\det\left(
+\left(  x_{i}^{n-j}x_{i}^{\delta_{j,k}}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}\right)  }_{\substack{=0\\\text{(by (\ref{sol.vander-det.s1.sol2.short.2}%
+))}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have split off the addend for
+}k=1\text{ from the sum}\right)  \\
+&  =\det\left(  \left(
+\begin{cases}
+x_{i}^{n-j}, & \text{if }j>1;\\
+x_{i}^{n}, & \text{if }j=1
+\end{cases}
+\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  +\underbrace{\sum
+\limits_{k=2}^{n}0}_{=0}=\det\left(  \left(
+\begin{cases}
+x_{i}^{n-j}, & \text{if }j>1;\\
+x_{i}^{n}, & \text{if }j=1
+\end{cases}
+\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  .
+\end{align*}
+This solves Exercise \ref{exe.vander-det.s1} again.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
 \begin{proof}
 [Second solution to Exercise \ref{exe.vander-det.s1}.]Exercise
 \ref{exe.det.schur-lem} (applied to $a_{i,j}=x_{i}^{n-j}$ and $b_{i}=x_{i}$)
