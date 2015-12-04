@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, December 04, 2015 05:06:44}
+%TCIDATA{LastRevised=Friday, December 04, 2015 10:40:13}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -2637,8 +2637,8 @@ of course is empty and thus has no consecutive elements; and the Fibonacci
 number $f_{1}$ is precisely $1$.)
 
 \begin{remark}
-Exercise \ref{exe.ps2.2.3} is equivalent to another known combinatorial
-interpretation of the Fibonacci numbers.
+\label{rmk.fib.dominos}Exercise \ref{exe.ps2.2.3} is equivalent to another
+known combinatorial interpretation of the Fibonacci numbers.
 
 Namely, let $n$ be a positive integer. Consider a rectangular table of
 dimensions $2\times\left(  n-1\right)  $ (that is, with $2$ rows and $n-1$
@@ -2813,10 +2813,14 @@ $f_{n-1}$, then I guess it is easier to just prove it by induction without
 taking the detour through Exercise \ref{exe.ps2.2.3}.)
 \end{remark}
 
-Here is another formula about recursive sequences, coming out of a recent
-paper on cluster algebras\footnote{Specifically, Exercise \ref{exe.ps2.2.S} is
-part of \cite[Definition 1]{LS2}, but I have reindexed the sequence and fixed
-the missing upper bound in the sum.}:
+Either Exercise \ref{exe.ps2.2.3} or Remark \ref{rmk.fib.dominos} can be used
+to prove properties of Fibonacci numbers in a combinatorial way; see
+\cite{BenQui-fib} for some examples of such proofs.
+
+Here is another formula for certain recursive sequences, coming out of a
+recent paper on cluster algebras\footnote{Specifically, Exercise
+\ref{exe.ps2.2.S} is part of \cite[Definition 1]{LS2}, but I have reindexed
+the sequence and fixed the missing upper bound in the sum.}:
 
 \begin{exercise}
 \label{exe.ps2.2.S}Let $r\in\mathbb{Z}$. Define a sequence $\left(
@@ -4235,7 +4239,7 @@ element. Clearly, $n\in K\cup\left\{  1\right\}  \subseteq\left\{
 
 Every $j\in K\cup\left\{  1\right\}  $ satisfies
 \begin{equation}
-j\leq n\label{pf.prop.S(infty).inversions.short.a.1}%
+j\leq n \label{pf.prop.S(infty).inversions.short.a.1}%
 \end{equation}
 (since $n$ is the greatest element of $K\cup\left\{  1\right\}  $). Now, let
 $i$ be an integer such that $i>n$. Then, $i>n>0$, so that $i$ is a positive
@@ -4312,7 +4316,7 @@ consequence, we obtain that there exists some finite subset $J$ of $\left\{
 1,2,3,\ldots\right\}  $ such that%
 \begin{equation}
 \text{every }i\in\left\{  1,2,3,\ldots\right\}  \setminus J\text{ satisfies
-}\sigma\left(  i\right)  =i.\label{pf.prop.S(infty).inversions.a.J}%
+}\sigma\left(  i\right)  =i. \label{pf.prop.S(infty).inversions.a.J}%
 \end{equation}
 Consider this $J$.
 
@@ -30017,7 +30021,7 @@ This solves Exercise \ref{exe.det.schur-lem}.
 \end{verlong}
 
 \subsection{\label{sect.sols.vander-det.s1.sol2}Second solution to Exercise
-\ref{exe.vander-det.s1}.}
+\ref{exe.vander-det.s1}}
 
 \begin{verlong}
 Exercise \ref{exe.det.schur-lem} can be used to give a new (and simpler)
@@ -33539,7 +33543,7 @@ Hence, Exercise \ref{exe.block2x2.tridet} is solved by induction.
 \end{proof}
 \end{verlong}
 
-\subsection{Second solution to Exercise \ref{exe.ps4.5}.}
+\subsection{Second solution to Exercise \ref{exe.ps4.5}}
 
 \begin{proof}
 [Second solution to Exercise \ref{exe.ps4.5} (sketched).]\textbf{(b)} We have%
@@ -33912,6 +33916,13 @@ from the Book}, 4th edition, Springer 2010.
 from the Book}, XYZ Press 2008.
 
 \bibitem[Artin]{Artin}Michael Artin, \textit{Algebra}, 2nd edition, Pearson 2010.
+
+\bibitem[BenQui04]{BenQui-fib}%
+\href{https://www.math.hmc.edu/~benjamin/papers/bama.pdf}{Arthur T. Benjamin
+and Jennifer J. Quinn, \textit{Proofs that Really Count: The Magic of
+Fibonacci Numbers and More}, Mathematical Adventures for Students and
+Amateurs, (David F. Hayes and Tatiana Shubin, editors), Spectrum Series of
+MAA, pp. 83--98, 2004.}
 
 \bibitem[Conrad]{Conrad}Keith Conrad, \textit{Sign of permutations},
 \newline%
