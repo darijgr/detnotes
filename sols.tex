@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, December 04, 2015 04:58:42}
+%TCIDATA{LastRevised=Friday, December 04, 2015 05:06:44}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -3886,6 +3886,133 @@ S_{\left(  \infty\right)  }$, we have $\sigma\circ\tau\in S_{\left(
 $\sigma^{-1}\in S_{\left(  \infty\right)  }$.
 \end{proposition}
 
+\begin{vershort}
+\begin{proof}
+[Proof of Proposition \ref{prop.S(infty).group}.]We have defined $S_{\left(
+\infty\right)  }$ as the set of all $\sigma\in S_{\infty}$ such that
+$\sigma\left(  i\right)  =i$ for all but finitely many $i\in\left\{
+1,2,3,\ldots\right\}  $. In other words, $S_{\left(  \infty\right)  }$ is the
+set of all $\sigma\in S_{\infty}$ such that there exists a finite subset $K$
+of $\left\{  1,2,3,\ldots\right\}  $ such that $\left(  \text{every }%
+i\in\left\{  1,2,3,\ldots\right\}  \setminus K\text{ satisfies }\gamma\left(
+i\right)  =i\right)  $. As a consequence, we have the following two facts:
+
+\begin{itemize}
+\item If $K$ is a finite subset of $\left\{  1,2,3,\ldots\right\}  $, and if
+$\gamma\in S_{\infty}$ is a permutation such that%
+\begin{equation}
+\left(  \text{every }i\in\left\{  1,2,3,\ldots\right\}  \setminus K\text{
+satisfies }\gamma\left(  i\right)  =i\right)  ,
+\label{pf.prop.S(infty).group.short.lem.hyp}%
+\end{equation}
+then%
+\begin{equation}
+\gamma\in S_{\left(  \infty\right)  }.
+\label{pf.prop.S(infty).group.short.lem}%
+\end{equation}
+
+
+\item If $\gamma\in S_{\left(  \infty\right)  }$, then
+\begin{equation}
+\left(
+\begin{array}
+[c]{c}%
+\text{there exists some finite subset }K\text{ of }\left\{  1,2,3,\ldots
+\right\} \\
+\text{such that every }i\in\left\{  1,2,3,\ldots\right\}  \setminus K\text{
+satisfies }\gamma\left(  i\right)  =i
+\end{array}
+\right)  . \label{pf.prop.S(infty).group.short.lem2}%
+\end{equation}
+
+\end{itemize}
+
+We can now step to the actual proof of Proposition \ref{prop.S(infty).group}.
+
+\textbf{(a)} Every $i\in\left\{  1,2,3,\ldots\right\}  \setminus\varnothing$
+satisfies $\operatorname*{id}\left(  i\right)  =i$. Thus,
+(\ref{pf.prop.S(infty).group.short.lem}) (applied to $K=\varnothing$ and
+$\gamma=\operatorname*{id}$) yields $\operatorname*{id}\in S_{\left(
+\infty\right)  }$. This proves Proposition \ref{prop.S(infty).group}
+\textbf{(a)}.
+
+\textbf{(b)} Let $\sigma\in S_{\left(  \infty\right)  }$ and $\tau\in
+S_{\left(  \infty\right)  }$.
+
+From (\ref{pf.prop.S(infty).group.short.lem2}) (applied to $\gamma=\sigma$),
+we conclude that there exists some finite subset $K$ of $\left\{
+1,2,3,\ldots\right\}  $ such that every $i\in\left\{  1,2,3,\ldots\right\}
+\setminus K$ satisfies $\sigma\left(  i\right)  =i$. Let us denote this $K$ by
+$J_{1}$. Thus, $J_{1}$ is a finite subset of $\left\{  1,2,3,\ldots\right\}
+$, and%
+\begin{equation}
+\text{every }i\in\left\{  1,2,3,\ldots\right\}  \setminus J_{1}\text{
+satisfies }\sigma\left(  i\right)  =i.
+\label{pf.prop.S(infty).group.short.b.1}%
+\end{equation}
+
+
+From (\ref{pf.prop.S(infty).group.short.lem2}) (applied to $\gamma=\tau$), we
+conclude that there exists some finite subset $K$ of $\left\{  1,2,3,\ldots
+\right\}  $ such that every $i\in\left\{  1,2,3,\ldots\right\}  \setminus K$
+satisfies $\tau\left(  i\right)  =i$. Let us denote this $K$ by $J_{2}$. Thus,
+$J_{2}$ is a finite subset of $\left\{  1,2,3,\ldots\right\}  $, and%
+\begin{equation}
+\text{every }i\in\left\{  1,2,3,\ldots\right\}  \setminus J_{2}\text{
+satisfies }\tau\left(  i\right)  =i. \label{pf.prop.S(infty).group.short.b.2}%
+\end{equation}
+
+
+The sets $J_{1}$ and $J_{2}$ are finite. Hence, their union $J_{1}\cup J_{2}$
+is finite. Moreover,
+\[
+\text{every }i\in\left\{  1,2,3,\ldots\right\}  \setminus\left(  J_{1}\cup
+J_{2}\right)  \text{ satisfies }\left(  \sigma\circ\tau\right)  \left(
+i\right)  =i
+\]
+\footnote{\textit{Proof.} Let $i\in\left\{  1,2,3,\ldots\right\}
+\setminus\left(  J_{1}\cup J_{2}\right)  $. Thus, $i\in\left\{  1,2,3,\ldots
+\right\}  $ and $i\notin J_{1}\cup J_{2}$.
+\par
+We have $i\notin J_{1}\cup J_{2}$ and thus $i\notin J_{1}$ (since
+$J_{1}\subseteq J_{1}\cup J_{2}$). Hence, $i\in\left\{  1,2,3,\ldots\right\}
+\setminus J_{1}$. Similarly, $i\in\left\{  1,2,3,\ldots\right\}  \setminus
+J_{2}$. Thus, (\ref{pf.prop.S(infty).group.short.b.2}) yields $\tau\left(
+i\right)  =i$. Hence, $\left(  \sigma\circ\tau\right)  \left(  i\right)
+=\sigma\left(  \underbrace{\tau\left(  i\right)  }_{=i}\right)  =\sigma\left(
+i\right)  =i$ (by (\ref{pf.prop.S(infty).group.short.b.1})), qed.}. Therefore,
+(\ref{pf.prop.S(infty).group.short.lem}) (applied to $K=J_{1}\cup J_{2}$ and
+$\gamma=\sigma\circ\tau$) yields $\sigma\circ\tau\in S_{\left(  \infty\right)
+}$. This proves Proposition \ref{prop.S(infty).group} \textbf{(b)}.
+
+\textbf{(c)} Let $\sigma\in S_{\left(  \infty\right)  }$.
+
+From (\ref{pf.prop.S(infty).group.short.lem2}) (applied to $\gamma=\sigma$),
+we conclude that there exists some finite subset $K$ of $\left\{
+1,2,3,\ldots\right\}  $ such that every $i\in\left\{  1,2,3,\ldots\right\}
+\setminus K$ satisfies $\sigma\left(  i\right)  =i$. Consider this $K$. Thus,
+$K$ is a finite subset of $\left\{  1,2,3,\ldots\right\}  $, and%
+\begin{equation}
+\text{every }i\in\left\{  1,2,3,\ldots\right\}  \setminus K\text{ satisfies
+}\sigma\left(  i\right)  =i \label{pf.prop.S(infty).group.short.c.3}%
+\end{equation}
+
+
+Now,
+\[
+\text{every }i\in\left\{  1,2,3,\ldots\right\}  \setminus K\text{ satisfies
+}\sigma^{-1}\left(  i\right)  =i
+\]
+\footnote{\textit{Proof.} Let $i\in\left\{  1,2,3,\ldots\right\}  \setminus
+K$. Thus, $\sigma\left(  i\right)  =i$ (according to
+(\ref{pf.prop.S(infty).group.short.c.3})), so that $\sigma^{-1}\left(
+i\right)  =i$, qed.}. Therefore, (\ref{pf.prop.S(infty).group.short.lem})
+(applied to $\gamma=\sigma^{-1}$) yields $\sigma^{-1}\in S_{\left(
+\infty\right)  }$. This proves Proposition \ref{prop.S(infty).group}
+\textbf{(c)}.
+\end{proof}
+\end{vershort}
+
 \begin{verlong}
 \begin{proof}
 [Proof of Proposition \ref{prop.S(infty).group}.]Let us record the following facts:
@@ -3895,12 +4022,12 @@ $\sigma^{-1}\in S_{\left(  \infty\right)  }$.
 $\gamma\in S_{\infty}$ is a permutation such that%
 \begin{equation}
 \left(  \text{every }i\in\left\{  1,2,3,\ldots\right\}  \setminus K\text{
-satisfies }\gamma\left(  i\right)  =i\right)
-,\label{pf.prop.S(infty).group.lem.hyp}%
+satisfies }\gamma\left(  i\right)  =i\right)  ,
+\label{pf.prop.S(infty).group.lem.hyp}%
 \end{equation}
 then%
 \begin{equation}
-\gamma\in S_{\left(  \infty\right)  }.\label{pf.prop.S(infty).group.lem}%
+\gamma\in S_{\left(  \infty\right)  }. \label{pf.prop.S(infty).group.lem}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{pf.prop.S(infty).group.lem}):} Let $K$ be a
 finite subset of $\left\{  1,2,3,\ldots\right\}  $, and let $\gamma\in
@@ -3931,7 +4058,7 @@ This proves (\ref{pf.prop.S(infty).group.lem}).}
 \begin{array}
 [c]{c}%
 \text{there exists some finite subset }J\text{ of }\left\{  1,2,3,\ldots
-\right\}  \\
+\right\} \\
 \text{such that every }i\in\left\{  1,2,3,\ldots\right\}  \setminus J\text{
 satisfies }\gamma\left(  i\right)  =i
 \end{array}
@@ -3955,6 +4082,8 @@ $i\in\left\{  1,2,3,\ldots\right\}  \setminus J$ satisfies $\gamma\left(
 i\right)  =i$. This proves (\ref{pf.prop.S(infty).group.lem2}).}.
 \end{itemize}
 
+We can now step to the actual proof of Proposition \ref{prop.S(infty).group}.
+
 \textbf{(a)} Every $i\in\left\{  1,2,3,\ldots\right\}  \setminus\varnothing$
 satisfies $\operatorname*{id}\left(  i\right)  =i$. Thus,
 (\ref{pf.prop.S(infty).group.lem}) (applied to $K=\varnothing$ and
@@ -3972,7 +4101,7 @@ satisfies $\sigma\left(  i\right)  =i$. Let us denote this $J$ by $J_{1}$.
 Thus, $J_{1}$ is a finite subset of $\left\{  1,2,3,\ldots\right\}  $, and%
 \begin{equation}
 \text{every }i\in\left\{  1,2,3,\ldots\right\}  \setminus J_{1}\text{
-satisfies }\sigma\left(  i\right)  =i.\label{pf.prop.S(infty).group.b.1}%
+satisfies }\sigma\left(  i\right)  =i. \label{pf.prop.S(infty).group.b.1}%
 \end{equation}
 
 
@@ -3983,7 +4112,7 @@ satisfies $\tau\left(  i\right)  =i$. Let us denote this $J$ by $J_{2}$. Thus,
 $J_{2}$ is a finite subset of $\left\{  1,2,3,\ldots\right\}  $, and%
 \begin{equation}
 \text{every }i\in\left\{  1,2,3,\ldots\right\}  \setminus J_{2}\text{
-satisfies }\tau\left(  i\right)  =i.\label{pf.prop.S(infty).group.b.2}%
+satisfies }\tau\left(  i\right)  =i. \label{pf.prop.S(infty).group.b.2}%
 \end{equation}
 
 
@@ -4016,11 +4145,11 @@ $\gamma=\sigma\circ\tau$) yields $\sigma\circ\tau\in S_{\left(  \infty\right)
 From (\ref{pf.prop.S(infty).group.lem2}) (applied to $\gamma=\sigma$), we
 conclude that there exists some finite subset $J$ of $\left\{  1,2,3,\ldots
 \right\}  $ such that every $i\in\left\{  1,2,3,\ldots\right\}  \setminus J$
-satisfies $\sigma\left(  i\right)  =i$. Consider this $J$.. Thus, $J$ is a
+satisfies $\sigma\left(  i\right)  =i$. Consider this $J$. Thus, $J$ is a
 finite subset of $\left\{  1,2,3,\ldots\right\}  $, and%
 \begin{equation}
 \text{every }i\in\left\{  1,2,3,\ldots\right\}  \setminus J\text{ satisfies
-}\sigma\left(  i\right)  =i\label{pf.prop.S(infty).group.c.3}%
+}\sigma\left(  i\right)  =i \label{pf.prop.S(infty).group.c.3}%
 \end{equation}
 
 
@@ -4084,16 +4213,106 @@ every integer $i>N$ satisfies $\sigma\left(  i\right)  =i$.
 \textbf{(b)} There are only finitely many inversions of $\sigma$.
 \end{proposition}
 
+\begin{vershort}
 \begin{proof}
-[Proof of Proposition \ref{prop.S(infty).inversions}.]Let $\sigma\in
-S_{\left(  \infty\right)  }$.
+[Proof of Proposition \ref{prop.S(infty).inversions}.]\textbf{(a)} We can
+apply (\ref{pf.prop.S(infty).group.short.lem2}) to $\gamma=\sigma$. As a
+consequence, we obtain that there exists some finite subset $K$ of $\left\{
+1,2,3,\ldots\right\}  $ such that%
+\begin{equation}
+\text{every }i\in\left\{  1,2,3,\ldots\right\}  \setminus K\text{ satisfies
+}\sigma\left(  i\right)  =i. \label{pf.prop.S(infty).inversions.short.a.J}%
+\end{equation}
+Consider this $K$.
 
-\textbf{(a)} We can apply (\ref{pf.prop.S(infty).group.lem2}) to
-$\gamma=\sigma$. As a consequence, we obtain that there exists some finite
-subset $J$ of $\left\{  1,2,3,\ldots\right\}  $ such that%
+The set $K$ is finite. Hence, the set $K\cup\left\{  1\right\}  $ is finite;
+this set is also nonempty (since it contains $1$) and a subset of $\left\{
+1,2,3,\ldots\right\}  $. Therefore, this set $K\cup\left\{  1\right\}  $ has a
+greatest element (since every finite nonempty subset of $\left\{
+1,2,3,\ldots\right\}  $ has a greatest element). Let $n$ be this greatest
+element. Clearly, $n\in K\cup\left\{  1\right\}  \subseteq\left\{
+1,2,3,\ldots\right\}  $, so that $n>0$.
+
+Every $j\in K\cup\left\{  1\right\}  $ satisfies
+\begin{equation}
+j\leq n\label{pf.prop.S(infty).inversions.short.a.1}%
+\end{equation}
+(since $n$ is the greatest element of $K\cup\left\{  1\right\}  $). Now, let
+$i$ be an integer such that $i>n$. Then, $i>n>0$, so that $i$ is a positive
+integer. If we had $i\in K$, then we would have $i\in K\subseteq K\cup\left\{
+1\right\}  $ and thus $i\leq n$ (by
+(\ref{pf.prop.S(infty).inversions.short.a.1}), applied to $j=i$), which would
+contradict $i>n$. Hence, we cannot have $i\in K$. We thus have $i\notin K$.
+Since $i\in\left\{  1,2,3,\ldots\right\}  $, this shows that $i\in\left\{
+1,2,3,\ldots\right\}  \setminus K$. Thus, $\sigma\left(  i\right)  =i$ (by
+(\ref{pf.prop.S(infty).inversions.short.a.J})).
+
+Let us now forget that we fixed $i$. We thus have shown that every integer
+$i>n$ satisfies $\sigma\left(  i\right)  =i$. Hence, Proposition
+\ref{prop.S(infty).inversions} \textbf{(a)} holds (we can take $N=n$).
+
+\textbf{(b)} Proposition \ref{prop.S(infty).inversions} \textbf{(a)} shows
+that there exists some $N\in\left\{  1,2,3,\ldots\right\}  $ such that%
+\begin{equation}
+\text{every integer }i>N\text{ satisfies }\sigma\left(  i\right)  =i.
+\label{pf.prop.S(infty).inversions.short.b.N}%
+\end{equation}
+Consider such an $N$. We shall now show that
+\[
+\text{every inversion of }\sigma\text{ is an element of }\left\{
+1,2,\ldots,N\right\}  ^{2}.
+\]
+
+
+In fact, let $c$ be an inversion of $\sigma$. We will show that $c$ is an
+element of $\left\{  1,2,\ldots,N\right\}  ^{2}$.
+
+We know that $c$ is an inversion of $\sigma$. In other words, $c$ is a pair
+$\left(  i,j\right)  $ of integers satisfying $1\leq i<j$ and $\sigma\left(
+i\right)  >\sigma\left(  j\right)  $ (by the definition of an
+\textquotedblleft inversion of $\sigma$\textquotedblright). Consider this
+$\left(  i,j\right)  $. We then have $i\leq N$\ \ \ \footnote{\textit{Proof.}
+Assume the contrary. Thus, $i>N$. Hence,
+(\ref{pf.prop.S(infty).inversions.short.b.N}) shows that $\sigma\left(
+i\right)  =i$. Also, $i<j$, so that $j>i>N$. Hence,
+(\ref{pf.prop.S(infty).inversions.short.b.N}) (applied to $j$ instead of $i$)
+shows that $\sigma\left(  j\right)  =j$. Thus, $\sigma\left(  i\right)
+=i<j=\sigma\left(  j\right)  $. This contradicts $\sigma\left(  i\right)
+>\sigma\left(  j\right)  $. This contradiction shows that our assumption was
+wrong, qed.} and $j\leq N$\ \ \ \ \footnote{\textit{Proof.} Assume the
+contrary. Thus, $j>N$. Hence, (\ref{pf.prop.S(infty).inversions.short.b.N})
+(applied to $j$ instead of $i$) shows that $\sigma\left(  j\right)  =j$. Now,
+$\sigma\left(  i\right)  >\sigma\left(  j\right)  =j>N$. Therefore,
+(\ref{pf.prop.S(infty).inversions.short.b.N}) (applied to $\sigma\left(
+i\right)  $ instead of $i$) yields $\sigma\left(  \sigma\left(  i\right)
+\right)  =\sigma\left(  i\right)  $. But $\sigma$ is a permutation, and thus
+an injective map. Hence, from $\sigma\left(  \sigma\left(  i\right)  \right)
+=\sigma\left(  i\right)  $, we obtain $\sigma\left(  i\right)  =i$. Thus,
+$\sigma\left(  i\right)  =i<j=\sigma\left(  j\right)  $. This contradicts
+$\sigma\left(  i\right)  >\sigma\left(  j\right)  $. This contradiction shows
+that our assumption was wrong, qed.}. Consequently, $\left(  i,j\right)
+\in\left\{  1,2,\ldots,N\right\}  ^{2}$. Hence, $c=\left(  i,j\right)
+\in\left\{  1,2,\ldots,N\right\}  ^{2}$.
+
+Now, let us forget that we fixed $c$. We thus have shown that if $c$ is an
+inversion of $\sigma$, then $c$ is an element of $\left\{  1,2,\ldots
+,N\right\}  ^{2}$. In other words, every inversion of $\sigma$ is an element
+of $\left\{  1,2,\ldots,N\right\}  ^{2}$. Thus, there are only finitely many
+inversions of $\sigma$ (since there are only finitely many elements of
+$\left\{  1,2,\ldots,N\right\}  ^{2}$). Proposition
+\ref{prop.S(infty).inversions} \textbf{(b)} is thus proven.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Proposition \ref{prop.S(infty).inversions}.]\textbf{(a)} We can
+apply (\ref{pf.prop.S(infty).group.lem2}) to $\gamma=\sigma$. As a
+consequence, we obtain that there exists some finite subset $J$ of $\left\{
+1,2,3,\ldots\right\}  $ such that%
 \begin{equation}
 \text{every }i\in\left\{  1,2,3,\ldots\right\}  \setminus J\text{ satisfies
-}\sigma\left(  i\right)  =i. \label{pf.prop.S(infty).inversions.a.J}%
+}\sigma\left(  i\right)  =i.\label{pf.prop.S(infty).inversions.a.J}%
 \end{equation}
 Consider this $J$.
 
@@ -4179,6 +4398,7 @@ inversions of $\sigma$ (since there are only finitely many elements of
 $\left\{  1,2,\ldots,N\right\}  ^{2}$). Proposition
 \ref{prop.S(infty).inversions} \textbf{(b)} is thus proven.
 \end{proof}
+\end{verlong}
 
 Actually, Proposition \ref{prop.S(infty).inversions} \textbf{(b)} has a
 converse: If a permutation $\sigma\in S_{\infty}$ has only finitely many
