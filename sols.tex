@@ -16620,250 +16620,6 @@ Curiously, there is also a formula for the case when $n=m$ and $CD=DC$ (see
 \cite[Theorem 3]{Silvest}).
 \end{remark}
 
-\begin{vershort}
-\begin{proof}
-We shall prove Exercise \ref{exe.block2x2.tridet} by induction over $m$:
-
-\textit{Induction base:} Let $n\in\mathbb{N}$. Let $A$ be an $n\times
-n$-matrix. Let $B$ be an $n\times0$-matrix\footnote{Of course, there is only
-one such $n\times0$-matrix (namely, the empty matrix).}. Let $D$ be a
-$0\times0$-matrix\footnote{Of course, there is only one such $0\times0$-matrix
-(namely, the empty matrix).}. Then, all three matrices $B$, $0_{0\times n}$
-and $D$ are empty (in the sense that each of them has either $0$ rows or $0$
-columns or both), and thus we have $\left(
-\begin{array}
-[c]{cc}%
-A & B\\
-0_{0\times n} & D
-\end{array}
-\right)  =A$. Hence, $\det\left(
-\begin{array}
-[c]{cc}%
-A & B\\
-0_{0\times n} & D
-\end{array}
-\right)  =\det A$. Compared with $\det D=1$ (since $D$ is a $0\times
-0$-matrix), this yields $\det\left(
-\begin{array}
-[c]{cc}%
-A & B\\
-0_{0\times n} & D
-\end{array}
-\right)  =\det A\cdot\det D$.
-
-Now, let us forget that we fixed $n$, $A$, $B$ and $D$. We thus have proven
-that every $n\in\mathbb{N}$, every $n\times n$-matrix $A$, every $n\times
-0$-matrix $B$ and every $0\times0$-matrix $D$ satisfy $\det\left(
-\begin{array}
-[c]{cc}%
-A & B\\
-0_{0\times n} & D
-\end{array}
-\right)  =\det A\cdot\det D$. In other words, Exercise
-\ref{exe.block2x2.tridet} holds for $m=0$. This completes the induction base.
-
-\textit{Induction step:} Let $M\in\mathbb{N}$ be positive. Assume that
-Exercise \ref{exe.block2x2.tridet} holds for $m=M-1$. We need to prove that
-Exercise \ref{exe.block2x2.tridet} holds for $m=M$.
-
-Let $n\in\mathbb{N}$. Let $A$ be an $n\times n$-matrix. Let $B$ be an $n\times
-M$-matrix. Let $D$ be an $M\times M$-matrix.
-
-Write the $M\times M$-matrix $D$ in the form $D=\left(  d_{i,j}\right)
-_{1\leq i\leq M,\ 1\leq j\leq M}$. Hence, Theorem \ref{thm.laplace.gen}
-\textbf{(a)} (applied to $M$, $D$, $d_{i,j}$ and $M$ instead of $n$, $A$,
-$a_{i,j}$ and $p$) shows that%
-\begin{equation}
-\det D=\sum_{q=1}^{M}\left(  -1\right)  ^{M+q}d_{M,q}\det\left(  D_{\sim
-M,\sim q}\right)  \label{sol.block2x2.tridet.short.indstep.detD}%
-\end{equation}
-(since $M\in\left\{  1,2,\ldots,M\right\}  $ (because $M>0$)).
-
-Write the $\left(  n+M\right)  \times\left(  n+M\right)  $-matrix $\left(
-\begin{array}
-[c]{cc}%
-A & B\\
-0_{M\times n} & D
-\end{array}
-\right)  $ in the form $\left(
-\begin{array}
-[c]{cc}%
-A & B\\
-0_{M\times n} & D
-\end{array}
-\right)  =\left(  u_{i,j}\right)  _{1\leq u\leq n+M,\ 1\leq v\leq n+M}$. Thus,%
-\begin{equation}
-u_{n+M,q}=0\ \ \ \ \ \ \ \ \ \ \text{for every }q\in\left\{  1,2,\ldots
-,n\right\}  , \label{sol.block2x2.tridet.short.indstep.u=0}%
-\end{equation}
-and%
-\begin{equation}
-u_{n+M,n+q}=d_{M,q}\ \ \ \ \ \ \ \ \ \ \text{for every }q\in\left\{
-1,2,\ldots,M\right\}  . \label{sol.block2x2.tridet.short.indstep.u=d}%
-\end{equation}
-
-
-Furthermore, for every $q\in\left\{  1,2,\ldots,M\right\}  $, we have%
-\begin{equation}
-\left(
-\begin{array}
-[c]{cc}%
-A & B\\
-0_{M\times n} & D
-\end{array}
-\right)  _{\sim\left(  n+M\right)  ,\sim\left(  n+q\right)  }=\left(
-\begin{array}
-[c]{cc}%
-A & B_{q}^{\prime}\\
-0_{\left(  M-1\right)  \times n} & D_{\sim M,\sim q}%
-\end{array}
-\right)  , \label{sol.block2x2.tridet.short.indstep.1}%
-\end{equation}
-where $B_{q}^{\prime}$ is the result of crossing out the $q$-th column in the
-matrix $B$. (Draw the matrices and cross out the appropriate rows and columns
-to see why this is true.)
-
-But we have assumed that Exercise \ref{exe.block2x2.tridet} holds for $m=M-1$.
-Hence, for every $q\in\left\{  1,2,\ldots,M\right\}  $, we can apply Exercise
-\ref{exe.block2x2.tridet} to $M-1$, $B_{q}^{\prime}$ and $D_{\sim M,\sim q}$
-instead of $m$, $B$ and $D$. As a result, for every $q\in\left\{
-1,2,\ldots,M\right\}  $, we obtain%
-\[
-\det\left(
-\begin{array}
-[c]{cc}%
-A & B_{q}^{\prime}\\
-0_{\left(  M-1\right)  \times n} & D_{\sim M,\sim q}%
-\end{array}
-\right)  =\det A\cdot\det\left(  D_{\sim M,\sim q}\right)  .
-\]
-Now, taking determinants in (\ref{sol.block2x2.tridet.short.indstep.1}), we
-obtain%
-\begin{equation}
-\det\left(  \left(
-\begin{array}
-[c]{cc}%
-A & B\\
-0_{M\times n} & D
-\end{array}
-\right)  _{\sim\left(  n+M\right)  ,\sim\left(  n+q\right)  }\right)
-=\det\left(
-\begin{array}
-[c]{cc}%
-A & B_{q}^{\prime}\\
-0_{\left(  M-1\right)  \times n} & D_{\sim M,\sim q}%
-\end{array}
-\right)  =\det A\cdot\det\left(  D_{\sim M,\sim q}\right)  .
-\label{sol.block2x2.tridet.short.indstep.2}%
-\end{equation}
-
-
-But $n+M>0$ and thus $n+M\in\left\{  1,2,\ldots,n+M\right\}  $. Thus, Theorem
-\ref{thm.laplace.gen} \textbf{(a)} (applied to $n+M$, $\left(
-\begin{array}
-[c]{cc}%
-A & B\\
-0_{M\times n} & D
-\end{array}
-\right)  $, $u_{i,j}$ and $n+M$ instead of $n$, $A$, $a_{i,j}$ and $p$) shows
-that%
-\begin{align*}
-&  \det\left(
-\begin{array}
-[c]{cc}%
-A & B\\
-0_{M\times n} & D
-\end{array}
-\right) \\
-&  =\sum_{q=1}^{n+M}\left(  -1\right)  ^{\left(  n+M\right)  +q}u_{n+M,q}%
-\det\left(  \left(
-\begin{array}
-[c]{cc}%
-A & B\\
-0_{M\times n} & D
-\end{array}
-\right)  _{\sim\left(  n+M\right)  ,\sim q}\right) \\
-&  =\sum_{q=1}^{n}\left(  -1\right)  ^{\left(  n+M\right)  +q}%
-\underbrace{u_{n+M,q}}_{\substack{=0\\\text{(by
-(\ref{sol.block2x2.tridet.short.indstep.u=0}))}}}\det\left(  \left(
-\begin{array}
-[c]{cc}%
-A & B\\
-0_{M\times n} & D
-\end{array}
-\right)  _{\sim\left(  n+M\right)  ,\sim q}\right) \\
-&  \ \ \ \ \ \ \ \ \ \ +\sum_{q=n+1}^{n+M}\left(  -1\right)  ^{\left(
-n+M\right)  +q}u_{n+M,q}\det\left(  \left(
-\begin{array}
-[c]{cc}%
-A & B\\
-0_{M\times n} & D
-\end{array}
-\right)  _{\sim\left(  n+M\right)  ,\sim q}\right) \\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }0\leq n\leq n+M\right) \\
-&  =\underbrace{\sum_{q=1}^{n}\left(  -1\right)  ^{\left(  n+M\right)
-+q}0\det\left(  \left(
-\begin{array}
-[c]{cc}%
-A & B\\
-0_{M\times n} & D
-\end{array}
-\right)  _{\sim\left(  n+M\right)  ,\sim q}\right)  }_{=0}\\
-&  \ \ \ \ \ \ \ \ \ \ +\sum_{q=n+1}^{n+M}\left(  -1\right)  ^{\left(
-n+M\right)  +q}u_{n+M,q}\det\left(  \left(
-\begin{array}
-[c]{cc}%
-A & B\\
-0_{M\times n} & D
-\end{array}
-\right)  _{\sim\left(  n+M\right)  ,\sim q}\right) \\
-&  =\sum_{q=n+1}^{n+M}\left(  -1\right)  ^{\left(  n+M\right)  +q}%
-u_{n+M,q}\det\left(  \left(
-\begin{array}
-[c]{cc}%
-A & B\\
-0_{M\times n} & D
-\end{array}
-\right)  _{\sim\left(  n+M\right)  ,\sim q}\right) \\
-&  =\sum_{q=1}^{M}\underbrace{\left(  -1\right)  ^{\left(  n+M\right)
-+\left(  n+q\right)  }}_{\substack{=\left(  -1\right)  ^{M+q}\\\text{(since
-}\left(  n+M\right)  +\left(  n+q\right)  =2n+M+q\equiv M+q\operatorname{mod}%
-2\text{)}}}\underbrace{u_{n+M,n+q}}_{\substack{=d_{M,q}\\\text{(by
-(\ref{sol.block2x2.tridet.short.indstep.u=d}))}}}\underbrace{\det\left(
-\left(
-\begin{array}
-[c]{cc}%
-A & B\\
-0_{M\times n} & D
-\end{array}
-\right)  _{\sim\left(  n+M\right)  ,\sim q}\right)  }_{\substack{=\det
-A\cdot\det\left(  D_{\sim M,\sim q}\right)  \\\text{(by
-(\ref{sol.block2x2.tridet.short.indstep.2}))}}}\\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }n+q\text{ for
-}q\text{ in the sum}\right) \\
-&  =\sum_{q=1}^{M}\left(  -1\right)  ^{M+q}d_{M,q}\det A\cdot\det\left(
-D_{\sim M,\sim q}\right)  =\det A\cdot\underbrace{\sum_{q=1}^{M}\left(
--1\right)  ^{M+q}d_{M,q}\det\left(  D_{\sim M,\sim q}\right)  }%
-_{\substack{=\det D\\\text{(by (\ref{sol.block2x2.tridet.short.indstep.detD}%
-))}}}=\det A\cdot\det D.
-\end{align*}
-
-
-Now, let us forget that we fixed $n$, $A$, $B$ and $D$. We thus have shown
-that for every $n\in\mathbb{N}$, for every $n\times n$-matrix $A$, for every
-$n\times M$-matrix $B$, and for every $M\times M$-matrix $D$, we have
-$\det\left(
-\begin{array}
-[c]{cc}%
-A & B\\
-0_{M\times n} & D
-\end{array}
-\right)  =\det A\cdot\det D$. In other words, Exercise
-\ref{exe.block2x2.tridet} holds for $m=M$. This completes the induction step.
-Hence, Exercise \ref{exe.block2x2.tridet} is solved by induction.
-\end{proof}
-\end{vershort}
-
 We notice that Exercise \ref{exe.block2x2.tridet} allows us to solve Exercise
 \ref{exe.ps4.5} in a new way.
 
@@ -32644,6 +32400,250 @@ This solves Exercise \ref{exe.block2x2.mult}.
 \end{verlong}
 
 \subsection{Solution to Exercise \ref{exe.block2x2.tridet}}
+
+\begin{vershort}
+\begin{proof}[Solution to Exercise \ref{exe.block2x2.tridet}.]
+We shall prove Exercise \ref{exe.block2x2.tridet} by induction over $m$:
+
+\textit{Induction base:} Let $n\in\mathbb{N}$. Let $A$ be an $n\times
+n$-matrix. Let $B$ be an $n\times0$-matrix\footnote{Of course, there is only
+one such $n\times0$-matrix (namely, the empty matrix).}. Let $D$ be a
+$0\times0$-matrix\footnote{Of course, there is only one such $0\times0$-matrix
+(namely, the empty matrix).}. Then, all three matrices $B$, $0_{0\times n}$
+and $D$ are empty (in the sense that each of them has either $0$ rows or $0$
+columns or both), and thus we have $\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+0_{0\times n} & D
+\end{array}
+\right)  =A$. Hence, $\det\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+0_{0\times n} & D
+\end{array}
+\right)  =\det A$. Compared with $\det D=1$ (since $D$ is a $0\times
+0$-matrix), this yields $\det\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+0_{0\times n} & D
+\end{array}
+\right)  =\det A\cdot\det D$.
+
+Now, let us forget that we fixed $n$, $A$, $B$ and $D$. We thus have proven
+that every $n\in\mathbb{N}$, every $n\times n$-matrix $A$, every $n\times
+0$-matrix $B$ and every $0\times0$-matrix $D$ satisfy $\det\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+0_{0\times n} & D
+\end{array}
+\right)  =\det A\cdot\det D$. In other words, Exercise
+\ref{exe.block2x2.tridet} holds for $m=0$. This completes the induction base.
+
+\textit{Induction step:} Let $M\in\mathbb{N}$ be positive. Assume that
+Exercise \ref{exe.block2x2.tridet} holds for $m=M-1$. We need to prove that
+Exercise \ref{exe.block2x2.tridet} holds for $m=M$.
+
+Let $n\in\mathbb{N}$. Let $A$ be an $n\times n$-matrix. Let $B$ be an $n\times
+M$-matrix. Let $D$ be an $M\times M$-matrix.
+
+Write the $M\times M$-matrix $D$ in the form $D=\left(  d_{i,j}\right)
+_{1\leq i\leq M,\ 1\leq j\leq M}$. Hence, Theorem \ref{thm.laplace.gen}
+\textbf{(a)} (applied to $M$, $D$, $d_{i,j}$ and $M$ instead of $n$, $A$,
+$a_{i,j}$ and $p$) shows that%
+\begin{equation}
+\det D=\sum_{q=1}^{M}\left(  -1\right)  ^{M+q}d_{M,q}\det\left(  D_{\sim
+M,\sim q}\right)  \label{sol.block2x2.tridet.short.indstep.detD}%
+\end{equation}
+(since $M\in\left\{  1,2,\ldots,M\right\}  $ (because $M>0$)).
+
+Write the $\left(  n+M\right)  \times\left(  n+M\right)  $-matrix $\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+0_{M\times n} & D
+\end{array}
+\right)  $ in the form $\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+0_{M\times n} & D
+\end{array}
+\right)  =\left(  u_{i,j}\right)  _{1\leq u\leq n+M,\ 1\leq v\leq n+M}$. Thus,%
+\begin{equation}
+u_{n+M,q}=0\ \ \ \ \ \ \ \ \ \ \text{for every }q\in\left\{  1,2,\ldots
+,n\right\}  , \label{sol.block2x2.tridet.short.indstep.u=0}%
+\end{equation}
+and%
+\begin{equation}
+u_{n+M,n+q}=d_{M,q}\ \ \ \ \ \ \ \ \ \ \text{for every }q\in\left\{
+1,2,\ldots,M\right\}  . \label{sol.block2x2.tridet.short.indstep.u=d}%
+\end{equation}
+
+
+Furthermore, for every $q\in\left\{  1,2,\ldots,M\right\}  $, we have%
+\begin{equation}
+\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+0_{M\times n} & D
+\end{array}
+\right)  _{\sim\left(  n+M\right)  ,\sim\left(  n+q\right)  }=\left(
+\begin{array}
+[c]{cc}%
+A & B_{q}^{\prime}\\
+0_{\left(  M-1\right)  \times n} & D_{\sim M,\sim q}%
+\end{array}
+\right)  , \label{sol.block2x2.tridet.short.indstep.1}%
+\end{equation}
+where $B_{q}^{\prime}$ is the result of crossing out the $q$-th column in the
+matrix $B$. (Draw the matrices and cross out the appropriate rows and columns
+to see why this is true.)
+
+But we have assumed that Exercise \ref{exe.block2x2.tridet} holds for $m=M-1$.
+Hence, for every $q\in\left\{  1,2,\ldots,M\right\}  $, we can apply Exercise
+\ref{exe.block2x2.tridet} to $M-1$, $B_{q}^{\prime}$ and $D_{\sim M,\sim q}$
+instead of $m$, $B$ and $D$. As a result, for every $q\in\left\{
+1,2,\ldots,M\right\}  $, we obtain%
+\[
+\det\left(
+\begin{array}
+[c]{cc}%
+A & B_{q}^{\prime}\\
+0_{\left(  M-1\right)  \times n} & D_{\sim M,\sim q}%
+\end{array}
+\right)  =\det A\cdot\det\left(  D_{\sim M,\sim q}\right)  .
+\]
+Now, taking determinants in (\ref{sol.block2x2.tridet.short.indstep.1}), we
+obtain%
+\begin{equation}
+\det\left(  \left(
+\begin{array}
+[c]{cc}%
+A & B\\
+0_{M\times n} & D
+\end{array}
+\right)  _{\sim\left(  n+M\right)  ,\sim\left(  n+q\right)  }\right)
+=\det\left(
+\begin{array}
+[c]{cc}%
+A & B_{q}^{\prime}\\
+0_{\left(  M-1\right)  \times n} & D_{\sim M,\sim q}%
+\end{array}
+\right)  =\det A\cdot\det\left(  D_{\sim M,\sim q}\right)  .
+\label{sol.block2x2.tridet.short.indstep.2}%
+\end{equation}
+
+
+But $n+M>0$ and thus $n+M\in\left\{  1,2,\ldots,n+M\right\}  $. Thus, Theorem
+\ref{thm.laplace.gen} \textbf{(a)} (applied to $n+M$, $\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+0_{M\times n} & D
+\end{array}
+\right)  $, $u_{i,j}$ and $n+M$ instead of $n$, $A$, $a_{i,j}$ and $p$) shows
+that%
+\begin{align*}
+&  \det\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+0_{M\times n} & D
+\end{array}
+\right) \\
+&  =\sum_{q=1}^{n+M}\left(  -1\right)  ^{\left(  n+M\right)  +q}u_{n+M,q}%
+\det\left(  \left(
+\begin{array}
+[c]{cc}%
+A & B\\
+0_{M\times n} & D
+\end{array}
+\right)  _{\sim\left(  n+M\right)  ,\sim q}\right) \\
+&  =\sum_{q=1}^{n}\left(  -1\right)  ^{\left(  n+M\right)  +q}%
+\underbrace{u_{n+M,q}}_{\substack{=0\\\text{(by
+(\ref{sol.block2x2.tridet.short.indstep.u=0}))}}}\det\left(  \left(
+\begin{array}
+[c]{cc}%
+A & B\\
+0_{M\times n} & D
+\end{array}
+\right)  _{\sim\left(  n+M\right)  ,\sim q}\right) \\
+&  \ \ \ \ \ \ \ \ \ \ +\sum_{q=n+1}^{n+M}\left(  -1\right)  ^{\left(
+n+M\right)  +q}u_{n+M,q}\det\left(  \left(
+\begin{array}
+[c]{cc}%
+A & B\\
+0_{M\times n} & D
+\end{array}
+\right)  _{\sim\left(  n+M\right)  ,\sim q}\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }0\leq n\leq n+M\right) \\
+&  =\underbrace{\sum_{q=1}^{n}\left(  -1\right)  ^{\left(  n+M\right)
++q}0\det\left(  \left(
+\begin{array}
+[c]{cc}%
+A & B\\
+0_{M\times n} & D
+\end{array}
+\right)  _{\sim\left(  n+M\right)  ,\sim q}\right)  }_{=0}\\
+&  \ \ \ \ \ \ \ \ \ \ +\sum_{q=n+1}^{n+M}\left(  -1\right)  ^{\left(
+n+M\right)  +q}u_{n+M,q}\det\left(  \left(
+\begin{array}
+[c]{cc}%
+A & B\\
+0_{M\times n} & D
+\end{array}
+\right)  _{\sim\left(  n+M\right)  ,\sim q}\right) \\
+&  =\sum_{q=n+1}^{n+M}\left(  -1\right)  ^{\left(  n+M\right)  +q}%
+u_{n+M,q}\det\left(  \left(
+\begin{array}
+[c]{cc}%
+A & B\\
+0_{M\times n} & D
+\end{array}
+\right)  _{\sim\left(  n+M\right)  ,\sim q}\right) \\
+&  =\sum_{q=1}^{M}\underbrace{\left(  -1\right)  ^{\left(  n+M\right)
++\left(  n+q\right)  }}_{\substack{=\left(  -1\right)  ^{M+q}\\\text{(since
+}\left(  n+M\right)  +\left(  n+q\right)  =2n+M+q\equiv M+q\operatorname{mod}%
+2\text{)}}}\underbrace{u_{n+M,n+q}}_{\substack{=d_{M,q}\\\text{(by
+(\ref{sol.block2x2.tridet.short.indstep.u=d}))}}}\underbrace{\det\left(
+\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+0_{M\times n} & D
+\end{array}
+\right)  _{\sim\left(  n+M\right)  ,\sim q}\right)  }_{\substack{=\det
+A\cdot\det\left(  D_{\sim M,\sim q}\right)  \\\text{(by
+(\ref{sol.block2x2.tridet.short.indstep.2}))}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }n+q\text{ for
+}q\text{ in the sum}\right) \\
+&  =\sum_{q=1}^{M}\left(  -1\right)  ^{M+q}d_{M,q}\det A\cdot\det\left(
+D_{\sim M,\sim q}\right)  =\det A\cdot\underbrace{\sum_{q=1}^{M}\left(
+-1\right)  ^{M+q}d_{M,q}\det\left(  D_{\sim M,\sim q}\right)  }%
+_{\substack{=\det D\\\text{(by (\ref{sol.block2x2.tridet.short.indstep.detD}%
+))}}}=\det A\cdot\det D.
+\end{align*}
+
+
+Now, let us forget that we fixed $n$, $A$, $B$ and $D$. We thus have shown
+that for every $n\in\mathbb{N}$, for every $n\times n$-matrix $A$, for every
+$n\times M$-matrix $B$, and for every $M\times M$-matrix $D$, we have
+$\det\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+0_{M\times n} & D
+\end{array}
+\right)  =\det A\cdot\det D$. In other words, Exercise
+\ref{exe.block2x2.tridet} holds for $m=M$. This completes the induction step.
+Hence, Exercise \ref{exe.block2x2.tridet} is solved by induction.
+\end{proof}
+\end{vershort}
 
 \begin{verlong}
 Before we prove Exercise \ref{exe.block2x2.tridet}, we state a lemma (which is
