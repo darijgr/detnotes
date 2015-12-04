@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, December 04, 2015 03:58:23}
+%TCIDATA{LastRevised=Friday, December 04, 2015 04:58:42}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -1799,12 +1799,13 @@ The equality (\ref{sol.ps1.1.4.xclaim}) (which we have proven) states that
 $P\left(  x\right)  =Q\left(  x\right)  $ for all $x\in\mathbb{N}$. Thus,
 Lemma \ref{lem.polyeq} \textbf{(b)} yields that $P=Q$. Recalling how $P$ and
 $Q$ are defined, we see that this rewrites as $\dbinom{X}{a}\dbinom{X}{b}%
-=\sum_{i=0}^{a+b}e_{i}\dbinom{X}{i}$. This proves Proposition \ref{exe.ps1.1.4}.
+=\sum_{i=0}^{a+b}e_{i}\dbinom{X}{i}$. This proves Proposition
+\ref{exe.ps1.1.4}.
 \end{proof}
 
 \begin{proof}
-[Second proof of Proposition \ref{exe.ps1.1.4}.]Here is an algebraic proof
-of Proposition \ref{exe.ps1.1.4} (based on a suggestion of math.stackexchange
+[Second proof of Proposition \ref{exe.ps1.1.4}.]Here is an algebraic proof of
+Proposition \ref{exe.ps1.1.4} (based on a suggestion of math.stackexchange
 user tcamps in a comment on
 \href{http://math.stackexchange.com/questions/1342384}{question \#1342384}).
 
@@ -1864,20 +1865,20 @@ Thus, Proposition \ref{exe.ps1.1.4} is proven again.
 
 \begin{remark}
 Comparing our two proofs of Proposition \ref{exe.ps1.1.4}, it is natural to
-suspect that the $e_{0},e_{1},\ldots,e_{a+b}$ defined in the First proof
-are identical with the $e_{0},e_{1},\ldots,e_{a+b}$ defined in the Second
-proof. This actually follows from general principles (namely, from the word
+suspect that the $e_{0},e_{1},\ldots,e_{a+b}$ defined in the First proof are
+identical with the $e_{0},e_{1},\ldots,e_{a+b}$ defined in the Second proof.
+This actually follows from general principles (namely, from the word
 \textquotedblleft unique\textquotedblright\ in Proposition
 \ref{prop.hartshorne} \textbf{(a)}), but there is also a simple combinatorial
 reason. Namely, let $i\in\left\{  0,1,\ldots,a+b\right\}  $. We shall show
-that the $e_{i}$ defined in the First proof equals the $e_{i}$ defined in
-the Second proof.
+that the $e_{i}$ defined in the First proof equals the $e_{i}$ defined in the
+Second proof.
 
-The $e_{i}$ defined in the First proof is the number of all $\left[
-i\right]  $-junctions. An $\left[  i\right]  $-junction is a pair $\left(
-A,B\right)  $, where $A$ is an $a$-element subset of $\left[  i\right]  $ and
-where $B$ is a $b$-element subset of $\left[  i\right]  $ such that $A\cup
-B=\left[  i\right]  $. Here is a way to construct an $\left[  i\right]  $-junction:
+The $e_{i}$ defined in the First proof is the number of all $\left[  i\right]
+$-junctions. An $\left[  i\right]  $-junction is a pair $\left(  A,B\right)
+$, where $A$ is an $a$-element subset of $\left[  i\right]  $ and where $B$ is
+a $b$-element subset of $\left[  i\right]  $ such that $A\cup B=\left[
+i\right]  $. Here is a way to construct an $\left[  i\right]  $-junction:
 
 \begin{itemize}
 \item First, we pick the set $A$. There are $\dbinom{i}{a}$ ways to do this,
@@ -1908,8 +1909,8 @@ i\right]  $-junctions is $\left\{
 \dbinom{i}{a}\dbinom{a}{a+b-i},\ \ \ \ \ \ \ \ \ \ \text{if }i\geq a;\\
 0,\ \ \ \ \ \ \ \ \ \ \text{otherwise}%
 \end{array}
-\right.  $. In other words, the $e_{i}$ defined in the First proof equals
-the $e_{i}$ defined in the Second proof.
+\right.  $. In other words, the $e_{i}$ defined in the First proof equals the
+$e_{i}$ defined in the Second proof.
 \end{remark}
 
 Here is an assortment of other identities that involve binomial coefficients:
@@ -3704,8 +3705,8 @@ of a permutation.
 
 \subsection{Infinite permutations}
 
-(This section is optional; it explores some material which is useful in
-combinatorics, but is not necessary for what follows. I advise the reader
+(This section is optional; it explores some technical material which is useful
+in combinatorics, but is not necessary for what follows. I advise the reader
 to skip it at the first read.)
 
 We have introduced the notion of a permutation of an arbitrary set; but so
@@ -3885,18 +3886,21 @@ S_{\left(  \infty\right)  }$, we have $\sigma\circ\tau\in S_{\left(
 $\sigma^{-1}\in S_{\left(  \infty\right)  }$.
 \end{proposition}
 
+\begin{verlong}
 \begin{proof}
-[Proof of Proposition \ref{prop.S(infty).group}.]Let us record the following
-fact: If $K$ is a finite subset of $\left\{  1,2,3,\ldots\right\}  $, and if
+[Proof of Proposition \ref{prop.S(infty).group}.]Let us record the following facts:
+
+\begin{itemize}
+\item If $K$ is a finite subset of $\left\{  1,2,3,\ldots\right\}  $, and if
 $\gamma\in S_{\infty}$ is a permutation such that%
 \begin{equation}
 \left(  \text{every }i\in\left\{  1,2,3,\ldots\right\}  \setminus K\text{
-satisfies }\gamma\left(  i\right)  =i\right)  ,
-\label{pf.prop.S(infty).group.lem.hyp}%
+satisfies }\gamma\left(  i\right)  =i\right)
+,\label{pf.prop.S(infty).group.lem.hyp}%
 \end{equation}
 then%
 \begin{equation}
-\gamma\in S_{\left(  \infty\right)  }. \label{pf.prop.S(infty).group.lem}%
+\gamma\in S_{\left(  \infty\right)  }.\label{pf.prop.S(infty).group.lem}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{pf.prop.S(infty).group.lem}):} Let $K$ be a
 finite subset of $\left\{  1,2,3,\ldots\right\}  $, and let $\gamma\in
@@ -3921,13 +3925,13 @@ for all but finitely many }i\in\left\{  1,2,3,\ldots\right\}  \right\}
 \]
 This proves (\ref{pf.prop.S(infty).group.lem}).}
 
-On the other hand, if $\gamma\in S_{\left(  \infty\right)  }$, then
+\item If $\gamma\in S_{\left(  \infty\right)  }$, then
 \begin{equation}
 \left(
 \begin{array}
 [c]{c}%
 \text{there exists some finite subset }J\text{ of }\left\{  1,2,3,\ldots
-\right\} \\
+\right\}  \\
 \text{such that every }i\in\left\{  1,2,3,\ldots\right\}  \setminus J\text{
 satisfies }\gamma\left(  i\right)  =i
 \end{array}
@@ -3949,6 +3953,7 @@ $i\in\left\{  1,2,3,\ldots\right\}  $. In other words, there exists some
 finite subset $J$ of $\left\{  1,2,3,\ldots\right\}  $ such that every
 $i\in\left\{  1,2,3,\ldots\right\}  \setminus J$ satisfies $\gamma\left(
 i\right)  =i$. This proves (\ref{pf.prop.S(infty).group.lem2}).}.
+\end{itemize}
 
 \textbf{(a)} Every $i\in\left\{  1,2,3,\ldots\right\}  \setminus\varnothing$
 satisfies $\operatorname*{id}\left(  i\right)  =i$. Thus,
@@ -3967,7 +3972,7 @@ satisfies $\sigma\left(  i\right)  =i$. Let us denote this $J$ by $J_{1}$.
 Thus, $J_{1}$ is a finite subset of $\left\{  1,2,3,\ldots\right\}  $, and%
 \begin{equation}
 \text{every }i\in\left\{  1,2,3,\ldots\right\}  \setminus J_{1}\text{
-satisfies }\sigma\left(  i\right)  =i. \label{pf.prop.S(infty).group.b.1}%
+satisfies }\sigma\left(  i\right)  =i.\label{pf.prop.S(infty).group.b.1}%
 \end{equation}
 
 
@@ -3978,7 +3983,7 @@ satisfies $\tau\left(  i\right)  =i$. Let us denote this $J$ by $J_{2}$. Thus,
 $J_{2}$ is a finite subset of $\left\{  1,2,3,\ldots\right\}  $, and%
 \begin{equation}
 \text{every }i\in\left\{  1,2,3,\ldots\right\}  \setminus J_{2}\text{
-satisfies }\tau\left(  i\right)  =i. \label{pf.prop.S(infty).group.b.2}%
+satisfies }\tau\left(  i\right)  =i.\label{pf.prop.S(infty).group.b.2}%
 \end{equation}
 
 
@@ -4015,7 +4020,7 @@ satisfies $\sigma\left(  i\right)  =i$. Consider this $J$.. Thus, $J$ is a
 finite subset of $\left\{  1,2,3,\ldots\right\}  $, and%
 \begin{equation}
 \text{every }i\in\left\{  1,2,3,\ldots\right\}  \setminus J\text{ satisfies
-}\sigma\left(  i\right)  =i \label{pf.prop.S(infty).group.c.3}%
+}\sigma\left(  i\right)  =i\label{pf.prop.S(infty).group.c.3}%
 \end{equation}
 
 
@@ -4031,6 +4036,7 @@ J$. Thus, $\sigma\left(  i\right)  =i$ (according to
 and $\gamma=\sigma^{-1}$) yields $\sigma^{-1}\in S_{\left(  \infty\right)  }$.
 This proves Proposition \ref{prop.S(infty).group} \textbf{(c)}.
 \end{proof}
+\end{verlong}
 
 In the language of group theorists, Proposition \ref{prop.S(infty).group} show
 that $S_{\left(  \infty\right)  }$ is a subgroup of the group $S_{\infty}$.
@@ -19829,7 +19835,9 @@ XXX
 
 \section{Solutions}
 
-This section contains solutions (or, sometimes, solution sketches) to some of the exercises in the text, as well as occasional remarks. I do not recommend reading it before trying to solve the problem on your own.
+This section contains solutions (or, sometimes, solution sketches) to some of
+the exercises in the text, as well as occasional remarks. I do not recommend
+reading it before trying to solve the problem on your own.
 
 \subsection{Solution to Exercise \ref{exe.ps1.1.1}}
 
@@ -27133,8 +27141,6 @@ This solves Exercise \ref{exe.ps4.4}.
 \end{vershort}
 
 \begin{verlong}
-
-
 \begin{proof}
 [Solution to Exercise \ref{exe.ps4.4}.]Define a map $\Phi:S_{n}\rightarrow
 S_{n}$ by%
@@ -29645,8 +29651,8 @@ x_{i}^{n}, & \text{if }j=1
 This solves Exercise \ref{exe.vander-det.s1}.
 \end{proof}
 
-We shall give a second solution for Exercise \ref{exe.vander-det.s1} later
-(in Section \ref{sect.sols.vander-det.s1.sol2}).
+We shall give a second solution for Exercise \ref{exe.vander-det.s1} later (in
+Section \ref{sect.sols.vander-det.s1.sol2}).
 \end{verlong}
 
 \subsection{Solution to Exercise \ref{exe.det.schur-lem}}
@@ -29790,7 +29796,8 @@ This solves Exercise \ref{exe.det.schur-lem}.
 \end{proof}
 \end{verlong}
 
-\subsection{\label{sect.sols.vander-det.s1.sol2}Second solution to Exercise \ref{exe.vander-det.s1}.}
+\subsection{\label{sect.sols.vander-det.s1.sol2}Second solution to Exercise
+\ref{exe.vander-det.s1}.}
 
 \begin{verlong}
 Exercise \ref{exe.det.schur-lem} can be used to give a new (and simpler)
@@ -30148,14 +30155,15 @@ equality (\ref{sol.det.a1a2anx.short.US}).
 We have $\left(  i,j\right)  \in\left\{  1,2,\ldots,n+1\right\}  ^{2}$. Thus,
 $1\leq i\leq n+1$ and $1\leq j\leq n+1$. Now,%
 \begin{align}
-\sum_{k=1}^{n+1}u_{i,k}s_{k,j} &  =\sum_{k=1}^{j}u_{i,k}\underbrace{s_{k,j}%
+\sum_{k=1}^{n+1}u_{i,k}s_{k,j}  &  =\sum_{k=1}^{j}u_{i,k}\underbrace{s_{k,j}%
 }_{\substack{=1\\\text{(by the definition of}\\s_{k,j}\text{, since }k\leq
 j\text{)}}}+\sum_{k=j+1}^{n+1}u_{i,k}\underbrace{s_{k,j}}%
 _{\substack{=0\\\text{(by the definition of}\\s_{k,j}\text{, since
 }k>j\text{)}}}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }1\leq j\leq n+1\right)
 \nonumber\\
 &  =\sum_{k=1}^{j}u_{i,k}1+\underbrace{\sum_{k=j+1}^{n+1}u_{i,k}0}_{=0}%
-=\sum_{k=1}^{j}u_{i,k}1=\sum_{k=1}^{j}u_{i,k}.\label{sol.det.a1a2anx.short.US.pf.1}%
+=\sum_{k=1}^{j}u_{i,k}1=\sum_{k=1}^{j}u_{i,k}.
+\label{sol.det.a1a2anx.short.US.pf.1}%
 \end{align}
 \par
 Now, we must be in one of the following two cases:
@@ -30170,14 +30178,14 @@ of $s_{i,j}$ shows that $s_{i,j}=1$ (since $i\leq j$). Therefore,%
 \underbrace{\sum_{k=1}^{j}a_{k}}_{\substack{=\sum_{k=1}^{j-1}a_{k}%
 +a_{j}\\\text{(here, we have split off the}\\\text{addend for }k=j\text{ from
 the sum)}}}+\underbrace{s_{i,j}}_{=1}\left(  x-a_{j}\right)  =\sum_{k=1}%
-^{j-1}a_{k}+a_{j}+\left(  x-a_{j}\right)  =\sum_{k=1}^{j-1}a_{k}%
-+x.\label{sol.det.a1a2anx.short.US.pf.3}%
+^{j-1}a_{k}+a_{j}+\left(  x-a_{j}\right)  =\sum_{k=1}^{j-1}a_{k}+x.
+\label{sol.det.a1a2anx.short.US.pf.3}%
 \end{equation}
 \par
 We have $1\leq i\leq j$. Thus, $0\leq i-1\leq j-1$. Now,
 (\ref{sol.det.a1a2anx.short.US.pf.1}) becomes%
 \begin{align*}
-\sum_{k=1}^{n+1}u_{i,k}s_{k,j} &  =\sum_{k=1}^{j}u_{i,k}=\underbrace{\sum
+\sum_{k=1}^{n+1}u_{i,k}s_{k,j}  &  =\sum_{k=1}^{j}u_{i,k}=\underbrace{\sum
 _{k=1}^{i}u_{i,k}}_{\substack{=\sum_{k=1}^{i-1}u_{i,k}+u_{i,i}\\\text{(here,
 we have split off the}\\\text{addend for }k=i\text{ from the sum)}}%
 }+\sum_{k=i+1}^{j}u_{i,k}\\
@@ -30205,7 +30213,7 @@ definition of $s_{i,j}$ therefore shows that $s_{i,j}=0$. Hence,%
 \begin{equation}
 \sum_{k=1}^{j}a_{k}+\underbrace{s_{i,j}}_{=0}\left(  x-a_{j}\right)
 =\sum_{k=1}^{j}a_{k}+\underbrace{0\left(  x-a_{j}\right)  }_{=0}=\sum
-_{k=1}^{j}a_{k}.\label{sol.det.a1a2anx.short.US.pf.5}%
+_{k=1}^{j}a_{k}. \label{sol.det.a1a2anx.short.US.pf.5}%
 \end{equation}
 \par
 But (\ref{sol.det.a1a2anx.short.US.pf.1}) becomes%
@@ -30221,8 +30229,8 @@ x-a_{j}\right)  .
 \]
 Thus, (\ref{sol.det.a1a2anx.short.US}) is proven in Case 2.
 \par
-We have thus proven (\ref{sol.det.a1a2anx.short.US}) in each of the two Cases 1 and
-2. Hence, (\ref{sol.det.a1a2anx.short.US}) always holds.}.
+We have thus proven (\ref{sol.det.a1a2anx.short.US}) in each of the two Cases
+1 and 2. Hence, (\ref{sol.det.a1a2anx.short.US}) always holds.}.
 
 For any two objects $i$ and $j$, we define an element $\delta_{i,j}%
 \in\mathbb{K}$ by $\delta_{i,j}=%
@@ -30258,14 +30266,14 @@ $1\leq i\leq n+1$ and $1\leq j\leq n+1$.
 \par
 The definition of $s_{i,n+1}$ yields $s_{i,n+1}=1$ (since $i\leq n+1$). Now,%
 \begin{align*}
-\sum_{k=1}^{n+1}s_{i,k}c_{k,j} &  =\underbrace{\sum_{r=1}^{n+1}}_{=\sum
+\sum_{k=1}^{n+1}s_{i,k}c_{k,j}  &  =\underbrace{\sum_{r=1}^{n+1}}_{=\sum
 _{r\in\left\{  1,2,\ldots,n+1\right\}  }}s_{i,r}\underbrace{c_{r,j}%
 }_{\substack{=\delta_{r,j}\left(  x-a_{j}\right)  +\delta_{r,n+1}\sum
 _{k=1}^{j}a_{k}\\\text{(by the definition of }c_{r,j}\text{)}}%
 }\ \ \ \ \ \ \ \ \ \ \left(  \text{here, we renamed the summation index
-}k\text{ as }r\right)  \\
+}k\text{ as }r\right) \\
 &  =\sum_{r\in\left\{  1,2,\ldots,n+1\right\}  }s_{i,r}\left(  \delta
-_{r,j}\left(  x-a_{j}\right)  +\delta_{r,n+1}\sum_{k=1}^{j}a_{k}\right)  \\
+_{r,j}\left(  x-a_{j}\right)  +\delta_{r,n+1}\sum_{k=1}^{j}a_{k}\right) \\
 &  =\underbrace{\sum_{r\in\left\{  1,2,\ldots,n+1\right\}  }s_{i,r}%
 \delta_{r,j}\left(  x-a_{j}\right)  }_{\substack{=s_{i,j}\delta_{j,j}\left(
 x-a_{j}\right)  +\sum_{\substack{r\in\left\{  1,2,\ldots,n+1\right\}  ;\\r\neq
@@ -30279,7 +30287,7 @@ for }r=n+1\text{ from the sum)}}}\\
 &  =s_{i,j}\underbrace{\delta_{j,j}}_{\substack{=1\\\text{(since }j=j\text{)}%
 }}\left(  x-a_{j}\right)  +\sum_{\substack{r\in\left\{  1,2,\ldots
 ,n+1\right\}  ;\\r\neq j}}s_{i,r}\underbrace{\delta_{r,j}}%
-_{\substack{=0\\\text{(since }r\neq j\text{)}}}\left(  x-a_{j}\right)  \\
+_{\substack{=0\\\text{(since }r\neq j\text{)}}}\left(  x-a_{j}\right) \\
 &  \ \ \ \ \ \ \ \ \ \ +\underbrace{s_{i,n+1}}_{=1}\underbrace{\delta
 _{n+1,n+1}}_{\substack{=1\\\text{(since }n+1=n+1\text{)}}}\sum_{k=1}^{j}%
 a_{k}+\sum_{\substack{r\in\left\{  1,2,\ldots,n+1\right\}  ;\\r\neq
@@ -30296,30 +30304,32 @@ Thus, (\ref{sol.det.a1a2anx.short.SC}) is proven.}. Thus, for every $\left(
 i,j\right)  \in\left\{  1,2,\ldots,n+1\right\}  ^{2}$, we have%
 \begin{equation}
 \sum_{k=1}^{n+1}s_{i,k}c_{k,j}=\sum_{k=1}^{j}a_{k}+s_{i,j}\left(
-x-a_{j}\right)  =\sum_{k=1}^{n+1}u_{i,k}s_{k,j}\label{sol.det.a1a2anx.short.SCvsUS}%
+x-a_{j}\right)  =\sum_{k=1}^{n+1}u_{i,k}s_{k,j}
+\label{sol.det.a1a2anx.short.SCvsUS}%
 \end{equation}
 (by (\ref{sol.det.a1a2anx.short.US})).
 
 For every $i\in\left\{  1,2,\ldots,n\right\}  $, we have%
 \begin{equation}
-c_{i,i}=x-a_{i}\label{sol.det.a1a2anx.short.cii}%
+c_{i,i}=x-a_{i} \label{sol.det.a1a2anx.short.cii}%
 \end{equation}
-\footnote{\textit{Proof of (\ref{sol.det.a1a2anx.short.cii}):} Let $i\in\left\{
-1,2,\ldots,n\right\}  $. Thus, $i\neq n+1$, so that $\delta_{i,n+1}=0$. Now,
-the definition of $c_{i,i}$ yields%
+\footnote{\textit{Proof of (\ref{sol.det.a1a2anx.short.cii}):} Let
+$i\in\left\{  1,2,\ldots,n\right\}  $. Thus, $i\neq n+1$, so that
+$\delta_{i,n+1}=0$. Now, the definition of $c_{i,i}$ yields%
 \[
 c_{i,i}=\underbrace{\delta_{i,i}}_{\substack{=1\\\text{(since }i=i\text{)}%
 }}\left(  x-a_{i}\right)  +\underbrace{\delta_{i,n+1}}_{=0}\sum_{k=1}^{i}%
-a_{k}=\left(  x-a_{i}\right)  +\underbrace{0\sum_{k=1}^{i}a_{k}}_{=0}=x-a_{i}.
+a_{k}=\left(  x-a_{i}\right)  +\underbrace{0\sum_{k=1}^{i}a_{k}}_{=0}%
+=x-a_{i}.
 \]
 This proves (\ref{sol.det.a1a2anx.short.cii}).}. Also,%
 \begin{equation}
-c_{n+1,n+1}=x+\sum_{i=1}^{n}a_{i}\label{sol.det.a1a2anx.short.cn+1n+1}%
+c_{n+1,n+1}=x+\sum_{i=1}^{n}a_{i} \label{sol.det.a1a2anx.short.cn+1n+1}%
 \end{equation}
-\footnote{\textit{Proof of (\ref{sol.det.a1a2anx.short.cn+1n+1}):} The definition of
-$c_{n+1,n+1}$ yields%
+\footnote{\textit{Proof of (\ref{sol.det.a1a2anx.short.cn+1n+1}):} The
+definition of $c_{n+1,n+1}$ yields%
 \begin{align*}
-c_{n+1,n+1} &  =\underbrace{\delta_{n+1,n+1}}_{\substack{=1\\\text{(since
+c_{n+1,n+1}  &  =\underbrace{\delta_{n+1,n+1}}_{\substack{=1\\\text{(since
 }n+1=n+1\text{)}}}\left(  x-a_{n+1}\right)  +\underbrace{\delta_{n+1,n+1}%
 }_{\substack{=1\\\text{(since }n+1=n+1\text{)}}}\sum_{k=1}^{n+1}a_{k}=\left(
 x-a_{n+1}\right)  +\sum_{k=1}^{n+1}a_{k}\\
@@ -30340,15 +30350,15 @@ yields $c_{i,j}=\underbrace{\delta_{i,j}}_{=0}\left(  x-a_{j}\right)
 +0\sum_{k=1}^{j}a_{k}=0$, qed.}. Hence, Exercise \ref{exe.ps4.3} (applied to
 $n+1$, $C$ and $c_{i,j}$ instead of $n$, $A$ and $a_{i,j}$) shows that%
 \begin{align}
-\det C &  =c_{1,1}c_{2,2}\cdots c_{n+1,n+1}=\prod_{i=1}^{n+1}c_{i,i}%
+\det C  &  =c_{1,1}c_{2,2}\cdots c_{n+1,n+1}=\prod_{i=1}^{n+1}c_{i,i}%
 \nonumber\\
 &  =\left(  \prod_{i=1}^{n}\underbrace{c_{i,i}}_{\substack{=x-a_{i}\\\text{(by
-(\ref{sol.det.a1a2anx.short.cii}))}}}\right)  \underbrace{c_{n+1,n+1}}%
-_{\substack{=x+\sum_{i=1}^{n}a_{i}\\\text{(by (\ref{sol.det.a1a2anx.short.cn+1n+1}%
-))}}}\nonumber\\
+(\ref{sol.det.a1a2anx.short.cii}))}}}\right)  \underbrace{c_{n+1,n+1}%
+}_{\substack{=x+\sum_{i=1}^{n}a_{i}\\\text{(by
+(\ref{sol.det.a1a2anx.short.cn+1n+1}))}}}\nonumber\\
 &  =\left(  \prod_{i=1}^{n}\left(  x-a_{i}\right)  \right)  \left(
 x+\sum_{i=1}^{n}a_{i}\right)  =\left(  x+\sum_{i=1}^{n}a_{i}\right)
-\prod_{i=1}^{n}\left(  x-a_{i}\right)  .\label{sol.det.a1a2anx.short.detC}%
+\prod_{i=1}^{n}\left(  x-a_{i}\right)  . \label{sol.det.a1a2anx.short.detC}%
 \end{align}
 
 
@@ -30359,8 +30369,8 @@ Hence, the definition of the product of two matrices shows that
 SC=\left(  \underbrace{\sum_{k=1}^{n+1}s_{i,k}c_{k,j}}_{\substack{=\sum
 _{k=1}^{n+1}u_{i,k}s_{k,j}\\\text{(by (\ref{sol.det.a1a2anx.short.SCvsUS}))}%
 }}\right)  _{1\leq i\leq n+1,\ 1\leq j\leq n+1}=\left(  \sum_{k=1}%
-^{n+1}u_{i,k}s_{k,j}\right)  _{1\leq i\leq n+1,\ 1\leq j\leq n+1}%
-.\label{sol.det.a1a2anx.short.3}%
+^{n+1}u_{i,k}s_{k,j}\right)  _{1\leq i\leq n+1,\ 1\leq j\leq n+1}.
+\label{sol.det.a1a2anx.short.3}%
 \end{equation}
 
 
@@ -30369,8 +30379,8 @@ n+1}$ and $S=\left(  s_{i,j}\right)  _{1\leq i\leq n+1,\ 1\leq j\leq n+1}$.
 Hence, the definition of the product of two matrices shows that
 \[
 US=\left(  \sum_{k=1}^{n+1}u_{i,k}s_{k,j}\right)  _{1\leq i\leq n+1,\ 1\leq
-j\leq n+1}=SC\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{sol.det.a1a2anx.short.3}%
-)}\right)  .
+j\leq n+1}=SC\ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{sol.det.a1a2anx.short.3})}\right)  .
 \]
 
 
@@ -30579,7 +30589,7 @@ $1\leq i\leq n+1$. Now,%
 1, & \text{if }k\leq j;\\
 0, & \text{if }k>j
 \end{cases}
-\\\text{(by the definition of }s_{k,j}\text{)}}} &  =\sum_{k=1}^{n+1}u_{i,k}%
+\\\text{(by the definition of }s_{k,j}\text{)}}}  &  =\sum_{k=1}^{n+1}u_{i,k}%
 \begin{cases}
 1, & \text{if }k\leq j;\\
 0, & \text{if }k>j
@@ -30597,10 +30607,9 @@ u_{i,k}\underbrace{%
 0, & \text{if }k>j
 \end{cases}
 }_{\substack{=0\\\text{(since }k>j\text{)}}}\nonumber\\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }1\leq j\leq n+1\right)
-\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }1\leq j\leq n+1\right) \nonumber\\
 &  =\sum_{k=1}^{j}u_{i,k}1+\underbrace{\sum_{k=j+1}^{n+1}u_{i,k}0}_{=0}%
-=\sum_{k=1}^{j}u_{i,k}1=\sum_{k=1}^{j}u_{i,k}.\label{sol.det.a1a2anx.US.pf.1}%
+=\sum_{k=1}^{j}u_{i,k}1=\sum_{k=1}^{j}u_{i,k}. \label{sol.det.a1a2anx.US.pf.1}%
 \end{align}
 \par
 Now, we must be in one of the following two cases:
@@ -30620,14 +30629,14 @@ of $s_{i,j}$ shows that $s_{i,j}=%
 \underbrace{\sum_{k=1}^{j}a_{k}}_{\substack{=\sum_{k=1}^{j-1}a_{k}%
 +a_{j}\\\text{(here, we have split off the}\\\text{addend for }k=j\text{ from
 the sum)}}}+\underbrace{s_{i,j}}_{=1}\left(  x-a_{j}\right)  =\sum_{k=1}%
-^{j-1}a_{k}+a_{j}+\left(  x-a_{j}\right)  =\sum_{k=1}^{j-1}a_{k}%
-+x.\label{sol.det.a1a2anx.US.pf.3}%
+^{j-1}a_{k}+a_{j}+\left(  x-a_{j}\right)  =\sum_{k=1}^{j-1}a_{k}+x.
+\label{sol.det.a1a2anx.US.pf.3}%
 \end{equation}
 \par
 We have $1\leq i\leq j$. Thus, $0\leq i-1\leq j-1$. Now,
 (\ref{sol.det.a1a2anx.US.pf.1}) becomes%
 \begin{align*}
-\sum_{k=1}^{n+1}u_{i,k}s_{k,j} &  =\sum_{k=1}^{j}u_{i,k}=\underbrace{\sum
+\sum_{k=1}^{n+1}u_{i,k}s_{k,j}  &  =\sum_{k=1}^{j}u_{i,k}=\underbrace{\sum
 _{k=1}^{i}u_{i,k}}_{\substack{=\sum_{k=1}^{i-1}u_{i,k}+u_{i,i}\\\text{(here,
 we have split off the}\\\text{addend for }k=i\text{ from the sum)}}%
 }+\sum_{k=i+1}^{j}u_{i,k}\\
@@ -30695,7 +30704,7 @@ definition of $s_{i,j}$ shows that $s_{i,j}=%
 \begin{equation}
 \sum_{k=1}^{j}a_{k}+\underbrace{s_{i,j}}_{=0}\left(  x-a_{j}\right)
 =\sum_{k=1}^{j}a_{k}+\underbrace{0\left(  x-a_{j}\right)  }_{=0}=\sum
-_{k=1}^{j}a_{k}.\label{sol.det.a1a2anx.US.pf.5}%
+_{k=1}^{j}a_{k}. \label{sol.det.a1a2anx.US.pf.5}%
 \end{equation}
 \par
 But (\ref{sol.det.a1a2anx.US.pf.1}) becomes%
