@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, December 05, 2015 01:12:12}
+%TCIDATA{LastRevised=Saturday, December 05, 2015 01:13:55}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -2427,7 +2427,7 @@ Two solutions to the preceding exercise are sketched in
 \[
 \sum_{k=0}^{n}\left(  -1\right)  ^{k}\dbinom{X}{k}\dbinom{X}{n-k}=%
 \begin{cases}
-\left(  -1\right)  ^{n/2}\dbinom{r}{n/2}, & \text{if }n\text{ is even};\\
+\left(  -1\right)  ^{n/2}\dbinom{X}{n/2}, & \text{if }n\text{ is even};\\
 0, & \text{if }n\text{ is odd}%
 \end{cases}
 \]
@@ -3097,10 +3097,10 @@ be the Fibonacci numbers.
 
 \textbf{(a)} Prove the identities%
 \begin{align*}
-1f_{n} &  =f_{n}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq1;\\
-2f_{n} &  =f_{n-2}+f_{n+1}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq3;\\
-3f_{n} &  =f_{n-2}+f_{n+2}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq3;\\
-4f_{n} &  =f_{n-2}+f_{n}+f_{n+2}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq3.
+1f_{n}  &  =f_{n}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq1;\\
+2f_{n}  &  =f_{n-2}+f_{n+1}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq3;\\
+3f_{n}  &  =f_{n-2}+f_{n+2}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq3;\\
+4f_{n}  &  =f_{n-2}+f_{n}+f_{n+2}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq3.
 \end{align*}
 
 
@@ -3115,7 +3115,7 @@ prove the following: Let $T$ be a finite set, and $a_{t}$ be an integer for
 every $t\in T$. Then, there exists a unique lacunar subset $S$ of $\mathbb{Z}$
 such that
 \begin{align*}
-\sum\limits_{t\in T}f_{n+a_{t}} &  =\sum\limits_{s\in S}f_{n+s}%
+\sum\limits_{t\in T}f_{n+a_{t}}  &  =\sum\limits_{s\in S}f_{n+s}%
 \ \ \ \ \ \ \ \ \ \ \text{for every }n\in\mathbb{Z}\text{ which}\\
 &  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \text{ satisfies }n\geq\max\left(
 \left\{  -a_{t}\mid t\in T\right\}  \cup\left\{  -s\mid s\in S\right\}
@@ -13161,7 +13161,7 @@ x_{i}-x_{U}, & \text{if }i=k;\\
 \end{cases}
 }_{\substack{=0\\\text{(since we don't have }i=k\\\text{(since }i\neq k\text{
 (since }k\neq i\text{)))}}}x_{k}^{\left(  U-1\right)  -j}\\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we hve split off the addend for
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have split off the addend for
 }k=i\text{ from the sum}\right) \\
 &  =\left(  x_{i}-x_{U}\right)  x_{i}^{\left(  U-1\right)  -j}%
 +\underbrace{\sum_{\substack{k\in\left\{  1,2,\ldots,U-1\right\}  ;\\k\neq
@@ -17384,7 +17384,7 @@ this yields $\operatorname*{adj}\left(  A^{T}\right)  =\left(
 \ref{prop.adj.transpose}.
 \end{proof}
 
-The most important propery of adjugates, however, is the following fact:
+The most important property of adjugates, however, is the following fact:
 
 \begin{theorem}
 \label{thm.adj.inverse}Let $n\in\mathbb{N}$. Let $A$ be an $n\times n$-matrix.
@@ -19617,7 +19617,7 @@ determinant $\det A$ is known as their
 to the exercise, the condition $\det A=0$ is necessary for $P$ and $Q$ to have
 a common root. In the general case, the converse does not hold: For one, you
 can always force $\det A$ to be $0$ by taking $d>\deg P$ and $e>\deg Q$ (so
-$p_{d}=0$ and $q_{e}=0$, and thus the $1$-st column of $A$ consists of zeoes).
+$p_{d}=0$ and $q_{e}=0$, and thus the $1$-st column of $A$ consists of zeroes).
 More importantly, the resultant of the two polynomials $X^{3}-1$ and
 $X^{2}+X+1$ is $0$, but they only have common roots in $\mathbb{C}\left[
 X\right]  $, not in $\mathbb{R}\left[  X\right]  $, so there is more to common
@@ -25903,7 +25903,7 @@ Consider the infinite sequence $\left(  i_{1+r}-i_{1},i_{2+r}-i_{2}%
 with period $k$) and all its entries are nonzero (because the $k$ elements
 $i_{1},i_{2},\ldots,i_{k}$ are distinct, and thus every $u\geq1$ satisfies
 $i_{u+r}-i_{u}\neq0$). Thus, each entry of this sequence is either positive or
-negative. In other words, every $u\geq1$ satisfes%
+negative. In other words, every $u\geq1$ satisfies%
 \begin{equation}
 \text{either }i_{\left(  u+1\right)  +r}-i_{u+1}>0\text{ or }i_{\left(
 u+1\right)  +r}-i_{u+1}<0. \label{sol.perm.cycles.short.c.mainclaim.pf.4}%
@@ -26597,7 +26597,7 @@ Consider the infinite sequence $\left(  i_{1+r}-i_{1},i_{2+r}-i_{2}%
 with period $k$) and all its entries are nonzero (because the $k$ elements
 $i_{1},i_{2},\ldots,i_{k}$ are distinct, and thus every $u\geq1$ satisfies
 $i_{u+r}-i_{u}\neq0$). Thus, each entry of this sequence is either positive or
-negative. In other words, every $u\geq1$ satisfes%
+negative. In other words, every $u\geq1$ satisfies%
 \begin{equation}
 \text{either }i_{\left(  u+1\right)  +r}-i_{u+1}>0\text{ or }i_{\left(
 u+1\right)  +r}-i_{u+1}<0. \label{sol.perm.cycles.c.mainclaim.pf.4}%
@@ -33880,7 +33880,7 @@ d_{i-n,k-m}c_{k-m,j}^{\prime}, & \text{if }i>n\text{ and }j\leq\ell;\\
 \\
 &  =\sum_{k=1}^{m}c_{i-n,k}b_{k,j-\ell}^{\prime}+\sum_{k=m+1}^{m+m^{\prime}%
 }d_{i-n,k-m}d_{k-m,j-\ell}^{\prime}\ \ \ \ \ \ \ \ \ \ \left(  \text{since
-}imren\text{ and }j>\ell\right)  ,
+}i>n\text{ and }j>\ell\right)  ,
 \end{align*}
 we obtain
 \begin{align*}
