@@ -35639,6 +35639,160 @@ obtained the result in its factored form!)
 
 \subsection{Solution to Exercise \ref{exe.adj(AB)}}
 
+\begin{vershort}
+\begin{proof}
+[Solution to Exercise \ref{exe.adj(AB)}.]Let $\left(  u,v\right)  \in\left\{
+1,2,\ldots,n\right\}  ^{2}$. Thus, $1\leq u\leq n$, so that $n\geq1$.
+
+For every $k\in\left\{  1,2,\ldots,n\right\}  $, we have%
+\begin{equation}
+\operatorname*{cols}\nolimits_{1,2,\ldots,\widehat{k},\ldots,n}\left(
+\operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{u},\ldots,n}A\right)
+=A_{\sim u,\sim k} \label{sol.adj(AB).short.A}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.adj(AB).short.A}):} Let $k\in\left\{
+1,2,\ldots,n\right\}  $. We can apply Proposition \ref{prop.submatrix.easy}
+\textbf{(d)} to $n-1$, $n-1$, $\left(  1,2,\ldots,\widehat{u},\ldots,n\right)
+$ and $\left(  1,2,\ldots,\widehat{k},\ldots,n\right)  $ instead of $u$, $v$,
+$\left(  i_{1},i_{2},\ldots,i_{u}\right)  $ and $\left(  j_{1},j_{2}%
+,\ldots,j_{v}\right)  $. As a result, we obtain%
+\[
+\operatorname*{sub}\nolimits_{1,2,\ldots,\widehat{u},\ldots,n}^{1,2,\ldots
+,\widehat{k},\ldots,n}A=\operatorname*{rows}\nolimits_{1,2,\ldots
+,\widehat{u},\ldots,n}\left(  \operatorname*{cols}\nolimits_{1,2,\ldots
+,\widehat{k},\ldots,n}A\right)  =\operatorname*{cols}\nolimits_{1,2,\ldots
+,\widehat{k},\ldots,n}\left(  \operatorname*{rows}\nolimits_{1,2,\ldots
+,\widehat{u},\ldots,n}A\right)  .
+\]
+But the definition of $A_{\sim u,\sim k}$ yields%
+\[
+A_{\sim u,\sim k}=\operatorname*{sub}\nolimits_{1,2,\ldots,\widehat{u}%
+,\ldots,n}^{1,2,\ldots,\widehat{k},\ldots,n}A=\operatorname*{cols}%
+\nolimits_{1,2,\ldots,\widehat{k},\ldots,n}\left(  \operatorname*{rows}%
+\nolimits_{1,2,\ldots,\widehat{u},\ldots,n}A\right)  .
+\]
+This proves (\ref{sol.adj(AB).short.A}).} and%
+\begin{equation}
+\operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{k},\ldots,n}\left(
+\operatorname*{cols}\nolimits_{1,2,\ldots,\widehat{v},\ldots,n}B\right)
+=B_{\sim k,\sim v} \label{sol.adj(AB).short.B}%
+\end{equation}
+\footnote{This holds for similar reasons.}.
+
+We have%
+\begin{equation}
+\left(  AB\right)  _{\sim u,\sim v}=\left(  \operatorname*{rows}%
+\nolimits_{1,2,\ldots,\widehat{u},\ldots,n}A\right)  \cdot\left(
+\operatorname*{cols}\nolimits_{1,2,\ldots,\widehat{v},\ldots,n}B\right)
+\label{sol.adj(AB).short.1}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.adj(AB).short.1}):} The definition of
+$\left(  AB\right)  _{\sim u,\sim v}$ yields%
+\[
+\left(  AB\right)  _{\sim u,\sim v}=\operatorname*{sub}\nolimits_{1,2,\ldots
+,\widehat{u},\ldots,n}^{1,2,\ldots,\widehat{v},\ldots,n}\left(  AB\right)
+=\left(  \operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{u},\ldots
+,n}A\right)  \cdot\left(  \operatorname*{cols}\nolimits_{1,2,\ldots
+,\widehat{v},\ldots,n}B\right)
+\]
+(by Lemma \ref{lem.adj(AB).minor-of-AB}, applied to $m=n$, $p=n$, $u=n-1$,
+$\left(  i_{1},i_{2},\ldots,i_{u}\right)  =\left(  1,2,\ldots,\widehat{u}%
+,\ldots,n\right)  $ and $\left(  j_{1},j_{2},\ldots,j_{v}\right)  =\left(
+1,2,\ldots,\widehat{v},\ldots,n\right)  $). This proves
+(\ref{sol.adj(AB).short.1}).}. Taking determinants on both sides of this
+equation, we obtain%
+\begin{align}
+&  \det\left(  \left(  AB\right)  _{\sim u,\sim v}\right) \nonumber\\
+&  =\det\left(  \left(  \operatorname*{rows}\nolimits_{1,2,\ldots
+,\widehat{u},\ldots,n}A\right)  \cdot\left(  \operatorname*{cols}%
+\nolimits_{1,2,\ldots,\widehat{v},\ldots,n}B\right)  \right) \nonumber\\
+&  =\sum_{k=1}^{n}\det\left(  \underbrace{\operatorname*{cols}%
+\nolimits_{1,2,\ldots,\widehat{k},\ldots,n}\left(  \operatorname*{rows}%
+\nolimits_{1,2,\ldots,\widehat{u},\ldots,n}A\right)  }_{\substack{=A_{\sim
+u,\sim k}\\\text{(by (\ref{sol.adj(AB).short.A}))}}}\right)  \cdot\det\left(
+\underbrace{\operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{k},\ldots
+,n}\left(  \operatorname*{cols}\nolimits_{1,2,\ldots,\widehat{v},\ldots
+,n}B\right)  }_{\substack{=B_{\sim k,\sim v}\\\text{(by
+(\ref{sol.adj(AB).short.B}))}}}\right) \nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{by Lemma \ref{lem.adj(AB).cauchy-binet}, applied to }%
+\operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{u},\ldots,n}A\\
+\text{and }\operatorname*{cols}\nolimits_{1,2,\ldots,\widehat{v},\ldots
+,n}B\text{ instead of }A\text{ and }B
+\end{array}
+\right) \nonumber\\
+&  =\sum_{k=1}^{n}\det\left(  A_{\sim u,\sim k}\right)  \cdot\det\left(
+B_{\sim k,\sim v}\right)  . \label{sol.adj(AB).short.5}%
+\end{align}
+
+
+Let us now forget that we fixed $\left(  u,v\right)  $. We thus have proven
+(\ref{sol.adj(AB).short.5}) for every $\left(  u,v\right)  \in\left\{
+1,2,\ldots,n\right\}  ^{2}$.
+
+Now, the definition of $\operatorname*{adj}\left(  AB\right)  $ yields%
+\begin{equation}
+\operatorname*{adj}\left(  AB\right)  =\left(  \left(  -1\right)  ^{i+j}%
+\det\left(  \left(  AB\right)  _{\sim j,\sim i}\right)  \right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}.\label{sol.adj(AB).short.L1}%
+\end{equation}
+But every $\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}$
+satisfies%
+\begin{align*}
+&  \left(  -1\right)  ^{i+j}\underbrace{\det\left(  \left(  AB\right)  _{\sim
+j,\sim i}\right)  }_{\substack{=\sum_{k=1}^{n}\det\left(  A_{\sim j,\sim
+k}\right)  \cdot\det\left(  B_{\sim k,\sim i}\right)  \\\text{(by
+(\ref{sol.adj(AB).short.5}), applied to }\left(  u,v\right)  =\left(
+j,i\right)  \text{)}}}\\
+&  =\left(  -1\right)  ^{i+j}\sum_{k=1}^{n}\det\left(  A_{\sim j,\sim
+k}\right)  \cdot\det\left(  B_{\sim k,\sim i}\right)  \\
+&  =\sum_{k=1}^{n}\underbrace{\left(  -1\right)  ^{i+j}}_{\substack{=\left(
+-1\right)  ^{\left(  i+k\right)  +\left(  k+j\right)  }\\\text{(since
+}i+j\equiv i+j+2k=\left(  i+k\right)  +\left(  k+j\right)  \operatorname{mod}%
+2\text{)}}}\det\left(  A_{\sim j,\sim k}\right)  \cdot\det\left(  B_{\sim
+k,\sim i}\right)  \\
+&  =\sum_{k=1}^{n}\underbrace{\left(  -1\right)  ^{\left(  i+k\right)
++\left(  k+j\right)  }}_{=\left(  -1\right)  ^{i+k}\left(  -1\right)  ^{k+j}%
+}\det\left(  A_{\sim j,\sim k}\right)  \cdot\det\left(  B_{\sim k,\sim
+i}\right)  \\
+&  =\sum_{k=1}^{n}\left(  -1\right)  ^{i+k}\det\left(  B_{\sim k,\sim
+i}\right)  \cdot\left(  -1\right)  ^{k+j}\det\left(  A_{\sim j,\sim k}\right)
+.
+\end{align*}
+Thus, (\ref{sol.adj(AB).short.L1}) becomes%
+\begin{align}
+\operatorname*{adj}\left(  AB\right)   &  =\left(  \underbrace{\left(
+-1\right)  ^{i+j}\det\left(  \left(  AB\right)  _{\sim j,\sim i}\right)
+}_{=\sum_{k=1}^{n}\left(  -1\right)  ^{i+k}\det\left(  B_{\sim k,\sim
+i}\right)  \cdot\left(  -1\right)  ^{k+j}\det\left(  A_{\sim j,\sim k}\right)
+}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\nonumber\\
+&  =\left(  \sum_{k=1}^{n}\left(  -1\right)  ^{i+k}\det\left(  B_{\sim k,\sim
+i}\right)  \cdot\left(  -1\right)  ^{k+j}\det\left(  A_{\sim j,\sim k}\right)
+\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\label{sol.adj(AB).short.L2}%
+\end{align}
+
+
+On the other hand, we have $\operatorname*{adj}B=\left(  \left(  -1\right)
+^{i+j}\det\left(  B_{\sim j,\sim i}\right)  \right)  _{1\leq i\leq n,\ 1\leq
+j\leq n}$ (by the definition of $\operatorname*{adj}B$) and
+$\operatorname*{adj}A=\left(  \left(  -1\right)  ^{i+j}\det\left(  A_{\sim
+j,\sim i}\right)  \right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ (by the
+definition of $\operatorname*{adj}A$). Therefore, the definition of the
+product of two matrices shows that%
+\[
+\operatorname*{adj}B\cdot\operatorname*{adj}A=\left(  \sum_{k=1}^{n}\left(
+-1\right)  ^{i+k}\det\left(  B_{\sim k,\sim i}\right)  \cdot\left(  -1\right)
+^{k+j}\det\left(  A_{\sim j,\sim k}\right)  \right)  _{1\leq i\leq n,\ 1\leq
+j\leq n}.
+\]
+Compared with (\ref{sol.adj(AB).short.L2}), this yields $\operatorname*{adj}%
+\left(  AB\right)  =\operatorname*{adj}B\cdot\operatorname*{adj}A$. This
+solves Exercise \ref{exe.adj(AB)}.
+\end{proof}
+\end{vershort}
+
 \begin{verlong}
 \begin{proof}
 [Solution to Exercise \ref{exe.adj(AB)}.]Let $\left(  u,v\right)  \in\left\{
