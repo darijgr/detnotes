@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, December 05, 2015 00:56:52}
+%TCIDATA{LastRevised=Saturday, December 05, 2015 01:12:12}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -3040,6 +3040,13 @@ additional exercises\textquotedblright, these will not be relied on in the
 rest of this text, and solutions will not be provided.
 
 \begin{addexercise}
+\label{exeadd.rec.qn-rn}Let $q$ and $r$ be two complex numbers. Prove that the
+sequence $\left(  q^{0}-r^{0},q^{1}-r^{1},q^{2}-r^{2},\ldots\right)  $ is
+$\left(  a,b\right)  $-recurrent for two appropriately chosen $a$ and $b$.
+Find these $a$ and $b$.
+\end{addexercise}
+
+\begin{addexercise}
 \label{exeadd.fib.floor}Let $\varphi$ be the golden ratio (i.e., the real
 number $\dfrac{1+\sqrt{5}}{2}$). Let $\left(  f_{0},f_{1},f_{2},\ldots\right)
 $ be the Fibonacci numbers.
@@ -3090,10 +3097,10 @@ be the Fibonacci numbers.
 
 \textbf{(a)} Prove the identities%
 \begin{align*}
-1f_{n}  &  =f_{n}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq1;\\
-2f_{n}  &  =f_{n-2}+f_{n+1}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq3;\\
-3f_{n}  &  =f_{n-2}+f_{n+2}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq3;\\
-4f_{n}  &  =f_{n-2}+f_{n}+f_{n+2}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq3.
+1f_{n} &  =f_{n}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq1;\\
+2f_{n} &  =f_{n-2}+f_{n+1}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq3;\\
+3f_{n} &  =f_{n-2}+f_{n+2}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq3;\\
+4f_{n} &  =f_{n-2}+f_{n}+f_{n+2}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq3.
 \end{align*}
 
 
@@ -3108,7 +3115,7 @@ prove the following: Let $T$ be a finite set, and $a_{t}$ be an integer for
 every $t\in T$. Then, there exists a unique lacunar subset $S$ of $\mathbb{Z}$
 such that
 \begin{align*}
-\sum\limits_{t\in T}f_{n+a_{t}}  &  =\sum\limits_{s\in S}f_{n+s}%
+\sum\limits_{t\in T}f_{n+a_{t}} &  =\sum\limits_{s\in S}f_{n+s}%
 \ \ \ \ \ \ \ \ \ \ \text{for every }n\in\mathbb{Z}\text{ which}\\
 &  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \text{ satisfies }n\geq\max\left(
 \left\{  -a_{t}\mid t\in T\right\}  \cup\left\{  -s\mid s\in S\right\}
@@ -19521,20 +19528,32 @@ c & d
 \end{array}
 \right)  $, we have%
 \begin{align*}
-\det\left(  A+XI_{n}\right)    & =\det\left(
+\det\left(  A+XI_{n}\right)   &  =\det\left(
 \begin{array}
 [c]{cc}%
 a+X & b\\
 c & d+X
 \end{array}
 \right)  =\left(  a+X\right)  \left(  d+X\right)  -bc\\
-& =X^{2}+\left(  a+d\right)  X+\left(  ad-bc\right)  .
+&  =X^{2}+\left(  a+d\right)  X+\left(  ad-bc\right)  .
 \end{align*}
 )
 
 What can you say about the coefficients of this polynomial? Most importantly,
 what are the coefficients before $X^{n}$, before $X^{n-1}$, and before $X^{0}$
 ? Can you express the other coefficients as sums of determinants?
+\end{addexercise}
+
+\begin{addexercise}
+\label{exeadd.det.rk1upd}Let $n\in\mathbb{N}$. Let $u$ be a column vector of
+length $n$, and let $v$ be a row vector of length $n$. (Thus, $uv$ is an
+$n\times n$-matrix, whereas $vu$ is a $1\times1$-matrix.) Let $A$ be an
+$n\times n$-matrix. Prove that%
+\[
+\det\left(  A+uv\right)  =\det A+v\left(  \operatorname*{adj}A\right)  u
+\]
+(where we regard the $1\times1$-matrix $v\left(  \operatorname*{adj}A\right)
+u$ as an element of $\mathbb{K}$).
 \end{addexercise}
 
 \begin{addexercise}
