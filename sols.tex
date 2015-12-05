@@ -32663,6 +32663,423 @@ This solves Exercise \ref{exe.tridiag.fib}.
 
 \subsection{Solution to Exercise \ref{exe.block2x2.mult}}
 
+\begin{vershort}
+\begin{proof}
+[Solution to Exercise \ref{exe.block2x2.mult}.]This is another case where the
+solution is really clear with the appropriate amount of waving hands and
+pointing fingers, but on paper becomes nearly impossible to convey. I shall
+therefore resort to formalism and computation.
+
+Write the matrices $A$, $B$, $C$, $D$, $A^{\prime}$, $B^{\prime}$, $C^{\prime
+}$ and $D^{\prime}$ in the forms%
+\begin{align*}
+A  & =\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq m}%
+,\ \ \ \ \ \ \ \ \ \ B=\left(  b_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+m^{\prime}},\\
+C  & =\left(  c_{i,j}\right)  _{1\leq i\leq n^{\prime},\ 1\leq j\leq
+m},\ \ \ \ \ \ \ \ \ \ D=\left(  d_{i,j}\right)  _{1\leq i\leq n^{\prime
+},\ 1\leq j\leq m^{\prime}},\\
+A^{\prime}  & =\left(  a_{i,j}^{\prime}\right)  _{1\leq i\leq m,\ 1\leq
+j\leq\ell},\ \ \ \ \ \ \ \ \ \ B^{\prime}=\left(  b_{i,j}^{\prime}\right)
+_{1\leq i\leq m,\ 1\leq j\leq\ell^{\prime}},\\
+C^{\prime}  & =\left(  c_{i,j}^{\prime}\right)  _{1\leq i\leq m^{\prime
+},\ 1\leq j\leq\ell},\ \ \ \ \ \ \ \ \ \ D^{\prime}=\left(  d_{i,j}^{\prime
+}\right)  _{1\leq i\leq m^{\prime},\ 1\leq j\leq\ell^{\prime}}.
+\end{align*}
+The definition of the $\left(  n+n^{\prime}\right)  \times\left(  m+m^{\prime
+}\right)  $-matrix $\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+C & D
+\end{array}
+\right)  $ shows that%
+\begin{align*}
+\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+C & D
+\end{array}
+\right)    & =\left(
+\begin{array}
+[c]{cccccccc}%
+a_{1,1} & a_{1,2} & \cdots & a_{1,m} & b_{1,1} & b_{1,2} & \cdots &
+b_{1,m^{\prime}}\\
+a_{2,1} & a_{2,2} & \cdots & a_{2,m} & b_{2,1} & b_{2,2} & \cdots &
+b_{2,m^{\prime}}\\
+\vdots & \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots\\
+a_{n,1} & a_{n,2} & \cdots & a_{n,m} & b_{n,1} & b_{n,2} & \cdots &
+b_{n,m^{\prime}}\\
+c_{1,1} & c_{1,2} & \cdots & c_{1,m} & d_{1,1} & d_{1,2} & \cdots &
+d_{1,m^{\prime}}\\
+c_{2,1} & c_{2,2} & \cdots & c_{2,m} & d_{2,1} & d_{2,2} & \cdots &
+d_{2,m^{\prime}}\\
+\vdots & \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots\\
+c_{n^{\prime},1} & c_{n^{\prime},2} & \cdots & c_{n^{\prime},m} &
+d_{n^{\prime},1} & d_{n^{\prime},2} & \cdots & d_{n^{\prime},m^{\prime}}%
+\end{array}
+\right)  \\
+& =\left(
+\begin{cases}
+a_{i,j}, & \text{if }i\leq n\text{ and }j\leq m;\\
+b_{i,j-m}, & \text{if }i\leq n\text{ and }j>m;\\
+c_{i-n,j}, & \text{if }i>n\text{ and }j\leq m;\\
+d_{i-n,j-m}, & \text{if }i>n\text{ and }j>m
+\end{cases}
+\right)  _{1\leq i\leq n+n^{\prime},\ 1\leq j\leq m+m^{\prime}}.
+\end{align*}
+Similarly,%
+\begin{align*}
+\left(
+\begin{array}
+[c]{cc}%
+A^{\prime} & B^{\prime}\\
+C^{\prime} & D^{\prime}%
+\end{array}
+\right)    & =\left(
+\begin{array}
+[c]{cccccccc}%
+a_{1,1}^{\prime} & a_{1,2}^{\prime} & \cdots & a_{1,\ell}^{\prime} &
+b_{1,1}^{\prime} & b_{1,2}^{\prime} & \cdots & b_{1,\ell^{\prime}}^{\prime}\\
+a_{2,1}^{\prime} & a_{2,2}^{\prime} & \cdots & a_{2,\ell}^{\prime} &
+b_{2,1}^{\prime} & b_{2,2}^{\prime} & \cdots & b_{2,\ell^{\prime}}^{\prime}\\
+\vdots & \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots\\
+a_{m,1}^{\prime} & a_{m,2}^{\prime} & \cdots & a_{m,\ell}^{\prime} &
+b_{m,1}^{\prime} & b_{m,2}^{\prime} & \cdots & b_{m,\ell^{\prime}}^{\prime}\\
+c_{1,1}^{\prime} & c_{1,2}^{\prime} & \cdots & c_{1,\ell}^{\prime} &
+d_{1,1}^{\prime} & d_{1,2}^{\prime} & \cdots & d_{1,\ell^{\prime}}^{\prime}\\
+c_{2,1}^{\prime} & c_{2,2}^{\prime} & \cdots & c_{2,\ell}^{\prime} &
+d_{2,1}^{\prime} & d_{2,2}^{\prime} & \cdots & d_{2,\ell^{\prime}}^{\prime}\\
+\vdots & \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots\\
+c_{m^{\prime},1}^{\prime} & c_{m^{\prime},2}^{\prime} & \cdots & c_{m^{\prime
+},\ell}^{\prime} & d_{m^{\prime},1}^{\prime} & d_{m^{\prime},2}^{\prime} &
+\cdots & d_{m^{\prime},\ell^{\prime}}^{\prime}%
+\end{array}
+\right)  \\
+& =\left(
+\begin{cases}
+a_{i,j}^{\prime}, & \text{if }i\leq m\text{ and }j\leq\ell;\\
+b_{i,j-\ell}^{\prime}, & \text{if }i\leq m\text{ and }j>\ell;\\
+c_{i-m,j}^{\prime}, & \text{if }i>m\text{ and }j\leq\ell;\\
+d_{i-m,j-\ell}^{\prime}, & \text{if }i>m\text{ and }j>\ell
+\end{cases}
+\right)  _{1\leq i\leq m+m^{\prime},\ 1\leq j\leq\ell+\ell^{\prime}}.
+\end{align*}
+Using these two equalities, we can compute the product $\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+C & D
+\end{array}
+\right)  \left(
+\begin{array}
+[c]{cc}%
+A^{\prime} & B^{\prime}\\
+C^{\prime} & D^{\prime}%
+\end{array}
+\right)  $: Namely,%
+\begin{align}
+&  \left(
+\begin{array}
+[c]{cc}%
+A & B\\
+C & D
+\end{array}
+\right)  \left(
+\begin{array}
+[c]{cc}%
+A^{\prime} & B^{\prime}\\
+C^{\prime} & D^{\prime}%
+\end{array}
+\right)  \nonumber\\
+&  =\left(  \sum_{k=1}^{m+m^{\prime}}%
+\begin{cases}
+a_{i,k}, & \text{if }i\leq n\text{ and }k\leq m;\\
+b_{i,k-m}, & \text{if }i\leq n\text{ and }k>m;\\
+c_{i-n,k}, & \text{if }i>n\text{ and }k\leq m;\\
+d_{i-n,k-m}, & \text{if }i>n\text{ and }k>m
+\end{cases}%
+\begin{cases}
+a_{k,j}^{\prime}, & \text{if }k\leq m\text{ and }j\leq\ell;\\
+b_{k,j-\ell}^{\prime}, & \text{if }k\leq m\text{ and }j>\ell;\\
+c_{k-m,j}^{\prime}, & \text{if }k>m\text{ and }j\leq\ell;\\
+d_{k-m,j-\ell}^{\prime}, & \text{if }k>m\text{ and }j>\ell
+\end{cases}
+\right)  _{1\leq i\leq n+n^{\prime},\ 1\leq j\leq\ell+\ell^{\prime}%
+}.\label{sol.block2x2.mult.short.3}%
+\end{align}
+
+
+On the other hand, we have $A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq
+j\leq m}$ and $A^{\prime}=\left(  a_{i,j}^{\prime}\right)  _{1\leq i\leq
+m,\ 1\leq j\leq\ell}$. Hence, the definition of the product of two matrices
+shows that%
+\begin{equation}
+AA^{\prime}=\left(  \sum_{k=1}^{m}a_{i,k}a_{k,j}^{\prime}\right)  _{1\leq
+i\leq n,\ 1\leq j\leq\ell}. \label{sol.block2x2.mult.short.5a}%
+\end{equation}
+
+
+Also, we have $B=\left(  b_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+m^{\prime}}$ and $C^{\prime}=\left(  c_{i,j}^{\prime}\right)  _{1\leq i\leq
+m^{\prime},\ 1\leq j\leq\ell}$. Hence, the definition of the product of two
+matrices shows that%
+\begin{equation}
+BC^{\prime}=\left(  \sum_{k=1}^{m^{\prime}}b_{i,k}c_{k,j}^{\prime}\right)
+_{1\leq i\leq n,\ 1\leq j\leq\ell}. \label{sol.block2x2.mult.short.5b}%
+\end{equation}
+
+
+Adding the equalities (\ref{sol.block2x2.mult.short.5a}) and
+(\ref{sol.block2x2.mult.short.5b}), we obtain%
+\begin{align}
+AA^{\prime}+BC^{\prime}  &  =\left(  \sum_{k=1}^{m}a_{i,k}a_{k,j}^{\prime
+}\right)  _{1\leq i\leq n,\ 1\leq j\leq\ell}+\left(  \sum_{k=1}^{m^{\prime}%
+}b_{i,k}c_{k,j}^{\prime}\right)  _{1\leq i\leq n,\ 1\leq j\leq\ell}\nonumber\\
+&  =\left(  \sum_{k=1}^{m}a_{i,k}a_{k,j}^{\prime}+\underbrace{\sum
+_{k=1}^{m^{\prime}}b_{i,k}c_{k,j}^{\prime}}_{\substack{=\sum_{k=m+1}%
+^{m+m^{\prime}}b_{i,k-m}c_{k-m,j}^{\prime}\\\text{(here, we have substituted
+}k-m\text{ for }k\text{ in the sum)}}}\right)  _{1\leq i\leq n,\ 1\leq
+j\leq\ell}\nonumber\\
+&  =\left(  \sum_{k=1}^{m}a_{i,k}a_{k,j}^{\prime}+\sum_{k=m+1}^{m+m^{\prime}%
+}b_{i,k-m}c_{k-m,j}^{\prime}\right)  _{1\leq i\leq n,\ 1\leq j\leq\ell}.
+\label{sol.block2x2.mult.short.5c}%
+\end{align}
+
+
+Similarly,%
+\begin{equation}
+AB^{\prime}+BD^{\prime}=\left(  \sum_{k=1}^{m}a_{i,k}b_{k,j}^{\prime}%
++\sum_{k=m+1}^{m+m^{\prime}}b_{i,k-m}d_{k-m,j}^{\prime}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq\ell^{\prime}};\label{sol.block2x2.mult.short.6c}%
+\end{equation}%
+\begin{equation}
+CA^{\prime}+DC^{\prime}=\left(  \sum_{k=1}^{m}c_{i,k}a_{k,j}^{\prime}%
++\sum_{k=m+1}^{m+m^{\prime}}d_{i,k-m}c_{k-m,j}^{\prime}\right)  _{1\leq i\leq
+n^{\prime},\ 1\leq j\leq\ell};\label{sol.block2x2.mult.short.7c}%
+\end{equation}%
+\begin{equation}
+CB^{\prime}+DD^{\prime}=\left(  \sum_{k=1}^{m}c_{i,k}b_{k,j}^{\prime}%
++\sum_{k=m+1}^{m+m^{\prime}}d_{i,k-m}d_{k-m,j}^{\prime}\right)  _{1\leq i\leq
+n^{\prime},\ 1\leq j\leq\ell^{\prime}}.\label{sol.block2x2.mult.short.8c}%
+\end{equation}
+
+
+Now, we have the four equalities (\ref{sol.block2x2.mult.short.5c}),
+(\ref{sol.block2x2.mult.short.6c}), (\ref{sol.block2x2.mult.short.7c}) and
+(\ref{sol.block2x2.mult.short.8c}). Hence, the definition of the block matrix
+$\left(
+\begin{array}
+[c]{cc}%
+AA^{\prime}+BC^{\prime} & AB^{\prime}+BD^{\prime}\\
+CA^{\prime}+DC^{\prime} & CB^{\prime}+DD^{\prime}%
+\end{array}
+\right)  $ (or, more precisely, the equality (\ref{eq.def.block2x2.formal}),
+applied to $n$, $n^{\prime}$, $\ell$, $\ell^{\prime}$, $AA^{\prime}%
++BC^{\prime}$, $AB^{\prime}+BD^{\prime}$, $CA^{\prime}+DC^{\prime}$,
+$CB^{\prime}+DD^{\prime}$, $\sum_{k=1}^{m}a_{i,k}a_{k,j}^{\prime}+\sum
+_{k=m+1}^{m+m^{\prime}}b_{i,k-m}c_{k-m,j}^{\prime}$, $\sum_{k=1}^{m}%
+a_{i,k}b_{k,j}^{\prime}+\sum_{k=m+1}^{m+m^{\prime}}b_{i,k-m}d_{k-m,j}^{\prime
+}$, $\sum_{k=1}^{m}c_{i,k}a_{k,j}^{\prime}+\sum_{k=m+1}^{m+m^{\prime}%
+}d_{i,k-m}c_{k-m,j}^{\prime}$ and $\sum_{k=1}^{m}c_{i,k}b_{k,j}^{\prime}%
++\sum_{k=m+1}^{m+m^{\prime}}d_{i,k-m}d_{k-m,j}^{\prime}$ instead of $n$,
+$n^{\prime}$, $m$, $m^{\prime}$, $A$, $B$, $C$, $D$, $a_{i,j}$, $b_{i,j}$,
+$c_{i,j}$ and $d_{i,j}$) shows that
+\begin{align}
+&  \left(
+\begin{array}
+[c]{cc}%
+AA^{\prime}+BC^{\prime} & AB^{\prime}+BD^{\prime}\\
+CA^{\prime}+DC^{\prime} & CB^{\prime}+DD^{\prime}%
+\end{array}
+\right)  \nonumber\\
+&  =\left(
+\begin{cases}
+\sum_{k=1}^{m}a_{i,k}a_{k,j}^{\prime}+\sum_{k=m+1}^{m+m^{\prime}}%
+b_{i,k-m}c_{k-m,j}^{\prime}, & \text{if }i\leq n\text{ and }j\leq\ell;\\
+\sum_{k=1}^{m}a_{i,k}b_{k,j-\ell}^{\prime}+\sum_{k=m+1}^{m+m^{\prime}%
+}b_{i,k-m}d_{k-m,j-\ell}^{\prime}, & \text{if }i\leq n\text{ and }j>\ell;\\
+\sum_{k=1}^{m}c_{i-n,k}a_{k,j}^{\prime}+\sum_{k=m+1}^{m+m^{\prime}}%
+d_{i-n,k-m}c_{k-m,j}^{\prime}, & \text{if }i>n\text{ and }j\leq\ell;\\
+\sum_{k=1}^{m}c_{i-n,k}b_{k,j-\ell}^{\prime}+\sum_{k=m+1}^{m+m^{\prime}%
+}d_{i-n,k-m}d_{k-m,j-\ell}^{\prime}, & \text{if }i>n\text{ and }j>\ell
+\end{cases}
+\right)  _{1\leq i\leq n+n^{\prime},\ 1\leq j\leq\ell+\ell^{\prime}%
+}.\label{sol.block2x2.mult.short.9}%
+\end{align}
+
+
+But our goal is to prove that $\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+C & D
+\end{array}
+\right)  \left(
+\begin{array}
+[c]{cc}%
+A^{\prime} & B^{\prime}\\
+C^{\prime} & D^{\prime}%
+\end{array}
+\right)  =\left(
+\begin{array}
+[c]{cc}%
+AA^{\prime}+BC^{\prime} & AB^{\prime}+BD^{\prime}\\
+CA^{\prime}+DC^{\prime} & CB^{\prime}+DD^{\prime}%
+\end{array}
+\right)  $. In other words, we want to prove that the left hand sides of the
+equalities (\ref{sol.block2x2.mult.short.3}) and (\ref{sol.block2x2.mult.short.9}) are
+equal. For this, it clearly suffices to show that the right hand sides of
+these equalities are equal. In other words, it suffices to show that every
+$\left(  i,j\right)  \in\left\{  1,2,\ldots,n+n^{\prime}\right\}
+\times\left\{  1,2,\ldots,\ell+\ell^{\prime}\right\}  $ satisfies%
+\begin{align}
+&  \sum_{k=1}^{m+m^{\prime}}%
+\begin{cases}
+a_{i,k}, & \text{if }i\leq n\text{ and }k\leq m;\\
+b_{i,k-m}, & \text{if }i\leq n\text{ and }k>m;\\
+c_{i-n,k}, & \text{if }i>n\text{ and }k\leq m;\\
+d_{i-n,k-m}, & \text{if }i>n\text{ and }k>m
+\end{cases}%
+\begin{cases}
+a_{k,j}^{\prime}, & \text{if }k\leq m\text{ and }j\leq\ell;\\
+b_{k,j-\ell}^{\prime}, & \text{if }k\leq m\text{ and }j>\ell;\\
+c_{k-m,j}^{\prime}, & \text{if }k>m\text{ and }j\leq\ell;\\
+d_{k-m,j-\ell}^{\prime}, & \text{if }k>m\text{ and }j>\ell
+\end{cases}
+\nonumber\\
+&  =%
+\begin{cases}
+\sum_{k=1}^{m}a_{i,k}a_{k,j}^{\prime}+\sum_{k=m+1}^{m+m^{\prime}}%
+b_{i,k-m}c_{k-m,j}^{\prime}, & \text{if }i\leq n\text{ and }j\leq\ell;\\
+\sum_{k=1}^{m}a_{i,k}b_{k,j-\ell}^{\prime}+\sum_{k=m+1}^{m+m^{\prime}%
+}b_{i,k-m}d_{k-m,j-\ell}^{\prime}, & \text{if }i\leq n\text{ and }j>\ell;\\
+\sum_{k=1}^{m}c_{i-n,k}a_{k,j}^{\prime}+\sum_{k=m+1}^{m+m^{\prime}}%
+d_{i-n,k-m}c_{k-m,j}^{\prime}, & \text{if }i>n\text{ and }j\leq\ell;\\
+\sum_{k=1}^{m}c_{i-n,k}b_{k,j-\ell}^{\prime}+\sum_{k=m+1}^{m+m^{\prime}%
+}d_{i-n,k-m}d_{k-m,j-\ell}^{\prime}, & \text{if }i>n\text{ and }j>\ell
+\end{cases}
+.\label{sol.block2x2.mult.short.entrywise}%
+\end{align}
+
+
+\textit{Proof of (\ref{sol.block2x2.mult.short.entrywise}):} Let $\left(
+i,j\right)  \in\left\{  1,2,\ldots,n+n^{\prime}\right\}  \times\left\{
+1,2,\ldots,\ell+\ell^{\prime}\right\}  $. Thus, $i\in\left\{  1,2,\ldots
+,n+n^{\prime}\right\}  $ and $j\in\left\{  1,2,\ldots,\ell+\ell^{\prime
+}\right\}  $. We must be in one of the following four cases:
+
+\textit{Case 1:} We have $i\leq n$ and $j\leq\ell$.
+
+\textit{Case 2:} We have $i\leq n$ and $j>\ell$.
+
+\textit{Case 3:} We have $i>n$ and $j\leq\ell$.
+
+\textit{Case 4:} We have $i>n$ and $j>\ell$.
+
+All four cases are completely analogous; we thus will only show how to deal
+with Case 1. In this case, we have $i\leq n$ and $j\leq\ell$. Now, comparing%
+\begin{align*}
+&  \sum_{k=1}^{m+m^{\prime}}%
+\begin{cases}
+a_{i,k}, & \text{if }i\leq n\text{ and }k\leq m;\\
+b_{i,k-m}, & \text{if }i\leq n\text{ and }k>m;\\
+c_{i-n,k}, & \text{if }i>n\text{ and }k\leq m;\\
+d_{i-n,k-m}, & \text{if }i>n\text{ and }k>m
+\end{cases}%
+\begin{cases}
+a_{k,j}^{\prime}, & \text{if }k\leq m\text{ and }j\leq\ell;\\
+b_{k,j-\ell}^{\prime}, & \text{if }k\leq m\text{ and }j>\ell;\\
+c_{k-m,j}^{\prime}, & \text{if }k>m\text{ and }j\leq\ell;\\
+d_{k-m,j-\ell}^{\prime}, & \text{if }k>m\text{ and }j>\ell
+\end{cases}
+\\
+&  =\sum_{k=1}^{m}\underbrace{%
+\begin{cases}
+a_{i,k}, & \text{if }i\leq n\text{ and }k\leq m;\\
+b_{i,k-m}, & \text{if }i\leq n\text{ and }k>m;\\
+c_{i-n,k}, & \text{if }i>n\text{ and }k\leq m;\\
+d_{i-n,k-m}, & \text{if }i>n\text{ and }k>m
+\end{cases}
+}_{\substack{=a_{i,k}\\\text{(since }i\leq n\text{ and }k\leq m\text{)}%
+}}\underbrace{%
+\begin{cases}
+a_{k,j}^{\prime}, & \text{if }k\leq m\text{ and }j\leq\ell;\\
+b_{k,j-\ell}^{\prime}, & \text{if }k\leq m\text{ and }j>\ell;\\
+c_{k-m,j}^{\prime}, & \text{if }k>m\text{ and }j\leq\ell;\\
+d_{k-m,j-\ell}^{\prime}, & \text{if }k>m\text{ and }j>\ell
+\end{cases}
+}_{\substack{=a_{k,j}^{\prime}\\\text{(since }k\leq m\text{ and }j\leq
+\ell\text{)}}}\\
+&  \ \ \ \ \ \ \ \ \ \ +\sum_{k=m+1}^{m+m^{\prime}}\underbrace{%
+\begin{cases}
+a_{i,k}, & \text{if }i\leq n\text{ and }k\leq m;\\
+b_{i,k-m}, & \text{if }i\leq n\text{ and }k>m;\\
+c_{i-n,k}, & \text{if }i>n\text{ and }k\leq m;\\
+d_{i-n,k-m}, & \text{if }i>n\text{ and }k>m
+\end{cases}
+}_{\substack{=b_{i,k-m}\\\text{(since }i\leq n\text{ and }k>m\text{)}%
+}}\underbrace{%
+\begin{cases}
+a_{k,j}^{\prime}, & \text{if }k\leq m\text{ and }j\leq\ell;\\
+b_{k,j-\ell}^{\prime}, & \text{if }k\leq m\text{ and }j>\ell;\\
+c_{k-m,j}^{\prime}, & \text{if }k>m\text{ and }j\leq\ell;\\
+d_{k-m,j-\ell}^{\prime}, & \text{if }k>m\text{ and }j>\ell
+\end{cases}
+}_{\substack{=c_{k-m,j}^{\prime}\\\text{(since }k>m\text{ and }j\leq
+\ell\text{)}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }0\leq m\leq m+m^{\prime}\right)
+\\
+&  =\sum_{k=1}^{m}a_{i,k}a_{k,j}^{\prime}+\sum_{k=m+1}^{m+m^{\prime}}%
+b_{i,k-m}c_{k-m,j}^{\prime}%
+\end{align*}
+with%
+\begin{align*}
+&
+\begin{cases}
+\sum_{k=1}^{m}a_{i,k}a_{k,j}^{\prime}+\sum_{k=m+1}^{m+m^{\prime}}%
+b_{i,k-m}c_{k-m,j}^{\prime}, & \text{if }i\leq n\text{ and }j\leq\ell;\\
+\sum_{k=1}^{m}a_{i,k}b_{k,j-\ell}^{\prime}+\sum_{k=m+1}^{m+m^{\prime}%
+}b_{i,k-m}d_{k-m,j-\ell}^{\prime}, & \text{if }i\leq n\text{ and }j>\ell;\\
+\sum_{k=1}^{m}c_{i-n,k}a_{k,j}^{\prime}+\sum_{k=m+1}^{m+m^{\prime}}%
+d_{i-n,k-m}c_{k-m,j}^{\prime}, & \text{if }i>n\text{ and }j\leq\ell;\\
+\sum_{k=1}^{m}c_{i-n,k}b_{k,j-\ell}^{\prime}+\sum_{k=m+1}^{m+m^{\prime}%
+}d_{i-n,k-m}d_{k-m,j-\ell}^{\prime}, & \text{if }i>n\text{ and }j>\ell
+\end{cases}
+\\
+&  =\sum_{k=1}^{m}a_{i,k}a_{k,j}^{\prime}+\sum_{k=m+1}^{m+m^{\prime}}%
+b_{i,k-m}c_{k-m,j}^{\prime}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }i\leq
+n\text{ and }j\leq\ell\right)  ,
+\end{align*}
+we obtain precisely (\ref{sol.block2x2.mult.short.entrywise}). Thus,
+(\ref{sol.block2x2.mult.short.entrywise}) is proven in Case 1. As I said, the other
+three cases are similar, and so (\ref{sol.block2x2.mult.short.entrywise}) is proven.
+
+From (\ref{sol.block2x2.mult.short.entrywise}), we see that the right hand sides of
+the equalities (\ref{sol.block2x2.mult.short.3}) and (\ref{sol.block2x2.mult.short.9}) are
+equal. Hence, so are their left hand sides. In other words, $\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+C & D
+\end{array}
+\right)  \left(
+\begin{array}
+[c]{cc}%
+A^{\prime} & B^{\prime}\\
+C^{\prime} & D^{\prime}%
+\end{array}
+\right)  =\left(
+\begin{array}
+[c]{cc}%
+AA^{\prime}+BC^{\prime} & AB^{\prime}+BD^{\prime}\\
+CA^{\prime}+DC^{\prime} & CB^{\prime}+DD^{\prime}%
+\end{array}
+\right)  $. This solves Exercise \ref{exe.block2x2.mult}.
+\end{proof}
+\end{vershort}
+
 \begin{verlong}
 \begin{proof}
 [Solution to Exercise \ref{exe.block2x2.mult}.]Write the $n\times m$-matrix
