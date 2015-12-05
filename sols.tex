@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, December 05, 2015 00:01:37}
+%TCIDATA{LastRevised=Saturday, December 05, 2015 00:04:22}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -2448,6 +2448,8 @@ Source: \cite[(5.55)]{GKP}; see also
 
 \section{\label{chp.recur}Recurrent sequences}
 
+\subsection{Basics}
+
 Two of the most famous integer sequences defined recursively are the Fibonacci
 sequence and the Lucas sequence:
 
@@ -2569,7 +2571,7 @@ So, the Fibonacci sequence and the Lucas sequences are $\left(  1,1\right)
 $-recurrent. An $\left(  a,b\right)  $-recurrent sequence $\left(  x_{0}%
 ,x_{1},x_{2},\ldots\right)  $ is fully determined by the four values $a$, $b$,
 $x_{0}$ and $x_{1}$, and can be constructed for any choice of these four
-values. Here are some further examples of $\left(  a,b\right)  $-recurrent sequence:
+values. Here are some further examples of $\left(  a,b\right)  $-recurrent sequences:
 
 \begin{itemize}
 \item A sequence $\left(  x_{0},x_{1},x_{2},\ldots\right)  $ is $\left(
@@ -2670,13 +2672,15 @@ Hence,
 \begin{align*}
 \sin\left(  \beta+n\alpha\right)   &  =2\cos\alpha\sin\left(  \beta+\left(
 n-1\right)  \alpha\right)  -\sin\left(  \beta+\left(  n-2\right)
-\alpha\right) \\
+\alpha\right)  \\
 &  =2\cos\alpha\sin\left(  \beta+\left(  n-1\right)  \alpha\right)  +\left(
 -1\right)  \sin\left(  \beta+\left(  n-2\right)  \alpha\right)  ,
 \end{align*}
 qed.}. When $\alpha\in2\pi\mathbb{Q}$ (that is, some integer multiple of
 $\alpha$ equals some integer multiple of $2\pi$), this sequence is periodic.
 \end{itemize}
+
+\subsection{Explicit formulas (\`{a} la Binet)}
 
 Now, we can get an explicit formula (similar to (\ref{eq.binet.f}) and
 (\ref{eq.binet.l})) for every term of an $\left(  a,b\right)  $-recurrent
@@ -2760,12 +2764,14 @@ explicit formula really deserves the name \textquotedblleft
 explicit\textquotedblright.]
 \end{exercise}
 
+\subsection{Further results}
+
 Here are some more exercises from the theory of recurrent sequences. I am not
-going particularly deep here, but we may discuss generalizations later.
+going particularly deep here, but we may encounter generalizations later.
 
 First, an example: If we \textquotedblleft split\textquotedblright\ the
 Fibonacci sequence $\left(  f_{0},f_{1},f_{2},\ldots\right)  =\left(
-1,1,2,3,5,8,\ldots\right)  $ two subsequences $\left(  f_{0},f_{2}%
+1,1,2,3,5,8,\ldots\right)  $ into two subsequences $\left(  f_{0},f_{2}%
 ,f_{4},\ldots\right)  =\left(  1,2,5,13,\ldots\right)  $ and $\left(
 f_{1},f_{3},f_{5},\ldots\right)  =\left(  1,3,8,21,\ldots\right)  $ (each of
 which contains every other Fibonacci number), then it turns out that each of
