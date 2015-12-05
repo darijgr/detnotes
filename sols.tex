@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, December 04, 2015 22:52:58}
+%TCIDATA{LastRevised=Saturday, December 05, 2015 00:01:37}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -2367,6 +2367,12 @@ such that $n\geq k$. Prove that%
 
 \end{addexercise}
 
+\begin{noncompile}
+See
+\href{http://web.mit.edu/~darij/www/QEDMO4P13.pdf}{http://web.mit.edu/\symbol{126}%
+darij/www/QEDMO4P13.pdf} for a solution to the preceding exercise.
+\end{noncompile}
+
 \begin{addexercise}
 \label{exeadd.bininv}Let $N\in\mathbb{N}$. The \textit{binomial transform} of
 a finite sequence $\left(  f_{0},f_{1},\ldots,f_{N}\right)  \in\mathbb{Z}%
@@ -2399,6 +2405,46 @@ the sequence $\left(  q^{0},q^{1},\ldots,q^{N}\right)  $.
 1,0,1,0,1,0,\ldots\right)  $ (this ends with $1$ if $N$ is even, and with $0$
 if $N$ is odd).
 \end{addexercise}
+
+\begin{addexercise}
+\label{exeadd.AoPS333199}For any $n\in\mathbb{N}$ and $m\in\mathbb{N}$, define
+a polynomial $Z_{m,n}\in\mathbb{Z}\left[  X\right]  $ by%
+\[
+Z_{m,n}=\sum_{k=0}^{n}\left(  -1\right)  ^{k}\dbinom{n}{k}\left(
+X^{n-k}-1\right)  ^{m}.
+\]
+Show that $Z_{m,n}=Z_{n,m}$ for any $n\in\mathbb{N}$ and $m\in\mathbb{N}$.
+\end{addexercise}
+
+\begin{noncompile}
+Two solutions to the preceding exercise are sketched in
+\href{http://www.artofproblemsolving.com/community/c6h333199p1782800}{http://www.artofproblemsolving.com/community/c6h333199p1782800}
+.
+\end{noncompile}
+
+\begin{addexercise}
+\label{exeadd.AoPS262752}Let $n\in\mathbb{N}$. Prove%
+\[
+\sum_{k=0}^{n}\left(  -1\right)  ^{k}\dbinom{X}{k}\dbinom{X}{n-k}=%
+\begin{cases}
+\left(  -1\right)  ^{n/2}\dbinom{r}{n/2}, & \text{if }n\text{ is even};\\
+0, & \text{if }n\text{ is odd}%
+\end{cases}
+\]
+(an identity between polynomials in $\mathbb{Q}\left[  X\right]  $).
+
+[\textbf{Hint:} It is enough to prove this when $X$ is replaced by a
+nonnegative integer $r$ (why?). Now that you have gotten rid of polynomials,
+introduce new polynomials. Namely, compute the coefficient of $X^{n}$ in
+$\left(  1+X\right)  ^{r}\left(  1-X\right)  ^{r}$. Compare with the
+coefficient of $X^{n}$ in $\left(  1-X^{2}\right)  ^{r}$.]
+\end{addexercise}
+
+\begin{noncompile}
+Source: \cite[(5.55)]{GKP}; see also
+\href{http://www.artofproblemsolving.com/community/c6h262752}{http://www.artofproblemsolving.com/community/c6h262752}
+.
+\end{noncompile}
 
 \section{\label{chp.recur}Recurrent sequences}
 
@@ -5343,6 +5389,13 @@ notation) and also with the standard notation for $k$-tuples. This is why we
 prefer to use the notation $\operatorname*{cyc}\nolimits_{i_{1},i_{2}%
 ,\ldots,i_{k}}$. (That said, we are not going to use $k$-cycles very often.)
 \end{remark}
+
+The following exercise gathers some properties of cycles. Parts \textbf{(a)}
+and \textbf{(d)} and, to a lesser extent, \textbf{(b)} are fairly important
+and you should make sure you know how to solve them. The significantly more
+difficult part \textbf{(c)} is more of a curiosity with an interesting proof
+(I have not found an application of it so far; skip it if you do not want to
+spend time on what is essentially a contest problem).
 
 \begin{exercise}
 \label{exe.perm.cycles}Let $n\in\mathbb{N}$. Let $\left[  n\right]  =\left\{
@@ -35736,7 +35789,7 @@ Now, the definition of $\operatorname*{adj}\left(  AB\right)  $ yields%
 \begin{equation}
 \operatorname*{adj}\left(  AB\right)  =\left(  \left(  -1\right)  ^{i+j}%
 \det\left(  \left(  AB\right)  _{\sim j,\sim i}\right)  \right)  _{1\leq i\leq
-n,\ 1\leq j\leq n}.\label{sol.adj(AB).short.L1}%
+n,\ 1\leq j\leq n}. \label{sol.adj(AB).short.L1}%
 \end{equation}
 But every $\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}$
 satisfies%
@@ -35747,16 +35800,16 @@ k}\right)  \cdot\det\left(  B_{\sim k,\sim i}\right)  \\\text{(by
 (\ref{sol.adj(AB).short.5}), applied to }\left(  u,v\right)  =\left(
 j,i\right)  \text{)}}}\\
 &  =\left(  -1\right)  ^{i+j}\sum_{k=1}^{n}\det\left(  A_{\sim j,\sim
-k}\right)  \cdot\det\left(  B_{\sim k,\sim i}\right)  \\
+k}\right)  \cdot\det\left(  B_{\sim k,\sim i}\right) \\
 &  =\sum_{k=1}^{n}\underbrace{\left(  -1\right)  ^{i+j}}_{\substack{=\left(
 -1\right)  ^{\left(  i+k\right)  +\left(  k+j\right)  }\\\text{(since
 }i+j\equiv i+j+2k=\left(  i+k\right)  +\left(  k+j\right)  \operatorname{mod}%
 2\text{)}}}\det\left(  A_{\sim j,\sim k}\right)  \cdot\det\left(  B_{\sim
-k,\sim i}\right)  \\
+k,\sim i}\right) \\
 &  =\sum_{k=1}^{n}\underbrace{\left(  -1\right)  ^{\left(  i+k\right)
 +\left(  k+j\right)  }}_{=\left(  -1\right)  ^{i+k}\left(  -1\right)  ^{k+j}%
 }\det\left(  A_{\sim j,\sim k}\right)  \cdot\det\left(  B_{\sim k,\sim
-i}\right)  \\
+i}\right) \\
 &  =\sum_{k=1}^{n}\left(  -1\right)  ^{i+k}\det\left(  B_{\sim k,\sim
 i}\right)  \cdot\left(  -1\right)  ^{k+j}\det\left(  A_{\sim j,\sim k}\right)
 .
@@ -35770,7 +35823,7 @@ i}\right)  \cdot\left(  -1\right)  ^{k+j}\det\left(  A_{\sim j,\sim k}\right)
 }\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\nonumber\\
 &  =\left(  \sum_{k=1}^{n}\left(  -1\right)  ^{i+k}\det\left(  B_{\sim k,\sim
 i}\right)  \cdot\left(  -1\right)  ^{k+j}\det\left(  A_{\sim j,\sim k}\right)
-\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\label{sol.adj(AB).short.L2}%
+\right)  _{1\leq i\leq n,\ 1\leq j\leq n} \label{sol.adj(AB).short.L2}%
 \end{align}
 
 
