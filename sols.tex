@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, December 05, 2015 00:04:22}
+%TCIDATA{LastRevised=Saturday, December 05, 2015 00:33:28}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -3032,6 +3032,130 @@ $r=0$ and $n-1-2i<0$).
 Of course, the downside of this convention is that we might not have $a\cdot
 b=b\cdot a$ (because $a\cdot b$ might be well-defined while $b\cdot a$ is not,
 or vice versa).}
+
+\subsection{Additional exercises}
+
+This section contains some further exercises. As the earlier \textquotedblleft
+additional exercises\textquotedblright, these will not be relied on in the
+rest of this text, and solutions will not be provided.
+
+\begin{addexercise}
+\label{exeadd.fib.floor}Let $\varphi$ be the golden ratio (i.e., the real
+number $\dfrac{1+\sqrt{5}}{2}$). Let $\left(  f_{0},f_{1},f_{2},\ldots\right)
+$ be the Fibonacci numbers.
+
+\textbf{(a)} Show that $f_{n+1}-\varphi f_{n}=\dfrac{1}{\sqrt{5}}\psi^{n}$ for
+every $n\in\mathbb{N}$, where $\psi=\dfrac{1-\sqrt{5}}{2}$. (Notice that
+$\psi=\dfrac{1-\sqrt{5}}{2}\approx-0.618$ lies between $-1$ and $0$, and thus
+the powers $\psi^{n}$ converge to $0$ as $n\rightarrow\infty$. So
+$f_{n+1}-\varphi f_{n}\rightarrow0$ as $n\rightarrow\infty$, and consequently
+$\dfrac{f_{n+1}}{f_{n}}\rightarrow0$ as well.)
+
+\textbf{(b)} Show that%
+\[
+f_{n}=\operatorname*{round}\left(  \dfrac{1}{\sqrt{5}}\varphi^{n}\right)
+\ \ \ \ \ \ \ \ \ \ \text{for every }n\in\mathbb{N}.
+\]
+Here, if $x$ is a real number, then $\operatorname*{round}x$ denotes the
+integer closest to $x$ (where, in case of a tie, we take the higher of the two
+candidates\footnote{This does not really matter in our situation, because
+$\dfrac{1}{\sqrt{5}}\varphi^{n}$ will never be a half-integer.}).
+\end{addexercise}
+
+\begin{addexercise}
+\label{exeadd.fib.zeckendorf}Let $\left(  f_{0},f_{1},f_{2},\ldots\right)  $
+be the Fibonacci numbers. A set $I$ of integers is said to be \textit{lacunar}
+if no two elements of $I$ are consecutive (i.e., there exists no $i\in I$ such
+that $i+1\in I$). Show that, for every $n\in\mathbb{N}$, there exists a unique
+lacunar subset $S$ of $\left\{  2,3,4,\ldots\right\}  $ such that
+$n=\sum_{s\in S}f_{s}$.
+
+(For example, if $n=17$, then $S=\left\{  2,4,7\right\}  $, because
+$17=1+3+13=f_{2}+f_{4}+f_{7}$.)
+\end{addexercise}
+
+\begin{remark}
+The representation of $n$ in the form $n=\sum_{s\in S}f_{s}$ in Exercise
+\ref{exeadd.fib.zeckendorf} is known as the
+\textit{\href{https://en.wikipedia.org/wiki/Zeckendorf's_theorem}{\textit{Zeckendorf
+representation}}} of $n$. It has a number of interesting properties and trivia
+related to it; for example, there is
+\href{https://www.encyclopediaofmath.org/index.php/Zeckendorf_representation}{a
+rule of thumb for converting miles into kilometers that uses it}.
+\end{remark}
+
+\begin{addexercise}
+\label{exeadd.fib.zeckendids}Let $\left(  f_{0},f_{1},f_{2},\ldots\right)  $
+be the Fibonacci numbers.
+
+\textbf{(a)} Prove the identities%
+\begin{align*}
+1f_{n} &  =f_{n}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq1;\\
+2f_{n} &  =f_{n-2}+f_{n+1}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq3;\\
+3f_{n} &  =f_{n-2}+f_{n+2}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq3;\\
+4f_{n} &  =f_{n-2}+f_{n}+f_{n+2}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq3.
+\end{align*}
+
+
+\textbf{(b)} Notice that the right hand sides of these identities have a
+specific form: they are sums of $f_{n+t}$ for $t$ ranging over a lacunar
+subset of $\mathbb{Z}$. (See Additional exercise \ref{exeadd.fib.zeckendorf}
+for the definition of \textquotedblleft lacunar\textquotedblright.) Try to
+find similar identities for $5f_{n}$ and $6f_{n}$.
+
+\textbf{(c)} Prove that such identities exist in general. More precisely,
+prove the following: Let $T$ be a finite set, and $a_{t}$ be an integer for
+every $t\in T$. Then, there exists a unique lacunar subset $S$ of $\mathbb{Z}$
+such that
+\begin{align*}
+\sum\limits_{t\in T}f_{n+a_{t}}  & =\sum\limits_{s\in S}f_{n+s}%
+\ \ \ \ \ \ \ \ \ \ \text{for every }n\in\mathbb{Z}\text{ which}\\
+& \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \text{ satisfies }n\geq\max\left(
+\left\{  -a_{t}\mid t\in T\right\}  \cup\left\{  -s\mid s\in S\right\}
+\right)  .
+\end{align*}
+(The condition $n\geq\max\left(  \left\{  -a_{t}\mid t\in T\right\}
+\cup\left\{  -s\mid s\in S\right\}  \right)  $ merely ensures that all the
+$f_{n+a_{t}}$ and $f_{n+s}$ are well-defined.)
+\end{addexercise}
+
+\begin{remark}
+Additional exercise \ref{exeadd.fib.zeckendids} \textbf{(c)} is \cite[Theorem
+1]{Gri-zeck}. I'd be delighted to see other proofs!
+
+Similarly I am highly interested in analogues of Additional exercises
+\ref{exeadd.fib.zeckendorf} and \ref{exeadd.fib.zeckendids} for other $\left(
+a,b\right)  $-recurrent sequences (e.g., Lucas numbers).
+\end{remark}
+
+\begin{addexercise}
+\label{exeadd.rec.addition}\textbf{(a)} Let $\left(  f_{0},f_{1},f_{2}%
+,\ldots\right)  $ be the Fibonacci numbers. Prove that $f_{m+n}=f_{m}%
+f_{n+1}+f_{m-1}f_{n}$ for any positive integer $m$ and any $n\in\mathbb{N}$.
+
+\textbf{(b)} Generalize to $\left(  a,b\right)  $-recurrent sequences in general.
+\end{addexercise}
+
+\begin{addexercise}
+\label{exeadd.rec.fibonomial}\textbf{(a)} Let $\left(  f_{0},f_{1}%
+,f_{2},\ldots\right)  $ be the Fibonacci numbers. For every $n\in\mathbb{N}$
+and $k\in\mathbb{N}$ satisfying $0\leq k\leq n$, define a rational number
+$\dbinom{n}{k}_{F}$ by%
+\[
+\dbinom{n}{k}_{F}=\dfrac{f_{n}f_{n-1}\cdots f_{n-k+1}}{f_{k}f_{k-1}\cdots
+f_{1}}.
+\]
+This is called the $\left(  n,k\right)  $-th \textit{Fibonomial coefficient}
+(in analogy to the binomial coefficient $\dbinom{n}{k}=\dfrac{n\left(
+n-1\right)  \cdots\left(  n-k+1\right)  }{k\left(  k-1\right)  \cdots1}$).
+
+Show that $\dbinom{n}{k}_{F}$ is an integer.
+
+\textbf{(b)} Try to extend as many identities for binomial coefficients as you
+can to Fibonomial coefficients.
+
+\textbf{(c)} Generalize to $\left(  a,b\right)  $-recurrent sequences in general.
+\end{addexercise}
 
 \section{\label{chp.perm}Permutations}
 
@@ -36085,6 +36209,10 @@ for Summing Finite Series}, Edited and Compiled by Jocelyn Quaintance, May 3,
 
 \bibitem[Gri10]{GriHyp}Darij Grinberg, \textit{A hyperfactorial divisibility},
 version of 27 July 2015.\newline\texttt{\url{http://web.mit.edu/~darij/www/}}
+
+\bibitem[Gri11]{Gri-zeck}Darij Grinberg, \textit{Zeckendorf family identities
+generalized}, arXiv preprint
+\texttt{\href{http://arxiv.org/abs/1103.4507v1}{arXiv:1103.4507v1}}.
 
 \bibitem[GriRei15]{Reiner}Darij Grinberg, Victor Reiner, \textit{Hopf algebras
 in Combinatorics}, August 25, 2015. arXiv preprint
