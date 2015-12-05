@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, December 04, 2015 14:21:58}
+%TCIDATA{LastRevised=Friday, December 04, 2015 19:54:01}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -26,6 +26,7 @@
 %EndMSIPreambleData
 \usetikzlibrary{arrows}
 \newcounter{exer}
+\newcounter{exera}
 \theoremstyle{definition}
 \newtheorem{theo}{Theorem}[section]
 \newenvironment{theorem}[1][]
@@ -79,6 +80,10 @@
 \newenvironment{exercise}[1][]
 {\begin{exmp}[#1]\begin{leftbar}}
 {\end{leftbar}\end{exmp}}
+\newtheorem{exetwo}[exera]{Additional exercise}
+\newenvironment{addexercise}[1][]
+{\begin{exetwo}[#1]\begin{leftbar}}
+{\end{leftbar}\end{exetwo}}
 \iffalse
 \newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
 \fi
@@ -736,7 +741,7 @@ this yields $\dbinom{X}{n}=\dfrac{X}{n}\dbinom{X-1}{n-1}$. This proves
 
 \item If $a\in\mathbb{N}$ and $i\in\mathbb{N}$ are such that $i\geq a$, then%
 \begin{equation}
-\dbinom{X}{i}\dbinom{i}{a}=\dbinom{X}{a}\dbinom{X-a}{i-a}%
+\dbinom{X}{i}\dbinom{i}{a}=\dbinom{X}{a}\dbinom{X-a}{i-a}
 \label{eq.binom.trinom-rev}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{eq.binom.trinom-rev}):} Let $a\in\mathbb{N}$
@@ -783,7 +788,7 @@ expressions is a polynomial indeterminate, and (\ref{eq.binom.formula}) cannot
 be applied to it!}. In particular, if $m\in\mathbb{Z}$, $a\in\mathbb{N}$ and
 $i\in\mathbb{N}$ are such that $i\geq a$, then%
 \begin{equation}
-\dbinom{m}{i}\dbinom{i}{a}=\dbinom{m}{a}\dbinom{m-a}{i-a}%
+\dbinom{m}{i}\dbinom{i}{a}=\dbinom{m}{a}\dbinom{m-a}{i-a}
 \label{eq.binom.trinom-rev.m}%
 \end{equation}
 \footnote{This formula is obtained from (\ref{eq.binom.trinom-rev}) by
@@ -1672,8 +1677,8 @@ $y$.
 \textbf{nonnegative} integers $c_{i,j}$ for all $0\leq i\leq n$ and $0\leq
 j\leq n$ such that%
 \begin{equation}
-\dbinom{XY}{n}=\sum_{i=0}^{n}\sum_{j=0}^{n}c_{i,j}\dbinom{X}{i}\dbinom{Y}%
-{j}\label{eq.exe.1.2.claim}%
+\dbinom{XY}{n}=\sum_{i=0}^{n}\sum_{j=0}^{n}c_{i,j}\dbinom{X}{i}\dbinom{Y}{j}
+\label{eq.exe.1.2.claim}%
 \end{equation}
 (an equality between polynomials in two variables $X$ and $Y$).
 \end{exercise}
@@ -2254,14 +2259,14 @@ instead of $x$) shows that%
 {b+x}{b}\nonumber\\
 &  =\underbrace{\left(  -1\right)  ^{a}\left(  -1\right)  ^{b}}_{=\left(
 -1\right)  ^{a+b}}\dbinom{a+x}{a}\dbinom{b+x}{b}=\left(  -1\right)
-^{a+b}\dbinom{a+x}{a}\dbinom{b+x}{b}.\label{pf.prop.binom.bin-id.g.3}%
+^{a+b}\dbinom{a+x}{a}\dbinom{b+x}{b}. \label{pf.prop.binom.bin-id.g.3}%
 \end{align}
 But every $i\in\left\{  0,1,\ldots,b\right\}  $ satisfies%
 \begin{align*}
-\dbinom{\left(  -x-1\right)  +i}{a+b} &  =\left(  -1\right)  ^{a+b}%
+\dbinom{\left(  -x-1\right)  +i}{a+b}  &  =\left(  -1\right)  ^{a+b}%
 \dbinom{a+b-\left(  \left(  -x-1\right)  +i\right)  -1}{a+b}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{eq.binom.upper-neg}), applied to
-}m=\left(  -x-1\right)  +i\text{ and }n=a+b\right)  \\
+}m=\left(  -x-1\right)  +i\text{ and }n=a+b\right) \\
 &  =\left(  -1\right)  ^{a+b}\dbinom{a+b+x-i}{a+b}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }a+b-\left(  \left(  -x-1\right)
 +i\right)  -1=a+b+x-i\right)  .
@@ -2277,7 +2282,8 @@ Hence,%
 Comparing this with (\ref{pf.prop.binom.bin-id.g.3}), we obtain%
 \[
 \left(  -1\right)  ^{a+b}\sum_{i=0}^{b}\dbinom{a}{i}\dbinom{b}{i}%
-\dbinom{a+b+x-i}{a+b}=\left(  -1\right)  ^{a+b}\dbinom{a+x}{a}\dbinom{b+x}{b}.
+\dbinom{a+b+x-i}{a+b}=\left(  -1\right)  ^{a+b}\dbinom{a+x}{a}\dbinom{b+x}%
+{b}.
 \]
 We can cancel $\left(  -1\right)  ^{a+b}$ from this equality (since $\left(
 -1\right)  ^{a+b}\neq0$), and thus obtain $\sum_{i=0}^{b}\dbinom{a}{i}%
@@ -2288,6 +2294,111 @@ proves Proposition \ref{prop.binom.bin-id} \textbf{(g)}.
 Many more examples of equalities with binomial coefficients, as well as
 advanced tactics for proving such equalities, can be found in \cite[Chapter
 5]{GKP}.
+
+\subsection{Additional exercises}
+
+This section contains some further exercises. These will not be used in the
+rest of the notes, and they can be skipped at will\footnote{The same, of
+course, can be said for many of the standard exercises.}. I am not planning to
+provide solutions for them.
+
+\begin{addexercise}
+\label{exeadd.prop.vandermonde.consequences.f}Find a different proof of
+Proposition \ref{prop.vandermonde.consequences} \textbf{(f)} that uses a
+double-counting argument (i.e., counting some combinatorial objects in two
+different ways, and then concluding that the results are equal).
+
+[\textbf{Hint:} How many $\left(  x+y+1\right)  $-element subsets does the set
+$\left\{  1,2,\ldots,n+1\right\}  $ have? Now, for a given $k\in\left\{
+0,1,\ldots,n\right\}  $, how many $\left(  x+y+1\right)  $-element subsets
+whose $\left(  x+1\right)  $-th smallest element is $k$ does the set $\left\{
+1,2,\ldots,n+1\right\}  $ have?]
+\end{addexercise}
+
+\begin{addexercise}
+\label{exeadd.multichoose}Let $n\in\mathbb{N}$ and $k\in\mathbb{N}$ be fixed.
+Show that the number of all $k$-tuples $\left(  a_{1},a_{2},\ldots
+,a_{k}\right)  \in\mathbb{N}^{k}$ satisfying $a_{1}+a_{2}+\cdots+a_{k}=n$
+equals $\dbinom{n+k-1}{k}$.
+\end{addexercise}
+
+\begin{remark}
+Additional exercise \ref{exeadd.multichoose} can be restated in terms of
+multisets. Namely, let $n\in\mathbb{N}$ and $k\in\mathbb{N}$ be fixed. Also,
+fix a $k$-element set $K$. Then, the number of $n$-element multisets whose
+elements all belong to $K$ is $\dbinom{n+k-1}{k}$. Indeed, we can WLOG assume
+that $K=\left\{  1,2,\ldots,k\right\}  $ (otherwise, just relabel the elements
+of $K$); then, the multisets whose elements all belong to $K$ are in bijection
+with the $k$-tuples $\left(  a_{1},a_{2},\ldots,a_{k}\right)  \in
+\mathbb{N}^{k}$. The bijection sends a multiset $M$ to the $k$-tuple $\left(
+m_{1}\left(  M\right)  ,m_{2}\left(  M\right)  ,\ldots,m_{k}\left(  M\right)
+\right)  $, where each $m_{i}\left(  M\right)  $ is the multiplicity of the
+element $i$ in $M$. The size of a multiset $M$ corresponds to the sum
+$a_{1}+a_{2}+\cdots+a_{k}$ of the entries of the resulting $k$-tuple; thus, we
+get a bijection between
+
+\begin{itemize}
+\item the $n$-element multisets whose elements all belong to $K$
+\end{itemize}
+
+and
+
+\begin{itemize}
+\item the $k$-tuples $\left(  a_{1},a_{2},\ldots,a_{k}\right)  \in
+\mathbb{N}^{k}$ satisfying $a_{1}+a_{2}+\cdots+a_{k}=n$.
+\end{itemize}
+
+As a consequence, Additional exercise \ref{exeadd.multichoose} shows that the
+number of the former multisets is $\dbinom{n+k-1}{k}$.
+
+Similarly, we can reinterpet the classical combinatorial interpretation of
+$\dbinom{n}{k}$ (as the number of $k$-element subsets of $\left\{
+1,2,\ldots,n\right\}  $) as follows: The number of all $k$-tuples $\left(
+a_{1},a_{2},\ldots,a_{k}\right)  \in\left\{  0,1\right\}  ^{k}$ satisfying
+$a_{1}+a_{2}+\cdots+a_{k}=n$ equals $\dbinom{n}{k}$.
+\end{remark}
+
+\begin{addexercise}
+\label{exeadd.multichoose-app}Let $n\in\mathbb{N}$ and $k\in\mathbb{N}$ be
+such that $n\geq k$. Prove that%
+\[
+\sum_{u=0}^{k}\dbinom{n+u-1}{u}\dbinom{n}{k-2u}=\dbinom{n+k-1}{k}.
+\]
+
+\end{addexercise}
+
+\begin{addexercise}
+\label{exeadd.bininv}Let $N\in\mathbb{N}$. The \textit{binomial transform} of
+a finite sequence $\left(  f_{0},f_{1},\ldots,f_{N}\right)  \in\mathbb{Z}%
+^{N+1}$ is defined to be the sequence $\left(  g_{0},g_{1},\ldots
+,g_{N}\right)  $ defined by%
+\[
+g_{n}=\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n}{i}f_{i}%
+\ \ \ \ \ \ \ \ \ \ \text{for every }n\in\left\{  0,1,\ldots,N\right\}  .
+\]
+
+
+\textbf{(a)} Let $\left(  f_{0},f_{1},\ldots,f_{N}\right)  \in\mathbb{Z}%
+^{N+1}$ be a finite sequence of integers. Let $\left(  g_{0},g_{1}%
+,\ldots,g_{N}\right)  $ be the binomial transform of $\left(  f_{0}%
+,f_{1},\ldots,f_{N}\right)  $. Show that $\left(  f_{0},f_{1},\ldots
+,f_{N}\right)  $ is, in turn, the binomial transform of $\left(  g_{0}%
+,g_{1},\ldots,g_{N}\right)  $.
+
+\textbf{(b)} Find the binomial transform of the sequence $\left(
+1,1,\ldots,1\right)  $.
+
+\textbf{(c)} For any given $a\in\mathbb{N}$, find the binomial transform of
+the sequence $\left(  \dbinom{0}{a},\dbinom{1}{a},\ldots,\dbinom{N}{a}\right)
+$.
+
+\textbf{(d)} For any given $q\in\mathbb{Z}$, find the binomial transform of
+the sequence $\left(  q^{0},q^{1},\ldots,q^{N}\right)  $.
+
+\textbf{(e)} Find the binomial transform of the sequence $\left(
+1,0,1,0,1,0,\ldots\right)  $ (this ends with $1$ if $N$ is even, and with $0$
+if $N$ is odd).
+\end{addexercise}
 
 \section{\label{chp.recur}Recurrent sequences}
 
@@ -31128,7 +31239,7 @@ This solves Exercise \ref{exe.det.a1a2anx}.
 
 \subsection{Solution to Exercise \ref{exe.det.2diags}}
 
-\begin{verlong}
+\begin{vershort}
 \begin{proof}
 [Solution to Exercise \ref{exe.det.2diags}.]Let $z$ be the permutation
 $\operatorname*{cyc}\nolimits_{n,n-1,\ldots,1}$ (where we are using the
@@ -31140,7 +31251,7 @@ z\left(  i\right)  =%
 i-1, & \text{if }i>1;\\
 n, & \text{if }i=1
 \end{cases}
-. \label{sol.det.2diags.z}%
+. \label{sol.det.2diags.short.z}%
 \end{equation}
 (This follows easily from the definition of $z$.) In particular, $z\left(
 1\right)  =n\neq1$ (since $n>1$), and thus $z\neq\operatorname*{id}$. Every
@@ -31164,7 +31275,7 @@ i-1, & \text{if }i=1
 \text{in the case when }i=1
 \end{array}
 \right) \nonumber\\
-&  =i-1\operatorname{mod}n. \label{sol.det.2diags.zmod}%
+&  =i-1\operatorname{mod}n. \label{sol.det.2diags.short.zmod}%
 \end{align}
 Notice also that $z=\operatorname*{cyc}\nolimits_{n,n-1,\ldots,1}$, so that
 $\left(  -1\right)  ^{z}=\left(  -1\right)  ^{\operatorname*{cyc}%
@@ -31186,20 +31297,20 @@ Now, I claim that if $\sigma\in S_{n}$ satisfies $\sigma\notin\left\{
 i\neq\sigma\left(  i\right)  \text{ and }i\not \equiv \sigma\left(  i\right)
 +1\operatorname{mod}n
 \end{array}
-\right)  . \label{sol.det.2diags.exi}%
+\right)  . \label{sol.det.2diags.short.exi}%
 \end{equation}
 
 
-\textit{Proof of (\ref{sol.det.2diags.exi}):} Let $\sigma\in S_{n}$ be such
-that $\sigma\notin\left\{  \operatorname*{id},z\right\}  $. Thus, $\sigma
-\neq\operatorname*{id}$ and $\sigma\neq z$.
+\textit{Proof of (\ref{sol.det.2diags.short.exi}):} Let $\sigma\in S_{n}$ be
+such that $\sigma\notin\left\{  \operatorname*{id},z\right\}  $. Thus,
+$\sigma\neq\operatorname*{id}$ and $\sigma\neq z$.
 
-We need to prove (\ref{sol.det.2diags.exi}). Indeed, let us assume the
+We need to prove (\ref{sol.det.2diags.short.exi}). Indeed, let us assume the
 contrary (for the sake of contradiction). Thus,%
 \begin{equation}
 \text{every }i\in\left\{  1,2,\ldots,n\right\}  \text{ satisfies either
 }i=\sigma\left(  i\right)  \text{ or }i\equiv\sigma\left(  i\right)
-+1\operatorname{mod}n. \label{sol.det.2diags.exi.pf.ass}%
++1\operatorname{mod}n. \label{sol.det.2diags.short.exi.pf.ass}%
 \end{equation}
 \footnote{I use the words \textquotedblleft either\textquotedblleft%
 /\textquotedblleft or\textquotedblright\ in a non-exclusive meaning (i.e.,
@@ -31214,7 +31325,7 @@ J\right)  \neq J$ (since $\sigma\neq\operatorname*{id}$). Let $j$ be the
 smallest such $J$. Thus, $\sigma\left(  j\right)  \neq j$, but every $J<j$
 satisfies $\sigma\left(  J\right)  =J$.
 
-Applying (\ref{sol.det.2diags.exi.pf.ass}) to $i=j$, we see that either
+Applying (\ref{sol.det.2diags.short.exi.pf.ass}) to $i=j$, we see that either
 $j=\sigma\left(  j\right)  $ or $j\equiv\sigma\left(  j\right)
 +1\operatorname{mod}n$. Since $j=\sigma\left(  j\right)  $ cannot hold
 (because we have $\sigma\left(  j\right)  \neq j$), we thus have
@@ -31242,16 +31353,16 @@ i\right)  \neq z\left(  i\right)  $. Consider this $i$.
 \par
 If we had $i\equiv\sigma\left(  i\right)  +1\operatorname{mod}n$, then we
 would have $\sigma\left(  i\right)  \equiv i-1\equiv z\left(  i\right)
-\operatorname{mod}n$ (by (\ref{sol.det.2diags.zmod})), which would entail
-$\sigma\left(  i\right)  =z\left(  i\right)  $ (since both $\sigma\left(
-i\right)  $ and $z\left(  i\right)  $ belong to $\left\{  1,2,\ldots
-,n\right\}  $); but this would contradict $\sigma\left(  i\right)  \neq
-z\left(  i\right)  $. Hence, we cannot have $i\equiv\sigma\left(  i\right)
-+1\operatorname{mod}n$.
+\operatorname{mod}n$ (by (\ref{sol.det.2diags.short.zmod})), which would
+entail $\sigma\left(  i\right)  =z\left(  i\right)  $ (since both
+$\sigma\left(  i\right)  $ and $z\left(  i\right)  $ belong to $\left\{
+1,2,\ldots,n\right\}  $); but this would contradict $\sigma\left(  i\right)
+\neq z\left(  i\right)  $. Hence, we cannot have $i\equiv\sigma\left(
+i\right)  +1\operatorname{mod}n$.
 \par
 We have either $i=\sigma\left(  i\right)  $ or $i\equiv\sigma\left(  i\right)
-+1\operatorname{mod}n$ (because of (\ref{sol.det.2diags.exi.pf.ass})). Thus,
-$i=\sigma\left(  i\right)  $ (since we cannot have $i\equiv\sigma\left(
++1\operatorname{mod}n$ (because of (\ref{sol.det.2diags.short.exi.pf.ass})).
+Thus, $i=\sigma\left(  i\right)  $ (since we cannot have $i\equiv\sigma\left(
 i\right)  +1\operatorname{mod}n$). Hence, there exists a $K\in\left\{
 1,2,\ldots,n\right\}  $ such that $\sigma\left(  K\right)  =K$ (namely,
 $K=i$). Qed.}. Let $k$ be the largest such $K$. Thus, $\sigma\left(  k\right)
@@ -31266,18 +31377,772 @@ We cannot have $k=n$ (because otherwise, we would have $\sigma\left(
 contradict $\sigma\left(  n\right)  \neq n$). Thus, $k<n$. Hence,
 $k+1\in\left\{  1,2,\ldots,n\right\}  $. Therefore, $\sigma\left(  k+1\right)
 \neq k+1$ (since every $K>k$ satisfies $\sigma\left(  K\right)  \neq K$, and
-since $k+1>k$). Now, applying (\ref{sol.det.2diags.exi.pf.ass}) to $i=k+1$, we
-conclude that either $k+1=\sigma\left(  k+1\right)  $ or $k+1\equiv
-\sigma\left(  k+1\right)  +1\operatorname{mod}n$. Since we cannot have
-$k+1=\sigma\left(  k+1\right)  $ (because $\sigma\left(  k+1\right)  \neq
+since $k+1>k$). Now, applying (\ref{sol.det.2diags.short.exi.pf.ass}) to
+$i=k+1$, we conclude that either $k+1=\sigma\left(  k+1\right)  $ or
+$k+1\equiv\sigma\left(  k+1\right)  +1\operatorname{mod}n$. Since we cannot
+have $k+1=\sigma\left(  k+1\right)  $ (because $\sigma\left(  k+1\right)  \neq
 k+1$), we thus must have $k+1\equiv\sigma\left(  k+1\right)
 +1\operatorname{mod}n$. In other words, $k\equiv\sigma\left(  k+1\right)
 \operatorname{mod}n$. Hence, $k=\sigma\left(  k+1\right)  $ (since both $k$
 and $\sigma\left(  k+1\right)  $ belong to $\left\{  1,2,\ldots,n\right\}  $),
 so that $\sigma\left(  k+1\right)  =k=\sigma\left(  k\right)  $. Since
-$\sigma$ is surjective, this yields $k+1=k$, which is absurd. This
+$\sigma$ is injective, this yields $k+1=k$, which is absurd. This
 contradiction shows that our assumption was wrong. Hence,
-(\ref{sol.det.2diags.exi}) is proven.
+(\ref{sol.det.2diags.short.exi}) is proven.
+
+Let us now write our matrix $A$ in the form $A=\left(  a_{i,j}\right)  _{1\leq
+i\leq n,\ 1\leq j\leq n}$. Then,%
+\[
+\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}=A=\left(
+\begin{cases}
+a_{j}, & \text{if }i=j;\\
+b_{j}, & \text{if }i\equiv j+1\operatorname{mod}n;\\
+0, & \text{otherwise}%
+\end{cases}
+\right)  _{1\leq i\leq n,\ 1\leq j\leq n}.
+\]
+In other words, we have%
+\begin{equation}
+a_{i,j}=%
+\begin{cases}
+a_{j}, & \text{if }i=j;\\
+b_{j}, & \text{if }i\equiv j+1\operatorname{mod}n;\\
+0, & \text{otherwise}%
+\end{cases}
+\label{sol.det.2diags.short.aij}%
+\end{equation}
+for every $\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}$.
+
+It is now easy to see that if $\sigma\in S_{n}$ satisfies $\sigma
+\notin\left\{  \operatorname*{id},z\right\}  $, then
+\begin{equation}
+\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }=0 \label{sol.det.2diags.short.0}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.det.2diags.short.0}):} Let $\sigma\in
+S_{n}$ be such that $\sigma\notin\left\{  \operatorname*{id},z\right\}  $.
+Thus, there exists an $i\in\left\{  1,2,\ldots,n\right\}  $ satisfying
+$i\neq\sigma\left(  i\right)  $ and $i\not \equiv \sigma\left(  i\right)
++1\operatorname{mod}n$ (because of (\ref{sol.det.2diags.short.exi})). Consider
+this $i$.
+\par
+From (\ref{sol.det.2diags.short.aij}) (applied to $\left(  i,\sigma\left(
+i\right)  \right)  $ instead of $\left(  i,j\right)  $), we obtain%
+\[
+a_{i,\sigma\left(  i\right)  }=%
+\begin{cases}
+a_{\sigma\left(  i\right)  }, & \text{if }i=\sigma\left(  i\right)  ;\\
+b_{\sigma\left(  i\right)  }, & \text{if }i\equiv\sigma\left(  i\right)
++1\operatorname{mod}n;\\
+0, & \text{otherwise}%
+\end{cases}
+=0
+\]
+(since $i\neq\sigma\left(  i\right)  $ and $i\not \equiv \sigma\left(
+i\right)  +1\operatorname{mod}n$).
+\par
+Now, let us forget that we fixed $i$. We thus have shown that there exists an
+$i\in\left\{  1,2,\ldots,n\right\}  $ satisfying $a_{i,\sigma\left(  i\right)
+}=0$. In other words, at least one factor of the product $\prod_{i=1}%
+^{n}a_{i,\sigma\left(  i\right)  }$ equals $0$. Therefore, the whole product
+$\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }$ equals $0$. This proves
+(\ref{sol.det.2diags.short.0}).}.
+
+Now, (\ref{eq.det.eq.2}) becomes%
+\begin{align*}
+\det A  &  =\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\prod_{i=1}%
+^{n}a_{i,\sigma\left(  i\right)  }\\
+&  =\underbrace{\left(  -1\right)  ^{\operatorname*{id}}}_{=1}\prod_{i=1}%
+^{n}\underbrace{a_{i,\operatorname*{id}\left(  i\right)  }}_{=a_{i,i}%
+}+\underbrace{\left(  -1\right)  ^{z}}_{=\left(  -1\right)  ^{n-1}}\prod
+_{i=1}^{n}a_{i,z\left(  i\right)  }+\sum_{\substack{\sigma\in S_{n}%
+;\\\sigma\notin\left\{  \operatorname*{id},z\right\}  }}\left(  -1\right)
+^{\sigma}\underbrace{\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }%
+}_{\substack{=0\\\text{(by (\ref{sol.det.2diags.short.0}))}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have split off the addends for }\sigma=\operatorname*{id}\text{
+and}\\
+\text{for }\sigma=z\text{ from the sum (since }z\neq\operatorname*{id}\text{)}%
+\end{array}
+\right) \\
+&  =\prod_{i=1}^{n}a_{i,i}+\left(  -1\right)  ^{n-1}\prod_{i=1}^{n}%
+a_{i,z\left(  i\right)  }+\underbrace{\sum_{\substack{\sigma\in S_{n}%
+;\\\sigma\notin\left\{  \operatorname*{id},z\right\}  }}\left(  -1\right)
+^{\sigma}0}_{=0}\\
+&  =\prod_{i=1}^{n}\underbrace{a_{i,i}}_{\substack{=%
+\begin{cases}
+a_{i}, & \text{if }i=i;\\
+b_{i}, & \text{if }i\equiv i+1\operatorname{mod}n;\\
+0, & \text{otherwise}%
+\end{cases}
+\\\text{(by (\ref{sol.det.2diags.short.aij}), applied to }\left(  i,i\right)
+\text{ instead of }\left(  i,j\right)  \text{)}}}+\left(  -1\right)
+^{n-1}\prod_{i=1}^{n}\underbrace{a_{i,z\left(  i\right)  }}_{\substack{=%
+\begin{cases}
+a_{z\left(  i\right)  }, & \text{if }i=z\left(  i\right)  ;\\
+b_{z\left(  i\right)  }, & \text{if }i\equiv z\left(  i\right)
++1\operatorname{mod}n;\\
+0, & \text{otherwise}%
+\end{cases}
+\\\text{(by (\ref{sol.det.2diags.short.aij}), applied to }\left(  i,z\left(
+i\right)  \right)  \text{ instead of }\left(  i,j\right)  \text{)}}}\\
+&  =\prod_{i=1}^{n}\underbrace{%
+\begin{cases}
+a_{i}, & \text{if }i=i;\\
+b_{i}, & \text{if }i\equiv i+1\operatorname{mod}n;\\
+0, & \text{otherwise}%
+\end{cases}
+}_{\substack{=a_{i}\\\text{(since }i=i\text{)}}}+\left(  -1\right)
+^{n-1}\prod_{i=1}^{n}\underbrace{%
+\begin{cases}
+a_{z\left(  i\right)  }, & \text{if }i=z\left(  i\right)  ;\\
+b_{z\left(  i\right)  }, & \text{if }i\equiv z\left(  i\right)
++1\operatorname{mod}n;\\
+0, & \text{otherwise}%
+\end{cases}
+}_{\substack{=b_{z\left(  i\right)  }\\\text{(since }i\equiv z\left(
+i\right)  +1\operatorname{mod}n\text{ (by (\ref{sol.det.2diags.short.zmod}%
+)))}}}\\
+&  =\prod_{i=1}^{n}a_{i}+\left(  -1\right)  ^{n-1}\underbrace{\prod_{i=1}%
+^{n}b_{z\left(  i\right)  }}_{\substack{=\prod_{i=1}^{n}b_{i}\\\text{(here, we
+have substituted }i\\\text{for }z\left(  i\right)  \text{ in the
+product,}\\\text{since }z:\left\{  1,2,\ldots,n\right\}  \rightarrow\left\{
+1,2,\ldots,n\right\}  \\\text{is a bijection)}}}=\underbrace{\prod_{i=1}%
+^{n}a_{i}}_{=a_{1}a_{2}\cdots a_{n}}+\left(  -1\right)  ^{n-1}%
+\underbrace{\prod_{i=1}^{n}b_{i}}_{=b_{1}b_{2}\cdots b_{n}}\\
+&  =a_{1}a_{2}\cdots a_{n}+\left(  -1\right)  ^{n-1}b_{1}b_{2}\cdots b_{n}.
+\end{align*}
+This solves Exercise \ref{exe.det.2diags}.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Solution to Exercise \ref{exe.det.2diags}.]We first make some preliminary definitions.
+
+Let $\left[  n\right]  $ denote the set $\left\{  1,2,\ldots,n\right\}  $. The
+set $S_{n}$ is the set of all permutations of $\left\{  1,2,\ldots,n\right\}
+$. In other words, the set $S_{n}$ is the set of all permutations of $\left[
+n\right]  $ (since $\left[  n\right]  =\left\{  1,2,\ldots,n\right\}  $).
+
+The integers $1,2,\ldots,n$ take all possible residues modulo $n$, and each of
+them exactly once. In other words: For every $h\in\mathbb{Z}$, there exists a
+unique element $g\in\left\{  1,2,\ldots,n\right\}  $ satisfying $g\equiv
+h\operatorname{mod}n$. Since $\left\{  1,2,\ldots,n\right\}  =\left[
+n\right]  $, this rewrites as follows: For every $h\in\mathbb{Z}$, there
+exists a unique element $g\in\left\{  1,2,\ldots,n\right\}  $ satisfying
+$g\equiv h\operatorname{mod}n$. We shall denote this $g$ by
+$\operatorname*{posrem}h$. Thus, we have the following facts:
+
+\begin{itemize}
+\item For every $h\in\mathbb{Z}$, we have%
+\begin{equation}
+\operatorname*{posrem}h\in\left[  n\right]  \ \ \ \ \ \ \ \ \ \ \text{and}%
+\ \ \ \ \ \ \ \ \ \ \operatorname*{posrem}h\equiv h\operatorname{mod}n
+\label{sol.det.2diags.posrem.1}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.det.2diags.posrem.1}):} Let
+$h\in\mathbb{Z}$. We know that $\operatorname*{posrem}h$ is the unique element
+$g\in\left[  n\right]  $ satisfying $g\equiv h\operatorname{mod}n$ (because
+this is how we have defined $\operatorname*{posrem}h$). Thus,
+$\operatorname*{posrem}h$ is an element $g\in\left[  n\right]  $ satisfying
+$g\equiv h\operatorname{mod}n$. In other words, $\operatorname*{posrem}h$ is
+an element of $\left[  n\right]  $ and satisfies $\operatorname*{posrem}%
+h\equiv h\operatorname{mod}n$. In other words, $\operatorname*{posrem}%
+h\in\left[  n\right]  $ and $\operatorname*{posrem}h\equiv h\operatorname{mod}%
+n$. This proves (\ref{sol.det.2diags.posrem.1}).}.
+
+\item If $h\in\mathbb{Z}$ and $k\in\left[  n\right]  $ are such that $k\equiv
+h\operatorname{mod}n$, then%
+\begin{equation}
+k=\operatorname*{posrem}h \label{sol.det.2diags.posrem.2}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.det.2diags.posrem.2}):} Let
+$h\in\mathbb{Z}$ and $k\in\left[  n\right]  $ are such that $k\equiv
+h\operatorname{mod}n$.
+\par
+We know that $\operatorname*{posrem}h$ is the unique element $g\in\left[
+n\right]  $ satisfying $g\equiv h\operatorname{mod}n$ (because this is how we
+have defined $\operatorname*{posrem}h$). Thus, in particular,
+$\operatorname*{posrem}h$ is the only such element. In other words, if
+$g\in\left[  n\right]  $ is any element satisfying $g\equiv
+h\operatorname{mod}n$, then $g=\operatorname*{posrem}h$. Applying this to
+$g=k$, we obtain $k=\operatorname*{posrem}h$ (since $k\in\left[  n\right]  $
+is an element satisfying $k\equiv h\operatorname{mod}n$). This proves
+(\ref{sol.det.2diags.posrem.2}).}.
+
+\item If $a\in\left[  n\right]  $ and $b\in\left[  n\right]  $ are such that
+$a\equiv b\operatorname{mod}n$, then%
+\begin{equation}
+a=b \label{sol.det.2diags.posrem.3}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.det.2diags.posrem.3}):} Let $a\in\left[
+n\right]  $ and $b\in\left[  n\right]  $ be such that $a\equiv
+b\operatorname{mod}n$. Applying (\ref{sol.det.2diags.posrem.2}) to $h=b$ and
+$k=a$, we obtain $a=\operatorname*{posrem}b$ (since $a\equiv
+b\operatorname{mod}n$). Applying (\ref{sol.det.2diags.posrem.2}) to $h=b$ and
+$k=b$, we obtain $b=\operatorname*{posrem}b$ (since $b\equiv
+b\operatorname{mod}n$). Thus, $a=\operatorname*{posrem}b=b$. This proves
+(\ref{sol.det.2diags.posrem.3}).}.
+\end{itemize}
+
+Now, fix $a\in\mathbb{Z}$. Every $g\in\left[  n\right]  $ satisfies
+$\operatorname*{posrem}\left(  g+a\right)  \in\left[  n\right]  $%
+\ \ \ \ \footnote{\textit{Proof.} Let $g\in\left[  n\right]  $. Then,
+(\ref{sol.det.2diags.posrem.1}) (applied to $h=g+a$) shows that
+$\operatorname*{posrem}\left(  g+a\right)  \in\left[  n\right]  $ and
+$\operatorname*{posrem}\left(  g+a\right)  \equiv g+a\operatorname{mod}n$. In
+particular, $\operatorname*{posrem}\left(  g+a\right)  \in\left[  n\right]  $,
+qed.}. Hence, we can define a map $\operatorname*{shift}\nolimits_{a}:\left[
+n\right]  \rightarrow\left[  n\right]  $ by setting%
+\[
+\left(  \operatorname*{shift}\nolimits_{a}\left(  g\right)
+=\operatorname*{posrem}\left(  g+a\right)  \ \ \ \ \ \ \ \ \ \ \text{for every
+}g\in\left[  n\right]  \right)  .
+\]
+Consider this map $\operatorname*{shift}\nolimits_{a}$.
+
+Let us now forget that we fixed $a\in\mathbb{Z}$. We thus have defined a map
+$\operatorname*{shift}\nolimits_{a}:\left[  n\right]  \rightarrow\left[
+n\right]  $ for every $a\in\mathbb{Z}$. (For example, if $n=5$ and $a=2$, then
+the map $\operatorname*{shift}\nolimits_{a}$ sends $1,2,3,4,5$ to $3,4,5,1,2$, respectively.)
+
+We observe the following facts:
+
+\begin{itemize}
+\item We have%
+\begin{equation}
+\operatorname*{shift}\nolimits_{0}=\operatorname*{id}
+\label{sol.det.2diags.shift.0}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.det.2diags.shift.0}):} Let $g\in\left[
+n\right]  $. Then, $g\equiv g\operatorname{mod}n$. Hence,
+(\ref{sol.det.2diags.posrem.2}) (applied to $h=g$ and $k=g$) shows that
+$g=\operatorname*{posrem}g$. Now, the definition of $\operatorname*{shift}%
+\nolimits_{0}$ shows that $\operatorname*{shift}\nolimits_{0}\left(  g\right)
+=\operatorname*{posrem}\left(  \underbrace{g+0}_{=g}\right)
+=\operatorname*{posrem}g$. Compared with $\operatorname*{id}\left(  g\right)
+=g=\operatorname*{posrem}g$, this yields $\operatorname*{shift}\nolimits_{0}%
+\left(  g\right)  =\operatorname*{id}\left(  g\right)  $.
+\par
+Now, let us forget that we fixed $g$. We thus have proven that
+$\operatorname*{shift}\nolimits_{0}\left(  g\right)  =\operatorname*{id}%
+\left(  g\right)  $ for every $g\in\left[  n\right]  $. In other words,
+$\operatorname*{shift}\nolimits_{0}=\operatorname*{id}$. This proves
+(\ref{sol.det.2diags.shift.0}).}.
+
+\item We have%
+\begin{equation}
+\operatorname*{shift}\nolimits_{a+b}=\operatorname*{shift}\nolimits_{a}%
+\circ\operatorname*{shift}\nolimits_{b}\ \ \ \ \ \ \ \ \ \ \text{for any }%
+a\in\mathbb{Z}\text{ and }b\in\mathbb{Z} \label{sol.det.2diags.shift.a+b}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.det.2diags.shift.a+b}):} Let
+$a\in\mathbb{Z}$ and $b\in\mathbb{Z}$.
+\par
+Let $g\in\left[  n\right]  $. Then, $\operatorname*{shift}\nolimits_{a+b}%
+\left(  g\right)  =\operatorname*{posrem}\left(  g+a+b\right)  $ (by the
+definition of $\operatorname*{shift}\nolimits_{a+b}$).
+\par
+On the other hand, $\operatorname*{shift}\nolimits_{b}\left(  g\right)
+=\operatorname*{posrem}\left(  g+b\right)  $ (by the definition of
+$\operatorname*{shift}\nolimits_{b}$). Applying (\ref{sol.det.2diags.posrem.1}%
+) to $h=g+b$, we obtain $\operatorname*{posrem}\left(  g+b\right)  \in\left[
+n\right]  $ and $\operatorname*{posrem}\left(  g+b\right)  \equiv
+g+b\operatorname{mod}n$.
+\par
+Moreover, $\left(  \operatorname*{shift}\nolimits_{a}\circ
+\operatorname*{shift}\nolimits_{b}\right)  \left(  g\right)
+=\operatorname*{shift}\nolimits_{a}\left(  \operatorname*{shift}%
+\nolimits_{b}\left(  g\right)  \right)  =\operatorname*{posrem}\left(
+\operatorname*{shift}\nolimits_{b}\left(  g\right)  +a\right)  $ (by the
+definition of $\operatorname*{shift}\nolimits_{a}$). Applying
+(\ref{sol.det.2diags.posrem.1}) to $h=\operatorname*{shift}\nolimits_{b}%
+\left(  g\right)  +a$, we obtain $\operatorname*{posrem}\left(
+\operatorname*{shift}\nolimits_{b}\left(  g\right)  +a\right)  \in\left[
+n\right]  $ and $\operatorname*{posrem}\left(  \operatorname*{shift}%
+\nolimits_{b}\left(  g\right)  +a\right)  \equiv\operatorname*{shift}%
+\nolimits_{b}\left(  g\right)  +a\operatorname{mod}n$.
+\par
+Now,%
+\begin{align*}
+&  \left(  \operatorname*{shift}\nolimits_{a}\circ\operatorname*{shift}%
+\nolimits_{b}\right)  \left(  g\right) \\
+&  =\operatorname*{posrem}\left(  \operatorname*{shift}\nolimits_{b}\left(
+g\right)  +a\right)  \equiv\underbrace{\operatorname*{shift}\nolimits_{b}%
+\left(  g\right)  }_{=\operatorname*{posrem}\left(  g+b\right)  \equiv
+g+b\operatorname{mod}n}+a\\
+&  \equiv g+b+a=g+a+b\operatorname{mod}n.
+\end{align*}
+Thus, we can apply (\ref{sol.det.2diags.posrem.3}) to $h=g+a+b$ and $k=\left(
+\operatorname*{shift}\nolimits_{a}\circ\operatorname*{shift}\nolimits_{b}%
+\right)  \left(  g\right)  $ (since $\left(  \operatorname*{shift}%
+\nolimits_{a}\circ\operatorname*{shift}\nolimits_{b}\right)  \left(  g\right)
+=\operatorname*{posrem}\left(  \operatorname*{shift}\nolimits_{b}\left(
+g\right)  +a\right)  \in\left[  n\right]  $). As a result, we obtain $\left(
+\operatorname*{shift}\nolimits_{a}\circ\operatorname*{shift}\nolimits_{b}%
+\right)  \left(  g\right)  =\operatorname*{posrem}\left(  g+a+b\right)  $.
+Comparing this with $\operatorname*{shift}\nolimits_{a+b}\left(  g\right)
+=\operatorname*{posrem}\left(  g+a+b\right)  $, we obtain $\left(
+\operatorname*{shift}\nolimits_{a}\circ\operatorname*{shift}\nolimits_{b}%
+\right)  \left(  g\right)  =\operatorname*{shift}\nolimits_{a+b}\left(
+g\right)  $.
+\par
+Now, let us forget that we fixed $g$. We thus have shown that $\left(
+\operatorname*{shift}\nolimits_{a}\circ\operatorname*{shift}\nolimits_{b}%
+\right)  \left(  g\right)  =\operatorname*{shift}\nolimits_{a+b}\left(
+g\right)  $ for every $g\in\left[  n\right]  $. In other words,
+$\operatorname*{shift}\nolimits_{a}\circ\operatorname*{shift}\nolimits_{b}%
+=\operatorname*{shift}\nolimits_{a+b}$. This proves
+(\ref{sol.det.2diags.shift.a+b}).}.
+
+\item We have%
+\begin{equation}
+\operatorname*{shift}\nolimits_{a}\in S_{n}\ \ \ \ \ \ \ \ \ \ \text{for every
+}a\in\mathbb{Z} \label{sol.det.2diags.shift.Sn}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.det.2diags.shift.Sn}):} Let
+$a\in\mathbb{Z}$. From (\ref{sol.det.2diags.shift.a+b}) (applied to $b=-a$),
+we obtain $\operatorname*{shift}\nolimits_{a+\left(  -a\right)  }%
+=\operatorname*{shift}\nolimits_{a}\circ\operatorname*{shift}\nolimits_{-a}$.
+Hence,%
+\begin{align*}
+\operatorname*{shift}\nolimits_{a}\circ\operatorname*{shift}\nolimits_{-a}  &
+=\operatorname*{shift}\nolimits_{a+\left(  -a\right)  }=\operatorname*{shift}%
+\nolimits_{0}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }a+\left(  -a\right)
+=0\right) \\
+&  =\operatorname*{id}\ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{sol.det.2diags.shift.0})}\right)  .
+\end{align*}
+\par
+From (\ref{sol.det.2diags.shift.a+b}) (applied to $-a$ and $a$ instead of $a$
+and $b$), we obtain $\operatorname*{shift}\nolimits_{\left(  -a\right)
++a}=\operatorname*{shift}\nolimits_{-a}\circ\operatorname*{shift}%
+\nolimits_{a}$. Hence,%
+\begin{align*}
+\operatorname*{shift}\nolimits_{-a}\circ\operatorname*{shift}\nolimits_{a}  &
+=\operatorname*{shift}\nolimits_{\left(  -a\right)  +a}=\operatorname*{shift}%
+\nolimits_{0}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(  -a\right)
++a=0\right) \\
+&  =\operatorname*{id}\ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{sol.det.2diags.shift.0})}\right)  .
+\end{align*}
+\par
+The maps $\operatorname*{shift}\nolimits_{a}$ and $\operatorname*{shift}%
+\nolimits_{-a}$ are mutually inverse (since $\operatorname*{shift}%
+\nolimits_{a}\circ\operatorname*{shift}\nolimits_{-a}=\operatorname*{id}$ and
+$\operatorname*{shift}\nolimits_{-a}\circ\operatorname*{shift}\nolimits_{a}%
+=\operatorname*{id}$). Thus, the map $\operatorname*{shift}\nolimits_{a}$ is
+invertible, and therefore a bijection.
+\par
+So the map $\operatorname*{shift}\nolimits_{a}$ is a bijection $\left[
+n\right]  \rightarrow\left[  n\right]  $. In other words, the map
+$\operatorname*{shift}\nolimits_{a}$ is a permutation of the set $\left[
+n\right]  $. In other words, the map $\operatorname*{shift}\nolimits_{a}$ is a
+permutation of the set $\left\{  1,2,\ldots,n\right\}  $ (since $\left[
+n\right]  =\left\{  1,2,\ldots,n\right\}  $). In other words,
+$\operatorname*{shift}\nolimits_{a}\in S_{n}$ (since $S_{n}$ is the set of all
+permutations of the set $\left\{  1,2,\ldots,n\right\}  $). This proves
+(\ref{sol.det.2diags.shift.Sn}).}.
+\end{itemize}
+
+Let $z=\operatorname*{shift}\nolimits_{-1}$. Then, $z=\operatorname*{shift}%
+\nolimits_{-1}\in S_{n}$ (by (\ref{sol.det.2diags.shift.Sn}), applied to
+$a=-1$). In other words, $z$ is a permutation of $\left[  n\right]  $ (since
+$S_{n}$ is the set of all permutations of $\left[  n\right]  $). We observe
+some properties of $z$:
+
+\begin{itemize}
+\item We have $z=\operatorname*{cyc}\nolimits_{n,n-1,\ldots,1}$, where we are
+using the notations of Definition \ref{def.perm.cycles}. We will not use this
+fact, and thus we will not prove it (but the proof is almost trivial).
+
+\item We have%
+\begin{equation}
+z\left(  i\right)  \equiv i-1\operatorname{mod}n\ \ \ \ \ \ \ \ \ \ \text{for
+every }i\in\left[  n\right]  \label{sol.det.2diags.zmod}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.det.2diags.zmod}):} Let $i\in\left[
+n\right]  $. Applying (\ref{sol.det.2diags.posrem.1}) to $h=i-1$, we obtain
+$\operatorname*{posrem}\left(  i-1\right)  \in\left[  n\right]  $ and
+$\operatorname*{posrem}\left(  i-1\right)  \equiv i-1\operatorname{mod}n$.
+Now,%
+\begin{align*}
+\underbrace{z}_{=\operatorname*{shift}\nolimits_{-1}}\left(  i\right)   &
+=\operatorname*{shift}\nolimits_{-1}\left(  i\right)  =\operatorname*{posrem}%
+\left(  \underbrace{i+\left(  -1\right)  }_{=i-1}\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\operatorname*{shift}%
+\nolimits_{-1}\right)  \\
+&  =\operatorname*{posrem}\left(  i-1\right)  \equiv i-1\operatorname{mod}n.
+\end{align*}
+This proves (\ref{sol.det.2diags.zmod}).}. In other words,%
+\begin{equation}
+z\left(  i\right)  +1\equiv i\operatorname{mod}n\ \ \ \ \ \ \ \ \ \ \text{for
+every }i\in\left[  n\right]  .\label{sol.det.2diags.zmod2}%
+\end{equation}
+In particular,%
+\begin{equation}
+i\neq z\left(  i\right)  \ \ \ \ \ \ \ \ \ \ \text{for every }i\in\left[
+n\right]  \label{sol.det.2diags.zmod0}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.det.2diags.zmod0}):} Let $i\in\left[
+n\right]  $. We have $i\equiv z\left(  i\right)  +1\operatorname{mod}n$ (by
+(\ref{sol.det.2diags.zmod2})), so that $i-z\left(  i\right)  \equiv
+1\not \equiv 0\operatorname{mod}n$ (since $n>1$). In other words,
+$i\not \equiv z\left(  i\right)  \operatorname{mod}n$. Hence, $i\neq z\left(
+i\right)  $. This proves (\ref{sol.det.2diags.zmod0}).}.
+
+\item We have
+\begin{equation}
+z\left(  1\right)  =n\label{sol.det.2diags.shift.z.1}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.det.2diags.shift.z.1}):} We have
+$n\in\left\{  1,2,\ldots,n\right\}  =\left[  n\right]  $ and $n\equiv
+0\operatorname{mod}n$. Hence, $n=\operatorname*{posrem}0$ (by
+(\ref{sol.det.2diags.posrem.2}), applied to $k=n$ and $h=0$). Now,
+\begin{align*}
+\underbrace{z}_{=\operatorname*{shift}\nolimits_{-1}}\left(  1\right)   &
+=\operatorname*{shift}\nolimits_{-1}\left(  1\right)  =\operatorname*{posrem}%
+\underbrace{\left(  1+\left(  -1\right)  \right)  }_{=0}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\operatorname*{shift}%
+\nolimits_{-1}\right)  \\
+&  =\operatorname*{posrem}0=n\ \ \ \ \ \ \ \ \ \ \left(  \text{since
+}n=\operatorname*{posrem}0\right)  .
+\end{align*}
+This proves (\ref{sol.det.2diags.shift.z.1}).}.
+
+\item We have%
+\begin{equation}
+z\left(  i\right)  =i-1\label{sol.det.2diags.shift.z.i}%
+\end{equation}
+for every $i\in\left[  n\right]  $ satisfying $i\neq1$%
+\ \ \ \ \footnote{\textit{Proof of (\ref{sol.det.2diags.shift.z.i}):} Let
+$i\in\left[  n\right]  $ be such that $i\neq1$. We have $i\in\left[  n\right]
+=\left\{  1,2,\ldots,n\right\}  $. Combining this with $i\neq1$, we obtain
+$i\in\left\{  1,2,\ldots,n\right\}  \setminus\left\{  1\right\}  =\left\{
+2,3,\ldots,n\right\}  $, so that $i-1\in\left\{  1,2,\ldots,n-1\right\}
+\subseteq\left\{  1,2,\ldots,n\right\}  =\left[  n\right]  $.
+\par
+We have $i-1\in\left[  n\right]  $ and $i-1\equiv i-1\operatorname{mod}n$.
+Hence, $i-1=\operatorname*{posrem}\left(  i-1\right)  $ (by
+(\ref{sol.det.2diags.posrem.2}), applied to $k=i-1$ and $h=i-1$). Now,
+\begin{align*}
+\underbrace{z}_{=\operatorname*{shift}\nolimits_{-1}}\left(  i\right)   &
+=\operatorname*{shift}\nolimits_{-1}\left(  i\right)  =\operatorname*{posrem}%
+\underbrace{\left(  i+\left(  -1\right)  \right)  }_{=i-1}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\operatorname*{shift}%
+\nolimits_{-1}\right)  \\
+&  =\operatorname*{posrem}\left(  i-1\right)  =i-1\ \ \ \ \ \ \ \ \ \ \left(
+\text{since }i-1=\operatorname*{posrem}\left(  i-1\right)  \right)  .
+\end{align*}
+This proves (\ref{sol.det.2diags.shift.z.i}).}.
+\end{itemize}
+
+For every $\sigma\in S_{n}$, we let $\operatorname*{Inv}\left(  \sigma\right)
+$ be the set of all inversions of the permutation $\sigma$. Thus, for every
+$\sigma\in S_{n}$, we have%
+\begin{align}
+\ell\left(  \sigma\right)   &  =\left(  \text{the number of inversions of
+}\sigma\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }%
+\ell\left(  \sigma\right)  \right)  \nonumber\\
+&  =\left\vert \underbrace{\left(  \text{the set of all inversions of }%
+\sigma\right)  }_{\substack{=\operatorname*{Inv}\left(  \sigma\right)
+\\\text{(since }\operatorname*{Inv}\left(  \sigma\right)  \text{ is the set of
+all inversions of }\sigma\text{)}}}\right\vert \nonumber\\
+&  =\left\vert \operatorname*{Inv}\left(  \sigma\right)  \right\vert
+.\label{sol.det.2diags.invl}%
+\end{align}
+
+
+Now, we continue stating properties of $z$:
+
+\begin{itemize}
+\item The set $\operatorname*{Inv}\left(  z\right)  $ is the set of all
+inversions of $z$ (by the definition of $\operatorname*{Inv}\left(  z\right)
+$). For every $u\in\left\{  2,3,\ldots,n\right\}  $, we have $\left(
+1,u\right)  \in\operatorname*{Inv}\left(  z\right)  $%
+\ \ \ \ \footnote{\textit{Proof.} Let $u\in\left\{  2,3,\ldots,n\right\}  $.
+Thus, $2\leq u\leq n$. Now, $1<2\leq u$. Thus, $1\leq1<u\leq n$. Moreover,
+$u\in\left\{  2,3,\ldots,n\right\}  \subseteq\left\{  1,2,\ldots,n\right\}
+=\left[  n\right]  $ and $u\neq1$ (since $1<u$). Hence,
+(\ref{sol.det.2diags.shift.z.i}) (applied to $i=u$) shows that $z\left(
+u\right)  =u-1<u\leq n$. But (\ref{sol.det.2diags.shift.z.1}) shows that
+$z\left(  1\right)  =n>z\left(  u\right)  $ (since $z\left(  u\right)  <n$).
+\par
+Thus, $\left(  1,u\right)  $ is a pair $\left(  i,j\right)  $ of integers
+satisfying $1\leq i<j\leq n$ and $z\left(  i\right)  >z\left(  j\right)  $
+(since $1\leq1<u\leq n$ and $z\left(  1\right)  >z\left(  u\right)  $). In
+other words, $\left(  1,u\right)  $ is an inversion of $z$ (by the definition
+of an \textquotedblleft inversion of $z$\textquotedblright). In other words,
+$\left(  1,u\right)  \in\operatorname*{Inv}\left(  z\right)  $ (since
+$\operatorname*{Inv}\left(  z\right)  $ is the set of all inversions of $z$).
+Qed.}. Hence, we can define a map $\rho:\left\{  2,3,\ldots,n\right\}
+\rightarrow\operatorname*{Inv}\left(  \sigma\right)  $ by%
+\[
+\left(  \rho\left(  u\right)  =\left(  1,u\right)
+\ \ \ \ \ \ \ \ \ \ \text{for every }u\in\left\{  2,3,\ldots,n\right\}
+\right)  .
+\]
+Consider this map $\rho$. The map $\rho$ is injective\footnote{\textit{Proof.}
+Let $u_{1}$ and $u_{2}$ be two elements of $\left\{  2,3,\ldots,n\right\}  $
+such that $\rho\left(  u_{1}\right)  =\rho\left(  u_{2}\right)  $. Then,
+$\rho\left(  u_{1}\right)  =\left(  1,u_{1}\right)  $ (by the definition of
+$\rho$) and $\rho\left(  u_{2}\right)  =\left(  1,u_{2}\right)  $ (by the
+definition of $\rho$). Now, $\left(  1,u_{1}\right)  =\rho\left(
+u_{1}\right)  =\rho\left(  u_{2}\right)  =\left(  1,u_{2}\right)  $. In other
+words, $1=1$ and $u_{1}=u_{2}$.
+\par
+Let us now forget that we fixed $u_{1}$ and $u_{2}$. We thus have shown that
+if $u_{1}$ and $u_{2}$ are two elements of $\left\{  2,3,\ldots,n\right\}  $
+such that $\rho\left(  u_{1}\right)  =\rho\left(  u_{2}\right)  $, then
+$u_{1}=u_{2}$. In other words, the map $\rho$ is injective, qed.} and
+surjective\footnote{\textit{Proof.} Let $c\in\operatorname*{Inv}\left(
+z\right)  $. Thus, $c$ is an element of the set $\operatorname*{Inv}\left(
+z\right)  $. In other words, $c$ is an inversion of $z$ (since
+$\operatorname*{Inv}\left(  z\right)  $ is the set of all inversions of $z$).
+In other words, $c$ is a pair $\left(  i,j\right)  $ of integers satisfying
+$1\leq i<j\leq n$ and $z\left(  i\right)  >z\left(  j\right)  $ (by the
+definition of an \textquotedblleft inversion of $z$\textquotedblright).
+Consider this pair $\left(  i,j\right)  $. Thus, $c=\left(  i,j\right)  $.
+\par
+We have $i\in\left[  n\right]  $ (since $1\leq i\leq n$) and $j\in\left[
+n\right]  $ (since $1\leq j\leq n$). Also, $1\leq i<j$; thus, $j>1$, so that
+$j\neq1$. Hence, $z\left(  j\right)  =j-1$ (by (\ref{sol.det.2diags.shift.z.i}%
+), applied to $j$ instead of $i$). From $j>1$, we obtain $j\geq2$ (since $j$
+is an integer). Hence, $j\in\left\{  2,3,\ldots,n\right\}  $ (since $j\leq
+n$). Thus, $\rho\left(  j\right)  $ is well-defined. The definition of $\rho$
+shows that $\rho\left(  j\right)  =\left(  1,j\right)  $.
+\par
+We assume (for the sake of contradiction) that $i\neq1$. Thus, $z\left(
+i\right)  =i-1$ (by (\ref{sol.det.2diags.shift.z.i})). Hence, $z\left(
+i\right)  =\underbrace{i}_{<j}-1<j-1=z\left(  j\right)  $, which contradicts
+$z\left(  i\right)  >z\left(  j\right)  $. This contradiction shows that our
+assumption (that $i\neq1$) was wrong. Hence, we cannot have $i\neq1$. We thus
+have $i=1$. Now, $c=\left(  \underbrace{i}_{=1},j\right)  =\left(  1,j\right)
+=\rho\left(  \underbrace{j}_{\in\left\{  2,3,\ldots,n\right\}  }\right)
+\in\rho\left(  \left\{  2,3,\ldots,n\right\}  \right)  $.
+\par
+Let us now forget that we fixed $c$. We thus have shown that $c\in\rho\left(
+\left\{  2,3,\ldots,n\right\}  \right)  $ for every $c\in\operatorname*{Inv}%
+\left(  z\right)  $. In other words, $\operatorname*{Inv}\left(  z\right)
+\subseteq\rho\left(  \left\{  2,3,\ldots,n\right\}  \right)  $. In other
+words, the map $\rho$ is surjective, qed.}. Hence, the map $\rho$ is
+bijective. Thus, we have found a bijective map between the sets $\left\{
+2,3,\ldots,n\right\}  $ and $\operatorname*{Inv}\left(  z\right)  $ (namely,
+$\rho$). Consequently,%
+\[
+\left\vert \operatorname*{Inv}\left(  z\right)  \right\vert =\left\vert
+\left\{  2,3,\ldots,n\right\}  \right\vert =n-1.
+\]
+Now, (\ref{sol.det.2diags.invl}) (applied to $\sigma=z$) shows that
+$\ell\left(  z\right)  =\left\vert \operatorname*{Inv}\left(  z\right)
+\right\vert =n-1$. The definition of $\left(  -1\right)  ^{z}$ now shows that
+\begin{equation}
+\left(  -1\right)  ^{z}=\left(  -1\right)  ^{\ell\left(  z\right)  }=\left(
+-1\right)  ^{n-1}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\ell\left(
+z\right)  =n-1\right)  .\label{sol.det.2diags.signz}%
+\end{equation}
+(Alternatively, we could have obtained this equality from Exercise
+\ref{exe.perm.cycles} \textbf{(d)} (applied to $k=n$ and $\left(  i_{1}%
+,i_{2},\ldots,i_{k}\right)  =\left(  n,n-1,\ldots,1\right)  $) using the
+observation that $z=\operatorname*{cyc}\nolimits_{n,n-1,\ldots,1}$.)
+
+\item Now, let us recall that $n>1$; hence, $n\neq1$. We have $z\neq
+\operatorname*{id}$\ \ \ \ \footnote{\textit{Proof.} Assume the contrary.
+Thus, $z=\operatorname*{id}$. Hence, $\underbrace{z}_{=\operatorname*{id}%
+}\left(  1\right)  =\operatorname*{id}\left(  1\right)  =1$. This contradicts
+$z\left(  1\right)  =n\neq1$. This contradiction proves that our assumption
+was wrong; qed.}.
+\end{itemize}
+
+Now, I claim that if $\sigma\in S_{n}$ satisfies $\sigma\notin\left\{
+\operatorname*{id},z\right\}  $, then%
+\begin{equation}
+\left(
+\begin{array}
+[c]{c}%
+\text{there exists an }i\in\left[  n\right]  \text{ satisfying}\\
+i\neq\sigma\left(  i\right)  \text{ and }i\not \equiv \sigma\left(  i\right)
++1\operatorname{mod}n
+\end{array}
+\right)  .\label{sol.det.2diags.exi}%
+\end{equation}
+
+
+\textit{Proof of (\ref{sol.det.2diags.exi}):} Let $\sigma\in S_{n}$ be such
+that $\sigma\notin\left\{  \operatorname*{id},z\right\}  $. Thus, $\sigma
+\neq\operatorname*{id}$ and $\sigma\neq z$.
+
+The map $\sigma$ is an element of $S_{n}$, thus a permutation of the set
+$\left\{  1,2,\ldots,n\right\}  $ (since $S_{n}$ is the set of all
+permutations of the set $\left\{  1,2,\ldots,n\right\}  $). In other words,
+$\sigma$ is a permutation of the set $\left[  n\right]  $ (since $\left\{
+1,2,\ldots,n\right\}  =\left[  n\right]  $). Thus, $\sigma$ is a bijection
+$\left[  n\right]  \rightarrow\left[  n\right]  $. Hence, the map $\sigma$ is
+bijective, and therefore injective and surjective.
+
+There exists a $J\in\left[  n\right]  $ such that $\sigma\left(  J\right)
+\neq J$\ \ \ \ \footnote{\textit{Proof.} Assume the contrary. Thus, there
+exists no $J\in\left[  n\right]  $ such that $\sigma\left(  J\right)  \neq J$.
+In other words, every $J\in\left[  n\right]  $ satisfies $\sigma\left(
+J\right)  =J$. Thus, every $J\in\left[  n\right]  $ satisfies $\sigma\left(
+J\right)  =J=\operatorname*{id}\left(  J\right)  $. In other words,
+$\sigma=\operatorname*{id}$. This contradicts $\sigma\neq\operatorname*{id}$.
+This contradiction proves that our assumption was wrong. Qed.}. Let $j$ be the
+smallest such $J$. Thus, $j$ is an element of $\left[  n\right]  $ satisfying
+$\sigma\left(  j\right)  \neq j$\ \ \ \ \footnote{\textit{Proof.} We know that
+$j$ is the smallest $J\in\left[  n\right]  $ such that $\sigma\left(
+J\right)  \neq J$ (by the definition of $j$). Hence, $j$ is an element $J$ of
+$\left[  n\right]  $ such that $\sigma\left(  J\right)  \neq J$. In other
+words, $j$ is an element of $\left[  n\right]  $ satisfying $\sigma\left(
+j\right)  \neq j$. Qed.}. Moreover,
+\begin{equation}
+\text{every }J\in\left[  n\right]  \text{ satisfying }\sigma\left(  J\right)
+\neq J\text{ must satisfy }J\geq j\label{sol.det.2diags.exi.pf.min}%
+\end{equation}
+\ \ \ \ \footnote{\textit{Proof of (\ref{sol.det.2diags.exi.pf.min}):} We know
+that $j$ is the \textbf{smallest} $J\in\left[  n\right]  $ such that
+$\sigma\left(  J\right)  \neq J$ (by the definition of $j$). Hence, no
+$J\in\left[  n\right]  $ such that $\sigma\left(  J\right)  \neq J$ can be
+smaller than $j$. In other words, every $J\in\left[  n\right]  $ such that
+$\sigma\left(  J\right)  \neq J$ must be $\geq j$. In other words, every
+$J\in\left[  n\right]  $ satisfying $\sigma\left(  J\right)  \neq J$ must
+satisfy $J\geq j$. This proves (\ref{sol.det.2diags.exi.pf.min}).}.
+
+If $j\not \equiv \sigma\left(  j\right)  +1\operatorname{mod}n$, then
+(\ref{sol.det.2diags.exi}) holds\footnote{\textit{Proof.} Assume the contrary.
+Thus, $j\not \equiv \sigma\left(  j\right)  +1\operatorname{mod}n$. So we know
+that $j\neq\sigma\left(  j\right)  $ (since $\sigma\left(  j\right)  \neq j$)
+and $j\not \equiv \sigma\left(  j\right)  +1\operatorname{mod}n$.
+Consequently, there exists an $i\in\left[  n\right]  $ satisfying $i\neq
+\sigma\left(  i\right)  $ and $i\not \equiv \sigma\left(  i\right)
++1\operatorname{mod}n$ (namely, $i=j$). In other words,
+(\ref{sol.det.2diags.exi}) holds. Qed.}. Hence, for the rest of this proof of
+(\ref{sol.det.2diags.exi}), we can WLOG assume that we don't have
+$j\not \equiv \sigma\left(  j\right)  +1\operatorname{mod}n$. Assume this.
+
+We have $j\equiv\sigma\left(  j\right)  +1\operatorname{mod}n$ (since we don't
+have $j\not \equiv \sigma\left(  j\right)  +1\operatorname{mod}n$). In other
+words, $\sigma\left(  j\right)  \equiv j-1\operatorname{mod}n$.
+
+We have $j=1$\ \ \ \ \footnote{\textit{Proof.} Assume the contrary. Thus,
+$j\neq1$. Combining this with $j\in\left[  n\right]  =\left\{  1,2,\ldots
+,n\right\}  $, we obtain $j\in\left\{  1,2,\ldots,n\right\}  \setminus\left\{
+1\right\}  =\left\{  2,3,\ldots,n\right\}  $. Hence, $j-1\in\left\{
+1,2,\ldots,n-1\right\}  \subseteq\left\{  1,2,\ldots,n\right\}  =\left[
+n\right]  $. Also, $j-1<j$.
+\par
+If we had $\sigma\left(  j-1\right)  \neq j-1$, then we would obtain $j-1\geq
+j$ (by (\ref{sol.det.2diags.exi.pf.min}), applied to $J=j-1$); but this would
+contradict $j-1<j$. Hence, we cannot have $\sigma\left(  j-1\right)  \neq
+j-1$. In other words, we must have $\sigma\left(  j-1\right)  =j-1$. Thus,
+$\sigma\left(  j-1\right)  =j-1\equiv\sigma\left(  j\right)
+\operatorname{mod}n$ (since $\sigma\left(  j\right)  \equiv
+j-1\operatorname{mod}n$). Since both $\sigma\left(  j-1\right)  $ and
+$\sigma\left(  j\right)  $ are elements of $\left[  n\right]  $, we can now
+apply (\ref{sol.det.2diags.posrem.3}) to $\sigma\left(  j-1\right)  $ and
+$\sigma\left(  j\right)  $ instead of $a$ and $b$. As a result, we obtain
+$\sigma\left(  j-1\right)  =\sigma\left(  j\right)  $. Since the map $\sigma$
+is injective, this shows that $j-1=j$. But this contradicts $j-1\neq j$. This
+contradiction shows that our assumption was wrong, qed.}. Thus, $\sigma\left(
+\underbrace{1}_{=j}\right)  =\sigma\left(  j\right)  \equiv\underbrace{j}%
+_{=1}-1=0\equiv n\operatorname{mod}n$. Since both $\sigma\left(  1\right)  $
+and $n$ belong to $\left\{  1,2,\ldots,n\right\}  =\left[  n\right]  $, we can
+now apply (\ref{sol.det.2diags.posrem.3}) to $\sigma\left(  1\right)  $ and
+$n$ instead of $a$ and $b$. As a result, we obtain $\sigma\left(  1\right)
+=n$.
+
+There exists a $p\in\left[  n\right]  $ such that $\sigma\left(  p\right)
+\neq z\left(  p\right)  $\ \ \ \ \footnote{\textit{Proof.} Assume the
+contrary. Thus, there exists no $p\in\left[  n\right]  $ such that
+$\sigma\left(  p\right)  \neq z\left(  p\right)  $. In other words, every
+$p\in\left[  n\right]  $ satisfies $\sigma\left(  p\right)  =z\left(
+p\right)  $. In other words, $\sigma=z$. This contradicts $\sigma\neq z$. This
+contradiction shows that our assumption was wrong. Qed.}. Consider this $p$.
+
+We have $p\not \equiv \sigma\left(  p\right)  +1\operatorname{mod}%
+n$\ \ \ \ \footnote{\textit{Proof.} Assume the contrary. Thus, $p\equiv
+\sigma\left(  p\right)  +1\operatorname{mod}n$. Hence, $\sigma\left(
+p\right)  \equiv p-1\operatorname{mod}n$. But (\ref{sol.det.2diags.zmod})
+(applied to $i=p$) yields $z\left(  p\right)  \equiv p-1\operatorname{mod}n$.
+Hence, $\sigma\left(  p\right)  \equiv p-1\equiv z\left(  p\right)
+\operatorname{mod}n$. Since both $\sigma$ and $z$ are elements of $S_{n}$, we
+have $\sigma\left(  p\right)  \in\left[  n\right]  $ and $z\left(  p\right)
+\in\left[  n\right]  $. Thus, (\ref{sol.det.2diags.posrem.3}) (applied to
+$\sigma\left(  p\right)  $ and $z\left(  p\right)  $ instead of $a$ and $b$)
+shows that $\sigma\left(  p\right)  =z\left(  p\right)  $ (since
+$\sigma\left(  p\right)  \equiv z\left(  p\right)  \operatorname{mod}n$). This
+contradicts $\sigma\left(  p\right)  \neq z\left(  p\right)  $. This
+contradiction proves that our assumption was wrong, qed.}. If we have
+$p\neq\sigma\left(  p\right)  $, then (\ref{sol.det.2diags.exi})
+holds\footnote{\textit{Proof.} Assume the contrary. Thus, $p\neq\sigma\left(
+p\right)  $. So we know that $p\neq\sigma\left(  p\right)  $ and
+$p\not \equiv \sigma\left(  p\right)  +1\operatorname{mod}n$. Consequently,
+there exists an $i\in\left[  n\right]  $ satisfying $i\neq\sigma\left(
+i\right)  $ and $i\not \equiv \sigma\left(  i\right)  +1\operatorname{mod}n$
+(namely, $i=p$). In other words, (\ref{sol.det.2diags.exi}) holds. Qed.}.
+Hence, for the rest of this proof of (\ref{sol.det.2diags.exi}), we can WLOG
+assume that we don't have $p\neq\sigma\left(  p\right)  $. Assume this.
+
+We have $p=\sigma\left(  p\right)  $ (since we don't have $p\neq\sigma\left(
+p\right)  $). Hence, there exists a $K\in\left[  n\right]  $ such that
+$\sigma\left(  K\right)  =K$ (namely, $K=p$). Let $k$ be the largest such $K$.
+Thus, $k$ is an element of $\left[  n\right]  $ satisfying $\sigma\left(
+k\right)  =k$\ \ \ \ \footnote{\textit{Proof.} We know that $k$ is the largest
+$K\in\left[  n\right]  $ such that $\sigma\left(  K\right)  =K$ (by the
+definition of $k$). Hence, $k$ is an element $K$ of $\left[  n\right]  $ such
+that $\sigma\left(  K\right)  =K$. In other words, $k$ is an element of
+$\left[  n\right]  $ satisfying $\sigma\left(  k\right)  =k$. Qed.}.
+Moreover,
+\begin{equation}
+\text{every }K\in\left[  n\right]  \text{ satisfying }\sigma\left(  K\right)
+=K\text{ must satisfy }K\leq k\label{sol.det.2diags.exi.pf.max}%
+\end{equation}
+\ \ \ \ \footnote{\textit{Proof of (\ref{sol.det.2diags.exi.pf.max}):} We know
+that $k$ is the \textbf{largest} $K\in\left[  n\right]  $ such that
+$\sigma\left(  K\right)  =K$ (by the definition of $k$). Hence, no
+$K\in\left[  n\right]  $ such that $\sigma\left(  K\right)  =K$ can be larger
+than $k$. In other words, every $K\in\left[  n\right]  $ such that
+$\sigma\left(  K\right)  =K$ must be $\leq k$. In other words, every
+$K\in\left[  n\right]  $ satisfying $\sigma\left(  K\right)  =K$ must satisfy
+$K\leq k$. This proves (\ref{sol.det.2diags.exi.pf.max}).}.
+
+We have $n\neq1$ and thus $\sigma\left(  n\right)  \neq\sigma\left(  1\right)
+$ (since the map $\sigma$ is injective). Thus, $\sigma\left(  n\right)
+\neq\sigma\left(  1\right)  =n$.
+
+If we had $k=n$, then we would have $\sigma\left(  \underbrace{n}_{=k}\right)
+=\sigma\left(  k\right)  =k=n$, which would contradict $\sigma\left(
+n\right)  \neq n$. Thus, we cannot have $k=n$. Hence, we have $k\neq n$. Thus,
+$k+1\in\left[  n\right]  $\ \ \ \ \footnote{\textit{Proof.} Combining
+$k\in\left[  n\right]  =\left\{  1,2,\ldots,n\right\}  $ with $k\neq n$, we
+obtain $k\in\left\{  1,2,\ldots,n\right\}  \setminus\left\{  n\right\}
+=\left\{  1,2,\ldots,n-1\right\}  $, so that $k+1\in\left\{  2,3,\ldots
+,n\right\}  \subseteq\left\{  1,2,\ldots,n\right\}  =\left[  n\right]  $,
+qed.}. Hence, $\sigma\left(  k+1\right)  $ is well-defined. If we had
+$\sigma\left(  k+1\right)  =k+1$, then we would obtain $k+1\leq k$ (by
+(\ref{sol.det.2diags.exi.pf.max}), applied to $K=k+1$), which would contradict
+$k+1>k$. Hence, we cannot have $\sigma\left(  k+1\right)  =k+1$. We therefore
+must have $\sigma\left(  k+1\right)  \neq k+1$. In other words, $k+1\neq
+\sigma\left(  k+1\right)  $.
+
+But we also have $k+1\not \equiv \sigma\left(  k+1\right)
++1\operatorname{mod}n$\ \ \ \ \footnote{\textit{Proof.} Assume the contrary.
+Thus, $k+1\equiv\sigma\left(  k+1\right)  +1\operatorname{mod}n$. Subtracting
+$1$ from both sides of this congruence, we obtain $k\equiv\sigma\left(
+k+1\right)  \operatorname{mod}n$. Since both $k$ and $\sigma\left(
+k+1\right)  $ belong to $\left[  n\right]  $, we can therefore apply
+(\ref{sol.det.2diags.posrem.3}) to $k$ and $\sigma\left(  k+1\right)  $
+instead of $a$ and $b$. As a result, we obtain $k=\sigma\left(  k+1\right)  $.
+Hence, $\sigma\left(  k+1\right)  =k=\sigma\left(  k\right)  $ (since
+$\sigma\left(  k\right)  =k$). Since the map $\sigma$ is injective, this
+yields that $k+1=k$. But this contradicts $k+1>k$. This contradiction proves
+that our assumption was false, qed.}. Hence, there exists an $i\in\left[
+n\right]  $ satisfying $i\neq\sigma\left(  i\right)  $ and $i\not \equiv
+\sigma\left(  i\right)  +1\operatorname{mod}n$ (namely, $i=k+1$). In other
+words, (\ref{sol.det.2diags.exi}) holds. This completes the proof of
+(\ref{sol.det.2diags.exi}).
 
 Let us now write our matrix $A$ in the form $A=\left(  a_{i,j}\right)  _{1\leq
 i\leq n,\ 1\leq j\leq n}$. Then,%
@@ -31305,13 +32170,16 @@ for every $\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}$.
 It is now easy to see that if $\sigma\in S_{n}$ satisfies $\sigma
 \notin\left\{  \operatorname*{id},z\right\}  $, then
 \begin{equation}
-\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }=0 \label{sol.det.2diags.0}%
+\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }=0\label{sol.det.2diags.0}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{sol.det.2diags.0}):} Let $\sigma\in S_{n}$ be
 such that $\sigma\notin\left\{  \operatorname*{id},z\right\}  $. Thus, there
-exists an $i\in\left\{  1,2,\ldots,n\right\}  $ satisfying $i\neq\sigma\left(
-i\right)  $ and $i\not \equiv \sigma\left(  i\right)  +1\operatorname{mod}n$
-(because of (\ref{sol.det.2diags.exi})). Consider this $i$.
+exists an $i\in\left[  n\right]  $ satisfying $i\neq\sigma\left(  i\right)  $
+and $i\not \equiv \sigma\left(  i\right)  +1\operatorname{mod}n$ (because of
+(\ref{sol.det.2diags.exi})). Consider this $i$. We have neither $i=\sigma
+\left(  i\right)  $ nor $i\equiv\sigma\left(  i\right)  +1\operatorname{mod}n$
+(since we have $i\neq\sigma\left(  i\right)  $ and $i\not \equiv \sigma\left(
+i\right)  +1\operatorname{mod}n$).
 \par
 From (\ref{sol.det.2diags.aij}) (applied to $\left(  i,\sigma\left(  i\right)
 \right)  $ instead of $\left(  i,j\right)  $), we obtain%
@@ -31325,27 +32193,89 @@ b_{\sigma\left(  i\right)  }, & \text{if }i\equiv\sigma\left(  i\right)
 \end{cases}
 =0
 \]
-(since $i\neq\sigma\left(  i\right)  $ and $i\not \equiv \sigma\left(
+(since we have neither $i=\sigma\left(  i\right)  $ nor $i\equiv\sigma\left(
 i\right)  +1\operatorname{mod}n$).
 \par
-Now, let us forget that we fixed $i$. We thus have shown that there exists an
-$i\in\left\{  1,2,\ldots,n\right\}  $ satisfying $a_{i,\sigma\left(  i\right)
-}=0$. In other words, at least one factor of the product $\prod_{i=1}%
-^{n}a_{i,\sigma\left(  i\right)  }$ equals $0$. Therefore, the whole product
-$\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }$ equals $0$. This proves
-(\ref{sol.det.2diags.0}).}.
+Now, let us forget that we fixed $i$. We thus have found an $i\in\left[
+n\right]  $ satisfying $a_{i,\sigma\left(  i\right)  }=0$. Thus, there exists
+an $i\in\left[  n\right]  $ satisfying $a_{i,\sigma\left(  i\right)  }=0$. In
+other words, at least one factor of the product $\prod_{i\in\left[  n\right]
+}a_{i,\sigma\left(  i\right)  }$ equals $0$. Therefore, the whole product
+$\prod_{i\in\left[  n\right]  }a_{i,\sigma\left(  i\right)  }$ equals $0$
+(because if at least one factor of a product equals $0$, then the whole
+product equals $0$). In other words, $\prod_{i\in\left[  n\right]
+}a_{i,\sigma\left(  i\right)  }=0$.
+\par
+Now,
+\[
+\underbrace{\prod_{i=1}^{n}}_{\substack{=\prod_{i\in\left\{  1,2,\ldots
+,n\right\}  }=\prod_{i\in\left[  n\right]  }\\\text{(since }\left\{
+1,2,\ldots,n\right\}  =\left[  n\right]  \text{)}}}a_{i,\sigma\left(
+i\right)  }=\prod_{i\in\left[  n\right]  }a_{i,\sigma\left(  i\right)  }=0.
+\]
+This proves (\ref{sol.det.2diags.0}).}.
+
+Let us also notice that%
+\begin{equation}
+\prod_{i=1}^{n}a_{i,z\left(  i\right)  }=\prod_{i=1}^{n}b_{i}%
+\label{sol.det.2diags.1}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.det.2diags.1}):} The map $z$ is a
+permutation of $\left[  n\right]  $. In other words, the map $z$ is a
+permutation of $\left\{  1,2,\ldots,n\right\}  $ (since $\left[  n\right]
+=\left\{  1,2,\ldots,n\right\}  $), thus a bijection $\left\{  1,2,\ldots
+,n\right\}  \rightarrow\left\{  1,2,\ldots,n\right\}  $. Hence, we can
+substitute $i$ for $z\left(  i\right)  $ in the product $\prod_{i\in\left\{
+1,2,\ldots,n\right\}  }b_{z\left(  i\right)  }$. We thus obtain $\prod
+_{i\in\left\{  1,2,\ldots,n\right\}  }b_{z\left(  i\right)  }=\prod
+_{i\in\left\{  1,2,\ldots,n\right\}  }b_{i}$.
+\par
+But for every $i\in\left\{  1,2,\ldots,n\right\}  $, we have%
+\begin{align*}
+a_{i,z\left(  i\right)  }  & =%
+\begin{cases}
+a_{z\left(  i\right)  }, & \text{if }i=z\left(  i\right)  ;\\
+b_{z\left(  i\right)  }, & \text{if }i\equiv z\left(  i\right)
++1\operatorname{mod}n;\\
+0, & \text{otherwise}%
+\end{cases}
+\\
+& \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{sol.det.2diags.aij}), applied to
+}\left(  i,z\left(  i\right)  \right)  \text{ instead of }\left(  i,j\right)
+\right)  \\
+& =b_{z\left(  i\right)  }\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since we don't have }i=z\left(  i\right)  \text{ (because of
+(\ref{sol.det.2diags.zmod0})),}\\
+\text{but we do have }i\equiv z\left(  i\right)  +1\operatorname{mod}n\text{
+(by (\ref{sol.det.2diags.zmod}))}%
+\end{array}
+\right)  .
+\end{align*}
+Thus,%
+\[
+\underbrace{\prod_{i=1}^{n}}_{=\prod_{i\in\left\{  1,2,\ldots,n\right\}  }%
+}\underbrace{a_{i,z\left(  i\right)  }}_{=b_{z\left(  i\right)  }}=\prod
+_{i\in\left\{  1,2,\ldots,n\right\}  }b_{z\left(  i\right)  }%
+=\underbrace{\prod_{i\in\left\{  1,2,\ldots,n\right\}  }}_{=\prod_{i=1}^{n}%
+}b_{i}=\prod_{i=1}^{n}b_{i}.
+\]
+This proves (\ref{sol.det.2diags.1}).}.
 
 Now, (\ref{eq.det.eq.2}) becomes%
 \begin{align*}
-\det A  &  =\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\prod_{i=1}%
+\det A &  =\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\prod_{i=1}%
 ^{n}a_{i,\sigma\left(  i\right)  }\\
 &  =\underbrace{\left(  -1\right)  ^{\operatorname*{id}}}_{=1}\prod_{i=1}%
-^{n}\underbrace{a_{i,\operatorname*{id}\left(  i\right)  }}_{=a_{i,i}%
-}+\underbrace{\left(  -1\right)  ^{z}}_{=\left(  -1\right)  ^{n-1}}\prod
-_{i=1}^{n}a_{i,z\left(  i\right)  }+\sum_{\substack{\sigma\in S_{n}%
-;\\\sigma\notin\left\{  \operatorname*{id},z\right\}  }}\left(  -1\right)
-^{\sigma}\underbrace{\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }%
-}_{\substack{=0\\\text{(by (\ref{sol.det.2diags.0}))}}}\\
+^{n}\underbrace{a_{i,\operatorname*{id}\left(  i\right)  }}%
+_{\substack{=a_{i,i}\\\text{(since }\operatorname*{id}\left(  i\right)
+=i\text{)}}}+\underbrace{\left(  -1\right)  ^{z}}_{\substack{=\left(
+-1\right)  ^{n-1}\\\text{(by (\ref{sol.det.2diags.signz}))}}}\prod_{i=1}%
+^{n}a_{i,z\left(  i\right)  }+\sum_{\substack{\sigma\in S_{n};\\\sigma
+\notin\left\{  \operatorname*{id},z\right\}  }}\left(  -1\right)  ^{\sigma
+}\underbrace{\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }}%
+_{\substack{=0\\\text{(by (\ref{sol.det.2diags.0}))}}}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
@@ -31353,7 +32283,7 @@ _{i=1}^{n}a_{i,z\left(  i\right)  }+\sum_{\substack{\sigma\in S_{n}%
 and}\\
 \text{for }\sigma=z\text{ from the sum (since }z\neq\operatorname*{id}\text{)}%
 \end{array}
-\right) \\
+\right)  \\
 &  =\prod_{i=1}^{n}a_{i,i}+\left(  -1\right)  ^{n-1}\prod_{i=1}^{n}%
 a_{i,z\left(  i\right)  }+\underbrace{\sum_{\substack{\sigma\in S_{n}%
 ;\\\sigma\notin\left\{  \operatorname*{id},z\right\}  }}\left(  -1\right)
@@ -31366,15 +32296,8 @@ b_{i}, & \text{if }i\equiv i+1\operatorname{mod}n;\\
 \end{cases}
 \\\text{(by (\ref{sol.det.2diags.aij}), applied to }\left(  i,i\right)  \text{
 instead of }\left(  i,j\right)  \text{)}}}+\left(  -1\right)  ^{n-1}%
-\prod_{i=1}^{n}\underbrace{a_{i,z\left(  i\right)  }}_{\substack{=%
-\begin{cases}
-a_{z\left(  i\right)  }, & \text{if }i=z\left(  i\right)  ;\\
-b_{z\left(  i\right)  }, & \text{if }i\equiv z\left(  i\right)
-+1\operatorname{mod}n;\\
-0, & \text{otherwise}%
-\end{cases}
-\\\text{(by (\ref{sol.det.2diags.aij}), applied to }\left(  i,z\left(
-i\right)  \right)  \text{ instead of }\left(  i,j\right)  \text{)}}}\\
+\underbrace{\prod_{i=1}^{n}a_{i,z\left(  i\right)  }}_{\substack{=\prod
+_{i=1}^{n}b_{i}\\\text{(by (\ref{sol.det.2diags.1}))}}}\\
 &  =\prod_{i=1}^{n}\underbrace{%
 \begin{cases}
 a_{i}, & \text{if }i=i;\\
@@ -31382,22 +32305,9 @@ b_{i}, & \text{if }i\equiv i+1\operatorname{mod}n;\\
 0, & \text{otherwise}%
 \end{cases}
 }_{\substack{=a_{i}\\\text{(since }i=i\text{)}}}+\left(  -1\right)
-^{n-1}\prod_{i=1}^{n}\underbrace{%
-\begin{cases}
-a_{z\left(  i\right)  }, & \text{if }i=z\left(  i\right)  ;\\
-b_{z\left(  i\right)  }, & \text{if }i\equiv z\left(  i\right)
-+1\operatorname{mod}n;\\
-0, & \text{otherwise}%
-\end{cases}
-}_{\substack{=b_{z\left(  i\right)  }\\\text{(since }i\equiv z\left(
-i\right)  +1\operatorname{mod}n\text{ (by (\ref{sol.det.2diags.zmod})))}}}\\
-&  =\prod_{i=1}^{n}a_{i}+\left(  -1\right)  ^{n-1}\underbrace{\prod_{i=1}%
-^{n}b_{z\left(  i\right)  }}_{\substack{=\prod_{i=1}^{n}b_{i}\\\text{(here, we
-have substituted }i\text{ for }z\left(  i\right)  \text{ in the product,}%
-\\\text{since }z:\left\{  1,2,\ldots,n\right\}  \rightarrow\left\{
-1,2,\ldots,n\right\}  \text{ is a bijection)}}}=\underbrace{\prod_{i=1}%
-^{n}a_{i}}_{=a_{1}a_{2}\cdots a_{n}}+\left(  -1\right)  ^{n-1}%
-\underbrace{\prod_{i=1}^{n}b_{i}}_{=b_{1}b_{2}\cdots b_{n}}\\
+^{n-1}\prod_{i=1}^{n}b_{i}\\
+&  =\underbrace{\prod_{i=1}^{n}a_{i}}_{=a_{1}a_{2}\cdots a_{n}}+\left(
+-1\right)  ^{n-1}\underbrace{\prod_{i=1}^{n}b_{i}}_{=b_{1}b_{2}\cdots b_{n}}\\
 &  =a_{1}a_{2}\cdots a_{n}+\left(  -1\right)  ^{n-1}b_{1}b_{2}\cdots b_{n}.
 \end{align*}
 This solves Exercise \ref{exe.det.2diags}.
