@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, December 05, 2015 01:13:55}
+%TCIDATA{LastRevised=Saturday, December 05, 2015 02:43:19}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -3049,14 +3049,14 @@ Find these $a$ and $b$.
 \begin{addexercise}
 \label{exeadd.fib.floor}Let $\varphi$ be the golden ratio (i.e., the real
 number $\dfrac{1+\sqrt{5}}{2}$). Let $\left(  f_{0},f_{1},f_{2},\ldots\right)
-$ be the Fibonacci numbers.
+$ be the Fibonacci sequence.
 
 \textbf{(a)} Show that $f_{n+1}-\varphi f_{n}=\dfrac{1}{\sqrt{5}}\psi^{n}$ for
 every $n\in\mathbb{N}$, where $\psi=\dfrac{1-\sqrt{5}}{2}$. (Notice that
 $\psi=\dfrac{1-\sqrt{5}}{2}\approx-0.618$ lies between $-1$ and $0$, and thus
 the powers $\psi^{n}$ converge to $0$ as $n\rightarrow\infty$. So
 $f_{n+1}-\varphi f_{n}\rightarrow0$ as $n\rightarrow\infty$, and consequently
-$\dfrac{f_{n+1}}{f_{n}}\rightarrow0$ as well.)
+$\dfrac{f_{n+1}}{f_{n}}\rightarrow\varphi$ as well.)
 
 \textbf{(b)} Show that%
 \[
@@ -3064,18 +3064,19 @@ f_{n}=\operatorname*{round}\left(  \dfrac{1}{\sqrt{5}}\varphi^{n}\right)
 \ \ \ \ \ \ \ \ \ \ \text{for every }n\in\mathbb{N}.
 \]
 Here, if $x$ is a real number, then $\operatorname*{round}x$ denotes the
-integer closest to $x$ (where, in case of a tie, we take the higher of the two
-candidates\footnote{This does not really matter in our situation, because
-$\dfrac{1}{\sqrt{5}}\varphi^{n}$ will never be a half-integer.}).
+integer closest to $x$ (where, in case of a tie, we take the higher of the two candidates\footnotemark).
 \end{addexercise}
+
+\footnotetext{This does not really matter in our situation, because $\dfrac
+{1}{\sqrt{5}}\varphi^{n}$ will never be a half-integer.}
 
 \begin{addexercise}
 \label{exeadd.fib.zeckendorf}Let $\left(  f_{0},f_{1},f_{2},\ldots\right)  $
-be the Fibonacci numbers. A set $I$ of integers is said to be \textit{lacunar}
-if no two elements of $I$ are consecutive (i.e., there exists no $i\in I$ such
-that $i+1\in I$). Show that, for every $n\in\mathbb{N}$, there exists a unique
-lacunar subset $S$ of $\left\{  2,3,4,\ldots\right\}  $ such that
-$n=\sum_{s\in S}f_{s}$.
+be the Fibonacci sequence. A set $I$ of integers is said to be
+\textit{lacunar} if no two elements of $I$ are consecutive (i.e., there exists
+no $i\in I$ such that $i+1\in I$). Show that, for every $n\in\mathbb{N}$,
+there exists a unique lacunar subset $S$ of $\left\{  2,3,4,\ldots\right\}  $
+such that $n=\sum_{s\in S}f_{s}$.
 
 (For example, if $n=17$, then $S=\left\{  2,4,7\right\}  $, because
 $17=1+3+13=f_{2}+f_{4}+f_{7}$.)
@@ -3093,14 +3094,14 @@ rule of thumb for converting miles into kilometers that uses it}.
 
 \begin{addexercise}
 \label{exeadd.fib.zeckendids}Let $\left(  f_{0},f_{1},f_{2},\ldots\right)  $
-be the Fibonacci numbers.
+be the Fibonacci sequence.
 
 \textbf{(a)} Prove the identities%
 \begin{align*}
-1f_{n}  &  =f_{n}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq1;\\
-2f_{n}  &  =f_{n-2}+f_{n+1}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq3;\\
-3f_{n}  &  =f_{n-2}+f_{n+2}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq3;\\
-4f_{n}  &  =f_{n-2}+f_{n}+f_{n+2}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq3.
+1f_{n} &  =f_{n}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq1;\\
+2f_{n} &  =f_{n-2}+f_{n+1}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq3;\\
+3f_{n} &  =f_{n-2}+f_{n+2}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq3;\\
+4f_{n} &  =f_{n-2}+f_{n}+f_{n+2}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq3.
 \end{align*}
 
 
@@ -3115,7 +3116,7 @@ prove the following: Let $T$ be a finite set, and $a_{t}$ be an integer for
 every $t\in T$. Then, there exists a unique lacunar subset $S$ of $\mathbb{Z}$
 such that
 \begin{align*}
-\sum\limits_{t\in T}f_{n+a_{t}}  &  =\sum\limits_{s\in S}f_{n+s}%
+\sum\limits_{t\in T}f_{n+a_{t}} &  =\sum\limits_{s\in S}f_{n+s}%
 \ \ \ \ \ \ \ \ \ \ \text{for every }n\in\mathbb{Z}\text{ which}\\
 &  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \text{ satisfies }n\geq\max\left(
 \left\{  -a_{t}\mid t\in T\right\}  \cup\left\{  -s\mid s\in S\right\}
@@ -3137,7 +3138,7 @@ a,b\right)  $-recurrent sequences (e.g., Lucas numbers).
 
 \begin{addexercise}
 \label{exeadd.rec.addition}\textbf{(a)} Let $\left(  f_{0},f_{1},f_{2}%
-,\ldots\right)  $ be the Fibonacci numbers. Prove that $f_{m+n}=f_{m}%
+,\ldots\right)  $ be the Fibonacci sequence. Prove that $f_{m+n}=f_{m}%
 f_{n+1}+f_{m-1}f_{n}$ for any positive integer $m$ and any $n\in\mathbb{N}$.
 
 \textbf{(b)} Generalize to $\left(  a,b\right)  $-recurrent sequences in general.
@@ -3145,7 +3146,7 @@ f_{n+1}+f_{m-1}f_{n}$ for any positive integer $m$ and any $n\in\mathbb{N}$.
 
 \begin{addexercise}
 \label{exeadd.rec.fibonomial}\textbf{(a)} Let $\left(  f_{0},f_{1}%
-,f_{2},\ldots\right)  $ be the Fibonacci numbers. For every $n\in\mathbb{N}$
+,f_{2},\ldots\right)  $ be the Fibonacci sequence. For every $n\in\mathbb{N}$
 and $k\in\mathbb{N}$ satisfying $0\leq k\leq n$, define a rational number
 $\dbinom{n}{k}_{F}$ by%
 \[
@@ -19617,8 +19618,8 @@ determinant $\det A$ is known as their
 to the exercise, the condition $\det A=0$ is necessary for $P$ and $Q$ to have
 a common root. In the general case, the converse does not hold: For one, you
 can always force $\det A$ to be $0$ by taking $d>\deg P$ and $e>\deg Q$ (so
-$p_{d}=0$ and $q_{e}=0$, and thus the $1$-st column of $A$ consists of zeroes).
-More importantly, the resultant of the two polynomials $X^{3}-1$ and
+$p_{d}=0$ and $q_{e}=0$, and thus the $1$-st column of $A$ consists of
+zeroes). More importantly, the resultant of the two polynomials $X^{3}-1$ and
 $X^{2}+X+1$ is $0$, but they only have common roots in $\mathbb{C}\left[
 X\right]  $, not in $\mathbb{R}\left[  X\right]  $, so there is more to common
 roots than just the vanishing of a determinant.
