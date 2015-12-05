@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, December 05, 2015 00:33:28}
+%TCIDATA{LastRevised=Saturday, December 05, 2015 00:56:52}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -2672,7 +2672,7 @@ Hence,
 \begin{align*}
 \sin\left(  \beta+n\alpha\right)   &  =2\cos\alpha\sin\left(  \beta+\left(
 n-1\right)  \alpha\right)  -\sin\left(  \beta+\left(  n-2\right)
-\alpha\right)  \\
+\alpha\right) \\
 &  =2\cos\alpha\sin\left(  \beta+\left(  n-1\right)  \alpha\right)  +\left(
 -1\right)  \sin\left(  \beta+\left(  n-2\right)  \alpha\right)  ,
 \end{align*}
@@ -3090,10 +3090,10 @@ be the Fibonacci numbers.
 
 \textbf{(a)} Prove the identities%
 \begin{align*}
-1f_{n} &  =f_{n}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq1;\\
-2f_{n} &  =f_{n-2}+f_{n+1}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq3;\\
-3f_{n} &  =f_{n-2}+f_{n+2}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq3;\\
-4f_{n} &  =f_{n-2}+f_{n}+f_{n+2}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq3.
+1f_{n}  &  =f_{n}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq1;\\
+2f_{n}  &  =f_{n-2}+f_{n+1}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq3;\\
+3f_{n}  &  =f_{n-2}+f_{n+2}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq3;\\
+4f_{n}  &  =f_{n-2}+f_{n}+f_{n+2}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq3.
 \end{align*}
 
 
@@ -3108,9 +3108,9 @@ prove the following: Let $T$ be a finite set, and $a_{t}$ be an integer for
 every $t\in T$. Then, there exists a unique lacunar subset $S$ of $\mathbb{Z}$
 such that
 \begin{align*}
-\sum\limits_{t\in T}f_{n+a_{t}}  & =\sum\limits_{s\in S}f_{n+s}%
+\sum\limits_{t\in T}f_{n+a_{t}}  &  =\sum\limits_{s\in S}f_{n+s}%
 \ \ \ \ \ \ \ \ \ \ \text{for every }n\in\mathbb{Z}\text{ which}\\
-& \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \text{ satisfies }n\geq\max\left(
+&  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \text{ satisfies }n\geq\max\left(
 \left\{  -a_{t}\mid t\in T\right\}  \cup\left\{  -s\mid s\in S\right\}
 \right)  .
 \end{align*}
@@ -17886,697 +17886,6 @@ n$-matrices. Prove that%
 
 \end{exercise}
 
-\begin{verlong}
-Before we start solving this exercise, let us show two lemmas. The first of
-them formalizes the (intuitively obvious) fact that the elements of a finite
-set of integers can be listed in increasing order in exactly one way:
-
-\begin{lemma}
-\label{lem.adj(AB).set.increase}Let $n\in\mathbb{N}$. Let $a_{1},a_{2}%
-,\ldots,a_{n}$ be $n$ integers such that $a_{1}<a_{2}<\cdots<a_{n}$. Let
-$b_{1},b_{2},\ldots,b_{n}$ be $n$ integers such that $b_{1}<b_{2}<\cdots
-<b_{n}$. Assume that $\left\{  a_{1},a_{2},\ldots,a_{n}\right\}  =\left\{
-b_{1},b_{2},\ldots,b_{n}\right\}  $. Then, $\left(  a_{1},a_{2},\ldots
-,a_{n}\right)  =\left(  b_{1},b_{2},\ldots,b_{n}\right)  $.
-\end{lemma}
-
-\begin{proof}
-[Proof of Lemma \ref{lem.adj(AB).set.increase}.]We have $b_{1}<b_{2}%
-<\cdots<b_{n}$. In other words, if $p$ and $q$ are two elements of $\left\{
-1,2,\ldots,n\right\}  $ satisfying $p<q$, then%
-\begin{equation}
-b_{p}<b_{q}. \label{pf.lem.adj(AB).set.increase.binc}%
-\end{equation}
-Hence, if $p$ and $q$ are two elements of $\left\{  1,2,\ldots,n\right\}  $
-satisfying $b_{p}=b_{q}$, then%
-\begin{equation}
-p=q \label{pf.lem.adj(AB).set.increase.bdj}%
-\end{equation}
-\footnote{\textit{Proof of (\ref{pf.lem.adj(AB).set.increase.bdj}):} Let $p$
-and $q$ be two elements of $\left\{  1,2,\ldots,n\right\}  $ satisfying
-$b_{p}=b_{q}$. If we had $p<q$, then we would have $b_{p}<b_{q}$ (by
-(\ref{pf.lem.adj(AB).set.increase.binc})), which would contradict $b_{p}%
-=b_{q}$. Thus, we cannot have $p<q$. In other words, we must have $p\geq q$.
-If we had $q<p$, then we would have $b_{q}<b_{p}$ (by
-(\ref{pf.lem.adj(AB).set.increase.binc}), applied to $q$ and $p$ instead of
-$p$ and $q$)), which would contradict $b_{q}=b_{p}$. Thus, we cannot have
-$q<p$. In other words, we must have $q\geq p$. Combined with $p\geq q$, this
-shows that $p=q$. This proves (\ref{pf.lem.adj(AB).set.increase.bdj}).}.
-
-We define a map $A:\left\{  1,2,\ldots,n\right\}  \rightarrow\left\{
-1,2,\ldots,n\right\}  $ as follows:
-
-Let $i\in\left\{  1,2,\ldots,n\right\}  $. Then, $a_{i}\in\left\{  a_{1}%
-,a_{2},\ldots,a_{n}\right\}  =\left\{  b_{1},b_{2},\ldots,b_{n}\right\}  $.
-Hence, there exists a $j\in\left\{  1,2,\ldots,n\right\}  $ satisfying
-$a_{i}=b_{j}$. Moreover, this $j$ is unique\footnote{\textit{Proof.} Let
-$j_{1}$ and $j_{2}$ be two elements $j\in\left\{  1,2,\ldots,n\right\}  $
-satisfying $a_{i}=b_{j}$. We shall show that $j_{1}=j_{2}$.
-\par
-We know that $j_{1}$ is an element $j\in\left\{  1,2,\ldots,n\right\}  $
-satisfying $a_{i}=b_{j}$. In other words, $j_{1}$ is an element of $\left\{
-1,2,\ldots,n\right\}  $ satisfying $a_{i}=b_{j_{1}}$.
-\par
-We know that $j_{2}$ is an element $j\in\left\{  2,2,\ldots,n\right\}  $
-satisfying $a_{i}=b_{j}$. In other words, $j_{2}$ is an element of $\left\{
-1,2,\ldots,n\right\}  $ satisfying $a_{i}=b_{j_{2}}$.
-\par
-We have $b_{j_{1}}=a_{i}=b_{j_{2}}$. Hence, $j_{1}=j_{2}$ (by
-(\ref{pf.lem.adj(AB).set.increase.bdj}), applied to $p=j_{1}$ and $q=j_{2}$).
-\par
-Now, let us forget that we fixed $j_{1}$ and $j_{2}$. We thus have proven that
-if $j_{1}$ and $j_{2}$ are two elements $j\in\left\{  1,2,\ldots,n\right\}  $
-satisfying $a_{i}=b_{j}$, then $j_{1}=j_{2}$. In other words, any two elements
-$j\in\left\{  1,2,\ldots,n\right\}  $ satisfying $a_{i}=b_{j}$ must be equal.
-Hence, the $j\in\left\{  1,2,\ldots,n\right\}  $ satisfying $a_{i}=b_{j}$ is
-unique (because we already know that such a $j$ exists). Qed.}. We define
-$A\left(  i\right)  $ to be this $j$. Thus, $A\left(  i\right)  $ is the
-unique $j\in\left\{  1,2,\ldots,n\right\}  $ satisfying $a_{i}=b_{j}$. In
-other words, $A\left(  i\right)  $ is an element of $\left\{  1,2,\ldots
-,n\right\}  $ satisfying $a_{i}=b_{A\left(  i\right)  }$.
-
-Thus, we have defined $A\left(  i\right)  \in\left\{  1,2,\ldots,n\right\}  $
-for every $i\in\left\{  1,2,\ldots,n\right\}  $. In other words, we have
-defined a map $A:\left\{  1,2,\ldots,n\right\}  \rightarrow\left\{
-1,2,\ldots,n\right\}  $.
-
-Thus, we have defined a map $A:\left\{  1,2,\ldots,n\right\}  \rightarrow
-\left\{  1,2,\ldots,n\right\}  $ which satisfies%
-\begin{equation}
-\left(  a_{i}=b_{A\left(  i\right)  }\ \ \ \ \ \ \ \ \ \ \text{for every }%
-i\in\left\{  1,2,\ldots,n\right\}  \right)  .
-\label{pf.lem.adj(AB).set.increase.A}%
-\end{equation}
-An analogous construction (with $\left(  a_{1},a_{2},\ldots,a_{n}\right)  $,
-$\left(  b_{1},b_{2},\ldots,b_{n}\right)  $ and $A$ replaced by $\left(
-b_{1},b_{2},\ldots,b_{n}\right)  $, $\left(  a_{1},a_{2},\ldots,a_{n}\right)
-$ and $B$) allows us to construct a map $B:\left\{  1,2,\ldots,n\right\}
-\rightarrow\left\{  1,2,\ldots,n\right\}  $ which satisfies%
-\begin{equation}
-\left(  b_{i}=a_{B\left(  i\right)  }\ \ \ \ \ \ \ \ \ \ \text{for every }%
-i\in\left\{  1,2,\ldots,n\right\}  \right)  .
-\label{pf.lem.adj(AB).set.increase.B}%
-\end{equation}
-Consider this map $B$.
-
-We have $A\circ B=\operatorname*{id}$\ \ \ \ \footnote{\textit{Proof.} Let
-$i\in\left\{  1,2,\ldots,n\right\}  $. Then, $a_{B\left(  i\right)
-}=b_{A\left(  B\left(  i\right)  \right)  }$ (by
-(\ref{pf.lem.adj(AB).set.increase.A}), applied to $B\left(  i\right)  $
-instead of $i$). Hence, $b_{A\left(  B\left(  i\right)  \right)  }=a_{B\left(
-i\right)  }=b_{i}$ (by (\ref{pf.lem.adj(AB).set.increase.B})). Thus, $A\left(
-B\left(  i\right)  \right)  =i$ (by (\ref{pf.lem.adj(AB).set.increase.bdj}),
-applied to $p=A\left(  B\left(  i\right)  \right)  $ and $q=i$). Thus,
-$\left(  A\circ B\right)  \left(  i\right)  =A\left(  B\left(  i\right)
-\right)  =i=\operatorname*{id}\left(  i\right)  $.
-\par
-Now, let us forget that we fixed $i$. Thus, we have shown that $\left(  A\circ
-B\right)  \left(  i\right)  =\operatorname*{id}\left(  i\right)  $ for every
-$i\in\left\{  1,2,\ldots,n\right\}  $. In other words, $A\circ
-B=\operatorname*{id}$, qed.}. The same argument (but applied to $\left(
-b_{1},b_{2},\ldots,b_{n}\right)  $, $\left(  a_{1},a_{2},\ldots,a_{n}\right)
-$, $B$ and $A$ instead of $\left(  a_{1},a_{2},\ldots,a_{n}\right)  $,
-$\left(  b_{1},b_{2},\ldots,b_{n}\right)  $, $A$ and $B$) shows that $B\circ
-A=\operatorname*{id}$.
-
-The maps $A$ and $B$ are mutually inverse (since $A\circ B=\operatorname*{id}$
-and $B\circ A=\operatorname*{id}$). Thus, the map $A$ is invertible. In other
-words, the map $A$ is a bijection. Hence, $A$ is a bijection $\left\{
-1,2,\ldots,n\right\}  \rightarrow\left\{  1,2,\ldots,n\right\}  $. In other
-words, $A$ is a permutation of the set $\left\{  1,2,\ldots,n\right\}  $. In
-other words, $A\in S_{n}$ (since $S_{n}$ is the set of all permutations of the
-set $\left\{  1,2,\ldots,n\right\}  $).
-
-The integers $b_{1},b_{2},\ldots,b_{n}$ are distinct (because of
-(\ref{pf.lem.adj(AB).set.increase.bdj})). Proposition \ref{prop.sorting}
-\textbf{(c)} (applied to $\left(  b_{1},b_{2},\ldots,b_{n}\right)  $ instead
-of $\left(  a_{1},a_{2},\ldots,a_{n}\right)  $) thus shows that there is a
-\textbf{unique} permutation $\sigma\in S_{n}$ such that $b_{\sigma\left(
-1\right)  }<b_{\sigma\left(  2\right)  }<\cdots<b_{\sigma\left(  n\right)  }$.
-Hence, there exists at most one such permutation. In other words, if
-$\sigma_{1}$ and $\sigma_{2}$ are two permutations $\sigma\in S_{n}$ such that
-$b_{\sigma\left(  1\right)  }<b_{\sigma\left(  2\right)  }<\cdots
-<b_{\sigma\left(  n\right)  }$, then%
-\begin{equation}
-\sigma_{1}=\sigma_{2}. \label{pf.lem.adj(AB).set.increase.uni}%
-\end{equation}
-
-
-The permutation $\operatorname*{id}\in S_{n}$ satisfies $b_{\operatorname*{id}%
-\left(  1\right)  }<b_{\operatorname*{id}\left(  2\right)  }<\cdots
-<b_{\operatorname*{id}\left(  n\right)  }$\ \ \ \ \footnote{In fact, this is
-just a way to rewrite the chain of inequalities $b_{1}<b_{2}<\cdots<b_{n}$
-(which is true by assumption).}. In other words, the permutation
-$\operatorname*{id}\in S_{n}$ is a permutation $\sigma\in S_{n}$ such that
-$b_{\sigma\left(  1\right)  }<b_{\sigma\left(  2\right)  }<\cdots
-<b_{\sigma\left(  n\right)  }$.
-
-We have $a_{1}<a_{2}<\cdots<a_{n}$. This rewrites as $b_{A\left(  1\right)
-}<b_{A\left(  2\right)  }<\cdots<b_{A\left(  n\right)  }$ (since
-$a_{i}=b_{A\left(  i\right)  }$ for every $i\in\left\{  1,2,\ldots,n\right\}
-$ (by (\ref{pf.lem.adj(AB).set.increase.A}))). Thus, $A$ is a permutation
-$\sigma\in S_{n}$ such that $b_{\sigma\left(  1\right)  }<b_{\sigma\left(
-2\right)  }<\cdots<b_{\sigma\left(  n\right)  }$.
-
-Thus, we know that $A$ and $\operatorname*{id}$ are two permutations
-$\sigma\in S_{n}$ such that $b_{\sigma\left(  1\right)  }<b_{\sigma\left(
-2\right)  }<\cdots<b_{\sigma\left(  n\right)  }$. Hence,
-(\ref{pf.lem.adj(AB).set.increase.uni}) (applied to $\sigma_{1}=A$ and
-$\sigma_{2}=\operatorname*{id}$) shows that $A=\operatorname*{id}$.
-
-But (\ref{pf.lem.adj(AB).set.increase.A}) shows that%
-\begin{align*}
-\left(  a_{1},a_{2},\ldots,a_{n}\right)   &  =\left(  b_{A\left(  1\right)
-},b_{A\left(  2\right)  },\ldots,b_{A\left(  n\right)  }\right)  =\left(
-b_{\operatorname*{id}\left(  1\right)  },b_{\operatorname*{id}\left(
-2\right)  },\ldots,b_{\operatorname*{id}\left(  n\right)  }\right)
-\ \ \ \ \ \ \ \ \ \ \left(  \text{since }A=\operatorname*{id}\right) \\
-&  =\left(  b_{1},b_{2},\ldots,b_{n}\right)  \ \ \ \ \ \ \ \ \ \ \left(
-\text{since }b_{\operatorname*{id}\left(  i\right)  }=b_{i}\text{ for every
-}i\in\left\{  1,2,\ldots,n\right\}  \right)  .
-\end{align*}
-This proves Lemma \ref{lem.adj(AB).set.increase}.
-\end{proof}
-
-\begin{lemma}
-\label{lem.adj(AB).cauchy-binet}Let $n$ be a positive integer. Let $A$ be an
-$\left(  n-1\right)  \times n$-matrix. Let $B$ be an $n\times\left(
-n-1\right)  $-matrix. Then,%
-\[
-\det\left(  AB\right)  =\sum_{k=1}^{n}\det\left(  \operatorname*{cols}%
-\nolimits_{1,2,\ldots,\widehat{k},\ldots,n}A\right)  \cdot\det\left(
-\operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{k},\ldots,n}B\right)  .
-\]
-
-\end{lemma}
-
-This lemma is a particular case of the Cauchy-Binet formula. Here is how it
-can be derived from the latter, in detail:
-
-\begin{proof}
-[Proof of Lemma \ref{lem.adj(AB).cauchy-binet}.]Let $\left[  n\right]  $
-denote the set $\left\{  1,2,\ldots,n\right\}  $. Define a subset $\mathbf{I}$
-of $\left[  n\right]  ^{n-1}$ by%
-\[
-\mathbf{I}=\left\{  \left(  k_{1},k_{2},\ldots,k_{n-1}\right)  \in\left[
-n\right]  ^{n-1}\ \mid\ k_{1}<k_{2}<\cdots<k_{n-1}\right\}  .
-\]
-
-
-Theorem \ref{thm.cauchy-binet} (applied to $n-1$ and $n$ instead of $n$ and
-$m$) yields%
-\begin{align}
-\det\left(  AB\right)   &  =\underbrace{\sum_{1\leq g_{1}<g_{2}<\cdots
-<g_{n-1}\leq n-1}}_{\substack{=\sum_{\substack{\left(  g_{1},g_{2}%
-,\ldots,g_{n}\right)  \in\left\{  1,2,\ldots,m\right\}  ^{n};\\g_{1}%
-<g_{2}<\cdots<g_{n}}}\\=\sum_{\left(  g_{1},g_{2},\ldots,g_{n}\right)
-\in\left\{  \left(  k_{1},k_{2},\ldots,k_{n-1}\right)  \in\left[  n\right]
-^{n-1}\ \mid\ k_{1}<k_{2}<\cdots<k_{n-1}\right\}  }\\=\sum_{\left(
-g_{1},g_{2},\ldots,g_{n}\right)  \in\mathbf{I}}\\\text{(since }\left\{
-\left(  k_{1},k_{2},\ldots,k_{n-1}\right)  \in\left[  n\right]  ^{n-1}%
-\ \mid\ k_{1}<k_{2}<\cdots<k_{n-1}\right\}  =\mathbf{I}\text{)}}}\det\left(
-\operatorname*{cols}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}}A\right)  \cdot
-\det\left(  \operatorname*{rows}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}}B\right)
-\nonumber\\
-&  =\sum_{\left(  g_{1},g_{2},\ldots,g_{n}\right)  \in\mathbf{I}}\det\left(
-\operatorname*{cols}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}}A\right)  \cdot
-\det\left(  \operatorname*{rows}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}%
-}B\right)  . \label{pf.lem.adj(AB).cauchy-binet.1}%
-\end{align}
-
-
-Now, for every $k\in\left\{  1,2,\ldots,n\right\}  $, we have%
-\[
-\left(  1,2,\ldots,\widehat{k},\ldots,n\right)  \in\mathbf{I}%
-\]
-\footnote{\textit{Proof.} Let $k\in\left\{  1,2,\ldots,n\right\}  $. Let us
-denote the $\left(  n-1\right)  $-tuple $\left(  1,2,\ldots,\widehat{k}%
-,\ldots,n\right)  $ by $\left(  t_{1},t_{2},\ldots,t_{n-1}\right)  $. Thus,%
-\begin{equation}
-t_{i}=%
-\begin{cases}
-i, & \text{if }i<k;\\
-i+1, & \text{if }i\geq k
-\end{cases}
-\ \ \ \ \ \ \ \ \ \ \text{for every }i\in\left\{  1,2,\ldots,n-1\right\}  .
-\label{pf.lem.adj(AB).cauchy-binet.wd.pf.1}%
-\end{equation}
-\par
-Now, let $i\in\left\{  1,2,\ldots,n-2\right\}  $. We shall prove that
-$t_{i}<t_{i+1}$. Indeed, let us assume the contrary (for the sake of
-contradiction). Thus, $t_{i}\geq t_{i+1}$. But%
-\begin{align*}
-t_{i}  &  =%
-\begin{cases}
-i, & \text{if }i<k;\\
-i+1, & \text{if }i\geq k
-\end{cases}
-\ \ \ \ \ \ \ \ \ \ \left(  \text{by
-(\ref{pf.lem.adj(AB).cauchy-binet.wd.pf.1})}\right) \\
-&  \leq%
-\begin{cases}
-i+1, & \text{if }i<k;\\
-i+1, & \text{if }i\geq k
-\end{cases}
-\ \ \ \ \ \ \ \ \ \ \left(  \text{since }i\leq i+1\text{ in the case when
-}i<k\right) \\
-&  =i+1,
-\end{align*}
-so that%
-\begin{align*}
-i+1  &  \geq t_{i}\geq t_{i+1}=%
-\begin{cases}
-i+1, & \text{if }i+1<k;\\
-\left(  i+1\right)  +1, & \text{if }i+1\geq k
-\end{cases}
-\ \ \ \ \ \ \ \ \ \ \left(  \text{by
-(\ref{pf.lem.adj(AB).cauchy-binet.wd.pf.1}), applied to }i+1\text{ instead of
-}i\right) \\
-&  \geq%
-\begin{cases}
-i+1, & \text{if }i+1<k;\\
-i+1, & \text{if }i+1\geq k
-\end{cases}
-\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(  i+1\right)  +1\geq i+1\text{
-in the case when }i+1\geq k\right) \\
-&  =i+1.
-\end{align*}
-Combining $i+1\geq t_{i}$ with $t_{i}\geq i+1$, we obtain $i+1=t_{i}$. Hence,
-if we had $i<k$, then we would have%
-\[
-i+1=t_{i}=%
-\begin{cases}
-i, & \text{if }i<k;\\
-i+1, & \text{if }i\geq k
-\end{cases}
-=i\ \ \ \ \ \ \ \ \ \ \left(  \text{since }i<k\right)  ,
-\]
-which would contradict $i+1\neq i$. Therefore, we cannot have $i<k$. Thus, we
-have $i\geq k$. Thus, $i+1\geq k$. Now,%
-\begin{align*}
-t_{i+1}  &  =%
-\begin{cases}
-i+1, & \text{if }i+1<k;\\
-\left(  i+1\right)  +1, & \text{if }i+1\geq k
-\end{cases}
-=\left(  i+1\right)  +1\ \ \ \ \ \ \ \ \ \ \left(  \text{since }i+1\geq
-k\right) \\
-&  >i+1=t_{i}\geq t_{i+1}.
-\end{align*}
-This is absurd. Thus, we have obtained a contradiction. This contradiction
-proves that our assumption was wrong. Hence, $t_{i}<t_{i+1}$.
-\par
-Now, let us forget that we fixed $i$. We thus have shown that $t_{i}<t_{i+1}$
-for every $i\in\left\{  1,2,\ldots,n-2\right\}  $. In other words,
-$t_{1}<t_{2}<\cdots<t_{n-1}$.
-\par
-Also, $\left(  t_{1},t_{2},\ldots,t_{n-1}\right)  =\left(  1,2,\ldots
-,\widehat{k},\ldots,n\right)  \in\left[  n\right]  ^{n-1}$. Hence, $\left(
-t_{1},t_{2},\ldots,t_{n-1}\right)  $ is an element of $\left[  n\right]
-^{n-1}$ and satisfies $t_{1}<t_{2}<\cdots<t_{n-1}$. In other words, $\left(
-t_{1},t_{2},\ldots,t_{n-1}\right)  $ is an element $\left(  k_{1},k_{2}%
-,\ldots,k_{n-1}\right)  \in\left[  n\right]  ^{n-1}$ satisfying $\left(
-k_{1},k_{2},\ldots,k_{n-1}\right)  \in\left[  n\right]  ^{n-1}$. In other
-words,
-\[
-\left(  t_{1},t_{2},\ldots,t_{n-1}\right)  \in\left\{  \left(  k_{1}%
-,k_{2},\ldots,k_{n-1}\right)  \in\left[  n\right]  ^{n-1}\ \mid\ k_{1}%
-<k_{2}<\cdots<k_{n-1}\right\}  =\mathbf{I}.
-\]
-Thus, $\left(  1,2,\ldots,\widehat{k},\ldots,n\right)  \in\left(  t_{1}%
-,t_{2},\ldots,t_{n-1}\right)  =\mathbf{I}$, qed.}. Hence, we can define a map%
-\[
-\Phi:\left\{  1,2,\ldots,n\right\}  \rightarrow\mathbf{I}%
-\]
-by%
-\[
-\left(  \Phi\left(  k\right)  =\left(  1,2,\ldots,\widehat{k},\ldots,n\right)
-\ \ \ \ \ \ \ \ \ \ \text{for every }k\in\left\{  1,2,\ldots,n\right\}
-\right)  .
-\]
-Consider this map $\Phi$. This map $\Phi$ is
-injective\footnote{\textit{Proof.} Let $i\in\left\{  1,2,\ldots,n\right\}  $
-and $j\in\left\{  1,2,\ldots,n\right\}  $ be such that $\Phi\left(  i\right)
-=\Phi\left(  j\right)  $. We shall show that $i=j$.
-\par
-The definition of $\Phi$ yields $\Phi\left(  i\right)  =\left(  1,2,\ldots
-,\widehat{i},\ldots,n\right)  $. Hence,%
-\begin{align*}
-&  \left(  \text{the set of all entries of }\underbrace{\Phi\left(  i\right)
-}_{=\left(  1,2,\ldots,\widehat{i},\ldots,n\right)  }\right) \\
-&  =\left(  \text{the set of all entries of }\left(  1,2,\ldots,\widehat{i}%
-,\ldots,n\right)  \right) \\
-&  =\left\{  1,2,\ldots,\widehat{i},\ldots,n\right\}  =\left\{  1,2,\ldots
-,n\right\}  \setminus\left\{  i\right\}  .
-\end{align*}
-Thus,%
-\begin{align*}
-&  \left\{  1,2,\ldots,n\right\}  \setminus\underbrace{\left(  \text{the set
-of all entries of }\Phi\left(  i\right)  \right)  }_{=\left\{  1,2,\ldots
-,n\right\}  \setminus\left\{  i\right\}  }\\
-&  =\left\{  1,2,\ldots,n\right\}  \setminus\left(  \left\{  1,2,\ldots
-,n\right\}  \setminus\left\{  i\right\}  \right)  =\left\{  i\right\}
-\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left\{  i\right\}  \subseteq\left\{
-1,2,\ldots,n\right\}  \text{ (since }i\in\left\{  1,2,\ldots,n\right\}
-\text{)}\right)  .
-\end{align*}
-The same argument (applied to $j$ instead of $i$) shows that%
-\[
-\left\{  1,2,\ldots,n\right\}  \setminus\left(  \text{the set of all entries
-of }\Phi\left(  j\right)  \right)  =\left\{  j\right\}  .
-\]
-\par
-Now,%
-\begin{align*}
-\left\{  i\right\}   &  =\left\{  1,2,\ldots,n\right\}  \setminus\left(
-\text{the set of all entries of }\underbrace{\Phi\left(  i\right)  }%
-_{=\Phi\left(  j\right)  }\right) \\
-&  =\left\{  1,2,\ldots,n\right\}  \setminus\left(  \text{the set of all
-entries of }\Phi\left(  j\right)  \right)  =\left\{  j\right\}  .
-\end{align*}
-Hence, $i\in\left\{  i\right\}  =\left\{  j\right\}  $, so that $i=j$.
-\par
-Now, let us forget that we fixed $i$ and $j$. We thus have proven that if
-$i\in\left\{  1,2,\ldots,n\right\}  $ and $j\in\left\{  1,2,\ldots,n\right\}
-$ are such that $\Phi\left(  i\right)  =\Phi\left(  j\right)  $, then $i=j$.
-In other words, the map $\Phi$ is injective, qed.} and
-surjective\footnote{\textit{Proof.} Let $\mathbf{g}\in\mathbf{I}$. We shall
-show that $\mathbf{g}\in\Phi\left(  \left\{  1,2,\ldots,n\right\}  \right)  $.
-\par
-We have%
-\begin{align*}
-\mathbf{g}  &  \in\mathbf{I}=\left\{  \left(  k_{1},k_{2},\ldots
-,k_{n-1}\right)  \in\left[  n\right]  ^{n-1}\ \mid\ k_{1}<k_{2}<\cdots
-<k_{n-1}\right\} \\
-&  =\left\{  \left(  g_{1},g_{2},\ldots,g_{n-1}\right)  \in\left[  n\right]
-^{n-1}\ \mid\ g_{1}<g_{2}<\cdots<g_{n-1}\right\}
-\end{align*}
-(here, we have renamed the index $\left(  k_{1},k_{2},\ldots,k_{n-1}\right)  $
-as $\left(  g_{1},g_{2},\ldots,g_{n-1}\right)  $). In other words,
-\textbf{$g$} can be written in the form $\mathbf{g}=\left(  g_{1},g_{2}%
-,\ldots,g_{n-1}\right)  $ for some $\left(  g_{1},g_{2},\ldots,g_{n-1}\right)
-\in\left[  n\right]  ^{n-1}$ satisfying $g_{1}<g_{2}<\cdots<g_{n-1}$. Consider
-this $\left(  g_{1},g_{2},\ldots,g_{n-1}\right)  $.
-\par
-The integers $g_{1},g_{2},\ldots,g_{n-1}$ are distinct (since $g_{1}%
-<g_{2}<\cdots<g_{n-1}$). Hence, they are $n-1$ distinct integers. In other
-words, we have $\left\vert \left\{  g_{1},g_{2},\ldots,g_{n-1}\right\}
-\right\vert =n-1$. Also, each $i\in\left\{  1,2,\ldots,n-1\right\}  $
-satisfies $g_{i}\in\left[  n\right]  $ (since $\left(  g_{1},g_{2}%
-,\ldots,g_{n-1}\right)  \in\left[  n\right]  ^{n-1}$). In other words,
-$\left\{  g_{1},g_{2},\ldots,g_{n-1}\right\}  \subseteq\left[  n\right]  $.
-Hence,%
-\[
-\left\vert \left[  n\right]  \setminus\left\{  g_{1},g_{2},\ldots
-,g_{n-1}\right\}  \right\vert =\underbrace{\left\vert \left[  n\right]
-\right\vert }_{=n}-\underbrace{\left\vert \left\{  g_{1},g_{2},\ldots
-,g_{n-1}\right\}  \right\vert }_{=n-1}=n-\left(  n-1\right)  =1.
-\]
-In other words, $\left[  n\right]  \setminus\left\{  g_{1},g_{2}%
-,\ldots,g_{n-1}\right\}  $ is a one-element set. Hence, the set $\left[
-n\right]  \setminus\left\{  g_{1},g_{2},\ldots,g_{n-1}\right\}  $ has the form
-$\left\{  k\right\}  $ for some object $k$. Consider this $k$.
-\par
-We have $\left[  n\right]  \setminus\left\{  g_{1},g_{2},\ldots,g_{n-1}%
-\right\}  =\left\{  k\right\}  $, so that $k\in\left\{  k\right\}  =\left[
-n\right]  \setminus\left\{  g_{1},g_{2},\ldots,g_{n-1}\right\}  \subseteq
-\left[  n\right]  =\left\{  1,2,\ldots,n\right\}  $.
-\par
-Let us denote the $\left(  n-1\right)  $-tuple $\left(  1,2,\ldots
-,\widehat{k},\ldots,n\right)  $ by $\left(  t_{1},t_{2},\ldots,t_{n-1}\right)
-$. Thus,%
-\begin{align*}
-\left(  t_{1},t_{2},\ldots,t_{n-1}\right)   &  =\left(  1,2,\ldots
-,\widehat{k},\ldots,n\right) \\
-&  \in\mathbf{I}=\left\{  \left(  k_{1},k_{2},\ldots,k_{n-1}\right)
-\in\left[  n\right]  ^{n-1}\ \mid\ k_{1}<k_{2}<\cdots<k_{n-1}\right\}  .
-\end{align*}
-In other words, $\left(  t_{1},t_{2},\ldots,t_{n-1}\right)  $ is an element
-$\left(  k_{1},k_{2},\ldots,k_{n-1}\right)  $ of $\left[  n\right]  ^{n-1}$
-satisfying $k_{1}<k_{2}<\cdots<k_{n-1}$. In other words, $\left(  t_{1}%
-,t_{2},\ldots,t_{n-1}\right)  $ is an element of $\left[  n\right]  ^{n-1}$
-and satisfies $t_{1}<t_{2}<\cdots<t_{n-1}$.
-\par
-Clearly,
-\begin{align*}
-\left\{  t_{1},t_{2},\ldots,t_{n-1}\right\}   &  =\left(  \text{the set of all
-entries of the list }\underbrace{\left(  t_{1},t_{2},\ldots,t_{n-1}\right)
-}_{=\left(  1,2,\ldots,\widehat{k},\ldots,n\right)  }\right) \\
-&  =\left(  \text{the set of all entries of the list }\left(  1,2,\ldots
-,\widehat{k},\ldots,n\right)  \right) \\
-&  =\left\{  1,2,\ldots,\widehat{k},\ldots,n\right\}  =\underbrace{\left\{
-1,2,\ldots,n\right\}  }_{=\left[  n\right]  }\setminus\underbrace{\left\{
-k\right\}  }_{=\left[  n\right]  \setminus\left\{  g_{1},g_{2},\ldots
-,g_{n-1}\right\}  }\\
-&  =\left[  n\right]  \setminus\left(  \left[  n\right]  \setminus\left\{
-g_{1},g_{2},\ldots,g_{n-1}\right\}  \right)  =\left\{  g_{1},g_{2}%
-,\ldots,g_{n-1}\right\}
-\end{align*}
-(since $\left\{  g_{1},g_{2},\ldots,g_{n-1}\right\}  \subseteq\left[
-n\right]  $).
-\par
-Now, Lemma \ref{lem.adj(AB).set.increase} (applied to $n-1$, $\left(
-t_{1},t_{2},\ldots,t_{n-1}\right)  $ and $\left(  g_{1},g_{2},\ldots
-,g_{n-1}\right)  $ instead of $n$, $\left(  a_{1},a_{2},\ldots,a_{n}\right)  $
-and $\left(  b_{1},b_{2},\ldots,b_{n}\right)  $) shows that $\left(
-t_{1},t_{2},\ldots,t_{n-1}\right)  =\left(  g_{1},g_{2},\ldots,g_{n-1}\right)
-$. Compared with $\mathbf{g}=\left(  g_{1},g_{2},\ldots,g_{n-1}\right)  $,
-this yields%
-\[
-\mathbf{g}=\left(  t_{1},t_{2},\ldots,t_{n-1}\right)  =\left(  1,2,\ldots
-,\widehat{k},\ldots,n\right)  =\Phi\left(  k\right)
-\]
-(since $\Phi\left(  k\right)  =\left(  1,2,\ldots,\widehat{k},\ldots,n\right)
-$ (by the definition of $\Phi\left(  k\right)  $)). Thus, $\mathbf{g}%
-=\Phi\left(  \underbrace{k}_{\in\left\{  1,2,\ldots,n\right\}  }\right)
-\in\Phi\left(  \left\{  1,2,\ldots,n\right\}  \right)  $.
-\par
-Now, let us forget that we fixed $\mathbf{g}$. We thus have proven that
-$\mathbf{g}\in\Phi\left(  \left\{  1,2,\ldots,n\right\}  \right)  $ for every
-$\mathbf{g}\in\mathbf{I}$. In other words, $\mathbf{I}\subseteq\Phi\left(
-\left\{  1,2,\ldots,n\right\}  \right)  $. In other words, the map $\Phi$ is
-surjective, qed.}. Hence, the map $\Phi$ is bijective. In other words, the map
-$\Phi$ is a bijection. In other words, the map%
-\begin{align*}
-\left\{  1,2,\ldots,n\right\}   &  \rightarrow\mathbf{I},\\
-k  &  \mapsto\left(  1,2,\ldots,\widehat{k},\ldots,n\right)
-\end{align*}
-is a bijection (because the map $\Phi$ is the map
-\begin{align*}
-\left\{  1,2,\ldots,n\right\}   &  \rightarrow\mathbf{I},\\
-k  &  \mapsto\left(  1,2,\ldots,\widehat{k},\ldots,n\right)
-\end{align*}
-(since we have $\Phi\left(  k\right)  =\left(  1,2,\ldots,\widehat{k}%
-,\ldots,n\right)  $ for every $k\in\left\{  1,2,\ldots,n\right\}  $)).
-
-Now, (\ref{pf.lem.adj(AB).cauchy-binet.1}) becomes%
-\begin{align*}
-\det\left(  AB\right)   &  =\sum_{\left(  g_{1},g_{2},\ldots,g_{n}\right)
-\in\mathbf{I}}\det\left(  \operatorname*{cols}\nolimits_{g_{1},g_{2}%
-,\ldots,g_{n-1}}A\right)  \cdot\det\left(  \operatorname*{rows}%
-\nolimits_{g_{1},g_{2},\ldots,g_{n-1}}B\right) \\
-&  =\underbrace{\sum_{k\in\left\{  1,2,\ldots,n\right\}  }}_{=\sum_{k=1}^{n}%
-}\det\left(  \operatorname*{cols}\nolimits_{1,2,\ldots,\widehat{k},\ldots
-,n}A\right)  \cdot\det\left(  \operatorname*{rows}\nolimits_{1,2,\ldots
-,\widehat{k},\ldots,n}B\right) \\
-&  \ \ \ \ \ \ \ \ \ \ \left(
-\begin{array}
-[c]{c}%
-\text{here, we have substituted }\left(  1,2,\ldots,\widehat{k},\ldots
-,n\right)  \text{ for}\\
-\left(  g_{1},g_{2},\ldots,g_{n}\right)  \text{ in the sum, since the map}\\
-\left\{  1,2,\ldots,n\right\}  \rightarrow\mathbf{I},\ k\mapsto\left(
-1,2,\ldots,\widehat{k},\ldots,n\right)  \text{ is a bijection}%
-\end{array}
-\right) \\
-&  =\sum_{k=1}^{n}\det\left(  \operatorname*{cols}\nolimits_{1,2,\ldots
-,\widehat{k},\ldots,n}A\right)  \cdot\det\left(  \operatorname*{rows}%
-\nolimits_{1,2,\ldots,\widehat{k},\ldots,n}B\right)  .
-\end{align*}
-This proves Lemma \ref{lem.adj(AB).cauchy-binet}.
-\end{proof}
-
-Here comes one more simple lemma:
-
-\begin{lemma}
-\label{lem.adj(AB).minor-of-AB}Let $n\in\mathbb{N}$, $m\in\mathbb{N}$ and
-$p\in\mathbb{N}$. Let $A$ be an $n\times p$-matrix. Let $B$ be a $p\times
-m$-matrix. Let $i_{1},i_{2},\ldots,i_{u}$ be some elements of $\left\{
-1,2,\ldots,n\right\}  $. Let $j_{1},j_{2},\ldots,j_{v}$ be some elements of
-$\left\{  1,2,\ldots,m\right\}  $. Then,%
-\[
-\operatorname*{sub}\nolimits_{i_{1},i_{2},\ldots,i_{u}}^{j_{1},j_{2}%
-,\ldots,j_{v}}\left(  AB\right)  =\left(  \operatorname*{rows}\nolimits_{i_{1}%
-,i_{2},\ldots,i_{u}}A\right)  \cdot\left(  \operatorname*{cols}%
-\nolimits_{j_{1},j_{2},\ldots,j_{v}}B\right)  .
-\]
-
-\end{lemma}
-
-\begin{proof}
-[Proof of Lemma \ref{lem.adj(AB).minor-of-AB}.]Let us write the $n\times
-p$-matrix $A$ in the form $A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq
-j\leq p}$. Let us write the $p\times m$-matrix $B$ in the form $B=\left(
-b_{i,j}\right)  _{1\leq i\leq p,\ 1\leq j\leq m}$.
-
-The definition of the product of two matrices yields $AB=\left(  \sum
-_{k=1}^{p}a_{i,k}b_{k,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq m}$ (since
-$A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq p}$ and $B=\left(
-b_{i,j}\right)  _{1\leq i\leq p,\ 1\leq j\leq m}$). Thus, the definition of
-$\operatorname*{sub}\nolimits_{i_{1},i_{2},\ldots,i_{u}}^{j_{1},j_{2}%
-,\ldots,j_{v}}\left(  AB\right)  $ yields%
-\begin{equation}
-\operatorname*{sub}\nolimits_{i_{1},i_{2},\ldots,i_{u}}^{j_{1},j_{2}%
-,\ldots,j_{v}}\left(  AB\right)  =\left(  \sum_{k=1}^{p}a_{i_{x},k}b_{k,j_{y}%
-}\right)  _{1\leq x\leq u,\ 1\leq y\leq v}.
-\label{pf.lem.adj(AB).minor-of-AB.1}%
-\end{equation}
-
-
-On the other hand, $A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq
-p}$. Hence, the definition of $\operatorname*{rows}\nolimits_{i_{1}%
-,i_{2},\ldots,i_{u}}A$ yields%
-\[
-\operatorname*{rows}\nolimits_{i_{1},i_{2},\ldots,i_{u}}A=\left(  a_{i_{x}%
-,j}\right)  _{1\leq x\leq u,\ 1\leq j\leq p}=\left(  a_{i_{i},j}\right)
-_{1\leq i\leq u,\ 1\leq j\leq p}%
-\]
-(here, we renamed the index $\left(  x,j\right)  $ as $\left(  i,j\right)  $).
-(The two \textquotedblleft$i$\textquotedblright s appearing in the
-\textquotedblleft$i_{i}$\textquotedblright\ are unrelated to each other.)
-
-Also, $B=\left(  b_{i,j}\right)  _{1\leq i\leq p,\ 1\leq j\leq m}$. Hence, the
-definition of $\operatorname*{cols}\nolimits_{j_{1},j_{2},\ldots,j_{v}}B$
-yields%
-\[
-\operatorname*{cols}\nolimits_{j_{1},j_{2},\ldots,j_{v}}B=\left(  b_{i,j_{y}%
-}\right)  _{1\leq i\leq p,\ 1\leq y\leq v}=\left(  b_{i,j_{j}}\right)  _{1\leq
-i\leq p,\ 1\leq j\leq v}%
-\]
-(here, we renamed the index $\left(  i,y\right)  $ as $\left(  i,j\right)  $).
-
-We have $\operatorname*{rows}\nolimits_{i_{1},i_{2},\ldots,i_{u}}A=\left(
-a_{i_{i},j}\right)  _{1\leq i\leq u,\ 1\leq j\leq p}$ and
-$\operatorname*{cols}\nolimits_{j_{1},j_{2},\ldots,j_{v}}B=\left(  b_{i,j_{j}%
-}\right)  _{1\leq i\leq p,\ 1\leq j\leq v}$. The definition of the product of
-two matrices thus yields%
-\[
-\left(  \operatorname*{rows}\nolimits_{i_{1},i_{2},\ldots,i_{u}}A\right)
-\cdot\left(  \operatorname*{cols}\nolimits_{j_{1},j_{2},\ldots,j_{v}}B\right)
-=\left(  \sum_{k=1}^{p}a_{i_{i},k}b_{k,j_{j}}\right)  _{1\leq i\leq u,\ 1\leq
-j\leq v}=\left(  \sum_{k=1}^{p}a_{i_{x},k}b_{k,j_{y}}\right)  _{1\leq x\leq
-u,\ 1\leq y\leq v}%
-\]
-(here, we have renamed the index $\left(  i,j\right)  $ as $\left(
-x,y\right)  $). Comparing this with (\ref{pf.lem.adj(AB).minor-of-AB.1}), we
-obtain%
-\[
-\operatorname*{sub}\nolimits_{i_{1},i_{2},\ldots,i_{u}}^{j_{1},j_{2}%
-,\ldots,j_{v}}\left(  AB\right)  =\left(  \operatorname*{rows}\nolimits_{i_{1}%
-,i_{2},\ldots,i_{u}}A\right)  \cdot\left(  \operatorname*{cols}%
-\nolimits_{j_{1},j_{2},\ldots,j_{v}}B\right)  .
-\]
-This proves Lemma \ref{lem.adj(AB).minor-of-AB}.
-\end{proof}
-
-We note in passing that Lemma \ref{lem.adj(AB).minor-of-AB} leads to the
-following generalization of Theorem \ref{thm.cauchy-binet}:
-
-\begin{corollary}
-\label{cor.adj(AB).cauchy-binet-general}Let $n\in\mathbb{N}$, $m\in\mathbb{N}$
-and $p\in\mathbb{N}$. Let $A$ be an $n\times p$-matrix. Let $B$ be a $p\times
-m$-matrix. Let $u\in\mathbb{N}$. Let $i_{1},i_{2},\ldots,i_{u}$ be some
-elements of $\left\{  1,2,\ldots,n\right\}  $. Let $j_{1},j_{2},\ldots,j_{u}$
-be some elements of $\left\{  1,2,\ldots,m\right\}  $. Then,%
-\[
-\det\left(  \operatorname*{sub}\nolimits_{i_{1},i_{2},\ldots,i_{u}}%
-^{j_{1},j_{2},\ldots,j_{u}}\left(  AB\right)  \right)  =\sum_{1\leq
-g_{1}<g_{2}<\cdots<g_{u}\leq p}\det\left(  \operatorname*{sub}\nolimits_{i_{1}%
-,i_{2},\ldots,i_{u}}^{g_{1},g_{2},\ldots,g_{u}}A\right)  \cdot\det\left(
-\operatorname*{sub}\nolimits_{g_{1},g_{2},\ldots,g_{u}}^{j_{1},j_{2}%
-,\ldots,j_{u}}B\right)  .
-\]
-(Here, the summation sign \textquotedblleft$\sum_{1\leq g_{1}<g_{2}%
-<\cdots<g_{u}\leq p}$\textquotedblright\ has to be interpreted as
-\textquotedblleft$\sum_{\substack{\left(  g_{1},g_{2},\ldots,g_{u}\right)
-\in\left\{  1,2,\ldots,p\right\}  ^{u};\\g_{1}<g_{2}<\cdots<g_{u}}%
-}$\textquotedblright, in analogy to Remark \ref{rmk.cauchy-binet.sumsign}.)
-\end{corollary}
-
-Corollary \ref{cor.adj(AB).cauchy-binet-general} is precisely the formula
-\cite[(1.10)]{NoumiYamada}\footnote{We notice that the notation $A_{j_{1}%
-,j_{2},\ldots,j_{u}}^{i_{1},i_{2},\ldots,i_{u}}$ in \cite{NoumiYamada} is
-equivalent to our notation $\operatorname*{sub}\nolimits_{i_{1},i_{2}%
-,\ldots,i_{u}}^{j_{1},j_{2},\ldots,j_{u}}A$.}.
-
-\begin{proof}
-[Proof of Corollary \ref{cor.adj(AB).cauchy-binet-general}.]Fix any $\left(
-g_{1},g_{2},\ldots,g_{u}\right)  \in\left\{  1,2,\ldots,p\right\}  ^{u}$.
-Applying Proposition \ref{prop.submatrix.easy} \textbf{(d)} to $p$, $u$ and
-$\left(  g_{1},g_{2},\ldots,g_{u}\right)  $ instead of $m$, $v$ and $\left(
-j_{1},j_{2},\ldots,j_{v}\right)  $, we obtain%
-\[
-\operatorname*{sub}\nolimits_{i_{1},i_{2},\ldots,i_{u}}^{g_{1},g_{2}%
-,\ldots,g_{u}}A=\operatorname*{rows}\nolimits_{i_{1},i_{2},\ldots,i_{u}%
-}\left(  \operatorname*{cols}\nolimits_{g_{1},g_{2},\ldots,g_{u}}A\right)
-=\operatorname*{cols}\nolimits_{g_{1},g_{2},\ldots,g_{u}}\left(
-\operatorname*{rows}\nolimits_{i_{1},i_{2},\ldots,i_{u}}A\right)  .
-\]
-Applying Proposition \ref{prop.submatrix.easy} \textbf{(d)} to $p$, $B$, $u$
-and $\left(  g_{1},g_{2},\ldots,g_{u}\right)  $ instead of $n$, $A$, $v$ and
-$\left(  i_{1},i_{2},\ldots,i_{u}\right)  $, we obtain%
-\[
-\operatorname*{sub}\nolimits_{g_{1},g_{2},\ldots,g_{u}}^{j_{1},j_{2}%
-,\ldots,j_{u}}B=\operatorname*{rows}\nolimits_{g_{1},g_{2},\ldots,g_{u}%
-}\left(  \operatorname*{cols}\nolimits_{j_{1},j_{2},\ldots,j_{u}}B\right)
-=\operatorname*{cols}\nolimits_{j_{1},j_{2},\ldots,j_{u}}\left(
-\operatorname*{rows}\nolimits_{g_{1},g_{2},\ldots,g_{u}}B\right)  .
-\]
-
-
-Now, Lemma \ref{lem.adj(AB).minor-of-AB} (applied to $v=u$) shows that%
-\[
-\operatorname*{sub}\nolimits_{i_{1},i_{2},\ldots,i_{u}}^{j_{1},j_{2}%
-,\ldots,j_{u}}\left(  AB\right)  =\left(  \operatorname*{rows}\nolimits_{i_{1}%
-,i_{2},\ldots,i_{u}}A\right)  \cdot\left(  \operatorname*{cols}%
-\nolimits_{j_{1},j_{2},\ldots,j_{u}}B\right)  .
-\]
-Hence,%
-\begin{align*}
-&  \det\left(  \underbrace{\operatorname*{sub}\nolimits_{i_{1},i_{2}%
-,\ldots,i_{u}}^{j_{1},j_{2},\ldots,j_{u}}\left(  AB\right)  }_{=\left(
-\operatorname*{rows}\nolimits_{i_{1},i_{2},\ldots,i_{u}}A\right)  \cdot\left(
-\operatorname*{cols}\nolimits_{j_{1},j_{2},\ldots,j_{u}}B\right)  }\right) \\
-&  =\det\left(  \left(  \operatorname*{rows}\nolimits_{i_{1},i_{2}%
-,\ldots,i_{u}}A\right)  \cdot\left(  \operatorname*{cols}\nolimits_{j_{1}%
-,j_{2},\ldots,j_{u}}B\right)  \right) \\
-&  =\sum_{1\leq g_{1}<g_{2}<\cdots<g_{u}\leq p}\det\left(
-\underbrace{\operatorname*{cols}\nolimits_{g_{1},g_{2},\ldots,g_{u}}\left(
-\operatorname*{rows}\nolimits_{i_{1},i_{2},\ldots,i_{u}}A\right)
-}_{=\operatorname*{sub}\nolimits_{i_{1},i_{2},\ldots,i_{u}}^{g_{1}%
-,g_{2},\ldots,g_{u}}A}\right)  \cdot\det\left(
-\underbrace{\operatorname*{rows}\nolimits_{g_{1},g_{2},\ldots,g_{u}}\left(
-\operatorname*{cols}\nolimits_{j_{1},j_{2},\ldots,j_{u}}B\right)
-}_{=\operatorname*{sub}\nolimits_{g_{1},g_{2},\ldots,g_{u}}^{j_{1}%
-,j_{2},\ldots,j_{u}}B}\right) \\
-&  \ \ \ \ \ \ \ \ \ \ \left(
-\begin{array}
-[c]{c}%
-\text{by Theorem \ref{thm.cauchy-binet} (applied to }u\text{, }p\text{,
-}\operatorname*{rows}\nolimits_{i_{1},i_{2},\ldots,i_{u}}A\text{ and}\\
-\operatorname*{cols}\nolimits_{j_{1},j_{2},\ldots,j_{u}}B\text{ instead of
-}n\text{, }m\text{, }A\text{ and }B\text{)}%
-\end{array}
-\right) \\
-&  =\sum_{1\leq g_{1}<g_{2}<\cdots<g_{u}\leq p}\det\left(  \operatorname*{sub}%
-\nolimits_{i_{1},i_{2},\ldots,i_{u}}^{g_{1},g_{2},\ldots,g_{u}}A\right)
-\cdot\det\left(  \operatorname*{sub}\nolimits_{g_{1},g_{2},\ldots,g_{u}%
-}^{j_{1},j_{2},\ldots,j_{u}}B\right)  .
-\end{align*}
-This proves Corollary \ref{cor.adj(AB).cauchy-binet-general}.
-\end{proof}
-\end{verlong}
-
 \subsection{Inverting matrices}
 
 We now will study inverses of matrices. We begin with a definition:
@@ -20139,6 +19448,168 @@ XXX
 \end{verlong}
 
 [To be continued!]
+
+\subsection{Additional exercises}
+
+Here are a few more additional exercises, with no solutions given and no
+importance to the rest of the text.
+
+\begin{addexercise}
+\label{exeadd.det.anotherpattern}Compute the determinant of the horrible
+$7\times7$-matrix%
+\[
+\left(
+\begin{array}
+[c]{ccccccc}%
+a & 0 & 0 & 0 & 0 & 0 & b\\
+0 & a^{\prime} & 0 & 0 & 0 & b^{\prime} & 0\\
+0 & 0 & a^{\prime\prime} & 0 & b^{\prime\prime} & 0 & 0\\
+0 & 0 & 0 & e & 0 & 0 & 0\\
+0 & 0 & c^{\prime\prime} & 0 & d^{\prime\prime} & 0 & 0\\
+0 & c^{\prime} & 0 & 0 & 0 & d^{\prime} & 0\\
+c & 0 & 0 & 0 & 0 & 0 & d
+\end{array}
+\right)  .
+\]
+
+\end{addexercise}
+
+\begin{addexercise}
+\label{exeadd.det.charpoly}Let $n\in\mathbb{N}$. Let $A$ be an $n\times
+n$-matrix over the commutative ring $\mathbb{K}$. Consider the commutative
+ring $\mathbb{K}\left[  X\right]  $ of polynomials in the indeterminate $X$
+over $\mathbb{K}$ (that is, polynomials in the indeterminate $X$ with
+coefficients lying in $\mathbb{K}$). We can then regard $A$ as a matrix over
+the ring $\mathbb{K}\left[  X\right]  $ as well (because every element of
+$\mathbb{K}$ can be viewed as a constant polynomial in $\mathbb{K}\left[
+X\right]  $).
+
+Consider the $n\times n$-matrix $A+XI_{n}$ over the commutative ring
+$\mathbb{K}\left[  X\right]  $. (For example, if $n=2$ and $A=\left(
+\begin{array}
+[c]{cc}%
+a & b\\
+c & d
+\end{array}
+\right)  $, then $A+XI_{n}=\left(
+\begin{array}
+[c]{cc}%
+a & b\\
+c & d
+\end{array}
+\right)  +X\left(
+\begin{array}
+[c]{cc}%
+1 & 0\\
+0 & 1
+\end{array}
+\right)  =\left(
+\begin{array}
+[c]{cc}%
+a+X & b\\
+c & d+X
+\end{array}
+\right)  $. In general, the matrix $A+XI_{n}$ is obtained from $A$ by adding
+an $X$ to each diagonal entry.)
+
+The determinant $\det\left(  A+XI_{n}\right)  $ is a polynomial in
+$\mathbb{K}\left[  X\right]  $. (For instance, for $n=2$ and $A=\left(
+\begin{array}
+[c]{cc}%
+a & b\\
+c & d
+\end{array}
+\right)  $, we have%
+\begin{align*}
+\det\left(  A+XI_{n}\right)    & =\det\left(
+\begin{array}
+[c]{cc}%
+a+X & b\\
+c & d+X
+\end{array}
+\right)  =\left(  a+X\right)  \left(  d+X\right)  -bc\\
+& =X^{2}+\left(  a+d\right)  X+\left(  ad-bc\right)  .
+\end{align*}
+)
+
+What can you say about the coefficients of this polynomial? Most importantly,
+what are the coefficients before $X^{n}$, before $X^{n-1}$, and before $X^{0}$
+? Can you express the other coefficients as sums of determinants?
+\end{addexercise}
+
+\begin{addexercise}
+\label{exeadd.det.resultant}Let $P=\sum_{k=0}^{d}p_{k}X^{k}$ and $Q=\sum
+_{k=0}^{e}q_{k}X^{k}$ be two polynomials over $\mathbb{K}$ (where $p_{0}%
+,p_{1},\ldots,p_{d}\in\mathbb{K}$ and $q_{0},q_{1},\ldots,q_{e}\in\mathbb{K}$
+are their coefficients). Define a $\left(  d+e\right)  \times\left(
+d+e\right)  $-matrix $A$ as follows:
+
+\begin{itemize}
+\item For every $k\in\left\{  1,2,\ldots,e\right\}  $, the $k$-th row of $A$
+is%
+\[
+\left(  \underbrace{0,0,\ldots,0}_{k-1\text{ zeroes}},p_{d},p_{d-1}%
+,\ldots,p_{1},p_{0},\underbrace{0,0,\ldots,0}_{e-k\text{ zeroes}}\right)  .
+\]
+
+
+\item For every $k\in\left\{  1,2,\ldots,d\right\}  $, the $\left(
+e+k\right)  $-th row of $A$ is%
+\[
+\left(  \underbrace{0,0,\ldots,0}_{k-1\text{ zeroes}},q_{e},q_{e-1}%
+,\ldots,q_{1},q_{0},\underbrace{0,0,\ldots,0}_{d-k\text{ zeroes}}\right)  .
+\]
+
+\end{itemize}
+
+(For example, if $d=4$ and $e=3$, then%
+\[
+A=\left(
+\begin{array}
+[c]{ccccccc}%
+p_{4} & p_{3} & p_{2} & p_{1} & p_{0} & 0 & 0\\
+0 & p_{4} & p_{3} & p_{2} & p_{1} & p_{0} & 0\\
+0 & 0 & p_{4} & p_{3} & p_{2} & p_{1} & p_{0}\\
+q_{3} & q_{2} & q_{1} & q_{0} & 0 & 0 & 0\\
+0 & q_{3} & q_{2} & q_{1} & q_{0} & 0 & 0\\
+0 & 0 & q_{3} & q_{2} & q_{1} & q_{0} & 0\\
+0 & 0 & 0 & q_{3} & q_{2} & q_{1} & q_{0}%
+\end{array}
+\right)  .
+\]
+)
+
+Assume that the polynomials $P$ and $Q$ have a common root $z$ (that is, there
+exists a $z\in\mathbb{K}$ such that $P\left(  z\right)  =0$ and $Q\left(
+z\right)  =0$). Show that $\det A=0$.
+
+[\textbf{Hint:} Find a column vector $v$ of length $d+e$ satisfying
+$Av=0_{\left(  d+e\right)  \times1}$; then apply Corollary
+\ref{cor.adj.kernel}.]
+\end{addexercise}
+
+\begin{remark}
+The matrix $A$ in Additional exercise \ref{exeadd.det.resultant} is called the
+\textit{\href{https://en.wikipedia.org/wiki/Sylvester_matrix}{\textit{Sylvester
+matrix}}} of the polynomials $P$ and $Q$ (for degrees $d$ and $e$); its
+determinant $\det A$ is known as their
+\textit{\href{https://en.wikipedia.org/wiki/Resultant}{\textit{resultant}}}
+(at least when $d$ and $e$ are actually the degrees of $P$ and $Q$). According
+to the exercise, the condition $\det A=0$ is necessary for $P$ and $Q$ to have
+a common root. In the general case, the converse does not hold: For one, you
+can always force $\det A$ to be $0$ by taking $d>\deg P$ and $e>\deg Q$ (so
+$p_{d}=0$ and $q_{e}=0$, and thus the $1$-st column of $A$ consists of zeoes).
+More importantly, the resultant of the two polynomials $X^{3}-1$ and
+$X^{2}+X+1$ is $0$, but they only have common roots in $\mathbb{C}\left[
+X\right]  $, not in $\mathbb{R}\left[  X\right]  $, so there is more to common
+roots than just the vanishing of a determinant.
+
+However, if $\mathbb{K}$ is an algebraically closed field (I won't go into the
+details of what this means, but an example of such a field is $\mathbb{C}$),
+and if $d=\deg P$ and $e=\deg Q$, then the polynomials $P$ and $Q$ have a
+common root \textbf{if and only if} their resultant is $0$. This comes rather
+useful in algebra.
+\end{remark}
 
 \section{Solutions}
 
@@ -35822,7 +35293,9 @@ obtained the result in its factored form!)
 
 \subsection{Solution to Exercise \ref{exe.adj(AB)}}
 
-\begin{vershort}
+\begin{noncompile}
+[Incomplete vershort solution follows:]
+
 \begin{proof}
 [Solution to Exercise \ref{exe.adj(AB)}.]Let $\left(  u,v\right)  \in\left\{
 1,2,\ldots,n\right\}  ^{2}$. Thus, $1\leq u\leq n$, so that $n\geq1$.
@@ -35974,9 +35447,698 @@ Compared with (\ref{sol.adj(AB).short.L2}), this yields $\operatorname*{adj}%
 \left(  AB\right)  =\operatorname*{adj}B\cdot\operatorname*{adj}A$. This
 solves Exercise \ref{exe.adj(AB)}.
 \end{proof}
-\end{vershort}
+\end{noncompile}
 
 \begin{verlong}
+Before we start solving this exercise, let us show two lemmas. The first of
+them formalizes the (intuitively obvious) fact that the elements of a finite
+set of integers can be listed in increasing order in exactly one way:
+
+\begin{lemma}
+\label{lem.adj(AB).set.increase}Let $n\in\mathbb{N}$. Let $a_{1},a_{2}%
+,\ldots,a_{n}$ be $n$ integers such that $a_{1}<a_{2}<\cdots<a_{n}$. Let
+$b_{1},b_{2},\ldots,b_{n}$ be $n$ integers such that $b_{1}<b_{2}<\cdots
+<b_{n}$. Assume that $\left\{  a_{1},a_{2},\ldots,a_{n}\right\}  =\left\{
+b_{1},b_{2},\ldots,b_{n}\right\}  $. Then, $\left(  a_{1},a_{2},\ldots
+,a_{n}\right)  =\left(  b_{1},b_{2},\ldots,b_{n}\right)  $.
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.adj(AB).set.increase}.]We have $b_{1}<b_{2}%
+<\cdots<b_{n}$. In other words, if $p$ and $q$ are two elements of $\left\{
+1,2,\ldots,n\right\}  $ satisfying $p<q$, then%
+\begin{equation}
+b_{p}<b_{q}. \label{pf.lem.adj(AB).set.increase.binc}%
+\end{equation}
+Hence, if $p$ and $q$ are two elements of $\left\{  1,2,\ldots,n\right\}  $
+satisfying $b_{p}=b_{q}$, then%
+\begin{equation}
+p=q \label{pf.lem.adj(AB).set.increase.bdj}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.adj(AB).set.increase.bdj}):} Let $p$
+and $q$ be two elements of $\left\{  1,2,\ldots,n\right\}  $ satisfying
+$b_{p}=b_{q}$. If we had $p<q$, then we would have $b_{p}<b_{q}$ (by
+(\ref{pf.lem.adj(AB).set.increase.binc})), which would contradict $b_{p}%
+=b_{q}$. Thus, we cannot have $p<q$. In other words, we must have $p\geq q$.
+If we had $q<p$, then we would have $b_{q}<b_{p}$ (by
+(\ref{pf.lem.adj(AB).set.increase.binc}), applied to $q$ and $p$ instead of
+$p$ and $q$)), which would contradict $b_{q}=b_{p}$. Thus, we cannot have
+$q<p$. In other words, we must have $q\geq p$. Combined with $p\geq q$, this
+shows that $p=q$. This proves (\ref{pf.lem.adj(AB).set.increase.bdj}).}.
+
+We define a map $A:\left\{  1,2,\ldots,n\right\}  \rightarrow\left\{
+1,2,\ldots,n\right\}  $ as follows:
+
+Let $i\in\left\{  1,2,\ldots,n\right\}  $. Then, $a_{i}\in\left\{  a_{1}%
+,a_{2},\ldots,a_{n}\right\}  =\left\{  b_{1},b_{2},\ldots,b_{n}\right\}  $.
+Hence, there exists a $j\in\left\{  1,2,\ldots,n\right\}  $ satisfying
+$a_{i}=b_{j}$. Moreover, this $j$ is unique\footnote{\textit{Proof.} Let
+$j_{1}$ and $j_{2}$ be two elements $j\in\left\{  1,2,\ldots,n\right\}  $
+satisfying $a_{i}=b_{j}$. We shall show that $j_{1}=j_{2}$.
+\par
+We know that $j_{1}$ is an element $j\in\left\{  1,2,\ldots,n\right\}  $
+satisfying $a_{i}=b_{j}$. In other words, $j_{1}$ is an element of $\left\{
+1,2,\ldots,n\right\}  $ satisfying $a_{i}=b_{j_{1}}$.
+\par
+We know that $j_{2}$ is an element $j\in\left\{  2,2,\ldots,n\right\}  $
+satisfying $a_{i}=b_{j}$. In other words, $j_{2}$ is an element of $\left\{
+1,2,\ldots,n\right\}  $ satisfying $a_{i}=b_{j_{2}}$.
+\par
+We have $b_{j_{1}}=a_{i}=b_{j_{2}}$. Hence, $j_{1}=j_{2}$ (by
+(\ref{pf.lem.adj(AB).set.increase.bdj}), applied to $p=j_{1}$ and $q=j_{2}$).
+\par
+Now, let us forget that we fixed $j_{1}$ and $j_{2}$. We thus have proven that
+if $j_{1}$ and $j_{2}$ are two elements $j\in\left\{  1,2,\ldots,n\right\}  $
+satisfying $a_{i}=b_{j}$, then $j_{1}=j_{2}$. In other words, any two elements
+$j\in\left\{  1,2,\ldots,n\right\}  $ satisfying $a_{i}=b_{j}$ must be equal.
+Hence, the $j\in\left\{  1,2,\ldots,n\right\}  $ satisfying $a_{i}=b_{j}$ is
+unique (because we already know that such a $j$ exists). Qed.}. We define
+$A\left(  i\right)  $ to be this $j$. Thus, $A\left(  i\right)  $ is the
+unique $j\in\left\{  1,2,\ldots,n\right\}  $ satisfying $a_{i}=b_{j}$. In
+other words, $A\left(  i\right)  $ is an element of $\left\{  1,2,\ldots
+,n\right\}  $ satisfying $a_{i}=b_{A\left(  i\right)  }$.
+
+Thus, we have defined $A\left(  i\right)  \in\left\{  1,2,\ldots,n\right\}  $
+for every $i\in\left\{  1,2,\ldots,n\right\}  $. In other words, we have
+defined a map $A:\left\{  1,2,\ldots,n\right\}  \rightarrow\left\{
+1,2,\ldots,n\right\}  $.
+
+Thus, we have defined a map $A:\left\{  1,2,\ldots,n\right\}  \rightarrow
+\left\{  1,2,\ldots,n\right\}  $ which satisfies%
+\begin{equation}
+\left(  a_{i}=b_{A\left(  i\right)  }\ \ \ \ \ \ \ \ \ \ \text{for every }%
+i\in\left\{  1,2,\ldots,n\right\}  \right)  .
+\label{pf.lem.adj(AB).set.increase.A}%
+\end{equation}
+An analogous construction (with $\left(  a_{1},a_{2},\ldots,a_{n}\right)  $,
+$\left(  b_{1},b_{2},\ldots,b_{n}\right)  $ and $A$ replaced by $\left(
+b_{1},b_{2},\ldots,b_{n}\right)  $, $\left(  a_{1},a_{2},\ldots,a_{n}\right)
+$ and $B$) allows us to construct a map $B:\left\{  1,2,\ldots,n\right\}
+\rightarrow\left\{  1,2,\ldots,n\right\}  $ which satisfies%
+\begin{equation}
+\left(  b_{i}=a_{B\left(  i\right)  }\ \ \ \ \ \ \ \ \ \ \text{for every }%
+i\in\left\{  1,2,\ldots,n\right\}  \right)  .
+\label{pf.lem.adj(AB).set.increase.B}%
+\end{equation}
+Consider this map $B$.
+
+We have $A\circ B=\operatorname*{id}$\ \ \ \ \footnote{\textit{Proof.} Let
+$i\in\left\{  1,2,\ldots,n\right\}  $. Then, $a_{B\left(  i\right)
+}=b_{A\left(  B\left(  i\right)  \right)  }$ (by
+(\ref{pf.lem.adj(AB).set.increase.A}), applied to $B\left(  i\right)  $
+instead of $i$). Hence, $b_{A\left(  B\left(  i\right)  \right)  }=a_{B\left(
+i\right)  }=b_{i}$ (by (\ref{pf.lem.adj(AB).set.increase.B})). Thus, $A\left(
+B\left(  i\right)  \right)  =i$ (by (\ref{pf.lem.adj(AB).set.increase.bdj}),
+applied to $p=A\left(  B\left(  i\right)  \right)  $ and $q=i$). Thus,
+$\left(  A\circ B\right)  \left(  i\right)  =A\left(  B\left(  i\right)
+\right)  =i=\operatorname*{id}\left(  i\right)  $.
+\par
+Now, let us forget that we fixed $i$. Thus, we have shown that $\left(  A\circ
+B\right)  \left(  i\right)  =\operatorname*{id}\left(  i\right)  $ for every
+$i\in\left\{  1,2,\ldots,n\right\}  $. In other words, $A\circ
+B=\operatorname*{id}$, qed.}. The same argument (but applied to $\left(
+b_{1},b_{2},\ldots,b_{n}\right)  $, $\left(  a_{1},a_{2},\ldots,a_{n}\right)
+$, $B$ and $A$ instead of $\left(  a_{1},a_{2},\ldots,a_{n}\right)  $,
+$\left(  b_{1},b_{2},\ldots,b_{n}\right)  $, $A$ and $B$) shows that $B\circ
+A=\operatorname*{id}$.
+
+The maps $A$ and $B$ are mutually inverse (since $A\circ B=\operatorname*{id}$
+and $B\circ A=\operatorname*{id}$). Thus, the map $A$ is invertible. In other
+words, the map $A$ is a bijection. Hence, $A$ is a bijection $\left\{
+1,2,\ldots,n\right\}  \rightarrow\left\{  1,2,\ldots,n\right\}  $. In other
+words, $A$ is a permutation of the set $\left\{  1,2,\ldots,n\right\}  $. In
+other words, $A\in S_{n}$ (since $S_{n}$ is the set of all permutations of the
+set $\left\{  1,2,\ldots,n\right\}  $).
+
+The integers $b_{1},b_{2},\ldots,b_{n}$ are distinct (because of
+(\ref{pf.lem.adj(AB).set.increase.bdj})). Proposition \ref{prop.sorting}
+\textbf{(c)} (applied to $\left(  b_{1},b_{2},\ldots,b_{n}\right)  $ instead
+of $\left(  a_{1},a_{2},\ldots,a_{n}\right)  $) thus shows that there is a
+\textbf{unique} permutation $\sigma\in S_{n}$ such that $b_{\sigma\left(
+1\right)  }<b_{\sigma\left(  2\right)  }<\cdots<b_{\sigma\left(  n\right)  }$.
+Hence, there exists at most one such permutation. In other words, if
+$\sigma_{1}$ and $\sigma_{2}$ are two permutations $\sigma\in S_{n}$ such that
+$b_{\sigma\left(  1\right)  }<b_{\sigma\left(  2\right)  }<\cdots
+<b_{\sigma\left(  n\right)  }$, then%
+\begin{equation}
+\sigma_{1}=\sigma_{2}. \label{pf.lem.adj(AB).set.increase.uni}%
+\end{equation}
+
+
+The permutation $\operatorname*{id}\in S_{n}$ satisfies $b_{\operatorname*{id}%
+\left(  1\right)  }<b_{\operatorname*{id}\left(  2\right)  }<\cdots
+<b_{\operatorname*{id}\left(  n\right)  }$\ \ \ \ \footnote{In fact, this is
+just a way to rewrite the chain of inequalities $b_{1}<b_{2}<\cdots<b_{n}$
+(which is true by assumption).}. In other words, the permutation
+$\operatorname*{id}\in S_{n}$ is a permutation $\sigma\in S_{n}$ such that
+$b_{\sigma\left(  1\right)  }<b_{\sigma\left(  2\right)  }<\cdots
+<b_{\sigma\left(  n\right)  }$.
+
+We have $a_{1}<a_{2}<\cdots<a_{n}$. This rewrites as $b_{A\left(  1\right)
+}<b_{A\left(  2\right)  }<\cdots<b_{A\left(  n\right)  }$ (since
+$a_{i}=b_{A\left(  i\right)  }$ for every $i\in\left\{  1,2,\ldots,n\right\}
+$ (by (\ref{pf.lem.adj(AB).set.increase.A}))). Thus, $A$ is a permutation
+$\sigma\in S_{n}$ such that $b_{\sigma\left(  1\right)  }<b_{\sigma\left(
+2\right)  }<\cdots<b_{\sigma\left(  n\right)  }$.
+
+Thus, we know that $A$ and $\operatorname*{id}$ are two permutations
+$\sigma\in S_{n}$ such that $b_{\sigma\left(  1\right)  }<b_{\sigma\left(
+2\right)  }<\cdots<b_{\sigma\left(  n\right)  }$. Hence,
+(\ref{pf.lem.adj(AB).set.increase.uni}) (applied to $\sigma_{1}=A$ and
+$\sigma_{2}=\operatorname*{id}$) shows that $A=\operatorname*{id}$.
+
+But (\ref{pf.lem.adj(AB).set.increase.A}) shows that%
+\begin{align*}
+\left(  a_{1},a_{2},\ldots,a_{n}\right)   &  =\left(  b_{A\left(  1\right)
+},b_{A\left(  2\right)  },\ldots,b_{A\left(  n\right)  }\right)  =\left(
+b_{\operatorname*{id}\left(  1\right)  },b_{\operatorname*{id}\left(
+2\right)  },\ldots,b_{\operatorname*{id}\left(  n\right)  }\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }A=\operatorname*{id}\right) \\
+&  =\left(  b_{1},b_{2},\ldots,b_{n}\right)  \ \ \ \ \ \ \ \ \ \ \left(
+\text{since }b_{\operatorname*{id}\left(  i\right)  }=b_{i}\text{ for every
+}i\in\left\{  1,2,\ldots,n\right\}  \right)  .
+\end{align*}
+This proves Lemma \ref{lem.adj(AB).set.increase}.
+\end{proof}
+
+\begin{lemma}
+\label{lem.adj(AB).cauchy-binet}Let $n$ be a positive integer. Let $A$ be an
+$\left(  n-1\right)  \times n$-matrix. Let $B$ be an $n\times\left(
+n-1\right)  $-matrix. Then,%
+\[
+\det\left(  AB\right)  =\sum_{k=1}^{n}\det\left(  \operatorname*{cols}%
+\nolimits_{1,2,\ldots,\widehat{k},\ldots,n}A\right)  \cdot\det\left(
+\operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{k},\ldots,n}B\right)  .
+\]
+
+\end{lemma}
+
+This lemma is a particular case of the Cauchy-Binet formula. Here is how it
+can be derived from the latter, in detail:
+
+\begin{proof}
+[Proof of Lemma \ref{lem.adj(AB).cauchy-binet}.]Let $\left[  n\right]  $
+denote the set $\left\{  1,2,\ldots,n\right\}  $. Define a subset $\mathbf{I}$
+of $\left[  n\right]  ^{n-1}$ by%
+\[
+\mathbf{I}=\left\{  \left(  k_{1},k_{2},\ldots,k_{n-1}\right)  \in\left[
+n\right]  ^{n-1}\ \mid\ k_{1}<k_{2}<\cdots<k_{n-1}\right\}  .
+\]
+
+
+Theorem \ref{thm.cauchy-binet} (applied to $n-1$ and $n$ instead of $n$ and
+$m$) yields%
+\begin{align}
+\det\left(  AB\right)   &  =\underbrace{\sum_{1\leq g_{1}<g_{2}<\cdots
+<g_{n-1}\leq n-1}}_{\substack{=\sum_{\substack{\left(  g_{1},g_{2}%
+,\ldots,g_{n}\right)  \in\left\{  1,2,\ldots,m\right\}  ^{n};\\g_{1}%
+<g_{2}<\cdots<g_{n}}}\\=\sum_{\left(  g_{1},g_{2},\ldots,g_{n}\right)
+\in\left\{  \left(  k_{1},k_{2},\ldots,k_{n-1}\right)  \in\left[  n\right]
+^{n-1}\ \mid\ k_{1}<k_{2}<\cdots<k_{n-1}\right\}  }\\=\sum_{\left(
+g_{1},g_{2},\ldots,g_{n}\right)  \in\mathbf{I}}\\\text{(since }\left\{
+\left(  k_{1},k_{2},\ldots,k_{n-1}\right)  \in\left[  n\right]  ^{n-1}%
+\ \mid\ k_{1}<k_{2}<\cdots<k_{n-1}\right\}  =\mathbf{I}\text{)}}}\det\left(
+\operatorname*{cols}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}}A\right)  \cdot
+\det\left(  \operatorname*{rows}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}}B\right)
+\nonumber\\
+&  =\sum_{\left(  g_{1},g_{2},\ldots,g_{n}\right)  \in\mathbf{I}}\det\left(
+\operatorname*{cols}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}}A\right)  \cdot
+\det\left(  \operatorname*{rows}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}%
+}B\right)  . \label{pf.lem.adj(AB).cauchy-binet.1}%
+\end{align}
+
+
+Now, for every $k\in\left\{  1,2,\ldots,n\right\}  $, we have%
+\[
+\left(  1,2,\ldots,\widehat{k},\ldots,n\right)  \in\mathbf{I}%
+\]
+\footnote{\textit{Proof.} Let $k\in\left\{  1,2,\ldots,n\right\}  $. Let us
+denote the $\left(  n-1\right)  $-tuple $\left(  1,2,\ldots,\widehat{k}%
+,\ldots,n\right)  $ by $\left(  t_{1},t_{2},\ldots,t_{n-1}\right)  $. Thus,%
+\begin{equation}
+t_{i}=%
+\begin{cases}
+i, & \text{if }i<k;\\
+i+1, & \text{if }i\geq k
+\end{cases}
+\ \ \ \ \ \ \ \ \ \ \text{for every }i\in\left\{  1,2,\ldots,n-1\right\}  .
+\label{pf.lem.adj(AB).cauchy-binet.wd.pf.1}%
+\end{equation}
+\par
+Now, let $i\in\left\{  1,2,\ldots,n-2\right\}  $. We shall prove that
+$t_{i}<t_{i+1}$. Indeed, let us assume the contrary (for the sake of
+contradiction). Thus, $t_{i}\geq t_{i+1}$. But%
+\begin{align*}
+t_{i}  &  =%
+\begin{cases}
+i, & \text{if }i<k;\\
+i+1, & \text{if }i\geq k
+\end{cases}
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{pf.lem.adj(AB).cauchy-binet.wd.pf.1})}\right) \\
+&  \leq%
+\begin{cases}
+i+1, & \text{if }i<k;\\
+i+1, & \text{if }i\geq k
+\end{cases}
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }i\leq i+1\text{ in the case when
+}i<k\right) \\
+&  =i+1,
+\end{align*}
+so that%
+\begin{align*}
+i+1  &  \geq t_{i}\geq t_{i+1}=%
+\begin{cases}
+i+1, & \text{if }i+1<k;\\
+\left(  i+1\right)  +1, & \text{if }i+1\geq k
+\end{cases}
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{pf.lem.adj(AB).cauchy-binet.wd.pf.1}), applied to }i+1\text{ instead of
+}i\right) \\
+&  \geq%
+\begin{cases}
+i+1, & \text{if }i+1<k;\\
+i+1, & \text{if }i+1\geq k
+\end{cases}
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(  i+1\right)  +1\geq i+1\text{
+in the case when }i+1\geq k\right) \\
+&  =i+1.
+\end{align*}
+Combining $i+1\geq t_{i}$ with $t_{i}\geq i+1$, we obtain $i+1=t_{i}$. Hence,
+if we had $i<k$, then we would have%
+\[
+i+1=t_{i}=%
+\begin{cases}
+i, & \text{if }i<k;\\
+i+1, & \text{if }i\geq k
+\end{cases}
+=i\ \ \ \ \ \ \ \ \ \ \left(  \text{since }i<k\right)  ,
+\]
+which would contradict $i+1\neq i$. Therefore, we cannot have $i<k$. Thus, we
+have $i\geq k$. Thus, $i+1\geq k$. Now,%
+\begin{align*}
+t_{i+1}  &  =%
+\begin{cases}
+i+1, & \text{if }i+1<k;\\
+\left(  i+1\right)  +1, & \text{if }i+1\geq k
+\end{cases}
+=\left(  i+1\right)  +1\ \ \ \ \ \ \ \ \ \ \left(  \text{since }i+1\geq
+k\right) \\
+&  >i+1=t_{i}\geq t_{i+1}.
+\end{align*}
+This is absurd. Thus, we have obtained a contradiction. This contradiction
+proves that our assumption was wrong. Hence, $t_{i}<t_{i+1}$.
+\par
+Now, let us forget that we fixed $i$. We thus have shown that $t_{i}<t_{i+1}$
+for every $i\in\left\{  1,2,\ldots,n-2\right\}  $. In other words,
+$t_{1}<t_{2}<\cdots<t_{n-1}$.
+\par
+Also, $\left(  t_{1},t_{2},\ldots,t_{n-1}\right)  =\left(  1,2,\ldots
+,\widehat{k},\ldots,n\right)  \in\left[  n\right]  ^{n-1}$. Hence, $\left(
+t_{1},t_{2},\ldots,t_{n-1}\right)  $ is an element of $\left[  n\right]
+^{n-1}$ and satisfies $t_{1}<t_{2}<\cdots<t_{n-1}$. In other words, $\left(
+t_{1},t_{2},\ldots,t_{n-1}\right)  $ is an element $\left(  k_{1},k_{2}%
+,\ldots,k_{n-1}\right)  \in\left[  n\right]  ^{n-1}$ satisfying $\left(
+k_{1},k_{2},\ldots,k_{n-1}\right)  \in\left[  n\right]  ^{n-1}$. In other
+words,
+\[
+\left(  t_{1},t_{2},\ldots,t_{n-1}\right)  \in\left\{  \left(  k_{1}%
+,k_{2},\ldots,k_{n-1}\right)  \in\left[  n\right]  ^{n-1}\ \mid\ k_{1}%
+<k_{2}<\cdots<k_{n-1}\right\}  =\mathbf{I}.
+\]
+Thus, $\left(  1,2,\ldots,\widehat{k},\ldots,n\right)  \in\left(  t_{1}%
+,t_{2},\ldots,t_{n-1}\right)  =\mathbf{I}$, qed.}. Hence, we can define a map%
+\[
+\Phi:\left\{  1,2,\ldots,n\right\}  \rightarrow\mathbf{I}%
+\]
+by%
+\[
+\left(  \Phi\left(  k\right)  =\left(  1,2,\ldots,\widehat{k},\ldots,n\right)
+\ \ \ \ \ \ \ \ \ \ \text{for every }k\in\left\{  1,2,\ldots,n\right\}
+\right)  .
+\]
+Consider this map $\Phi$. This map $\Phi$ is
+injective\footnote{\textit{Proof.} Let $i\in\left\{  1,2,\ldots,n\right\}  $
+and $j\in\left\{  1,2,\ldots,n\right\}  $ be such that $\Phi\left(  i\right)
+=\Phi\left(  j\right)  $. We shall show that $i=j$.
+\par
+The definition of $\Phi$ yields $\Phi\left(  i\right)  =\left(  1,2,\ldots
+,\widehat{i},\ldots,n\right)  $. Hence,%
+\begin{align*}
+&  \left(  \text{the set of all entries of }\underbrace{\Phi\left(  i\right)
+}_{=\left(  1,2,\ldots,\widehat{i},\ldots,n\right)  }\right) \\
+&  =\left(  \text{the set of all entries of }\left(  1,2,\ldots,\widehat{i}%
+,\ldots,n\right)  \right) \\
+&  =\left\{  1,2,\ldots,\widehat{i},\ldots,n\right\}  =\left\{  1,2,\ldots
+,n\right\}  \setminus\left\{  i\right\}  .
+\end{align*}
+Thus,%
+\begin{align*}
+&  \left\{  1,2,\ldots,n\right\}  \setminus\underbrace{\left(  \text{the set
+of all entries of }\Phi\left(  i\right)  \right)  }_{=\left\{  1,2,\ldots
+,n\right\}  \setminus\left\{  i\right\}  }\\
+&  =\left\{  1,2,\ldots,n\right\}  \setminus\left(  \left\{  1,2,\ldots
+,n\right\}  \setminus\left\{  i\right\}  \right)  =\left\{  i\right\}
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left\{  i\right\}  \subseteq\left\{
+1,2,\ldots,n\right\}  \text{ (since }i\in\left\{  1,2,\ldots,n\right\}
+\text{)}\right)  .
+\end{align*}
+The same argument (applied to $j$ instead of $i$) shows that%
+\[
+\left\{  1,2,\ldots,n\right\}  \setminus\left(  \text{the set of all entries
+of }\Phi\left(  j\right)  \right)  =\left\{  j\right\}  .
+\]
+\par
+Now,%
+\begin{align*}
+\left\{  i\right\}   &  =\left\{  1,2,\ldots,n\right\}  \setminus\left(
+\text{the set of all entries of }\underbrace{\Phi\left(  i\right)  }%
+_{=\Phi\left(  j\right)  }\right) \\
+&  =\left\{  1,2,\ldots,n\right\}  \setminus\left(  \text{the set of all
+entries of }\Phi\left(  j\right)  \right)  =\left\{  j\right\}  .
+\end{align*}
+Hence, $i\in\left\{  i\right\}  =\left\{  j\right\}  $, so that $i=j$.
+\par
+Now, let us forget that we fixed $i$ and $j$. We thus have proven that if
+$i\in\left\{  1,2,\ldots,n\right\}  $ and $j\in\left\{  1,2,\ldots,n\right\}
+$ are such that $\Phi\left(  i\right)  =\Phi\left(  j\right)  $, then $i=j$.
+In other words, the map $\Phi$ is injective, qed.} and
+surjective\footnote{\textit{Proof.} Let $\mathbf{g}\in\mathbf{I}$. We shall
+show that $\mathbf{g}\in\Phi\left(  \left\{  1,2,\ldots,n\right\}  \right)  $.
+\par
+We have%
+\begin{align*}
+\mathbf{g}  &  \in\mathbf{I}=\left\{  \left(  k_{1},k_{2},\ldots
+,k_{n-1}\right)  \in\left[  n\right]  ^{n-1}\ \mid\ k_{1}<k_{2}<\cdots
+<k_{n-1}\right\} \\
+&  =\left\{  \left(  g_{1},g_{2},\ldots,g_{n-1}\right)  \in\left[  n\right]
+^{n-1}\ \mid\ g_{1}<g_{2}<\cdots<g_{n-1}\right\}
+\end{align*}
+(here, we have renamed the index $\left(  k_{1},k_{2},\ldots,k_{n-1}\right)  $
+as $\left(  g_{1},g_{2},\ldots,g_{n-1}\right)  $). In other words,
+\textbf{$g$} can be written in the form $\mathbf{g}=\left(  g_{1},g_{2}%
+,\ldots,g_{n-1}\right)  $ for some $\left(  g_{1},g_{2},\ldots,g_{n-1}\right)
+\in\left[  n\right]  ^{n-1}$ satisfying $g_{1}<g_{2}<\cdots<g_{n-1}$. Consider
+this $\left(  g_{1},g_{2},\ldots,g_{n-1}\right)  $.
+\par
+The integers $g_{1},g_{2},\ldots,g_{n-1}$ are distinct (since $g_{1}%
+<g_{2}<\cdots<g_{n-1}$). Hence, they are $n-1$ distinct integers. In other
+words, we have $\left\vert \left\{  g_{1},g_{2},\ldots,g_{n-1}\right\}
+\right\vert =n-1$. Also, each $i\in\left\{  1,2,\ldots,n-1\right\}  $
+satisfies $g_{i}\in\left[  n\right]  $ (since $\left(  g_{1},g_{2}%
+,\ldots,g_{n-1}\right)  \in\left[  n\right]  ^{n-1}$). In other words,
+$\left\{  g_{1},g_{2},\ldots,g_{n-1}\right\}  \subseteq\left[  n\right]  $.
+Hence,%
+\[
+\left\vert \left[  n\right]  \setminus\left\{  g_{1},g_{2},\ldots
+,g_{n-1}\right\}  \right\vert =\underbrace{\left\vert \left[  n\right]
+\right\vert }_{=n}-\underbrace{\left\vert \left\{  g_{1},g_{2},\ldots
+,g_{n-1}\right\}  \right\vert }_{=n-1}=n-\left(  n-1\right)  =1.
+\]
+In other words, $\left[  n\right]  \setminus\left\{  g_{1},g_{2}%
+,\ldots,g_{n-1}\right\}  $ is a one-element set. Hence, the set $\left[
+n\right]  \setminus\left\{  g_{1},g_{2},\ldots,g_{n-1}\right\}  $ has the form
+$\left\{  k\right\}  $ for some object $k$. Consider this $k$.
+\par
+We have $\left[  n\right]  \setminus\left\{  g_{1},g_{2},\ldots,g_{n-1}%
+\right\}  =\left\{  k\right\}  $, so that $k\in\left\{  k\right\}  =\left[
+n\right]  \setminus\left\{  g_{1},g_{2},\ldots,g_{n-1}\right\}  \subseteq
+\left[  n\right]  =\left\{  1,2,\ldots,n\right\}  $.
+\par
+Let us denote the $\left(  n-1\right)  $-tuple $\left(  1,2,\ldots
+,\widehat{k},\ldots,n\right)  $ by $\left(  t_{1},t_{2},\ldots,t_{n-1}\right)
+$. Thus,%
+\begin{align*}
+\left(  t_{1},t_{2},\ldots,t_{n-1}\right)   &  =\left(  1,2,\ldots
+,\widehat{k},\ldots,n\right) \\
+&  \in\mathbf{I}=\left\{  \left(  k_{1},k_{2},\ldots,k_{n-1}\right)
+\in\left[  n\right]  ^{n-1}\ \mid\ k_{1}<k_{2}<\cdots<k_{n-1}\right\}  .
+\end{align*}
+In other words, $\left(  t_{1},t_{2},\ldots,t_{n-1}\right)  $ is an element
+$\left(  k_{1},k_{2},\ldots,k_{n-1}\right)  $ of $\left[  n\right]  ^{n-1}$
+satisfying $k_{1}<k_{2}<\cdots<k_{n-1}$. In other words, $\left(  t_{1}%
+,t_{2},\ldots,t_{n-1}\right)  $ is an element of $\left[  n\right]  ^{n-1}$
+and satisfies $t_{1}<t_{2}<\cdots<t_{n-1}$.
+\par
+Clearly,
+\begin{align*}
+\left\{  t_{1},t_{2},\ldots,t_{n-1}\right\}   &  =\left(  \text{the set of all
+entries of the list }\underbrace{\left(  t_{1},t_{2},\ldots,t_{n-1}\right)
+}_{=\left(  1,2,\ldots,\widehat{k},\ldots,n\right)  }\right) \\
+&  =\left(  \text{the set of all entries of the list }\left(  1,2,\ldots
+,\widehat{k},\ldots,n\right)  \right) \\
+&  =\left\{  1,2,\ldots,\widehat{k},\ldots,n\right\}  =\underbrace{\left\{
+1,2,\ldots,n\right\}  }_{=\left[  n\right]  }\setminus\underbrace{\left\{
+k\right\}  }_{=\left[  n\right]  \setminus\left\{  g_{1},g_{2},\ldots
+,g_{n-1}\right\}  }\\
+&  =\left[  n\right]  \setminus\left(  \left[  n\right]  \setminus\left\{
+g_{1},g_{2},\ldots,g_{n-1}\right\}  \right)  =\left\{  g_{1},g_{2}%
+,\ldots,g_{n-1}\right\}
+\end{align*}
+(since $\left\{  g_{1},g_{2},\ldots,g_{n-1}\right\}  \subseteq\left[
+n\right]  $).
+\par
+Now, Lemma \ref{lem.adj(AB).set.increase} (applied to $n-1$, $\left(
+t_{1},t_{2},\ldots,t_{n-1}\right)  $ and $\left(  g_{1},g_{2},\ldots
+,g_{n-1}\right)  $ instead of $n$, $\left(  a_{1},a_{2},\ldots,a_{n}\right)  $
+and $\left(  b_{1},b_{2},\ldots,b_{n}\right)  $) shows that $\left(
+t_{1},t_{2},\ldots,t_{n-1}\right)  =\left(  g_{1},g_{2},\ldots,g_{n-1}\right)
+$. Compared with $\mathbf{g}=\left(  g_{1},g_{2},\ldots,g_{n-1}\right)  $,
+this yields%
+\[
+\mathbf{g}=\left(  t_{1},t_{2},\ldots,t_{n-1}\right)  =\left(  1,2,\ldots
+,\widehat{k},\ldots,n\right)  =\Phi\left(  k\right)
+\]
+(since $\Phi\left(  k\right)  =\left(  1,2,\ldots,\widehat{k},\ldots,n\right)
+$ (by the definition of $\Phi\left(  k\right)  $)). Thus, $\mathbf{g}%
+=\Phi\left(  \underbrace{k}_{\in\left\{  1,2,\ldots,n\right\}  }\right)
+\in\Phi\left(  \left\{  1,2,\ldots,n\right\}  \right)  $.
+\par
+Now, let us forget that we fixed $\mathbf{g}$. We thus have proven that
+$\mathbf{g}\in\Phi\left(  \left\{  1,2,\ldots,n\right\}  \right)  $ for every
+$\mathbf{g}\in\mathbf{I}$. In other words, $\mathbf{I}\subseteq\Phi\left(
+\left\{  1,2,\ldots,n\right\}  \right)  $. In other words, the map $\Phi$ is
+surjective, qed.}. Hence, the map $\Phi$ is bijective. In other words, the map
+$\Phi$ is a bijection. In other words, the map%
+\begin{align*}
+\left\{  1,2,\ldots,n\right\}   &  \rightarrow\mathbf{I},\\
+k  &  \mapsto\left(  1,2,\ldots,\widehat{k},\ldots,n\right)
+\end{align*}
+is a bijection (because the map $\Phi$ is the map
+\begin{align*}
+\left\{  1,2,\ldots,n\right\}   &  \rightarrow\mathbf{I},\\
+k  &  \mapsto\left(  1,2,\ldots,\widehat{k},\ldots,n\right)
+\end{align*}
+(since we have $\Phi\left(  k\right)  =\left(  1,2,\ldots,\widehat{k}%
+,\ldots,n\right)  $ for every $k\in\left\{  1,2,\ldots,n\right\}  $)).
+
+Now, (\ref{pf.lem.adj(AB).cauchy-binet.1}) becomes%
+\begin{align*}
+\det\left(  AB\right)   &  =\sum_{\left(  g_{1},g_{2},\ldots,g_{n}\right)
+\in\mathbf{I}}\det\left(  \operatorname*{cols}\nolimits_{g_{1},g_{2}%
+,\ldots,g_{n-1}}A\right)  \cdot\det\left(  \operatorname*{rows}%
+\nolimits_{g_{1},g_{2},\ldots,g_{n-1}}B\right) \\
+&  =\underbrace{\sum_{k\in\left\{  1,2,\ldots,n\right\}  }}_{=\sum_{k=1}^{n}%
+}\det\left(  \operatorname*{cols}\nolimits_{1,2,\ldots,\widehat{k},\ldots
+,n}A\right)  \cdot\det\left(  \operatorname*{rows}\nolimits_{1,2,\ldots
+,\widehat{k},\ldots,n}B\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have substituted }\left(  1,2,\ldots,\widehat{k},\ldots
+,n\right)  \text{ for}\\
+\left(  g_{1},g_{2},\ldots,g_{n}\right)  \text{ in the sum, since the map}\\
+\left\{  1,2,\ldots,n\right\}  \rightarrow\mathbf{I},\ k\mapsto\left(
+1,2,\ldots,\widehat{k},\ldots,n\right)  \text{ is a bijection}%
+\end{array}
+\right) \\
+&  =\sum_{k=1}^{n}\det\left(  \operatorname*{cols}\nolimits_{1,2,\ldots
+,\widehat{k},\ldots,n}A\right)  \cdot\det\left(  \operatorname*{rows}%
+\nolimits_{1,2,\ldots,\widehat{k},\ldots,n}B\right)  .
+\end{align*}
+This proves Lemma \ref{lem.adj(AB).cauchy-binet}.
+\end{proof}
+
+Here comes one more simple lemma:
+
+\begin{lemma}
+\label{lem.adj(AB).minor-of-AB}Let $n\in\mathbb{N}$, $m\in\mathbb{N}$ and
+$p\in\mathbb{N}$. Let $A$ be an $n\times p$-matrix. Let $B$ be a $p\times
+m$-matrix. Let $i_{1},i_{2},\ldots,i_{u}$ be some elements of $\left\{
+1,2,\ldots,n\right\}  $. Let $j_{1},j_{2},\ldots,j_{v}$ be some elements of
+$\left\{  1,2,\ldots,m\right\}  $. Then,%
+\[
+\operatorname*{sub}\nolimits_{i_{1},i_{2},\ldots,i_{u}}^{j_{1},j_{2}%
+,\ldots,j_{v}}\left(  AB\right)  =\left(  \operatorname*{rows}\nolimits_{i_{1}%
+,i_{2},\ldots,i_{u}}A\right)  \cdot\left(  \operatorname*{cols}%
+\nolimits_{j_{1},j_{2},\ldots,j_{v}}B\right)  .
+\]
+
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.adj(AB).minor-of-AB}.]Let us write the $n\times
+p$-matrix $A$ in the form $A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq
+j\leq p}$. Let us write the $p\times m$-matrix $B$ in the form $B=\left(
+b_{i,j}\right)  _{1\leq i\leq p,\ 1\leq j\leq m}$.
+
+The definition of the product of two matrices yields $AB=\left(  \sum
+_{k=1}^{p}a_{i,k}b_{k,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq m}$ (since
+$A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq p}$ and $B=\left(
+b_{i,j}\right)  _{1\leq i\leq p,\ 1\leq j\leq m}$). Thus, the definition of
+$\operatorname*{sub}\nolimits_{i_{1},i_{2},\ldots,i_{u}}^{j_{1},j_{2}%
+,\ldots,j_{v}}\left(  AB\right)  $ yields%
+\begin{equation}
+\operatorname*{sub}\nolimits_{i_{1},i_{2},\ldots,i_{u}}^{j_{1},j_{2}%
+,\ldots,j_{v}}\left(  AB\right)  =\left(  \sum_{k=1}^{p}a_{i_{x},k}b_{k,j_{y}%
+}\right)  _{1\leq x\leq u,\ 1\leq y\leq v}.
+\label{pf.lem.adj(AB).minor-of-AB.1}%
+\end{equation}
+
+
+On the other hand, $A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+p}$. Hence, the definition of $\operatorname*{rows}\nolimits_{i_{1}%
+,i_{2},\ldots,i_{u}}A$ yields%
+\[
+\operatorname*{rows}\nolimits_{i_{1},i_{2},\ldots,i_{u}}A=\left(  a_{i_{x}%
+,j}\right)  _{1\leq x\leq u,\ 1\leq j\leq p}=\left(  a_{i_{i},j}\right)
+_{1\leq i\leq u,\ 1\leq j\leq p}%
+\]
+(here, we renamed the index $\left(  x,j\right)  $ as $\left(  i,j\right)  $).
+(The two \textquotedblleft$i$\textquotedblright s appearing in the
+\textquotedblleft$i_{i}$\textquotedblright\ are unrelated to each other.)
+
+Also, $B=\left(  b_{i,j}\right)  _{1\leq i\leq p,\ 1\leq j\leq m}$. Hence, the
+definition of $\operatorname*{cols}\nolimits_{j_{1},j_{2},\ldots,j_{v}}B$
+yields%
+\[
+\operatorname*{cols}\nolimits_{j_{1},j_{2},\ldots,j_{v}}B=\left(  b_{i,j_{y}%
+}\right)  _{1\leq i\leq p,\ 1\leq y\leq v}=\left(  b_{i,j_{j}}\right)  _{1\leq
+i\leq p,\ 1\leq j\leq v}%
+\]
+(here, we renamed the index $\left(  i,y\right)  $ as $\left(  i,j\right)  $).
+
+We have $\operatorname*{rows}\nolimits_{i_{1},i_{2},\ldots,i_{u}}A=\left(
+a_{i_{i},j}\right)  _{1\leq i\leq u,\ 1\leq j\leq p}$ and
+$\operatorname*{cols}\nolimits_{j_{1},j_{2},\ldots,j_{v}}B=\left(  b_{i,j_{j}%
+}\right)  _{1\leq i\leq p,\ 1\leq j\leq v}$. The definition of the product of
+two matrices thus yields%
+\[
+\left(  \operatorname*{rows}\nolimits_{i_{1},i_{2},\ldots,i_{u}}A\right)
+\cdot\left(  \operatorname*{cols}\nolimits_{j_{1},j_{2},\ldots,j_{v}}B\right)
+=\left(  \sum_{k=1}^{p}a_{i_{i},k}b_{k,j_{j}}\right)  _{1\leq i\leq u,\ 1\leq
+j\leq v}=\left(  \sum_{k=1}^{p}a_{i_{x},k}b_{k,j_{y}}\right)  _{1\leq x\leq
+u,\ 1\leq y\leq v}%
+\]
+(here, we have renamed the index $\left(  i,j\right)  $ as $\left(
+x,y\right)  $). Comparing this with (\ref{pf.lem.adj(AB).minor-of-AB.1}), we
+obtain%
+\[
+\operatorname*{sub}\nolimits_{i_{1},i_{2},\ldots,i_{u}}^{j_{1},j_{2}%
+,\ldots,j_{v}}\left(  AB\right)  =\left(  \operatorname*{rows}\nolimits_{i_{1}%
+,i_{2},\ldots,i_{u}}A\right)  \cdot\left(  \operatorname*{cols}%
+\nolimits_{j_{1},j_{2},\ldots,j_{v}}B\right)  .
+\]
+This proves Lemma \ref{lem.adj(AB).minor-of-AB}.
+\end{proof}
+
+We note in passing that Lemma \ref{lem.adj(AB).minor-of-AB} leads to the
+following generalization of Theorem \ref{thm.cauchy-binet}:
+
+\begin{corollary}
+\label{cor.adj(AB).cauchy-binet-general}Let $n\in\mathbb{N}$, $m\in\mathbb{N}$
+and $p\in\mathbb{N}$. Let $A$ be an $n\times p$-matrix. Let $B$ be a $p\times
+m$-matrix. Let $u\in\mathbb{N}$. Let $i_{1},i_{2},\ldots,i_{u}$ be some
+elements of $\left\{  1,2,\ldots,n\right\}  $. Let $j_{1},j_{2},\ldots,j_{u}$
+be some elements of $\left\{  1,2,\ldots,m\right\}  $. Then,%
+\[
+\det\left(  \operatorname*{sub}\nolimits_{i_{1},i_{2},\ldots,i_{u}}%
+^{j_{1},j_{2},\ldots,j_{u}}\left(  AB\right)  \right)  =\sum_{1\leq
+g_{1}<g_{2}<\cdots<g_{u}\leq p}\det\left(  \operatorname*{sub}\nolimits_{i_{1}%
+,i_{2},\ldots,i_{u}}^{g_{1},g_{2},\ldots,g_{u}}A\right)  \cdot\det\left(
+\operatorname*{sub}\nolimits_{g_{1},g_{2},\ldots,g_{u}}^{j_{1},j_{2}%
+,\ldots,j_{u}}B\right)  .
+\]
+(Here, the summation sign \textquotedblleft$\sum_{1\leq g_{1}<g_{2}%
+<\cdots<g_{u}\leq p}$\textquotedblright\ has to be interpreted as
+\textquotedblleft$\sum_{\substack{\left(  g_{1},g_{2},\ldots,g_{u}\right)
+\in\left\{  1,2,\ldots,p\right\}  ^{u};\\g_{1}<g_{2}<\cdots<g_{u}}%
+}$\textquotedblright, in analogy to Remark \ref{rmk.cauchy-binet.sumsign}.)
+\end{corollary}
+
+Corollary \ref{cor.adj(AB).cauchy-binet-general} is precisely the formula
+\cite[(1.10)]{NoumiYamada}\footnote{We notice that the notation $A_{j_{1}%
+,j_{2},\ldots,j_{u}}^{i_{1},i_{2},\ldots,i_{u}}$ in \cite{NoumiYamada} is
+equivalent to our notation $\operatorname*{sub}\nolimits_{i_{1},i_{2}%
+,\ldots,i_{u}}^{j_{1},j_{2},\ldots,j_{u}}A$.}.
+
+\begin{proof}
+[Proof of Corollary \ref{cor.adj(AB).cauchy-binet-general}.]Fix any $\left(
+g_{1},g_{2},\ldots,g_{u}\right)  \in\left\{  1,2,\ldots,p\right\}  ^{u}$.
+Applying Proposition \ref{prop.submatrix.easy} \textbf{(d)} to $p$, $u$ and
+$\left(  g_{1},g_{2},\ldots,g_{u}\right)  $ instead of $m$, $v$ and $\left(
+j_{1},j_{2},\ldots,j_{v}\right)  $, we obtain%
+\[
+\operatorname*{sub}\nolimits_{i_{1},i_{2},\ldots,i_{u}}^{g_{1},g_{2}%
+,\ldots,g_{u}}A=\operatorname*{rows}\nolimits_{i_{1},i_{2},\ldots,i_{u}%
+}\left(  \operatorname*{cols}\nolimits_{g_{1},g_{2},\ldots,g_{u}}A\right)
+=\operatorname*{cols}\nolimits_{g_{1},g_{2},\ldots,g_{u}}\left(
+\operatorname*{rows}\nolimits_{i_{1},i_{2},\ldots,i_{u}}A\right)  .
+\]
+Applying Proposition \ref{prop.submatrix.easy} \textbf{(d)} to $p$, $B$, $u$
+and $\left(  g_{1},g_{2},\ldots,g_{u}\right)  $ instead of $n$, $A$, $v$ and
+$\left(  i_{1},i_{2},\ldots,i_{u}\right)  $, we obtain%
+\[
+\operatorname*{sub}\nolimits_{g_{1},g_{2},\ldots,g_{u}}^{j_{1},j_{2}%
+,\ldots,j_{u}}B=\operatorname*{rows}\nolimits_{g_{1},g_{2},\ldots,g_{u}%
+}\left(  \operatorname*{cols}\nolimits_{j_{1},j_{2},\ldots,j_{u}}B\right)
+=\operatorname*{cols}\nolimits_{j_{1},j_{2},\ldots,j_{u}}\left(
+\operatorname*{rows}\nolimits_{g_{1},g_{2},\ldots,g_{u}}B\right)  .
+\]
+
+
+Now, Lemma \ref{lem.adj(AB).minor-of-AB} (applied to $v=u$) shows that%
+\[
+\operatorname*{sub}\nolimits_{i_{1},i_{2},\ldots,i_{u}}^{j_{1},j_{2}%
+,\ldots,j_{u}}\left(  AB\right)  =\left(  \operatorname*{rows}\nolimits_{i_{1}%
+,i_{2},\ldots,i_{u}}A\right)  \cdot\left(  \operatorname*{cols}%
+\nolimits_{j_{1},j_{2},\ldots,j_{u}}B\right)  .
+\]
+Hence,%
+\begin{align*}
+&  \det\left(  \underbrace{\operatorname*{sub}\nolimits_{i_{1},i_{2}%
+,\ldots,i_{u}}^{j_{1},j_{2},\ldots,j_{u}}\left(  AB\right)  }_{=\left(
+\operatorname*{rows}\nolimits_{i_{1},i_{2},\ldots,i_{u}}A\right)  \cdot\left(
+\operatorname*{cols}\nolimits_{j_{1},j_{2},\ldots,j_{u}}B\right)  }\right) \\
+&  =\det\left(  \left(  \operatorname*{rows}\nolimits_{i_{1},i_{2}%
+,\ldots,i_{u}}A\right)  \cdot\left(  \operatorname*{cols}\nolimits_{j_{1}%
+,j_{2},\ldots,j_{u}}B\right)  \right) \\
+&  =\sum_{1\leq g_{1}<g_{2}<\cdots<g_{u}\leq p}\det\left(
+\underbrace{\operatorname*{cols}\nolimits_{g_{1},g_{2},\ldots,g_{u}}\left(
+\operatorname*{rows}\nolimits_{i_{1},i_{2},\ldots,i_{u}}A\right)
+}_{=\operatorname*{sub}\nolimits_{i_{1},i_{2},\ldots,i_{u}}^{g_{1}%
+,g_{2},\ldots,g_{u}}A}\right)  \cdot\det\left(
+\underbrace{\operatorname*{rows}\nolimits_{g_{1},g_{2},\ldots,g_{u}}\left(
+\operatorname*{cols}\nolimits_{j_{1},j_{2},\ldots,j_{u}}B\right)
+}_{=\operatorname*{sub}\nolimits_{g_{1},g_{2},\ldots,g_{u}}^{j_{1}%
+,j_{2},\ldots,j_{u}}B}\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{by Theorem \ref{thm.cauchy-binet} (applied to }u\text{, }p\text{,
+}\operatorname*{rows}\nolimits_{i_{1},i_{2},\ldots,i_{u}}A\text{ and}\\
+\operatorname*{cols}\nolimits_{j_{1},j_{2},\ldots,j_{u}}B\text{ instead of
+}n\text{, }m\text{, }A\text{ and }B\text{)}%
+\end{array}
+\right) \\
+&  =\sum_{1\leq g_{1}<g_{2}<\cdots<g_{u}\leq p}\det\left(  \operatorname*{sub}%
+\nolimits_{i_{1},i_{2},\ldots,i_{u}}^{g_{1},g_{2},\ldots,g_{u}}A\right)
+\cdot\det\left(  \operatorname*{sub}\nolimits_{g_{1},g_{2},\ldots,g_{u}%
+}^{j_{1},j_{2},\ldots,j_{u}}B\right)  .
+\end{align*}
+This proves Corollary \ref{cor.adj(AB).cauchy-binet-general}.
+\end{proof}
+
 \begin{proof}
 [Solution to Exercise \ref{exe.adj(AB)}.]Let $\left(  u,v\right)  \in\left\{
 1,2,\ldots,n\right\}  ^{2}$. Thus, $u\in\left\{  1,2,\ldots,n\right\}  $ and
