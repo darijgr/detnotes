@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, December 05, 2015 02:43:19}
+%TCIDATA{LastRevised=Sunday, December 06, 2015 15:47:59}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -3098,10 +3098,10 @@ be the Fibonacci sequence.
 
 \textbf{(a)} Prove the identities%
 \begin{align*}
-1f_{n} &  =f_{n}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq1;\\
-2f_{n} &  =f_{n-2}+f_{n+1}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq3;\\
-3f_{n} &  =f_{n-2}+f_{n+2}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq3;\\
-4f_{n} &  =f_{n-2}+f_{n}+f_{n+2}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq3.
+1f_{n}  &  =f_{n}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq1;\\
+2f_{n}  &  =f_{n-2}+f_{n+1}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq3;\\
+3f_{n}  &  =f_{n-2}+f_{n+2}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq3;\\
+4f_{n}  &  =f_{n-2}+f_{n}+f_{n+2}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq3.
 \end{align*}
 
 
@@ -3116,7 +3116,7 @@ prove the following: Let $T$ be a finite set, and $a_{t}$ be an integer for
 every $t\in T$. Then, there exists a unique lacunar subset $S$ of $\mathbb{Z}$
 such that
 \begin{align*}
-\sum\limits_{t\in T}f_{n+a_{t}} &  =\sum\limits_{s\in S}f_{n+s}%
+\sum\limits_{t\in T}f_{n+a_{t}}  &  =\sum\limits_{s\in S}f_{n+s}%
 \ \ \ \ \ \ \ \ \ \ \text{for every }n\in\mathbb{Z}\text{ which}\\
 &  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \text{ satisfies }n\geq\max\left(
 \left\{  -a_{t}\mid t\in T\right\}  \cup\left\{  -s\mid s\in S\right\}
@@ -18793,7 +18793,8 @@ inverses\textquotedblright\ axiom holds.
 
 Thus, let $a\in\mathbb{L}^{\times}$. We need to show that there exists an
 $a^{\prime}\in\mathbb{L}^{\times}$ such that $a\cdot_{\mathbb{L}^{\times}%
-}a^{\prime}=a^{\prime}\cdot_{\mathbb{L}^{\times}}a=1_{\mathbb{L}^{\times}}$.
+}a^{\prime}=a^{\prime}\cdot_{\mathbb{L}^{\times}}a=1_{\mathbb{L}}$ (since
+$1_{\mathbb{L}}$ is the neutral element of $\mathbb{L}^{\times}$).
 
 We know that $a$ is an invertible element of $\mathbb{L}$ (sin${}$ce
 $a\in\mathbb{L}^{\times}$); it thus has an inverse $a^{-1}$. Now, $a$ itself
@@ -18805,10 +18806,10 @@ inverse. In other words, $a^{-1}$ is invertible, so that $a^{-1}\in
 =1_{\mathbb{L}}$ and that $a^{-1}\cdot_{\mathbb{L}^{\times}}a=a^{-1}%
 a=1_{\mathbb{L}}$. Hence, there exists an $a^{\prime}\in\mathbb{L}^{\times}$
 such that $a\cdot_{\mathbb{L}^{\times}}a^{\prime}=a^{\prime}\cdot
-_{\mathbb{L}^{\times}}a=1_{\mathbb{L}^{\times}}$ (namely, $a^{\prime}=a^{-1}%
-$). Thus we have proven that the \textquotedblleft existence of
-inverses\textquotedblright\ axiom holds. The proof of Proposition
-\ref{prop.ring.groups} \textbf{(b)} is thus complete.
+_{\mathbb{L}^{\times}}a=1_{\mathbb{L}}$ (namely, $a^{\prime}=a^{-1}$). Thus we
+have proven that the \textquotedblleft existence of inverses\textquotedblright%
+\ axiom holds. The proof of Proposition \ref{prop.ring.groups} \textbf{(b)} is
+thus complete.
 \end{proof}
 
 We now have a plentitude of examples of groups: For every noncommutative ring
@@ -18875,15 +18876,17 @@ b_{n}%
 \textit{Cramer's rule}.
 
 \begin{remark}
-A system of linear equations in $n$ variables $x_{1},x_{2},\ldots,x_{n}$ can
-be written in the form $Ax=b$, where $A$ is a fixed $n\times n$-matrix and $b$
-is a column vector of length $n$ (and where $x$ is the column vector $\left(
-x_{1},x_{2},\ldots,x_{n}\right)  ^{T}$ containing all the variables). When the
-matrix $A$ is invertible, it thus has a unique solution: namely, $x=A^{-1}b$
-(just multiply the equation $Ax=b$ from the left with $A^{-1}$ to see this),
-and this solution can be computed using Theorem \ref{thm.cramer}. This looks
-nice, but isn't actually all that useful for solving systems of linear
-equations: For one thing, the matrix $A$ coming from a system of linear
+A system of $n$ linear equations in $n$ variables $x_{1},x_{2},\ldots,x_{n}$
+can be written in the form $Ax=b$, where $A$ is a fixed $n\times n$-matrix and
+$b$ is a column vector of length $n$ (and where $x$ is the column vector
+$\left(  x_{1},x_{2},\ldots,x_{n}\right)  ^{T}$ containing all the variables).
+When the matrix $A$ is invertible, it thus has a unique solution: namely,
+$x=A^{-1}b$ (just multiply the equation $Ax=b$ from the left with $A^{-1}$ to
+see this), and this solution can be computed using Theorem \ref{thm.cramer}.
+This looks nice, but isn't actually all that useful for solving systems of
+linear equations: For one thing, this does not immediately help us solve
+systems of fewer or more than $n$ equations in $n$ variables; and even in the
+case of exactly $n$ equations, the matrix $A$ coming from a system of linear
 equations will not always be invertible (and in the more interesting cases, it
 will not be). For another thing, at least when $\mathbb{K}$ is a field, there
 are faster ways to solve a system of linear equations than anything that
