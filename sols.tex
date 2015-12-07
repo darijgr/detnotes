@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Sunday, December 06, 2015 21:03:06}
+%TCIDATA{LastRevised=Sunday, December 06, 2015 21:49:20}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -19510,6 +19510,83 @@ c & 0 & 0 & 0 & 0 & 0 & d
 \]
 
 \end{addexercise}
+
+\begin{addexercise}
+\label{exeadd.det.delannoy}Recall that the binomial coefficients satisfy the
+recurrence relation (\ref{eq.binom.rec.m}), which (visually) says that every
+entry of Pascal's triangle is the sum of the two entries left-above it and
+right-above it.
+
+Let us now define a variation of Pascal's triangle as follows: Define a
+nonnegative integer $\dbinom{m}{n}_{D}$ for every $m\in\mathbb{N}$ and
+$n\in\mathbb{N}$ recursively as follows:
+
+\begin{itemize}
+\item Set $\dbinom{0}{n}_{D}=%
+\begin{cases}
+1, & \text{if }n=0;\\
+0, & \text{if }n>0
+\end{cases}
+$ for every $n\in\mathbb{N}$.
+
+\item For every $m\in\mathbb{Z}$ and $n\in\mathbb{Z}$, set $\dbinom{m}{n}%
+_{D}=0$ if either $m$ or $n$ is negative.
+
+\item For every positive integer $m$ and every $n\in\mathbb{N}$, set
+\[
+\dbinom{m}{n}_{D}=\dbinom{m-1}{n-1}_{D}+\dbinom{m-1}{n}_{D}+\dbinom{m-2}%
+{n-1}_{D}.
+\]
+
+\end{itemize}
+
+(Thus, if we lay these $\dbinom{m}{n}_{D}$ out in the same way as the binomial
+coefficients $\dbinom{m}{n}$ in Pascal's triangle, then every entry is the sum
+of the three entries left-above it, right-above it, and straight above it.)
+
+The integers $\dbinom{m}{n}_{D}$ are known as the
+\href{https://en.wikipedia.org/wiki/Delannoy_number}{Delannoy numbers}.
+
+\textbf{(a)} Show that
+\[
+\dbinom{n+m}{n}_{D}=\sum_{i=0}^{n}\dbinom{n}{i}\dbinom{m+i}{n}=\sum_{i=0}%
+^{n}\dbinom{n}{i}\dbinom{m}{i}2^{i}%
+\]
+for every $n\in\mathbb{N}$ and $m\in\mathbb{N}$. (The second equality sign
+here is a consequence of Proposition \ref{prop.binom.bin-id} \textbf{(e)}.)
+
+\textbf{(b)} Let $n\in\mathbb{N}$. Let $A$ be the $n\times n$-matrix $\left(
+\dbinom{i+j-2}{i-1}_{D}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ (an analogue
+of the matrix $A$ from Exercise \ref{exe.ps4.pascal}.) Show that%
+\[
+\det A=2^{n\left(  n+1\right)  /2}.
+\]
+
+\end{addexercise}
+
+\begin{noncompile}
+\textbf{(a)} One can prove $\dbinom{n+m}{n}_{D}=\sum_{i=0}^{n}\dbinom{n}%
+{i}\dbinom{m+i}{n}$ by strong induction over $n+m$, along the following lines:%
+\begin{align*}
+& \sum_{i=0}^{n}\dbinom{n}{i}\underbrace{\dbinom{m+i}{n}}_{=\dbinom
+{m+i-1}{n-1}+\dbinom{m+i-1}{n}}\\
+& =\sum_{i=0}^{n}\underbrace{\dbinom{n}{i}}_{=\dbinom{n-1}{i-1}+\dbinom
+{n-1}{i}}\dbinom{m+i-1}{n-1}+\underbrace{\sum_{i=0}^{n}\dbinom{n}{i}%
+\dbinom{m+i-1}{n}}_{=\dbinom{n+m-1}{n}_{D}}\\
+& =\underbrace{\sum_{i=0}^{n}\dbinom{n-1}{i-1}\dbinom{m+i-1}{n-1}%
+}_{\substack{=\sum_{i=0}^{n}\dbinom{n-1}{i-1}\dbinom{m+\left(  i-1\right)
+}{n-1}\\=\dbinom{\left(  n-1\right)  +m}{n-1}_{D}}}+\underbrace{\sum_{i=0}%
+^{n}\dbinom{n-1}{i}\dbinom{m+i-1}{n-1}}_{\substack{=\sum_{i=0}^{n}\dbinom
+{n-1}{i}\dbinom{\left(  m-1\right)  +i}{n-1}\\=\dbinom{\left(  n-1\right)
++\left(  m-1\right)  }{n-1}_{D}}}+\dbinom{n+m-1}{n}_{D}\\
+& =\dbinom{\left(  n-1\right)  +m}{n-1}_{D}+\dbinom{\left(  n-1\right)
++\left(  m-1\right)  }{n-1}_{D}+\dbinom{n+m-1}{n}_{D}=\dbinom{n+m}{n}_{D}.
+\end{align*}
+
+
+\textbf{(b)} Use $\dbinom{n+m}{n}_{D}=\sum_{i=0}^{n}\dbinom{n}{i}\dbinom{m}%
+{i}2^{i}$ and the same tactic as in Exercise \ref{exe.ps4.pascal}.
+\end{noncompile}
 
 \begin{addexercise}
 \label{exeadd.det.charpoly}Let $n\in\mathbb{N}$. Let $A$ be an $n\times
