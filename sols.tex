@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Sunday, December 06, 2015 15:47:59}
+%TCIDATA{LastRevised=Sunday, December 06, 2015 21:03:06}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -2364,7 +2364,7 @@ such that $n\geq k$. Prove that%
 \[
 \sum_{u=0}^{k}\dbinom{n+u-1}{u}\dbinom{n}{k-2u}=\dbinom{n+k-1}{k}.
 \]
-
+Here, $\dbinom{a}{b}$ is defined to be $0$ when $b<0$.
 \end{addexercise}
 
 \begin{noncompile}
@@ -2419,7 +2419,11 @@ Show that $Z_{m,n}=Z_{n,m}$ for any $n\in\mathbb{N}$ and $m\in\mathbb{N}$.
 \begin{noncompile}
 Two solutions to the preceding exercise are sketched in
 \href{http://www.artofproblemsolving.com/community/c6h333199p1782800}{http://www.artofproblemsolving.com/community/c6h333199p1782800}
-.
+. More generally, $Y_{m,n}=Y_{n,m}$, where $Y_{m,n}$ is the polynomial%
+\[
+\sum_{k=0}^{n}Y^{k}\dbinom{n}{k}\left(  X^{n-k}+Y\right)  ^{m}.
+\]
+
 \end{noncompile}
 
 \begin{addexercise}
@@ -18347,8 +18351,30 @@ theoretical purposes.
 
 \begin{proof}
 [Proof of Theorem \ref{thm.matrices.inverses.square}.]\textbf{(a)}
-$\Longrightarrow:$ Assume that the matrix $A$ is invertible. In other words,
-an inverse $B$ of $A$ exists. Consider such a $B$.
+$\Longrightarrow:$\ \ \ \ \footnote{In case you don't know what the notation
+\textquotedblleft$\Longrightarrow:$\textquotedblright\ here means:
+\par
+Theorem \ref{thm.matrices.inverses.square} \textbf{(a)} is an
+\textquotedblleft if and only if\textquotedblright\ assertion. In other words,
+it asserts that $\mathcal{U}\Longleftrightarrow\mathcal{V}$ for two statements
+$\mathcal{U}$ and $\mathcal{V}$. (In our case, $\mathcal{U}$ is the statement
+\textquotedblleft the matrix $A$ is invertible\textquotedblright, and
+$\mathcal{V}$ is the statement \textquotedblleft the element $\det A$ of
+$\mathbb{K}$ is invertible (in $\mathbb{K}$)\textquotedblright. In order to
+prove a statement of the form $\mathcal{U}\Longleftrightarrow\mathcal{V}$, it
+is sufficient to prove the implications $\mathcal{U}\Longrightarrow
+\mathcal{V}$ and $\mathcal{U}\Longleftarrow\mathcal{V}$. Usually, these two
+implications are proven separately (although not always; for instance, in the
+proof of Corollary \ref{cor.matrices.inverses.square.ZZ}, we have used a chain
+of equivalences to prove $\mathcal{U}\Longleftrightarrow\mathcal{V}$
+directly). When writing such a proof, one often uses the abbreviations
+\textquotedblleft$\Longrightarrow:$\textquotedblright\ and \textquotedblleft%
+$\Longleftarrow:$\textquotedblright\ for \textquotedblleft Here comes the
+proof of the implication $\mathcal{U}\Longrightarrow\mathcal{V}$%
+:\textquotedblright\ and \textquotedblleft Here comes the proof of the
+implication $\mathcal{U}\Longleftarrow\mathcal{V}$:\textquotedblright,
+respectively.} Assume that the matrix $A$ is invertible. In other words, an
+inverse $B$ of $A$ exists. Consider such a $B$.
 
 The matrix $B$ is an inverse of $A$. In other words, $B$ is an $n\times
 n$-matrix such that $BA=I_{n}$ and $AB=I_{n}$ (by the definition of an
