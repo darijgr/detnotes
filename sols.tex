@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Sunday, December 06, 2015 21:49:20}
+%TCIDATA{LastRevised=Saturday, December 12, 2015 22:14:54}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -134,6 +134,95 @@ mathematics on a high level) and mature enough to read combinatorial proofs.
 The notes are unfinished and probably full of misprints. Thanks to Anya Zhang
 and Karthik Karnik (the two students taking part in the project) for finding
 some errors!
+
+\subsection{Prerequisites}
+
+These notes are still far from their final form, and the exact prerequisites
+for a reader are subject to change. At the current moment, I assume that the reader
+
+\begin{itemize}
+\item has a good grasp on school-level mathematics;
+
+\item has some experience with proofs (mathematical induction, strong
+induction, proof by contradiction, the concept of \textquotedblleft
+WLOG\textquotedblright, etc.) and mathematical notation (functions,
+subscripts, cases);
+
+\item knows what a polynomial is (at least over $\mathbb{Z}$ and $\mathbb{Q}$)
+and how polynomials differ from polynomial functions;
+
+\item knows the most basic properties of binomial coefficients (e.g., how
+$\dbinom{n}{k}$ counts $k$-element subsets of an $n$-element set);
+
+\item knows the basics of modular arithmetic (e.g., if $a\equiv
+b\operatorname{mod}n$ and $c\equiv d\operatorname{mod}n$, then $ac\equiv
+bd\operatorname{mod}n$);
+
+\item is familiar with the summation sign ($\sum$) and the product sign
+($\prod$) and knows how to transform them (e.g., interchanging summations, and
+substituting the index);
+
+\item has some familiarity with matrices (i.e., knows how to add and to
+multiply them).
+\end{itemize}
+
+Probably a few more requirements creep in at certain points of the notes,
+which I have overlooked. Some examples and remarks rely on additional
+knowledge (such as analysis, graph theory, abstract algebra); however, these
+can be skipped.
+
+\begin{noncompile}
+Basics on sums and products
+
+In the notes below, we shall make much use of the summation sign ($\sum$) and
+the product sign ($\prod$). In this short section, we shall introduce these
+signs and 
+
+For instance, the reader should understand the following two arguments:
+
+For any nonnegative integer $n$, we have%
+\begin{align*}
+2\sum_{i=0}^{n}i  & =\sum_{i=0}^{n}i+\sum_{i=0}^{n}%
+i\ \ \ \ \ \ \ \ \ \ \left(  \text{since }2q=q+q\text{ for every }%
+q\in\mathbb{Q}\right)  \\
+& =\sum_{i=0}^{n}i+\sum_{i=0}^{n}\left(  n-i\right)  \\
+& \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we substituted }n-i\text{ for
+}i\text{ in the second sum}\right)  \\
+& =\sum_{i=0}^{n}\underbrace{\left(  i+\left(  n-i\right)  \right)  }%
+_{=n}=\sum_{i=0}^{n}n=\left(  n+1\right)  n=n\left(  n+1\right)
+\end{align*}
+and thus $\sum_{i=0}^{n}i=\dfrac{n\left(  n+1\right)  }{2}$. Since $\sum
+_{i=0}^{n}i=0+\sum_{i=1}^{n}i=\sum_{i=1}^{n}i$, this rewrites as $\sum
+_{i=1}^{n}i=\dfrac{n\left(  n+1\right)  }{2}$.
+
+[to add:
+
+-- def $\sum_{i=a}^{b}$
+
+-- def $\prod_{i=a}^{b}$
+
+-- def less-than-empty sums/products
+
+-- telescope rule
+
+-- $\sum_{i}\sum_{j}=\sum_{j}\sum_{i}$ in nice and less nice circumstances
+
+-- little Gauss with 2 proofs (nice and ugly, both showing something)
+
+-- $\sum_{s\in S}$
+
+-- $\prod_{s\in S}$
+
+-- Fubini (and explain what it means)
+
+-- $\sum_{i\in\left[  n\right]  }=\sum_{i=1}^{n}$
+
+-- substituting index (with several examples)
+
+-- $\sum_{i=1}^{n}i^{2}$
+
+]
+\end{noncompile}
 
 \subsection{Notations}
 
@@ -2712,9 +2801,10 @@ $\lambda_{-}$, the sequence%
 \left(  \lambda_{+}+\lambda_{-},\lambda_{+}q_{+}+\lambda_{-}q_{-},\lambda
 _{+}q_{+}^{2}+\lambda_{-}q_{-}^{2},\ldots\right)
 \]
-(the $n$-th term, with $n$ starting at $0$, is $\lambda_{+}q_{+}^{n}%
-+\lambda_{-}q_{-}^{n}$) must also be $\left(  a,b\right)  $-recurrent. We
-denote this sequence by $L_{\lambda_{+},\lambda_{-}}$.
+(the $n$-th term of this sequence, with $n$ starting at $0$, is $\lambda
+_{+}q_{+}^{n}+\lambda_{-}q_{-}^{n}$) must also be $\left(  a,b\right)
+$-recurrent (check this!). We denote this sequence by $L_{\lambda_{+}%
+,\lambda_{-}}$.
 
 We now need to find two complex numbers $\lambda_{+}$ and $\lambda_{-}$ such
 that this sequence $L_{\lambda_{+},\lambda_{-}}$ is our sequence $\left(
@@ -2739,18 +2829,18 @@ of linear equations%
 Thanks to $q_{+}\neq q_{-}$, this system has a unique solution:%
 \[
 \lambda_{+}=\dfrac{x_{1}-q_{-}x_{0}}{q_{+}-q_{-}};\ \ \ \ \ \ \ \ \ \ \lambda
-_{-}=\dfrac{\lambda_{+}x_{0}-x_{1}}{q_{+}-q_{-}}.
+_{-}=\dfrac{q_{+}x_{0}-x_{1}}{q_{+}-q_{-}}.
 \]
 Thus, if we set $\left(  \lambda_{+},\lambda_{-}\right)  $ to be this
 solution, then $\left(  x_{0},x_{1},x_{2},\ldots\right)  =L_{\lambda
 _{+},\lambda_{-}}$, so that%
 \begin{equation}
-x_{n}=\lambda_{+}q_{+}^{n}+\lambda_{-}q_{-}^{n}
+x_{n}=\lambda_{+}q_{+}^{n}+\lambda_{-}q_{-}^{n}%
 \label{rmk.recursive.binet-general}%
 \end{equation}
 for every nonnegative integer $n$. This is an explicit formula, at least if
 the square roots do not disturb you. When $x_{0}=x_{1}=a=b=1$, you get the
-famous Binet formula for the Fibonacci sequence.
+famous Binet formula (\ref{eq.binet.f}) for the Fibonacci sequence.
 \end{remark}
 
 In the next exercise you will see what happens if the $a^{2}+4b\neq0$
@@ -19568,18 +19658,18 @@ of the matrix $A$ from Exercise \ref{exe.ps4.pascal}.) Show that%
 \textbf{(a)} One can prove $\dbinom{n+m}{n}_{D}=\sum_{i=0}^{n}\dbinom{n}%
 {i}\dbinom{m+i}{n}$ by strong induction over $n+m$, along the following lines:%
 \begin{align*}
-& \sum_{i=0}^{n}\dbinom{n}{i}\underbrace{\dbinom{m+i}{n}}_{=\dbinom
+&  \sum_{i=0}^{n}\dbinom{n}{i}\underbrace{\dbinom{m+i}{n}}_{=\dbinom
 {m+i-1}{n-1}+\dbinom{m+i-1}{n}}\\
-& =\sum_{i=0}^{n}\underbrace{\dbinom{n}{i}}_{=\dbinom{n-1}{i-1}+\dbinom
+&  =\sum_{i=0}^{n}\underbrace{\dbinom{n}{i}}_{=\dbinom{n-1}{i-1}+\dbinom
 {n-1}{i}}\dbinom{m+i-1}{n-1}+\underbrace{\sum_{i=0}^{n}\dbinom{n}{i}%
 \dbinom{m+i-1}{n}}_{=\dbinom{n+m-1}{n}_{D}}\\
-& =\underbrace{\sum_{i=0}^{n}\dbinom{n-1}{i-1}\dbinom{m+i-1}{n-1}%
+&  =\underbrace{\sum_{i=0}^{n}\dbinom{n-1}{i-1}\dbinom{m+i-1}{n-1}%
 }_{\substack{=\sum_{i=0}^{n}\dbinom{n-1}{i-1}\dbinom{m+\left(  i-1\right)
 }{n-1}\\=\dbinom{\left(  n-1\right)  +m}{n-1}_{D}}}+\underbrace{\sum_{i=0}%
 ^{n}\dbinom{n-1}{i}\dbinom{m+i-1}{n-1}}_{\substack{=\sum_{i=0}^{n}\dbinom
 {n-1}{i}\dbinom{\left(  m-1\right)  +i}{n-1}\\=\dbinom{\left(  n-1\right)
 +\left(  m-1\right)  }{n-1}_{D}}}+\dbinom{n+m-1}{n}_{D}\\
-& =\dbinom{\left(  n-1\right)  +m}{n-1}_{D}+\dbinom{\left(  n-1\right)
+&  =\dbinom{\left(  n-1\right)  +m}{n-1}_{D}+\dbinom{\left(  n-1\right)
 +\left(  m-1\right)  }{n-1}_{D}+\dbinom{n+m-1}{n}_{D}=\dbinom{n+m}{n}_{D}.
 \end{align*}
 
