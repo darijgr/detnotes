@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, December 12, 2015 22:14:54}
+%TCIDATA{LastRevised=Saturday, December 12, 2015 22:16:27}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -176,19 +176,19 @@ Basics on sums and products
 
 In the notes below, we shall make much use of the summation sign ($\sum$) and
 the product sign ($\prod$). In this short section, we shall introduce these
-signs and 
+signs and
 
 For instance, the reader should understand the following two arguments:
 
 For any nonnegative integer $n$, we have%
 \begin{align*}
-2\sum_{i=0}^{n}i  & =\sum_{i=0}^{n}i+\sum_{i=0}^{n}%
+2\sum_{i=0}^{n}i  &  =\sum_{i=0}^{n}i+\sum_{i=0}^{n}%
 i\ \ \ \ \ \ \ \ \ \ \left(  \text{since }2q=q+q\text{ for every }%
-q\in\mathbb{Q}\right)  \\
-& =\sum_{i=0}^{n}i+\sum_{i=0}^{n}\left(  n-i\right)  \\
-& \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we substituted }n-i\text{ for
-}i\text{ in the second sum}\right)  \\
-& =\sum_{i=0}^{n}\underbrace{\left(  i+\left(  n-i\right)  \right)  }%
+q\in\mathbb{Q}\right) \\
+&  =\sum_{i=0}^{n}i+\sum_{i=0}^{n}\left(  n-i\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we substituted }n-i\text{ for
+}i\text{ in the second sum}\right) \\
+&  =\sum_{i=0}^{n}\underbrace{\left(  i+\left(  n-i\right)  \right)  }%
 _{=n}=\sum_{i=0}^{n}n=\left(  n+1\right)  n=n\left(  n+1\right)
 \end{align*}
 and thus $\sum_{i=0}^{n}i=\dfrac{n\left(  n+1\right)  }{2}$. Since $\sum
@@ -259,7 +259,7 @@ $\dfrac{x}{1+x}$) does not exist (for $x = 2$, we have $\dfrac{x}{1+x} =
 $\mathbb{Z}$ cannot send this $x$ to this $\dfrac{x}{1+x}$). Thus, when
 defining a map from $X$ to $Y$ (using whatever notation), do not forget to
 check that it is well-defined (i.e., that your definition specifies precisely
-one image for each $x \in X$, and that these values all lie in $Y$). In many
+one image for each $x \in X$, and that these images all lie in $Y$). In many
 cases, this is obvious or very easy to check (I will usually not even mention
 this check), but in some cases, this is a difficult task.}
 \end{itemize}
@@ -2835,7 +2835,7 @@ Thus, if we set $\left(  \lambda_{+},\lambda_{-}\right)  $ to be this
 solution, then $\left(  x_{0},x_{1},x_{2},\ldots\right)  =L_{\lambda
 _{+},\lambda_{-}}$, so that%
 \begin{equation}
-x_{n}=\lambda_{+}q_{+}^{n}+\lambda_{-}q_{-}^{n}%
+x_{n}=\lambda_{+}q_{+}^{n}+\lambda_{-}q_{-}^{n}
 \label{rmk.recursive.binet-general}%
 \end{equation}
 for every nonnegative integer $n$. This is an explicit formula, at least if
@@ -7106,7 +7106,7 @@ $\left(
 2 & 0\\
 -1 & 1
 \end{array}
-\right)  ^{T}$.
+\right)  $.
 \end{definition}
 
 \begin{remark}
@@ -19816,15 +19816,13 @@ a common root. In the general case, the converse does not hold: For one, you
 can always force $\det A$ to be $0$ by taking $d>\deg P$ and $e>\deg Q$ (so
 $p_{d}=0$ and $q_{e}=0$, and thus the $1$-st column of $A$ consists of
 zeroes). More importantly, the resultant of the two polynomials $X^{3}-1$ and
-$X^{2}+X+1$ is $0$, but they only have common roots in $\mathbb{C}\left[
-X\right]  $, not in $\mathbb{R}\left[  X\right]  $, so there is more to common
-roots than just the vanishing of a determinant.
+$X^{2}+X+1$ is $0$, but they only have common roots in $\mathbb{C}$, not in
+$\mathbb{R}$. Thus, there is more to common roots than just the vanishing of a determinant.
 
 However, if $\mathbb{K}$ is an algebraically closed field (I won't go into the
 details of what this means, but an example of such a field is $\mathbb{C}$),
 and if $d=\deg P$ and $e=\deg Q$, then the polynomials $P$ and $Q$ have a
-common root \textbf{if and only if} their resultant is $0$. This comes rather
-useful in algebra.
+common root \textbf{if and only if} their resultant is $0$.
 \end{remark}
 
 \section{Solutions}
