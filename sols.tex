@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, December 12, 2015 22:16:27}
+%TCIDATA{LastRevised=Sunday, December 13, 2015 03:28:30}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -197,29 +197,38 @@ _{i=1}^{n}i=\dfrac{n\left(  n+1\right)  }{2}$.
 
 [to add:
 
--- def $\sum_{i=a}^{b}$
-
--- def $\prod_{i=a}^{b}$
-
--- def less-than-empty sums/products
-
--- telescope rule
-
--- $\sum_{i}\sum_{j}=\sum_{j}\sum_{i}$ in nice and less nice circumstances
-
--- little Gauss with 2 proofs (nice and ugly, both showing something)
-
 -- $\sum_{s\in S}$
 
 -- $\prod_{s\in S}$
 
--- Fubini (and explain what it means)
+-- def $\sum_{i=a}^{b}$
 
--- $\sum_{i\in\left[  n\right]  }=\sum_{i=1}^{n}$
+-- def $\prod_{i=a}^{b}$
+
+-- explain empty sums \& products \& less-than-empty (do not \textquotedblleft
+sum backwards\textquotedblright)
+
+-- renaming the summation index
 
 -- substituting index (with several examples)
 
+-- splitting a sum (careful because of less-than-empty)
+
+-- splitting off addends
+
+-- Fubini (and explain what it means)
+
+-- telescope rule
+
+-- $\sum_{i}\sum_{j}=\sum_{j}\sum_{i}$ in rectangles and triangles
+
+-- little Gauss with 2 proofs (nice and ugly, both showing something)
+
 -- $\sum_{i=1}^{n}i^{2}$
+
+-- infinite sums with $0$s and products with $1$s
+
+-- product rule
 
 ]
 \end{noncompile}
@@ -5066,7 +5075,8 @@ By now, we know almost all about the $s_{k}$'s and about the lengths of
 permutations that is necessary for studying determinants. (\textquotedblleft
 Almost\textquotedblright\ because Exercise \ref{exe.ps4.1ab} below will also
 be useful.) I shall now sketch some more advanced properties of these things,
-partly as a curiosity, partly to further your intuition.
+partly as a curiosity, partly to further your intuition; none of these
+properties shall be used further below.
 
 First, here is a way to visualize lengths of permutations using graph theory:
 
@@ -6761,7 +6771,8 @@ actually commutative when $n\leq1$ or when $\mathbb{K}$ is a trivial ring.)
 Instead of saying \textquotedblleft noncommutative ring\textquotedblright,
 many algebraists just say \textquotedblleft ring\textquotedblright. We shall,
 however, keep the word \textquotedblleft noncommutative\textquotedblright\ in
-order to avoid confusion.}.
+order to avoid confusion.}. We shall study noncommutative rings later (in
+Section \ref{sect.noncommring}).
 
 \subsection{Determinants}
 
@@ -12132,7 +12143,18 @@ $, thus $\widehat{\sigma}\left(  i\right)  \leq n$. From $\widehat{\sigma
 }\left(  i\right)  >\widehat{\sigma}\left(  j\right)  $, we obtain
 $\widehat{\sigma}\left(  j\right)  <\widehat{\sigma}\left(  i\right)  \leq n$
 and thus $\widehat{\sigma}\left(  j\right)  \leq n-1$ (since $\widehat{\sigma
-}\left(  j\right)  $ and $n$ are integers). Hence, $1\leq i<j\leq n-1$.
+}\left(  j\right)  $ and $n$ are integers).
+\par
+The definition of $\widehat{\sigma}$ yields $\widehat{\sigma}\left(  n\right)
+=%
+\begin{cases}
+\sigma\left(  n\right)  , & \text{if }n<n;\\
+n, & \text{if }n=n
+\end{cases}
+=n$ (since $n=n$). Hence, $\widehat{\sigma}\left(  n\right)  =n\neq
+\widehat{\sigma}\left(  j\right)  $ (since $\widehat{\sigma}\left(  j\right)
+<\widehat{\sigma}\left(  n\right)  $), so that $n\neq j$. Hence, $j\neq n$, so
+that $j<n$ (since $j\leq n$). Hence, $1\leq i<j\leq n-1$.
 \par
 The definition of $\widehat{\sigma}$ yields $\widehat{\sigma}\left(  i\right)
 =%
@@ -12232,8 +12254,8 @@ $m=n-1$) yields $\ell\left(  \sigma\right)  =\left\vert
 \underbrace{\operatorname*{Inv}\left(  \sigma\right)  }_{=\operatorname*{Inv}%
 \left(  \widehat{\sigma}\right)  }\right\vert =\left\vert \operatorname*{Inv}%
 \left(  \widehat{\sigma}\right)  \right\vert $. On the other hand,
-(\ref{pf.lem.laplace.lem.l}) (applied to $\widehat{\sigma}$ instead of
-$\sigma$) yields $\ell\left(  \widehat{\sigma}\right)  =\left\vert
+(\ref{pf.lem.laplace.lem.l}) (applied to $n-1$ and $\widehat{\sigma}$ instead
+of $m$ and $\sigma$) yields $\ell\left(  \widehat{\sigma}\right)  =\left\vert
 \operatorname*{Inv}\left(  \widehat{\sigma}\right)  \right\vert $. Comparing
 this with $\ell\left(  \sigma\right)  =\left\vert \operatorname*{Inv}\left(
 \widehat{\sigma}\right)  \right\vert $, we obtain $\ell\left(  \sigma\right)
@@ -13695,10 +13717,10 @@ the determinant of a matrix, again using the Vandermonde determinant!
 (None of the references to \cite{GriHyp} makes any claim of precedence;
 actually, I am rather sure of the opposite, i.e., that none of my proofs in
 \cite{GriHyp} are new.)
+\end{remark}
 
 For some more exercises related to Vandermonde determinants, see \cite[Chapter
 1, problems 1.12--1.22]{Prasolov}. Here comes one of them:
-\end{remark}
 
 \begin{exercise}
 \label{exe.vander-det.xi+yj}Let $n$ be a positive integer. Let $x_{1}%
@@ -13718,11 +13740,24 @@ n,\ 1\leq j\leq n}\right)  =0.
 i\leq n,\ 1\leq j\leq n}\right) \\
 &  =\left(  \prod_{k=0}^{n-1}\dbinom{n-1}{k}\right)  \left(  \prod_{1\leq
 i<j\leq n}\left(  x_{i}-x_{j}\right)  \right)  \left(  \prod_{1\leq i<j\leq
-n}\left(  y_{i}-y_{j}\right)  \right)  .
+n}\left(  y_{j}-y_{i}\right)  \right)  .
 \end{align*}
 
 
 [\textbf{Hint:} Use the binomial theorem.]
+
+\textbf{(c)} Let $\left(  p_{0},p_{1},\ldots,p_{n-1}\right)  \in\mathbb{K}%
+^{n}$ be an $n$-tuple of elements of $\mathbb{K}$. Let $P\left(  X\right)
+\in\mathbb{K}\left[  X\right]  $ be the polynomial $\sum_{k=0}^{n-1}p_{k}%
+X^{k}$. Prove that%
+\begin{align*}
+&  \det\left(  \left(  P\left(  x_{i}+y_{j}\right)  \right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}\right) \\
+&  =p_{n-1}^{n}\left(  \prod_{k=0}^{n-1}\dbinom{n-1}{k}\right)  \left(
+\prod_{1\leq i<j\leq n}\left(  x_{i}-x_{j}\right)  \right)  \left(
+\prod_{1\leq i<j\leq n}\left(  y_{j}-y_{i}\right)  \right)  .
+\end{align*}
+
 \end{exercise}
 
 Notice how Exercise \ref{exe.vander-det.xi+yj} \textbf{(a)} generalizes
@@ -17494,7 +17529,7 @@ as $\left(  \operatorname*{adj}A\right)  \cdot A$ and $\left(  \det A\right)
 \end{theorem}
 
 \begin{example}
-Recall that the adjugate of a $3\times3$-matrix is given by the formula
+Recall that the adjugate of a $2\times2$-matrix is given by the formula
 $\operatorname*{adj}\left(
 \begin{array}
 [c]{cc}%
@@ -17507,8 +17542,8 @@ c & d
 d & -b\\
 -c & a
 \end{array}
-\right)  $. Thus, Theorem \ref{thm.adj.inverse} (applied to $n=3$) yields%
-\begin{align*}
+\right)  $. Thus, Theorem \ref{thm.adj.inverse} (applied to $n=2$) yields%
+\[
 \left(
 \begin{array}
 [c]{cc}%
@@ -17521,7 +17556,7 @@ c & d
 d & -b\\
 -c & a
 \end{array}
-\right)   &  =\left(
+\right)  =\left(
 \begin{array}
 [c]{cc}%
 d & -b\\
@@ -17533,15 +17568,14 @@ d & -b\\
 a & b\\
 c & d
 \end{array}
-\right) \\
-&  =\det\left(
+\right)  =\det\left(
 \begin{array}
 [c]{cc}%
 a & b\\
 c & d
 \end{array}
 \right)  \cdot I_{2}.
-\end{align*}
+\]
 (Of course, $\det\left(
 \begin{array}
 [c]{cc}%
@@ -18581,7 +18615,7 @@ defined, I invite you to check that the two infinite matrices $A=\left(
 Corollary \ref{cor.matrices.inverse.AB} \textbf{(a)} all the more interesting.
 \end{remark}
 
-\subsection{Noncommutative rings}
+\subsection{\label{sect.noncommring}Noncommutative rings}
 
 I think that here is a good place to introduce two other basic notions from
 algebra: that of a noncommutative ring, and that of a group.
@@ -22819,7 +22853,7 @@ every }\sigma\in C_{n}.
 These two maps $\Phi$ and $\Psi$ are mutually inverse (since every $\sigma\in
 S_{n}$ satisfies $\sigma\circ\underbrace{s_{k}\circ s_{k}}_{=s_{k}%
 ^{2}=\operatorname*{id}}=\sigma$). Therefore, the map $\Phi$ is a bijection.
-Thus, there exists a bijection form $A_{n}$ to $C_{n}$ (namely, $\Psi$), so
+Thus, there exists a bijection form $A_{n}$ to $C_{n}$ (namely, $\Phi$), so
 that we obtain $\left\vert A_{n}\right\vert =\left\vert C_{n}\right\vert $.
 Hence, $\left\vert S_{n}\right\vert =\underbrace{\left\vert A_{n}\right\vert
 }_{=\left\vert C_{n}\right\vert }+\left\vert C_{n}\right\vert =\left\vert
@@ -24718,7 +24752,7 @@ This map $\rho$ is injective (indeed, we can reconstruct every $\left(
 i,j\right)  \in G$ from its image $\rho\left(  \left(  i,j\right)  \right)
 =\left\{  i,j\right\}  $, because $\left(  i,j\right)  \in G$ entails $i<j$)
 and surjective (since every two-element subset $S$ of $\left[  n\right]  $ has
-the form $\left(  i,j\right)  $ for some $\left(  i,j\right)  \in\left[
+the form $\left\{  i,j\right\}  $ for some $\left(  i,j\right)  \in\left[
 n\right]  ^{2}$ satisfying $i<j$). Hence, the map $\rho$ is bijective.
 
 For every $S\in\mathcal{P}_{2}\left(  \left[  n\right]  \right)  $, we define
@@ -24797,8 +24831,8 @@ proves (\ref{sol.perm.sign.pseudoexplicit.short.b.a1}).}
 \sigma\right)  $, we have%
 \begin{equation}
 a_{\left(  \sigma\left(  i\right)  ,\sigma\left(  j\right)  \right)
-}=-a_{\sigma\left(  \rho\left(  \left(  i,j\right)  \right)  \right)  }
-\label{sol.perm.sign.pseudoexplicit.short.b.a2}%
+}=-a_{\sigma\left(  \rho\left(  \left(  i,j\right)  \right)  \right)
+}.\label{sol.perm.sign.pseudoexplicit.short.b.a2}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{sol.perm.sign.pseudoexplicit.short.b.a2}):}
 Let $\left(  i,j\right)  \in\operatorname*{Inv}\left(  \sigma\right)  $. Thus,
@@ -24822,7 +24856,7 @@ i\right)  $.
 Now, the definition of $a_{\sigma\left(  \rho\left(  \left(  i,j\right)
 \right)  \right)  }$ shows that%
 \begin{align*}
-a_{\sigma\left(  \rho\left(  \left(  i,j\right)  \right)  \right)  }  &
+a_{\sigma\left(  \rho\left(  \left(  i,j\right)  \right)  \right)  } &
 =a_{\left(  \min\left(  \sigma\left(  \rho\left(  \left(  i,j\right)  \right)
 \right)  \right)  ,\max\left(  \sigma\left(  \rho\left(  \left(  i,j\right)
 \right)  \right)  \right)  \right)  }=a_{\left(  \sigma\left(  j\right)
@@ -24830,16 +24864,12 @@ a_{\sigma\left(  \rho\left(  \left(  i,j\right)  \right)  \right)  }  &
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\min\left(  \sigma\left(
 \rho\left(  \left(  i,j\right)  \right)  \right)  \right)  =\sigma\left(
 j\right)  \text{ and }\max\left(  \sigma\left(  \rho\left(  \left(
-i,j\right)  \right)  \right)  \right)  =\sigma\left(  i\right)  \right) \\
+i,j\right)  \right)  \right)  \right)  =\sigma\left(  i\right)  \right)  \\
 &  =-a_{\left(  \sigma\left(  i\right)  ,\sigma\left(  j\right)  \right)
-}\ \ \ \ \ \ \ \ \ \ \left(
-\begin{array}
-[c]{c}%
-\text{by (\ref{eq.exe.perm.sign.pseudoexplicit.b.skew}), applied to }%
-\sigma\left(  i\right)  \text{ and }\sigma\left(  j\right) \\
-\text{instead of }i\text{ and }j
-\end{array}
-\right)  .
+}\ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{eq.exe.perm.sign.pseudoexplicit.b.skew}), applied to }\sigma\left(
+i\right)  \text{ and }\sigma\left(  j\right)  \text{ instead of }i\text{ and
+}j\right)  .
 \end{align*}
 Hence, $a_{\left(  \sigma\left(  i\right)  ,\sigma\left(  j\right)  \right)
 }=-a_{\sigma\left(  \rho\left(  \left(  i,j\right)  \right)  \right)  }$. This
@@ -24849,8 +24879,8 @@ proves (\ref{sol.perm.sign.pseudoexplicit.short.b.a2}).}
 \notin\operatorname*{Inv}\left(  \sigma\right)  $, we have%
 \begin{equation}
 a_{\left(  \sigma\left(  i\right)  ,\sigma\left(  j\right)  \right)
-}=a_{\sigma\left(  \rho\left(  \left(  i,j\right)  \right)  \right)  }
-\label{sol.perm.sign.pseudoexplicit.short.b.a3}%
+}=a_{\sigma\left(  \rho\left(  \left(  i,j\right)  \right)  \right)
+}.\label{sol.perm.sign.pseudoexplicit.short.b.a3}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{sol.perm.sign.pseudoexplicit.short.b.a3}):}
 Let $\left(  i,j\right)  \in G$ be such that $\left(  i,j\right)
@@ -24886,14 +24916,14 @@ j\right)  $.
 Now, the definition of $a_{\sigma\left(  \rho\left(  \left(  i,j\right)
 \right)  \right)  }$ shows that%
 \begin{align*}
-a_{\sigma\left(  \rho\left(  \left(  i,j\right)  \right)  \right)  }  &
+a_{\sigma\left(  \rho\left(  \left(  i,j\right)  \right)  \right)  } &
 =a_{\left(  \min\left(  \sigma\left(  \rho\left(  \left(  i,j\right)  \right)
 \right)  \right)  ,\max\left(  \sigma\left(  \rho\left(  \left(  i,j\right)
 \right)  \right)  \right)  \right)  }=a_{\left(  \sigma\left(  i\right)
 ,\sigma\left(  j\right)  \right)  }\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\min\left(  \sigma\left(
 \rho\left(  \left(  i,j\right)  \right)  \right)  \right)  =\sigma\left(
-{}\right)  \text{ and }\max\left(  \sigma\left(  \rho\left(  \left(
+i\right)  \text{ and }\max\left(  \sigma\left(  \rho\left(  \left(
 i,j\right)  \right)  \right)  \right)  =\sigma\left(  j\right)  \right)  .
 \end{align*}
 This proves (\ref{sol.perm.sign.pseudoexplicit.short.b.a3}).}.
