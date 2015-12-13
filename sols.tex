@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Sunday, December 13, 2015 03:28:30}
+%TCIDATA{LastRevised=Sunday, December 13, 2015 04:02:37}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -24831,8 +24831,8 @@ proves (\ref{sol.perm.sign.pseudoexplicit.short.b.a1}).}
 \sigma\right)  $, we have%
 \begin{equation}
 a_{\left(  \sigma\left(  i\right)  ,\sigma\left(  j\right)  \right)
-}=-a_{\sigma\left(  \rho\left(  \left(  i,j\right)  \right)  \right)
-}.\label{sol.perm.sign.pseudoexplicit.short.b.a2}%
+}=-a_{\sigma\left(  \rho\left(  \left(  i,j\right)  \right)  \right)  }.
+\label{sol.perm.sign.pseudoexplicit.short.b.a2}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{sol.perm.sign.pseudoexplicit.short.b.a2}):}
 Let $\left(  i,j\right)  \in\operatorname*{Inv}\left(  \sigma\right)  $. Thus,
@@ -24856,7 +24856,7 @@ i\right)  $.
 Now, the definition of $a_{\sigma\left(  \rho\left(  \left(  i,j\right)
 \right)  \right)  }$ shows that%
 \begin{align*}
-a_{\sigma\left(  \rho\left(  \left(  i,j\right)  \right)  \right)  } &
+a_{\sigma\left(  \rho\left(  \left(  i,j\right)  \right)  \right)  }  &
 =a_{\left(  \min\left(  \sigma\left(  \rho\left(  \left(  i,j\right)  \right)
 \right)  \right)  ,\max\left(  \sigma\left(  \rho\left(  \left(  i,j\right)
 \right)  \right)  \right)  \right)  }=a_{\left(  \sigma\left(  j\right)
@@ -24864,7 +24864,7 @@ a_{\sigma\left(  \rho\left(  \left(  i,j\right)  \right)  \right)  } &
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\min\left(  \sigma\left(
 \rho\left(  \left(  i,j\right)  \right)  \right)  \right)  =\sigma\left(
 j\right)  \text{ and }\max\left(  \sigma\left(  \rho\left(  \left(
-i,j\right)  \right)  \right)  \right)  =\sigma\left(  i\right)  \right)  \\
+i,j\right)  \right)  \right)  \right)  =\sigma\left(  i\right)  \right) \\
 &  =-a_{\left(  \sigma\left(  i\right)  ,\sigma\left(  j\right)  \right)
 }\ \ \ \ \ \ \ \ \ \ \left(  \text{by
 (\ref{eq.exe.perm.sign.pseudoexplicit.b.skew}), applied to }\sigma\left(
@@ -24879,8 +24879,8 @@ proves (\ref{sol.perm.sign.pseudoexplicit.short.b.a2}).}
 \notin\operatorname*{Inv}\left(  \sigma\right)  $, we have%
 \begin{equation}
 a_{\left(  \sigma\left(  i\right)  ,\sigma\left(  j\right)  \right)
-}=a_{\sigma\left(  \rho\left(  \left(  i,j\right)  \right)  \right)
-}.\label{sol.perm.sign.pseudoexplicit.short.b.a3}%
+}=a_{\sigma\left(  \rho\left(  \left(  i,j\right)  \right)  \right)  }.
+\label{sol.perm.sign.pseudoexplicit.short.b.a3}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{sol.perm.sign.pseudoexplicit.short.b.a3}):}
 Let $\left(  i,j\right)  \in G$ be such that $\left(  i,j\right)
@@ -24916,7 +24916,7 @@ j\right)  $.
 Now, the definition of $a_{\sigma\left(  \rho\left(  \left(  i,j\right)
 \right)  \right)  }$ shows that%
 \begin{align*}
-a_{\sigma\left(  \rho\left(  \left(  i,j\right)  \right)  \right)  } &
+a_{\sigma\left(  \rho\left(  \left(  i,j\right)  \right)  \right)  }  &
 =a_{\left(  \min\left(  \sigma\left(  \rho\left(  \left(  i,j\right)  \right)
 \right)  \right)  ,\max\left(  \sigma\left(  \rho\left(  \left(  i,j\right)
 \right)  \right)  \right)  \right)  }=a_{\left(  \sigma\left(  i\right)
@@ -29686,6 +29686,903 @@ This solves Exercise \ref{exe.vander-det.s1}.
 
 We shall give a second solution for Exercise \ref{exe.vander-det.s1} later (in
 Section \ref{sect.sols.vander-det.s1.sol2}).
+
+\subsection{Solution to Exercise \ref{exe.vander-det.xi+yj}}
+
+We shall first sketch short solutions to parts \textbf{(a)} and \textbf{(b)}
+of Exercise \ref{exe.vander-det.xi+yj}. Then, we will show a solution to part
+\textbf{(c)} (which is a more elaborate and subtler version of our solution to
+part \textbf{(b)}), and finally derive parts \textbf{(a)} and \textbf{(b)}
+from part \textbf{(c)}. Thus, parts \textbf{(a)} and \textbf{(b)} of Exercise
+\ref{exe.vander-det.xi+yj} will be solved twice (though the solutions cannot
+really be called different).
+
+\begin{proof}
+[Solution sketch to parts \textbf{(a)} and \textbf{(b)} of Exercise
+\ref{exe.vander-det.xi+yj}.]\textbf{(a)} Let $m\in\left\{  0,1,\ldots
+,n-2\right\}  $. Thus, $m+1<n$.
+
+Define an $n\times\left(  m+1\right)  $-matrix $B$ by%
+\[
+B=\left(  \dbinom{m}{j-1}x_{i}^{j-1}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+m+1}.
+\]
+Define an $\left(  m+1\right)  \times n$-matrix $C$ by%
+\[
+C=\left(  y_{j}^{m-\left(  i-1\right)  }\right)  _{1\leq i\leq m+1,\ 1\leq
+j\leq n}.
+\]
+Then, the definition of the product of two matrices shows that%
+\[
+BC=\left(  \sum_{k=1}^{m+1}\dbinom{m}{k-1}x_{i}^{k-1}y_{j}^{m-\left(
+k-1\right)  }\right)  _{1\leq i\leq n,\ 1\leq j\leq n}.
+\]
+Since every $\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}$
+satisfies%
+\begin{align*}
+&  \sum_{k=1}^{m+1}\dbinom{m}{k-1}x_{i}^{k-1}y_{j}^{m-\left(  k-1\right)  }\\
+&  =\sum_{k=0}^{m}\dbinom{m}{k}x_{i}^{k}y_{j}^{m-k}\ \ \ \ \ \ \ \ \ \ \left(
+\text{here, we have substituted }k\text{ for }k-1\text{ in the sum}\right) \\
+&  =\left(  x_{i}+y_{j}\right)  ^{m}\ \ \ \ \ \ \ \ \ \ \left(  \text{since
+the binomial formula yields }\left(  x_{i}+y_{j}\right)  ^{m}=\sum_{k=0}%
+^{m}\dbinom{m}{k}x_{i}^{k}y_{j}^{m-k}\right)  ,
+\end{align*}
+this rewrites as%
+\[
+BC=\left(  \left(  x_{i}+y_{j}\right)  ^{m}\right)  _{1\leq i\leq n,\ 1\leq
+j\leq n}.
+\]
+
+
+But recall that $m+1<n$. Hence, (\ref{eq.exam.cauchy-binet.0}) (applied to
+$m+1$, $B$ and $C$ instead of $m$, $A$ and $B$) shows that $\det\left(
+BC\right)  =0$. Since $BC=\left(  \left(  x_{i}+y_{j}\right)  ^{m}\right)
+_{1\leq i\leq n,\ 1\leq j\leq n}$, this rewrites as $\det\left(  \left(
+\left(  x_{i}+y_{j}\right)  ^{m}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}\right)  =0$. This solves Exercise \ref{exe.vander-det.xi+yj} \textbf{(a)}.
+
+\textbf{(b)} Define an $n\times n$-matrix $B$ by%
+\[
+B=\left(  \dbinom{n-1}{j-1}x_{i}^{j-1}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}.
+\]
+Define an $n\times n$-matrix $C$ by%
+\[
+C=\left(  y_{j}^{n-i}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}.
+\]
+Then, the definition of the product of two matrices shows that%
+\[
+BC=\left(  \sum_{k=1}^{n}\dbinom{n-1}{k-1}x_{i}^{k-1}y_{j}^{n-k}\right)
+_{1\leq i\leq n,\ 1\leq j\leq n}.
+\]
+Since every $\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}$
+satisfies%
+\begin{align*}
+&  \sum_{k=1}^{n}\dbinom{n-1}{k-1}x_{i}^{k-1}\underbrace{y_{j}^{n-k}}%
+_{=y_{j}^{\left(  n-1\right)  -\left(  k-1\right)  }}=\sum_{k=1}^{n}%
+\dbinom{n-1}{k-1}x_{i}^{k-1}y_{j}^{\left(  n-1\right)  -\left(  k-1\right)
+}\\
+&  =\sum_{k=0}^{n-1}\dbinom{n-1}{k}x_{i}^{k}y_{j}^{\left(  n-1\right)
+-k}\ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }k\text{ for
+}k-1\text{ in the sum}\right)  \\
+&  =\left(  x_{i}+y_{j}\right)  ^{n-1}\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since the binomial formula yields}\\
+\left(  x_{i}+y_{j}\right)  ^{n-1}=\sum_{k=0}^{n-1}\dbinom{n-1}{k}x_{i}%
+^{k}y_{j}^{\left(  n-1\right)  -k}%
+\end{array}
+\right)  ,
+\end{align*}
+this rewrites as%
+\[
+BC=\left(  \left(  x_{i}+y_{j}\right)  ^{n-1}\right)  _{1\leq i\leq n,\ 1\leq
+j\leq n}.
+\]
+
+
+Theorem \ref{thm.det(AB)} shows that $\det\left(  BC\right)  =\det B\cdot\det
+C$. But what are $\det B$ and $\det C$ ?
+
+Finding $\det C$ is easy: We have $C=\left(  y_{j}^{n-i}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}$ and thus
+\[
+\det C=\det\left(  \left(  y_{j}^{n-i}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}\right)  =\prod_{1\leq i<j\leq n}\left(  y_{i}-y_{j}\right)
+\]
+(by Theorem \ref{thm.vander-det} \textbf{(b)}, applied to $y_{k}$ instead of
+$x_{k}$).
+
+To find $\det B$, we first observe that $\det\left(  \left(  x_{i}%
+^{j-1}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  =\prod_{1\leq j<i\leq
+n}\left(  x_{i}-x_{j}\right)  $ (by Theorem \ref{thm.vander-det}
+\textbf{(c)}). But $B=\left(  \dbinom{n-1}{j-1}x_{i}^{j-1}\right)  _{1\leq
+i\leq n,\ 1\leq j\leq n}$. In other words, the matrix $B$ is obtained from the
+matrix $\left(  x_{i}^{j-1}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ by
+multiplying the whole $j$-th column with $\dbinom{n-1}{j-1}$ for every
+$j\in\left\{  1,2,\ldots,n\right\}  $. Therefore, the determinant $\det B$ is
+obtained by successively multiplying $\det\left(  \left(  x_{i}^{j-1}\right)
+_{1\leq i\leq n,\ 1\leq j\leq n}\right)  $ with $\dbinom{n-1}{j-1}$ for every
+$j\in\left\{  1,2,\ldots,n\right\}  $ (since Exercise \ref{exe.ps4.6}
+\textbf{(h)} tells us that multiplying a single column of a square matrix by a
+scalar $\lambda$ results in the determinant getting multiplied by $\lambda$).
+In other words,%
+\begin{align*}
+\det B  &  =\underbrace{\det\left(  \left(  x_{i}^{j-1}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}\right)  }_{\substack{=\prod_{1\leq j<i\leq n}\left(
+x_{i}-x_{j}\right)  \\=\prod_{1\leq i<j\leq n}\left(  x_{j}-x_{i}\right)
+\\\text{(here, we renamed the}\\\text{index }\left(  j,i\right)  \text{ as
+}\left(  i,j\right)  \text{)}}}\cdot\underbrace{\prod_{j=1}^{n}\dbinom
+{n-1}{j-1}}_{\substack{=\prod_{k=0}^{n-1}\dbinom{n-1}{k}\\\text{(here, we
+substituted }k\text{ for }j-1\text{)}}}\\
+&  =\left(  \prod_{1\leq i<j\leq n}\left(  x_{j}-x_{i}\right)  \right)
+\cdot\left(  \prod_{k=0}^{n-1}\dbinom{n-1}{k}\right)  .
+\end{align*}
+
+
+Now,%
+\begin{align*}
+\det\left(  BC\right)   &  =\underbrace{\det B}_{=\left(  \prod_{1\leq i<j\leq
+n}\left(  x_{j}-x_{i}\right)  \right)  \cdot\left(  \prod_{k=0}^{n-1}%
+\dbinom{n-1}{k}\right)  }\cdot\underbrace{\det C}_{=\prod_{1\leq i<j\leq
+n}\left(  y_{i}-y_{j}\right)  }\\
+&  =\left(  \prod_{1\leq i<j\leq n}\left(  x_{j}-x_{i}\right)  \right)
+\cdot\left(  \prod_{k=0}^{n-1}\dbinom{n-1}{k}\right)  \cdot\left(
+\prod_{1\leq i<j\leq n}\left(  y_{i}-y_{j}\right)  \right) \\
+&  =\left(  \prod_{k=0}^{n-1}\dbinom{n-1}{k}\right)  \cdot\underbrace{\left(
+\prod_{1\leq i<j\leq n}\left(  x_{j}-x_{i}\right)  \right)  \cdot\left(
+\prod_{1\leq i<j\leq n}\left(  y_{i}-y_{j}\right)  \right)  }_{=\prod_{1\leq
+i<j\leq n}\left(  \left(  x_{j}-x_{i}\right)  \left(  y_{i}-y_{j}\right)
+\right)  }\\
+&  =\left(  \prod_{k=0}^{n-1}\dbinom{n-1}{k}\right)  \cdot\prod_{1\leq i<j\leq
+n}\underbrace{\left(  \left(  x_{j}-x_{i}\right)  \left(  y_{i}-y_{j}\right)
+\right)  }_{=\left(  x_{i}-x_{j}\right)  \left(  y_{j}-y_{i}\right)  }\\
+&  =\left(  \prod_{k=0}^{n-1}\dbinom{n-1}{k}\right)  \cdot\underbrace{\prod
+_{1\leq i<j\leq n}\left(  \left(  x_{i}-x_{j}\right)  \left(  y_{j}%
+-y_{i}\right)  \right)  }_{=\left(  \prod_{1\leq i<j\leq n}\left(  x_{i}%
+-x_{j}\right)  \right)  \left(  \prod_{1\leq i<j\leq n}\left(  y_{j}%
+-y_{i}\right)  \right)  }\\
+&  =\left(  \prod_{k=0}^{n-1}\dbinom{n-1}{k}\right)  \cdot\left(  \prod_{1\leq
+i<j\leq n}\left(  x_{i}-x_{j}\right)  \right)  \left(  \prod_{1\leq i<j\leq
+n}\left(  y_{j}-y_{i}\right)  \right)  .
+\end{align*}
+Since $BC=\left(  \left(  x_{i}+y_{j}\right)  ^{n-1}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}$, this rewrites as%
+\begin{align*}
+&  \det\left(  \left(  \left(  x_{i}+y_{j}\right)  ^{n-1}\right)  _{1\leq
+i\leq n,\ 1\leq j\leq n}\right) \\
+&  =\left(  \prod_{k=0}^{n-1}\dbinom{n-1}{k}\right)  \cdot\left(  \prod_{1\leq
+i<j\leq n}\left(  x_{i}-x_{j}\right)  \right)  \left(  \prod_{1\leq i<j\leq
+n}\left(  y_{j}-y_{i}\right)  \right)  .
+\end{align*}
+This solves Exercise \ref{exe.vander-det.xi+yj} \textbf{(b)}.
+\end{proof}
+
+Now, as promised, we shall start from scratch, and solve Exercise
+\ref{exe.vander-det.xi+yj} \textbf{(c)} first, and then solve Exercise
+\ref{exe.vander-det.xi+yj} \textbf{(a)} and \textbf{(b)} again using Exercise
+\ref{exe.vander-det.xi+yj} \textbf{(c)}.
+
+\begin{vershort}
+\begin{proof}
+[Solution to Exercise \ref{exe.vander-det.xi+yj}.]\textbf{(c)} We extend the
+$n$-tuple $\left(  p_{0},p_{1},\ldots,p_{n-1}\right)  $ to an infinite
+sequence $\left(  p_{0},p_{1},p_{2},\ldots\right)  \in\mathbb{K}^{\infty}$ by
+setting%
+\begin{equation}
+p_{\ell}=0\ \ \ \ \ \ \ \ \ \ \text{for every }\ell\in\left\{
+n,n+1,n+2,\ldots\right\}  . \label{sol.vander-det.xi+yj.short.c.pk=0}%
+\end{equation}
+
+
+Next, we define three $n\times n$-matrices $B$, $C$ and $D$:
+
+\begin{itemize}
+\item Define an $n\times n$-matrix $B$ by
+\[
+B=\left(  x_{i}^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}.
+\]
+Then,%
+\begin{equation}
+\det\underbrace{B}_{=\left(  x_{i}^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}}=\det\left(  \left(  x_{i}^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}\right)  =\prod_{1\leq i<j\leq n}\left(  x_{i}-x_{j}\right)
+\label{sol.vander-det.xi+yj.short.c.detB}%
+\end{equation}
+(by Theorem \ref{thm.vander-det} \textbf{(a)}).
+
+\item For every $\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}$,
+the element $\dbinom{n-1-i+j}{j-1}p_{n-1-i+j}$ of $\mathbb{K}$ is
+well-defined\footnote{\textit{Proof.} Let $\left(  i,j\right)  \in\left\{
+1,2,\ldots,n\right\}  ^{2}$. Thus, $j-1\geq0$. Hence, the binomial coefficient
+$\dbinom{n-1-i+j}{j-1}\in\mathbb{Z}$ is well-defined. Moreover,
+$n-1-\underbrace{i}_{\leq n}+\underbrace{j}_{\geq1}\geq n-1-n+1=0$, so that
+$n-1-i+j\in\mathbb{N}$. Thus, $p_{n-1-i+j}\in\mathbb{K}$ is well-defined
+(since we have an infinite sequence $\left(  p_{0},p_{1},p_{2},\ldots\right)
+\in\mathbb{K}^{\infty}$). Hence, the element $\dbinom{n-1-i+j}{j-1}%
+p_{n-1-i+j}$ of $\mathbb{K}$ is well-defined. Qed.}. Thus, for every $\left(
+i,j\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}$, we can define an element
+$c_{i,j}\in\mathbb{K}$ by $c_{i,j}=\dbinom{n-1-i+j}{j-1}p_{n-1-i+j}$. Consider
+these elements $c_{i,j}$. Define an $n\times n$-matrix $C$ by%
+\[
+C=\left(  c_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}.
+\]
+Consider this matrix $C$. We have $c_{i,j}=0$ for every $\left(  i,j\right)
+\in\left\{  1,2,\ldots,n\right\}  ^{2}$ satisfying $i<j$%
+\ \ \ \ \footnote{\textit{Proof.} Let $\left(  i,j\right)  \in\left\{
+1,2,\ldots,n\right\}  ^{2}$ be such that $i<j$. From $i<j$, we obtain $i\leq
+j-1$ (since $i$ and $j$ are integers). Thus, $n-1-\underbrace{i}_{\leq
+j-1}+j\geq n-1-\left(  j-1\right)  +j=n$. In other words, $n-1-i+j\in\left\{
+n,n+1,n+2,\ldots\right\}  $. Hence, $p_{n-1-i+j}=0$ (by
+(\ref{sol.vander-det.xi+yj.short.c.pk=0}), applied to $\ell=n-1-i+j$). Hence,
+$c_{i,j}=\dbinom{n-1-i+j}{j-1}\underbrace{p_{n-1-i+j}}_{=0}=0$, qed.}. Hence,
+Exercise \ref{exe.ps4.3} (applied to $C$ and $\left(  c_{i,j}\right)  _{1\leq
+i\leq n,\ 1\leq j\leq n}$ instead of $A$ and $\left(  a_{i,j}\right)  _{1\leq
+i\leq n,\ 1\leq j\leq n}$) shows that%
+\begin{align}
+\det C  &  =c_{1,1}c_{2,2}\cdots c_{n,n}=\prod_{i=1}^{n}\underbrace{c_{i,i}%
+}_{\substack{=\dbinom{n-1-i+i}{i-1}p_{n-1-i+i}\\\text{(by the definition of
+}c_{i,i}\text{)}}}\nonumber\\
+&  =\prod_{i=1}^{n}\left(  \underbrace{\dbinom{n-1-i+i}{i-1}}_{=\dbinom
+{n-1}{i-1}}\underbrace{p_{n-1-i+i}}_{=p_{n-1}}\right) \nonumber\\
+&  =\prod_{i=1}^{n}\left(  \dbinom{n-1}{i-1}p_{n-1}\right)  =\left(
+\prod_{i=1}^{n}\dbinom{n-1}{i-1}\right)  p_{n-1}^{n}\nonumber\\
+&  =p_{n-1}^{n}\left(  \prod_{i=1}^{n}\dbinom{n-1}{i-1}\right)  =p_{n-1}%
+^{n}\left(  \prod_{k=0}^{n-1}\dbinom{n-1}{k}\right)
+\label{sol.vander-det.xi+yj.short.c.detC}%
+\end{align}
+(here, we have substituted $k$ for $i-1$ in the product).
+
+\item Define an $n\times n$-matrix $D$ by
+\[
+D=\left(  y_{j}^{i-1}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}.
+\]
+Then,%
+\begin{align}
+\det\underbrace{D}_{=\left(  y_{j}^{i-1}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}}  &  =\det\left(  \left(  y_{j}^{i-1}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}\right)  =\prod_{1\leq j<i\leq n}\left(  y_{i}-y_{j}\right) \nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem \ref{thm.vander-det}
+\textbf{(d)}, applied to }y_{k}\text{ instead of }x_{k}\right) \nonumber\\
+&  =\prod_{1\leq i<j\leq n}\left(  y_{j}-y_{i}\right)
+\label{sol.vander-det.xi+yj.short.c.detD}%
+\end{align}
+(here, we have renamed the index $\left(  j,i\right)  $ as $\left(
+i,j\right)  $ in the product).
+\end{itemize}
+
+Our goal is to prove that $\left(  P\left(  x_{i}+y_{j}\right)  \right)
+_{1\leq i\leq n,\ 1\leq j\leq n}=BCD$. Once this is done, we will be able to
+compute $\det\left(  \left(  P\left(  x_{i}+y_{j}\right)  \right)  _{1\leq
+i\leq n,\ 1\leq j\leq n}\right)  $ by applying Theorem \ref{thm.det(AB)} twice.
+
+We have $C=\left(  c_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ and
+$D=\left(  y_{j}^{i-1}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$. Hence, the
+definition of the product of two matrices shows that%
+\begin{equation}
+CD=\left(  \sum_{k=1}^{n}c_{i,k}y_{j}^{k-1}\right)  _{1\leq i\leq n,\ 1\leq
+j\leq n}. \label{sol.vander-det.xi+yj.short.c.CD.1}%
+\end{equation}
+But every $\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}$
+satisfies%
+\begin{align*}
+\sum_{k=1}^{n}c_{i,k}y_{j}^{k-1}  &  =\sum_{\ell=0}^{n-1}\underbrace{c_{i,\ell
++1}}_{\substack{=\dbinom{n-1-i+\left(  \ell+1\right)  }{\left(  \ell+1\right)
+-1}p_{n-1-i+\left(  \ell+1\right)  }\\\text{(by the definition of }%
+c_{i,\ell+1}\text{)}}}y_{j}^{\left(  \ell+1\right)  -1}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }\ell+1\text{
+for }k\text{ in the sum}\right) \\
+&  =\sum_{\ell=0}^{n-1}\underbrace{\dbinom{n-1-i+\left(  \ell+1\right)
+}{\left(  \ell+1\right)  -1}}_{\substack{=\dbinom{n-i+\ell}{\ell}%
+}}\underbrace{p_{n-1-i+\left(  \ell+1\right)  }}_{=p_{n-i+\ell}}%
+\underbrace{y_{j}^{\left(  \ell+1\right)  -1}}_{=y_{j}^{\ell}}\\
+&  =\sum_{\ell=0}^{n-1}\dbinom{n-i+\ell}{\ell}p_{n-i+\ell}y_{j}^{\ell}.
+\end{align*}
+Hence, (\ref{sol.vander-det.xi+yj.short.c.CD.1}) rewrites as%
+\[
+CD=\left(  \sum_{\ell=0}^{n-1}\dbinom{n-i+\ell}{\ell}p_{n-i+\ell}y_{j}^{\ell
+}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}.
+\]
+
+
+Now, $B=\left(  x_{i}^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ and
+$CD=\left(  \sum_{\ell=0}^{n-1}\dbinom{n-i+\ell}{\ell}p_{n-i+\ell}y_{j}^{\ell
+}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$. Hence, the definition of the
+product of two matrices shows that%
+\begin{equation}
+B\left(  CD\right)  =\left(  \sum_{k=1}^{n}x_{i}^{n-k}\left(  \sum_{\ell
+=0}^{n-1}\dbinom{n-k+\ell}{\ell}p_{n-k+\ell}y_{j}^{\ell}\right)  \right)
+_{1\leq i\leq n,\ 1\leq j\leq n}. \label{sol.vander-det.xi+yj.short.c.BCD.1}%
+\end{equation}
+
+
+Now, let $\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}$. Then,%
+\begin{align}
+&  \sum_{k=1}^{n}x_{i}^{n-k}\left(  \sum_{\ell=0}^{n-1}\dbinom{n-k+\ell}{\ell
+}p_{n-k+\ell}y_{j}^{\ell}\right) \nonumber\\
+&  =\sum_{k=0}^{n-1}x_{i}^{k}\left(  \sum_{\ell=0}^{n-1}\dbinom{k+\ell}{\ell
+}p_{k+\ell}y_{j}^{\ell}\right) \nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }k\text{ for
+}n-k\text{ in the first sum}\right) \nonumber\\
+&  =\sum_{k=0}^{n-1}\sum_{\ell=0}^{n-1}x_{i}^{k}\dbinom{k+\ell}{\ell}%
+p_{k+\ell}y_{j}^{\ell}\nonumber\\
+&  =\sum_{k=0}^{n-1}\sum_{\ell=k}^{n-1+k}x_{i}^{k}\underbrace{\dbinom
+{k+\left(  \ell-k\right)  }{\ell-k}}_{=\dbinom{\ell}{\ell-k}}%
+\underbrace{p_{k+\left(  \ell-k\right)  }}_{=p_{\ell}}y_{j}^{\ell
+-k}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }\ell-k\text{
+for }\ell\text{ in the second sum}\right) \nonumber\\
+&  =\sum_{k=0}^{n-1}\underbrace{\sum_{\ell=k}^{n-1+k}x_{i}^{k}\dbinom{\ell
+}{\ell-k}p_{\ell}y_{j}^{\ell-k}}_{\substack{=\sum_{\ell=k}^{n-1}x_{i}%
+^{k}\dbinom{\ell}{\ell-k}p_{\ell}y_{j}^{\ell-k}+\sum_{\ell=n}^{n-1+k}x_{i}%
+^{k}\dbinom{\ell}{\ell-k}p_{\ell}y_{j}^{\ell-k}\\\text{(since }k\leq n\leq
+n-1+k+1\text{)}}}\nonumber\\
+&  =\sum_{k=0}^{n-1}\left(  \sum_{\ell=k}^{n-1}x_{i}^{k}\dbinom{\ell}{\ell
+-k}p_{\ell}y_{j}^{\ell-k}+\sum_{\ell=n}^{n-1+k}x_{i}^{k}\dbinom{\ell}{\ell
+-k}\underbrace{p_{\ell}}_{\substack{=0\\\text{(by
+(\ref{sol.vander-det.xi+yj.short.c.pk=0})}\\\text{(since }\ell\in\left\{
+n,n+1,\ldots,n-1+k\right\}  \subseteq\left\{  n,n+1,n+2,\ldots\right\}
+\text{))}}}y_{j}^{\ell-k}\right) \nonumber\\
+&  =\sum_{k=0}^{n-1}\left(  \sum_{\ell=k}^{n-1}x_{i}^{k}\dbinom{\ell}{\ell
+-k}p_{\ell}y_{j}^{\ell-k}+\underbrace{\sum_{\ell=n}^{n-1+k}x_{i}^{k}%
+\dbinom{\ell}{\ell-k}0y_{j}^{\ell-k}}_{=0}\right) \nonumber\\
+&  =\sum_{k=0}^{n-1}\sum_{\ell=k}^{n-1}x_{i}^{k}\dbinom{\ell}{\ell-k}p_{\ell
+}y_{j}^{\ell-k}. \label{sol.vander-det.xi+yj.short.c.BCD.2}%
+\end{align}
+On the other hand, $P\left(  X\right)  =\sum_{k=0}^{n-1}p_{k}X^{k}=\sum
+_{\ell=0}^{n-1}p_{\ell}X^{\ell}$ (here, we renamed the summation index $k$ as
+$\ell$). Hence,%
+\begin{align}
+P\left(  x_{i}+y_{j}\right)   &  =\sum_{\ell=0}^{n-1}p_{\ell}%
+\underbrace{\left(  x_{i}+y_{j}\right)  ^{\ell}}_{\substack{=\sum_{k=0}^{\ell
+}\dbinom{\ell}{k}x_{i}^{k}y_{j}^{\ell-k}\\\text{(by the binomial formula)}%
+}}=\sum_{\ell=0}^{n-1}p_{\ell}\sum_{k=0}^{\ell}\dbinom{\ell}{k}x_{i}^{k}%
+y_{j}^{\ell-k}\nonumber\\
+&  =\underbrace{\sum_{\ell=0}^{n-1}\sum_{k=0}^{\ell}}_{=\sum
+_{\substack{\left(  \ell,k\right)  \in\left\{  0,1,\ldots,n-1\right\}
+^{2};\\k\leq\ell}}=\sum_{k=0}^{n-1}\sum_{\ell=k}^{n-1}}p_{\ell}\dbinom{\ell
+}{k}x_{i}^{k}y_{j}^{\ell-k}\nonumber\\
+&  =\sum_{k=0}^{n-1}\sum_{\ell=k}^{n-1}p_{\ell}\underbrace{\dbinom{\ell}{k}%
+}_{\substack{=\dbinom{\ell}{\ell-k}\\\text{(by (\ref{eq.binom.symm}), applied
+to }\ell\text{ and }k\\\text{instead of }m\text{ and }n\text{)}}}x_{i}%
+^{k}y_{j}^{\ell-k}\nonumber\\
+&  =\sum_{k=0}^{n-1}\sum_{\ell=k}^{n-1}p_{\ell}\dbinom{\ell}{\ell-k}x_{i}%
+^{k}y_{j}^{\ell-k}=\sum_{k=0}^{n-1}\sum_{\ell=k}^{n-1}x_{i}^{k}\dbinom{\ell
+}{\ell-k}p_{\ell}y_{j}^{\ell-k}\nonumber\\
+&  =\sum_{k=1}^{n}x_{i}^{n-k}\left(  \sum_{\ell=0}^{n-1}\dbinom{n-k+\ell}%
+{\ell}p_{n-k+\ell}y_{j}^{\ell}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{sol.vander-det.xi+yj.short.c.BCD.2})}\right)  .
+\label{sol.vander-det.xi+yj.short.c.BCD.3}%
+\end{align}
+
+
+Now, let us forget that we fixed $\left(  i,j\right)  $. We thus have proven
+(\ref{sol.vander-det.xi+yj.short.c.BCD.3}) for every $\left(  i,j\right)
+\in\left\{  1,2,\ldots,n\right\}  ^{2}$. Hence,%
+\begin{align*}
+&  \left(  P\left(  x_{i}+y_{j}\right)  \right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}\\
+&  =\left(  \sum_{k=1}^{n}x_{i}^{n-k}\left(  \sum_{\ell=0}^{n-1}%
+\dbinom{n-k+\ell}{\ell}p_{n-k+\ell}y_{j}^{\ell}\right)  \right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}=B\left(  CD\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{sol.vander-det.xi+yj.short.c.BCD.1})}\right) \\
+&  =BCD.
+\end{align*}
+Hence,%
+\begin{align*}
+&  \det\underbrace{\left(  \left(  P\left(  x_{i}+y_{j}\right)  \right)
+_{1\leq i\leq n,\ 1\leq j\leq n}\right)  }_{=BCD}\\
+&  =\det\left(  BCD\right)  =\det B\cdot\underbrace{\det\left(  CD\right)
+}_{\substack{=\det C\cdot\det D\\\text{(by Theorem \ref{thm.det(AB)}, applied
+to }C\text{ and }D\\\text{instead of }A\text{ and }B\text{)}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem \ref{thm.det(AB)}, applied to
+}B\text{ and }CD\text{ instead of }A\text{ and }B\right) \\
+&  =\underbrace{\det B}_{\substack{=\prod_{1\leq i<j\leq n}\left(  x_{i}%
+-x_{j}\right)  \\\text{(by (\ref{sol.vander-det.xi+yj.short.c.detB}))}}%
+}\cdot\underbrace{\det C}_{\substack{=p_{n-1}^{n}\left(  \prod_{k=0}%
+^{n-1}\dbinom{n-1}{k}\right)  \\\text{(by
+(\ref{sol.vander-det.xi+yj.short.c.detC}))}}}\cdot\underbrace{\det
+D}_{\substack{=\prod_{1\leq i<j\leq n}\left(  y_{j}-y_{i}\right)  \\\text{(by
+(\ref{sol.vander-det.xi+yj.short.c.detD}))}}}\\
+&  =\left(  \prod_{1\leq i<j\leq n}\left(  x_{i}-x_{j}\right)  \right)  \cdot
+p_{n-1}^{n}\left(  \prod_{k=0}^{n-1}\dbinom{n-1}{k}\right)  \cdot\left(
+\prod_{1\leq i<j\leq n}\left(  y_{j}-y_{i}\right)  \right) \\
+&  =p_{n-1}^{n}\left(  \prod_{k=0}^{n-1}\dbinom{n-1}{k}\right)  \left(
+\prod_{1\leq i<j\leq n}\left(  x_{i}-x_{j}\right)  \right)  \left(
+\prod_{1\leq i<j\leq n}\left(  y_{j}-y_{i}\right)  \right)  .
+\end{align*}
+This solves Exercise \ref{exe.vander-det.xi+yj} \textbf{(c)}.
+
+\textbf{(a)} For any two objects $i$ and $j$, we define $\delta_{i,j}$ to be
+the element $%
+\begin{cases}
+1, & \text{if }i=j;\\
+0, & \text{if }i\neq j
+\end{cases}
+$ of $\mathbb{K}$.
+
+Let $m\in\left\{  0,1,\ldots,n-1\right\}  $. (You are reading this right: We
+are not requiring $m$ to belong to $\left\{  0,1,\ldots,n-2\right\}  $; the
+purpose of this is to obtain a result that will bring us close to solving both
+parts \textbf{(a)} and \textbf{(b)} simultaneously.)
+
+Define an $n$-tuple $\left(  p_{0},p_{1},\ldots,p_{n-1}\right)  \in
+\mathbb{K}^{n}$ by%
+\[
+\left(  p_{k}=\delta_{k,m}\ \ \ \ \ \ \ \ \ \ \text{for every }k\in\left\{
+0,1,\ldots,n-1\right\}  \right)  .
+\]
+Let $P\left(  X\right)  \in\mathbb{K}\left[  X\right]  $ be the polynomial
+$\sum_{k=0}^{n-1}p_{k}X^{k}$.
+
+We have%
+\begin{align*}
+P\left(  X\right)   &  =\underbrace{\sum_{k=0}^{n-1}}_{=\sum_{k\in\left\{
+0,1,\ldots,n-1\right\}  }}\underbrace{p_{k}}_{\substack{=\delta_{k,m}}%
+}X^{k}=\sum_{k\in\left\{  0,1,\ldots,n-1\right\}  }\delta_{k,m}X^{k}\\
+&  =\underbrace{\delta_{m,m}}_{\substack{=1\\\text{(since }k=m\text{)}}%
+}X^{m}+\sum_{\substack{k\in\left\{  0,1,\ldots,n-1\right\}  ;\\k\neq
+m}}\underbrace{\delta_{k,m}}_{\substack{=0\\\text{(since }k\neq m\text{)}%
+}}X^{k}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have split off the addend for }k=m\text{ from the sum}\\
+\text{(since }m\in\left\{  0,1,\ldots,n-2\right\}  \subseteq\left\{
+0,1,\ldots,n-1\right\}  \text{)}%
+\end{array}
+\right)  \\
+&  =X^{m}+\underbrace{\sum_{\substack{k\in\left\{  0,1,\ldots,n-1\right\}
+;\\k\neq m}}0X^{k}}_{=0}=X^{m}.
+\end{align*}
+Every $\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}$ satisfies
+$P\left(  x_{i}+y_{j}\right)  =\left(  x_{i}+y_{j}\right)  ^{m}$ (since
+$P\left(  X\right)  =X^{m}$). In other words, $\left(  P\left(  x_{i}%
++y_{j}\right)  \right)  _{1\leq i\leq n,\ 1\leq j\leq n}=\left(  \left(
+x_{i}+y_{j}\right)  ^{m}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$. Hence,%
+\[
+\left(  \left(  x_{i}+y_{j}\right)  ^{m}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}=\left(  P\left(  x_{i}+y_{j}\right)  \right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}.
+\]
+Taking determinants on both sides of this equality, we obtain%
+\begin{align}
+&  \det\left(  \left(  \left(  x_{i}+y_{j}\right)  ^{m}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}\right)  \nonumber\\
+&  =\det\left(  \left(  P\left(  x_{i}+y_{j}\right)  \right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}\right)  \nonumber\\
+&  =\underbrace{p_{n-1}^{n}}_{\substack{=\delta_{n-1,m}^{n}\\\text{(since
+}p_{n-1}=\delta_{n-1,m}\\\text{(by the definition of }p_{n-1}\text{))}%
+}}\left(  \prod_{k=0}^{n-1}\dbinom{n-1}{k}\right)  \left(  \prod_{1\leq
+i<j\leq n}\left(  x_{i}-x_{j}\right)  \right)  \left(  \prod_{1\leq i<j\leq
+n}\left(  y_{j}-y_{i}\right)  \right)  \nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Exercise \ref{exe.vander-det.xi+yj}
+\textbf{(c)}}\right)  \nonumber\\
+&  =\delta_{n-1,m}^{n}\left(  \prod_{k=0}^{n-1}\dbinom{n-1}{k}\right)  \left(
+\prod_{1\leq i<j\leq n}\left(  x_{i}-x_{j}\right)  \right)  \left(
+\prod_{1\leq i<j\leq n}\left(  y_{j}-y_{i}\right)  \right)
+.\label{sol.vander-det.xi+yj.short.a.almost}%
+\end{align}
+
+
+Now, let us forget that we fixed $m$. We thus have proven
+(\ref{sol.vander-det.xi+yj.short.a.almost}) for every $m\in\left\{
+0,1,\ldots,n-1\right\}  $.
+
+Now, let $m\in\left\{  0,1,\ldots,n-2\right\}  $. Thus, $m\neq n-1$, so that
+$\delta_{n-1,m}=0$. Hence, $\delta_{n-1,m}^{n}=0^{n}=0$ (since $n$ is a
+positive integer).
+
+On the other hand, $m\in\left\{  0,1,\ldots,n-2\right\}  \subseteq\left\{
+0,1,\ldots,n-1\right\}  $, and therefore
+(\ref{sol.vander-det.xi+yj.short.a.almost}) holds. Hence,%
+\begin{align*}
+&  \det\left(  \left(  \left(  x_{i}+y_{j}\right)  ^{m}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}\right) \\
+&  =\underbrace{\delta_{n-1,m}^{n}}_{=0}\left(  \prod_{k=0}^{n-1}\dbinom
+{n-1}{k}\right)  \left(  \prod_{1\leq i<j\leq n}\left(  x_{i}-x_{j}\right)
+\right)  \left(  \prod_{1\leq i<j\leq n}\left(  y_{j}-y_{i}\right)  \right) \\
+&  =0.
+\end{align*}
+This solves Exercise \ref{exe.vander-det.xi+yj} \textbf{(a)}.
+
+\textbf{(b)} For any two objects $i$ and $j$, we define $\delta_{i,j}$ as in
+the solution to Exercise \ref{exe.vander-det.xi+yj} \textbf{(a)}.
+
+We have $\delta_{n-1,n-1}=1$ and thus $\delta_{n-1,n-1}^{n}=1^{n}=1$.
+
+In our solution of Exercise \ref{exe.vander-det.xi+yj} \textbf{(a)}, we have
+proven the equality (\ref{sol.vander-det.xi+yj.short.a.almost}) for every
+$m\in\left\{  0,1,\ldots,n-1\right\}  $. Thus, we can apply this equality to
+$m=n-1$. As a result, we obtain
+\begin{align*}
+&  \det\left(  \left(  \left(  x_{i}+y_{j}\right)  ^{m}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}\right) \\
+&  =\underbrace{\delta_{n-1,n-1}^{n}}_{=1}\left(  \prod_{k=0}^{n-1}%
+\dbinom{n-1}{k}\right)  \left(  \prod_{1\leq i<j\leq n}\left(  x_{i}%
+-x_{j}\right)  \right)  \left(  \prod_{1\leq i<j\leq n}\left(  y_{j}%
+-y_{i}\right)  \right) \\
+&  =\left(  \prod_{k=0}^{n-1}\dbinom{n-1}{k}\right)  \left(  \prod_{1\leq
+i<j\leq n}\left(  x_{i}-x_{j}\right)  \right)  \left(  \prod_{1\leq i<j\leq
+n}\left(  y_{j}-y_{i}\right)  \right)  .
+\end{align*}
+This solves Exercise \ref{exe.vander-det.xi+yj} \textbf{(b)}.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Solution to Exercise \ref{exe.vander-det.xi+yj}.]\textbf{(c)} We extend the
+$n$-tuple $\left(  p_{0},p_{1},\ldots,p_{n-1}\right)  $ to an infinite
+sequence $\left(  p_{0},p_{1},p_{2},\ldots\right)  \in\mathbb{K}^{\infty}$ by
+setting%
+\begin{equation}
+p_{\ell}=0\ \ \ \ \ \ \ \ \ \ \text{for every }\ell\in\left\{
+n,n+1,n+2,\ldots\right\}  . \label{sol.vander-det.xi+yj.c.pk=0}%
+\end{equation}
+
+
+Next, we define three $n\times n$-matrices $B$, $C$ and $D$:
+
+\begin{itemize}
+\item Define an $n\times n$-matrix $B$ by
+\[
+B=\left(  x_{i}^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}.
+\]
+Then,%
+\begin{equation}
+\det\underbrace{B}_{=\left(  x_{i}^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}}=\det\left(  \left(  x_{i}^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}\right)  =\prod_{1\leq i<j\leq n}\left(  x_{i}-x_{j}\right)
+\label{sol.vander-det.xi+yj.c.detB}%
+\end{equation}
+(by Theorem \ref{thm.vander-det} \textbf{(a)}).
+
+\item For every $\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}$,
+the element $\dbinom{n-1-i+j}{j-1}p_{n-1-i+j}$ of $\mathbb{K}$ is
+well-defined\footnote{\textit{Proof.} Let $\left(  i,j\right)  \in\left\{
+1,2,\ldots,n\right\}  ^{2}$. Thus, $i\in\left\{  1,2,\ldots,n\right\}  $ and
+$j\in\left\{  1,2,\ldots,n\right\}  $. Hence, $1\leq i\leq n$ (since
+$i\in\left\{  1,2,\ldots,n\right\}  $) and $1\leq j\leq n$ (since
+$j\in\left\{  1,2,\ldots,n\right\}  $). From $1\leq j$, we obtain $j-1\geq0$.
+Hence, the binomial coefficient $\dbinom{n-1-i+j}{j-1}\in\mathbb{Z}$ is
+well-defined.
+\par
+Moreover, $n-1-\underbrace{i}_{\leq n}+\underbrace{j}_{\geq1}\geq n-1-n+1=0$,
+so that $n-1-i+j\in\mathbb{N}$. Thus, $p_{n-1-i+j}\in\mathbb{K}$ is
+well-defined (since we have an infinite sequence $\left(  p_{0},p_{1}%
+,p_{2},\ldots\right)  \in\mathbb{K}^{\infty}$). Hence, the element
+$\dbinom{n-1-i+j}{j-1}p_{n-1-i+j}$ of $\mathbb{K}$ is well-defined. Qed.}.
+Thus, for every $\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}$,
+we can define an element $c_{i,j}\in\mathbb{K}$ by $c_{i,j}=\dbinom
+{n-1-i+j}{j-1}p_{n-1-i+j}$. Consider these elements $c_{i,j}$. Define an
+$n\times n$-matrix $C$ by%
+\[
+C=\left(  c_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}.
+\]
+Consider this matrix $C$. We have $c_{i,j}=0$ for every $\left(  i,j\right)
+\in\left\{  1,2,\ldots,n\right\}  ^{2}$ satisfying $i<j$%
+\ \ \ \ \footnote{\textit{Proof.} Let $\left(  i,j\right)  \in\left\{
+1,2,\ldots,n\right\}  ^{2}$ be such that $i<j$. From $i<j$, we obtain $i\leq
+j-1$ (since $i$ and $j$ are integers). Thus, $n-1-\underbrace{i}_{\leq
+j-1}+j\geq n-1-\left(  j-1\right)  +j=n$. In other words, $n-1-i+j\in\left\{
+n,n+1,n+2,\ldots\right\}  $. Hence, $p_{n-1-i+j}=0$ (by
+(\ref{sol.vander-det.xi+yj.c.pk=0}), applied to $\ell=n-1-i+j$). Hence,
+$c_{i,j}=\dbinom{n-1-i+j}{j-1}\underbrace{p_{n-1-i+j}}_{=0}=0$, qed.}. Hence,
+Exercise \ref{exe.ps4.3} (applied to $C$ and $\left(  c_{i,j}\right)  _{1\leq
+i\leq n,\ 1\leq j\leq n}$ instead of $A$ and $\left(  a_{i,j}\right)  _{1\leq
+i\leq n,\ 1\leq j\leq n}$) shows that%
+\begin{align}
+\det C  &  =c_{1,1}c_{2,2}\cdots c_{n,n}=\prod_{i=1}^{n}\underbrace{c_{i,i}%
+}_{\substack{=\dbinom{n-1-i+i}{i-1}p_{n-1-i+i}\\\text{(by the definition of
+}c_{i,i}\text{)}}}\nonumber\\
+&  =\prod_{i=1}^{n}\left(  \underbrace{\dbinom{n-1-i+i}{i-1}}_{=\dbinom
+{n-1}{i-1}}\underbrace{p_{n-1-i+i}}_{\substack{=p_{n-1}\\\text{(since
+}n-1-i+i=n-1\text{)}}}\right) \nonumber\\
+&  =\prod_{i=1}^{n}\left(  \dbinom{n-1}{i-1}p_{n-1}\right)  =\left(
+\prod_{i=1}^{n}\dbinom{n-1}{i-1}\right)  p_{n-1}^{n}\nonumber\\
+&  =p_{n-1}^{n}\left(  \prod_{i=1}^{n}\dbinom{n-1}{i-1}\right)  =p_{n-1}%
+^{n}\left(  \prod_{k=0}^{n-1}\dbinom{n-1}{k}\right)
+\label{sol.vander-det.xi+yj.c.detC}%
+\end{align}
+(here, we have substituted $k$ for $i-1$ in the product).
+
+\item Define an $n\times n$-matrix $D$ by
+\[
+D=\left(  y_{j}^{i-1}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}.
+\]
+Then,%
+\begin{align}
+\det\underbrace{D}_{=\left(  y_{j}^{i-1}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}}  &  =\det\left(  \left(  y_{j}^{i-1}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}\right)  =\prod_{1\leq j<i\leq n}\left(  y_{i}-y_{j}\right) \nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem \ref{thm.vander-det}
+\textbf{(d)}, applied to }y_{k}\text{ instead of }x_{k}\right) \nonumber\\
+&  =\prod_{1\leq i<j\leq n}\left(  y_{j}-y_{i}\right)
+\label{sol.vander-det.xi+yj.c.detD}%
+\end{align}
+(here, we have renamed the index $\left(  j,i\right)  $ as $\left(
+i,j\right)  $ in the product).
+\end{itemize}
+
+Our goal is to prove that $\left(  P\left(  x_{i}+y_{j}\right)  \right)
+_{1\leq i\leq n,\ 1\leq j\leq n}=BCD$. Once this is done, we will be able to
+compute $\det\left(  \left(  P\left(  x_{i}+y_{j}\right)  \right)  _{1\leq
+i\leq n,\ 1\leq j\leq n}\right)  $ by applying Theorem \ref{thm.det(AB)} twice.
+
+We have $C=\left(  c_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ and
+$D=\left(  y_{j}^{i-1}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$. Hence, the
+definition of the product of two matrices shows that%
+\begin{equation}
+CD=\left(  \sum_{k=1}^{n}c_{i,k}y_{j}^{k-1}\right)  _{1\leq i\leq n,\ 1\leq
+j\leq n}. \label{sol.vander-det.xi+yj.c.CD.1}%
+\end{equation}
+But every $\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}$
+satisfies%
+\begin{align*}
+\sum_{k=1}^{n}c_{i,k}y_{j}^{k-1}  &  =\sum_{k=0}^{n-1}\underbrace{c_{i,k+1}%
+}_{\substack{=\dbinom{n-1-i+\left(  k+1\right)  }{\left(  k+1\right)
+-1}p_{n-1-i+\left(  k+1\right)  }\\\text{(by the definition of }%
+c_{i,k+1}\text{)}}}y_{j}^{\left(  k+1\right)  -1}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }k+1\text{ for
+}k\text{ in the sum}\right) \\
+&  =\sum_{k=0}^{n-1}\underbrace{\dbinom{n-1-i+\left(  k+1\right)  }{\left(
+k+1\right)  -1}}_{\substack{=\dbinom{n-i+k}{k}\\\text{(since }n-1-i+\left(
+k+1\right)  =n-i+k\\\text{and }\left(  k+1\right)  -1=k\text{)}}%
+}\underbrace{p_{n-1-i+\left(  k+1\right)  }}_{\substack{=p_{n-i+k}%
+\\\text{(since }n-1-i+\left(  k+1\right)  =n-i+k\text{)}}}\underbrace{y_{j}%
+^{\left(  k+1\right)  -1}}_{\substack{=y_{j}^{k}\\\text{(since }\left(
+k+1\right)  -1=k\text{)}}}\\
+&  =\sum_{k=0}^{n-1}\dbinom{n-i+k}{k}p_{n-i+k}y_{j}^{k}=\sum_{\ell=0}%
+^{n-1}\dbinom{n-i+\ell}{\ell}p_{n-i+\ell}y_{j}^{\ell}%
+\end{align*}
+(here, we renamed the summation index $k$ as $\ell$). Hence,
+(\ref{sol.vander-det.xi+yj.c.CD.1}) becomes%
+\[
+CD=\left(  \underbrace{\sum_{k=1}^{n}c_{i,k}y_{j}^{k-1}}_{=\sum_{\ell=0}%
+^{n-1}\dbinom{n-i+\ell}{\ell}p_{n-i+\ell}y_{j}^{\ell}}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}=\left(  \sum_{\ell=0}^{n-1}\dbinom{n-i+\ell}{\ell
+}p_{n-i+\ell}y_{j}^{\ell}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}.
+\]
+
+
+Now, $B=\left(  x_{i}^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ and
+$CD=\left(  \sum_{\ell=0}^{n-1}\dbinom{n-i+\ell}{\ell}p_{n-i+\ell}y_{j}^{\ell
+}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$. Hence, the definition of the
+product of two matrices shows that%
+\begin{equation}
+B\left(  CD\right)  =\left(  \sum_{k=1}^{n}x_{i}^{n-k}\left(  \sum_{\ell
+=0}^{n-1}\dbinom{n-k+\ell}{\ell}p_{n-k+\ell}y_{j}^{\ell}\right)  \right)
+_{1\leq i\leq n,\ 1\leq j\leq n}. \label{sol.vander-det.xi+yj.c.BCD.1}%
+\end{equation}
+
+
+Now, let $\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}$. Then,%
+\begin{align}
+&  \sum_{k=1}^{n}x_{i}^{n-k}\left(  \sum_{\ell=0}^{n-1}\dbinom{n-k+\ell}{\ell
+}p_{n-k+\ell}y_{j}^{\ell}\right) \nonumber\\
+&  =\sum_{k=0}^{n-1}x_{i}^{k}\left(  \sum_{\ell=0}^{n-1}\dbinom{k+\ell}{\ell
+}p_{k+\ell}y_{j}^{\ell}\right) \nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }k\text{ for
+}n-k\text{ in the first sum}\right) \nonumber\\
+&  =\sum_{k=0}^{n-1}\sum_{\ell=0}^{n-1}x_{i}^{k}\dbinom{k+\ell}{\ell}%
+p_{k+\ell}y_{j}^{\ell}\nonumber\\
+&  =\sum_{k=0}^{n-1}\sum_{\ell=k}^{n-1+k}x_{i}^{k}\underbrace{\dbinom
+{k+\left(  \ell-k\right)  }{\ell-k}}_{\substack{=\dbinom{\ell}{\ell
+-k}\\\text{(since }k+\left(  \ell-k\right)  =\ell\text{)}}%
+}\underbrace{p_{k+\left(  \ell-k\right)  }}_{\substack{=p_{\ell}\\\text{(since
+}k+\left(  \ell-k\right)  =\ell\text{)}}}y_{j}^{\ell-k}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }\ell-k\text{
+for }\ell\text{ in the second sum}\right) \nonumber\\
+&  =\sum_{k=0}^{n-1}\underbrace{\sum_{\ell=k}^{n-1+k}x_{i}^{k}\dbinom{\ell
+}{\ell-k}p_{\ell}y_{j}^{\ell-k}}_{\substack{=\sum_{\ell=k}^{n-1}x_{i}%
+^{k}\dbinom{\ell}{\ell-k}p_{\ell}y_{j}^{\ell-k}+\sum_{\ell=n}^{n-1+k}x_{i}%
+^{k}\dbinom{\ell}{\ell-k}p_{\ell}y_{j}^{\ell-k}\\\text{(since }k\leq n\leq
+n-1+k+1\text{)}}}\nonumber\\
+&  =\sum_{k=0}^{n-1}\left(  \sum_{\ell=k}^{n-1}x_{i}^{k}\dbinom{\ell}{\ell
+-k}p_{\ell}y_{j}^{\ell-k}+\sum_{\ell=n}^{n-1+k}x_{i}^{k}\dbinom{\ell}{\ell
+-k}\underbrace{p_{\ell}}_{\substack{=0\\\text{(by
+(\ref{sol.vander-det.xi+yj.c.pk=0})}\\\text{(since }\ell\in\left\{
+n,n+1,\ldots,n-1+k\right\}  \subseteq\left\{  n,n+1,n+2,\ldots\right\}
+\text{))}}}y_{j}^{\ell-k}\right) \nonumber\\
+&  =\sum_{k=0}^{n-1}\left(  \sum_{\ell=k}^{n-1}x_{i}^{k}\dbinom{\ell}{\ell
+-k}p_{\ell}y_{j}^{\ell-k}+\underbrace{\sum_{\ell=n}^{n-1+k}x_{i}^{k}%
+\dbinom{\ell}{\ell-k}0y_{j}^{\ell-k}}_{=0}\right) \nonumber\\
+&  =\sum_{k=0}^{n-1}\sum_{\ell=k}^{n-1}x_{i}^{k}\dbinom{\ell}{\ell-k}p_{\ell
+}y_{j}^{\ell-k}. \label{sol.vander-det.xi+yj.c.BCD.2}%
+\end{align}
+On the other hand, $P\left(  X\right)  =\sum_{k=0}^{n-1}p_{k}X^{k}=\sum
+_{\ell=0}^{n-1}p_{\ell}X^{\ell}$ (here, we renamed the summation index $k$ as
+$\ell$). Hence,%
+\begin{align}
+P\left(  x_{i}+y_{j}\right)   &  =\sum_{\ell=0}^{n-1}p_{\ell}%
+\underbrace{\left(  x_{i}+y_{j}\right)  ^{\ell}}_{\substack{=\sum_{k=0}^{\ell
+}\dbinom{\ell}{k}x_{i}^{k}y_{j}^{\ell-k}\\\text{(by the binomial formula)}%
+}}=\sum_{\ell=0}^{n-1}p_{\ell}\sum_{k=0}^{\ell}\dbinom{\ell}{k}x_{i}^{k}%
+y_{j}^{\ell-k}\nonumber\\
+&  =\underbrace{\sum_{\ell=0}^{n-1}\sum_{k=0}^{\ell}}_{=\sum
+_{\substack{\left(  \ell,k\right)  \in\left\{  0,1,\ldots,n-1\right\}
+^{2};\\k\leq\ell}}=\sum_{k=0}^{n-1}\sum_{\ell=k}^{n-1}}p_{\ell}\dbinom{\ell
+}{k}x_{i}^{k}y_{j}^{\ell-k}\nonumber\\
+&  =\sum_{k=0}^{n-1}\sum_{\ell=k}^{n-1}p_{\ell}\underbrace{\dbinom{\ell}{k}%
+}_{\substack{=\dbinom{\ell}{\ell-k}\\\text{(by (\ref{eq.binom.symm}) (applied
+to }\ell\text{ and }k\\\text{instead of }m\text{ and }n\text{))}}}x_{i}%
+^{k}y_{j}^{\ell-k}\nonumber\\
+&  =\sum_{k=0}^{n-1}\sum_{\ell=k}^{n-1}\underbrace{p_{\ell}\dbinom{\ell}%
+{\ell-k}x_{i}^{k}}_{=x_{i}^{k}\dbinom{\ell}{\ell-k}p_{\ell}}y_{j}^{\ell
+-k}=\sum_{k=0}^{n-1}\sum_{\ell=k}^{n-1}x_{i}^{k}\dbinom{\ell}{\ell-k}p_{\ell
+}y_{j}^{\ell-k}\nonumber\\
+&  =\sum_{k=1}^{n}x_{i}^{n-k}\left(  \sum_{\ell=0}^{n-1}\dbinom{n-k+\ell}%
+{\ell}p_{n-k+\ell}y_{j}^{\ell}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{sol.vander-det.xi+yj.c.BCD.2})}\right)  .
+\label{sol.vander-det.xi+yj.c.BCD.3}%
+\end{align}
+
+
+Now, let us forget that we fixed $\left(  i,j\right)  $. We thus have proven
+(\ref{sol.vander-det.xi+yj.c.BCD.3}) for every $\left(  i,j\right)
+\in\left\{  1,2,\ldots,n\right\}  ^{2}$. Hence,%
+\begin{align*}
+&  \left(  \underbrace{P\left(  x_{i}+y_{j}\right)  }_{\substack{=\sum
+_{k=1}^{n}x_{i}^{n-k}\left(  \sum_{\ell=0}^{n-1}\dbinom{n-k+\ell}{\ell
+}p_{n-k+\ell}y_{j}^{\ell}\right)  \\\text{(by
+(\ref{sol.vander-det.xi+yj.c.BCD.3}))}}}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}\\
+&  =\left(  \sum_{k=1}^{n}x_{i}^{n-k}\left(  \sum_{\ell=0}^{n-1}%
+\dbinom{n-k+\ell}{\ell}p_{n-k+\ell}y_{j}^{\ell}\right)  \right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}=B\left(  CD\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{sol.vander-det.xi+yj.c.BCD.1})}\right) \\
+&  =BCD.
+\end{align*}
+Hence,%
+\begin{align*}
+&  \det\underbrace{\left(  \left(  P\left(  x_{i}+y_{j}\right)  \right)
+_{1\leq i\leq n,\ 1\leq j\leq n}\right)  }_{=BCD}\\
+&  =\det\left(  BCD\right)  =\det B\cdot\underbrace{\det\left(  CD\right)
+}_{\substack{=\det C\cdot\det D\\\text{(by Theorem \ref{thm.det(AB)}, applied
+to }C\text{ and }D\\\text{instead of }A\text{ and }B\text{)}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem \ref{thm.det(AB)}, applied to
+}B\text{ and }CD\text{ instead of }A\text{ and }B\right) \\
+&  =\underbrace{\det B}_{\substack{=\prod_{1\leq i<j\leq n}\left(  x_{i}%
+-x_{j}\right)  \\\text{(by (\ref{sol.vander-det.xi+yj.c.detB}))}}%
+}\cdot\underbrace{\det C}_{\substack{=p_{n-1}^{n}\left(  \prod_{k=0}%
+^{n-1}\dbinom{n-1}{k}\right)  \\\text{(by (\ref{sol.vander-det.xi+yj.c.detC}%
+))}}}\cdot\underbrace{\det D}_{\substack{=\prod_{1\leq i<j\leq n}\left(
+y_{j}-y_{i}\right)  \\\text{(by (\ref{sol.vander-det.xi+yj.c.detD}))}}}\\
+&  =\left(  \prod_{1\leq i<j\leq n}\left(  x_{i}-x_{j}\right)  \right)  \cdot
+p_{n-1}^{n}\left(  \prod_{k=0}^{n-1}\dbinom{n-1}{k}\right)  \cdot\left(
+\prod_{1\leq i<j\leq n}\left(  y_{j}-y_{i}\right)  \right) \\
+&  =p_{n-1}^{n}\left(  \prod_{k=0}^{n-1}\dbinom{n-1}{k}\right)  \left(
+\prod_{1\leq i<j\leq n}\left(  x_{i}-x_{j}\right)  \right)  \left(
+\prod_{1\leq i<j\leq n}\left(  y_{j}-y_{i}\right)  \right)  .
+\end{align*}
+This solves Exercise \ref{exe.vander-det.xi+yj} \textbf{(c)}.
+
+\textbf{(a)} For any two objects $i$ and $j$, we define $\delta_{i,j}$ to be
+the element $%
+\begin{cases}
+1, & \text{if }i=j;\\
+0, & \text{if }i\neq j
+\end{cases}
+$ of $\mathbb{K}$.
+
+Let $m\in\left\{  0,1,\ldots,n-1\right\}  $. (You are reading this right: We
+are not requiring $m$ to belong to $\left\{  0,1,\ldots,n-2\right\}  $; the
+purpose of this is to obtain a result that will bring us close to solving both
+parts \textbf{(a)} and \textbf{(b)} simultaneously.)
+
+Define an $n$-tuple $\left(  p_{0},p_{1},\ldots,p_{n-1}\right)  \in
+\mathbb{K}^{n}$ by%
+\[
+\left(  p_{k}=\delta_{k,m}\ \ \ \ \ \ \ \ \ \ \text{for every }k\in\left\{
+0,1,\ldots,n-1\right\}  \right)  .
+\]
+Let $P\left(  X\right)  \in\mathbb{K}\left[  X\right]  $ be the polynomial
+$\sum_{k=0}^{n-1}p_{k}X^{k}$.
+
+We have%
+\begin{align*}
+P\left(  X\right)   &  =\underbrace{\sum_{k=0}^{n-1}}_{=\sum_{k\in\left\{
+0,1,\ldots,n-1\right\}  }}\underbrace{p_{k}}_{\substack{=\delta_{k,m}%
+\\\text{(by the definition}\\\text{of }p_{k}\text{)}}}X^{k}=\sum_{k\in\left\{
+0,1,\ldots,n-1\right\}  }\delta_{k,m}X^{k}\\
+&  =\underbrace{\delta_{m,m}}_{\substack{=1\\\text{(since }k=m\text{)}}%
+}X^{m}+\sum_{\substack{k\in\left\{  0,1,\ldots,n-1\right\}  ;\\k\neq
+m}}\underbrace{\delta_{k,m}}_{\substack{=0\\\text{(since }k\neq m\text{)}%
+}}X^{k}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have split off the addend for }k=m\text{ from the sum}\\
+\text{(since }m\in\left\{  0,1,\ldots,n-2\right\}  \subseteq\left\{
+0,1,\ldots,n-1\right\}  \text{)}%
+\end{array}
+\right)  \\
+&  =X^{m}+\underbrace{\sum_{\substack{k\in\left\{  0,1,\ldots,n-1\right\}
+;\\k\neq m}}0X^{k}}_{=0}=X^{m}.
+\end{align*}
+Every $\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}$ satisfies
+$P\left(  x_{i}+y_{j}\right)  =\left(  x_{i}+y_{j}\right)  ^{m}$ (since
+$P\left(  X\right)  =X^{m}$). In other words, $\left(  P\left(  x_{i}%
++y_{j}\right)  \right)  _{1\leq i\leq n,\ 1\leq j\leq n}=\left(  \left(
+x_{i}+y_{j}\right)  ^{m}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$. Hence,%
+\[
+\left(  \left(  x_{i}+y_{j}\right)  ^{m}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}=\left(  P\left(  x_{i}+y_{j}\right)  \right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}.
+\]
+Taking determinants on both sides of this equality, we obtain%
+\begin{align}
+&  \det\left(  \left(  \left(  x_{i}+y_{j}\right)  ^{m}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}\right)  \nonumber\\
+&  =\det\left(  \left(  P\left(  x_{i}+y_{j}\right)  \right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}\right)  \nonumber\\
+&  =\underbrace{p_{n-1}^{n}}_{\substack{=\delta_{n-1,m}^{n}\\\text{(since
+}p_{n-1}=\delta_{n-1,m}\\\text{(by the definition of }p_{n-1}\text{))}%
+}}\left(  \prod_{k=0}^{n-1}\dbinom{n-1}{k}\right)  \left(  \prod_{1\leq
+i<j\leq n}\left(  x_{i}-x_{j}\right)  \right)  \left(  \prod_{1\leq i<j\leq
+n}\left(  y_{j}-y_{i}\right)  \right)  \nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Exercise \ref{exe.vander-det.xi+yj}
+\textbf{(c)}}\right)  \nonumber\\
+&  =\delta_{n-1,m}^{n}\left(  \prod_{k=0}^{n-1}\dbinom{n-1}{k}\right)  \left(
+\prod_{1\leq i<j\leq n}\left(  x_{i}-x_{j}\right)  \right)  \left(
+\prod_{1\leq i<j\leq n}\left(  y_{j}-y_{i}\right)  \right)
+.\label{sol.vander-det.xi+yj.a.almost}%
+\end{align}
+
+
+Now, let us forget that we fixed $m$. We thus have proven
+(\ref{sol.vander-det.xi+yj.a.almost}) for every $m\in\left\{  0,1,\ldots
+,n-1\right\}  $.
+
+Now, let $m\in\left\{  0,1,\ldots,n-2\right\}  $. Thus, $m\neq n-1$, so that
+$n-1\neq m$. Thus, $\delta_{n-1,m}=0$.
+
+But $n$ is a positive integer. Hence, $0^{n}=0$. Now, taking the equality
+$\delta_{n-1,m}=0$ to the $n$-th power, we obtain $\delta_{n-1,m}^{n}=0^{n}=0$.
+
+On the other hand, $m\in\left\{  0,1,\ldots,n-2\right\}  \subseteq\left\{
+0,1,\ldots,n-1\right\}  $, and therefore (\ref{sol.vander-det.xi+yj.a.almost})
+holds. Hence,%
+\begin{align*}
+&  \det\left(  \left(  \left(  x_{i}+y_{j}\right)  ^{m}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}\right) \\
+&  =\underbrace{\delta_{n-1,m}^{n}}_{=0}\left(  \prod_{k=0}^{n-1}\dbinom
+{n-1}{k}\right)  \left(  \prod_{1\leq i<j\leq n}\left(  x_{i}-x_{j}\right)
+\right)  \left(  \prod_{1\leq i<j\leq n}\left(  y_{j}-y_{i}\right)  \right) \\
+&  =0.
+\end{align*}
+This solves Exercise \ref{exe.vander-det.xi+yj} \textbf{(a)}.
+
+\textbf{(b)} For any two objects $i$ and $j$, we define $\delta_{i,j}$ to be
+the element $%
+\begin{cases}
+1, & \text{if }i=j;\\
+0, & \text{if }i\neq j
+\end{cases}
+$ of $\mathbb{K}$.
+
+We have $\delta_{n-1,n-1}=1$ (since $n-1=n-1$) and thus $\delta_{n-1,n-1}%
+^{n}=1^{n}=1$.
+
+In our solution of Exercise \ref{exe.vander-det.xi+yj} \textbf{(a)}, we have
+proven the equality (\ref{sol.vander-det.xi+yj.a.almost}) for every
+$m\in\left\{  0,1,\ldots,n-1\right\}  $. Thus, we can apply this equality to
+$m=n-1$. As a result, we obtain
+\begin{align*}
+&  \det\left(  \left(  \left(  x_{i}+y_{j}\right)  ^{m}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}\right) \\
+&  =\underbrace{\delta_{n-1,n-1}^{n}}_{=1}\left(  \prod_{k=0}^{n-1}%
+\dbinom{n-1}{k}\right)  \left(  \prod_{1\leq i<j\leq n}\left(  x_{i}%
+-x_{j}\right)  \right)  \left(  \prod_{1\leq i<j\leq n}\left(  y_{j}%
+-y_{i}\right)  \right) \\
+&  =\left(  \prod_{k=0}^{n-1}\dbinom{n-1}{k}\right)  \left(  \prod_{1\leq
+i<j\leq n}\left(  x_{i}-x_{j}\right)  \right)  \left(  \prod_{1\leq i<j\leq
+n}\left(  y_{j}-y_{i}\right)  \right)  .
+\end{align*}
+This solves Exercise \ref{exe.vander-det.xi+yj} \textbf{(b)}.
+\end{proof}
+\end{verlong}
 
 \subsection{Solution to Exercise \ref{exe.cauchy-det}}
 
