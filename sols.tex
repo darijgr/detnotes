@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Sunday, December 13, 2015 22:27:04}
+%TCIDATA{LastRevised=Monday, December 14, 2015 16:43:51}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -30588,8 +30588,30 @@ This solves Exercise \ref{exe.vander-det.xi+yj} \textbf{(b)}.
 \subsection{Solution to Exercise \ref{exe.cauchy-det}}
 
 Exercise \ref{exe.cauchy-det} is obtained from \cite[Exercise 2.66(a)]{Reiner}
-by setting $a_{i} = x_{i}$ and $b_{j} = -y_{j}$. (See the ancillary PDF file
-of the arXiv version of \cite{Reiner} for the solutions to the exercises.)
+by setting $a_{i}=x_{i}$ and $b_{j}=-y_{j}$. (See the ancillary PDF file of
+the arXiv version of \cite{Reiner} for the solutions to the exercises.)
+
+Exercise \ref{exe.cauchy-det} can also be obtained from \cite[Theorem
+2]{Gri-19.9} by setting $\mathbb{K}=k$, $m=n$, $a_{j}=y_{j}$ and $b_{i}%
+=-x_{i}$ (and observing that
+\begin{align*}
+& \prod_{\substack{\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}
+^{2};\\i>j}}\underbrace{\left(  \left(  y_{i}-y_{j}\right)  \left(  \left(
+-x_{j}\right)  -\left(  -x_{i}\right)  \right)  \right)  }_{\substack{=\left(
+y_{j}-y_{i}\right)  \left(  x_{j}-x_{i}\right)  \\=\left(  x_{j}-x_{i}\right)
+\left(  y_{j}-y_{i}\right)  }}\\
+& =\prod_{\substack{\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}
+^{2};\\i>j}}\left(  \left(  x_{j}-x_{i}\right)  \left(  y_{j}-y_{i}\right)
+\right)  =\prod_{\substack{\left(  j,i\right)  \in\left\{  1,2,\ldots
+,n\right\}  ^{2};\\j>i}}\left(  \left(  x_{i}-x_{j}\right)  \left(
+y_{i}-y_{j}\right)  \right)  \\
+& \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have renamed the index }\left(
+i,j\right)  \text{ as }\left(  j,i\right)  \right)  \\
+& =\prod_{1\leq i<j\leq n}\left(  \left(  x_{i}-x_{j}\right)  \left(
+y_{i}-y_{j}\right)  \right)
+\end{align*}
+). The statement of \cite[Theorem 2]{Gri-19.9} makes the requirement that $k$
+be a field; however, this is easily seen to be unnecessary for the proof.
 
 \subsection{Solution to Exercise \ref{exe.cauchy-det-lem}}
 
@@ -36436,8 +36458,8 @@ obtained the result in its factored form!)
 \subsection{Solution to Exercise \ref{exe.adj(AB)}}
 
 \begin{vershort}
-Before we start solving this exercise, let us show some lemmas.
-The first of them is a (somewhat disguised) particular case of the Cauchy-Binet formula:
+Before we start solving this exercise, let us show some lemmas. The first of
+them is a (somewhat disguised) particular case of the Cauchy-Binet formula:
 \end{vershort}
 
 \begin{verlong}
@@ -36775,11 +36797,11 @@ Now, (\ref{pf.lem.adj(AB).cauchy-binet.short.2}) becomes%
 \det\left(  AB\right)   &  =\sum_{\left(  g_{1},g_{2},\ldots,g_{n-1}\right)
 \in\mathbf{I}}\det\left(  \operatorname*{cols}\nolimits_{g_{1},g_{2}%
 ,\ldots,g_{n-1}}A\right)  \cdot\det\left(  \operatorname*{rows}%
-\nolimits_{g_{1},g_{2},\ldots,g_{n-1}}B\right)  \\
+\nolimits_{g_{1},g_{2},\ldots,g_{n-1}}B\right) \\
 &  =\underbrace{\sum_{k\in\left\{  1,2,\ldots,n\right\}  }}_{=\sum_{k=1}^{n}%
 }\det\left(  \operatorname*{cols}\nolimits_{1,2,\ldots,\widehat{k},\ldots
 ,n}A\right)  \cdot\det\left(  \operatorname*{rows}\nolimits_{1,2,\ldots
-,\widehat{k},\ldots,n}B\right)  \\
+,\widehat{k},\ldots,n}B\right) \\
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
@@ -36789,7 +36811,7 @@ Now, (\ref{pf.lem.adj(AB).cauchy-binet.short.2}) becomes%
 \left\{  1,2,\ldots,n\right\}  \rightarrow\mathbf{I},\ k\mapsto\left(
 1,2,\ldots,\widehat{k},\ldots,n\right)  \text{ is a bijection}%
 \end{array}
-\right)  \\
+\right) \\
 &  =\sum_{k=1}^{n}\det\left(  \operatorname*{cols}\nolimits_{1,2,\ldots
 ,\widehat{k},\ldots,n}A\right)  \cdot\det\left(  \operatorname*{rows}%
 \nolimits_{1,2,\ldots,\widehat{k},\ldots,n}B\right)  .
@@ -37202,9 +37224,9 @@ two matrices thus yields%
 \begin{align*}
 \left(  \operatorname*{rows}\nolimits_{i_{1},i_{2},\ldots,i_{u}}A\right)
 \cdot\left(  \operatorname*{cols}\nolimits_{j_{1},j_{2},\ldots,j_{v}}B\right)
-& =\left(  \sum_{k=1}^{p}a_{i_{i},k}b_{k,j_{j}}\right)  _{1\leq i\leq
+&  =\left(  \sum_{k=1}^{p}a_{i_{i},k}b_{k,j_{j}}\right)  _{1\leq i\leq
 u,\ 1\leq j\leq v}\\
-& =\left(  \sum_{k=1}^{p}a_{i_{x},k}b_{k,j_{y}}\right)  _{1\leq x\leq
+&  =\left(  \sum_{k=1}^{p}a_{i_{x},k}b_{k,j_{y}}\right)  _{1\leq x\leq
 u,\ 1\leq y\leq v}%
 \end{align*}
 (here, we have renamed the index $\left(  i,j\right)  $ as $\left(
@@ -37709,6 +37731,11 @@ version of 27 July 2015.\newline\texttt{\url{http://web.mit.edu/~darij/www/}}
 \bibitem[Gri11]{Gri-zeck}Darij Grinberg, \textit{Zeckendorf family identities
 generalized}, arXiv preprint
 \texttt{\href{http://arxiv.org/abs/1103.4507v1}{arXiv:1103.4507v1}}.
+
+\bibitem[Gri09]{Gri-19.9}%
+\href{http://web.mit.edu/~darij/www/solutions.html}{Darij Grinberg,
+\textit{Solution to Problem 19.9 from \textquotedblleft Problems from the
+Book\textquotedblright}}.
 
 \bibitem[GriRei15]{Reiner}Darij Grinberg, Victor Reiner, \textit{Hopf algebras
 in Combinatorics}, August 25, 2015. arXiv preprint
