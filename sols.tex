@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Monday, December 14, 2015 16:43:51}
+%TCIDATA{LastRevised=Tuesday, December 29, 2015 00:37:31}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -212,7 +212,9 @@ sum backwards\textquotedblright)
 
 -- substituting index (with several examples)
 
--- splitting a sum (careful because of less-than-empty)
+-- splitting a sum/product on a predicate
+
+-- splitting a sum (careful because of less-than-empty) by interval
 
 -- splitting off addends
 
@@ -224,11 +226,19 @@ sum backwards\textquotedblright)
 
 -- little Gauss with 2 proofs (nice and ugly, both showing something)
 
+-- search for ``famous formula'' and replace it by a correct reference
+
 -- $\sum_{i=1}^{n}i^{2}$
 
 -- infinite sums with $0$s and products with $1$s
 
 -- product rule
+
+-- $\sum1 = $ cardinality
+
+-- cardinality of union of disjoint sets as sum
+
+-- cardinality of cartesian product of sets as product
 
 ]
 \end{noncompile}
@@ -6408,7 +6418,7 @@ n\left(  ab\right)   &  =\left(  na\right)  b=n\left(  ab\right)
 0^{n}  &  =%
 \begin{cases}
 0, & \text{if }n>0;\\
-1, & \text{if }n=0.
+1, & \text{if }n=0
 \end{cases}
 \ \ \ \ \ \ \ \ \ \ \text{for }n\in\mathbb{N};\label{eq.rings.0**n}\\
 a^{n+m}  &  =a^{n}a^{m}\ \ \ \ \ \ \ \ \ \ \text{for }a\in\mathbb{K}\text{ and
@@ -6707,12 +6717,12 @@ empty product of $n\times n$-matrices to be $I_{n}$).
 Further properties of matrix multiplication are easy to state and to prove:
 
 \begin{itemize}
-\item For every $n\in\mathbb{N}$ and $m\in\mathbb{N}$, every $\lambda
-\in\mathbb{K}$, and every two $n\times m$-matrices $A$ and $B$, we have
-$\lambda\left(  AB\right)  =\left(  \lambda A\right)  B=A\left(  \lambda
-B\right)  $. (This allows us to write $\lambda AB$ for each of the matrices
-$\lambda\left(  AB\right)  $, $\left(  \lambda A\right)  B$ and $A\left(
-\lambda B\right)  $.)
+\item For every $n\in\mathbb{N}$, $m\in\mathbb{N}$, $k\in\mathbb{N}$ and
+$\lambda\in\mathbb{K}$, every $n\times m$-matrix $A$ and every $m\times
+k$-matrix $B$, we have $\lambda\left(  AB\right)  =\left(  \lambda A\right)
+B=A\left(  \lambda B\right)  $. (This allows us to write $\lambda AB$ for each
+of the matrices $\lambda\left(  AB\right)  $, $\left(  \lambda A\right)  B$
+and $A\left(  \lambda B\right)  $.)
 
 \item For every $n\in\mathbb{N}$, $m\in\mathbb{N}$ and $k\in\mathbb{N}$, every
 two $n\times m$-matrices $A$ and $B$, and every $m\times k$-matrix $C$, we
@@ -15599,14 +15609,13 @@ n-1\right)  \right)  =\left(  1,2,\ldots,\widehat{q},\ldots,n\right)
 (by Lemma \ref{lem.laplace.gpshort} \textbf{(d)}, applied to $q$ instead of
 $p$). Now, the definition of $A_{\sim p,\sim q}$ yields%
 \begin{align}
-A_{\sim p,\sim q}  &  =\operatorname*{sub}\nolimits_{1,2,\ldots,\widehat{p}%
+A_{\sim p,\sim q} &  =\operatorname*{sub}\nolimits_{1,2,\ldots,\widehat{p}%
 ,\ldots,n}^{1,2,\ldots,\widehat{q},\ldots,n}A=\operatorname*{sub}%
 \nolimits_{g_{p}\left(  1\right)  ,g_{p}\left(  2\right)  ,\ldots,g_{p}\left(
 n-1\right)  }^{g_{q}\left(  1\right)  ,g_{q}\left(  2\right)  ,\ldots
-,g_{q}\left(  n-1\right)  }A\nonumber\\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
+,g_{q}\left(  n-1\right)  }A\ \ \ \ \ \ \ \ \ \ \left(  \text{by
 (\ref{pf.lem.laplace.Apq.short.indices1}) and
-(\ref{pf.lem.laplace.Apq.short.indices2})}\right) \nonumber\\
+(\ref{pf.lem.laplace.Apq.short.indices2})}\right)  \nonumber\\
 &  =\left(  a_{g_{p}\left(  x\right)  ,g_{q}\left(  y\right)  }\right)
 _{1\leq x\leq n-1,\ 1\leq y\leq n-1}\ \ \ \ \ \ \ \ \ \ \left(  \text{by the
 definition of }\operatorname*{sub}\nolimits_{g_{p}\left(  1\right)
@@ -15626,12 +15635,12 @@ thus we have $n>0$.
 Now, let us recall the map $T:\left\{  \tau\in S_{n}\ \mid\ \tau\left(
 n\right)  =n\right\}  \rightarrow\left\{  \tau\in S_{n}\ \mid\ \tau\left(
 p\right)  =q\right\}  $ defined in Lemma \ref{lem.laplace.gpshort}
-\textbf{(d)}. Lemma \ref{lem.laplace.gpshort} \textbf{(g)} says that this map
+\textbf{(d)}. Lemma \ref{lem.laplace.gpshort} \textbf{(d)} says that this map
 $T$ is well-defined and bijective. Every $\sigma\in\left\{  \tau\in
 S_{n}\ \mid\ \tau\left(  n\right)  =n\right\}  $ satisfies%
 \begin{equation}
 \left(  -1\right)  ^{T\left(  \sigma\right)  }=\left(  -1\right)  ^{p+q}%
-\cdot\left(  -1\right)  ^{\sigma} \label{pf.lem.laplace.Apq.short.1}%
+\cdot\left(  -1\right)  ^{\sigma}\label{pf.lem.laplace.Apq.short.1}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{pf.lem.laplace.Apq.short.1}):} Let $\sigma
 \in\left\{  \tau\in S_{n}\ \mid\ \tau\left(  n\right)  =n\right\}  $. Applying
@@ -15648,21 +15657,21 @@ g_{p}\right)  ^{-1}\circ g_{p}}_{=\operatorname*{id}}=g_{q}\circ\sigma,
 \]
 so that%
 \begin{align*}
-\left(  -1\right)  ^{T\left(  \sigma\right)  \circ g_{p}}  &  =\left(
+\left(  -1\right)  ^{T\left(  \sigma\right)  \circ g_{p}} &  =\left(
 -1\right)  ^{g_{q}\circ\sigma}=\underbrace{\left(  -1\right)  ^{g_{q}}%
 }_{=\left(  -1\right)  ^{n+q}}\cdot\left(  -1\right)  ^{\sigma}%
 \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{eq.sign.prod}), applied to }%
-g_{q}\text{ and }\sigma\text{ instead of }\sigma\text{ and }\tau\right) \\
+g_{q}\text{ and }\sigma\text{ instead of }\sigma\text{ and }\tau\right)  \\
 &  =\left(  -1\right)  ^{n+q}\cdot\left(  -1\right)  ^{\sigma}.
 \end{align*}
 Compared with%
 \begin{align*}
-\left(  -1\right)  ^{T\left(  \sigma\right)  \circ g_{p}}  &  =\left(
+\left(  -1\right)  ^{T\left(  \sigma\right)  \circ g_{p}} &  =\left(
 -1\right)  ^{T\left(  \sigma\right)  }\cdot\underbrace{\left(  -1\right)
 ^{g_{p}}}_{\substack{=\left(  -1\right)  ^{n-p}\\\text{(by Lemma
 \ref{lem.laplace.gpshort} \textbf{(b)})}}}\ \ \ \ \ \ \ \ \ \ \left(  \text{by
 (\ref{eq.sign.prod}), applied to }T\left(  \sigma\right)  \text{ and }%
-g_{p}\text{ instead of }\sigma\text{ and }\tau\right) \\
+g_{p}\text{ instead of }\sigma\text{ and }\tau\right)  \\
 &  =\left(  -1\right)  ^{T\left(  \sigma\right)  }\cdot\left(  -1\right)
 ^{n-p},
 \end{align*}
@@ -15687,8 +15696,8 @@ This proves (\ref{pf.lem.laplace.Apq.short.1}).} and%
 \begin{equation}
 \prod_{\substack{i\in\left\{  1,2,\ldots,n\right\}  ;\\i\neq p}}a_{i,\left(
 T\left(  \sigma\right)  \right)  \left(  i\right)  }=\prod_{i=1}^{n-1}%
-a_{g_{p}\left(  i\right)  ,g_{q}\left(  \sigma\left(  i\right)  \right)  }
-\label{pf.lem.laplace.Apq.short.2}%
+a_{g_{p}\left(  i\right)  ,g_{q}\left(  \sigma\left(  i\right)  \right)
+}\label{pf.lem.laplace.Apq.short.2}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{pf.lem.laplace.Apq.short.2}):} Let $\sigma
 \in\left\{  \tau\in S_{n}\ \mid\ \tau\left(  n\right)  =n\right\}  $. Let us
@@ -15718,8 +15727,8 @@ T\left(  \sigma\right)  \right)  \left(  g_{p}^{\prime}\left(  i\right)
 \begin{equation}
 a_{g_{p}^{\prime}\left(  i\right)  ,\left(  T\left(  \sigma\right)  \right)
 \left(  g_{p}^{\prime}\left(  i\right)  \right)  }=a_{g_{p}\left(  i\right)
-,g_{q}\left(  \sigma\left(  i\right)  \right)  }.
-\label{pf.lem.laplace.Apq.short.2.pf.1}%
+,g_{q}\left(  \sigma\left(  i\right)  \right)  }%
+.\label{pf.lem.laplace.Apq.short.2.pf.1}%
 \end{equation}
 \par
 Now, let us forget that we fixed $i$. We thus have proven
@@ -15747,7 +15756,7 @@ i\right)  \right)  }\\\text{(by (\ref{pf.lem.laplace.Apq.short.2.pf.1}))}}}\\
 g_{p}^{\prime}:\left[  n-1\right]  \rightarrow\left[  n\right]  \setminus
 \left\{  p\right\}  \text{ is a bijection}%
 \end{array}
-\right) \\
+\right)  \\
 &  =\prod_{i=1}^{n-1}a_{g_{p}\left(  i\right)  ,g_{q}\left(  \sigma\left(
 i\right)  \right)  }.
 \end{align*}
@@ -24039,11 +24048,11 @@ satisfying }1\leq i<j\leq n\right) \\
 &  =\sum_{k=2}^{n}\underbrace{\left(  \text{the number of pairs } \left(  i,
 j\right)  \text{ satisfying }1\leq i<j\leq n\text{ and } j=k\right)
 }_{=\left(  \text{the number of integers }i\text{ satisfying }1\leq
-i<k\right)  =\left(  k-1\right)  }\\
+i<k\right)  = k-1 }\\
 &  =\sum_{k=2}^{n}\left(  k-1\right)  =\sum_{j=1}^{n-1}%
 j\ \ \ \ \ \ \ \ \ \ \left(  \text{here, we substituted }j\text{ for
 }k-1\text{ in the sum}\right) \\
-&  1+2+\cdots+\left(  n-1\right)  =\left(  n-1\right)  n/2\\
+&  = 1+2+\cdots+\left(  n-1\right)  =\left(  n-1\right)  n/2\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by a famous formula commonly ascribed to
 Gauss}\right) \\
 &  =n\left(  n-1\right)  /2.
@@ -24673,13 +24682,13 @@ order to prove that it is well-defined, we need to show that $f\left(
 S\right)  \in\mathcal{P}_{2}\left(  B\right)  $ for every $S\in\mathcal{P}%
 _{2}\left(  A\right)  $.
 \par
-The set $S$ is a $2$-element subset of $A$ (since $S\in\mathcal{P}_{2}\left(
-A\right)  $). The map $f$ sends its two elements to two \textbf{distinct}
-elements of $B$ (they are distinct because $f$ is injective). In other words,
-the set $f\left(  S\right)  $ has $2$ elements. Thus, $f\left(  S\right)  $ is
-a $2$-element subset of $B$; in other words, $f\left(  S\right)
-\in\mathcal{P}_{2}\left(  B\right)  $. This proves that the map $f^{\ast}$ is
-well-defined.
+Let $S \in\mathcal{P}_{2}\left(  A\right)  $. Thus, the set $S$ is a
+$2$-element subset of $A$. The map $f$ sends its two elements to two
+\textbf{distinct} elements of $B$ (they are distinct because $f$ is
+injective). In other words, the set $f\left(  S\right)  $ has $2$ elements.
+Thus, $f\left(  S\right)  $ is a $2$-element subset of $B$; in other words,
+$f\left(  S\right)  \in\mathcal{P}_{2}\left(  B\right)  $. This proves that
+the map $f^{\ast}$ is well-defined.
 \par
 Notice that we have used the injectivity of $f$ in this argument.} This
 construction has the following three basic properties:
@@ -24969,7 +24978,7 @@ G;\\\left(  i,j\right)  \in\operatorname*{Inv}\left(  \sigma\right)
 \operatorname*{Inv}\left(  \sigma\right)  \right\vert }\\\text{(since
 }\operatorname*{Inv}\left(  \sigma\right)  \subseteq G\text{, and
 thus}\\\left\{  \left(  i,j\right)  \in G\ \mid\ \left(  i,j\right)
-\in\operatorname*{Inv}\left(  \sigma\right)  \right\}  \\=\operatorname*{Inv}%
+\in\operatorname*{Inv}\left(  \sigma\right)  \right\}  =\operatorname*{Inv}%
 \left(  \sigma\right)  \text{)}}}\underbrace{\left(  \prod_{\substack{\left(
 i,j\right)  \in G;\\\left(  i,j\right)  \in\operatorname*{Inv}\left(
 \sigma\right)  }}a_{\sigma\left(  \rho\left(  \left(  i,j\right)  \right)
@@ -25055,10 +25064,10 @@ i<j\leq n}\left(  \sigma\left(  i\right)  -\sigma\left(  j\right)  \right)
 }{\prod_{1\leq i<j\leq n}\left(  i-j\right)  }=\left(  -1\right)  ^{\sigma}$.
 Thus,%
 \[
-\prod_{1\leq i<j\leq n}\left(  i-j\right)  =\dfrac{\prod_{1\leq i<j\leq
-n}\left(  \sigma\left(  i\right)  -\sigma\left(  j\right)  \right)  }%
-{\prod_{1\leq i<j\leq n}\left(  i-j\right)  }=\prod_{1\leq i<j\leq n}%
-\dfrac{\sigma\left(  i\right)  -\sigma\left(  j\right)  }{i-j}.
+\left(  -1\right)  ^{\sigma}=\dfrac{\prod_{1\leq i<j\leq n}\left(
+\sigma\left(  i\right)  -\sigma\left(  j\right)  \right)  }{\prod_{1\leq
+i<j\leq n}\left(  i-j\right)  }=\prod_{1\leq i<j\leq n}\dfrac{\sigma\left(
+i\right)  -\sigma\left(  j\right)  }{i-j}.
 \]
 Thus, (\ref{eq.sign.pseudoexplicit}) is proven. This solves Exercise
 \ref{exe.perm.sign.pseudoexplicit} \textbf{(c)}.
@@ -25635,10 +25644,10 @@ i<j\leq n}\left(  \sigma\left(  i\right)  -\sigma\left(  j\right)  \right)
 }{\prod_{1\leq i<j\leq n}\left(  i-j\right)  }=\left(  -1\right)  ^{\sigma}$.
 Thus,%
 \[
-\prod_{1\leq i<j\leq n}\left(  i-j\right)  =\dfrac{\prod_{1\leq i<j\leq
-n}\left(  \sigma\left(  i\right)  -\sigma\left(  j\right)  \right)  }%
-{\prod_{1\leq i<j\leq n}\left(  i-j\right)  }=\prod_{1\leq i<j\leq n}%
-\dfrac{\sigma\left(  i\right)  -\sigma\left(  j\right)  }{i-j}.
+\left(  -1\right)  ^{\sigma}=\dfrac{\prod_{1\leq i<j\leq n}\left(
+\sigma\left(  i\right)  -\sigma\left(  j\right)  \right)  }{\prod_{1\leq
+i<j\leq n}\left(  i-j\right)  }=\prod_{1\leq i<j\leq n}\dfrac{\sigma\left(
+i\right)  -\sigma\left(  j\right)  }{i-j}.
 \]
 Thus, (\ref{eq.sign.pseudoexplicit}) is proven. This solves Exercise
 \ref{exe.perm.sign.pseudoexplicit} \textbf{(c)}.
@@ -26118,6 +26127,8 @@ Now, fix $r\in\left\{  1,2,\ldots,k-1\right\}  $. We shall prove that
 \text{there exists some }u\geq1\text{ such that }\left(  i_{u},i_{u+r}\right)
 \in\operatorname*{Inv}\sigma. \label{sol.perm.cycles.short.c.mainclaim}%
 \end{equation}
+
+
 \textit{Proof of (\ref{sol.perm.cycles.short.c.mainclaim}):} Let us (for the
 sake of contradiction) assume the contrary. Thus, there exists no
 $u\in\mathbb{Z}$ such that $\left(  i_{u},i_{u+r}\right)  \in
@@ -26151,7 +26162,7 @@ But this contradicts%
 =\sum_{u=1}^{k}\left(  i_{r+u}-i_{u}\right)  =\left(  \sum_{u=1}^{k}%
 i_{r+u}\right)  -\left(  \sum_{u=1}^{k}i_{u}\right) \\
 &  =\left(  i_{r+1}+i_{r+2}+\cdots+i_{r+k}\right)  -\left(  i_{1}+i_{2}%
-+\cdots+i_{r}\right)  =0\ \ \ \ \ \ \ \ \ \ \left(  \text{by
++\cdots+i_{k}\right)  =0\ \ \ \ \ \ \ \ \ \ \left(  \text{by
 (\ref{sol.perm.cycles.short.c.periodsum})}\right)  .
 \end{align*}
 This contradiction shows that our assumption was wrong, qed.}, and at least
@@ -27685,7 +27696,7 @@ _{i=1}^{n}a_{i,\sigma\left(  i\right)  }}_{=0}=\sum_{\sigma\in S_{n}}\left(
 This solves Exercise \ref{exe.ps4.6} \textbf{(c)}.
 \end{verlong}
 
-\textbf{(d)} Assume that a column of $A$ consists of zeroes. Thus, a column of
+\textbf{(d)} Assume that a column of $A$ consists of zeroes. Thus, a row of
 $A^{T}$ consists of zeroes (because the columns of $A$ correspond to the rows
 of $A^{T}$\ \ \ \ \footnote{More precisely, the columns of $A$ are the
 transposes of the rows of $A^{T}$.}). Hence, Exercise \ref{exe.ps4.6}
@@ -28082,7 +28093,7 @@ Thus, Exercise \ref{exe.ps4.6} \textbf{(g)} is solved.
 \end{verlong}
 
 \textbf{(h)} Let $B$ be the $n\times n$-matrix obtained from $A$ by
-multiplying the $k$-th column by $\lambda$. Thus, $B^{T}$ is an $n\times
+multiplying the $k$-th column by $\lambda$. Thus, $B^{T}$ is the $n\times
 n$-matrix obtained from $A^{T}$ by multiplying the $k$-th row by $\lambda$
 (because the columns of $A$ correspond to the rows of $A^{T}$%
 \ \ \ \ \footnote{More precisely, the columns of $A$ are the transposes of the
@@ -29304,15 +29315,15 @@ another column. Now, let us do the following steps (in this order):
 the $2$-nd column;
 
 \item subtract $x_{U}$ times the $4$-rd column of the resulting matrix from
-the $3$-nd column;
+the $3$-rd column;
 
 \item and so on, all the way until we finally subtract $x_{U}$ times the
 $U$-th column of the matrix from the $\left(  U-1\right)  $-st column.
 \end{itemize}
 
 Yes, you are reading this right: At the first step we subtract $x_{U}^{2}$
-times (not $x_{U}$ times) the $2$-nd column from the $1$-st column (but at all
-further steps, we subtract $x_{U}$ times a column from another). Having done
+times (not $x_{U}$ times) the $2$-nd column from the $1$-st column; but at all
+further steps, we subtract $x_{U}$ times a column from another. Having done
 all this, the resulting matrix is $B$ (according to our definition of $B$).
 Thus, $\det B=\det\left(  A_{U}\right)  $ (since our subtractions never change
 the determinant). This proves $\det B=\det\left(  A_{U}\right)  $.
@@ -30592,22 +30603,22 @@ by setting $a_{i}=x_{i}$ and $b_{j}=-y_{j}$. (See the ancillary PDF file of
 the arXiv version of \cite{Reiner} for the solutions to the exercises.)
 
 Exercise \ref{exe.cauchy-det} can also be obtained from \cite[Theorem
-2]{Gri-19.9} by setting $\mathbb{K}=k$, $m=n$, $a_{j}=y_{j}$ and $b_{i}%
+2]{Gri-19.9} by setting $k=\mathbb{K}$, $m=n$, $a_{j}=y_{j}$ and $b_{i}%
 =-x_{i}$ (and observing that
 \begin{align*}
-& \prod_{\substack{\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}
+&  \prod_{\substack{\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}
 ^{2};\\i>j}}\underbrace{\left(  \left(  y_{i}-y_{j}\right)  \left(  \left(
 -x_{j}\right)  -\left(  -x_{i}\right)  \right)  \right)  }_{\substack{=\left(
 y_{j}-y_{i}\right)  \left(  x_{j}-x_{i}\right)  \\=\left(  x_{j}-x_{i}\right)
 \left(  y_{j}-y_{i}\right)  }}\\
-& =\prod_{\substack{\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}
+&  =\prod_{\substack{\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}
 ^{2};\\i>j}}\left(  \left(  x_{j}-x_{i}\right)  \left(  y_{j}-y_{i}\right)
 \right)  =\prod_{\substack{\left(  j,i\right)  \in\left\{  1,2,\ldots
 ,n\right\}  ^{2};\\j>i}}\left(  \left(  x_{i}-x_{j}\right)  \left(
-y_{i}-y_{j}\right)  \right)  \\
-& \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have renamed the index }\left(
-i,j\right)  \text{ as }\left(  j,i\right)  \right)  \\
-& =\prod_{1\leq i<j\leq n}\left(  \left(  x_{i}-x_{j}\right)  \left(
+y_{i}-y_{j}\right)  \right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have renamed the index }\left(
+i,j\right)  \text{ as }\left(  j,i\right)  \right) \\
+&  =\prod_{1\leq i<j\leq n}\left(  \left(  x_{i}-x_{j}\right)  \left(
 y_{i}-y_{j}\right)  \right)
 \end{align*}
 ). The statement of \cite[Theorem 2]{Gri-19.9} makes the requirement that $k$
