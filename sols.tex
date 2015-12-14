@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Sunday, December 13, 2015 04:02:37}
+%TCIDATA{LastRevised=Sunday, December 13, 2015 22:09:29}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -15778,7 +15778,8 @@ _{i=1}^{n-1}a_{g_{p}\left(  i\right)  ,g_{q}\left(  \sigma\left(  i\right)
 \sigma\text{ in the sum,}\\
 \text{since the map }T:\left\{  \tau\in S_{n}\ \mid\ \tau\left(  n\right)
 =n\right\}  \rightarrow\left\{  \tau\in S_{n}\ \mid\ \tau\left(  p\right)
-=q\right\}
+=q\right\} \\
+\text{is a bijection}%
 \end{array}
 \right) \\
 &  =\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  n\right)  =n}}\left(
@@ -29764,7 +29765,7 @@ _{=y_{j}^{\left(  n-1\right)  -\left(  k-1\right)  }}=\sum_{k=1}^{n}%
 }\\
 &  =\sum_{k=0}^{n-1}\dbinom{n-1}{k}x_{i}^{k}y_{j}^{\left(  n-1\right)
 -k}\ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }k\text{ for
-}k-1\text{ in the sum}\right)  \\
+}k-1\text{ in the sum}\right) \\
 &  =\left(  x_{i}+y_{j}\right)  ^{n-1}\ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
@@ -30131,7 +30132,7 @@ m}}\underbrace{\delta_{k,m}}_{\substack{=0\\\text{(since }k\neq m\text{)}%
 \text{(since }m\in\left\{  0,1,\ldots,n-2\right\}  \subseteq\left\{
 0,1,\ldots,n-1\right\}  \text{)}%
 \end{array}
-\right)  \\
+\right) \\
 &  =X^{m}+\underbrace{\sum_{\substack{k\in\left\{  0,1,\ldots,n-1\right\}
 ;\\k\neq m}}0X^{k}}_{=0}=X^{m}.
 \end{align*}
@@ -30148,20 +30149,20 @@ n}.
 Taking determinants on both sides of this equality, we obtain%
 \begin{align}
 &  \det\left(  \left(  \left(  x_{i}+y_{j}\right)  ^{m}\right)  _{1\leq i\leq
-n,\ 1\leq j\leq n}\right)  \nonumber\\
+n,\ 1\leq j\leq n}\right) \nonumber\\
 &  =\det\left(  \left(  P\left(  x_{i}+y_{j}\right)  \right)  _{1\leq i\leq
-n,\ 1\leq j\leq n}\right)  \nonumber\\
+n,\ 1\leq j\leq n}\right) \nonumber\\
 &  =\underbrace{p_{n-1}^{n}}_{\substack{=\delta_{n-1,m}^{n}\\\text{(since
 }p_{n-1}=\delta_{n-1,m}\\\text{(by the definition of }p_{n-1}\text{))}%
 }}\left(  \prod_{k=0}^{n-1}\dbinom{n-1}{k}\right)  \left(  \prod_{1\leq
 i<j\leq n}\left(  x_{i}-x_{j}\right)  \right)  \left(  \prod_{1\leq i<j\leq
-n}\left(  y_{j}-y_{i}\right)  \right)  \nonumber\\
+n}\left(  y_{j}-y_{i}\right)  \right) \nonumber\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Exercise \ref{exe.vander-det.xi+yj}
-\textbf{(c)}}\right)  \nonumber\\
+\textbf{(c)}}\right) \nonumber\\
 &  =\delta_{n-1,m}^{n}\left(  \prod_{k=0}^{n-1}\dbinom{n-1}{k}\right)  \left(
 \prod_{1\leq i<j\leq n}\left(  x_{i}-x_{j}\right)  \right)  \left(
-\prod_{1\leq i<j\leq n}\left(  y_{j}-y_{i}\right)  \right)
-.\label{sol.vander-det.xi+yj.short.a.almost}%
+\prod_{1\leq i<j\leq n}\left(  y_{j}-y_{i}\right)  \right)  .
+\label{sol.vander-det.xi+yj.short.a.almost}%
 \end{align}
 
 
@@ -30497,7 +30498,7 @@ m}}\underbrace{\delta_{k,m}}_{\substack{=0\\\text{(since }k\neq m\text{)}%
 \text{(since }m\in\left\{  0,1,\ldots,n-2\right\}  \subseteq\left\{
 0,1,\ldots,n-1\right\}  \text{)}%
 \end{array}
-\right)  \\
+\right) \\
 &  =X^{m}+\underbrace{\sum_{\substack{k\in\left\{  0,1,\ldots,n-1\right\}
 ;\\k\neq m}}0X^{k}}_{=0}=X^{m}.
 \end{align*}
@@ -30514,20 +30515,20 @@ n}.
 Taking determinants on both sides of this equality, we obtain%
 \begin{align}
 &  \det\left(  \left(  \left(  x_{i}+y_{j}\right)  ^{m}\right)  _{1\leq i\leq
-n,\ 1\leq j\leq n}\right)  \nonumber\\
+n,\ 1\leq j\leq n}\right) \nonumber\\
 &  =\det\left(  \left(  P\left(  x_{i}+y_{j}\right)  \right)  _{1\leq i\leq
-n,\ 1\leq j\leq n}\right)  \nonumber\\
+n,\ 1\leq j\leq n}\right) \nonumber\\
 &  =\underbrace{p_{n-1}^{n}}_{\substack{=\delta_{n-1,m}^{n}\\\text{(since
 }p_{n-1}=\delta_{n-1,m}\\\text{(by the definition of }p_{n-1}\text{))}%
 }}\left(  \prod_{k=0}^{n-1}\dbinom{n-1}{k}\right)  \left(  \prod_{1\leq
 i<j\leq n}\left(  x_{i}-x_{j}\right)  \right)  \left(  \prod_{1\leq i<j\leq
-n}\left(  y_{j}-y_{i}\right)  \right)  \nonumber\\
+n}\left(  y_{j}-y_{i}\right)  \right) \nonumber\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Exercise \ref{exe.vander-det.xi+yj}
-\textbf{(c)}}\right)  \nonumber\\
+\textbf{(c)}}\right) \nonumber\\
 &  =\delta_{n-1,m}^{n}\left(  \prod_{k=0}^{n-1}\dbinom{n-1}{k}\right)  \left(
 \prod_{1\leq i<j\leq n}\left(  x_{i}-x_{j}\right)  \right)  \left(
-\prod_{1\leq i<j\leq n}\left(  y_{j}-y_{i}\right)  \right)
-.\label{sol.vander-det.xi+yj.a.almost}%
+\prod_{1\leq i<j\leq n}\left(  y_{j}-y_{i}\right)  \right)  .
+\label{sol.vander-det.xi+yj.a.almost}%
 \end{align}
 
 
@@ -36591,7 +36592,7 @@ solves Exercise \ref{exe.adj(AB)}.
 \end{noncompile}
 
 \begin{verlong}
-Before we start solving this exercise, let us show two lemmas. The first of
+Before we start solving this exercise, let us show some lemmas. The first of
 them formalizes the (intuitively obvious) fact that the elements of a finite
 set of integers can be listed in increasing order in exactly one way:
 
@@ -36790,22 +36791,31 @@ n\right]  ^{n-1}\ \mid\ k_{1}<k_{2}<\cdots<k_{n-1}\right\}  .
 Theorem \ref{thm.cauchy-binet} (applied to $n-1$ and $n$ instead of $n$ and
 $m$) yields%
 \begin{align}
-\det\left(  AB\right)   &  =\underbrace{\sum_{1\leq g_{1}<g_{2}<\cdots
-<g_{n-1}\leq n-1}}_{\substack{=\sum_{\substack{\left(  g_{1},g_{2}%
-,\ldots,g_{n}\right)  \in\left\{  1,2,\ldots,m\right\}  ^{n};\\g_{1}%
-<g_{2}<\cdots<g_{n}}}\\=\sum_{\left(  g_{1},g_{2},\ldots,g_{n}\right)
-\in\left\{  \left(  k_{1},k_{2},\ldots,k_{n-1}\right)  \in\left[  n\right]
-^{n-1}\ \mid\ k_{1}<k_{2}<\cdots<k_{n-1}\right\}  }\\=\sum_{\left(
-g_{1},g_{2},\ldots,g_{n}\right)  \in\mathbf{I}}\\\text{(since }\left\{
-\left(  k_{1},k_{2},\ldots,k_{n-1}\right)  \in\left[  n\right]  ^{n-1}%
-\ \mid\ k_{1}<k_{2}<\cdots<k_{n-1}\right\}  =\mathbf{I}\text{)}}}\det\left(
-\operatorname*{cols}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}}A\right)  \cdot
-\det\left(  \operatorname*{rows}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}}B\right)
-\nonumber\\
-&  =\sum_{\left(  g_{1},g_{2},\ldots,g_{n}\right)  \in\mathbf{I}}\det\left(
+&  \det\left(  AB\right)  \nonumber\\
+&  =\underbrace{\sum_{1\leq g_{1}<g_{2}<\cdots<g_{n-1}\leq n}}%
+_{\substack{=\sum_{\substack{\left(  g_{1},g_{2},\ldots,g_{n-1}\right)
+\in\left\{  1,2,\ldots,n\right\}  ^{n-1};\\g_{1}<g_{2}<\cdots<g_{n-1}}%
+}\\=\sum_{\substack{\left(  g_{1},g_{2},\ldots,g_{n-1}\right)  \in\left[
+n\right]  ^{n-1};\\g_{1}<g_{2}<\cdots<g_{n-1}}}\\\text{(since }\left\{
+1,2,\ldots,n-1\right\}  =\left[  n\right]  \text{)}}}\det\left(
 \operatorname*{cols}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}}A\right)  \cdot
 \det\left(  \operatorname*{rows}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}%
-}B\right)  . \label{pf.lem.adj(AB).cauchy-binet.1}%
+}B\right)  \nonumber\\
+&  =\underbrace{\sum_{\substack{\left(  g_{1},g_{2},\ldots,g_{n-1}\right)
+\in\left[  n\right]  ^{n-1};\\g_{1}<g_{2}<\cdots<g_{n-1}}}}_{\substack{=\sum
+_{\left(  g_{1},g_{2},\ldots,g_{n-1}\right)  \in\left\{  \left(  k_{1}%
+,k_{2},\ldots,k_{n-1}\right)  \in\left[  n\right]  ^{n-1}\ \mid\ k_{1}%
+<k_{2}<\cdots<k_{n-1}\right\}  }\\=\sum_{\left(  g_{1},g_{2},\ldots
+,g_{n}\right)  \in\mathbf{I}}\\\text{(since }\left\{  \left(  k_{1}%
+,k_{2},\ldots,k_{n-1}\right)  \in\left[  n\right]  ^{n-1}\ \mid\ k_{1}%
+<k_{2}<\cdots<k_{n-1}\right\}  =\mathbf{I}\text{)}}}\det\left(
+\operatorname*{cols}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}}A\right)  \cdot
+\det\left(  \operatorname*{rows}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}%
+}B\right)  \nonumber\\
+&  =\sum_{\left(  g_{1},g_{2},\ldots,g_{n-1}\right)  \in\mathbf{I}}\det\left(
+\operatorname*{cols}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}}A\right)  \cdot
+\det\left(  \operatorname*{rows}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}%
+}B\right)  .\label{pf.lem.adj(AB).cauchy-binet.1}%
 \end{align}
 
 
@@ -37075,7 +37085,7 @@ k  &  \mapsto\left(  1,2,\ldots,\widehat{k},\ldots,n\right)
 
 Now, (\ref{pf.lem.adj(AB).cauchy-binet.1}) becomes%
 \begin{align*}
-\det\left(  AB\right)   &  =\sum_{\left(  g_{1},g_{2},\ldots,g_{n}\right)
+\det\left(  AB\right)   &  =\sum_{\left(  g_{1},g_{2},\ldots,g_{n-1}\right)
 \in\mathbf{I}}\det\left(  \operatorname*{cols}\nolimits_{g_{1},g_{2}%
 ,\ldots,g_{n-1}}A\right)  \cdot\det\left(  \operatorname*{rows}%
 \nolimits_{g_{1},g_{2},\ldots,g_{n-1}}B\right) \\
