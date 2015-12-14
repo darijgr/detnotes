@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Sunday, December 13, 2015 22:09:29}
+%TCIDATA{LastRevised=Sunday, December 13, 2015 22:27:04}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -36435,161 +36435,10 @@ obtained the result in its factored form!)
 
 \subsection{Solution to Exercise \ref{exe.adj(AB)}}
 
-\begin{noncompile}
-[Incomplete vershort solution follows:]
-
-\begin{proof}
-[Solution to Exercise \ref{exe.adj(AB)}.]Let $\left(  u,v\right)  \in\left\{
-1,2,\ldots,n\right\}  ^{2}$. Thus, $1\leq u\leq n$, so that $n\geq1$.
-
-For every $k\in\left\{  1,2,\ldots,n\right\}  $, we have%
-\begin{equation}
-\operatorname*{cols}\nolimits_{1,2,\ldots,\widehat{k},\ldots,n}\left(
-\operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{u},\ldots,n}A\right)
-=A_{\sim u,\sim k} \label{sol.adj(AB).short.A}%
-\end{equation}
-\footnote{\textit{Proof of (\ref{sol.adj(AB).short.A}):} Let $k\in\left\{
-1,2,\ldots,n\right\}  $. We can apply Proposition \ref{prop.submatrix.easy}
-\textbf{(d)} to $n-1$, $n-1$, $\left(  1,2,\ldots,\widehat{u},\ldots,n\right)
-$ and $\left(  1,2,\ldots,\widehat{k},\ldots,n\right)  $ instead of $u$, $v$,
-$\left(  i_{1},i_{2},\ldots,i_{u}\right)  $ and $\left(  j_{1},j_{2}%
-,\ldots,j_{v}\right)  $. As a result, we obtain%
-\[
-\operatorname*{sub}\nolimits_{1,2,\ldots,\widehat{u},\ldots,n}^{1,2,\ldots
-,\widehat{k},\ldots,n}A=\operatorname*{rows}\nolimits_{1,2,\ldots
-,\widehat{u},\ldots,n}\left(  \operatorname*{cols}\nolimits_{1,2,\ldots
-,\widehat{k},\ldots,n}A\right)  =\operatorname*{cols}\nolimits_{1,2,\ldots
-,\widehat{k},\ldots,n}\left(  \operatorname*{rows}\nolimits_{1,2,\ldots
-,\widehat{u},\ldots,n}A\right)  .
-\]
-But the definition of $A_{\sim u,\sim k}$ yields%
-\[
-A_{\sim u,\sim k}=\operatorname*{sub}\nolimits_{1,2,\ldots,\widehat{u}%
-,\ldots,n}^{1,2,\ldots,\widehat{k},\ldots,n}A=\operatorname*{cols}%
-\nolimits_{1,2,\ldots,\widehat{k},\ldots,n}\left(  \operatorname*{rows}%
-\nolimits_{1,2,\ldots,\widehat{u},\ldots,n}A\right)  .
-\]
-This proves (\ref{sol.adj(AB).short.A}).} and%
-\begin{equation}
-\operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{k},\ldots,n}\left(
-\operatorname*{cols}\nolimits_{1,2,\ldots,\widehat{v},\ldots,n}B\right)
-=B_{\sim k,\sim v} \label{sol.adj(AB).short.B}%
-\end{equation}
-\footnote{This holds for similar reasons.}.
-
-We have%
-\begin{equation}
-\left(  AB\right)  _{\sim u,\sim v}=\left(  \operatorname*{rows}%
-\nolimits_{1,2,\ldots,\widehat{u},\ldots,n}A\right)  \cdot\left(
-\operatorname*{cols}\nolimits_{1,2,\ldots,\widehat{v},\ldots,n}B\right)
-\label{sol.adj(AB).short.1}%
-\end{equation}
-\footnote{\textit{Proof of (\ref{sol.adj(AB).short.1}):} The definition of
-$\left(  AB\right)  _{\sim u,\sim v}$ yields%
-\[
-\left(  AB\right)  _{\sim u,\sim v}=\operatorname*{sub}\nolimits_{1,2,\ldots
-,\widehat{u},\ldots,n}^{1,2,\ldots,\widehat{v},\ldots,n}\left(  AB\right)
-=\left(  \operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{u},\ldots
-,n}A\right)  \cdot\left(  \operatorname*{cols}\nolimits_{1,2,\ldots
-,\widehat{v},\ldots,n}B\right)
-\]
-(by Lemma \ref{lem.adj(AB).minor-of-AB}, applied to $m=n$, $p=n$, $u=n-1$,
-$\left(  i_{1},i_{2},\ldots,i_{u}\right)  =\left(  1,2,\ldots,\widehat{u}%
-,\ldots,n\right)  $ and $\left(  j_{1},j_{2},\ldots,j_{v}\right)  =\left(
-1,2,\ldots,\widehat{v},\ldots,n\right)  $). This proves
-(\ref{sol.adj(AB).short.1}).}. Taking determinants on both sides of this
-equation, we obtain%
-\begin{align}
-&  \det\left(  \left(  AB\right)  _{\sim u,\sim v}\right) \nonumber\\
-&  =\det\left(  \left(  \operatorname*{rows}\nolimits_{1,2,\ldots
-,\widehat{u},\ldots,n}A\right)  \cdot\left(  \operatorname*{cols}%
-\nolimits_{1,2,\ldots,\widehat{v},\ldots,n}B\right)  \right) \nonumber\\
-&  =\sum_{k=1}^{n}\det\left(  \underbrace{\operatorname*{cols}%
-\nolimits_{1,2,\ldots,\widehat{k},\ldots,n}\left(  \operatorname*{rows}%
-\nolimits_{1,2,\ldots,\widehat{u},\ldots,n}A\right)  }_{\substack{=A_{\sim
-u,\sim k}\\\text{(by (\ref{sol.adj(AB).short.A}))}}}\right)  \cdot\det\left(
-\underbrace{\operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{k},\ldots
-,n}\left(  \operatorname*{cols}\nolimits_{1,2,\ldots,\widehat{v},\ldots
-,n}B\right)  }_{\substack{=B_{\sim k,\sim v}\\\text{(by
-(\ref{sol.adj(AB).short.B}))}}}\right) \nonumber\\
-&  \ \ \ \ \ \ \ \ \ \ \left(
-\begin{array}
-[c]{c}%
-\text{by Lemma \ref{lem.adj(AB).cauchy-binet}, applied to }%
-\operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{u},\ldots,n}A\\
-\text{and }\operatorname*{cols}\nolimits_{1,2,\ldots,\widehat{v},\ldots
-,n}B\text{ instead of }A\text{ and }B
-\end{array}
-\right) \nonumber\\
-&  =\sum_{k=1}^{n}\det\left(  A_{\sim u,\sim k}\right)  \cdot\det\left(
-B_{\sim k,\sim v}\right)  . \label{sol.adj(AB).short.5}%
-\end{align}
-
-
-Let us now forget that we fixed $\left(  u,v\right)  $. We thus have proven
-(\ref{sol.adj(AB).short.5}) for every $\left(  u,v\right)  \in\left\{
-1,2,\ldots,n\right\}  ^{2}$.
-
-Now, the definition of $\operatorname*{adj}\left(  AB\right)  $ yields%
-\begin{equation}
-\operatorname*{adj}\left(  AB\right)  =\left(  \left(  -1\right)  ^{i+j}%
-\det\left(  \left(  AB\right)  _{\sim j,\sim i}\right)  \right)  _{1\leq i\leq
-n,\ 1\leq j\leq n}. \label{sol.adj(AB).short.L1}%
-\end{equation}
-But every $\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}$
-satisfies%
-\begin{align*}
-&  \left(  -1\right)  ^{i+j}\underbrace{\det\left(  \left(  AB\right)  _{\sim
-j,\sim i}\right)  }_{\substack{=\sum_{k=1}^{n}\det\left(  A_{\sim j,\sim
-k}\right)  \cdot\det\left(  B_{\sim k,\sim i}\right)  \\\text{(by
-(\ref{sol.adj(AB).short.5}), applied to }\left(  u,v\right)  =\left(
-j,i\right)  \text{)}}}\\
-&  =\left(  -1\right)  ^{i+j}\sum_{k=1}^{n}\det\left(  A_{\sim j,\sim
-k}\right)  \cdot\det\left(  B_{\sim k,\sim i}\right) \\
-&  =\sum_{k=1}^{n}\underbrace{\left(  -1\right)  ^{i+j}}_{\substack{=\left(
--1\right)  ^{\left(  i+k\right)  +\left(  k+j\right)  }\\\text{(since
-}i+j\equiv i+j+2k=\left(  i+k\right)  +\left(  k+j\right)  \operatorname{mod}%
-2\text{)}}}\det\left(  A_{\sim j,\sim k}\right)  \cdot\det\left(  B_{\sim
-k,\sim i}\right) \\
-&  =\sum_{k=1}^{n}\underbrace{\left(  -1\right)  ^{\left(  i+k\right)
-+\left(  k+j\right)  }}_{=\left(  -1\right)  ^{i+k}\left(  -1\right)  ^{k+j}%
-}\det\left(  A_{\sim j,\sim k}\right)  \cdot\det\left(  B_{\sim k,\sim
-i}\right) \\
-&  =\sum_{k=1}^{n}\left(  -1\right)  ^{i+k}\det\left(  B_{\sim k,\sim
-i}\right)  \cdot\left(  -1\right)  ^{k+j}\det\left(  A_{\sim j,\sim k}\right)
-.
-\end{align*}
-Thus, (\ref{sol.adj(AB).short.L1}) becomes%
-\begin{align}
-\operatorname*{adj}\left(  AB\right)   &  =\left(  \underbrace{\left(
--1\right)  ^{i+j}\det\left(  \left(  AB\right)  _{\sim j,\sim i}\right)
-}_{=\sum_{k=1}^{n}\left(  -1\right)  ^{i+k}\det\left(  B_{\sim k,\sim
-i}\right)  \cdot\left(  -1\right)  ^{k+j}\det\left(  A_{\sim j,\sim k}\right)
-}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\nonumber\\
-&  =\left(  \sum_{k=1}^{n}\left(  -1\right)  ^{i+k}\det\left(  B_{\sim k,\sim
-i}\right)  \cdot\left(  -1\right)  ^{k+j}\det\left(  A_{\sim j,\sim k}\right)
-\right)  _{1\leq i\leq n,\ 1\leq j\leq n} \label{sol.adj(AB).short.L2}%
-\end{align}
-
-
-On the other hand, we have $\operatorname*{adj}B=\left(  \left(  -1\right)
-^{i+j}\det\left(  B_{\sim j,\sim i}\right)  \right)  _{1\leq i\leq n,\ 1\leq
-j\leq n}$ (by the definition of $\operatorname*{adj}B$) and
-$\operatorname*{adj}A=\left(  \left(  -1\right)  ^{i+j}\det\left(  A_{\sim
-j,\sim i}\right)  \right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ (by the
-definition of $\operatorname*{adj}A$). Therefore, the definition of the
-product of two matrices shows that%
-\[
-\operatorname*{adj}B\cdot\operatorname*{adj}A=\left(  \sum_{k=1}^{n}\left(
--1\right)  ^{i+k}\det\left(  B_{\sim k,\sim i}\right)  \cdot\left(  -1\right)
-^{k+j}\det\left(  A_{\sim j,\sim k}\right)  \right)  _{1\leq i\leq n,\ 1\leq
-j\leq n}.
-\]
-Compared with (\ref{sol.adj(AB).short.L2}), this yields $\operatorname*{adj}%
-\left(  AB\right)  =\operatorname*{adj}B\cdot\operatorname*{adj}A$. This
-solves Exercise \ref{exe.adj(AB)}.
-\end{proof}
-\end{noncompile}
+\begin{vershort}
+Before we start solving this exercise, let us show some lemmas.
+The first of them is a (somewhat disguised) particular case of the Cauchy-Binet formula:
+\end{vershort}
 
 \begin{verlong}
 Before we start solving this exercise, let us show some lemmas. The first of
@@ -36762,6 +36611,7 @@ b_{\operatorname*{id}\left(  1\right)  },b_{\operatorname*{id}\left(
 \end{align*}
 This proves Lemma \ref{lem.adj(AB).set.increase}.
 \end{proof}
+\end{verlong}
 
 \begin{lemma}
 \label{lem.adj(AB).cauchy-binet}Let $n$ be a positive integer. Let $A$ be an
@@ -36775,6 +36625,180 @@ n-1\right)  $-matrix. Then,%
 
 \end{lemma}
 
+\begin{vershort}
+\begin{proof}
+[Proof of Lemma \ref{lem.adj(AB).cauchy-binet}.]Let $\left[  n\right]  $
+denote the set $\left\{  1,2,\ldots,n\right\}  $. Define a subset $\mathbf{I}$
+of $\left[  n\right]  ^{n-1}$ by%
+\[
+\mathbf{I}=\left\{  \left(  k_{1},k_{2},\ldots,k_{n-1}\right)  \in\left[
+n\right]  ^{n-1}\ \mid\ k_{1}<k_{2}<\cdots<k_{n-1}\right\}  .
+\]
+
+
+Theorem \ref{thm.cauchy-binet} (applied to $n-1$ and $n$ instead of $n$ and
+$m$) yields%
+\begin{align}
+&  \det\left(  AB\right) \nonumber\\
+&  =\sum_{1\leq g_{1}<g_{2}<\cdots<g_{n-1}\leq n}\det\left(
+\operatorname*{cols}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}}A\right)  \cdot
+\det\left(  \operatorname*{rows}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}%
+}B\right)  . \label{pf.lem.adj(AB).cauchy-binet.short.1}%
+\end{align}
+Recall that the summation sign $\sum_{1\leq g_{1}<g_{2}<\cdots<g_{n-1}\leq
+n-1}$ is an abbreviation for $\sum_{\substack{\left(  g_{1},g_{2}%
+,\ldots,g_{n-1}\right)  \in\left\{  1,2,\ldots,n\right\}  ^{n-1};\\g_{1}%
+<g_{2}<\cdots<g_{n-1}}}$, which can be rewritten as $\sum_{\left(  g_{1}%
+,g_{2},\ldots,g_{n-1}\right)  \in\mathbf{I}}$ (because the $\left(
+n-1\right)  $-tuples $\left(  g_{1},g_{2},\ldots,g_{n-1}\right)  \in\left\{
+1,2,\ldots,n\right\}  ^{n-1}$ satisfying $g_{1}<g_{2}<\cdots<g_{n-1}$ are
+precisely the elements of $\mathbf{I}$). Therefore,
+(\ref{pf.lem.adj(AB).cauchy-binet.short.1}) can be rewritten as%
+\begin{align}
+&  \det\left(  AB\right) \nonumber\\
+&  =\sum_{\left(  g_{1},g_{2},\ldots,g_{n-1}\right)  \in\mathbf{I}}\det\left(
+\operatorname*{cols}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}}A\right)  \cdot
+\det\left(  \operatorname*{rows}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}%
+}B\right)  . \label{pf.lem.adj(AB).cauchy-binet.short.2}%
+\end{align}
+
+
+Now, let us take a closer look at $\mathbf{I}$. The set $\mathbf{I}$ consists
+of all $\left(  n-1\right)  $-tuples $\left(  k_{1},k_{2},\ldots
+,k_{n-1}\right)  \in\left[  n\right]  ^{n-1}$ satisfying $k_{1}<k_{2}%
+<\cdots<k_{n-1}$. There are only $n$ such $\left(  n-1\right)  $-tuples:
+namely, the $\left(  n-1\right)  $-tuples $\left(  1,2,\ldots,\widehat{k}%
+,\ldots,n\right)  $ for $k\in\left\{  1,2,\ldots,n\right\}  $. This is
+intuitively clear: If you want to choose an $\left(  n-1\right)  $-tuple
+$\left(  k_{1},k_{2},\ldots,k_{n-1}\right)  \in\mathbf{I}$, you can simply
+decide which of the $n$ elements $1,2,\ldots,n$ you do \textbf{not} want to be
+an entry of $\left(  k_{1},k_{2},\ldots,k_{n-1}\right)  $, and then the
+$\left(  n-1\right)  $-tuple $\left(  k_{1},k_{2},\ldots,k_{n-1}\right)  $
+will have to be the list of all the remaining $n-1$ elements of $\left\{
+1,2,\ldots,n\right\}  $ in increasing order. Let us formalize this argument a
+bit more:
+
+For every $k\in\left\{  1,2,\ldots,n\right\}  $, we have $\left(
+1,2,\ldots,\widehat{k},\ldots,n\right)  \in\mathbf{I}$ (for obvious reasons).
+Hence, we can define a map%
+\[
+\Phi:\left\{  1,2,\ldots,n\right\}  \rightarrow\mathbf{I}%
+\]
+by%
+\[
+\left(  \Phi\left(  k\right)  =\left(  1,2,\ldots,\widehat{k},\ldots,n\right)
+\ \ \ \ \ \ \ \ \ \ \text{for every }k\in\left\{  1,2,\ldots,n\right\}
+\right)  .
+\]
+Consider this map $\Phi$. This map $\Phi$ is
+injective\footnote{\textit{Proof.} Let $i\in\left\{  1,2,\ldots,n\right\}  $
+and $j\in\left\{  1,2,\ldots,n\right\}  $ be such that $\Phi\left(  i\right)
+=\Phi\left(  j\right)  $. We shall show that $i=j$.
+\par
+The definition of $\Phi$ yields $\Phi\left(  i\right)  =\left(  1,2,\ldots
+,\widehat{i},\ldots,n\right)  $. Hence, $i$ is the only element of $\left\{
+1,2,\ldots,n\right\}  $ that does not appear in $\Phi\left(  i\right)  $.
+Similarly, $j$ is the only element of $\left\{  1,2,\ldots,n\right\}  $ that
+does not appear in $\Phi\left(  j\right)  $. In other words, $j$ is the only
+element of $\left\{  1,2,\ldots,n\right\}  $ that does not appear in
+$\Phi\left(  i\right)  $ (since $\Phi\left(  i\right)  =\Phi\left(  j\right)
+$). Comparing this with the fact that $i$ is the only element of $\left\{
+1,2,\ldots,n\right\}  $ that does not appear in $\Phi\left(  i\right)  $, we
+conclude that $i=j$.
+\par
+Now, let us forget that we fixed $i$ and $j$. We thus have proven that if
+$i\in\left\{  1,2,\ldots,n\right\}  $ and $j\in\left\{  1,2,\ldots,n\right\}
+$ are such that $\Phi\left(  i\right)  =\Phi\left(  j\right)  $, then $i=j$.
+In other words, the map $\Phi$ is injective.} and
+surjective\footnote{\textit{Proof.} Let $\mathbf{g}\in\mathbf{I}$. We shall
+show that $\mathbf{g}\in\Phi\left(  \left\{  1,2,\ldots,n\right\}  \right)  $.
+\par
+We have $\mathbf{g}\in\mathbf{I}=\left\{  \left(  k_{1},k_{2},\ldots
+,k_{n-1}\right)  \in\left[  n\right]  ^{n-1}\ \mid\ k_{1}<k_{2}<\cdots
+<k_{n-1}\right\}  $. In other words, \textbf{$g$} can be written in the form
+$\mathbf{g}=\left(  g_{1},g_{2},\ldots,g_{n-1}\right)  $ for some $\left(
+g_{1},g_{2},\ldots,g_{n-1}\right)  \in\left[  n\right]  ^{n-1}$ satisfying
+$g_{1}<g_{2}<\cdots<g_{n-1}$. Consider this $\left(  g_{1},g_{2}%
+,\ldots,g_{n-1}\right)  $.
+\par
+The integers $g_{1},g_{2},\ldots,g_{n-1}$ are distinct (since $g_{1}%
+<g_{2}<\cdots<g_{n-1}$). Thus, $\left\{  g_{1},g_{2},\ldots,g_{n-1}\right\}  $
+is an $\left(  n-1\right)  $-element subset of $\left[  n\right]  $.
+Therefore, its complement $\left[  n\right]  \setminus\left\{  g_{1}%
+,g_{2},\ldots,g_{n-1}\right\}  $ is a $1$-element subset of $\left[  n\right]
+$ (since $n-\left(  n-1\right)  =1$). In other words, $\left[  n\right]
+\setminus\left\{  g_{1},g_{2},\ldots,g_{n-1}\right\}  =\left\{  k\right\}  $
+for some $k\in\left[  n\right]  $. Consider this $k$.
+\par
+We have $k\in\left[  n\right]  =\left\{  1,2,\ldots,n\right\}  $. Since
+$\left\{  g_{1},g_{2},\ldots,g_{n-1}\right\}  \subseteq\left[  n\right]  $, we
+have%
+\[
+\left\{  g_{1},g_{2},\ldots,g_{n-1}\right\}  =\left[  n\right]  \setminus
+\underbrace{\left(  \left[  n\right]  \setminus\left\{  g_{1},g_{2}%
+,\ldots,g_{n-1}\right\}  \right)  }_{=\left\{  k\right\}  }=\left[  n\right]
+\setminus\left\{  k\right\}  .
+\]
+\par
+Now, recall that $g_{1}<g_{2}<\cdots<g_{n-1}$. Hence, the $\left(  n-1\right)
+$-tuple $\left(  g_{1},g_{2},\ldots,g_{n-1}\right)  $ is the list of all
+elements of the set $\left\{  g_{1},g_{2},\ldots,g_{n-1}\right\}  $ in
+increasing order. Since $\left\{  g_{1},g_{2},\ldots,g_{n-1}\right\}  =\left[
+n\right]  \setminus\left\{  k\right\}  $, this rewrites as follows: The
+$\left(  n-1\right)  $-tuple $\left(  g_{1},g_{2},\ldots,g_{n-1}\right)  $ is
+the list of all elements of the set $\left[  n\right]  \setminus\left\{
+k\right\}  $ in increasing order. But clearly the latter list is $\left(
+1,2,\ldots,\widehat{k},\ldots,n\right)  $. Thus, the $\left(  n-1\right)
+$-tuple $\left(  g_{1},g_{2},\ldots,g_{n-1}\right)  $ is the list $\left(
+1,2,\ldots,\widehat{k},\ldots,n\right)  $. In other words, $\left(
+g_{1},g_{2},\ldots,g_{n-1}\right)  =\left(  1,2,\ldots,\widehat{k}%
+,\ldots,n\right)  $, so that%
+\[
+\mathbf{g}=\left(  g_{1},g_{2},\ldots,g_{n-1}\right)  =\left(  1,2,\ldots
+,\widehat{k},\ldots,n\right)  =\Phi\left(  k\right)  \in\Phi\left(  \left\{
+1,2,\ldots,n\right\}  \right)  .
+\]
+\par
+Now, let us forget that we fixed $\mathbf{g}$. We thus have proven that
+$\mathbf{g}\in\Phi\left(  \left\{  1,2,\ldots,n\right\}  \right)  $ for every
+$\mathbf{g}\in\mathbf{I}$. In other words, $\mathbf{I}\subseteq\Phi\left(
+\left\{  1,2,\ldots,n\right\}  \right)  $. In other words, the map $\Phi$ is
+surjective.}. Hence, the map $\Phi$ is a bijection. In other words, the map%
+\[
+\left\{  1,2,\ldots,n\right\}  \rightarrow\mathbf{I}%
+,\ \ \ \ \ \ \ \ \ \ k\mapsto\left(  1,2,\ldots,\widehat{k},\ldots,n\right)
+\]
+is a bijection (since this map is precisely $\Phi$).
+
+Now, (\ref{pf.lem.adj(AB).cauchy-binet.short.2}) becomes%
+\begin{align*}
+\det\left(  AB\right)   &  =\sum_{\left(  g_{1},g_{2},\ldots,g_{n-1}\right)
+\in\mathbf{I}}\det\left(  \operatorname*{cols}\nolimits_{g_{1},g_{2}%
+,\ldots,g_{n-1}}A\right)  \cdot\det\left(  \operatorname*{rows}%
+\nolimits_{g_{1},g_{2},\ldots,g_{n-1}}B\right)  \\
+&  =\underbrace{\sum_{k\in\left\{  1,2,\ldots,n\right\}  }}_{=\sum_{k=1}^{n}%
+}\det\left(  \operatorname*{cols}\nolimits_{1,2,\ldots,\widehat{k},\ldots
+,n}A\right)  \cdot\det\left(  \operatorname*{rows}\nolimits_{1,2,\ldots
+,\widehat{k},\ldots,n}B\right)  \\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have substituted }\left(  1,2,\ldots,\widehat{k},\ldots
+,n\right)  \text{ for}\\
+\left(  g_{1},g_{2},\ldots,g_{n}\right)  \text{ in the sum, since the map}\\
+\left\{  1,2,\ldots,n\right\}  \rightarrow\mathbf{I},\ k\mapsto\left(
+1,2,\ldots,\widehat{k},\ldots,n\right)  \text{ is a bijection}%
+\end{array}
+\right)  \\
+&  =\sum_{k=1}^{n}\det\left(  \operatorname*{cols}\nolimits_{1,2,\ldots
+,\widehat{k},\ldots,n}A\right)  \cdot\det\left(  \operatorname*{rows}%
+\nolimits_{1,2,\ldots,\widehat{k},\ldots,n}B\right)  .
+\end{align*}
+This proves Lemma \ref{lem.adj(AB).cauchy-binet}.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
 This lemma is a particular case of the Cauchy-Binet formula. Here is how it
 can be derived from the latter, in detail:
 
@@ -36791,7 +36815,7 @@ n\right]  ^{n-1}\ \mid\ k_{1}<k_{2}<\cdots<k_{n-1}\right\}  .
 Theorem \ref{thm.cauchy-binet} (applied to $n-1$ and $n$ instead of $n$ and
 $m$) yields%
 \begin{align}
-&  \det\left(  AB\right)  \nonumber\\
+&  \det\left(  AB\right) \nonumber\\
 &  =\underbrace{\sum_{1\leq g_{1}<g_{2}<\cdots<g_{n-1}\leq n}}%
 _{\substack{=\sum_{\substack{\left(  g_{1},g_{2},\ldots,g_{n-1}\right)
 \in\left\{  1,2,\ldots,n\right\}  ^{n-1};\\g_{1}<g_{2}<\cdots<g_{n-1}}%
@@ -36799,8 +36823,8 @@ _{\substack{=\sum_{\substack{\left(  g_{1},g_{2},\ldots,g_{n-1}\right)
 n\right]  ^{n-1};\\g_{1}<g_{2}<\cdots<g_{n-1}}}\\\text{(since }\left\{
 1,2,\ldots,n-1\right\}  =\left[  n\right]  \text{)}}}\det\left(
 \operatorname*{cols}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}}A\right)  \cdot
-\det\left(  \operatorname*{rows}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}%
-}B\right)  \nonumber\\
+\det\left(  \operatorname*{rows}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}}B\right)
+\nonumber\\
 &  =\underbrace{\sum_{\substack{\left(  g_{1},g_{2},\ldots,g_{n-1}\right)
 \in\left[  n\right]  ^{n-1};\\g_{1}<g_{2}<\cdots<g_{n-1}}}}_{\substack{=\sum
 _{\left(  g_{1},g_{2},\ldots,g_{n-1}\right)  \in\left\{  \left(  k_{1}%
@@ -36810,12 +36834,12 @@ _{\left(  g_{1},g_{2},\ldots,g_{n-1}\right)  \in\left\{  \left(  k_{1}%
 ,k_{2},\ldots,k_{n-1}\right)  \in\left[  n\right]  ^{n-1}\ \mid\ k_{1}%
 <k_{2}<\cdots<k_{n-1}\right\}  =\mathbf{I}\text{)}}}\det\left(
 \operatorname*{cols}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}}A\right)  \cdot
-\det\left(  \operatorname*{rows}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}%
-}B\right)  \nonumber\\
+\det\left(  \operatorname*{rows}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}}B\right)
+\nonumber\\
 &  =\sum_{\left(  g_{1},g_{2},\ldots,g_{n-1}\right)  \in\mathbf{I}}\det\left(
 \operatorname*{cols}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}}A\right)  \cdot
 \det\left(  \operatorname*{rows}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}%
-}B\right)  .\label{pf.lem.adj(AB).cauchy-binet.1}%
+}B\right)  . \label{pf.lem.adj(AB).cauchy-binet.1}%
 \end{align}
 
 
@@ -37109,6 +37133,7 @@ Now, (\ref{pf.lem.adj(AB).cauchy-binet.1}) becomes%
 \end{align*}
 This proves Lemma \ref{lem.adj(AB).cauchy-binet}.
 \end{proof}
+\end{verlong}
 
 Here comes one more simple lemma:
 
@@ -37174,13 +37199,14 @@ a_{i_{i},j}\right)  _{1\leq i\leq u,\ 1\leq j\leq p}$ and
 $\operatorname*{cols}\nolimits_{j_{1},j_{2},\ldots,j_{v}}B=\left(  b_{i,j_{j}%
 }\right)  _{1\leq i\leq p,\ 1\leq j\leq v}$. The definition of the product of
 two matrices thus yields%
-\[
+\begin{align*}
 \left(  \operatorname*{rows}\nolimits_{i_{1},i_{2},\ldots,i_{u}}A\right)
 \cdot\left(  \operatorname*{cols}\nolimits_{j_{1},j_{2},\ldots,j_{v}}B\right)
-=\left(  \sum_{k=1}^{p}a_{i_{i},k}b_{k,j_{j}}\right)  _{1\leq i\leq u,\ 1\leq
-j\leq v}=\left(  \sum_{k=1}^{p}a_{i_{x},k}b_{k,j_{y}}\right)  _{1\leq x\leq
+& =\left(  \sum_{k=1}^{p}a_{i_{i},k}b_{k,j_{j}}\right)  _{1\leq i\leq
+u,\ 1\leq j\leq v}\\
+& =\left(  \sum_{k=1}^{p}a_{i_{x},k}b_{k,j_{y}}\right)  _{1\leq x\leq
 u,\ 1\leq y\leq v}%
-\]
+\end{align*}
 (here, we have renamed the index $\left(  i,j\right)  $ as $\left(
 x,y\right)  $). Comparing this with (\ref{pf.lem.adj(AB).minor-of-AB.1}), we
 obtain%
@@ -37221,7 +37247,9 @@ Corollary \ref{cor.adj(AB).cauchy-binet-general} is precisely the formula
 \cite[(1.10)]{NoumiYamada}\footnote{We notice that the notation $A_{j_{1}%
 ,j_{2},\ldots,j_{u}}^{i_{1},i_{2},\ldots,i_{u}}$ in \cite{NoumiYamada} is
 equivalent to our notation $\operatorname*{sub}\nolimits_{i_{1},i_{2}%
-,\ldots,i_{u}}^{j_{1},j_{2},\ldots,j_{u}}A$.}.
+,\ldots,i_{u}}^{j_{1},j_{2},\ldots,j_{u}}A$.}. We shall not use Corollary
+\ref{cor.adj(AB).cauchy-binet-general} in what follows, but let us
+nevertheless prove it:
 
 \begin{proof}
 [Proof of Corollary \ref{cor.adj(AB).cauchy-binet-general}.]Fix any $\left(
@@ -37290,6 +37318,161 @@ Hence,%
 This proves Corollary \ref{cor.adj(AB).cauchy-binet-general}.
 \end{proof}
 
+\begin{vershort}
+\begin{proof}
+[Solution to Exercise \ref{exe.adj(AB)}.]Let $\left(  u,v\right)  \in\left\{
+1,2,\ldots,n\right\}  ^{2}$. Thus, $1\leq u\leq n$, so that $n\geq1$.
+
+For every $k\in\left\{  1,2,\ldots,n\right\}  $, we have%
+\begin{equation}
+\operatorname*{cols}\nolimits_{1,2,\ldots,\widehat{k},\ldots,n}\left(
+\operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{u},\ldots,n}A\right)
+=A_{\sim u,\sim k} \label{sol.adj(AB).short.A}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.adj(AB).short.A}):} Let $k\in\left\{
+1,2,\ldots,n\right\}  $. We can apply Proposition \ref{prop.submatrix.easy}
+\textbf{(d)} to $n-1$, $n-1$, $\left(  1,2,\ldots,\widehat{u},\ldots,n\right)
+$ and $\left(  1,2,\ldots,\widehat{k},\ldots,n\right)  $ instead of $u$, $v$,
+$\left(  i_{1},i_{2},\ldots,i_{u}\right)  $ and $\left(  j_{1},j_{2}%
+,\ldots,j_{v}\right)  $. As a result, we obtain%
+\[
+\operatorname*{sub}\nolimits_{1,2,\ldots,\widehat{u},\ldots,n}^{1,2,\ldots
+,\widehat{k},\ldots,n}A=\operatorname*{rows}\nolimits_{1,2,\ldots
+,\widehat{u},\ldots,n}\left(  \operatorname*{cols}\nolimits_{1,2,\ldots
+,\widehat{k},\ldots,n}A\right)  =\operatorname*{cols}\nolimits_{1,2,\ldots
+,\widehat{k},\ldots,n}\left(  \operatorname*{rows}\nolimits_{1,2,\ldots
+,\widehat{u},\ldots,n}A\right)  .
+\]
+But the definition of $A_{\sim u,\sim k}$ yields%
+\[
+A_{\sim u,\sim k}=\operatorname*{sub}\nolimits_{1,2,\ldots,\widehat{u}%
+,\ldots,n}^{1,2,\ldots,\widehat{k},\ldots,n}A=\operatorname*{cols}%
+\nolimits_{1,2,\ldots,\widehat{k},\ldots,n}\left(  \operatorname*{rows}%
+\nolimits_{1,2,\ldots,\widehat{u},\ldots,n}A\right)  .
+\]
+This proves (\ref{sol.adj(AB).short.A}).} and%
+\begin{equation}
+\operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{k},\ldots,n}\left(
+\operatorname*{cols}\nolimits_{1,2,\ldots,\widehat{v},\ldots,n}B\right)
+=B_{\sim k,\sim v} \label{sol.adj(AB).short.B}%
+\end{equation}
+\footnote{This holds for similar reasons.}.
+
+We have%
+\begin{equation}
+\left(  AB\right)  _{\sim u,\sim v}=\left(  \operatorname*{rows}%
+\nolimits_{1,2,\ldots,\widehat{u},\ldots,n}A\right)  \cdot\left(
+\operatorname*{cols}\nolimits_{1,2,\ldots,\widehat{v},\ldots,n}B\right)
+\label{sol.adj(AB).short.1}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.adj(AB).short.1}):} The definition of
+$\left(  AB\right)  _{\sim u,\sim v}$ yields%
+\[
+\left(  AB\right)  _{\sim u,\sim v}=\operatorname*{sub}\nolimits_{1,2,\ldots
+,\widehat{u},\ldots,n}^{1,2,\ldots,\widehat{v},\ldots,n}\left(  AB\right)
+=\left(  \operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{u},\ldots
+,n}A\right)  \cdot\left(  \operatorname*{cols}\nolimits_{1,2,\ldots
+,\widehat{v},\ldots,n}B\right)
+\]
+(by Lemma \ref{lem.adj(AB).minor-of-AB}, applied to $m=n$, $p=n$, $u=n-1$,
+$\left(  i_{1},i_{2},\ldots,i_{u}\right)  =\left(  1,2,\ldots,\widehat{u}%
+,\ldots,n\right)  $ and $\left(  j_{1},j_{2},\ldots,j_{v}\right)  =\left(
+1,2,\ldots,\widehat{v},\ldots,n\right)  $). This proves
+(\ref{sol.adj(AB).short.1}).}. Taking determinants on both sides of this
+equation, we obtain%
+\begin{align}
+&  \det\left(  \left(  AB\right)  _{\sim u,\sim v}\right) \nonumber\\
+&  =\det\left(  \left(  \operatorname*{rows}\nolimits_{1,2,\ldots
+,\widehat{u},\ldots,n}A\right)  \cdot\left(  \operatorname*{cols}%
+\nolimits_{1,2,\ldots,\widehat{v},\ldots,n}B\right)  \right) \nonumber\\
+&  =\sum_{k=1}^{n}\det\left(  \underbrace{\operatorname*{cols}%
+\nolimits_{1,2,\ldots,\widehat{k},\ldots,n}\left(  \operatorname*{rows}%
+\nolimits_{1,2,\ldots,\widehat{u},\ldots,n}A\right)  }_{\substack{=A_{\sim
+u,\sim k}\\\text{(by (\ref{sol.adj(AB).short.A}))}}}\right)  \cdot\det\left(
+\underbrace{\operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{k},\ldots
+,n}\left(  \operatorname*{cols}\nolimits_{1,2,\ldots,\widehat{v},\ldots
+,n}B\right)  }_{\substack{=B_{\sim k,\sim v}\\\text{(by
+(\ref{sol.adj(AB).short.B}))}}}\right) \nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{by Lemma \ref{lem.adj(AB).cauchy-binet}, applied to }%
+\operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{u},\ldots,n}A\\
+\text{and }\operatorname*{cols}\nolimits_{1,2,\ldots,\widehat{v},\ldots
+,n}B\text{ instead of }A\text{ and }B
+\end{array}
+\right) \nonumber\\
+&  =\sum_{k=1}^{n}\det\left(  A_{\sim u,\sim k}\right)  \cdot\det\left(
+B_{\sim k,\sim v}\right)  . \label{sol.adj(AB).short.5}%
+\end{align}
+
+
+Let us now forget that we fixed $\left(  u,v\right)  $. We thus have proven
+(\ref{sol.adj(AB).short.5}) for every $\left(  u,v\right)  \in\left\{
+1,2,\ldots,n\right\}  ^{2}$.
+
+Now, the definition of $\operatorname*{adj}\left(  AB\right)  $ yields%
+\begin{equation}
+\operatorname*{adj}\left(  AB\right)  =\left(  \left(  -1\right)  ^{i+j}%
+\det\left(  \left(  AB\right)  _{\sim j,\sim i}\right)  \right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}. \label{sol.adj(AB).short.L1}%
+\end{equation}
+But every $\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}$
+satisfies%
+\begin{align*}
+&  \left(  -1\right)  ^{i+j}\underbrace{\det\left(  \left(  AB\right)  _{\sim
+j,\sim i}\right)  }_{\substack{=\sum_{k=1}^{n}\det\left(  A_{\sim j,\sim
+k}\right)  \cdot\det\left(  B_{\sim k,\sim i}\right)  \\\text{(by
+(\ref{sol.adj(AB).short.5}), applied to }\left(  u,v\right)  =\left(
+j,i\right)  \text{)}}}\\
+&  =\left(  -1\right)  ^{i+j}\sum_{k=1}^{n}\det\left(  A_{\sim j,\sim
+k}\right)  \cdot\det\left(  B_{\sim k,\sim i}\right) \\
+&  =\sum_{k=1}^{n}\underbrace{\left(  -1\right)  ^{i+j}}_{\substack{=\left(
+-1\right)  ^{\left(  i+k\right)  +\left(  k+j\right)  }\\\text{(since
+}i+j\equiv i+j+2k=\left(  i+k\right)  +\left(  k+j\right)  \operatorname{mod}%
+2\text{)}}}\det\left(  A_{\sim j,\sim k}\right)  \cdot\det\left(  B_{\sim
+k,\sim i}\right) \\
+&  =\sum_{k=1}^{n}\underbrace{\left(  -1\right)  ^{\left(  i+k\right)
++\left(  k+j\right)  }}_{=\left(  -1\right)  ^{i+k}\left(  -1\right)  ^{k+j}%
+}\det\left(  A_{\sim j,\sim k}\right)  \cdot\det\left(  B_{\sim k,\sim
+i}\right) \\
+&  =\sum_{k=1}^{n}\left(  -1\right)  ^{i+k}\det\left(  B_{\sim k,\sim
+i}\right)  \cdot\left(  -1\right)  ^{k+j}\det\left(  A_{\sim j,\sim k}\right)
+.
+\end{align*}
+Thus, (\ref{sol.adj(AB).short.L1}) becomes%
+\begin{align}
+\operatorname*{adj}\left(  AB\right)   &  =\left(  \underbrace{\left(
+-1\right)  ^{i+j}\det\left(  \left(  AB\right)  _{\sim j,\sim i}\right)
+}_{=\sum_{k=1}^{n}\left(  -1\right)  ^{i+k}\det\left(  B_{\sim k,\sim
+i}\right)  \cdot\left(  -1\right)  ^{k+j}\det\left(  A_{\sim j,\sim k}\right)
+}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\nonumber\\
+&  =\left(  \sum_{k=1}^{n}\left(  -1\right)  ^{i+k}\det\left(  B_{\sim k,\sim
+i}\right)  \cdot\left(  -1\right)  ^{k+j}\det\left(  A_{\sim j,\sim k}\right)
+\right)  _{1\leq i\leq n,\ 1\leq j\leq n} \label{sol.adj(AB).short.L2}%
+\end{align}
+
+
+On the other hand, we have $\operatorname*{adj}B=\left(  \left(  -1\right)
+^{i+j}\det\left(  B_{\sim j,\sim i}\right)  \right)  _{1\leq i\leq n,\ 1\leq
+j\leq n}$ (by the definition of $\operatorname*{adj}B$) and
+$\operatorname*{adj}A=\left(  \left(  -1\right)  ^{i+j}\det\left(  A_{\sim
+j,\sim i}\right)  \right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ (by the
+definition of $\operatorname*{adj}A$). Therefore, the definition of the
+product of two matrices shows that%
+\[
+\operatorname*{adj}B\cdot\operatorname*{adj}A=\left(  \sum_{k=1}^{n}\left(
+-1\right)  ^{i+k}\det\left(  B_{\sim k,\sim i}\right)  \cdot\left(  -1\right)
+^{k+j}\det\left(  A_{\sim j,\sim k}\right)  \right)  _{1\leq i\leq n,\ 1\leq
+j\leq n}.
+\]
+Compared with (\ref{sol.adj(AB).short.L2}), this yields $\operatorname*{adj}%
+\left(  AB\right)  =\operatorname*{adj}B\cdot\operatorname*{adj}A$. This
+solves Exercise \ref{exe.adj(AB)}.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
 \begin{proof}
 [Solution to Exercise \ref{exe.adj(AB)}.]Let $\left(  u,v\right)  \in\left\{
 1,2,\ldots,n\right\}  ^{2}$. Thus, $u\in\left\{  1,2,\ldots,n\right\}  $ and
