@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Tuesday, December 29, 2015 00:37:31}
+%TCIDATA{LastRevised=Tuesday, December 29, 2015 20:25:28}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -149,7 +149,9 @@ WLOG\textquotedblright, etc.) and mathematical notation (functions,
 subscripts, cases);
 
 \item knows what a polynomial is (at least over $\mathbb{Z}$ and $\mathbb{Q}$)
-and how polynomials differ from polynomial functions;
+and how polynomials differ from polynomial functions\footnote{See Section
+\ref{sect.polynomials-emergency} below for a quick survey of what this means,
+and which sources to consult for the precise definitions.};
 
 \item knows the most basic properties of binomial coefficients (e.g., how
 $\dbinom{n}{k}$ counts $k$-element subsets of an $n$-element set);
@@ -284,6 +286,496 @@ this check), but in some cases, this is a difficult task.}
 \end{itemize}
 
 Further notations will be defined whenever they arise for the first time.
+
+\subsection{\label{sect.polynomials-emergency}Polynomials: a brief
+introduction}
+
+As I have already mentioned in the above list of prerequisites, the notion of
+polynomials (in one and in several indeterminates) will be used in these
+notes. Most likely, the reader already has at least a vague understanding of
+this notion (e.g., from high school); this vague understanding is probably
+sufficient for understanding most of its uses in my notes. But polynomials are
+one of the most important notions in algebra (if not to say in mathematics),
+and the reader will likely encounter them over and over; sooner or later, it
+will happen that the vague understanding is not sufficient and some subtleties
+do matter. For that reason, anyone serious about doing abstract algebra should
+know a complete and correct definition of polynomials and have some experience
+working with it. I shall not give a complete definition of the most general
+notion of polynomials in these notes, but I will comment on some of the
+subtleties and define an important special case (that of polynomials in one
+variable with rational coefficients) in the present section. A reader is
+probably best advised to skip this section on their first read.
+
+It is not easy to find a good (formal and sufficiently general) treatment of
+polynomials in textbooks. Various authors tend to skimp on subtleties and
+technical points such as the notion of an \textquotedblleft
+indeterminate\textquotedblright, or the precise meaning of \textquotedblleft
+formal expression\textquotedblright\ in the slogan \textquotedblleft a
+polynomial is a formal expression\textquotedblright\ (the best texts do not
+use this vague slogan at all), or the definition of the degree of the zero
+polynomial, or the difference between regarding polynomials as sequences
+(which is the classical viewpoint and particularly useful for polynomials in
+one variable) and regarding polynomials as elements of a monoid ring (which is
+important in the case of several variables, since it allows us to regard the
+polynomial rings $\mathbb{Q}\left[  X\right]  $ and $\mathbb{Q}\left[
+Y\right]  $ as two distinct subrings of $\mathbb{Q}\left[  X,Y\right]  $).
+They also tend to take some questionable shortcuts, such as defining
+polynomials in $n$ variables (by induction over $n$) as one-variable
+polynomials over the ring of $\left(  n-1\right)  $-variable polynomials (this
+shortcut has several shortcomings, such as making the symmetric role of the
+$n$ variables opaque, and functioning only for finitely many variables).
+
+More often than not, the polynomials we will be using will be polynomials in
+one variable. These are usually handled well in good books on abstract algebra
+-- e.g., in \cite[\S 4.5]{Walker87}, in \cite[Appendix G]{Hungerford}, in
+\cite[Chapter III, \S 5]{Hungerford-03}, in \cite[\S 4.1, \S 4.2]%
+{HoffmanKunze} (although in \cite[\S 4.1, \S 4.2]{HoffmanKunze}, only
+polynomials over fields are studied, but the definition applies to commutative
+rings mutatis mutandis), and in \cite[Chapter III, \S 6]{BirkMac}. Most of
+these treatments rely on the notion of a \textit{commutative ring}, which is
+not difficult but somewhat abstract (I shall introduce it below in Section
+\ref{sect.commring}).
+
+Let me give a brief survey of the notion of univariate polynomials (i.e.,
+polynomials in one variable); I shall define them as sequences. For the sake
+of simplicity, I shall only talk of polynomials with rational coefficients.
+Similarly, one can obtain polynomials with integer coefficients, with real
+coefficients, or with complex coefficients; of course, one then has to replace
+each \textquotedblleft$\mathbb{Q}$\textquotedblright\ by a \textquotedblleft%
+$\mathbb{Z}$\textquotedblright, a \textquotedblleft$\mathbb{R}$%
+\textquotedblright\ or a \textquotedblleft$\mathbb{C}$\textquotedblright.
+
+The rough idea behind the definition of a polynomial is that a polynomial with
+rational coefficients should be a \textquotedblleft formal
+expression\textquotedblright\ which is built out of rational numbers, an
+\textquotedblleft indeterminate\textquotedblright\ $X$ as well as addition,
+subtraction and multiplication signs, such as $X^{4}-27X+\dfrac{3}{2}$ or
+$-X^{3}+2X+1$ or $\dfrac{1}{3}\left(  X-3\right)  \cdot X^{2}$ or
+$X^{4}+7X^{3}\left(  X-2\right)  $ or $-15$. We have not explicitly allowed
+powers, but we understand $X^{n}$ to mean the product $\underbrace{XX\cdots
+X}_{n\text{ times}}$ (or $1$ when $n=0$). Notice that division is not allowed,
+so we cannot get $\dfrac{X}{X+1}$ (but we can get $\dfrac{3}{2}X$, because
+$\dfrac{3}{2}$ is a rational number). Notice also that a polynomial can be a
+single rational number, since we never said that $X$ must necessarily be used;
+for instance, $-15$ and $0$ are polynomials.
+
+This is, of course, not a valid definition. One problem with it that it does
+not explain what a \textquotedblleft formal expression\textquotedblright\ is.
+For starters, we want an expression that is well-defined -- i.e., that we can
+substitute a rational number for $X$ and obtain a valid term. For example,
+$X-+\cdot5$ is not well-defined, so it does not fit our bill; neither is the
+\textquotedblleft empty expression\textquotedblright. Furthermore, when do we
+want two \textquotedblleft formal expressions\textquotedblright\ to be viewed
+as one and the same polynomial? Do we want to equate $X\left(  X+2\right)  $
+with $X^{2}+2X$ ? Do we want to equate $0X^{3}+2X+1$ with $2X+1$ ? The answer
+is \textquotedblleft yes\textquotedblright\ both times, but a general rule is
+not easy to give if we keep talking of \textquotedblleft formal
+expressions\textquotedblright.
+
+We \textit{could} define two polynomials $p\left(  X\right)  $ and $q\left(
+X\right)  $ to be equal if and only if, for every number $\alpha\in\mathbb{Q}%
+$, the values $p\left(  \alpha\right)  $ and $q\left(  \alpha\right)  $
+(obtained by substituting $\alpha$ for $X$ in $p$ and in $q$, respectively)
+are equal. This would be tantamount to treating polynomials as
+\textit{functions}: it would mean that we identify a polynomial $p\left(
+X\right)  $ with the function $\mathbb{Q}\rightarrow\mathbb{Q},\ \alpha\mapsto
+p\left(  \alpha\right)  $. Such a definition would work well as long as we
+would do only rather basic things with it\footnote{And some authors, such as
+Axler in \cite[Chapter 4]{Axler}, do use this definition.}, but as soon as we
+would try to go deeper, we would encounter technical issues which would make
+it inadequate and painful\footnote{Here are the three most important among
+these issues:
+\par
+\begin{itemize}
+\item One of the strengths of polynomials is that we can evaluate them not
+only at numbers, but also at many other things, e.g., at square matrices:
+Evaluating the polynomial $X^{2}-3X$ at the square matrix $\left(
+\begin{array}
+[c]{cc}%
+1 & 3\\
+-1 & 2
+\end{array}
+\right)  $ gives $\left(
+\begin{array}
+[c]{cc}%
+1 & 3\\
+-1 & 2
+\end{array}
+\right)  ^{2}-3\left(
+\begin{array}
+[c]{cc}%
+1 & 3\\
+-1 & 2
+\end{array}
+\right)  =\left(
+\begin{array}
+[c]{cc}%
+-5 & 0\\
+0 & -5
+\end{array}
+\right)  $. However, a function must have a well-defined domain, and does not
+make sense outside of this domain. So, if the polynomial $X^{2}-3X$ is
+regarded as the function $\mathbb{Q}\rightarrow\mathbb{Q},\ \alpha
+\mapsto\alpha^{2}-3\alpha$, then it makes no sense to evaluate this polynomial
+at the matrix $\left(
+\begin{array}
+[c]{cc}%
+1 & 3\\
+-1 & 2
+\end{array}
+\right)  $, just because this matrix does not like in the domain $\mathbb{Q}$
+of the polynomial. We could, of course, extend the domain of the function to
+(say) the set of square matrices over $\mathbb{Q}$, but then we would still
+have the same problem with other things that we want to evaluate polynomials
+at. At some point we want to be able to evaluate polynomials at functions and
+at other polynomials, and if we would try to achieve this by extending the
+domain, we would have to do this over and over, because each time we extend
+the domain, we get even more polynomials to evaluate our polynomials at; thus,
+the definition would be eternally \textquotedblleft hunting its own
+tail\textquotedblright! (We could resolve this difficulty by defining
+polynomials as \textit{natural transformations} in the sense of category
+theory. I do not want to even go into this definition here, as it would take
+several pages to properly introduced.)
+\par
+\item Let $p\left(  X\right)  $ be a polynomial with real coefficients. Then,
+it should be obvious that $p\left(  X\right)  $ can also be viewed as a
+polynomial with complex coefficients: For instance, if $p\left(  X\right)  $
+was defined as $3X+\dfrac{7}{2}X\left(  X-1\right)  $, then we can view the
+numbers $3$, $\dfrac{7}{2}$ and $-1$ appearing in its definition as complex
+numbers, and thus get a polynomial with complex coefficients. But wait! What
+if two polynomials $p\left(  X\right)  $ and $q\left(  X\right)  $ are equal
+when viewed as polynomials with real coefficients, but when viewed as
+polynomials with complex coefficients become distinct (because when we view
+them as polynomials with complex coefficients, their domains become extended,
+and a new complex $\alpha$ might perhaps no longer satisfy $p\left(
+\alpha\right)  =q\left(  \alpha\right)  $ )? This does not actually happen,
+but ruling this out is not obvious.
+\par
+\item (This requires some familiarity with finite fields:) Treating
+polynomials as functions works halfway well for polynomials with integer,
+rational, real and complex coefficients. But we will eventually want to
+consider polynomials with coefficients in any arbitrary commutative ring
+$\mathbb{K}$. An example for a commutative ring $\mathbb{K}$ is the finite
+field $\mathbb{F}_{p}$ with $p$ elements, where $p$ is a prime. If we define
+polynomials with coefficients in $\mathbb{F}_{p}$ as functions $\mathbb{F}%
+_{p}\rightarrow\mathbb{F}_{p}$, then we really run into problems; for example,
+the polynomials $X$ and $X^{p}$ over this field become identical as functions!
+\end{itemize}
+}. Also, if we equated polynomials with the functions they describe, then we
+would waste the word \textquotedblleft polynomial\textquotedblright\ on a
+concept (a function described by a polynomial) that already has a word for it
+(namely, \textit{polynomial function}).
+
+The preceding paragraphs should have convinced you that it is worth defining
+\textquotedblleft polynomials\textquotedblright\ in a way that, on the one
+hand, conveys the concept that they are more \textquotedblleft formal
+expressions\textquotedblright\ than \textquotedblleft
+functions\textquotedblright, but on the other hand, is less nebulous than
+\textquotedblleft formal expression\textquotedblright. Here is one such definition:
+
+\begin{definition}
+\label{def.polynomial-univar}\textbf{(a)} A \textit{univariate polynomial with
+rational coefficients} means a sequence $\left(  p_{0},p_{1},p_{2}%
+,\ldots\right)  \in\mathbb{Q}^{\infty}$ of elements of $\mathbb{Q}$ such that%
+\begin{equation}
+\text{all but finitely many }k\in\mathbb{N}\text{ satisfy }p_{k}=0.
+\label{eq.def.polynomial-univar.finite}%
+\end{equation}
+Here, the phrase \textquotedblleft all but finitely many $k\in\mathbb{N}$
+satisfy $p_{k}=0$\textquotedblright\ means \textquotedblleft there exists some
+finite subset $J$ of $\mathbb{N}$ such that every $k\in\mathbb{N}\setminus J$
+satisfies $p_{k}=0$\textquotedblright. (See Definition \ref{def.allbutfin} for
+the general definition of \textquotedblleft all but finitely
+many\textquotedblright, and Section \ref{sect.infperm} for some practice with
+this concept.)
+
+For the remainder of this definition, \textquotedblleft univariate polynomial
+with rational coefficients\textquotedblright\ will be abbreviated as
+\textquotedblleft polynomial\textquotedblright.
+
+For example, the sequences $\left(  0,0,0,\ldots\right)  $, $\left(
+1,3,5,0,0,0,\ldots\right)  $, $\left(  4,0,-\dfrac{2}{3},5,0,0,0,\ldots
+\right)  $, $\left(  0,-1,\dfrac{1}{2},0,0,0,\ldots\right)  $ (where the
+\textquotedblleft$\ldots$\textquotedblright\ stand for infinitely many zeroes)
+are polynomials, but the sequence $\left(  1,1,1,\ldots\right)  $ (where the
+\textquotedblleft$\ldots$\textquotedblright\ stands for infinitely many $1$'s)
+is not (since it does not satisfy (\ref{eq.def.polynomial-univar.finite})).
+
+So we have defined a polynomial as an infinite sequence of rational numbers
+with a certain property. So far, this does not seem to reflect any intuition
+of polynomials as \textquotedblleft formal expressions\textquotedblright.
+However, we shall soon (namely, in Definition \ref{def.polynomial-univar}
+\textbf{(j)}) identify the polynomial $\left(  p_{0},p_{1},p_{2}%
+,\ldots\right)  \in\mathbb{Q}^{\infty}$ with the \textquotedblleft formal
+expression\textquotedblright\ $p_{0}+p_{1}X+p_{2}X^{2}+\cdots$ (this is an
+infinite sum, but due to (\ref{eq.def.polynomial-univar.finite}) all but its
+first few terms are $0$ and thus can be neglected). For instance, the
+polynomial $\left(  1,3,5,0,0,0,\ldots\right)  $ will be identified with the
+\textquotedblleft formal expression\textquotedblright\ $1+3X+5X^{2}%
++0X^{3}+0X^{4}+0X^{5}+\cdots=1+3X+5X^{2}$. Of course, we cannot do this
+identification right now, since we do not have a reasonable definition of $X$.
+
+\textbf{(b)} We let $\mathbb{Q}\left[  X\right]  $ denote the set of all
+univariate polynomials with rational coefficients. Given a polynomial
+$p=\left(  p_{0},p_{1},p_{2},\ldots\right)  \in\mathbb{Q}\left[  X\right]  $,
+we denote the numbers $p_{0},p_{1},p_{2},\ldots$ as the \textit{coefficients}
+of $p$. More precisely, for every $i\in\mathbb{N}$, we shall refer to $p_{i}$
+as the $i$\textit{-th coefficient} (or as the \textit{coefficient before
+}$X^{i}$) of $p$. (Do not forget that we are counting from $0$ here: any
+polynomial \textquotedblleft begins\textquotedblright\ with its $0$-th
+coefficient.) The $0$-th coefficient of $p$ is also known as the
+\textit{constant term} of $p$.
+
+Thus, any polynomial $p\in\mathbb{Q}\left[  X\right]  $ is the sequence of its coefficients.
+
+\textbf{(c)} We denote the polynomial $\left(  0,0,0,\ldots\right)
+\in\mathbb{Q}\left[  X\right]  $ by $\mathbf{0}$. We will also write $0$ for
+it when no confusion with the number $0$ is possible. The polynomial
+$\mathbf{0}$ is called the \textit{zero polynomial}. A polynomial
+$p\in\mathbb{Q}\left[  X\right]  $ is said to be \textit{nonzero} if
+$p\neq\mathbf{0}$.
+
+\textbf{(d)} We denote the polynomial $\left(  1,0,0,\ldots\right)
+\in\mathbb{Q}\left[  X\right]  $ by $\mathbf{1}$. We will also write $1$ for
+it when no confusion with the number $1$ is possible.
+
+\textbf{(e)} For any $\lambda\in\mathbb{Q}$, we denote the polynomial $\left(
+\lambda,0,0,0,\ldots\right)  \in\mathbb{Q}\left[  X\right]  $ by
+$\operatorname*{const}\lambda$. We call it the \textit{constant polynomial
+with value }$\lambda$. It is often useful to identify $\lambda\in\mathbb{Q}$
+with $\operatorname*{const}\lambda\in\mathbb{Q}\left[  X\right]  $. Notice
+that $\mathbf{0}=\operatorname*{const}0$ and $\mathbf{1}=\operatorname*{const}%
+1$.
+
+\textbf{(f)} Now, let us define the sum, the difference and the product of two
+polynomials. Indeed, let $a=\left(  a_{0},a_{1},a_{2},\ldots\right)
+\in\mathbb{Q}\left[  X\right]  $ and $b=\left(  b_{0},b_{1},b_{2}%
+,\ldots\right)  \in\mathbb{Q}\left[  X\right]  $ be two polynomials. Then, we
+define three polynomials $a+b$, $a-b$ and $a\cdot b$ in $\mathbb{Q}\left[
+X\right]  $ by%
+\begin{align*}
+a+b  &  =\left(  a_{0}+b_{0},a_{1}+b_{1},a_{2}+b_{2},\ldots\right)  ;\\
+a-b  &  =\left(  a_{0}-b_{0},a_{1}-b_{1},a_{2}-b_{2},\ldots\right)  ;\\
+a\cdot b  &  =\left(  c_{0},c_{1},c_{2},\ldots\right)  ,
+\end{align*}
+where%
+\[
+c_{k}=\sum_{i=0}^{k}a_{i}b_{k-i}\ \ \ \ \ \ \ \ \ \ \text{for every }%
+k\in\mathbb{N}.
+\]
+We call $a+b$ the \textit{sum} of $a$ and $b$; we call $a-b$ the
+\textit{difference} of $a$ and $b$; we call $a\cdot b$ the \textit{product} of
+$a$ and $b$. We abbreviate $a\cdot b$ for $ab$.
+
+For example,%
+\begin{align*}
+\left(  1,2,2,0,0,\ldots\right)  +\left(  3,0,-1,0,0,0,\ldots\right)   &
+=\left(  4,2,1,0,0,0,\ldots\right)  ;\\
+\left(  1,2,2,0,0,\ldots\right)  -\left(  3,0,-1,0,0,0,\ldots\right)   &
+=\left(  -2,2,3,0,0,0,\ldots\right)  ;\\
+\left(  1,2,2,0,0,\ldots\right)  \cdot\left(  3,0,-1,0,0,0,\ldots\right)   &
+=\left(  3,6,5,-2,-2,0,0,0,\ldots\right)  .
+\end{align*}
+
+
+The definition of $a+b$ essentially says that \textquotedblleft polynomials
+are added coefficientwise\textquotedblright\ (i.e., in order to obtain the sum
+of two polynomials $a$ and $b$, it suffices to add each coefficient of $a$ to
+the corresponding coefficient of $b$). Similarly, the definition of $a-b$ says
+the same thing about subtraction. The definition of $a\cdot b$ is more
+surprising. However, it loses its mystique when we identify the polynomials
+$a$ and $b$ with the \textquotedblleft formal expressions\textquotedblright%
+\ $a_{0}+a_{1}X+a_{2}X^{2}+\cdots$ and $b_{0}+b_{1}X+b_{2}X^{2}+\cdots$
+(although, at this point, we do not know what these expressions really mean);
+indeed, it simply says that
+\[
+\left(  a_{0}+a_{1}X+a_{2}X^{2}+\cdots\right)  \left(  b_{0}+b_{1}X+b_{2}%
+X^{2}+\cdots\right)  =c_{0}+c_{1}X+c_{2}X^{2}+\cdots,
+\]
+where $c_{k}=\sum_{i=0}^{k}a_{i}b_{k-i}$ for every $k\in\mathbb{N}$. This is
+precisely what one would expect, because if you expand $\left(  a_{0}%
++a_{1}X+a_{2}X^{2}+\cdots\right)  \left(  b_{0}+b_{1}X+b_{2}X^{2}%
++\cdots\right)  $ using the distributive law, then you get precisely
+$c_{0}+c_{1}X+c_{2}X^{2}+\cdots$. Thus, the definition of $a\cdot b$ has been
+tailored to make the distributive law hold.
+
+(By the way, why is $a\cdot b$ a polynomial? That is, why does it satisfy
+(\ref{eq.def.polynomial-univar.finite}) ? The proof is easy, but we omit it.)
+
+Addition, subtraction and multiplication of polynomials satisfy some of the
+same rules as addition, subtraction and multiplication of numbers. For
+example, the commutative laws $a+b=b+a$ and $ab=ba$ are valid for polynomials
+just as they are for numbers; same holds for the associative laws $\left(
+a+b\right)  +c=a+\left(  b+c\right)  $ and $\left(  ab\right)  c=a\left(
+bc\right)  $ and the distributive laws $\left(  a+b\right)  c=ac+bc$ and
+$a\left(  b+c\right)  =ab+ac$.
+
+The set $\mathbb{Q}\left[  X\right]  $, endowed with the operations $+$ and
+$\cdot$ just defined, and with the elements $\mathbf{0}$ and $\mathbf{1}$, is
+a commutative ring (where we are using the notations of Definition
+\ref{def.commring}). It is called the \textit{(univariate) polynomial ring
+over }$\mathbb{Q}$.
+
+\textbf{(g)} Let $a=\left(  a_{0},a_{1},a_{2},\ldots\right)  \in
+\mathbb{Q}\left[  X\right]  $ and $\lambda\in\mathbb{Q}$. Then, $\lambda a$
+denotes the polynomial $\left(  \lambda a_{0},\lambda a_{1},\lambda
+a_{2},\ldots\right)  \in\mathbb{Q}\left[  X\right]  $. (This equals the
+polynomial $\left(  \operatorname*{const}\lambda\right)  \cdot a$; thus,
+identifying $\lambda$ with $\operatorname*{const}\lambda$ does not cause any
+inconsistencies here.)
+
+\textbf{(h)} If $p=\left(  p_{0},p_{1},p_{2},\ldots\right)  \in\mathbb{Q}%
+\left[  X\right]  $ is a nonzero polynomial, then the \textit{degree} of $p$
+is defined to be the maximum $i\in\mathbb{N}$ satisfying $p_{i}\neq0$. If
+$p\in\mathbb{Q}\left[  X\right]  $ is the zero polynomial, then the degree of
+$p$ is defined to be $-\infty$. (Here, $-\infty$ is just a fancy symbol, not a
+number.) For example, $\deg\left(  1,4,0,-1,0,0,0,\ldots\right)  =3$.
+
+\textbf{(i)} If $a=\left(  a_{0},a_{1},a_{2},\ldots\right)  \in\mathbb{Q}%
+\left[  X\right]  $ and $n\in\mathbb{N}$, then a polynomial $a^{n}%
+\in\mathbb{Q}\left[  X\right]  $ is defined to be the product
+$\underbrace{aa\cdots a}_{n\text{ times}}$. (This is understood to be
+$\mathbf{1}$ when $n=0$.)
+
+\textbf{(j)} We let $X$ denote the polynomial $\left(  0,1,0,0,0,\ldots
+\right)  \in\mathbb{Q}\left[  X\right]  $. (This is the polynomial whose
+$1$-st coefficient is $1$ and whose other coefficients are $0$.) This
+polynomial is called the \textit{indeterminate} of $\mathbb{Q}\left[
+X\right]  $. It is easy to see that, for any $n\in\mathbb{N}$, we have%
+\[
+X^{n}=\left(  \underbrace{0,0,\ldots,0}_{n\text{ zeroes}},1,0,0,0,\ldots
+\right)  .
+\]
+
+
+This polynomial $X$ finally provides an answer to the question
+\textquotedblleft what is an indeterminate\textquotedblright\ and
+\textquotedblleft what is a formal expression\textquotedblright. Namely, let
+$\left(  p_{0},p_{1},p_{2},\ldots\right)  \in\mathbb{Q}\left[  X\right]  $ be
+any polynomial. Then, the sum $p_{0}+p_{1}X+p_{2}X^{2}+\cdots$ is well-defined
+(it is an infinite sum, but due to (\ref{eq.def.polynomial-univar.finite}) it
+has only finitely many nonzero addends), and it is easy to see that this sum
+equals $\left(  p_{0},p_{1},p_{2},\ldots\right)  $. Thus,
+\[
+\left(  p_{0},p_{1},p_{2},\ldots\right)  =p_{0}+p_{1}X+p_{2}X^{2}%
++\cdots\ \ \ \ \ \ \ \ \ \ \text{for every }\left(  p_{0},p_{1},p_{2}%
+,\ldots\right)  \in\mathbb{Q}\left[  X\right]  .
+\]
+This finally allows us to write a polynomial $\left(  p_{0},p_{1},p_{2}%
+,\ldots\right)  $ as a sum $p_{0}+p_{1}X+p_{2}X^{2}+\cdots$ while remaining
+honest; the sum $p_{0}+p_{1}X+p_{2}X^{2}+\cdots$ is no longer a
+\textquotedblleft formal expression\textquotedblright\ of unclear meaning, nor
+a function, but it is just an alternative way to write the sequence $\left(
+p_{0},p_{1},p_{2},\ldots\right)  $. So, at last, our notion of a polynomial
+resembles the intuitive notion of a polynomial!
+
+Of course, we can write polynomials as finite sums as well. Indeed, if
+$\left(  p_{0},p_{1},p_{2},\ldots\right)  \in\mathbb{Q}\left[  X\right]  $ is
+a polynomial and $N$ is a nonnegative integer such that every $n>N$ satisfies
+$p_{n}=0$, then%
+\[
+\left(  p_{0},p_{1},p_{2},\ldots\right)  =p_{0}+p_{1}X+p_{2}X^{2}+\cdots
+=p_{0}+p_{1}X+\cdots+p_{N}X^{N}%
+\]
+(because addends can be discarded when they are $0$). For example, $\left(
+4,1,0,0,0,\ldots\right)  =4+1X=4+X$ and $\left(  \dfrac{1}{2},0,\dfrac{1}%
+{3},0,0,0,\ldots\right)  =\dfrac{1}{2}+0X+\dfrac{1}{3}X^{2}=\dfrac{1}%
+{2}+\dfrac{1}{3}X^{2}$.
+
+\textbf{(k)} For our definition of polynomials to be fully compatible with our
+intuition, we are missing only one more thing: a way to evaluate a polynomial
+at a number, or some other object (another polynomial or a function). This is
+easy: Let $p=\left(  p_{0},p_{1},p_{2},\ldots\right)  \in\mathbb{Q}\left[
+X\right]  $ be a polynomial, and let $\alpha\in\mathbb{Q}$. Then, $p\left(
+\alpha\right)  $ means the number $p_{0}+p_{1}\alpha+p_{2}\alpha^{2}+\cdots
+\in\mathbb{Q}$. (Again, the infinite sum $p_{0}+p_{1}\alpha+p_{2}\alpha
+^{2}+\cdots$ makes sense because of (\ref{eq.def.polynomial-univar.finite}).)
+Similarly, we can define $p\left(  \alpha\right)  $ when $\alpha\in\mathbb{R}$
+(but in this case, $p\left(  \alpha\right)  $ will be an element of
+$\mathbb{R}$) or when $\alpha\in\mathbb{C}$ (in this case, $p\left(
+\alpha\right)  \in\mathbb{C}$) or when $\alpha$ is a square matrix with
+rational entries (in this case, $p\left(  \alpha\right)  $ will also be such a
+matrix) or when $\alpha$ is another polynomial (in this case, $p\left(
+\alpha\right)  $ is such a polynomial as well).
+
+For example, if $p=\left(  1,-2,0,3,0,0,0,\ldots\right)  =1-2X+3X^{3}$, then
+$p\left(  \alpha\right)  =1-2\alpha+3\alpha^{3}$ for every $\alpha$.
+
+The map $\mathbb{Q}\rightarrow\mathbb{Q},\ \alpha\mapsto p\left(
+\alpha\right)  $ is called the \textit{polynomial function described by }$p$.
+As we said above, this function is not $p$, and it is not a good idea to
+equate it with $p$.
+
+If $\alpha$ is a number (or a square matrix, or another polynomial), then
+$p\left(  \alpha\right)  $ is called the result of \textit{evaluating }$p$
+\textit{at }$X=\alpha$ (or, simply, evaluating $p$ at $\alpha$), or the result
+of \textit{substituting }$\alpha$\textit{ for }$X$\textit{ in }$p$. This
+notation, of course, reminds of functions; nevertheless, (as we already said a
+few times) $p$ is \textbf{not a function}.
+
+Probably the simplest three cases of evaluation are the following ones:
+
+\begin{itemize}
+\item We have $p\left(  0\right)  =p_{0}+p_{1}0^{1}+p_{2}0^{2}+\cdots=p_{0}$.
+In other words, evaluating $p$ at $X=0$ yields the constant term of $p$.
+
+\item We have $p\left(  0\right)  =p_{0}+p_{1}1^{1}+p_{2}1^{2}+\cdots
+=p_{0}+p_{1}+p_{2}+\cdots$. In other words, evaluating $p$ at $X=1$ yields the
+sum of all coefficients of $p$.
+
+\item We have $p\left(  X\right)  =p_{0}+p_{1}X^{1}+p_{2}X^{2}+\cdots
+=p_{0}+p_{1}X+p_{2}X^{2}+\cdots=p$. In other words, evaluating $p$ at $X=X$
+yields $p$ itself. This allows us to write $p\left(  X\right)  $ for $p$. Many
+authors do so, just in order to stress that $p$ is a polynomial and that the
+indeterminate is called $X$. It should be kept in mind that $X$ is \textbf{not
+a variable} (just as $p$ is \textbf{not a function}); it is the (fixed!)
+sequence $\left(  0,1,0,0,0,\ldots\right)  \in\mathbb{Q}\left[  X\right]  $
+which serves as the indeterminate for polynomials in $\mathbb{Q}\left[
+X\right]  $.
+\end{itemize}
+
+\textbf{(l)} It is often useful to work to give an indeterminate a name other
+than $X$. (For instance, instead of polynomials with rational coefficients, we
+could be considering polynomials whose coefficients themselves are polynomials
+in $\mathbb{Q}\left[  X\right]  $; and then, we would not be allowed to use
+the letter $X$ for the \textquotedblleft new\textquotedblright\ indeterminate
+anymore, as it could be a coefficient!) This can be done, and the rules are
+the following: Any letter (that does not already have a meaning) can be used
+to denote the indeterminate; but then, the set of all polynomials has to be
+renamed as $\mathbb{Q}\left[  \eta\right]  $, where $\eta$ is this letter. For
+instance, if we want to denote the indeterminate as $x$, then we have to
+denote the set by $\mathbb{Q}\left[  x\right]  $.
+
+It is furthermore convenient to regard the sets $\mathbb{Q}\left[
+\eta\right]  $ for different letters $\eta$ as distinct. Thus, for example,
+the polynomial $3X^{2}+1$ is not the same as the polynomial $3Y^{2}+1$. (The
+reason for doing so is that one wishes to view both of these polynomials as
+polynomials in the two variables $X$ and $Y$.) Formally speaking, this means
+that we should define a polynomial in $\mathbb{Q}\left[  \eta\right]  $ to be
+not just a sequence $\left(  p_{0},p_{1},p_{2},\ldots\right)  $ of rational
+numbers, but actually a pair $\left(  \left(  p_{0},p_{1},p_{2},\ldots\right)
+,\text{\textquotedblleft}\eta\text{\textquotedblright}\right)  $ of a sequence
+of rational numbers and the letter $\eta$. (Here, \textquotedblleft$\eta
+$\textquotedblright\ really means the letter $\eta$, not the sequence $\left(
+0,1,0,0,0,\ldots\right)  $.) This is, of course, a very technical point which
+is of little relevance to most of mathematics; it becomes important when one
+tries to implement polynomials in a programming language.
+\end{definition}
+
+So much for univariate polynomials.
+
+Polynomials in multiple variables are (in my opinion) treated the best in
+\cite[Chapter II, \S 3]{Lang02}, where they are introduced as elements of a
+monoid ring. However, this treatment is rather abstract and uses a good deal
+of algebraic language (also, the book \cite{Lang02} is notorious for
+unpolished writing; it is best read with Bergman's companion
+\cite{Bergman-Lang} at hand). The treatments in \cite[\S 4.5]{Walker87} and
+\cite[Chapter IV, \S 4]{BirkMac} use the above-mentioned recursive shortcut
+that makes them inferior (in my opinion). A neat (and rather elementary)
+treatment of polynomials in $n$ variables (for finite $n$) can be found in
+\cite[Chapter III, \S 5]{Hungerford-03}; it generalizes the \textquotedblleft
+polynomials are sequences\textquotedblright\ viewpoint used for univariate
+polynomials above.
 
 \section{\label{chp.quivers}On acyclic quivers and mutations}
 
@@ -4141,7 +4633,7 @@ algebra class. Each of them has its own advantages and drawbacks. Definition
 \ref{def.det.old} is the most direct, assuming that one knows about the sign
 of a permutation.
 
-\subsection{Infinite permutations}
+\subsection{\label{sect.infperm}Infinite permutations}
 
 (This section is optional; it explores some technical material which is useful
 in combinatorics, but is not necessary for what follows. I advise the reader
@@ -15609,13 +16101,13 @@ n-1\right)  \right)  =\left(  1,2,\ldots,\widehat{q},\ldots,n\right)
 (by Lemma \ref{lem.laplace.gpshort} \textbf{(d)}, applied to $q$ instead of
 $p$). Now, the definition of $A_{\sim p,\sim q}$ yields%
 \begin{align}
-A_{\sim p,\sim q} &  =\operatorname*{sub}\nolimits_{1,2,\ldots,\widehat{p}%
+A_{\sim p,\sim q}  &  =\operatorname*{sub}\nolimits_{1,2,\ldots,\widehat{p}%
 ,\ldots,n}^{1,2,\ldots,\widehat{q},\ldots,n}A=\operatorname*{sub}%
 \nolimits_{g_{p}\left(  1\right)  ,g_{p}\left(  2\right)  ,\ldots,g_{p}\left(
 n-1\right)  }^{g_{q}\left(  1\right)  ,g_{q}\left(  2\right)  ,\ldots
 ,g_{q}\left(  n-1\right)  }A\ \ \ \ \ \ \ \ \ \ \left(  \text{by
 (\ref{pf.lem.laplace.Apq.short.indices1}) and
-(\ref{pf.lem.laplace.Apq.short.indices2})}\right)  \nonumber\\
+(\ref{pf.lem.laplace.Apq.short.indices2})}\right) \nonumber\\
 &  =\left(  a_{g_{p}\left(  x\right)  ,g_{q}\left(  y\right)  }\right)
 _{1\leq x\leq n-1,\ 1\leq y\leq n-1}\ \ \ \ \ \ \ \ \ \ \left(  \text{by the
 definition of }\operatorname*{sub}\nolimits_{g_{p}\left(  1\right)
@@ -15640,7 +16132,7 @@ $T$ is well-defined and bijective. Every $\sigma\in\left\{  \tau\in
 S_{n}\ \mid\ \tau\left(  n\right)  =n\right\}  $ satisfies%
 \begin{equation}
 \left(  -1\right)  ^{T\left(  \sigma\right)  }=\left(  -1\right)  ^{p+q}%
-\cdot\left(  -1\right)  ^{\sigma}\label{pf.lem.laplace.Apq.short.1}%
+\cdot\left(  -1\right)  ^{\sigma} \label{pf.lem.laplace.Apq.short.1}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{pf.lem.laplace.Apq.short.1}):} Let $\sigma
 \in\left\{  \tau\in S_{n}\ \mid\ \tau\left(  n\right)  =n\right\}  $. Applying
@@ -15657,21 +16149,21 @@ g_{p}\right)  ^{-1}\circ g_{p}}_{=\operatorname*{id}}=g_{q}\circ\sigma,
 \]
 so that%
 \begin{align*}
-\left(  -1\right)  ^{T\left(  \sigma\right)  \circ g_{p}} &  =\left(
+\left(  -1\right)  ^{T\left(  \sigma\right)  \circ g_{p}}  &  =\left(
 -1\right)  ^{g_{q}\circ\sigma}=\underbrace{\left(  -1\right)  ^{g_{q}}%
 }_{=\left(  -1\right)  ^{n+q}}\cdot\left(  -1\right)  ^{\sigma}%
 \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{eq.sign.prod}), applied to }%
-g_{q}\text{ and }\sigma\text{ instead of }\sigma\text{ and }\tau\right)  \\
+g_{q}\text{ and }\sigma\text{ instead of }\sigma\text{ and }\tau\right) \\
 &  =\left(  -1\right)  ^{n+q}\cdot\left(  -1\right)  ^{\sigma}.
 \end{align*}
 Compared with%
 \begin{align*}
-\left(  -1\right)  ^{T\left(  \sigma\right)  \circ g_{p}} &  =\left(
+\left(  -1\right)  ^{T\left(  \sigma\right)  \circ g_{p}}  &  =\left(
 -1\right)  ^{T\left(  \sigma\right)  }\cdot\underbrace{\left(  -1\right)
 ^{g_{p}}}_{\substack{=\left(  -1\right)  ^{n-p}\\\text{(by Lemma
 \ref{lem.laplace.gpshort} \textbf{(b)})}}}\ \ \ \ \ \ \ \ \ \ \left(  \text{by
 (\ref{eq.sign.prod}), applied to }T\left(  \sigma\right)  \text{ and }%
-g_{p}\text{ instead of }\sigma\text{ and }\tau\right)  \\
+g_{p}\text{ instead of }\sigma\text{ and }\tau\right) \\
 &  =\left(  -1\right)  ^{T\left(  \sigma\right)  }\cdot\left(  -1\right)
 ^{n-p},
 \end{align*}
@@ -15696,8 +16188,8 @@ This proves (\ref{pf.lem.laplace.Apq.short.1}).} and%
 \begin{equation}
 \prod_{\substack{i\in\left\{  1,2,\ldots,n\right\}  ;\\i\neq p}}a_{i,\left(
 T\left(  \sigma\right)  \right)  \left(  i\right)  }=\prod_{i=1}^{n-1}%
-a_{g_{p}\left(  i\right)  ,g_{q}\left(  \sigma\left(  i\right)  \right)
-}\label{pf.lem.laplace.Apq.short.2}%
+a_{g_{p}\left(  i\right)  ,g_{q}\left(  \sigma\left(  i\right)  \right)  }
+\label{pf.lem.laplace.Apq.short.2}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{pf.lem.laplace.Apq.short.2}):} Let $\sigma
 \in\left\{  \tau\in S_{n}\ \mid\ \tau\left(  n\right)  =n\right\}  $. Let us
@@ -15727,8 +16219,8 @@ T\left(  \sigma\right)  \right)  \left(  g_{p}^{\prime}\left(  i\right)
 \begin{equation}
 a_{g_{p}^{\prime}\left(  i\right)  ,\left(  T\left(  \sigma\right)  \right)
 \left(  g_{p}^{\prime}\left(  i\right)  \right)  }=a_{g_{p}\left(  i\right)
-,g_{q}\left(  \sigma\left(  i\right)  \right)  }%
-.\label{pf.lem.laplace.Apq.short.2.pf.1}%
+,g_{q}\left(  \sigma\left(  i\right)  \right)  }.
+\label{pf.lem.laplace.Apq.short.2.pf.1}%
 \end{equation}
 \par
 Now, let us forget that we fixed $i$. We thus have proven
@@ -15756,7 +16248,7 @@ i\right)  \right)  }\\\text{(by (\ref{pf.lem.laplace.Apq.short.2.pf.1}))}}}\\
 g_{p}^{\prime}:\left[  n-1\right]  \rightarrow\left[  n\right]  \setminus
 \left\{  p\right\}  \text{ is a bijection}%
 \end{array}
-\right)  \\
+\right) \\
 &  =\prod_{i=1}^{n-1}a_{g_{p}\left(  i\right)  ,g_{q}\left(  \sigma\left(
 i\right)  \right)  }.
 \end{align*}
@@ -37700,12 +38192,23 @@ from the Book}, XYZ Press 2008.
 
 \bibitem[Artin]{Artin}Michael Artin, \textit{Algebra}, 2nd edition, Pearson 2010.
 
+\bibitem[Axler]{Axler}Sheldon Axler, \textit{Linear Algebra Done Right}, 3rd
+edition 2015.
+
 \bibitem[BenQui04]{BenQui-fib}%
 \href{https://www.math.hmc.edu/~benjamin/papers/bama.pdf}{Arthur T. Benjamin
 and Jennifer J. Quinn, \textit{Proofs that Really Count: The Magic of
 Fibonacci Numbers and More}, Mathematical Adventures for Students and
 Amateurs, (David F. Hayes and Tatiana Shubin, editors), Spectrum Series of
 MAA, pp. 83--98, 2004.}
+
+\bibitem[Bergma15]{Bergman-Lang}George M. Bergman, \textit{A Companion to
+Lang's Algebra}, website (2015).\newline%
+\href{https://math.berkeley.edu/~gbergman/.C.to.L/}{https://math.berkeley.edu/\symbol{126}%
+gbergman/.C.to.L/}
+
+\bibitem[BirMac99]{BirkMac}Saunders Mac Lane, Garrett Birkhoff,
+\textit{Algebra}, 3rd edition, AMS Chelsea Publishing 1999.
 
 \bibitem[Conrad]{Conrad}Keith Conrad, \textit{Sign of permutations},
 \newline%
@@ -37766,6 +38269,13 @@ edition, John Wiley \& Sons, 1975.
 \bibitem[HoffKun]{HoffmanKunze}Kenneth Hoffman, Ray Kunze, \textit{Linear
 algebra}, 2nd edition, Prentice-Hall 1971.
 
+\bibitem[Hunger03]{Hungerford-03}%
+\href{http://link.springer.com/book/10.1007%2F978-1-4612-6101-8}{Thomas W.
+Hungerford, \textit{Algebra}, 12th printing, Springer 2003.}
+
+\bibitem[Hunger14]{Hungerford}Thomas W. Hungerford, \textit{Abstract Algebra:
+An Introduction}, 3rd edition, Brooks/Cole 2014.
+
 \bibitem[Knutson]{Knutson}Allen Knutson,
 \textit{\href{http://www.math.cornell.edu/~allenk/schubnotes.pdf}{Schubert
 polynomials and Symmetric Functions}}, lecture notes, July 28, 2012.
@@ -37784,6 +38294,11 @@ A version with my corrections:\newline%
 \texttt{\url{https://www.dropbox.com/s/aush67ecrx6twlf/cluster - version 4 dec 2013 EV.pdf?dl=0}}
 .
 \end{verlong}
+
+\bibitem[Lang02]{Lang02}%
+\href{http://link.springer.com/book/10.1007%2F978-1-4613-0041-0}{Serge Lang,
+\textit{Algebra}, Revised Third Edition, Graduate Texts in Mathematics \#211,
+Springer 2002.}
 
 \bibitem[Laue]{Laue-det}Hartmut Laue, \textit{Determinants}, version 17 May
 2015,\newline%
@@ -37847,6 +38362,11 @@ Combinatorics, volume 2}, First edition 2001.
 \href{http://www.combinatorics.org/ojs/index.php/eljc/article/view/v9i1n5}{John
 R. Stembridge, \textit{A Concise Proof of the Littlewood-Richardson Rule}, The
 Electronic Journal of Combinatorics, Volume 9 (2002), Note \#N5.}
+
+\bibitem[Walker87]{Walker87}%
+\href{https://www.math.nmsu.edu/~elbert/AbsAlgeb.pdf}{Elbert A. Walker,
+\textit{Introduction to Abstract Algebra}, Random House/Birkhauser, New York,
+1987.}
 
 \bibitem[Zeilbe]{Zeilbe}%
 \href{http://www.math.rutgers.edu/~zeilberg/mamarimY/DM85.pdf}{Doron
