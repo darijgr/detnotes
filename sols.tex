@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Tuesday, December 29, 2015 20:25:28}
+%TCIDATA{LastRevised=Tuesday, December 29, 2015 20:23:30}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -13050,6 +13050,7 @@ from the second by rearranging the rows in opposite order. Thus, the four
 parts of Theorem \ref{thm.vander-det} are rather easily seen to be equivalent.
 (We shall prove part \textbf{(a)} and derive the others from it.) Nevertheless
 it is useful to have seen them all.
+\end{remark}
 
 Theorem \ref{thm.vander-det} is a classical result (known as the
 \textit{\href{https://en.wikipedia.org/wiki/Vandermonde_matrix}{\textit{Vandermonde
@@ -13060,12 +13061,17 @@ prove it in lesser generality. It is a fundamental result that has various
 applications to abstract algebra, number theory, coding theory, combinatorics
 and numerical mathematics.
 
-Theorem \ref{thm.vander-det} has many known proofs. My favorite proof (of
-Theorem \ref{thm.vander-det} \textbf{(c)} only, but as I said the other parts
-are easily seen to be equivalent) is given in \cite[Theorem 1]{GriHyp}. In
-these notes, I will show another proof, which has the advantage of
-demonstrating how to use Theorem \ref{thm.laplace.pre}.
-\end{remark}
+Theorem \ref{thm.vander-det} has many known proofs\footnote{For three
+combinatorial proofs, see \cite{Gessel-Vand}, \cite[\S 12.9]{Loehr-BC} and
+\cite{BenDre-Vand}. (Specifically, \cite{Gessel-Vand} and \cite{BenDre-Vand}
+prove Theorem \ref{thm.vander-det} \textbf{(c)}, whereas \cite[\S 12.9]%
+{Loehr-BC} proves Theorem \ref{thm.vander-det} \textbf{(b)}. But as we will
+see, the four parts of Theorem \ref{thm.vander-det} are easily seen to be
+equivalent to each other.)}. My favorite proof (of Theorem
+\ref{thm.vander-det} \textbf{(c)} only, but as I said the other parts are
+easily seen to be equivalent) is given in \cite[Theorem 1]{GriHyp}. In these
+notes, I will show another proof, which has the advantage of demonstrating how
+to use Theorem \ref{thm.laplace.pre}.
 
 \begin{example}
 \label{exa.vander-det.3}Let $x,y,z\in\mathbb{K}$. Let $A=\left(
@@ -13077,10 +13083,10 @@ demonstrating how to use Theorem \ref{thm.laplace.pre}.
 \end{array}
 \right)  $. Then, (\ref{eq.det.small.3x3}) shows that%
 \begin{align}
-\det A  &  =1yz^{2}+xy^{2}\cdot1+x^{2}\cdot1z-1y^{2}z-x\cdot1z^{2}-x^{2}%
+\det A &  =1yz^{2}+xy^{2}\cdot1+x^{2}\cdot1z-1y^{2}z-x\cdot1z^{2}-x^{2}%
 y\cdot1\nonumber\\
 &  =yz^{2}+xy^{2}+x^{2}z-y^{2}z-xz^{2}-x^{2}y=yz\left(  z-y\right)  +zx\left(
-x-z\right)  +xy\left(  y-x\right)  . \label{eq.exa.vander-det.3.1}%
+x-z\right)  +xy\left(  y-x\right)  .\label{eq.exa.vander-det.3.1}%
 \end{align}
 On the other hand, Theorem \ref{thm.vander-det} \textbf{(c)} (applied to
 $n=3$, $x_{1}=x$, $x_{2}=y$ and $x_{3}=z$) yields $\det A=\left(  y-x\right)
@@ -13088,8 +13094,8 @@ $n=3$, $x_{1}=x$, $x_{2}=y$ and $x_{3}=z$) yields $\det A=\left(  y-x\right)
 (\ref{eq.exa.vander-det.3.1}), this yields%
 \begin{equation}
 \left(  y-x\right)  \left(  z-x\right)  \left(  z-y\right)  =yz\left(
-z-y\right)  +zx\left(  x-z\right)  +xy\left(  y-x\right)  .
-\label{eq.exa.vander-det.3.2}%
+z-y\right)  +zx\left(  x-z\right)  +xy\left(  y-x\right)
+.\label{eq.exa.vander-det.3.2}%
 \end{equation}
 You might have encountered this curious identity as a trick of use in contest
 problems. When $x,y,z$ are three distinct complex numbers, we can divide
@@ -38195,6 +38201,12 @@ from the Book}, XYZ Press 2008.
 \bibitem[Axler]{Axler}Sheldon Axler, \textit{Linear Algebra Done Right}, 3rd
 edition 2015.
 
+\bibitem[BenDre07]{BenDre-Vand}%
+\href{http://home.wlu.edu/~dresdeng/papers/VDM.pdf}{Arthur T. Benjamin and
+Gregory P. Dresden, \textit{A Combinatorial Proof of Vandermonde's
+Determinant}, The American Mathematical Monthly, Vol. 114, No. 4 (Apr., 2007),
+pp. 338--341.}
+
 \bibitem[BenQui04]{BenQui-fib}%
 \href{https://www.math.hmc.edu/~benjamin/papers/bama.pdf}{Arthur T. Benjamin
 and Jennifer J. Quinn, \textit{Proofs that Really Count: The Magic of
@@ -38223,6 +38235,9 @@ Monthly, Vol. 111, No. 3 (March 2004), pp. 189--197.}
 \href{http://arxiv.org/abs/math/9712261v2}{Theresia Eisenk\"{o}lbl,
 \textit{Rhombus Tilings of a Hexagon with Three Fixed Border Tiles},
 arXiv:math/9712261v2.} Published in: J. Combin. Theory Ser. A 88 (1999), pp. 368--378.
+
+\bibitem[Gessel79]{Gessel-Vand}Ira Gessel, \textit{Tournaments and
+Vandermonde's Determinant}, Journal of Graph Theory, Vol. 3 (1979), pp. 305--307.
 
 \bibitem[Gill12]{Gill}%
 \href{http://cseweb.ucsd.edu/~gill/CILASite/Resources/LinearAlgebra.pdf}{S.
@@ -38316,6 +38331,9 @@ cluster algebras},\newline\texttt{\url{http://arxiv.org/abs/1306.2415v3}} .
 van Leeuwen, \textit{Schur functions and alternating sums}}, Electronic
 Journal of Combinatorics Vol 11(2) A5 (2006), also available as
 \href{http://arxiv.org/abs/math.CO/0602357}{arXiv:math.CO/0602357}.
+
+\bibitem[Loehr11]{Loehr-BC}Nicholas A. Loehr, \textit{Bijective Combinatorics}%
+, Chapman \& Hall/CRC 2011.
 
 \bibitem[Muir]{Muir}%
 \href{http://phalanstere.univ-mlv.fr/~al/#Classiques}{Thomas Muir, \textit{The
