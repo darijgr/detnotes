@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Tuesday, December 29, 2015 20:23:30}
+%TCIDATA{LastRevised=Tuesday, December 29, 2015 21:46:56}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -760,6 +760,17 @@ $\textquotedblright\ really means the letter $\eta$, not the sequence $\left(
 0,1,0,0,0,\ldots\right)  $.) This is, of course, a very technical point which
 is of little relevance to most of mathematics; it becomes important when one
 tries to implement polynomials in a programming language.
+
+\textbf{(m)} As already explained, we can replace $\mathbb{Q}$ by $\mathbb{Z}%
+$, $\mathbb{R}$, $\mathbb{C}$ or any other commutative ring $\mathbb{K}$ in
+the above definition. (See Definition \ref{def.commring} for the definition of
+a commutative ring.) When $\mathbb{Q}$ is replaced by a commutative ring
+$\mathbb{K}$, the notion of \textquotedblleft univariate polynomials with
+rational coefficients\textquotedblright\ becomes \textquotedblleft univariate
+polynomials with coefficients in $\mathbb{K}$\textquotedblright\ (also known
+as \textquotedblleft univariate polynomials over $\mathbb{K}$%
+\textquotedblright), and the set of such polynomials is denoted by
+$\mathbb{K}\left[  X\right]  $ rather than $\mathbb{Q}\left[  X\right]  $.
 \end{definition}
 
 So much for univariate polynomials.
@@ -773,9 +784,8 @@ unpolished writing; it is best read with Bergman's companion
 \cite[Chapter IV, \S 4]{BirkMac} use the above-mentioned recursive shortcut
 that makes them inferior (in my opinion). A neat (and rather elementary)
 treatment of polynomials in $n$ variables (for finite $n$) can be found in
-\cite[Chapter III, \S 5]{Hungerford-03}; it generalizes the \textquotedblleft
-polynomials are sequences\textquotedblright\ viewpoint used for univariate
-polynomials above.
+\cite[Chapter III, \S 5]{Hungerford-03}; it generalizes the viewpoint we used
+in Definition \ref{def.polynomial-univar} for univariate polynomials above.
 
 \section{\label{chp.quivers}On acyclic quivers and mutations}
 
@@ -876,6 +886,8 @@ more general definition of mutation given in \cite[Definition 2.2.1]{Lampe},
 at least if one gives up the ability to distinguish different arrows from one
 vertex to another.)
 \end{itemize}
+
+\Needspace{15\baselineskip}
 
 \begin{exercise}
 \label{exe.ps1.1.1}Let $Q=\left(  Q_{0},Q_{1},s,t\right)  $ be an acyclic quiver.
@@ -13083,10 +13095,10 @@ to use Theorem \ref{thm.laplace.pre}.
 \end{array}
 \right)  $. Then, (\ref{eq.det.small.3x3}) shows that%
 \begin{align}
-\det A &  =1yz^{2}+xy^{2}\cdot1+x^{2}\cdot1z-1y^{2}z-x\cdot1z^{2}-x^{2}%
+\det A  &  =1yz^{2}+xy^{2}\cdot1+x^{2}\cdot1z-1y^{2}z-x\cdot1z^{2}-x^{2}%
 y\cdot1\nonumber\\
 &  =yz^{2}+xy^{2}+x^{2}z-y^{2}z-xz^{2}-x^{2}y=yz\left(  z-y\right)  +zx\left(
-x-z\right)  +xy\left(  y-x\right)  .\label{eq.exa.vander-det.3.1}%
+x-z\right)  +xy\left(  y-x\right)  . \label{eq.exa.vander-det.3.1}%
 \end{align}
 On the other hand, Theorem \ref{thm.vander-det} \textbf{(c)} (applied to
 $n=3$, $x_{1}=x$, $x_{2}=y$ and $x_{3}=z$) yields $\det A=\left(  y-x\right)
@@ -13094,8 +13106,8 @@ $n=3$, $x_{1}=x$, $x_{2}=y$ and $x_{3}=z$) yields $\det A=\left(  y-x\right)
 (\ref{eq.exa.vander-det.3.1}), this yields%
 \begin{equation}
 \left(  y-x\right)  \left(  z-x\right)  \left(  z-y\right)  =yz\left(
-z-y\right)  +zx\left(  x-z\right)  +xy\left(  y-x\right)
-.\label{eq.exa.vander-det.3.2}%
+z-y\right)  +zx\left(  x-z\right)  +xy\left(  y-x\right)  .
+\label{eq.exa.vander-det.3.2}%
 \end{equation}
 You might have encountered this curious identity as a trick of use in contest
 problems. When $x,y,z$ are three distinct complex numbers, we can divide
