@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, January 02, 2016 00:59:35}
+%TCIDATA{LastRevised=Saturday, January 02, 2016 03:13:04}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -9158,7 +9158,7 @@ x_{3} & 0 & 0 & \cdots & 0\\
 x_{n} & 0 & 0 & \cdots & 0
 \end{array}
 \right)  $. (Thus, the first column of $B$ is $\left(  x_{1},x_{2}%
-,\ldots,x_{n}\right)  $, while all other columns are filled with zeroes.)
+,\ldots,x_{n}\right)  ^{T}$, while all other columns are filled with zeroes.)
 Define an $n\times n$-matrix $C$ by $C=\left(
 \begin{array}
 [c]{ccccc}%
@@ -9218,9 +9218,9 @@ x_{3} & 1 & 0 & \cdots & 0\\
 x_{n} & 1 & 0 & \cdots & 0
 \end{array}
 \right)  $. (Thus, the first column of $B$ is $\left(  x_{1},x_{2}%
-,\ldots,x_{n}\right)  $, the second column is $\left(  1,1,\ldots,1\right)  $,
-while all other columns are filled with zeroes.) Define an $n\times n$-matrix
-$C$ by $C=\left(
+,\ldots,x_{n}\right)  ^{T}$, the second column is $\left(  1,1,\ldots
+,1\right)  ^{T}$, while all other columns are filled with zeroes.) Define an
+$n\times n$-matrix $C$ by $C=\left(
 \begin{array}
 [c]{ccccc}%
 1 & 1 & 1 & \cdots & 1\\
@@ -24045,11 +24045,11 @@ t_{i,j}\right)  =\left\vert \operatorname*{Inv}\left(  t_{i,j}\right)
 \begin{verlong}
 The permutation $t_{i,j}$ switches $i$ with $j$ while leaving all other
 elements of $\left\{  1,2,\ldots,n\right\}  $ unchanged. In other words, we
-have $t_{i,j}\left(  i\right)  =j$, $t_{j,i}\left(  j\right)  =i$ and%
+have $t_{i,j}\left(  i\right)  =j$, $t_{i,j}\left(  j\right)  =i$ and%
 \begin{equation}
 t_{i,j}\left(  k\right)  =k\ \ \ \ \ \ \ \ \ \ \text{for every }k\in\left\{
-1,2,\ldots,n\right\}  \text{ satisfying }k\notin\left\{  i,j\right\}  .
-\label{sol.ps4.1ab.a.tij}%
+1,2,\ldots,n\right\}  \text{ satisfying }k\notin\left\{  i,j\right\}
+.\label{sol.ps4.1ab.a.tij}%
 \end{equation}
 
 
@@ -24364,12 +24364,12 @@ s_{1}\left(  k\right)  =k\ \ \ \ \ \ \ \ \ \ \text{for every }k\in\left\{
 
 On the other hand, the permutation $t_{i,j}$ switches $i$ with $j$ while
 leaving all other elements of $\left\{  1,2,\ldots,n\right\}  $ unchanged. In
-other words, we have $t_{i,j}\left(  i\right)  =j$, $t_{j,i}\left(  j\right)
+other words, we have $t_{i,j}\left(  i\right)  =j$, $t_{i,j}\left(  j\right)
 =i$ and%
 \begin{equation}
 t_{i,j}\left(  k\right)  =k\ \ \ \ \ \ \ \ \ \ \text{for every }k\in\left\{
-1,2,\ldots,n\right\}  \text{ satisfying }k\notin\left\{  i,j\right\}  .
-\label{sol.ps4.1ab.b.tij}%
+1,2,\ldots,n\right\}  \text{ satisfying }k\notin\left\{  i,j\right\}
+.\label{sol.ps4.1ab.b.tij}%
 \end{equation}
 
 
