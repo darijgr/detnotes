@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, January 02, 2016 03:13:04}
+%TCIDATA{LastRevised=Saturday, January 02, 2016 03:50:10}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -6338,6 +6338,69 @@ to find $\left(  -1\right)  ^{\sigma}$ (because Exercise \ref{exe.perm.cycles}
 \textbf{(d)} tells us how to find the sign of a $k$-cycle). This is
 significantly faster than counting inversions of $\sigma$.
 \end{remark}
+
+\subsection{Additional exercises}
+
+Permutations and symmetric groups are a staple of combinatorics; there are
+countless results involving them. For an example, B\'{o}na's book
+\cite{Bona12}, as well as significant parts of Stanley's \cite{Stanley-EC1}
+and \cite{Stanley-EC2} are devoted to them. In this section, I shall only give
+a haphazard selection of exercises, which are not relevant to the rest of
+these notes (thus can be skipped at will). I am not planning to provide
+solutions for them.
+
+\begin{addexercise}
+\label{exeadd.perm.order}Let $n\in\mathbb{N}$. Let $d=\operatorname{lcm}%
+\left(  1,2,\ldots,n\right)  $.
+
+\textbf{(a)} Show that $\pi^{d}=\operatorname*{id}$ for every $\pi\in S_{n}$.
+
+\textbf{(b)} Let $k$ be an integer such that every $\pi\in S_{n}$ satisfies
+$\pi^{k}=\operatorname*{id}$. Show that $d\mid k$.
+\end{addexercise}
+
+\begin{addexercise}
+\label{exeadd.perm.invset}Let $n\in\mathbb{N}$. For every $\sigma\in S_{n}$,
+we let $\operatorname*{Inv}\sigma$ denote the set of all inversions of $S_{n}%
+$. Let $G=\left\{  \left(  i,j\right)  \in\mathbb{Z}^{2}\ \mid\ 1\leq i<j\leq
+n\right\}  $.
+
+A subset $U$ of $G$ is said to be \textit{transitive} if every $a,b,c\in
+\left\{  1,2,\ldots,n\right\}  $ satisfying $\left(  a,b\right)  \in U$ and
+$\left(  b,c\right)  \in U$ also satisfy $\left(  a,c\right)  \in U$.
+
+A subset $U$ of $G$ is said to be \textit{inversive} if there exists a
+$\sigma\in S_{n}$ such that $U=\operatorname*{Inv}\sigma$.
+
+Let $U$ be a subset of $G$. Prove that $U$ is inversive if and only if both
+$U$ and $G\setminus U$ are transitive.
+\end{addexercise}
+
+\begin{addexercise}
+\label{exeadd.perm.sigmacrosstau}Let $n\in\mathbb{N}$ and $m\in\mathbb{N}$.
+Let $\sigma\in S_{n}$ and $\tau\in S_{m}$. We define a permutation
+$\sigma\times\tau$ of the set $\left\{  1,2,\ldots,n\right\}  \times\left\{
+1,2,\ldots,m\right\}  $ by setting%
+\[
+\left(  \sigma\times\tau\right)  \left(  a,b\right)  =\left(  \sigma\left(
+a\right)  ,\tau\left(  b\right)  \right)  \ \ \ \ \ \ \ \ \ \ \text{for every
+}\left(  a,b\right)  \in\left\{  1,2,\ldots,n\right\}  \times\left\{
+1,2,\ldots,m\right\}  .
+\]
+
+
+\textbf{(a)} Prove that $\sigma\times\tau$ is a well-defined permutation.
+
+\textbf{(b)} Prove that $\sigma\times\tau=\left(  \sigma\times
+\operatorname*{id}\right)  \circ\left(  \operatorname*{id}\times\tau\right)  $.
+
+\textbf{(c)} According to Exercise \ref{exe.ps4.2} (applied to $X=\left\{
+1,2,\ldots,n\right\}  \times\left\{  1,2,\ldots,m\right\}  $), the permutation
+$\sigma\times\tau$ has a well-defined sign $\left(  -1\right)  ^{\sigma
+\times\tau}$. Prove that $\left(  -1\right)  ^{\sigma\times\tau}=\left(
+\left(  -1\right)  ^{\sigma}\right)  ^{m}\left(  \left(  -1\right)  ^{\tau
+}\right)  ^{n}$.
+\end{addexercise}
 
 \section{\label{chp.det}An introduction to determinants}
 
@@ -24048,8 +24111,8 @@ elements of $\left\{  1,2,\ldots,n\right\}  $ unchanged. In other words, we
 have $t_{i,j}\left(  i\right)  =j$, $t_{i,j}\left(  j\right)  =i$ and%
 \begin{equation}
 t_{i,j}\left(  k\right)  =k\ \ \ \ \ \ \ \ \ \ \text{for every }k\in\left\{
-1,2,\ldots,n\right\}  \text{ satisfying }k\notin\left\{  i,j\right\}
-.\label{sol.ps4.1ab.a.tij}%
+1,2,\ldots,n\right\}  \text{ satisfying }k\notin\left\{  i,j\right\}  .
+\label{sol.ps4.1ab.a.tij}%
 \end{equation}
 
 
@@ -24368,8 +24431,8 @@ other words, we have $t_{i,j}\left(  i\right)  =j$, $t_{i,j}\left(  j\right)
 =i$ and%
 \begin{equation}
 t_{i,j}\left(  k\right)  =k\ \ \ \ \ \ \ \ \ \ \text{for every }k\in\left\{
-1,2,\ldots,n\right\}  \text{ satisfying }k\notin\left\{  i,j\right\}
-.\label{sol.ps4.1ab.b.tij}%
+1,2,\ldots,n\right\}  \text{ satisfying }k\notin\left\{  i,j\right\}  .
+\label{sol.ps4.1ab.b.tij}%
 \end{equation}
 
 
@@ -38233,6 +38296,9 @@ gbergman/.C.to.L/}
 
 \bibitem[BirMac99]{BirkMac}Saunders Mac Lane, Garrett Birkhoff,
 \textit{Algebra}, 3rd edition, AMS Chelsea Publishing 1999.
+
+\bibitem[Bona12]{Bona12}Miklos Bona, \textit{Combinatorics of Permutations},
+2nd edition, CRC Press 2012.
 
 \bibitem[Conrad]{Conrad}Keith Conrad, \textit{Sign of permutations},
 \newline%
