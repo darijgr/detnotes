@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, January 02, 2016 19:35:33}
+%TCIDATA{LastRevised=Friday, January 08, 2016 18:01:52}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -294,11 +294,11 @@ As I have already mentioned in the above list of prerequisites, the notion of
 polynomials (in one and in several indeterminates) will be used in these
 notes. Most likely, the reader already has at least a vague understanding of
 this notion (e.g., from high school); this vague understanding is probably
-sufficient for understanding most of its uses in my notes. But polynomials are
-one of the most important notions in algebra (if not to say in mathematics),
-and the reader will likely encounter them over and over; sooner or later, it
-will happen that the vague understanding is not sufficient and some subtleties
-do matter. For that reason, anyone serious about doing abstract algebra should
+sufficient for reading most of these notes. But polynomials are one of the
+most important notions in algebra (if not to say in mathematics), and the
+reader will likely encounter them over and over; sooner or later, it will
+happen that the vague understanding is not sufficient and some subtleties do
+matter. For that reason, anyone serious about doing abstract algebra should
 know a complete and correct definition of polynomials and have some experience
 working with it. I shall not give a complete definition of the most general
 notion of polynomials in these notes, but I will comment on some of the
@@ -723,7 +723,7 @@ Probably the simplest three cases of evaluation are the following ones:
 \item We have $p\left(  0\right)  =p_{0}+p_{1}0^{1}+p_{2}0^{2}+\cdots=p_{0}$.
 In other words, evaluating $p$ at $X=0$ yields the constant term of $p$.
 
-\item We have $p\left(  0\right)  =p_{0}+p_{1}1^{1}+p_{2}1^{2}+\cdots
+\item We have $p\left(  1\right)  =p_{0}+p_{1}1^{1}+p_{2}1^{2}+\cdots
 =p_{0}+p_{1}+p_{2}+\cdots$. In other words, evaluating $p$ at $X=1$ yields the
 sum of all coefficients of $p$.
 
@@ -738,32 +738,34 @@ which serves as the indeterminate for polynomials in $\mathbb{Q}\left[
 X\right]  $.
 \end{itemize}
 
-\textbf{(l)} It is often useful to work to give an indeterminate a name other
-than $X$. (For instance, instead of polynomials with rational coefficients, we
-could be considering polynomials whose coefficients themselves are polynomials
-in $\mathbb{Q}\left[  X\right]  $; and then, we would not be allowed to use
-the letter $X$ for the \textquotedblleft new\textquotedblright\ indeterminate
-anymore, as it could be a coefficient!) This can be done, and the rules are
-the following: Any letter (that does not already have a meaning) can be used
-to denote the indeterminate; but then, the set of all polynomials has to be
-renamed as $\mathbb{Q}\left[  \eta\right]  $, where $\eta$ is this letter. For
-instance, if we want to denote the indeterminate as $x$, then we have to
-denote the set by $\mathbb{Q}\left[  x\right]  $.
+\textbf{(l)} Often, one wants (or is required) to give an indeterminate a name
+other than $X$. (For instance, instead of polynomials with rational
+coefficients, we could be considering polynomials whose coefficients
+themselves are polynomials in $\mathbb{Q}\left[  X\right]  $; and then, we
+would not be allowed to use the letter $X$ for the \textquotedblleft
+new\textquotedblright\ indeterminate anymore, as it already means the
+indeterminate of $\mathbb{Q}\left[  X\right]  $ !) This can be done, and the
+rules are the following: Any letter (that does not already have a meaning) can
+be used to denote the indeterminate; but then, the set of all polynomials has
+to be renamed as $\mathbb{Q}\left[  \eta\right]  $, where $\eta$ is this
+letter. For instance, if we want to denote the indeterminate as $x$, then we
+have to denote the set by $\mathbb{Q}\left[  x\right]  $.
 
 It is furthermore convenient to regard the sets $\mathbb{Q}\left[
 \eta\right]  $ for different letters $\eta$ as distinct. Thus, for example,
 the polynomial $3X^{2}+1$ is not the same as the polynomial $3Y^{2}+1$. (The
-reason for doing so is that one wishes to view both of these polynomials as
-polynomials in the two variables $X$ and $Y$.) Formally speaking, this means
-that we should define a polynomial in $\mathbb{Q}\left[  \eta\right]  $ to be
-not just a sequence $\left(  p_{0},p_{1},p_{2},\ldots\right)  $ of rational
-numbers, but actually a pair $\left(  \left(  p_{0},p_{1},p_{2},\ldots\right)
-,\text{\textquotedblleft}\eta\text{\textquotedblright}\right)  $ of a sequence
-of rational numbers and the letter $\eta$. (Here, \textquotedblleft$\eta
-$\textquotedblright\ really means the letter $\eta$, not the sequence $\left(
-0,1,0,0,0,\ldots\right)  $.) This is, of course, a very technical point which
-is of little relevance to most of mathematics; it becomes important when one
-tries to implement polynomials in a programming language.
+reason for doing so is that one sometimes wishes to view both of these
+polynomials as polynomials in the two variables $X$ and $Y$.) Formally
+speaking, this means that we should define a polynomial in $\mathbb{Q}\left[
+\eta\right]  $ to be not just a sequence $\left(  p_{0},p_{1},p_{2}%
+,\ldots\right)  $ of rational numbers, but actually a pair $\left(  \left(
+p_{0},p_{1},p_{2},\ldots\right)  ,\text{\textquotedblleft}\eta
+\text{\textquotedblright}\right)  $ of a sequence of rational numbers and the
+letter $\eta$. (Here, \textquotedblleft$\eta$\textquotedblright\ really means
+the letter $\eta$, not the sequence $\left(  0,1,0,0,0,\ldots\right)  $.) This
+is, of course, a very technical point which is of little relevance to most of
+mathematics; it becomes important when one tries to implement polynomials in a
+programming language.
 
 \textbf{(m)} As already explained, we can replace $\mathbb{Q}$ by $\mathbb{Z}%
 $, $\mathbb{R}$, $\mathbb{C}$ or any other commutative ring $\mathbb{K}$ in
@@ -782,9 +784,9 @@ So much for univariate polynomials.
 Polynomials in multiple variables are (in my opinion) treated the best in
 \cite[Chapter II, \S 3]{Lang02}, where they are introduced as elements of a
 monoid ring. However, this treatment is rather abstract and uses a good deal
-of algebraic language (also, the book \cite{Lang02} is notorious for
+of algebraic language\footnote{Also, the book \cite{Lang02} is notorious for
 unpolished writing; it is best read with Bergman's companion
-\cite{Bergman-Lang} at hand). The treatments in \cite[\S 4.5]{Walker87} and
+\cite{Bergman-Lang} at hand.}. The treatments in \cite[\S 4.5]{Walker87} and
 \cite[Chapter IV, \S 4]{BirkMac} use the above-mentioned recursive shortcut
 that makes them inferior (in my opinion). A neat (and rather elementary)
 treatment of polynomials in $n$ variables (for finite $n$) can be found in
@@ -20283,7 +20285,7 @@ here is a consequence of Proposition \ref{prop.binom.bin-id} \textbf{(e)}.)
 
 \textbf{(b)} Let $n\in\mathbb{N}$. Let $A$ be the $n\times n$-matrix $\left(
 \dbinom{i+j-2}{i-1}_{D}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ (an analogue
-of the matrix $A$ from Exercise \ref{exe.ps4.pascal}.) Show that%
+of the matrix $A$ from Exercise \ref{exe.ps4.pascal}). Show that%
 \[
 \det A=2^{n\left(  n+1\right)  /2}.
 \]
@@ -21574,7 +21576,7 @@ Now,%
 \\\text{(by (\ref{sol.exeadd.AoPS262752.sol2.1}) (applied to }g=k\text{))}%
 }}\nonumber\\
 &  =\sum_{k=0}^{n}\left(  -1\right)  ^{k}\dbinom{X}{k}\left(  \sum_{i=0}%
-^{n-k}\dbinom{k}{i}\dbinom{X-k}{n-k-i}\right)  \nonumber\\
+^{n-k}\dbinom{k}{i}\dbinom{X-k}{n-k-i}\right) \nonumber\\
 &  =\underbrace{\sum_{k=0}^{n}\sum_{i=0}^{n-k}}_{\substack{=\sum
 _{\substack{\left(  k,i\right)  \in\mathbb{N}^{2};\\k\leq n;\ i\leq n-k}%
 }=\sum_{\substack{\left(  k,i\right)  \in\mathbb{N}^{2};\\k\leq n;\ k+i\leq
@@ -21617,11 +21619,11 @@ _{\substack{=\left(  -1\right)  ^{i}\left[  n-i=i\right]  \\\text{(by Lemma
 -1\right)  ^{i}\left[  \underbrace{n-i=i}_{\text{this is equivalent to }%
 n=2i}\right]  =\sum_{i\in\left\{  0,1,\ldots,n\right\}  }\dbinom{X}%
 {n-i}\left(  -1\right)  ^{i}\left[  \underbrace{n=2i}_{\text{this is
-equivalent to }i=n/2}\right]  \nonumber
+equivalent to }i=n/2}\right] \nonumber
 \end{align}%
 \begin{align}
 &  =\sum_{i\in\left\{  0,1,\ldots,n\right\}  }\dbinom{X}{n-i}\left(
--1\right)  ^{i}\left[  i=n/2\right]  \nonumber\\
+-1\right)  ^{i}\left[  i=n/2\right] \nonumber\\
 &  =\sum_{\substack{i\in\left\{  0,1,\ldots,n\right\}  ;\\i=n/2}}\dbinom
 {X}{n-i}\left(  -1\right)  ^{i}\underbrace{\left[  i=n/2\right]
 }_{\substack{=1\\\text{(since }n/2\neq i\text{)}}}+\sum_{\substack{i\in
@@ -21633,7 +21635,7 @@ n/2\text{)}}}\nonumber\\
 0,1,\ldots,n\right\}  ;\\i\neq n/2}}\dbinom{X}{n-i}\left(  -1\right)  ^{i}%
 0}_{=0}\nonumber\\
 &  =\sum_{\substack{i\in\left\{  0,1,\ldots,n\right\}  ;\\i=n/2}}\dbinom
-{X}{n-i}\left(  -1\right)  ^{i}.\label{sol.exeadd.AoPS262752.sol2.6}%
+{X}{n-i}\left(  -1\right)  ^{i}. \label{sol.exeadd.AoPS262752.sol2.6}%
 \end{align}
 
 
