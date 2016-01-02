@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, January 02, 2016 04:50:06}
+%TCIDATA{LastRevised=Saturday, January 02, 2016 19:35:33}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -520,11 +520,15 @@ univariate polynomials with rational coefficients. Given a polynomial
 $p=\left(  p_{0},p_{1},p_{2},\ldots\right)  \in\mathbb{Q}\left[  X\right]  $,
 we denote the numbers $p_{0},p_{1},p_{2},\ldots$ as the \textit{coefficients}
 of $p$. More precisely, for every $i\in\mathbb{N}$, we shall refer to $p_{i}$
-as the $i$\textit{-th coefficient} (or as the \textit{coefficient before
-}$X^{i}$) of $p$. (Do not forget that we are counting from $0$ here: any
-polynomial \textquotedblleft begins\textquotedblright\ with its $0$-th
-coefficient.) The $0$-th coefficient of $p$ is also known as the
+as the $i$\textit{-th coefficient} of $p$. (Do not forget that we are counting
+from $0$ here: any polynomial \textquotedblleft begins\textquotedblright\ with
+its $0$-th coefficient.) The $0$-th coefficient of $p$ is also known as the
 \textit{constant term} of $p$.
+
+Instead of \textquotedblleft the $i$-th coefficient of $p$\textquotedblright,
+we often also say \textquotedblleft the \textit{coefficient before }$X^{i}%
+$\textit{ of }$p$\textquotedblright\ or \textquotedblleft the
+\textit{coefficient of }$X^{i}$ \textit{in }$p$\textquotedblright.
 
 Thus, any polynomial $p\in\mathbb{Q}\left[  X\right]  $ is the sequence of its coefficients.
 
@@ -21026,6 +21030,741 @@ _{j=0}^{c}d_{j}\dbinom{X}{j}=\sum_{i=0}^{c}d_{i}\dbinom{X}{i}.
 Exercise \ref{exe.ps1.1.3} is thus solved.
 \end{proof}
 
+\subsection{Solution to Additional exercise \ref{exeadd.AoPS333199}}
+
+We shall prove the following generalization of Additional exercise
+\ref{exeadd.AoPS333199}:
+
+\begin{proposition}
+\label{prop.AoPS333199.gen}Let $\mathbb{K}$ be a commutative ring. (See
+Definition \ref{def.commring} for the definition of a \textquotedblleft
+commutative ring\textquotedblright. For example, we can set $\mathbb{K}%
+=\mathbb{Z}$ or $\mathbb{K}=\mathbb{R}$ or $\mathbb{K}=\mathbb{Q}\left[
+X\right]  $.) Let $x$ and $y$ be two elements of $\mathbb{K}$. For any
+$n\in\mathbb{N}$ and $m\in\mathbb{N}$, define $Y_{m,n}\in\mathbb{K}$ by%
+\[
+Y_{m,n}=\sum_{k=0}^{n}y^{k}\dbinom{n}{k}\left(  x^{n-k}+y\right)  ^{m}.
+\]
+Then, $Y_{m,n}=Y_{n,m}$ for any $n\in\mathbb{N}$ and $m\in\mathbb{N}$.
+\end{proposition}
+
+\begin{proof}
+[Proof of Proposition \ref{prop.AoPS333199.gen}.]For any $n\in\mathbb{N}$ and
+$m\in\mathbb{N}$, we have%
+\begin{align}
+Y_{m,n}  &  =\sum_{k=0}^{n}y^{k}\dbinom{n}{k}\left(  x^{n-k}+y\right)
+^{m}=\sum_{\ell=0}^{n}y^{\ell}\dbinom{n}{\ell}\left(  \underbrace{x^{n-\ell
+}+y}_{=y+x^{n-\ell}}\right)  ^{m}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have renamed the summation index
+}k\text{ as }\ell\right) \nonumber\\
+&  =\sum_{\ell=0}^{n}y^{\ell}\dbinom{n}{\ell}\underbrace{\left(  y+x^{n-\ell
+}\right)  ^{m}}_{\substack{=\sum_{k=0}^{m}\dbinom{m}{k}y^{k}\left(  x^{n-\ell
+}\right)  ^{m-k}\\\text{(by the binomial formula)}}}=\sum_{\ell=0}^{n}y^{\ell
+}\dbinom{n}{\ell}\left(  \sum_{k=0}^{m}\dbinom{m}{k}y^{k}\left(  x^{n-\ell
+}\right)  ^{m-k}\right) \nonumber\\
+&  =\sum_{\ell=0}^{n}\sum_{k=0}^{m}\underbrace{y^{\ell}\dbinom{n}{\ell}%
+\dbinom{m}{k}}_{=\dbinom{n}{\ell}\dbinom{m}{k}y^{\ell}}y^{k}\left(  x^{n-\ell
+}\right)  ^{m-k}=\sum_{\ell=0}^{n}\sum_{k=0}^{m}\dbinom{n}{\ell}\dbinom{m}%
+{k}\underbrace{y^{\ell}y^{k}}_{=y^{\ell+k}}\underbrace{\left(  x^{n-\ell
+}\right)  ^{m-k}}_{=x^{\left(  n-\ell\right)  \left(  m-k\right)  }%
+}\nonumber\\
+&  =\sum_{\ell=0}^{n}\sum_{k=0}^{m}\dbinom{n}{\ell}\dbinom{m}{k}y^{\ell
++k}x^{\left(  n-\ell\right)  \left(  m-k\right)  }.
+\label{pf.prop.AoPS333199.gen.1}%
+\end{align}
+Now, let $n\in\mathbb{N}$ and $m\in\mathbb{N}$. Then,
+(\ref{pf.prop.AoPS333199.gen.1}) (applied to $m$ and $n$ instead of $n$ and
+$m$) shows that%
+\begin{align*}
+Y_{n,m}  &  =\underbrace{\sum_{\ell=0}^{m}\sum_{k=0}^{n}}_{=\sum_{k=0}^{n}%
+\sum_{\ell=0}^{m}}\underbrace{\dbinom{m}{\ell}\dbinom{n}{k}}_{=\dbinom{n}%
+{k}\dbinom{m}{\ell}}\underbrace{y^{\ell+k}}_{=y^{k+\ell}}%
+\underbrace{x^{\left(  m-\ell\right)  \left(  n-k\right)  }}_{=x^{\left(
+n-k\right)  \left(  m-\ell\right)  }}\\
+&  =\sum_{k=0}^{n}\sum_{\ell=0}^{m}\dbinom{n}{k}\dbinom{m}{\ell}y^{k+\ell
+}x^{\left(  n-k\right)  \left(  m-\ell\right)  }=\sum_{k=0}^{n}\sum_{g=0}%
+^{m}\dbinom{n}{k}\dbinom{m}{g}y^{k+g}x^{\left(  n-k\right)  \left(
+m-g\right)  }\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have renamed the summation index
+}\ell\text{ as }g\right) \\
+&  =\sum_{\ell=0}^{n}\sum_{g=0}^{m}\dbinom{n}{\ell}\dbinom{m}{g}y^{\ell
++g}x^{\left(  n-\ell\right)  \left(  m-g\right)  }\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have renamed the summation index
+}k\text{ as }\ell\right) \\
+&  =\sum_{\ell=0}^{n}\sum_{k=0}^{m}\dbinom{n}{\ell}\dbinom{m}{k}y^{\ell
++k}x^{\left(  n-\ell\right)  \left(  m-k\right)  }\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have renamed the summation index
+}g\text{ as }k\right) \\
+&  =Y_{m,n}\ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{pf.prop.AoPS333199.gen.1})}\right)  .
+\end{align*}
+This proves Proposition \ref{prop.AoPS333199.gen}.
+\end{proof}
+
+\begin{proof}
+[Solution to Additional exercise \ref{exeadd.AoPS333199}.]Set $\mathbb{K}%
+=\mathbb{Z}\left[  X\right]  $, and define two elements $x$ and $y$ of
+$\mathbb{K}$ by $x=X$ and $y=-1$. For any $n\in\mathbb{N}$ and $m\in
+\mathbb{N}$, define $Y_{m,n}\in\mathbb{K}$ as in Proposition
+\ref{prop.AoPS333199.gen}. Then, for any $n\in\mathbb{N}$ and $m\in\mathbb{N}%
+$, we have%
+\begin{align}
+Y_{m,n}  &  =\sum_{k=0}^{n}\underbrace{y^{k}}_{\substack{=\left(  -1\right)
+^{k}\\\text{(since }y=-1\text{)}}}\dbinom{n}{k}\left(  \underbrace{x^{n-k}%
+}_{\substack{=X^{n-k}\\\text{(since }x=X\text{)}}}+\underbrace{y}%
+_{=-1}\right)  ^{m}\nonumber\\
+&  =\sum_{k=0}^{n}\left(  -1\right)  ^{k}\dbinom{n}{k}\left(
+\underbrace{X^{n-k}+\left(  -1\right)  }_{=X^{n-k}-1}\right)  ^{m}=\sum
+_{k=0}^{n}\left(  -1\right)  ^{k}\dbinom{n}{k}\left(  X^{n-k}-1\right)
+^{m}=Z_{m,n}. \label{sol.exeadd.AoPS333199.1}%
+\end{align}
+
+
+Now, fix $n\in\mathbb{N}$ and $m\in\mathbb{N}$. Applying
+(\ref{sol.exeadd.AoPS333199.1}) to $m$ and $n$ instead of $n$ and $m$, we
+obtain $Y_{n,m}=Z_{n,m}$. But Proposition \ref{prop.AoPS333199.gen} shows that
+$Y_{m,n}=Y_{n,m}$. Comparing this with (\ref{sol.exeadd.AoPS333199.1}), we
+obtain $Y_{n,m}=Z_{m,n}$. Comparing this with $Y_{n,m}=Z_{n,m}$, we obtain
+$Z_{m,n}=Z_{n,m}$. This solves Exercise \ref{exeadd.AoPS333199}.
+\end{proof}
+
+\begin{remark}
+Two solutions to Exercise \ref{exeadd.AoPS333199} are sketched in
+\href{http://www.artofproblemsolving.com/community/c6h333199p1782800}{http://www.artofproblemsolving.com/community/c6h333199p1782800}
+. One is essentially the solution given above (except in lesser generality);
+the other is combinatorial.
+\end{remark}
+
+\subsection{Solution to Additional exercise \ref{exeadd.AoPS262752}}
+
+We shall give two solutions to Additional exercise \ref{exeadd.AoPS262752}.
+The first solution follows the Hint given in the exercise, and illustrates
+both the use of Lemma \ref{lem.polyeq} \textbf{(b)} and of \textquotedblleft
+generating functions\textquotedblright\ (the strategy of proving identities by
+identifying both sides as coefficients in polynomials or power series). The
+second solution is of a more classical nature, using no new methods but a
+tricky application of Theorem \ref{thm.vandermonde}.
+
+The crux of the first solution is the proof of the following lemma (which
+appears in \cite[(5.55)]{GKP}):
+
+\begin{lemma}
+\label{lem.AoPS262752.r}Let $n\in\mathbb{N}$ and $x\in\mathbb{N}$. Then,%
+\[
+\sum_{k=0}^{n}\left(  -1\right)  ^{k}\dbinom{x}{k}\dbinom{x}{n-k}=%
+\begin{cases}
+\left(  -1\right)  ^{n/2}\dbinom{x}{n/2}, & \text{if }n\text{ is even};\\
+0, & \text{if }n\text{ is odd}%
+\end{cases}
+.
+\]
+
+\end{lemma}
+
+Thus, Lemma \ref{lem.AoPS262752.r} is obtained from Additional exercise
+\ref{exeadd.AoPS262752} by substituting a nonnegative integer $x$ for the
+indeterminate $X$. It thus is clear that Lemma \ref{lem.AoPS262752.r} follows
+from Additional exercise \ref{exeadd.AoPS262752}. However, for us, the
+interest lies in the opposite implication: We shall derive Additional exercise
+\ref{exeadd.AoPS262752} from Lemma \ref{lem.AoPS262752.r}. Let us, however,
+prove Lemma \ref{lem.AoPS262752.r} first. But before we do this, let us state
+a version of the binomial theorem:
+
+\begin{proposition}
+\label{prop.AoPS262752.binom}Let $x\in\mathbb{N}$. Then,%
+\[
+\left(  1+X\right)  ^{x}=\sum_{k\in\mathbb{N}}\dbinom{x}{k}X^{k}%
+\]
+(an equality between polynomials in $\mathbb{Z}\left[  X\right]  $). (The sum
+$\sum_{k\in\mathbb{N}}\dbinom{x}{k}X^{k}$ is an infinite sum, but only
+finitely many of its addends are nonzero, so it is well-defined.)
+\end{proposition}
+
+\begin{proof}
+[Proof of Proposition \ref{prop.AoPS262752.binom}.]We have%
+\begin{align*}
+\sum_{k\in\mathbb{N}}\dbinom{x}{k}X^{k}  &  =\underbrace{\sum_{\substack{k\in
+\mathbb{N};\\k\leq x}}}_{=\sum_{k=0}^{x}}\dbinom{x}{k}X^{k}+\sum
+_{\substack{k\in\mathbb{N};\\k>x}}\underbrace{\dbinom{x}{k}}%
+_{\substack{=0\\\text{(by (\ref{eq.binom.0}) (applied to }x\text{ and
+}k\\\text{instead of }m\text{ and }n\text{) (since }x<k\text{ (since
+}k>x\text{)))}}}X^{k}\\
+&  =\sum_{k=0}^{x}\dbinom{x}{k}X^{k}+\underbrace{\sum_{\substack{k\in
+\mathbb{N};\\k>x}}0X^{k}}_{=0}=\sum_{k=0}^{x}\dbinom{x}{k}X^{k}.
+\end{align*}
+Comparing this with
+\begin{align*}
+\left(  \underbrace{1+X}_{=X+1}\right)  ^{x}  &  =\left(  X+1\right)
+^{x}=\sum_{k=0}^{x}\dbinom{x}{k}X^{k}\underbrace{1^{x-k}}_{=1}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by the binomial formula}\right) \\
+&  =\sum_{k=0}^{x}\dbinom{x}{k}X^{k},
+\end{align*}
+we obtain $\left(  1+X\right)  ^{x}=\sum_{k\in\mathbb{N}}\dbinom{x}{k}X^{k}$.
+This proves Proposition \ref{prop.AoPS262752.binom}.
+\end{proof}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.AoPS262752.r}.]Proposition
+\ref{prop.AoPS262752.binom} yields
+\begin{equation}
+\left(  1+X\right)  ^{x}=\sum_{k\in\mathbb{N}}\dbinom{x}{k}X^{k}.
+\label{pf.lem.AoPS262752.r.1}%
+\end{equation}
+Substituting $-X$ for $X$ in this equality, we obtain%
+\[
+\left(  1+\left(  -X\right)  \right)  ^{x}=\sum_{k\in\mathbb{N}}\dbinom{x}%
+{k}\underbrace{\left(  -X\right)  ^{k}}_{=\left(  -1\right)  ^{k}X^{k}}%
+=\sum_{k\in\mathbb{N}}\dbinom{x}{k}\left(  -1\right)  ^{k}X^{k}=\sum
+_{k\in\mathbb{N}}\left(  -1\right)  ^{k}\dbinom{x}{k}X^{k}.
+\]
+Since $1+\left(  -X\right)  =1-X$, this rewrites as%
+\[
+\left(  1-X\right)  ^{x}=\sum_{k\in\mathbb{N}}\left(  -1\right)  ^{k}%
+\dbinom{x}{k}X^{k}.
+\]
+Multiplying this equality with (\ref{pf.lem.AoPS262752.r.1}), we obtain%
+\begin{align*}
+\left(  1-X\right)  ^{x}\left(  1+X\right)  ^{x}  &  =\left(  \sum
+_{k\in\mathbb{N}}\left(  -1\right)  ^{k}\dbinom{x}{k}X^{k}\right)  \left(
+\sum_{k\in\mathbb{N}}\dbinom{x}{k}X^{k}\right) \\
+&  =\sum_{k\in\mathbb{N}}\left(  \sum_{i=0}^{k}\left(  -1\right)  ^{i}%
+\dbinom{x}{i}\dbinom{x}{k-i}\right)  X^{k}%
+\end{align*}
+(according to the definition of the product of two polynomials). Hence,
+\begin{align}
+&  \left(  \text{the coefficient of }X^{n}\text{ in }\left(  1-X\right)
+^{x}\left(  1+X\right)  ^{x}\right) \nonumber\\
+&  =\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{x}{i}\dbinom{x}{n-i}%
+=\sum_{k=0}^{n}\left(  -1\right)  ^{k}\dbinom{x}{k}\dbinom{x}{n-k}
+\label{pf.lem.AoPS262752.r.6}%
+\end{align}
+(here, we have renamed the summation index $i$ as $k$).
+
+On the other hand,%
+\begin{align*}
+\left(  1-X\right)  ^{x}\left(  1+X\right)  ^{x}  &  =\left(
+\underbrace{\left(  1-X\right)  \left(  1+X\right)  }_{=1-X^{2}=1+\left(
+-X\right)  ^{2}}\right)  ^{x}=\left(  1+\left(  -X\right)  ^{2}\right)
+^{x}=\sum_{k\in\mathbb{N}}\dbinom{x}{k}\underbrace{\left(  -X^{2}\right)
+^{k}}_{=\left(  -1\right)  ^{k}\left(  X^{2}\right)  ^{k}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{this follows from substituting }%
+-X^{2}\text{ for }X\text{ in (\ref{pf.lem.AoPS262752.r.1})}\right) \\
+&  =\sum_{k\in\mathbb{N}}\underbrace{\dbinom{x}{k}\left(  -1\right)  ^{k}%
+}_{=\left(  -1\right)  ^{k}\dbinom{x}{k}}\underbrace{\left(  X^{2}\right)
+^{k}}_{=X^{2k}}=\sum_{k\in\mathbb{N}}\left(  -1\right)  ^{k}\dbinom{x}%
+{k}X^{2k}.
+\end{align*}
+Hence,%
+\begin{align*}
+&  \left(  \text{the coefficient of }X^{n}\text{ in }\left(  1-X\right)
+^{x}\left(  1+X\right)  ^{x}\right) \\
+&  =%
+\begin{cases}
+\left(  -1\right)  ^{n/2}\dbinom{x}{n/2}, & \text{if }n\text{ is even};\\
+0, & \text{if }n\text{ is odd}%
+\end{cases}
+.
+\end{align*}
+Comparing this with (\ref{pf.lem.AoPS262752.r.6}), we obtain%
+\[
+\sum_{k=0}^{n}\left(  -1\right)  ^{k}\dbinom{x}{k}\dbinom{x}{n-k}=%
+\begin{cases}
+\left(  -1\right)  ^{n/2}\dbinom{x}{n/2}, & \text{if }n\text{ is even};\\
+0, & \text{if }n\text{ is odd}%
+\end{cases}
+.
+\]
+This proves Lemma \ref{lem.AoPS262752.r}.
+\end{proof}
+
+\begin{proof}
+[First solution to Additional exercise \ref{exeadd.AoPS262752}.]Define two
+polynomials $P$ and $Q$ (with rational coefficients) by%
+\begin{equation}
+P=\sum_{k=0}^{n}\left(  -1\right)  ^{k}\dbinom{X}{k}\dbinom{X}{n-k}
+\label{sol.exeadd.AoPS262752.sol1.P}%
+\end{equation}
+and%
+\begin{equation}
+Q=%
+\begin{cases}
+\left(  -1\right)  ^{n/2}\dbinom{X}{n/2}, & \text{if }n\text{ is even};\\
+0, & \text{if }n\text{ is odd}%
+\end{cases}
+. \label{sol.exeadd.AoPS262752.sol1.Q}%
+\end{equation}
+For every $x\in\mathbb{N}$, we have%
+\begin{align*}
+P\left(  x\right)   &  =\sum_{k=0}^{n}\left(  -1\right)  ^{k}\dbinom{x}%
+{k}\dbinom{x}{n-k}\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of
+}P\right) \\
+&  =%
+\begin{cases}
+\left(  -1\right)  ^{n/2}\dbinom{x}{n/2}, & \text{if }n\text{ is even};\\
+0, & \text{if }n\text{ is odd}%
+\end{cases}
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by Lemma \ref{lem.AoPS262752.r}}\right) \\
+&  =Q\left(  x\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of
+}Q\right)  .
+\end{align*}
+Hence, Lemma \ref{lem.polyeq} \textbf{(b)} shows that $P=Q$. In light of
+(\ref{sol.exeadd.AoPS262752.sol1.P}) and (\ref{sol.exeadd.AoPS262752.sol1.Q}),
+this rewrites as
+\[
+\sum_{k=0}^{n}\left(  -1\right)  ^{k}\dbinom{X}{k}\dbinom{X}{n-k}=%
+\begin{cases}
+\left(  -1\right)  ^{n/2}\dbinom{X}{n/2}, & \text{if }n\text{ is even};\\
+0, & \text{if }n\text{ is odd}%
+\end{cases}
+.
+\]
+This solves Additional exercise \ref{exeadd.AoPS262752}.
+\end{proof}
+
+Now let us prepare for the second solution to Additional exercise
+\ref{exeadd.AoPS262752}. We shall use the following notation (known as
+\href{https://en.wikipedia.org/wiki/Iverson_bracket}{the \textit{Iverson
+bracket}}): If $\mathcal{A}$ is any logical statement, then $\left[
+\mathcal{A}\right]  $ will mean the integer $%
+\begin{cases}
+1, & \text{if }\mathcal{A}\text{ is true};\\
+0, & \text{if }\mathcal{A}\text{ is false}%
+\end{cases}
+$. For example, $\left[  1+1=2\right]  =1$ (since $1+1=2$ is true), whereas
+$\left[  1+1=1\right]  =0$ (since $1+1=1$ is false). Clearly, if $\mathcal{A}$
+and $\mathcal{B}$ are two equivalent logical statements, then $\left[
+\mathcal{A}\right]  =\left[  \mathcal{B}\right]  $.
+
+We notice that every $n\in\mathbb{N}$ satisfies%
+\[
+\left[  n=0\right]  =%
+\begin{cases}
+1, & \text{if }n=0\text{ is true};\\
+0, & \text{if }n=0\text{ is false}%
+\end{cases}
+=%
+\begin{cases}
+1, & \text{if }n=0;\\
+0, & \text{if }n\neq0
+\end{cases}
+=\sum_{k=0}^{n}\left(  -1\right)  ^{k}\dbinom{n}{k}%
+\]
+(by Proposition \ref{prop.binom.bin-id} \textbf{(c)}). In other words, every
+$n\in\mathbb{N}$ satisfies%
+\begin{equation}
+\sum_{k=0}^{n}\left(  -1\right)  ^{k}\dbinom{n}{k}=\left[  n=0\right]  .
+\label{sol.exeadd.AoPS262752.n=0}%
+\end{equation}
+
+
+Next, we state a simple fact:
+
+\begin{lemma}
+\label{lem.exeadd.AoPS262752.1}Let $m\in\mathbb{N}$ and $i\in\mathbb{N}$.
+Then,%
+\[
+\sum_{k=0}^{m}\left(  -1\right)  ^{k}\dbinom{k}{i}\dbinom{m}{k}=\left(
+-1\right)  ^{i}\left[  m=i\right]  .
+\]
+
+\end{lemma}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Lemma \ref{lem.exeadd.AoPS262752.1}.]If $m<i$, then Lemma
+\ref{lem.exeadd.AoPS262752.1} holds\footnote{\textit{Proof.} Assume that
+$m<i$. Then, $m\neq i$. Thus, $\left[  m=i\right]  =0$.
+\par
+But every $k\in\left\{  0,1,\ldots,m\right\}  $ satisfies $k\leq m<i$. Hence,
+every $k\in\left\{  0,1,\ldots,m\right\}  $ satisfies $\dbinom{k}{i}=0$ (by
+(\ref{eq.binom.0}), applied to $k$ and $i$ instead of $m$ and $n$). Now,
+\[
+\sum_{k=0}^{m}\left(  -1\right)  ^{k}\underbrace{\dbinom{k}{i}}_{=0}\dbinom
+{m}{k}=\sum_{k=0}^{m}\left(  -1\right)  ^{k}0\dbinom{m}{k}=0=\left[
+m=i\right]
+\]
+(since $\left[  m=i\right]  =0$). In other words, Lemma
+\ref{lem.exeadd.AoPS262752.1} holds, qed.}. Hence, for the rest of this proof
+of Lemma \ref{lem.exeadd.AoPS262752.1}, we can WLOG assume that we don't have
+$m<i$. Assume this.
+
+We have $m\geq i$ (since we don't have $m<i$). Hence, $m\geq i\geq0$, so that%
+\begin{align}
+&  \sum_{k=0}^{m}\left(  -1\right)  ^{k}\underbrace{\dbinom{k}{i}\dbinom{m}%
+{k}}_{=\dbinom{m}{k}\dbinom{k}{i}}\nonumber\\
+&  =\sum_{k=0}^{m}\left(  -1\right)  ^{k}\dbinom{m}{k}\dbinom{k}{i}\nonumber\\
+&  =\sum_{k=0}^{i-1}\left(  -1\right)  ^{k}\dbinom{m}{k}\underbrace{\dbinom
+{k}{i}}_{\substack{=0\\\text{(by (\ref{eq.binom.0}) (applied to }k\text{ and
+}i\\\text{instead of }m\text{ and }n\text{) (since }k<i\text{))}}}+\sum
+_{k=i}^{m}\left(  -1\right)  ^{k}\underbrace{\dbinom{m}{k}\dbinom{k}{i}%
+}_{\substack{=\dbinom{m}{i}\dbinom{m-i}{k-i}\\\text{(by
+(\ref{eq.binom.trinom-rev.m}) (applied to }k\text{ and }i\\\text{instead of
+}i\text{ and }a\text{) (since }k\geq i\text{))}}}\nonumber\\
+&  =\underbrace{\sum_{k=0}^{i-1}\left(  -1\right)  ^{k}\dbinom{m}{k}0}%
+_{=0}+\sum_{k=i}^{m}\left(  -1\right)  ^{k}\dbinom{m}{i}\dbinom{m-i}{k-i}%
+=\sum_{k=i}^{m}\left(  -1\right)  ^{k}\dbinom{m}{i}\dbinom{m-i}{k-i}%
+\nonumber\\
+&  =\sum_{k=0}^{m-i}\underbrace{\left(  -1\right)  ^{k+i}}_{=\left(
+-1\right)  ^{k}\left(  -1\right)  ^{i}}\dbinom{m}{i}\dbinom{m-i}{k}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }k+i\text{ for
+}k\text{ in the sum}\right) \nonumber\\
+&  =\sum_{k=0}^{m-i}\left(  -1\right)  ^{k}\left(  -1\right)  ^{i}\dbinom
+{m}{i}\dbinom{m-i}{k}=\left(  -1\right)  ^{i}\dbinom{m}{i}\underbrace{\sum
+_{k=0}^{m-i}\left(  -1\right)  ^{k}\dbinom{m-i}{k}}_{\substack{=\left[
+m-i=0\right]  \\\text{(by (\ref{sol.exeadd.AoPS262752.n=0}) (applied to
+}n=m-i\text{))}}}\nonumber\\
+&  =\left(  -1\right)  ^{i}\dbinom{m}{i}\left[  \underbrace{m-i=0}%
+_{\substack{\text{this is equivalent to}\\m=i}}\right]  =\left(  -1\right)
+^{i}\dbinom{m}{i}\left[  m=i\right]  .
+\label{pf.lem.exeadd.AoPS262752.1.short.main}%
+\end{align}
+But it is easy to see that $\dbinom{m}{i}\left[  m=i\right]  =\left[
+m=i\right]  $\ \ \ \ \footnote{\textit{Proof.} We have $\underbrace{\dbinom
+{i}{i}}_{=1}\left[  i=i\right]  =\left[  i=i\right]  $. In other words, the
+equality $\dbinom{m}{i}\left[  m=i\right]  =\left[  m=i\right]  $ holds in the
+case when $m=i$. Therefore, in order to prove this equality, we only need to
+consider the case when $m\neq i$. So assume that $m\neq i$. Then, $\left[
+m=i\right]  =0$, and thus $\dbinom{m}{i}\underbrace{\left[  m=i\right]  }%
+_{=0}=0=\left[  m=i\right]  $, qed.}. Hence,
+(\ref{pf.lem.exeadd.AoPS262752.1.short.main}) becomes%
+\[
+\sum_{k=0}^{m}\left(  -1\right)  ^{k}\dbinom{k}{i}\dbinom{m}{k}=\left(
+-1\right)  ^{i}\underbrace{\dbinom{m}{i}\left[  m=i\right]  }_{=\left[
+m=i\right]  }=\left(  -1\right)  ^{i}\left[  m=i\right]  .
+\]
+This proves Lemma \ref{lem.exeadd.AoPS262752.1}.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Lemma \ref{lem.exeadd.AoPS262752.1}.]If $m<i$, then Lemma
+\ref{lem.exeadd.AoPS262752.1} holds\footnote{\textit{Proof.} Assume that
+$m<i$. Then, $m\neq i$. Hence, the statement $m=i$ is false. Thus, $\left[
+m=i\right]  =0$.
+\par
+But every $k\in\left\{  0,1,\ldots,m\right\}  $ satisfies $k\leq m<i$. Hence,
+every $k\in\left\{  0,1,\ldots,m\right\}  $ satisfies
+\begin{equation}
+\dbinom{k}{i}=0 \label{pf.lem.exeadd.AoPS262752.1.fn1.1}%
+\end{equation}
+(by (\ref{eq.binom.0}), applied to $k$ and $i$ instead of $m$ and $n$). Now,
+\[
+\sum_{k=0}^{m}\left(  -1\right)  ^{k}\underbrace{\dbinom{k}{i}}%
+_{\substack{=0\\\text{(by (\ref{pf.lem.exeadd.AoPS262752.1.fn1.1}))}}%
+}\dbinom{m}{k}=\sum_{k=0}^{m}\left(  -1\right)  ^{k}0\dbinom{m}{k}=0=\left[
+m=i\right]
+\]
+(since $\left[  m=i\right]  =0$). In other words, Lemma
+\ref{lem.exeadd.AoPS262752.1} holds, qed.}. Hence, for the rest of this proof
+of Lemma \ref{lem.exeadd.AoPS262752.1}, we can WLOG assume that we don't have
+$m<i$. Assume this.
+
+We have $m\geq i$ (since we don't have $m<i$). Hence, $m\geq i\geq0$, so that%
+\begin{align}
+&  \sum_{k=0}^{m}\left(  -1\right)  ^{k}\underbrace{\dbinom{k}{i}\dbinom{m}%
+{k}}_{=\dbinom{m}{k}\dbinom{k}{i}}\nonumber\\
+&  =\sum_{k=0}^{m}\left(  -1\right)  ^{k}\dbinom{m}{k}\dbinom{k}{i}\nonumber\\
+&  =\sum_{k=0}^{i-1}\left(  -1\right)  ^{k}\dbinom{m}{k}\underbrace{\dbinom
+{k}{i}}_{\substack{=0\\\text{(by (\ref{eq.binom.0}) (applied to }k\text{ and
+}i\\\text{instead of }m\text{ and }n\text{) (since }k<i\text{))}}}+\sum
+_{k=i}^{m}\left(  -1\right)  ^{k}\underbrace{\dbinom{m}{k}\dbinom{k}{i}%
+}_{\substack{=\dbinom{m}{i}\dbinom{m-i}{k-i}\\\text{(by
+(\ref{eq.binom.trinom-rev.m}) (applied to }k\text{ and }i\\\text{instead of
+}i\text{ and }a\text{) (since }k\geq i\text{))}}}\nonumber\\
+&  =\underbrace{\sum_{k=0}^{i-1}\left(  -1\right)  ^{k}\dbinom{m}{k}0}%
+_{=0}+\sum_{k=i}^{m}\left(  -1\right)  ^{k}\dbinom{m}{i}\dbinom{m-i}{k-i}%
+=\sum_{k=i}^{m}\left(  -1\right)  ^{k}\dbinom{m}{i}\dbinom{m-i}{k-i}%
+\nonumber\\
+&  =\sum_{k=0}^{m-i}\underbrace{\left(  -1\right)  ^{k+i}}_{=\left(
+-1\right)  ^{k}\left(  -1\right)  ^{i}}\dbinom{m}{i}\underbrace{\dbinom
+{m-i}{k+i-i}}_{\substack{=\dbinom{m-i}{k}\\\text{(since }k+i-i=k\text{)}%
+}}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }k+i\text{ for
+}k\text{ in the sum}\right) \nonumber\\
+&  =\sum_{k=0}^{m-i}\left(  -1\right)  ^{k}\left(  -1\right)  ^{i}\dbinom
+{m}{i}\dbinom{m-i}{k}=\left(  -1\right)  ^{i}\dbinom{m}{i}\underbrace{\sum
+_{k=0}^{m-i}\left(  -1\right)  ^{k}\dbinom{m-i}{k}}_{\substack{=\left[
+m-i=0\right]  \\\text{(by (\ref{sol.exeadd.AoPS262752.n=0}) (applied to
+}n=m-i\text{))}}}\nonumber\\
+&  =\left(  -1\right)  ^{i}\dbinom{m}{i}\left[  m-i=0\right]  .
+\label{pf.lem.exeadd.AoPS262752.1.main}%
+\end{align}
+
+
+If $m=i$, then Lemma \ref{lem.exeadd.AoPS262752.1}
+holds\footnote{\textit{Proof.} Assume that $m=i$. Hence, $m-i=0$, so that
+$\left[  m-i=0\right]  =1$. Also, $\left[  m=i\right]  =1$ (since $m=i$).
+Also, from $m=i$, we obtain $\dbinom{m}{i}=\dbinom{i}{i}=1$ (by
+(\ref{eq.binom.mm}), applied to $m=i$). Hence,
+(\ref{pf.lem.exeadd.AoPS262752.1.main}) becomes%
+\[
+\sum_{k=0}^{m}\left(  -1\right)  ^{k}\dbinom{k}{i}\dbinom{m}{k}=\left(
+-1\right)  ^{i}\underbrace{\dbinom{m}{i}}_{=1}\underbrace{\left[
+m-i=0\right]  }_{=1=\left[  m=i\right]  }=\left(  -1\right)  ^{i}\left[
+m=i\right]  .
+\]
+In other words, Lemma \ref{lem.exeadd.AoPS262752.1} holds, qed.}. Hence, for
+the rest of this proof of Lemma \ref{lem.exeadd.AoPS262752.1}, we can WLOG
+assume that we don't have $m=i$. Assume this.
+
+We have $m\neq i$ (since we don't have $m=i$). Hence, $\left[  m=i\right]
+=0$, so that $\left(  -1\right)  ^{i}\underbrace{\left[  m=i\right]  }_{=0}%
+=0$. Also, $m-i\neq0$ (since $m\neq i$) and thus $\left[  m-i=0\right]  =0$.
+Now, (\ref{pf.lem.exeadd.AoPS262752.1.main}) becomes%
+\[
+\sum_{k=0}^{m}\left(  -1\right)  ^{k}\dbinom{k}{i}\dbinom{m}{k}=\left(
+-1\right)  ^{i}\dbinom{m}{i}\underbrace{\left[  m-i=0\right]  }_{=0}=0=\left(
+-1\right)  ^{i}\left[  m=i\right]
+\]
+(since $\left(  -1\right)  ^{i}\left[  m=i\right]  =0$). This proves Lemma
+\ref{lem.exeadd.AoPS262752.1}.
+\end{proof}
+\end{verlong}
+
+Now, we are ready to solve Additional exercise \ref{exeadd.AoPS262752} again:
+
+\begin{proof}
+[Second solution to Additional exercise \ref{exeadd.AoPS262752}.]Let
+$g\in\left\{  0,1,\ldots,n\right\}  $ be arbitrary. Then, Theorem
+\ref{thm.vandermonde} (applied to $n-g$ instead of $n$) yields%
+\[
+\dbinom{X+Y}{n-g}=\sum_{k=0}^{n-g}\dbinom{X}{k}\dbinom{Y}{n-g-k}%
+\]
+(an equality between two polynomials in $X$ and $Y$). Substituting $g$ and
+$X-g$ for $X$ and $Y$ in this equality, we obtain%
+\[
+\dbinom{g+\left(  X-g\right)  }{n-g}=\sum_{k=0}^{n-g}\dbinom{g}{k}\dbinom
+{X-g}{n-g-k}=\sum_{i=0}^{n-g}\dbinom{g}{i}\dbinom{X-g}{n-g-i}%
+\]
+(here, we have renamed the summation index $k$ as $i$). Since $g+\left(
+X-g\right)  =X$, this rewrites as
+\begin{equation}
+\dbinom{X}{n-g}=\sum_{i=0}^{n-g}\dbinom{g}{i}\dbinom{X-g}{n-g-i}.
+\label{sol.exeadd.AoPS262752.sol2.1}%
+\end{equation}
+
+
+Now, let us forget that we fixed $g$. We thus have shown that
+(\ref{sol.exeadd.AoPS262752.sol2.1}) holds for every $g\in\left\{
+0,1,\ldots,n\right\}  $.
+
+On the other hand, for every $k\in\mathbb{N}$ and $i\in\mathbb{N}$ satisfying
+$k+i\leq n$, we have%
+\begin{equation}
+\dbinom{X}{k}\dbinom{X-k}{n-k-i}=\dbinom{X}{n-i}\dbinom{n-i}{k}
+\label{sol.exeadd.AoPS262752.sol2.3}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.exeadd.AoPS262752.sol2.3}):} Let
+$k\in\mathbb{N}$ and $i\in\mathbb{N}$ be such that $k+i\leq n$. From $k+i\leq
+n$, we obtain $n-i\geq k$. Thus, $n-i\geq k\geq0$, so that $n-i\in\mathbb{N}$.
+Hence, (\ref{eq.binom.trinom-rev}) (applied to $n-i$ and $k$ instead of $i$
+and $a$) shows that
+\[
+\dbinom{X}{n-i}\dbinom{n-i}{k}=\dbinom{X}{k}\dbinom{X-k}{\left(  n-i\right)
+-k}=\dbinom{X}{k}\dbinom{X-k}{n-k-i}%
+\]
+(since $\left(  n-i\right)  -k=n-k-i$). This proves
+(\ref{sol.exeadd.AoPS262752.sol2.3}).}.
+
+Now,%
+\begin{align}
+&  \sum_{k=0}^{n}\left(  -1\right)  ^{k}\dbinom{X}{k}\underbrace{\dbinom
+{X}{n-k}}_{\substack{=\sum_{i=0}^{n-k}\dbinom{k}{i}\dbinom{X-k}{n-k-i}%
+\\\text{(by (\ref{sol.exeadd.AoPS262752.sol2.1}) (applied to }g=k\text{))}%
+}}\nonumber\\
+&  =\sum_{k=0}^{n}\left(  -1\right)  ^{k}\dbinom{X}{k}\left(  \sum_{i=0}%
+^{n-k}\dbinom{k}{i}\dbinom{X-k}{n-k-i}\right)  \nonumber\\
+&  =\underbrace{\sum_{k=0}^{n}\sum_{i=0}^{n-k}}_{\substack{=\sum
+_{\substack{\left(  k,i\right)  \in\mathbb{N}^{2};\\k\leq n;\ i\leq n-k}%
+}=\sum_{\substack{\left(  k,i\right)  \in\mathbb{N}^{2};\\k\leq n;\ k+i\leq
+n}}\\\text{(since the condition }i\leq n-k\text{ is equivalent to }k+i\leq
+n\text{)}}}\left(  -1\right)  ^{k}\underbrace{\dbinom{X}{k}\dbinom{k}{i}%
+}_{=\dbinom{k}{i}\dbinom{X}{k}}\dbinom{X-k}{n-k-i}\nonumber\\
+&  =\underbrace{\sum_{\substack{\left(  k,i\right)  \in\mathbb{N}^{2};\\k\leq
+n;\ k+i\leq n}}}_{\substack{=\sum_{\substack{\left(  k,i\right)  \in
+\mathbb{N}^{2};\\k+i\leq n}}\\\text{(since the condition }\left(  k\leq
+n\text{ and }k+i\leq n\right)  \text{ is equivalent to }k+i\leq
+n\\\text{(because the condition }k\leq n\text{ follows from }k+i\leq
+n\text{))}}}\left(  -1\right)  ^{k}\dbinom{k}{i}\underbrace{\dbinom{X}%
+{k}\dbinom{X-k}{n-k-i}}_{\substack{=\dbinom{X}{n-i}\dbinom{n-i}{k}\\\text{(by
+(\ref{sol.exeadd.AoPS262752.sol2.3}))}}}\nonumber\\
+&  =\underbrace{\sum_{\substack{\left(  k,i\right)  \in\mathbb{N}%
+^{2};\\k+i\leq n}}}_{\substack{=\sum_{\substack{\left(  k,i\right)
+\in\mathbb{N}^{2};\\i\leq n;\ k+i\leq n}}\\\text{(since the condition }k+i\leq
+n\text{ is equivalent to }\left(  i\leq n\text{ and }k+i\leq n\right)
+\\\text{(because the condition }i\leq n\text{ follows from }k+i\leq
+n\text{))}}}\left(  -1\right)  ^{k}\dbinom{k}{i}\dbinom{X}{n-i}\dbinom{n-i}%
+{k}\nonumber
+\end{align}%
+\begin{align}
+&  =\underbrace{\sum_{\substack{\left(  k,i\right)  \in\mathbb{N}^{2};\\i\leq
+n;\ k+i\leq n}}}_{\substack{=\sum_{\substack{\left(  i,k\right)  \in
+\mathbb{N}^{2};\\i\leq n;\ k+i\leq n}}=\sum_{\substack{\left(  i,k\right)
+\in\mathbb{N}^{2};\\i\leq n;\ k\leq n-i}}\\\text{(since the condition }k+i\leq
+n\text{ is equivalent to }k\leq n-i\text{)}}}\left(  -1\right)  ^{k}\dbinom
+{k}{i}\dbinom{X}{n-i}\dbinom{n-i}{k}\nonumber\\
+&  =\underbrace{\sum_{\substack{\left(  i,k\right)  \in\mathbb{N}^{2};\\i\leq
+n;\ k\leq n-i}}}_{=\sum_{i=0}^{n}\sum_{k=0}^{n-i}}\left(  -1\right)
+^{k}\dbinom{k}{i}\dbinom{X}{n-i}\dbinom{n-i}{k}\nonumber\\
+&  =\sum_{i=0}^{n}\sum_{k=0}^{n-i}\left(  -1\right)  ^{k}\dbinom{k}{i}%
+\dbinom{X}{n-i}\dbinom{n-i}{k}=\underbrace{\sum_{i=0}^{n}}_{=\sum
+_{i\in\left\{  0,1,\ldots,n\right\}  }}\dbinom{X}{n-i}\underbrace{\sum
+_{k=0}^{n-i}\left(  -1\right)  ^{k}\dbinom{k}{i}\dbinom{n-i}{k}}%
+_{\substack{=\left(  -1\right)  ^{i}\left[  n-i=i\right]  \\\text{(by Lemma
+\ref{lem.exeadd.AoPS262752.1}}\\\text{(applied to }m=n-i\text{))}}}\nonumber\\
+&  =\sum_{i\in\left\{  0,1,\ldots,n\right\}  }\dbinom{X}{n-i}\left(
+-1\right)  ^{i}\left[  \underbrace{n-i=i}_{\text{this is equivalent to }%
+n=2i}\right]  =\sum_{i\in\left\{  0,1,\ldots,n\right\}  }\dbinom{X}%
+{n-i}\left(  -1\right)  ^{i}\left[  \underbrace{n=2i}_{\text{this is
+equivalent to }i=n/2}\right]  \nonumber
+\end{align}%
+\begin{align}
+&  =\sum_{i\in\left\{  0,1,\ldots,n\right\}  }\dbinom{X}{n-i}\left(
+-1\right)  ^{i}\left[  i=n/2\right]  \nonumber\\
+&  =\sum_{\substack{i\in\left\{  0,1,\ldots,n\right\}  ;\\i=n/2}}\dbinom
+{X}{n-i}\left(  -1\right)  ^{i}\underbrace{\left[  i=n/2\right]
+}_{\substack{=1\\\text{(since }n/2\neq i\text{)}}}+\sum_{\substack{i\in
+\left\{  0,1,\ldots,n\right\}  ;\\n/2\neq i}}\dbinom{X}{n-i}\left(  -1\right)
+^{i}\underbrace{\left[  i=n/2\right]  }_{\substack{=0\\\text{(since }i\neq
+n/2\text{)}}}\nonumber\\
+&  =\sum_{\substack{i\in\left\{  0,1,\ldots,n\right\}  ;\\i=n/2}}\dbinom
+{X}{n-i}\left(  -1\right)  ^{i}+\underbrace{\sum_{\substack{i\in\left\{
+0,1,\ldots,n\right\}  ;\\i\neq n/2}}\dbinom{X}{n-i}\left(  -1\right)  ^{i}%
+0}_{=0}\nonumber\\
+&  =\sum_{\substack{i\in\left\{  0,1,\ldots,n\right\}  ;\\i=n/2}}\dbinom
+{X}{n-i}\left(  -1\right)  ^{i}.\label{sol.exeadd.AoPS262752.sol2.6}%
+\end{align}
+
+
+We must be in one of the following two cases:
+
+\textit{Case 1:} The number $n$ is even.
+
+\textit{Case 2:} The number $n$ is odd.
+
+Let us first consider Case 1. In this case, the number $n$ is even. Hence,
+\begin{equation}%
+\begin{cases}
+\left(  -1\right)  ^{n/2}\dbinom{X}{n/2}, & \text{if }n\text{ is even};\\
+0, & \text{if }n\text{ is odd}%
+\end{cases}
+=\left(  -1\right)  ^{n/2}\dbinom{X}{n/2}.
+\label{sol.exeadd.AoPS262752.sol2.case1.1}%
+\end{equation}
+
+
+On the other hand, $n/2\in\mathbb{Z}$ (since $n$ is even). Combined with
+$n/2\geq0$ (since $n\geq0$) and $n/2\leq n$ (for the same reason), this shows
+that $n/2\in\left\{  0,1,\ldots,n\right\}  $. Now,
+(\ref{sol.exeadd.AoPS262752.sol2.6}) becomes%
+\begin{align*}
+&  \sum_{k=0}^{n}\left(  -1\right)  ^{k}\dbinom{X}{k}\dbinom{X}{n-k}\\
+&  =\sum_{\substack{i\in\left\{  0,1,\ldots,n\right\}  ;\\i=n/2}}\dbinom
+{X}{n-i}\left(  -1\right)  ^{i}=\dbinom{X}{n-n/2}\left(  -1\right)
+^{n/2}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }n/2\in\left\{  0,1,\ldots
+,n\right\}  \right) \\
+&  =\left(  -1\right)  ^{n/2}\dbinom{X}{n-n/2}=\left(  -1\right)
+^{n/2}\dbinom{X}{n/2}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }n-n/2=n/2\right)
+\\
+&  =%
+\begin{cases}
+\left(  -1\right)  ^{n/2}\dbinom{X}{n/2}, & \text{if }n\text{ is even};\\
+0, & \text{if }n\text{ is odd}%
+\end{cases}
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{sol.exeadd.AoPS262752.sol2.case1.1}%
+)}\right)  .
+\end{align*}
+Thus, Additional exercise \ref{exeadd.AoPS262752} is solved in Case 1.
+
+Let us now consider Case 2. In this case, the number $n$ is odd. Hence,
+\begin{equation}%
+\begin{cases}
+\left(  -1\right)  ^{n/2}\dbinom{X}{n/2}, & \text{if }n\text{ is even};\\
+0, & \text{if }n\text{ is odd}%
+\end{cases}
+=0. \label{sol.exeadd.AoPS262752.sol2.case1.2}%
+\end{equation}
+
+
+On the other hand, $n/2\notin\mathbb{Z}$ (since $n$ is odd). Hence,
+$n/2\notin\left\{  0,1,\ldots,n\right\}  $ (since $\left\{  0,1,\ldots
+,n\right\}  \subseteq\mathbb{Z}$). Now, (\ref{sol.exeadd.AoPS262752.sol2.6})
+becomes%
+\begin{align*}
+&  \sum_{k=0}^{n}\left(  -1\right)  ^{k}\dbinom{X}{k}\dbinom{X}{n-k}\\
+&  =\sum_{\substack{i\in\left\{  0,1,\ldots,n\right\}  ;\\i=n/2}}\dbinom
+{X}{n-i}\left(  -1\right)  ^{i}=\left(  \text{empty sum}\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }n/2\notin\left\{  0,1,\ldots
+,n\right\}  \right) \\
+&  =0=%
+\begin{cases}
+\left(  -1\right)  ^{n/2}\dbinom{X}{n/2}, & \text{if }n\text{ is even};\\
+0, & \text{if }n\text{ is odd}%
+\end{cases}
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{sol.exeadd.AoPS262752.sol2.case1.1}%
+)}\right)  .
+\end{align*}
+Thus, Additional exercise \ref{exeadd.AoPS262752} is solved in Case 2.
+
+We have now solved Additional exercise \ref{exeadd.AoPS262752} in both Cases 1
+and 2. Since these two Cases cover all possibilities, this shows that
+Additional exercise \ref{exeadd.AoPS262752} always holds.
+\end{proof}
+
+Let us record a classical result which follows from Additional exercise
+\ref{exeadd.AoPS262752}:
+
+\begin{corollary}
+\label{cor.AoPS262752.X=n}Let $n\in\mathbb{N}$. Then,%
+\[
+\sum_{k=0}^{n}\left(  -1\right)  ^{k}\dbinom{n}{k}^{2}=%
+\begin{cases}
+\left(  -1\right)  ^{n/2}\dbinom{n}{n/2}, & \text{if }n\text{ is even};\\
+0, & \text{if }n\text{ is odd}%
+\end{cases}
+.
+\]
+
+\end{corollary}
+
+\begin{proof}
+[Proof of Corollary \ref{cor.AoPS262752.X=n}.]Additional exercise
+\ref{exeadd.AoPS262752} shows that%
+\[
+\sum_{k=0}^{n}\left(  -1\right)  ^{k}\dbinom{X}{k}\dbinom{X}{n-k}=%
+\begin{cases}
+\left(  -1\right)  ^{n/2}\dbinom{X}{n/2}, & \text{if }n\text{ is even};\\
+0, & \text{if }n\text{ is odd}%
+\end{cases}
+.
+\]
+Substituting $n$ for $X$ in this equality, we obtain%
+\[
+\sum_{k=0}^{n}\left(  -1\right)  ^{k}\dbinom{n}{k}\dbinom{n}{n-k}=%
+\begin{cases}
+\left(  -1\right)  ^{n/2}\dbinom{n}{n/2}, & \text{if }n\text{ is even};\\
+0, & \text{if }n\text{ is odd}%
+\end{cases}
+.
+\]
+Now,%
+\begin{align*}
+\sum_{k=0}^{n}\left(  -1\right)  ^{k}\underbrace{\dbinom{n}{k}^{2}}%
+_{=\dbinom{n}{k}\dbinom{n}{k}}  &  =\sum_{k=0}^{n}\left(  -1\right)
+^{k}\dbinom{n}{k}\underbrace{\dbinom{n}{k}}_{\substack{=\dbinom{n}%
+{n-k}\\\text{(by (\ref{eq.binom.symm}) (applied to }n\text{ and }%
+k\\\text{instead of }m\text{ and }n\text{))}}}\\
+&  =\sum_{k=0}^{n}\left(  -1\right)  ^{k}\dbinom{n}{k}\dbinom{n}{n-k}=%
+\begin{cases}
+\left(  -1\right)  ^{n/2}\dbinom{n}{n/2}, & \text{if }n\text{ is even};\\
+0, & \text{if }n\text{ is odd}%
+\end{cases}
+.
+\end{align*}
+This proves Corollary \ref{cor.AoPS262752.X=n}.
+\end{proof}
+
 \subsection{Solution to Exercise \ref{exe.ps2.2.1}}
 
 \begin{proof}
@@ -25730,7 +26469,7 @@ bracket}}): If $\mathcal{A}$ is any logical statement, then $\left[
 \mathcal{A}\right]  $ will mean the integer $%
 \begin{cases}
 1, & \text{if }\mathcal{A}\text{ is true};\\
-0, & \text{if }\mathcal{A}\text{ is false}.
+0, & \text{if }\mathcal{A}\text{ is false}%
 \end{cases}
 $. For example, $\left[  1+1=2\right]  =1$ (since $1+1=2$ is true), whereas
 $\left[  1+1=1\right]  =0$ (since $1+1=1$ is false). Clearly, if $\mathcal{A}$
