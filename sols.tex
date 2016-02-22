@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, January 08, 2016 18:01:52}
+%TCIDATA{LastRevised=Sunday, February 21, 2016 19:35:15}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -6151,7 +6151,7 @@ $, then%
 ,i_{1},i_{2},\ldots,i_{k-1}}.
 \]
 (In less formal words: The $k$-cycle $\operatorname*{cyc}\nolimits_{i_{1}%
-,i_{2},\ldots,i_{k}}$ does not change when we can cyclically rotate the list
+,i_{2},\ldots,i_{k}}$ does not change when we cyclically rotate the list
 $\left(  i_{1},i_{2},\ldots,i_{k}\right)  $.)
 \end{example}
 
@@ -6217,7 +6217,7 @@ $k$-cycle need not be $k-1$. Exercise \ref{exe.perm.cycles} \textbf{(c)} shows
 that this length is always $\geq k-1$, but it can take other values as well.
 For instance, in $S_{4}$, the length of the $3$-cycle $\operatorname*{cyc}%
 \nolimits_{1,4,3}$ is $4$. (Another example are the transpositions $t_{i,j}$
-from Definition \ref{def.transpos}; these are $2$-cycle but can have length
+from Definition \ref{def.transpos}; these are $2$-cycles but can have length
 $>1$.)
 
 I don't know a simple way to describe when equality holds in Exercise
@@ -6994,11 +6994,14 @@ following identities hold:%
 \begin{align}
 -\left(  a+b\right)   &  =\left(  -a\right)  +\left(  -b\right)
 \ \ \ \ \ \ \ \ \ \ \text{for }a,b\in\mathbb{K};\label{eq.rings.-(a+b)}\\
+-\left(  -a\right)   &  =a\ \ \ \ \ \ \ \ \ \ \text{for }a\in\mathbb{K}%
+;\label{eq.rings.-(-a)}\\
 -\left(  ab\right)   &  =\left(  -a\right)  b=a\left(  -b\right)
 \ \ \ \ \ \ \ \ \ \ \text{for }a,b\in\mathbb{K};\label{eq.rings.-(ab)}\\
--\left(  na\right)   &  =\left(  -n\right)  a\ \ \ \ \ \ \ \ \ \ \text{for
-}a\in\mathbb{K}\text{ and }n\in\mathbb{Z};\label{eq.rings.-(na)}\\
-n\left(  ab\right)   &  =\left(  na\right)  b=n\left(  ab\right)
+-\left(  na\right)   &  =\left(  -n\right)  a=n\left(  -a\right)
+\ \ \ \ \ \ \ \ \ \ \text{for }a\in\mathbb{K}\text{ and }n\in\mathbb{Z}%
+;\label{eq.rings.-(na)}\\
+n\left(  ab\right)   &  =\left(  na\right)  b=a\left(  nb\right)
 \ \ \ \ \ \ \ \ \ \ \text{for }a,b\in\mathbb{K}\text{ and }n\in\mathbb{Z}%
 ;\label{eq.rings.nab}\\
 \left(  nm\right)  a  &  =n\left(  ma\right)  \ \ \ \ \ \ \ \ \ \ \text{for
@@ -14485,6 +14488,7 @@ to the parts of matrix theory which work over any commutative ring.
 Nevertheless, let us comment on how determinants can be computed fast when
 $\mathbb{K}$ is a field.
 
+\Needspace{30\baselineskip}
 \begin{remark}
 \label{rmk.laplace.pre.gauss-alg}Assume that $\mathbb{K}$ is a field. If $A$
 is an $n\times n$-matrix over $\mathbb{K}$, then the determinant of $A$ can be
@@ -19088,7 +19092,7 @@ it asserts that $\mathcal{U}\Longleftrightarrow\mathcal{V}$ for two statements
 $\mathcal{U}$ and $\mathcal{V}$. (In our case, $\mathcal{U}$ is the statement
 \textquotedblleft the matrix $A$ is invertible\textquotedblright, and
 $\mathcal{V}$ is the statement \textquotedblleft the element $\det A$ of
-$\mathbb{K}$ is invertible (in $\mathbb{K}$)\textquotedblright. In order to
+$\mathbb{K}$ is invertible (in $\mathbb{K}$)\textquotedblright.) In order to
 prove a statement of the form $\mathcal{U}\Longleftrightarrow\mathcal{V}$, it
 is sufficient to prove the implications $\mathcal{U}\Longrightarrow
 \mathcal{V}$ and $\mathcal{U}\Longleftarrow\mathcal{V}$. Usually, these two
@@ -19361,16 +19365,16 @@ for any $n\in\mathbb{Z}$ and $a\in\mathbb{L}$ (in the same way as we defined
 $na$ for $n\in\mathbb{Z}$ and $a\in\mathbb{K}$ when $\mathbb{K}$ was a
 commutative ring). We can still define $a^{n}$ for any $n\in\mathbb{N}$ and
 $a\in\mathbb{L}$ (again, in the same fashion as for commutative rings). The
-identities (\ref{eq.rings.-(a+b)}), (\ref{eq.rings.-(ab)}),
-(\ref{eq.rings.-(na)}), (\ref{eq.rings.nab}), (\ref{eq.rings.nma}),
-(\ref{eq.rings.0**n}) and (\ref{eq.rings.a**(n+m)}) still hold when the
-commutative ring $\mathbb{K}$ is replaced by the noncommutative ring
-$\mathbb{L}$; but the identities (\ref{eq.rings.-(ab)**n}) and
-(\ref{eq.rings.(a+b)**n}) may not (although they \textbf{do} hold if we
+identities (\ref{eq.rings.-(a+b)}), (\ref{eq.rings.-(-a)}),
+(\ref{eq.rings.-(ab)}), (\ref{eq.rings.-(na)}), (\ref{eq.rings.nab}),
+(\ref{eq.rings.nma}), (\ref{eq.rings.0**n}) and (\ref{eq.rings.a**(n+m)})
+still hold when the commutative ring $\mathbb{K}$ is replaced by the
+noncommutative ring $\mathbb{L}$; but the identities (\ref{eq.rings.-(ab)**n})
+and (\ref{eq.rings.(a+b)**n}) may not (although they \textbf{do} hold if we
 additionally assume that $ab=ba$). Finite sums such as $\sum_{s\in S}a_{s}$
 (where $S$ is a finite set, and $a_{s}\in\mathbb{L}$ for every $s\in S$) are
 well-defined, but finite products such as $\prod_{s\in S}a_{s}$ are not
-(unless we specify the order in which its factors are to be multiplied).
+(unless we specify the order in which their factors are to be multiplied).
 
 We can define matrices over $\mathbb{L}$ in the same way as we have defined
 matrices over $\mathbb{K}$. We can even define the determinant of a square
