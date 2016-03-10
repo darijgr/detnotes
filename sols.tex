@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Sunday, February 21, 2016 19:35:15}
+%TCIDATA{LastRevised=Thursday, March 10, 2016 16:47:30}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -14489,6 +14489,7 @@ Nevertheless, let us comment on how determinants can be computed fast when
 $\mathbb{K}$ is a field.
 
 \Needspace{30\baselineskip}
+
 \begin{remark}
 \label{rmk.laplace.pre.gauss-alg}Assume that $\mathbb{K}$ is a field. If $A$
 is an $n\times n$-matrix over $\mathbb{K}$, then the determinant of $A$ can be
@@ -35103,7 +35104,7 @@ $i$ (since $\sigma\left(  i+1\right)  \neq i$) and cannot be $i+1$ either
 i\right)  $, which would contradict the injectivity of $\sigma$). Hence,
 $\sigma\left(  i+1\right)  $ must be $i+2$. In other words, $\sigma\left(
 i+1\right)  =i+2$. Moreover, the injectivity of $\sigma$ shows that
-$\sigma\left(  i+2\right)  \neq\sigma\left(  i\right)  =i+2$, so that $i+1$ is
+$\sigma\left(  i+2\right)  \neq\sigma\left(  i\right)  =i+1$, so that $i+1$ is
 evil. But this contradicts the fact that $i+1$ is not evil. Thus, Observation
 1 is proven.
 
@@ -35172,9 +35173,9 @@ lacunar, so that $k-1\in I$ entails $k\notin I$; thus, $k\notin
 I=\operatorname*{Exced}\sigma$, so that $k$ is not an excedance of $\sigma$.
 In other words, $\sigma\left(  k\right)  \leq k$. Combined with $\sigma\left(
 k\right)  \neq k$, this yields $\sigma\left(  k\right)  <k$. Since $\left\vert
-\sigma\left(  k\right)  -k\right\vert \leq1$ (because $\sigma$ is lacunary),
-this shows that $\sigma\left(  k\right)  =k-1$. On the other hand, $\tau
-_{I}\left(  k\right)  =k-1$ by the definition of $\tau_{I}$. Thus,
+\sigma\left(  k\right)  -k\right\vert \leq1$ (because $\sigma$ is
+short-legged), this shows that $\sigma\left(  k\right)  =k-1$. On the other
+hand, $\tau_{I}\left(  k\right)  =k-1$ by the definition of $\tau_{I}$. Thus,
 $\sigma\left(  k\right)  =k-1=\tau_{I}\left(  k\right)  $. Hence,
 $\sigma\left(  k\right)  =\tau_{I}\left(  k\right)  $ is proven in Case 2.
 
@@ -35184,11 +35185,12 @@ the contrary. Thus, $\sigma\left(  k\right)  \neq k$. As in Case 2, we can use
 this (and $k\notin I$) to show that $\sigma\left(  k\right)  =k-1$.
 Observation 2 thus shows that $\sigma\left(  k-1\right)  =k>k-1$, so that
 $k-1$ is an excedance of $\sigma$. In other words, $k-1\in
-\operatorname*{Exced}\sigma=I$. This contradicts the assumption that $k-1\in
-I$. This contradiction concludes our proof of $\sigma\left(  k\right)  =k$. On
-the other hand, $\tau_{I}\left(  k\right)  =k$ by the definition of $\tau_{I}%
-$. Thus, $\sigma\left(  k\right)  =k=\tau_{I}\left(  k\right)  $. Hence,
-$\sigma\left(  k\right)  =\tau_{I}\left(  k\right)  $ is proven in Case 3.
+\operatorname*{Exced}\sigma=I$. This contradicts the assumption that we do not
+have $k-1\in I$. This contradiction concludes our proof of $\sigma\left(
+k\right)  =k$. On the other hand, $\tau_{I}\left(  k\right)  =k$ by the
+definition of $\tau_{I}$. Thus, $\sigma\left(  k\right)  =k=\tau_{I}\left(
+k\right)  $. Hence, $\sigma\left(  k\right)  =\tau_{I}\left(  k\right)  $ is
+proven in Case 3.
 \end{itemize}
 
 We now have shown that $\sigma\left(  k\right)  =\tau_{I}\left(  k\right)  $
@@ -36501,7 +36503,7 @@ A & B\\
 A & B\\
 0_{0\times n} & D
 \end{array}
-\right)  =\det A$. Compared with $\det D=1$ (since $D$ is a $0\times
+\right)  =\det A$. Combined with $\det D=1$ (since $D$ is a $0\times
 0$-matrix), this yields $\det\left(
 \begin{array}
 [c]{cc}%
@@ -37499,7 +37501,7 @@ rewrites as $\det\left(  U_{\sim\left(  n+M\right)  ,\sim\left(  n+q\right)
 
 Furthermore, for every $q\in\left\{  1,2,\ldots,n\right\}  $, we have%
 \begin{equation}
-u_{n+M,q}=0 \label{sol.block2x2.tridet.indstep.u=0}%
+u_{n+M,q}=0\label{sol.block2x2.tridet.indstep.u=0}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{sol.block2x2.tridet.indstep.u=0}):} Let
 $q\in\left\{  1,2,\ldots,n\right\}  $. Thus, $q\leq n$. Also,
@@ -37519,7 +37521,7 @@ d_{n+M-n,q-n}, & \text{if }n+M>n\text{ and }q>n
 (\ref{sol.block2x2.tridet.indstep.u=0}).}. On the other hand, for every
 $q\in\left\{  1,2,\ldots,M\right\}  $, we have%
 \begin{equation}
-u_{n+M,n+q}=d_{M,q} \label{sol.block2x2.tridet.indstep.u=d}%
+u_{n+M,n+q}=d_{M,q}\label{sol.block2x2.tridet.indstep.u=d}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{sol.block2x2.tridet.indstep.u=d}):} Let
 $q\in\left\{  1,2,\ldots,M\right\}  $. Thus, $q>0$, so that $n+\underbrace{q}%
@@ -37527,7 +37529,7 @@ _{>0}>n$. Also, $n+\underbrace{M}_{>0}>n$. Now,
 (\ref{sol.block2x2.tridet.indstep.minor.pf.1}) (applied to $\left(
 i,j\right)  =\left(  n+M,n+q\right)  $) yields%
 \begin{align*}
-u_{n+M,n+q}  &  =%
+u_{n+M,n+q} &  =%
 \begin{cases}
 a_{n+M,n+q} & \text{if }n+M\leq n\text{ and }n+q\leq n;\\
 b_{n+M,n+q-n}, & \text{if }n+M\leq n\text{ and }n+q>n;\\
@@ -37536,8 +37538,8 @@ d_{n+M-n,n+q-n}, & \text{if }n+M>n\text{ and }n+q>n
 \end{cases}
 \\
 &  =d_{n+M-n,n+q-n}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }n+M>n\text{ and
-}n+q>n\right) \\
-&  =d_{M,q}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }n+M-n=m\text{ and
+}n+q>n\right)  \\
+&  =d_{M,q}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }n+M-n=M\text{ and
 }n+q-n=q\right)  ,
 \end{align*}
 This proves (\ref{sol.block2x2.tridet.indstep.u=d}).}.
