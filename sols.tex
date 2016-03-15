@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, March 10, 2016 16:47:30}
+%TCIDATA{LastRevised=Tuesday, March 15, 2016 16:20:17}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -31542,8 +31542,8 @@ proven the equality (\ref{sol.vander-det.xi+yj.short.a.almost}) for every
 $m\in\left\{  0,1,\ldots,n-1\right\}  $. Thus, we can apply this equality to
 $m=n-1$. As a result, we obtain
 \begin{align*}
-&  \det\left(  \left(  \left(  x_{i}+y_{j}\right)  ^{m}\right)  _{1\leq i\leq
-n,\ 1\leq j\leq n}\right) \\
+&  \det\left(  \left(  \left(  x_{i}+y_{j}\right)  ^{n-1}\right)  _{1\leq
+i\leq n,\ 1\leq j\leq n}\right) \\
 &  =\underbrace{\delta_{n-1,n-1}^{n}}_{=1}\left(  \prod_{k=0}^{n-1}%
 \dbinom{n-1}{k}\right)  \left(  \prod_{1\leq i<j\leq n}\left(  x_{i}%
 -x_{j}\right)  \right)  \left(  \prod_{1\leq i<j\leq n}\left(  y_{j}%
@@ -31916,8 +31916,8 @@ proven the equality (\ref{sol.vander-det.xi+yj.a.almost}) for every
 $m\in\left\{  0,1,\ldots,n-1\right\}  $. Thus, we can apply this equality to
 $m=n-1$. As a result, we obtain
 \begin{align*}
-&  \det\left(  \left(  \left(  x_{i}+y_{j}\right)  ^{m}\right)  _{1\leq i\leq
-n,\ 1\leq j\leq n}\right) \\
+&  \det\left(  \left(  \left(  x_{i}+y_{j}\right)  ^{n-1}\right)  _{1\leq
+i\leq n,\ 1\leq j\leq n}\right) \\
 &  =\underbrace{\delta_{n-1,n-1}^{n}}_{=1}\left(  \prod_{k=0}^{n-1}%
 \dbinom{n-1}{k}\right)  \left(  \prod_{1\leq i<j\leq n}\left(  x_{i}%
 -x_{j}\right)  \right)  \left(  \prod_{1\leq i<j\leq n}\left(  y_{j}%
@@ -34914,9 +34914,9 @@ depend on whether the permutation $\sigma$ is short-legged or not:
 not short-legged. Thus, there exists a $k\in\left\{  1,2,\ldots,n\right\}  $
 satisfying $\left\vert \sigma\left(  k\right)  -k\right\vert >1$. The factor
 $a_{k,\sigma\left(  k\right)  }$ corresponding to this $k$ must be $0$
-(because of (\ref{sol.tridiag.fib.sol2.locality})); this which forces the
-whole product $\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }$ to become $0$.
-Thus, (\ref{sol.tridiag.fib.sol2.term1}) follows.
+(because of (\ref{sol.tridiag.fib.sol2.locality})); this forces the whole
+product $\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }$ to become $0$. Thus,
+(\ref{sol.tridiag.fib.sol2.term1}) follows.
 
 \item If a permutation $\sigma\in S_{n}$ is short-legged, then%
 \begin{equation}
@@ -34981,23 +34981,23 @@ thus, (\ref{sol.tridiag.fib.sol2.term2}) is proven.
 
 Now, (\ref{eq.det.eq.2}) becomes%
 \begin{align}
-\det A  &  =\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\prod_{i=1}%
+\det A &  =\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\prod_{i=1}%
 ^{n}a_{i,\sigma\left(  i\right)  }\nonumber\\
-&  =\sum_{\substack{\sigma\in S_{n};\\\sigma\text{ is short-legged}}}\left(
--1\right)  ^{\sigma}\underbrace{\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }%
-}_{\substack{=0\\\text{(by (\ref{sol.tridiag.fib.sol2.term1}))}}%
-}+\sum_{\substack{\sigma\in S_{n};\\\sigma\text{ is not short-legged}}}\left(
+&  =\sum_{\substack{\sigma\in S_{n};\\\sigma\text{ is not short-legged}%
+}}\left(  -1\right)  ^{\sigma}\underbrace{\prod_{i=1}^{n}a_{i,\sigma\left(
+i\right)  }}_{\substack{=0\\\text{(by (\ref{sol.tridiag.fib.sol2.term1}))}%
+}}+\sum_{\substack{\sigma\in S_{n};\\\sigma\text{ is short-legged}}}\left(
 -1\right)  ^{\sigma}\underbrace{\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }%
 }_{\substack{=\left(  -1\right)  ^{\left\vert \operatorname*{Exced}%
 \sigma\right\vert }\\\text{(by (\ref{sol.tridiag.fib.sol2.term2}))}%
 }}\nonumber\\
-&  =\underbrace{\sum_{\substack{\sigma\in S_{n};\\\sigma\text{ is
+&  =\underbrace{\sum_{\substack{\sigma\in S_{n};\\\sigma\text{ is not
 short-legged}}}\left(  -1\right)  ^{\sigma}0}_{=0}+\sum_{\substack{\sigma\in
-S_{n};\\\sigma\text{ is not short-legged}}}\left(  -1\right)  ^{\sigma}\left(
+S_{n};\\\sigma\text{ is short-legged}}}\left(  -1\right)  ^{\sigma}\left(
 -1\right)  ^{\left\vert \operatorname*{Exced}\sigma\right\vert }\nonumber\\
-&  =\sum_{\substack{\sigma\in S_{n};\\\sigma\text{ is not short-legged}%
-}}\left(  -1\right)  ^{\sigma}\left(  -1\right)  ^{\left\vert
-\operatorname*{Exced}\sigma\right\vert }. \label{sol.tridiag.fib.sol2.det1}%
+&  =\sum_{\substack{\sigma\in S_{n};\\\sigma\text{ is short-legged}}}\left(
+-1\right)  ^{\sigma}\left(  -1\right)  ^{\left\vert \operatorname*{Exced}%
+\sigma\right\vert }.\label{sol.tridiag.fib.sol2.det1}%
 \end{align}
 We still don't see how this connects to $f_{n+1}$, though. So let us relate
 short-legged permutations to lacunar sets.
@@ -35206,9 +35206,9 @@ permutations $\tau_{I}$ for distinct $I$ are distinct). Thus, we have a
 bijection between the lacunar sets and the short-legged permutations in
 $S_{n}$; the bijection sends every $I$ to $\tau_{I}$. Consequently,%
 \begin{align*}
-&  \sum_{\substack{\sigma\in S_{n};\\\sigma\text{ is not short-legged}%
-}}\left(  -1\right)  ^{\sigma}\left(  -1\right)  ^{\left\vert
-\operatorname*{Exced}\sigma\right\vert }\\
+&  \sum_{\substack{\sigma\in S_{n};\\\sigma\text{ is short-legged}}}\left(
+-1\right)  ^{\sigma}\left(  -1\right)  ^{\left\vert \operatorname*{Exced}%
+\sigma\right\vert }\\
 &  =\sum_{I\text{ is a lacunar set}}\underbrace{\left(  -1\right)  ^{\tau_{I}%
 }}_{\substack{=\left(  -1\right)  ^{\left\vert I\right\vert }\\\text{(by
 (\ref{sol.tridiag.fib.sol2.tauI.sign}))}}}\underbrace{\left(  -1\right)
@@ -37501,7 +37501,7 @@ rewrites as $\det\left(  U_{\sim\left(  n+M\right)  ,\sim\left(  n+q\right)
 
 Furthermore, for every $q\in\left\{  1,2,\ldots,n\right\}  $, we have%
 \begin{equation}
-u_{n+M,q}=0\label{sol.block2x2.tridet.indstep.u=0}%
+u_{n+M,q}=0 \label{sol.block2x2.tridet.indstep.u=0}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{sol.block2x2.tridet.indstep.u=0}):} Let
 $q\in\left\{  1,2,\ldots,n\right\}  $. Thus, $q\leq n$. Also,
@@ -37521,7 +37521,7 @@ d_{n+M-n,q-n}, & \text{if }n+M>n\text{ and }q>n
 (\ref{sol.block2x2.tridet.indstep.u=0}).}. On the other hand, for every
 $q\in\left\{  1,2,\ldots,M\right\}  $, we have%
 \begin{equation}
-u_{n+M,n+q}=d_{M,q}\label{sol.block2x2.tridet.indstep.u=d}%
+u_{n+M,n+q}=d_{M,q} \label{sol.block2x2.tridet.indstep.u=d}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{sol.block2x2.tridet.indstep.u=d}):} Let
 $q\in\left\{  1,2,\ldots,M\right\}  $. Thus, $q>0$, so that $n+\underbrace{q}%
@@ -37529,7 +37529,7 @@ _{>0}>n$. Also, $n+\underbrace{M}_{>0}>n$. Now,
 (\ref{sol.block2x2.tridet.indstep.minor.pf.1}) (applied to $\left(
 i,j\right)  =\left(  n+M,n+q\right)  $) yields%
 \begin{align*}
-u_{n+M,n+q} &  =%
+u_{n+M,n+q}  &  =%
 \begin{cases}
 a_{n+M,n+q} & \text{if }n+M\leq n\text{ and }n+q\leq n;\\
 b_{n+M,n+q-n}, & \text{if }n+M\leq n\text{ and }n+q>n;\\
@@ -37538,7 +37538,7 @@ d_{n+M-n,n+q-n}, & \text{if }n+M>n\text{ and }n+q>n
 \end{cases}
 \\
 &  =d_{n+M-n,n+q-n}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }n+M>n\text{ and
-}n+q>n\right)  \\
+}n+q>n\right) \\
 &  =d_{M,q}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }n+M-n=M\text{ and
 }n+q-n=q\right)  ,
 \end{align*}
