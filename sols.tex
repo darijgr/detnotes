@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Wednesday, March 16, 2016 01:39:14}
+%TCIDATA{LastRevised=Wednesday, March 16, 2016 04:06:46}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -162,7 +162,8 @@ bd\operatorname{mod}n$);
 
 \item is familiar with the summation sign ($\sum$) and the product sign
 ($\prod$) and knows how to transform them (e.g., interchanging summations, and
-substituting the index);
+substituting the index)\footnote{See Section \ref{sect.sums-repetitorium}
+below for a quick overview of the notations that we will need.};
 
 \item has some familiarity with matrices (i.e., knows how to add and to
 multiply them).
@@ -286,6 +287,781 @@ this check), but in some cases, this is a difficult task.}
 \end{itemize}
 
 Further notations will be defined whenever they arise for the first time.
+
+\subsection{\label{sect.sums-repetitorium}Sums and products: a repetitorium}
+
+In this section, I will recall the definitions of the $\sum$ and $\prod$ signs
+and collect some of their basic properties (without proofs). When I say
+\textquotedblleft recall\textquotedblright, I am implying that the reader has
+at least some prior acquaintance (and, ideally, experience) with these signs;
+for a first introduction, this section is probably too brief. Ideally, you
+should use this section to familiarize yourself with my (sometimes
+idiosyncratic) notations.
+
+Throughout Section \ref{sect.sums-repetitorium}, we let $\mathbb{A}$ be one of
+the sets $\mathbb{N}$, $\mathbb{Z}$, $\mathbb{Q}$, $\mathbb{R}$ and
+$\mathbb{C}$.
+
+\subsubsection{Definition of $\sum$}
+
+Let us first define the $\sum$ sign. There are actually several (slightly
+different, but still closely related) notations involving the $\sum$ sign; let
+us define the most important of them:
+
+\begin{itemize}
+\item If $S$ is a finite set, and if $a_{s}$ is an element of $\mathbb{A}$ for
+each $s\in S$, then $\sum_{s\in S}a_{s}$ denotes the sum of all of these
+elements $a_{s}$. Formally, this sum is defined by recursion on $\left\vert
+S\right\vert $, as follows:
+
+\begin{itemize}
+\item If $S=\varnothing$, then $\sum_{s\in S}a_{s}$ is defined to be $0$.
+
+\item Let $n\in\mathbb{N}$. Assume that we have defined $\sum_{s\in S}a_{s}$
+for every finite set $S$ with $\left\vert S\right\vert =n$ (and every choice
+of elements $a_{s}$ of $\mathbb{A}$). Now, if $S$ is a finite set with
+$\left\vert S\right\vert =n+1$ (and if $a_{s}\in\mathbb{A}$ are chosen for all
+$s\in S$), then $\sum_{s\in S}a_{s}$ is defined by%
+\begin{equation}
+\sum_{s\in S}a_{s}=a_{t}+\sum_{s\in S\setminus\left\{  t\right\}  }%
+a_{s}\ \ \ \ \ \ \ \ \ \ \text{for any }t\in S.\label{eq.sum.def.1}%
+\end{equation}
+It is not immediately clear why this definition is well-defined: The right
+hand side of (\ref{eq.sum.def.1}) is defined using a choice of $t$, but we
+want our value of $\sum_{s\in S}a_{s}$ to depend only on $S$ and on the
+$a_{s}$ (not on some arbitrarily chosen $t\in S$). However, it is possible to
+prove that the right hand side of (\ref{eq.sum.def.1}) is actually independent
+of $t$ (that is, any two choices of $t$ will lead to the same result).
+\end{itemize}
+
+\textbf{Examples:}
+
+\begin{itemize}
+\item If $S=\left\{  4,7,9\right\}  $ and $a_{s}=\dfrac{1}{s^{2}}$ for every
+$s\in S$, then $\sum_{s\in S}a_{s}=a_{4}+a_{7}+a_{9}=\dfrac{1}{4^{2}}%
++\dfrac{1}{7^{2}}+\dfrac{1}{9^{2}}=\dfrac{6049}{63504}$.
+
+\item If $S=\left\{  1,2,\ldots,n\right\}  $ (for some $n\in\mathbb{N}$) and
+$a_{s}=s^{2}$ for every $s\in S$, then $\sum_{s\in S}a_{s}=\sum_{s\in S}%
+s^{2}=1^{2}+2^{2}+\cdots+n^{2}$. (There is a formula saying that the right
+hand side of this equality is $\dfrac{1}{6}n\left(  2n+1\right)  \left(
+n+1\right)  $.)
+\end{itemize}
+
+\textbf{Remarks:}
+
+\begin{itemize}
+\item The sum $\sum_{s\in S}a_{s}$ is usually pronounced \textquotedblleft sum
+of the $a_{s}$ over all $s\in S$\textquotedblright\ or \textquotedblleft sum
+of the $a_{s}$ with $s$ ranging over $S$\textquotedblright\ or
+\textquotedblleft sum of the $a_{s}$ with $s$ running through all elements of
+$S$\textquotedblright. The letter \textquotedblleft$s$\textquotedblright\ in
+the sum is called the \textquotedblleft summation index\textquotedblright%
+\footnote{The plural of the word \textquotedblleft index\textquotedblright%
+\ here is \textquotedblleft indices\textquotedblright, not \textquotedblleft
+indexes\textquotedblright.}, and its exact choice is immaterial (for example,
+you can rewrite $\sum_{s\in S}a_{s}$ as $\sum_{t\in S}a_{t}$ or as $\sum
+_{\Phi\in S}a_{\Phi}$ or as $\sum_{\spadesuit\in S}a_{\spadesuit}$), as long
+as it does not already have a different meaning outside of the sum\footnote{If
+it already has a different meaning, then it must not be used as a summation
+index! For example, you must not write \textquotedblleft every $n\in
+\mathbb{N}$ satisfies $\sum_{n\in\left\{  0,1,\ldots,n\right\}  }%
+n=\dfrac{n\left(  n+1\right)  }{2}$\textquotedblright, because here the
+summation index $n$ clashes with a different meaning of the letter $n$.}.
+(Ultimately, a summation index is the same kind of placeholder variable as the
+\textquotedblleft$s$\textquotedblright\ in the statement \textquotedblleft for
+all $s\in S$, we have $a_{s}+2a_{s}=3a_{s}$\textquotedblright, or as a loop
+variable in a for-loop in programming.) The sign $\sum$ itself is called
+\textquotedblleft the summation sign\textquotedblright\ or \textquotedblleft
+the $\sum$ sign\textquotedblright. The numbers $a_{s}$ are called the
+\textit{addends} (or \textit{summands}) of the sum $\sum_{s\in S}a_{s}$.
+
+\item When the set $S$ is empty, the sum $\sum_{s\in S}a_{s}$ is called an
+\textit{empty sum}. Our definition implies that any empty sum is $0$. This
+convention is used throughout mathematics, except in rare occasions where a
+slightly subtler version of it is used\footnote{If you really want to know
+what I mean by this: Our above definition is tailored for the cases when the
+$a_{s}$ are numbers (i.e., elements of one of the sets $\mathbb{N}$,
+$\mathbb{Z}$, $\mathbb{Q}$, $\mathbb{R}$ and $\mathbb{C}$). In more advanced
+settings, one tends to take sums of the form $\sum_{s\in S}a_{s}$ where the
+$a_{s}$ are not numbers but (for example) elements of a commutative ring
+$\mathbb{K}$. (See Definition \ref{def.commring} for the definition of a
+commutative ring.) In such cases, one wants the sum $\sum_{s\in S}a_{s}$ for
+an empty set $S$ to be not the integer $0$, but the zero of the commutative
+ring $\mathbb{K}$ (which is sometimes distinct from the integer $0$). This has
+the slightly confusing consequence that the meaning of the sum $\sum_{s\in
+S}a_{s}$ for an empty set $S$ depends on what ring $\mathbb{K}$ the $a_{s}$
+belong to, even if (for an empty set $S$) there are no $a_{s}$ to begin with!
+But in practice, the choice of $\mathbb{K}$ is always clear from context, so
+this is not ambiguous.
+\par
+A similar caveat applies to the other versions of the $\sum$ sign, as well as
+to the $\prod$ sign defined further below; I shall not elaborate it further.}.
+If someone tells you that empty sums are undefined, you should not be listening!
+
+\item The summation index does not always have to be a single letter. For
+instance, if $S$ is a set of pairs, then we can write $\sum_{\left(
+x,y\right)  \in S}a_{\left(  x,y\right)  }$ (meaning the same as $\sum_{s\in
+S}a_{s}$). Here is an example of this notation:%
+\[
+\sum_{\left(  x,y\right)  \in\left\{  1,2,3\right\}  ^{2}}\dfrac{x}{y}%
+=\dfrac{1}{1}+\dfrac{1}{2}+\dfrac{1}{3}+\dfrac{2}{1}+\dfrac{2}{2}+\dfrac{2}%
+{3}+\dfrac{3}{1}+\dfrac{3}{2}+\dfrac{3}{3}%
+\]
+(here, we are using the notation $\sum_{\left(  x,y\right)  \in S}a_{\left(
+x,y\right)  }$ with $S=\left\{  1,2,3\right\}  ^{2}$ and $a_{\left(
+x,y\right)  }=\dfrac{x}{y}$). Note that we could not have rewritten this sum
+in the form $\sum_{s\in S}a_{s}$ with a single-letter variable $s$ without
+introducing an extra notation such as $a_{\left(  x,y\right)  }$ for the
+quotients $\dfrac{x}{y}$.
+
+\item Mathematicians don't seem to have reached an agreement on how strongly
+the summation sign \textquotedblleft binds\textquotedblright. By this I mean
+the following question: Does $\sum_{s\in S}a_{s}+b$ (where $b$ is some other
+element of $\mathbb{A}$) mean $\sum_{s\in S}\left(  a_{s}+b\right)  $ or
+$\left(  \sum_{s\in S}a_{s}\right)  +b$ ? In my experience, the second
+interpretation (i.e., reading it as $\left(  \sum_{s\in S}a_{s}\right)  +b$)
+is more widespread, and this is the interpretation that I will follow.
+Nevertheless, be on the watch for possible misunderstandings, as someone might
+be using the first interpretation when you expect it the least!\footnote{This
+is similar to the notorious disagreement about whether $a/bc$ means $\left(
+a/b\right)  \cdot c$ or $a/\left(  bc\right)  $.}
+
+However, the situation is different for products and nested sums. For
+instance, the expression $\sum_{s\in S}ba_{s}c$ is understood to mean
+$\sum_{s\in S}\left(  ba_{s}c\right)  $, and a nested sum like $\sum_{s\in
+S}\sum_{t\in T}a_{s,t}$ (where $S$ and $T$ are two sets, and where $a_{s,t}$
+is an element of $\mathbb{A}$ for each pair $\left(  s,t\right)  \in S\times
+T$) is to be read as $\sum_{s\in S}\left(  \sum_{t\in T}a_{s,t}\right)  $.
+
+\item Speaking of nested sums: they mean exactly what they seem to mean. For
+instance, $\sum_{s\in S}\sum_{t\in T}a_{s,t}$ is what you get if you compute
+the sum $\sum_{t\in T}a_{s,t}$ for each $s\in S$, and then sum up all of these
+sums together. In a nested sum $\sum_{s\in S}\sum_{t\in T}a_{s,t}$, the first
+summation sign ($\sum_{s\in S}$) is called the \textquotedblleft outer
+summation\textquotedblright, and the second summation sign ($\sum_{t\in T}$)
+is called the \textquotedblleft inner summation\textquotedblright.
+
+\item We have required the set $S$ to be finite when defining $\sum_{s\in
+S}a_{s}$. Of course, this requirement was necessary for our definition, and
+there is no way to make sense of infinite sums such as $\sum_{s\in\mathbb{Z}%
+}s^{2}$. However, \textbf{some} infinite sums can be made sense of. The
+simplest case is when the set $S$ might be infinite, but only finitely many
+among the $a_{s}$ are nonzero. In this case, we can define $\sum_{s\in S}%
+a_{s}$ simply by dropping the zero addend and summing the finitely many
+remaining addends. Other situations in which infinite sums make sense appear
+in analysis and in topological algebra (e.g., power series).
+\end{itemize}
+
+\item A slightly more complicated version of the summation sign is the
+following: Let $S$ be a finite set, and let $\mathcal{A}\left(  s\right)  $ be
+a logical statement defined for every $s\in S$\ \ \ \ \footnote{Formally
+speaking, this means that $\mathcal{A}$ is a map from $S$ to the set of all
+logical statements. Such a map is called a \textit{predicate}.}. For example,
+$S$ can be $\left\{  1,2,3,4\right\}  $, and $\mathcal{A}\left(  s\right)  $
+can be the statement \textquotedblleft$s$ is even\textquotedblright. For each
+$s\in S$ satisfying $\mathcal{A}\left(  s\right)  $, let $a_{s}$ be an element
+of $\mathbb{A}$. Then, the sum $\sum_{\substack{s\in S;\\\mathcal{A}\left(
+s\right)  }}a_{s}$ is defined by%
+\[
+\sum_{\substack{s\in S;\\\mathcal{A}\left(  s\right)  }}a_{s}=\sum
+_{s\in\left\{  t\in S\ \mid\ \mathcal{A}\left(  t\right)  \right\}  }a_{s}.
+\]
+In other words, $\sum_{\substack{s\in S;\\\mathcal{A}\left(  s\right)  }%
+}a_{s}$ is the sum of the $a_{s}$ for all $s\in S$ which satisfy
+$\mathcal{A}\left(  s\right)  $.
+
+\textbf{Examples:}
+
+\begin{itemize}
+\item If $S=\left\{  1,2,3,4,5\right\}  $, then $\sum_{\substack{s\in
+S;\\s\text{ is even}}}a_{s}=a_{2}+a_{4}$. (Of course, $\sum_{\substack{s\in
+S;\\s\text{ is even}}}a_{s}$ is $\sum_{\substack{s\in S;\\\mathcal{A}\left(
+s\right)  }}a_{s}$ when $\mathcal{A}\left(  s\right)  $ is defined to be the
+statement \textquotedblleft$s$ is even\textquotedblright.)
+
+\item If $S=\left\{  1,2,\ldots,n\right\}  $ (for some $n\in\mathbb{N}$) and
+$a_{s}=s^{2}$ for every $s\in S$, then $\sum_{\substack{s\in S;\\s\text{ is
+even}}}a_{s}=a_{2}+a_{4}+\cdots+a_{k}$, where $k$ is the largest even number
+among $1,2,\ldots,n$ (that is, $k=n$ if $n$ is even, and $k=n-1$ otherwise).
+\end{itemize}
+
+\textbf{Remarks:}
+
+\begin{itemize}
+\item The sum $\sum_{\substack{s\in S;\\\mathcal{A}\left(  s\right)  }}a_{s}$
+is usually pronounced \textquotedblleft sum of the $a_{s}$ over all $s\in S$
+satisfying $\mathcal{A}\left(  s\right)  $\textquotedblright. The semicolon
+after \textquotedblleft$s\in S$\textquotedblright\ is often omitted or
+replaced by a colon or a comma.
+
+\item The set $S$ needs not be finite in order for $\sum_{\substack{s\in
+S;\\\mathcal{A}\left(  s\right)  }}a_{s}$ to be defined; it suffices that the
+set $\left\{  t\in S\ \mid\ \mathcal{A}\left(  t\right)  \right\}  $ be finite
+(i.e., that only finitely many $s\in S$ satisfy $\mathcal{A}\left(  s\right)
+$).
+
+\item The sum $\sum_{\substack{s\in S;\\\mathcal{A}\left(  s\right)  }}a_{s}$
+is said to be \textit{empty} whenever the set  $\left\{  t\in S\ \mid
+\ \mathcal{A}\left(  t\right)  \right\}  $ is empty (i.e., whenever no $s\in
+S$ satisfies $\mathcal{A}\left(  s\right)  $).
+\end{itemize}
+
+\item Finally, here is the simplest version of the summation sign: Let $u$ and
+$v$ be two integers. We agree to understand the set $\left\{  u,u+1,\ldots
+,v\right\}  $ to be empty when $u>v$. Let $a_{s}$ be an element of
+$\mathbb{A}$ for each $s\in\left\{  u,u+1,\ldots,v\right\}  $. Then,
+$\sum_{s=u}^{v}a_{s}$ is defined by%
+\[
+\sum_{s=u}^{v}a_{s}=\sum_{s\in\left\{  u,u+1,\ldots,v\right\}  }a_{s}.
+\]
+
+
+\textbf{Examples:}
+
+\begin{itemize}
+\item We have $\sum_{s=3}^{8}\dfrac{1}{s}=\sum_{s\in\left\{  3,4,\ldots
+,8\right\}  }\dfrac{1}{s}=\dfrac{1}{3}+\dfrac{1}{4}+\dfrac{1}{5}+\dfrac{1}%
+{6}+\dfrac{1}{7}+\dfrac{1}{8}=\dfrac{341}{280}$.
+
+\item We have $\sum_{s=3}^{3}\dfrac{1}{s}=\sum_{s\in\left\{  3\right\}
+}\dfrac{1}{s}=\dfrac{1}{3}$.
+
+\item We have $\sum_{s=3}^{2}\dfrac{1}{s}=\sum_{s\in\varnothing}\dfrac{1}%
+{s}=0$.
+\end{itemize}
+
+\textbf{Remarks:}
+
+\begin{itemize}
+\item The sum $\sum_{s=u}^{v}a_{s}$ is usually pronounced \textquotedblleft
+sum of the $a_{s}$ for all $s$ from $u$ to $v$ (inclusive)\textquotedblright.
+It is often written $a_{u}+a_{u+1}+\cdots+a_{v}$, but this latter notation has
+its drawbacks: In order to understand an expression like $a_{u}+a_{u+1}%
++\cdots+a_{v}$, one needs to correctly guess the pattern (which can be
+unintuitive when the $a_{s}$ themselves are complicated: for example, it takes
+a while to find the \textquotedblleft moving parts\textquotedblright\ in the
+expression $\dfrac{2\cdot7}{3+2}+\dfrac{3\cdot7}{3+3}+\cdots+\dfrac{7\cdot
+7}{3+7}$, whereas the notation $\sum_{s=2}^{7}\dfrac{s\cdot7}{3+s}$ for the
+same sum is perfectly clear).
+
+\item In the sum $\sum_{s=u}^{v}a_{s}$, the integer $u$ is called the
+\textit{lower limit} (of the sum), whereas the integer $v$ is called the
+\textit{upper limit} (of the sum). The sum is said to \textit{start} (or
+\textit{begin}) at $u$ and \textit{end} at $v$.
+
+\item The sum $\sum_{s=u}^{v}a_{s}$ is said to be \textit{empty} whenever
+$u>v$. In other words, a sum of the form $\sum_{s=u}^{v}a_{s}$ is empty
+whenever it \textquotedblleft ends before it has begun\textquotedblright.
+However, a sum which \textquotedblleft ends right after it
+begins\textquotedblright\ (i.e., a sum $\sum_{s=u}^{v}a_{s}$ with $u=v$) is
+not empty; it just has one addend only. (This is unlike integrals, which are
+$0$ whenever their lower and upper limit are equal.)
+
+\item Let me stress once again that a sum $\sum_{s=u}^{v}a_{s}$ with $u>v$ is
+empty and equals $0$. It does not matter how much greater $u$ is than $v$. So,
+for example, $\sum_{s=1}^{-5}s=0$. The fact that the upper bound ($-5$) is
+much smaller than the lower bound ($1$) does not mean that you have to
+subtract rather than add.
+\end{itemize}
+\end{itemize}
+
+Thus we have introduced the main three forms of the summation sign. Some mild
+variations on them appear in the literature (e.g., there is a slightly awkward
+notation $\sum_{\substack{s=u;\\\mathcal{A}\left(  s\right)  }}^{v}a_{s}$ for
+$\sum_{\substack{s\in\left\{  u,u+1,\ldots,v\right\}  ;\\\mathcal{A}\left(
+s\right)  }}a_{s}$).
+
+\subsubsection{Properties of $\sum$}
+
+Let me now show some basic properties of summation signs that are important in
+making them useful:
+
+\begin{itemize}
+\item \underline{\textbf{Splitting-off:}} Let $S$ be a finite set. Let $t\in
+S$. Let $a_{s}$ be an element of $\mathbb{A}$ for each $s\in S$. Then,%
+\begin{equation}
+\sum_{s\in S}a_{s}=a_{t}+\sum_{s\in S\setminus\left\{  t\right\}  }%
+a_{s}.\label{eq.sum.split-off}%
+\end{equation}
+(This is precisely the equality (\ref{eq.sum.def.1}).) This formula
+(\ref{eq.sum.split-off}) allows us to \textquotedblleft split
+off\textquotedblright\ an addend from a sum.
+
+\textbf{Example:} If $n\in\mathbb{N}$, then
+\[
+\sum_{s\in\left\{  1,2,\ldots,n+1\right\}  }a_{s}=a_{n+1}+\sum_{s\in\left\{
+1,2,\ldots,n\right\}  }a_{s}%
+\]
+(by (\ref{eq.sum.split-off}), applied to $S=\left\{  1,2,\ldots,n+1\right\}  $
+and $t=n+1$), but also%
+\[
+\sum_{s\in\left\{  1,2,\ldots,n+1\right\}  }a_{s}=a_{1}+\sum_{s\in\left\{
+2,3,\ldots,n+1\right\}  }a_{s}%
+\]
+(by (\ref{eq.sum.split-off}), applied to $S=\left\{  1,2,\ldots,n+1\right\}  $
+and $t=1$).
+
+\item \underline{\textbf{Splitting:}} Let $S$ be a finite set. Let $X$ and $Y$
+be two subsets of $S$ such that $X\cap Y=\varnothing$ and $X\cup Y=S$.
+(Equivalently, $X$ and $Y$ are two subsets of $S$ such that each element of
+$S$ lies in \textbf{exactly} one of $X$ and $Y$.) Let $a_{s}$ be an element of
+$\mathbb{A}$ for each $s\in S$. Then,%
+\begin{equation}
+\sum_{s\in S}a_{s}=\sum_{s\in X}a_{s}+\sum_{s\in Y}a_{s}.\label{eq.sum.split}%
+\end{equation}
+(Here, as we explained, $\sum_{s\in X}a_{s}+\sum_{s\in Y}a_{s}$ stands for
+$\left(  \sum_{s\in X}a_{s}\right)  +\left(  \sum_{s\in Y}a_{s}\right)  $.)
+The idea behind (\ref{eq.sum.split}) is that if we want to add a bunch of
+numbers (the $a_{s}$ for $s\in S$), we can proceed by splitting it into two
+\textquotedblleft sub-bunches\textquotedblright\ (one \textquotedblleft
+sub-bunch\textquotedblright\ consisting of the $a_{s}$ for $s\in X$, and the
+other consisting of the $a_{s}$ for $s\in Y$), then take the sum of each of
+these two sub-bunches, and finally add together the two sums.
+
+\textbf{Examples:}
+
+\begin{itemize}
+\item If $n\in\mathbb{N}$, then%
+\[
+\sum_{s\in\left\{  1,2,\ldots,2n\right\}  }a_{s}=\sum_{s\in\left\{
+1,3,\ldots,2n-1\right\}  }a_{s}+\sum_{s\in\left\{  2,4,\ldots,2n\right\}
+}a_{s}%
+\]
+(by (\ref{eq.sum.split}), applied to $S=\left\{  1,2,\ldots,2n\right\}  $,
+$X=\left\{  1,3,\ldots,2n-1\right\}  $ and $Y=\left\{  2,4,\ldots,2n\right\}
+$.)
+
+\item If $n\in\mathbb{N}$ and $m\in\mathbb{N}$, then%
+\[
+\sum_{s\in\left\{  -m,-m+1,\ldots,n\right\}  }a_{s}=\sum_{s\in\left\{
+-m,-m+1,\ldots,0\right\}  }a_{s}+\sum_{s\in\left\{  1,2,\ldots,n\right\}
+}a_{s}%
+\]
+(by (\ref{eq.sum.split}), applied to $S=\left\{  -m,-m+1,\ldots,n\right\}  $,
+$X=\left\{  -m,-m+1,\ldots,0\right\}  $ and $Y=\left\{  1,2,\ldots,n\right\}
+$.)
+
+\item If $u$, $v$ and $w$ are three integers such that $u-1\leq v\leq w$, and
+if $a_{s}$ is an element of $\mathbb{A}$ for each $s\in\left\{  u,u+1,\ldots
+,w\right\}  $, then%
+\begin{equation}
+\sum_{s=u}^{w}a_{s}=\sum_{s=u}^{v}a_{s}+\sum_{s=v+1}^{w}a_{s}%
+.\label{eq.sum.split.uvw}%
+\end{equation}
+This follows from (\ref{eq.sum.split}), applied to $S=\left\{  u,u+1,\ldots
+,w\right\}  $, $X=\left\{  u,u+1,\ldots,v\right\}  $ and $Y=\left\{
+v+1,v+2,\ldots,w\right\}  $. Notice that the requirement $u-1\leq v\leq w$ is
+important; otherwise, the $X\cap Y=\varnothing$ and $X\cup Y=S$ condition
+would not hold!
+\end{itemize}
+
+\item \underline{\textbf{Splitting using a predicate:}} Let $S$ be a finite
+set. Let $\mathcal{A}\left(  s\right)  $ be a logical statement for each $s\in
+S$. Let $a_{s}$ be an element of $\mathbb{A}$ for each $s\in S$. Then,%
+\begin{equation}
+\sum_{s\in S}a_{s}=\sum_{\substack{s\in S;\\\mathcal{A}\left(  s\right)
+}}a_{s}+\sum_{\substack{s\in S;\\\text{not }\mathcal{A}\left(  s\right)
+}}a_{s}\label{eq.sum.split.pred}%
+\end{equation}
+(where \textquotedblleft not $\mathcal{A}\left(  s\right)  $\textquotedblright%
+\ means the negation of $\mathcal{A}\left(  s\right)  $). This simply follows
+from (\ref{eq.sum.split}), applied to $X=\left\{  s\in S\ \mid\ \mathcal{A}%
+\left(  s\right)  \right\}  $ and $Y=\left\{  s\in S\ \mid\ \text{not
+}\mathcal{A}\left(  s\right)  \right\}  $.
+
+\textbf{Example:} If $S\subseteq\mathbb{Z}$, then%
+\[
+\sum_{s\in S}a_{s}=\sum_{\substack{s\in S;\\s\text{ is even}}}a_{s}%
++\sum_{\substack{s\in S;\\s\text{ is odd}}}a_{s}%
+\]
+(because \textquotedblleft$s$ is odd\textquotedblright\ is the negation of
+\textquotedblleft$s$ is even\textquotedblright).
+
+\item \underline{\textbf{Splitting an addend:}} Let $S$ be a finite set. For
+every $s\in S$, let $a_{s}$ and $b_{s}$ be elements of $\mathbb{A}$. Then,%
+\begin{equation}
+\sum_{s\in S}\left(  a_{s}+b_{s}\right)  =\sum_{s\in S}a_{s}+\sum_{s\in
+S}b_{s}.\label{eq.sum.linear1}%
+\end{equation}
+
+
+\textbf{Remark:} Of course, similar rules hold for other forms of summations:
+If $\mathcal{A}\left(  s\right)  $ is a logical statement for each $s\in S$,
+then%
+\[
+\sum_{\substack{s\in S;\\\mathcal{A}\left(  s\right)  }}\left(  a_{s}%
++b_{s}\right)  =\sum_{\substack{s\in S;\\\mathcal{A}\left(  s\right)  }%
+}a_{s}+\sum_{\substack{s\in S;\\\mathcal{A}\left(  s\right)  }}b_{s}.
+\]
+If $u$ and $v$ are two integers, then%
+\begin{equation}
+\sum_{s=u}^{v}\left(  a_{s}+b_{s}\right)  =\sum_{s=u}^{v}a_{s}+\sum_{s=u}%
+^{v}b_{s}.\label{eq.sum.linear1.c}%
+\end{equation}
+
+
+\item \underline{\textbf{Factoring out:}} Let $S$ be a finite set. For every
+$s\in S$, let $a_{s}$ be an element of $\mathbb{A}$. Also, let $\lambda$ be an
+element of $\mathbb{A}$. Then,%
+\[
+\sum_{s\in S}\lambda a_{s}=\lambda\sum_{s\in S}a_{s}.
+\]
+Again, similar rules hold for the other types of summation sign.
+
+\item \underline{\textbf{Zeros sum to zero:}} Let $S$ be a finite set. Then,%
+\[
+\sum_{s\in S}0=0.
+\]
+That is, any sum of zeroes is zero.
+
+\textbf{Remark:} This applies even to infinite sums! Do not be fooled by the
+infiniteness of a sum: There are no reasonable situations where an infinite
+sum of zeroes is defined to be anything other than zero. The infinity does not
+\textquotedblleft compensate\textquotedblright\ for the zero.
+
+\item \underline{\textbf{Summing equal values:}} Let $S$ be a finite set. Let
+$a$ be an element of $\mathbb{A}$. Then,%
+\begin{equation}
+\sum_{s\in S}a=\left\vert S\right\vert \cdot a.\label{eq.sum.equal}%
+\end{equation}
+In other words, if all addends of a sum are equal to one and the same element
+$a$, then the sum is just the number of its addends times $a$. In particular,%
+\[
+\sum_{s\in S}1=\left\vert S\right\vert \cdot1=\left\vert S\right\vert .
+\]
+
+
+\item \underline{\textbf{Dropping zeroes:}} Let $S$ be a finite set. Let
+$a_{s}$ be an element of $\mathbb{A}$ for each $s\in S$. Let $T$ be a subset
+of $S$ such that every $s\in T$ satisfies $a_{s}=0$. Then,%
+\[
+\sum_{s\in S}a_{s}=\sum_{s\in S\setminus T}a_{s}.
+\]
+(That is, any addends which are zero can be removed from a sum without
+changing the sum's value.)
+
+\item \underline{\textbf{Renaming the index:}} Let $S$ be a finite set. Let
+$a_{s}$ be an element of $\mathbb{A}$ for each $s\in S$. Then,%
+\[
+\sum_{s\in S}a_{s}=\sum_{t\in S}a_{t}.
+\]
+This is just saying that the summation index in a sum can be renamed at will,
+as long as its name does not clash with other notation.
+
+\item \underline{\textbf{Substituting the index I:}} Let $S$ and $T$ be two
+finite sets. Let $f:S\rightarrow T$ be a \textbf{bijective} map. Let $a_{t}$
+be an element of $\mathbb{A}$ for each $t\in T$. Then,%
+\begin{equation}
+\sum_{t\in T}a_{t}=\sum_{s\in S}a_{f\left(  s\right)  }.\label{eq.sum.subs1}%
+\end{equation}
+(The idea here is that the sum $\sum_{s\in S}a_{f\left(  s\right)  }$ contains
+the same addends as the sum $\sum_{t\in T}a_{t}$.)
+
+\textbf{Examples:}
+
+\begin{itemize}
+\item For any $n\in\mathbb{N}$, we have%
+\[
+\sum_{t\in\left\{  1,2,\ldots,n\right\}  }t^{3}=\sum_{s\in\left\{
+-n,-n+1,\ldots,-1\right\}  }\left(  -s\right)  ^{3}.
+\]
+(This follows from (\ref{eq.sum.subs1}), applied to $S=\left\{  -n,-n+1,\ldots
+,-1\right\}  $, $T=\left\{  1,2,\ldots,n\right\}  $, and $f\left(  s\right)
+=-s$.)
+
+\item The sets $S$ and $T$ in (\ref{eq.sum.subs1}) may well be the same. For
+example, for any $n\in\mathbb{N}$, we have%
+\[
+\sum_{t\in\left\{  1,2,\ldots,n\right\}  }t^{3}=\sum_{s\in\left\{
+1,2,\ldots,n\right\}  }\left(  n+1-s\right)  ^{3}.
+\]
+(This follows from (\ref{eq.sum.subs1}), applied to $S=\left\{  1,2,\ldots
+,n\right\}  $, $T=\left\{  1,2,\ldots,n\right\}  $, and $f\left(  s\right)
+=n+1-s$.)
+
+\item More generally: Let $u$ and $v$ be two integers. Then, the map $\left\{
+u,u+1,\ldots,v\right\}  \rightarrow\left\{  u,u+1,\ldots,v\right\}  $ sending
+each $s\in\left\{  u,u+1,\ldots,v\right\}  $ to $u+v-s$ is a
+bijection\footnote{Check this!}. Hence, we can substitute $u+v-s$ for $s$ in
+the sum $\sum_{s=u}^{v}a_{s}$ whenever an element $a_{s}$ of $\mathbb{A}$ is
+given for each $s\in\left\{  u,u+1,\ldots,v\right\}  $. We thus obtain the
+formula%
+\[
+\sum_{s=u}^{v}a_{s}=\sum_{s=u}^{v}a_{u+v-s}.
+\]
+
+\end{itemize}
+
+\textbf{Remark:}
+
+\begin{itemize}
+\item When I use (\ref{eq.sum.subs1}) to rewrite the sum $\sum_{t\in T}a_{t}$
+as $\sum_{s\in S}a_{f\left(  s\right)  }$, I say that I have \textquotedblleft
+substituted $f\left(  s\right)  $ for $t$ in the sum\textquotedblright.
+Conversely, when I use (\ref{eq.sum.subs1}) to rewrite the sum $\sum_{s\in
+S}a_{f\left(  s\right)  }$ as $\sum_{t\in T}a_{t}$, I say that I have
+\textquotedblleft substituted $t$ for $f\left(  s\right)  $ in the
+sum\textquotedblright.
+
+\item For convenience, I have chosen $s$ and $t$ as summation indices in
+(\ref{eq.sum.subs1}). But as before, they can be chosen to be any letters not
+otherwise used. It is perfectly okay to use one and the same letter for both
+of them, e.g., to write $\sum_{s\in T}a_{s}=\sum_{s\in S}a_{f\left(  s\right)
+}$.
+
+\item Let us give the probably most famous example of substitution in a sum:
+Fix a nonnegative integer $n$. Then, we can substitute $n-i$ for $i$ in the
+sum $\sum_{i=0}^{n}i$ (since the map $\left\{  0,1,\ldots,n\right\}
+\rightarrow\left\{  0,1,\ldots,n\right\}  ,\ i\mapsto n-i$ is a bijection).
+Thus, we obtain%
+\[
+\sum_{i=0}^{n}i=\sum_{i=0}^{n}\left(  n-i\right)  .
+\]
+Now,%
+\begin{align*}
+2\sum_{i=0}^{n}i &  =\sum_{i=0}^{n}i+\underbrace{\sum_{i=0}^{n}i}_{=\sum
+_{i=0}^{n}\left(  n-i\right)  }\ \ \ \ \ \ \ \ \ \ \left(  \text{since
+}2q=q+q\text{ for every }q\in\mathbb{Q}\right)  \\
+&  =\sum_{i=0}^{n}i+\sum_{i=0}^{n}\left(  n-i\right)  =\sum_{i=0}%
+^{n}\underbrace{\left(  i+\left(  n-i\right)  \right)  }_{=n}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have used (\ref{eq.sum.linear1.c})
+backwards}\right)  \\
+&  =\sum_{i=0}^{n}n=\left(  n+1\right)  n\ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{eq.sum.equal})}\right)  \\
+&  =n\left(  n+1\right)  ,
+\end{align*}
+and therefore%
+\begin{equation}
+\sum_{i=0}^{n}i=\dfrac{n\left(  n+1\right)  }{2}.\label{eq.sum.littlegauss1}%
+\end{equation}
+Since $\sum_{i=0}^{n}i=0+\sum_{i=1}^{n}i=\sum_{i=1}^{n}i$, this rewrites as%
+\begin{equation}
+\sum_{i=1}^{n}i=\dfrac{n\left(  n+1\right)  }{2}.\label{eq.sum.littlegauss2}%
+\end{equation}
+
+\end{itemize}
+
+\item \underline{\textbf{Substituting the index II:}} Let $S$ and $T$ be two
+finite sets. Let $f:S\rightarrow T$ be a \textbf{bijective} map. Let $a_{s}$
+be an element of $\mathbb{A}$ for each $s\in S$. Then,%
+\begin{equation}
+\sum_{s\in S}a_{s}=\sum_{t\in T}a_{f^{-1}\left(  t\right)  }%
+.\label{eq.sum.subs2}%
+\end{equation}
+This is, of course, just (\ref{eq.sum.subs1}) but applied to $T$, $S$ and
+$f^{-1}$ instead of $S$, $T$ and $f$. (Nevertheless, I prefer to mention
+(\ref{eq.sum.subs2}) separately because it often is used in this very form.)
+
+\item \underline{\textbf{Splitting a sum by a value of a function:}} Let $S$
+be a finite set. Let $W$ be a set. Let $f:S\rightarrow W$ be a map. Then,%
+\begin{equation}
+\sum_{s\in S}a_{s}=\sum_{w\in W}\sum_{\substack{s\in S;\\f\left(  s\right)
+=w}}a_{s}.\label{eq.sum.sheph}%
+\end{equation}
+The idea behind this formula is the following: The left hand side is the sum
+of all $a_{s}$ for $s\in S$. The right hand side is the same sum, but split
+into a particular way: First, for each $w\in W$, we sum the $a_{s}$ for all
+$s\in S$ satisfying $f\left(  s\right)  =w$, and then we sum all these
+\textquotedblleft partial sums\textquotedblright\ are all together.
+
+\textbf{Examples:}
+
+\begin{itemize}
+\item Let $n\in\mathbb{N}$. Then,%
+\begin{equation}
+\sum_{s\in\left\{  -n,-\left(  n-1\right)  ,\ldots,n\right\}  }s^{3}%
+=\sum_{w\in\left\{  0,1,\ldots,n\right\}  }\sum_{\substack{s\in\left\{
+-n,-\left(  n-1\right)  ,\ldots,n\right\}  ;\\\left\vert s\right\vert
+=w}}s^{3}.\label{eq.sum.sheph.exam1}%
+\end{equation}
+(This follows from (\ref{eq.sum.sheph}), applied to $S=\left\{  -n,-\left(
+n-1\right)  ,\ldots,n\right\}  $, $W=\left\{  0,1,\ldots,n\right\}  $ and
+$f\left(  s\right)  =\left\vert s\right\vert $.) You might wonder what you
+gain by this observation. But actually, it allows you to compute the sum: For
+any $w\in\left\{  0,1,\ldots,n\right\}  $, the sum $\sum_{\substack{s\in
+\left\{  -n,-\left(  n-1\right)  ,\ldots,n\right\}  ;\\\left\vert s\right\vert
+=w}}s^{3}$ is $0$\ \ \ \ \footnote{\textit{Proof.} If $w=0$, then this sum
+$\sum_{\substack{s\in\left\{  -n,-\left(  n-1\right)  ,\ldots,n\right\}
+;\\\left\vert s\right\vert =w}}s^{3}$ consists of one addend only, and this
+addend is $0^{3}$. If $w>0$, then this sum has two addends, namely $\left(
+-w\right)  ^{3}$ and $w^{3}$. In either case, the sum is $0$ (because
+$0^{3}=0$ and $\left(  -w\right)  ^{3}+w^{3}=-w^{3}+w^{3}=0$).}, and therefore
+(\ref{eq.sum.sheph.exam1}) becomes%
+\[
+\sum_{s\in\left\{  -n,-\left(  n-1\right)  ,\ldots,n\right\}  }s^{3}%
+=\sum_{w\in\left\{  0,1,\ldots,n\right\}  }\underbrace{\sum_{\substack{s\in
+\left\{  -n,-\left(  n-1\right)  ,\ldots,n\right\}  ;\\\left\vert s\right\vert
+=w}}s^{3}}_{=0}=\sum_{w\in\left\{  0,1,\ldots,n\right\}  }0=0.
+\]
+Thus, a strategic application of (\ref{eq.sum.sheph}) can help in evaluating a sum.
+
+\item Let $S$ be a finite set. Let $W$ be a set. Let $f:S\rightarrow W$ be a
+map. If we apply (\ref{eq.sum.sheph}) to $a_{s}=1$, then we obtain%
+\[
+\sum_{s\in S}1=\sum_{w\in W}\underbrace{\sum_{\substack{s\in S;\\f\left(
+s\right)  =w}}1}_{\substack{=\left\vert \left\{  s\in S\ \mid\ f\left(
+s\right)  =w\right\}  \right\vert \cdot1\\=\left\vert \left\{  s\in
+S\ \mid\ f\left(  s\right)  =w\right\}  \right\vert }}=\sum_{w\in W}\left\vert
+\left\{  s\in S\ \mid\ f\left(  s\right)  =w\right\}  \right\vert .
+\]
+Since $\sum_{s\in S}1=\left\vert S\right\vert \cdot1=\left\vert S\right\vert
+$, this rewrites as follows:%
+\begin{equation}
+\left\vert S\right\vert =\sum_{w\in W}\left\vert \left\{  s\in S\ \mid
+\ f\left(  s\right)  =w\right\}  \right\vert .\label{eq.sum.sheph.exam2}%
+\end{equation}
+This equality is often called the \textit{shepherd's principle}, because it is
+connected to the joke that \textquotedblleft in order to count a flock of
+sheep, just count the legs and divide by $4$\textquotedblright. The connection
+is somewhat weak, actually; the equality (\ref{eq.sum.sheph.exam2}) is better
+regarded as a formalization of the (less funny) idea that in order to count
+all legs of a flock of sheep, you can count the legs of every single sheep,
+and then sum the resulting numbers over all sheep in the flock. Think of the
+$S$ in (\ref{eq.sum.sheph.exam2}) as the set of all legs of all sheep in the
+flock; think of $W$ as the set of all sheep in the flock; and think of $f$ as
+the function which sends every leg to the (hopefully uniquely determined)
+sheep it belongs to.
+\end{itemize}
+
+\textbf{Remarks:}
+
+\begin{itemize}
+\item If $f:S\rightarrow W$ is a map between two sets $S$ and $W$, and if $w$
+is an element of $W$, then it is common to denote the set $\left\{  s\in
+S\ \mid\ f\left(  s\right)  =w\right\}  $ by $f^{-1}\left(  w\right)  $.
+(Formally speaking, this notation might clash with the notation $f^{-1}\left(
+w\right)  $ for the actual preimage of $w$ when $f$ happens to be bijective;
+but in practice, this causes far less confusion than it might seem to.) Using
+this notation, we can rewrite (\ref{eq.sum.sheph}) as follows:%
+\begin{equation}
+\sum_{s\in S}a_{s}=\sum_{w\in W}\underbrace{\sum_{\substack{s\in S;\\f\left(
+s\right)  =w}}}_{=\sum_{s\in f^{-1}\left(  w\right)  }}a_{s}=\sum_{w\in W}%
+\sum_{s\in f^{-1}\left(  w\right)  }a_{s}.\label{eq.sum.sheph.preimg}%
+\end{equation}
+
+
+\item When I rewrite a sum $\sum_{s\in S}a_{s}$ as $\sum_{w\in W}%
+\sum_{\substack{s\in S;\\f\left(  s\right)  =w}}a_{s}$ (or as $\sum_{w\in
+W}\sum_{s\in f^{-1}\left(  w\right)  }a_{s}$), I say that I am
+\textquotedblleft splitting the sum according to the value of $f\left(
+s\right)  $\textquotedblright. (Though, most of the time, I shall be doing
+such manipulations without explicit mention.)
+\end{itemize}
+
+\item \underline{\textbf{Fubini's theorem (interchanging the order of
+summation):}} Let $X$ and $Y$ be two finite sets. Let $a_{\left(  x,y\right)
+}$ be an element of $\mathbb{A}$ for each $\left(  x,y\right)  \in X\times Y$.
+Then,%
+\begin{equation}
+\sum_{x\in X}\sum_{y\in Y}a_{\left(  x,y\right)  }=\sum_{\left(  x,y\right)
+\in X\times Y}a_{\left(  x,y\right)  }=\sum_{y\in Y}\sum_{x\in X}a_{\left(
+x,y\right)  }.\label{eq.sum.fubini}%
+\end{equation}
+This is called \textit{Fubini's theorem for finite sums}, and is a lot easier
+to prove than what analysts tend to call Fubini's theorem. I shall sketch a
+proof shortly; but first, let me give some intuition for the statement.
+Imagine that you have a rectangular table filled with numbers. If you want to
+sum the numbers in the table, you can proceed in several ways. One way is to
+sum the numbers in each row, and then sum all the sums you have obtained.
+Another way is to sum the numbers in each column, and the sum all the obtained
+sums. Either way, you get the same result -- namely, the sum of all numbers in
+the table. This is essentially what (\ref{eq.sum.fubini}) says, at least when
+$X=\left\{  1,2,\ldots,n\right\}  $ and $Y=\left\{  1,2,\ldots,m\right\}  $
+for some integers $n$ and $m$. In this case, the numbers $a_{\left(
+x,y\right)  }$ can be viewed as forming a table, where $a_{\left(  x,y\right)
+}$ is placed in the cell at the intersection of row $x$ with column $y$. When
+$X$ and $Y$ are arbitrary finite sets (not necessarily $\left\{
+1,2,\ldots,n\right\}  $ and $\left\{  1,2,\ldots,m\right\}  $), then you need
+to slightly stretch your imagination in order to see the $a_{\left(
+x,y\right)  }$ as \textquotedblleft forming a table\textquotedblright; in
+fact, there is no obvious order in which the numbers appear in a row or
+column, but there is still a notion of rows and columns.
+
+I have promised to outline a proof of (\ref{eq.sum.fubini}). Here it comes:
+Let $S=X\times Y$ and $W=Y$, and let $f:S\rightarrow W$ be the map which sends
+every pair $\left(  x,y\right)  $ to its second entry $y$. Then,
+(\ref{eq.sum.sheph.preimg}) shows that%
+\begin{equation}
+\sum_{s\in X\times Y}a_{s}=\sum_{w\in Y}\sum_{s\in f^{-1}\left(  w\right)
+}a_{s}.\label{eq.sum.fubini.pf.1}%
+\end{equation}
+But for every given $w\in Y$, the set $f^{-1}\left(  w\right)  $ is simply the
+set of all pairs $\left(  x,w\right)  $ with $x\in X$. Thus, for every given
+$w\in Y$, there is a bijection $g_{w}:X\rightarrow f^{-1}\left(  w\right)  $
+given by%
+\[
+g_{w}\left(  x\right)  =\left(  x,w\right)  \ \ \ \ \ \ \ \ \ \ \text{for all
+}x\in X.
+\]
+Hence, for every given $w\in Y$, we can substitute $g_{w}\left(  x\right)  $
+for $s$ in the sum $\sum_{s\in f^{-1}\left(  w\right)  }a_{s}$, and thus
+obtain%
+\[
+\sum_{s\in f^{-1}\left(  w\right)  }a_{s}=\sum_{x\in X}\underbrace{a_{g_{w}%
+\left(  x\right)  }}_{\substack{=a_{\left(  x,w\right)  }\\\text{(since }%
+g_{w}\left(  x\right)  =\left(  x,w\right)  \text{)}}}=\sum_{x\in X}a_{\left(
+x,w\right)  }.
+\]
+Hence, (\ref{eq.sum.fubini.pf.1}) becomes%
+\[
+\sum_{s\in X\times Y}a_{s}=\sum_{w\in Y}\underbrace{\sum_{s\in f^{-1}\left(
+w\right)  }a_{s}}_{=\sum_{x\in X}a_{\left(  x,w\right)  }}=\sum_{w\in Y}%
+\sum_{x\in X}a_{\left(  x,w\right)  }=\sum_{y\in Y}\sum_{x\in X}a_{\left(
+x,y\right)  }%
+\]
+(here, we have renamed the summation index $w$ as $y$ in the outer sum).
+Therefore,%
+\[
+\sum_{y\in Y}\sum_{x\in X}a_{\left(  x,y\right)  }=\sum_{s\in X\times Y}%
+a_{s}=\sum_{\left(  x,y\right)  \in X\times Y}a_{\left(  x,y\right)  }.
+\]
+Thus, we have proven the second part of the equality (\ref{eq.sum.fubini}).
+The first part can be proven similarly.
+
+\textbf{Examples:}
+
+\begin{itemize}
+\item Let $n\in\mathbb{N}$ and $m\in\mathbb{N}$. Let $a_{\left(  x,y\right)
+}$ be an element of $\mathbb{A}$ for each $\left(  x,y\right)  \in\left\{
+1,2,\ldots,n\right\}  \times\left\{  1,2,\ldots,m\right\}  $. Then,
+\begin{equation}
+\sum_{x=1}^{n}\sum_{y=1}^{m}a_{\left(  x,y\right)  }=\sum_{\left(  x,y\right)
+\in\left\{  1,2,\ldots,n\right\}  \times\left\{  1,2,\ldots,m\right\}
+}a_{\left(  x,y\right)  }=\sum_{y=1}^{m}\sum_{x=1}^{n}a_{\left(  x,y\right)
+}.\label{eq.sum.fubini.nm}%
+\end{equation}
+This follows from (\ref{eq.sum.fubini}), applied to $X=\left\{  1,2,\ldots
+,n\right\}  $ and $Y=\left\{  1,2,\ldots,m\right\}  $.
+\end{itemize}
+\end{itemize}
+
+[... This section is to be continued with a few more items, and some
+discussion of products!]
+
+\begin{noncompile}
+[to add:
+
+-- $\prod_{s\in S}$
+
+-- def $\prod_{i=a}^{b}$
+
+-- telescope rule
+
+-- $\sum_{i}\sum_{j}=\sum_{j}\sum_{i}$ in rectangles and triangles
+
+-- $\sum_{i=1}^{n}i^{2}$
+
+-- infinite sums with $0$s and products with $1$s
+
+-- product rule
+
+-- cardinality of union of disjoint sets as sum
+
+-- cardinality of cartesian product of sets as product
+
+]
+\end{noncompile}
 
 \subsection{\label{sect.polynomials-emergency}Polynomials: a brief
 introduction}
@@ -5758,7 +6534,7 @@ s_{2}\circ s_{3}$ can be obtained from one another by the following rewriting
 process:%
 \begin{align*}
 s_{1}\circ s_{2}\circ\underbrace{s_{3}\circ s_{1}}_{\substack{=s_{1}\circ
-s_{3}\\\text{(by (\ref{eq.perms.braid2}))}}}\circ s_{2} &  =\underbrace{s_{1}%
+s_{3}\\\text{(by (\ref{eq.perms.braid2}))}}}\circ s_{2}  &  =\underbrace{s_{1}%
 \circ s_{2}\circ s_{1}}_{\substack{=s_{2}\circ s_{1}\circ s_{2}\\\text{(by
 (\ref{eq.perms.braid3}))}}}\circ s_{3}\circ s_{2}=s_{2}\circ s_{1}%
 \circ\underbrace{s_{2}\circ s_{3}\circ s_{2}}_{\substack{=s_{3}\circ
