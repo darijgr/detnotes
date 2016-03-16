@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Tuesday, March 15, 2016 16:20:17}
+%TCIDATA{LastRevised=Wednesday, March 16, 2016 01:39:14}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -5516,15 +5516,16 @@ For every $n\in\mathbb{N}$, there is an injective map $\mathbf{i}_{n}%
 \mathbf{i}_{n}\left(  \sigma\right)  =\sigma_{\left(  \infty\right)
 }\ \ \ \ \ \ \ \ \ \ \text{for every }\sigma\in S_{n}.
 \]
-This map $\mathbf{i}_{n}$ is what algebraists call a \textit{group
-homomorphism}: It satisfies%
+This map $\mathbf{i}_{n}$ is an example of what algebraists call a
+\textit{group homomorphism}: It satisfies%
 \begin{align*}
 \mathbf{i}_{n}\left(  \operatorname*{id}\right)   &  =\operatorname*{id};\\
 \mathbf{i}_{n}\left(  \sigma\circ\tau\right)   &  =\mathbf{i}_{n}\left(
 \sigma\right)  \circ\mathbf{i}_{n}\left(  \tau\right)
 \ \ \ \ \ \ \ \ \ \ \text{for all }\sigma,\tau\in S_{n};\\
-\mathbf{i}_{n}\left(  \sigma^{-1}\right)   &  =\mathbf{i}_{n}\left(
-\sigma\right)  \ \ \ \ \ \ \ \ \ \ \text{for all }\sigma\in S_{n}.
+\mathbf{i}_{n}\left(  \sigma^{-1}\right)   &  =\left(  \mathbf{i}_{n}\left(
+\sigma\right)  \right)  ^{-1}\ \ \ \ \ \ \ \ \ \ \text{for all }\sigma\in
+S_{n}.
 \end{align*}
 (This is all easy to check.) Thus, we can consider the image $\mathbf{i}%
 _{n}\left(  S_{n}\right)  $ of $S_{n}$ under this map as a \textquotedblleft
@@ -5539,7 +5540,7 @@ inside $S_{\left(  \infty\right)  }$: Namely,%
 \]
 
 
-From Proposition \ref{prop.S(infty).inversions} \textbf{(a)}, it is easy to
+Using Proposition \ref{prop.S(infty).inversions} \textbf{(a)}, it is easy to
 check that $S_{\left(  \infty\right)  }=\bigcup_{n\in\mathbb{N}}\mathbf{i}%
 _{n}\left(  S_{n}\right)  =\mathbf{i}_{0}\left(  S_{0}\right)  \cup
 \mathbf{i}_{1}\left(  S_{1}\right)  \cup\mathbf{i}_{2}\left(  S_{2}\right)
@@ -5555,10 +5556,10 @@ changes; this is how I solve these exercises further below.)
 
 \subsection{More on lengths of permutations}
 
-Let us summarize what we have learnt about permutations. We have defined the
-length $\ell\left(  \sigma\right)  $ and the inversions of a permutation
-$\sigma\in S_{n}$, where $n$ is a nonnegative integer. We recall the basic
-properties of these objects:
+Let us summarize some of what we have learnt about permutations. We have
+defined the length $\ell\left(  \sigma\right)  $ and the inversions of a
+permutation $\sigma\in S_{n}$, where $n$ is a nonnegative integer. We recall
+the basic properties of these objects:
 
 \begin{itemize}
 \item For each $k\in\left\{  1,2,\ldots,n-1\right\}  $, we defined $s_{k}$ to
@@ -5757,7 +5758,7 @@ s_{2}\circ s_{3}$ can be obtained from one another by the following rewriting
 process:%
 \begin{align*}
 s_{1}\circ s_{2}\circ\underbrace{s_{3}\circ s_{1}}_{\substack{=s_{1}\circ
-s_{3}\\\text{(by (\ref{eq.perms.braid2}))}}}\circ s_{2}  &  =\underbrace{s_{1}%
+s_{3}\\\text{(by (\ref{eq.perms.braid2}))}}}\circ s_{2} &  =\underbrace{s_{1}%
 \circ s_{2}\circ s_{1}}_{\substack{=s_{2}\circ s_{1}\circ s_{2}\\\text{(by
 (\ref{eq.perms.braid3}))}}}\circ s_{3}\circ s_{2}=s_{2}\circ s_{1}%
 \circ\underbrace{s_{2}\circ s_{3}\circ s_{2}}_{\substack{=s_{3}\circ
@@ -5766,7 +5767,12 @@ s_{2}\circ s_{3}\\\text{(by (\ref{eq.perms.braid3}))}}}\\
 s_{1}\\\text{(by (\ref{eq.perms.braid2}))}}}\circ s_{2}\circ s_{3}=s_{2}\circ
 s_{3}\circ s_{1}\circ s_{2}\circ s_{3}.
 \end{align*}
-
+See, e.g., Williamson's thesis \cite[Corollary 1.2.3]{William03} or Knutson's
+notes \cite[\S 2.3]{Knutson} for a proof of this fact. (Knutson, instead of
+saying that \textquotedblleft$\sigma=s_{k_{1}}\circ s_{k_{2}}\circ\cdots\circ
+s_{k_{p}}$ is a reduced expression for $\sigma$\textquotedblright, says that
+\textquotedblleft$k_{1}k_{2}\cdots k_{p}$ is a reduced word for $\sigma
+$\textquotedblright.)
 
 Something subtler holds for \textquotedblleft non-reduced\textquotedblright%
 \ expressions. Namely, if we have a representation of $\sigma$ as a
@@ -5775,17 +5781,13 @@ necessarily $\ell\left(  \sigma\right)  $ of them), then we can transform it
 into a reduced expression by a rewriting process which consists of
 applications of (\ref{eq.perms.braid3}) and (\ref{eq.perms.braid2}) as before
 and also of cancellation steps (i.e., picking an \textquotedblleft$s_{i}\circ
-s_{i}$\textquotedblright\ in the expression and removing it).
+s_{i}$\textquotedblright\ in the expression and removing it). (I don't know of
+a place where this is proven elementarily in full detail, but it can easily be
+derived from \cite[Corollary 1.2.3 and Corollary 1.1.6]{William03}.)
 
-This all is proven in greater generality in good books on Coxeter groups; I am
-not sure whether anyone has done it in an elementary way for permutations.
-Matsumoto's theorem is proven in Knutson's notes \cite[\S 2.3]{Knutson}.
-(Knutson, instead of saying that \textquotedblleft$\sigma=s_{k_{1}}\circ
-s_{k_{2}}\circ\cdots\circ s_{k_{p}}$ is a reduced expression for $\sigma
-$\textquotedblright, says that \textquotedblleft$k_{1}k_{2}\cdots k_{p}$ is a
-reduced word for $\sigma$\textquotedblright.) We won't need these results in
-the following, but they are an example of what one can see if one looks at
-permutations closely.
+This all is stated and proven in greater generality in good books on Coxeter
+groups, such as \cite{BjoBre05}. We won't need these results in the following,
+but they are an example of what one can see if one looks at permutations closely.
 \end{remark}
 
 \subsection{More on signs of permutations}
@@ -13160,17 +13162,17 @@ prove it in lesser generality. It is a fundamental result that has various
 applications to abstract algebra, number theory, coding theory, combinatorics
 and numerical mathematics.
 
-Theorem \ref{thm.vander-det} has many known proofs\footnote{For three
-combinatorial proofs, see \cite{Gessel-Vand}, \cite[\S 12.9]{Loehr-BC} and
-\cite{BenDre-Vand}. (Specifically, \cite{Gessel-Vand} and \cite{BenDre-Vand}
-prove Theorem \ref{thm.vander-det} \textbf{(c)}, whereas \cite[\S 12.9]%
-{Loehr-BC} proves Theorem \ref{thm.vander-det} \textbf{(b)}. But as we will
-see, the four parts of Theorem \ref{thm.vander-det} are easily seen to be
-equivalent to each other.)}. My favorite proof (of Theorem
-\ref{thm.vander-det} \textbf{(c)} only, but as I said the other parts are
-easily seen to be equivalent) is given in \cite[Theorem 1]{GriHyp}. In these
-notes, I will show another proof, which has the advantage of demonstrating how
-to use Theorem \ref{thm.laplace.pre}.
+Theorem \ref{thm.vander-det} has many known proofs\footnote{For four
+combinatorial proofs, see \cite{Gessel-Vand}, \cite[\S 5.3]{Aigner07},
+\cite[\S 12.9]{Loehr-BC} and \cite{BenDre-Vand}. (Specifically,
+\cite{Gessel-Vand} and \cite{BenDre-Vand} prove Theorem \ref{thm.vander-det}
+\textbf{(c)}, whereas \cite[\S 5.3]{Aigner07} and \cite[\S 12.9]{Loehr-BC}
+prove Theorem \ref{thm.vander-det} \textbf{(b)}. But as we will see, the four
+parts of Theorem \ref{thm.vander-det} are easily seen to be equivalent to each
+other.)}. My favorite proof (of Theorem \ref{thm.vander-det} \textbf{(c)}
+only, but as I said the other parts are easily seen to be equivalent) is given
+in \cite[Theorem 1]{GriHyp}. In these notes, I will show another proof, which
+has the advantage of demonstrating how to use Theorem \ref{thm.laplace.pre}.
 
 \begin{example}
 \label{exa.vander-det.3}Let $x,y,z\in\mathbb{K}$. Let $A=\left(
@@ -34981,7 +34983,7 @@ thus, (\ref{sol.tridiag.fib.sol2.term2}) is proven.
 
 Now, (\ref{eq.det.eq.2}) becomes%
 \begin{align}
-\det A &  =\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\prod_{i=1}%
+\det A  &  =\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\prod_{i=1}%
 ^{n}a_{i,\sigma\left(  i\right)  }\nonumber\\
 &  =\sum_{\substack{\sigma\in S_{n};\\\sigma\text{ is not short-legged}%
 }}\left(  -1\right)  ^{\sigma}\underbrace{\prod_{i=1}^{n}a_{i,\sigma\left(
@@ -34997,7 +34999,7 @@ S_{n};\\\sigma\text{ is short-legged}}}\left(  -1\right)  ^{\sigma}\left(
 -1\right)  ^{\left\vert \operatorname*{Exced}\sigma\right\vert }\nonumber\\
 &  =\sum_{\substack{\sigma\in S_{n};\\\sigma\text{ is short-legged}}}\left(
 -1\right)  ^{\sigma}\left(  -1\right)  ^{\left\vert \operatorname*{Exced}%
-\sigma\right\vert }.\label{sol.tridiag.fib.sol2.det1}%
+\sigma\right\vert }. \label{sol.tridiag.fib.sol2.det1}%
 \end{align}
 We still don't see how this connects to $f_{n+1}$, though. So let us relate
 short-legged permutations to lacunar sets.
@@ -39027,6 +39029,10 @@ Exercise \ref{exe.adj(AB)}.
 \begin{thebibliography}{999999999}                                                                                        %
 
 
+\bibitem[Aigner07]{Aigner07}%
+\href{http://doi.org/10.1007/978-3-540-39035-0}{Martin Aigner, \textit{A
+Course in Enumeration}, Graduate Texts in Mathematics \#238, Springer 2007.}
+
 \bibitem[AigZie]{AigZie}Martin Aigner, G\"{u}nter M. Ziegler, \textit{Proofs
 from the Book}, 4th edition, Springer 2010.
 
@@ -39058,6 +39064,10 @@ gbergman/.C.to.L/}
 
 \bibitem[BirMac99]{BirkMac}Saunders Mac Lane, Garrett Birkhoff,
 \textit{Algebra}, 3rd edition, AMS Chelsea Publishing 1999.
+
+\bibitem[BjoBre05]{BjoBre05}\href{http://doi.org/10.1007/3-540-27596-7}{Anders
+Bj\"{o}rner, Francesco Brenti, \textit{Combinatorics of Coxeter Groups},
+Graduate Texts in Mathematics \#231, Springer 2005.}
 
 \bibitem[Bona12]{Bona12}Miklos Bona, \textit{Combinatorics of Permutations},
 2nd edition, CRC Press 2012.
@@ -39226,6 +39236,12 @@ Electronic Journal of Combinatorics, Volume 9 (2002), Note \#N5.}
 \href{https://www.math.nmsu.edu/~elbert/AbsAlgeb.pdf}{Elbert A. Walker,
 \textit{Introduction to Abstract Algebra}, Random House/Birkhauser, New York,
 1987.}
+
+\bibitem[William03]{William03}%
+\href{http://people.mpim-bonn.mpg.de/geordie/Hecke.pdf}{Geordie Williamson,
+\textit{Mind your }$P$\textit{ and }$Q$\textit{-symbols: Why the
+Kazhdan-Lusztig basis of the Hecke algebra of type A is cellular}, Honours
+thesis at the University of Sydney, October 2003.}
 
 \bibitem[Zeilbe]{Zeilbe}%
 \href{http://www.math.rutgers.edu/~zeilberg/mamarimY/DM85.pdf}{Doron
