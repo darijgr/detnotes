@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Wednesday, March 16, 2016 20:28:56}
+%TCIDATA{LastRevised=Wednesday, March 16, 2016 20:44:46}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -927,7 +927,7 @@ For every positive integer $i$, we have%
 \begin{align*}
 &  \sum_{i=1}^{n}\dfrac{1}{\sqrt{i}+\sqrt{i+1}}\\
 &  =\sum_{i=1}^{n}\left(  \sqrt{i+1}-\sqrt{i}\right)  =\sum_{s=2}^{n+1}\left(
-\sqrt{s}-\sqrt{s-1}\right)  \\
+\sqrt{s}-\sqrt{s-1}\right) \\
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
@@ -936,10 +936,10 @@ For every positive integer $i$, we have%
 1,2,\ldots,n\right\}  ,\ s\mapsto s-1\\
 \text{is a bijection}%
 \end{array}
-\right)  \\
+\right) \\
 &  =\sqrt{n+1}-\underbrace{\sqrt{2-1}}_{=\sqrt{1}=1}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{eq.sum.telescope}), applied to
-}u=2\text{, }v=n+1\text{ and }a_{s}=\sqrt{s}-\sqrt{s-1}\right)  \\
+}u=2\text{, }v=n+1\text{ and }a_{s}=\sqrt{s}-\sqrt{s-1}\right) \\
 &  =\sqrt{n+1}-1.
 \end{align*}
 
@@ -959,7 +959,7 @@ $a_{v}-a_{u-1}$ like a telescope does when it is collapsed.
 be a finite set. Let $W$ be a set. Let $f:S\rightarrow W$ be a map. Then,%
 \begin{equation}
 \sum_{s\in S}a_{s}=\sum_{w\in W}\sum_{\substack{s\in S;\\f\left(  s\right)
-=w}}a_{s}.\label{eq.sum.sheph}%
+=w}}a_{s}. \label{eq.sum.sheph}%
 \end{equation}
 The idea behind this formula is the following: The left hand side is the sum
 of all $a_{s}$ for $s\in S$. The right hand side is the same sum, but split
@@ -975,7 +975,7 @@ $s\in S$ satisfying $f\left(  s\right)  =w$, and then we sum all these
 \sum_{s\in\left\{  -n,-\left(  n-1\right)  ,\ldots,n\right\}  }s^{3}%
 =\sum_{w\in\left\{  0,1,\ldots,n\right\}  }\sum_{\substack{s\in\left\{
 -n,-\left(  n-1\right)  ,\ldots,n\right\}  ;\\\left\vert s\right\vert
-=w}}s^{3}.\label{eq.sum.sheph.exam1}%
+=w}}s^{3}. \label{eq.sum.sheph.exam1}%
 \end{equation}
 (This follows from (\ref{eq.sum.sheph}), applied to $S=\left\{  -n,-\left(
 n-1\right)  ,\ldots,n\right\}  $, $W=\left\{  0,1,\ldots,n\right\}  $ and
@@ -1179,7 +1179,7 @@ _{\substack{=\sum_{i=1}^{n}i=\dfrac{n\left(  n+1\right)  }{2}\\\text{(by
 (\ref{eq.sum.littlegauss2}))}}}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{eq.sum.linear2}), applied to
 }S=\left\{  1,2,\ldots,n\right\}  \text{, }a_{s}=s\text{ and }\lambda
-=\dfrac{m\left(  m+1\right)  }{2}\right)  \\
+=\dfrac{m\left(  m+1\right)  }{2}\right) \\
 &  =\dfrac{m\left(  m+1\right)  }{2}\cdot\dfrac{n\left(  n+1\right)  }{2}.
 \end{align*}
 
@@ -36301,7 +36301,7 @@ lacunar sets.
 (For example, if $n=5$, then the lacunar sets are $\varnothing$, $\left\{
 1\right\}  $, $\left\{  2\right\}  $, $\left\{  3\right\}  $, $\left\{
 4\right\}  $, $\left\{  1,3\right\}  $, $\left\{  1,4\right\}  $, and
-$\left\{  2,4\right\}  $. Their number, unsurprisingly, is $8=f_{5+1}$.
+$\left\{  2,4\right\}  $. Their number, unsurprisingly, is $8=f_{5+1}$.)
 
 For any $\sigma\in S_{n}$, we define the following terminology:
 
@@ -38059,23 +38059,24 @@ A & B_{q}^{\prime}\\
 \]
 Now, taking determinants in (\ref{sol.block2x2.tridet.short.indstep.1}), we
 obtain%
-\begin{equation}
+\begin{align}
 \det\left(  \left(
 \begin{array}
 [c]{cc}%
 A & B\\
 0_{M\times n} & D
 \end{array}
-\right)  _{\sim\left(  n+M\right)  ,\sim\left(  n+q\right)  }\right)
+\right)  _{\sim\left(  n+M\right)  ,\sim\left(  n+q\right)  }\right)    &
 =\det\left(
 \begin{array}
 [c]{cc}%
 A & B_{q}^{\prime}\\
 0_{\left(  M-1\right)  \times n} & D_{\sim M,\sim q}%
 \end{array}
-\right)  =\det A\cdot\det\left(  D_{\sim M,\sim q}\right)  .
-\label{sol.block2x2.tridet.short.indstep.2}%
-\end{equation}
+\right)  \nonumber\\
+& =\det A\cdot\det\left(  D_{\sim M,\sim q}\right)
+.\label{sol.block2x2.tridet.short.indstep.2}%
+\end{align}
 
 
 But $n+M>0$ and thus $n+M\in\left\{  1,2,\ldots,n+M\right\}  $. Thus, Theorem
@@ -38094,7 +38095,7 @@ that%
 A & B\\
 0_{M\times n} & D
 \end{array}
-\right) \\
+\right)  \\
 &  =\sum_{q=1}^{n+M}\left(  -1\right)  ^{\left(  n+M\right)  +q}u_{n+M,q}%
 \det\left(  \left(
 \begin{array}
@@ -38102,7 +38103,7 @@ A & B\\
 A & B\\
 0_{M\times n} & D
 \end{array}
-\right)  _{\sim\left(  n+M\right)  ,\sim q}\right) \\
+\right)  _{\sim\left(  n+M\right)  ,\sim q}\right)  \\
 &  =\sum_{q=1}^{n}\left(  -1\right)  ^{\left(  n+M\right)  +q}%
 \underbrace{u_{n+M,q}}_{\substack{=0\\\text{(by
 (\ref{sol.block2x2.tridet.short.indstep.u=0}))}}}\det\left(  \left(
@@ -38111,7 +38112,7 @@ A & B\\
 A & B\\
 0_{M\times n} & D
 \end{array}
-\right)  _{\sim\left(  n+M\right)  ,\sim q}\right) \\
+\right)  _{\sim\left(  n+M\right)  ,\sim q}\right)  \\
 &  \ \ \ \ \ \ \ \ \ \ +\sum_{q=n+1}^{n+M}\left(  -1\right)  ^{\left(
 n+M\right)  +q}u_{n+M,q}\det\left(  \left(
 \begin{array}
@@ -38119,8 +38120,8 @@ n+M\right)  +q}u_{n+M,q}\det\left(  \left(
 A & B\\
 0_{M\times n} & D
 \end{array}
-\right)  _{\sim\left(  n+M\right)  ,\sim q}\right) \\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }0\leq n\leq n+M\right) \\
+\right)  _{\sim\left(  n+M\right)  ,\sim q}\right)  \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }0\leq n\leq n+M\right)  \\
 &  =\underbrace{\sum_{q=1}^{n}\left(  -1\right)  ^{\left(  n+M\right)
 +q}0\det\left(  \left(
 \begin{array}
@@ -38136,7 +38137,7 @@ n+M\right)  +q}u_{n+M,q}\det\left(  \left(
 A & B\\
 0_{M\times n} & D
 \end{array}
-\right)  _{\sim\left(  n+M\right)  ,\sim q}\right) \\
+\right)  _{\sim\left(  n+M\right)  ,\sim q}\right)  \\
 &  =\sum_{q=n+1}^{n+M}\left(  -1\right)  ^{\left(  n+M\right)  +q}%
 u_{n+M,q}\det\left(  \left(
 \begin{array}
@@ -38144,23 +38145,23 @@ u_{n+M,q}\det\left(  \left(
 A & B\\
 0_{M\times n} & D
 \end{array}
-\right)  _{\sim\left(  n+M\right)  ,\sim q}\right) \\
+\right)  _{\sim\left(  n+M\right)  ,\sim q}\right)  \\
 &  =\sum_{q=1}^{M}\underbrace{\left(  -1\right)  ^{\left(  n+M\right)
 +\left(  n+q\right)  }}_{\substack{=\left(  -1\right)  ^{M+q}\\\text{(since
-}\left(  n+M\right)  +\left(  n+q\right)  =2n+M+q\equiv M+q\operatorname{mod}%
-2\text{)}}}\underbrace{u_{n+M,n+q}}_{\substack{=d_{M,q}\\\text{(by
-(\ref{sol.block2x2.tridet.short.indstep.u=d}))}}}\underbrace{\det\left(
-\left(
+}\left(  n+M\right)  +\left(  n+q\right)  \\=2n+M+q\equiv
+M+q\operatorname{mod}2\text{)}}}\underbrace{u_{n+M,n+q}}_{\substack{=d_{M,q}%
+\\\text{(by (\ref{sol.block2x2.tridet.short.indstep.u=d}))}}}\underbrace{\det
+\left(  \left(
 \begin{array}
 [c]{cc}%
 A & B\\
 0_{M\times n} & D
 \end{array}
-\right)  _{\sim\left(  n+M\right)  ,\sim q}\right)  }_{\substack{=\det
-A\cdot\det\left(  D_{\sim M,\sim q}\right)  \\\text{(by
+\right)  _{\sim\left(  n+M\right)  ,\sim\left(  n+q\right)  }\right)
+}_{\substack{=\det A\cdot\det\left(  D_{\sim M,\sim q}\right)  \\\text{(by
 (\ref{sol.block2x2.tridet.short.indstep.2}))}}}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }n+q\text{ for
-}q\text{ in the sum}\right) \\
+}q\text{ in the sum}\right)  \\
 &  =\sum_{q=1}^{M}\left(  -1\right)  ^{M+q}d_{M,q}\det A\cdot\det\left(
 D_{\sim M,\sim q}\right)  =\det A\cdot\underbrace{\sum_{q=1}^{M}\left(
 -1\right)  ^{M+q}d_{M,q}\det\left(  D_{\sim M,\sim q}\right)  }%
