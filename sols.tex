@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Wednesday, March 16, 2016 04:06:46}
+%TCIDATA{LastRevised=Wednesday, March 16, 2016 20:28:56}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -321,17 +321,19 @@ S\right\vert $, as follows:
 for every finite set $S$ with $\left\vert S\right\vert =n$ (and every choice
 of elements $a_{s}$ of $\mathbb{A}$). Now, if $S$ is a finite set with
 $\left\vert S\right\vert =n+1$ (and if $a_{s}\in\mathbb{A}$ are chosen for all
-$s\in S$), then $\sum_{s\in S}a_{s}$ is defined by%
+$s\in S$), then $\sum_{s\in S}a_{s}$ is defined by picking any $t\in
+S$\ \ \ \ \footnote{This is possible, because $S$ is nonempty (in fact,
+$\left\vert S\right\vert =n+1>n\geq0$).} and setting%
 \begin{equation}
-\sum_{s\in S}a_{s}=a_{t}+\sum_{s\in S\setminus\left\{  t\right\}  }%
-a_{s}\ \ \ \ \ \ \ \ \ \ \text{for any }t\in S.\label{eq.sum.def.1}%
+\sum_{s\in S}a_{s}=a_{t}+\sum_{s\in S\setminus\left\{  t\right\}  }a_{s}.
+\label{eq.sum.def.1}%
 \end{equation}
-It is not immediately clear why this definition is well-defined: The right
-hand side of (\ref{eq.sum.def.1}) is defined using a choice of $t$, but we
-want our value of $\sum_{s\in S}a_{s}$ to depend only on $S$ and on the
-$a_{s}$ (not on some arbitrarily chosen $t\in S$). However, it is possible to
-prove that the right hand side of (\ref{eq.sum.def.1}) is actually independent
-of $t$ (that is, any two choices of $t$ will lead to the same result).
+It is not immediately clear why this definition is legitimate: The right hand
+side of (\ref{eq.sum.def.1}) is defined using a choice of $t$, but we want our
+value of $\sum_{s\in S}a_{s}$ to depend only on $S$ and on the $a_{s}$ (not on
+some arbitrarily chosen $t\in S$). However, it is possible to prove that the
+right hand side of (\ref{eq.sum.def.1}) is actually independent of $t$ (that
+is, any two choices of $t$ will lead to the same result).
 \end{itemize}
 
 \textbf{Examples:}
@@ -374,30 +376,36 @@ all $s\in S$, we have $a_{s}+2a_{s}=3a_{s}$\textquotedblright, or as a loop
 variable in a for-loop in programming.) The sign $\sum$ itself is called
 \textquotedblleft the summation sign\textquotedblright\ or \textquotedblleft
 the $\sum$ sign\textquotedblright. The numbers $a_{s}$ are called the
-\textit{addends} (or \textit{summands}) of the sum $\sum_{s\in S}a_{s}$.
+\textit{addends} (or \textit{summands}) of the sum $\sum_{s\in S}a_{s}$. More
+precisely, for any given $t\in S$, we can refer to the number $a_{t}$ as the
+\textquotedblleft addend corresponding to the index $t$\textquotedblright\ (or
+as the \textquotedblleft addend for $s=t$\textquotedblright, or as the
+\textquotedblleft addend for $t$\textquotedblright) of the sum $\sum_{s\in
+S}a_{s}$.
 
 \item When the set $S$ is empty, the sum $\sum_{s\in S}a_{s}$ is called an
 \textit{empty sum}. Our definition implies that any empty sum is $0$. This
 convention is used throughout mathematics, except in rare occasions where a
-slightly subtler version of it is used\footnote{If you really want to know
-what I mean by this: Our above definition is tailored for the cases when the
-$a_{s}$ are numbers (i.e., elements of one of the sets $\mathbb{N}$,
-$\mathbb{Z}$, $\mathbb{Q}$, $\mathbb{R}$ and $\mathbb{C}$). In more advanced
-settings, one tends to take sums of the form $\sum_{s\in S}a_{s}$ where the
-$a_{s}$ are not numbers but (for example) elements of a commutative ring
-$\mathbb{K}$. (See Definition \ref{def.commring} for the definition of a
-commutative ring.) In such cases, one wants the sum $\sum_{s\in S}a_{s}$ for
-an empty set $S$ to be not the integer $0$, but the zero of the commutative
-ring $\mathbb{K}$ (which is sometimes distinct from the integer $0$). This has
-the slightly confusing consequence that the meaning of the sum $\sum_{s\in
-S}a_{s}$ for an empty set $S$ depends on what ring $\mathbb{K}$ the $a_{s}$
-belong to, even if (for an empty set $S$) there are no $a_{s}$ to begin with!
-But in practice, the choice of $\mathbb{K}$ is always clear from context, so
-this is not ambiguous.
+slightly subtler version of it is used\footnote{Do not worry about this
+subtler version for the time being. If you really want to know what it is: Our
+above definition is tailored to the cases when the $a_{s}$ are numbers (i.e.,
+elements of one of the sets $\mathbb{N}$, $\mathbb{Z}$, $\mathbb{Q}$,
+$\mathbb{R}$ and $\mathbb{C}$). In more advanced settings, one tends to take
+sums of the form $\sum_{s\in S}a_{s}$ where the $a_{s}$ are not numbers but
+(for example) elements of a commutative ring $\mathbb{K}$. (See Definition
+\ref{def.commring} for the definition of a commutative ring.) In such cases,
+one wants the sum $\sum_{s\in S}a_{s}$ for an empty set $S$ to be not the
+integer $0$, but the zero of the commutative ring $\mathbb{K}$ (which is
+sometimes distinct from the integer $0$). This has the slightly confusing
+consequence that the meaning of the sum $\sum_{s\in S}a_{s}$ for an empty set
+$S$ depends on what ring $\mathbb{K}$ the $a_{s}$ belong to, even if (for an
+empty set $S$) there are no $a_{s}$ to begin with! But in practice, the choice
+of $\mathbb{K}$ is always clear from context, so this is not ambiguous.
 \par
 A similar caveat applies to the other versions of the $\sum$ sign, as well as
-to the $\prod$ sign defined further below; I shall not elaborate it further.}.
-If someone tells you that empty sums are undefined, you should not be listening!
+to the $\prod$ sign defined further below; I shall not elaborate on it
+further.}. If someone tells you that empty sums are undefined, you should not
+be listening!
 
 \item The summation index does not always have to be a single letter. For
 instance, if $S$ is a set of pairs, then we can write $\sum_{\left(
@@ -415,17 +423,17 @@ in the form $\sum_{s\in S}a_{s}$ with a single-letter variable $s$ without
 introducing an extra notation such as $a_{\left(  x,y\right)  }$ for the
 quotients $\dfrac{x}{y}$.
 
-\item Mathematicians don't seem to have reached an agreement on how strongly
-the summation sign \textquotedblleft binds\textquotedblright. By this I mean
-the following question: Does $\sum_{s\in S}a_{s}+b$ (where $b$ is some other
-element of $\mathbb{A}$) mean $\sum_{s\in S}\left(  a_{s}+b\right)  $ or
-$\left(  \sum_{s\in S}a_{s}\right)  +b$ ? In my experience, the second
-interpretation (i.e., reading it as $\left(  \sum_{s\in S}a_{s}\right)  +b$)
-is more widespread, and this is the interpretation that I will follow.
-Nevertheless, be on the watch for possible misunderstandings, as someone might
-be using the first interpretation when you expect it the least!\footnote{This
-is similar to the notorious disagreement about whether $a/bc$ means $\left(
-a/b\right)  \cdot c$ or $a/\left(  bc\right)  $.}
+\item Mathematicians don't seem to have reached an agreement on the operator
+precedence of the $\sum$ sign. By this I mean the following question: Does
+$\sum_{s\in S}a_{s}+b$ (where $b$ is some other element of $\mathbb{A}$) mean
+$\sum_{s\in S}\left(  a_{s}+b\right)  $ or $\left(  \sum_{s\in S}a_{s}\right)
++b$ ? In my experience, the second interpretation (i.e., reading it as
+$\left(  \sum_{s\in S}a_{s}\right)  +b$) is more widespread, and this is the
+interpretation that I will follow. Nevertheless, be on the watch for possible
+misunderstandings, as someone might be using the first interpretation when you
+expect it the least!\footnote{This is similar to the notorious disagreement
+about whether $a/bc$ means $\left(  a/b\right)  \cdot c$ or $a/\left(
+bc\right)  $.}
 
 However, the situation is different for products and nested sums. For
 instance, the expression $\sum_{s\in S}ba_{s}c$ is understood to mean
@@ -448,9 +456,16 @@ there is no way to make sense of infinite sums such as $\sum_{s\in\mathbb{Z}%
 }s^{2}$. However, \textbf{some} infinite sums can be made sense of. The
 simplest case is when the set $S$ might be infinite, but only finitely many
 among the $a_{s}$ are nonzero. In this case, we can define $\sum_{s\in S}%
-a_{s}$ simply by dropping the zero addend and summing the finitely many
+a_{s}$ simply by dropping the zero addends and summing the finitely many
 remaining addends. Other situations in which infinite sums make sense appear
 in analysis and in topological algebra (e.g., power series).
+
+\item The sum $\sum_{s\in S}a_{s}$ always belongs to $\mathbb{A}%
+$.\ \ \ \ \footnote{Recall that we have assumed $\mathbb{A}$ to be one of the
+sets $\mathbb{N}$, $\mathbb{Z}$, $\mathbb{Q}$, $\mathbb{R}$ and $\mathbb{C}$,
+and that we have assumed the $a_{s}$ to belong to $\mathbb{A}$.} For instance,
+a sum of elements of $\mathbb{N}$ belongs to $\mathbb{N}$; a sum of elements
+of $\mathbb{R}$ belongs to $\mathbb{R}$, and so on.
 \end{itemize}
 
 \item A slightly more complicated version of the summation sign is the
@@ -493,7 +508,11 @@ among $1,2,\ldots,n$ (that is, $k=n$ if $n$ is even, and $k=n-1$ otherwise).
 is usually pronounced \textquotedblleft sum of the $a_{s}$ over all $s\in S$
 satisfying $\mathcal{A}\left(  s\right)  $\textquotedblright. The semicolon
 after \textquotedblleft$s\in S$\textquotedblright\ is often omitted or
-replaced by a colon or a comma.
+replaced by a colon or a comma. Many authors often omit the \textquotedblleft%
+$s\in S$\textquotedblright\ part (so they simply write $\sum_{\mathcal{A}%
+\left(  s\right)  }a_{s}$) when it is clear enough what the $S$ is. (For
+instance, they would write $\sum_{1\leq s\leq5}s^{2}$ instead of
+$\sum_{\substack{s\in\mathbb{N};\\1\leq s\leq5}}s^{2}$.)
 
 \item The set $S$ needs not be finite in order for $\sum_{\substack{s\in
 S;\\\mathcal{A}\left(  s\right)  }}a_{s}$ to be defined; it suffices that the
@@ -502,7 +521,7 @@ set $\left\{  t\in S\ \mid\ \mathcal{A}\left(  t\right)  \right\}  $ be finite
 $).
 
 \item The sum $\sum_{\substack{s\in S;\\\mathcal{A}\left(  s\right)  }}a_{s}$
-is said to be \textit{empty} whenever the set  $\left\{  t\in S\ \mid
+is said to be \textit{empty} whenever the set $\left\{  t\in S\ \mid
 \ \mathcal{A}\left(  t\right)  \right\}  $ is empty (i.e., whenever no $s\in
 S$ satisfies $\mathcal{A}\left(  s\right)  $).
 \end{itemize}
@@ -581,8 +600,8 @@ making them useful:
 \item \underline{\textbf{Splitting-off:}} Let $S$ be a finite set. Let $t\in
 S$. Let $a_{s}$ be an element of $\mathbb{A}$ for each $s\in S$. Then,%
 \begin{equation}
-\sum_{s\in S}a_{s}=a_{t}+\sum_{s\in S\setminus\left\{  t\right\}  }%
-a_{s}.\label{eq.sum.split-off}%
+\sum_{s\in S}a_{s}=a_{t}+\sum_{s\in S\setminus\left\{  t\right\}  }a_{s}.
+\label{eq.sum.split-off}%
 \end{equation}
 (This is precisely the equality (\ref{eq.sum.def.1}).) This formula
 (\ref{eq.sum.split-off}) allows us to \textquotedblleft split
@@ -608,7 +627,7 @@ be two subsets of $S$ such that $X\cap Y=\varnothing$ and $X\cup Y=S$.
 $S$ lies in \textbf{exactly} one of $X$ and $Y$.) Let $a_{s}$ be an element of
 $\mathbb{A}$ for each $s\in S$. Then,%
 \begin{equation}
-\sum_{s\in S}a_{s}=\sum_{s\in X}a_{s}+\sum_{s\in Y}a_{s}.\label{eq.sum.split}%
+\sum_{s\in S}a_{s}=\sum_{s\in X}a_{s}+\sum_{s\in Y}a_{s}. \label{eq.sum.split}%
 \end{equation}
 (Here, as we explained, $\sum_{s\in X}a_{s}+\sum_{s\in Y}a_{s}$ stands for
 $\left(  \sum_{s\in X}a_{s}\right)  +\left(  \sum_{s\in Y}a_{s}\right)  $.)
@@ -646,8 +665,8 @@ $.)
 if $a_{s}$ is an element of $\mathbb{A}$ for each $s\in\left\{  u,u+1,\ldots
 ,w\right\}  $, then%
 \begin{equation}
-\sum_{s=u}^{w}a_{s}=\sum_{s=u}^{v}a_{s}+\sum_{s=v+1}^{w}a_{s}%
-.\label{eq.sum.split.uvw}%
+\sum_{s=u}^{w}a_{s}=\sum_{s=u}^{v}a_{s}+\sum_{s=v+1}^{w}a_{s}.
+\label{eq.sum.split.uvw}%
 \end{equation}
 This follows from (\ref{eq.sum.split}), applied to $S=\left\{  u,u+1,\ldots
 ,w\right\}  $, $X=\left\{  u,u+1,\ldots,v\right\}  $ and $Y=\left\{
@@ -662,7 +681,7 @@ S$. Let $a_{s}$ be an element of $\mathbb{A}$ for each $s\in S$. Then,%
 \begin{equation}
 \sum_{s\in S}a_{s}=\sum_{\substack{s\in S;\\\mathcal{A}\left(  s\right)
 }}a_{s}+\sum_{\substack{s\in S;\\\text{not }\mathcal{A}\left(  s\right)
-}}a_{s}\label{eq.sum.split.pred}%
+}}a_{s} \label{eq.sum.split.pred}%
 \end{equation}
 (where \textquotedblleft not $\mathcal{A}\left(  s\right)  $\textquotedblright%
 \ means the negation of $\mathcal{A}\left(  s\right)  $). This simply follows
@@ -682,7 +701,7 @@ from (\ref{eq.sum.split}), applied to $X=\left\{  s\in S\ \mid\ \mathcal{A}%
 every $s\in S$, let $a_{s}$ and $b_{s}$ be elements of $\mathbb{A}$. Then,%
 \begin{equation}
 \sum_{s\in S}\left(  a_{s}+b_{s}\right)  =\sum_{s\in S}a_{s}+\sum_{s\in
-S}b_{s}.\label{eq.sum.linear1}%
+S}b_{s}. \label{eq.sum.linear1}%
 \end{equation}
 
 
@@ -697,16 +716,16 @@ then%
 If $u$ and $v$ are two integers, then%
 \begin{equation}
 \sum_{s=u}^{v}\left(  a_{s}+b_{s}\right)  =\sum_{s=u}^{v}a_{s}+\sum_{s=u}%
-^{v}b_{s}.\label{eq.sum.linear1.c}%
+^{v}b_{s}. \label{eq.sum.linear1.c}%
 \end{equation}
 
 
 \item \underline{\textbf{Factoring out:}} Let $S$ be a finite set. For every
 $s\in S$, let $a_{s}$ be an element of $\mathbb{A}$. Also, let $\lambda$ be an
 element of $\mathbb{A}$. Then,%
-\[
-\sum_{s\in S}\lambda a_{s}=\lambda\sum_{s\in S}a_{s}.
-\]
+\begin{equation}
+\sum_{s\in S}\lambda a_{s}=\lambda\sum_{s\in S}a_{s}. \label{eq.sum.linear2}%
+\end{equation}
 Again, similar rules hold for the other types of summation sign.
 
 \item \underline{\textbf{Zeros sum to zero:}} Let $S$ be a finite set. Then,%
@@ -723,7 +742,7 @@ sum of zeroes is defined to be anything other than zero. The infinity does not
 \item \underline{\textbf{Summing equal values:}} Let $S$ be a finite set. Let
 $a$ be an element of $\mathbb{A}$. Then,%
 \begin{equation}
-\sum_{s\in S}a=\left\vert S\right\vert \cdot a.\label{eq.sum.equal}%
+\sum_{s\in S}a=\left\vert S\right\vert \cdot a. \label{eq.sum.equal}%
 \end{equation}
 In other words, if all addends of a sum are equal to one and the same element
 $a$, then the sum is just the number of its addends times $a$. In particular,%
@@ -753,7 +772,7 @@ as long as its name does not clash with other notation.
 finite sets. Let $f:S\rightarrow T$ be a \textbf{bijective} map. Let $a_{t}$
 be an element of $\mathbb{A}$ for each $t\in T$. Then,%
 \begin{equation}
-\sum_{t\in T}a_{t}=\sum_{s\in S}a_{f\left(  s\right)  }.\label{eq.sum.subs1}%
+\sum_{t\in T}a_{t}=\sum_{s\in S}a_{f\left(  s\right)  }. \label{eq.sum.subs1}%
 \end{equation}
 (The idea here is that the sum $\sum_{s\in S}a_{f\left(  s\right)  }$ contains
 the same addends as the sum $\sum_{t\in T}a_{t}$.)
@@ -820,24 +839,24 @@ Thus, we obtain%
 \]
 Now,%
 \begin{align*}
-2\sum_{i=0}^{n}i &  =\sum_{i=0}^{n}i+\underbrace{\sum_{i=0}^{n}i}_{=\sum
-_{i=0}^{n}\left(  n-i\right)  }\ \ \ \ \ \ \ \ \ \ \left(  \text{since
-}2q=q+q\text{ for every }q\in\mathbb{Q}\right)  \\
+2\sum_{i=0}^{n}i  &  =\sum_{i=0}^{n}i+\underbrace{\sum_{i=0}^{n}i}%
+_{=\sum_{i=0}^{n}\left(  n-i\right)  }\ \ \ \ \ \ \ \ \ \ \left(  \text{since
+}2q=q+q\text{ for every }q\in\mathbb{Q}\right) \\
 &  =\sum_{i=0}^{n}i+\sum_{i=0}^{n}\left(  n-i\right)  =\sum_{i=0}%
 ^{n}\underbrace{\left(  i+\left(  n-i\right)  \right)  }_{=n}%
 \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have used (\ref{eq.sum.linear1.c})
-backwards}\right)  \\
+backwards}\right) \\
 &  =\sum_{i=0}^{n}n=\left(  n+1\right)  n\ \ \ \ \ \ \ \ \ \ \left(  \text{by
-(\ref{eq.sum.equal})}\right)  \\
+(\ref{eq.sum.equal})}\right) \\
 &  =n\left(  n+1\right)  ,
 \end{align*}
 and therefore%
 \begin{equation}
-\sum_{i=0}^{n}i=\dfrac{n\left(  n+1\right)  }{2}.\label{eq.sum.littlegauss1}%
+\sum_{i=0}^{n}i=\dfrac{n\left(  n+1\right)  }{2}. \label{eq.sum.littlegauss1}%
 \end{equation}
 Since $\sum_{i=0}^{n}i=0+\sum_{i=1}^{n}i=\sum_{i=1}^{n}i$, this rewrites as%
 \begin{equation}
-\sum_{i=1}^{n}i=\dfrac{n\left(  n+1\right)  }{2}.\label{eq.sum.littlegauss2}%
+\sum_{i=1}^{n}i=\dfrac{n\left(  n+1\right)  }{2}. \label{eq.sum.littlegauss2}%
 \end{equation}
 
 \end{itemize}
@@ -846,12 +865,95 @@ Since $\sum_{i=0}^{n}i=0+\sum_{i=1}^{n}i=\sum_{i=1}^{n}i$, this rewrites as%
 finite sets. Let $f:S\rightarrow T$ be a \textbf{bijective} map. Let $a_{s}$
 be an element of $\mathbb{A}$ for each $s\in S$. Then,%
 \begin{equation}
-\sum_{s\in S}a_{s}=\sum_{t\in T}a_{f^{-1}\left(  t\right)  }%
-.\label{eq.sum.subs2}%
+\sum_{s\in S}a_{s}=\sum_{t\in T}a_{f^{-1}\left(  t\right)  }.
+\label{eq.sum.subs2}%
 \end{equation}
 This is, of course, just (\ref{eq.sum.subs1}) but applied to $T$, $S$ and
 $f^{-1}$ instead of $S$, $T$ and $f$. (Nevertheless, I prefer to mention
 (\ref{eq.sum.subs2}) separately because it often is used in this very form.)
+
+\item \underline{\textbf{Telescoping sums:}} Let $u$ and $v$ be two integers
+such that $u-1\leq v$. Let $a_{s}$ be an element of $\mathbb{A}$ for each
+$s\in\left\{  u-1,u,\ldots,v\right\}  $. Then,%
+\begin{equation}
+\sum_{s=u}^{v}\left(  a_{s}-a_{s-1}\right)  =a_{v}-a_{u-1}.
+\label{eq.sum.telescope}%
+\end{equation}
+
+
+\textbf{Examples:}
+
+\begin{itemize}
+\item Let us give a new proof of (\ref{eq.sum.littlegauss2}). Indeed, fix a
+nonnegative integer $n$. An easy computation reveals that%
+\begin{equation}
+s=\dfrac{s\left(  s+1\right)  }{2}-\dfrac{\left(  s-1\right)  \left(  \left(
+s-1\right)  +1\right)  }{2} \label{eq.sum.littlegauss2.pf2.1}%
+\end{equation}
+for each $s\in\mathbb{Z}$. Thus,%
+\begin{align*}
+\sum_{i=1}^{n}i  &  =\sum_{s=1}^{n}s=\sum_{s=1}^{n}\left(  \dfrac{s\left(
+s+1\right)  }{2}-\dfrac{\left(  s-1\right)  \left(  \left(  s-1\right)
++1\right)  }{2}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{eq.sum.littlegauss2.pf2.1})}\right) \\
+&  =\dfrac{n\left(  n+1\right)  }{2}-\underbrace{\dfrac{\left(  1-1\right)
+\left(  \left(  1-1\right)  +1\right)  }{2}}_{=0}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{eq.sum.telescope}), applied to
+}u=1\text{, }v=n\text{ and }a_{s}=\dfrac{s\left(  s+1\right)  }{2}\right) \\
+&  =\dfrac{n\left(  n+1\right)  }{2}.
+\end{align*}
+Thus, (\ref{eq.sum.littlegauss2}) is proven again. This kind of proof works
+often when we need to prove a formula like (\ref{eq.sum.littlegauss2}); the
+only tricky part was to \textquotedblleft guess\textquotedblright\ the right
+value of $a_{s}$, which is straightforward if you know what you are looking
+for (you want $a_{n}-a_{1}$ to be $\dfrac{n\left(  n+1\right)  }{2}$), but
+rather tricky if you don't.
+
+\item Other examples for the use of (\ref{eq.sum.telescope}) can be found on
+\href{https://en.wikipedia.org/wiki/Telescoping_series}{the Wikipedia page for
+\textquotedblleft telescoping series\textquotedblright}. Let me add just one
+more example: Given $n\in\mathbb{N}$, we want to compute $\sum_{i=1}^{n}%
+\dfrac{1}{\sqrt{i}+\sqrt{i+1}}$. (Here, of course, we need to take
+$\mathbb{A}=\mathbb{R}$ or $\mathbb{A}=\mathbb{Q}$.) We proceed as follows:
+For every positive integer $i$, we have%
+\[
+\dfrac{1}{\sqrt{i}+\sqrt{i+1}}=\dfrac{\left(  \sqrt{i+1}-\sqrt{i}\right)
+}{\left(  \sqrt{i}+\sqrt{i+1}\right)  \left(  \sqrt{i+1}-\sqrt{i}\right)
+}=\sqrt{i+1}-\sqrt{i}%
+\]
+(since $\left(  \sqrt{i}+\sqrt{i+1}\right)  \left(  \sqrt{i+1}-\sqrt
+{i}\right)  =\left(  \sqrt{i+1}\right)  ^{2}-\left(  \sqrt{i}\right)
+^{2}=\left(  i+1\right)  -i=1$). Thus,%
+\begin{align*}
+&  \sum_{i=1}^{n}\dfrac{1}{\sqrt{i}+\sqrt{i+1}}\\
+&  =\sum_{i=1}^{n}\left(  \sqrt{i+1}-\sqrt{i}\right)  =\sum_{s=2}^{n+1}\left(
+\sqrt{s}-\sqrt{s-1}\right)  \\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have substituted }s-1\text{ for }i\text{ in the sum,}\\
+\text{since the map }\left\{  2,3,\ldots,n+1\right\}  \rightarrow\left\{
+1,2,\ldots,n\right\}  ,\ s\mapsto s-1\\
+\text{is a bijection}%
+\end{array}
+\right)  \\
+&  =\sqrt{n+1}-\underbrace{\sqrt{2-1}}_{=\sqrt{1}=1}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{eq.sum.telescope}), applied to
+}u=2\text{, }v=n+1\text{ and }a_{s}=\sqrt{s}-\sqrt{s-1}\right)  \\
+&  =\sqrt{n+1}-1.
+\end{align*}
+
+\end{itemize}
+
+\textbf{Remark:} When we use the equality (\ref{eq.sum.telescope}) to rewrite
+the sum $\sum_{s=u}^{v}\left(  a_{s}-a_{s-1}\right)  $ as $a_{v}-a_{u-1}$, we
+can say that the sum $\sum_{s=u}^{v}\left(  a_{s}-a_{s-1}\right)  $
+\textquotedblleft telescopes\textquotedblright\ to $a_{v}-a_{u-1}$. A sum like
+$\sum_{s=u}^{v}\left(  a_{s}-a_{s-1}\right)  $ is said to be a
+\textquotedblleft telescoping sum\textquotedblright. This terminology
+references the idea that the sum $\sum_{s=u}^{v}\left(  a_{s}-a_{s-1}\right)
+$ \textquotedblleft shrink\textquotedblright\ to the simple difference
+$a_{v}-a_{u-1}$ like a telescope does when it is collapsed.
 
 \item \underline{\textbf{Splitting a sum by a value of a function:}} Let $S$
 be a finite set. Let $W$ be a set. Let $f:S\rightarrow W$ be a map. Then,%
@@ -909,7 +1011,7 @@ Since $\sum_{s\in S}1=\left\vert S\right\vert \cdot1=\left\vert S\right\vert
 $, this rewrites as follows:%
 \begin{equation}
 \left\vert S\right\vert =\sum_{w\in W}\left\vert \left\{  s\in S\ \mid
-\ f\left(  s\right)  =w\right\}  \right\vert .\label{eq.sum.sheph.exam2}%
+\ f\left(  s\right)  =w\right\}  \right\vert . \label{eq.sum.sheph.exam2}%
 \end{equation}
 This equality is often called the \textit{shepherd's principle}, because it is
 connected to the joke that \textquotedblleft in order to count a flock of
@@ -937,7 +1039,7 @@ this notation, we can rewrite (\ref{eq.sum.sheph}) as follows:%
 \begin{equation}
 \sum_{s\in S}a_{s}=\sum_{w\in W}\underbrace{\sum_{\substack{s\in S;\\f\left(
 s\right)  =w}}}_{=\sum_{s\in f^{-1}\left(  w\right)  }}a_{s}=\sum_{w\in W}%
-\sum_{s\in f^{-1}\left(  w\right)  }a_{s}.\label{eq.sum.sheph.preimg}%
+\sum_{s\in f^{-1}\left(  w\right)  }a_{s}. \label{eq.sum.sheph.preimg}%
 \end{equation}
 
 
@@ -949,6 +1051,39 @@ s\right)  $\textquotedblright. (Though, most of the time, I shall be doing
 such manipulations without explicit mention.)
 \end{itemize}
 
+\item \underline{\textbf{Splitting a sum into subsums:}} Let $S$ be a finite
+set. Let $S_{1},S_{2},\ldots,S_{n}$ be finitely many subsets of $S$. Assume
+that these subsets $S_{1},S_{2},\ldots,S_{n}$ are pairwise disjoint (i.e., we
+have $S_{i}\cap S_{j}=\varnothing$ for any two distinct elements $i$ and $j$
+of $\left\{  1,2,\ldots,n\right\}  $) and their union is $S$. (Thus, every
+element of $S$ lies in precisely one of the subsets $S_{1},S_{2},\ldots,S_{n}%
+$.) Let $a_{s}$ be an element of $\mathbb{A}$ for each $s\in S$. Then,%
+\begin{equation}
+\sum_{s\in S}a_{s}=\sum_{w=1}^{n}\sum_{s\in S_{w}}a_{s}.
+\label{eq.sum.split-n}%
+\end{equation}
+This is a generalization of (\ref{eq.sum.split}) (indeed, (\ref{eq.sum.split})
+is obtained from (\ref{eq.sum.split-n}) by setting $n=2$, $S_{1}=X$ and
+$S_{2}=Y$). It is also a consequence of (\ref{eq.sum.sheph}): Indeed, set
+$W=\left\{  1,2,\ldots,n\right\}  $, and define a map $f:S\rightarrow W$ to
+send each $s\in S$ to the unique $w\in\left\{  1,2,\ldots,n\right\}  $ for
+which $s\in S_{w}$. Then, every $w\in W$ satisfies $\sum_{\substack{s\in
+S;\\f\left(  s\right)  =w}}a_{s}=\sum_{s\in S_{w}}a_{s}$; therefore,
+(\ref{eq.sum.sheph}) becomes (\ref{eq.sum.split-n}).
+
+\textbf{Example:} If we set $a_{s}=1$ for each $s\in S$, then
+(\ref{eq.sum.split-n}) becomes%
+\[
+\sum_{s\in S}1=\sum_{w=1}^{n}\underbrace{\sum_{s\in S_{w}}1}_{=\left\vert
+S_{w}\right\vert }=\sum_{w=1}^{n}\left\vert S_{w}\right\vert .
+\]
+Hence,
+\[
+\sum_{w=1}^{n}\left\vert S_{w}\right\vert =\sum_{s\in S}1=\left\vert
+S\right\vert .
+\]
+
+
 \item \underline{\textbf{Fubini's theorem (interchanging the order of
 summation):}} Let $X$ and $Y$ be two finite sets. Let $a_{\left(  x,y\right)
 }$ be an element of $\mathbb{A}$ for each $\left(  x,y\right)  \in X\times Y$.
@@ -956,35 +1091,107 @@ Then,%
 \begin{equation}
 \sum_{x\in X}\sum_{y\in Y}a_{\left(  x,y\right)  }=\sum_{\left(  x,y\right)
 \in X\times Y}a_{\left(  x,y\right)  }=\sum_{y\in Y}\sum_{x\in X}a_{\left(
-x,y\right)  }.\label{eq.sum.fubini}%
+x,y\right)  }. \label{eq.sum.fubini}%
 \end{equation}
 This is called \textit{Fubini's theorem for finite sums}, and is a lot easier
 to prove than what analysts tend to call Fubini's theorem. I shall sketch a
-proof shortly; but first, let me give some intuition for the statement.
-Imagine that you have a rectangular table filled with numbers. If you want to
-sum the numbers in the table, you can proceed in several ways. One way is to
-sum the numbers in each row, and then sum all the sums you have obtained.
-Another way is to sum the numbers in each column, and the sum all the obtained
-sums. Either way, you get the same result -- namely, the sum of all numbers in
-the table. This is essentially what (\ref{eq.sum.fubini}) says, at least when
-$X=\left\{  1,2,\ldots,n\right\}  $ and $Y=\left\{  1,2,\ldots,m\right\}  $
-for some integers $n$ and $m$. In this case, the numbers $a_{\left(
-x,y\right)  }$ can be viewed as forming a table, where $a_{\left(  x,y\right)
-}$ is placed in the cell at the intersection of row $x$ with column $y$. When
-$X$ and $Y$ are arbitrary finite sets (not necessarily $\left\{
-1,2,\ldots,n\right\}  $ and $\left\{  1,2,\ldots,m\right\}  $), then you need
-to slightly stretch your imagination in order to see the $a_{\left(
-x,y\right)  }$ as \textquotedblleft forming a table\textquotedblright; in
-fact, there is no obvious order in which the numbers appear in a row or
-column, but there is still a notion of rows and columns.
+proof shortly (in the Remark below); but first, let me give some intuition for
+the statement. Imagine that you have a rectangular table filled with numbers.
+If you want to sum the numbers in the table, you can proceed in several ways.
+One way is to sum the numbers in each row, and then sum all the sums you have
+obtained. Another way is to sum the numbers in each column, and the sum all
+the obtained sums. Either way, you get the same result -- namely, the sum of
+all numbers in the table. This is essentially what (\ref{eq.sum.fubini}) says,
+at least when $X=\left\{  1,2,\ldots,n\right\}  $ and $Y=\left\{
+1,2,\ldots,m\right\}  $ for some integers $n$ and $m$. In this case, the
+numbers $a_{\left(  x,y\right)  }$ can be viewed as forming a table, where
+$a_{\left(  x,y\right)  }$ is placed in the cell at the intersection of row
+$x$ with column $y$. When $X$ and $Y$ are arbitrary finite sets (not
+necessarily $\left\{  1,2,\ldots,n\right\}  $ and $\left\{  1,2,\ldots
+,m\right\}  $), then you need to slightly stretch your imagination in order to
+see the $a_{\left(  x,y\right)  }$ as \textquotedblleft forming a
+table\textquotedblright; in fact, there is no obvious order in which the
+numbers appear in a row or column, but there is still a notion of rows and columns.
 
-I have promised to outline a proof of (\ref{eq.sum.fubini}). Here it comes:
-Let $S=X\times Y$ and $W=Y$, and let $f:S\rightarrow W$ be the map which sends
-every pair $\left(  x,y\right)  $ to its second entry $y$. Then,
-(\ref{eq.sum.sheph.preimg}) shows that%
+\textbf{Examples:}
+
+\begin{itemize}
+\item Let $n\in\mathbb{N}$ and $m\in\mathbb{N}$. Let $a_{\left(  x,y\right)
+}$ be an element of $\mathbb{A}$ for each $\left(  x,y\right)  \in\left\{
+1,2,\ldots,n\right\}  \times\left\{  1,2,\ldots,m\right\}  $. Then,
+\begin{equation}
+\sum_{x=1}^{n}\sum_{y=1}^{m}a_{\left(  x,y\right)  }=\sum_{\left(  x,y\right)
+\in\left\{  1,2,\ldots,n\right\}  \times\left\{  1,2,\ldots,m\right\}
+}a_{\left(  x,y\right)  }=\sum_{y=1}^{m}\sum_{x=1}^{n}a_{\left(  x,y\right)
+}. \label{eq.sum.fubini.nm}%
+\end{equation}
+(This follows from (\ref{eq.sum.fubini}), applied to $X=\left\{
+1,2,\ldots,n\right\}  $ and $Y=\left\{  1,2,\ldots,m\right\}  $.) We can
+rewrite the equality (\ref{eq.sum.fubini.nm}) without using $\sum$ signs; it
+then takes the following form:%
+\begin{align*}
+&  \left(  a_{\left(  1,1\right)  }+a_{\left(  1,2\right)  }+\cdots+a_{\left(
+1,m\right)  }\right) \\
+&  \ \ \ \ \ \ \ \ \ \ +\left(  a_{\left(  2,1\right)  }+a_{\left(
+2,2\right)  }+\cdots+a_{\left(  2,m\right)  }\right) \\
+&  \ \ \ \ \ \ \ \ \ \ +\cdots\\
+&  \ \ \ \ \ \ \ \ \ \ +\left(  a_{\left(  n,1\right)  }+a_{\left(
+n,2\right)  }+\cdots+a_{\left(  n,m\right)  }\right) \\
+&  =a_{\left(  1,1\right)  }+a_{\left(  1,2\right)  }+\cdots+a_{\left(
+n,m\right)  }\ \ \ \ \ \ \ \ \ \ \left(  \text{this is the sum of all
+}nm\text{ numbers }a_{\left(  x,y\right)  }\right) \\
+&  =\left(  a_{\left(  1,1\right)  }+a_{\left(  2,1\right)  }+\cdots
++a_{\left(  n,1\right)  }\right) \\
+&  \ \ \ \ \ \ \ \ \ \ +\left(  a_{\left(  1,2\right)  }+a_{\left(
+2,2\right)  }+\cdots+a_{\left(  n,2\right)  }\right) \\
+&  \ \ \ \ \ \ \ \ \ \ +\cdots\\
+&  \ \ \ \ \ \ \ \ \ \ +\left(  a_{\left(  1,m\right)  }+a_{\left(
+2,m\right)  }+\cdots+a_{\left(  n,m\right)  }\right)  .
+\end{align*}
+
+
+\item Here is a concrete application of (\ref{eq.sum.fubini.nm}): Let
+$n\in\mathbb{N}$ and $m\in\mathbb{N}$. We want to compute $\sum_{\left(
+x,y\right)  \in\left\{  1,2,\ldots,n\right\}  \times\left\{  1,2,\ldots
+,m\right\}  }xy$. (This is the sum of all entries of the $n\times m$
+multiplication table.) Applying (\ref{eq.sum.fubini.nm}) to $a_{\left(
+x,y\right)  }=xy$, we obtain%
+\[
+\sum_{x=1}^{n}\sum_{y=1}^{m}xy=\sum_{\left(  x,y\right)  \in\left\{
+1,2,\ldots,n\right\}  \times\left\{  1,2,\ldots,m\right\}  }xy=\sum_{y=1}%
+^{m}\sum_{x=1}^{n}xy.
+\]
+Hence,%
+\begin{align*}
+&  \sum_{\left(  x,y\right)  \in\left\{  1,2,\ldots,n\right\}  \times\left\{
+1,2,\ldots,m\right\}  }xy\\
+&  =\sum_{x=1}^{n}\underbrace{\sum_{y=1}^{m}xy}_{\substack{=\sum_{s=1}%
+^{m}xs=x\sum_{s=1}^{m}s\\\text{(by (\ref{eq.sum.linear2}), applied to
+}S=\left\{  1,2,\ldots,m\right\}  \text{,}\\a_{s}=s\text{ and }\lambda
+=x\text{)}}}=\sum_{x=1}^{n}x\underbrace{\sum_{s=1}^{m}s}_{\substack{=\sum
+_{i=1}^{m}i=\dfrac{m\left(  m+1\right)  }{2}\\\text{(by
+(\ref{eq.sum.littlegauss2}), applied to }m\\\text{instead of }n\text{)}}}\\
+&  =\sum_{x=1}^{n}x\dfrac{m\left(  m+1\right)  }{2}=\sum_{x=1}^{n}%
+\dfrac{m\left(  m+1\right)  }{2}x=\sum_{s=1}^{n}\dfrac{m\left(  m+1\right)
+}{2}s\\
+&  =\dfrac{m\left(  m+1\right)  }{2}\underbrace{\sum_{s=1}^{n}s}%
+_{\substack{=\sum_{i=1}^{n}i=\dfrac{n\left(  n+1\right)  }{2}\\\text{(by
+(\ref{eq.sum.littlegauss2}))}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{eq.sum.linear2}), applied to
+}S=\left\{  1,2,\ldots,n\right\}  \text{, }a_{s}=s\text{ and }\lambda
+=\dfrac{m\left(  m+1\right)  }{2}\right)  \\
+&  =\dfrac{m\left(  m+1\right)  }{2}\cdot\dfrac{n\left(  n+1\right)  }{2}.
+\end{align*}
+
+\end{itemize}
+
+\textbf{Remark:} I have promised to outline a proof of (\ref{eq.sum.fubini}).
+Here it comes: Let $S=X\times Y$ and $W=Y$, and let $f:S\rightarrow W$ be the
+map which sends every pair $\left(  x,y\right)  $ to its second entry $y$.
+Then, (\ref{eq.sum.sheph.preimg}) shows that%
 \begin{equation}
 \sum_{s\in X\times Y}a_{s}=\sum_{w\in Y}\sum_{s\in f^{-1}\left(  w\right)
-}a_{s}.\label{eq.sum.fubini.pf.1}%
+}a_{s}. \label{eq.sum.fubini.pf.1}%
 \end{equation}
 But for every given $w\in Y$, the set $f^{-1}\left(  w\right)  $ is simply the
 set of all pairs $\left(  x,w\right)  $ with $x\in X$. Thus, for every given
@@ -1019,49 +1226,523 @@ a_{s}=\sum_{\left(  x,y\right)  \in X\times Y}a_{\left(  x,y\right)  }.
 Thus, we have proven the second part of the equality (\ref{eq.sum.fubini}).
 The first part can be proven similarly.
 
+\item \underline{\textbf{Triangular Fubini's theorem I:}} The equality
+(\ref{eq.sum.fubini.nm}) formalizes the idea that we can sum the entries of a
+rectangular table by first tallying each row and then adding together, or
+first tallying each column and adding together. The same holds for triangular
+tables. More precisely: Let $n\in\mathbb{N}$. Let $T_{n}$ be the set $\left\{
+\left(  x,y\right)  \in\left\{  1,2,3,\ldots\right\}  ^{2}\ \mid\ x+y\leq
+n\right\}  $. (For instance, if $n=3$, then $T_{n}=T_{3}=\left\{  \left(
+1,1\right)  ,\left(  1,2\right)  ,\left(  2,1\right)  \right\}  $.) Let
+$a_{\left(  x,y\right)  }$ be an element of $\mathbb{A}$ for each $\left(
+x,y\right)  \in T_{n}$. Then,%
+\begin{equation}
+\sum_{x=1}^{n}\sum_{y=1}^{n-x}a_{\left(  x,y\right)  }=\sum_{\left(
+x,y\right)  \in T_{n}}a_{\left(  x,y\right)  }=\sum_{y=1}^{n}\sum_{x=1}%
+^{n-y}a_{\left(  x,y\right)  }. \label{eq.sum.fubini.triangle}%
+\end{equation}
+
+
 \textbf{Examples:}
 
 \begin{itemize}
-\item Let $n\in\mathbb{N}$ and $m\in\mathbb{N}$. Let $a_{\left(  x,y\right)
-}$ be an element of $\mathbb{A}$ for each $\left(  x,y\right)  \in\left\{
-1,2,\ldots,n\right\}  \times\left\{  1,2,\ldots,m\right\}  $. Then,
+\item In the case when $n=4$, the formula (\ref{eq.sum.fubini.triangle})
+(rewritten without the use of $\sum$ signs) looks as follows:%
+\begin{align*}
+&  \left(  a_{\left(  1,1\right)  }+a_{\left(  1,2\right)  }+a_{\left(
+1,3\right)  }\right)  +\left(  a_{\left(  2,1\right)  }+a_{\left(  2,2\right)
+}\right)  +a_{\left(  3,1\right)  }\\
+&  =\left(  \text{the sum of the }a_{\left(  x,y\right)  }\text{ for all
+}\left(  x,y\right)  \in T_{4}\right) \\
+&  =\left(  a_{\left(  1,1\right)  }+a_{\left(  2,1\right)  }+a_{\left(
+3,1\right)  }\right)  +\left(  a_{\left(  1,2\right)  }+a_{\left(  2,2\right)
+}\right)  +a_{\left(  1,3\right)  }.
+\end{align*}
+
+
+\item Let us use (\ref{eq.sum.fubini.triangle}) to compute $\left\vert
+T_{n}\right\vert $. Indeed, we can apply (\ref{eq.sum.fubini.triangle}) to
+$a_{\left(  x,y\right)  }=1$. Thus, we obtain%
+\[
+\sum_{x=1}^{n}\sum_{y=1}^{n-x}1=\sum_{\left(  x,y\right)  \in T_{n}}%
+1=\sum_{y=1}^{n}\sum_{x=1}^{n-y}1.
+\]
+Hence,%
+\[
+\sum_{x=1}^{n}\sum_{y=1}^{n-x}1=\sum_{\left(  x,y\right)  \in T_{n}%
+}1=\left\vert T_{n}\right\vert ,
+\]
+so that%
+\begin{align*}
+\left\vert T_{n}\right\vert  &  =\sum_{x=1}^{n}\underbrace{\sum_{y=1}^{n-x}%
+1}_{=n-x}=\sum_{x=1}^{n}\left(  n-x\right)  =\sum_{i=0}^{n-1}i\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have substituted }i\text{ for }n-x\text{ in the sum,}\\
+\text{since the map }\left\{  1,2,\ldots,n\right\}  \rightarrow\left\{
+0,1,\ldots,n-1\right\}  ,\ x\mapsto n-x\\
+\text{is a bijection}%
+\end{array}
+\right) \\
+&  =\dfrac{\left(  n-1\right)  \left(  \left(  n-1\right)  +1\right)  }%
+{2}\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{eq.sum.littlegauss1}), applied
+to }n-1\text{ instead of }n\right) \\
+&  =\dfrac{\left(  n-1\right)  n}{2}.
+\end{align*}
+
+\end{itemize}
+
+\textbf{Remarks:}
+
+\begin{itemize}
+\item The sum $\sum_{\left(  x,y\right)  \in T_{n}}a_{\left(  x,y\right)  }$
+in (\ref{eq.sum.fubini.triangle}) can also be rewritten as $\sum
+_{\substack{\left(  x,y\right)  \in\left\{  1,2,3,\ldots\right\}
+^{2};\\x+y\leq n}}a_{\left(  x,y\right)  }$.
+
+\item Let us prove (\ref{eq.sum.fubini.triangle}). Indeed, the proof will be
+very similar to our proof of (\ref{eq.sum.fubini}) above. Let $S=T_{n}$ and
+$W=\left\{  1,2,\ldots,n\right\}  $, and let $f:S\rightarrow W$ be the map
+which sends every pair $\left(  x,y\right)  $ to its second entry $y$. Then,
+(\ref{eq.sum.sheph.preimg}) shows that%
 \begin{equation}
-\sum_{x=1}^{n}\sum_{y=1}^{m}a_{\left(  x,y\right)  }=\sum_{\left(  x,y\right)
-\in\left\{  1,2,\ldots,n\right\}  \times\left\{  1,2,\ldots,m\right\}
-}a_{\left(  x,y\right)  }=\sum_{y=1}^{m}\sum_{x=1}^{n}a_{\left(  x,y\right)
-}.\label{eq.sum.fubini.nm}%
+\sum_{s\in T_{n}}a_{s}=\sum_{w\in W}\sum_{s\in f^{-1}\left(  w\right)  }a_{s}.
+\label{eq.sum.fubini.triangle.pf.1}%
 \end{equation}
-This follows from (\ref{eq.sum.fubini}), applied to $X=\left\{  1,2,\ldots
-,n\right\}  $ and $Y=\left\{  1,2,\ldots,m\right\}  $.
+But for every given $w\in W$, the set $f^{-1}\left(  w\right)  $ is simply the
+set of all pairs $\left(  x,w\right)  $ with $x\in\left\{  1,2,\ldots
+,n-w\right\}  $. Thus, for every given $w\in W$, there is a bijection
+$g_{w}:\left\{  1,2,\ldots,n-w\right\}  \rightarrow f^{-1}\left(  w\right)  $
+given by%
+\[
+g_{w}\left(  x\right)  =\left(  x,w\right)  \ \ \ \ \ \ \ \ \ \ \text{for all
+}x\in\left\{  1,2,\ldots,n-w\right\}  .
+\]
+Hence, for every given $w\in W$, we can substitute $g_{w}\left(  x\right)  $
+for $s$ in the sum $\sum_{s\in f^{-1}\left(  w\right)  }a_{s}$, and thus
+obtain%
+\[
+\sum_{s\in f^{-1}\left(  w\right)  }a_{s}=\underbrace{\sum_{x\in\left\{
+1,2,\ldots,n-w\right\}  }}_{=\sum_{x=1}^{n-w}}\underbrace{a_{g_{w}\left(
+x\right)  }}_{\substack{=a_{\left(  x,w\right)  }\\\text{(since }g_{w}\left(
+x\right)  =\left(  x,w\right)  \text{)}}}=\sum_{x=1}^{n-w}a_{\left(
+x,w\right)  }.
+\]
+Hence, (\ref{eq.sum.fubini.triangle.pf.1}) becomes%
+\[
+\sum_{s\in T_{n}}a_{s}=\underbrace{\sum_{w\in W}}_{\substack{=\sum_{w=1}%
+^{n}\\\text{(since }W=\left\{  1,2,\ldots,n\right\}  \text{)}}%
+}\underbrace{\sum_{s\in f^{-1}\left(  w\right)  }a_{s}}_{=\sum_{x=1}%
+^{n-w}a_{\left(  x,w\right)  }}=\sum_{w=1}^{n}\sum_{x=1}^{n-w}a_{\left(
+x,w\right)  }=\sum_{y=1}^{n}\sum_{x=1}^{n-y}a_{\left(  x,y\right)  }%
+\]
+(here, we have renamed the summation index $w$ as $y$ in the outer sum).
+Therefore,%
+\[
+\sum_{y=1}^{n}\sum_{x=1}^{n-y}a_{\left(  x,y\right)  }=\sum_{s\in T_{n}}%
+a_{s}=\sum_{\left(  x,y\right)  \in T_{n}}a_{\left(  x,y\right)  }.
+\]
+Thus, we have proven the second part of the equality
+(\ref{eq.sum.fubini.triangle}). The first part can be proven similarly.
+\end{itemize}
+
+\item \underline{\textbf{Triangular Fubini's theorem II:}} Here is another
+equality similar to (\ref{eq.sum.fubini.triangle}). Let $n\in\mathbb{N}$. Let
+$Q_{n}$ be the set $\left\{  \left(  x,y\right)  \in\left\{  1,2,\ldots
+,n\right\}  ^{2}\ \mid\ x\leq y\right\}  $. (For instance, if $n=3$, then
+$Q_{n}=Q_{3}=\left\{  \left(  1,1\right)  ,\left(  1,2\right)  ,\left(
+1,3\right)  ,\left(  2,2\right)  ,\left(  2,3\right)  ,\left(  3,3\right)
+\right\}  $.) Let $a_{\left(  x,y\right)  }$ be an element of $\mathbb{A}$ for
+each $\left(  x,y\right)  \in Q_{n}$. Then,%
+\begin{equation}
+\sum_{x=1}^{n}\sum_{y=x}^{n}a_{\left(  x,y\right)  }=\sum_{\left(  x,y\right)
+\in Q_{n}}a_{\left(  x,y\right)  }=\sum_{y=1}^{n}\sum_{x=1}^{y}a_{\left(
+x,y\right)  }. \label{eq.sum.fubini.triangle2}%
+\end{equation}
+
+
+\textbf{Examples:}
+
+\begin{itemize}
+\item Let us use (\ref{eq.sum.fubini.triangle2}) to compute $\left\vert
+Q_{n}\right\vert $. Indeed, we can apply (\ref{eq.sum.fubini.triangle2}) to
+$a_{\left(  x,y\right)  }=1$. Thus, we obtain%
+\[
+\sum_{x=1}^{n}\sum_{y=x}^{n}1=\sum_{\left(  x,y\right)  \in Q_{n}}1=\sum
+_{y=1}^{n}\sum_{x=1}^{y}1.
+\]
+Hence,%
+\[
+\sum_{y=1}^{n}\sum_{x=1}^{y}1=\sum_{\left(  x,y\right)  \in Q_{n}}1=\left\vert
+Q_{n}\right\vert ,
+\]
+so that%
+\begin{align*}
+\left\vert Q_{n}\right\vert  &  =\sum_{y=1}^{n}\underbrace{\sum_{x=1}^{y}%
+1}_{=y}=\sum_{y=1}^{n}y=\sum_{i=1}^{n}i\\
+&  =\dfrac{n\left(  n+1\right)  }{2}\ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{eq.sum.littlegauss2})}\right)  .
+\end{align*}
+
+\end{itemize}
+
+\textbf{Remarks:}
+
+\begin{itemize}
+\item The sum $\sum_{\left(  x,y\right)  \in Q_{n}}a_{\left(  x,y\right)  }$
+in (\ref{eq.sum.fubini.triangle2}) can also be rewritten as $\sum
+_{\substack{\left(  x,y\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2};\\x\leq
+y}}a_{\left(  x,y\right)  }$. It is also often written as $\sum_{1\leq x\leq
+y\leq n}a_{\left(  x,y\right)  }$.
+
+\item The proof of (\ref{eq.sum.fubini.triangle2}) is similar to that of
+(\ref{eq.sum.fubini.triangle}).
 \end{itemize}
 \end{itemize}
 
-[... This section is to be continued with a few more items, and some
-discussion of products!]
+\subsubsection{Definition of $\prod$}
 
-\begin{noncompile}
-[to add:
+We shall now define the $\prod$ sign. Since the $\prod$ sign is (in many
+aspects) analogous to the $\sum$ sign, we shall be brief and confine ourselves
+to the bare necessities; we trust the reader to transfer most of what we said
+about $\sum$ to the case of $\prod$. In particular, we shall give very few
+examples and no proofs.
 
--- $\prod_{s\in S}$
+\begin{itemize}
+\item If $S$ is a finite set, and if $a_{s}$ is an element of $\mathbb{A}$ for
+each $s\in S$, then $\prod\nolimits_{s\in S}a_{s}$ denotes the product of all
+of these elements $a_{s}$. Formally, this product is defined by recursion on
+$\left\vert S\right\vert $, as follows:
 
--- def $\prod_{i=a}^{b}$
+\begin{itemize}
+\item If $S=\varnothing$, then $\prod_{s\in S}a_{s}$ is defined to be $1$.
 
--- telescope rule
+\item Let $n\in\mathbb{N}$. Assume that we have defined $\prod_{s\in S}a_{s}$
+for every finite set $S$ with $\left\vert S\right\vert =n$ (and every choice
+of elements $a_{s}$ of $\mathbb{A}$). Now, if $S$ is a finite set with
+$\left\vert S\right\vert =n+1$ (and if $a_{s}\in\mathbb{A}$ are chosen for all
+$s\in S$), then $\prod_{s\in S}a_{s}$ is defined by picking any $t\in S$ and
+setting%
+\begin{equation}
+\prod_{s\in S}a_{s}=a_{t}\cdot\prod_{s\in S\setminus\left\{  t\right\}  }%
+a_{s}. \label{eq.prod.def.1}%
+\end{equation}
+As for $\sum_{s\in S}a_{s}$, this definition is not obviously legitimate, but
+it can be proven to be legitimate nevertheless.
+\end{itemize}
 
--- $\sum_{i}\sum_{j}=\sum_{j}\sum_{i}$ in rectangles and triangles
+\textbf{Examples:}
 
--- $\sum_{i=1}^{n}i^{2}$
+\begin{itemize}
+\item If $S=\left\{  1,2,\ldots,n\right\}  $ (for some $n\in\mathbb{N}$) and
+$a_{s}=s$ for every $s\in S$, then $\prod_{s\in S}a_{s}=\prod_{s\in S}%
+s=1\cdot2\cdot\cdots\cdot n$. This number $1\cdot2\cdot\cdots\cdot n$ is
+denoted by $n!$ and called the \textit{factorial of }$n$.
+\end{itemize}
 
--- infinite sums with $0$s and products with $1$s
+\textbf{Remarks:}
 
--- product rule
+\begin{itemize}
+\item The product $\prod_{s\in S}a_{s}$ is usually pronounced
+\textquotedblleft product of the $a_{s}$ over all $s\in S$\textquotedblright%
+\ or \textquotedblleft product of the $a_{s}$ with $s$ ranging over
+$S$\textquotedblright\ or \textquotedblleft product of the $a_{s}$ with $s$
+running through all elements of $S$\textquotedblright. The letter
+\textquotedblleft$s$\textquotedblright\ in the product is called the
+\textquotedblleft product index\textquotedblright, and its exact choice is
+immaterial, as long as it does not already have a different meaning outside of
+the product. The sign $\prod$ itself is called \textquotedblleft the product
+sign\textquotedblright\ or \textquotedblleft the $\prod$
+sign\textquotedblright. The numbers $a_{s}$ are called the \textit{factors} of
+the product $\prod_{s\in S}a_{s}$. More precisely, for any given $t\in S$, we
+can refer to the number $a_{t}$ as the \textquotedblleft factor corresponding
+to the index $t$\textquotedblright\ (or as the \textquotedblleft factor for
+$s=t$\textquotedblright, or as the \textquotedblleft factor for $t$%
+\textquotedblright) of the product $\prod_{s\in S}a_{s}$.
 
--- cardinality of union of disjoint sets as sum
+\item When the set $S$ is empty, the product $\prod_{s\in S}a_{s}$ is called
+an \textit{empty product}. Our definition implies that any empty product is
+$1$. This convention is used throughout mathematics, except in rare occasions
+where a slightly subtler version of it is used\footnote{Just as with sums, the
+subtlety lies in the fact that mathematicians sometimes want an empty product
+to be not the integer $1$ but the unity of some ring. As before, this does not
+matter for us right now.}.
 
--- cardinality of cartesian product of sets as product
+\item If $a\in\mathbb{A}$ and $n\in\mathbb{N}$, then the $n$-th power of $a$
+(written $a^{n}$) is defined by%
+\[
+a^{n}=\underbrace{a\cdot a\cdot\cdots\cdot a}_{n\text{ times}}=\prod
+_{i\in\left\{  1,2,\ldots,n\right\}  }a.
+\]
+Thus, $a^{0}$ is an empty product, and therefore equal to $1$. This holds for
+any $a\in\mathbb{A}$, including $0$; thus, $0^{0}=1$. \textbf{There is nothing
+controversial about the equality }$0^{0}=1$; it is a consequence of the only
+reasonable definition of the $n$-th power of a number. If anyone tells you
+that $0^{0}$ is \textquotedblleft undefined\textquotedblright\ or
+\textquotedblleft indeterminate\textquotedblright\ or \textquotedblleft can be
+$0$ or $1$ or anything, depending on the context\textquotedblright, do not
+listen to them.\footnote{I am talking about the \textbf{number} $0^{0}$ here.
+There is also something called \textquotedblleft the
+\href{https://en.wikipedia.org/wiki/Indeterminate form}{indeterminate form}
+$0^{0}$\textquotedblright, which is a much different story.}
 
-]
-\end{noncompile}
+\item The product index (just like a summation index) needs not be a single
+letter; it can be a pair or a triple, for example.
+
+\item Mathematicians don't seem to have reached an agreement on the operator
+precedence of the $\prod$ sign. My convention is that the product sign has
+higher precedence than the plus sign (so an expression like $\prod_{s\in
+S}a_{s}+b$ must be read as $\left(  \prod_{s\in S}a_{s}\right)  +b$, and not
+as $\prod_{s\in S}\left(  a_{s}+b\right)  $); this is, of course, in line with
+the standard convention that multiplication-like operations have higher
+precedence than addition-like operations (\textquotedblleft
+PEMDAS\textquotedblright). Be warned that some authors disagree even with this
+convention. I strongly advise against writing things like $\prod_{s\in S}%
+a_{s}b$, since it might mean both $\left(  \prod_{s\in S}a_{s}\right)  b$ and
+$\prod_{s\in S}\left(  a_{s}b\right)  $ depending on the weather. In
+particular, I advise against writing things like $\prod_{s\in S}a_{s}%
+\cdot\prod_{s\in S}b_{s}$ without parentheses (although I do use a similar
+convention for sums, namely $\sum_{s\in S}a_{s}+\sum_{s\in S}b_{s}$, and I
+find it to be fairly harmless). These rules are not carved in stone, and you
+should use whatever conventions make \textbf{you} safe from ambiguity; either
+way, you should keep in mind that other authors make different choices.
+
+\item We have required the set $S$ to be finite when defining $\prod_{s\in
+S}a_{s}$. Such products are not generally defined when $S$ is infinite.
+However, \textbf{some} infinite products can be made sense of. The simplest
+case is when the set $S$ might be infinite, but only finitely many among the
+$a_{s}$ are distinct from $1$. In this case, we can define $\prod_{s\in
+S}a_{s}$ simply by factors which equal $1$ and multiplying the finitely many
+remaining factors. Other situations in which infinite product make sense
+appear in analysis and in topological algebra.
+
+\item The product $\prod_{s\in S}a_{s}$ always belongs to $\mathbb{A}$.
+\end{itemize}
+
+\item A slightly more complicated version of the product sign is the
+following: Let $S$ be a finite set, and let $\mathcal{A}\left(  s\right)  $ be
+a logical statement defined for every $s\in S$. For each $s\in S$ satisfying
+$\mathcal{A}\left(  s\right)  $, let $a_{s}$ be an element of $\mathbb{A}$.
+Then, the product $\prod_{\substack{s\in S;\\\mathcal{A}\left(  s\right)
+}}a_{s}$ is defined by%
+\[
+\prod_{\substack{s\in S;\\\mathcal{A}\left(  s\right)  }}a_{s}=\prod
+_{s\in\left\{  t\in S\ \mid\ \mathcal{A}\left(  t\right)  \right\}  }a_{s}.
+\]
+
+
+\item Finally, here is the simplest version of the product sign: Let $u$ and
+$v$ be two integers. As before, we understand the set $\left\{  u,u+1,\ldots
+,v\right\}  $ to be empty when $u>v$. Let $a_{s}$ be an element of
+$\mathbb{A}$ for each $s\in\left\{  u,u+1,\ldots,v\right\}  $. Then,
+$\prod_{s=u}^{v}a_{s}$ is defined by%
+\[
+\prod_{s=u}^{v}a_{s}=\prod_{s\in\left\{  u,u+1,\ldots,v\right\}  }a_{s}.
+\]
+
+
+\textbf{Examples:}
+
+\begin{itemize}
+\item We have $\prod_{s=1}^{n}s=1\cdot2\cdot\cdots\cdot n=n!$ for each
+$n\in\mathbb{N}$.
+\end{itemize}
+\end{itemize}
+
+Thus we have introduced the main three forms of the product sign.
+
+\subsubsection{Properties of $\prod$}
+
+Now, let me summarize the most important properties of the $\prod$ sign. These
+properties mirror the properties of $\sum$ discussed before; thus, I will
+again be brief.
+
+\begin{itemize}
+\item \underline{\textbf{Splitting-off:}} Let $S$ be a finite set. Let $t\in
+S$. Let $a_{s}$ be an element of $\mathbb{A}$ for each $s\in S$. Then,%
+\[
+\prod_{s\in S}a_{s}=a_{t}\cdot\prod_{s\in S\setminus\left\{  t\right\}  }%
+a_{s}.
+\]
+
+
+\item \underline{\textbf{Splitting:}} Let $S$ be a finite set. Let $X$ and $Y
+$ be two subsets of $S$ such that $X\cap Y=\varnothing$ and $X\cup Y=S$.
+(Equivalently, $X$ and $Y$ are two subsets of $S$ such that each element of
+$S$ lies in \textbf{exactly} one of $X$ and $Y$.) Let $a_{s}$ be an element of
+$\mathbb{A}$ for each $s\in S$. Then,%
+\[
+\prod_{s\in S}a_{s}=\left(  \prod_{s\in X}a_{s}\right)  \cdot\left(
+\prod_{s\in Y}a_{s}\right)  .
+\]
+
+
+\item \underline{\textbf{Splitting using a predicate:}} Let $S$ be a finite
+set. Let $\mathcal{A}\left(  s\right)  $ be a logical statement for each $s\in
+S$. Let $a_{s}$ be an element of $\mathbb{A}$ for each $s\in S$. Then,%
+\[
+\prod_{s\in S}a_{s}=\left(  \prod_{\substack{s\in S; \\\mathcal{A}\left(
+s\right)  }}a_{s}\right)  \cdot\left(  \prod_{\substack{s\in S; \\\text{not
+}\mathcal{A}\left(  s\right)  }}a_{s}\right)  .
+\]
+
+
+\item \underline{\textbf{Splitting a factor:}} Let $S$ be a finite set. For
+every $s\in S$, let $a_{s}$ and $b_{s}$ be elements of $\mathbb{A}$. Then,%
+\[
+\prod_{s\in S}\left(  a_{s}b_{s}\right)  =\left(  \prod_{s\in S}a_{s}\right)
+\cdot\left(  \prod_{s\in S}b_{s}\right)  .
+\]
+
+
+\item \underline{\textbf{Factoring out an exponent:}} Let $S$ be a finite set.
+For every $s\in S$, let $a_{s}$ be an element of $\mathbb{A}$. Also, let
+$\lambda\in\mathbb{N}$. Then,%
+\[
+\prod_{s\in S}a_{s}^{\lambda}=\left(  \prod_{s\in S}a_{s}\right)  ^{\lambda}.
+\]
+
+
+\item \underline{\textbf{Ones multiply to one:}} Let $S$ be a finite set.
+Then,%
+\[
+\prod_{s\in S}1=1.
+\]
+
+
+\item \underline{\textbf{Multiplying equal values:}} Let $S$ be a finite set.
+Let $a$ be an element of $\mathbb{A}$. Then,%
+\[
+\prod_{s\in S}a=a^{\left\vert S\right\vert }.
+\]
+
+
+\item \underline{\textbf{Dropping ones:}} Let $S$ be a finite set. Let $a_{s}
+$ be an element of $\mathbb{A}$ for each $s\in S$. Let $T$ be a subset of $S$
+such that every $s\in T$ satisfies $a_{s}=1$. Then,%
+\[
+\prod_{s\in S}a_{s}=\prod_{s\in S\setminus T}a_{s}.
+\]
+
+
+\item \underline{\textbf{Renaming the index:}} Let $S$ be a finite set. Let
+$a_{s}$ be an element of $\mathbb{A}$ for each $s\in S$. Then,%
+\[
+\prod_{s\in S}a_{s}=\prod_{t\in S}a_{t}.
+\]
+
+
+\item \underline{\textbf{Substituting the index I:}} Let $S$ and $T$ be two
+finite sets. Let $f:S\rightarrow T$ be a \textbf{bijective} map. Let $a_{t}$
+be an element of $\mathbb{A}$ for each $t\in T$. Then,%
+\[
+\prod_{t\in T}a_{t}=\prod_{s\in S}a_{f\left(  s\right)  }.
+\]
+
+
+\item \underline{\textbf{Substituting the index II:}} Let $S$ and $T$ be two
+finite sets. Let $f:S\rightarrow T$ be a \textbf{bijective} map. Let $a_{s}$
+be an element of $\mathbb{A}$ for each $s\in S$. Then,%
+\[
+\prod_{s\in S}a_{s}=\prod_{t\in T}a_{f^{-1}\left(  t\right)  }.
+\]
+
+
+\item \underline{\textbf{Telescoping products:}} Let $u$ and $v$ be two
+integers such that $u-1\leq v$. Let $a_{s}$ be an element of $\mathbb{A}$ for
+each $s\in\left\{  u-1,u,\ldots,v\right\}  $. Then,%
+\begin{equation}
+\prod_{s=u}^{v}\dfrac{a_{s}}{a_{s-1}}=\dfrac{a_{v}}{a_{u-1}}.
+\label{eq.prod.telescope}%
+\end{equation}
+
+
+\textbf{Examples:}
+
+\begin{itemize}
+\item Let $n$ be a positive integer. Then,%
+\begin{align*}
+&  \prod_{s=2}^{n}\underbrace{\left(  1-\dfrac{1}{s}\right)  }_{=\dfrac
+{s-1}{s}=\dfrac{1/s}{1/\left(  s-1\right)  }}\\
+&  =\prod_{s=2}^{n}\dfrac{1/s}{1/\left(  s-1\right)  }=\dfrac{1/n}{1/\left(
+2-1\right)  }\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{eq.prod.telescope}), applied to
+}u=2\text{, }v=n\text{ and }a_{s}=1/s\right) \\
+&  =\dfrac{1}{n}.
+\end{align*}
+
+\end{itemize}
+
+\item \underline{\textbf{Splitting a product by a value of a function:}} Let
+$S$ be a finite set. Let $W$ be a set. Let $f:S\rightarrow W$ be a map. Then,%
+\[
+\prod_{s\in S}a_{s}=\prod_{w\in W}\prod_{\substack{s\in S; \\f\left(
+s\right)  =w}}a_{s}.
+\]
+(The right hand side is to be read as $\prod_{w\in W}\left(  \prod
+_{\substack{s\in S; \\f\left(  s\right)  =w}}a_{s}\right)  $.)
+
+\item \underline{\textbf{Splitting a product into subproducts:}} Let $S$ be a
+finite set. Let $S_{1},S_{2},\ldots,S_{n}$ be finitely many subsets of $S$.
+Assume that these subsets $S_{1},S_{2},\ldots,S_{n}$ are pairwise disjoint
+(i.e., we have $S_{i}\cap S_{j}=\varnothing$ for any two distinct elements $i$
+and $j$ of $\left\{  1,2,\ldots,n\right\}  $) and their union is $S$. (Thus,
+every element of $S$ lies in precisely one of the subsets $S_{1},S_{2}%
+,\ldots,S_{n}$.) Let $a_{s}$ be an element of $\mathbb{A}$ for each $s\in S$.
+Then,%
+\[
+\prod_{s\in S}a_{s}=\prod_{w=1}^{n}\prod_{s\in S_{w}}a_{s}.
+\]
+
+
+\item \underline{\textbf{Fubini's theorem (interchanging the order of
+multiplication):}} Let $X$ and $Y$ be two finite sets. Let $a_{\left(
+x,y\right)  }$ be an element of $\mathbb{A}$ for each $\left(  x,y\right)  \in
+X\times Y$. Then,%
+\[
+\prod_{x\in X}\prod_{y\in Y}a_{\left(  x,y\right)  }=\prod_{\left(
+x,y\right)  \in X\times Y}a_{\left(  x,y\right)  }=\prod_{y\in Y}\prod_{x\in
+X}a_{\left(  x,y\right)  }.
+\]
+
+
+In particular, if $n$ and $m$ are two elements of $\mathbb{N}$, and if
+$a_{\left(  x,y\right)  }$ is an element of $\mathbb{A}$ for each $\left(
+x,y\right)  \in\left\{  1,2,\ldots,n\right\}  \times\left\{  1,2,\ldots
+,m\right\}  $, then%
+\[
+\prod_{x=1}^{n}\prod_{y=1}^{m}a_{\left(  x,y\right)  }=\prod_{\left(
+x,y\right)  \in\left\{  1,2,\ldots,n\right\}  \times\left\{  1,2,\ldots
+,m\right\}  }a_{\left(  x,y\right)  }=\prod_{y=1}^{m}\prod_{x=1}^{n}a_{\left(
+x,y\right)  }.
+\]
+
+
+\item \underline{\textbf{Triangular Fubini's theorem I:}} Let $n\in\mathbb{N}%
+$. Let $T_{n}$ be the set \newline$\left\{  \left(  x,y\right)  \in\left\{
+1,2,3,\ldots\right\}  ^{2}\ \mid\ x+y\leq n\right\}  $. Let $a_{\left(
+x,y\right)  }$ be an element of $\mathbb{A}$ for each $\left(  x,y\right)  \in
+T_{n}$. Then,%
+\[
+\prod_{x=1}^{n}\prod_{y=1}^{n-x}a_{\left(  x,y\right)  }=\prod_{\left(
+x,y\right)  \in T_{n}}a_{\left(  x,y\right)  }=\prod_{y=1}^{n}\prod
+_{x=1}^{n-y}a_{\left(  x,y\right)  }.
+\]
+
+
+\item \underline{\textbf{Triangular Fubini's theorem II:}} Let $n\in
+\mathbb{N}$. Let $Q_{n}$ be the set \newline$\left\{  \left(  x,y\right)
+\in\left\{  1,2,\ldots,n\right\}  ^{2}\ \mid\ x\leq y\right\}  $. Let
+$a_{\left(  x,y\right)  }$ be an element of $\mathbb{A}$ for each $\left(
+x,y\right)  \in Q_{n}$. Then,%
+\[
+\prod_{x=1}^{n}\prod_{y=x}^{n}a_{\left(  x,y\right)  }=\prod_{\left(
+x,y\right)  \in Q_{n}}a_{\left(  x,y\right)  }=\prod_{y=1}^{n}\prod_{x=1}%
+^{y}a_{\left(  x,y\right)  }.
+\]
+
+\end{itemize}
 
 \subsection{\label{sect.polynomials-emergency}Polynomials: a brief
 introduction}
