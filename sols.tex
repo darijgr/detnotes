@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, March 18, 2016 20:28:27}
+%TCIDATA{LastRevised=Friday, March 18, 2016 20:30:06}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -700,11 +700,23 @@ from (\ref{eq.sum.split}), applied to $X=\left\{  s\in S\ \mid\ \mathcal{A}%
 (because \textquotedblleft$s$ is odd\textquotedblright\ is the negation of
 \textquotedblleft$s$ is even\textquotedblright).
 
+\item \underline{\textbf{Summing equal values:}} Let $S$ be a finite set. Let
+$a$ be an element of $\mathbb{A}$. Then,%
+\begin{equation}
+\sum_{s\in S}a=\left\vert S\right\vert \cdot a.\label{eq.sum.equal}%
+\end{equation}
+In other words, if all addends of a sum are equal to one and the same element
+$a$, then the sum is just the number of its addends times $a$. In particular,%
+\[
+\sum_{s\in S}1=\left\vert S\right\vert \cdot1=\left\vert S\right\vert .
+\]
+
+
 \item \underline{\textbf{Splitting an addend:}} Let $S$ be a finite set. For
 every $s\in S$, let $a_{s}$ and $b_{s}$ be elements of $\mathbb{A}$. Then,%
 \begin{equation}
 \sum_{s\in S}\left(  a_{s}+b_{s}\right)  =\sum_{s\in S}a_{s}+\sum_{s\in
-S}b_{s}. \label{eq.sum.linear1}%
+S}b_{s}.\label{eq.sum.linear1}%
 \end{equation}
 
 
@@ -719,7 +731,7 @@ then%
 If $u$ and $v$ are two integers, then%
 \begin{equation}
 \sum_{s=u}^{v}\left(  a_{s}+b_{s}\right)  =\sum_{s=u}^{v}a_{s}+\sum_{s=u}%
-^{v}b_{s}. \label{eq.sum.linear1.c}%
+^{v}b_{s}.\label{eq.sum.linear1.c}%
 \end{equation}
 
 
@@ -727,7 +739,7 @@ If $u$ and $v$ are two integers, then%
 $s\in S$, let $a_{s}$ be an element of $\mathbb{A}$. Also, let $\lambda$ be an
 element of $\mathbb{A}$. Then,%
 \begin{equation}
-\sum_{s\in S}\lambda a_{s}=\lambda\sum_{s\in S}a_{s}. \label{eq.sum.linear2}%
+\sum_{s\in S}\lambda a_{s}=\lambda\sum_{s\in S}a_{s}.\label{eq.sum.linear2}%
 \end{equation}
 Again, similar rules hold for the other types of summation sign.
 
@@ -741,18 +753,6 @@ That is, any sum of zeroes is zero.
 infiniteness of a sum: There are no reasonable situations where an infinite
 sum of zeroes is defined to be anything other than zero. The infinity does not
 \textquotedblleft compensate\textquotedblright\ for the zero.
-
-\item \underline{\textbf{Summing equal values:}} Let $S$ be a finite set. Let
-$a$ be an element of $\mathbb{A}$. Then,%
-\begin{equation}
-\sum_{s\in S}a=\left\vert S\right\vert \cdot a. \label{eq.sum.equal}%
-\end{equation}
-In other words, if all addends of a sum are equal to one and the same element
-$a$, then the sum is just the number of its addends times $a$. In particular,%
-\[
-\sum_{s\in S}1=\left\vert S\right\vert \cdot1=\left\vert S\right\vert .
-\]
-
 
 \item \underline{\textbf{Dropping zeroes:}} Let $S$ be a finite set. Let
 $a_{s}$ be an element of $\mathbb{A}$ for each $s\in S$. Let $T$ be a subset
@@ -775,7 +775,7 @@ as long as its name does not clash with other notation.
 finite sets. Let $f:S\rightarrow T$ be a \textbf{bijective} map. Let $a_{t}$
 be an element of $\mathbb{A}$ for each $t\in T$. Then,%
 \begin{equation}
-\sum_{t\in T}a_{t}=\sum_{s\in S}a_{f\left(  s\right)  }. \label{eq.sum.subs1}%
+\sum_{t\in T}a_{t}=\sum_{s\in S}a_{f\left(  s\right)  }.\label{eq.sum.subs1}%
 \end{equation}
 (The idea here is that the sum $\sum_{s\in S}a_{f\left(  s\right)  }$ contains
 the same addends as the sum $\sum_{t\in T}a_{t}$.)
@@ -1657,6 +1657,13 @@ s\right)  }}a_{s}\right)  \cdot\left(  \prod_{\substack{s\in S; \\\text{not
 \]
 
 
+\item \underline{\textbf{Multiplying equal values:}} Let $S$ be a finite set.
+Let $a$ be an element of $\mathbb{A}$. Then,%
+\[
+\prod_{s\in S}a=a^{\left\vert S\right\vert }.
+\]
+
+
 \item \underline{\textbf{Splitting a factor:}} Let $S$ be a finite set. For
 every $s\in S$, let $a_{s}$ and $b_{s}$ be elements of $\mathbb{A}$. Then,%
 \begin{equation}
@@ -1702,13 +1709,6 @@ $\lambda\in\mathbb{N}$. Then,%
 Then,%
 \[
 \prod_{s\in S}1=1.
-\]
-
-
-\item \underline{\textbf{Multiplying equal values:}} Let $S$ be a finite set.
-Let $a$ be an element of $\mathbb{A}$. Then,%
-\[
-\prod_{s\in S}a=a^{\left\vert S\right\vert }.
 \]
 
 
@@ -1758,10 +1758,10 @@ each $s\in\left\{  u-1,u,\ldots,v\right\}  $. Then,%
 \item Let $n$ be a positive integer. Then,%
 \begin{align*}
 \prod_{s=2}^{n}\underbrace{\left(  1-\dfrac{1}{s}\right)  }_{=\dfrac{s-1}%
-{s}=\dfrac{1/s}{1/\left(  s-1\right)  }} &  =\prod_{s=2}^{n}\dfrac
+{s}=\dfrac{1/s}{1/\left(  s-1\right)  }}  &  =\prod_{s=2}^{n}\dfrac
 {1/s}{1/\left(  s-1\right)  }=\dfrac{1/n}{1/\left(  2-1\right)  }\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{eq.prod.telescope}), applied to
-}u=2\text{, }v=n\text{ and }a_{s}=1/s\right)  \\
+}u=2\text{, }v=n\text{ and }a_{s}=1/s\right) \\
 &  =\dfrac{1}{n}.
 \end{align*}
 
