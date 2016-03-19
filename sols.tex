@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, March 18, 2016 20:56:25}
+%TCIDATA{LastRevised=Friday, March 18, 2016 23:23:12}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -106,7 +106,7 @@
 \includecomment{vershort}
 \excludecomment{noncompile}
 \newcommand{\id}{\operatorname{id}}
-\ihead{PRIMES 2015 reading project: problems and solutions}
+\ihead{Notes on the combinatorial fundamentals of algebra}
 \ohead{page \thepage}
 \cfoot{}
 \begin{document}
@@ -11683,9 +11683,9 @@ all inversions of $\mathbf{a}$. Thus, $\operatorname*{Inv}\left(
 \mathbf{a}\right)  \subseteq\left[  n\right]  ^{2}$. More precisely,%
 \begin{align}
 \operatorname*{Inv}\left(  \mathbf{a}\right)   &  =\left(  \text{the set of
-all inversions of }\mathbf{a}\right) \nonumber\\
+all inversions of }\mathbf{a}\right)  \nonumber\\
 &  =\left\{  \left(  i,j\right)  \in\left[  n\right]  ^{2}\ \mid\ i<j\text{
-and }a_{i}>a_{j}\right\} \label{pf.prop.sorting.a.Inv.1}\\
+and }a_{i}>a_{j}\right\}  \label{pf.prop.sorting.a.Inv.1}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
@@ -11694,11 +11694,11 @@ i,j\right)  \in\left[  n\right]  ^{2}\text{ satisfying}\\
 i<j\text{ and }a_{i}>a_{j}\text{ (by the definition of an \textquotedblleft
 inversion\textquotedblright)}%
 \end{array}
-\right) \nonumber\\
+\right)  \nonumber\\
 &  =\left\{  \left(  u,v\right)  \in\left[  n\right]  ^{2}\ \mid\ u<v\text{
-and }a_{u}>a_{v}\right\} \label{pf.prop.sorting.a.Inv.2}\\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we renamed the summation index
-}\left(  i,j\right)  \text{ as }\left(  u,v\right)  \right)  .\nonumber
+and }a_{u}>a_{v}\right\}  \label{pf.prop.sorting.a.Inv.2}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we renamed the index }\left(
+i,j\right)  \text{ as }\left(  u,v\right)  \right)  .\nonumber
 \end{align}
 
 
@@ -11706,14 +11706,14 @@ and }a_{u}>a_{v}\right\} \label{pf.prop.sorting.a.Inv.2}\\
 \operatorname*{Inv}\left(  \mathbf{a}\right)  \right\vert $. (This is
 well-defined because $\operatorname*{Inv}\left(  \mathbf{a}\right)  $ is
 finite (since $\operatorname*{Inv}\left(  \mathbf{a}\right)  \subseteq\left[
-n\right]  ^{2}$)). Thus,%
+n\right]  ^{2}$).) Thus,%
 \begin{align}
 \ell\left(  \mathbf{a}\right)   &  =\left\vert \underbrace{\operatorname*{Inv}%
 \left(  \mathbf{a}\right)  }_{=\left(  \text{the set of all inversions of
 }\mathbf{a}\right)  }\right\vert =\left\vert \left(  \text{the set of all
 inversions of }\mathbf{a}\right)  \right\vert \nonumber\\
-&  =\left(  \text{the number of all inversions of }\mathbf{a}\right)  .
-\label{pf.prop.sorting.a.l(sigma)}%
+&  =\left(  \text{the number of all inversions of }\mathbf{a}\right)
+.\label{pf.prop.sorting.a.l(sigma)}%
 \end{align}
 
 
@@ -12631,7 +12631,7 @@ sends $\left(  \left(  1,2,4,6\right)  ,\pi\right)  $ to $\left(
 4,1,6,2\right)  $.} This is not a formal proof, but this should explain why
 Lemma \ref{lem.cauchy-binet.EI} is usually applied throughout mathematics
 without even mentioning it as a statement. If desired, a formal proof of Lemma
-\ref{lem.cauchy-binet.EI} can be obtained using Lemma \ref{prop.sorting}.
+\ref{lem.cauchy-binet.EI} can be obtained using Proposition \ref{prop.sorting}.
 
 \begin{verlong}
 \begin{proof}
@@ -29563,7 +29563,7 @@ $i=k$. We thus have $i\neq k$. Combined with $i\in\left\{  1,2,\ldots
 ,k\right\}  $, this shows that $i\in\left\{  1,2,\ldots,k\right\}
 \setminus\left\{  k\right\}  =\left\{  1,2,\ldots,k-1\right\}  $. Hence,
 (\ref{sol.perm.cycles.b.sigma-manifest.1a}) yields $\sigma\left(  p+i\right)
-=p+\left(  i+1\right)  =\underbrace{p+i}_{=1}+1=q+1$. This contradicts
+=p+\left(  i+1\right)  =\underbrace{p+i}_{=q}+1=q+1$. This contradicts
 $\sigma\left(  \underbrace{p+i}_{=q}\right)  =\sigma\left(  q\right)  >q+1$.
 This contradiction proves that our assumption was wrong. Hence, $\sigma\left(
 q\right)  \leq q+1$ is proven. We are thus done proving
@@ -35296,7 +35296,7 @@ n$. This proves (\ref{sol.det.2diags.posrem.1}).}.
 \item If $h\in\mathbb{Z}$ and $k\in\left[  n\right]  $ are such that $k\equiv
 h\operatorname{mod}n$, then%
 \begin{equation}
-k=\operatorname*{posrem}h\label{sol.det.2diags.posrem.2}%
+k=\operatorname*{posrem}h \label{sol.det.2diags.posrem.2}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{sol.det.2diags.posrem.2}):} Let
 $h\in\mathbb{Z}$ and $k\in\left[  n\right]  $ be such that $k\equiv
