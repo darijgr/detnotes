@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, March 18, 2016 20:33:54}
+%TCIDATA{LastRevised=Friday, March 18, 2016 20:56:25}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -1431,7 +1431,7 @@ $a_{\left(  x,y\right)  }$ be an element of $\mathbb{A}$. Then,%
 }}a_{\left(  x,y\right)  }=\sum_{\substack{\left(  x,y\right)  \in X\times
 Y;\\\mathcal{A}\left(  x,y\right)  }}a_{\left(  x,y\right)  }=\sum_{y\in
 Y}\sum_{\substack{x\in X;\\\mathcal{A}\left(  x,y\right)  }}a_{\left(
-x,y\right)  }.\label{eq.sum.fubini.predicate}%
+x,y\right)  }. \label{eq.sum.fubini.predicate}%
 \end{equation}
 
 
@@ -1444,7 +1444,8 @@ x,y\right)  }.\label{eq.sum.fubini.predicate}%
 1,2,\ldots,m\right\}  ;\\x+y\text{ is even}}}xy=\sum_{\substack{\left(
 x,y\right)  \in\left\{  1,2,\ldots,n\right\}  \times\left\{  1,2,\ldots
 ,m\right\}  ;\\x+y\text{ is even}}}xy=\sum_{y\in\left\{  1,2,\ldots,m\right\}
-}\sum_{\substack{x\in\left\{  1,2,\ldots,n\right\}  ;\\x+y\text{ is even}}}xy.
+}\sum_{\substack{x\in\left\{  1,2,\ldots,n\right\}  ;\\x+y\text{ is even}%
+}}xy.
 \]
 (This follows from (\ref{eq.sum.fubini.predicate}), applied to $X=\left\{
 1,2,\ldots,n\right\}  $, $Y=\left\{  1,2,\ldots,m\right\}  $ and
@@ -35082,8 +35083,8 @@ j-1\right)  $ and $\sigma\left(  j\right)  $ are elements of $\left\{
 But this is absurd. This contradiction shows that our assumption was wrong,
 qed.}. Thus, $\sigma\left(  \underbrace{1}_{=j}\right)  =\sigma\left(
 j\right)  \equiv\underbrace{j}_{=1}-1=0\equiv n\operatorname{mod}n$. Since
-both $1$ and $n$ belong to $\left\{  1,2,\ldots,n\right\}  $, this shows that
-$\sigma\left(  1\right)  =n$.
+both $\sigma\left(  1\right)  $ and $n$ belong to $\left\{  1,2,\ldots
+,n\right\}  $, this shows that $\sigma\left(  1\right)  =n$.
 
 There exists a $K\in\left\{  1,2,\ldots,n\right\}  $ such that $\sigma\left(
 K\right)  =K$\ \ \ \ \footnote{\textit{Proof.} We have $\sigma\neq z$. Hence,
@@ -35270,9 +35271,9 @@ them exactly once. In other words: For every $h\in\mathbb{Z}$, there exists a
 unique element $g\in\left\{  1,2,\ldots,n\right\}  $ satisfying $g\equiv
 h\operatorname{mod}n$. Since $\left\{  1,2,\ldots,n\right\}  =\left[
 n\right]  $, this rewrites as follows: For every $h\in\mathbb{Z}$, there
-exists a unique element $g\in\left\{  1,2,\ldots,n\right\}  $ satisfying
-$g\equiv h\operatorname{mod}n$. We shall denote this $g$ by
-$\operatorname*{posrem}h$. Thus, we have the following facts:
+exists a unique element $g\in\left[  n\right]  $ satisfying $g\equiv
+h\operatorname{mod}n$. We shall denote this $g$ by $\operatorname*{posrem}h$.
+Thus, we have the following facts:
 
 \begin{itemize}
 \item For every $h\in\mathbb{Z}$, we have%
@@ -35295,10 +35296,10 @@ n$. This proves (\ref{sol.det.2diags.posrem.1}).}.
 \item If $h\in\mathbb{Z}$ and $k\in\left[  n\right]  $ are such that $k\equiv
 h\operatorname{mod}n$, then%
 \begin{equation}
-k=\operatorname*{posrem}h \label{sol.det.2diags.posrem.2}%
+k=\operatorname*{posrem}h\label{sol.det.2diags.posrem.2}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{sol.det.2diags.posrem.2}):} Let
-$h\in\mathbb{Z}$ and $k\in\left[  n\right]  $ are such that $k\equiv
+$h\in\mathbb{Z}$ and $k\in\left[  n\right]  $ be such that $k\equiv
 h\operatorname{mod}n$.
 \par
 We know that $\operatorname*{posrem}h$ is the unique element $g\in\left[
