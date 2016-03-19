@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, March 18, 2016 20:10:54}
+%TCIDATA{LastRevised=Friday, March 18, 2016 20:28:27}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -1659,11 +1659,36 @@ s\right)  }}a_{s}\right)  \cdot\left(  \prod_{\substack{s\in S; \\\text{not
 
 \item \underline{\textbf{Splitting a factor:}} Let $S$ be a finite set. For
 every $s\in S$, let $a_{s}$ and $b_{s}$ be elements of $\mathbb{A}$. Then,%
-\[
+\begin{equation}
 \prod_{s\in S}\left(  a_{s}b_{s}\right)  =\left(  \prod_{s\in S}a_{s}\right)
-\cdot\left(  \prod_{s\in S}b_{s}\right)  .
-\]
+\cdot\left(  \prod_{s\in S}b_{s}\right)  .\label{eq.prod.linear1}%
+\end{equation}
 
+
+\textbf{Examples:}
+
+\begin{itemize}
+\item Here is a frequently used particular case of (\ref{eq.prod.linear1}):
+Let $S$ be a finite set. For every $s\in S$, let $b_{s}$ be an element of
+$\mathbb{A}$. Let $a$ be an element of $\mathbb{A}$. Then,
+(\ref{eq.prod.linear1}) (applied to $a_{s}=a$) yields%
+\begin{equation}
+\prod_{s\in S}\left(  ab_{s}\right)  =\underbrace{\left(  \prod_{s\in
+S}a\right)  }_{=a^{\left\vert S\right\vert }}\cdot\left(  \prod_{s\in S}%
+b_{s}\right)  =a^{\left\vert S\right\vert }\cdot\left(  \prod_{s\in S}%
+b_{s}\right)  .\label{eq.prod.linear1.ex1}%
+\end{equation}
+
+
+\item Here is an even further particular case: Let $S$ be a finite set. For
+every $s\in S$, let $b_{s}$ be an element of $\mathbb{A}$. Then,%
+\[
+\prod_{s\in S}\underbrace{\left(  -b_{s}\right)  }_{=\left(  -1\right)  b_{s}%
+}=\prod_{s\in S}\left(  \left(  -1\right)  b_{s}\right)  =\left(  -1\right)
+^{\left\vert S\right\vert }\cdot\left(  \prod_{s\in S}b_{s}\right)
+\]
+(by (\ref{eq.prod.linear1.ex1}), applied to $a=-1$).
+\end{itemize}
 
 \item \underline{\textbf{Factoring out an exponent:}} Let $S$ be a finite set.
 For every $s\in S$, let $a_{s}$ be an element of $\mathbb{A}$. Also, let
@@ -1687,8 +1712,8 @@ Let $a$ be an element of $\mathbb{A}$. Then,%
 \]
 
 
-\item \underline{\textbf{Dropping ones:}} Let $S$ be a finite set. Let $a_{s}
-$ be an element of $\mathbb{A}$ for each $s\in S$. Let $T$ be a subset of $S$
+\item \underline{\textbf{Dropping ones:}} Let $S$ be a finite set. Let $a_{s}$
+be an element of $\mathbb{A}$ for each $s\in S$. Let $T$ be a subset of $S$
 such that every $s\in T$ satisfies $a_{s}=1$. Then,%
 \[
 \prod_{s\in S}a_{s}=\prod_{s\in S\setminus T}a_{s}.
@@ -1722,7 +1747,7 @@ be an element of $\mathbb{A}$ for each $s\in S$. Then,%
 integers such that $u-1\leq v$. Let $a_{s}$ be an element of $\mathbb{A}$ for
 each $s\in\left\{  u-1,u,\ldots,v\right\}  $. Then,%
 \begin{equation}
-\prod_{s=u}^{v}\dfrac{a_{s}}{a_{s-1}}=\dfrac{a_{v}}{a_{u-1}}
+\prod_{s=u}^{v}\dfrac{a_{s}}{a_{s-1}}=\dfrac{a_{v}}{a_{u-1}}%
 \label{eq.prod.telescope}%
 \end{equation}
 (provided that $a_{s-1}\neq0$ for all $s\in\left\{  u,u+1,\ldots,v\right\}  $).
@@ -1733,10 +1758,10 @@ each $s\in\left\{  u-1,u,\ldots,v\right\}  $. Then,%
 \item Let $n$ be a positive integer. Then,%
 \begin{align*}
 \prod_{s=2}^{n}\underbrace{\left(  1-\dfrac{1}{s}\right)  }_{=\dfrac{s-1}%
-{s}=\dfrac{1/s}{1/\left(  s-1\right)  }}  &  =\prod_{s=2}^{n}\dfrac
+{s}=\dfrac{1/s}{1/\left(  s-1\right)  }} &  =\prod_{s=2}^{n}\dfrac
 {1/s}{1/\left(  s-1\right)  }=\dfrac{1/n}{1/\left(  2-1\right)  }\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{eq.prod.telescope}), applied to
-}u=2\text{, }v=n\text{ and }a_{s}=1/s\right) \\
+}u=2\text{, }v=n\text{ and }a_{s}=1/s\right)  \\
 &  =\dfrac{1}{n}.
 \end{align*}
 
@@ -1745,11 +1770,11 @@ each $s\in\left\{  u-1,u,\ldots,v\right\}  $. Then,%
 \item \underline{\textbf{Splitting a product by a value of a function:}} Let
 $S$ be a finite set. Let $W$ be a set. Let $f:S\rightarrow W$ be a map. Then,%
 \[
-\prod_{s\in S}a_{s}=\prod_{w\in W}\prod_{\substack{s\in S; \\f\left(
-s\right)  =w}}a_{s}.
+\prod_{s\in S}a_{s}=\prod_{w\in W}\prod_{\substack{s\in S;\\f\left(  s\right)
+=w}}a_{s}.
 \]
 (The right hand side is to be read as $\prod_{w\in W}\left(  \prod
-_{\substack{s\in S; \\f\left(  s\right)  =w}}a_{s}\right)  $.)
+_{\substack{s\in S;\\f\left(  s\right)  =w}}a_{s}\right)  $.)
 
 \item \underline{\textbf{Splitting a product into subproducts:}} Let $S$ be a
 finite set. Let $S_{1},S_{2},\ldots,S_{n}$ be finitely many subsets of $S$.
