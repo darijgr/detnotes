@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, March 18, 2016 20:30:06}
+%TCIDATA{LastRevised=Friday, March 18, 2016 20:33:54}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -703,7 +703,7 @@ from (\ref{eq.sum.split}), applied to $X=\left\{  s\in S\ \mid\ \mathcal{A}%
 \item \underline{\textbf{Summing equal values:}} Let $S$ be a finite set. Let
 $a$ be an element of $\mathbb{A}$. Then,%
 \begin{equation}
-\sum_{s\in S}a=\left\vert S\right\vert \cdot a.\label{eq.sum.equal}%
+\sum_{s\in S}a=\left\vert S\right\vert \cdot a. \label{eq.sum.equal}%
 \end{equation}
 In other words, if all addends of a sum are equal to one and the same element
 $a$, then the sum is just the number of its addends times $a$. In particular,%
@@ -716,7 +716,7 @@ $a$, then the sum is just the number of its addends times $a$. In particular,%
 every $s\in S$, let $a_{s}$ and $b_{s}$ be elements of $\mathbb{A}$. Then,%
 \begin{equation}
 \sum_{s\in S}\left(  a_{s}+b_{s}\right)  =\sum_{s\in S}a_{s}+\sum_{s\in
-S}b_{s}.\label{eq.sum.linear1}%
+S}b_{s}. \label{eq.sum.linear1}%
 \end{equation}
 
 
@@ -731,7 +731,7 @@ then%
 If $u$ and $v$ are two integers, then%
 \begin{equation}
 \sum_{s=u}^{v}\left(  a_{s}+b_{s}\right)  =\sum_{s=u}^{v}a_{s}+\sum_{s=u}%
-^{v}b_{s}.\label{eq.sum.linear1.c}%
+^{v}b_{s}. \label{eq.sum.linear1.c}%
 \end{equation}
 
 
@@ -739,7 +739,7 @@ If $u$ and $v$ are two integers, then%
 $s\in S$, let $a_{s}$ be an element of $\mathbb{A}$. Also, let $\lambda$ be an
 element of $\mathbb{A}$. Then,%
 \begin{equation}
-\sum_{s\in S}\lambda a_{s}=\lambda\sum_{s\in S}a_{s}.\label{eq.sum.linear2}%
+\sum_{s\in S}\lambda a_{s}=\lambda\sum_{s\in S}a_{s}. \label{eq.sum.linear2}%
 \end{equation}
 Again, similar rules hold for the other types of summation sign.
 
@@ -775,7 +775,7 @@ as long as its name does not clash with other notation.
 finite sets. Let $f:S\rightarrow T$ be a \textbf{bijective} map. Let $a_{t}$
 be an element of $\mathbb{A}$ for each $t\in T$. Then,%
 \begin{equation}
-\sum_{t\in T}a_{t}=\sum_{s\in S}a_{f\left(  s\right)  }.\label{eq.sum.subs1}%
+\sum_{t\in T}a_{t}=\sum_{s\in S}a_{f\left(  s\right)  }. \label{eq.sum.subs1}%
 \end{equation}
 (The idea here is that the sum $\sum_{s\in S}a_{f\left(  s\right)  }$ contains
 the same addends as the sum $\sum_{t\in T}a_{t}$.)
@@ -1423,15 +1423,15 @@ y\leq n}a_{\left(  x,y\right)  }$.
 
 \item \underline{\textbf{Fubini's theorem with a predicate:}} Let $X$ and $Y$
 be two finite sets. For every pair $\left(  x,y\right)  \in X\times Y$, let
-$\mathcal{A}\left(  x,y\right)  $ be a logical statement. Let $a_{\left(
-x,y\right)  }$ be an element of $\mathbb{A}$ for each $\left(  x,y\right)  \in
-X\times Y$ satisfying $\mathcal{A}\left(  x,y\right)  $. Then,%
+$\mathcal{A}\left(  x,y\right)  $ be a logical statement. For each $\left(
+x,y\right)  \in X\times Y$ satisfying $\mathcal{A}\left(  x,y\right)  $, let
+$a_{\left(  x,y\right)  }$ be an element of $\mathbb{A}$. Then,%
 \begin{equation}
 \sum_{x\in X}\sum_{\substack{y\in Y;\\\mathcal{A}\left(  x,y\right)
 }}a_{\left(  x,y\right)  }=\sum_{\substack{\left(  x,y\right)  \in X\times
 Y;\\\mathcal{A}\left(  x,y\right)  }}a_{\left(  x,y\right)  }=\sum_{y\in
 Y}\sum_{\substack{x\in X;\\\mathcal{A}\left(  x,y\right)  }}a_{\left(
-x,y\right)  }. \label{eq.sum.fubini.predicate}%
+x,y\right)  }.\label{eq.sum.fubini.predicate}%
 \end{equation}
 
 
@@ -1444,8 +1444,7 @@ x,y\right)  }. \label{eq.sum.fubini.predicate}%
 1,2,\ldots,m\right\}  ;\\x+y\text{ is even}}}xy=\sum_{\substack{\left(
 x,y\right)  \in\left\{  1,2,\ldots,n\right\}  \times\left\{  1,2,\ldots
 ,m\right\}  ;\\x+y\text{ is even}}}xy=\sum_{y\in\left\{  1,2,\ldots,m\right\}
-}\sum_{\substack{x\in\left\{  1,2,\ldots,n\right\}  ;\\x+y\text{ is even}%
-}}xy.
+}\sum_{\substack{x\in\left\{  1,2,\ldots,n\right\}  ;\\x+y\text{ is even}}}xy.
 \]
 (This follows from (\ref{eq.sum.fubini.predicate}), applied to $X=\left\{
 1,2,\ldots,n\right\}  $, $Y=\left\{  1,2,\ldots,m\right\}  $ and
@@ -1454,11 +1453,11 @@ even\textquotedblright}\right)  $.)
 \end{itemize}
 
 \item \underline{\textbf{Interchange of predicates:}} Let $S$ be a finite set.
-For every $s\in S$, assume that $\mathcal{A}\left(  s\right)  $ and
-$\mathcal{B}\left(  s\right)  $ are two equivalent logical statements.
-(\textquotedblleft Equivalent\textquotedblright\ means that $\mathcal{A}%
-\left(  s\right)  $ holds if and only if $\mathcal{A}\left(  s\right)  $
-holds.) Let $a_{s}$ be an element of $\mathbb{A}$ for each $s\in S$. Then,%
+For every $s\in S$, let $\mathcal{A}\left(  s\right)  $ and $\mathcal{B}%
+\left(  s\right)  $ be two equivalent logical statements. (\textquotedblleft
+Equivalent\textquotedblright\ means that $\mathcal{A}\left(  s\right)  $ holds
+if and only if $\mathcal{B}\left(  s\right)  $ holds.) Let $a_{s}$ be an
+element of $\mathbb{A}$ for each $s\in S$. Then,%
 \[
 \sum_{\substack{s\in S;\\\mathcal{A}\left(  s\right)  }}a_{s}=\sum
 _{\substack{s\in S;\\\mathcal{B}\left(  s\right)  }}a_{s}.
@@ -1668,7 +1667,7 @@ Let $a$ be an element of $\mathbb{A}$. Then,%
 every $s\in S$, let $a_{s}$ and $b_{s}$ be elements of $\mathbb{A}$. Then,%
 \begin{equation}
 \prod_{s\in S}\left(  a_{s}b_{s}\right)  =\left(  \prod_{s\in S}a_{s}\right)
-\cdot\left(  \prod_{s\in S}b_{s}\right)  .\label{eq.prod.linear1}%
+\cdot\left(  \prod_{s\in S}b_{s}\right)  . \label{eq.prod.linear1}%
 \end{equation}
 
 
@@ -1683,7 +1682,7 @@ $\mathbb{A}$. Let $a$ be an element of $\mathbb{A}$. Then,
 \prod_{s\in S}\left(  ab_{s}\right)  =\underbrace{\left(  \prod_{s\in
 S}a\right)  }_{=a^{\left\vert S\right\vert }}\cdot\left(  \prod_{s\in S}%
 b_{s}\right)  =a^{\left\vert S\right\vert }\cdot\left(  \prod_{s\in S}%
-b_{s}\right)  .\label{eq.prod.linear1.ex1}%
+b_{s}\right)  . \label{eq.prod.linear1.ex1}%
 \end{equation}
 
 
@@ -1747,7 +1746,7 @@ be an element of $\mathbb{A}$ for each $s\in S$. Then,%
 integers such that $u-1\leq v$. Let $a_{s}$ be an element of $\mathbb{A}$ for
 each $s\in\left\{  u-1,u,\ldots,v\right\}  $. Then,%
 \begin{equation}
-\prod_{s=u}^{v}\dfrac{a_{s}}{a_{s-1}}=\dfrac{a_{v}}{a_{u-1}}%
+\prod_{s=u}^{v}\dfrac{a_{s}}{a_{s-1}}=\dfrac{a_{v}}{a_{u-1}}
 \label{eq.prod.telescope}%
 \end{equation}
 (provided that $a_{s-1}\neq0$ for all $s\in\left\{  u,u+1,\ldots,v\right\}  $).
@@ -1838,9 +1837,9 @@ x,y\right)  \in Q_{n}}a_{\left(  x,y\right)  }=\prod_{y=1}^{n}\prod_{x=1}%
 
 \item \underline{\textbf{Fubini's theorem with a predicate:}} Let $X$ and $Y$
 be two finite sets. For every pair $\left(  x,y\right)  \in X\times Y$, let
-$\mathcal{A}\left(  x,y\right)  $ be a logical statement. Let $a_{\left(
-x,y\right)  }$ be an element of $\mathbb{A}$ for each $\left(  x,y\right)  \in
-X\times Y$ satisfying $\mathcal{A}\left(  x,y\right)  $. Then,%
+$\mathcal{A}\left(  x,y\right)  $ be a logical statement. For each $\left(
+x,y\right)  \in X\times Y$ satisfying $\mathcal{A}\left(  x,y\right)  $, let
+$a_{\left(  x,y\right)  }$ be an element of $\mathbb{A}$. Then,%
 \[
 \prod_{x\in X}\prod_{\substack{y\in Y;\\\mathcal{A}\left(  x,y\right)
 }}a_{\left(  x,y\right)  }=\prod_{\substack{\left(  x,y\right)  \in X\times
@@ -1851,11 +1850,11 @@ x,y\right)  }.
 
 
 \item \underline{\textbf{Interchange of predicates:}} Let $S$ be a finite set.
-For every $s\in S$, assume that $\mathcal{A}\left(  s\right)  $ and
-$\mathcal{B}\left(  s\right)  $ are two equivalent logical statements.
-(\textquotedblleft Equivalent\textquotedblright\ means that $\mathcal{A}%
-\left(  s\right)  $ holds if and only if $\mathcal{A}\left(  s\right)  $
-holds.) Let $a_{s}$ be an element of $\mathbb{A}$ for each $s\in S$. Then,%
+For every $s\in S$, let $\mathcal{A}\left(  s\right)  $ and $\mathcal{B}%
+\left(  s\right)  $ be two equivalent logical statements. (\textquotedblleft
+Equivalent\textquotedblright\ means that $\mathcal{A}\left(  s\right)  $ holds
+if and only if $\mathcal{B}\left(  s\right)  $ holds.) Let $a_{s}$ be an
+element of $\mathbb{A}$ for each $s\in S$. Then,%
 \[
 \prod_{\substack{s\in S;\\\mathcal{A}\left(  s\right)  }}a_{s}=\prod
 _{\substack{s\in S;\\\mathcal{B}\left(  s\right)  }}a_{s}.
