@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, March 18, 2016 23:23:12}
+%TCIDATA{LastRevised=Monday, March 21, 2016 15:08:17}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -11683,9 +11683,9 @@ all inversions of $\mathbf{a}$. Thus, $\operatorname*{Inv}\left(
 \mathbf{a}\right)  \subseteq\left[  n\right]  ^{2}$. More precisely,%
 \begin{align}
 \operatorname*{Inv}\left(  \mathbf{a}\right)   &  =\left(  \text{the set of
-all inversions of }\mathbf{a}\right)  \nonumber\\
+all inversions of }\mathbf{a}\right) \nonumber\\
 &  =\left\{  \left(  i,j\right)  \in\left[  n\right]  ^{2}\ \mid\ i<j\text{
-and }a_{i}>a_{j}\right\}  \label{pf.prop.sorting.a.Inv.1}\\
+and }a_{i}>a_{j}\right\} \label{pf.prop.sorting.a.Inv.1}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
@@ -11694,9 +11694,9 @@ i,j\right)  \in\left[  n\right]  ^{2}\text{ satisfying}\\
 i<j\text{ and }a_{i}>a_{j}\text{ (by the definition of an \textquotedblleft
 inversion\textquotedblright)}%
 \end{array}
-\right)  \nonumber\\
+\right) \nonumber\\
 &  =\left\{  \left(  u,v\right)  \in\left[  n\right]  ^{2}\ \mid\ u<v\text{
-and }a_{u}>a_{v}\right\}  \label{pf.prop.sorting.a.Inv.2}\\
+and }a_{u}>a_{v}\right\} \label{pf.prop.sorting.a.Inv.2}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we renamed the index }\left(
 i,j\right)  \text{ as }\left(  u,v\right)  \right)  .\nonumber
 \end{align}
@@ -11712,8 +11712,8 @@ n\right]  ^{2}$).) Thus,%
 \left(  \mathbf{a}\right)  }_{=\left(  \text{the set of all inversions of
 }\mathbf{a}\right)  }\right\vert =\left\vert \left(  \text{the set of all
 inversions of }\mathbf{a}\right)  \right\vert \nonumber\\
-&  =\left(  \text{the number of all inversions of }\mathbf{a}\right)
-.\label{pf.prop.sorting.a.l(sigma)}%
+&  =\left(  \text{the number of all inversions of }\mathbf{a}\right)  .
+\label{pf.prop.sorting.a.l(sigma)}%
 \end{align}
 
 
@@ -25923,7 +25923,7 @@ $i\in\left\{  1,2,\ldots,M\right\}  $, we have defined a $k_{i}\in\left\{
 Now, every $j\in\left\{  0,1,\ldots,M\right\}  $ satisfies%
 \begin{equation}
 \delta_{j}=\sigma\circ\left(  s_{k_{1}}\circ s_{k_{2}}\circ\cdots\circ
-s_{k_{p}}\right)  \label{sol.ps4.short.0.5}%
+s_{k_{j}}\right)  \label{sol.ps4.short.0.5}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{sol.ps4.short.0.5}):} We shall prove
 (\ref{sol.ps4.short.0.5}) by induction over $j$:
@@ -25945,7 +25945,7 @@ We have $\delta_{J}=\sigma\circ\left(  s_{k_{1}}\circ s_{k_{2}}\circ
 $j=J-1$). Now, recall that $\delta_{i}=\delta_{i-1}\circ s_{k_{i}}$ for every
 $i\in\left\{  1,2,\ldots,M\right\}  $. Applying this to $i=J$, we obtain%
 \begin{align*}
-\delta_{J}  &  =\underbrace{\delta_{J-1}}_{=\sigma\circ\left(  s_{k_{1}}\circ
+\delta_{J} &  =\underbrace{\delta_{J-1}}_{=\sigma\circ\left(  s_{k_{1}}\circ
 s_{k_{2}}\circ\cdots\circ s_{k_{J-1}}\right)  }\circ s_{k_{J}}%
 \ \ \ \ \ \ \ \ \ \ \left(  \text{since }j\in\left\{  1,2,\ldots,M\right\}
 \text{ (since }j\in\left\{  0,1,\ldots,M\right\}  \text{ is positive)}\right)
@@ -25970,9 +25970,9 @@ Compared with $\delta_{M}=\tau$, this yields%
 so that
 \begin{align*}
 \sigma^{-1}\circ\underbrace{\tau}_{=\sigma\circ\left(  s_{k_{1}}\circ
-s_{k_{2}}\circ\cdots\circ s_{k_{M}}\right)  }  &  =\underbrace{\sigma
-^{-1}\circ\sigma}_{=\operatorname*{id}}\circ\left(  s_{k_{1}}\circ s_{k_{2}%
-}\circ\cdots\circ s_{k_{M}}\right) \\
+s_{k_{2}}\circ\cdots\circ s_{k_{M}}\right)  } &  =\underbrace{\sigma^{-1}%
+\circ\sigma}_{=\operatorname*{id}}\circ\left(  s_{k_{1}}\circ s_{k_{2}}%
+\circ\cdots\circ s_{k_{M}}\right)  \\
 &  =s_{k_{1}}\circ s_{k_{2}}\circ\cdots\circ s_{k_{M}}.
 \end{align*}
 Therefore, the permutation $\sigma^{-1}\circ\tau$ can be written as a
@@ -26132,7 +26132,7 @@ $i\in\left\{  1,2,\ldots,M\right\}  $, we have defined a $k_{i}\in\left\{
 Now, every $j\in\left\{  0,1,\ldots,M\right\}  $ satisfies%
 \begin{equation}
 \delta_{j}=\sigma\circ\left(  s_{k_{1}}\circ s_{k_{2}}\circ\cdots\circ
-s_{k_{p}}\right)  \label{sol.ps4.0.5}%
+s_{k_{j}}\right)  \label{sol.ps4.0.5}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{sol.ps4.0.5}):} We shall prove
 (\ref{sol.ps4.0.5}) by induction over $j$:
@@ -26154,7 +26154,7 @@ We have $\delta_{J}=\sigma\circ\left(  s_{k_{1}}\circ s_{k_{2}}\circ
 $j=J-1$). Now, recall that $\delta_{i}=\delta_{i-1}\circ s_{k_{i}}$ for every
 $i\in\left\{  1,2,\ldots,M\right\}  $. Applying this to $i=J$, we obtain%
 \begin{align*}
-\delta_{J}  &  =\underbrace{\delta_{J-1}}_{=\sigma\circ\left(  s_{k_{1}}\circ
+\delta_{J} &  =\underbrace{\delta_{J-1}}_{=\sigma\circ\left(  s_{k_{1}}\circ
 s_{k_{2}}\circ\cdots\circ s_{k_{J-1}}\right)  }\circ s_{k_{J}}%
 \ \ \ \ \ \ \ \ \ \ \left(  \text{since }j\in\left\{  1,2,\ldots,M\right\}
 \text{ (since }j\in\left\{  0,1,\ldots,M\right\}  \text{ is positive)}\right)
@@ -26179,9 +26179,9 @@ Compared with $\delta_{M}=\tau$, this yields%
 so that
 \begin{align*}
 \sigma^{-1}\circ\underbrace{\tau}_{=\sigma\circ\left(  s_{k_{1}}\circ
-s_{k_{2}}\circ\cdots\circ s_{k_{M}}\right)  }  &  =\underbrace{\sigma
-^{-1}\circ\sigma}_{=\operatorname*{id}}\circ\left(  s_{k_{1}}\circ s_{k_{2}%
-}\circ\cdots\circ s_{k_{M}}\right) \\
+s_{k_{2}}\circ\cdots\circ s_{k_{M}}\right)  } &  =\underbrace{\sigma^{-1}%
+\circ\sigma}_{=\operatorname*{id}}\circ\left(  s_{k_{1}}\circ s_{k_{2}}%
+\circ\cdots\circ s_{k_{M}}\right)  \\
 &  =s_{k_{1}}\circ s_{k_{2}}\circ\cdots\circ s_{k_{M}}.
 \end{align*}
 Therefore, the permutation $\sigma^{-1}\circ\tau$ can be written as a
