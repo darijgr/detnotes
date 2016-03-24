@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, March 24, 2016 14:06:27}
+%TCIDATA{LastRevised=Thursday, March 24, 2016 14:21:43}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -23108,6 +23108,122 @@ Now, (\ref{pf.lem.exeadd.AoPS262752.1.main}) becomes%
 \end{proof}
 \end{verlong}
 
+Here comes one more simple lemma:
+
+\begin{lemma}
+\label{lem.exeadd.AoPS262752.2}Let $n\in\mathbb{N}$. Let $a_{0},a_{1}%
+,\ldots,a_{n}$ be $n+1$ polynomials in the indeterminate $X$ with rational
+coefficients (that is, $n+1$ elements of $\mathbb{Q}\left[  X\right]  $).
+Then,%
+\[
+\sum_{i=0}^{n}a_{i}\left[  n-i=i\right]  =%
+\begin{cases}
+a_{n/2}, & \text{if }n\text{ is even};\\
+0, & \text{if }n\text{ is odd}%
+\end{cases}
+.
+\]
+
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.exeadd.AoPS262752.2}.]We have $n\in\mathbb{N}$, so
+that $n\geq0$. For every $i\in\left\{  0,1,\ldots,n\right\}  $, we have%
+\begin{equation}
+\left[  \underbrace{n-i=i}_{\text{this is equivalent to }n=2i}\right]
+=\left[  \underbrace{n=2i}_{\text{this is equivalent to }i=n/2}\right]
+=\left[  i=n/2\right]  .\label{pf.lem.exeadd.AoPS262752.2.1}%
+\end{equation}
+Thus,%
+\begin{align}
+&  \underbrace{\sum_{i=0}^{n}}_{=\sum_{i\in\left\{  0,1,\ldots,n\right\}  }%
+}a_{i}\underbrace{\left[  n-i=i\right]  }_{\substack{=\left[  i=n/2\right]
+\\\text{(by (\ref{pf.lem.exeadd.AoPS262752.2.1}))}}}\nonumber\\
+&  =\sum_{i\in\left\{  0,1,\ldots,n\right\}  }a_{i}\left[  i=n/2\right]
+=\sum_{\substack{i\in\left\{  0,1,\ldots,n\right\}  ;\\i=n/2}}a_{i}%
+\underbrace{\left[  i=n/2\right]  }_{\substack{=1\\\text{(since }%
+i=n/2\text{)}}}+\sum_{\substack{i\in\left\{  0,1,\ldots,n\right\}  ;\\i\neq
+n/2}}a_{i}\underbrace{\left[  i=n/2\right]  }_{\substack{=0\\\text{(since
+}i\neq n/2\text{)}}}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since every }i\in\left\{  0,1,\ldots
+,n\right\}  \text{ satisfies either }i=n/2\text{ or }i\neq n/2\text{ (but not
+both)}\right)  \nonumber\\
+&  =\sum_{\substack{i\in\left\{  0,1,\ldots,n\right\}  ;\\i=n/2}%
+}a_{i}+\underbrace{\sum_{\substack{i\in\left\{  0,1,\ldots,n\right\}  ;\\i\neq
+n/2}}a_{i}0}_{=0}=\sum_{\substack{i\in\left\{  0,1,\ldots,n\right\}
+;\\i=n/2}}a_{i}.\label{pf.lem.exeadd.AoPS262752.2.2}%
+\end{align}
+
+
+We must be in one of the following two cases:
+
+\textit{Case 1:} The number $n$ is even.
+
+\textit{Case 2:} The number $n$ is odd.
+
+Let us first consider Case 1. In this case, the number $n$ is even. Hence,
+\begin{equation}%
+\begin{cases}
+a_{n/2}, & \text{if }n\text{ is even};\\
+0, & \text{if }n\text{ is odd}%
+\end{cases}
+=a_{n/2}. \label{pf.lem.exeadd.AoPS262752.2.c1.1}%
+\end{equation}
+
+
+On the other hand, $n/2\in\mathbb{Z}$ (since $n$ is even). Combined with
+$n/2\geq0$ (since $n\geq0$) and $n/2\leq n$ (for the same reason), this shows
+that $n/2\in\left\{  0,1,\ldots,n\right\}  $. Now,
+(\ref{pf.lem.exeadd.AoPS262752.2.2}) becomes%
+\begin{align*}
+&  \sum_{i=0}^{n}a_{i}\left[  n-i=i\right] \\
+&  =\sum_{\substack{i\in\left\{  0,1,\ldots,n\right\}  ;\\i=n/2}}a_{i}%
+=a_{n/2}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }n/2\in\left\{  0,1,\ldots
+,n\right\}  \right) \\
+&  =%
+\begin{cases}
+a_{n/2}, & \text{if }n\text{ is even};\\
+0, & \text{if }n\text{ is odd}%
+\end{cases}
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{pf.lem.exeadd.AoPS262752.2.c1.1}%
+)}\right)  .
+\end{align*}
+Thus, Lemma \ref{lem.exeadd.AoPS262752.2} is proven in Case 1.
+
+Let us now consider Case 2. In this case, the number $n$ is odd. Hence,
+\begin{equation}%
+\begin{cases}
+a_{n/2}, & \text{if }n\text{ is even};\\
+0, & \text{if }n\text{ is odd}%
+\end{cases}
+=0. \label{pf.lem.exeadd.AoPS262752.2.c2.1}%
+\end{equation}
+
+
+On the other hand, $n/2\notin\mathbb{Z}$ (since $n$ is odd). Hence,
+$n/2\notin\left\{  0,1,\ldots,n\right\}  $ (since $\left\{  0,1,\ldots
+,n\right\}  \subseteq\mathbb{Z}$). Now, (\ref{pf.lem.exeadd.AoPS262752.2.2})
+becomes%
+\begin{align*}
+&  \sum_{i=0}^{n}a_{i}\underbrace{\left[  n-i=i\right]  }\\
+&  =\sum_{\substack{i\in\left\{  0,1,\ldots,n\right\}  ;\\i=n/2}}a_{i}=\left(
+\text{empty sum}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }%
+n/2\notin\left\{  0,1,\ldots,n\right\}  \right) \\
+&  =0=%
+\begin{cases}
+a_{n/2}, & \text{if }n\text{ is even};\\
+0, & \text{if }n\text{ is odd}%
+\end{cases}
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{pf.lem.exeadd.AoPS262752.2.c2.1}%
+)}\right)  .
+\end{align*}
+Thus, Lemma \ref{lem.exeadd.AoPS262752.2} is proven in Case 2.
+
+We have now proved Lemma \ref{lem.exeadd.AoPS262752.2} in both Cases 1 and 2.
+Since these two Cases cover all possibilities, this shows that Lemma
+\ref{lem.exeadd.AoPS262752.2} always holds.
+\end{proof}
+
 Now, we are ready to solve Additional exercise \ref{exeadd.AoPS262752} again:
 
 \begin{proof}
@@ -23160,7 +23276,7 @@ Now,%
 \\\text{(by (\ref{sol.exeadd.AoPS262752.sol2.1}) (applied to }g=k\text{))}%
 }}\nonumber\\
 &  =\sum_{k=0}^{n}\left(  -1\right)  ^{k}\dbinom{X}{k}\left(  \sum_{i=0}%
-^{n-k}\dbinom{k}{i}\dbinom{X-k}{n-k-i}\right)  \nonumber\\
+^{n-k}\dbinom{k}{i}\dbinom{X-k}{n-k-i}\right) \nonumber\\
 &  =\underbrace{\sum_{k=0}^{n}\sum_{i=0}^{n-k}}_{\substack{=\sum
 _{\substack{\left(  k,i\right)  \in\mathbb{N}^{2};\\k\leq n;\ i\leq n-k}%
 }=\sum_{\substack{\left(  k,i\right)  \in\mathbb{N}^{2};\\k\leq n;\ k+i\leq
@@ -23194,112 +23310,29 @@ n\text{ is equivalent to }k\leq n-i\text{)}}}\left(  -1\right)  ^{k}\dbinom
 n;\ k\leq n-i}}}_{=\sum_{i=0}^{n}\sum_{k=0}^{n-i}}\left(  -1\right)
 ^{k}\dbinom{k}{i}\dbinom{X}{n-i}\dbinom{n-i}{k}\\
 &  =\sum_{i=0}^{n}\sum_{k=0}^{n-i}\left(  -1\right)  ^{k}\dbinom{k}{i}%
-\dbinom{X}{n-i}\dbinom{n-i}{k}=\underbrace{\sum_{i=0}^{n}}_{=\sum
-_{i\in\left\{  0,1,\ldots,n\right\}  }}\dbinom{X}{n-i}\underbrace{\sum
+\dbinom{X}{n-i}\dbinom{n-i}{k}=\sum_{i=0}^{n}\dbinom{X}{n-i}\underbrace{\sum
 _{k=0}^{n-i}\left(  -1\right)  ^{k}\dbinom{k}{i}\dbinom{n-i}{k}}%
 _{\substack{=\left(  -1\right)  ^{i}\left[  n-i=i\right]  \\\text{(by Lemma
 \ref{lem.exeadd.AoPS262752.1}}\\\text{(applied to }m=n-i\text{))}}}\\
-&  =\sum_{i\in\left\{  0,1,\ldots,n\right\}  }\dbinom{X}{n-i}\left(
--1\right)  ^{i}\left[  \underbrace{n-i=i}_{\text{this is equivalent to }%
-n=2i}\right]  \\
-&  =\sum_{i\in\left\{  0,1,\ldots,n\right\}  }\dbinom{X}{n-i}\left(
--1\right)  ^{i}\left[  \underbrace{n=2i}_{\text{this is equivalent to }%
-i=n/2}\right]
-\end{align*}%
-\begin{align}
-&  =\sum_{i\in\left\{  0,1,\ldots,n\right\}  }\dbinom{X}{n-i}\left(
--1\right)  ^{i}\left[  i=n/2\right]  \nonumber\\
-&  =\sum_{\substack{i\in\left\{  0,1,\ldots,n\right\}  ;\\i=n/2}}\dbinom
-{X}{n-i}\left(  -1\right)  ^{i}\underbrace{\left[  i=n/2\right]
-}_{\substack{=1\\\text{(since }i=n/2\text{)}}}+\sum_{\substack{i\in\left\{
-0,1,\ldots,n\right\}  ;\\i\neq n/2}}\dbinom{X}{n-i}\left(  -1\right)
-^{i}\underbrace{\left[  i=n/2\right]  }_{\substack{=0\\\text{(since }i\neq
-n/2\text{)}}}\nonumber\\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since every }i\in\left\{  0,1,\ldots
-,n\right\}  \text{ satisfies either }i=n/2\text{ or }i\neq n/2\text{ (but not
-both)}\right)  \nonumber\\
-&  =\sum_{\substack{i\in\left\{  0,1,\ldots,n\right\}  ;\\i=n/2}}\dbinom
-{X}{n-i}\left(  -1\right)  ^{i}+\underbrace{\sum_{\substack{i\in\left\{
-0,1,\ldots,n\right\}  ;\\i\neq n/2}}\dbinom{X}{n-i}\left(  -1\right)  ^{i}%
-0}_{=0}\nonumber\\
-&  =\sum_{\substack{i\in\left\{  0,1,\ldots,n\right\}  ;\\i=n/2}}\dbinom
-{X}{n-i}\left(  -1\right)  ^{i}.\label{sol.exeadd.AoPS262752.sol2.6}%
-\end{align}
-
-
-We must be in one of the following two cases:
-
-\textit{Case 1:} The number $n$ is even.
-
-\textit{Case 2:} The number $n$ is odd.
-
-Let us first consider Case 1. In this case, the number $n$ is even. Hence,
-\begin{equation}%
+&  =\sum_{i=0}^{n}\underbrace{\dbinom{X}{n-i}\left(  -1\right)  ^{i}%
+}_{=\left(  -1\right)  ^{i}\dbinom{X}{n-i}}\left[  n-i=i\right] \\
+&  =\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{X}{n-i}\left[  n-i=i\right]
+=%
 \begin{cases}
-\left(  -1\right)  ^{n/2}\dbinom{X}{n/2}, & \text{if }n\text{ is even};\\
+\left(  -1\right)  ^{n/2}\dbinom{X}{n-n/2}, & \text{if }n\text{ is even};\\
 0, & \text{if }n\text{ is odd}%
 \end{cases}
-=\left(  -1\right)  ^{n/2}\dbinom{X}{n/2}.
-\label{sol.exeadd.AoPS262752.sol2.case1.1}%
-\end{equation}
-
-
-On the other hand, $n/2\in\mathbb{Z}$ (since $n$ is even). Combined with
-$n/2\geq0$ (since $n\geq0$) and $n/2\leq n$ (for the same reason), this shows
-that $n/2\in\left\{  0,1,\ldots,n\right\}  $. Now,
-(\ref{sol.exeadd.AoPS262752.sol2.6}) becomes%
-\begin{align*}
-&  \sum_{k=0}^{n}\left(  -1\right)  ^{k}\dbinom{X}{k}\dbinom{X}{n-k}\\
-&  =\sum_{\substack{i\in\left\{  0,1,\ldots,n\right\}  ;\\i=n/2}}\dbinom
-{X}{n-i}\left(  -1\right)  ^{i}=\dbinom{X}{n-n/2}\left(  -1\right)
-^{n/2}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }n/2\in\left\{  0,1,\ldots
-,n\right\}  \right) \\
-&  =\left(  -1\right)  ^{n/2}\dbinom{X}{n-n/2}=\left(  -1\right)
-^{n/2}\dbinom{X}{n/2}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }n-n/2=n/2\right)
 \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Lemma \ref{lem.exeadd.AoPS262752.2},
+applied to }a_{i}=\left(  -1\right)  ^{i}\dbinom{X}{n-i}\right) \\
 &  =%
 \begin{cases}
 \left(  -1\right)  ^{n/2}\dbinom{X}{n/2}, & \text{if }n\text{ is even};\\
 0, & \text{if }n\text{ is odd}%
 \end{cases}
-\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{sol.exeadd.AoPS262752.sol2.case1.1}%
-)}\right)  .
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }n-n/2=n/2\right)  .
 \end{align*}
-Thus, Additional exercise \ref{exeadd.AoPS262752} is solved in Case 1.
-
-Let us now consider Case 2. In this case, the number $n$ is odd. Hence,
-\begin{equation}%
-\begin{cases}
-\left(  -1\right)  ^{n/2}\dbinom{X}{n/2}, & \text{if }n\text{ is even};\\
-0, & \text{if }n\text{ is odd}%
-\end{cases}
-=0. \label{sol.exeadd.AoPS262752.sol2.case1.2}%
-\end{equation}
-
-
-On the other hand, $n/2\notin\mathbb{Z}$ (since $n$ is odd). Hence,
-$n/2\notin\left\{  0,1,\ldots,n\right\}  $ (since $\left\{  0,1,\ldots
-,n\right\}  \subseteq\mathbb{Z}$). Now, (\ref{sol.exeadd.AoPS262752.sol2.6})
-becomes%
-\begin{align*}
-&  \sum_{k=0}^{n}\left(  -1\right)  ^{k}\dbinom{X}{k}\dbinom{X}{n-k}\\
-&  =\sum_{\substack{i\in\left\{  0,1,\ldots,n\right\}  ;\\i=n/2}}\dbinom
-{X}{n-i}\left(  -1\right)  ^{i}=\left(  \text{empty sum}\right)
-\ \ \ \ \ \ \ \ \ \ \left(  \text{since }n/2\notin\left\{  0,1,\ldots
-,n\right\}  \right) \\
-&  =0=%
-\begin{cases}
-\left(  -1\right)  ^{n/2}\dbinom{X}{n/2}, & \text{if }n\text{ is even};\\
-0, & \text{if }n\text{ is odd}%
-\end{cases}
-\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{sol.exeadd.AoPS262752.sol2.case1.1}%
-)}\right)  .
-\end{align*}
-Thus, Additional exercise \ref{exeadd.AoPS262752} is solved in Case 2.
-
-We have now solved Additional exercise \ref{exeadd.AoPS262752} in both Cases 1
-and 2. Since these two Cases cover all possibilities, this shows that
-Additional exercise \ref{exeadd.AoPS262752} always holds.
+This solves Additional exercise \ref{exeadd.AoPS262752}.
 \end{proof}
 
 Let us record a classical result which follows from Additional exercise
