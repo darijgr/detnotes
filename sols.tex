@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Tuesday, March 22, 2016 16:43:17}
+%TCIDATA{LastRevised=Thursday, March 24, 2016 14:06:27}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -23160,7 +23160,7 @@ Now,%
 \\\text{(by (\ref{sol.exeadd.AoPS262752.sol2.1}) (applied to }g=k\text{))}%
 }}\nonumber\\
 &  =\sum_{k=0}^{n}\left(  -1\right)  ^{k}\dbinom{X}{k}\left(  \sum_{i=0}%
-^{n-k}\dbinom{k}{i}\dbinom{X-k}{n-k-i}\right) \nonumber\\
+^{n-k}\dbinom{k}{i}\dbinom{X-k}{n-k-i}\right)  \nonumber\\
 &  =\underbrace{\sum_{k=0}^{n}\sum_{i=0}^{n-k}}_{\substack{=\sum
 _{\substack{\left(  k,i\right)  \in\mathbb{N}^{2};\\k\leq n;\ i\leq n-k}%
 }=\sum_{\substack{\left(  k,i\right)  \in\mathbb{N}^{2};\\k\leq n;\ k+i\leq
@@ -23183,43 +23183,47 @@ n\text{ is equivalent to }\left(  i\leq n\text{ and }k+i\leq n\right)
 n\text{))}}}\left(  -1\right)  ^{k}\dbinom{k}{i}\dbinom{X}{n-i}\dbinom{n-i}%
 {k}\nonumber
 \end{align}%
-\begin{align}
+\begin{align*}
 &  =\underbrace{\sum_{\substack{\left(  k,i\right)  \in\mathbb{N}^{2};\\i\leq
 n;\ k+i\leq n}}}_{\substack{=\sum_{\substack{\left(  i,k\right)  \in
 \mathbb{N}^{2};\\i\leq n;\ k+i\leq n}}=\sum_{\substack{\left(  i,k\right)
 \in\mathbb{N}^{2};\\i\leq n;\ k\leq n-i}}\\\text{(since the condition }k+i\leq
 n\text{ is equivalent to }k\leq n-i\text{)}}}\left(  -1\right)  ^{k}\dbinom
-{k}{i}\dbinom{X}{n-i}\dbinom{n-i}{k}\nonumber\\
+{k}{i}\dbinom{X}{n-i}\dbinom{n-i}{k}\\
 &  =\underbrace{\sum_{\substack{\left(  i,k\right)  \in\mathbb{N}^{2};\\i\leq
 n;\ k\leq n-i}}}_{=\sum_{i=0}^{n}\sum_{k=0}^{n-i}}\left(  -1\right)
-^{k}\dbinom{k}{i}\dbinom{X}{n-i}\dbinom{n-i}{k}\nonumber\\
+^{k}\dbinom{k}{i}\dbinom{X}{n-i}\dbinom{n-i}{k}\\
 &  =\sum_{i=0}^{n}\sum_{k=0}^{n-i}\left(  -1\right)  ^{k}\dbinom{k}{i}%
 \dbinom{X}{n-i}\dbinom{n-i}{k}=\underbrace{\sum_{i=0}^{n}}_{=\sum
 _{i\in\left\{  0,1,\ldots,n\right\}  }}\dbinom{X}{n-i}\underbrace{\sum
 _{k=0}^{n-i}\left(  -1\right)  ^{k}\dbinom{k}{i}\dbinom{n-i}{k}}%
 _{\substack{=\left(  -1\right)  ^{i}\left[  n-i=i\right]  \\\text{(by Lemma
-\ref{lem.exeadd.AoPS262752.1}}\\\text{(applied to }m=n-i\text{))}}}\nonumber\\
+\ref{lem.exeadd.AoPS262752.1}}\\\text{(applied to }m=n-i\text{))}}}\\
 &  =\sum_{i\in\left\{  0,1,\ldots,n\right\}  }\dbinom{X}{n-i}\left(
 -1\right)  ^{i}\left[  \underbrace{n-i=i}_{\text{this is equivalent to }%
-n=2i}\right]  =\sum_{i\in\left\{  0,1,\ldots,n\right\}  }\dbinom{X}%
-{n-i}\left(  -1\right)  ^{i}\left[  \underbrace{n=2i}_{\text{this is
-equivalent to }i=n/2}\right] \nonumber
-\end{align}%
+n=2i}\right]  \\
+&  =\sum_{i\in\left\{  0,1,\ldots,n\right\}  }\dbinom{X}{n-i}\left(
+-1\right)  ^{i}\left[  \underbrace{n=2i}_{\text{this is equivalent to }%
+i=n/2}\right]
+\end{align*}%
 \begin{align}
 &  =\sum_{i\in\left\{  0,1,\ldots,n\right\}  }\dbinom{X}{n-i}\left(
--1\right)  ^{i}\left[  i=n/2\right] \nonumber\\
+-1\right)  ^{i}\left[  i=n/2\right]  \nonumber\\
 &  =\sum_{\substack{i\in\left\{  0,1,\ldots,n\right\}  ;\\i=n/2}}\dbinom
 {X}{n-i}\left(  -1\right)  ^{i}\underbrace{\left[  i=n/2\right]
-}_{\substack{=1\\\text{(since }n/2\neq i\text{)}}}+\sum_{\substack{i\in
-\left\{  0,1,\ldots,n\right\}  ;\\n/2\neq i}}\dbinom{X}{n-i}\left(  -1\right)
+}_{\substack{=1\\\text{(since }i=n/2\text{)}}}+\sum_{\substack{i\in\left\{
+0,1,\ldots,n\right\}  ;\\i\neq n/2}}\dbinom{X}{n-i}\left(  -1\right)
 ^{i}\underbrace{\left[  i=n/2\right]  }_{\substack{=0\\\text{(since }i\neq
 n/2\text{)}}}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since every }i\in\left\{  0,1,\ldots
+,n\right\}  \text{ satisfies either }i=n/2\text{ or }i\neq n/2\text{ (but not
+both)}\right)  \nonumber\\
 &  =\sum_{\substack{i\in\left\{  0,1,\ldots,n\right\}  ;\\i=n/2}}\dbinom
 {X}{n-i}\left(  -1\right)  ^{i}+\underbrace{\sum_{\substack{i\in\left\{
 0,1,\ldots,n\right\}  ;\\i\neq n/2}}\dbinom{X}{n-i}\left(  -1\right)  ^{i}%
 0}_{=0}\nonumber\\
 &  =\sum_{\substack{i\in\left\{  0,1,\ldots,n\right\}  ;\\i=n/2}}\dbinom
-{X}{n-i}\left(  -1\right)  ^{i}. \label{sol.exeadd.AoPS262752.sol2.6}%
+{X}{n-i}\left(  -1\right)  ^{i}.\label{sol.exeadd.AoPS262752.sol2.6}%
 \end{align}
 
 
@@ -28996,8 +29000,8 @@ k\right)  }\ \ \ \ \ \ \ \ \ \ \text{for every }u\geq1\right)  .
 This sequence $\left(  i_{1},i_{2},i_{3},\ldots\right)  $ is periodic with
 period $k$. In other words,%
 \begin{equation}
-i_{u}=i_{u+k}\ \ \ \ \ \ \ \ \ \ \text{for every }u\geq
-1.\label{sol.perm.cycles.short.c.period}%
+i_{u}=i_{u+k}\ \ \ \ \ \ \ \ \ \ \text{for every }u\geq1.
+\label{sol.perm.cycles.short.c.period}%
 \end{equation}
 From this, it is easy to obtain that%
 \[
@@ -29007,9 +29011,9 @@ i_{1}+i_{2}+\cdots+i_{k}=i_{2}+i_{3}+\cdots+i_{k+1}=i_{3}+i_{4}+\cdots
 \footnote{\textit{Proof.} Every $u\in\left\{  1,2,3,\ldots\right\}  $
 satisfies%
 \begin{align*}
-i_{u}+i_{u+1}+\cdots+i_{u+k-1} &  =\underbrace{i_{u}}_{\substack{=i_{u+k}%
+i_{u}+i_{u+1}+\cdots+i_{u+k-1}  &  =\underbrace{i_{u}}_{\substack{=i_{u+k}%
 \\\text{(by (\ref{sol.perm.cycles.short.c.period}))}}}+\left(  i_{u+1}%
-+i_{u+2}+\cdots+i_{u+k-1}\right)  \\
++i_{u+2}+\cdots+i_{u+k-1}\right) \\
 &  =i_{u+k}+\left(  i_{u+1}+i_{u+2}+\cdots+i_{u+k-1}\right)  =\left(
 i_{u+1}+i_{u+2}+\cdots+i_{u+k-1}\right)  +i_{u+k}\\
 &  =i_{u+1}+i_{u+2}+\cdots+i_{u+k}.
@@ -29018,8 +29022,8 @@ Thus, $i_{1}+i_{2}+\cdots+i_{k}=i_{2}+i_{3}+\cdots+i_{k+1}=i_{3}+i_{4}%
 +\cdots+i_{k+2}=\cdots$, qed.}. Thus,%
 \begin{equation}
 i_{r+1}+i_{r+2}+\cdots+i_{r+k}=i_{1}+i_{2}+\cdots+i_{k}%
-\ \ \ \ \ \ \ \ \ \ \text{for every }r\in\mathbb{N}%
-.\label{sol.perm.cycles.short.c.periodsum}%
+\ \ \ \ \ \ \ \ \ \ \text{for every }r\in\mathbb{N}.
+\label{sol.perm.cycles.short.c.periodsum}%
 \end{equation}
 
 
@@ -29693,8 +29697,8 @@ k\right)  }\ \ \ \ \ \ \ \ \ \ \text{for every }u\geq1\right)  .
 This sequence $\left(  i_{1},i_{2},i_{3},\ldots\right)  $ is periodic with
 period $k$. In other words,%
 \begin{equation}
-i_{u}=i_{u+k}\ \ \ \ \ \ \ \ \ \ \text{for every }u\geq
-1.\label{sol.perm.cycles.c.period}%
+i_{u}=i_{u+k}\ \ \ \ \ \ \ \ \ \ \text{for every }u\geq1.
+\label{sol.perm.cycles.c.period}%
 \end{equation}
 From this, it is easy to obtain that%
 \[
@@ -29704,9 +29708,9 @@ i_{1}+i_{2}+\cdots+i_{k}=i_{2}+i_{3}+\cdots+i_{k+1}=i_{3}+i_{4}+\cdots
 \footnote{\textit{Proof.} Every $u\in\left\{  1,2,3,\ldots\right\}  $
 satisfies%
 \begin{align*}
-i_{u}+i_{u+1}+\cdots+i_{u+k-1} &  =\underbrace{i_{u}}_{\substack{=i_{u+k}%
+i_{u}+i_{u+1}+\cdots+i_{u+k-1}  &  =\underbrace{i_{u}}_{\substack{=i_{u+k}%
 \\\text{(by (\ref{sol.perm.cycles.c.period}))}}}+\left(  i_{u+1}%
-+i_{u+2}+\cdots+i_{u+k-1}\right)  \\
++i_{u+2}+\cdots+i_{u+k-1}\right) \\
 &  =i_{u+k}+\left(  i_{u+1}+i_{u+2}+\cdots+i_{u+k-1}\right)  =\left(
 i_{u+1}+i_{u+2}+\cdots+i_{u+k-1}\right)  +i_{u+k}\\
 &  =i_{u+1}+i_{u+2}+\cdots+i_{u+k}.
@@ -29715,8 +29719,8 @@ Thus, $i_{1}+i_{2}+\cdots+i_{k}=i_{2}+i_{3}+\cdots+i_{k+1}=i_{3}+i_{4}%
 +\cdots+i_{k+2}=\cdots$, qed.}. Thus,%
 \begin{equation}
 i_{r+1}+i_{r+2}+\cdots+i_{r+k}=i_{1}+i_{2}+\cdots+i_{k}%
-\ \ \ \ \ \ \ \ \ \ \text{for every }r\in\mathbb{N}%
-.\label{sol.perm.cycles.c.periodsum}%
+\ \ \ \ \ \ \ \ \ \ \text{for every }r\in\mathbb{N}.
+\label{sol.perm.cycles.c.periodsum}%
 \end{equation}
 
 
@@ -32919,6 +32923,7 @@ B\left(  CD\right)  =\left(  \sum_{k=1}^{n}x_{i}^{n-k}\left(  \sum_{\ell
 =0}^{n-1}\dbinom{n-k+\ell}{\ell}p_{n-k+\ell}y_{j}^{\ell}\right)  \right)
 _{1\leq i\leq n,\ 1\leq j\leq n}. \label{sol.vander-det.xi+yj.short.c.BCD.1}%
 \end{equation}
+
 
 Now, let $\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}$. Then,%
 \begin{align}
