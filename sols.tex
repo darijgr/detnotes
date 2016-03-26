@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, March 25, 2016 21:00:11}
+%TCIDATA{LastRevised=Saturday, March 26, 2016 14:46:20}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -1999,8 +1999,8 @@ at the matrix $\left(
 1 & 3\\
 -1 & 2
 \end{array}
-\right)  $, just because this matrix does not like in the domain $\mathbb{Q}$
-of the polynomial. We could, of course, extend the domain of the function to
+\right)  $, just because this matrix does not lie in the domain $\mathbb{Q}$
+of the function. We could, of course, extend the domain of the function to
 (say) the set of square matrices over $\mathbb{Q}$, but then we would still
 have the same problem with other things that we want to evaluate polynomials
 at. At some point we want to be able to evaluate polynomials at functions and
@@ -2011,7 +2011,8 @@ the definition would be eternally \textquotedblleft hunting its own
 tail\textquotedblright! (We could resolve this difficulty by defining
 polynomials as \textit{natural transformations} in the sense of category
 theory. I do not want to even go into this definition here, as it would take
-several pages to properly introduced.)
+several pages to properly introduce. At this point, it is not worth the
+hassle.)
 \par
 \item Let $p\left(  X\right)  $ be a polynomial with real coefficients. Then,
 it should be obvious that $p\left(  X\right)  $ can also be viewed as a
@@ -2025,7 +2026,7 @@ polynomials with complex coefficients become distinct (because when we view
 them as polynomials with complex coefficients, their domains become extended,
 and a new complex $\alpha$ might perhaps no longer satisfy $p\left(
 \alpha\right)  =q\left(  \alpha\right)  $ )? This does not actually happen,
-but ruling this out is not obvious.
+but ruling this out is not obvious if you regard polynomials as functions.
 \par
 \item (This requires some familiarity with finite fields:) Treating
 polynomials as functions works halfway well for polynomials with integer,
@@ -2115,7 +2116,7 @@ $\mathbf{0}$ is called the \textit{zero polynomial}. A polynomial
 $p\in\mathbb{Q}\left[  X\right]  $ is said to be \textit{nonzero} if
 $p\neq\mathbf{0}$.
 
-\textbf{(d)} We denote the polynomial $\left(  1,0,0,\ldots\right)
+\textbf{(d)} We denote the polynomial $\left(  1,0,0,0,\ldots\right)
 \in\mathbb{Q}\left[  X\right]  $ by $\mathbf{1}$. We will also write $1$ for
 it when no confusion with the number $1$ is possible.
 
@@ -2145,7 +2146,7 @@ k\in\mathbb{N}.
 \]
 We call $a+b$ the \textit{sum} of $a$ and $b$; we call $a-b$ the
 \textit{difference} of $a$ and $b$; we call $a\cdot b$ the \textit{product} of
-$a$ and $b$. We abbreviate $a\cdot b$ for $ab$.
+$a$ and $b$. We abbreviate $a\cdot b$ by $ab$.
 
 For example,%
 \begin{align*}
@@ -2175,9 +2176,9 @@ X^{2}+\cdots\right)  =c_{0}+c_{1}X+c_{2}X^{2}+\cdots,
 where $c_{k}=\sum_{i=0}^{k}a_{i}b_{k-i}$ for every $k\in\mathbb{N}$. This is
 precisely what one would expect, because if you expand $\left(  a_{0}%
 +a_{1}X+a_{2}X^{2}+\cdots\right)  \left(  b_{0}+b_{1}X+b_{2}X^{2}%
-+\cdots\right)  $ using the distributive law, then you get precisely
-$c_{0}+c_{1}X+c_{2}X^{2}+\cdots$. Thus, the definition of $a\cdot b$ has been
-tailored to make the distributive law hold.
++\cdots\right)  $ using the distributive law and collect equal powers of $X$,
+then you get precisely $c_{0}+c_{1}X+c_{2}X^{2}+\cdots$. Thus, the definition
+of $a\cdot b$ has been tailored to make the distributive law hold.
 
 (By the way, why is $a\cdot b$ a polynomial? That is, why does it satisfy
 (\ref{eq.def.polynomial-univar.finite}) ? The proof is easy, but we omit it.)
@@ -2215,7 +2216,8 @@ number.) For example, $\deg\left(  1,4,0,-1,0,0,0,\ldots\right)  =3$.
 \left[  X\right]  $ and $n\in\mathbb{N}$, then a polynomial $a^{n}%
 \in\mathbb{Q}\left[  X\right]  $ is defined to be the product
 $\underbrace{aa\cdots a}_{n\text{ times}}$. (This is understood to be
-$\mathbf{1}$ when $n=0$.)
+$\mathbf{1}$ when $n=0$. In general, an empty product of polynomials is always
+understood to be $\mathbf{1}$.)
 
 \textbf{(j)} We let $X$ denote the polynomial $\left(  0,1,0,0,0,\ldots
 \right)  \in\mathbb{Q}\left[  X\right]  $. (This is the polynomial whose
@@ -2264,19 +2266,19 @@ $p_{n}=0$, then%
 
 \textbf{(k)} For our definition of polynomials to be fully compatible with our
 intuition, we are missing only one more thing: a way to evaluate a polynomial
-at a number, or some other object (another polynomial or a function). This is
-easy: Let $p=\left(  p_{0},p_{1},p_{2},\ldots\right)  \in\mathbb{Q}\left[
-X\right]  $ be a polynomial, and let $\alpha\in\mathbb{Q}$. Then, $p\left(
-\alpha\right)  $ means the number $p_{0}+p_{1}\alpha+p_{2}\alpha^{2}+\cdots
-\in\mathbb{Q}$. (Again, the infinite sum $p_{0}+p_{1}\alpha+p_{2}\alpha
-^{2}+\cdots$ makes sense because of (\ref{eq.def.polynomial-univar.finite}).)
-Similarly, we can define $p\left(  \alpha\right)  $ when $\alpha\in\mathbb{R}$
-(but in this case, $p\left(  \alpha\right)  $ will be an element of
-$\mathbb{R}$) or when $\alpha\in\mathbb{C}$ (in this case, $p\left(
-\alpha\right)  \in\mathbb{C}$) or when $\alpha$ is a square matrix with
-rational entries (in this case, $p\left(  \alpha\right)  $ will also be such a
-matrix) or when $\alpha$ is another polynomial (in this case, $p\left(
-\alpha\right)  $ is such a polynomial as well).
+at a number, or some other object (e.g., another polynomial or a function).
+This is easy: Let $p=\left(  p_{0},p_{1},p_{2},\ldots\right)  \in
+\mathbb{Q}\left[  X\right]  $ be a polynomial, and let $\alpha\in\mathbb{Q}$.
+Then, $p\left(  \alpha\right)  $ means the number $p_{0}+p_{1}\alpha
++p_{2}\alpha^{2}+\cdots\in\mathbb{Q}$. (Again, the infinite sum $p_{0}%
++p_{1}\alpha+p_{2}\alpha^{2}+\cdots$ makes sense because of
+(\ref{eq.def.polynomial-univar.finite}).) Similarly, we can define $p\left(
+\alpha\right)  $ when $\alpha\in\mathbb{R}$ (but in this case, $p\left(
+\alpha\right)  $ will be an element of $\mathbb{R}$) or when $\alpha
+\in\mathbb{C}$ (in this case, $p\left(  \alpha\right)  \in\mathbb{C}$) or when
+$\alpha$ is a square matrix with rational entries (in this case, $p\left(
+\alpha\right)  $ will also be such a matrix) or when $\alpha$ is another
+polynomial (in this case, $p\left(  \alpha\right)  $ is such a polynomial as well).
 
 For example, if $p=\left(  1,-2,0,3,0,0,0,\ldots\right)  =1-2X+3X^{3}$, then
 $p\left(  \alpha\right)  =1-2\alpha+3\alpha^{3}$ for every $\alpha$.
@@ -2361,7 +2363,7 @@ Polynomials in multiple variables are (in my opinion) treated the best in
 \cite[Chapter II, \S 3]{Lang02}, where they are introduced as elements of a
 monoid ring. However, this treatment is rather abstract and uses a good deal
 of algebraic language\footnote{Also, the book \cite{Lang02} is notorious for
-unpolished writing; it is best read with Bergman's companion
+its unpolished writing; it is best read with Bergman's companion
 \cite{Bergman-Lang} at hand.}. The treatments in \cite[\S 4.5]{Walker87} and
 \cite[Chapter IV, \S 4]{BirkMac} use the above-mentioned recursive shortcut
 that makes them inferior (in my opinion). A neat (and rather elementary)
@@ -12403,7 +12405,7 @@ $a_{\sigma\left(  i\right)  }\leq y$. Indeed, assume the contrary. Thus,
 $a_{\sigma\left(  i\right)  }>y$. Hence,%
 \begin{equation}
 \left\vert \left\{  j\in\left\{  1,2,\ldots,n\right\}  \ \mid\ a_{j}\leq
-y\right\}  \right\vert <i \label{pf.prop.sorting.bclaim.pf.5}%
+y\right\}  \right\vert <i\label{pf.prop.sorting.bclaim.pf.5}%
 \end{equation}
 \footnote{\textit{Proof.} Let $p\in\left\{  j\in\left\{  1,2,\ldots,n\right\}
 \ \mid\ a_{j}\leq y\right\}  $. Thus, $p$ is an element $j$ of $\left\{
@@ -12430,14 +12432,18 @@ $ satisfies $p\in\sigma\left(  \left\{  1,2,\ldots,i-1\right\}  \right)  $. In
 other words,%
 \[
 \left\{  j\in\left\{  1,2,\ldots,n\right\}  \ \mid\ a_{j}\leq y\right\}
-\subseteq\left\{  1,2,\ldots,i-1\right\}  .
+\subseteq\sigma\left(  \left\{  1,2,\ldots,i-1\right\}  \right)  .
 \]
 Hence,%
-\[
+\begin{align*}
 \left\vert \left\{  j\in\left\{  1,2,\ldots,n\right\}  \ \mid\ a_{j}\leq
-y\right\}  \right\vert \leq\left\vert \left\{  1,2,\ldots,i-1\right\}
-\right\vert =i-1<i,
-\]
+y\right\}  \right\vert  & \leq\left\vert \sigma\left(  \left\{  1,2,\ldots
+,i-1\right\}  \right)  \right\vert =\left\vert \left\{  1,2,\ldots
+,i-1\right\}  \right\vert \\
+& \ \ \ \ \ \ \ \ \ \ \left(  \text{since the map }\sigma\text{ is
+injective}\right)  \\
+& =i-1<i,
+\end{align*}
 qed.}.
 
 But%
@@ -18544,7 +18550,7 @@ In other words, $\left(  A_{x,y}\right)  _{\sim\left(  y-x\right)
 Let us write the matrix $A_{x,y}$ in the form $A_{x,y}=\left(  u_{i,j}\right)
 _{1\leq i\leq y-x,\ 1\leq j\leq y-x}$. Thus,
 \begin{align*}
-&  \left(  u_{y-x,1},u_{y-x,2},\ldots,u_{y-x,y-x}\right)  \\
+&  \left(  u_{y-x,1},u_{y-x,2},\ldots,u_{y-x,y-x}\right) \\
 &  =\left(  \text{the last row of the matrix }A_{x,y}\right)  =\left(
 0,0,\ldots,0,c_{y-1},a_{y}\right)  .
 \end{align*}
@@ -18563,30 +18569,30 @@ $A_{x,y}$, $u_{i,j}$ and $y-x$ instead of $n$, $A$, $a_{i,j}$ and $p$) yields%
 \begin{align}
 \det\left(  A_{x,y}\right)   &  =\sum_{q=1}^{y-x}\left(  -1\right)  ^{\left(
 y-x\right)  +q}u_{y-x,q}\det\left(  \left(  A_{x,y}\right)  _{\sim\left(
-y-x\right)  ,\sim q}\right)  \nonumber\\
+y-x\right)  ,\sim q}\right) \nonumber\\
 &  =\sum_{q=1}^{y-x-2}\left(  -1\right)  ^{\left(  y-x\right)  +q}%
 \underbrace{u_{y-x,q}}_{\substack{=0\\\text{(by (\ref{pf.prop.tridiag.rec.c.1}%
 ))}}}\det\left(  \left(  A_{x,y}\right)  _{\sim\left(  y-x\right)  ,\sim
-q}\right)  \nonumber\\
+q}\right) \nonumber\\
 &  \ \ \ \ \ \ \ \ \ \ +\underbrace{\left(  -1\right)  ^{\left(  y-x\right)
 +\left(  y-x-1\right)  }}_{=-1}\underbrace{u_{y-x,y-x-1}}_{=c_{y-1}}%
 \det\left(  \left(  A_{x,y}\right)  _{\sim\left(  y-x\right)  ,\sim\left(
-y-x-1\right)  }\right)  \nonumber\\
+y-x-1\right)  }\right) \nonumber\\
 &  \ \ \ \ \ \ \ \ \ \ +\underbrace{\left(  -1\right)  ^{\left(  y-x\right)
 +\left(  y-x\right)  }}_{=1}\underbrace{u_{y-x,y-x}}_{=a_{y}}\det\left(
 \underbrace{\left(  A_{x,y}\right)  _{\sim\left(  y-x\right)  ,\sim\left(
-y-x\right)  }}_{=A_{x,y-1}}\right)  \nonumber\\
+y-x\right)  }}_{=A_{x,y-1}}\right) \nonumber\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }y-x\geq2\text{ (since }x\leq
-y-2\text{)}\right)  \nonumber\\
+y-2\text{)}\right) \nonumber\\
 &  =\underbrace{\sum_{q=1}^{y-x-2}\left(  -1\right)  ^{\left(  y-x\right)
 +q}0\det\left(  \left(  A_{x,y}\right)  _{\sim\left(  y-x\right)  ,\sim
 q}\right)  }_{=0}\nonumber\\
 &  \ \ \ \ \ \ \ \ \ \ -c_{y-1}\det\left(  \left(  A_{x,y}\right)
 _{\sim\left(  y-x\right)  ,\sim\left(  y-x-1\right)  }\right)  +a_{y}%
-\det\left(  A_{x,y-1}\right)  \nonumber\\
+\det\left(  A_{x,y-1}\right) \nonumber\\
 &  =-c_{y-1}\det\left(  \left(  A_{x,y}\right)  _{\sim\left(  y-x\right)
-,\sim\left(  y-x-1\right)  }\right)  +a_{y}\det\left(  A_{x,y-1}\right)
-.\label{pf.prop.tridiag.rec.c.3}%
+,\sim\left(  y-x-1\right)  }\right)  +a_{y}\det\left(  A_{x,y-1}\right)  .
+\label{pf.prop.tridiag.rec.c.3}%
 \end{align}
 
 
@@ -18624,7 +18630,7 @@ c_{x+1} & a_{x+2} & b_{x+2} & \cdots & 0 & 0 & 0\\
 Now, let us write the matrix $B$ in the form $B=\left(  v_{i,j}\right)
 _{1\leq i\leq y-x-1,\ 1\leq j\leq y-x-1}$. Thus,
 \begin{align*}
-&  \left(  v_{1,y-x-1},v_{2,y-x-1},\ldots,v_{y-x-1,y-x-1}\right)  \\
+&  \left(  v_{1,y-x-1},v_{2,y-x-1},\ldots,v_{y-x-1,y-x-1}\right) \\
 &  =\left(  \text{the last column of the matrix }B\right)  =\left(
 0,0,\ldots,0,b_{y-1}\right)
 \end{align*}
@@ -18639,25 +18645,25 @@ Now, Laplace expansion along the $\left(  y-x-1\right)  $-th column (or, more
 precisely, Theorem \ref{thm.laplace.gen} \textbf{(b)}, applied to $y-x-1$,
 $B$, $v_{i,j}$ and $y-x-1$ instead of $n$, $A$, $a_{i,j}$ and $q$) yields%
 \begin{align}
-\det B &  =\sum_{p=1}^{y-x-1}\left(  -1\right)  ^{p+\left(  y-x-1\right)
+\det B  &  =\sum_{p=1}^{y-x-1}\left(  -1\right)  ^{p+\left(  y-x-1\right)
 }v_{p,y-x-1}\det\left(  B_{\sim p,\sim\left(  y-x-1\right)  }\right)
 \nonumber\\
 &  =\sum_{p=1}^{y-x-2}\left(  -1\right)  ^{p+\left(  y-x-1\right)
 }\underbrace{v_{p,y-x-1}}_{\substack{=0\\\text{(by
 (\ref{pf.prop.tridiag.rec.c.7}))}}}\det\left(  B_{\sim p,\sim\left(
-y-x-1\right)  }\right)  \nonumber\\
+y-x-1\right)  }\right) \nonumber\\
 &  \ \ \ \ \ \ \ \ \ \ +\underbrace{\left(  -1\right)  ^{\left(  y-x-1\right)
 +\left(  y-x-1\right)  }}_{=1}\underbrace{v_{y-x-1,y-x-1}}_{=b_{y-1}}%
 \det\left(  B_{\sim\left(  y-x-1\right)  ,\sim\left(  y-x-1\right)  }\right)
 \nonumber\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }y-x-1\geq1\text{ (since }x\leq
-y-2\text{)}\right)  \nonumber\\
+y-2\text{)}\right) \nonumber\\
 &  =\underbrace{\sum_{p=1}^{y-x-2}\left(  -1\right)  ^{p+\left(  y-x-1\right)
 }0\det\left(  B_{\sim p,\sim\left(  y-x-1\right)  }\right)  }_{=0}+b_{y-1}%
 \det\left(  B_{\sim\left(  y-x-1\right)  ,\sim\left(  y-x-1\right)  }\right)
 \nonumber\\
 &  =b_{y-1}\det\left(  B_{\sim\left(  y-x-1\right)  ,\sim\left(  y-x-1\right)
-}\right)  .\label{pf.prop.tridiag.rec.c.9}%
+}\right)  . \label{pf.prop.tridiag.rec.c.9}%
 \end{align}
 Finally, a look at (\ref{pf.prop.tridiag.rec.c.5}) reveals that%
 \[
@@ -18683,9 +18689,9 @@ A_{x,y-2}\right)  .
 Therefore, (\ref{pf.prop.tridiag.rec.c.3a}) becomes%
 \begin{align*}
 \det\left(  A_{x,y}\right)   &  =-c_{y-1}\underbrace{\det B}_{=b_{y-1}%
-\det\left(  A_{x,y-2}\right)  }+a_{y}\det\left(  A_{x,y-1}\right)  \\
+\det\left(  A_{x,y-2}\right)  }+a_{y}\det\left(  A_{x,y-1}\right) \\
 &  =-c_{y-1}b_{y-1}\det\left(  A_{x,y-2}\right)  +a_{y}\det\left(
-A_{x,y-1}\right)  \\
+A_{x,y-1}\right) \\
 &  =a_{y}\det\left(  A_{x,y-1}\right)  -b_{y-1}c_{y-1}\det\left(
 A_{x,y-2}\right)  .
 \end{align*}
