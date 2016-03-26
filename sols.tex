@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, March 26, 2016 15:18:29}
+%TCIDATA{LastRevised=Saturday, March 26, 2016 18:22:35}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -5995,19 +5995,21 @@ $\left(  1,2\right)  $, $\left(  1,3\right)  $, $\left(  2,3\right)  $ and
 $\left(  4,5\right)  $. These are precisely the inversions of $\sigma$ except
 for $\left(  1,5\right)  $. This is no surprise: In fact, $s_{k}\circ\sigma$
 is obtained from $\sigma$ by switching the entry $k$ with the entry $k+1$, and
-this switch does not change the relative order of any two entries other than
-of $k$ and $k+1$. In general, when $\sigma^{-1}\left(  k\right)  >\sigma
-^{-1}\left(  k+1\right)  $ (that is, when $k$ appears further left than $k+1$
-in the one-line notation of $\sigma$), the inversions of $s_{k}\circ\sigma$
-are the inversions of $\sigma$ except for $\left(  \sigma^{-1}\left(
-k+1\right)  ,\sigma^{-1}\left(  k\right)  \right)  $. Therefore, in this case,
-the number of inversions of $s_{k}\circ\sigma$ equals the number of inversions
-of $\sigma$ plus $1$. That is, in this case, $\ell\left(  s_{k}\circ
-\sigma\right)  =\ell\left(  \sigma\right)  +1$. When $\sigma^{-1}\left(
-k\right)  <\sigma^{-1}\left(  k+1\right)  $, a similar argument shows
-$\ell\left(  s_{k}\circ\sigma\right)  =\ell\left(  \sigma\right)  -1$. This
-explains why (\ref{eq.exe.2.5.a.2}) holds (although formalizing this argument
-will be tedious).
+this operation clearly preserves all inversions other than the one that is
+directly being turned around (i.e., the inversion $\left(  i,j\right)  $ where
+$\left\{  \sigma\left(  i\right)  ,\sigma\left(  j\right)  \right\}  =\left\{
+k,k+1\right\}  $; in our case, this is the inversion $\left(  1,5\right)  $).
+In general, when $\sigma^{-1}\left(  k\right)  >\sigma^{-1}\left(  k+1\right)
+$ (that is, when $k$ appears further left than $k+1$ in the one-line notation
+of $\sigma$), the inversions of $s_{k}\circ\sigma$ are the inversions of
+$\sigma$ except for $\left(  \sigma^{-1}\left(  k+1\right)  ,\sigma
+^{-1}\left(  k\right)  \right)  $. Therefore, in this case, the number of
+inversions of $s_{k}\circ\sigma$ equals the number of inversions of $\sigma$
+plus $1$. That is, in this case, $\ell\left(  s_{k}\circ\sigma\right)
+=\ell\left(  \sigma\right)  +1$. When $\sigma^{-1}\left(  k\right)
+<\sigma^{-1}\left(  k+1\right)  $, a similar argument shows $\ell\left(
+s_{k}\circ\sigma\right)  =\ell\left(  \sigma\right)  -1$. This explains why
+(\ref{eq.exe.2.5.a.2}) holds (although formalizing this argument will be tedious).
 
 The inversions of $\sigma\circ s_{k}=\left(  4,2,5,1,3\right)  $ are $\left(
 1,2\right)  $, $\left(  1,4\right)  $, $\left(  1,5\right)  $, $\left(
@@ -6018,10 +6020,10 @@ prove (\ref{eq.exe.2.5.a.1}). However, instead of considering inversions of
 $\sigma$, one can consider inversions of $\sigma^{-1}$. These are even more
 intuitive: They are the pairs of integers $\left(  i,j\right)  $ with $1\leq
 i<j\leq n$ such that $i$ appears further right than $j$ in the one-line
-notation of $j$. For instance, the inversions of $\sigma^{-1}$ are $\left(
-1,2\right)  $, $\left(  1,4\right)  $, $\left(  2,4\right)  $, $\left(
-3,4\right)  $ and $\left(  3,5\right)  $, whereas the inversions of $\left(
-\sigma\circ s_{k}\right)  ^{-1}$ are all of these and also $\left(
+notation of $\sigma$. For instance, the inversions of $\sigma^{-1}$ are
+$\left(  1,2\right)  $, $\left(  1,4\right)  $, $\left(  2,4\right)  $,
+$\left(  3,4\right)  $ and $\left(  3,5\right)  $, whereas the inversions of
+$\left(  \sigma\circ s_{k}\right)  ^{-1}$ are all of these and also $\left(
 1,5\right)  $. But there is no need to repeat our proof of
 (\ref{eq.exe.2.5.a.2}); it is easier to deduce (\ref{eq.exe.2.5.a.1}) from
 (\ref{eq.exe.2.5.a.2}) by applying (\ref{eq.exe.2.5.a.2}) to $\sigma^{-1}$
@@ -31303,8 +31305,8 @@ Then, combining (\ref{pf.prop.sorting.a.fact2}) with
 $n$-tuple of integers, and if $k\in\left\{  1,2,\ldots,n-1\right\}  $ is such
 that $a_{k}>a_{k+1}$, then%
 \begin{equation}
-\ell\left(  \mathbf{a}\circ s_{k}\right)  =\ell\left(  \mathbf{a}\right)
--1\label{pf.prop.sorting.a.fact5}%
+\ell\left(  \mathbf{a}\circ s_{k}\right)  =\ell\left(  \mathbf{a}\right)  -1
+\label{pf.prop.sorting.a.fact5}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{pf.prop.sorting.a.fact5}):} Let
 $\mathbf{a}=\left(  a_{1},a_{2},\ldots,a_{n}\right)  $ be an $n$-tuple of
@@ -31338,7 +31340,7 @@ n\right]  ^{2}$. Applying this to $X=\operatorname*{Inv}\left(  \mathbf{a}%
 \left(  \mathbf{a}\right)  \setminus\left\{  \left(  k,k+1\right)  \right\}
 \right)  \right\vert =\left\vert \operatorname*{Inv}\left(  \mathbf{a}\right)
 \setminus\left\{  \left(  k,k+1\right)  \right\}  \right\vert =\ell\left(
-\mathbf{a}\right)  -1.\label{pf.prop.sorting.a.fact5.pf.1}%
+\mathbf{a}\right)  -1. \label{pf.prop.sorting.a.fact5.pf.1}%
 \end{equation}
 \par
 On the other hand, let us assume (for the sake of contradiction) that $\left(
@@ -31384,7 +31386,7 @@ $\ell\left(  \mathbf{a}\circ s_{k}\right)  =\left\vert \operatorname*{Inv}%
 \item If $\mathbf{a}=\left(  a_{1},a_{2},\ldots,a_{n}\right)  $ is an
 $n$-tuple of integers satisfying $\ell\left(  \mathbf{a}\right)  =0$, then%
 \begin{equation}
-a_{1}\leq a_{2}\leq\cdots\leq a_{n}\label{pf.prop.sorting.a.fact7}%
+a_{1}\leq a_{2}\leq\cdots\leq a_{n} \label{pf.prop.sorting.a.fact7}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{pf.prop.sorting.a.fact7}):} Let
 $\mathbf{a}=\left(  a_{1},a_{2},\ldots,a_{n}\right)  $ be an $n$-tuple of
@@ -31419,7 +31421,7 @@ a_{n}$. This proves (\ref{pf.prop.sorting.a.fact7}).}.
 \item If $\mathbf{a}=\left(  a_{1},a_{2},\ldots,a_{n}\right)  $ is an
 $n$-tuple of integers satisfying $a_{1}\leq a_{2}\leq\cdots\leq a_{n}$, then%
 \begin{equation}
-\ell\left(  \mathbf{a}\right)  =0\label{pf.prop.sorting.a.fact8}%
+\ell\left(  \mathbf{a}\right)  =0 \label{pf.prop.sorting.a.fact8}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{pf.prop.sorting.a.fact8}):} Let
 $\mathbf{a}=\left(  a_{1},a_{2},\ldots,a_{n}\right)  $ be an $n$-tuple of
@@ -31437,7 +31439,7 @@ Consider this $c$.
 \par
 Recall that $a_{1}\leq a_{2}\leq\cdots\leq a_{n}$. In other words,%
 \begin{equation}
-a_{u}\leq a_{v}\label{pf.prop.sorting.a.fact8.pf.leq}%
+a_{u}\leq a_{v} \label{pf.prop.sorting.a.fact8.pf.leq}%
 \end{equation}
 for any $u\in\left[  n\right]  $ and $v\in\left[  n\right]  $ satisfying
 $u<v$.
@@ -31461,7 +31463,7 @@ Hence, we have shown that $\ell\left(  \mathbf{a}\right)  =0$. This proves
 \item If $\mathbf{a}$ is an $n$-tuple of integers, then%
 \begin{equation}
 \text{there exists a }\sigma\in S_{n}\text{ such that }\ell\left(
-\mathbf{a}\circ\sigma\right)  =0\label{pf.prop.sorting.a.fact6}%
+\mathbf{a}\circ\sigma\right)  =0 \label{pf.prop.sorting.a.fact6}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{pf.prop.sorting.a.fact6}):} We shall prove
 (\ref{pf.prop.sorting.a.fact6}) by induction over $\ell\left(  \mathbf{a}%
@@ -31488,7 +31490,7 @@ We have assumed that (\ref{pf.prop.sorting.a.fact6}) holds for $\ell\left(
 integers satisfying $\ell\left(  \mathbf{a}\right)  =L-1$, then%
 \begin{equation}
 \text{there exists a }\sigma\in S_{n}\text{ such that }\ell\left(
-\mathbf{a}\circ\sigma\right)  =0.\label{pf.prop.sorting.a.fact6.pf.hyp}%
+\mathbf{a}\circ\sigma\right)  =0. \label{pf.prop.sorting.a.fact6.pf.hyp}%
 \end{equation}
 \par
 Now, let $\mathbf{a}$ be an $n$-tuple of integers satisfying $\ell\left(
@@ -31559,7 +31561,7 @@ $. Let $i\in\left\{  1,2,\ldots,n\right\}  $. We shall now show that%
 \begin{equation}
 a_{\sigma\left(  i\right)  }=\min\left\{  x\in\mathbb{Z}\ \mid\ \text{at least
 }i\text{ elements }j\in\left\{  1,2,\ldots,n\right\}  \text{ satisfy }%
-a_{j}\leq x\right\}  .\label{pf.prop.sorting.bclaim}%
+a_{j}\leq x\right\}  . \label{pf.prop.sorting.bclaim}%
 \end{equation}
 (This statement includes the tacit claim that the right hand side of
 (\ref{pf.prop.sorting.bclaim}) is well-defined.)
