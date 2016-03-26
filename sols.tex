@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, March 24, 2016 14:21:43}
+%TCIDATA{LastRevised=Friday, March 25, 2016 21:00:11}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -11176,6 +11176,14 @@ $n$-tuple $\left(  g_{1},g_{2},\ldots,g_{n}\right)  \in\left\{  1,2,\ldots
 ,m\right\}  ^{n}$ satisfying $g_{1}<g_{2}<\cdots<g_{n}$.
 \end{lemma}
 
+As for its intuitive meaning, Lemma \ref{lem.increasing-sequences} can be
+viewed as a \textquotedblleft pigeonhole principle\textquotedblright\ for
+strictly increasing sequences: Part \textbf{(b)} says (roughly speaking) that
+there is no way to squeeze a strictly increasing sequence $\left(  g_{1}%
+,g_{2},\ldots,g_{n}\right)  $ of $n$ numbers into the set $\left\{
+1,2,\ldots,m\right\}  $ when $m<n$; part \textbf{(a)} says (again, informally)
+that the only such sequence for $m=n$ is $\left(  1,2,\ldots,n\right)  $.
+
 \begin{verlong}
 
 
@@ -11192,7 +11200,7 @@ Let $i\in\left\{  1,2,\ldots,n-1\right\}  $. Then, $g_{i}<g_{i+1}$ (since
 $g_{1}<g_{2}<\cdots<g_{n}$). Hence, $g_{i}\leq g_{i+1}-1$ (since $g_{i}$ and
 $g_{i+1}$ are integers). Hence, $\underbrace{g_{i}}_{\leq g_{i+1}-1}-i\leq
 g_{i+1}-1-i=g_{i+1}-\left(  i+1\right)  $, qed.}. In other words, we have
-$g_{1}-1\leq g_{2}-2\leq\cdots\leq g_{n}-n$. Hence, $g_{1}-1\leq g_{n}-1$.
+$g_{1}-1\leq g_{2}-2\leq\cdots\leq g_{n}-n$. Hence, $g_{1}-1\leq g_{n}-n$.
 
 But $g_{n}\in\left\{  1,2,\ldots,m\right\}  $, so that $g_{n}\leq m<n$ and
 thus $\underbrace{g_{n}}_{<n}-n<n-n=0$. Hence, $g_{1}-1\leq g_{n}-n<0$. On the
@@ -11219,21 +11227,22 @@ Indeed, let $\left(  g_{1},g_{2},\ldots,g_{n}\right)  \in\left\{
 <\cdots<g_{n}$. We shall prove that $\left(  g_{1},g_{2},\ldots,g_{n}\right)
 =\left(  1,2,\ldots,n\right)  $.
 
-Let $i\in\left\{  1,2,\ldots,n\right\}  $. Then, $1\leq i\leq n$, so that
-$1\leq n$. Hence, the elements $g_{1}$ and $g_{n}$ of $\left\{  1,2,\ldots
-,n\right\}  $ are well-defined. Every $i\in\left\{  1,2,\ldots,n-1\right\}  $
-satisfies $g_{i}-i\leq g_{i+1}-\left(  i+1\right)  $%
-\ \ \ \ \footnote{\textit{Proof.} Let $i\in\left\{  1,2,\ldots,n-1\right\}  $.
-Then, $g_{i}<g_{i+1}$ (since $g_{1}<g_{2}<\cdots<g_{n}$). Hence, $g_{i}\leq
-g_{i+1}-1$ (since $g_{i}$ and $g_{i+1}$ are integers). Hence,
-$\underbrace{g_{i}}_{\leq g_{i+1}-1}-i\leq g_{i+1}-1-i=g_{i+1}-\left(
-i+1\right)  $, qed.}. In other words, we have $g_{1}-1\leq g_{2}-2\leq
-\cdots\leq g_{n}-n$. In other words,%
+Every $i\in\left\{  1,2,\ldots,n-1\right\}  $ satisfies $g_{i}-i\leq
+g_{i+1}-\left(  i+1\right)  $\ \ \ \ \footnote{\textit{Proof.} Let
+$i\in\left\{  1,2,\ldots,n-1\right\}  $. Then, $g_{i}<g_{i+1}$ (since
+$g_{1}<g_{2}<\cdots<g_{n}$). Hence, $g_{i}\leq g_{i+1}-1$ (since $g_{i}$ and
+$g_{i+1}$ are integers). Hence, $\underbrace{g_{i}}_{\leq g_{i+1}-1}-i\leq
+g_{i+1}-1-i=g_{i+1}-\left(  i+1\right)  $, qed.}. In other words, we have
+$g_{1}-1\leq g_{2}-2\leq\cdots\leq g_{n}-n$. In other words,%
 \begin{equation}
 g_{u}-u\leq g_{v}-v \label{pf.lem.increasing-sequences.b.1}%
 \end{equation}
 for any two elements $u$ and $v$ of $\left\{  1,2,\ldots,n\right\}  $
 satisfying $u\leq v$.
+
+Let $i\in\left\{  1,2,\ldots,n\right\}  $. Then, $1\leq i\leq n$, so that
+$1\leq n$. Hence, the elements $g_{1}$ and $g_{n}$ of $\left\{  1,2,\ldots
+,n\right\}  $ are well-defined.
 
 Now, $1\leq i$. Hence, (\ref{pf.lem.increasing-sequences.b.1}) (applied to
 $u=1$ and $v=i$) yields $g_{1}-1\leq g_{i}-i$. But $g_{1}\in\left\{
@@ -18535,14 +18544,14 @@ In other words, $\left(  A_{x,y}\right)  _{\sim\left(  y-x\right)
 Let us write the matrix $A_{x,y}$ in the form $A_{x,y}=\left(  u_{i,j}\right)
 _{1\leq i\leq y-x,\ 1\leq j\leq y-x}$. Thus,
 \begin{align*}
-&  \left(  u_{y-x,1},u_{y-x,2},\ldots,u_{y-x,y-x}\right) \\
+&  \left(  u_{y-x,1},u_{y-x,2},\ldots,u_{y-x,y-x}\right)  \\
 &  =\left(  \text{the last row of the matrix }A_{x,y}\right)  =\left(
 0,0,\ldots,0,c_{y-1},a_{y}\right)  .
 \end{align*}
 In other words, we have%
 \begin{align}
 &  \left(  u_{y-x,q}=0\ \ \ \ \ \ \ \ \ \ \text{for every }q\in\left\{
-0,1,\ldots,y-x-2\right\}  \right)  ,\label{pf.prop.tridiag.rec.c.1}\\
+1,2,\ldots,y-x-2\right\}  \right)  ,\label{pf.prop.tridiag.rec.c.1}\\
 &  u_{y-x,y-x-1}=c_{y-1},\ \ \ \ \ \ \ \ \ \ \text{and}\nonumber\\
 &  u_{y-x,y-x}=a_{y}.\nonumber
 \end{align}
@@ -18554,30 +18563,30 @@ $A_{x,y}$, $u_{i,j}$ and $y-x$ instead of $n$, $A$, $a_{i,j}$ and $p$) yields%
 \begin{align}
 \det\left(  A_{x,y}\right)   &  =\sum_{q=1}^{y-x}\left(  -1\right)  ^{\left(
 y-x\right)  +q}u_{y-x,q}\det\left(  \left(  A_{x,y}\right)  _{\sim\left(
-y-x\right)  ,\sim q}\right) \nonumber\\
+y-x\right)  ,\sim q}\right)  \nonumber\\
 &  =\sum_{q=1}^{y-x-2}\left(  -1\right)  ^{\left(  y-x\right)  +q}%
 \underbrace{u_{y-x,q}}_{\substack{=0\\\text{(by (\ref{pf.prop.tridiag.rec.c.1}%
 ))}}}\det\left(  \left(  A_{x,y}\right)  _{\sim\left(  y-x\right)  ,\sim
-q}\right) \nonumber\\
+q}\right)  \nonumber\\
 &  \ \ \ \ \ \ \ \ \ \ +\underbrace{\left(  -1\right)  ^{\left(  y-x\right)
 +\left(  y-x-1\right)  }}_{=-1}\underbrace{u_{y-x,y-x-1}}_{=c_{y-1}}%
 \det\left(  \left(  A_{x,y}\right)  _{\sim\left(  y-x\right)  ,\sim\left(
-y-x-1\right)  }\right) \nonumber\\
+y-x-1\right)  }\right)  \nonumber\\
 &  \ \ \ \ \ \ \ \ \ \ +\underbrace{\left(  -1\right)  ^{\left(  y-x\right)
-+\left(  y-x\right)  }}_{=1}\underbrace{u_{y-x,q}}_{=a_{y}}\det\left(
++\left(  y-x\right)  }}_{=1}\underbrace{u_{y-x,y-x}}_{=a_{y}}\det\left(
 \underbrace{\left(  A_{x,y}\right)  _{\sim\left(  y-x\right)  ,\sim\left(
-y-x\right)  }}_{=A_{x,y-1}}\right) \nonumber\\
+y-x\right)  }}_{=A_{x,y-1}}\right)  \nonumber\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }y-x\geq2\text{ (since }x\leq
-y-2\text{)}\right) \nonumber\\
+y-2\text{)}\right)  \nonumber\\
 &  =\underbrace{\sum_{q=1}^{y-x-2}\left(  -1\right)  ^{\left(  y-x\right)
 +q}0\det\left(  \left(  A_{x,y}\right)  _{\sim\left(  y-x\right)  ,\sim
 q}\right)  }_{=0}\nonumber\\
 &  \ \ \ \ \ \ \ \ \ \ -c_{y-1}\det\left(  \left(  A_{x,y}\right)
 _{\sim\left(  y-x\right)  ,\sim\left(  y-x-1\right)  }\right)  +a_{y}%
-\det\left(  A_{x,y-1}\right) \nonumber\\
+\det\left(  A_{x,y-1}\right)  \nonumber\\
 &  =-c_{y-1}\det\left(  \left(  A_{x,y}\right)  _{\sim\left(  y-x\right)
-,\sim\left(  y-x-1\right)  }\right)  +a_{y}\det\left(  A_{x,y-1}\right)  .
-\label{pf.prop.tridiag.rec.c.3}%
+,\sim\left(  y-x-1\right)  }\right)  +a_{y}\det\left(  A_{x,y-1}\right)
+.\label{pf.prop.tridiag.rec.c.3}%
 \end{align}
 
 
@@ -18615,14 +18624,14 @@ c_{x+1} & a_{x+2} & b_{x+2} & \cdots & 0 & 0 & 0\\
 Now, let us write the matrix $B$ in the form $B=\left(  v_{i,j}\right)
 _{1\leq i\leq y-x-1,\ 1\leq j\leq y-x-1}$. Thus,
 \begin{align*}
-&  \left(  v_{1,y-x-1},v_{2,y-x-1},\ldots,v_{y-x-1,y-x-1}\right) \\
+&  \left(  v_{1,y-x-1},v_{2,y-x-1},\ldots,v_{y-x-1,y-x-1}\right)  \\
 &  =\left(  \text{the last column of the matrix }B\right)  =\left(
 0,0,\ldots,0,b_{y-1}\right)
 \end{align*}
 (because of (\ref{pf.prop.tridiag.rec.c.5})). In other words, we have%
 \begin{align}
 &  \left(  v_{p,y-x-1}=0\ \ \ \ \ \ \ \ \ \ \text{for every }p\in\left\{
-0,1,\ldots,y-x-2\right\}  \right)  ,\ \ \ \ \ \ \ \ \ \ \text{and}%
+1,2,\ldots,y-x-2\right\}  \right)  ,\ \ \ \ \ \ \ \ \ \ \text{and}%
 \label{pf.prop.tridiag.rec.c.7}\\
 &  v_{y-x-1,y-x-1}=b_{y-1}.\nonumber
 \end{align}
@@ -18630,24 +18639,25 @@ Now, Laplace expansion along the $\left(  y-x-1\right)  $-th column (or, more
 precisely, Theorem \ref{thm.laplace.gen} \textbf{(b)}, applied to $y-x-1$,
 $B$, $v_{i,j}$ and $y-x-1$ instead of $n$, $A$, $a_{i,j}$ and $q$) yields%
 \begin{align}
-\det B  &  =\sum_{p=1}^{y-x-1}\left(  -1\right)  ^{p+\left(  y-x\right)
+\det B &  =\sum_{p=1}^{y-x-1}\left(  -1\right)  ^{p+\left(  y-x-1\right)
 }v_{p,y-x-1}\det\left(  B_{\sim p,\sim\left(  y-x-1\right)  }\right)
 \nonumber\\
-&  =\sum_{p=1}^{y-x-2}\left(  -1\right)  ^{p+\left(  y-x\right)
+&  =\sum_{p=1}^{y-x-2}\left(  -1\right)  ^{p+\left(  y-x-1\right)
 }\underbrace{v_{p,y-x-1}}_{\substack{=0\\\text{(by
 (\ref{pf.prop.tridiag.rec.c.7}))}}}\det\left(  B_{\sim p,\sim\left(
-y-x-1\right)  }\right) \nonumber\\
+y-x-1\right)  }\right)  \nonumber\\
 &  \ \ \ \ \ \ \ \ \ \ +\underbrace{\left(  -1\right)  ^{\left(  y-x-1\right)
 +\left(  y-x-1\right)  }}_{=1}\underbrace{v_{y-x-1,y-x-1}}_{=b_{y-1}}%
-\det\left(  B_{\sim p,\sim\left(  y-x-1\right)  }\right) \nonumber\\
+\det\left(  B_{\sim\left(  y-x-1\right)  ,\sim\left(  y-x-1\right)  }\right)
+\nonumber\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }y-x-1\geq1\text{ (since }x\leq
-y-2\text{)}\right) \nonumber\\
-&  =\underbrace{\sum_{p=1}^{y-x-2}\left(  -1\right)  ^{p+\left(  y-x\right)
+y-2\text{)}\right)  \nonumber\\
+&  =\underbrace{\sum_{p=1}^{y-x-2}\left(  -1\right)  ^{p+\left(  y-x-1\right)
 }0\det\left(  B_{\sim p,\sim\left(  y-x-1\right)  }\right)  }_{=0}+b_{y-1}%
 \det\left(  B_{\sim\left(  y-x-1\right)  ,\sim\left(  y-x-1\right)  }\right)
 \nonumber\\
 &  =b_{y-1}\det\left(  B_{\sim\left(  y-x-1\right)  ,\sim\left(  y-x-1\right)
-}\right)  . \label{pf.prop.tridiag.rec.c.9}%
+}\right)  .\label{pf.prop.tridiag.rec.c.9}%
 \end{align}
 Finally, a look at (\ref{pf.prop.tridiag.rec.c.5}) reveals that%
 \[
@@ -18673,9 +18683,9 @@ A_{x,y-2}\right)  .
 Therefore, (\ref{pf.prop.tridiag.rec.c.3a}) becomes%
 \begin{align*}
 \det\left(  A_{x,y}\right)   &  =-c_{y-1}\underbrace{\det B}_{=b_{y-1}%
-\det\left(  A_{x,y-2}\right)  }+a_{y}\det\left(  A_{x,y-1}\right) \\
+\det\left(  A_{x,y-2}\right)  }+a_{y}\det\left(  A_{x,y-1}\right)  \\
 &  =-c_{y-1}b_{y-1}\det\left(  A_{x,y-2}\right)  +a_{y}\det\left(
-A_{x,y-1}\right) \\
+A_{x,y-1}\right)  \\
 &  =a_{y}\det\left(  A_{x,y-1}\right)  -b_{y-1}c_{y-1}\det\left(
 A_{x,y-2}\right)  .
 \end{align*}
@@ -23132,7 +23142,7 @@ that $n\geq0$. For every $i\in\left\{  0,1,\ldots,n\right\}  $, we have%
 \begin{equation}
 \left[  \underbrace{n-i=i}_{\text{this is equivalent to }n=2i}\right]
 =\left[  \underbrace{n=2i}_{\text{this is equivalent to }i=n/2}\right]
-=\left[  i=n/2\right]  .\label{pf.lem.exeadd.AoPS262752.2.1}%
+=\left[  i=n/2\right]  . \label{pf.lem.exeadd.AoPS262752.2.1}%
 \end{equation}
 Thus,%
 \begin{align}
@@ -23147,11 +23157,11 @@ n/2}}a_{i}\underbrace{\left[  i=n/2\right]  }_{\substack{=0\\\text{(since
 }i\neq n/2\text{)}}}\nonumber\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since every }i\in\left\{  0,1,\ldots
 ,n\right\}  \text{ satisfies either }i=n/2\text{ or }i\neq n/2\text{ (but not
-both)}\right)  \nonumber\\
+both)}\right) \nonumber\\
 &  =\sum_{\substack{i\in\left\{  0,1,\ldots,n\right\}  ;\\i=n/2}%
 }a_{i}+\underbrace{\sum_{\substack{i\in\left\{  0,1,\ldots,n\right\}  ;\\i\neq
 n/2}}a_{i}0}_{=0}=\sum_{\substack{i\in\left\{  0,1,\ldots,n\right\}
-;\\i=n/2}}a_{i}.\label{pf.lem.exeadd.AoPS262752.2.2}%
+;\\i=n/2}}a_{i}. \label{pf.lem.exeadd.AoPS262752.2.2}%
 \end{align}
 
 
