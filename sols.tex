@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, March 26, 2016 15:14:21}
+%TCIDATA{LastRevised=Saturday, March 26, 2016 15:18:29}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -31416,6 +31416,48 @@ $a_{k}>a_{k+1}$. In other words, every $k\in\left\{  1,2,\ldots,n-1\right\}  $
 satisfies $a_{k}\leq a_{k+1}$. In other words, $a_{1}\leq a_{2}\leq\cdots\leq
 a_{n}$. This proves (\ref{pf.prop.sorting.a.fact7}).}.
 
+\item If $\mathbf{a}=\left(  a_{1},a_{2},\ldots,a_{n}\right)  $ is an
+$n$-tuple of integers satisfying $a_{1}\leq a_{2}\leq\cdots\leq a_{n}$, then%
+\begin{equation}
+\ell\left(  \mathbf{a}\right)  =0\label{pf.prop.sorting.a.fact8}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.prop.sorting.a.fact8}):} Let
+$\mathbf{a}=\left(  a_{1},a_{2},\ldots,a_{n}\right)  $ be an $n$-tuple of
+integers satisfying $a_{1}\leq a_{2}\leq\cdots\leq a_{n}$. We must prove that
+$\ell\left(  \mathbf{a}\right)  =0$.
+\par
+Indeed, assume the contrary. Thus, $\ell\left(  \mathbf{a}\right)  \neq0$. But
+the definition of $\ell\left(  \mathbf{a}\right)  $ yields $\ell\left(
+\mathbf{a}\right)  =\left\vert \operatorname*{Inv}\left(  \mathbf{a}\right)
+\right\vert $, so that $\left\vert \operatorname*{Inv}\left(  \mathbf{a}%
+\right)  \right\vert =\ell\left(  \mathbf{a}\right)  \neq0$. Hence, the set
+$\operatorname*{Inv}\left(  \mathbf{a}\right)  $ is nonempty. In other words,
+there exists some $c\in\operatorname*{Inv}\left(  \mathbf{a}\right)  $.
+Consider this $c$.
+\par
+Recall that $a_{1}\leq a_{2}\leq\cdots\leq a_{n}$. In other words,%
+\begin{equation}
+a_{u}\leq a_{v}\label{pf.prop.sorting.a.fact8.pf.leq}%
+\end{equation}
+for any $u\in\left[  n\right]  $ and $v\in\left[  n\right]  $ satisfying
+$u<v$.
+\par
+But%
+\[
+c\in\operatorname*{Inv}\left(  \mathbf{a}\right)  =\left\{  \left(
+u,v\right)  \in\left[  n\right]  ^{2}\ \mid\ u<v\text{ and }a_{u}%
+>a_{v}\right\}
+\]
+(by (\ref{pf.prop.sorting.a.Inv.2})). In other words, $c$ has the form
+$c=\left(  u,v\right)  $ for some $\left(  u,v\right)  \in\left[  n\right]
+^{2}$ satisfying $u<v$ and $a_{u}>a_{v}$. Consider this $\left(  u,v\right)
+\in\left[  n\right]  ^{2}$. We have $u<v$, and thus $a_{u}\leq a_{v}$ (by
+(\ref{pf.prop.sorting.a.fact8.pf.leq})). This contradicts $a_{u}>a_{v}$. This
+contradiction proves that our assumption was wrong.
+\par
+Hence, we have shown that $\ell\left(  \mathbf{a}\right)  =0$. This proves
+(\ref{pf.prop.sorting.a.fact8}).}.
+
 \item If $\mathbf{a}$ is an $n$-tuple of integers, then%
 \begin{equation}
 \text{there exists a }\sigma\in S_{n}\text{ such that }\ell\left(
@@ -31458,31 +31500,10 @@ Let us first prove that there exists some $k\in\left\{  1,2,\ldots
 there exists no $k\in\left\{  1,2,\ldots,n-1\right\}  $ such that
 $a_{k}>a_{k+1}$. In other words, every $k\in\left\{  1,2,\ldots,n-1\right\}  $
 satisfies $a_{k}\leq a_{k+1}$. In other words, $a_{1}\leq a_{2}\leq\cdots\leq
-a_{n}$. In other words,%
-\begin{equation}
-a_{u}\leq a_{v}\label{pf.prop.sorting.a.fact6.pf.leq}%
-\end{equation}
-for any $u\in\left[  n\right]  $ and $v\in\left[  n\right]  $ satisfying
-$u<v$.
-\par
-But the definition of $\ell\left(  \mathbf{a}\right)  $ yields $\ell\left(
-\mathbf{a}\right)  =\left\vert \operatorname*{Inv}\left(  \mathbf{a}\right)
-\right\vert $, so that $\left\vert \operatorname*{Inv}\left(  \mathbf{a}%
-\right)  \right\vert =\ell\left(  \mathbf{a}\right)  =L>0$ (since $L$ is
-positive). Hence, the set $\operatorname*{Inv}\left(  \mathbf{a}\right)  $ is
-nonempty. In other words, there exists some $c\in\operatorname*{Inv}\left(
-\mathbf{a}\right)  $. Consider this $c$. We have%
-\[
-c\in\operatorname*{Inv}\left(  \mathbf{a}\right)  =\left\{  \left(
-u,v\right)  \in\left[  n\right]  ^{2}\ \mid\ u<v\text{ and }a_{u}%
->a_{v}\right\}
-\]
-(by (\ref{pf.prop.sorting.a.Inv.2})). In other words, $c$ has the form
-$c=\left(  u,v\right)  $ for some $\left(  u,v\right)  \in\left[  n\right]
-^{2}$ satisfying $u<v$ and $a_{u}>a_{v}$. Consider this $\left(  u,v\right)
-\in\left[  n\right]  ^{2}$. We have $u<v$, and thus $a_{u}\leq a_{v}$ (by
-(\ref{pf.prop.sorting.a.fact6.pf.leq})). This contradicts $a_{u}>a_{v}$. This
-contradiction proves that our assumption was wrong.
+a_{n}$. Thus, (\ref{pf.prop.sorting.a.fact8}) shows that $\ell\left(
+\mathbf{a}\right)  =0$. Hence, $0=\ell\left(  \mathbf{a}\right)  =L>0$ (since
+$L$ is positive). This is absurd. This contradiction proves that our
+assumption was wrong.
 \par
 Hence, we have proven that there exists some $k\in\left\{  1,2,\ldots
 ,n-1\right\}  $ such that $a_{k}>a_{k+1}$. Consider this $k$. Then,
@@ -31538,7 +31559,7 @@ $. Let $i\in\left\{  1,2,\ldots,n\right\}  $. We shall now show that%
 \begin{equation}
 a_{\sigma\left(  i\right)  }=\min\left\{  x\in\mathbb{Z}\ \mid\ \text{at least
 }i\text{ elements }j\in\left\{  1,2,\ldots,n\right\}  \text{ satisfy }%
-a_{j}\leq x\right\}  . \label{pf.prop.sorting.bclaim}%
+a_{j}\leq x\right\}  .\label{pf.prop.sorting.bclaim}%
 \end{equation}
 (This statement includes the tacit claim that the right hand side of
 (\ref{pf.prop.sorting.bclaim}) is well-defined.)
