@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, March 26, 2016 18:22:35}
+%TCIDATA{LastRevised=Saturday, March 26, 2016 18:34:28}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -23237,30 +23237,30 @@ this solves Exercise \ref{exe.ps2.2.4} \textbf{(c)}.
 
 \subsection{Solution to Exercise \ref{exe.ps2.2.5}}
 
-\begin{proof}
-[Solution to Exercise \ref{exe.ps2.2.5}.]We shall first prove part
-\textbf{(d)} of the exercise, then part \textbf{(f)}, then part \textbf{(a)},
-then part \textbf{(e)}, and then the remaining three parts.
+Let us first state Exercise \ref{exe.ps2.2.5} \textbf{(d)} as a separate result:
 
-Exercise \ref{exe.ps2.2.5} \textbf{(d)} essentially says that the only way to
+\begin{proposition}
+\label{prop.sol.exe.ps2.2.5.d}Let $n\in\mathbb{N}$. Let $\sigma\in S_{n}$ be a
+permutation satisfying $\sigma\left(  1\right)  \leq\sigma\left(  2\right)
+\leq\cdots\leq\sigma\left(  n\right)  $. Then, $\sigma=\operatorname*{id}$.
+\end{proposition}
+
+Proposition \ref{prop.sol.exe.ps2.2.5.d} essentially says that the only way to
 list the numbers $1,2,\ldots,n$ in increasing order is $\left(  1,2,\ldots
-,n\right)  $. If you think this is intuitively obvious, you are right. The
-following proof is just a formalization of the intuition.
+,n\right)  $. If you think this is intuitively obvious, you are right. Let me
+nevertheless give two proofs (the second of which is completely formal):
 
-\textbf{(d)} Let $\sigma\in S_{n}$ be a permutation satisfying $\sigma\left(
-1\right)  \leq\sigma\left(  2\right)  \leq\cdots\leq\sigma\left(  n\right)  $.
-We must show that $\sigma=\operatorname*{id}$.
-
-First of all, every $k\in\left\{  1,2,\ldots,n-1\right\}  $ satisfies
-$\sigma\left(  k\right)  <\sigma\left(  k+1\right)  $%
-\ \ \ \ \footnote{\textit{Proof.} Let $k\in\left\{  1,2,\ldots,n-1\right\}  $.
-Then, $\sigma$ is a permutation, thus injective. Hence, $\sigma\left(
-k\right)  \neq\sigma\left(  k+1\right)  $ (since $k\neq k+1$). Combined with
-$\sigma\left(  k\right)  \leq\sigma\left(  k+1\right)  $ (since $\sigma\left(
-1\right)  \leq\sigma\left(  2\right)  \leq\cdots\leq\sigma\left(  n\right)
-$), this yields $\sigma\left(  k\right)  <\sigma\left(  k+1\right)  $, qed.}.
-In other words, $\sigma\left(  1\right)  <\sigma\left(  2\right)
-<\cdots<\sigma\left(  n\right)  $.
+\begin{proof}
+[First proof of Proposition \ref{prop.sol.exe.ps2.2.5.d}.] First of all, every
+$k\in\left\{  1,2,\ldots,n-1\right\}  $ satisfies $\sigma\left(  k\right)
+<\sigma\left(  k+1\right)  $\ \ \ \ \footnote{\textit{Proof.} Let
+$k\in\left\{  1,2,\ldots,n-1\right\}  $. Then, $\sigma$ is a permutation, thus
+injective. Hence, $\sigma\left(  k\right)  \neq\sigma\left(  k+1\right)  $
+(since $k\neq k+1$). Combined with $\sigma\left(  k\right)  \leq\sigma\left(
+k+1\right)  $ (since $\sigma\left(  1\right)  \leq\sigma\left(  2\right)
+\leq\cdots\leq\sigma\left(  n\right)  $), this yields $\sigma\left(  k\right)
+<\sigma\left(  k+1\right)  $, qed.}. In other words, $\sigma\left(  1\right)
+<\sigma\left(  2\right)  <\cdots<\sigma\left(  n\right)  $.
 
 Let $i\in\left\{  1,2,\ldots,n\right\}  $. Then, $\sigma\left(  i\right)  $ is
 the $i$-th smallest among the numbers $\sigma\left(  1\right)  ,\sigma\left(
@@ -23277,21 +23277,16 @@ $\sigma\left(  i\right)  =i=\operatorname*{id}\left(  i\right)  $.
 
 Let us now forget that we fixed $i$. Thus, we have shown that $\sigma\left(
 i\right)  =\operatorname*{id}\left(  i\right)  $ for every $i\in\left\{
-1,2,\ldots,n\right\}  $. In other words, $\sigma=\operatorname*{id}$. Exercise
-\ref{exe.ps2.2.5} \textbf{(d)} is thus solved.
+1,2,\ldots,n\right\}  $. In other words, $\sigma=\operatorname*{id}$.
+Proposition \ref{prop.sol.exe.ps2.2.5.d} is thus proven.
+\end{proof}
 
-\begin{verlong}
-Here is an alternative solution to Exercise \ref{exe.ps2.2.5} \textbf{(d)}:
-
-\textit{Second solution to Exercise \ref{exe.ps2.2.5} \textbf{(d)}:} Let
-$\sigma\in S_{n}$ be a permutation satisfying $\sigma\left(  1\right)
-\leq\sigma\left(  2\right)  \leq\cdots\leq\sigma\left(  n\right)  $. We must
-show that $\sigma=\operatorname*{id}$.
-
-Indeed, we shall show that%
+\begin{proof}
+[Second proof of Proposition \ref{prop.sol.exe.ps2.2.5.d}.] We shall show
+that
 \begin{equation}
 \sigma\left(  i\right)  =i\ \ \ \ \ \ \ \ \ \ \text{for every }i\in\left\{
-1,2,\ldots,n\right\}  . \label{sol.ps2.2.5.d.1}%
+1,2,\ldots,n\right\}  .\label{sol.ps2.2.5.d.1}%
 \end{equation}
 
 
@@ -23305,7 +23300,7 @@ We have assumed that (\ref{sol.ps2.2.5.d.1}) is proven for every $i<I$. In
 other words,%
 \begin{equation}
 \sigma\left(  i\right)  =i\ \ \ \ \ \ \ \ \ \ \text{for every }i\in\left\{
-1,2,\ldots,n\right\}  \text{ satisfying }i<I. \label{sol.ps2.2.5.d.1.pf.1}%
+1,2,\ldots,n\right\}  \text{ satisfying }i<I.\label{sol.ps2.2.5.d.1.pf.1}%
 \end{equation}
 
 
@@ -23341,11 +23336,19 @@ proof of (\ref{sol.ps2.2.5.d.1}).
 
 Now, (\ref{sol.ps2.2.5.d.1}) shows that every $i\in\left\{  1,2,\ldots
 ,n\right\}  $ satisfies $\sigma\left(  i\right)  =i=\operatorname*{id}\left(
-i\right)  $. In other words, $\sigma=\operatorname*{id}$. Exercise
-\ref{exe.ps2.2.5} \textbf{(d)} is solved again.
-\end{verlong}
+i\right)  $. In other words, $\sigma=\operatorname*{id}$. Proposition
+\ref{prop.sol.exe.ps2.2.5.d} is solved again.
+\end{proof}
 
-Before we solve the rest of the exercise, let us introduce one more notation.
+Now, we come to the actual solution of Exercise \ref{exe.ps2.2.5}.
+
+\begin{proof}
+[Solution to Exercise \ref{exe.ps2.2.5}.]Exercise \ref{exe.ps2.2.5}
+\textbf{(d)} follows immediately from Proposition \ref{prop.sol.exe.ps2.2.5.d}%
+. We shall next prove part \textbf{(f)} of the exercise, then part
+\textbf{(a)}, then part \textbf{(e)}, and then the remaining three parts.
+
+Before we come to the actual solution, let us introduce one more notation.
 
 For every $\sigma\in S_{n}$, let $\operatorname*{Inv}\left(  \sigma\right)  $
 be the set of all inversions of the permutation $\sigma$. Thus, for every
@@ -23353,16 +23356,21 @@ $\sigma\in S_{n}$, we have%
 \begin{align}
 \ell\left(  \sigma\right)   &  =\left(  \text{the number of inversions of
 }\sigma\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }%
-\ell\left(  \sigma\right)  \right) \nonumber\\
+\ell\left(  \sigma\right)  \right)  \nonumber\\
 &  =\left(  \text{the number of elements of }\operatorname*{Inv}\left(
-\sigma\right)  \right) \nonumber\\
+\sigma\right)  \right)  \nonumber\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\operatorname*{Inv}\left(
 \sigma\right)  \text{ is the set of all inversions of }\sigma\right)
 \nonumber\\
-&  =\left\vert \operatorname*{Inv}\left(  \sigma\right)  \right\vert .
-\label{sol.ps2.2.5.f.1}%
+&  =\left\vert \operatorname*{Inv}\left(  \sigma\right)  \right\vert
+.\label{sol.ps2.2.5.f.1}%
 \end{align}
 
+
+\textbf{(d)} Let $\sigma\in S_{n}$ be a permutation satisfying $\sigma\left(
+1\right)  \leq\sigma\left(  2\right)  \leq\cdots\leq\sigma\left(  n\right)  $.
+Then, Proposition \ref{prop.sol.exe.ps2.2.5.d} shows that $\sigma
+=\operatorname*{id}$. This solves Exercise \ref{exe.ps2.2.5} \textbf{(d)}.
 
 \textbf{(f)} Let $\sigma\in S_{n}$. For every $\left(  i,j\right)
 \in\operatorname*{Inv}\left(  \sigma\right)  $, we have $\left(  \sigma\left(
