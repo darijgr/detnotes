@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, March 26, 2016 15:09:33}
+%TCIDATA{LastRevised=Saturday, March 26, 2016 15:14:21}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -31036,14 +31036,14 @@ s_{k}\right)  \circ\left(  s_{k}\times s_{k}\right)  \right)  \left(  \left(
 i,j\right)  \right)  =\left(  s_{k}\times s_{k}\right)  \left(
 \underbrace{\left(  s_{k}\times s_{k}\right)  \left(  \left(  i,j\right)
 \right)  }_{\substack{=\left(  s_{k}\left(  i\right)  ,s_{k}\left(  j\right)
-\right)  \\\text{(by the definition of }s_{k}\times s_{k}\text{)}}}\right)  \\
+\right)  \\\text{(by the definition of }s_{k}\times s_{k}\text{)}}}\right) \\
 &  =\left(  s_{k}\times s_{k}\right)  \left(  \left(  s_{k}\left(  i\right)
 ,s_{k}\left(  j\right)  \right)  \right)  =\left(  \underbrace{s_{k}\left(
 s_{k}\left(  i\right)  \right)  }_{=s_{k}^{2}\left(  i\right)  }%
 ,\underbrace{s_{k}\left(  s_{k}\left(  j\right)  \right)  }_{=s_{k}^{2}\left(
-j\right)  }\right)  \\
+j\right)  }\right) \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }s_{k}\times
-s_{k}\right)  \\
+s_{k}\right) \\
 &  =\left(  \underbrace{s_{k}^{2}}_{=\operatorname*{id}}\left(  i\right)
 ,\underbrace{s_{k}^{2}}_{=\operatorname*{id}}\left(  j\right)  \right)
 =\left(  \underbrace{\operatorname*{id}\left(  i\right)  }_{=i}%
@@ -31303,8 +31303,8 @@ Then, combining (\ref{pf.prop.sorting.a.fact2}) with
 $n$-tuple of integers, and if $k\in\left\{  1,2,\ldots,n-1\right\}  $ is such
 that $a_{k}>a_{k+1}$, then%
 \begin{equation}
-\ell\left(  \mathbf{a}\circ s_{k}\right)  =\ell\left(  \mathbf{a}\right)  -1
-\label{pf.prop.sorting.a.fact5}%
+\ell\left(  \mathbf{a}\circ s_{k}\right)  =\ell\left(  \mathbf{a}\right)
+-1\label{pf.prop.sorting.a.fact5}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{pf.prop.sorting.a.fact5}):} Let
 $\mathbf{a}=\left(  a_{1},a_{2},\ldots,a_{n}\right)  $ be an $n$-tuple of
@@ -31338,7 +31338,7 @@ n\right]  ^{2}$. Applying this to $X=\operatorname*{Inv}\left(  \mathbf{a}%
 \left(  \mathbf{a}\right)  \setminus\left\{  \left(  k,k+1\right)  \right\}
 \right)  \right\vert =\left\vert \operatorname*{Inv}\left(  \mathbf{a}\right)
 \setminus\left\{  \left(  k,k+1\right)  \right\}  \right\vert =\ell\left(
-\mathbf{a}\right)  -1. \label{pf.prop.sorting.a.fact5.pf.1}%
+\mathbf{a}\right)  -1.\label{pf.prop.sorting.a.fact5.pf.1}%
 \end{equation}
 \par
 On the other hand, let us assume (for the sake of contradiction) that $\left(
@@ -31381,10 +31381,45 @@ $\ell\left(  \mathbf{a}\circ s_{k}\right)  =\left\vert \operatorname*{Inv}%
 \left(  \mathbf{a}\circ s_{k}\right)  \right\vert =\ell\left(  \mathbf{a}%
 \right)  -1$. This proves (\ref{pf.prop.sorting.a.fact5}).}.
 
+\item If $\mathbf{a}=\left(  a_{1},a_{2},\ldots,a_{n}\right)  $ is an
+$n$-tuple of integers satisfying $\ell\left(  \mathbf{a}\right)  =0$, then%
+\begin{equation}
+a_{1}\leq a_{2}\leq\cdots\leq a_{n}\label{pf.prop.sorting.a.fact7}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.prop.sorting.a.fact7}):} Let
+$\mathbf{a}=\left(  a_{1},a_{2},\ldots,a_{n}\right)  $ be an $n$-tuple of
+integers such that $\ell\left(  \mathbf{a}\right)  =0$.
+\par
+We assume (for the sake of contradiction) that there exists some $k\in\left\{
+1,2,\ldots,n-1\right\}  $ such that $a_{k}>a_{k+1}$. Consider this $k$. Then,
+$\left(  k,k+1\right)  $ is an element $\left(  u,v\right)  \in\left[
+n\right]  ^{2}$ satisfying $u<v$ and $a_{u}>a_{v}$ (since $k<k+1$ and
+$a_{k}>a_{k+1}$). In other words,%
+\[
+\left(  k,k+1\right)  \in\left\{  \left(  u,v\right)  \in\left[  n\right]
+^{2}\ \mid\ u<v\text{ and }a_{u}>a_{v}\right\}  =\operatorname*{Inv}\left(
+\mathbf{a}\right)
+\]
+(by (\ref{pf.prop.sorting.a.Inv.2})). Hence, the set $\operatorname*{Inv}%
+\left(  \mathbf{a}\right)  $ contains at least one element (namely, $\left(
+k,k+1\right)  $). In other words, $\left\vert \operatorname*{Inv}\left(
+\mathbf{a}\right)  \right\vert \geq1$.
+\par
+But the definition of $\ell\left(  \mathbf{a}\right)  $ yields $\ell\left(
+\mathbf{a}\right)  =\left\vert \operatorname*{Inv}\left(  \mathbf{a}\right)
+\right\vert \geq1$. This contradicts $\ell\left(  \mathbf{a}\right)  =0$. This
+contradiction shows that our assumption (that there exists some $k\in\left\{
+1,2,\ldots,n-1\right\}  $ such that $a_{k}>a_{k+1}$) was wrong.
+\par
+Therefore, there exists no $k\in\left\{  1,2,\ldots,n-1\right\}  $ such that
+$a_{k}>a_{k+1}$. In other words, every $k\in\left\{  1,2,\ldots,n-1\right\}  $
+satisfies $a_{k}\leq a_{k+1}$. In other words, $a_{1}\leq a_{2}\leq\cdots\leq
+a_{n}$. This proves (\ref{pf.prop.sorting.a.fact7}).}.
+
 \item If $\mathbf{a}$ is an $n$-tuple of integers, then%
 \begin{equation}
 \text{there exists a }\sigma\in S_{n}\text{ such that }\ell\left(
-\mathbf{a}\circ\sigma\right)  =0 \label{pf.prop.sorting.a.fact6}%
+\mathbf{a}\circ\sigma\right)  =0\label{pf.prop.sorting.a.fact6}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{pf.prop.sorting.a.fact6}):} We shall prove
 (\ref{pf.prop.sorting.a.fact6}) by induction over $\ell\left(  \mathbf{a}%
@@ -31411,7 +31446,7 @@ We have assumed that (\ref{pf.prop.sorting.a.fact6}) holds for $\ell\left(
 integers satisfying $\ell\left(  \mathbf{a}\right)  =L-1$, then%
 \begin{equation}
 \text{there exists a }\sigma\in S_{n}\text{ such that }\ell\left(
-\mathbf{a}\circ\sigma\right)  =0. \label{pf.prop.sorting.a.fact6.pf.hyp}%
+\mathbf{a}\circ\sigma\right)  =0.\label{pf.prop.sorting.a.fact6.pf.hyp}%
 \end{equation}
 \par
 Now, let $\mathbf{a}$ be an $n$-tuple of integers satisfying $\ell\left(
@@ -31425,7 +31460,7 @@ $a_{k}>a_{k+1}$. In other words, every $k\in\left\{  1,2,\ldots,n-1\right\}  $
 satisfies $a_{k}\leq a_{k+1}$. In other words, $a_{1}\leq a_{2}\leq\cdots\leq
 a_{n}$. In other words,%
 \begin{equation}
-a_{u}\leq a_{v} \label{pf.prop.sorting.a.fact6.pf.leq}%
+a_{u}\leq a_{v}\label{pf.prop.sorting.a.fact6.pf.leq}%
 \end{equation}
 for any $u\in\left[  n\right]  $ and $v\in\left[  n\right]  $ satisfying
 $u<v$.
@@ -31475,41 +31510,6 @@ $\ell\left(  \mathbf{a}\circ\sigma\right)  =0$. In other words,
 (\ref{pf.prop.sorting.a.fact6}) holds for $\ell\left(  \mathbf{a}\right)  =L$.
 This completes the induction step. Thus, the induction proof of
 (\ref{pf.prop.sorting.a.fact6}) is complete.}.
-
-\item If $\mathbf{a}=\left(  a_{1},a_{2},\ldots,a_{n}\right)  $ is an
-$n$-tuple of integers satisfying $\ell\left(  \mathbf{a}\right)  =0$, then%
-\begin{equation}
-a_{1}\leq a_{2}\leq\cdots\leq a_{n} \label{pf.prop.sorting.a.fact7}%
-\end{equation}
-\footnote{\textit{Proof of (\ref{pf.prop.sorting.a.fact7}):} Let
-$\mathbf{a}=\left(  a_{1},a_{2},\ldots,a_{n}\right)  $ be an $n$-tuple of
-integers such that $\ell\left(  \mathbf{a}\right)  =0$.
-\par
-We assume (for the sake of contradiction) that there exists some $k\in\left\{
-1,2,\ldots,n-1\right\}  $ such that $a_{k}>a_{k+1}$. Consider this $k$. Then,
-$\left(  k,k+1\right)  $ is an element $\left(  u,v\right)  \in\left[
-n\right]  ^{2}$ satisfying $u<v$ and $a_{u}>a_{v}$ (since $k<k+1$ and
-$a_{k}>a_{k+1}$). In other words,%
-\[
-\left(  k,k+1\right)  \in\left\{  \left(  u,v\right)  \in\left[  n\right]
-^{2}\ \mid\ u<v\text{ and }a_{u}>a_{v}\right\}  =\operatorname*{Inv}\left(
-\mathbf{a}\right)
-\]
-(by (\ref{pf.prop.sorting.a.Inv.2})). Hence, the set $\operatorname*{Inv}%
-\left(  \mathbf{a}\right)  $ contains at least one element (namely, $\left(
-k,k+1\right)  $). In other words, $\left\vert \operatorname*{Inv}\left(
-\mathbf{a}\right)  \right\vert \geq1$.
-\par
-But the definition of $\ell\left(  \mathbf{a}\right)  $ yields $\ell\left(
-\mathbf{a}\right)  =\left\vert \operatorname*{Inv}\left(  \mathbf{a}\right)
-\right\vert \geq1$. This contradicts $\ell\left(  \mathbf{a}\right)  =0$. This
-contradiction shows that our assumption (that there exists some $k\in\left\{
-1,2,\ldots,n-1\right\}  $ such that $a_{k}>a_{k+1}$) was wrong.
-\par
-Therefore, there exists no $k\in\left\{  1,2,\ldots,n-1\right\}  $ such that
-$a_{k}>a_{k+1}$. In other words, every $k\in\left\{  1,2,\ldots,n-1\right\}  $
-satisfies $a_{k}\leq a_{k+1}$. In other words, $a_{1}\leq a_{2}\leq\cdots\leq
-a_{n}$. This proves (\ref{pf.prop.sorting.a.fact7}).}.
 \end{itemize}
 
 Now, let us prove Proposition \ref{prop.sorting} \textbf{(a)}. Let
