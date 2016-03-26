@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, March 26, 2016 18:34:28}
+%TCIDATA{LastRevised=Saturday, March 26, 2016 18:40:31}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -23251,7 +23251,7 @@ list the numbers $1,2,\ldots,n$ in increasing order is $\left(  1,2,\ldots
 nevertheless give two proofs (the second of which is completely formal):
 
 \begin{proof}
-[First proof of Proposition \ref{prop.sol.exe.ps2.2.5.d}.] First of all, every
+[First proof of Proposition \ref{prop.sol.exe.ps2.2.5.d}.]First of all, every
 $k\in\left\{  1,2,\ldots,n-1\right\}  $ satisfies $\sigma\left(  k\right)
 <\sigma\left(  k+1\right)  $\ \ \ \ \footnote{\textit{Proof.} Let
 $k\in\left\{  1,2,\ldots,n-1\right\}  $. Then, $\sigma$ is a permutation, thus
@@ -23282,11 +23282,10 @@ Proposition \ref{prop.sol.exe.ps2.2.5.d} is thus proven.
 \end{proof}
 
 \begin{proof}
-[Second proof of Proposition \ref{prop.sol.exe.ps2.2.5.d}.] We shall show
-that
+[Second proof of Proposition \ref{prop.sol.exe.ps2.2.5.d}.]We shall show that
 \begin{equation}
 \sigma\left(  i\right)  =i\ \ \ \ \ \ \ \ \ \ \text{for every }i\in\left\{
-1,2,\ldots,n\right\}  .\label{sol.ps2.2.5.d.1}%
+1,2,\ldots,n\right\}  . \label{sol.ps2.2.5.d.1}%
 \end{equation}
 
 
@@ -23300,7 +23299,7 @@ We have assumed that (\ref{sol.ps2.2.5.d.1}) is proven for every $i<I$. In
 other words,%
 \begin{equation}
 \sigma\left(  i\right)  =i\ \ \ \ \ \ \ \ \ \ \text{for every }i\in\left\{
-1,2,\ldots,n\right\}  \text{ satisfying }i<I.\label{sol.ps2.2.5.d.1.pf.1}%
+1,2,\ldots,n\right\}  \text{ satisfying }i<I. \label{sol.ps2.2.5.d.1.pf.1}%
 \end{equation}
 
 
@@ -23340,6 +23339,42 @@ i\right)  $. In other words, $\sigma=\operatorname*{id}$. Proposition
 \ref{prop.sol.exe.ps2.2.5.d} is solved again.
 \end{proof}
 
+For future use, let us record an easy consequence of Proposition
+\ref{prop.sol.exe.ps2.2.5.d}:
+
+\begin{corollary}
+\label{cor.sol.exe.ps2.2.5.d2}Let $n\in\mathbb{N}$. Let $\sigma\in S_{n}$ be a
+permutation satisfying $\ell\left(  \sigma\right)  =0$. Then, $\sigma
+=\operatorname*{id}$.
+\end{corollary}
+
+\begin{proof}
+[Proof of Corollary \ref{cor.sol.exe.ps2.2.5.d2}.] Let $k\in\left\{
+1,2,\ldots,n-1\right\}  $. Assume (for the sake of contradiction) that
+$\sigma\left(  k\right)  >\sigma\left(  k+1\right)  $. Then, $\left(
+k,k+1\right)  $ is a pair of integers satisfying $1\leq k<k+1\leq n$ and
+$\sigma\left(  k\right)  >\sigma\left(  k+1\right)  $. In other words,
+$\left(  k,k+1\right)  $ is a pair $\left(  i,j\right)  $ of integers
+satisfying $1\leq i<j\leq n$ and $\sigma\left(  i\right)  >\sigma\left(
+j\right)  $. In other words, $\left(  k,k+1\right)  $ is an inversion of
+$\sigma$ (by the definition of an \textquotedblleft
+inversion\textquotedblright). Thus, the permutation $\sigma$ has at least one
+inversion (namely, $\left(  k,k+1\right)  $).
+
+But the number of inversions of $\sigma$ is $\ell\left(  \sigma\right)  =0$;
+in other words, $\sigma$ has no inversions. This contradicts the fact that
+$\sigma$ has at least one inversion. This contradiction proves that our
+assumption (that $\sigma\left(  k\right)  >\sigma\left(  k+1\right)  $) was
+wrong. Hence, we have $\sigma\left(  k\right)  \leq\sigma\left(  k+1\right)  $.
+
+Now, let us forget that we fixed $k$. We thus have shown that $\sigma\left(
+k\right)  \leq\sigma\left(  k+1\right)  $ for every $k\in\left\{
+1,2,\ldots,n-1\right\}  $. Thus, $\sigma\left(  1\right)  \leq\sigma\left(
+2\right)  \leq\cdots\leq\sigma\left(  n\right)  $. Therefore, Proposition
+\ref{prop.sol.exe.ps2.2.5.d} shows that $\sigma=\operatorname*{id}$. This
+proves Corollary \ref{cor.sol.exe.ps2.2.5.d2}.
+\end{proof}
+
 Now, we come to the actual solution of Exercise \ref{exe.ps2.2.5}.
 
 \begin{proof}
@@ -23356,14 +23391,14 @@ $\sigma\in S_{n}$, we have%
 \begin{align}
 \ell\left(  \sigma\right)   &  =\left(  \text{the number of inversions of
 }\sigma\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }%
-\ell\left(  \sigma\right)  \right)  \nonumber\\
+\ell\left(  \sigma\right)  \right) \nonumber\\
 &  =\left(  \text{the number of elements of }\operatorname*{Inv}\left(
-\sigma\right)  \right)  \nonumber\\
+\sigma\right)  \right) \nonumber\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\operatorname*{Inv}\left(
 \sigma\right)  \text{ is the set of all inversions of }\sigma\right)
 \nonumber\\
-&  =\left\vert \operatorname*{Inv}\left(  \sigma\right)  \right\vert
-.\label{sol.ps2.2.5.f.1}%
+&  =\left\vert \operatorname*{Inv}\left(  \sigma\right)  \right\vert .
+\label{sol.ps2.2.5.f.1}%
 \end{align}
 
 
@@ -23883,34 +23918,18 @@ show that $\sigma$ can be written as a composition of $\ell\left(
 \sigma\right)  $ permutations of the form $s_{k}$ (with $k\in\left\{
 1,2,\ldots,n-1\right\}  $).
 \par
-We are first going to prove that $\sigma=\operatorname*{id}$.
+Recall that the composition of $0$ permutations in $S_{n}$ is
+$\operatorname*{id}$ (by definition).
 \par
-Indeed, let $k\in\left\{  1,2,\ldots,n-1\right\}  $. Assume (for the sake of
-contradiction) that $\sigma\left(  k\right)  >\sigma\left(  k+1\right)  $.
-Then, $\left(  k,k+1\right)  $ is a pair of integers satisfying $1\leq
-k<k+1\leq n$ and $\sigma\left(  k\right)  >\sigma\left(  k+1\right)  $. In
-other words, $\left(  k,k+1\right)  $ is an inversion of $\sigma$ (by the
-definition of an \textquotedblleft inversion\textquotedblright). But the
-number of inversions of $\sigma$ is $\ell\left(  \sigma\right)  =0$; in other
-words, $\sigma$ has no inversions. This contradicts the fact that $\left(
-k,k+1\right)  $ is an inversion of $\sigma$. This contradiction proves that
-our assumption (that $\sigma\left(  k\right)  >\sigma\left(  k+1\right)  $)
-was wrong. Hence, we have $\sigma\left(  k\right)  \leq\sigma\left(
-k+1\right)  $.
-\par
-Now, let us forget that we fixed $k$. We thus have shown that $\sigma\left(
-k\right)  \leq\sigma\left(  k+1\right)  $ for every $k\in\left\{
-1,2,\ldots,n-1\right\}  $. Thus, $\sigma\left(  1\right)  \leq\sigma\left(
-2\right)  \leq\cdots\leq\sigma\left(  n\right)  $. Therefore, Exercise
-\ref{exe.ps2.2.5} \textbf{(d)} shows that $\sigma=\operatorname*{id}$.
-\par
-Therefore, $\sigma$ is a composition of $0$ permutations of the form $s_{k}$
-(with $k\in\left\{  1,2,\ldots,n-1\right\}  $). In other words, $\sigma$ is a
-composition of $\ell\left(  \sigma\right)  $ permutations of the form $s_{k}$
-(with $k\in\left\{  1,2,\ldots,n-1\right\}  $) (since $\ell\left(
-\sigma\right)  =0$). Thus, Exercise \ref{exe.ps2.2.5} \textbf{(e)} is solved
-in the case when $\ell\left(  \sigma\right)  =0$, qed.}. This completes the
-induction base.
+We have $\ell\left(  \sigma\right)  =0$, and thus $\sigma=\operatorname*{id}$
+(by Corollary \ref{cor.sol.exe.ps2.2.5.d2}). Therefore, $\sigma$ is a
+composition of $0$ permutations of the form $s_{k}$ (with $k\in\left\{
+1,2,\ldots,n-1\right\}  $) (because the composition of $0$ permutations in
+$S_{n}$ is $\operatorname*{id}$). In other words, $\sigma$ is a composition of
+$\ell\left(  \sigma\right)  $ permutations of the form $s_{k}$ (with
+$k\in\left\{  1,2,\ldots,n-1\right\}  $) (since $\ell\left(  \sigma\right)
+=0$). Thus, Exercise \ref{exe.ps2.2.5} \textbf{(e)} is solved in the case when
+$\ell\left(  \sigma\right)  =0$, qed.}. This completes the induction base.
 
 \textit{Induction step:} Let $L$ be a positive integer. Assume that Exercise
 \ref{exe.ps2.2.5} \textbf{(e)} is solved in the case when $\ell\left(
