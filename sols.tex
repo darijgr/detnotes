@@ -11186,112 +11186,12 @@ there is no way to squeeze a strictly increasing sequence $\left(  g_{1}%
 1,2,\ldots,m\right\}  $ when $m<n$; part \textbf{(a)} says (again, informally)
 that the only such sequence for $m=n$ is $\left(  1,2,\ldots,n\right)  $.
 
-\begin{verlong}
-
-
-\begin{proof}
-[Proof of Lemma \ref{lem.increasing-sequences}.]\textbf{(b)} Let $\left(
-g_{1},g_{2},\ldots,g_{n}\right)  \in\left\{  1,2,\ldots,m\right\}  ^{n}$ be an
-$n$-tuple satisfying $g_{1}<g_{2}<\cdots<g_{n}$. We shall derive a contradiction.
-
-We have $m<n$, so that $n>m\geq0$. Thus, $n\geq1$ (since $n$ is an integer).
-Therefore, the elements $g_{1}$ and $g_{n}$ of $\left\{  1,2,\ldots,m\right\}
-$ are well-defined. Every $i\in\left\{  1,2,\ldots,n-1\right\}  $ satisfies
-$g_{i}-i\leq g_{i+1}-\left(  i+1\right)  $\ \ \ \ \footnote{\textit{Proof.}
-Let $i\in\left\{  1,2,\ldots,n-1\right\}  $. Then, $g_{i}<g_{i+1}$ (since
-$g_{1}<g_{2}<\cdots<g_{n}$). Hence, $g_{i}\leq g_{i+1}-1$ (since $g_{i}$ and
-$g_{i+1}$ are integers). Hence, $\underbrace{g_{i}}_{\leq g_{i+1}-1}-i\leq
-g_{i+1}-1-i=g_{i+1}-\left(  i+1\right)  $, qed.}. In other words, we have
-$g_{1}-1\leq g_{2}-2\leq\cdots\leq g_{n}-n$. Hence, $g_{1}-1\leq g_{n}-n$.
-
-But $g_{n}\in\left\{  1,2,\ldots,m\right\}  $, so that $g_{n}\leq m<n$ and
-thus $\underbrace{g_{n}}_{<n}-n<n-n=0$. Hence, $g_{1}-1\leq g_{n}-n<0$. On the
-other hand, $g_{1}\in\left\{  1,2,\ldots,m\right\}  $, so that $g_{1}\geq1$
-and thus $g_{1}-1\geq0$. This contradicts $g_{1}-1<0$.
-
-Now, let us forget that we fixed $\left(  g_{1},g_{2},\ldots,g_{n}\right)  $.
-We thus have derived a contradiction for every $n$-tuple $\left(  g_{1}%
-,g_{2},\ldots,g_{n}\right)  \in\left\{  1,2,\ldots,m\right\}  ^{n}$ satisfying
-$g_{1}<g_{2}<\cdots<g_{n}$. Hence, there exists no $n$-tuple $\left(
-g_{1},g_{2},\ldots,g_{n}\right)  \in\left\{  1,2,\ldots,m\right\}  ^{n}$
-satisfying $g_{1}<g_{2}<\cdots<g_{n}$. This proves Lemma
-\ref{lem.increasing-sequences} \textbf{(b)}.
-
-\textbf{(a)} The $n$-tuple $\left(  1,2,\ldots,n\right)  $ clearly belongs to
-$\left\{  1,2,\ldots,n\right\}  ^{n}$, and satisfies $1<2<\cdots<n$. Hence,
-there exists an $n$-tuple $\left(  g_{1},g_{2},\ldots,g_{n}\right)
-\in\left\{  1,2,\ldots,n\right\}  ^{n}$ satisfying $g_{1}<g_{2}<\cdots<g_{n}$,
-namely the $n$-tuple $\left(  1,2,\ldots,n\right)  $. We shall now show that
-$\left(  1,2,\ldots,n\right)  $ is the only such $n$-tuple.
-
-Indeed, let $\left(  g_{1},g_{2},\ldots,g_{n}\right)  \in\left\{
-1,2,\ldots,n\right\}  ^{n}$ be an $n$-tuple satisfying $g_{1}<g_{2}%
-<\cdots<g_{n}$. We shall prove that $\left(  g_{1},g_{2},\ldots,g_{n}\right)
-=\left(  1,2,\ldots,n\right)  $.
-
-Every $i\in\left\{  1,2,\ldots,n-1\right\}  $ satisfies $g_{i}-i\leq
-g_{i+1}-\left(  i+1\right)  $\ \ \ \ \footnote{\textit{Proof.} Let
-$i\in\left\{  1,2,\ldots,n-1\right\}  $. Then, $g_{i}<g_{i+1}$ (since
-$g_{1}<g_{2}<\cdots<g_{n}$). Hence, $g_{i}\leq g_{i+1}-1$ (since $g_{i}$ and
-$g_{i+1}$ are integers). Hence, $\underbrace{g_{i}}_{\leq g_{i+1}-1}-i\leq
-g_{i+1}-1-i=g_{i+1}-\left(  i+1\right)  $, qed.}. In other words, we have
-$g_{1}-1\leq g_{2}-2\leq\cdots\leq g_{n}-n$. In other words,%
-\begin{equation}
-g_{u}-u\leq g_{v}-v \label{pf.lem.increasing-sequences.b.1}%
-\end{equation}
-for any two elements $u$ and $v$ of $\left\{  1,2,\ldots,n\right\}  $
-satisfying $u\leq v$.
-
-Let $i\in\left\{  1,2,\ldots,n\right\}  $. Then, $1\leq i\leq n$, so that
-$1\leq n$. Hence, the elements $g_{1}$ and $g_{n}$ of $\left\{  1,2,\ldots
-,n\right\}  $ are well-defined.
-
-Now, $1\leq i$. Hence, (\ref{pf.lem.increasing-sequences.b.1}) (applied to
-$u=1$ and $v=i$) yields $g_{1}-1\leq g_{i}-i$. But $g_{1}\in\left\{
-1,2,\ldots,n\right\}  $, so that $g_{1}\geq1$ and thus $g_{1}-1\geq0$. Hence,
-$0\leq g_{1}-1\leq g_{i}-i$.
-
-On the other hand, $i\leq n$. Therefore,
-(\ref{pf.lem.increasing-sequences.b.1}) (applied to $u=i$ and $v=n$) yields
-$g_{i}-i\leq g_{n}-n$. But $g_{n}\in\left\{  1,2,\ldots,n\right\}  $, so that
-$g_{n}\leq n$ and thus $g_{n}-n\leq0$. Hence, $g_{i}-i\leq g_{n}-n\leq0$.
-Combined with $0\leq g_{i}-i$, this yields $g_{i}-i=0$, so that $g_{i}=i$.
-
-Now, let us forget that we fixed $i$. We thus have shown that $g_{i}=i$ for
-every $i\in\left\{  1,2,\ldots,n\right\}  $. In other words, $\left(
-g_{1},g_{2},\ldots,g_{n}\right)  =\left(  1,2,\ldots,n\right)  $.
-
-Let us now forget that we fixed $\left(  g_{1},g_{2},\ldots,g_{n}\right)  $.
-We thus have shown that if $\left(  g_{1},g_{2},\ldots,g_{n}\right)
-\in\left\{  1,2,\ldots,n\right\}  ^{n}$ is an $n$-tuple satisfying
-$g_{1}<g_{2}<\cdots<g_{n}$, then $\left(  g_{1},g_{2},\ldots,g_{n}\right)
-=\left(  1,2,\ldots,n\right)  $. In other words, every $n$-tuple $\left(
-g_{1},g_{2},\ldots,g_{n}\right)  \in\left\{  1,2,\ldots,n\right\}  ^{n}$
-satisfying $g_{1}<g_{2}<\cdots<g_{n}$ must be equal to $\left(  1,2,\ldots
-,n\right)  $. Hence, there exists at most one $n$-tuple $\left(  g_{1}%
-,g_{2},\ldots,g_{n}\right)  \in\left\{  1,2,\ldots,n\right\}  ^{n}$ satisfying
-$g_{1}<g_{2}<\cdots<g_{n}$ (namely, the $n$-tuple $\left(  1,2,\ldots
-,n\right)  $).
-
-We now know the following two facts:
-
-\begin{itemize}
-\item There exists an $n$-tuple $\left(  g_{1},g_{2},\ldots,g_{n}\right)
-\in\left\{  1,2,\ldots,n\right\}  ^{n}$ satisfying $g_{1}<g_{2}<\cdots<g_{n}$,
-namely the $n$-tuple $\left(  1,2,\ldots,n\right)  $.
-
-\item There exists at most one $n$-tuple $\left(  g_{1},g_{2},\ldots
-,g_{n}\right)  \in\left\{  1,2,\ldots,n\right\}  ^{n}$ satisfying $g_{1}%
-<g_{2}<\cdots<g_{n}$.
-\end{itemize}
-
-Combining these two facts, we conclude that there exists exactly one $n$-tuple
-$\left(  g_{1},g_{2},\ldots,g_{n}\right)  \in\left\{  1,2,\ldots,n\right\}
-^{n}$ satisfying $g_{1}<g_{2}<\cdots<g_{n}$, namely the $n$-tuple $\left(
-1,2,\ldots,n\right)  $. This proves Lemma \ref{lem.increasing-sequences}
-\textbf{(a)}.
-\end{proof}
-\end{verlong}
+\begin{exercise}
+\label{exe.lem.increasing-sequences}
+Give a formal proof of Lemma \ref{lem.increasing-sequences}.
+(Do not bother doing this if you do not particularly care about formal
+proofs and find Lemma \ref{lem.increasing-sequences} obvious enough.)
+\end{exercise}
 
 \begin{example}
 \label{exam.cauchy-binet.nxn}Let $n\in\mathbb{N}$. Let $A$ and $B$ be two
@@ -32149,6 +32049,111 @@ Hence, $A=BB^{T}$, so that%
 &  =1.
 \end{align*}
 This solves Exercise \ref{exe.ps4.pascal}.
+\end{proof}
+
+\subsection{Solution to Exercise \ref{exe.lem.increasing-sequences}}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.increasing-sequences}.]\textbf{(b)} Let $\left(
+g_{1},g_{2},\ldots,g_{n}\right)  \in\left\{  1,2,\ldots,m\right\}  ^{n}$ be an
+$n$-tuple satisfying $g_{1}<g_{2}<\cdots<g_{n}$. We shall derive a contradiction.
+
+We have $m<n$, so that $n>m\geq0$. Thus, $n\geq1$ (since $n$ is an integer).
+Therefore, the elements $g_{1}$ and $g_{n}$ of $\left\{  1,2,\ldots,m\right\}
+$ are well-defined. Every $i\in\left\{  1,2,\ldots,n-1\right\}  $ satisfies
+$g_{i}-i\leq g_{i+1}-\left(  i+1\right)  $\ \ \ \ \footnote{\textit{Proof.}
+Let $i\in\left\{  1,2,\ldots,n-1\right\}  $. Then, $g_{i}<g_{i+1}$ (since
+$g_{1}<g_{2}<\cdots<g_{n}$). Hence, $g_{i}\leq g_{i+1}-1$ (since $g_{i}$ and
+$g_{i+1}$ are integers). Hence, $\underbrace{g_{i}}_{\leq g_{i+1}-1}-i\leq
+g_{i+1}-1-i=g_{i+1}-\left(  i+1\right)  $, qed.}. In other words, we have
+$g_{1}-1\leq g_{2}-2\leq\cdots\leq g_{n}-n$. Hence, $g_{1}-1\leq g_{n}-n$.
+
+But $g_{n}\in\left\{  1,2,\ldots,m\right\}  $, so that $g_{n}\leq m<n$ and
+thus $\underbrace{g_{n}}_{<n}-n<n-n=0$. Hence, $g_{1}-1\leq g_{n}-n<0$. On the
+other hand, $g_{1}\in\left\{  1,2,\ldots,m\right\}  $, so that $g_{1}\geq1$
+and thus $g_{1}-1\geq0$. This contradicts $g_{1}-1<0$.
+
+Now, let us forget that we fixed $\left(  g_{1},g_{2},\ldots,g_{n}\right)  $.
+We thus have derived a contradiction for every $n$-tuple $\left(  g_{1}%
+,g_{2},\ldots,g_{n}\right)  \in\left\{  1,2,\ldots,m\right\}  ^{n}$ satisfying
+$g_{1}<g_{2}<\cdots<g_{n}$. Hence, there exists no $n$-tuple $\left(
+g_{1},g_{2},\ldots,g_{n}\right)  \in\left\{  1,2,\ldots,m\right\}  ^{n}$
+satisfying $g_{1}<g_{2}<\cdots<g_{n}$. This proves Lemma
+\ref{lem.increasing-sequences} \textbf{(b)}.
+
+\textbf{(a)} The $n$-tuple $\left(  1,2,\ldots,n\right)  $ clearly belongs to
+$\left\{  1,2,\ldots,n\right\}  ^{n}$, and satisfies $1<2<\cdots<n$. Hence,
+there exists an $n$-tuple $\left(  g_{1},g_{2},\ldots,g_{n}\right)
+\in\left\{  1,2,\ldots,n\right\}  ^{n}$ satisfying $g_{1}<g_{2}<\cdots<g_{n}$,
+namely the $n$-tuple $\left(  1,2,\ldots,n\right)  $. We shall now show that
+$\left(  1,2,\ldots,n\right)  $ is the only such $n$-tuple.
+
+Indeed, let $\left(  g_{1},g_{2},\ldots,g_{n}\right)  \in\left\{
+1,2,\ldots,n\right\}  ^{n}$ be an $n$-tuple satisfying $g_{1}<g_{2}%
+<\cdots<g_{n}$. We shall prove that $\left(  g_{1},g_{2},\ldots,g_{n}\right)
+=\left(  1,2,\ldots,n\right)  $.
+
+Every $i\in\left\{  1,2,\ldots,n-1\right\}  $ satisfies $g_{i}-i\leq
+g_{i+1}-\left(  i+1\right)  $\ \ \ \ \footnote{\textit{Proof.} Let
+$i\in\left\{  1,2,\ldots,n-1\right\}  $. Then, $g_{i}<g_{i+1}$ (since
+$g_{1}<g_{2}<\cdots<g_{n}$). Hence, $g_{i}\leq g_{i+1}-1$ (since $g_{i}$ and
+$g_{i+1}$ are integers). Hence, $\underbrace{g_{i}}_{\leq g_{i+1}-1}-i\leq
+g_{i+1}-1-i=g_{i+1}-\left(  i+1\right)  $, qed.}. In other words, we have
+$g_{1}-1\leq g_{2}-2\leq\cdots\leq g_{n}-n$. In other words,%
+\begin{equation}
+g_{u}-u\leq g_{v}-v \label{pf.lem.increasing-sequences.b.1}%
+\end{equation}
+for any two elements $u$ and $v$ of $\left\{  1,2,\ldots,n\right\}  $
+satisfying $u\leq v$.
+
+Let $i\in\left\{  1,2,\ldots,n\right\}  $. Then, $1\leq i\leq n$, so that
+$1\leq n$. Hence, the elements $g_{1}$ and $g_{n}$ of $\left\{  1,2,\ldots
+,n\right\}  $ are well-defined.
+
+Now, $1\leq i$. Hence, (\ref{pf.lem.increasing-sequences.b.1}) (applied to
+$u=1$ and $v=i$) yields $g_{1}-1\leq g_{i}-i$. But $g_{1}\in\left\{
+1,2,\ldots,n\right\}  $, so that $g_{1}\geq1$ and thus $g_{1}-1\geq0$. Hence,
+$0\leq g_{1}-1\leq g_{i}-i$.
+
+On the other hand, $i\leq n$. Therefore,
+(\ref{pf.lem.increasing-sequences.b.1}) (applied to $u=i$ and $v=n$) yields
+$g_{i}-i\leq g_{n}-n$. But $g_{n}\in\left\{  1,2,\ldots,n\right\}  $, so that
+$g_{n}\leq n$ and thus $g_{n}-n\leq0$. Hence, $g_{i}-i\leq g_{n}-n\leq0$.
+Combined with $0\leq g_{i}-i$, this yields $g_{i}-i=0$, so that $g_{i}=i$.
+
+Now, let us forget that we fixed $i$. We thus have shown that $g_{i}=i$ for
+every $i\in\left\{  1,2,\ldots,n\right\}  $. In other words, $\left(
+g_{1},g_{2},\ldots,g_{n}\right)  =\left(  1,2,\ldots,n\right)  $.
+
+Let us now forget that we fixed $\left(  g_{1},g_{2},\ldots,g_{n}\right)  $.
+We thus have shown that if $\left(  g_{1},g_{2},\ldots,g_{n}\right)
+\in\left\{  1,2,\ldots,n\right\}  ^{n}$ is an $n$-tuple satisfying
+$g_{1}<g_{2}<\cdots<g_{n}$, then $\left(  g_{1},g_{2},\ldots,g_{n}\right)
+=\left(  1,2,\ldots,n\right)  $. In other words, every $n$-tuple $\left(
+g_{1},g_{2},\ldots,g_{n}\right)  \in\left\{  1,2,\ldots,n\right\}  ^{n}$
+satisfying $g_{1}<g_{2}<\cdots<g_{n}$ must be equal to $\left(  1,2,\ldots
+,n\right)  $. Hence, there exists at most one $n$-tuple $\left(  g_{1}%
+,g_{2},\ldots,g_{n}\right)  \in\left\{  1,2,\ldots,n\right\}  ^{n}$ satisfying
+$g_{1}<g_{2}<\cdots<g_{n}$ (namely, the $n$-tuple $\left(  1,2,\ldots
+,n\right)  $).
+
+We now know the following two facts:
+
+\begin{itemize}
+\item There exists an $n$-tuple $\left(  g_{1},g_{2},\ldots,g_{n}\right)
+\in\left\{  1,2,\ldots,n\right\}  ^{n}$ satisfying $g_{1}<g_{2}<\cdots<g_{n}$,
+namely the $n$-tuple $\left(  1,2,\ldots,n\right)  $.
+
+\item There exists at most one $n$-tuple $\left(  g_{1},g_{2},\ldots
+,g_{n}\right)  \in\left\{  1,2,\ldots,n\right\}  ^{n}$ satisfying $g_{1}%
+<g_{2}<\cdots<g_{n}$.
+\end{itemize}
+
+Combining these two facts, we conclude that there exists exactly one $n$-tuple
+$\left(  g_{1},g_{2},\ldots,g_{n}\right)  \in\left\{  1,2,\ldots,n\right\}
+^{n}$ satisfying $g_{1}<g_{2}<\cdots<g_{n}$, namely the $n$-tuple $\left(
+1,2,\ldots,n\right)  $. This proves Lemma \ref{lem.increasing-sequences}
+\textbf{(a)}.
 \end{proof}
 
 \subsection{Solution to Exercise \ref{exe.vander-det.s1}}
