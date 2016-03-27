@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Sunday, March 27, 2016 17:52:46}
+%TCIDATA{LastRevised=Sunday, March 27, 2016 18:02:36}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -14904,9 +14904,9 @@ $1\times1$-matrix. (In our example, we obtain $\det A=-140$ at the end.)
 
 This looks like a viable algorithm (which is, furthermore, fairly fast:
 essentially as fast as Gaussian elimination). But does it always work? It
-turns out that it \textbf{almost} works. There are cases in which it can get
-\textquotedblleft stuck\textquotedblright, and it needs to be modified to deal
-with these cases.
+turns out that it \textbf{almost} always works. There are cases in which it
+can get \textquotedblleft stuck\textquotedblright, and it needs to be modified
+to deal with these cases.
 
 Namely, what can happen is that the $\left(  n,n\right)  $-th entry of the
 matrix $A$ could be $0$. Again, let us observe this on an example: Set $n=4$
@@ -16496,22 +16496,22 @@ $g_{p}$ is well-defined. Similarly, $g_{q}$ is well-defined. We have%
 n-1\right)  \right)  =\left(  1,2,\ldots,\widehat{p},\ldots,n\right)
 \label{pf.lem.laplace.Apq.short.indices1}%
 \end{equation}
-(by Lemma \ref{lem.laplace.gpshort} \textbf{(d)}) and
+(by Lemma \ref{lem.laplace.gpshort} \textbf{(a)}) and
 \begin{equation}
 \left(  g_{q}\left(  1\right)  ,g_{q}\left(  2\right)  ,\ldots,g_{q}\left(
 n-1\right)  \right)  =\left(  1,2,\ldots,\widehat{q},\ldots,n\right)
 \label{pf.lem.laplace.Apq.short.indices2}%
 \end{equation}
-(by Lemma \ref{lem.laplace.gpshort} \textbf{(d)}, applied to $q$ instead of
+(by Lemma \ref{lem.laplace.gpshort} \textbf{(a)}, applied to $q$ instead of
 $p$). Now, the definition of $A_{\sim p,\sim q}$ yields%
 \begin{align}
-A_{\sim p,\sim q}  &  =\operatorname*{sub}\nolimits_{1,2,\ldots,\widehat{p}%
+A_{\sim p,\sim q} &  =\operatorname*{sub}\nolimits_{1,2,\ldots,\widehat{p}%
 ,\ldots,n}^{1,2,\ldots,\widehat{q},\ldots,n}A=\operatorname*{sub}%
 \nolimits_{g_{p}\left(  1\right)  ,g_{p}\left(  2\right)  ,\ldots,g_{p}\left(
 n-1\right)  }^{g_{q}\left(  1\right)  ,g_{q}\left(  2\right)  ,\ldots
 ,g_{q}\left(  n-1\right)  }A\ \ \ \ \ \ \ \ \ \ \left(  \text{by
 (\ref{pf.lem.laplace.Apq.short.indices1}) and
-(\ref{pf.lem.laplace.Apq.short.indices2})}\right) \nonumber\\
+(\ref{pf.lem.laplace.Apq.short.indices2})}\right)  \nonumber\\
 &  =\left(  a_{g_{p}\left(  x\right)  ,g_{q}\left(  y\right)  }\right)
 _{1\leq x\leq n-1,\ 1\leq y\leq n-1}\ \ \ \ \ \ \ \ \ \ \left(  \text{by the
 definition of }\operatorname*{sub}\nolimits_{g_{p}\left(  1\right)
