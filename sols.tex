@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, March 26, 2016 22:45:12}
+%TCIDATA{LastRevised=Saturday, March 26, 2016 22:54:52}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -24714,8 +24714,8 @@ $i\in\left\{  1,2,\ldots,M\right\}  $. Applying this to $i=J$, we obtain%
 \begin{align*}
 \delta_{J}  &  =\underbrace{\delta_{J-1}}_{=\sigma\circ\left(  s_{k_{1}}\circ
 s_{k_{2}}\circ\cdots\circ s_{k_{J-1}}\right)  }\circ s_{k_{J}}%
-\ \ \ \ \ \ \ \ \ \ \left(  \text{since }j\in\left\{  1,2,\ldots,M\right\}
-\text{ (since }j\in\left\{  0,1,\ldots,M\right\}  \text{ is positive)}\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }J\in\left\{  1,2,\ldots,M\right\}
+\text{ (since }J\in\left\{  0,1,\ldots,M\right\}  \text{ is positive)}\right)
 \\
 &  =\sigma\circ\underbrace{\left(  s_{k_{1}}\circ s_{k_{2}}\circ\cdots\circ
 s_{k_{J-1}}\right)  \circ s_{k_{J}}}_{=s_{k_{1}}\circ s_{k_{2}}\circ
@@ -24923,8 +24923,8 @@ $i\in\left\{  1,2,\ldots,M\right\}  $. Applying this to $i=J$, we obtain%
 \begin{align*}
 \delta_{J}  &  =\underbrace{\delta_{J-1}}_{=\sigma\circ\left(  s_{k_{1}}\circ
 s_{k_{2}}\circ\cdots\circ s_{k_{J-1}}\right)  }\circ s_{k_{J}}%
-\ \ \ \ \ \ \ \ \ \ \left(  \text{since }j\in\left\{  1,2,\ldots,M\right\}
-\text{ (since }j\in\left\{  0,1,\ldots,M\right\}  \text{ is positive)}\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }J\in\left\{  1,2,\ldots,M\right\}
+\text{ (since }J\in\left\{  0,1,\ldots,M\right\}  \text{ is positive)}\right)
 \\
 &  =\sigma\circ\underbrace{\left(  s_{k_{1}}\circ s_{k_{2}}\circ\cdots\circ
 s_{k_{J-1}}\right)  \circ s_{k_{J}}}_{=s_{k_{1}}\circ s_{k_{2}}\circ
@@ -26341,55 +26341,55 @@ is finite, the set $\dbinom{A}{2}$ satisfies $\left\vert \dbinom{A}%
 {2}\right\vert =\dbinom{\left\vert A\right\vert }{2}$.}
 
 If $A$ and $B$ are two sets, and if $f:A\rightarrow B$ is an injective map,
-then we can define a map $f^{\ast}:\mathcal{P}_{2}\left(  A\right)
+then we can define a map $f_{\ast}:\mathcal{P}_{2}\left(  A\right)
 \rightarrow\mathcal{P}_{2}\left(  B\right)  $ by%
 \[
-\left(  f^{\ast}\left(  S\right)  =f\left(  S\right)
+\left(  f_{\ast}\left(  S\right)  =f\left(  S\right)
 \ \ \ \ \ \ \ \ \ \ \text{for every }S\in\mathcal{P}_{2}\left(  A\right)
 \right)  .
 \]
-\footnote{At this point, we need to check that this map $f^{\ast}$ is
-well-defined. Before I do this, let me rewrite the definition of $f^{\ast}$ in
+\footnote{At this point, we need to check that this map $f_{\ast}$ is
+well-defined. Before I do this, let me rewrite the definition of $f_{\ast}$ in
 a more intuitive way: An element of $\mathcal{P}_{2}\left(  A\right)  $ is a
-$2$-element subset $\left\{  a,a^{\prime}\right\}  $ of $A$. The map $f^{\ast
+$2$-element subset $\left\{  a,a^{\prime}\right\}  $ of $A$. The map $f_{\ast
 }$ takes this subset to $\left\{  f\left(  a\right)  ,f\left(  a^{\prime
 }\right)  \right\}  $ (in other words, it applies $f$ to each of its
 elements).
 \par
-So why is the map $f^{\ast}$ is well-defined? It is supposed to send every
+So why is the map $f_{\ast}$ well-defined? It is supposed to send every
 $S\in\mathcal{P}_{2}\left(  A\right)  $ to $f\left(  S\right)  $. Thus, in
 order to prove that it is well-defined, we need to show that $f\left(
 S\right)  \in\mathcal{P}_{2}\left(  B\right)  $ for every $S\in\mathcal{P}%
 _{2}\left(  A\right)  $.
 \par
-Let $S \in\mathcal{P}_{2}\left(  A\right)  $. Thus, the set $S$ is a
+Let $S\in\mathcal{P}_{2}\left(  A\right)  $. Thus, the set $S$ is a
 $2$-element subset of $A$. The map $f$ sends its two elements to two
 \textbf{distinct} elements of $B$ (they are distinct because $f$ is
 injective). In other words, the set $f\left(  S\right)  $ has $2$ elements.
 Thus, $f\left(  S\right)  $ is a $2$-element subset of $B$; in other words,
 $f\left(  S\right)  \in\mathcal{P}_{2}\left(  B\right)  $. This proves that
-the map $f^{\ast}$ is well-defined.
+the map $f_{\ast}$ is well-defined.
 \par
 Notice that we have used the injectivity of $f$ in this argument.} This
 construction has the following three basic properties:
 
 \begin{enumerate}
 \item If $A$ is a set, then $\left(  \operatorname*{id}\nolimits_{A}\right)
-^{\ast}=\operatorname*{id}\nolimits_{\mathcal{P}_{2}\left(  A\right)  }$.
+_{\ast}=\operatorname*{id}\nolimits_{\mathcal{P}_{2}\left(  A\right)  }$.
 
 \item If $A$, $B$ and $C$ are three sets, and if $f:A\rightarrow B$ and
-$g:B\rightarrow C$ are two injective maps, then $\left(  f\circ g\right)
-^{\ast}=f^{\ast}\circ g^{\ast}$. (Of course, $f\circ g$ is injective here, so
-$\left(  f\circ g\right)  ^{\ast}$ makes sense.)
+$g:B\rightarrow C$ are two injective maps, then $\left(  g\circ f\right)
+_{\ast}=g_{\ast}\circ f_{\ast}$. (Of course, $g\circ f$ is injective here, so
+$\left(  g\circ f\right)  _{\ast}$ makes sense.)
 
 \item If $A$ and $B$ are two sets, and if $f:A\rightarrow B$ is an invertible
-map, then $f^{\ast}$ is invertible as well and satisfies $\left(
-f^{-1}\right)  ^{\ast}=\left(  f^{\ast}\right)  ^{-1}$.
+map, then $f_{\ast}$ is invertible as well and satisfies $\left(
+f^{-1}\right)  _{\ast}=\left(  f_{\ast}\right)  ^{-1}$.
 \end{enumerate}
 
 (The first of these three properties is obvious; the second follows by
-observing that $f\left(  g\left(  S\right)  \right)  =\left(  f\circ g\right)
-\left(  S\right)  $ for every $S\in\mathcal{P}_{2}\left(  A\right)  $; the
+observing that $\left(  g\circ f\right)  \left(  S\right)  =g\left(  f\left(
+S\right)  \right)  $ for every $S\in\mathcal{P}_{2}\left(  A\right)  $; the
 third can be proven using the second or directly.)
 
 Let $\left[  n\right]  $ be the set $\left\{  1,2,\ldots,n\right\}  $. Recall
@@ -26401,14 +26401,14 @@ permutations of the set $\left[  n\right]  $ (since $\left\{  1,2,\ldots
 We have $\sigma\in S_{n}$. In other words, $\sigma$ is a permutation of the
 set $\left[  n\right]  $ (since $S_{n}$ is the set of all such permutations).
 Thus, $\sigma$ is a bijective map $\left[  n\right]  \rightarrow\left[
-n\right]  $. In particular, the map $\sigma^{\ast}:\mathcal{P}_{2}\left(
+n\right]  $. In particular, the map $\sigma_{\ast}:\mathcal{P}_{2}\left(
 \left[  n\right]  \right)  \rightarrow\mathcal{P}_{2}\left(  \left[  n\right]
 \right)  $ is well-defined.
 
 Recall that if $A$ and $B$ are two sets, and if $f:A\rightarrow B$ is an
-invertible map, then $f^{\ast}$ is invertible as well. Applying this to
+invertible map, then $f_{\ast}$ is invertible as well. Applying this to
 $A=\left[  n\right]  $, $B=\left[  n\right]  $ and $f=\sigma$, we conclude
-that $\sigma^{\ast}$ is invertible (since $\sigma$ is invertible).
+that $\sigma_{\ast}$ is invertible (since $\sigma$ is invertible).
 
 Let $G$ be the subset%
 \[
@@ -26640,7 +26640,7 @@ i,j\right)  \right)  \right)  }\\\text{(by
 \sigma\left(  i\right)  ,\sigma\left(  j\right)  \right)  }}%
 _{\substack{=a_{\sigma\left(  \rho\left(  \left(  i,j\right)  \right)
 \right)  }\\\text{(by (\ref{sol.perm.sign.pseudoexplicit.short.b.a3}))}%
-}}\right) \nonumber\\
+}}\right)  \nonumber\\
 &  =\underbrace{\left(  \prod_{\substack{\left(  i,j\right)  \in G;\\\left(
 i,j\right)  \in\operatorname*{Inv}\left(  \sigma\right)  }}\left(
 -a_{\sigma\left(  \rho\left(  \left(  i,j\right)  \right)  \right)  }\right)
@@ -26651,7 +26651,7 @@ G;\\\left(  i,j\right)  \in\operatorname*{Inv}\left(  \sigma\right)
 }}a_{\sigma\left(  \rho\left(  \left(  i,j\right)  \right)  \right)  }\right)
 }\cdot\left(  \prod_{\substack{\left(  i,j\right)  \in G;\\\left(  i,j\right)
 \notin\operatorname*{Inv}\left(  \sigma\right)  }}a_{\sigma\left(  \rho\left(
-\left(  i,j\right)  \right)  \right)  }\right) \nonumber\\
+\left(  i,j\right)  \right)  \right)  }\right)  \nonumber\\
 &  =\underbrace{\left(  -1\right)  ^{\left\vert \left\{  \left(  i,j\right)
 \in G\ \mid\ \left(  i,j\right)  \in\operatorname*{Inv}\left(  \sigma\right)
 \right\}  \right\vert }}_{\substack{=\left(  -1\right)  ^{\left\vert
@@ -26676,7 +26676,7 @@ substituted }T\\\text{for }\rho\left(  \left(  i,j\right)  \right)  \text{ in
 the product,}\\\text{since the map }\rho:G\rightarrow\mathcal{P}_{2}\left(
 \left[  n\right]  \right)  \\\text{is bijective)}}}=\left(  -1\right)
 ^{\sigma}\cdot\prod_{T\in\mathcal{P}_{2}\left(  \left[  n\right]  \right)
-}a_{\sigma\left(  T\right)  }. \label{sol.perm.sign.pseudoexplicit.short.b.u}%
+}a_{\sigma\left(  T\right)  }.\label{sol.perm.sign.pseudoexplicit.short.b.u}%
 \end{align}
 On the other hand,
 \begin{align}
@@ -26695,23 +26695,23 @@ a_{S}\nonumber\\
 \text{since the map }\rho:G\rightarrow\mathcal{P}_{2}\left(  \left[  n\right]
 \right)  \text{ is bijective}%
 \end{array}
-\right) \nonumber\\
+\right)  \nonumber\\
 &  =\prod_{T\in\mathcal{P}_{2}\left(  \left[  n\right]  \right)
-}\underbrace{a_{\sigma^{\ast}\left(  T\right)  }}_{\substack{=a_{\sigma\left(
-T\right)  }\\\text{(since }\sigma^{\ast}\left(  T\right)  =\sigma\left(
-T\right)  \\\text{(by the definition of }\sigma^{\ast}\text{))}}}\nonumber\\
+}\underbrace{a_{\sigma_{\ast}\left(  T\right)  }}_{\substack{=a_{\sigma\left(
+T\right)  }\\\text{(since }\sigma_{\ast}\left(  T\right)  =\sigma\left(
+T\right)  \\\text{(by the definition of }\sigma_{\ast}\text{))}}}\nonumber\\
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
-\text{here, we have substituted }\sigma^{\ast}\left(  T\right)  \text{ for
+\text{here, we have substituted }\sigma_{\ast}\left(  T\right)  \text{ for
 }S\text{ in the product,}\\
-\text{since the map }\sigma^{\ast}:\mathcal{P}_{2}\left(  \left[  n\right]
+\text{since the map }\sigma_{\ast}:\mathcal{P}_{2}\left(  \left[  n\right]
 \right)  \rightarrow\mathcal{P}_{2}\left(  \left[  n\right]  \right)  \text{
 is bijective}%
 \end{array}
-\right) \nonumber\\
+\right)  \nonumber\\
 &  =\prod_{T\in\mathcal{P}_{2}\left(  \left[  n\right]  \right)  }%
-a_{\sigma\left(  T\right)  }. \label{sol.perm.sign.pseudoexplicit.short.b.v}%
+a_{\sigma\left(  T\right)  }.\label{sol.perm.sign.pseudoexplicit.short.b.v}%
 \end{align}
 Hence, (\ref{sol.perm.sign.pseudoexplicit.short.b.u}) becomes%
 \[
@@ -38206,7 +38206,8 @@ Write the $m\times\ell^{\prime}$-matrix $B^{\prime}$ in the form $B^{\prime
 }$.
 
 Write the $m^{\prime}\times\ell$-matrix $C^{\prime}$ in the form $C^{\prime
-}=\left(  c_{i,j}^{\prime}\right)  _{1\leq i\leq m^{\prime},\ 1\leq j\leq\ell}$.
+}=\left(  c_{i,j}^{\prime}\right)  _{1\leq i\leq m^{\prime},\ 1\leq j\leq\ell
+}$.
 
 Write the $m^{\prime}\times\ell^{\prime}$-matrix $D^{\prime}$ in the form
 $D^{\prime}=\left(  d_{i,j}^{\prime}\right)  _{1\leq i\leq m^{\prime},\ 1\leq
