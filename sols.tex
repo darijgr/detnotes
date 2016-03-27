@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, March 26, 2016 20:12:54}
+%TCIDATA{LastRevised=Saturday, March 26, 2016 20:44:59}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -144,12 +144,21 @@ These notes are still far from their final form, and the exact prerequisites
 for a reader are subject to change. At the current moment, I assume that the reader
 
 \begin{itemize}
-\item has a good grasp on school-level mathematics;
+\item has a good grasp on basic school-level mathematics (integers, rational
+numbers, prime numbers, etc.);
 
 \item has some experience with proofs (mathematical induction, strong
 induction, proof by contradiction, the concept of \textquotedblleft
 WLOG\textquotedblright, etc.) and mathematical notation (functions,
-subscripts, cases);
+subscripts, cases, what it means for an object to be \textquotedblleft
+well-defined\textquotedblright, etc.)\footnote{A great introduction into these
+matters (and many others!) is the free book \cite{LeLeMe16} by Lehman,
+Leighton and Meyer. (\textbf{Practical note:} As of 2016, this book is still
+undergoing frequent revisions, so you may find a newer version of it on the
+internet by the time you are reading this than what I am citing below.
+Unfortunately, you will also find many older versions, often as the first
+google hits. Try searching for the title of the book along with the current
+year to find something new.)};
 
 \item knows what a polynomial is (at least over $\mathbb{Z}$ and $\mathbb{Q}$)
 and how polynomials differ from polynomial functions\footnote{See Section
@@ -4918,10 +4927,10 @@ sequence (in terms of $a$, $b$, $x_{0}$ and $x_{1}$) in the case when
 $a^{2}+4b\neq0$. Here is how this works:
 
 \begin{remark}
-Let $a$ and $b$ be complex numbers such that $a^{2}+4b\neq0$. Let $\left(
-x_{0},x_{1},x_{2},\ldots\right)  $ be an $\left(  a,b\right)  $-recurrent
-sequence. We want to construct an explicit formula for each $x_{n}$ in terms
-of $x_{0}$, $x_{1}$, $a$ and $b$.
+\label{rmk.binet}Let $a$ and $b$ be complex numbers such that $a^{2}+4b\neq0$.
+Let $\left(  x_{0},x_{1},x_{2},\ldots\right)  $ be an $\left(  a,b\right)
+$-recurrent sequence. We want to construct an explicit formula for each
+$x_{n}$ in terms of $x_{0}$, $x_{1}$, $a$ and $b$.
 
 To do so, we let $q_{+}$ and $q_{-}$ be the two solutions of the quadratic
 equation $X^{2}-aX-b=0$, namely%
@@ -4994,6 +5003,26 @@ case of two distinct roots studied above, you won't see any radicals here. The
 explicit formula really deserves the name \textquotedblleft
 explicit\textquotedblright.]
 \end{exercise}
+
+Remark \ref{rmk.binet} and Exercise \ref{exe.ps2.2.1}, combined, solve the
+problem of finding an explicit formula for any term of an $\left(  a,b\right)
+$-recurrent sequence when $a$ and $b$ are complex numbers, at least if you
+don't mind having square roots in your formula. Similar tactics can be used to
+find explicit forms for the more general case of sequences satisfying
+\textquotedblleft homogeneous linear recurrences with constant
+coefficients\textquotedblright\footnote{These are sequences $\left(
+x_{0},x_{1},x_{2},\ldots\right)  $ which satisfy%
+\[
+\left(  x_{n}=c_{1}x_{n-1}+c_{2}x_{n-2}+\cdots+c_{k}x_{n-k}%
+\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq k\right)
+\]
+for a fixed $k\in\mathbb{N}$ and a fixed $k$-tuple $\left(  c_{1},c_{2}%
+,\ldots,c_{k}\right)  $ of complex numbers. When $k=2$, these are the $\left(
+c_{1},c_{2}\right)  $-recurrent sequences.}, although instead of square roots
+you will now need roots of higher-degree polynomials. (See \cite[\S 22.3.2
+(\textquotedblleft Solving Homogeneous Linear Recurrences\textquotedblright%
+)]{LeLeMe16} for an outline of this; see also \cite[Topic \textquotedblleft
+Linear Recurrences\textquotedblright]{Hefferon} for a linear-algebraic introduction.)
 
 \subsection{Further results}
 
@@ -40825,10 +40854,10 @@ version of 27 July 2015.\newline\texttt{\url{http://web.mit.edu/~darij/www/}}
 generalized}, arXiv preprint
 \texttt{\href{http://arxiv.org/abs/1103.4507v1}{arXiv:1103.4507v1}}.
 
-\bibitem[Gri09]{Gri-19.9}%
-\href{http://web.mit.edu/~darij/www/solutions.html}{Darij Grinberg,
-\textit{Solution to Problem 19.9 from \textquotedblleft Problems from the
-Book\textquotedblright}}.
+\bibitem[Gri09]{Gri-19.9}\href{http://web.mit.edu/~darij/www/19-9ML.pdf}{Darij
+Grinberg, \textit{Solution to Problem 19.9 from \textquotedblleft Problems
+from the Book\textquotedblright}}.\newline%
+\texttt{\url{http://web.mit.edu/~darij/www/solutions.html}}
 
 \bibitem[GriRei15]{Reiner}Darij Grinberg, Victor Reiner, \textit{Hopf algebras
 in Combinatorics}, August 25, 2015. arXiv preprint
@@ -40895,6 +40924,11 @@ cluster algebras},\newline\texttt{\url{http://arxiv.org/abs/1306.2415v3}} .
 van Leeuwen, \textit{Schur functions and alternating sums}}, Electronic
 Journal of Combinatorics Vol 11(2) A5 (2006), also available as
 \href{http://arxiv.org/abs/math.CO/0602357}{arXiv:math.CO/0602357}.
+
+\bibitem[LeLeMe16]{LeLeMe16}Eric Lehman, F. Thomson Leighton, Albert R. Meyer,
+\textit{Mathematics for Computer Science}, revised Friday 18th March,
+2016,\newline%
+\texttt{\url{https://courses.csail.mit.edu/6.042/spring16/mcs.pdf}} .
 
 \bibitem[Loehr11]{Loehr-BC}%
 \href{http://www.math.vt.edu/people/nloehr/bijbook.html}{Nicholas A. Loehr,
