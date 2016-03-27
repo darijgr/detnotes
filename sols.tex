@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, March 26, 2016 22:54:52}
+%TCIDATA{LastRevised=Sunday, March 27, 2016 17:52:46}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -3151,9 +3151,25 @@ yields $P-Q=0$. Thus, $P=Q$. Lemma \ref{lem.polyeq} \textbf{(d)} is proven.
 Of course, Lemma \ref{lem.polyeq} can be generalized to polynomials in more
 than two variables (the proof of Lemma \ref{lem.polyeq} \textbf{(c)}
 essentially suggests how to prove this generalization by induction over the
-number of variables) and to polynomials with coefficients from other
-commutative rings (e.g., from $\mathbb{R}$ or $\mathbb{C}$) as long as these
-rings contain $\mathbb{N}$ (and not just a quotient of $\mathbb{N}$) as a subset.
+number of variables).\footnote{If you know what a commutative ring is, you
+might wonder whether Lemma \ref{lem.polyeq} can also be generalized to
+polynomials with coefficients from other commutative rings (e.g., from
+$\mathbb{R}$ or $\mathbb{C}$) instead of rational coefficients. In other
+words, what happens if we replace \textquotedblleft rational
+coefficients\textquotedblright\ by \textquotedblleft coefficients in
+$R$\textquotedblright\ throughout Lemma \ref{lem.polyeq}, where $R$ is some
+commutative ring? (Of course, we will then have to also replace $P\left(
+x\right)  $ by $P\left(  x\cdot1_{R}\right)  $ and so on.)
+\par
+The answer is that Lemma \ref{lem.polyeq} becomes generally false if we don't
+require anything more specific on $R$. However, there are certain conditions
+on $R$ that make Lemma \ref{lem.polyeq} remain valid. For instance, Lemma
+\ref{lem.polyeq} remains valid for $R=\mathbb{Z}$, for $R=\mathbb{R}$ and for
+$R=\mathbb{C}$, as well as for $R$ being any polynomial ring over $\mathbb{Z}%
+$, $\mathbb{Q}$, $\mathbb{R}$ or $\mathbb{C}$. More generally, Lemma
+\ref{lem.polyeq} is valid if $R$ is any field of characteristic $0$ (i.e., any
+field such that the elements $n\cdot1_{R}$ for $n$ ranging over $\mathbb{N}$
+are pairwise distinct), or any subring of such a field.}
 
 \subsection{The Chu-Vandermonde identity}
 
@@ -26640,7 +26656,7 @@ i,j\right)  \right)  \right)  }\\\text{(by
 \sigma\left(  i\right)  ,\sigma\left(  j\right)  \right)  }}%
 _{\substack{=a_{\sigma\left(  \rho\left(  \left(  i,j\right)  \right)
 \right)  }\\\text{(by (\ref{sol.perm.sign.pseudoexplicit.short.b.a3}))}%
-}}\right)  \nonumber\\
+}}\right) \nonumber\\
 &  =\underbrace{\left(  \prod_{\substack{\left(  i,j\right)  \in G;\\\left(
 i,j\right)  \in\operatorname*{Inv}\left(  \sigma\right)  }}\left(
 -a_{\sigma\left(  \rho\left(  \left(  i,j\right)  \right)  \right)  }\right)
@@ -26651,7 +26667,7 @@ G;\\\left(  i,j\right)  \in\operatorname*{Inv}\left(  \sigma\right)
 }}a_{\sigma\left(  \rho\left(  \left(  i,j\right)  \right)  \right)  }\right)
 }\cdot\left(  \prod_{\substack{\left(  i,j\right)  \in G;\\\left(  i,j\right)
 \notin\operatorname*{Inv}\left(  \sigma\right)  }}a_{\sigma\left(  \rho\left(
-\left(  i,j\right)  \right)  \right)  }\right)  \nonumber\\
+\left(  i,j\right)  \right)  \right)  }\right) \nonumber\\
 &  =\underbrace{\left(  -1\right)  ^{\left\vert \left\{  \left(  i,j\right)
 \in G\ \mid\ \left(  i,j\right)  \in\operatorname*{Inv}\left(  \sigma\right)
 \right\}  \right\vert }}_{\substack{=\left(  -1\right)  ^{\left\vert
@@ -26676,7 +26692,7 @@ substituted }T\\\text{for }\rho\left(  \left(  i,j\right)  \right)  \text{ in
 the product,}\\\text{since the map }\rho:G\rightarrow\mathcal{P}_{2}\left(
 \left[  n\right]  \right)  \\\text{is bijective)}}}=\left(  -1\right)
 ^{\sigma}\cdot\prod_{T\in\mathcal{P}_{2}\left(  \left[  n\right]  \right)
-}a_{\sigma\left(  T\right)  }.\label{sol.perm.sign.pseudoexplicit.short.b.u}%
+}a_{\sigma\left(  T\right)  }. \label{sol.perm.sign.pseudoexplicit.short.b.u}%
 \end{align}
 On the other hand,
 \begin{align}
@@ -26695,7 +26711,7 @@ a_{S}\nonumber\\
 \text{since the map }\rho:G\rightarrow\mathcal{P}_{2}\left(  \left[  n\right]
 \right)  \text{ is bijective}%
 \end{array}
-\right)  \nonumber\\
+\right) \nonumber\\
 &  =\prod_{T\in\mathcal{P}_{2}\left(  \left[  n\right]  \right)
 }\underbrace{a_{\sigma_{\ast}\left(  T\right)  }}_{\substack{=a_{\sigma\left(
 T\right)  }\\\text{(since }\sigma_{\ast}\left(  T\right)  =\sigma\left(
@@ -26709,9 +26725,9 @@ T\right)  \\\text{(by the definition of }\sigma_{\ast}\text{))}}}\nonumber\\
 \right)  \rightarrow\mathcal{P}_{2}\left(  \left[  n\right]  \right)  \text{
 is bijective}%
 \end{array}
-\right)  \nonumber\\
+\right) \nonumber\\
 &  =\prod_{T\in\mathcal{P}_{2}\left(  \left[  n\right]  \right)  }%
-a_{\sigma\left(  T\right)  }.\label{sol.perm.sign.pseudoexplicit.short.b.v}%
+a_{\sigma\left(  T\right)  }. \label{sol.perm.sign.pseudoexplicit.short.b.v}%
 \end{align}
 Hence, (\ref{sol.perm.sign.pseudoexplicit.short.b.u}) becomes%
 \[
