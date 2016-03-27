@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, March 26, 2016 21:10:04}
+%TCIDATA{LastRevised=Saturday, March 26, 2016 22:45:12}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -7995,7 +7995,7 @@ countless results involving them. For an example, B\'{o}na's book
 and \cite{Stanley-EC2} are devoted to them. In this section, I shall only give
 a haphazard selection of exercises, which are not relevant to the rest of
 these notes (thus can be skipped at will). I am not planning to provide
-solutions for them.
+solutions for all of them.
 
 \begin{addexercise}
 \label{exeadd.perm.order}Let $n\in\mathbb{N}$. Let $d=\operatorname{lcm}%
@@ -8005,23 +8005,6 @@ solutions for them.
 
 \textbf{(b)} Let $k$ be an integer such that every $\pi\in S_{n}$ satisfies
 $\pi^{k}=\operatorname*{id}$. Show that $d\mid k$.
-\end{addexercise}
-
-\begin{addexercise}
-\label{exeadd.perm.invset}Let $n\in\mathbb{N}$. For every $\sigma\in S_{n}$,
-we let $\operatorname*{Inv}\sigma$ denote the set of all inversions of $S_{n}%
-$. Let $G=\left\{  \left(  i,j\right)  \in\mathbb{Z}^{2}\ \mid\ 1\leq i<j\leq
-n\right\}  $.
-
-A subset $U$ of $G$ is said to be \textit{transitive} if every $a,b,c\in
-\left\{  1,2,\ldots,n\right\}  $ satisfying $\left(  a,b\right)  \in U$ and
-$\left(  b,c\right)  \in U$ also satisfy $\left(  a,c\right)  \in U$.
-
-A subset $U$ of $G$ is said to be \textit{inversive} if there exists a
-$\sigma\in S_{n}$ such that $U=\operatorname*{Inv}\sigma$.
-
-Let $U$ be a subset of $G$. Prove that $U$ is inversive if and only if both
-$U$ and $G\setminus U$ are transitive.
 \end{addexercise}
 
 \begin{addexercise}
@@ -8048,6 +8031,63 @@ $\sigma\times\tau$ has a well-defined sign $\left(  -1\right)  ^{\sigma
 \times\tau}$. Prove that $\left(  -1\right)  ^{\sigma\times\tau}=\left(
 \left(  -1\right)  ^{\sigma}\right)  ^{m}\left(  \left(  -1\right)  ^{\tau
 }\right)  ^{n}$.
+\end{addexercise}
+
+The next two additional exercises concern the inversions of a permutation.
+They use the following definition:
+
+\begin{definition}
+\label{def.Inv}Let $n\in\mathbb{N}$. For every $\sigma\in S_{n}$, we let
+$\operatorname*{Inv}\sigma$ denote the set of all inversions of $\sigma$.
+\end{definition}
+
+Exercise \ref{exe.ps2.2.5} \textbf{(c)} shows that any $n\in\mathbb{N}$ and
+any two permutations $\sigma$ and $\tau$ in $S_{n}$ satisfy the inequality
+$\ell\left(  \sigma\circ\tau\right)  \leq\ell\left(  \sigma\right)
++\ell\left(  \tau\right)  $. In the following exercise, we will see when this
+inequality becomes an equality:
+
+\begin{addexercise}
+\label{exeadd.perm.Inv.sub}Let $n\in\mathbb{N}$. Let $\sigma\in S_{n}$ and
+$\tau\in S_{n}$.
+
+\textbf{(a)} Prove that $\ell\left(  \sigma\circ\tau\right)  =\ell\left(
+\sigma\right)  +\ell\left(  \tau\right)  $ holds if and only if
+$\operatorname*{Inv}\tau\subseteq\operatorname*{Inv}\left(  \sigma\circ
+\tau\right)  $.
+
+\textbf{(b)} Prove that $\ell\left(  \sigma\circ\tau\right)  =\ell\left(
+\sigma\right)  +\ell\left(  \tau\right)  $ holds if and only if
+$\operatorname*{Inv}\left(  \sigma^{-1}\right)  \subseteq\operatorname*{Inv}%
+\left(  \tau^{-1}\circ\sigma^{-1}\right)  $.
+
+\textbf{(c)} Prove that $\operatorname*{Inv}\sigma\subseteq\operatorname*{Inv}%
+\tau$ holds if and only if $\ell\left(  \tau\right)  =\ell\left(  \tau
+\circ\sigma^{-1}\right)  +\ell\left(  \sigma\right)  $.
+
+\textbf{(d)} Assume that $\operatorname*{Inv}\sigma=\operatorname*{Inv}\tau$.
+Prove that $\sigma=\tau$.
+\end{addexercise}
+
+Additional exercise \ref{exeadd.perm.Inv.sub} \textbf{(d)} shows that if two
+permutations in $S_{n}$ have the same set of inversions, then they are equal.
+In other words, a permutation in $S_{n}$ is uniquely determined by its set of
+inversions. The next additional exercise shows what set of inversions a
+permutation can have:
+
+\begin{addexercise}
+\label{exeadd.perm.invset}Let $n\in\mathbb{N}$. Let $G=\left\{  \left(
+i,j\right)  \in\mathbb{Z}^{2}\ \mid\ 1\leq i<j\leq n\right\}  $.
+
+A subset $U$ of $G$ is said to be \textit{transitive} if every $a,b,c\in
+\left\{  1,2,\ldots,n\right\}  $ satisfying $\left(  a,b\right)  \in U$ and
+$\left(  b,c\right)  \in U$ also satisfy $\left(  a,c\right)  \in U$.
+
+A subset $U$ of $G$ is said to be \textit{inversive} if there exists a
+$\sigma\in S_{n}$ such that $U=\operatorname*{Inv}\sigma$.
+
+Let $U$ be a subset of $G$. Prove that $U$ is inversive if and only if both
+$U$ and $G\setminus U$ are transitive.
 \end{addexercise}
 
 \section{\label{chp.det}An introduction to determinants}
@@ -20456,7 +20496,7 @@ This proves Theorem \ref{thm.cramer} \textbf{(b)}.
 \end{verlong}
 
 \begin{verlong}
-XXX
+[TODO: section on Pl\"{u}cker \& Carroll]
 \end{verlong}
 
 [To be continued!]
@@ -28665,6 +28705,760 @@ of this alternative proof to the curious reader. (That said, this alternative
 proof is also the most popular proof, so it is easily found in textbooks.)]
 \end{proof}
 \end{verlong}
+
+\subsection{Solution to Additional exercise \ref{exeadd.perm.Inv.sub}}
+
+We shall now prepare for the solution of Additional exercise
+\ref{exeadd.perm.Inv.sub}. First, we introduce a notation:
+
+\begin{definition}
+\label{def.sol.exeadd.perm.Inv.sub.aXb}If $X$, $X^{\prime}$, $Y$ and
+$Y^{\prime}$ are four sets and if $\alpha:X\rightarrow X^{\prime}$ and
+$\beta:Y\rightarrow Y^{\prime}$ are two maps, then $\alpha\times\beta$ will
+denote the map%
+\begin{align*}
+X\times Y  &  \rightarrow X^{\prime}\times Y^{\prime},\\
+\left(  x,y\right)   &  \mapsto\left(  \alpha\left(  x\right)  ,\beta\left(
+y\right)  \right)  .
+\end{align*}
+
+\end{definition}
+
+\begin{lemma}
+\label{lem.sol.exeadd.perm.Inv.sub.bijbij}Let $n\in\mathbb{N}$. Let $\left[
+n\right]  $ denote the set $\left\{  1,2,\ldots,n\right\}  $. Let $\alpha\in
+S_{n}$ and $\beta\in S_{n}$. Then, the map $\alpha\times\beta:\left[
+n\right]  \times\left[  n\right]  \rightarrow\left[  n\right]  \times\left[
+n\right]  $ is invertible, and its inverse is $\alpha^{-1}\times\beta^{-1}$.
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exeadd.perm.Inv.sub.bijbij}.]Recall that $S_{n}$
+is the set of all permutations of the set $\left\{  1,2,\ldots,n\right\}  $.
+In other words, $S_{n}$ is the set of all permutations of the set $\left[
+n\right]  $ (since $\left\{  1,2,\ldots,n\right\}  =\left[  n\right]  $).
+
+We know that $\alpha\in S_{n}$. In other words, $\alpha$ is a permutation of
+the set $\left[  n\right]  $ (since $S_{n}$ is the set of all permutations of
+the set $\left[  n\right]  $). In other words, $\alpha$ is a bijective map
+$\left[  n\right]  \rightarrow\left[  n\right]  $. Similarly, $\beta$ is a
+bijective map $\left[  n\right]  \rightarrow\left[  n\right]  $. Hence,
+Definition \ref{def.sol.exeadd.perm.Inv.sub.aXb} defines a map $\alpha
+\times\beta:\left[  n\right]  \times\left[  n\right]  \rightarrow\left[
+n\right]  \times\left[  n\right]  $.
+
+The map $\alpha$ is bijective, and thus invertible. Hence, its inverse map
+$\alpha^{-1}:\left[  n\right]  \rightarrow\left[  n\right]  $ is well-defined.
+Similarly, $\beta^{-1}:\left[  n\right]  \rightarrow\left[  n\right]  $ is
+well-defined. Thus, Definition \ref{def.sol.exeadd.perm.Inv.sub.aXb} defines a
+map $\alpha^{-1}\times\beta^{-1}:\left[  n\right]  \times\left[  n\right]
+\rightarrow\left[  n\right]  \times\left[  n\right]  $.
+
+\begin{vershort}
+Now, every $\left(  i,j\right)  \in\left[  n\right]  \times\left[  n\right]  $
+satisfies
+\begin{align*}
+\left(  \left(  \alpha^{-1}\times\beta^{-1}\right)  \circ\left(  \alpha
+\times\beta\right)  \right)  \left(  i,j\right)   &  =\left(  \alpha
+^{-1}\times\beta^{-1}\right)  \left(  \underbrace{\left(  \alpha\times
+\beta\right)  \left(  i,j\right)  }_{\substack{=\left(  \alpha\left(
+i\right)  ,\beta\left(  j\right)  \right)  \\\text{(by the definition of
+}\alpha\times\beta\text{)}}}\right) \\
+&  =\left(  \alpha^{-1}\times\beta^{-1}\right)  \left(  \alpha\left(
+i\right)  ,\beta\left(  j\right)  \right)  =\left(  \underbrace{\alpha
+^{-1}\left(  \alpha\left(  i\right)  \right)  }_{=i},\underbrace{\beta
+^{-1}\left(  \beta\left(  j\right)  \right)  }_{=j}\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\alpha^{-1}%
+\times\beta^{-1}\right) \\
+&  =\left(  i,j\right)  =\operatorname*{id}\left(  i,j\right)  .
+\end{align*}
+Thus, $\left(  \alpha^{-1}\times\beta^{-1}\right)  \circ\left(  \alpha
+\times\beta\right)  =\operatorname*{id}$. Similarly, $\left(  \alpha
+\times\beta\right)  \circ\left(  \alpha^{-1}\times\beta^{-1}\right)
+=\operatorname*{id}$. These two equalities show that the maps $\alpha
+\times\beta$ and $\alpha^{-1}\times\beta^{-1}$ are mutually inverse. Hence,
+the map $\alpha\times\beta:\left[  n\right]  \times\left[  n\right]
+\rightarrow\left[  n\right]  \times\left[  n\right]  $ is invertible, and its
+inverse is $\alpha^{-1}\times\beta^{-1}$. This proves Lemma
+\ref{lem.sol.exeadd.perm.Inv.sub.bijbij}.
+\end{vershort}
+
+\begin{verlong}
+Now, $\left(  \alpha^{-1}\times\beta^{-1}\right)  \circ\left(  \alpha
+\times\beta\right)  =\operatorname*{id}$\ \ \ \ \footnote{\textit{Proof.} Let
+$z\in\left[  n\right]  \times\left[  n\right]  $. Thus, $z=\left(  i,j\right)
+$ for some $\left(  i,j\right)  \in\left[  n\right]  \times\left[  n\right]
+$. Consider this $\left(  i,j\right)  $.
+\par
+We have%
+\begin{align*}
+\left(  \left(  \alpha^{-1}\times\beta^{-1}\right)  \circ\left(  \alpha
+\times\beta\right)  \right)  \left(  \underbrace{z}_{=\left(  i,j\right)
+}\right)   &  =\left(  \left(  \alpha^{-1}\times\beta^{-1}\right)
+\circ\left(  \alpha\times\beta\right)  \right)  \left(  i,j\right) \\
+&  =\left(  \alpha^{-1}\times\beta^{-1}\right)  \left(  \underbrace{\left(
+\alpha\times\beta\right)  \left(  i,j\right)  }_{\substack{=\left(
+\alpha\left(  i\right)  ,\beta\left(  j\right)  \right)  \\\text{(by the
+definition of }\alpha\times\beta\text{)}}}\right) \\
+&  =\left(  \alpha^{-1}\times\beta^{-1}\right)  \left(  \alpha\left(
+i\right)  ,\beta\left(  j\right)  \right)  =\left(  \underbrace{\alpha
+^{-1}\left(  \alpha\left(  i\right)  \right)  }_{=i},\underbrace{\beta
+^{-1}\left(  \beta\left(  j\right)  \right)  }_{=j}\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\alpha^{-1}%
+\times\beta^{-1}\right) \\
+&  =\left(  i,j\right)  =z=\operatorname*{id}\left(  z\right)  .
+\end{align*}
+\par
+Now, forget that we fixed $z$. We thus have shown that $\left(  \left(
+\alpha^{-1}\times\beta^{-1}\right)  \circ\left(  \alpha\times\beta\right)
+\right)  \left(  z\right)  =\operatorname*{id}\left(  z\right)  $ for every
+$z\in\left[  n\right]  \times\left[  n\right]  $. In other words, $\left(
+\alpha^{-1}\times\beta^{-1}\right)  \circ\left(  \alpha\times\beta\right)
+=\operatorname*{id}$, qed.} and $\left(  \alpha\times\beta\right)
+\circ\left(  \alpha^{-1}\times\beta^{-1}\right)  =\operatorname*{id}%
+$\ \ \ \ \footnote{\textit{Proof.} Let $z\in\left[  n\right]  \times\left[
+n\right]  $. Thus, $z=\left(  i,j\right)  $ for some $\left(  i,j\right)
+\in\left[  n\right]  \times\left[  n\right]  $. Consider this $\left(
+i,j\right)  $.
+\par
+We have%
+\begin{align*}
+\left(  \left(  \alpha\times\beta\right)  \circ\left(  \alpha^{-1}\times
+\beta^{-1}\right)  \right)  \left(  \underbrace{z}_{=\left(  i,j\right)
+}\right)   &  =\left(  \left(  \alpha\times\beta\right)  \circ\left(
+\alpha^{-1}\times\beta^{-1}\right)  \right)  \left(  i,j\right) \\
+&  =\left(  \alpha\times\beta\right)  \left(  \underbrace{\left(  \alpha
+^{-1}\times\beta^{-1}\right)  \left(  i,j\right)  }_{\substack{=\left(
+\alpha^{-1}\left(  i\right)  ,\beta^{-1}\left(  j\right)  \right)  \\\text{(by
+the definition of }\alpha^{-1}\times\beta^{-1}\text{)}}}\right) \\
+&  =\left(  \alpha\times\beta\right)  \left(  \alpha^{-1}\left(  i\right)
+,\beta^{-1}\left(  j\right)  \right)  =\left(  \underbrace{\alpha\left(
+\alpha^{-1}\left(  i\right)  \right)  }_{=i},\underbrace{\beta\left(
+\beta^{-1}\left(  j\right)  \right)  }_{=j}\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\alpha\times
+\beta\right) \\
+&  =\left(  i,j\right)  =z=\operatorname*{id}\left(  z\right)  .
+\end{align*}
+\par
+Now, forget that we fixed $z$. We thus have shown that $\left(  \left(
+\alpha\times\beta\right)  \circ\left(  \alpha^{-1}\times\beta^{-1}\right)
+\right)  \left(  z\right)  =\operatorname*{id}\left(  z\right)  $ for every
+$z\in\left[  n\right]  \times\left[  n\right]  $. In other words, $\left(
+\alpha\times\beta\right)  \circ\left(  \alpha^{-1}\times\beta^{-1}\right)
+=\operatorname*{id}$, qed.}. Thus, the maps $\alpha\times\beta$ and
+$\alpha^{-1}\times\beta^{-1}$ are mutually inverse (since $\left(  \alpha
+^{-1}\times\beta^{-1}\right)  \circ\left(  \alpha\times\beta\right)
+=\operatorname*{id}$ and $\left(  \alpha\times\beta\right)  \circ\left(
+\alpha^{-1}\times\beta^{-1}\right)  =\operatorname*{id}$). Hence, the map
+$\alpha\times\beta:\left[  n\right]  \times\left[  n\right]  \rightarrow
+\left[  n\right]  \times\left[  n\right]  $ is invertible, and its inverse is
+$\alpha^{-1}\times\beta^{-1}$. This proves Lemma
+\ref{lem.sol.exeadd.perm.Inv.sub.bijbij}.
+\end{verlong}
+\end{proof}
+
+\begin{lemma}
+\label{lem.sol.exeadd.perm.Inv.sub.subset}Let $n\in\mathbb{N}$. Let $\sigma\in
+S_{n}$ and $\tau\in S_{n}$. Then:
+
+\textbf{(a)} We have $\operatorname*{Inv}\left(  \sigma\circ\tau\right)
+\setminus\operatorname*{Inv}\tau\subseteq\left(  \tau\times\tau\right)
+^{-1}\left(  \operatorname*{Inv}\sigma\right)  $. (Here, $\tau\times\tau$ is
+defined as in Definition \ref{def.sol.exeadd.perm.Inv.sub.aXb}.)
+
+\textbf{(b)} We have $\left\vert \operatorname*{Inv}\left(  \sigma\circ
+\tau\right)  \setminus\operatorname*{Inv}\tau\right\vert \leq\left\vert
+\operatorname*{Inv}\sigma\right\vert $.
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exeadd.perm.Inv.sub.subset}.]Let $\left[
+n\right]  $ denote the set $\left\{  1,2,\ldots,n\right\}  $. Lemma
+\ref{lem.sol.exeadd.perm.Inv.sub.bijbij} (applied to $\alpha=\tau$ and
+$\beta=\tau$) yields that the map $\tau\times\tau:\left[  n\right]
+\times\left[  n\right]  \rightarrow\left[  n\right]  \times\left[  n\right]  $
+is invertible, and its inverse is $\tau^{-1}\times\tau^{-1}$. Thus, $\left(
+\tau\times\tau\right)  ^{-1}=\tau^{-1}\times\tau^{-1}$.
+
+\textbf{(a)} Let $c\in\operatorname*{Inv}\left(  \sigma\circ\tau\right)
+\setminus\operatorname*{Inv}\tau$. Thus, $c\in\operatorname*{Inv}\left(
+\sigma\circ\tau\right)  $ but $c\notin\operatorname*{Inv}\tau$.
+
+We have $c\in\operatorname*{Inv}\left(  \sigma\circ\tau\right)  $. In other
+words, $c$ is an inversion of $\sigma\circ\tau$ (since $\operatorname*{Inv}%
+\left(  \sigma\circ\tau\right)  $ is the set of all inversions of $\sigma
+\circ\tau$). In other words, $c$ is a pair $\left(  i,j\right)  $ of integers
+satisfying $1\leq i<j\leq n$ and $\left(  \sigma\circ\tau\right)  \left(
+i\right)  >\left(  \sigma\circ\tau\right)  \left(  j\right)  $ (by the
+definition of an \textquotedblleft inversion of $\sigma\circ\tau
+$\textquotedblright). In other words, there exists a pair $\left(  i,j\right)
+$ of integers satisfying $1\leq i<j\leq n$, $\left(  \sigma\circ\tau\right)
+\left(  i\right)  >\left(  \sigma\circ\tau\right)  \left(  j\right)  $ and
+$c=\left(  i,j\right)  $. Let us denote this pair $\left(  i,j\right)  $ by
+$\left(  u,v\right)  $. Thus, $\left(  u,v\right)  $ is a pair of integers
+satisfying $1\leq u<v\leq n$, $\left(  \sigma\circ\tau\right)  \left(
+u\right)  >\left(  \sigma\circ\tau\right)  \left(  v\right)  $ and $c=\left(
+u,v\right)  $.
+
+But $\tau\left(  u\right)  <\tau\left(  v\right)  $%
+\ \ \ \ \footnote{\textit{Proof.} Assume the contrary. Thus, $\tau\left(
+u\right)  \geq\tau\left(  v\right)  $. But $\tau\in S_{n}$. In other words,
+$\tau$ is a permutation of the set $\left\{  1,2,\ldots,n\right\}  $ (since
+$S_{n}$ is the set of all permutations of the set $\left\{  1,2,\ldots
+,n\right\}  $). Thus, the map $\tau$ is bijective, and therefore also
+injective. But $u<v$, so that $u\neq v$ and therefore $\tau\left(  u\right)
+\neq\tau\left(  v\right)  $ (since $\tau$ is injective). Combining this with
+$\tau\left(  u\right)  \geq\tau\left(  v\right)  $, we obtain $\tau\left(
+u\right)  >\tau\left(  v\right)  $.
+\par
+Now, we know that $\left(  u,v\right)  $ is a pair of integers and satisfies
+$1\leq u<v\leq n$ and $\tau\left(  u\right)  >\tau\left(  v\right)  $. In
+other words, $\left(  u,v\right)  $ is a pair $\left(  i,j\right)  $ of
+integers satisfying $1\leq i<j\leq n$ and $\tau\left(  i\right)  >\tau\left(
+j\right)  $. In other words, $\left(  u,v\right)  $ is an inversion of $\tau$
+(by the definition of an \textquotedblleft inversion of $\tau$%
+\textquotedblright). In other words, $\left(  u,v\right)  \in
+\operatorname*{Inv}\tau$ (since $\operatorname*{Inv}\tau$ is the set of all
+inversions of $\tau$). But this contradicts $\left(  u,v\right)
+=c\notin\operatorname*{Inv}\tau$. This contradiction shows that our assumption
+was false, qed.}. Also, $1\leq\tau\left(  u\right)  $ (since $\tau\left(
+u\right)  \in\left\{  1,2,\ldots,n\right\}  $) and $\tau\left(  v\right)  \leq
+n$ (since $\tau\left(  v\right)  \in\left\{  1,2,\ldots,n\right\}  $).
+Finally, $\sigma\left(  \tau\left(  u\right)  \right)  =\left(  \sigma
+\circ\tau\right)  \left(  u\right)  >\left(  \sigma\circ\tau\right)  \left(
+v\right)  =\sigma\left(  \tau\left(  v\right)  \right)  $.
+
+Thus, $\left(  \tau\left(  u\right)  ,\tau\left(  v\right)  \right)  $ is a
+pair of integers satisfying $1\leq\tau\left(  u\right)  <\tau\left(  v\right)
+\leq n$ and $\sigma\left(  \tau\left(  u\right)  \right)  >\sigma\left(
+\tau\left(  v\right)  \right)  $. In other words, $\left(  \tau\left(
+u\right)  ,\tau\left(  v\right)  \right)  $ is a pair $\left(  i,j\right)  $
+of integers satisfying $1\leq i<j\leq n$ and $\sigma\left(  i\right)
+>\sigma\left(  j\right)  $. In other words, $\left(  \tau\left(  u\right)
+,\tau\left(  v\right)  \right)  $ is an inversion of $\sigma$ (by the
+definition of an \textquotedblleft inversion of $\sigma$\textquotedblright).
+In other words, $\left(  \tau\left(  u\right)  ,\tau\left(  v\right)  \right)
+\in\operatorname*{Inv}\sigma$ (since $\operatorname*{Inv}\sigma$ is the set of
+all inversions of $\sigma$).
+
+Now, $c=\left(  u,v\right)  \in\left[  n\right]  \times\left[  n\right]  $
+(since both $u$ and $v$ belong to $\left[  n\right]  $), and we have
+\begin{align*}
+\left(  \tau\times\tau\right)  \left(  \underbrace{c}_{=\left(  u,v\right)
+}\right)   &  =\left(  \tau\times\tau\right)  \left(  u,v\right)  =\left(
+\tau\left(  u\right)  ,\tau\left(  v\right)  \right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\tau\times\tau\right)
+\\
+&  \in\operatorname*{Inv}\sigma,
+\end{align*}
+so that $c\in\left(  \tau\times\tau\right)  ^{-1}\left(  \operatorname*{Inv}%
+\sigma\right)  $.
+
+Now, forget that we fixed $c$. We thus have shown that $c\in\left(  \tau
+\times\tau\right)  ^{-1}\left(  \operatorname*{Inv}\sigma\right)  $ for every
+$c\in\operatorname*{Inv}\left(  \sigma\circ\tau\right)  \setminus
+\operatorname*{Inv}\tau$. In other words, $\operatorname*{Inv}\left(
+\sigma\circ\tau\right)  \setminus\operatorname*{Inv}\tau\subseteq\left(
+\tau\times\tau\right)  ^{-1}\left(  \operatorname*{Inv}\sigma\right)  $. This
+proves Lemma \ref{lem.sol.exeadd.perm.Inv.sub.subset} \textbf{(a)}.
+
+\textbf{(b)} Lemma \ref{lem.sol.exeadd.perm.Inv.sub.subset} \textbf{(a)}
+yields $\operatorname*{Inv}\left(  \sigma\circ\tau\right)  \setminus
+\operatorname*{Inv}\tau\subseteq\left(  \tau\times\tau\right)  ^{-1}\left(
+\operatorname*{Inv}\sigma\right)  $. Thus,%
+\[
+\left\vert \operatorname*{Inv}\left(  \sigma\circ\tau\right)  \setminus
+\operatorname*{Inv}\tau\right\vert \leq\left\vert \left(  \tau\times
+\tau\right)  ^{-1}\left(  \operatorname*{Inv}\sigma\right)  \right\vert
+=\left\vert \operatorname*{Inv}\sigma\right\vert
+\]
+(since $\tau\times\tau$ is a bijection (since the map $\tau\times\tau$ is
+invertible)). This proves Lemma \ref{lem.sol.exeadd.perm.Inv.sub.subset}
+\textbf{(b)}.
+\end{proof}
+
+\begin{lemma}
+\label{lem.sol.exeadd.perm.Inv.sub.l}Let $n\in\mathbb{N}$. Let $\sigma\in
+S_{n}$. Then, $\ell\left(  \sigma\right)  =\left\vert \operatorname*{Inv}%
+\sigma\right\vert $.
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exeadd.perm.Inv.sub.l}.]We have%
+\begin{align*}
+\ell\left(  \sigma\right)   &  =\left(  \text{the number of inversions of
+}\sigma\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }%
+\ell\left(  \sigma\right)  \right) \\
+&  =\left\vert \underbrace{\left(  \text{the set of all inversions of }%
+\sigma\right)  }_{\substack{=\operatorname*{Inv}\left(  \sigma\right)
+\\\text{(since }\operatorname*{Inv}\left(  \sigma\right)  \text{ is the set of
+all inversions of }\sigma\text{)}}}\right\vert \\
+&  =\left\vert \operatorname*{Inv}\left(  \sigma\right)  \right\vert .
+\end{align*}
+This proves Lemma \ref{lem.sol.exeadd.perm.Inv.sub.l}.
+\end{proof}
+
+Before we step to the solution to Exercise \ref{exeadd.perm.Inv.sub}, let us
+make a short digression and use Lemma \ref{lem.sol.exeadd.perm.Inv.sub.subset}
+to give a new solution of Exercise \ref{exe.ps2.2.5} \textbf{(c)}:
+
+\begin{proof}
+[Second solution to Exercise \ref{exe.ps2.2.5} \textbf{(c)}.]Let $\sigma\in
+S_{n}$ and $\tau\in S_{n}$. We have $\left\vert A\setminus B\right\vert
+\geq\left\vert A\right\vert -\left\vert B\right\vert $ for any two finite sets
+$A$ and $B$\ \ \ \ \footnote{\textit{Proof.} Let $A$ and $B$ be two finite
+sets. Then, $A\setminus B=A\setminus\left(  A\cap B\right)  $, so that
+\begin{align*}
+\left\vert A\setminus B\right\vert  &  =\left\vert A\setminus\left(  A\cap
+B\right)  \right\vert =\left\vert A\right\vert -\underbrace{\left\vert A\cap
+B\right\vert }_{\substack{\leq\left\vert B\right\vert \\\text{(since }A\cap
+B\subseteq B\text{)}}}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }A\cap
+B\subseteq A\right) \\
+&  \geq\left\vert A\right\vert -\left\vert B\right\vert ,
+\end{align*}
+qed.}. Applying this to $A=\operatorname*{Inv}\left(  \sigma\circ\tau\right)
+$ and $B=\operatorname*{Inv}\tau$, we obtain $\left\vert \operatorname*{Inv}%
+\left(  \sigma\circ\tau\right)  \setminus\operatorname*{Inv}\tau\right\vert
+\geq\left\vert \operatorname*{Inv}\left(  \sigma\circ\tau\right)  \right\vert
+-\left\vert \operatorname*{Inv}\tau\right\vert $. Thus,%
+\begin{align*}
+\left\vert \operatorname*{Inv}\left(  \sigma\circ\tau\right)  \right\vert
+-\left\vert \operatorname*{Inv}\tau\right\vert  &  \leq\left\vert
+\operatorname*{Inv}\left(  \sigma\circ\tau\right)  \setminus
+\operatorname*{Inv}\tau\right\vert \leq\left\vert \operatorname*{Inv}%
+\sigma\right\vert \ \ \ \ \ \ \ \ \ \ \left(  \text{by Lemma
+\ref{lem.sol.exeadd.perm.Inv.sub.subset} \textbf{(b)}}\right) \\
+&  =\ell\left(  \sigma\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Lemma
+\ref{lem.sol.exeadd.perm.Inv.sub.l}}\right)  .
+\end{align*}
+Now,%
+\[
+\underbrace{\ell\left(  \sigma\circ\tau\right)  }_{\substack{=\left\vert
+\operatorname*{Inv}\left(  \sigma\circ\tau\right)  \right\vert \\\text{(by
+Lemma \ref{lem.sol.exeadd.perm.Inv.sub.l}}\\\text{(applied to }\sigma\circ
+\tau\text{ instead of }\sigma\text{))}}}-\underbrace{\ell\left(  \tau\right)
+}_{\substack{=\left\vert \operatorname*{Inv}\tau\right\vert \\\text{(by Lemma
+\ref{lem.sol.exeadd.perm.Inv.sub.l}}\\\text{(applied to }\tau\text{ instead of
+}\sigma\text{))}}}=\left\vert \operatorname*{Inv}\left(  \sigma\circ
+\tau\right)  \right\vert -\left\vert \operatorname*{Inv}\tau\right\vert
+\leq\ell\left(  \sigma\right)  .
+\]
+In other words, $\ell\left(  \sigma\circ\tau\right)  \leq\ell\left(
+\sigma\right)  +\ell\left(  \tau\right)  $. Thus, Exercise \ref{exe.ps2.2.5}
+\textbf{(c)} is solved again.
+\end{proof}
+
+Now, let us finally solve Exercise \ref{exeadd.perm.Inv.sub}:
+
+\begin{proof}
+[Solution to Exercise \ref{exeadd.perm.Inv.sub}.]\textbf{(a)} We first observe
+that%
+\begin{equation}
+\underbrace{\ell\left(  \sigma\circ\tau\right)  }_{\substack{=\left\vert
+\operatorname*{Inv}\left(  \sigma\circ\tau\right)  \right\vert \\\text{(by
+Lemma \ref{lem.sol.exeadd.perm.Inv.sub.l}}\\\text{(applied to }\sigma\circ
+\tau\text{ instead of }\sigma\text{))}}}-\underbrace{\ell\left(  \tau\right)
+}_{\substack{=\left\vert \operatorname*{Inv}\tau\right\vert \\\text{(by Lemma
+\ref{lem.sol.exeadd.perm.Inv.sub.l}}\\\text{(applied to }\tau\text{ instead of
+}\sigma\text{))}}}=\left\vert \operatorname*{Inv}\left(  \sigma\circ
+\tau\right)  \right\vert -\left\vert \operatorname*{Inv}\tau\right\vert .
+\label{sol.exeadd.perm.Inv.sub.a.triv}%
+\end{equation}
+
+
+Let us now prove the logical implication%
+\begin{equation}
+\left(  \ell\left(  \sigma\circ\tau\right)  =\ell\left(  \sigma\right)
++\ell\left(  \tau\right)  \right)  \ \Longrightarrow\ \left(
+\operatorname*{Inv}\tau\subseteq\operatorname*{Inv}\left(  \sigma\circ
+\tau\right)  \right)  . \label{sol.exeadd.perm.Inv.sub.a.1}%
+\end{equation}
+
+
+\textit{Proof of (\ref{sol.exeadd.perm.Inv.sub.a.1}):} Assume that
+$\ell\left(  \sigma\circ\tau\right)  =\ell\left(  \sigma\right)  +\ell\left(
+\tau\right)  $ holds. We will prove that $\operatorname*{Inv}\tau
+\subseteq\operatorname*{Inv}\left(  \sigma\circ\tau\right)  $.
+
+If two finite sets $A$ and $B$ satisfy $\left\vert A\setminus B\right\vert
+\leq\left\vert A\right\vert -\left\vert B\right\vert $, then%
+\begin{equation}
+B\subseteq A \label{sol.exeadd.perm.Inv.sub.a.1.pf.1}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.exeadd.perm.Inv.sub.a.1.pf.1}):} Let $A$
+and $B$ be two finite sets satisfying $\left\vert A\setminus B\right\vert
+\leq\left\vert A\right\vert -\left\vert B\right\vert $.
+\par
+We have $A\setminus\left(  A\cap B\right)  =A\setminus B$, so that $\left\vert
+A\setminus\left(  A\cap B\right)  \right\vert =\left\vert A\setminus
+B\right\vert \leq\left\vert A\right\vert -\left\vert B\right\vert $. Adding
+$\left\vert B\right\vert $ to both sides of this inequality, we obtain
+$\left\vert A\setminus\left(  A\cap B\right)  \right\vert +\left\vert
+B\right\vert \leq\left\vert A\right\vert $. Hence,%
+\[
+\left\vert A\right\vert \geq\underbrace{\left\vert A\setminus\left(  A\cap
+B\right)  \right\vert }_{\substack{=\left\vert A\right\vert -\left\vert A\cap
+B\right\vert \\\text{(since }A\cap B\subseteq A\text{)}}}+\left\vert
+B\right\vert =\left\vert A\right\vert -\left\vert A\cap B\right\vert
++\left\vert B\right\vert .
+\]
+Subtracting $\left\vert A\right\vert $ from both sides of this inequality, we
+obtain $0\geq-\left\vert A\cap B\right\vert +\left\vert B\right\vert $. In
+other words, $\left\vert A\cap B\right\vert \geq\left\vert B\right\vert $.
+Also, clearly, $A\cap B$ is a subset of $B$.
+\par
+But $B$ is a finite set. Hence, the only subset of $B$ having size
+$\geq\left\vert B\right\vert $ is $B$ itself. In other words, if $C$ is a
+subset of $B$ satisfying $\left\vert C\right\vert \geq\left\vert B\right\vert
+$, then $C=B$. Applying this to $C=A\cap B$, we obtain $A\cap B=B$ (since
+$A\cap B$ is a subset of $B$ satisfying $\left\vert A\cap B\right\vert
+\geq\left\vert B\right\vert $). Hence, $B=A\cap B\subseteq A$. This proves
+(\ref{sol.exeadd.perm.Inv.sub.a.1.pf.1}).}.
+
+Now, Lemma \ref{lem.sol.exeadd.perm.Inv.sub.subset} \textbf{(b)} yields
+\begin{align*}
+\left\vert \operatorname*{Inv}\left(  \sigma\circ\tau\right)  \setminus
+\operatorname*{Inv}\tau\right\vert  &  \leq\left\vert \operatorname*{Inv}%
+\sigma\right\vert =\ell\left(  \sigma\right)  \ \ \ \ \ \ \ \ \ \ \left(
+\text{by Lemma \ref{lem.sol.exeadd.perm.Inv.sub.l}}\right) \\
+&  =\ell\left(  \sigma\circ\tau\right)  -\ell\left(  \tau\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\ell\left(  \sigma\circ\tau\right)
+=\ell\left(  \sigma\right)  +\ell\left(  \tau\right)  \right) \\
+&  =\left\vert \operatorname*{Inv}\left(  \sigma\circ\tau\right)  \right\vert
+-\left\vert \operatorname*{Inv}\tau\right\vert \ \ \ \ \ \ \ \ \ \ \left(
+\text{by (\ref{sol.exeadd.perm.Inv.sub.a.triv})}\right)  .
+\end{align*}
+Thus, (\ref{sol.exeadd.perm.Inv.sub.a.1.pf.1}) (applied to
+$A=\operatorname*{Inv}\left(  \sigma\circ\tau\right)  $ and
+$B=\operatorname*{Inv}\tau$) yields $\operatorname*{Inv}\tau\subseteq
+\operatorname*{Inv}\left(  \sigma\circ\tau\right)  $.
+
+Now, forget our assumption that $\ell\left(  \sigma\circ\tau\right)
+=\ell\left(  \sigma\right)  +\ell\left(  \tau\right)  $. We thus have proven
+that if $\ell\left(  \sigma\circ\tau\right)  =\ell\left(  \sigma\right)
++\ell\left(  \tau\right)  $, then $\operatorname*{Inv}\tau\subseteq
+\operatorname*{Inv}\left(  \sigma\circ\tau\right)  $. In other words, we have
+proven the implication (\ref{sol.exeadd.perm.Inv.sub.a.1}).
+
+Let us next prove the logical implication%
+\begin{equation}
+\left(  \operatorname*{Inv}\tau\subseteq\operatorname*{Inv}\left(  \sigma
+\circ\tau\right)  \right)  \ \Longrightarrow\ \left(  \ell\left(  \sigma
+\circ\tau\right)  =\ell\left(  \sigma\right)  +\ell\left(  \tau\right)
+\right)  . \label{sol.exeadd.perm.Inv.sub.a.2}%
+\end{equation}
+
+
+\textit{Proof of (\ref{sol.exeadd.perm.Inv.sub.a.2}):} Assume that
+$\operatorname*{Inv}\tau\subseteq\operatorname*{Inv}\left(  \sigma\circ
+\tau\right)  $ holds. We will prove that $\ell\left(  \sigma\circ\tau\right)
+=\ell\left(  \sigma\right)  +\ell\left(  \tau\right)  $.
+
+Consider the map $\tau\times\tau$ defined as in Definition
+\ref{def.sol.exeadd.perm.Inv.sub.aXb}. Let $\left[  n\right]  $ denote the set
+$\left\{  1,2,\ldots,n\right\}  $. Lemma
+\ref{lem.sol.exeadd.perm.Inv.sub.bijbij} (applied to $\alpha=\tau$ and
+$\beta=\tau$) yields that the map $\tau\times\tau:\left[  n\right]
+\times\left[  n\right]  \rightarrow\left[  n\right]  \times\left[  n\right]  $
+is invertible, and its inverse is $\tau^{-1}\times\tau^{-1}$. Thus, $\left(
+\tau\times\tau\right)  ^{-1}=\tau^{-1}\times\tau^{-1}$.
+
+Lemma \ref{lem.sol.exeadd.perm.Inv.sub.subset} \textbf{(a)} shows that%
+\begin{equation}
+\operatorname*{Inv}\left(  \sigma\circ\tau\right)  \setminus
+\operatorname*{Inv}\tau\subseteq\left(  \tau\times\tau\right)  ^{-1}\left(
+\operatorname*{Inv}\sigma\right)  . \label{sol.exeadd.perm.Inv.sub.a.2.pf.1}%
+\end{equation}
+We shall now prove the reverse inclusion, i.e., we shall prove that $\left(
+\tau\times\tau\right)  ^{-1}\left(  \operatorname*{Inv}\sigma\right)
+\subseteq\operatorname*{Inv}\left(  \sigma\circ\tau\right)  \setminus
+\operatorname*{Inv}\tau$.
+
+Indeed, fix $c\in\left(  \tau\times\tau\right)  ^{-1}\left(
+\operatorname*{Inv}\sigma\right)  $. Thus, $c\in\left[  n\right]
+\times\left[  n\right]  $ and $\left(  \tau\times\tau\right)  \left(
+c\right)  \in\operatorname*{Inv}\sigma$.
+
+We have $\left(  \tau\times\tau\right)  \left(  c\right)  \in
+\operatorname*{Inv}\sigma$. In other words, $\left(  \tau\times\tau\right)
+\left(  c\right)  $ is an inversion of $\sigma$ (since $\operatorname*{Inv}%
+\sigma$ is the set of all inversions of $\sigma$). In other words, $\left(
+\tau\times\tau\right)  \left(  c\right)  $ is a pair $\left(  i,j\right)  $ of
+integers satisfying $1\leq i<j\leq n$ and $\sigma\left(  i\right)
+>\sigma\left(  j\right)  $ (by the definition of an \textquotedblleft
+inversion of $\sigma$\textquotedblright). In other words, there exists a pair
+$\left(  i,j\right)  $ of integers satisfying $1\leq i<j\leq n$,
+$\sigma\left(  i\right)  >\sigma\left(  j\right)  $ and $\left(  \tau
+\times\tau\right)  \left(  c\right)  =\left(  i,j\right)  $. Let us denote
+this pair $\left(  i,j\right)  $ by $\left(  u,v\right)  $. Thus, $\left(
+u,v\right)  $ is a pair of integers satisfying $1\leq u<v\leq n$,
+$\sigma\left(  u\right)  >\sigma\left(  v\right)  $ and $\left(  \tau
+\times\tau\right)  \left(  c\right)  =\left(  u,v\right)  $.
+
+From $\left(  \tau\times\tau\right)  \left(  c\right)  =\left(  u,v\right)  $,
+we obtain%
+\begin{align*}
+c  &  =\underbrace{\left(  \tau\times\tau\right)  ^{-1}}_{=\tau^{-1}\times
+\tau^{-1}}\left(  u,v\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since the map
+}\tau\times\tau\text{ is invertible}\right) \\
+&  =\left(  \tau^{-1}\times\tau^{-1}\right)  \left(  u,v\right)  =\left(
+\tau^{-1}\left(  u\right)  ,\tau^{-1}\left(  v\right)  \right)
+\end{align*}
+(by the definition of $\tau^{-1}\times\tau^{-1}$).
+
+Notice that%
+\begin{equation}
+\left(  \sigma\circ\tau\right)  \left(  \tau^{-1}\left(  v\right)  \right)
+=\sigma\left(  \underbrace{\tau\left(  \tau^{-1}\left(  v\right)  \right)
+}_{=v}\right)  =\sigma\left(  v\right)
+\label{sol.exeadd.perm.Inv.sub.a.2.pf.4}%
+\end{equation}
+and%
+\begin{align}
+\left(  \sigma\circ\tau\right)  \left(  \tau^{-1}\left(  u\right)  \right)
+&  =\sigma\left(  \underbrace{\tau\left(  \tau^{-1}\left(  u\right)  \right)
+}_{=u}\right)  =\sigma\left(  u\right) \nonumber\\
+&  >\sigma\left(  v\right)  =\left(  \sigma\circ\tau\right)  \left(  \tau
+^{-1}\left(  v\right)  \right)  \label{sol.exeadd.perm.Inv.sub.a.2.pf.5}%
+\end{align}
+(by (\ref{sol.exeadd.perm.Inv.sub.a.2.pf.4})).
+
+Let us now prove that $\tau^{-1}\left(  u\right)  <\tau^{-1}\left(  v\right)
+$. Indeed, let us assume the contrary. Thus, $\tau^{-1}\left(  u\right)
+\geq\tau^{-1}\left(  v\right)  $. But $u\neq v$ (since $u<v$), so that
+$\tau^{-1}\left(  u\right)  \neq\tau^{-1}\left(  v\right)  $. Combined with
+$\tau^{-1}\left(  u\right)  \geq\tau^{-1}\left(  v\right)  $, this yields
+$\tau^{-1}\left(  u\right)  >\tau^{-1}\left(  v\right)  $. In other words,
+$\tau^{-1}\left(  v\right)  <\tau^{-1}\left(  u\right)  $. Also, $1\leq
+\tau^{-1}\left(  v\right)  $ (since $\tau^{-1}\left(  v\right)  \in\left\{
+1,2,\ldots,n\right\}  $) and $\tau^{-1}\left(  u\right)  \leq n$ (since
+$\tau^{-1}\left(  u\right)  \in\left\{  1,2,\ldots,n\right\}  $). Finally,
+$\tau\left(  \tau^{-1}\left(  v\right)  \right)  =v>u=\tau\left(  \tau
+^{-1}\left(  u\right)  \right)  $.
+
+Thus, $\left(  \tau^{-1}\left(  v\right)  ,\tau^{-1}\left(  u\right)  \right)
+$ is a pair of integers satisfying $1\leq\tau^{-1}\left(  v\right)  <\tau
+^{-1}\left(  u\right)  \leq n$ and $\tau\left(  \tau^{-1}\left(  v\right)
+\right)  >\tau\left(  \tau^{-1}\left(  u\right)  \right)  $. In other words,
+$\left(  \tau^{-1}\left(  v\right)  ,\tau^{-1}\left(  u\right)  \right)  $ is
+a pair $\left(  i,j\right)  $ of integers satisfying $1\leq i<j\leq n$ and
+$\tau\left(  i\right)  >\tau\left(  j\right)  $. In other words, $\left(
+\tau^{-1}\left(  v\right)  ,\tau^{-1}\left(  u\right)  \right)  $ is an
+inversion of $\tau$ (by the definition of an \textquotedblleft inversion of
+$\tau$\textquotedblright). In other words, $\left(  \tau^{-1}\left(  v\right)
+,\tau^{-1}\left(  u\right)  \right)  \in\operatorname*{Inv}\tau$ (since
+$\operatorname*{Inv}\tau$ is the set of all inversions of $\tau$). Hence,
+$\left(  \tau^{-1}\left(  v\right)  ,\tau^{-1}\left(  u\right)  \right)
+\in\operatorname*{Inv}\tau\subseteq\operatorname*{Inv}\left(  \sigma\circ
+\tau\right)  $. In other words, $\left(  \tau^{-1}\left(  v\right)  ,\tau
+^{-1}\left(  u\right)  \right)  $ is an inversion of $\sigma\circ\tau$ (since
+$\operatorname*{Inv}\left(  \sigma\circ\tau\right)  $ is the set of all
+inversions of $\sigma\circ\tau$). In other words, $\left(  \tau^{-1}\left(
+v\right)  ,\tau^{-1}\left(  u\right)  \right)  $ is a pair $\left(
+i,j\right)  $ of integers satisfying $1\leq i<j\leq n$ and $\left(
+\sigma\circ\tau\right)  \left(  i\right)  >\left(  \sigma\circ\tau\right)
+\left(  j\right)  $ (by the definition of an \textquotedblleft inversion of
+$\sigma\circ\tau$\textquotedblright). In other words, $\left(  \tau
+^{-1}\left(  v\right)  ,\tau^{-1}\left(  u\right)  \right)  $ is a pair of
+integers satisfying $1\leq\tau^{-1}\left(  v\right)  <\tau^{-1}\left(
+u\right)  \leq n$ and $\left(  \sigma\circ\tau\right)  \left(  \tau
+^{-1}\left(  v\right)  \right)  >\left(  \sigma\circ\tau\right)  \left(
+\tau^{-1}\left(  u\right)  \right)  $. But $\left(  \sigma\circ\tau\right)
+\left(  \tau^{-1}\left(  v\right)  \right)  >\left(  \sigma\circ\tau\right)
+\left(  \tau^{-1}\left(  u\right)  \right)  >\left(  \sigma\circ\tau\right)
+\left(  \tau^{-1}\left(  v\right)  \right)  $ (by
+(\ref{sol.exeadd.perm.Inv.sub.a.2.pf.5})), which is absurd. This contradiction
+proves that our assumption was wrong. Hence, $\tau^{-1}\left(  u\right)
+<\tau^{-1}\left(  v\right)  $ is proven.
+
+Now, $1\leq\tau^{-1}\left(  u\right)  $ (since $\tau^{-1}\left(  u\right)
+\in\left\{  1,2,\ldots,n\right\}  $) and $\tau^{-1}\left(  v\right)  \leq n$
+(since $\tau^{-1}\left(  v\right)  \in\left\{  1,2,\ldots,n\right\}  $).
+Finally, recall that (\ref{sol.exeadd.perm.Inv.sub.a.2.pf.5}) holds. Thus,
+$\left(  \tau^{-1}\left(  u\right)  ,\tau^{-1}\left(  v\right)  \right)  $ is
+a pair of integers satisfying $1\leq\tau^{-1}\left(  u\right)  <\tau
+^{-1}\left(  v\right)  \leq n$ and $\left(  \sigma\circ\tau\right)  \left(
+\tau^{-1}\left(  u\right)  \right)  >\left(  \sigma\circ\tau\right)  \left(
+\tau^{-1}\left(  v\right)  \right)  $. In other words, $\left(  \tau
+^{-1}\left(  u\right)  ,\tau^{-1}\left(  v\right)  \right)  $ is a pair
+$\left(  i,j\right)  $ of integers satisfying $1\leq i<j\leq n$ and $\left(
+\sigma\circ\tau\right)  \left(  i\right)  >\left(  \sigma\circ\tau\right)
+\left(  j\right)  $. In other words, $\left(  \tau^{-1}\left(  u\right)
+,\tau^{-1}\left(  v\right)  \right)  $ is an inversion of $\sigma\circ\tau$
+(by the definition of an \textquotedblleft inversion of $\sigma\circ\tau
+$\textquotedblright). In other words, $\left(  \tau^{-1}\left(  u\right)
+,\tau^{-1}\left(  v\right)  \right)  \in\operatorname*{Inv}\left(  \sigma
+\circ\tau\right)  $ (since $\operatorname*{Inv}\left(  \sigma\circ\tau\right)
+$ is the set of all inversions of $\sigma\circ\tau$).
+
+Hence, $c=\left(  \tau^{-1}\left(  u\right)  ,\tau^{-1}\left(  v\right)
+\right)  \in\operatorname*{Inv}\left(  \sigma\circ\tau\right)  $.
+
+Let us now prove that $c\notin\operatorname*{Inv}\tau$. Indeed, assume the
+contrary. Thus, $c\in\operatorname*{Inv}\tau$. Thus, $\left(  \tau^{-1}\left(
+u\right)  ,\tau^{-1}\left(  v\right)  \right)  =c\in\operatorname*{Inv}\tau$.
+In other words, $\left(  \tau^{-1}\left(  u\right)  ,\tau^{-1}\left(
+v\right)  \right)  $ is an inversion of $\tau$ (since $\operatorname*{Inv}%
+\tau$ is the set of all inversions of $\tau$). In other words, $\left(
+\tau^{-1}\left(  u\right)  ,\tau^{-1}\left(  v\right)  \right)  $ is a pair
+$\left(  i,j\right)  $ of integers satisfying $1\leq i<j\leq n$ and
+$\tau\left(  i\right)  >\tau\left(  j\right)  $ (by the definition of an
+\textquotedblleft inversion of $\tau$\textquotedblright). In other words,
+$\left(  \tau^{-1}\left(  u\right)  ,\tau^{-1}\left(  v\right)  \right)  $ is
+a pair of integers satisfying $1\leq\tau^{-1}\left(  u\right)  <\tau
+^{-1}\left(  v\right)  \leq n$ and $\tau\left(  \tau^{-1}\left(  u\right)
+\right)  >\tau\left(  \tau^{-1}\left(  v\right)  \right)  $. But $\tau\left(
+\tau^{-1}\left(  u\right)  \right)  >\tau\left(  \tau^{-1}\left(  v\right)
+\right)  =v$ contradicts $\tau\left(  \tau^{-1}\left(  u\right)  \right)
+=u<v$. This contradiction proves that our assumption was wrong. Hence,
+$c\notin\operatorname*{Inv}\tau$ is proven.
+
+Combining $c\in\operatorname*{Inv}\left(  \sigma\circ\tau\right)  $ with
+$c\notin\operatorname*{Inv}\tau$, we obtain $c\in\operatorname*{Inv}\left(
+\sigma\circ\tau\right)  \setminus\operatorname*{Inv}\tau$.
+
+Now, forget that we fixed $c$. We thus have shown that $c\in
+\operatorname*{Inv}\left(  \sigma\circ\tau\right)  \setminus
+\operatorname*{Inv}\tau$ for each $c\in\left(  \tau\times\tau\right)
+^{-1}\left(  \operatorname*{Inv}\sigma\right)  $. In other words, we have
+proven the inclusion%
+\[
+\left(  \tau\times\tau\right)  ^{-1}\left(  \operatorname*{Inv}\sigma\right)
+\subseteq\operatorname*{Inv}\left(  \sigma\circ\tau\right)  \setminus
+\operatorname*{Inv}\tau.
+\]
+Combining this with the inclusion (\ref{sol.exeadd.perm.Inv.sub.a.2.pf.1}), we
+obtain%
+\[
+\operatorname*{Inv}\left(  \sigma\circ\tau\right)  \setminus
+\operatorname*{Inv}\tau=\left(  \tau\times\tau\right)  ^{-1}\left(
+\operatorname*{Inv}\sigma\right)  .
+\]
+Hence,%
+\[
+\left\vert \operatorname*{Inv}\left(  \sigma\circ\tau\right)  \setminus
+\operatorname*{Inv}\tau\right\vert =\left\vert \left(  \tau\times\tau\right)
+^{-1}\left(  \operatorname*{Inv}\sigma\right)  \right\vert =\left\vert
+\operatorname*{Inv}\sigma\right\vert
+\]
+(since the map $\tau\times\tau$ is a bijection (since $\tau\times\tau$ is
+invertible)). Thus, $\left\vert \operatorname*{Inv}\left(  \sigma\circ
+\tau\right)  \setminus\operatorname*{Inv}\tau\right\vert =\left\vert
+\operatorname*{Inv}\sigma\right\vert =\ell\left(  \sigma\right)  $ (by Lemma
+\ref{lem.sol.exeadd.perm.Inv.sub.l}). Hence,%
+\begin{align*}
+\ell\left(  \sigma\right)   &  =\left\vert \operatorname*{Inv}\left(
+\sigma\circ\tau\right)  \setminus\operatorname*{Inv}\tau\right\vert
+=\left\vert \operatorname*{Inv}\left(  \sigma\circ\tau\right)  \right\vert
+-\left\vert \operatorname*{Inv}\tau\right\vert \ \ \ \ \ \ \ \ \ \ \left(
+\text{since }\operatorname*{Inv}\tau\subseteq\operatorname*{Inv}\left(
+\sigma\circ\tau\right)  \right) \\
+&  =\ell\left(  \sigma\circ\tau\right)  -\ell\left(  \tau\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{sol.exeadd.perm.Inv.sub.a.triv}%
+)}\right)  .
+\end{align*}
+In other words, $\ell\left(  \sigma\circ\tau\right)  =\ell\left(
+\sigma\right)  +\ell\left(  \tau\right)  $.
+
+Now, forget our assumption that $\operatorname*{Inv}\tau\subseteq
+\operatorname*{Inv}\left(  \sigma\circ\tau\right)  $. We thus have proven that
+if $\operatorname*{Inv}\tau\subseteq\operatorname*{Inv}\left(  \sigma\circ
+\tau\right)  $, then $\ell\left(  \sigma\circ\tau\right)  =\ell\left(
+\sigma\right)  +\ell\left(  \tau\right)  $. In other words, we have proven the
+implication (\ref{sol.exeadd.perm.Inv.sub.a.2}).
+
+Combining the two implications (\ref{sol.exeadd.perm.Inv.sub.a.1}) and
+(\ref{sol.exeadd.perm.Inv.sub.a.2}), we obtain the logical equivalence%
+\[
+\left(  \ell\left(  \sigma\circ\tau\right)  =\ell\left(  \sigma\right)
++\ell\left(  \tau\right)  \right)  \ \Longleftrightarrow\ \left(
+\operatorname*{Inv}\tau\subseteq\operatorname*{Inv}\left(  \sigma\circ
+\tau\right)  \right)  .
+\]
+In other words, $\ell\left(  \sigma\circ\tau\right)  =\ell\left(
+\sigma\right)  +\ell\left(  \tau\right)  $ holds if and only if
+$\operatorname*{Inv}\tau\subseteq\operatorname*{Inv}\left(  \sigma\circ
+\tau\right)  $. This solves Additional exercise \ref{exeadd.perm.Inv.sub}
+\textbf{(a)}.
+
+\textbf{(b)} Exercise \ref{exe.ps2.2.5} \textbf{(f)} (applied to $\sigma
+\circ\tau$ instead of $\sigma$) yields $\ell\left(  \sigma\circ\tau\right)
+=\ell\left(  \underbrace{\left(  \sigma\circ\tau\right)  ^{-1}}_{=\tau
+^{-1}\circ\sigma^{-1}}\right)  =\ell\left(  \tau^{-1}\circ\sigma^{-1}\right)
+$. Exercise \ref{exe.ps2.2.5} \textbf{(f)} (applied to $\tau$ instead of
+$\sigma$) yields $\ell\left(  \tau\right)  =\ell\left(  \tau^{-1}\right)  $.
+Exercise \ref{exe.ps2.2.5} \textbf{(f)} yields $\ell\left(  \sigma\right)
+=\ell\left(  \sigma^{-1}\right)  $. Hence, $\underbrace{\ell\left(
+\sigma\right)  }_{=\ell\left(  \sigma^{-1}\right)  }+\underbrace{\ell\left(
+\tau\right)  }_{=\ell\left(  \tau^{-1}\right)  }=\ell\left(  \sigma
+^{-1}\right)  +\ell\left(  \tau^{-1}\right)  =\ell\left(  \tau^{-1}\right)
++\ell\left(  \sigma^{-1}\right)  $.
+
+Additional exercise \ref{exeadd.perm.Inv.sub} \textbf{(a)} (applied to
+$\tau^{-1}$ and $\sigma^{-1}$ instead of $\sigma$ and $\tau$) yields that
+$\ell\left(  \tau^{-1}\circ\sigma^{-1}\right)  =\ell\left(  \tau^{-1}\right)
++\ell\left(  \sigma^{-1}\right)  $ holds if and only if $\operatorname*{Inv}%
+\left(  \sigma^{-1}\right)  \subseteq\operatorname*{Inv}\left(  \tau^{-1}%
+\circ\sigma^{-1}\right)  $. In light of the equalities $\ell\left(  \tau
+^{-1}\circ\sigma^{-1}\right)  =\ell\left(  \sigma\circ\tau\right)  $ and
+$\ell\left(  \tau^{-1}\right)  +\ell\left(  \sigma^{-1}\right)  =\ell\left(
+\sigma\right)  +\ell\left(  \tau\right)  $, we can rewrite this as follows:%
+\[
+\ell\left(  \sigma\circ\tau\right)  =\ell\left(  \sigma\right)  +\ell\left(
+\tau\right)  \text{ holds if and only if }\operatorname*{Inv}\left(
+\sigma^{-1}\right)  \subseteq\operatorname*{Inv}\left(  \tau^{-1}\circ
+\sigma^{-1}\right)  .
+\]
+This solves Additional exercise \ref{exeadd.perm.Inv.sub} \textbf{(b)}.
+
+\textbf{(c)} Additional exercise \ref{exeadd.perm.Inv.sub} \textbf{(a)}
+(applied to $\tau\circ\sigma^{-1}$ and $\sigma$ instead of $\sigma$ and $\tau
+$) yields that $\ell\left(  \tau\circ\sigma^{-1}\circ\sigma\right)
+=\ell\left(  \tau\circ\sigma^{-1}\right)  +\ell\left(  \sigma\right)  $ holds
+if and only if $\operatorname*{Inv}\sigma\subseteq\operatorname*{Inv}\left(
+\tau\circ\sigma^{-1}\circ\sigma\right)  $. In light of $\tau\circ
+\underbrace{\sigma^{-1}\circ\sigma}_{=\operatorname*{id}}=\tau\circ
+\operatorname*{id}=\tau$, this rewrites as follows:%
+\[
+\ell\left(  \tau\right)  =\ell\left(  \tau\circ\sigma^{-1}\right)
++\ell\left(  \sigma\right)  \text{ holds if and only if }\operatorname*{Inv}%
+\sigma\subseteq\operatorname*{Inv}\tau.
+\]
+In other words, $\operatorname*{Inv}\sigma\subseteq\operatorname*{Inv}\tau$
+holds if and only if $\ell\left(  \tau\right)  =\ell\left(  \tau\circ
+\sigma^{-1}\right)  +\ell\left(  \sigma\right)  $. This solves Additional
+exercise \ref{exeadd.perm.Inv.sub} \textbf{(c)}.
+
+\textbf{(d)} We WLOG assume that $\ell\left(  \sigma\right)  \geq\ell\left(
+\tau\right)  $ (since otherwise, we can simply switch $\sigma$ and $\tau$). We
+have $\operatorname*{Inv}\sigma\subseteq\operatorname*{Inv}\tau$ (since
+$\operatorname*{Inv}\sigma=\operatorname*{Inv}\tau$). But Additional exercise
+\ref{exeadd.perm.Inv.sub} \textbf{(c)} shows that $\operatorname*{Inv}%
+\sigma\subseteq\operatorname*{Inv}\tau$ holds if and only if $\ell\left(
+\tau\right)  =\ell\left(  \tau\circ\sigma^{-1}\right)  +\ell\left(
+\sigma\right)  $. Hence, we have $\ell\left(  \tau\right)  =\ell\left(
+\tau\circ\sigma^{-1}\right)  +\ell\left(  \sigma\right)  $ (since
+$\operatorname*{Inv}\sigma\subseteq\operatorname*{Inv}\tau$ holds). Thus,
+$\ell\left(  \tau\right)  =\ell\left(  \tau\circ\sigma^{-1}\right)
++\underbrace{\ell\left(  \sigma\right)  }_{\geq\ell\left(  \tau\right)  }%
+\geq\ell\left(  \tau\circ\sigma^{-1}\right)  +\ell\left(  \tau\right)  $.
+Subtracting $\ell\left(  \tau\right)  $ from both sides of this inequality, we
+obtain $0\geq\ell\left(  \tau\circ\sigma^{-1}\right)  $. In other words,
+$\ell\left(  \tau\circ\sigma^{-1}\right)  \leq0$.
+
+But $\ell\left(  \tau\circ\sigma^{-1}\right)  $ is the number of inversions of
+$\tau\circ\sigma^{-1}$ (by the definition of $\ell\left(  \tau\circ\sigma
+^{-1}\right)  $), and thus is a nonnegative integer. Hence, $\ell\left(
+\tau\circ\sigma^{-1}\right)  \geq0$. Combining this with $\ell\left(
+\tau\circ\sigma^{-1}\right)  \leq0$, we obtain $\ell\left(  \tau\circ
+\sigma^{-1}\right)  =0$. Thus, Corollary \ref{cor.sol.exe.ps2.2.5.d2} (applied
+to $\tau\circ\sigma^{-1}$ instead of $\sigma$) yields $\tau\circ\sigma
+^{-1}=\operatorname*{id}$. Hence, $\underbrace{\tau\circ\sigma^{-1}%
+}_{=\operatorname*{id}}\circ\sigma=\operatorname*{id}\circ\sigma=\sigma$, so
+that $\sigma=\tau\circ\underbrace{\sigma^{-1}\circ\sigma}_{=\operatorname*{id}%
+}=\tau\circ\operatorname*{id}=\tau$. This solves Additional exercise
+\ref{exeadd.perm.Inv.sub} \textbf{(d)}.
+\end{proof}
 
 \subsection{Solution to Exercise \ref{exe.ps4.3}}
 
@@ -37412,8 +38206,7 @@ Write the $m\times\ell^{\prime}$-matrix $B^{\prime}$ in the form $B^{\prime
 }$.
 
 Write the $m^{\prime}\times\ell$-matrix $C^{\prime}$ in the form $C^{\prime
-}=\left(  c_{i,j}^{\prime}\right)  _{1\leq i\leq m^{\prime},\ 1\leq j\leq\ell
-}$.
+}=\left(  c_{i,j}^{\prime}\right)  _{1\leq i\leq m^{\prime},\ 1\leq j\leq\ell}$.
 
 Write the $m^{\prime}\times\ell^{\prime}$-matrix $D^{\prime}$ in the form
 $D^{\prime}=\left(  d_{i,j}^{\prime}\right)  _{1\leq i\leq m^{\prime},\ 1\leq
