@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Sunday, March 27, 2016 21:30:52}
+%TCIDATA{LastRevised=Monday, March 28, 2016 02:21:30}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -4366,7 +4366,7 @@ Compared with (\ref{pf.prop.binom.bin-id.f.2}), this yields%
 \begin{align}
 &  \sum_{i=0}^{b}\dbinom{a}{i}\dbinom{b}{i}\dbinom{X+i}{a+b}\nonumber\\
 &  =\sum_{k=0}^{a+b}\dbinom{X}{k}\sum_{i=0}^{a+b}\dbinom{a}{i}\dbinom
-{i}{a+b-k}\dbinom{b}{i}.\label{pf.prop.binom.bin-id.f.3}%
+{i}{a+b-k}\dbinom{b}{i}. \label{pf.prop.binom.bin-id.f.3}%
 \end{align}
 But for every $k\in\left\{  0,1,\ldots,a+b\right\}  $, we have%
 \[
@@ -4383,7 +4383,7 @@ Now,%
 and}\\a+b-k\text{ instead of }m\text{ and }n\\\text{(since }i<a+b-k\text{))}%
 }}\dbinom{b}{i}+\sum_{i=a+b-k}^{a+b}\dbinom{a}{i}\dbinom{i}{a+b-k}\dbinom
 {b}{i}\\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }0\leq a+b-k\leq a+b\right)  \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }0\leq a+b-k\leq a+b\right) \\
 &  =\underbrace{\sum_{i=0}^{\left(  a+b-k\right)  -1}\dbinom{a}{i}0\dbinom
 {b}{i}}_{=0}+\sum_{i=a+b-k}^{a+b}\dbinom{a}{i}\dbinom{i}{a+b-k}\dbinom{b}{i}\\
 &  =\sum_{i=a+b-k}^{a+b}\underbrace{\dbinom{a}{i}\dbinom{i}{a+b-k}%
@@ -4398,7 +4398,7 @@ applied to}\\a\text{ and }a+b-k\text{ instead of }n\text{ and }a\text{ (since
 {k-b}{k-j}\\\text{(since }a-\left(  a+b-k\right)  =k-b\text{ and}\\\left(
 a+b-j\right)  -\left(  a+b-k\right)  =k-j\text{)}}}\dbinom{b}{a+b-j}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }a+b-j\text{
-for }i\text{ in the sum}\right)  \\
+for }i\text{ in the sum}\right) \\
 &  =\sum_{j=0}^{k}\dbinom{a}{a+b-k}\dbinom{k-b}{k-j}\dbinom{b}{a+b-j}%
 =\dbinom{a}{a+b-k}\sum_{j=0}^{k}\dbinom{k-b}{k-j}\dbinom{b}{a+b-j},
 \end{align*}
@@ -4411,7 +4411,7 @@ qed.}. Hence, (\ref{pf.prop.binom.bin-id.f.3}) becomes%
 &  =\sum_{k=0}^{a+b}\dbinom{X}{k}\dbinom{a}{a+b-k}\sum_{j=0}^{k}\dbinom
 {k-b}{k-j}\dbinom{b}{a+b-j}\nonumber\\
 &  =\sum_{i=0}^{a+b}\dbinom{X}{i}\dbinom{a}{a+b-i}\sum_{j=0}^{i}\dbinom
-{i-b}{i-j}\dbinom{b}{a+b-j}\label{pf.prop.binom.bin-id.f.7}%
+{i-b}{i-j}\dbinom{b}{a+b-j} \label{pf.prop.binom.bin-id.f.7}%
 \end{align}
 (here, we renamed the summation index $k$ as $i$ in the first sum).
 Furthermore, every $i\in\left\{  0,1,\ldots,a+b\right\}  $ satisfies
@@ -4421,16 +4421,16 @@ Furthermore, every $i\in\left\{  0,1,\ldots,a+b\right\}  $ satisfies
 \footnote{\textit{Proof.} Let $i\in\left\{  0,1,\ldots,a+b\right\}  $. Thus,
 $0\leq i\leq a+b$. We have
 \begin{align}
-\sum_{j=0}^{i}\dbinom{i-b}{i-j}\dbinom{b}{a+b-j} &  =\sum_{k=0}^{i}%
-\underbrace{\dbinom{i-b}{i-\left(  i-k\right)  }}_{\substack{=\dbinom{i-b}%
-{k}\\\text{(since }i-\left(  i-k\right)  =k\text{)}}}\underbrace{\dbinom
+\sum_{j=0}^{i}\dbinom{i-b}{i-j}\dbinom{b}{a+b-j}  &  =\sum_{k=0}%
+^{i}\underbrace{\dbinom{i-b}{i-\left(  i-k\right)  }}_{\substack{=\dbinom
+{i-b}{k}\\\text{(since }i-\left(  i-k\right)  =k\text{)}}}\underbrace{\dbinom
 {b}{a+b-\left(  i-k\right)  }}_{\substack{=\dbinom{b}{\left(  a+b\right)
 +k-i}\\\text{(since }a+b-\left(  i-k\right)  =\left(  a+b\right)
 +k-i\text{))}}}\nonumber\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }i-k\text{ for
-}j\text{ in the sum}\right)  \nonumber\\
-&  =\sum_{k=0}^{i}\dbinom{i-b}{k}\dbinom{b}{\left(  a+b\right)  +k-i}%
-.\label{pf.prop.binom.bin-id.f.8.pf.1}%
+}j\text{ in the sum}\right) \nonumber\\
+&  =\sum_{k=0}^{i}\dbinom{i-b}{k}\dbinom{b}{\left(  a+b\right)  +k-i}.
+\label{pf.prop.binom.bin-id.f.8.pf.1}%
 \end{align}
 On the other hand, we have $b\in\mathbb{N}$, $\left(  i-b\right)  +b=i\geq0$
 and $a\geq i-b$ (since $a+b\geq i$). Therefore, we can apply Proposition
@@ -14603,7 +14603,7 @@ number which turns out to be an integer for non-obvious reasons) is%
 \begin{equation}
 \dfrac{H\left(  a\right)  H\left(  b\right)  H\left(  c\right)  H\left(
 a+b+c\right)  }{H\left(  b+c\right)  H\left(  c+a\right)  H\left(  a+b\right)
-}, \label{eq.rmk.vander-det.secret-ints.H}%
+},\label{eq.rmk.vander-det.secret-ints.H}%
 \end{equation}
 where $a,b,c$ are three nonnegative integers, and where $H\left(  n\right)  $
 (for $n\in\mathbb{N}$) denotes the \textit{hyperfactorial} of $n$, defined by%
@@ -14614,9 +14614,11 @@ n-1\right)  !.
 I am aware of two proofs of the fact that
 (\ref{eq.rmk.vander-det.secret-ints.H}) gives an integer for every
 $a,b,c\in\mathbb{N}$: One proof is combinatorial, and argues that
-(\ref{eq.rmk.vander-det.secret-ints.H}) is the number of \textit{rhombus
-tilings of an }$a\times b\times c$\textit{-box} (see
-\cite{Eisenk-planepartits} for a complete statement). Another proof (see
+(\ref{eq.rmk.vander-det.secret-ints.H}) is the number of \textit{plane
+partitions inside an }$a\times b\times c$\textit{-box (see \cite[last equality
+in \S 7.21]{Stanley-EC2} for a proof)}, or, equivalently, the number of
+\textit{rhombus tilings of a hexagon with sidelengths }$a,b,c,a,b,c$ (see
+\cite{Eisenk-planepartits} for a precise statement). Another proof (see
 \cite[Theorem 0]{GriHyp}) exhibits (\ref{eq.rmk.vander-det.secret-ints.H}) as
 the determinant of a matrix, again using the Vandermonde determinant!
 
