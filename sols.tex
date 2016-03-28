@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Sunday, March 27, 2016 18:02:36}
+%TCIDATA{LastRevised=Sunday, March 27, 2016 21:30:52}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -300,15 +300,15 @@ this check), but in some cases, this is a difficult task.}
 
 Further notations will be defined whenever they arise for the first time.
 
-\subsection{\label{sect.sums-repetitorium}Sums and products: a repetitorium}
+\subsection{\label{sect.sums-repetitorium}Sums and products: a synopsis}
 
 In this section, I will recall the definitions of the $\sum$ and $\prod$ signs
 and collect some of their basic properties (without proofs). When I say
 \textquotedblleft recall\textquotedblright, I am implying that the reader has
 at least some prior acquaintance (and, ideally, experience) with these signs;
-for a first introduction, this section is probably too brief. Ideally, you
-should use this section to familiarize yourself with my (sometimes
-idiosyncratic) notations.
+for a first introduction, this section is probably too brief and too abstract.
+Ideally, you should use this section to familiarize yourself with my
+(sometimes idiosyncratic) notations.
 
 Throughout Section \ref{sect.sums-repetitorium}, we let $\mathbb{A}$ be one of
 the sets $\mathbb{N}$, $\mathbb{Z}$, $\mathbb{Q}$, $\mathbb{R}$ and
@@ -3931,9 +3931,8 @@ polynomial in $X$ of degree $\leq c$) can be written as a sum $\sum_{i=0}%
 \end{exercise}
 
 \begin{proposition}
-\label{exe.ps1.1.4}Let $a$ and $b$ be two nonnegative integers. Prove that
-there exist \textbf{nonnegative} integers $e_{0},e_{1},\ldots,e_{a+b}$ such
-that%
+\label{exe.ps1.1.4}Let $a$ and $b$ be two nonnegative integers. There exist
+\textbf{nonnegative} integers $e_{0},e_{1},\ldots,e_{a+b}$ such that%
 \[
 \dbinom{X}{a}\dbinom{X}{b}=\sum_{i=0}^{a+b}e_{i}\dbinom{X}{i}%
 \]
@@ -3947,8 +3946,8 @@ let $\left[  N\right]  $ denote the $N$-element set $\left\{  1,2,\ldots
 
 For every set $S$, we let an $S$\textit{-junction} mean a pair $\left(
 A,B\right)  $, where $A$ is an $a$-element subset of $S$ and where $B$ is a
-$b$-element subset of $S$ such that $A\cup B=S$. (We do not treat $a$ and $b$
-as parts of the notation, because $a$ and $b$ are fixed.)
+$b$-element subset of $S$ such that $A\cup B=S$. (We do not mention $a$ and
+$b$ in our notation, because $a$ and $b$ are fixed.)
 
 For example, if $a=2$ and $b=3$, then $\left(  \left\{  1,4\right\}  ,\left\{
 2,3,4\right\}  \right)  $ is a $\left[  4\right]  $-junction, and $\left(
@@ -4367,7 +4366,7 @@ Compared with (\ref{pf.prop.binom.bin-id.f.2}), this yields%
 \begin{align}
 &  \sum_{i=0}^{b}\dbinom{a}{i}\dbinom{b}{i}\dbinom{X+i}{a+b}\nonumber\\
 &  =\sum_{k=0}^{a+b}\dbinom{X}{k}\sum_{i=0}^{a+b}\dbinom{a}{i}\dbinom
-{i}{a+b-k}\dbinom{b}{i}. \label{pf.prop.binom.bin-id.f.3}%
+{i}{a+b-k}\dbinom{b}{i}.\label{pf.prop.binom.bin-id.f.3}%
 \end{align}
 But for every $k\in\left\{  0,1,\ldots,a+b\right\}  $, we have%
 \[
@@ -4384,7 +4383,7 @@ Now,%
 and}\\a+b-k\text{ instead of }m\text{ and }n\\\text{(since }i<a+b-k\text{))}%
 }}\dbinom{b}{i}+\sum_{i=a+b-k}^{a+b}\dbinom{a}{i}\dbinom{i}{a+b-k}\dbinom
 {b}{i}\\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }0\leq a+b-k\leq a+b\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }0\leq a+b-k\leq a+b\right)  \\
 &  =\underbrace{\sum_{i=0}^{\left(  a+b-k\right)  -1}\dbinom{a}{i}0\dbinom
 {b}{i}}_{=0}+\sum_{i=a+b-k}^{a+b}\dbinom{a}{i}\dbinom{i}{a+b-k}\dbinom{b}{i}\\
 &  =\sum_{i=a+b-k}^{a+b}\underbrace{\dbinom{a}{i}\dbinom{i}{a+b-k}%
@@ -4399,7 +4398,7 @@ applied to}\\a\text{ and }a+b-k\text{ instead of }n\text{ and }a\text{ (since
 {k-b}{k-j}\\\text{(since }a-\left(  a+b-k\right)  =k-b\text{ and}\\\left(
 a+b-j\right)  -\left(  a+b-k\right)  =k-j\text{)}}}\dbinom{b}{a+b-j}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }a+b-j\text{
-for }i\text{ in the sum}\right) \\
+for }i\text{ in the sum}\right)  \\
 &  =\sum_{j=0}^{k}\dbinom{a}{a+b-k}\dbinom{k-b}{k-j}\dbinom{b}{a+b-j}%
 =\dbinom{a}{a+b-k}\sum_{j=0}^{k}\dbinom{k-b}{k-j}\dbinom{b}{a+b-j},
 \end{align*}
@@ -4412,7 +4411,7 @@ qed.}. Hence, (\ref{pf.prop.binom.bin-id.f.3}) becomes%
 &  =\sum_{k=0}^{a+b}\dbinom{X}{k}\dbinom{a}{a+b-k}\sum_{j=0}^{k}\dbinom
 {k-b}{k-j}\dbinom{b}{a+b-j}\nonumber\\
 &  =\sum_{i=0}^{a+b}\dbinom{X}{i}\dbinom{a}{a+b-i}\sum_{j=0}^{i}\dbinom
-{i-b}{i-j}\dbinom{b}{a+b-j} \label{pf.prop.binom.bin-id.f.7}%
+{i-b}{i-j}\dbinom{b}{a+b-j}\label{pf.prop.binom.bin-id.f.7}%
 \end{align}
 (here, we renamed the summation index $k$ as $i$ in the first sum).
 Furthermore, every $i\in\left\{  0,1,\ldots,a+b\right\}  $ satisfies
@@ -4422,24 +4421,27 @@ Furthermore, every $i\in\left\{  0,1,\ldots,a+b\right\}  $ satisfies
 \footnote{\textit{Proof.} Let $i\in\left\{  0,1,\ldots,a+b\right\}  $. Thus,
 $0\leq i\leq a+b$. We have
 \begin{align}
-\sum_{j=0}^{i}\dbinom{i-b}{i-j}\dbinom{b}{a+b-j}  &  =\sum_{k=0}%
-^{i}\underbrace{\dbinom{i-b}{i-\left(  i-k\right)  }}_{\substack{=\dbinom
-{i-b}{k}\\\text{(since }i-\left(  i-k\right)  =k\text{)}}}\underbrace{\dbinom
+\sum_{j=0}^{i}\dbinom{i-b}{i-j}\dbinom{b}{a+b-j} &  =\sum_{k=0}^{i}%
+\underbrace{\dbinom{i-b}{i-\left(  i-k\right)  }}_{\substack{=\dbinom{i-b}%
+{k}\\\text{(since }i-\left(  i-k\right)  =k\text{)}}}\underbrace{\dbinom
 {b}{a+b-\left(  i-k\right)  }}_{\substack{=\dbinom{b}{\left(  a+b\right)
 +k-i}\\\text{(since }a+b-\left(  i-k\right)  =\left(  a+b\right)
 +k-i\text{))}}}\nonumber\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }i-k\text{ for
-}j\text{ in the sum}\right) \nonumber\\
-&  =\sum_{k=0}^{i}\dbinom{i-b}{k}\dbinom{b}{\left(  a+b\right)  +k-i}.
-\label{pf.prop.binom.bin-id.f.8.pf.1}%
+}j\text{ in the sum}\right)  \nonumber\\
+&  =\sum_{k=0}^{i}\dbinom{i-b}{k}\dbinom{b}{\left(  a+b\right)  +k-i}%
+.\label{pf.prop.binom.bin-id.f.8.pf.1}%
 \end{align}
 On the other hand, we have $b\in\mathbb{N}$, $\left(  i-b\right)  +b=i\geq0$
 and $a\geq i-b$ (since $a+b\geq i$). Therefore, we can apply Proposition
-\ref{prop.vandermonde.consequences} \textbf{(g)} to $i-b$, $b$ and $a+b$
-instead of $x$, $y$ and $n$. As a result, we obtain%
+\ref{prop.vandermonde.consequences} \textbf{(g)} to $i-b$, $b$ and $a$ instead
+of $x$, $y$ and $n$. As a result, we obtain%
 \[
 \dbinom{\left(  i-b\right)  +b}{a}=\sum_{k=0}^{\left(  i-b\right)  +b}%
-\dbinom{i-b}{k}\dbinom{b}{\left(  a+b\right)  +k-i}.
+\dbinom{i-b}{k}\underbrace{\dbinom{b}{a+k-\left(  i-b\right)  }}%
+_{\substack{=\dbinom{b}{\left(  a+b\right)  +k-i}\\\text{(since }a+k-\left(
+i-b\right)  =\left(  a+b\right)  +k-i\text{)}}}=\sum_{k=0}^{\left(
+i-b\right)  +b}\dbinom{i-b}{k}\dbinom{b}{\left(  a+b\right)  +k-i}.
 \]
 Since $\left(  i-b\right)  +b=i$, this rewrites as
 \[
@@ -16505,13 +16507,13 @@ n-1\right)  \right)  =\left(  1,2,\ldots,\widehat{q},\ldots,n\right)
 (by Lemma \ref{lem.laplace.gpshort} \textbf{(a)}, applied to $q$ instead of
 $p$). Now, the definition of $A_{\sim p,\sim q}$ yields%
 \begin{align}
-A_{\sim p,\sim q} &  =\operatorname*{sub}\nolimits_{1,2,\ldots,\widehat{p}%
+A_{\sim p,\sim q}  &  =\operatorname*{sub}\nolimits_{1,2,\ldots,\widehat{p}%
 ,\ldots,n}^{1,2,\ldots,\widehat{q},\ldots,n}A=\operatorname*{sub}%
 \nolimits_{g_{p}\left(  1\right)  ,g_{p}\left(  2\right)  ,\ldots,g_{p}\left(
 n-1\right)  }^{g_{q}\left(  1\right)  ,g_{q}\left(  2\right)  ,\ldots
 ,g_{q}\left(  n-1\right)  }A\ \ \ \ \ \ \ \ \ \ \left(  \text{by
 (\ref{pf.lem.laplace.Apq.short.indices1}) and
-(\ref{pf.lem.laplace.Apq.short.indices2})}\right)  \nonumber\\
+(\ref{pf.lem.laplace.Apq.short.indices2})}\right) \nonumber\\
 &  =\left(  a_{g_{p}\left(  x\right)  ,g_{q}\left(  y\right)  }\right)
 _{1\leq x\leq n-1,\ 1\leq y\leq n-1}\ \ \ \ \ \ \ \ \ \ \left(  \text{by the
 definition of }\operatorname*{sub}\nolimits_{g_{p}\left(  1\right)
