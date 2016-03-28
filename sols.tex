@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Monday, March 28, 2016 03:06:16}
+%TCIDATA{LastRevised=Monday, March 28, 2016 19:22:50}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -14762,7 +14762,39 @@ $a^{n}=\left(  a^{-1}\right)  ^{-n}$ for all negative integers $n$). Of
 course, when $n=-1$, this is consistent with our notation $a^{-1}$ for the
 inverse of $a$.
 
-Next, we define the notion of a \textit{field}.
+Next, we define the notion of a \textit{field}\footnote{We are going to use
+the following simple fact: A commutative ring $\mathbb{K}$ is a trivial ring
+if and only if $0_{\mathbb{K}}=1_{\mathbb{K}}$.
+\par
+\textit{Proof.} Assume that $\mathbb{K}$ is a trivial ring. Thus, $\mathbb{K}$
+has only one element. Hence, both $0_{\mathbb{K}}$ and $1_{\mathbb{K}}$ have
+to equal this one element. Therefore, $0_{\mathbb{K}}=1_{\mathbb{K}}$.
+\par
+Now, forget that we assumed that $\mathbb{K}$ is a trivial ring. We thus have
+proven that
+\begin{equation}
+\text{if }\mathbb{K}\text{ is a trivial ring, then }0_{\mathbb{K}%
+}=1_{\mathbb{K}}\text{.} \label{eq.fn.field.trivring.1}%
+\end{equation}
+\par
+Conversely, assume that $0_{\mathbb{K}}=1_{\mathbb{K}}$. Then, every
+$a\in\mathbb{K}$ satisfies $a=a\cdot\underbrace{1_{\mathbb{K}}}%
+_{=0_{\mathbb{K}}}=a\cdot0_{\mathbb{K}}=0_{\mathbb{K}}\in\left\{
+0_{\mathbb{K}}\right\}  $. In other words, $\mathbb{K}\subseteq\left\{
+0_{\mathbb{K}}\right\}  $. Combining this with $\left\{  0_{\mathbb{K}%
+}\right\}  \subseteq\mathbb{K}$, we obtain $\mathbb{K}=\left\{  0_{\mathbb{K}%
+}\right\}  $. Hence, $\mathbb{K}$ has only one element. In other words,
+$\mathbb{K}$ is a trivial ring.
+\par
+Now, forget that we assumed that $0_{\mathbb{K}}=1_{\mathbb{K}}$. We thus have
+proven that
+\[
+\text{if }0_{\mathbb{K}}=1_{\mathbb{K}}\text{, then }\mathbb{K}\text{ is a
+trivial ring.}%
+\]
+Combining this with (\ref{eq.fn.field.trivring.1}), we conclude that
+$\mathbb{K}$ is a trivial ring if and only if $0_{\mathbb{K}}=1_{\mathbb{K}}%
+$.}.
 
 \begin{definition}
 A commutative ring $\mathbb{K}$ is said to be a \textit{field} if it satisfies
@@ -18368,28 +18400,28 @@ $n\geq1$ and thus $n-1\in\mathbb{N}$.
 
 The definition of $A_{\sim i,\sim j}$ yields $A_{\sim i,\sim j}%
 =\operatorname*{sub}\nolimits_{1,2,\ldots,\widehat{i},\ldots,n}^{1,2,\ldots
-,\widehat{j},\ldots,m}A$. But the definition of $\left(  A^{T}\right)  _{\sim
+,\widehat{j},\ldots,n}A$. But the definition of $\left(  A^{T}\right)  _{\sim
 j,\sim i}$ yields%
 \begin{equation}
 \left(  A^{T}\right)  _{\sim j,\sim i}=\operatorname*{sub}%
 \nolimits_{1,2,\ldots,\widehat{j},\ldots,n}^{1,2,\ldots,\widehat{i},\ldots
-,m}\left(  A^{T}\right)  . \label{pf.prop.adj.transpose.1}%
+,n}\left(  A^{T}\right)  .\label{pf.prop.adj.transpose.1}%
 \end{equation}
 
 
 On the other hand, Proposition \ref{prop.submatrix.easy} \textbf{(e)} (applied
-to $u=n-1$, $v=n-1$, $\left(  i_{1},i_{2},\ldots,i_{u}\right)  =\left(
-1,2,\ldots,\widehat{i},\ldots,m\right)  $ and $\left(  j_{1},j_{2}%
+to $m=n$, $u=n-1$, $v=n-1$, $\left(  i_{1},i_{2},\ldots,i_{u}\right)  =\left(
+1,2,\ldots,\widehat{i},\ldots,n\right)  $ and $\left(  j_{1},j_{2}%
 ,\ldots,j_{v}\right)  =\left(  1,2,\ldots,\widehat{j},\ldots,n\right)  $)
 yields $\left(  \operatorname*{sub}\nolimits_{1,2,\ldots,\widehat{i},\ldots
-,n}^{1,2,\ldots,\widehat{j},\ldots,m}A\right)  ^{T}=\operatorname*{sub}%
+,n}^{1,2,\ldots,\widehat{j},\ldots,n}A\right)  ^{T}=\operatorname*{sub}%
 \nolimits_{1,2,\ldots,\widehat{j},\ldots,n}^{1,2,\ldots,\widehat{i},\ldots
-,m}\left(  A^{T}\right)  $. Compared with (\ref{pf.prop.adj.transpose.1}),
+,n}\left(  A^{T}\right)  $. Compared with (\ref{pf.prop.adj.transpose.1}),
 this yields%
 \[
 \left(  A^{T}\right)  _{\sim j,\sim i}=\left(  \underbrace{\operatorname*{sub}%
 \nolimits_{1,2,\ldots,\widehat{i},\ldots,n}^{1,2,\ldots,\widehat{j},\ldots
-,m}A}_{=A_{\sim i,\sim j}}\right)  ^{T}=\left(  A_{\sim i,\sim j}\right)
+,n}A}_{=A_{\sim i,\sim j}}\right)  ^{T}=\left(  A_{\sim i,\sim j}\right)
 ^{T}.
 \]
 Hence,%
@@ -18399,8 +18431,8 @@ A_{\sim i,\sim j}\right)  ^{T}}\right)  =\det\left(  \left(  A_{\sim i,\sim
 j}\right)  ^{T}\right)  =\det\left(  A_{\sim i,\sim j}\right)
 \label{pf.prop.adj.transpose.4}%
 \end{equation}
-(by Exercise \ref{exe.ps4.4}, applied to $n-1$ and $\left(  A_{\sim i,\sim
-j}\right)  ^{T}$ instead of $n$ and $A$).
+(by Exercise \ref{exe.ps4.4}, applied to $n-1$ and $A_{\sim i,\sim j}$ instead
+of $n$ and $A$).
 
 Let us now forget that we fixed $i$ and $j$. We thus have shown that
 (\ref{pf.prop.adj.transpose.4}) holds for every $i\in\left\{  1,2,\ldots
@@ -18417,14 +18449,17 @@ j}\right)  \right)  _{1\leq i\leq n,\ 1\leq j\leq n}=\left(  \left(
 n,\ 1\leq j\leq n}.
 \]
 Compared with%
-\[
-\operatorname*{adj}\left(  A^{T}\right)  =\left(  \left(  -1\right)
+\begin{align*}
+\operatorname*{adj}\left(  A^{T}\right)    & =\left(  \left(  -1\right)
 ^{i+j}\underbrace{\det\left(  \left(  A^{T}\right)  _{\sim j,\sim i}\right)
 }_{\substack{=\det\left(  A_{\sim i,\sim j}\right)  \\\text{(by
 (\ref{pf.prop.adj.transpose.4}))}}}\right)  _{1\leq i\leq n,\ 1\leq j\leq
-n}=\left(  \left(  -1\right)  ^{i+j}\det\left(  A_{\sim i,\sim j}\right)
+n}\\
+& \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\operatorname*{adj}%
+\left(  A^{T}\right)  \right)  \\
+& =\left(  \left(  -1\right)  ^{i+j}\det\left(  A_{\sim i,\sim j}\right)
 \right)  _{1\leq i\leq n,\ 1\leq j\leq n},
-\]
+\end{align*}
 this yields $\operatorname*{adj}\left(  A^{T}\right)  =\left(
 \operatorname*{adj}A\right)  ^{T}$. This proves Proposition
 \ref{prop.adj.transpose}.
@@ -19152,8 +19187,9 @@ Let us now forget that we fixed $B$ and $B^{\prime}$. We thus have shown that
 if $B$ and $B^{\prime}$ are two inverses of $A$, then $B=B^{\prime}$. In other
 words, any two inverses of $A$ are equal. In other words, there exists at most
 one inverse of $A$. Since we also know that there exists at least one inverse
-of $A$ (namely, $B$), we thus conclude that there exists exactly one inverse
-of $A$. This proves Corollary \ref{cor.matrices.inverse-uni.cor} \textbf{(b)}.
+of $A$ (since $A$ is invertible), we thus conclude that there exists exactly
+one inverse of $A$. This proves Corollary \ref{cor.matrices.inverse-uni.cor}
+\textbf{(b)}.
 \end{proof}
 
 \begin{definition}
@@ -19215,7 +19251,7 @@ $\left(
 \end{array}
 \right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }0_{\mathbb{K}}%
 =1_{\mathbb{K}}\right) \\
-&  =I_{2\times2}%
+&  =I_{2}%
 \end{align*}
 and $\left(
 \begin{array}
@@ -19238,8 +19274,8 @@ and $\left(
 [c]{c}%
 1_{\mathbb{K}}%
 \end{array}
-\right)  =I_{1\times1}$.}. It turns out that this is the only case where
-nonsquare matrices can be invertible. Indeed, we have the following:
+\right)  =I_{1}$.}. It turns out that this is the only case where nonsquare
+matrices can be invertible. Indeed, we have the following:
 
 \begin{theorem}
 \label{thm.matrices.inverses.oblong}Let $n\in\mathbb{N}$ and $m\in\mathbb{N}$.
