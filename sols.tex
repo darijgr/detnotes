@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Monday, March 28, 2016 02:30:45}
+%TCIDATA{LastRevised=Monday, March 28, 2016 03:04:52}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -9534,7 +9534,12 @@ a & b
 c\\
 d
 \end{array}
-\right)  =\left(  ac+bd\right)  .
+\right)  =\left(
+\begin{array}
+[c]{c}%
+ac+bd
+\end{array}
+\right)  .
 \]
 If we would identify column vectors with row vectors, then this would cause contradictions.
 
@@ -14615,9 +14620,9 @@ I am aware of two proofs of the fact that
 (\ref{eq.rmk.vander-det.secret-ints.H}) gives an integer for every
 $a,b,c\in\mathbb{N}$: One proof is combinatorial, and argues that
 (\ref{eq.rmk.vander-det.secret-ints.H}) is the number of \textit{plane
-partitions inside an }$a\times b\times c$\textit{-box (see \cite[last equality
-in \S 7.21]{Stanley-EC2} for a proof)}, or, equivalently, the number of
-\textit{rhombus tilings of a hexagon with sidelengths }$a,b,c,a,b,c$ (see
+partitions inside an }$a\times b\times c$\textit{-box} (see \cite[last
+equality in \S 7.21]{Stanley-EC2} for a proof), or, equivalently, the number
+of \textit{rhombus tilings of a hexagon with sidelengths }$a,b,c,a,b,c$ (see
 \cite{Eisenk-planepartits} for a precise statement). Another proof (see
 \cite[Theorem 0]{GriHyp}) exhibits (\ref{eq.rmk.vander-det.secret-ints.H}) as
 the determinant of a matrix, again using the Vandermonde determinant!
@@ -19000,7 +19005,7 @@ Let $P$ be the $1\times2$-matrix $\left(
 [c]{c}%
 1
 \end{array}
-\right)  =I_{1\times1}$ and $P\left(
+\right)  =I_{1}$ and $P\left(
 \begin{array}
 [c]{c}%
 3\\
@@ -19011,8 +19016,8 @@ Let $P$ be the $1\times2$-matrix $\left(
 [c]{c}%
 1
 \end{array}
-\right)  =I_{1\times1}$). This example shows that the right inverse of a
-matrix is not always unique.
+\right)  =I_{1}$). This example shows that the right inverse of a matrix is
+not always unique.
 
 The $2\times1$-matrix $P^{T}=\left(
 \begin{array}
@@ -19029,7 +19034,7 @@ Let $Q$ be the $2\times2$-matrix $\left(
 \begin{array}
 [c]{cc}%
 1 & 0\\
-2 & -1
+3 & -1
 \end{array}
 \right)  $. The matrix $Q$ is invertible. Its inverse is $\left(
 \begin{array}
@@ -19043,13 +19048,13 @@ Let $Q$ be the $2\times2$-matrix $\left(
 1 & 0\\
 2 & -1
 \end{array}
-\right)  Q=I_{2\times2}$ and $Q\left(
+\right)  Q=I_{2}$ and $Q\left(
 \begin{array}
 [c]{cc}%
 1 & 0\\
 2 & -1
 \end{array}
-\right)  =I_{2\times2}$). It is not hard to see that this is its only inverse.
+\right)  =I_{2}$). It is not hard to see that this is its only inverse.
 
 Let $R$ be the $2\times2$-matrix $\left(
 \begin{array}
@@ -33003,7 +33008,7 @@ In other words, $\left(  g_{1},g_{2},\ldots,g_{n}\right)  =\left(  h_{1}%
 \]
 \par
 Now, let us forget that we fixed $\alpha$ and $\beta$. We thus have shown that
-if $\alpha$ and $\beta$ be two elements of $\mathbf{I}\times S_{n}$ such that
+if $\alpha$ and $\beta$ are two elements of $\mathbf{I}\times S_{n}$ such that
 $\Phi\left(  \alpha\right)  =\Phi\left(  \beta\right)  $, then $\alpha=\beta$.
 In other words, the map $\Phi$ is injective, qed.} and
 surjective\footnote{\textit{Proof.} Let $\gamma\in\mathbf{E}$. We shall prove
