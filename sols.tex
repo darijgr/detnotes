@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Tuesday, March 29, 2016 00:32:18}
+%TCIDATA{LastRevised=Tuesday, March 29, 2016 18:23:20}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -3755,7 +3755,7 @@ But $0\leq n-y$ (since $n-y\in\mathbb{N}$) and $n-y\leq n$ (since
 $y\in\mathbb{N}$). Also, every $k\in\left\{  n-y+1,n-y+2,\ldots,n\right\}  $
 satisfies%
 \begin{equation}
-\dbinom{n-k}{y}=0\label{pf.prop.vandermonde.consequences.f.2}%
+\dbinom{n-k}{y}=0 \label{pf.prop.vandermonde.consequences.f.2}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{pf.prop.vandermonde.consequences.f.2}):} Let
 $k\in\left\{  n-y+1,n-y+2,\ldots,n\right\}  $. Then, $k\leq n$ and $k>n-y$.
@@ -3764,18 +3764,17 @@ _{>n-y}<n-\left(  n-y\right)  =y$. Therefore, (\ref{eq.binom.0}) (applied to
 $n-k$ and $y$ instead of $m$ and $n$) yields $\dbinom{n-k}{y}=0$. This proves
 (\ref{pf.prop.vandermonde.consequences.f.2}).}. Hence,%
 \begin{align}
-\sum_{k=0}^{n}\dbinom{k}{x}\dbinom{n-k}{y} &  =\sum_{k=0}^{n-y}\dbinom{k}%
+\sum_{k=0}^{n}\dbinom{k}{x}\dbinom{n-k}{y}  &  =\sum_{k=0}^{n-y}\dbinom{k}%
 {x}\dbinom{n-k}{y}+\sum_{k=n-y+1}^{n}\dbinom{k}{x}\underbrace{\dbinom{n-k}{y}%
 }_{\substack{=0\\\text{(by (\ref{pf.prop.vandermonde.consequences.f.2}))}%
 }}\nonumber\\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }0\leq n-y\leq n\right)
-\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }0\leq n-y\leq n\right) \nonumber\\
 &  =\sum_{k=0}^{n-y}\dbinom{k}{x}\dbinom{n-k}{y}+\underbrace{\sum
 _{k=n-y+1}^{n}\dbinom{k}{x}0}_{=0}=\sum_{k=0}^{n-y}\dbinom{k}{x}\dbinom
 {n-k}{y}\nonumber\\
 &  =\dbinom{n+1}{n-x-y}\ \ \ \ \ \ \ \ \ \ \left(  \text{by
-(\ref{pf.prop.vandermonde.consequences.f.5})}\right)
-.\label{pf.prop.vandermonde.consequences.f.9}%
+(\ref{pf.prop.vandermonde.consequences.f.5})}\right)  .
+\label{pf.prop.vandermonde.consequences.f.9}%
 \end{align}
 
 
@@ -18607,10 +18606,11 @@ _{\substack{=\left(  -1\right)  ^{q+i}=\left(  -1\right)  ^{q+j}\\\text{(since
 _{\substack{=A_{\sim j,\sim q}\\\text{(since }}}\right)  =\sum_{q=1}%
 ^{n}\left(  -1\right)  ^{q+j}a_{i,q}\det\left(  A_{\sim j,\sim q}\right)  .
 \]
-Compared with $\det A\cdot\underbrace{\delta_{i,j}}_{=1}=\det A$, this yields%
+In view of $\det A\cdot\underbrace{\delta_{i,j}}_{=1}=\det A$, this rewrites
+as
 \[
-\sum_{q=1}^{n}\left(  -1\right)  ^{q+j}a_{i,q}\det\left(  A_{\sim j,\sim
-q}\right)  =\det A\cdot\delta_{i,j}.
+\det A\cdot\delta_{i,j}=\sum_{q=1}^{n}\left(  -1\right)  ^{q+j}a_{i,q}%
+\det\left(  A_{\sim j,\sim q}\right)  .
 \]
 Thus, (\ref{pf.thm.adj.inverse.short.twise}) is proven in Case 1.
 
@@ -18622,10 +18622,10 @@ $\delta_{i,j}=0$ and $j\neq i$. Now, Proposition \ref{prop.laplace.0}
 ^{q+j}}a_{i,q}\det\left(  A_{\sim j,\sim q}\right)  =\sum_{q=1}^{n}\left(
 -1\right)  ^{q+j}a_{i,q}\det\left(  A_{\sim j,\sim q}\right)  .
 \]
-Compared with $\det A\cdot\underbrace{\delta_{i,j}}_{=0}=0$, this yields%
+In view of $\det A\cdot\underbrace{\delta_{i,j}}_{=0}=0$, this rewrites as%
 \[
-\sum_{q=1}^{n}\left(  -1\right)  ^{q+j}a_{i,q}\det\left(  A_{\sim j,\sim
-q}\right)  =\det A\cdot\delta_{i,j}.
+\det A\cdot\delta_{i,j}=\sum_{q=1}^{n}\left(  -1\right)  ^{q+j}a_{i,q}%
+\det\left(  A_{\sim j,\sim q}\right)  .
 \]
 Thus, (\ref{pf.thm.adj.inverse.short.twise}) is proven in Case 2.
 
@@ -18669,7 +18669,7 @@ But here are four fundamental properties of transposes which are all easy to che
 \item If $u$, $v$ and $w$ are three nonnegative integers, if $P$ is a $u\times
 v$-matrix, and if $Q$ is a $v\times w$-matrix, then%
 \begin{equation}
-\left(  PQ\right)  ^{T}=P^{T}Q^{T}.
+\left(  PQ\right)  ^{T}=Q^{T}P^{T}.
 \label{pf.thm.adj.inverse.short.tranposes1}%
 \end{equation}
 
@@ -18799,12 +18799,13 @@ _{\substack{=\left(  -1\right)  ^{q+i}=\left(  -1\right)  ^{q+j}\\\text{(since
 _{\substack{=A_{\sim j,\sim q}\\\text{(since }}}\right)  =\sum_{q=1}%
 ^{n}\left(  -1\right)  ^{q+j}a_{i,q}\det\left(  A_{\sim j,\sim q}\right)  .
 \]
-Compared with $\det A\cdot\underbrace{\delta_{i,j}}_{=1}=\det A$, this yields%
+Hence,%
 \[
 \sum_{q=1}^{n}\left(  -1\right)  ^{q+j}a_{i,q}\det\left(  A_{\sim j,\sim
-q}\right)  =\det A\cdot\delta_{i,j}.
+q}\right)  =\det A=\det A\cdot\delta_{i,j}%
 \]
-Thus, (\ref{pf.thm.adj.inverse.twise}) is proven in Case 1.
+(since $\det A\cdot\underbrace{\delta_{i,j}}_{=1}=\det A$). Thus,
+(\ref{pf.thm.adj.inverse.twise}) is proven in Case 1.
 
 Let us next consider Case 2. In this case, we have $i\neq j$. Hence,
 $\delta_{i,j}=0$ and $j\neq i$. Now, Proposition \ref{prop.laplace.0}
@@ -18814,12 +18815,13 @@ $\delta_{i,j}=0$ and $j\neq i$. Now, Proposition \ref{prop.laplace.0}
 ^{q+j}}a_{i,q}\det\left(  A_{\sim j,\sim q}\right)  =\sum_{q=1}^{n}\left(
 -1\right)  ^{q+j}a_{i,q}\det\left(  A_{\sim j,\sim q}\right)  .
 \]
-Compared with $\det A\cdot\underbrace{\delta_{i,j}}_{=0}=0$, this yields%
+Hence,%
 \[
 \sum_{q=1}^{n}\left(  -1\right)  ^{q+j}a_{i,q}\det\left(  A_{\sim j,\sim
-q}\right)  =\det A\cdot\delta_{i,j}.
+q}\right)  =0=\det A\cdot\delta_{i,j}%
 \]
-Thus, (\ref{pf.thm.adj.inverse.twise}) is proven in Case 2.
+(since $\det A\cdot\underbrace{\delta_{i,j}}_{=0}=0$). Thus,
+(\ref{pf.thm.adj.inverse.twise}) is proven in Case 2.
 
 We have now proven (\ref{pf.thm.adj.inverse.twise}) in each of the two Cases 1
 and 2. Thus, (\ref{pf.thm.adj.inverse.twise}) always holds. This completes the
@@ -18861,7 +18863,7 @@ But here are four fundamental properties of transposes which are all easy to che
 \item If $u$, $v$ and $w$ are three nonnegative integers, if $P$ is a $u\times
 v$-matrix, and if $Q$ is a $v\times w$-matrix, then%
 \begin{equation}
-\left(  PQ\right)  ^{T}=P^{T}Q^{T}. \label{pf.thm.adj.inverse.tranposes1}%
+\left(  PQ\right)  ^{T}=Q^{T}P^{T}. \label{pf.thm.adj.inverse.tranposes1}%
 \end{equation}
 
 
