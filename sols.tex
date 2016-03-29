@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Monday, March 28, 2016 19:22:50}
+%TCIDATA{LastRevised=Tuesday, March 29, 2016 00:32:18}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -3755,7 +3755,7 @@ But $0\leq n-y$ (since $n-y\in\mathbb{N}$) and $n-y\leq n$ (since
 $y\in\mathbb{N}$). Also, every $k\in\left\{  n-y+1,n-y+2,\ldots,n\right\}  $
 satisfies%
 \begin{equation}
-\dbinom{n-k}{y}=0 \label{pf.prop.vandermonde.consequences.f.2}%
+\dbinom{n-k}{y}=0\label{pf.prop.vandermonde.consequences.f.2}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{pf.prop.vandermonde.consequences.f.2}):} Let
 $k\in\left\{  n-y+1,n-y+2,\ldots,n\right\}  $. Then, $k\leq n$ and $k>n-y$.
@@ -3764,17 +3764,18 @@ _{>n-y}<n-\left(  n-y\right)  =y$. Therefore, (\ref{eq.binom.0}) (applied to
 $n-k$ and $y$ instead of $m$ and $n$) yields $\dbinom{n-k}{y}=0$. This proves
 (\ref{pf.prop.vandermonde.consequences.f.2}).}. Hence,%
 \begin{align}
-\sum_{k=0}^{n}\dbinom{k}{x}\dbinom{n-k}{y}  &  =\sum_{k=0}^{n-y}\dbinom{k}%
-{x}\dbinom{n-k}{y}+\sum_{k=n-y}^{n}\dbinom{k}{x}\underbrace{\dbinom{n-k}{y}%
+\sum_{k=0}^{n}\dbinom{k}{x}\dbinom{n-k}{y} &  =\sum_{k=0}^{n-y}\dbinom{k}%
+{x}\dbinom{n-k}{y}+\sum_{k=n-y+1}^{n}\dbinom{k}{x}\underbrace{\dbinom{n-k}{y}%
 }_{\substack{=0\\\text{(by (\ref{pf.prop.vandermonde.consequences.f.2}))}%
 }}\nonumber\\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }0\leq n-y\leq n\right) \nonumber\\
-&  =\sum_{k=0}^{n-y}\dbinom{k}{x}\dbinom{n-k}{y}+\underbrace{\sum_{k=n-y}%
-^{n}\dbinom{k}{x}0}_{=0}=\sum_{k=0}^{n-y}\dbinom{k}{x}\dbinom{n-k}%
-{y}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }0\leq n-y\leq n\right)
+\nonumber\\
+&  =\sum_{k=0}^{n-y}\dbinom{k}{x}\dbinom{n-k}{y}+\underbrace{\sum
+_{k=n-y+1}^{n}\dbinom{k}{x}0}_{=0}=\sum_{k=0}^{n-y}\dbinom{k}{x}\dbinom
+{n-k}{y}\nonumber\\
 &  =\dbinom{n+1}{n-x-y}\ \ \ \ \ \ \ \ \ \ \left(  \text{by
-(\ref{pf.prop.vandermonde.consequences.f.5})}\right)  .
-\label{pf.prop.vandermonde.consequences.f.9}%
+(\ref{pf.prop.vandermonde.consequences.f.5})}\right)
+.\label{pf.prop.vandermonde.consequences.f.9}%
 \end{align}
 
 
@@ -18405,7 +18406,7 @@ j,\sim i}$ yields%
 \begin{equation}
 \left(  A^{T}\right)  _{\sim j,\sim i}=\operatorname*{sub}%
 \nolimits_{1,2,\ldots,\widehat{j},\ldots,n}^{1,2,\ldots,\widehat{i},\ldots
-,n}\left(  A^{T}\right)  .\label{pf.prop.adj.transpose.1}%
+,n}\left(  A^{T}\right)  . \label{pf.prop.adj.transpose.1}%
 \end{equation}
 
 
@@ -18450,14 +18451,13 @@ n,\ 1\leq j\leq n}.
 \]
 Compared with%
 \begin{align*}
-\operatorname*{adj}\left(  A^{T}\right)    & =\left(  \left(  -1\right)
+\operatorname*{adj}\left(  A^{T}\right)   &  =\left(  \left(  -1\right)
 ^{i+j}\underbrace{\det\left(  \left(  A^{T}\right)  _{\sim j,\sim i}\right)
 }_{\substack{=\det\left(  A_{\sim i,\sim j}\right)  \\\text{(by
-(\ref{pf.prop.adj.transpose.4}))}}}\right)  _{1\leq i\leq n,\ 1\leq j\leq
-n}\\
-& \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\operatorname*{adj}%
-\left(  A^{T}\right)  \right)  \\
-& =\left(  \left(  -1\right)  ^{i+j}\det\left(  A_{\sim i,\sim j}\right)
+(\ref{pf.prop.adj.transpose.4}))}}}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\operatorname*{adj}%
+\left(  A^{T}\right)  \right) \\
+&  =\left(  \left(  -1\right)  ^{i+j}\det\left(  A_{\sim i,\sim j}\right)
 \right)  _{1\leq i\leq n,\ 1\leq j\leq n},
 \end{align*}
 this yields $\operatorname*{adj}\left(  A^{T}\right)  =\left(

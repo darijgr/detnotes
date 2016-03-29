@@ -17,4 +17,4 @@ Up-to-date PDF files can be downloaded from my website:
 (Use this if you want to solve the problems on your own and prefer not to see
 spoilers.)
 
--- Darij Grinberg (*firstname***secondname**@gmail.com)
+-- Darij Grinberg (*firstname***lastname**@gmail.com)
