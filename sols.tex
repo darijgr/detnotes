@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Tuesday, March 29, 2016 18:23:20}
+%TCIDATA{LastRevised=Wednesday, March 30, 2016 22:16:52}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -7674,7 +7674,7 @@ i\right)  -\sigma\left(  j\right)  }{i-j}\ \ \ \ \ \ \ \ \ \ \text{for every
 this seemingly explicit formula than by counting inversions.)
 
 We shall prove (\ref{eq.sign.pseudoexplicit}) in Exercise
-\ref{exe.perm.sign.pseudoexplicit}.
+\ref{exe.perm.sign.pseudoexplicit} \textbf{(c)}.
 \end{remark}
 
 \begin{remark}
@@ -7720,6 +7720,9 @@ n}a_{\left(  i,j\right)  }.
 
 
 \textbf{(c)} Prove (\ref{eq.sign.pseudoexplicit}).
+
+\textbf{(d)} Use Exercise \ref{exe.perm.sign.pseudoexplicit} \textbf{(a)} to
+give a new solution to Exercise \ref{exe.ps2.2.5} \textbf{(b)}.
 \end{exercise}
 
 \subsection{Cycles}
@@ -23142,7 +23145,7 @@ Next, for every $m\in\left\{  0,1,\ldots,n\right\}  $, set%
 b_{m}=a_{1}\circ a_{2}\circ\cdots\circ a_{m}\in S_{n}.
 \]
 As a consequence, $b_{0}=a_{0}\circ a_{1}\circ\cdots\circ a_{0}=\left(
-\text{an composition of }0\text{ maps}\right)  =\operatorname*{id}$ and
+\text{a composition of }0\text{ maps}\right)  =\operatorname*{id}$ and
 $b_{n}=a_{1}\circ a_{2}\circ\cdots\circ a_{n}$. We claim that%
 \begin{equation}
 b_{m}\left(  k\right)  =\left\{
@@ -26814,6 +26817,8 @@ i\right)  -\sigma\left(  j\right)  }{i-j}.
 \]
 Thus, (\ref{eq.sign.pseudoexplicit}) is proven. This solves Exercise
 \ref{exe.perm.sign.pseudoexplicit} \textbf{(c)}.
+
+\textbf{(d)} See below.
 \end{proof}
 \end{vershort}
 
@@ -27394,8 +27399,120 @@ i\right)  -\sigma\left(  j\right)  }{i-j}.
 \]
 Thus, (\ref{eq.sign.pseudoexplicit}) is proven. This solves Exercise
 \ref{exe.perm.sign.pseudoexplicit} \textbf{(c)}.
+
+\textbf{(d)} See below.
 \end{proof}
 \end{verlong}
+
+Exercise \ref{exe.perm.sign.pseudoexplicit} \textbf{(d)} asks us to give an
+alternative solution to Exercise \ref{exe.ps2.2.5} \textbf{(b)}. Let us do
+this now:
+
+\begin{proof}
+[Alternative solution to Exercise \ref{exe.ps2.2.5} \textbf{(b)}.]Let
+$n\in\mathbb{N}$. Let $\sigma$ and $\tau$ be two permutations in $S_{n}$. We
+need to show that $\ell\left(  \sigma\circ\tau\right)  \equiv\ell\left(
+\sigma\right)  +\ell\left(  \tau\right)  \operatorname{mod}2$.
+
+We are going to prove that $\left(  -1\right)  ^{\sigma\circ\tau}=\left(
+-1\right)  ^{\sigma}\cdot\left(  -1\right)  ^{\tau}$ first.
+
+Exercise \ref{exe.perm.sign.pseudoexplicit} \textbf{(a)} (applied to $x_{i}%
+=i$) yields%
+\[
+\prod_{1\leq i<j\leq n}\left(  \sigma\left(  i\right)  -\sigma\left(
+j\right)  \right)  =\left(  -1\right)  ^{\sigma}\cdot\prod_{1\leq i<j\leq
+n}\left(  i-j\right)  .
+\]
+Exercise \ref{exe.perm.sign.pseudoexplicit} \textbf{(a)} (applied to
+$\sigma\left(  i\right)  $ and $\tau$ instead of $x_{i}$ and $\sigma$) yields%
+\begin{align}
+\prod_{1\leq i<j\leq n}\left(  \sigma\left(  \tau\left(  i\right)  \right)
+-\sigma\left(  \tau\left(  j\right)  \right)  \right)   &  =\left(  -1\right)
+^{\tau}\cdot\underbrace{\prod_{1\leq i<j\leq n}\left(  \sigma\left(  i\right)
+-\sigma\left(  j\right)  \right)  }_{=\left(  -1\right)  ^{\sigma}\cdot
+\prod_{1\leq i<j\leq n}\left(  i-j\right)  }\nonumber\\
+&  =\underbrace{\left(  -1\right)  ^{\tau}\cdot\left(  -1\right)  ^{\sigma}%
+}_{=\left(  -1\right)  ^{\sigma}\cdot\left(  -1\right)  ^{\tau}}\cdot
+\prod_{1\leq i<j\leq n}\left(  i-j\right) \nonumber\\
+&  =\left(  -1\right)  ^{\sigma}\cdot\left(  -1\right)  ^{\tau}\cdot
+\prod_{1\leq i<j\leq n}\left(  i-j\right)  .
+\label{sol.perm.sign.pseudoexplicit.d.1}%
+\end{align}
+Exercise \ref{exe.perm.sign.pseudoexplicit} \textbf{(a)} (applied to
+$\sigma\circ\tau$ instead of $\sigma$) yields%
+\[
+\prod_{1\leq i<j\leq n}\left(  \left(  \sigma\circ\tau\right)  \left(
+i\right)  -\left(  \sigma\circ\tau\right)  \left(  j\right)  \right)  =\left(
+-1\right)  ^{\sigma\circ\tau}\cdot\prod_{1\leq i<j\leq n}\left(  i-j\right)
+.
+\]
+Thus,%
+\begin{align}
+\left(  -1\right)  ^{\sigma\circ\tau}\cdot\prod_{1\leq i<j\leq n}\left(
+i-j\right)   &  =\prod_{1\leq i<j\leq n}\left(  \underbrace{\left(
+\sigma\circ\tau\right)  \left(  i\right)  }_{=\sigma\left(  \tau\left(
+i\right)  \right)  }-\underbrace{\left(  \sigma\circ\tau\right)  \left(
+j\right)  }_{=\sigma\left(  \tau\left(  j\right)  \right)  }\right)
+=\prod_{1\leq i<j\leq n}\left(  \sigma\left(  \tau\left(  i\right)  \right)
+-\sigma\left(  \tau\left(  j\right)  \right)  \right) \nonumber\\
+&  =\left(  -1\right)  ^{\sigma}\cdot\left(  -1\right)  ^{\tau}\cdot
+\prod_{1\leq i<j\leq n}\left(  i-j\right)  \ \ \ \ \ \ \ \ \ \ \left(
+\text{by (\ref{sol.perm.sign.pseudoexplicit.d.1})}\right)  .
+\label{sol.perm.sign.pseudoexplicit.d.2}%
+\end{align}
+
+
+\begin{vershort}
+But the integer $\prod_{1\leq i<j\leq n}\left(  i-j\right)  $ is nonzero
+(since it is a product of the nonzero integers $i-j$). Hence, we can divide
+both sides of the equality (\ref{sol.perm.sign.pseudoexplicit.d.2}) by
+$\prod_{1\leq i<j\leq n}\left(  i-j\right)  $. We thus obtain $\left(
+-1\right)  ^{\sigma\circ\tau}=\left(  -1\right)  ^{\sigma}\cdot\left(
+-1\right)  ^{\tau}$.
+\end{vershort}
+
+\begin{verlong}
+But the integer $\prod_{1\leq i<j\leq n}\left(  i-j\right)  $ is
+nonzero\footnote{\textit{Proof.} If $i$ and $j$ are two integers satisfying
+$1\leq i<j\leq n$, then the integer $i-j$ is negative (since $i<j$) and thus
+nonzero. Hence, the product $\prod_{1\leq i<j\leq n}\left(  i-j\right)  $ is a
+product of nonzero integers, and therefore itself nonzero (since a product of
+nonzero integers is always nonzero). Qed.}. Hence, we can divide both sides of
+the equality (\ref{sol.perm.sign.pseudoexplicit.d.2}) by $\prod_{1\leq i<j\leq
+n}\left(  i-j\right)  $. We thus obtain $\left(  -1\right)  ^{\sigma\circ\tau
+}=\left(  -1\right)  ^{\sigma}\cdot\left(  -1\right)  ^{\tau}$.
+\end{verlong}
+
+Now, the definition of $\left(  -1\right)  ^{\sigma}$ yields $\left(
+-1\right)  ^{\sigma}=\left(  -1\right)  ^{\ell\left(  \sigma\right)  }$. Also,
+the definition of $\left(  -1\right)  ^{\tau}$ yields $\left(  -1\right)
+^{\tau}=\left(  -1\right)  ^{\ell\left(  \tau\right)  }$. Hence,
+\[
+\underbrace{\left(  -1\right)  ^{\sigma}}_{=\left(  -1\right)  ^{\ell\left(
+\sigma\right)  }}\cdot\underbrace{\left(  -1\right)  ^{\tau}}_{=\left(
+-1\right)  ^{\ell\left(  \tau\right)  }}=\left(  -1\right)  ^{\ell\left(
+\sigma\right)  }\cdot\left(  -1\right)  ^{\ell\left(  \tau\right)  }=\left(
+-1\right)  ^{\ell\left(  \sigma\right)  +\ell\left(  \tau\right)  }.
+\]
+
+
+Finally, the definition of $\left(  -1\right)  ^{\sigma\circ\tau}$ yields
+$\left(  -1\right)  ^{\sigma\circ\tau}=\left(  -1\right)  ^{\ell\left(
+\sigma\circ\tau\right)  }$. Thus,%
+\[
+\left(  -1\right)  ^{\ell\left(  \sigma\circ\tau\right)  }=\left(  -1\right)
+^{\sigma\circ\tau}=\left(  -1\right)  ^{\sigma}\cdot\left(  -1\right)  ^{\tau
+}=\left(  -1\right)  ^{\ell\left(  \sigma\right)  +\ell\left(  \tau\right)
+}.
+\]
+But it is obvious that if two integers $u$ and $v$ satisfy $\left(  -1\right)
+^{u}=\left(  -1\right)  ^{v}$, then $u\equiv v\operatorname{mod}2$. Applying
+this to $u=\ell\left(  \sigma\circ\tau\right)  $ and $v=\ell\left(
+\sigma\right)  +\ell\left(  \tau\right)  $, we obtain $\ell\left(  \sigma
+\circ\tau\right)  \equiv\ell\left(  \sigma\right)  +\ell\left(  \tau\right)
+\operatorname{mod}2$. Thus, Exercise \ref{exe.ps2.2.5} \textbf{(b)} is solved again.
+\end{proof}
 
 \subsection{Solution to Exercise \ref{exe.perm.cycles}}
 
