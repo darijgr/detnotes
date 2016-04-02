@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, April 02, 2016 15:01:28}
+%TCIDATA{LastRevised=Saturday, April 02, 2016 15:04:19}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -6001,7 +6001,7 @@ k\right)  <\sigma^{-1}\left(  k+1\right)  ;\\
 \ell\left(  \sigma\right)  -1,\ \ \ \ \ \ \ \ \ \ \text{if }\sigma^{-1}\left(
 k\right)  >\sigma^{-1}\left(  k+1\right)
 \end{array}
-\right.  .\label{eq.exe.2.5.a.2}%
+\right.  . \label{eq.exe.2.5.a.2}%
 \end{equation}
 
 
@@ -6141,13 +6141,17 @@ modulo $2$.
 
 \subsection{\label{sect.sign}The sign of a permutation}
 
-We define the \textit{sign} of a permutation $\sigma\in S_{n}$ as the integer
-$\left(  -1\right)  ^{\ell\left(  \sigma\right)  }$. We denote this sign by
-$\left(  -1\right)  ^{\sigma}$ or $\operatorname*{sign}\sigma$ or
-$\operatorname*{sgn}\sigma$. We say that a permutation $\sigma$ is
+\begin{definition}
+\label{def.perm.sign}We define the \textit{sign} of a permutation $\sigma\in
+S_{n}$ as the integer $\left(  -1\right)  ^{\ell\left(  \sigma\right)  }$. We
+denote this sign by $\left(  -1\right)  ^{\sigma}$ or $\operatorname*{sign}%
+\sigma$ or $\operatorname*{sgn}\sigma$. We say that a permutation $\sigma$ is
 \textit{even} if its sign is $1$ (that is, if $\ell\left(  \sigma\right)  $ is
 even), and \textit{odd} if its sign is $-1$ (that is, if $\ell\left(
-\sigma\right)  $ is odd). Signs of permutations have the following properties:
+\sigma\right)  $ is odd).
+\end{definition}
+
+Signs of permutations have the following properties:
 
 \begin{itemize}
 \item The sign of the identity permutation $\operatorname*{id}\in S_{n}$ is
@@ -6171,10 +6175,10 @@ Applying (\ref{eq.exe.2.5.a.1}) to $\sigma=\operatorname*{id}$, we obtain
 \ell\left(  \operatorname*{id}\right)  -1,\ \ \ \ \ \ \ \ \ \ \text{if
 }\operatorname*{id}\left(  k\right)  >\operatorname*{id}\left(  k+1\right)
 \end{array}
-\right. \\
+\right.  \\
 &  =\underbrace{\ell\left(  \operatorname*{id}\right)  }_{=0}%
 +1\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\operatorname*{id}\left(  k\right)
-=k<k+1=\operatorname*{id}\left(  k+1\right)  \right) \\
+=k<k+1=\operatorname*{id}\left(  k+1\right)  \right)  \\
 &  =1.
 \end{align*}
 This rewrites as $\ell\left(  s_{k}\right)  =1$ (since $\operatorname*{id}%
@@ -7050,7 +7054,7 @@ k\right)  <\sigma^{-1}\left(  k+1\right)  ;\\
 \ell\left(  \sigma\right)  -1,\ \ \ \ \ \ \ \ \ \ \text{if }\sigma^{-1}\left(
 k\right)  >\sigma^{-1}\left(  k+1\right)
 \end{array}
-\right.  .\label{eq.exe.2.5'.a.2}%
+\right.  . \label{eq.exe.2.5'.a.2}%
 \end{equation}
 
 
@@ -7097,14 +7101,17 @@ Having defined the length of a permutation $\sigma\in S_{\left(
 \infty\right)  }$, we can now define the sign of such a permutation. Again, we
 mimic the definition of the sign of a $\sigma\in S_{n}$:
 
-We define the \textit{sign} of a permutation $\sigma\in S_{\left(
-\infty\right)  }$ as the integer $\left(  -1\right)  ^{\ell\left(
+\begin{definition}
+\label{def.perm.sign'}We define the \textit{sign} of a permutation $\sigma\in
+S_{\left(  \infty\right)  }$ as the integer $\left(  -1\right)  ^{\ell\left(
 \sigma\right)  }$. We denote this sign by $\left(  -1\right)  ^{\sigma}$ or
 $\operatorname*{sign}\sigma$ or $\operatorname*{sgn}\sigma$. We say that a
 permutation $\sigma$ is \textit{even} if its sign is $1$ (that is, if
 $\ell\left(  \sigma\right)  $ is even), and \textit{odd} if its sign is $-1$
-(that is, if $\ell\left(  \sigma\right)  $ is odd). Signs of permutations have
-the following properties:
+(that is, if $\ell\left(  \sigma\right)  $ is odd).
+\end{definition}
+
+Signs of permutations have the following properties:
 
 \begin{itemize}
 \item The sign of the identity permutation $\operatorname*{id}\in S_{\left(
