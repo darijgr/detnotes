@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, April 02, 2016 15:13:06}
+%TCIDATA{LastRevised=Saturday, April 02, 2016 15:17:58}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -7919,8 +7919,8 @@ $\sigma$ can be written as a composition of several pairwise disjoint cycles
 as follows:%
 \begin{equation}
 \sigma=\operatorname*{cyc}\nolimits_{1,4,3}\circ\operatorname*{cyc}%
-\nolimits_{7,9}\circ\operatorname*{cyc}\nolimits_{2,6}%
-.\label{eq.rmk.perm.cycles.decompose.1}%
+\nolimits_{7,9}\circ\operatorname*{cyc}\nolimits_{2,6}.
+\label{eq.rmk.perm.cycles.decompose.1}%
 \end{equation}
 Indeed, here is how such a decomposition can be found: Let us draw a directed
 graph whose vertices are $1,2,\ldots,n$, and which has an arc $i\rightarrow
@@ -7928,7 +7928,8 @@ graph whose vertices are $1,2,\ldots,n$, and which has an arc $i\rightarrow
 $n$ arcs altogether; some of them can be loops.) For our permutation
 $\sigma\in S_{9}$, this graph looks as follows:
 \begin{equation}
-\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=3cm, thick,main node/.style={circle,fill=blue!20,draw}] \node[main node] (1) {1}; \node[main node] (3) [below right of=1] {3}; \node[main node] (4) [above right of=1] {4}; \node[main node] (2) [above left of=1] {2}; \node[main node] (6) [below left of=1] {6}; \node[main node] (5) [below right of=4] {5}; \node[main node] (7) [above right of=5] {7}; \node[main node] (9) [below right of=5] {9}; \node[main node] (8) [above right of=9] {8}; \path[every node/.style={font=\sffamily\small}] (1) edge (4) (2) edge [bend right] (6) (3) edge (1) (4) edge (3) (5) edge [loop left] (5) (6) edge [bend right] (2) (7) edge [bend right] (9) (8) edge [loop left] (8) (9) edge [bend right] (7); \end{tikzpicture}.\label{eq.rmk.perm.cycles.decompose.2}%
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=3cm, thick,main node/.style={circle,fill=blue!20,draw}] \node[main node] (1) {1}; \node[main node] (3) [below right of=1] {3}; \node[main node] (4) [above right of=1] {4}; \node[main node] (2) [above left of=1] {2}; \node[main node] (6) [below left of=1] {6}; \node[main node] (5) [below right of=4] {5}; \node[main node] (7) [above right of=5] {7}; \node[main node] (9) [below right of=5] {9}; \node[main node] (8) [above right of=9] {8}; \path[every node/.style={font=\sffamily\small}] (1) edge (4) (2) edge [bend right] (6) (3) edge (1) (4) edge (3) (5) edge [loop left] (5) (6) edge [bend right] (2) (7) edge [bend right] (9) (8) edge [loop left] (8) (9) edge [bend right] (7); \end{tikzpicture}.
+\label{eq.rmk.perm.cycles.decompose.2}%
 \end{equation}
 Obviously, at each vertex $i$ of this graph, exactly one arc begins (namely,
 the arc $i\rightarrow\sigma\left(  i\right)  $). Moreover, since $\sigma$ is
@@ -7967,8 +7968,8 @@ Hence, we have%
 \begin{equation}
 \sigma=\operatorname*{cyc}\nolimits_{2,6}\circ\operatorname*{cyc}%
 \nolimits_{3,1,4}\circ\operatorname*{cyc}\nolimits_{5}\circ\operatorname*{cyc}%
-\nolimits_{7,9}\circ\operatorname*{cyc}\nolimits_{8}%
-.\label{eq.rmk.perm.cycles.decompose.3}%
+\nolimits_{7,9}\circ\operatorname*{cyc}\nolimits_{8}.
+\label{eq.rmk.perm.cycles.decompose.3}%
 \end{equation}
 Thus, we have found a way to write $\sigma$ as a composition of several
 pairwise disjoint cycles. We can rewrite (and even simplify) this
@@ -15594,10 +15595,19 @@ m}$. Thus, the definition of $\operatorname*{rows}\nolimits_{i_{1}%
 ,j}\right)  _{1\leq x\leq u,\ 1\leq j\leq m}=\left(  a_{i_{i},j}\right)
 _{1\leq i\leq u,\ 1\leq j\leq m}%
 \]
-(here, we renamed the index $\left(  x,j\right)  $ as $\left(  i,j\right)  $).
-Hence, the definition of $\operatorname*{cols}\nolimits_{j_{1},j_{2}%
-,\ldots,j_{v}}\left(  \operatorname*{rows}\nolimits_{i_{1},i_{2},\ldots,i_{u}%
-}A\right)  $ yields%
+\footnote{The double use of the letter \textquotedblleft$i$\textquotedblright%
+\ in \textquotedblleft$i_{i}$\textquotedblright\ might appear confusing. The
+first \textquotedblleft$i$\textquotedblright\ is part of the notation $i_{k}$
+for $k\in\left\{  1,2,\ldots,u\right\}  $; the second \textquotedblleft%
+$i$\textquotedblright\ is an element of $\left\{  1,2,\ldots,u\right\}  $.
+These two \textquotedblleft$i$\textquotedblright s are unrelated to each
+other. I hope the reader can easily tell them apart by the fact that the
+\textquotedblleft$i$\textquotedblright\ that is part of the notation $i_{k}$
+always appears with a subscript, whereas the second \textquotedblleft%
+$i$\textquotedblright\ never does.} (here, we renamed the index $\left(
+x,j\right)  $ as $\left(  i,j\right)  $). Hence, the definition of
+$\operatorname*{cols}\nolimits_{j_{1},j_{2},\ldots,j_{v}}\left(
+\operatorname*{rows}\nolimits_{i_{1},i_{2},\ldots,i_{u}}A\right)  $ yields%
 \[
 \operatorname*{cols}\nolimits_{j_{1},j_{2},\ldots,j_{v}}\left(
 \operatorname*{rows}\nolimits_{i_{1},i_{2},\ldots,i_{u}}A\right)  =\left(
@@ -41288,9 +41298,17 @@ p}$. Hence, the definition of $\operatorname*{rows}\nolimits_{i_{1}%
 ,j}\right)  _{1\leq x\leq u,\ 1\leq j\leq p}=\left(  a_{i_{i},j}\right)
 _{1\leq i\leq u,\ 1\leq j\leq p}%
 \]
-(here, we renamed the index $\left(  x,j\right)  $ as $\left(  i,j\right)  $).
-(The two \textquotedblleft$i$\textquotedblright s appearing in the
-\textquotedblleft$i_{i}$\textquotedblright\ are unrelated to each other.)
+\footnote{The double use of the letter \textquotedblleft$i$\textquotedblright%
+\ in \textquotedblleft$i_{i}$\textquotedblright\ might appear confusing. The
+first \textquotedblleft$i$\textquotedblright\ is part of the notation $i_{k}$
+for $k\in\left\{  1,2,\ldots,u\right\}  $; the second \textquotedblleft%
+$i$\textquotedblright\ is an element of $\left\{  1,2,\ldots,u\right\}  $.
+These two \textquotedblleft$i$\textquotedblright s are unrelated to each
+other. I hope the reader can easily tell them apart by the fact that the
+\textquotedblleft$i$\textquotedblright\ that is part of the notation $i_{k}$
+always appears with a subscript, whereas the second \textquotedblleft%
+$i$\textquotedblright\ never does.} (here, we renamed the index $\left(
+x,j\right)  $ as $\left(  i,j\right)  $).
 
 Also, $B=\left(  b_{i,j}\right)  _{1\leq i\leq p,\ 1\leq j\leq m}$. Hence, the
 definition of $\operatorname*{cols}\nolimits_{j_{1},j_{2},\ldots,j_{v}}B$
