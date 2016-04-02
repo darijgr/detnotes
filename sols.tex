@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, April 01, 2016 12:00:02}
+%TCIDATA{LastRevised=Saturday, April 02, 2016 14:50:04}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -5372,10 +5372,10 @@ be the Fibonacci sequence.
 
 \textbf{(a)} Prove the identities%
 \begin{align*}
-1f_{n}  &  =f_{n}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq1;\\
-2f_{n}  &  =f_{n-2}+f_{n+1}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq3;\\
-3f_{n}  &  =f_{n-2}+f_{n+2}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq3;\\
-4f_{n}  &  =f_{n-2}+f_{n}+f_{n+2}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq3.
+1f_{n} &  =f_{n}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq0;\\
+2f_{n} &  =f_{n-2}+f_{n+1}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq2;\\
+3f_{n} &  =f_{n-2}+f_{n+2}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq2;\\
+4f_{n} &  =f_{n-2}+f_{n}+f_{n+2}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq2.
 \end{align*}
 
 
@@ -34856,7 +34856,7 @@ for $k>1$ in the sum) are $0$.
 Indeed, every $k\in\left\{  2,3,\ldots,n\right\}  $ satisfies%
 \begin{equation}
 \det\left(  \left(  x_{i}^{n-j}x_{i}^{\delta_{j,k}}\right)  _{1\leq i\leq
-n,\ 1\leq j\leq n}\right)  =0\label{sol.vander-det.s1.sol2.short.2}%
+n,\ 1\leq j\leq n}\right)  =0 \label{sol.vander-det.s1.sol2.short.2}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{sol.vander-det.s1.sol2.short.2}):} Let
 $k\in\left\{  2,3,\ldots,n\right\}  $. Let $A$ be the $n\times n$-matrix
@@ -34868,8 +34868,8 @@ x_{i}^{\delta_{j,k}}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$, we have%
 \begin{equation}
 \left(  \text{the }\left(  h,k\right)  \text{-th entry of }A\right)
 =x_{h}^{n-k}\underbrace{x_{h}^{\delta_{k,k}}}_{\substack{=x_{h}^{1}%
-\\\text{(since }\delta_{k,k}=1\text{)}}}=x_{h}^{n-k}x_{h}^{1}=x_{h}%
-^{n-k+1}.\label{sol.vander-det.s1.sol2.short.2.pf.0}%
+\\\text{(since }\delta_{k,k}=1\text{)}}}=x_{h}^{n-k}x_{h}^{1}=x_{h}^{n-k+1}.
+\label{sol.vander-det.s1.sol2.short.2.pf.0}%
 \end{equation}
 On the other hand, $k-1\in\left\{  1,2,\ldots,n\right\}  $ (since
 $k\in\left\{  2,3,\ldots,n\right\}  $), and thus the $\left(  h,k-1\right)
@@ -34933,9 +34933,9 @@ Hence, (\ref{sol.vander-det.s1.sol2.short.4}) is proven (since we have proven
 Claims 1 and 2).}. Now, (\ref{sol.vander-det.s1.sol2.short.1}) shows that%
 \begin{align*}
 &  \left(  x_{1}+x_{2}+\cdots+x_{n}\right)  \prod_{1\leq i<j\leq n}\left(
-x_{i}-x_{j}\right)  \\
+x_{i}-x_{j}\right) \\
 &  =\sum\limits_{k=1}^{n}\det\left(  \left(  x_{i}^{n-j}x_{i}^{\delta_{j,k}%
-}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  \\
+}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right) \\
 &  =\det\left(  \left(  \underbrace{x_{i}^{n-j}x_{i}^{\delta_{j,1}}%
 }_{\substack{=%
 \begin{cases}
@@ -34948,7 +34948,7 @@ n,\ 1\leq j\leq n}\right)  +\sum\limits_{k=2}^{n}\underbrace{\det\left(
 n}\right)  }_{\substack{=0\\\text{(by (\ref{sol.vander-det.s1.sol2.short.2}%
 ))}}}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have split off the addend for
-}k=1\text{ from the sum}\right)  \\
+}k=1\text{ from the sum}\right) \\
 &  =\det\left(  \left(
 \begin{cases}
 x_{i}^{n-j}, & \text{if }j>1;\\
