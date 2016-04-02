@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, April 02, 2016 14:52:28}
+%TCIDATA{LastRevised=Saturday, April 02, 2016 14:55:48}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -5375,10 +5375,10 @@ be the Fibonacci sequence.
 
 \textbf{(a)} Prove the identities%
 \begin{align*}
-1f_{n} &  =f_{n}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq0;\\
-2f_{n} &  =f_{n-2}+f_{n+1}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq2;\\
-3f_{n} &  =f_{n-2}+f_{n+2}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq2;\\
-4f_{n} &  =f_{n-2}+f_{n}+f_{n+2}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq2.
+1f_{n}  &  =f_{n}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq0;\\
+2f_{n}  &  =f_{n-2}+f_{n+1}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq2;\\
+3f_{n}  &  =f_{n-2}+f_{n+2}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq2;\\
+4f_{n}  &  =f_{n-2}+f_{n}+f_{n+2}\ \ \ \ \ \ \ \ \ \ \text{for all }n\geq2.
 \end{align*}
 
 
@@ -6270,8 +6270,8 @@ defined as%
 
 \end{definition}
 
-Convince yourself that you have an intuition for this formula. The sum
-(\ref{eq.det.old}) has $n!$ terms, each of which has the form
+Let me try to describe the sum (\ref{eq.det.old}) in slightly more visual
+terms: The sum (\ref{eq.det.old}) has $n!$ terms, each of which has the form
 \textquotedblleft$\left(  -1\right)  ^{\sigma}$ times a
 product\textquotedblright. The product has $n$ factors, which are entries of
 $A$, and are chosen in such a way that there is exactly one entry taken from
@@ -6281,7 +6281,12 @@ i\right)  $-th entry from the $i$-th row.
 
 Convince yourself that the classical formulas%
 \begin{align*}
-\det\left(  a\right)   &  =a;\\
+\det\left(
+\begin{array}
+[c]{c}%
+a
+\end{array}
+\right)   &  =a;\\
 \det\left(
 \begin{array}
 [c]{cc}%
