@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, April 02, 2016 15:04:19}
+%TCIDATA{LastRevised=Saturday, April 02, 2016 15:13:06}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -6175,10 +6175,10 @@ Applying (\ref{eq.exe.2.5.a.1}) to $\sigma=\operatorname*{id}$, we obtain
 \ell\left(  \operatorname*{id}\right)  -1,\ \ \ \ \ \ \ \ \ \ \text{if
 }\operatorname*{id}\left(  k\right)  >\operatorname*{id}\left(  k+1\right)
 \end{array}
-\right.  \\
+\right. \\
 &  =\underbrace{\ell\left(  \operatorname*{id}\right)  }_{=0}%
 +1\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\operatorname*{id}\left(  k\right)
-=k<k+1=\operatorname*{id}\left(  k+1\right)  \right)  \\
+=k<k+1=\operatorname*{id}\left(  k+1\right)  \right) \\
 &  =1.
 \end{align*}
 This rewrites as $\ell\left(  s_{k}\right)  =1$ (since $\operatorname*{id}%
@@ -7919,8 +7919,8 @@ $\sigma$ can be written as a composition of several pairwise disjoint cycles
 as follows:%
 \begin{equation}
 \sigma=\operatorname*{cyc}\nolimits_{1,4,3}\circ\operatorname*{cyc}%
-\nolimits_{7,9}\circ\operatorname*{cyc}\nolimits_{2,6}.
-\label{eq.rmk.perm.cycles.decompose.1}%
+\nolimits_{7,9}\circ\operatorname*{cyc}\nolimits_{2,6}%
+.\label{eq.rmk.perm.cycles.decompose.1}%
 \end{equation}
 Indeed, here is how such a decomposition can be found: Let us draw a directed
 graph whose vertices are $1,2,\ldots,n$, and which has an arc $i\rightarrow
@@ -7928,17 +7928,17 @@ graph whose vertices are $1,2,\ldots,n$, and which has an arc $i\rightarrow
 $n$ arcs altogether; some of them can be loops.) For our permutation
 $\sigma\in S_{9}$, this graph looks as follows:
 \begin{equation}
-\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=3cm, thick,main node/.style={circle,fill=blue!20,draw}] \node[main node] (1) {1}; \node[main node] (3) [below right of=1] {3}; \node[main node] (4) [above right of=1] {4}; \node[main node] (2) [above left of=1] {2}; \node[main node] (6) [below left of=1] {6}; \node[main node] (5) [below right of=4] {5}; \node[main node] (7) [above right of=5] {7}; \node[main node] (9) [below right of=5] {9}; \node[main node] (8) [above right of=9] {8}; \path[every node/.style={font=\sffamily\small}] (1) edge (4) (2) edge [bend right] (6) (3) edge (1) (4) edge (3) (5) edge [loop left] (5) (6) edge [bend right] (2) (7) edge [bend right] (9) (8) edge [loop left] (8) (9) edge [bend right] (7); \end{tikzpicture}.
-\label{eq.rmk.perm.cycles.decompose.2}%
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=3cm, thick,main node/.style={circle,fill=blue!20,draw}] \node[main node] (1) {1}; \node[main node] (3) [below right of=1] {3}; \node[main node] (4) [above right of=1] {4}; \node[main node] (2) [above left of=1] {2}; \node[main node] (6) [below left of=1] {6}; \node[main node] (5) [below right of=4] {5}; \node[main node] (7) [above right of=5] {7}; \node[main node] (9) [below right of=5] {9}; \node[main node] (8) [above right of=9] {8}; \path[every node/.style={font=\sffamily\small}] (1) edge (4) (2) edge [bend right] (6) (3) edge (1) (4) edge (3) (5) edge [loop left] (5) (6) edge [bend right] (2) (7) edge [bend right] (9) (8) edge [loop left] (8) (9) edge [bend right] (7); \end{tikzpicture}.\label{eq.rmk.perm.cycles.decompose.2}%
 \end{equation}
-Obviously, at each vertex of this graph, exactly one arc begins. Moreover,
-since $\sigma$ is invertible, it is also clear that at each vertex of this
-graph, exactly one arc ends. Due to the way we constructed this graph, it is
-clear that it completely describes our permutation $\sigma$: Namely, if we
-want to find $\sigma\left(  i\right)  $ for a given $i\in\left[  n\right]  $,
-we should just locate the vertex $i$ on the graph, and follow the arc that
-begins at this vertex; the endpoint of this arc will be $\sigma\left(
-i\right)  $.
+Obviously, at each vertex $i$ of this graph, exactly one arc begins (namely,
+the arc $i\rightarrow\sigma\left(  i\right)  $). Moreover, since $\sigma$ is
+invertible, it is also clear that at each vertex $i$ of this graph, exactly
+one arc ends (namely, the arc $\sigma^{-1}\left(  i\right)  \rightarrow i$).
+Due to the way we constructed this graph, it is clear that it completely
+describes our permutation $\sigma$: Namely, if we want to find $\sigma\left(
+i\right)  $ for a given $i\in\left[  n\right]  $, we should just locate the
+vertex $i$ on the graph, and follow the arc that begins at this vertex; the
+endpoint of this arc will be $\sigma\left(  i\right)  $.
 
 Now, a look at this graph reveals five directed cycles (in the sense of
 \textquotedblleft paths which end at the same vertex at which they
@@ -7967,14 +7967,14 @@ Hence, we have%
 \begin{equation}
 \sigma=\operatorname*{cyc}\nolimits_{2,6}\circ\operatorname*{cyc}%
 \nolimits_{3,1,4}\circ\operatorname*{cyc}\nolimits_{5}\circ\operatorname*{cyc}%
-\nolimits_{7,9}\circ\operatorname*{cyc}\nolimits_{8}.
-\label{eq.rmk.perm.cycles.decompose.3}%
+\nolimits_{7,9}\circ\operatorname*{cyc}\nolimits_{8}%
+.\label{eq.rmk.perm.cycles.decompose.3}%
 \end{equation}
 Thus, we have found a way to write $\sigma$ as a composition of several
 pairwise disjoint cycles. We can rewrite (and even simplify) this
 representation a bit: Namely, we can simplify
 (\ref{eq.rmk.perm.cycles.decompose.3}) by removing the factors
-$\operatorname*{cyc}\nolimits_{5}$ and $\operatorname*{cyc}\nolimits_{9}$
+$\operatorname*{cyc}\nolimits_{5}$ and $\operatorname*{cyc}\nolimits_{8}$
 (because both of these factors equal $\operatorname*{id}$); thus we obtain
 $\sigma=\operatorname*{cyc}\nolimits_{2,6}\circ\operatorname*{cyc}%
 \nolimits_{3,1,4}\circ\operatorname*{cyc}\nolimits_{7,9}$. We can furthermore
