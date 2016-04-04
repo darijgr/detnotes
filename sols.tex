@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Monday, April 04, 2016 03:05:04}
+%TCIDATA{LastRevised=Monday, April 04, 2016 18:24:57}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -858,10 +858,10 @@ Now,%
 2\sum_{i=0}^{n}i  &  =\sum_{i=0}^{n}i+\underbrace{\sum_{i=0}^{n}i}%
 _{=\sum_{i=0}^{n}\left(  n-i\right)  }\ \ \ \ \ \ \ \ \ \ \left(  \text{since
 }2q=q+q\text{ for every }q\in\mathbb{Q}\right) \\
-&  =\sum_{i=0}^{n}i+\sum_{i=0}^{n}\left(  n-i\right)  =\sum_{i=0}%
-^{n}\underbrace{\left(  i+\left(  n-i\right)  \right)  }_{=n}%
-\ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have used (\ref{eq.sum.linear1.c})
-backwards}\right) \\
+&  =\sum_{i=0}^{n}i+\sum_{i=0}^{n}\left(  n-i\right) \\
+&  =\sum_{i=0}^{n}\underbrace{\left(  i+\left(  n-i\right)  \right)  }%
+_{=n}\ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have used
+(\ref{eq.sum.linear1.c}) backwards}\right) \\
 &  =\sum_{i=0}^{n}n=\left(  n+1\right)  n\ \ \ \ \ \ \ \ \ \ \left(  \text{by
 (\ref{eq.sum.equal})}\right) \\
 &  =n\left(  n+1\right)  ,
@@ -3111,12 +3111,13 @@ X\right)  $ (for $0\leq k\leq d$) is a polynomial in the single variable $X$.
 Consider this $d$ and these $P_{k}\left(  X\right)  $.
 
 Fix $\alpha\in\mathbb{N}$. Every $x\in\mathbb{N}$ satisfies%
-\[
-P\left(  \alpha,x\right)  =\sum_{k=0}^{d}P_{k}\left(  \alpha\right)
-x^{k}\ \ \ \ \ \ \ \ \ \ \left(  \text{here, we substituted }\alpha\text{ and
+\begin{align*}
+P\left(  \alpha,x\right)   &  =\sum_{k=0}^{d}P_{k}\left(  \alpha\right)
+x^{k}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we substituted }\alpha\text{ and
 }x\text{ for }X\text{ and }Y\text{ in }P=\sum_{k=0}^{d}P_{k}\left(  X\right)
 Y^{k}\right)  ,
-\]
+\end{align*}
 so that $\sum_{k=0}^{d}P_{k}\left(  \alpha\right)  x^{k}=P\left(
 \alpha,x\right)  =0$ (by (\ref{pf.lem.polyeq.b.2}), applied to $\alpha$ and
 $x$ instead of $x$ and $y$).
@@ -4270,7 +4271,8 @@ of $n$).
 Now, let $i\in\left\{  0,1,\ldots,n\right\}  $. Applying Proposition
 \ref{prop.vandermonde.consequences} \textbf{(a)} to $x=i$ and $y=m$, we obtain%
 \begin{align}
-\dbinom{i+m}{n}  &  =\sum_{k=0}^{n}\dbinom{i}{k}\dbinom{m}{n-k}\nonumber\\
+&  \dbinom{i+m}{n}\nonumber\\
+&  =\sum_{k=0}^{n}\dbinom{i}{k}\dbinom{m}{n-k}\nonumber\\
 &  =\sum_{k=0}^{i}\dbinom{i}{k}\dbinom{m}{n-k}+\sum_{k=i+1}^{n}%
 \underbrace{\dbinom{i}{k}}_{\substack{=0\\\text{(by (\ref{eq.binom.0}),
 applied to }i\text{ and }k\\\text{instead of }m\text{ and }n\text{ (since
@@ -4500,8 +4502,9 @@ instead of $x$) shows that%
 &  =\left(  -1\right)  ^{a}\dbinom{a+x}{a}\left(  -1\right)  ^{b}\dbinom
 {b+x}{b}\nonumber\\
 &  =\underbrace{\left(  -1\right)  ^{a}\left(  -1\right)  ^{b}}_{=\left(
--1\right)  ^{a+b}}\dbinom{a+x}{a}\dbinom{b+x}{b}=\left(  -1\right)
-^{a+b}\dbinom{a+x}{a}\dbinom{b+x}{b}. \label{pf.prop.binom.bin-id.g.3}%
+-1\right)  ^{a+b}}\dbinom{a+x}{a}\dbinom{b+x}{b}\nonumber\\
+&  =\left(  -1\right)  ^{a+b}\dbinom{a+x}{a}\dbinom{b+x}{b}.
+\label{pf.prop.binom.bin-id.g.3}%
 \end{align}
 But every $i\in\left\{  0,1,\ldots,b\right\}  $ satisfies%
 \begin{align*}
@@ -4724,8 +4727,8 @@ f_{0}  &  =0,\ \ \ \ \ \ \ \ \ \ f_{1}=1,\ \ \ \ \ \ \ \ \ \ f_{2}%
 =1,\ \ \ \ \ \ \ \ \ \ f_{3}=2,\ \ \ \ \ \ \ \ \ \ f_{4}%
 =3,\ \ \ \ \ \ \ \ \ \ f_{5}=5,\\
 f_{6}  &  =8,\ \ \ \ \ \ \ \ \ \ f_{7}=13,\ \ \ \ \ \ \ \ \ \ f_{8}%
-=21,\ \ \ \ \ \ \ \ \ \ f_{9}=34,\ \ \ \ \ \ \ \ \ \ f_{10}%
-=55,\ \ \ \ \ \ \ \ \ \ f_{11}=89.
+=21,\ \ \ \ \ \ \ \ \ \ f_{9}=34,\ \ \ \ \ \ \ \ \ \ f_{10}=55,\\
+f_{11}  &  =89,\ \ \ \ \ \ \ \ \ \ f_{12}=144,\ \ \ \ \ \ \ \ \ \ f_{13}=233.
 \end{align*}
 (Some authors prefer to start the sequence at $f_{1}$ rather than $f_{0}$; of
 course, the recursive definition then needs to be modified to require
@@ -4740,8 +4743,9 @@ which is defined recursively by $\ell_{0}=2$, $\ell_{1}=1$, and $\ell_{n}%
 _{2}=3,\ \ \ \ \ \ \ \ \ \ \ell_{3}=4,\ \ \ \ \ \ \ \ \ \ \ell_{4}%
 =7,\ \ \ \ \ \ \ \ \ \ \ell_{5}=11,\\
 \ell_{6}  &  =18,\ \ \ \ \ \ \ \ \ \ \ell_{7}=29,\ \ \ \ \ \ \ \ \ \ \ell
-_{8}=47,\ \ \ \ \ \ \ \ \ \ \ell_{9}=76,\ \ \ \ \ \ \ \ \ \ \ell
-_{10}=123,\ \ \ \ \ \ \ \ \ \ \ell_{11}=170.
+_{8}=47,\ \ \ \ \ \ \ \ \ \ \ell_{9}=76,\ \ \ \ \ \ \ \ \ \ \ell_{10}=123,\\
+\ell_{11}  &  =199,\ \ \ \ \ \ \ \ \ \ \ell_{12}=322,\ \ \ \ \ \ \ \ \ \ \ell
+_{13}=521.
 \end{align*}
 
 \end{itemize}
@@ -5798,7 +5802,7 @@ Clearly, $\left(  \tau\left(  1\right)  ,\tau\left(  2\right)  ,\ldots
 ,p_{2},\ldots,p_{n}\right)  =\left(  \tau\left(  1\right)  ,\tau\left(
 2\right)  ,\ldots,\tau\left(  n\right)  \right)  $.
 
-Hence, there exists a permutation $\sigma\in S_{n}$ such that $\left(
+Hence, there exists a permutation $\sigma\in S_{n}$ such that \newline$\left(
 p_{1},p_{2},\ldots,p_{n}\right)  =\left(  \sigma\left(  1\right)
 ,\sigma\left(  2\right)  ,\ldots,\sigma\left(  n\right)  \right)  $ (namely,
 $\sigma=\tau$). Moreover, there exists \textbf{at most one} such
@@ -5891,7 +5895,7 @@ Now,%
 &  =\left(  \tau\left(  1\right)  ,\tau\left(  2\right)  ,\ldots,\tau\left(
 k\right)  \right)  .
 \end{align*}
-Hence, there exists a permutation $\sigma\in S_{n}$ such that $\left(
+Hence, there exists a permutation $\sigma\in S_{n}$ such that \newline$\left(
 p_{1},p_{2},\ldots,p_{k}\right)  =\left(  \sigma\left(  1\right)
 ,\sigma\left(  2\right)  ,\ldots,\sigma\left(  k\right)  \right)  $ (namely,
 $\sigma=\tau$). This proves Proposition \ref{prop.perms.lists} \textbf{(c)}.
@@ -14333,10 +14337,12 @@ n}\right)  ^{T}\right)  =\det\left(  \left(  x_{j}^{n-i}\right)  _{1\leq i\leq
 n,\ 1\leq j\leq n}\right)
 \]
 (by Exercise \ref{exe.ps4.4}, applied to $A=\left(  x_{j}^{n-i}\right)
-_{1\leq i\leq n,\ 1\leq j\leq n}$), this yields $\det\left(  \left(
-x_{j}^{n-i}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  =\prod_{1\leq
-i<j\leq n}\left(  x_{i}-x_{j}\right)  $. This proves Theorem
-\ref{thm.vander-det} \textbf{(b)}.
+_{1\leq i\leq n,\ 1\leq j\leq n}$), this yields%
+\[
+\det\left(  \left(  x_{j}^{n-i}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}\right)  =\prod_{1\leq i<j\leq n}\left(  x_{i}-x_{j}\right)  .
+\]
+This proves Theorem \ref{thm.vander-det} \textbf{(b)}.
 
 \textbf{(d)} Applying Lemma \ref{lem.vander-det.lem-rearr} to $a_{i,j}%
 =x_{j}^{n-i}$, we obtain%
@@ -16586,11 +16592,11 @@ n-1\right)  }^{g_{q}\left(  1\right)  ,g_{q}\left(  2\right)  ,\ldots
 (\ref{pf.lem.laplace.Apq.short.indices1}) and
 (\ref{pf.lem.laplace.Apq.short.indices2})}\right) \nonumber\\
 &  =\left(  a_{g_{p}\left(  x\right)  ,g_{q}\left(  y\right)  }\right)
-_{1\leq x\leq n-1,\ 1\leq y\leq n-1}\ \ \ \ \ \ \ \ \ \ \left(  \text{by the
-definition of }\operatorname*{sub}\nolimits_{g_{p}\left(  1\right)
-,g_{p}\left(  2\right)  ,\ldots,g_{p}\left(  n-1\right)  }^{g_{q}\left(
-1\right)  ,g_{q}\left(  2\right)  ,\ldots,g_{q}\left(  n-1\right)  }A\right)
-\nonumber\\
+_{1\leq x\leq n-1,\ 1\leq y\leq n-1}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\operatorname*{sub}%
+\nolimits_{g_{p}\left(  1\right)  ,g_{p}\left(  2\right)  ,\ldots,g_{p}\left(
+n-1\right)  }^{g_{q}\left(  1\right)  ,g_{q}\left(  2\right)  ,\ldots
+,g_{q}\left(  n-1\right)  }A\right) \nonumber\\
 &  =\left(  a_{g_{p}\left(  i\right)  ,g_{q}\left(  j\right)  }\right)
 _{1\leq i\leq n-1,\ 1\leq j\leq n-1}\label{pf.lem.laplace.Apq.short.A}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we renamed the index }\left(
@@ -16762,8 +16768,8 @@ _{i=1}^{n-1}a_{g_{p}\left(  i\right)  ,g_{q}\left(  \sigma\left(  i\right)
 \right) \\
 &  =\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  n\right)  =n}}\left(
 -1\right)  ^{p+q}\cdot\left(  -1\right)  ^{\sigma}\prod_{i=1}^{n-1}%
-a_{g_{p}\left(  i\right)  ,g_{q}\left(  \sigma\left(  i\right)  \right)
-}=\left(  -1\right)  ^{p+q}\underbrace{\sum_{\substack{\sigma\in
+a_{g_{p}\left(  i\right)  ,g_{q}\left(  \sigma\left(  i\right)  \right)  }\\
+&  =\left(  -1\right)  ^{p+q}\underbrace{\sum_{\substack{\sigma\in
 S_{n};\\\sigma\left(  n\right)  =n}}\left(  -1\right)  ^{\sigma}\prod
 _{i=1}^{n-1}a_{g_{p}\left(  i\right)  ,g_{q}\left(  \sigma\left(  i\right)
 \right)  }}_{\substack{=\det\left(  \left(  a_{g_{p}\left(  i\right)
@@ -16995,8 +17001,8 @@ n\right)  =n}}}\underbrace{\left(  -1\right)  ^{T\left(  \sigma\right)  }%
 \right) \\
 &  =\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  n\right)  =n}}\left(
 -1\right)  ^{p+q}\cdot\left(  -1\right)  ^{\sigma}\prod_{i=1}^{n-1}%
-a_{g_{p}\left(  i\right)  ,g_{q}\left(  \sigma\left(  i\right)  \right)
-}=\left(  -1\right)  ^{p+q}\underbrace{\sum_{\substack{\sigma\in
+a_{g_{p}\left(  i\right)  ,g_{q}\left(  \sigma\left(  i\right)  \right)  }\\
+&  =\left(  -1\right)  ^{p+q}\underbrace{\sum_{\substack{\sigma\in
 S_{n};\\\sigma\left(  n\right)  =n}}\left(  -1\right)  ^{\sigma}\prod
 _{i=1}^{n-1}a_{g_{p}\left(  i\right)  ,g_{q}\left(  \sigma\left(  i\right)
 \right)  }}_{\substack{=\det\left(  \left(  a_{g_{p}\left(  i\right)
@@ -17088,8 +17094,8 @@ the}\\\text{statement }\left(  \sigma\left(  p\right)  =q\right)  \text{)}%
 }}\left(  -1\right)  ^{\sigma}\underbrace{\prod_{i\in\left\{  1,2,\ldots
 ,n\right\}  }a_{i,\sigma\left(  i\right)  }}_{\substack{=a_{p,\sigma\left(
 p\right)  }\prod_{\substack{i\in\left\{  1,2,\ldots,n\right\}  ;\\i\neq
-p}}a_{i,\sigma\left(  i\right)  }\\\text{(here, we have split off the factor
-for }i=p\text{ from the product)}}}\\
+p}}a_{i,\sigma\left(  i\right)  }\\\text{(here, we have split off
+the}\\\text{factor for }i=p\text{ from the product)}}}\\
 &  =\underbrace{\sum_{p\in\left\{  1,2,\ldots,n\right\}  }}_{=\sum_{p=1}^{n}%
 }\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  p\right)  =q}}\left(
 -1\right)  ^{\sigma}\underbrace{a_{p,\sigma\left(  p\right)  }}%
@@ -18595,21 +18601,21 @@ On the other hand, let us write the matrix $A$ in the form $A=\left(
 a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$. Then, the definition of the
 product of two matrices shows that%
 \begin{align}
-A\cdot\operatorname*{adj}A  &  =\left(  \sum_{k=1}^{n}a_{i,k}\left(
--1\right)  ^{k+j}\det\left(  A_{\sim j,\sim k}\right)  \right)  _{1\leq i\leq
-n,\ 1\leq j\leq n}\nonumber\\
+&  A\cdot\operatorname*{adj}A\nonumber\\
+&  =\left(  \sum_{k=1}^{n}a_{i,k}\left(  -1\right)  ^{k+j}\det\left(  A_{\sim
+j,\sim k}\right)  \right)  _{1\leq i\leq n,\ 1\leq j\leq n}\nonumber\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }A=\left(  a_{i,j}\right)  _{1\leq
 i\leq n,\ 1\leq j\leq n}\text{ and }\operatorname*{adj}A=\left(  \left(
 -1\right)  ^{i+j}\det\left(  A_{\sim j,\sim i}\right)  \right)  _{1\leq i\leq
-n,\ 1\leq j\leq n}\right) \nonumber\\
+n,\ 1\leq j\leq n}\right)  \nonumber\\
 &  =\left(  \sum_{q=1}^{n}\underbrace{a_{i,q}\left(  -1\right)  ^{q+j}%
 }_{=\left(  -1\right)  ^{q+j}a_{i,q}}\det\left(  A_{\sim j,\sim q}\right)
 \right)  _{1\leq i\leq n,\ 1\leq j\leq n}\nonumber\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we renamed the summation index
-}k\text{ as }q\right) \nonumber\\
+}k\text{ as }q\right)  \nonumber\\
 &  =\left(  \sum_{q=1}^{n}\left(  -1\right)  ^{q+j}a_{i,q}\det\left(  A_{\sim
-j,\sim q}\right)  \right)  _{1\leq i\leq n,\ 1\leq j\leq n}.
-\label{pf.thm.adj.inverse.short.L}%
+j,\sim q}\right)  \right)  _{1\leq i\leq n,\ 1\leq j\leq n}%
+.\label{pf.thm.adj.inverse.short.L}%
 \end{align}
 
 
@@ -18635,8 +18641,9 @@ $p=i$) yields%
 \det A=\sum_{q=1}^{n}\underbrace{\left(  -1\right)  ^{i+q}}%
 _{\substack{=\left(  -1\right)  ^{q+i}=\left(  -1\right)  ^{q+j}\\\text{(since
 }i=j\text{)}}}a_{i,q}\det\left(  \underbrace{A_{\sim i,\sim q}}%
-_{\substack{=A_{\sim j,\sim q}\\\text{(since }}}\right)  =\sum_{q=1}%
-^{n}\left(  -1\right)  ^{q+j}a_{i,q}\det\left(  A_{\sim j,\sim q}\right)  .
+_{\substack{=A_{\sim j,\sim q}\\\text{(since }i=j\text{)}}}\right)
+=\sum_{q=1}^{n}\left(  -1\right)  ^{q+j}a_{i,q}\det\left(  A_{\sim j,\sim
+q}\right)  .
 \]
 In view of $\det A\cdot\underbrace{\delta_{i,j}}_{=1}=\det A$, this rewrites
 as
@@ -18828,8 +18835,9 @@ $p=i$) yields%
 \det A=\sum_{q=1}^{n}\underbrace{\left(  -1\right)  ^{i+q}}%
 _{\substack{=\left(  -1\right)  ^{q+i}=\left(  -1\right)  ^{q+j}\\\text{(since
 }i=j\text{)}}}a_{i,q}\det\left(  \underbrace{A_{\sim i,\sim q}}%
-_{\substack{=A_{\sim j,\sim q}\\\text{(since }}}\right)  =\sum_{q=1}%
-^{n}\left(  -1\right)  ^{q+j}a_{i,q}\det\left(  A_{\sim j,\sim q}\right)  .
+_{\substack{=A_{\sim j,\sim q}\\\text{(since }i=j\text{)}}}\right)
+=\sum_{q=1}^{n}\left(  -1\right)  ^{q+j}a_{i,q}\det\left(  A_{\sim j,\sim
+q}\right)  .
 \]
 Hence,%
 \[
@@ -31267,7 +31275,7 @@ If $u\neq k$, then (\ref{sol.ps4.6k.lem.5}) follows from%
 \begin{align*}
 \left(  \text{the }u\text{-th row of }A\right)   &  =\left(  \text{the
 }u\text{-th row of }C\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
-(\ref{sol.ps4.6k.lem.3})}\right)  \\
+(\ref{sol.ps4.6k.lem.3})}\right) \\
 &  =\left(  \text{the }u\text{-th row of }C^{\prime}\right)
 \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{sol.ps4.6k.lem.3'})}\right)  .
 \end{align*}
@@ -31281,10 +31289,10 @@ We have $u=k$ (since we don't have $u\neq k$). Hence,%
 \text{the }k\text{-th row of }A\right)  =\lambda\underbrace{w}%
 _{\substack{=\left(  \text{the }k\text{-th row of }C\right)  \\\text{(by
 (\ref{sol.ps4.6k.lem.4}))}}}\ \ \ \ \ \ \ \ \ \ \left(  \text{by
-(\ref{sol.ps4.6k.lem.2})}\right)  \\
+(\ref{sol.ps4.6k.lem.2})}\right) \\
 &  =\lambda\left(  \text{the }k\text{-th row of }C\right)  =\left(  \text{the
 }\underbrace{k}_{=u}\text{-th row of }C^{\prime}\right)
-\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{sol.ps4.6k.lem.4'})}\right)  \\
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{sol.ps4.6k.lem.4'})}\right) \\
 &  =\left(  \text{the }u\text{-th row of }C^{\prime}\right)  .
 \end{align*}
 Hence, (\ref{sol.ps4.6k.lem.5}) is proven.}. In other words, every row of $A$
