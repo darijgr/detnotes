@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Sunday, April 03, 2016 16:06:06}
+%TCIDATA{LastRevised=Monday, April 04, 2016 03:00:30}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -24742,14 +24742,13 @@ adjacent\footnote{\textit{Proof.} Let $i\in\left\{  1,2,\ldots,L\right\}  $.
 Then, the definition of $\gamma_{i-1}$ yields $\gamma_{i-1}=\sigma\circ\left(
 s_{j_{1}}\circ s_{j_{2}}\circ\cdots\circ s_{j_{i-1}}\right)  $, whereas the
 definition of $\gamma_{i}$ yields%
-\begin{align*}
-\gamma_{i}  &  =\sigma\circ\underbrace{\left(  s_{j_{1}}\circ s_{j_{2}}%
-\circ\cdots\circ s_{j_{i}}\right)  }_{=\left(  s_{j_{1}}\circ s_{j_{2}}%
-\circ\cdots\circ s_{j_{i-1}}\right)  \circ s_{j_{i}}}=\underbrace{\sigma
+\[
+\gamma_{i}=\sigma\circ\underbrace{\left(  s_{j_{1}}\circ s_{j_{2}}\circ
+\cdots\circ s_{j_{i}}\right)  }_{=\left(  s_{j_{1}}\circ s_{j_{2}}\circ
+\cdots\circ s_{j_{i-1}}\right)  \circ s_{j_{i}}}=\underbrace{\sigma
 \circ\left(  s_{j_{1}}\circ s_{j_{2}}\circ\cdots\circ s_{j_{i-1}}\right)
-}_{=\gamma_{i-1}}\circ s_{j_{i}}\\
-&  =\gamma_{i-1}\circ s_{j_{i}}.
-\end{align*}
+}_{=\gamma_{i-1}}\circ s_{j_{i}}=\gamma_{i-1}\circ s_{j_{i}}.
+\]
 Therefore, there exists a $k\in\left\{  1,2,\ldots,n-1\right\}  $ such that
 $\gamma_{i}=\gamma_{i-1}\circ s_{k}$ (namely, $k=j_{i}$). In other words, the
 vertices $\gamma_{i}$ and $\gamma_{i-1}$ of the (undirected) $n$-th right
@@ -24830,13 +24829,13 @@ Compared with $\delta_{M}=\tau$, this yields%
 }\right)  ,
 \]
 so that
-\begin{align*}
+\[
 \sigma^{-1}\circ\underbrace{\tau}_{=\sigma\circ\left(  s_{k_{1}}\circ
-s_{k_{2}}\circ\cdots\circ s_{k_{M}}\right)  }  &  =\underbrace{\sigma
-^{-1}\circ\sigma}_{=\operatorname*{id}}\circ\left(  s_{k_{1}}\circ s_{k_{2}%
-}\circ\cdots\circ s_{k_{M}}\right) \\
-&  =s_{k_{1}}\circ s_{k_{2}}\circ\cdots\circ s_{k_{M}}.
-\end{align*}
+s_{k_{2}}\circ\cdots\circ s_{k_{M}}\right)  }=\underbrace{\sigma^{-1}%
+\circ\sigma}_{=\operatorname*{id}}\circ\left(  s_{k_{1}}\circ s_{k_{2}}%
+\circ\cdots\circ s_{k_{M}}\right)  =s_{k_{1}}\circ s_{k_{2}}\circ\cdots\circ
+s_{k_{M}}.
+\]
 Therefore, the permutation $\sigma^{-1}\circ\tau$ can be written as a
 composition of $M$ permutations of the form $s_{k}$ (with $k\in\left\{
 1,2,\ldots,n-1\right\}  $) (namely, of the $M$ permutations $s_{k_{1}}$,
@@ -28178,22 +28177,22 @@ _{=\sigma\circ\operatorname*{cyc}\nolimits_{1,2,\ldots,k}\circ\sigma^{-1}%
 Thus,%
 \begin{align*}
 \left(  -1\right)  ^{\operatorname*{cyc}\nolimits_{i_{1},i_{2},\ldots,i_{k}%
-}\circ\sigma} &  =\left(  -1\right)  ^{\sigma\circ\operatorname*{cyc}%
+}\circ\sigma}  &  =\left(  -1\right)  ^{\sigma\circ\operatorname*{cyc}%
 \nolimits_{1,2,\ldots,k}}=\left(  -1\right)  ^{\sigma}\cdot\underbrace{\left(
 -1\right)  ^{\operatorname*{cyc}\nolimits_{1,2,\ldots,k}}}_{=\left(
 -1\right)  ^{k-1}}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{eq.sign.prod}), applied to }%
-\tau=\operatorname*{cyc}\nolimits_{1,2,\ldots,k}\right)  \\
+\tau=\operatorname*{cyc}\nolimits_{1,2,\ldots,k}\right) \\
 &  =\left(  -1\right)  ^{\sigma}\cdot\left(  -1\right)  ^{k-1}.
 \end{align*}
 Compared with%
 \begin{align*}
 \left(  -1\right)  ^{\operatorname*{cyc}\nolimits_{i_{1},i_{2},\ldots,i_{k}%
-}\circ\sigma} &  =\left(  -1\right)  ^{\operatorname*{cyc}\nolimits_{i_{1}%
+}\circ\sigma}  &  =\left(  -1\right)  ^{\operatorname*{cyc}\nolimits_{i_{1}%
 ,i_{2},\ldots,i_{k}}}\cdot\left(  -1\right)  ^{\sigma}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{eq.sign.prod}), applied to
 }\operatorname*{cyc}\nolimits_{i_{1},i_{2},\ldots,i_{k}}\text{ and }%
-\sigma\text{ instead of }\sigma\text{ and }\tau\right)  \\
+\sigma\text{ instead of }\sigma\text{ and }\tau\right) \\
 &  =\left(  -1\right)  ^{\sigma}\cdot\left(  -1\right)  ^{\operatorname*{cyc}%
 \nolimits_{i_{1},i_{2},\ldots,i_{k}}},
 \end{align*}
@@ -34889,7 +34888,7 @@ for $k>1$ in the sum) are $0$.
 Indeed, every $k\in\left\{  2,3,\ldots,n\right\}  $ satisfies%
 \begin{equation}
 \det\left(  \left(  x_{i}^{n-j}x_{i}^{\delta_{j,k}}\right)  _{1\leq i\leq
-n,\ 1\leq j\leq n}\right)  =0 \label{sol.vander-det.s1.sol2.short.2}%
+n,\ 1\leq j\leq n}\right)  =0\label{sol.vander-det.s1.sol2.short.2}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{sol.vander-det.s1.sol2.short.2}):} Let
 $k\in\left\{  2,3,\ldots,n\right\}  $. Let $A$ be the $n\times n$-matrix
@@ -34901,8 +34900,8 @@ x_{i}^{\delta_{j,k}}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$, we have%
 \begin{equation}
 \left(  \text{the }\left(  h,k\right)  \text{-th entry of }A\right)
 =x_{h}^{n-k}\underbrace{x_{h}^{\delta_{k,k}}}_{\substack{=x_{h}^{1}%
-\\\text{(since }\delta_{k,k}=1\text{)}}}=x_{h}^{n-k}x_{h}^{1}=x_{h}^{n-k+1}.
-\label{sol.vander-det.s1.sol2.short.2.pf.0}%
+\\\text{(since }\delta_{k,k}=1\text{)}}}=x_{h}^{n-k}x_{h}^{1}=x_{h}%
+^{n-k+1}.\label{sol.vander-det.s1.sol2.short.2.pf.0}%
 \end{equation}
 On the other hand, $k-1\in\left\{  1,2,\ldots,n\right\}  $ (since
 $k\in\left\{  2,3,\ldots,n\right\}  $), and thus the $\left(  h,k-1\right)
@@ -34966,9 +34965,9 @@ Hence, (\ref{sol.vander-det.s1.sol2.short.4}) is proven (since we have proven
 Claims 1 and 2).}. Now, (\ref{sol.vander-det.s1.sol2.short.1}) shows that%
 \begin{align*}
 &  \left(  x_{1}+x_{2}+\cdots+x_{n}\right)  \prod_{1\leq i<j\leq n}\left(
-x_{i}-x_{j}\right) \\
+x_{i}-x_{j}\right)  \\
 &  =\sum\limits_{k=1}^{n}\det\left(  \left(  x_{i}^{n-j}x_{i}^{\delta_{j,k}%
-}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right) \\
+}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  \\
 &  =\det\left(  \left(  \underbrace{x_{i}^{n-j}x_{i}^{\delta_{j,1}}%
 }_{\substack{=%
 \begin{cases}
@@ -34981,14 +34980,15 @@ n,\ 1\leq j\leq n}\right)  +\sum\limits_{k=2}^{n}\underbrace{\det\left(
 n}\right)  }_{\substack{=0\\\text{(by (\ref{sol.vander-det.s1.sol2.short.2}%
 ))}}}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have split off the addend for
-}k=1\text{ from the sum}\right) \\
+}k=1\text{ from the sum}\right)  \\
 &  =\det\left(  \left(
 \begin{cases}
 x_{i}^{n-j}, & \text{if }j>1;\\
 x_{i}^{n}, & \text{if }j=1
 \end{cases}
 \right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  +\underbrace{\sum
-\limits_{k=2}^{n}0}_{=0}=\det\left(  \left(
+\limits_{k=2}^{n}0}_{=0}\\
+&  =\det\left(  \left(
 \begin{cases}
 x_{i}^{n-j}, & \text{if }j>1;\\
 x_{i}^{n}, & \text{if }j=1
@@ -35019,7 +35019,7 @@ x_{i}-x_{j}\right)  . \label{sol.vander-det.s1.sol2.1}%
 Now, every $k\in\left\{  2,3,\ldots,n\right\}  $ satisfies%
 \begin{equation}
 \det\left(  \left(  x_{i}^{n-j}x_{i}^{\delta_{j,k}}\right)  _{1\leq i\leq
-n,\ 1\leq j\leq n}\right)  =0 \label{sol.vander-det.s1.sol2.2}%
+n,\ 1\leq j\leq n}\right)  =0\label{sol.vander-det.s1.sol2.2}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{sol.vander-det.s1.sol2.2}):} Let
 $k\in\left\{  2,3,\ldots,n\right\}  $. Let $A$ be the $n\times n$-matrix
@@ -35039,8 +35039,8 @@ _{\substack{=x_{i}^{1}\\\text{(since }\delta_{k,k}=1\\\text{(since
 }k=k\text{))}}}\right)  _{1\leq i\leq n,\ 1\leq j\leq1}\nonumber\\
 &  =\left(  \underbrace{x_{i}^{n-k}x_{i}^{1}}_{=x_{i}^{\left(  n-k\right)
 +1}}\right)  _{1\leq i\leq n,\ 1\leq j\leq1}=\left(  x_{i}^{\left(
-n-k\right)  +1}\right)  _{1\leq i\leq n,\ 1\leq j\leq1}.
-\label{sol.vander-det.s1.sol2.2.pf.1}%
+n-k\right)  +1}\right)  _{1\leq i\leq n,\ 1\leq j\leq1}%
+.\label{sol.vander-det.s1.sol2.2.pf.1}%
 \end{align}
 On the other hand, we have $k\in\left\{  2,3,\ldots,n\right\}  $, so that
 $k-1\in\left\{  1,2,\ldots,n-1\right\}  \subseteq\left\{  1,2,\ldots
@@ -35133,9 +35133,9 @@ Now, we have proven (\ref{sol.vander-det.s1.sol2.4}) in each of the two Cases
 (\ref{sol.vander-det.s1.sol2.1}) shows that%
 \begin{align*}
 &  \left(  x_{1}+x_{2}+\cdots+x_{n}\right)  \prod_{1\leq i<j\leq n}\left(
-x_{i}-x_{j}\right) \\
+x_{i}-x_{j}\right)  \\
 &  =\sum\limits_{k=1}^{n}\det\left(  \left(  x_{i}^{n-j}x_{i}^{\delta_{j,k}%
-}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right) \\
+}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  \\
 &  =\det\left(  \left(  \underbrace{x_{i}^{n-j}x_{i}^{\delta_{j,1}}%
 }_{\substack{=%
 \begin{cases}
@@ -35147,14 +35147,15 @@ n,\ 1\leq j\leq n}\right)  +\sum\limits_{k=2}^{n}\underbrace{\det\left(
 \left(  x_{i}^{n-j}x_{i}^{\delta_{j,k}}\right)  _{1\leq i\leq n,\ 1\leq j\leq
 n}\right)  }_{\substack{=0\\\text{(by (\ref{sol.vander-det.s1.sol2.2}))}}}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have split off the addend for
-}k=1\text{ from the sum}\right) \\
+}k=1\text{ from the sum}\right)  \\
 &  =\det\left(  \left(
 \begin{cases}
 x_{i}^{n-j}, & \text{if }j>1;\\
 x_{i}^{n}, & \text{if }j=1
 \end{cases}
 \right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  +\underbrace{\sum
-\limits_{k=2}^{n}0}_{=0}=\det\left(  \left(
+\limits_{k=2}^{n}0}_{=0}\\
+&  =\det\left(  \left(
 \begin{cases}
 x_{i}^{n-j}, & \text{if }j>1;\\
 x_{i}^{n}, & \text{if }j=1
@@ -37314,7 +37315,7 @@ i\in\left\{  0,1,\ldots,n\right\}  . \label{sol.tridiag.isl.v}%
 
 \textit{Proof of (\ref{sol.tridiag.isl.v}):} We shall prove
 (\ref{sol.tridiag.isl.v}) by strong induction over $i$. Thus, we fix some
-$k\in\left\{  0,1,\ldots,n\right\}  $. We assume that (\ref{sol.tridiag.isl.u}%
+$k\in\left\{  0,1,\ldots,n\right\}  $. We assume that (\ref{sol.tridiag.isl.v}%
 ) holds for all $i<k$. We now must show that (\ref{sol.tridiag.isl.v}) holds
 for $i=k$. In other words, we must show that $v_{k}=\det\left(  A_{n-k,n}%
 \right)  $.
