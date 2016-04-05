@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Monday, April 04, 2016 18:24:57}
+%TCIDATA{LastRevised=Tuesday, April 05, 2016 18:51:30}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -802,8 +802,8 @@ the same addends as the sum $\sum_{t\in T}a_{t}$.)
 -n,-n+1,\ldots,-1\right\}  }\left(  -s\right)  ^{3}.
 \]
 (This follows from (\ref{eq.sum.subs1}), applied to $S=\left\{  -n,-n+1,\ldots
-,-1\right\}  $, $T=\left\{  1,2,\ldots,n\right\}  $, and $f\left(  s\right)
-=-s$.)
+,-1\right\}  $, $T=\left\{  1,2,\ldots,n\right\}  $, $f\left(  s\right)  =-s$,
+and $a_{t}=t^{3}$.)
 
 \item The sets $S$ and $T$ in (\ref{eq.sum.subs1}) may well be the same. For
 example, for any $n\in\mathbb{N}$, we have%
@@ -812,8 +812,8 @@ example, for any $n\in\mathbb{N}$, we have%
 1,2,\ldots,n\right\}  }\left(  n+1-s\right)  ^{3}.
 \]
 (This follows from (\ref{eq.sum.subs1}), applied to $S=\left\{  1,2,\ldots
-,n\right\}  $, $T=\left\{  1,2,\ldots,n\right\}  $, and $f\left(  s\right)
-=n+1-s$.)
+,n\right\}  $, $T=\left\{  1,2,\ldots,n\right\}  $, $f\left(  s\right)
+=n+1-s$ and $a_{t}=t^{3}$.)
 
 \item More generally: Let $u$ and $v$ be two integers. Then, the map $\left\{
 u,u+1,\ldots,v\right\}  \rightarrow\left\{  u,u+1,\ldots,v\right\}  $ sending
@@ -845,9 +845,9 @@ otherwise used. It is perfectly okay to use one and the same letter for both
 of them, e.g., to write $\sum_{s\in T}a_{s}=\sum_{s\in S}a_{f\left(  s\right)
 }$.
 
-\item Let us give the probably most famous example of substitution in a sum:
-Fix a nonnegative integer $n$. Then, we can substitute $n-i$ for $i$ in the
-sum $\sum_{i=0}^{n}i$ (since the map $\left\{  0,1,\ldots,n\right\}
+\item Here is the probably most famous example of substitution in a sum: Fix a
+nonnegative integer $n$. Then, we can substitute $n-i$ for $i$ in the sum
+$\sum_{i=0}^{n}i$ (since the map $\left\{  0,1,\ldots,n\right\}
 \rightarrow\left\{  0,1,\ldots,n\right\}  ,\ i\mapsto n-i$ is a bijection).
 Thus, we obtain%
 \[
@@ -855,24 +855,24 @@ Thus, we obtain%
 \]
 Now,%
 \begin{align*}
-2\sum_{i=0}^{n}i  &  =\sum_{i=0}^{n}i+\underbrace{\sum_{i=0}^{n}i}%
-_{=\sum_{i=0}^{n}\left(  n-i\right)  }\ \ \ \ \ \ \ \ \ \ \left(  \text{since
-}2q=q+q\text{ for every }q\in\mathbb{Q}\right) \\
-&  =\sum_{i=0}^{n}i+\sum_{i=0}^{n}\left(  n-i\right) \\
+2\sum_{i=0}^{n}i &  =\sum_{i=0}^{n}i+\underbrace{\sum_{i=0}^{n}i}_{=\sum
+_{i=0}^{n}\left(  n-i\right)  }\ \ \ \ \ \ \ \ \ \ \left(  \text{since
+}2q=q+q\text{ for every }q\in\mathbb{Q}\right)  \\
+&  =\sum_{i=0}^{n}i+\sum_{i=0}^{n}\left(  n-i\right)  \\
 &  =\sum_{i=0}^{n}\underbrace{\left(  i+\left(  n-i\right)  \right)  }%
 _{=n}\ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have used
-(\ref{eq.sum.linear1.c}) backwards}\right) \\
+(\ref{eq.sum.linear1.c}) backwards}\right)  \\
 &  =\sum_{i=0}^{n}n=\left(  n+1\right)  n\ \ \ \ \ \ \ \ \ \ \left(  \text{by
-(\ref{eq.sum.equal})}\right) \\
+(\ref{eq.sum.equal})}\right)  \\
 &  =n\left(  n+1\right)  ,
 \end{align*}
 and therefore%
 \begin{equation}
-\sum_{i=0}^{n}i=\dfrac{n\left(  n+1\right)  }{2}. \label{eq.sum.littlegauss1}%
+\sum_{i=0}^{n}i=\dfrac{n\left(  n+1\right)  }{2}.\label{eq.sum.littlegauss1}%
 \end{equation}
 Since $\sum_{i=0}^{n}i=0+\sum_{i=1}^{n}i=\sum_{i=1}^{n}i$, this rewrites as%
 \begin{equation}
-\sum_{i=1}^{n}i=\dfrac{n\left(  n+1\right)  }{2}. \label{eq.sum.littlegauss2}%
+\sum_{i=1}^{n}i=\dfrac{n\left(  n+1\right)  }{2}.\label{eq.sum.littlegauss2}%
 \end{equation}
 
 \end{itemize}
@@ -975,12 +975,12 @@ $a_{v}-a_{u-1}$ like a telescope does when it is collapsed.
 be a finite set. Let $W$ be a set. Let $f:S\rightarrow W$ be a map. Then,%
 \begin{equation}
 \sum_{s\in S}a_{s}=\sum_{w\in W}\sum_{\substack{s\in S;\\f\left(  s\right)
-=w}}a_{s}. \label{eq.sum.sheph}%
+=w}}a_{s}.\label{eq.sum.sheph}%
 \end{equation}
 The idea behind this formula is the following: The left hand side is the sum
-of all $a_{s}$ for $s\in S$. The right hand side is the same sum, but split
-into a particular way: First, for each $w\in W$, we sum the $a_{s}$ for all
-$s\in S$ satisfying $f\left(  s\right)  =w$, and then we sum all these
+of all $a_{s}$ for $s\in S$. The right hand side is the same sum, but split in
+a particular way: First, for each $w\in W$, we sum the $a_{s}$ for all $s\in
+S$ satisfying $f\left(  s\right)  =w$, and then we sum all these
 \textquotedblleft partial sums\textquotedblright\ are all together.
 
 \textbf{Examples:}
@@ -18607,15 +18607,15 @@ j,\sim k}\right)  \right)  _{1\leq i\leq n,\ 1\leq j\leq n}\nonumber\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }A=\left(  a_{i,j}\right)  _{1\leq
 i\leq n,\ 1\leq j\leq n}\text{ and }\operatorname*{adj}A=\left(  \left(
 -1\right)  ^{i+j}\det\left(  A_{\sim j,\sim i}\right)  \right)  _{1\leq i\leq
-n,\ 1\leq j\leq n}\right)  \nonumber\\
+n,\ 1\leq j\leq n}\right) \nonumber\\
 &  =\left(  \sum_{q=1}^{n}\underbrace{a_{i,q}\left(  -1\right)  ^{q+j}%
 }_{=\left(  -1\right)  ^{q+j}a_{i,q}}\det\left(  A_{\sim j,\sim q}\right)
 \right)  _{1\leq i\leq n,\ 1\leq j\leq n}\nonumber\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we renamed the summation index
-}k\text{ as }q\right)  \nonumber\\
+}k\text{ as }q\right) \nonumber\\
 &  =\left(  \sum_{q=1}^{n}\left(  -1\right)  ^{q+j}a_{i,q}\det\left(  A_{\sim
-j,\sim q}\right)  \right)  _{1\leq i\leq n,\ 1\leq j\leq n}%
-.\label{pf.thm.adj.inverse.short.L}%
+j,\sim q}\right)  \right)  _{1\leq i\leq n,\ 1\leq j\leq n}.
+\label{pf.thm.adj.inverse.short.L}%
 \end{align}
 
 
