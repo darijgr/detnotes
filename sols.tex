@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Tuesday, April 05, 2016 18:51:30}
+%TCIDATA{LastRevised=Wednesday, April 06, 2016 17:57:45}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -855,24 +855,24 @@ Thus, we obtain%
 \]
 Now,%
 \begin{align*}
-2\sum_{i=0}^{n}i &  =\sum_{i=0}^{n}i+\underbrace{\sum_{i=0}^{n}i}_{=\sum
-_{i=0}^{n}\left(  n-i\right)  }\ \ \ \ \ \ \ \ \ \ \left(  \text{since
-}2q=q+q\text{ for every }q\in\mathbb{Q}\right)  \\
-&  =\sum_{i=0}^{n}i+\sum_{i=0}^{n}\left(  n-i\right)  \\
+2\sum_{i=0}^{n}i  &  =\sum_{i=0}^{n}i+\underbrace{\sum_{i=0}^{n}i}%
+_{=\sum_{i=0}^{n}\left(  n-i\right)  }\ \ \ \ \ \ \ \ \ \ \left(  \text{since
+}2q=q+q\text{ for every }q\in\mathbb{Q}\right) \\
+&  =\sum_{i=0}^{n}i+\sum_{i=0}^{n}\left(  n-i\right) \\
 &  =\sum_{i=0}^{n}\underbrace{\left(  i+\left(  n-i\right)  \right)  }%
 _{=n}\ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have used
-(\ref{eq.sum.linear1.c}) backwards}\right)  \\
+(\ref{eq.sum.linear1.c}) backwards}\right) \\
 &  =\sum_{i=0}^{n}n=\left(  n+1\right)  n\ \ \ \ \ \ \ \ \ \ \left(  \text{by
-(\ref{eq.sum.equal})}\right)  \\
+(\ref{eq.sum.equal})}\right) \\
 &  =n\left(  n+1\right)  ,
 \end{align*}
 and therefore%
 \begin{equation}
-\sum_{i=0}^{n}i=\dfrac{n\left(  n+1\right)  }{2}.\label{eq.sum.littlegauss1}%
+\sum_{i=0}^{n}i=\dfrac{n\left(  n+1\right)  }{2}. \label{eq.sum.littlegauss1}%
 \end{equation}
 Since $\sum_{i=0}^{n}i=0+\sum_{i=1}^{n}i=\sum_{i=1}^{n}i$, this rewrites as%
 \begin{equation}
-\sum_{i=1}^{n}i=\dfrac{n\left(  n+1\right)  }{2}.\label{eq.sum.littlegauss2}%
+\sum_{i=1}^{n}i=\dfrac{n\left(  n+1\right)  }{2}. \label{eq.sum.littlegauss2}%
 \end{equation}
 
 \end{itemize}
@@ -975,7 +975,7 @@ $a_{v}-a_{u-1}$ like a telescope does when it is collapsed.
 be a finite set. Let $W$ be a set. Let $f:S\rightarrow W$ be a map. Then,%
 \begin{equation}
 \sum_{s\in S}a_{s}=\sum_{w\in W}\sum_{\substack{s\in S;\\f\left(  s\right)
-=w}}a_{s}.\label{eq.sum.sheph}%
+=w}}a_{s}. \label{eq.sum.sheph}%
 \end{equation}
 The idea behind this formula is the following: The left hand side is the sum
 of all $a_{s}$ for $s\in S$. The right hand side is the same sum, but split in
@@ -2875,7 +2875,7 @@ binomial coefficients.)}.
 
 \item We have%
 \begin{equation}
-\dbinom{m}{n}\in\mathbb{Z} \label{eq.binom.int}%
+\dbinom{m}{n}\in\mathbb{Z}\label{eq.binom.int}%
 \end{equation}
 for any $m\in\mathbb{Z}$ and $n\in\mathbb{N}$\ \ \ \ \footnote{\textit{Proof
 of (\ref{eq.binom.int}):} Let $m\in\mathbb{Z}$ and $n\in\mathbb{N}$. We need
@@ -2890,7 +2890,7 @@ Let us first consider Case 1. In this case, we have $m\geq0$. Hence,
 $m\in\mathbb{N}$. Thus, there exists an $m$-element set $S$ (for example,
 $S=\left\{  1,2,\ldots,m\right\}  $). Consider such $S$. Then, $\dbinom{m}{n}$
 is the number of all $n$-element subsets of $S$. Hence, $\dbinom{m}{n}$ is a
-positive integer, so that $\dbinom{m}{n}\in\mathbb{N}\subseteq\mathbb{Z}$.
+nonnegative integer, so that $\dbinom{m}{n}\in\mathbb{N}\subseteq\mathbb{Z}$.
 This proves (\ref{eq.binom.int}) in Case 1.
 \par
 Let us now consider Case 2. In this case, we have $m<0$. Thus, $m+1\leq0$, so
