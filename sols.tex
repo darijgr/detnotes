@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Wednesday, April 06, 2016 18:01:57}
+%TCIDATA{LastRevised=Wednesday, April 06, 2016 18:06:17}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -2613,21 +2613,38 @@ triangle. Nevertheless, the \textquotedblleft other\textquotedblright%
 integer) are highly useful.}. Let us state a few basic properties of these numbers:
 
 \begin{itemize}
-\item We have $\dbinom{X}{0}=1$\ \ \ \ \footnote{\textit{Proof.} The
-definition of $\dbinom{X}{0}$ yields $\dbinom{X}{0}=\dfrac{X\left(
-X-1\right)  \cdots\left(  X-0+1\right)  }{0!}$. Since $X\left(  X-1\right)
-\cdots\left(  X-0+1\right)  =\left(  \text{a product of }0\text{
-integers}\right)  =1$, this rewrites as $\dbinom{X}{0}=\dfrac{1}{0!}=1$ (since
-$0!=1$), qed.}. Thus,
+\item We have%
 \begin{equation}
-\dbinom{m}{0}=1 \label{eq.binom.00}%
+\dbinom{m}{n}=\dfrac{m\left(  m-1\right)  \cdots\left(  m-n+1\right)  }%
+{n!}\label{eq.binom.mn}%
+\end{equation}
+for every $m\in\mathbb{Z}$ and $n\in\mathbb{N}$. (This follows by evaluating
+both sides of the identity $\dbinom{X}{n}=\dfrac{X\left(  X-1\right)
+\cdots\left(  X-n+1\right)  }{n!}$ at $X=m$.)
+
+The equality (\ref{eq.binom.mn}) is how the binomial coefficients $\dbinom
+{m}{n}$ are usually defined in textbooks. Thus, our detour through polynomials
+was not necessary. (But this detour will reveal to be useful soon, when we
+will prove some properties of binomial coefficients.)
+
+\item We have
+\begin{equation}
+\dbinom{X}{0}=1\label{eq.binom.00X}%
+\end{equation}
+\footnote{\textit{Proof.} The definition of $\dbinom{X}{0}$ yields $\dbinom
+{X}{0}=\dfrac{X\left(  X-1\right)  \cdots\left(  X-0+1\right)  }{0!}$. Since
+$X\left(  X-1\right)  \cdots\left(  X-0+1\right)  =\left(  \text{a product of
+}0\text{ integers}\right)  =1$, this rewrites as $\dbinom{X}{0}=\dfrac{1}%
+{0!}=1$ (since $0!=1$), qed.}. Thus,
+\begin{equation}
+\dbinom{m}{0}=1\label{eq.binom.00}%
 \end{equation}
 for every $m\in\mathbb{Z}$. (This follows by substituting $0$ for $m$ in
-(\ref{eq.binom.00}).)
+(\ref{eq.binom.00X}).)
 
 \item We have%
 \begin{equation}
-\dbinom{m}{n}=\dfrac{m!}{n!\left(  m-n\right)  !} \label{eq.binom.formula}%
+\dbinom{m}{n}=\dfrac{m!}{n!\left(  m-n\right)  !}\label{eq.binom.formula}%
 \end{equation}
 for any $m\in\mathbb{N}$ and $n\in\mathbb{N}$ satisfying $m\geq n$%
 \ \ \ \ \footnote{\textbf{Caution:} This formula holds only for $m\in
@@ -2649,9 +2666,9 @@ we obtain%
 so that $n!\cdot\dbinom{m}{n}=m\left(  m-1\right)  \cdots\left(  m-n+1\right)
 $. But%
 \begin{align*}
-m!  &  =m\left(  m-1\right)  \cdots1=\left(  m\left(  m-1\right)
-\cdots\left(  m-n+1\right)  \right)  \cdot\underbrace{\left(  \left(
-m-n\right)  \left(  m-n-1\right)  \cdots1\right)  }_{=\left(  m-n\right)  !}\\
+m! &  =m\left(  m-1\right)  \cdots1=\left(  m\left(  m-1\right)  \cdots\left(
+m-n+1\right)  \right)  \cdot\underbrace{\left(  \left(  m-n\right)  \left(
+m-n-1\right)  \cdots1\right)  }_{=\left(  m-n\right)  !}\\
 &  =\left(  m\left(  m-1\right)  \cdots\left(  m-n+1\right)  \right)
 \cdot\left(  m-n\right)  !,
 \end{align*}
@@ -2664,7 +2681,7 @@ obtain $\dbinom{m}{n}=\dfrac{m!}{n!\left(  m-n\right)  !}$. Thus,
 
 \item We have
 \begin{equation}
-\dbinom{m}{n}=0 \label{eq.binom.0}%
+\dbinom{m}{n}=0\label{eq.binom.0}%
 \end{equation}
 for every $m\in\mathbb{N}$ and $n\in\mathbb{N}$ satisfying $m<n$%
 \ \ \ \ \footnote{\textbf{Caution:} This is not true if we drop the condition
@@ -2686,16 +2703,16 @@ whole product $m\left(  m-1\right)  \cdots\left(  m-n+1\right)  $ is $0$
 must be $0$). Thus, $m\left(  m-1\right)  \cdots\left(  m-n+1\right)  =0$.
 Hence,%
 \begin{align*}
-\dbinom{m}{n}  &  =\dfrac{m\left(  m-1\right)  \cdots\left(  m-n+1\right)
+\dbinom{m}{n} &  =\dfrac{m\left(  m-1\right)  \cdots\left(  m-n+1\right)
 }{n!}=\dfrac{0}{n!}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }m\left(
-m-1\right)  \cdots\left(  m-n+1\right)  =0\right) \\
+m-1\right)  \cdots\left(  m-n+1\right)  =0\right)  \\
 &  =0,
 \end{align*}
 qed.}.
 
 \item We have%
 \begin{equation}
-\dbinom{m}{n}=\dbinom{m}{m-n} \label{eq.binom.symm}%
+\dbinom{m}{n}=\dbinom{m}{m-n}\label{eq.binom.symm}%
 \end{equation}
 for any $m\in\mathbb{N}$ and $n\in\mathbb{N}$ satisfying $m\geq n$%
 \ \ \ \ \footnote{\textit{Proof of (\ref{eq.binom.symm}):} Let $m\in
@@ -2713,7 +2730,7 @@ this yields $\dbinom{m}{n}=\dbinom{m}{m-n}$, qed.}.
 
 \item We have%
 \begin{equation}
-\dbinom{m}{m}=1 \label{eq.binom.mm}%
+\dbinom{m}{m}=1\label{eq.binom.mm}%
 \end{equation}
 for every $m\in\mathbb{N}$\ \ \ \ \footnote{\textit{Proof of
 (\ref{eq.binom.mm}):} Let $m\in\mathbb{N}$. Then, (\ref{eq.binom.symm})
@@ -2724,7 +2741,7 @@ for every $m\in\mathbb{N}$\ \ \ \ \footnote{\textit{Proof of
 set, then
 \begin{equation}
 \dbinom{m}{n}\text{ is the number of all }n\text{-element subsets of
-}S\text{.}\label{eq.binom.subsets}%
+}S\text{.} \label{eq.binom.subsets}%
 \end{equation}
 In less formal terms, this says that $\dbinom{m}{n}$ is the number of ways to
 pick out $n$ among $m$ given objects, without replacement\footnote{That is,
@@ -2879,7 +2896,7 @@ binomial coefficients.)}.
 
 \item We have%
 \begin{equation}
-\dbinom{m}{n}\in\mathbb{Z}\label{eq.binom.int}%
+\dbinom{m}{n}\in\mathbb{Z} \label{eq.binom.int}%
 \end{equation}
 for any $m\in\mathbb{Z}$ and $n\in\mathbb{N}$\ \ \ \ \footnote{\textit{Proof
 of (\ref{eq.binom.int}):} Let $m\in\mathbb{Z}$ and $n\in\mathbb{N}$. We need
