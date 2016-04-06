@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Wednesday, April 06, 2016 17:57:45}
+%TCIDATA{LastRevised=Wednesday, April 06, 2016 18:01:26}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -2721,8 +2721,12 @@ for every $m\in\mathbb{N}$\ \ \ \ \footnote{\textit{Proof of
 (according to (\ref{eq.binom.00})). This proves (\ref{eq.binom.mm}).}.
 
 \item If $m\in\mathbb{N}$ and $n\in\mathbb{N}$, and if $S$ is an $m$-element
-set, then $\dbinom{m}{n}$ is the number of all $n$-element subsets of $S$. In
-less formal terms, this says that $\dbinom{m}{n}$ is the number of ways to
+set, then
+\begin{equation}
+\dbinom{m}{n}\text{ is the number of all }n\text{-element subsets of
+}S\text{.}\label{eq.binom.subsets}%
+\end{equation}
+In less formal terms, this says that $\dbinom{m}{n}$ is the number of ways to
 pick out $n$ among $m$ given objects, without replacement\footnote{That is,
 one must not pick out the same object twice.} and without regard for the order
 in which they are picked out. (Probabilists call this \textquotedblleft
@@ -2889,16 +2893,18 @@ cases:
 Let us first consider Case 1. In this case, we have $m\geq0$. Hence,
 $m\in\mathbb{N}$. Thus, there exists an $m$-element set $S$ (for example,
 $S=\left\{  1,2,\ldots,m\right\}  $). Consider such $S$. Then, $\dbinom{m}{n}$
-is the number of all $n$-element subsets of $S$. Hence, $\dbinom{m}{n}$ is a
-nonnegative integer, so that $\dbinom{m}{n}\in\mathbb{N}\subseteq\mathbb{Z}$.
-This proves (\ref{eq.binom.int}) in Case 1.
+is the number of all $n$-element subsets of $S$ (because of
+(\ref{eq.binom.subsets})). Hence, $\dbinom{m}{n}$ is a nonnegative integer, so
+that $\dbinom{m}{n}\in\mathbb{N}\subseteq\mathbb{Z}$. This proves
+(\ref{eq.binom.int}) in Case 1.
 \par
 Let us now consider Case 2. In this case, we have $m<0$. Thus, $m+1\leq0$, so
 that $n-m-1=n-\underbrace{\left(  m+1\right)  }_{\leq0}\geq n\geq0$. Hence,
 $n-m-1\in\mathbb{N}$. Therefore, there exists an $\left(  n-m-1\right)
 $-element set $S$ (for example, $S=\left\{  1,2,\ldots,n-m-1\right\}  $).
 Consider such $S$. Then, $\dbinom{n-m-1}{n}$ is the number of all $n$-element
-subsets of $S$. Hence, $\dbinom{n-m-1}{n}\in\mathbb{N}\subseteq\mathbb{Z}$.
+subsets of $S$ (because of (\ref{eq.binom.subsets}), applied to $n-m-1$
+instead of $m$). Hence, $\dbinom{n-m-1}{n}\in\mathbb{N}\subseteq\mathbb{Z}$.
 Now, (\ref{eq.binom.upper-neg}) shows that $\dbinom{m}{n}=\left(  -1\right)
 ^{n}\underbrace{\dbinom{n-m-1}{n}}_{\in\mathbb{Z}}\in\left(  -1\right)
 ^{n}\mathbb{Z}\subseteq\mathbb{Z}$ (where $\left(  -1\right)  ^{n}\mathbb{Z}$
@@ -3221,9 +3227,10 @@ $, we let $\left[  N\right]  $ denote the $N$-element set $\left\{
 
 Let $x\in\mathbb{N}$ and $y\in\mathbb{N}$. Recall that $\dbinom{x+y}{n}$ is
 the number of $n$-element subsets of a given $\left(  x+y\right)  $-element
-set. Since $\left[  x+y\right]  $ is an $\left(  x+y\right)  $-element set, we
-thus conclude that $\dbinom{x+y}{n}$ is the number of $n$-element subsets of
-$\left[  x+y\right]  $.
+set\footnote{This follows from (\ref{eq.binom.subsets}).}. Since $\left[
+x+y\right]  $ is an $\left(  x+y\right)  $-element set, we thus conclude that
+$\dbinom{x+y}{n}$ is the number of $n$-element subsets of $\left[  x+y\right]
+$.
 
 But let us count the $n$-element subsets of $\left[  x+y\right]  $ in a
 different way (i.e., find a different expression for the number of $n$-element
@@ -4006,7 +4013,9 @@ $a$-element subset $A$ of $\left[  x\right]  $ and a $b$-element subset $B$ of
 $\left[  x\right]  $, we need to choose an $a$-element subset $A$ of $\left[
 x\right]  $ and a $b$-element subset $B$ of $\left[  x\right]  $. There are
 $\dbinom{x}{a}\dbinom{x}{b}$ total ways to do this (since there are
-$\dbinom{x}{a}$ choices for $A$, and $\dbinom{x}{b}$ choices for $B$, and
+$\dbinom{x}{a}$ choices for $A$\ \ \ \ \footnote{This follows from
+(\ref{eq.binom.subsets}).}, and $\dbinom{x}{b}$ choices for $B$%
+\ \ \ \ \footnote{Again, this follows from (\ref{eq.binom.subsets}).}, and
 these choices are independent). In other words, the number of all pairs
 $\left(  A,B\right)  $ consisting of an $a$-element subset $A$ of $\left[
 x\right]  $ and a $b$-element subset $B$ of $\left[  x\right]  $ equals
