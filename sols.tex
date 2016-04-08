@@ -12,7 +12,6 @@
 \usepackage[sc]{mathpazo}
 \usepackage[T1]{fontenc}
 \usepackage{tikz}
-\usepackage{enumitem}
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
@@ -9376,7 +9375,7 @@ x_{i}\right)  \left(  \prod_{i\in\left[  n\right]  \setminus I}y_{\sigma
 So let us fix $I\subseteq\left[  n\right]  $, and try to prove
 (\ref{eq.exam.xi+yj.detA4}). We must be in one of the following two cases:
 
-\begin{enumerate}[leftmargin=2cm]
+\begin{description}
 \item[Case 1:] The set $\left[  n\right]  \setminus I$ has at least two
 elements. In this case, let us pick two distinct elements $a$ and $b$ of this
 set, and split the set $S_{n}$ into disjoint two-element subsets by pairing up
@@ -9397,7 +9396,7 @@ Again, the addends on the left hand side of (\ref{eq.exam.xi+yj.detA4})
 corresponding to two permutations paired up cancel out each other, and thus
 the whole left hand side of (\ref{eq.exam.xi+yj.detA4}) is $0$. This proves
 (\ref{eq.exam.xi+yj.detA4}) in Case 2.
-\end{enumerate}
+\end{description}
 
 We thus have proven (\ref{eq.exam.xi+yj.detA4}) in both cases. So $\det A=0$
 is proven. This was a tricky argument, and shows the limits of the usefulness
