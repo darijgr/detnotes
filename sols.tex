@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, April 08, 2016 00:37:50}
+%TCIDATA{LastRevised=Friday, April 08, 2016 01:10:05}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -11518,7 +11518,7 @@ $1\times1$-matrix $\left(
 \sum_{k=1}^{m}a_{k}b_{k}%
 \end{array}
 \right)  =\sum_{k=1}^{m}a_{k}b_{k}\ \ \ \ \ \ \ \ \ \ \left(  \text{by
-(\ref{eq.det.small.1x1})}\right)  .\label{eq.exam.cauchy-binet.1}%
+(\ref{eq.det.small.1x1})}\right)  . \label{eq.exam.cauchy-binet.1}%
 \end{equation}
 What would we obtain if we tried to compute $\det\left(  AB\right)  $ using
 Theorem \ref{thm.cauchy-binet}? Theorem \ref{thm.cauchy-binet} (applied to
@@ -11537,7 +11537,7 @@ a_{g_{1}}%
 [c]{c}%
 b_{g_{1}}%
 \end{array}
-\right)  }\right)  \\
+\right)  }\right) \\
 &  =\sum_{g_{1}=1}^{m}\underbrace{\det\left(
 \begin{array}
 [c]{c}%
@@ -34289,8 +34289,7 @@ m}}\underbrace{\delta_{k,m}}_{\substack{=0\\\text{(since }k\neq m\text{)}%
 \begin{array}
 [c]{c}%
 \text{here, we have split off the addend for }k=m\text{ from the sum}\\
-\text{(since }m\in\left\{  0,1,\ldots,n-2\right\}  \subseteq\left\{
-0,1,\ldots,n-1\right\}  \text{)}%
+\text{(since }m\in\left\{  0,1,\ldots,n-1\right\}  \text{)}%
 \end{array}
 \right) \\
 &  =X^{m}+\underbrace{\sum_{\substack{k\in\left\{  0,1,\ldots,n-1\right\}
@@ -34655,10 +34654,9 @@ m}}\underbrace{\delta_{k,m}}_{\substack{=0\\\text{(since }k\neq m\text{)}%
 \begin{array}
 [c]{c}%
 \text{here, we have split off the addend for }k=m\text{ from the sum}\\
-\text{(since }m\in\left\{  0,1,\ldots,n-2\right\}  \subseteq\left\{
-0,1,\ldots,n-1\right\}  \text{)}%
+\text{(since }m\in\left\{  0,1,\ldots,n-1\right\}  \text{)}%
 \end{array}
-\right) \\
+\right)  \\
 &  =X^{m}+\underbrace{\sum_{\substack{k\in\left\{  0,1,\ldots,n-1\right\}
 ;\\k\neq m}}0X^{k}}_{=0}=X^{m}.
 \end{align*}
@@ -34675,20 +34673,20 @@ n}.
 Taking determinants on both sides of this equality, we obtain%
 \begin{align}
 &  \det\left(  \left(  \left(  x_{i}+y_{j}\right)  ^{m}\right)  _{1\leq i\leq
-n,\ 1\leq j\leq n}\right) \nonumber\\
+n,\ 1\leq j\leq n}\right)  \nonumber\\
 &  =\det\left(  \left(  P\left(  x_{i}+y_{j}\right)  \right)  _{1\leq i\leq
-n,\ 1\leq j\leq n}\right) \nonumber\\
+n,\ 1\leq j\leq n}\right)  \nonumber\\
 &  =\underbrace{p_{n-1}^{n}}_{\substack{=\delta_{n-1,m}^{n}\\\text{(since
 }p_{n-1}=\delta_{n-1,m}\\\text{(by the definition of }p_{n-1}\text{))}%
 }}\left(  \prod_{k=0}^{n-1}\dbinom{n-1}{k}\right)  \left(  \prod_{1\leq
 i<j\leq n}\left(  x_{i}-x_{j}\right)  \right)  \left(  \prod_{1\leq i<j\leq
-n}\left(  y_{j}-y_{i}\right)  \right) \nonumber\\
+n}\left(  y_{j}-y_{i}\right)  \right)  \nonumber\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Exercise \ref{exe.vander-det.xi+yj}
-\textbf{(c)}}\right) \nonumber\\
+\textbf{(c)}}\right)  \nonumber\\
 &  =\delta_{n-1,m}^{n}\left(  \prod_{k=0}^{n-1}\dbinom{n-1}{k}\right)  \left(
 \prod_{1\leq i<j\leq n}\left(  x_{i}-x_{j}\right)  \right)  \left(
-\prod_{1\leq i<j\leq n}\left(  y_{j}-y_{i}\right)  \right)  .
-\label{sol.vander-det.xi+yj.a.almost}%
+\prod_{1\leq i<j\leq n}\left(  y_{j}-y_{i}\right)  \right)
+.\label{sol.vander-det.xi+yj.a.almost}%
 \end{align}
 
 
@@ -35103,8 +35101,9 @@ n-k\right)  +1}\right)  _{1\leq i\leq n,\ 1\leq j\leq1}.
 \end{align}
 On the other hand, we have $k\in\left\{  2,3,\ldots,n\right\}  $, so that
 $k-1\in\left\{  1,2,\ldots,n-1\right\}  \subseteq\left\{  1,2,\ldots
-,n\right\}  $. Hence, the $\left(  k-1\right)  $-th column of $A$ exists. We
-furthermore have%
+,n\right\}  $. Hence, the $\left(  k-1\right)  $-th column of $A$ exists. From
+$A=\left(  x_{i}^{n-j}x_{i}^{\delta_{j,k}}\right)  _{1\leq i\leq n,\ 1\leq
+j\leq n}$, we obtain%
 \begin{align*}
 \left(  \text{the }\left(  k-1\right)  \text{-th column of }A\right)   &
 =\left(
@@ -35277,7 +35276,8 @@ a_{1} & a_{2} & a_{3} & \cdots & a_{n} & x
 \]
 (Here, for every $i\in\left\{  1,2,\ldots,n\right\}  $, the $i$-th row of $B$
 has $i$-th entry $x-a_{i}$ and $\left(  i+1\right)  $-th entry $a_{i}-x$; all
-its other entries are $0$.)
+other entries in this row are $0$. The $\left(  n+1\right)  $-th row of $B$ is
+$\left(  a_{1},a_{2},\ldots,a_{n},x\right)  $.)
 
 Next, we apply the following operations to the matrix $B$ (in this order):
 
