@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, April 09, 2016 02:21:18}
+%TCIDATA{LastRevised=Saturday, April 09, 2016 02:40:13}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -14499,8 +14499,8 @@ n}\underbrace{\left(  x_{j}-x_{i}\right)  }_{=\left(  -1\right)  \left(
 x_{i}-x_{j}\right)  }\ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
-\text{here, we renamed the index }\left(  j,i\right)  \text{ as}\\
-\left(  i,j\right)  \text{ in the product}%
+\text{here, we renamed the index }\left(  j,i\right) \\
+\text{as }\left(  i,j\right)  \text{ in the product}%
 \end{array}
 \right) \\
 &  =\prod_{1\leq i<j\leq n}\left(  \left(  -1\right)  \left(  x_{i}%
@@ -22130,10 +22130,10 @@ $n/2\notin\left\{  0,1,\ldots,n\right\}  $ (since $\left\{  0,1,\ldots
 ,n\right\}  \subseteq\mathbb{Z}$). Now, (\ref{pf.lem.exeadd.AoPS262752.2.2})
 becomes%
 \begin{align*}
-&  \sum_{i=0}^{n}a_{i}\underbrace{\left[  n-i=i\right]  }\\
+&  \sum_{i=0}^{n}a_{i}\left[  n-i=i\right]  \\
 &  =\sum_{\substack{i\in\left\{  0,1,\ldots,n\right\}  ;\\i=n/2}}a_{i}=\left(
 \text{empty sum}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }%
-n/2\notin\left\{  0,1,\ldots,n\right\}  \right) \\
+n/2\notin\left\{  0,1,\ldots,n\right\}  \right)  \\
 &  =0=%
 \begin{cases}
 a_{n/2}, & \text{if }n\text{ is even};\\
@@ -33439,14 +33439,14 @@ again. Thus, Lemma \ref{lem.sorting.nmu.uniprop} is proven.
 ,m\right\}  $. Define a subset $X$ of $\mathbb{Z}$ by%
 \begin{equation}
 X=\left\{  x\in\mathbb{Z}\ \mid\ \text{at least }i\text{ elements }%
-j\in\left\{  1,2,\ldots,n\right\}  \text{ satisfy }a_{j}\leq x\right\}
-.\label{sol.sorting.nmu.X=}%
+j\in\left\{  1,2,\ldots,n\right\}  \text{ satisfy }a_{j}\leq x\right\}  .
+\label{sol.sorting.nmu.X=}%
 \end{equation}
 Define a subset $Y$ of $\mathbb{Z}$ by%
 \begin{equation}
 Y=\left\{  x\in\mathbb{Z}\ \mid\ \text{at least }i\text{ elements }%
-j\in\left\{  1,2,\ldots,m\right\}  \text{ satisfy }b_{j}\leq x\right\}
-.\label{sol.sorting.nmu.Y=}%
+j\in\left\{  1,2,\ldots,m\right\}  \text{ satisfy }b_{j}\leq x\right\}  .
+\label{sol.sorting.nmu.Y=}%
 \end{equation}
 
 
@@ -33459,11 +33459,11 @@ a_{j}\leq x\right\}  \label{sol.sorting.nmu.uniprop1}%
 (and, in particular, the right hand side of (\ref{sol.sorting.nmu.uniprop1})
 is well-defined). Thus,%
 \begin{align}
-a_{\sigma\left(  i\right)  }  & =\min\underbrace{\left\{  x\in\mathbb{Z}%
+a_{\sigma\left(  i\right)  }  &  =\min\underbrace{\left\{  x\in\mathbb{Z}%
 \ \mid\ \text{at least }i\text{ elements }j\in\left\{  1,2,\ldots,n\right\}
 \text{ satisfy }a_{j}\leq x\right\}  }_{\substack{=X\\\text{(by
 (\ref{sol.sorting.nmu.X=}))}}}\nonumber\\
-& =\min X.\label{sol.sorting.nmu.uniprop1'}%
+&  =\min X. \label{sol.sorting.nmu.uniprop1'}%
 \end{align}
 
 
@@ -33481,11 +33481,11 @@ b_{j}\leq x\right\}  \label{sol.sorting.nmu.uniprop2}%
 (and, in particular, the right hand side of (\ref{sol.sorting.nmu.uniprop2})
 is well-defined). Thus,%
 \begin{align}
-b_{\tau\left(  i\right)  }  & =\min\underbrace{\left\{  x\in\mathbb{Z}%
+b_{\tau\left(  i\right)  }  &  =\min\underbrace{\left\{  x\in\mathbb{Z}%
 \ \mid\ \text{at least }i\text{ elements }j\in\left\{  1,2,\ldots,m\right\}
 \text{ satisfy }b_{j}\leq x\right\}  }_{\substack{=Y\\\text{(by
 (\ref{sol.sorting.nmu.Y=}))}}}\nonumber\\
-& =\min Y.\label{sol.sorting.nmu.uniprop2'}%
+&  =\min Y. \label{sol.sorting.nmu.uniprop2'}%
 \end{align}
 
 
@@ -33573,10 +33573,10 @@ j\in\left\{  1,2,\ldots,m\right\}  \ \mid\ a_{j}\leq b_{\tau\left(  i\right)
 \]
 Thus,%
 \begin{align*}
-& \left\vert \left\{  j\in\left\{  1,2,\ldots,m\right\}  \ \mid\ a_{j}\leq
+&  \left\vert \left\{  j\in\left\{  1,2,\ldots,m\right\}  \ \mid\ a_{j}\leq
 b_{\tau\left(  i\right)  }\right\}  \right\vert \\
-& \geq\left\vert \left\{  j\in\left\{  1,2,\ldots,m\right\}  \ \mid\ b_{j}\leq
-b_{\tau\left(  i\right)  }\right\}  \right\vert \geq i.
+&  \geq\left\vert \left\{  j\in\left\{  1,2,\ldots,m\right\}  \ \mid
+\ b_{j}\leq b_{\tau\left(  i\right)  }\right\}  \right\vert \geq i.
 \end{align*}
 In other words, at least $i$ elements $j\in\left\{  1,2,\ldots,m\right\}  $
 satisfy $a_{j}\leq b_{\tau\left(  i\right)  }$.
@@ -33607,7 +33607,7 @@ solves Exercise \ref{exe.sorting.nmu}.
 \begin{verlong}
 But if $S$ is a subset of $\mathbb{Z}$ for which $\min S$ is well-defined,
 then every $s\in S$ satisfies $\min S\leq s$ (since the minimum of a set is
-$\leq$ to each element of this set).  Applying this to $S=X$, we conclude that
+$\leq$ to each element of this set). Applying this to $S=X$, we conclude that
 every $s\in X$ satisfies $\min X\leq s$. Applying this to $s=b_{\tau\left(
 i\right)  }$, we obtain $b_{\tau\left(  i\right)  }\leq\min X$ (since
 $b_{\tau\left(  i\right)  }\in X$). Thus, $b_{\tau\left(  i\right)  }\leq\min
@@ -41114,10 +41114,10 @@ $m$) yields%
 }B\right)  . \label{pf.lem.adj(AB).cauchy-binet.short.1}%
 \end{align}
 Recall that the summation sign $\sum_{1\leq g_{1}<g_{2}<\cdots<g_{n-1}\leq
-n-1}$ is an abbreviation for $\sum_{\substack{\left(  g_{1},g_{2}%
-,\ldots,g_{n-1}\right)  \in\left\{  1,2,\ldots,n\right\}  ^{n-1};\\g_{1}%
-<g_{2}<\cdots<g_{n-1}}}$, which can be rewritten as $\sum_{\left(  g_{1}%
-,g_{2},\ldots,g_{n-1}\right)  \in\mathbf{I}}$ (because the $\left(
+n-1}$ is an abbreviation for \newline$\sum_{\substack{\left(  g_{1}%
+,g_{2},\ldots,g_{n-1}\right)  \in\left\{  1,2,\ldots,n\right\}  ^{n-1}%
+;\\g_{1}<g_{2}<\cdots<g_{n-1}}}$, which can be rewritten as $\sum_{\left(
+g_{1},g_{2},\ldots,g_{n-1}\right)  \in\mathbf{I}}$ (because the $\left(
 n-1\right)  $-tuples $\left(  g_{1},g_{2},\ldots,g_{n-1}\right)  \in\left\{
 1,2,\ldots,n\right\}  ^{n-1}$ satisfying $g_{1}<g_{2}<\cdots<g_{n-1}$ are
 precisely the elements of $\mathbf{I}$). Therefore,
