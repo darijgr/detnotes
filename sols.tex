@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, April 09, 2016 02:40:13}
+%TCIDATA{LastRevised=Saturday, April 09, 2016 12:28:56}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -22130,10 +22130,10 @@ $n/2\notin\left\{  0,1,\ldots,n\right\}  $ (since $\left\{  0,1,\ldots
 ,n\right\}  \subseteq\mathbb{Z}$). Now, (\ref{pf.lem.exeadd.AoPS262752.2.2})
 becomes%
 \begin{align*}
-&  \sum_{i=0}^{n}a_{i}\left[  n-i=i\right]  \\
+&  \sum_{i=0}^{n}a_{i}\left[  n-i=i\right] \\
 &  =\sum_{\substack{i\in\left\{  0,1,\ldots,n\right\}  ;\\i=n/2}}a_{i}=\left(
 \text{empty sum}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }%
-n/2\notin\left\{  0,1,\ldots,n\right\}  \right)  \\
+n/2\notin\left\{  0,1,\ldots,n\right\}  \right) \\
 &  =0=%
 \begin{cases}
 a_{n/2}, & \text{if }n\text{ is even};\\
@@ -33435,8 +33435,17 @@ again. Thus, Lemma \ref{lem.sorting.nmu.uniprop} is proven.
 \end{proof}
 
 \begin{proof}
-[Solution to Exercise \ref{exe.sorting.nmu}.]Let $i\in\left\{  1,2,\ldots
-,m\right\}  $. Define a subset $X$ of $\mathbb{Z}$ by%
+[First solution to Exercise \ref{exe.sorting.nmu}.]Let $i\in\left\{
+1,2,\ldots,m\right\}  $. We must prove that $a_{\sigma\left(  i\right)  }\leq
+b_{\tau\left(  i\right)  }$.
+
+We have $n\geq m$, so that $m\leq n$. Now, $i\in\left\{  1,2,\ldots,m\right\}
+\subseteq\left\{  1,2,\ldots,n\right\}  $ (since $m\leq n$). Hence,
+$\sigma\left(  i\right)  $ is well-defined (since $\sigma$ is a map $\left\{
+1,2,\ldots,n\right\}  \rightarrow\left\{  1,2,\ldots,n\right\}  $ (since
+$\sigma\in S_{n}$)).
+
+Define a subset $X$ of $\mathbb{Z}$ by%
 \begin{equation}
 X=\left\{  x\in\mathbb{Z}\ \mid\ \text{at least }i\text{ elements }%
 j\in\left\{  1,2,\ldots,n\right\}  \text{ satisfy }a_{j}\leq x\right\}  .
@@ -33467,10 +33476,9 @@ a_{\sigma\left(  i\right)  }  &  =\min\underbrace{\left\{  x\in\mathbb{Z}%
 \end{align}
 
 
-We have $n\geq m$, so that $m\leq n$. Also, $\tau\in S_{m}$ satisfies
-$b_{\tau\left(  1\right)  }\leq b_{\tau\left(  2\right)  }\leq\cdots\leq
-b_{\tau\left(  m\right)  }$, and we have $i\in\left\{  1,2,\ldots,m\right\}
-\subseteq\left\{  1,2,\ldots,n\right\}  $ (since $m\leq n$). Thus, Lemma
+But $\tau\in S_{m}$ satisfies $b_{\tau\left(  1\right)  }\leq b_{\tau\left(
+2\right)  }\leq\cdots\leq b_{\tau\left(  m\right)  }$, and we have
+$i\in\left\{  1,2,\ldots,n\right\}  $. Thus, Lemma
 \ref{lem.sorting.nmu.uniprop} (applied to $m$, $b_{k}$ and $\tau$ instead of
 $n$, $a_{k}$ and $\sigma$) yields that%
 \begin{equation}
@@ -33598,8 +33606,8 @@ i\right)  }\in X$.
 \begin{vershort}
 But every $s\in X$ satisfies $\min X\leq s$ (since the minimum of a set is
 $\leq$ to each element of this set). Applying this to $s=b_{\tau\left(
-i\right)  }$, we obtain $b_{\tau\left(  i\right)  }\leq\min X$ (since
-$b_{\tau\left(  i\right)  }\in X$). Thus, $b_{\tau\left(  i\right)  }\leq\min
+i\right)  }$, we obtain $\min X\leq b_{\tau\left(  i\right)  }$ (since
+$b_{\tau\left(  i\right)  }\in X$). Thus, $b_{\tau\left(  i\right)  }\geq\min
 X=a_{\sigma\left(  i\right)  }$ (by (\ref{sol.sorting.nmu.uniprop1'})). This
 solves Exercise \ref{exe.sorting.nmu}.
 \end{vershort}
@@ -33609,11 +33617,350 @@ But if $S$ is a subset of $\mathbb{Z}$ for which $\min S$ is well-defined,
 then every $s\in S$ satisfies $\min S\leq s$ (since the minimum of a set is
 $\leq$ to each element of this set). Applying this to $S=X$, we conclude that
 every $s\in X$ satisfies $\min X\leq s$. Applying this to $s=b_{\tau\left(
-i\right)  }$, we obtain $b_{\tau\left(  i\right)  }\leq\min X$ (since
-$b_{\tau\left(  i\right)  }\in X$). Thus, $b_{\tau\left(  i\right)  }\leq\min
-X=a_{\sigma\left(  i\right)  }$ (by (\ref{sol.sorting.nmu.uniprop1'})). This
-solves Exercise \ref{exe.sorting.nmu}.
+i\right)  }$, we obtain $\min X\leq b_{\tau\left(  i\right)  }$ (since
+$b_{\tau\left(  i\right)  }\in X$). Thus, $b_{\tau\left(  i\right)  }\geq\min
+X=a_{\sigma\left(  i\right)  }$ (by (\ref{sol.sorting.nmu.uniprop1'})). In
+other words, $a_{\sigma\left(  i\right)  }\leq b_{\tau\left(  i\right)  }$.
+This solves Exercise \ref{exe.sorting.nmu}.
 \end{verlong}
+\end{proof}
+
+In order to give a second solution to Exercise \ref{exe.sorting.nmu}, let us
+prove a lemma:
+
+\begin{lemma}
+\label{lem.sorting.nmu.stronger}Let $n\in\mathbb{N}$ and $m\in\mathbb{N}$ be
+such that $n\geq m$. Let $a_{1},a_{2},\ldots,a_{n}$ be $n$ integers. Let
+$b_{1},b_{2},\ldots,b_{m}$ be $m$ integers. Assume that%
+\begin{equation}
+a_{i}\leq b_{i}\ \ \ \ \ \ \ \ \ \ \text{for every }i\in\left\{
+1,2,\ldots,m\right\}  . \label{eq.lem.sorting.nmu.stronger.ass1}%
+\end{equation}
+
+
+Let $\sigma\in S_{n}$ and $\tau\in S_{m}$. Let $i\in\left\{  1,2,\ldots
+,m\right\}  $. Assume that%
+\begin{equation}
+a_{\sigma\left(  i\right)  }\leq a_{\sigma\left(  v\right)  }%
+\ \ \ \ \ \ \ \ \ \ \text{for every }v\in\left\{  i,i+1,\ldots,n\right\}  .
+\label{eq.lem.sorting.nmu.stronger.ass2}%
+\end{equation}
+Furthermore, assume that%
+\begin{equation}
+b_{\tau\left(  u\right)  }\leq b_{\tau\left(  i\right)  }%
+\ \ \ \ \ \ \ \ \ \ \text{for every }u\in\left\{  1,2,\ldots,i\right\}  .
+\label{eq.lem.sorting.nmu.stronger.ass3}%
+\end{equation}
+Then, $a_{\sigma\left(  i\right)  }\leq b_{\tau\left(  i\right)  }$.
+\end{lemma}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Lemma \ref{lem.sorting.nmu.stronger}.]We have $i\in\left\{
+1,2,\ldots,m\right\}  \subseteq\left\{  1,2,\ldots,n\right\}  $ (since $m\leq
+n$).
+
+We have $\sigma\in S_{n}$. Thus, $\sigma$ is a permutation of $\left\{
+1,2,\ldots,n\right\}  $, hence an injective map. Thus, the $n$ integers
+$\sigma\left(  1\right)  ,\sigma\left(  2\right)  ,\ldots,\sigma\left(
+n\right)  $ are distinct. In particular, the $n-i+1$ integers $\sigma\left(
+i\right)  ,\sigma\left(  i+1\right)  ,\ldots,\sigma\left(  n\right)  $ are distinct.
+
+Also, $\tau\in S_{m}$. Therefore, $\tau$ is a permutation of $\left\{
+1,2,\ldots,m\right\}  $, hence an injective map. Therefore, the $m$ integers
+$\tau\left(  1\right)  ,\tau\left(  2\right)  ,\ldots,\tau\left(  m\right)  $
+are distinct. In particular, the $i$ integers $\tau\left(  1\right)
+,\tau\left(  2\right)  ,\ldots,\tau\left(  i\right)  $ are distinct.
+
+If $A$ and $B$ are two subsets of $\left\{  1,2,\ldots,n\right\}  $ satisfying
+$\left\vert A\right\vert +\left\vert B\right\vert >n$, then%
+\begin{equation}
+A\cap B\neq\varnothing\label{pf.lem.sorting.nmu.stronger.short.AcutB}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.sorting.nmu.stronger.short.AcutB}):}
+Let $A$ and $B$ be two subsets of $\left\{  1,2,\ldots,n\right\}  $ satisfying
+$\left\vert A\right\vert +\left\vert B\right\vert >n$. We must prove that
+$A\cap B\neq\varnothing$.
+\par
+Indeed, assume the contrary. Thus, $A\cap B=\varnothing$. We know that $A$ and
+$B$ are subsets of $\left\{  1,2,\ldots,n\right\}  $. Hence, $A\cup B$ is a
+subset of $\left\{  1,2,\ldots,n\right\}  $. Thus, $\left\vert A\cup
+B\right\vert \leq\left\vert \left\{  1,2,\ldots,n\right\}  \right\vert =n$.
+But the sets $A$ and $B$ are disjoint (since $A\cap B=\varnothing$), and thus
+we have $\left\vert A\cup B\right\vert =\left\vert A\right\vert +\left\vert
+B\right\vert $ (since the size of the union of two disjoint sets is the sum of
+their sizes). Thus, $\left\vert A\right\vert +\left\vert B\right\vert
+=\left\vert A\cup B\right\vert \leq n$. This contradicts $\left\vert
+A\right\vert +\left\vert B\right\vert >n$. This contradiction proves that our
+assumption was wrong. Hence, $A\cap B=\varnothing$ is proven. This proves
+(\ref{pf.lem.sorting.nmu.stronger.short.AcutB}).}.
+
+Now, let $A=\left\{  \sigma\left(  i\right)  ,\sigma\left(  i+1\right)
+,\ldots,\sigma\left(  n\right)  \right\}  $ and $B=\left\{  \tau\left(
+1\right)  ,\tau\left(  2\right)  ,\ldots,\tau\left(  i\right)  \right\}  $.
+
+Clearly,
+\begin{equation}
+A=\left\{  \sigma\left(  i\right)  ,\sigma\left(  i+1\right)  ,\ldots
+,\sigma\left(  n\right)  \right\}  \subseteq\left\{  1,2,\ldots,n\right\}
+\label{pf.lem.sorting.nmu.stronger.short.subset1}%
+\end{equation}
+(since $\sigma$ is a map $\left\{  1,2,\ldots,n\right\}  \rightarrow\left\{
+1,2,\ldots,n\right\}  $) and $B=\left\{  \tau\left(  1\right)  ,\tau\left(
+2\right)  ,\ldots,\tau\left(  i\right)  \right\}  \subseteq\left\{
+1,2,\ldots,m\right\}  $ (since $\tau$ is a map $\left\{  1,2,\ldots,m\right\}
+\rightarrow\left\{  1,2,\ldots,m\right\}  $). Thus,
+\begin{equation}
+B\subseteq\left\{  1,2,\ldots,m\right\}  \subseteq\left\{  1,2,\ldots
+,n\right\}  . \label{pf.lem.sorting.nmu.stronger.short.subset2}%
+\end{equation}
+
+
+Now, from (\ref{pf.lem.sorting.nmu.stronger.short.subset1}) and
+(\ref{pf.lem.sorting.nmu.stronger.short.subset2}), we see that $A$ and $B$ are
+two subsets of $\left\{  1,2,\ldots,n\right\}  $. These two subsets satisfy%
+\begin{align*}
+&  \left\vert \underbrace{A}_{=\left\{  \sigma\left(  i\right)  ,\sigma\left(
+i+1\right)  ,\ldots,\sigma\left(  n\right)  \right\}  }\right\vert +\left\vert
+\underbrace{B}_{=\left\{  \tau\left(  1\right)  ,\tau\left(  2\right)
+,\ldots,\tau\left(  i\right)  \right\}  }\right\vert \\
+&  =\underbrace{\left\vert \left\{  \sigma\left(  i\right)  ,\sigma\left(
+i+1\right)  ,\ldots,\sigma\left(  n\right)  \right\}  \right\vert
+}_{\substack{=n-i+1\\\text{(since the }n-i+1\text{ integers}\\\sigma\left(
+i\right)  ,\sigma\left(  i+1\right)  ,\ldots,\sigma\left(  n\right)  \text{
+are distinct)}}}+\underbrace{\left\vert \left\{  \tau\left(  1\right)
+,\tau\left(  2\right)  ,\ldots,\tau\left(  i\right)  \right\}  \right\vert
+}_{\substack{=i\\\text{(since the }i\text{ integers}\\\tau\left(  1\right)
+,\tau\left(  2\right)  ,\ldots,\tau\left(  i\right)  \text{ are distinct)}}}\\
+&  =n-i+1+i=n+1>n.
+\end{align*}
+Hence, (\ref{pf.lem.sorting.nmu.stronger.short.AcutB}) shows that $A\cap
+B\neq\varnothing$. In other words, there exists a $g\in A\cap B$. Consider
+this $g$.
+
+We have $g\in A\cap B\subseteq B=\left\{  \tau\left(  1\right)  ,\tau\left(
+2\right)  ,\ldots,\tau\left(  i\right)  \right\}  \subseteq\left\{
+1,2,\ldots,m\right\}  $. Hence, $b_{g}$ is well-defined. Also, $g\in\left\{
+\tau\left(  1\right)  ,\tau\left(  2\right)  ,\ldots,\tau\left(  i\right)
+\right\}  $. In other words, there exists a $u\in\left\{  1,2,\ldots
+,i\right\}  $ satisfying $g=\tau\left(  u\right)  $. Consider this $u$. From
+(\ref{eq.lem.sorting.nmu.stronger.ass3}), we obtain $b_{\tau\left(  u\right)
+}\leq b_{\tau\left(  i\right)  }$. But $g=\tau\left(  u\right)  $ shows that
+$b_{g}=b_{\tau\left(  u\right)  }\leq b_{\tau\left(  i\right)  }$.
+
+On the other hand, $g\in A\cap B\subseteq A=\left\{  \sigma\left(  i\right)
+,\sigma\left(  i+1\right)  ,\ldots,\sigma\left(  n\right)  \right\}
+\subseteq\left\{  1,2,\ldots,n\right\}  $. Hence, $a_{g}$ is well-defined.
+Also, $g\in\left\{  \sigma\left(  i\right)  ,\sigma\left(  i+1\right)
+,\ldots,\sigma\left(  n\right)  \right\}  $. In other words, there exists a
+$v\in\left\{  i,i+1,\ldots,n\right\}  $ such that $g=\sigma\left(  v\right)
+$. Consider this $v$. From (\ref{eq.lem.sorting.nmu.stronger.ass2}), we obtain
+$a_{\sigma\left(  i\right)  }\leq a_{\sigma\left(  v\right)  }=a_{g}$ (since
+$\sigma\left(  v\right)  =g$).
+
+But (\ref{eq.lem.sorting.nmu.stronger.ass1}) (applied to $g$ instead of $i$)
+shows that $a_{g}\leq b_{g}$ (since $g\in\left\{  1,2,\ldots,m\right\}  $).
+Hence, $a_{\sigma\left(  i\right)  }\leq a_{g}\leq b_{g}\leq b_{\tau\left(
+i\right)  }$. This proves Lemma \ref{lem.sorting.nmu.stronger}.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Lemma \ref{lem.sorting.nmu.stronger}.]We have $\sigma\in S_{n}$. In
+other words, $\sigma$ belongs to the set $S_{n}$. In other words, $\sigma$
+belongs to the set of all permutations of the set $\left\{  1,2,\ldots
+,n\right\}  $ (since $S_{n}$ is the set of all permutations of the set
+$\left\{  1,2,\ldots,n\right\}  $). In other words, $\sigma$ is a permutation
+of the set $\left\{  1,2,\ldots,n\right\}  $. In other words, $\sigma$ is a
+bijective map $\left\{  1,2,\ldots,n\right\}  \rightarrow\left\{
+1,2,\ldots,n\right\}  $. The map $\sigma$ is thus bijective, hence both
+surjective and injective.
+
+We have $\tau\in S_{m}$. In other words, $\tau$ belongs to the set $S_{m}$. In
+other words, $\tau$ belongs to the set of all permutations of the set
+$\left\{  1,2,\ldots,m\right\}  $ (since $S_{m}$ is the set of all
+permutations of the set $\left\{  1,2,\ldots,m\right\}  $). In other words,
+$\tau$ is a permutation of the set $\left\{  1,2,\ldots,m\right\}  $. In other
+words, $\tau$ is a bijective map $\left\{  1,2,\ldots,m\right\}
+\rightarrow\left\{  1,2,\ldots,m\right\}  $. The map $\tau$ is thus bijective,
+hence both surjective and injective.
+
+We have $n\geq m$, thus $m\leq n$, hence $\left\{  1,2,\ldots,m\right\}
+\subseteq\left\{  1,2,\ldots,n\right\}  $. Now, $i\in\left\{  1,2,\ldots
+,m\right\}  \subseteq\left\{  1,2,\ldots,n\right\}  $; thus, $\sigma\left(
+i\right)  $ is well-defined.
+
+If $A$ and $B$ are two subsets of $\left\{  1,2,\ldots,n\right\}  $ satisfying
+$\left\vert A\right\vert +\left\vert B\right\vert >n$, then%
+\begin{equation}
+A\cap B\neq\varnothing\label{pf.lem.sorting.nmu.stronger.AcutB}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.sorting.nmu.stronger.AcutB}):} Let $A$
+and $B$ be two subsets of $\left\{  1,2,\ldots,n\right\}  $ satisfying
+$\left\vert A\right\vert +\left\vert B\right\vert >n$. We must prove that
+$A\cap B\neq\varnothing$.
+\par
+Indeed, assume the contrary. Thus, $A\cap B=\varnothing$. We know that $A$ and
+$B$ are subsets of $\left\{  1,2,\ldots,n\right\}  $. Hence, $A\cup B$ is a
+subset of $\left\{  1,2,\ldots,n\right\}  $. In other words, $A\cup
+B\subseteq\left\{  1,2,\ldots,n\right\}  $. Thus, $\left\vert A\cup
+B\right\vert \leq\left\vert \left\{  1,2,\ldots,n\right\}  \right\vert =n$.
+But the sets $A$ and $B$ are disjoint (since $A\cap B=\varnothing$), and thus
+we have $\left\vert A\cup B\right\vert =\left\vert A\right\vert +\left\vert
+B\right\vert $ (since the size of the union of two disjoint sets is the sum of
+their sizes). Thus, $\left\vert A\right\vert +\left\vert B\right\vert
+=\left\vert A\cup B\right\vert \leq n$. This contradicts $\left\vert
+A\right\vert +\left\vert B\right\vert >n$. This contradiction proves that our
+assumption was wrong. Hence, $A\cap B=\varnothing$ is proven. This proves
+(\ref{pf.lem.sorting.nmu.stronger.AcutB}).}.
+
+Now, let $A=\left\{  \sigma\left(  i\right)  ,\sigma\left(  i+1\right)
+,\ldots,\sigma\left(  n\right)  \right\}  $ and $B=\left\{  \tau\left(
+1\right)  ,\tau\left(  2\right)  ,\ldots,\tau\left(  i\right)  \right\}  $.
+
+Clearly,
+\begin{equation}
+A=\left\{  \sigma\left(  i\right)  ,\sigma\left(  i+1\right)  ,\ldots
+,\sigma\left(  n\right)  \right\}  \subseteq\left\{  1,2,\ldots,n\right\}
+\label{pf.lem.sorting.nmu.stronger.subset1}%
+\end{equation}
+(since $\sigma$ is a map $\left\{  1,2,\ldots,n\right\}  \rightarrow\left\{
+1,2,\ldots,n\right\}  $) and $B=\left\{  \tau\left(  1\right)  ,\tau\left(
+2\right)  ,\ldots,\tau\left(  i\right)  \right\}  \subseteq\left\{
+1,2,\ldots,m\right\}  $ (since $\tau$ is a map $\left\{  1,2,\ldots,m\right\}
+\rightarrow\left\{  1,2,\ldots,m\right\}  $). Thus,
+\begin{equation}
+B\subseteq\left\{  1,2,\ldots,m\right\}  \subseteq\left\{  1,2,\ldots
+,n\right\}  . \label{pf.lem.sorting.nmu.stronger.subset2}%
+\end{equation}
+
+
+The $n-i+1$ integers $\sigma\left(  i\right)  ,\sigma\left(  i+1\right)
+,\ldots,\sigma\left(  n\right)  $ are pairwise
+distinct\footnote{\textit{Proof.} Assume the contrary. Thus, the $n-i+1$
+integers $\sigma\left(  i\right)  ,\sigma\left(  i+1\right)  ,\ldots
+,\sigma\left(  n\right)  $ are \textbf{not} pairwise distinct. In other words,
+two of these integers are equal. In other words, there exist two distinct
+elements $u$ and $v$ of $\left\{  i,i+1,\ldots,n\right\}  $ such that
+$\sigma\left(  u\right)  =\sigma\left(  v\right)  $. Consider these $u$ and
+$v$.
+\par
+From $\sigma\left(  u\right)  =\sigma\left(  v\right)  $, we obtain $u=v$
+(since the map $\sigma$ is injective). This contradicts the assumption that
+$u$ and $v$ are distinct. This contradiction shows that our assumption was
+wrong, qed.}. Hence, $\left\vert \left\{  \sigma\left(  i\right)
+,\sigma\left(  i+1\right)  ,\ldots,\sigma\left(  n\right)  \right\}
+\right\vert =n-i+1$.
+
+The $i$ integers $\tau\left(  1\right)  ,\tau\left(  2\right)  ,\ldots
+,\tau\left(  i\right)  $ are pairwise distinct\footnote{\textit{Proof.} Assume
+the contrary. Thus, the $i$ integers $\tau\left(  1\right)  ,\tau\left(
+2\right)  ,\ldots,\tau\left(  i\right)  $ are \textbf{not} pairwise distinct.
+In other words, two of these integers are equal. In other words, there exist
+two distinct elements $u$ and $v$ of $\left\{  1,2,\ldots,i\right\}  $ such
+that $\tau\left(  u\right)  =\tau\left(  v\right)  $. Consider these $u$ and
+$v$.
+\par
+From $\tau\left(  u\right)  =\tau\left(  v\right)  $, we obtain $u=v$ (since
+the map $\tau$ is injective). This contradicts the assumption that $u$ and $v$
+are distinct. This contradiction shows that our assumption was wrong, qed.}.
+Hence, $\left\vert \left\{  \tau\left(  1\right)  ,\tau\left(  2\right)
+,\ldots,\tau\left(  i\right)  \right\}  \right\vert =i$.
+
+Now, from (\ref{pf.lem.sorting.nmu.stronger.subset1}) and
+(\ref{pf.lem.sorting.nmu.stronger.subset2}), we see that $A$ and $B$ are two
+subsets of $\left\{  1,2,\ldots,n\right\}  $. These two subsets satisfy%
+\begin{align*}
+&  \left\vert \underbrace{A}_{=\left\{  \sigma\left(  i\right)  ,\sigma\left(
+i+1\right)  ,\ldots,\sigma\left(  n\right)  \right\}  }\right\vert +\left\vert
+\underbrace{B}_{=\left\{  \tau\left(  1\right)  ,\tau\left(  2\right)
+,\ldots,\tau\left(  i\right)  \right\}  }\right\vert \\
+&  =\underbrace{\left\vert \left\{  \sigma\left(  i\right)  ,\sigma\left(
+i+1\right)  ,\ldots,\sigma\left(  n\right)  \right\}  \right\vert }%
+_{=n-i+1}+\underbrace{\left\vert \left\{  \tau\left(  1\right)  ,\tau\left(
+2\right)  ,\ldots,\tau\left(  i\right)  \right\}  \right\vert }_{=i}\\
+&  =n-i+1+i=n+1>n.
+\end{align*}
+Hence, (\ref{pf.lem.sorting.nmu.stronger.AcutB}) shows that $A\cap
+B\neq\varnothing$. In other words, the set $A\cap B$ is nonempty. In other
+words, the set $A\cap B$ has at least one element. In other words, there
+exists a $g\in A\cap B$. Consider this $g$.
+
+We have $g\in A\cap B\subseteq B=\left\{  \tau\left(  1\right)  ,\tau\left(
+2\right)  ,\ldots,\tau\left(  i\right)  \right\}  \subseteq\left\{
+1,2,\ldots,m\right\}  $. Hence, $b_{g}$ is well-defined. Also, $g\in\left\{
+\tau\left(  1\right)  ,\tau\left(  2\right)  ,\ldots,\tau\left(  i\right)
+\right\}  $. In other words, there exists a $u\in\left\{  1,2,\ldots
+,i\right\}  $ satisfying $g=\tau\left(  u\right)  $. Consider this $u$. From
+(\ref{eq.lem.sorting.nmu.stronger.ass3}), we obtain $b_{\tau\left(  u\right)
+}\leq b_{\tau\left(  i\right)  }$. But $g=\tau\left(  u\right)  $ shows that
+$b_{g}=b_{\tau\left(  u\right)  }\leq b_{\tau\left(  i\right)  }$.
+
+On the other hand, $g\in A\cap B\subseteq A=\left\{  \sigma\left(  i\right)
+,\sigma\left(  i+1\right)  ,\ldots,\sigma\left(  n\right)  \right\}
+\subseteq\left\{  1,2,\ldots,n\right\}  $. Hence, $a_{g}$ is well-defined.
+Also, $g\in\left\{  \sigma\left(  i\right)  ,\sigma\left(  i+1\right)
+,\ldots,\sigma\left(  n\right)  \right\}  $. In other words, there exists a
+$v\in\left\{  i,i+1,\ldots,n\right\}  $ such that $g=\sigma\left(  v\right)
+$. Consider this $v$. From (\ref{eq.lem.sorting.nmu.stronger.ass2}), we obtain
+$a_{\sigma\left(  i\right)  }\leq a_{\sigma\left(  v\right)  }=a_{g}$ (since
+$\sigma\left(  v\right)  =g$).
+
+But (\ref{eq.lem.sorting.nmu.stronger.ass1}) (applied to $g$ instead of $i$)
+shows that $a_{g}\leq b_{g}$ (since $g\in\left\{  1,2,\ldots,m\right\}  $).
+Hence, $a_{\sigma\left(  i\right)  }\leq a_{g}\leq b_{g}\leq b_{\tau\left(
+i\right)  }$. This proves Lemma \ref{lem.sorting.nmu.stronger}.
+\end{proof}
+\end{verlong}
+
+\begin{proof}
+[Second solution to Exercise \ref{exe.sorting.nmu}.]Let $i\in\left\{
+1,2,\ldots,m\right\}  $. We must prove that $a_{\sigma\left(  i\right)  }\leq
+b_{\tau\left(  i\right)  }$.
+
+We have $a_{\sigma\left(  1\right)  }\leq a_{\sigma\left(  2\right)  }%
+\leq\cdots\leq a_{\sigma\left(  n\right)  }$. In other words, for every
+$u\in\left\{  1,2,\ldots,n\right\}  $ and $v\in\left\{  1,2,\ldots,n\right\}
+$ satisfying $u\leq v$, we have%
+\begin{equation}
+a_{\sigma\left(  u\right)  }\leq a_{\sigma\left(  v\right)  }.
+\label{sol.sorting.nmu.sol2.1}%
+\end{equation}
+Also, we have $b_{\tau\left(  1\right)  }\leq b_{\tau\left(  2\right)  }%
+\leq\cdots\leq b_{\tau\left(  m\right)  }$. In other words, for every
+$u\in\left\{  1,2,\ldots,m\right\}  $ and $v\in\left\{  1,2,\ldots,m\right\}
+$ satisfying $u\leq v$, we have%
+\begin{equation}
+b_{\tau\left(  u\right)  }\leq b_{\tau\left(  v\right)  }.
+\label{sol.sorting.nmu.sol2.2}%
+\end{equation}
+
+
+Now, let $i\in\left\{  1,2,\ldots,m\right\}  $. Then, we have%
+\[
+a_{\sigma\left(  i\right)  }\leq a_{\sigma\left(  v\right)  }%
+\ \ \ \ \ \ \ \ \ \ \text{for every }v\in\left\{  i,i+1,\ldots,n\right\}
+\]
+\footnote{\textit{Proof.} Let $v\in\left\{  i,i+1,\ldots,n\right\}  $. Then,
+$v\geq i$, so that $i\leq v$. Also, $i\in\left\{  1,2,\ldots,m\right\}
+\subseteq\left\{  1,2,\ldots,n\right\}  $ (since $m\leq n$ (since $n\geq m$))
+and $v\in\left\{  i,i+1,\ldots,n\right\}  \subseteq\left\{  1,2,\ldots
+,n\right\}  $ (since $i\geq1$ (since $i\in\left\{  1,2,\ldots,m\right\}  $)).
+Hence, (\ref{sol.sorting.nmu.sol2.1}) (applied to $u=i$) yields $a_{\sigma
+\left(  i\right)  }\leq a_{\sigma\left(  v\right)  }$. Qed.}. Furthermore,%
+\[
+b_{\tau\left(  u\right)  }\leq b_{\tau\left(  i\right)  }%
+\ \ \ \ \ \ \ \ \ \ \text{for every }u\in\left\{  1,2,\ldots,i\right\}
+\]
+\footnote{\textit{Proof.} Let $u\in\left\{  1,2,\ldots,i\right\}  $. Then,
+$u\leq i$. Also, $u\in\left\{  1,2,\ldots,i\right\}  \subseteq\left\{
+1,2,\ldots,m\right\}  $ (since $i\leq m$ (since $i\in\left\{  1,2,\ldots
+,m\right\}  $)) adnd $i\in\left\{  1,2,\ldots,m\right\}  $. Hence,
+(\ref{sol.sorting.nmu.sol2.2}) (applied to $v=i$) yields $b_{\tau\left(
+u\right)  }\leq b_{\tau\left(  i\right)  }$. Qed.}. Hence, Lemma
+\ref{lem.sorting.nmu.stronger} shows that $a_{\sigma\left(  i\right)  }\leq
+b_{\tau\left(  i\right)  }$. This solves Exercise \ref{exe.sorting.nmu} again.
 \end{proof}
 
 \subsection{Solution to Exercise \ref{exe.vander-det.s1}}
