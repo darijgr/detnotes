@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, April 08, 2016 01:10:05}
+%TCIDATA{LastRevised=Saturday, April 09, 2016 02:21:18}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -11793,6 +11793,77 @@ further below for such a proof.}
 \ref{lem.cauchy-binet.EI}. (Ignore this exercise if you find these two facts
 sufficiently obvious and are uninterested in the details of their proofs.)
 \end{exercise}
+
+Before we return to Theorem \ref{thm.cauchy-binet}, let me make a digression
+about sorting:
+
+\begin{exercise}
+\label{exe.sorting.nmu}Let $n\in\mathbb{N}$ and $m\in\mathbb{N}$ be such that
+$n\geq m$. Let $a_{1},a_{2},\ldots,a_{n}$ be $n$ integers. Let $b_{1}%
+,b_{2},\ldots,b_{m}$ be $m$ integers. Assume that%
+\begin{equation}
+a_{i}\leq b_{i}\ \ \ \ \ \ \ \ \ \ \text{for every }i\in\left\{
+1,2,\ldots,m\right\}  . \label{eq.exe.sorting.nmu.ass}%
+\end{equation}
+
+
+Let $\sigma\in S_{n}$ be such that $a_{\sigma\left(  1\right)  }\leq
+a_{\sigma\left(  2\right)  }\leq\cdots\leq a_{\sigma\left(  n\right)  }$. Let
+$\tau\in S_{m}$ be such that $b_{\tau\left(  1\right)  }\leq b_{\tau\left(
+2\right)  }\leq\cdots\leq b_{\tau\left(  m\right)  }$. Then,%
+\[
+a_{\sigma\left(  i\right)  }\leq b_{\tau\left(  i\right)  }%
+\ \ \ \ \ \ \ \ \ \ \text{for every }i\in\left\{  1,2,\ldots,m\right\}  .
+\]
+
+\end{exercise}
+
+\begin{remark}
+\label{rmk.sorting.nmu.interpret}Loosely speaking, Exercise
+\ref{exe.sorting.nmu} says the following: If two lists $\left(  a_{1}%
+,a_{2},\ldots,a_{n}\right)  $ and $\left(  b_{1},b_{2},\ldots,b_{m}\right)  $
+of integers have the property that each entry of the first list is $\leq$ to
+the corresponding entry of the second list (as long as the latter is
+well-defined), then this property still holds after both lists are sorted in
+increasing order, provided that we have $n\geq m$ (that is, the first list is
+at least as long as the second list).
+
+A consequence of Exercise \ref{exe.sorting.nmu} is the following curious fact,
+known as the \textquotedblleft non-messing-up phenomenon\textquotedblright%
+\ (\cite[Theorem 1]{Tenner-NMU}): If we start with a matrix filled with
+integers, then sort the entries of each row of the matrix in increasing order,
+and then sort the entries of each column of the resulting matrix in increasing
+order, then the final matrix still has sorted rows (i.e., the entries of each
+row are still sorted). That is, the sorting of the columns did not
+\textquotedblleft mess up\textquotedblright\ the sortedness of the rows. For
+example, if we start with the matrix $\left(
+\begin{array}
+[c]{cccc}%
+1 & 3 & 2 & 5\\
+2 & 1 & 4 & 2\\
+3 & 1 & 6 & 0
+\end{array}
+\right)  $, then sorting the entries of each row gives us the matrix $\left(
+\begin{array}
+[c]{cccc}%
+1 & 2 & 3 & 5\\
+1 & 2 & 2 & 4\\
+0 & 1 & 3 & 6
+\end{array}
+\right)  $, and then sorting the entries of each column results in the matrix
+$\left(
+\begin{array}
+[c]{cccc}%
+0 & 1 & 2 & 4\\
+1 & 2 & 3 & 5\\
+1 & 2 & 3 & 6
+\end{array}
+\right)  $. The rows of this matrix are still sorted, as the \textquotedblleft
+non-messing-up phenomenon\textquotedblright\ predicts. To prove this
+phenomenon in general, it suffices to show that any entry in the resulting
+matrix is $\leq$ to the entry directly below it (assuming that the latter
+exists); but this follows easily from Exercise \ref{exe.sorting.nmu}.
+\end{remark}
 
 We are now ready to prove Theorem \ref{thm.cauchy-binet}.
 
@@ -33334,6 +33405,217 @@ is a bijection (because the map $\Phi$ is the map
 ). This concludes the proof of Lemma \ref{lem.cauchy-binet.EI}.
 \end{proof}
 
+\subsection{Solution to Exercise \ref{exe.sorting.nmu}}
+
+Before we start solving Exercise \ref{exe.sorting.nmu}, let us isolate a
+useful fact that was proven in our above proof of Proposition
+\ref{prop.sorting} \textbf{(b)}:
+
+\begin{lemma}
+\label{lem.sorting.nmu.uniprop}Let $n\in\mathbb{N}$. Let $a_{1},a_{2}%
+,\ldots,a_{n}$ be $n$ integers. Let $\sigma\in S_{n}$ be such that
+$a_{\sigma\left(  1\right)  }\leq a_{\sigma\left(  2\right)  }\leq\cdots\leq
+a_{\sigma\left(  n\right)  }$. Let $i\in\left\{  1,2,\ldots,n\right\}  $.
+Then,%
+\begin{equation}
+a_{\sigma\left(  i\right)  }=\min\left\{  x\in\mathbb{Z}\ \mid\ \text{at least
+}i\text{ elements }j\in\left\{  1,2,\ldots,n\right\}  \text{ satisfy }%
+a_{j}\leq x\right\}  \label{eq.lem.sorting.nmu.uniprop.claim}%
+\end{equation}
+(and, in particular, the right hand side of
+(\ref{eq.lem.sorting.nmu.uniprop.claim}) is well-defined).
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sorting.nmu.uniprop}.]The equality
+(\ref{eq.lem.sorting.nmu.uniprop.claim}) is precisely the equality
+(\ref{pf.prop.sorting.bclaim}) that was proven during our above proof of
+Proposition \ref{prop.sorting} \textbf{(b)}. Hence, we do not need to prove it
+again. Thus, Lemma \ref{lem.sorting.nmu.uniprop} is proven.
+\end{proof}
+
+\begin{proof}
+[Solution to Exercise \ref{exe.sorting.nmu}.]Let $i\in\left\{  1,2,\ldots
+,m\right\}  $. Define a subset $X$ of $\mathbb{Z}$ by%
+\begin{equation}
+X=\left\{  x\in\mathbb{Z}\ \mid\ \text{at least }i\text{ elements }%
+j\in\left\{  1,2,\ldots,n\right\}  \text{ satisfy }a_{j}\leq x\right\}
+.\label{sol.sorting.nmu.X=}%
+\end{equation}
+Define a subset $Y$ of $\mathbb{Z}$ by%
+\begin{equation}
+Y=\left\{  x\in\mathbb{Z}\ \mid\ \text{at least }i\text{ elements }%
+j\in\left\{  1,2,\ldots,m\right\}  \text{ satisfy }b_{j}\leq x\right\}
+.\label{sol.sorting.nmu.Y=}%
+\end{equation}
+
+
+Lemma \ref{lem.sorting.nmu.uniprop} yields that
+\begin{equation}
+a_{\sigma\left(  i\right)  }=\min\left\{  x\in\mathbb{Z}\ \mid\ \text{at least
+}i\text{ elements }j\in\left\{  1,2,\ldots,n\right\}  \text{ satisfy }%
+a_{j}\leq x\right\}  \label{sol.sorting.nmu.uniprop1}%
+\end{equation}
+(and, in particular, the right hand side of (\ref{sol.sorting.nmu.uniprop1})
+is well-defined). Thus,%
+\begin{align}
+a_{\sigma\left(  i\right)  }  & =\min\underbrace{\left\{  x\in\mathbb{Z}%
+\ \mid\ \text{at least }i\text{ elements }j\in\left\{  1,2,\ldots,n\right\}
+\text{ satisfy }a_{j}\leq x\right\}  }_{\substack{=X\\\text{(by
+(\ref{sol.sorting.nmu.X=}))}}}\nonumber\\
+& =\min X.\label{sol.sorting.nmu.uniprop1'}%
+\end{align}
+
+
+We have $n\geq m$, so that $m\leq n$. Also, $\tau\in S_{m}$ satisfies
+$b_{\tau\left(  1\right)  }\leq b_{\tau\left(  2\right)  }\leq\cdots\leq
+b_{\tau\left(  m\right)  }$, and we have $i\in\left\{  1,2,\ldots,m\right\}
+\subseteq\left\{  1,2,\ldots,n\right\}  $ (since $m\leq n$). Thus, Lemma
+\ref{lem.sorting.nmu.uniprop} (applied to $m$, $b_{k}$ and $\tau$ instead of
+$n$, $a_{k}$ and $\sigma$) yields that%
+\begin{equation}
+b_{\tau\left(  i\right)  }=\min\left\{  x\in\mathbb{Z}\ \mid\ \text{at least
+}i\text{ elements }j\in\left\{  1,2,\ldots,m\right\}  \text{ satisfy }%
+b_{j}\leq x\right\}  \label{sol.sorting.nmu.uniprop2}%
+\end{equation}
+(and, in particular, the right hand side of (\ref{sol.sorting.nmu.uniprop2})
+is well-defined). Thus,%
+\begin{align}
+b_{\tau\left(  i\right)  }  & =\min\underbrace{\left\{  x\in\mathbb{Z}%
+\ \mid\ \text{at least }i\text{ elements }j\in\left\{  1,2,\ldots,m\right\}
+\text{ satisfy }b_{j}\leq x\right\}  }_{\substack{=Y\\\text{(by
+(\ref{sol.sorting.nmu.Y=}))}}}\nonumber\\
+& =\min Y.\label{sol.sorting.nmu.uniprop2'}%
+\end{align}
+
+
+\begin{vershort}
+But clearly, $\min Y\in Y$. Hence,
+\[
+b_{\tau\left(  i\right)  }=\min Y\in Y=\left\{  x\in\mathbb{Z}\ \mid\ \text{at
+least }i\text{ elements }j\in\left\{  1,2,\ldots,m\right\}  \text{ satisfy
+}b_{j}\leq x\right\}  .
+\]
+In other words, $b_{\tau\left(  i\right)  }$ is an element of $\mathbb{Z}$
+such that at least $i$ elements $j\in\left\{  1,2,\ldots,m\right\}  $ satisfy
+$b_{j}\leq b_{\tau\left(  i\right)  }$.
+\end{vershort}
+
+\begin{verlong}
+But if $S$ is a subset of $\mathbb{Z}$ for which $\min S$ is well-defined,
+then $\min S\in S$ (since the minimum of a set must lie inside the set).
+Applying this to $S=Y$, we obtain $\min Y\in Y$. Now,
+(\ref{sol.sorting.nmu.uniprop2'}) becomes%
+\[
+b_{\tau\left(  i\right)  }=\min Y\in Y=\left\{  x\in\mathbb{Z}\ \mid\ \text{at
+least }i\text{ elements }j\in\left\{  1,2,\ldots,m\right\}  \text{ satisfy
+}b_{j}\leq x\right\}  .
+\]
+In other words, $b_{\tau\left(  i\right)  }$ is an element $x$ of $\mathbb{Z}$
+such that at least $i$ elements $j\in\left\{  1,2,\ldots,m\right\}  $ satisfy
+$b_{j}\leq x$. In other words, $b_{\tau\left(  i\right)  }$ is an element of
+$\mathbb{Z}$ such that at least $i$ elements $j\in\left\{  1,2,\ldots
+,m\right\}  $ satisfy $b_{j}\leq b_{\tau\left(  i\right)  }$.
+\end{verlong}
+
+\begin{vershort}
+We now know that at least $i$ elements $j\in\left\{  1,2,\ldots,m\right\}  $
+satisfy $b_{j}\leq b_{\tau\left(  i\right)  }$. Each of these $i$ elements $j$
+must also satisfy $a_{j}\leq b_{\tau\left(  i\right)  }$ (because
+(\ref{eq.exe.sorting.nmu.ass}) (applied to $j$ instead of $i$) shows that
+$a_{j}\leq b_{j}\leq b_{\tau\left(  i\right)  }$). Thus, at least $i$ elements
+$j\in\left\{  1,2,\ldots,m\right\}  $ satisfy $a_{j}\leq b_{\tau\left(
+i\right)  }$.
+\end{vershort}
+
+\begin{verlong}
+We now know that at least $i$ elements $j\in\left\{  1,2,\ldots,m\right\}  $
+satisfy $b_{j}\leq b_{\tau\left(  i\right)  }$. In other words,%
+\[
+\left\vert \left\{  j\in\left\{  1,2,\ldots,m\right\}  \ \mid\ b_{j}\leq
+b_{\tau\left(  i\right)  }\right\}  \right\vert \geq i.
+\]
+
+
+But $\left\{  j\in\left\{  1,2,\ldots,m\right\}  \ \mid\ b_{j}\leq
+b_{\tau\left(  i\right)  }\right\}  \subseteq\left\{  j\in\left\{
+1,2,\ldots,m\right\}  \ \mid\ a_{j}\leq b_{\tau\left(  i\right)  }\right\}
+$\ \ \ \ \footnote{\textit{Proof.} Let $g\in\left\{  j\in\left\{
+1,2,\ldots,m\right\}  \ \mid\ b_{j}\leq b_{\tau\left(  i\right)  }\right\}  $.
+We shall prove that $g\in\left\{  j\in\left\{  1,2,\ldots,m\right\}
+\ \mid\ a_{j}\leq b_{\tau\left(  i\right)  }\right\}  $.
+\par
+We have $g\in\left\{  j\in\left\{  1,2,\ldots,m\right\}  \ \mid\ b_{j}\leq
+b_{\tau\left(  i\right)  }\right\}  $. In other words, $g$ is an element $j$
+of $\left\{  1,2,\ldots,m\right\}  $ satisfying $b_{j}\leq b_{\tau\left(
+i\right)  }$. In other words, $g$ is an element of $\left\{  1,2,\ldots
+,m\right\}  $ satisfying $b_{g}\leq b_{\tau\left(  i\right)  }$. Now,
+(\ref{eq.exe.sorting.nmu.ass}) (applied to $g$ instead of $i$) shows that
+$a_{g}\leq b_{g}\leq b_{\tau\left(  i\right)  }$. Hence, $g$ is an element of
+$\left\{  1,2,\ldots,m\right\}  $ satisfying $a_{g}\leq b_{\tau\left(
+i\right)  }$. In other words, $g$ is an element $j$ of $\left\{
+1,2,\ldots,m\right\}  $ satisfying $a_{j}\leq b_{\tau\left(  i\right)  }$. In
+other words, $g\in\left\{  j\in\left\{  1,2,\ldots,m\right\}  \ \mid
+\ a_{j}\leq b_{\tau\left(  i\right)  }\right\}  $.
+\par
+Now, forget that we fixed $g$. We thus have shown that $g\in\left\{
+j\in\left\{  1,2,\ldots,m\right\}  \ \mid\ a_{j}\leq b_{\tau\left(  i\right)
+}\right\}  $ for each $g\in\left\{  j\in\left\{  1,2,\ldots,m\right\}
+\ \mid\ b_{j}\leq b_{\tau\left(  i\right)  }\right\}  $. In other words,
+$\left\{  j\in\left\{  1,2,\ldots,m\right\}  \ \mid\ b_{j}\leq b_{\tau\left(
+i\right)  }\right\}  \subseteq\left\{  j\in\left\{  1,2,\ldots,m\right\}
+\ \mid\ a_{j}\leq b_{\tau\left(  i\right)  }\right\}  $. Qed.}. Hence,%
+\[
+\left\vert \left\{  j\in\left\{  1,2,\ldots,m\right\}  \ \mid\ b_{j}\leq
+b_{\tau\left(  i\right)  }\right\}  \right\vert \leq\left\vert \left\{
+j\in\left\{  1,2,\ldots,m\right\}  \ \mid\ a_{j}\leq b_{\tau\left(  i\right)
+}\right\}  \right\vert .
+\]
+Thus,%
+\begin{align*}
+& \left\vert \left\{  j\in\left\{  1,2,\ldots,m\right\}  \ \mid\ a_{j}\leq
+b_{\tau\left(  i\right)  }\right\}  \right\vert \\
+& \geq\left\vert \left\{  j\in\left\{  1,2,\ldots,m\right\}  \ \mid\ b_{j}\leq
+b_{\tau\left(  i\right)  }\right\}  \right\vert \geq i.
+\end{align*}
+In other words, at least $i$ elements $j\in\left\{  1,2,\ldots,m\right\}  $
+satisfy $a_{j}\leq b_{\tau\left(  i\right)  }$.
+\end{verlong}
+
+Now, we know that $b_{\tau\left(  i\right)  }$ is an element of $\mathbb{Z}$
+such that at least $i$ elements $j\in\left\{  1,2,\ldots,m\right\}  $ satisfy
+$a_{j}\leq b_{\tau\left(  i\right)  }$. In other words, $b_{\tau\left(
+i\right)  }$ is an element $x$ of $\mathbb{Z}$ such that at least $i$ elements
+$j\in\left\{  1,2,\ldots,m\right\}  $ satisfy $a_{j}\leq x$. In other words,%
+\[
+b_{\tau\left(  i\right)  }\in\left\{  x\in\mathbb{Z}\ \mid\ \text{at least
+}i\text{ elements }j\in\left\{  1,2,\ldots,m\right\}  \text{ satisfy }%
+a_{j}\leq x\right\}  .
+\]
+In light of (\ref{sol.sorting.nmu.X=}), this rewrites as $b_{\tau\left(
+i\right)  }\in X$.
+
+\begin{vershort}
+But every $s\in X$ satisfies $\min X\leq s$ (since the minimum of a set is
+$\leq$ to each element of this set). Applying this to $s=b_{\tau\left(
+i\right)  }$, we obtain $b_{\tau\left(  i\right)  }\leq\min X$ (since
+$b_{\tau\left(  i\right)  }\in X$). Thus, $b_{\tau\left(  i\right)  }\leq\min
+X=a_{\sigma\left(  i\right)  }$ (by (\ref{sol.sorting.nmu.uniprop1'})). This
+solves Exercise \ref{exe.sorting.nmu}.
+\end{vershort}
+
+\begin{verlong}
+But if $S$ is a subset of $\mathbb{Z}$ for which $\min S$ is well-defined,
+then every $s\in S$ satisfies $\min S\leq s$ (since the minimum of a set is
+$\leq$ to each element of this set).  Applying this to $S=X$, we conclude that
+every $s\in X$ satisfies $\min X\leq s$. Applying this to $s=b_{\tau\left(
+i\right)  }$, we obtain $b_{\tau\left(  i\right)  }\leq\min X$ (since
+$b_{\tau\left(  i\right)  }\in X$). Thus, $b_{\tau\left(  i\right)  }\leq\min
+X=a_{\sigma\left(  i\right)  }$ (by (\ref{sol.sorting.nmu.uniprop1'})). This
+solves Exercise \ref{exe.sorting.nmu}.
+\end{verlong}
+\end{proof}
+
 \subsection{Solution to Exercise \ref{exe.vander-det.s1}}
 
 \begin{proof}
@@ -34656,7 +34938,7 @@ m}}\underbrace{\delta_{k,m}}_{\substack{=0\\\text{(since }k\neq m\text{)}%
 \text{here, we have split off the addend for }k=m\text{ from the sum}\\
 \text{(since }m\in\left\{  0,1,\ldots,n-1\right\}  \text{)}%
 \end{array}
-\right)  \\
+\right) \\
 &  =X^{m}+\underbrace{\sum_{\substack{k\in\left\{  0,1,\ldots,n-1\right\}
 ;\\k\neq m}}0X^{k}}_{=0}=X^{m}.
 \end{align*}
@@ -34673,20 +34955,20 @@ n}.
 Taking determinants on both sides of this equality, we obtain%
 \begin{align}
 &  \det\left(  \left(  \left(  x_{i}+y_{j}\right)  ^{m}\right)  _{1\leq i\leq
-n,\ 1\leq j\leq n}\right)  \nonumber\\
+n,\ 1\leq j\leq n}\right) \nonumber\\
 &  =\det\left(  \left(  P\left(  x_{i}+y_{j}\right)  \right)  _{1\leq i\leq
-n,\ 1\leq j\leq n}\right)  \nonumber\\
+n,\ 1\leq j\leq n}\right) \nonumber\\
 &  =\underbrace{p_{n-1}^{n}}_{\substack{=\delta_{n-1,m}^{n}\\\text{(since
 }p_{n-1}=\delta_{n-1,m}\\\text{(by the definition of }p_{n-1}\text{))}%
 }}\left(  \prod_{k=0}^{n-1}\dbinom{n-1}{k}\right)  \left(  \prod_{1\leq
 i<j\leq n}\left(  x_{i}-x_{j}\right)  \right)  \left(  \prod_{1\leq i<j\leq
-n}\left(  y_{j}-y_{i}\right)  \right)  \nonumber\\
+n}\left(  y_{j}-y_{i}\right)  \right) \nonumber\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Exercise \ref{exe.vander-det.xi+yj}
-\textbf{(c)}}\right)  \nonumber\\
+\textbf{(c)}}\right) \nonumber\\
 &  =\delta_{n-1,m}^{n}\left(  \prod_{k=0}^{n-1}\dbinom{n-1}{k}\right)  \left(
 \prod_{1\leq i<j\leq n}\left(  x_{i}-x_{j}\right)  \right)  \left(
-\prod_{1\leq i<j\leq n}\left(  y_{j}-y_{i}\right)  \right)
-.\label{sol.vander-det.xi+yj.a.almost}%
+\prod_{1\leq i<j\leq n}\left(  y_{j}-y_{i}\right)  \right)  .
+\label{sol.vander-det.xi+yj.a.almost}%
 \end{align}
 
 
@@ -42060,6 +42342,11 @@ Combinatorics, volume 2}, First edition 2001.
 \href{http://www.combinatorics.org/ojs/index.php/eljc/article/view/v9i1n5}{John
 R. Stembridge, \textit{A Concise Proof of the Littlewood-Richardson Rule}, The
 Electronic Journal of Combinatorics, Volume 9 (2002), Note \#N5.}
+
+\bibitem[Tenner04]{Tenner-NMU}Bridget Eileen Tenner, \textit{A Non-Messing-Up
+Phenomenon for Posets}, Annals of Combinatorics 11 (2007), pp.
+101--114.\newline A preprint is available as
+\href{http://arxiv.org/abs/math/0404396}{arXiv:math/0404396}.
 
 \bibitem[Walker87]{Walker87}%
 \href{https://www.math.nmsu.edu/~elbert/AbsAlgeb.pdf}{Elbert A. Walker,
