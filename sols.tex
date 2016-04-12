@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Monday, April 11, 2016 19:27:24}
+%TCIDATA{LastRevised=Tuesday, April 12, 2016 00:46:26}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -10541,6 +10541,12 @@ Let $n\in\mathbb{N}$. For every $i\in\left[  n\right]  $, let $p_{i,1}%
 \times\cdots\times\left[  m_{n}\right]  }\prod_{i=1}^{n}p_{i,k_{i}}.
 \]
 
+
+(\textbf{Pedantic remark:} If $n=0$, then the Cartesian product $\left[
+m_{1}\right]  \times\left[  m_{2}\right]  \times\cdots\times\left[
+m_{n}\right]  $ has no factors; it is what is called an \textit{empty
+Cartesian product}. It is understood to be a $1$-element set, and its single
+element is the $0$-tuple $\left(  {}\right)  $ (also known as the empty list).)
 \end{lemma}
 
 I tend to refer to Lemma \ref{lem.prodrule} as the \textit{product rule}
@@ -10568,7 +10574,12 @@ m_{2}\right]  \times\cdots\times\left[  m_{n}\right]  $ are in bijection with
 the pairs $\left(  \left(  k_{1},k_{2},\ldots,k_{n-1}\right)  ,k_{n}\right)  $
 of an $\left(  n-1\right)  $-tuple $\left(  k_{1},k_{2},\ldots,k_{n-1}\right)
 \in\left[  m_{1}\right]  \times\left[  m_{2}\right]  \times\cdots\times\left[
-m_{n-1}\right]  $ and an element $k_{n}\in\left[  m_{n}\right]  $}.
+m_{n-1}\right]  $ and an element $k_{n}\in\left[  m_{n}\right]  $}. For the
+details (if you care about them), see the solution to the following exercise:
+
+\begin{exercise}
+\label{exe.prodrule}Prove Lemma \ref{lem.prodrule}.
+\end{exercise}
 
 We shall use a corollary of Lemma \ref{lem.prodrule}:
 
@@ -31637,6 +31648,558 @@ B^{T}\right)  =\det B$. But recall that $\det\left(  B^{T}\right)
 $\det\left(  B^{T}\right)  =\det B$ and $\det\left(  A^{T}\right)  =\det A$).
 This solves Exercise \ref{exe.ps4.6k} \textbf{(b)}.
 \end{proof}
+
+\subsection{Solution to Exercise \ref{exe.prodrule}}
+
+Our goal is now to prove Lemma \ref{lem.prodrule}. Actually, we will prove a
+more general result:
+
+\begin{lemma}
+\label{lem.prodrule.S}Let $n\in\mathbb{N}$. For every $i\in\left\{
+1,2,\ldots,n\right\}  $, let $S_{i}$ be a finite set. For every $i\in\left\{
+1,2,\ldots,n\right\}  $ and every $k\in S_{i}$, let $p_{i,k}$ be an element of
+$\mathbb{K}$. Then,%
+\[
+\prod_{i=1}^{n}\sum_{k\in S_{i}}p_{i,k}=\sum_{\left(  k_{1},k_{2},\ldots
+,k_{n}\right)  \in S_{1}\times S_{2}\times\cdots\times S_{n}}\prod_{i=1}%
+^{n}p_{i,k_{i}}.
+\]
+
+\end{lemma}
+
+Let us first show the particular case of this lemma for $n=2$:
+
+\begin{lemma}
+\label{lem.prodrule.S.n=2}Let $X$ and $Y$ be two finite sets. For every $x\in
+X$, let $q_{x}$ be an element of $\mathbb{K}$. For every $y\in Y$, let $r_{y}$
+be an element of $\mathbb{K}$. Then,%
+\[
+\left(  \sum_{x\in X}q_{x}\right)  \left(  \sum_{y\in Y}r_{y}\right)
+=\sum_{\left(  x,y\right)  \in X\times Y}q_{x}r_{y}.
+\]
+
+\end{lemma}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Lemma \ref{lem.prodrule.S.n=2}.]We have%
+\[
+\underbrace{\sum_{\left(  x,y\right)  \in X\times Y}}_{=\sum_{x\in X}%
+\sum_{y\in Y}}q_{x}r_{y}=\sum_{x\in X}\underbrace{\sum_{y\in Y}q_{x}r_{y}%
+}_{=q_{x}\sum_{y\in Y}r_{y}}=\sum_{x\in X}\left(  q_{x}\sum_{y\in Y}%
+r_{y}\right)  =\left(  \sum_{x\in X}q_{x}\right)  \left(  \sum_{y\in Y}%
+r_{y}\right)  .
+\]
+This proves Lemma \ref{lem.prodrule.S.n=2}.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Lemma \ref{lem.prodrule.S.n=2}.]The equalities (\ref{eq.sum.linear2}%
+) and (\ref{eq.sum.fubini}) (and most other properties of finite sums) remain
+valid if $\mathbb{A}$ is replaced by $\mathbb{K}$ throughout them. It is in
+this variant that they will be used in the following proof.
+
+For every $\lambda\in\mathbb{K}$, we have%
+\begin{align}
+\sum_{y\in Y}\lambda r_{y}  &  =\sum_{s\in Y}\lambda r_{s}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{here, we renamed the summation index
+}y\text{ as }s\right) \nonumber\\
+&  =\lambda\sum_{s\in Y}r_{s}\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{by (\ref{eq.sum.linear2}) (applied to }Y\text{, }r_{s}\text{ and
+}\mathbb{K}\\
+\text{instead of }S\text{, }a_{s}\text{ and }\mathbb{A}\text{)}%
+\end{array}
+\right) \nonumber\\
+&  =\lambda\sum_{y\in Y}r_{y}\ \ \ \ \ \ \ \ \ \ \left(  \text{here, we
+renamed the summation index }s\text{ as }y\right) \nonumber\\
+&  =\left(  \sum_{y\in Y}r_{y}\right)  \lambda.
+\label{pf.lem.prodrule.S.n=2.1}%
+\end{align}
+For every $\lambda\in\mathbb{K}$, we have%
+\begin{align}
+\sum_{x\in X}\lambda q_{x}  &  =\sum_{s\in X}\lambda q_{s}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{here, we renamed the summation index
+}y\text{ as }s\right) \nonumber\\
+&  =\lambda\sum_{s\in X}q_{s}\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{by (\ref{eq.sum.linear2}) (applied to }X\text{, }q_{s}\text{ and
+}\mathbb{K}\\
+\text{instead of }S\text{, }a_{s}\text{ and }\mathbb{A}\text{)}%
+\end{array}
+\right) \nonumber\\
+&  =\lambda\sum_{x\in X}q_{x}\ \ \ \ \ \ \ \ \ \ \left(  \text{here, we
+renamed the summation index }s\text{ as }x\right) \nonumber\\
+&  =\left(  \sum_{x\in X}q_{x}\right)  \lambda.
+\label{pf.lem.prodrule.S.n=2.2}%
+\end{align}
+
+
+From (\ref{eq.sum.fubini}) (applied to $\mathbb{K}$ and $q_{x}r_{y}$ instead
+of $\mathbb{A}$ and $a_{\left(  x,y\right)  }$), we obtain%
+\[
+\sum_{x\in X}\sum_{y\in Y}q_{x}r_{y}=\sum_{\left(  x,y\right)  \in X\times
+Y}q_{x}r_{y}=\sum_{y\in Y}\sum_{x\in X}q_{x}r_{y}.
+\]
+Hence,%
+\begin{align*}
+\sum_{\left(  x,y\right)  \in X\times Y}q_{x}r_{y}  &  =\sum_{x\in
+X}\underbrace{\sum_{y\in Y}q_{x}r_{y}}_{\substack{=\left(  \sum_{y\in Y}%
+r_{y}\right)  q_{x}\\\text{(by (\ref{pf.lem.prodrule.S.n=2.1}) (applied to
+}\lambda=q_{x}\text{))}}}=\sum_{x\in X}\left(  \sum_{y\in Y}r_{y}\right)
+q_{x}\\
+&  =\left(  \sum_{x\in X}q_{x}\right)  \left(  \sum_{y\in Y}r_{y}\right)
+\end{align*}
+(by (\ref{pf.lem.prodrule.S.n=2.2}) (applied to $\lambda=\sum_{x\in X}q_{x}%
+$)). This proves Lemma \ref{lem.prodrule.S.n=2}.
+\end{proof}
+\end{verlong}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.prodrule.S}.]We claim that%
+\begin{equation}
+\prod_{i=1}^{m}\sum_{k\in S_{i}}p_{i,k}=\sum_{\left(  k_{1},k_{2},\ldots
+,k_{m}\right)  \in S_{1}\times S_{2}\times\cdots\times S_{m}}\prod_{i=1}%
+^{m}p_{i,k_{i}}. \label{pf.lem.prodrule.S.claim}%
+\end{equation}
+for every $m\in\left\{  0,1,\ldots,n\right\}  $.
+
+\textit{Proof of (\ref{pf.lem.prodrule.S.claim}):} We shall prove
+(\ref{pf.lem.prodrule.S.claim}) by induction over $m$:
+
+\textit{Induction base:} Comparing
+\[
+\prod_{i=1}^{0}\sum_{k\in S_{i}}p_{i,k}=\left(  \text{empty product}\right)
+=1
+\]
+with%
+\begin{align*}
+\sum_{\left(  k_{1},k_{2},\ldots,k_{0}\right)  \in S_{1}\times S_{2}%
+\times\cdots\times S_{0}}\underbrace{\prod_{i=1}^{0}p_{i,k_{i}}}_{=\left(
+\text{empty product}\right)  =1} &  =\sum_{\left(  k_{1},k_{2},\ldots
+,k_{0}\right)  \in S_{1}\times S_{2}\times\cdots\times S_{0}}1\\
+&  =\underbrace{\left\vert S_{1}\times S_{2}\times\cdots\times S_{0}%
+\right\vert }_{\substack{=1\\\text{(since }S_{1}\times S_{2}\times\cdots\times
+S_{0}\text{ is an empty}\\\text{Cartesian product)}}}\cdot1=1,
+\end{align*}
+we obtain $\prod_{i=1}^{0}\sum_{k\in S_{i}}p_{i,k}=\sum_{\left(  k_{1}%
+,k_{2},\ldots,k_{0}\right)  \in S_{1}\times S_{2}\times\cdots\times S_{0}%
+}\prod_{i=1}^{0}p_{i,k_{i}}$. In other words, (\ref{pf.lem.prodrule.S.claim})
+holds for $m=0$. This completes the induction base.
+
+\textit{Induction step:} Let $M\in\left\{  0,1,\ldots,n\right\}  $ be
+positive. Assume that (\ref{pf.lem.prodrule.S.claim}) holds for $m=M-1$. We
+now must show that (\ref{pf.lem.prodrule.S.claim}) holds for $m=M$.
+
+We have assumed that (\ref{pf.lem.prodrule.S.claim}) holds for $m=M-1$. In
+other words, we have%
+\begin{equation}
+\prod_{i=1}^{M-1}\sum_{k\in S_{i}}p_{i,k}=\sum_{\left(  k_{1},k_{2}%
+,\ldots,k_{M-1}\right)  \in S_{1}\times S_{2}\times\cdots\times S_{M-1}}%
+\prod_{i=1}^{M-1}p_{i,k_{i}}. \label{pf.lem.prodrule.S.indhyp}%
+\end{equation}
+
+
+\begin{vershort}
+Now, the map
+\begin{align*}
+S_{1}\times S_{2}\times\cdots\times S_{M}  &  \rightarrow\left(  S_{1}\times
+S_{2}\times\cdots\times S_{M-1}\right)  \times S_{M},\\
+\left(  s_{1},s_{2},\ldots,s_{M}\right)   &  \mapsto\left(  \left(
+s_{1},s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right)
+\end{align*}
+is a bijection.\footnote{Indeed, this is the canonical bijection $S_{1}\times
+S_{2}\times\cdots\times S_{M}\rightarrow\left(  S_{1}\times S_{2}\times
+\cdots\times S_{M-1}\right)  \times S_{M}$.}
+\end{vershort}
+
+\begin{verlong}
+We define a map%
+\[
+\Phi:\left(  S_{1}\times S_{2}\times\cdots\times S_{M-1}\right)  \times
+S_{M}\rightarrow S_{1}\times S_{2}\times\cdots\times S_{M}%
+\]
+by%
+\begin{equation}
+\left(
+\begin{array}
+[c]{l}%
+\Phi\left(  \left(  s_{1},s_{2},\ldots,s_{M-1}\right)  ,t\right)  =\left(
+s_{1},s_{2},\ldots,s_{M-1},t\right) \\
+\ \ \ \ \ \ \ \ \ \ \text{for every }\left(  \left(  s_{1},s_{2}%
+,\ldots,s_{M-1}\right)  ,t\right)  \in\left(  S_{1}\times S_{2}\times
+\cdots\times S_{M-1}\right)  \times S_{M}%
+\end{array}
+\right)  . \label{pf.lem.prodrule.S.Phidef}%
+\end{equation}
+
+
+We also define a map%
+\[
+\Psi:S_{1}\times S_{2}\times\cdots\times S_{M}\rightarrow\left(  S_{1}\times
+S_{2}\times\cdots\times S_{M-1}\right)  \times S_{M}%
+\]
+by%
+\begin{equation}
+\left(
+\begin{array}
+[c]{l}%
+\Psi\left(  s_{1},s_{2},\ldots,s_{M}\right)  =\left(  \left(  s_{1}%
+,s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right) \\
+\ \ \ \ \ \ \ \ \ \ \text{for every }\left(  s_{1},s_{2},\ldots,s_{M}\right)
+\in S_{1}\times S_{2}\times\cdots\times S_{M}%
+\end{array}
+\right)  . \label{pf.lem.prodrule.S.Psidef}%
+\end{equation}
+
+
+We now claim that
+\begin{equation}
+\Psi\left(  s_{1},s_{2},\ldots,s_{M-1},t\right)  =\left(  \left(  s_{1}%
+,s_{2},\ldots,s_{M-1}\right)  ,t\right)  \label{pf.lem.prodrule.S.Psi}%
+\end{equation}
+for every $\left(  s_{1},s_{2},\ldots,s_{M-1}\right)  \in S_{1}\times
+S_{2}\times\cdots\times S_{M-1}$ and $t\in S_{M}$.
+
+\textit{Proof of (\ref{pf.lem.prodrule.S.Psi}):} Let $\left(  s_{1}%
+,s_{2},\ldots,s_{M-1}\right)  \in S_{1}\times S_{2}\times\cdots\times S_{M-1}$
+and $t\in S_{M}$. We have $\left(  s_{1},s_{2},\ldots,s_{M-1}\right)  \in
+S_{1}\times S_{2}\times\cdots\times S_{M-1}$; in other words,
+\begin{equation}
+s_{i}\in S_{i}\ \ \ \ \ \ \ \ \ \ \text{for every }i\in\left\{  1,2,\ldots
+,M-1\right\}  . \label{pf.lem.prodrule.S.Psi.pf.1}%
+\end{equation}
+
+
+For every $i\in\left\{  1,2,\ldots,M\right\}  $, the element $%
+\begin{cases}
+s_{i}, & \text{if }i<M;\\
+t, & \text{if }i=M
+\end{cases}
+$ is a well-defined element of $S_{i}$\ \ \ \ \footnote{\textit{Proof.} Let
+$i\in\left\{  1,2,\ldots,M\right\}  $. We must prove that
+\begin{equation}%
+\begin{cases}
+s_{i}, & \text{if }i<M;\\
+t, & \text{if }i=M
+\end{cases}
+\text{ is a well-defined element of }S_{i}.
+\label{pf.lem.prodrule.S.Psi.pf.fn1.1}%
+\end{equation}
+\par
+We are in one of the following two cases:
+\par
+\textit{Case 1:} We have $i\neq M$.
+\par
+\textit{Case 2:} We have $i=M$.
+\par
+Let us first consider Case 1. In this case, we have $i\neq M$. Combining this
+with $i\in\left\{  1,2,\ldots,M\right\}  $, we obtain $i\in\left\{
+1,2,\ldots,M\right\}  \setminus\left\{  M\right\}  =\left\{  1,2,\ldots
+,M-1\right\}  $. Hence, $s_{i}\in S_{i}$ (by (\ref{pf.lem.prodrule.S.Psi.pf.1}%
+)). Thus, $s_{i}$ is a well-defined element of $S_{i}$. In other words, $%
+\begin{cases}
+s_{i}, & \text{if }i<M;\\
+t, & \text{if }i=M
+\end{cases}
+$ is a well-defined element of $S_{i}$ (since $%
+\begin{cases}
+s_{i}, & \text{if }i<M;\\
+t, & \text{if }i=M
+\end{cases}
+=s_{i}$ (since $i<M$)). Thus, (\ref{pf.lem.prodrule.S.Psi.pf.fn1.1}) is proven
+in Case 1.
+\par
+Let us now consider Case 2. In this case, we have $i=M$. But $t$ is a
+well-defined element of $S_{M}$. In other words, $%
+\begin{cases}
+s_{i}, & \text{if }i<M;\\
+t, & \text{if }i=M
+\end{cases}
+$ is a well-defined element of $S_{i}$ (since $%
+\begin{cases}
+s_{i}, & \text{if }i<M;\\
+t, & \text{if }i=M
+\end{cases}
+=t$ (since $i=M$) and $M=i$ (since $i=M$)). Thus,
+(\ref{pf.lem.prodrule.S.Psi.pf.fn1.1}) is proven in Case 2.
+\par
+We have now proven (\ref{pf.lem.prodrule.S.Psi.pf.fn1.1}) in each of the two
+Cases 1 and 2. Thus, (\ref{pf.lem.prodrule.S.Psi.pf.fn1.1}) always holds
+(since Cases 1 and 2 cover all possibilities). In other words, $%
+\begin{cases}
+s_{i}, & \text{if }i<M;\\
+t, & \text{if }i=M
+\end{cases}
+$ is a well-defined element of $S_{i}$. Qed.}. Hence, we can define an
+$M$-tuple $\left(  q_{1},q_{2},\ldots,q_{M}\right)  \in S_{1}\times
+S_{2}\times\cdots\times S_{M}$ by%
+\[
+\left(  q_{i}=%
+\begin{cases}
+s_{i}, & \text{if }i<M;\\
+t, & \text{if }i=M
+\end{cases}
+\ \ \ \ \ \ \ \ \ \ \text{for every }i\in\left\{  1,2,\ldots,M\right\}
+\right)  .
+\]
+Consider this $M$-tuple $\left(  q_{1},q_{2},\ldots,q_{M}\right)  $. The
+definition of this $M$-tuple shows that%
+\[
+\left(  q_{1},q_{2},\ldots,q_{M}\right)  =\left(  s_{1},s_{2},\ldots
+,s_{M-1},t\right)  .
+\]
+
+
+For every $i\in\left\{  1,2,\ldots,M-1\right\}  $, we have%
+\[
+q_{i}=%
+\begin{cases}
+s_{i}, & \text{if }i<M;\\
+t, & \text{if }i=M
+\end{cases}
+=s_{i}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }i<M\text{ (since }i\in\left\{
+1,2,\ldots,M-1\right\}  \text{)}\right)  .
+\]
+In other words, $\left(  q_{1},q_{2},\ldots,q_{M-1}\right)  =\left(
+s_{1},s_{2},\ldots,s_{M-1}\right)  $. Also, the definition of $q_{M}$ shows
+that $q_{M}=%
+\begin{cases}
+s_{M}, & \text{if }M<M;\\
+t, & \text{if }M=M
+\end{cases}
+=t$ (since $M=M$).
+
+But the definition of $\Psi$ yields
+\begin{align*}
+\Psi\left(  q_{1},q_{2},\ldots,q_{M}\right)   &  =\left(  \underbrace{\left(
+q_{1},q_{2},\ldots,q_{M-1}\right)  }_{=\left(  s_{1},s_{2},\ldots
+,s_{M-1}\right)  },\underbrace{q_{M}}_{=t}\right) \\
+&  =\left(  \left(  s_{1},s_{2},\ldots,s_{M-1}\right)  ,t\right)  .
+\end{align*}
+Comparing this with $\Psi\underbrace{\left(  q_{1},q_{2},\ldots,q_{M}\right)
+}_{=\left(  s_{1},s_{2},\ldots,s_{M-1},t\right)  }=\Psi\left(  s_{1}%
+,s_{2},\ldots,s_{M-1},t\right)  $, we obtain $\Psi\left(  s_{1},s_{2}%
+,\ldots,s_{M-1},t\right)  =\left(  \left(  s_{1},s_{2},\ldots,s_{M-1}\right)
+,t\right)  $. This proves (\ref{pf.lem.prodrule.S.Psi.pf.1}).
+
+Now, we have $\Phi\circ\Psi=\operatorname*{id}$%
+\ \ \ \ \footnote{\textit{Proof.} Let $\alpha\in S_{1}\times S_{2}\times
+\cdots\times S_{M}$. Thus, we can write $\alpha$ in the form $\left(
+s_{1},s_{2},\ldots,s_{M}\right)  $ for some $\left(  s_{1},s_{2},\ldots
+,s_{M}\right)  \in S_{1}\times S_{2}\times\cdots\times S_{M}$. Consider this
+$\left(  s_{1},s_{2},\ldots,s_{M}\right)  $. Hence, $\alpha=\left(
+s_{1},s_{2},\ldots,s_{M}\right)  $.
+\par
+Now,%
+\begin{align*}
+\left(  \Phi\circ\Psi\right)  \left(  \underbrace{\alpha}_{=\left(
+s_{1},s_{2},\ldots,s_{M}\right)  }\right)   &  =\left(  \Phi\circ\Psi\right)
+\left(  s_{1},s_{2},\ldots,s_{M}\right)  =\Phi\left(  \underbrace{\Psi\left(
+s_{1},s_{2},\ldots,s_{M}\right)  }_{\substack{=\left(  \left(  s_{1}%
+,s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right)  \\\text{(by the definition of
+}\Psi\text{)}}}\right) \\
+&  =\Phi\left(  \left(  s_{1},s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right)
+=\left(  s_{1},s_{2},\ldots,s_{M-1},s_{M}\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\Phi\right) \\
+&  =\left(  s_{1},s_{2},\ldots,s_{M}\right)  =\alpha=\operatorname*{id}\left(
+\alpha\right)  .
+\end{align*}
+\par
+Let us now forget that we fixed $\alpha$. We thus have shown that $\left(
+\Phi\circ\Psi\right)  \left(  \alpha\right)  =\operatorname*{id}\left(
+\alpha\right)  $ for every $\alpha\in S_{1}\times S_{2}\times\cdots\times
+S_{M}$. In other words, $\Phi\circ\Psi=\operatorname*{id}$, qed.} and
+$\Psi\circ\Phi=\operatorname*{id}$\ \ \ \ \footnote{\textit{Proof.} Let
+$\beta\in\left(  S_{1}\times S_{2}\times\cdots\times S_{M-1}\right)  \times
+S_{M}$. Thus, we can write $\beta$ in the form $\left(  \gamma,t\right)  $ for
+some $\gamma\in S_{1}\times S_{2}\times\cdots\times S_{M-1}$ and $t\in S_{M}$.
+Consider these $\gamma$ and $t$. Thus, $\beta=\left(  \gamma,t\right)  $.
+\par
+We have $\gamma\in S_{1}\times S_{2}\times\cdots\times S_{M-1}$. Thus, we can
+write $\gamma$ in the form $\left(  s_{1},s_{2},\ldots,s_{M-1}\right)  $ for
+some $\left(  s_{1},s_{2},\ldots,s_{M-1}\right)  \in S_{1}\times S_{2}%
+\times\cdots\times S_{M-1}$. Consider this $\left(  s_{1},s_{2},\ldots
+,s_{M-1}\right)  $. Hence, $\gamma=\left(  s_{1},s_{2},\ldots,s_{M-1}\right)
+$.
+\par
+Now, $\beta=\left(  \underbrace{\gamma}_{=\left(  s_{1},s_{2},\ldots
+,s_{M-1}\right)  },t\right)  =\left(  \left(  s_{1},s_{2},\ldots
+,s_{M-1}\right)  ,t\right)  $. Applying the map $\Psi\circ\Phi$ to both sides
+of this equality, we obtain%
+\begin{align*}
+\left(  \Psi\circ\Phi\right)  \left(  \beta\right)   &  =\left(  \Psi\circ
+\Phi\right)  \left(  \left(  s_{1},s_{2},\ldots,s_{M-1}\right)  ,t\right) \\
+&  =\Psi\left(  \underbrace{\Phi\left(  \left(  s_{1},s_{2},\ldots
+,s_{M-1}\right)  ,t\right)  }_{\substack{=\left(  s_{1},s_{2},\ldots
+,s_{M-1},t\right)  \\\text{(by the definition of }\Phi\text{)}}}\right) \\
+&  =\Psi\left(  s_{1},s_{2},\ldots,s_{M-1},t\right)  =\left(  \left(
+s_{1},s_{2},\ldots,s_{M-1}\right)  ,t\right)  \ \ \ \ \ \ \ \ \ \ \left(
+\text{by (\ref{pf.lem.prodrule.S.Psi})}\right) \\
+&  =\beta=\operatorname*{id}\left(  \beta\right)  .
+\end{align*}
+\par
+Let us now forget that we fixed $\beta$. We thus have shown that $\left(
+\Psi\circ\Phi\right)  \left(  \beta\right)  =\operatorname*{id}\left(
+\beta\right)  $ for every $\beta\in\left(  S_{1}\times S_{2}\times\cdots\times
+S_{M-1}\right)  \times S_{M}$. In other words, $\Psi\circ\Phi
+=\operatorname*{id}$, qed.}. These two equalities show that the maps $\Phi$
+and $\Psi$ are mutually inverse. Thus, the map $\Psi$ is invertible. In other
+words, the map $\Psi$ is a bijection.
+
+Now, $\Psi$ is the map
+\begin{align*}
+S_{1}\times S_{2}\times\cdots\times S_{M}  &  \rightarrow\left(  S_{1}\times
+S_{2}\times\cdots\times S_{M-1}\right)  \times S_{M},\\
+\left(  s_{1},s_{2},\ldots,s_{M}\right)   &  \mapsto\left(  \left(
+s_{1},s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right)
+\end{align*}
+(because $\Psi$ is the map $S_{1}\times S_{2}\times\cdots\times S_{M}%
+\rightarrow\left(  S_{1}\times S_{2}\times\cdots\times S_{M-1}\right)  \times
+S_{M}$ satisfying (\ref{pf.lem.prodrule.S.Psidef})). Thus, the map
+\begin{align*}
+S_{1}\times S_{2}\times\cdots\times S_{M}  &  \rightarrow\left(  S_{1}\times
+S_{2}\times\cdots\times S_{M-1}\right)  \times S_{M},\\
+\left(  s_{1},s_{2},\ldots,s_{M}\right)   &  \mapsto\left(  \left(
+s_{1},s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right)
+\end{align*}
+is a bijection (since $\Psi$ is a bijection).
+\end{verlong}
+
+For every $\left(  k_{1},k_{2},\ldots,k_{M-1}\right)  \in S_{1}\times
+S_{2}\times\cdots\times S_{M-1}$, we define an element $g_{\left(  k_{1}%
+,k_{2},\ldots,k_{M-1}\right)  }\in\mathbb{K}$ by
+\begin{equation}
+g_{\left(  k_{1},k_{2},\ldots,k_{M-1}\right)  }=\prod_{i=1}^{M-1}p_{i,k_{i}}.
+\label{pf.lem.prodrule.S.g=}%
+\end{equation}
+
+
+Now, (\ref{pf.lem.prodrule.S.indhyp}) becomes%
+\begin{align}
+\prod_{i=1}^{M-1}\sum_{k\in S_{i}}p_{i,k}  &  =\sum_{\left(  k_{1}%
+,k_{2},\ldots,k_{M-1}\right)  \in S_{1}\times S_{2}\times\cdots\times S_{M-1}%
+}\underbrace{\prod_{i=1}^{M-1}p_{i,k_{i}}}_{\substack{=g_{\left(  k_{1}%
+,k_{2},\ldots,k_{M-1}\right)  }\\\text{(by (\ref{pf.lem.prodrule.S.g=}))}%
+}}\nonumber\\
+&  =\sum_{\left(  k_{1},k_{2},\ldots,k_{M-1}\right)  \in S_{1}\times
+S_{2}\times\cdots\times S_{M-1}}g_{\left(  k_{1},k_{2},\ldots,k_{M-1}\right)
+}\nonumber\\
+&  =\sum_{x\in S_{1}\times S_{2}\times\cdots\times S_{M-1}}g_{x}
+\label{pf.lem.prodrule.S.L1}%
+\end{align}
+(here, we have renamed the summation index $\left(  k_{1},k_{2},\ldots
+,k_{M-1}\right)  $ as $x$).
+
+The sets $S_{1},S_{2},\ldots,S_{M-1}$ are finite. Hence, their Cartesian
+product $S_{1}\times S_{2}\times\cdots\times S_{M-1}$ is also finite. Every
+$\left(  s_{1},s_{2},\ldots,s_{M}\right)  \in S_{1}\times S_{2}\times
+\cdots\times S_{M}$ satisfies%
+\begin{equation}
+\prod_{i=1}^{M}p_{i,s_{i}}=\left(  \prod_{i=1}^{M-1}p_{i,s_{i}}\right)
+p_{M,s_{M}} \label{pf.lem.prodrule.S.splioff}%
+\end{equation}
+(indeed, this follows by splitting off the factor for $i=M$ from the sum
+$\prod_{i=1}^{M}p_{i,s_{i}}$).
+
+Now, if we split off the factor for $i=M$ from the product $\prod_{i=1}%
+^{M}\sum_{k\in S_{i}}p_{i,k}$, we obtain
+\begin{align*}
+\prod_{i=1}^{M}\sum_{k\in S_{i}}p_{i,k}  &  =\underbrace{\left(  \prod
+_{i=1}^{M-1}\sum_{k\in S_{i}}p_{i,k}\right)  }_{\substack{=\sum_{x\in
+S_{1}\times S_{2}\times\cdots\times S_{M-1}}g_{x}\\\text{(by
+(\ref{pf.lem.prodrule.S.L1}))}}}\underbrace{\left(  \sum_{k\in S_{M}}%
+p_{M,k}\right)  }_{\substack{=\sum_{y\in S_{M}}p_{M,y}\\\text{(here, we
+renamed the}\\\text{summation index }k\text{ as }y\text{)}}}\\
+&  =\left(  \sum_{x\in S_{1}\times S_{2}\times\cdots\times S_{M-1}}%
+g_{x}\right)  \left(  \sum_{y\in S_{M}}p_{M,y}\right)  =\sum_{\left(
+x,y\right)  \in\left(  S_{1}\times S_{2}\times\cdots\times S_{M-1}\right)
+\times S_{M}}g_{x}p_{M,y}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{by Lemma \ref{lem.prodrule.S.n=2}, applied to}\\
+X=S_{1}\times S_{2}\times\cdots\times S_{M-1}\text{, }Y=S_{M}\text{, }%
+q_{x}=g_{x}\text{ and }r_{y}=p_{M,y}%
+\end{array}
+\right) \\
+&  =\sum_{\left(  x,y\right)  \in\left(  S_{1}\times S_{2}\times\cdots\times
+S_{M-1}\right)  \times S_{M}}g_{x}p_{M,y}\\
+&  =\sum_{\left(  s_{1},s_{2},\ldots,s_{M}\right)  \in S_{1}\times S_{2}%
+\times\cdots\times S_{M}}\underbrace{g_{\left(  s_{1},s_{2},\ldots
+,s_{M-1}\right)  }}_{\substack{=\prod_{i=1}^{M-1}p_{i,s_{i}}\\\text{(by the
+definition of }g_{\left(  s_{1},s_{2},\ldots,s_{M-1}\right)  }\text{)}%
+}}p_{M,s_{M}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have substituted }\left(  \left(  s_{1},s_{2},\ldots
+,s_{M-1}\right)  ,s_{M}\right)  \text{ for }\left(  x,y\right) \\
+\text{in the sum, since the map}\\
+S_{1}\times S_{2}\times\cdots\times S_{M}\rightarrow\left(  S_{1}\times
+S_{2}\times\cdots\times S_{M-1}\right)  \times S_{M},\\
+\left(  s_{1},s_{2},\ldots,s_{M}\right)  \mapsto\left(  \left(  s_{1}%
+,s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right) \\
+\text{is a bijection}%
+\end{array}
+\right) \\
+&  =\sum_{\left(  s_{1},s_{2},\ldots,s_{M}\right)  \in S_{1}\times S_{2}%
+\times\cdots\times S_{M}}\underbrace{\left(  \prod_{i=1}^{M-1}p_{i,s_{i}%
+}\right)  p_{M,s_{M}}}_{\substack{=\prod_{i=1}^{M}p_{i,s_{i}}\\\text{(by
+(\ref{pf.lem.prodrule.S.splioff}))}}}\\
+&  =\sum_{\left(  s_{1},s_{2},\ldots,s_{M}\right)  \in S_{1}\times S_{2}%
+\times\cdots\times S_{M}}\prod_{i=1}^{M}p_{i,s_{i}}=\sum_{\left(  k_{1}%
+,k_{2},\ldots,k_{M}\right)  \in S_{1}\times S_{2}\times\cdots\times S_{M}%
+}\prod_{i=1}^{M}p_{i,k_{i}}%
+\end{align*}
+(here, we have renamed the summation index $\left(  s_{1},s_{2},\ldots
+,s_{M}\right)  $ as $\left(  k_{1},k_{2},\ldots,k_{M}\right)  $). In other
+words, (\ref{pf.lem.prodrule.S.claim}) holds for $m=M$. This completes the
+induction step. Thus, (\ref{pf.lem.prodrule.S.claim}) is proven by induction.
+
+Now, (\ref{pf.lem.prodrule.S.claim}) (applied to $m=n$) yields%
+\[
+\prod_{i=1}^{n}\sum_{k\in S_{i}}p_{i,k}=\sum_{\left(  k_{1},k_{2},\ldots
+,k_{n}\right)  \in S_{1}\times S_{2}\times\cdots\times S_{n}}\prod_{i=1}%
+^{n}p_{i,k_{i}}.
+\]
+This proves Lemma \ref{lem.prodrule.S}.
+\end{proof}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.prodrule}.]For every $i\in\left[  n\right]  $, the
+set $\left[  m_{i}\right]  $ is clearly a finite set. For every $i\in\left[
+n\right]  $, we know that $p_{i,1},p_{i,2},\ldots,p_{i,m_{i}}$ are elements of
+$\mathbb{K}$. In other words, for every $i\in\left[  n\right]  $ and every
+$k\in\left[  m_{i}\right]  $, we know that $p_{i,k}$ is an element of
+$\mathbb{K}$. In other words, for every $i\in\left\{  1,2,\ldots,n\right\}  $
+and every $k\in\left[  m_{i}\right]  $, we know that $p_{i,k}$ is an element
+of $\mathbb{K}$ (since $\left[  n\right]  =\left\{  1,2,\ldots,n\right\}  $).
+Hence, Lemma \ref{lem.prodrule.S} (applied to $S_{i}=\left[  m_{i}\right]  $)
+yields%
+\[
+\prod_{i=1}^{n}\sum_{k\in\left[  m_{i}\right]  }p_{i,k}=\sum_{\left(
+k_{1},k_{2},\ldots,k_{n}\right)  \in\left[  m_{1}\right]  \times\left[
+m_{2}\right]  \times\cdots\times\left[  m_{n}\right]  }\prod_{i=1}%
+^{n}p_{i,k_{i}}.
+\]
+Thus,%
+\[
+\sum_{\left(  k_{1},k_{2},\ldots,k_{n}\right)  \in\left[  m_{1}\right]
+\times\left[  m_{2}\right]  \times\cdots\times\left[  m_{n}\right]  }%
+\prod_{i=1}^{n}p_{i,k_{i}}=\prod_{i=1}^{n}\underbrace{\sum_{k\in\left[
+m_{i}\right]  }}_{=\sum_{k=1}^{m_{i}}}p_{i,k}=\prod_{i=1}^{n}\sum_{k=1}%
+^{m_{i}}p_{i,k}.
+\]
+This proves Lemma \ref{lem.prodrule}.
+\end{proof}
+
+We have now proven Lemma \ref{lem.prodrule}, and thus solved Exercise
+\ref{exe.prodrule}.
 
 \subsection{Solution to Exercise \ref{exe.ps4.det.fibo}}
 
