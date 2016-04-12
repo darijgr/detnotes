@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Tuesday, April 12, 2016 00:46:26}
+%TCIDATA{LastRevised=Tuesday, April 12, 2016 01:17:21}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -31780,7 +31780,7 @@ with%
 \begin{align*}
 \sum_{\left(  k_{1},k_{2},\ldots,k_{0}\right)  \in S_{1}\times S_{2}%
 \times\cdots\times S_{0}}\underbrace{\prod_{i=1}^{0}p_{i,k_{i}}}_{=\left(
-\text{empty product}\right)  =1} &  =\sum_{\left(  k_{1},k_{2},\ldots
+\text{empty product}\right)  =1}  &  =\sum_{\left(  k_{1},k_{2},\ldots
 ,k_{0}\right)  \in S_{1}\times S_{2}\times\cdots\times S_{0}}1\\
 &  =\underbrace{\left\vert S_{1}\times S_{2}\times\cdots\times S_{0}%
 \right\vert }_{\substack{=1\\\text{(since }S_{1}\times S_{2}\times\cdots\times
@@ -34041,7 +34041,7 @@ a_{\sigma\left(  i\right)  }  &  =\min\underbrace{\left\{  x\in\mathbb{Z}%
 
 But $\tau\in S_{m}$ satisfies $b_{\tau\left(  1\right)  }\leq b_{\tau\left(
 2\right)  }\leq\cdots\leq b_{\tau\left(  m\right)  }$, and we have
-$i\in\left\{  1,2,\ldots,n\right\}  $. Thus, Lemma
+$i\in\left\{  1,2,\ldots,m\right\}  $. Thus, Lemma
 \ref{lem.sorting.nmu.uniprop} (applied to $m$, $b_{k}$ and $\tau$ instead of
 $n$, $a_{k}$ and $\sigma$) yields that%
 \begin{equation}
@@ -34092,10 +34092,12 @@ $\mathbb{Z}$ such that at least $i$ elements $j\in\left\{  1,2,\ldots
 \begin{vershort}
 We now know that at least $i$ elements $j\in\left\{  1,2,\ldots,m\right\}  $
 satisfy $b_{j}\leq b_{\tau\left(  i\right)  }$. Each of these $i$ elements $j$
-must also satisfy $a_{j}\leq b_{\tau\left(  i\right)  }$ (because
+must also be an element of $\left\{  1,2,\ldots,n\right\}  $ (since
+$j\in\left\{  1,2,\ldots,m\right\}  \subseteq\left\{  1,2,\ldots,n\right\}  $)
+which satisfies $a_{j}\leq b_{\tau\left(  i\right)  }$ (because
 (\ref{eq.exe.sorting.nmu.ass}) (applied to $j$ instead of $i$) shows that
 $a_{j}\leq b_{j}\leq b_{\tau\left(  i\right)  }$). Thus, at least $i$ elements
-$j\in\left\{  1,2,\ldots,m\right\}  $ satisfy $a_{j}\leq b_{\tau\left(
+$j\in\left\{  1,2,\ldots,n\right\}  $ satisfy $a_{j}\leq b_{\tau\left(
 i\right)  }$.
 \end{vershort}
 
@@ -34110,7 +34112,7 @@ b_{\tau\left(  i\right)  }\right\}  \right\vert \geq i.
 
 But $\left\{  j\in\left\{  1,2,\ldots,m\right\}  \ \mid\ b_{j}\leq
 b_{\tau\left(  i\right)  }\right\}  \subseteq\left\{  j\in\left\{
-1,2,\ldots,m\right\}  \ \mid\ a_{j}\leq b_{\tau\left(  i\right)  }\right\}
+1,2,\ldots,n\right\}  \ \mid\ a_{j}\leq b_{\tau\left(  i\right)  }\right\}
 $\ \ \ \ \footnote{\textit{Proof.} Let $g\in\left\{  j\in\left\{
 1,2,\ldots,m\right\}  \ \mid\ b_{j}\leq b_{\tau\left(  i\right)  }\right\}  $.
 We shall prove that $g\in\left\{  j\in\left\{  1,2,\ldots,m\right\}
@@ -34121,46 +34123,47 @@ b_{\tau\left(  i\right)  }\right\}  $. In other words, $g$ is an element $j$
 of $\left\{  1,2,\ldots,m\right\}  $ satisfying $b_{j}\leq b_{\tau\left(
 i\right)  }$. In other words, $g$ is an element of $\left\{  1,2,\ldots
 ,m\right\}  $ satisfying $b_{g}\leq b_{\tau\left(  i\right)  }$. Now,
-(\ref{eq.exe.sorting.nmu.ass}) (applied to $g$ instead of $i$) shows that
-$a_{g}\leq b_{g}\leq b_{\tau\left(  i\right)  }$. Hence, $g$ is an element of
-$\left\{  1,2,\ldots,m\right\}  $ satisfying $a_{g}\leq b_{\tau\left(
-i\right)  }$. In other words, $g$ is an element $j$ of $\left\{
-1,2,\ldots,m\right\}  $ satisfying $a_{j}\leq b_{\tau\left(  i\right)  }$. In
-other words, $g\in\left\{  j\in\left\{  1,2,\ldots,m\right\}  \ \mid
-\ a_{j}\leq b_{\tau\left(  i\right)  }\right\}  $.
+$g\in\left\{  1,2,\ldots,m\right\}  \subseteq\left\{  1,2,\ldots,n\right\}  $.
+Also, (\ref{eq.exe.sorting.nmu.ass}) (applied to $g$ instead of $i$) shows
+that $a_{g}\leq b_{g}\leq b_{\tau\left(  i\right)  }$. Hence, $g$ is an
+element of $\left\{  1,2,\ldots,n\right\}  $ satisfying $a_{g}\leq
+b_{\tau\left(  i\right)  }$. In other words, $g$ is an element $j$ of
+$\left\{  1,2,\ldots,n\right\}  $ satisfying $a_{j}\leq b_{\tau\left(
+i\right)  }$. In other words, $g\in\left\{  j\in\left\{  1,2,\ldots,n\right\}
+\ \mid\ a_{j}\leq b_{\tau\left(  i\right)  }\right\}  $.
 \par
 Now, forget that we fixed $g$. We thus have shown that $g\in\left\{
 j\in\left\{  1,2,\ldots,m\right\}  \ \mid\ a_{j}\leq b_{\tau\left(  i\right)
-}\right\}  $ for each $g\in\left\{  j\in\left\{  1,2,\ldots,m\right\}
+}\right\}  $ for each $g\in\left\{  j\in\left\{  1,2,\ldots,n\right\}
 \ \mid\ b_{j}\leq b_{\tau\left(  i\right)  }\right\}  $. In other words,
 $\left\{  j\in\left\{  1,2,\ldots,m\right\}  \ \mid\ b_{j}\leq b_{\tau\left(
-i\right)  }\right\}  \subseteq\left\{  j\in\left\{  1,2,\ldots,m\right\}
+i\right)  }\right\}  \subseteq\left\{  j\in\left\{  1,2,\ldots,n\right\}
 \ \mid\ a_{j}\leq b_{\tau\left(  i\right)  }\right\}  $. Qed.}. Hence,%
 \[
 \left\vert \left\{  j\in\left\{  1,2,\ldots,m\right\}  \ \mid\ b_{j}\leq
 b_{\tau\left(  i\right)  }\right\}  \right\vert \leq\left\vert \left\{
-j\in\left\{  1,2,\ldots,m\right\}  \ \mid\ a_{j}\leq b_{\tau\left(  i\right)
+j\in\left\{  1,2,\ldots,n\right\}  \ \mid\ a_{j}\leq b_{\tau\left(  i\right)
 }\right\}  \right\vert .
 \]
 Thus,%
 \begin{align*}
-&  \left\vert \left\{  j\in\left\{  1,2,\ldots,m\right\}  \ \mid\ a_{j}\leq
+&  \left\vert \left\{  j\in\left\{  1,2,\ldots,n\right\}  \ \mid\ a_{j}\leq
 b_{\tau\left(  i\right)  }\right\}  \right\vert \\
 &  \geq\left\vert \left\{  j\in\left\{  1,2,\ldots,m\right\}  \ \mid
 \ b_{j}\leq b_{\tau\left(  i\right)  }\right\}  \right\vert \geq i.
 \end{align*}
-In other words, at least $i$ elements $j\in\left\{  1,2,\ldots,m\right\}  $
+In other words, at least $i$ elements $j\in\left\{  1,2,\ldots,n\right\}  $
 satisfy $a_{j}\leq b_{\tau\left(  i\right)  }$.
 \end{verlong}
 
 Now, we know that $b_{\tau\left(  i\right)  }$ is an element of $\mathbb{Z}$
-such that at least $i$ elements $j\in\left\{  1,2,\ldots,m\right\}  $ satisfy
+such that at least $i$ elements $j\in\left\{  1,2,\ldots,n\right\}  $ satisfy
 $a_{j}\leq b_{\tau\left(  i\right)  }$. In other words, $b_{\tau\left(
 i\right)  }$ is an element $x$ of $\mathbb{Z}$ such that at least $i$ elements
-$j\in\left\{  1,2,\ldots,m\right\}  $ satisfy $a_{j}\leq x$. In other words,%
+$j\in\left\{  1,2,\ldots,n\right\}  $ satisfy $a_{j}\leq x$. In other words,%
 \[
 b_{\tau\left(  i\right)  }\in\left\{  x\in\mathbb{Z}\ \mid\ \text{at least
-}i\text{ elements }j\in\left\{  1,2,\ldots,m\right\}  \text{ satisfy }%
+}i\text{ elements }j\in\left\{  1,2,\ldots,n\right\}  \text{ satisfy }%
 a_{j}\leq x\right\}  .
 \]
 In light of (\ref{sol.sorting.nmu.X=}), this rewrites as $b_{\tau\left(
@@ -34519,7 +34522,7 @@ b_{\tau\left(  u\right)  }\leq b_{\tau\left(  i\right)  }%
 \footnote{\textit{Proof.} Let $u\in\left\{  1,2,\ldots,i\right\}  $. Then,
 $u\leq i$. Also, $u\in\left\{  1,2,\ldots,i\right\}  \subseteq\left\{
 1,2,\ldots,m\right\}  $ (since $i\leq m$ (since $i\in\left\{  1,2,\ldots
-,m\right\}  $)) adnd $i\in\left\{  1,2,\ldots,m\right\}  $. Hence,
+,m\right\}  $)) and $i\in\left\{  1,2,\ldots,m\right\}  $. Hence,
 (\ref{sol.sorting.nmu.sol2.2}) (applied to $v=i$) yields $b_{\tau\left(
 u\right)  }\leq b_{\tau\left(  i\right)  }$. Qed.}. Hence, Lemma
 \ref{lem.sorting.nmu.stronger} shows that $a_{\sigma\left(  i\right)  }\leq
@@ -34534,7 +34537,7 @@ the above proof of Theorem \ref{thm.vander-det} \textbf{(a)} (but it will
 involve some additional complications).
 
 For every $u\in\left\{  0,1,\ldots,n\right\}  $ and $\left(  i,j\right)
-\in\left\{  1,2,\ldots,n\right\}  ^{2}$, define $a_{i,j,u}\in\mathbb{K}$ by%
+\in\left\{  1,2,\ldots,u\right\}  ^{2}$, define $a_{i,j,u}\in\mathbb{K}$ by%
 \[
 a_{i,j,u}=%
 \begin{cases}
@@ -34655,7 +34658,7 @@ another column. Now, let us do the following steps (in this order):
 \item subtract $x_{U}$ times the $3$-rd column of the resulting matrix from
 the $2$-nd column;
 
-\item subtract $x_{U}$ times the $4$-rd column of the resulting matrix from
+\item subtract $x_{U}$ times the $4$-th column of the resulting matrix from
 the $3$-rd column;
 
 \item and so on, all the way until we finally subtract $x_{U}$ times the
@@ -41022,7 +41025,6 @@ $n\times\left(  M-1\right)  $-matrix $\operatorname*{cols}%
 B_{q}^{\prime}=\operatorname*{cols}\nolimits_{1,2,\ldots,\widehat{q},\ldots
 ,M}B\ \ \ \ \ \ \ \ \ \ \text{for every }q\in\left\{  1,2,\ldots,M\right\}  .
 \]
-
 
 Write the $\left(  n+M\right)  \times\left(  n+M\right)  $-matrix $U$ in the
 form $U=\left(  u_{i,j}\right)  _{1\leq i\leq n+M,\ 1\leq j\leq n+M}$. Thus,%
