@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Tuesday, April 12, 2016 01:17:21}
+%TCIDATA{LastRevised=Wednesday, April 13, 2016 19:08:13}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -11459,9 +11459,10 @@ reader.) Similarly, Example \ref{exam.xi+yj.3} could be dealt with.
 The equality (\ref{eq.exam.cauchy-binet.0}) can also be derived from Theorem
 \ref{thm.det(AB)}. Indeed, let $n\in\mathbb{N}$ and $m\in\mathbb{N}$ be such
 that $m<n$. Let $A$ be an $n\times m$-matrix, and let $B$ be an $m\times
-n$-matrix. Let $A^{\prime}$ be the $n\times n$-matrix obtained from $A$ by
-appending $m-n$ new columns to the right of $A$ and filling these columns with
-zeroes. (For example, if $n=4$ and $m=2$ and $A=\left(
+n$-matrix. Notice that $n-m>0$ (since $m<n$). Let $A^{\prime}$ be the $n\times
+n$-matrix obtained from $A$ by appending $n-m$ new columns to the right of $A$
+and filling these columns with zeroes. (For example, if $n=4$ and $m=2$ and
+$A=\left(
 \begin{array}
 [c]{cc}%
 a_{1,1} & a_{1,2}\\
@@ -11478,7 +11479,7 @@ a_{3,1} & a_{3,2} & 0 & 0\\
 a_{4,1} & a_{4,2} & 0 & 0
 \end{array}
 \right)  $.) Also, let $B^{\prime}$ be the $n\times n$-matrix obtained from
-$B$ by appending $m-n$ new rows to the bottom of $B$ and filling these rows
+$B$ by appending $n-m$ new rows to the bottom of $B$ and filling these rows
 with zeroes. (For example, if $n=4$ and $m=2$ and $B=\left(
 \begin{array}
 [c]{cccc}%
@@ -11495,16 +11496,16 @@ b_{2,1} & b_{2,2} & b_{2,3} & b_{2,4}\\
 \end{array}
 \right)  $.) Then, it is easy to check that $AB=A^{\prime}B^{\prime}$ (in
 fact, just compare corresponding entries of $AB$ and $A^{\prime}B^{\prime}$).
-Now, $m<n$. Hence, the matrix $A^{\prime}$ has a column consisting of zeroes
-(namely, its last column). Thus, Exercise \ref{exe.ps4.6} \textbf{(d)}
-(applied to $A^{\prime}$ instead of $A$) shows that $\det\left(  A^{\prime
-}\right)  =0$. Now,
+But recall that $n-m>0$. Hence, the matrix $A^{\prime}$ has a column
+consisting of zeroes (namely, its last column). Thus, Exercise \ref{exe.ps4.6}
+\textbf{(d)} (applied to $A^{\prime}$ instead of $A$) shows that $\det\left(
+A^{\prime}\right)  =0$. Now,
 \begin{align*}
 \det\left(  \underbrace{AB}_{=A^{\prime}B^{\prime}}\right)   &  =\det\left(
 A^{\prime}B^{\prime}\right)  =\underbrace{\det\left(  A^{\prime}\right)
-}_{=0}\cdot\det\left(  B^{\prime}\right) \\
+}_{=0}\cdot\det\left(  B^{\prime}\right)  \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem \ref{thm.det(AB)}, applied to
-}A^{\prime}\text{ and }B^{\prime}\text{ instead of }A\text{ and }B\right) \\
+}A^{\prime}\text{ and }B^{\prime}\text{ instead of }A\text{ and }B\right)  \\
 &  =0.
 \end{align*}
 Thus, (\ref{eq.exam.cauchy-binet.0}) is proven again.
