@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Wednesday, April 13, 2016 19:08:13}
+%TCIDATA{LastRevised=Wednesday, April 13, 2016 23:13:45}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -9237,8 +9237,12 @@ x_{i}y_{j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$. What is $\det A$ ?
 
 For $n=0$, we have $\det A=1$ (since the $0\times0$-matrix has determinant $1$).
 
-For $n=1$, we have $A=\left(  x_{1}y_{1}\right)  $ and thus $\det A=x_{1}%
-y_{1}$.
+For $n=1$, we have $A=\left(
+\begin{array}
+[c]{c}%
+x_{1}y_{1}%
+\end{array}
+\right)  $ and thus $\det A=x_{1}y_{1}$.
 
 For $n=2$, we have $A=\left(
 \begin{array}
@@ -9314,8 +9318,12 @@ _{1\leq i\leq n,\ 1\leq j\leq n}$. What is $\det A$ ?
 
 For $n=0$, we have $\det A=1$ again.
 
-For $n=1$, we have $A=\left(  x_{1}+y_{1}\right)  $ and thus $\det
-A=x_{1}+y_{1}$.
+For $n=1$, we have $A=\left(
+\begin{array}
+[c]{c}%
+x_{1}+y_{1}%
+\end{array}
+\right)  $ and thus $\det A=x_{1}+y_{1}$.
 
 For $n=2$, we have $A=\left(
 \begin{array}
@@ -11111,9 +11119,9 @@ reveals a significant part of the solution of Exercise \ref{exe.ps4.pascal}).
 There exists a more general notion of a matrix, in which the rows and the
 columns are indexed not necessarily by integers from $1$ to $n$ (for some
 $n\in\mathbb{N}$), but rather by arbitrary objects. For instance, this more
-general notion allows us to speak of a matrix with two columns labelled
+general notion allows us to speak of a matrix with two rows labelled
 \textquotedblleft spam\textquotedblright\ and \textquotedblleft
-eggs\textquotedblright, and with three rows labelled $0$, $3$ and $\infty$.
+eggs\textquotedblright, and with three columns labelled $0$, $3$ and $\infty$.
 (It thus has $6$ entries, such as the $\left(  \text{\textquotedblleft
 spam\textquotedblright},3\right)  $-th entry or the $\left(
 \text{\textquotedblleft eggs\textquotedblright},\infty\right)  $-th entry.)
@@ -11503,9 +11511,9 @@ A^{\prime}\right)  =0$. Now,
 \begin{align*}
 \det\left(  \underbrace{AB}_{=A^{\prime}B^{\prime}}\right)   &  =\det\left(
 A^{\prime}B^{\prime}\right)  =\underbrace{\det\left(  A^{\prime}\right)
-}_{=0}\cdot\det\left(  B^{\prime}\right)  \\
+}_{=0}\cdot\det\left(  B^{\prime}\right) \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem \ref{thm.det(AB)}, applied to
-}A^{\prime}\text{ and }B^{\prime}\text{ instead of }A\text{ and }B\right)  \\
+}A^{\prime}\text{ and }B^{\prime}\text{ instead of }A\text{ and }B\right) \\
 &  =0.
 \end{align*}
 Thus, (\ref{eq.exam.cauchy-binet.0}) is proven again.
@@ -41026,6 +41034,7 @@ $n\times\left(  M-1\right)  $-matrix $\operatorname*{cols}%
 B_{q}^{\prime}=\operatorname*{cols}\nolimits_{1,2,\ldots,\widehat{q},\ldots
 ,M}B\ \ \ \ \ \ \ \ \ \ \text{for every }q\in\left\{  1,2,\ldots,M\right\}  .
 \]
+
 
 Write the $\left(  n+M\right)  \times\left(  n+M\right)  $-matrix $U$ in the
 form $U=\left(  u_{i,j}\right)  _{1\leq i\leq n+M,\ 1\leq j\leq n+M}$. Thus,%
