@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Wednesday, April 13, 2016 23:13:45}
+%TCIDATA{LastRevised=Thursday, April 14, 2016 21:47:15}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -930,7 +930,7 @@ rather tricky if you don't.
 \textquotedblleft telescoping series\textquotedblright}. Let me add just one
 more example: Given $n\in\mathbb{N}$, we want to compute $\sum_{i=1}^{n}%
 \dfrac{1}{\sqrt{i}+\sqrt{i+1}}$. (Here, of course, we need to take
-$\mathbb{A}=\mathbb{R}$ or $\mathbb{A}=\mathbb{Q}$.) We proceed as follows:
+$\mathbb{A}=\mathbb{R}$ or $\mathbb{A}=\mathbb{C}$.) We proceed as follows:
 For every positive integer $i$, we have%
 \[
 \dfrac{1}{\sqrt{i}+\sqrt{i+1}}=\dfrac{\left(  \sqrt{i+1}-\sqrt{i}\right)
@@ -943,7 +943,7 @@ For every positive integer $i$, we have%
 \begin{align*}
 &  \sum_{i=1}^{n}\dfrac{1}{\sqrt{i}+\sqrt{i+1}}\\
 &  =\sum_{i=1}^{n}\left(  \sqrt{i+1}-\sqrt{i}\right)  =\sum_{s=2}^{n+1}\left(
-\sqrt{s}-\sqrt{s-1}\right) \\
+\sqrt{s}-\sqrt{s-1}\right)  \\
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
@@ -952,10 +952,10 @@ For every positive integer $i$, we have%
 1,2,\ldots,n\right\}  ,\ s\mapsto s-1\\
 \text{is a bijection}%
 \end{array}
-\right) \\
+\right)  \\
 &  =\sqrt{n+1}-\underbrace{\sqrt{2-1}}_{=\sqrt{1}=1}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{eq.sum.telescope}), applied to
-}u=2\text{, }v=n+1\text{ and }a_{s}=\sqrt{s}-\sqrt{s-1}\right) \\
+}u=2\text{, }v=n+1\text{ and }a_{s}=\sqrt{s}-\sqrt{s-1}\right)  \\
 &  =\sqrt{n+1}-1.
 \end{align*}
 
@@ -975,7 +975,7 @@ $a_{v}-a_{u-1}$ like a telescope does when it is collapsed.
 be a finite set. Let $W$ be a set. Let $f:S\rightarrow W$ be a map. Then,%
 \begin{equation}
 \sum_{s\in S}a_{s}=\sum_{w\in W}\sum_{\substack{s\in S;\\f\left(  s\right)
-=w}}a_{s}. \label{eq.sum.sheph}%
+=w}}a_{s}.\label{eq.sum.sheph}%
 \end{equation}
 The idea behind this formula is the following: The left hand side is the sum
 of all $a_{s}$ for $s\in S$. The right hand side is the same sum, but split in
