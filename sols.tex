@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, April 14, 2016 21:47:15}
+%TCIDATA{LastRevised=Friday, April 15, 2016 18:47:29}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -943,7 +943,7 @@ For every positive integer $i$, we have%
 \begin{align*}
 &  \sum_{i=1}^{n}\dfrac{1}{\sqrt{i}+\sqrt{i+1}}\\
 &  =\sum_{i=1}^{n}\left(  \sqrt{i+1}-\sqrt{i}\right)  =\sum_{s=2}^{n+1}\left(
-\sqrt{s}-\sqrt{s-1}\right)  \\
+\sqrt{s}-\sqrt{s-1}\right) \\
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
@@ -952,10 +952,10 @@ For every positive integer $i$, we have%
 1,2,\ldots,n\right\}  ,\ s\mapsto s-1\\
 \text{is a bijection}%
 \end{array}
-\right)  \\
+\right) \\
 &  =\sqrt{n+1}-\underbrace{\sqrt{2-1}}_{=\sqrt{1}=1}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{eq.sum.telescope}), applied to
-}u=2\text{, }v=n+1\text{ and }a_{s}=\sqrt{s}-\sqrt{s-1}\right)  \\
+}u=2\text{, }v=n+1\text{ and }a_{s}=\sqrt{s}-\sqrt{s-1}\right) \\
 &  =\sqrt{n+1}-1.
 \end{align*}
 
@@ -975,13 +975,13 @@ $a_{v}-a_{u-1}$ like a telescope does when it is collapsed.
 be a finite set. Let $W$ be a set. Let $f:S\rightarrow W$ be a map. Then,%
 \begin{equation}
 \sum_{s\in S}a_{s}=\sum_{w\in W}\sum_{\substack{s\in S;\\f\left(  s\right)
-=w}}a_{s}.\label{eq.sum.sheph}%
+=w}}a_{s}. \label{eq.sum.sheph}%
 \end{equation}
 The idea behind this formula is the following: The left hand side is the sum
 of all $a_{s}$ for $s\in S$. The right hand side is the same sum, but split in
 a particular way: First, for each $w\in W$, we sum the $a_{s}$ for all $s\in
-S$ satisfying $f\left(  s\right)  =w$, and then we sum all these
-\textquotedblleft partial sums\textquotedblright\ are all together.
+S$ satisfying $f\left(  s\right)  =w$, and then we take the sum of all these
+\textquotedblleft partial sums\textquotedblright.
 
 \textbf{Examples:}
 
@@ -1115,7 +1115,7 @@ proof shortly (in the Remark below); but first, let me give some intuition for
 the statement. Imagine that you have a rectangular table filled with numbers.
 If you want to sum the numbers in the table, you can proceed in several ways.
 One way is to sum the numbers in each row, and then sum all the sums you have
-obtained. Another way is to sum the numbers in each column, and the sum all
+obtained. Another way is to sum the numbers in each column, and then sum all
 the obtained sums. Either way, you get the same result -- namely, the sum of
 all numbers in the table. This is essentially what (\ref{eq.sum.fubini}) says,
 at least when $X=\left\{  1,2,\ldots,n\right\}  $ and $Y=\left\{
@@ -1210,7 +1210,7 @@ which sends every pair $\left(  x,y\right)  $ to its second entry $y$. Then,
 (\ref{eq.sum.sheph.preimg}) shows that%
 \begin{equation}
 \sum_{s\in X\times Y}a_{s}=\sum_{w\in Y}\sum_{s\in f^{-1}\left(  w\right)
-}a_{s}. \label{eq.sum.fubini.pf.1}%
+}a_{s}.\label{eq.sum.fubini.pf.1}%
 \end{equation}
 But for every given $w\in Y$, the set $f^{-1}\left(  w\right)  $ is simply the
 set of all pairs $\left(  x,w\right)  $ with $x\in X$. Thus, for every given
@@ -1240,8 +1240,9 @@ x,y\right)  }%
 Therefore,%
 \[
 \sum_{y\in Y}\sum_{x\in X}a_{\left(  x,y\right)  }=\sum_{s\in X\times Y}%
-a_{s}=\sum_{\left(  x,y\right)  \in X\times Y}a_{\left(  x,y\right)  }.
+a_{s}=\sum_{\left(  x,y\right)  \in X\times Y}a_{\left(  x,y\right)  }%
 \]
+(here, we have renamed the summation index $s$ as $\left(  x,y\right)  $).
 Thus, we have proven the second part of the equality (\ref{eq.sum.fubini}).
 The first part can be proven similarly.
 
