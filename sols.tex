@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, April 15, 2016 18:47:29}
+%TCIDATA{LastRevised=Saturday, April 16, 2016 22:50:02}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -472,7 +472,7 @@ there is no way to make sense of infinite sums such as $\sum_{s\in\mathbb{Z}%
 }s^{2}$. However, \textbf{some} infinite sums can be made sense of. The
 simplest case is when the set $S$ might be infinite, but only finitely many
 among the $a_{s}$ are nonzero. In this case, we can define $\sum_{s\in S}%
-a_{s}$ simply by dropping the zero addends and summing the finitely many
+a_{s}$ simply by discarding the zero addends and summing the finitely many
 remaining addends. Other situations in which infinite sums make sense appear
 in analysis and in topological algebra (e.g., power series).
 
@@ -1210,7 +1210,7 @@ which sends every pair $\left(  x,y\right)  $ to its second entry $y$. Then,
 (\ref{eq.sum.sheph.preimg}) shows that%
 \begin{equation}
 \sum_{s\in X\times Y}a_{s}=\sum_{w\in Y}\sum_{s\in f^{-1}\left(  w\right)
-}a_{s}.\label{eq.sum.fubini.pf.1}%
+}a_{s}. \label{eq.sum.fubini.pf.1}%
 \end{equation}
 But for every given $w\in Y$, the set $f^{-1}\left(  w\right)  $ is simply the
 set of all pairs $\left(  x,w\right)  $ with $x\in X$. Thus, for every given
@@ -1596,9 +1596,9 @@ S}a_{s}$. Such products are not generally defined when $S$ is infinite.
 However, \textbf{some} infinite products can be made sense of. The simplest
 case is when the set $S$ might be infinite, but only finitely many among the
 $a_{s}$ are distinct from $1$. In this case, we can define $\prod_{s\in
-S}a_{s}$ simply by factors which equal $1$ and multiplying the finitely many
-remaining factors. Other situations in which infinite product make sense
-appear in analysis and in topological algebra.
+S}a_{s}$ simply by discarding the factors which equal $1$ and multiplying the
+finitely many remaining factors. Other situations in which infinite products
+make sense appear in analysis and in topological algebra.
 
 \item The product $\prod_{s\in S}a_{s}$ always belongs to $\mathbb{A}$.
 \end{itemize}
@@ -3703,7 +3703,8 @@ $\sum_{k=0}^{n}\underbrace{\dbinom{k}{x}\dbinom{n-k}{y}}_{=0}=\sum_{k=0}%
 \ref{prop.vandermonde.consequences} \textbf{(f)} is proven in Case 1.
 
 Let us now consider Case 2. In this case, we have $n\geq x+y$. Hence, $n-y\geq
-x\geq0$ (since $x\in\mathbb{N}$), so that $n-y\in\mathbb{N}$. Moreover, $x\leq
+x\geq0$ (since $x\in\mathbb{N}$), so that $\left(  n-y\right)  -x\in
+\mathbb{N}$. Also, $n-y\in\mathbb{N}$ (since $n-y\geq0$). Moreover, $x\leq
 n-y$. Therefore, we can apply Proposition \ref{prop.vandermonde.consequences}
 \textbf{(e)} to $-y-1$ and $n-y$ instead of $y$ and $n$. As a result, we
 obtain%
@@ -3730,8 +3731,8 @@ k-x\right)  +\left(  \left(  n-y\right)  -k\right)  }=\left(  -1\right)
 -k}\nonumber\\
 &  =\sum_{k=0}^{n-y}\left(  -1\right)  ^{n-x-y}\dbinom{k}{x}\dbinom
 {n-k}{\left(  n-y\right)  -k}=\left(  -1\right)  ^{n-x-y}\sum_{k=0}%
-^{n-y}\dbinom{k}{x}\dbinom{n-k}{\left(  n-y\right)  -k}.
-\label{pf.prop.vandermonde.consequences.f.0}%
+^{n-y}\dbinom{k}{x}\dbinom{n-k}{\left(  n-y\right)  -k}%
+.\label{pf.prop.vandermonde.consequences.f.0}%
 \end{align}
 
 
@@ -3748,7 +3749,7 @@ $n-k\geq y\geq0$, so that $n-k\in\mathbb{N}$. Hence, (\ref{eq.binom.symm})
 {y}=\dbinom{n-k}{\left(  n-k\right)  -y}=\dbinom{n-k}{\left(  n-y\right)  -k}$
 (since $\left(  n-k\right)  -y=\left(  n-y\right)  -k$). This proves
 (\ref{pf.prop.vandermonde.consequences.f.1}).}. Thus,
-(\ref{pf.prop.vandermonde.consequences.f.1}) yields%
+(\ref{pf.prop.vandermonde.consequences.f.0}) yields%
 \begin{align*}
 \dbinom{\left(  -y-1\right)  -x-1}{\left(  n-y\right)  -x}  &  =\left(
 -1\right)  ^{n-x-y}\sum_{k=0}^{n-y}\dbinom{k}{x}\underbrace{\dbinom
@@ -3766,6 +3767,14 @@ Compared with%
 {n+1}{n-x-y}\\\text{(since }\left(  \left(  n-y\right)  -x\right)  -\left(
 \left(  -y-1\right)  -x-1\right)  -1=n+1\\\text{and }\left(  n-y\right)
 -x=n-x-y\text{)}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{by (\ref{eq.binom.upper-neg}), applied to }\left(  -y-1\right)
+-x-1\text{ and }\left(  n-y\right)  -x\\
+\text{instead of }m\text{ and }n
+\end{array}
+\right) \\
 &  =\left(  -1\right)  ^{n-x-y}\dbinom{n+1}{n-x-y},
 \end{align*}
 this yields%
@@ -3853,9 +3862,13 @@ Let us now consider Case 2. In this case, we have $x+y\geq n$. Hence,
 $\dbinom{x+y}{n}=\dbinom{x+y}{x+y-n}$ (by (\ref{eq.binom.symm}), applied to
 $m=x+y$). Also, $x+y-n\in\mathbb{N}$ (since $x+y\geq n$). Therefore,
 Proposition \ref{prop.vandermonde.consequences} \textbf{(a)} (applied to
-$x+y-n$ instead of $n$) yields
-\begin{equation}
+$x+y-n$ instead of $n$) yields%
+\[
 \dbinom{x+y}{x+y-n}=\sum_{k=0}^{x+y-n}\dbinom{x}{k}\dbinom{y}{x+y-n-k}.
+\]
+Since $\dbinom{x+y}{n}=\dbinom{x+y}{x+y-n}$, this rewrites as
+\begin{equation}
+\dbinom{x+y}{n}=\sum_{k=0}^{x+y-n}\dbinom{x}{k}\dbinom{y}{x+y-n-k}.
 \label{pf.prop.vandermonde.consequences.g.4}%
 \end{equation}
 But every $k\in\left\{  0,1,\ldots,x+y-n\right\}  $ satisfies $\dbinom
@@ -3869,8 +3882,8 @@ $x+y-n-k$ instead of $m$ and $n$) yields $\dbinom{y}{x+y-n-k}=\dbinom
 x+y-n-k\right)  =n+k-x$), qed.}. Hence,
 (\ref{pf.prop.vandermonde.consequences.g.4}) becomes%
 \begin{equation}
-\dbinom{x+y}{x+y-n}=\sum_{k=0}^{x+y-n}\dbinom{x}{k}\underbrace{\dbinom
-{y}{x+y-n-k}}_{=\dbinom{y}{n+k-x}}=\sum_{k=0}^{x+y-n}\dbinom{x}{k}\dbinom
+\dbinom{x+y}{n}=\sum_{k=0}^{x+y-n}\dbinom{x}{k}\underbrace{\dbinom{y}%
+{x+y-n-k}}_{=\dbinom{y}{n+k-x}}=\sum_{k=0}^{x+y-n}\dbinom{x}{k}\dbinom
 {y}{n+k-x}. \label{pf.prop.vandermonde.consequences.g.6}%
 \end{equation}
 
@@ -3897,7 +3910,7 @@ _{k=\left(  x+y-n\right)  +1}^{x+y}\dbinom{x}{k}0}_{=0}=\sum_{k=0}%
 \end{align*}
 Compared with (\ref{pf.prop.vandermonde.consequences.g.6}), this yields%
 \[
-\dbinom{x+y}{x+y-n}=\sum_{k=0}^{x+y}\dbinom{x}{k}\dbinom{y}{n+k-x}.
+\dbinom{x+y}{n}=\sum_{k=0}^{x+y}\dbinom{x}{k}\dbinom{y}{n+k-x}.
 \]
 This proves Proposition \ref{prop.vandermonde.consequences} \textbf{(g)} in
 Case 2.
