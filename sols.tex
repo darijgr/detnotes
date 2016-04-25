@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Monday, April 25, 2016 18:47:59}
+%TCIDATA{LastRevised=Monday, April 25, 2016 19:01:01}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -3204,7 +3204,7 @@ are pairwise distinct), or any subring of such a field.}
 
 The following fact is known as the \textit{Chu-Vandermonde identity}%
 \footnote{See
-\href{https://en.wikipedia.org/wiki/Vandermonde\%27s_identity\#Chu-Vandermonde_identity}{the
+\href{https://en.wikipedia.org/wiki/Vandermonde\%27s_identity\%23Chu-Vandermonde_identity}{the
 Wikipedia page} for part of its history. Usually, the equality $\dbinom
 {x+y}{n}=\sum_{k=0}^{n}\dbinom{x}{k}\dbinom{y}{n-k}$ for two
 \textbf{nonnegative integers} $x$ and $y$ is called the \textit{Vandermonde
@@ -3212,7 +3212,7 @@ identity}, whereas the name \textquotedblleft\textit{Chu-Vandermonde
 identity}\textquotedblright\ is used for the identity $\dbinom{X+Y}{n}%
 =\sum_{k=0}^{n}\dbinom{X}{k}\dbinom{Y}{n-k}$ in which $X$ and $Y$ are
 \textbf{indeterminates}. However, this seems to be mostly a matter of
-convention (which isn't even universally followed), and either way the two
+convention (which isn't even universally followed); and anyway the two
 identities are easily derived from one another as we will see in the first
 proof of Theorem \ref{thm.vandermonde}.}:
 
@@ -3224,7 +3224,11 @@ proof of Theorem \ref{thm.vandermonde}.}:
 (an equality between polynomials in two variables $X$ and $Y$).
 \end{theorem}
 
-We will give two proofs of this theorem: one combinatorial, and one algebraic.
+We will give two proofs of this theorem: one combinatorial, and one
+algebraic.\footnote{Note that Theorem~\ref{thm.vandermonde} appears in
+\cite[(5.27)]{GKP}, where it is called \textit{Vandermonde's convolution}. The
+first proof of Theorem~\ref{thm.vandermonde} we shall show below is just a
+more detailed writeup of the proof given there.}
 
 \begin{proof}
 [First proof of Theorem \ref{thm.vandermonde}.]Let us first show that%
@@ -3321,7 +3325,9 @@ coefficients, then a reasonable tactic is to first show that $P\left(
 x,y\right)  =Q\left(  x,y\right)  $ for all $x\in\mathbb{N}$ and
 $y\in\mathbb{N}$ (using combinatorics), and then to use something like Lemma
 \ref{lem.polyeq} in order to conclude that $P$ and $Q$ are equal as
-polynomials. We shall see this tactic used a few more times.
+polynomials. We shall see this tactic used a few more times.\footnote{This
+tactic is called \textquotedblleft the polynomial argument\textquotedblright%
+\ in \cite[\S 5.1]{GKP}.}
 
 But we promised an algebraic proof of Theorem \ref{thm.vandermonde} as well;
 let us show it now:
