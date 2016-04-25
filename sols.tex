@@ -15,7 +15,7 @@
 \usepackage{needspace}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Monday, April 25, 2016 12:14:55}
+%TCIDATA{LastRevised=Monday, April 25, 2016 18:35:10}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -11357,8 +11357,43 @@ now; for $n>0$, the notation $\sum_{1\leq g_{1}<g_{2}<\cdots<g_{n}\leq m}$
 fortunately means exactly what it seems to mean.
 \end{remark}
 
-Before we prove Theorem \ref{thm.cauchy-binet}, let us give some examples for
-its use. First, here is a simple fact:
+We shall soon give a detailed proof of Theorem \ref{thm.cauchy-binet}; see
+\cite[Chapter 29, Theorem]{AigZie} for a different proof\footnote{Note that
+the formulation of Theorem \ref{thm.cauchy-binet} in \cite[Chapter 29,
+Theorem]{AigZie} is slightly different: In our notations, it says that if $A$
+is an $n\times m$-matrix and if $B$ is an $m\times n$-matrix, then%
+\begin{equation}
+\det\left(  AB\right)  =\sum_{\substack{\mathcal{Z}\subseteq\left\{
+1,2,\ldots,m\right\}  ;\\\left\vert \mathcal{Z}\right\vert =n}}\det\left(
+\operatorname*{cols}\nolimits_{\mathcal{Z}}A\right)  \cdot\det\left(
+\operatorname*{rows}\nolimits_{\mathcal{Z}}B\right)
+,\label{eq.thm.cauchy-binet.fn1.alt}%
+\end{equation}
+where the matrices $\operatorname*{cols}\nolimits_{\mathcal{Z}}A$ and
+$\operatorname*{rows}\nolimits_{\mathcal{Z}}B$ (for $\mathcal{Z}$ being a
+subset of $\left\{  1,2,\ldots,m\right\}  $) are defined as follows: Write the
+subset $\mathcal{Z}$ in the form $\left\{  z_{1},z_{2},\ldots,z_{k}\right\}  $
+with $z_{1}<z_{2}<\cdots<z_{k}$, and set $\operatorname*{cols}%
+\nolimits_{\mathcal{Z}}A=\operatorname*{cols}\nolimits_{z_{1},z_{2}%
+,\ldots,z_{k}}A$ and $\operatorname*{rows}\nolimits_{\mathcal{Z}%
+}B=\operatorname*{rows}\nolimits_{z_{1},z_{2},\ldots,z_{k}}B$. (Apart from
+this, \cite[Chapter 29, Theorem]{AigZie} also requires $n\leq m$; but this
+requirement is useless.)
+\par
+The equalities (\ref{eq.thm.cauchy-binet}) and
+(\ref{eq.thm.cauchy-binet.fn1.alt}) are equivalent, because the $n$-tuples
+$\left(  g_{1},g_{2},\ldots,g_{n}\right)  \in\left\{  1,2,\ldots,m\right\}
+^{2}$ satisfying $g_{1}<g_{2}<\cdots<g_{n}$ are in a bijection with the
+subsets $\mathcal{Z}$ of $\left\{  1,2,\ldots,m\right\}  $ satisfying
+$\left\vert \mathcal{Z}\right\vert =n$. (This bijection sends an $n$-tuple
+$\left(  g_{1},g_{2},\ldots,g_{n}\right)  $ to the subset $\left\{
+g_{1},g_{2},\ldots,g_{n}\right\}  $.)
+\par
+The proof of (\ref{eq.thm.cauchy-binet.fn1.alt}) uses the
+\textit{Lindstr\"{o}m-Gessel-Viennot lemma} (which it calls the
+\textquotedblleft lemma of Gessel-Viennot\textquotedblright) and is highly
+worth reading.}. Before we prove Theorem \ref{thm.cauchy-binet}, let us give
+some examples for its use. First, here is a simple fact:
 
 \begin{lemma}
 \label{lem.increasing-sequences}Let $n\in\mathbb{N}$.
@@ -28186,7 +28221,7 @@ Hence, every integer $u\geq1$ satisfies $i_{u+r}\neq i_{u}$ (since
 $r\in\left\{  1,2,\ldots,k-1\right\}  $). In other words, every $u\geq1$
 satisfies%
 \begin{equation}
-i_{u+r}-i_{u}\neq0.\label{sol.perm.cycles.short.c.mainclaim.pf.4}%
+i_{u+r}-i_{u}\neq0. \label{sol.perm.cycles.short.c.mainclaim.pf.4}%
 \end{equation}
 The $k$-tuple $\left(  i_{1+r}-i_{1},i_{2+r}-i_{2},\ldots,i_{k+r}%
 -i_{k}\right)  $ contains at least one positive entry\footnote{\textit{Proof.}
@@ -28207,7 +28242,7 @@ But this contradicts%
 \begin{align*}
 \sum_{u=1}^{k}\left(  \underbrace{i_{u+r}}_{=i_{r+u}}-i_{u}\right)   &
 =\sum_{u=1}^{k}\left(  i_{r+u}-i_{u}\right)  =\left(  \sum_{u=1}^{k}%
-i_{r+u}\right)  -\left(  \sum_{u=1}^{k}i_{u}\right)  \\
+i_{r+u}\right)  -\left(  \sum_{u=1}^{k}i_{u}\right) \\
 &  =\left(  i_{r+1}+i_{r+2}+\cdots+i_{r+k}\right)  -\left(  i_{1}+i_{2}%
 +\cdots+i_{k}\right)  =0\ \ \ \ \ \ \ \ \ \ \left(  \text{by
 (\ref{sol.perm.cycles.short.c.periodsum})}\right)  .
@@ -28220,14 +28255,14 @@ there exists no $u\geq1$ such that $i_{u+r}-i_{u}>0$ but $i_{\left(
 u+1\right)  +r}-i_{u+1}<0$. Hence,%
 \begin{equation}
 \text{every }u\geq1\text{ satisfying }i_{u+r}-i_{u}>0\text{ must satisfy
-}i_{\left(  u+1\right)  +r}-i_{u+1}\geq
-0.\label{sol.perm.cycles.short.c.mainclaim.pf.5o}%
+}i_{\left(  u+1\right)  +r}-i_{u+1}\geq0.
+\label{sol.perm.cycles.short.c.mainclaim.pf.5o}%
 \end{equation}
 Therefore,%
 \begin{equation}
 \text{every }u\geq1\text{ satisfying }i_{u+r}-i_{u}>0\text{ must satisfy
-}i_{\left(  u+1\right)  +r}-i_{u+1}%
->0\label{sol.perm.cycles.short.c.mainclaim.pf.5}%
+}i_{\left(  u+1\right)  +r}-i_{u+1}>0
+\label{sol.perm.cycles.short.c.mainclaim.pf.5}%
 \end{equation}
 (because (\ref{sol.perm.cycles.short.c.mainclaim.pf.5o}) shows that
 $i_{\left(  u+1\right)  +r}-i_{u+1}\geq0$; but combining this with $i_{\left(
@@ -28262,7 +28297,7 @@ $\sigma\left(  i_{u+r}\right)  =i_{u+r+1}=i_{\left(  u+1\right)  +r}$. Hence,
 \begin{align*}
 \sigma\left(  i_{u}\right)   &  =i_{u+1}>i_{\left(  u+1\right)  +r}%
 \ \ \ \ \ \ \ \ \ \ \left(  \text{since }i_{\left(  u+1\right)  +r}%
--i_{u+1}<0\right)  \\
+-i_{u+1}<0\right) \\
 &  =\sigma\left(  i_{u+r}\right)  .
 \end{align*}
 So we know that $\left(  i_{u},i_{u+r}\right)  $ is a pair of integers
@@ -28824,14 +28859,13 @@ $\ell\left(  \operatorname*{cyc}\nolimits_{p+1,p+2,\ldots,p+k}\right)  =k-1$
 (since $\sigma=\operatorname*{cyc}\nolimits_{p+1,p+2,\ldots,p+k}$). This
 solves Exercise \ref{exe.perm.cycles} \textbf{(b)}.
 
-\textbf{(c)} We shall only sketch the proof, since we will not use the
-result in the following.
+\textbf{(c)} We shall only sketch the proof, since we will not use the result
+in the following.
 
-Let $i_{1},i_{2},\ldots,i_{k}$ be $k$
-distinct elements of $\left[  n\right]  $. We extend the $k$-tuple $\left(
-i_{1},i_{2},\ldots,i_{k}\right)  $ to an infinite sequence $\left(
-i_{1},i_{2},i_{3},\ldots\right)  $ of elements of $\left[  n\right]  $ by
-setting%
+Let $i_{1},i_{2},\ldots,i_{k}$ be $k$ distinct elements of $\left[  n\right]
+$. We extend the $k$-tuple $\left(  i_{1},i_{2},\ldots,i_{k}\right)  $ to an
+infinite sequence $\left(  i_{1},i_{2},i_{3},\ldots\right)  $ of elements of
+$\left[  n\right]  $ by setting%
 \[
 \left(  i_{u}=i_{\left(  \text{the element }u^{\prime}\in\left\{
 1,2,\ldots,k\right\}  \text{ satisfying }u^{\prime}\equiv u\operatorname{mod}%
@@ -28886,15 +28920,14 @@ Now, fix $r\in\left\{  1,2,\ldots,k-1\right\}  $. We shall prove that
 \end{equation}
 
 
-\textit{Proof of (\ref{sol.perm.cycles.c.mainclaim}):} The sequence
-$\left(  i_{1},i_{2},i_{3},\ldots\right)  $ is periodic with period $k$, and
-its first $k$ entries $i_{1},i_{2},\ldots,i_{k}$ are distinct. Hence, each
-entry of this sequence repeats itself each $k$ steps, but not more often.
-Hence, every integer $u\geq1$ satisfies $i_{u+r}\neq i_{u}$ (since
-$r\in\left\{  1,2,\ldots,k-1\right\}  $). In other words, every $u\geq1$
-satisfies%
+\textit{Proof of (\ref{sol.perm.cycles.c.mainclaim}):} The sequence $\left(
+i_{1},i_{2},i_{3},\ldots\right)  $ is periodic with period $k$, and its first
+$k$ entries $i_{1},i_{2},\ldots,i_{k}$ are distinct. Hence, each entry of this
+sequence repeats itself each $k$ steps, but not more often. Hence, every
+integer $u\geq1$ satisfies $i_{u+r}\neq i_{u}$ (since $r\in\left\{
+1,2,\ldots,k-1\right\}  $). In other words, every $u\geq1$ satisfies%
 \begin{equation}
-i_{u+r}-i_{u}\neq0.\label{sol.perm.cycles.c.mainclaim.pf.4}%
+i_{u+r}-i_{u}\neq0. \label{sol.perm.cycles.c.mainclaim.pf.4}%
 \end{equation}
 The $k$-tuple $\left(  i_{1+r}-i_{1},i_{2+r}-i_{2},\ldots,i_{k+r}%
 -i_{k}\right)  $ contains at least one positive entry\footnote{\textit{Proof.}
@@ -28902,11 +28935,10 @@ Assume the contrary. Thus, the $k$-tuple $\left(  i_{1+r}-i_{1},i_{2+r}%
 -i_{2},\ldots,i_{k+r}-i_{k}\right)  $ contains no positive entries. In other
 words, no $u\in\left\{  1,2,\ldots,k\right\}  $ satisfies $i_{u+r}-i_{u}>0$.
 In other words, every $u\in\left\{  1,2,\ldots,k\right\}  $ satisfies
-$i_{u+r}-i_{u}\leq0$. But (\ref{sol.perm.cycles.c.mainclaim.pf.4}) shows
-that every $u\in\left\{  1,2,\ldots,k\right\}  $ satisfies $i_{u+r}-i_{u}%
-\neq0$. Thus, every $u\in\left\{  1,2,\ldots,k\right\}  $ satisfies
-$i_{u+r}-i_{u}<0$ (since $i_{u+r}-i_{u}\leq0$ and $i_{u+r}-i_{u}\neq0$).
-Hence,%
+$i_{u+r}-i_{u}\leq0$. But (\ref{sol.perm.cycles.c.mainclaim.pf.4}) shows that
+every $u\in\left\{  1,2,\ldots,k\right\}  $ satisfies $i_{u+r}-i_{u}\neq0$.
+Thus, every $u\in\left\{  1,2,\ldots,k\right\}  $ satisfies $i_{u+r}-i_{u}<0$
+(since $i_{u+r}-i_{u}\leq0$ and $i_{u+r}-i_{u}\neq0$). Hence,%
 \[
 \sum_{u=1}^{k}\underbrace{\left(  i_{u+r}-i_{u}\right)  }_{<0}<\sum_{u=1}%
 ^{k}0=0.
@@ -28915,7 +28947,7 @@ But this contradicts%
 \begin{align*}
 \sum_{u=1}^{k}\left(  \underbrace{i_{u+r}}_{=i_{r+u}}-i_{u}\right)   &
 =\sum_{u=1}^{k}\left(  i_{r+u}-i_{u}\right)  =\left(  \sum_{u=1}^{k}%
-i_{r+u}\right)  -\left(  \sum_{u=1}^{k}i_{u}\right)  \\
+i_{r+u}\right)  -\left(  \sum_{u=1}^{k}i_{u}\right) \\
 &  =\left(  i_{r+1}+i_{r+2}+\cdots+i_{r+k}\right)  -\left(  i_{1}+i_{2}%
 +\cdots+i_{k}\right)  =0\ \ \ \ \ \ \ \ \ \ \left(  \text{by
 (\ref{sol.perm.cycles.c.periodsum})}\right)  .
@@ -28928,20 +28960,19 @@ there exists no $u\geq1$ such that $i_{u+r}-i_{u}>0$ but $i_{\left(
 u+1\right)  +r}-i_{u+1}<0$. Hence,%
 \begin{equation}
 \text{every }u\geq1\text{ satisfying }i_{u+r}-i_{u}>0\text{ must satisfy
-}i_{\left(  u+1\right)  +r}-i_{u+1}\geq
-0.\label{sol.perm.cycles.c.mainclaim.pf.5o}%
+}i_{\left(  u+1\right)  +r}-i_{u+1}\geq0.
+\label{sol.perm.cycles.c.mainclaim.pf.5o}%
 \end{equation}
 Therefore,%
 \begin{equation}
 \text{every }u\geq1\text{ satisfying }i_{u+r}-i_{u}>0\text{ must satisfy
-}i_{\left(  u+1\right)  +r}-i_{u+1}%
->0\label{sol.perm.cycles.c.mainclaim.pf.5}%
+}i_{\left(  u+1\right)  +r}-i_{u+1}>0 \label{sol.perm.cycles.c.mainclaim.pf.5}%
 \end{equation}
-(because (\ref{sol.perm.cycles.c.mainclaim.pf.5o}) shows that
-$i_{\left(  u+1\right)  +r}-i_{u+1}\geq0$; but combining this with $i_{\left(
-u+1\right)  +r}-i_{u+1}\neq0$ (which follows from
-(\ref{sol.perm.cycles.c.mainclaim.pf.4}), applied to $u+1$ instead of
-$u$), we obtain $i_{\left(  u+1\right)  +r}-i_{u+1}>0$).
+(because (\ref{sol.perm.cycles.c.mainclaim.pf.5o}) shows that $i_{\left(
+u+1\right)  +r}-i_{u+1}\geq0$; but combining this with $i_{\left(  u+1\right)
++r}-i_{u+1}\neq0$ (which follows from (\ref{sol.perm.cycles.c.mainclaim.pf.4}%
+), applied to $u+1$ instead of $u$), we obtain $i_{\left(  u+1\right)
++r}-i_{u+1}>0$).
 \par
 But there exists some $v\in\left\{  1,2,\ldots,k\right\}  $ satisfying
 $i_{v+r}-i_{v}>0$ (since the $k$-tuple $\left(  i_{1+r}-i_{1},i_{2+r}%
@@ -28951,8 +28982,8 @@ v+1\right)  +r}-i_{v+1}>0$ (by (\ref{sol.perm.cycles.c.mainclaim.pf.5}),
 applied to $u=v$), therefore $i_{\left(  v+2\right)  +r}-i_{v+2}>0$ (by
 (\ref{sol.perm.cycles.c.mainclaim.pf.5}), applied to $u=v+1$), therefore
 $i_{\left(  v+3\right)  +r}-i_{v+3}>0$ (by
-(\ref{sol.perm.cycles.c.mainclaim.pf.5}), applied to $u=v+2$), and so
-on. Altogether, we thus obtain
+(\ref{sol.perm.cycles.c.mainclaim.pf.5}), applied to $u=v+2$), and so on.
+Altogether, we thus obtain
 \[
 i_{h+r}-i_{h}>0\ \ \ \ \ \ \ \ \ \ \text{for every }h\geq v.
 \]
@@ -28963,24 +28994,24 @@ i_{1},i_{2},i_{3},\ldots\right)  $ contains infinitely many distinct entries.
 But this contradicts the fact that this sequence is periodic. This
 contradiction proves that our assumption was wrong, qed.}. Consider this $u$.
 We have $i_{u}<i_{u+r}$ (since $i_{u+r}-i_{u}>0$), so that $1\leq
-i_{u}<i_{u+r}\leq n$. Also, (\ref{sol.perm.cycles.c.sigma}) (applied to
-$p=u$) yields $\sigma\left(  i_{u}\right)  =i_{u+1}$. Moreover,
-(\ref{sol.perm.cycles.c.sigma}) (applied to $p=u+r$) yields
-$\sigma\left(  i_{u+r}\right)  =i_{u+r+1}=i_{\left(  u+1\right)  +r}$. Hence,
+i_{u}<i_{u+r}\leq n$. Also, (\ref{sol.perm.cycles.c.sigma}) (applied to $p=u$)
+yields $\sigma\left(  i_{u}\right)  =i_{u+1}$. Moreover,
+(\ref{sol.perm.cycles.c.sigma}) (applied to $p=u+r$) yields $\sigma\left(
+i_{u+r}\right)  =i_{u+r+1}=i_{\left(  u+1\right)  +r}$. Hence,
 \begin{align*}
 \sigma\left(  i_{u}\right)   &  =i_{u+1}>i_{\left(  u+1\right)  +r}%
 \ \ \ \ \ \ \ \ \ \ \left(  \text{since }i_{\left(  u+1\right)  +r}%
--i_{u+1}<0\right)  \\
+-i_{u+1}<0\right) \\
 &  =\sigma\left(  i_{u+r}\right)  .
 \end{align*}
 So we know that $\left(  i_{u},i_{u+r}\right)  $ is a pair of integers
 satisfying $1\leq i_{u}<i_{u+r}\leq n$ and $\sigma\left(  i_{u}\right)
 >\sigma\left(  i_{u+r}\right)  $. In other words, $\left(  i_{u}%
 ,i_{u+r}\right)  $ is an inversion of $\sigma$ (by the definition of an
-``inversion''). In other words, $\left(
-i_{u},i_{u+r}\right)  \in\operatorname*{Inv}\sigma$. Thus, we have found a
-$u\geq1$ such that $\left(  i_{u},i_{u+r}\right)  \in\operatorname*{Inv}%
-\sigma$. This proves (\ref{sol.perm.cycles.c.mainclaim}).
+``inversion''). In other words, $\left(  i_{u},i_{u+r}\right)  \in
+\operatorname*{Inv}\sigma$. Thus, we have found a $u\geq1$ such that $\left(
+i_{u},i_{u+r}\right)  \in\operatorname*{Inv}\sigma$. This proves
+(\ref{sol.perm.cycles.c.mainclaim}).
 
 Now, let us forget that we fixed $r$. We have shown that, for every
 $r\in\left\{  1,2,\ldots,k-1\right\}  $, there exists some $u\geq1$ such that
