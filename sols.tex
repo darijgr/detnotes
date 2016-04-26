@@ -7,15 +7,15 @@
 \usepackage{framed}
 \usepackage{comment}
 \usepackage{color}
-\usepackage{tabu}
 \usepackage{hyperref}
 \usepackage[sc]{mathpazo}
 \usepackage[T1]{fontenc}
 \usepackage{tikz}
 \usepackage{needspace}
+\usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Monday, April 25, 2016 19:01:01}
+%TCIDATA{LastRevised=Monday, April 25, 2016 22:37:30}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -91,6 +91,9 @@
 \renewcommand{\prod}{\prodnonlimits\limits}
 \renewcommand{\bigcup}{\cupnonlimits\limits}
 \renewcommand{\bigcap}{\capnonlimits\limits}
+\setlength\tablinesep{3pt}
+\setlength\arraylinesep{3pt}
+\setlength\extrarulesep{3pt}
 \voffset=0cm
 \hoffset=-0.7cm
 \setlength\textheight{22.5cm}
@@ -802,8 +805,8 @@ the same addends as the sum $\sum_{t\in T}a_{t}$.)
 -n,-n+1,\ldots,-1\right\}  }\left(  -s\right)  ^{3}.
 \]
 (This follows from (\ref{eq.sum.subs1}), applied to $S=\left\{  -n,-n+1,\ldots
-,-1\right\}  $, $T=\left\{  1,2,\ldots,n\right\}  $, $f\left(  s\right)  =-s$,
-and $a_{t}=t^{3}$.)
+,-1\right\}  $, \newline$T=\left\{  1,2,\ldots,n\right\}  $, $f\left(
+s\right)  =-s$, and $a_{t}=t^{3}$.)
 
 \item The sets $S$ and $T$ in (\ref{eq.sum.subs1}) may well be the same. For
 example, for any $n\in\mathbb{N}$, we have%
@@ -815,12 +818,12 @@ example, for any $n\in\mathbb{N}$, we have%
 ,n\right\}  $, $T=\left\{  1,2,\ldots,n\right\}  $, $f\left(  s\right)
 =n+1-s$ and $a_{t}=t^{3}$.)
 
-\item More generally: Let $u$ and $v$ be two integers. Then, the map $\left\{
-u,u+1,\ldots,v\right\}  \rightarrow\left\{  u,u+1,\ldots,v\right\}  $ sending
-each $s\in\left\{  u,u+1,\ldots,v\right\}  $ to $u+v-s$ is a
-bijection\footnote{Check this!}. Hence, we can substitute $u+v-s$ for $s$ in
-the sum $\sum_{s=u}^{v}a_{s}$ whenever an element $a_{s}$ of $\mathbb{A}$ is
-given for each $s\in\left\{  u,u+1,\ldots,v\right\}  $. We thus obtain the
+\item More generally: Let $u$ and $v$ be two integers. Then, the map
+\newline$\left\{  u,u+1,\ldots,v\right\}  \rightarrow\left\{  u,u+1,\ldots
+,v\right\}  $ sending each $s\in\left\{  u,u+1,\ldots,v\right\}  $ to $u+v-s$
+is a bijection\footnote{Check this!}. Hence, we can substitute $u+v-s$ for $s$
+in the sum $\sum_{s=u}^{v}a_{s}$ whenever an element $a_{s}$ of $\mathbb{A}$
+is given for each $s\in\left\{  u,u+1,\ldots,v\right\}  $. We thus obtain the
 formula%
 \[
 \sum_{s=u}^{v}a_{s}=\sum_{s=u}^{v}a_{u+v-s}.
@@ -1453,14 +1456,14 @@ x,y\right)  }. \label{eq.sum.fubini.predicate}%
 
 \begin{itemize}
 \item For any $n\in\mathbb{N}$ and $m\in\mathbb{N}$, we have%
-\[
+\begin{align*}
 \sum_{x\in\left\{  1,2,\ldots,n\right\}  }\sum_{\substack{y\in\left\{
-1,2,\ldots,m\right\}  ;\\x+y\text{ is even}}}xy=\sum_{\substack{\left(
+1,2,\ldots,m\right\}  ;\\x+y\text{ is even}}}xy  &  =\sum_{\substack{\left(
 x,y\right)  \in\left\{  1,2,\ldots,n\right\}  \times\left\{  1,2,\ldots
-,m\right\}  ;\\x+y\text{ is even}}}xy=\sum_{y\in\left\{  1,2,\ldots,m\right\}
-}\sum_{\substack{x\in\left\{  1,2,\ldots,n\right\}  ;\\x+y\text{ is even}%
-}}xy.
-\]
+,m\right\}  ;\\x+y\text{ is even}}}xy\\
+&  =\sum_{y\in\left\{  1,2,\ldots,m\right\}  }\sum_{\substack{x\in\left\{
+1,2,\ldots,n\right\}  ;\\x+y\text{ is even}}}xy.
+\end{align*}
 (This follows from (\ref{eq.sum.fubini.predicate}), applied to $X=\left\{
 1,2,\ldots,n\right\}  $, $Y=\left\{  1,2,\ldots,m\right\}  $ and
 $\mathcal{A}\left(  x,y\right)  =\left(  \text{\textquotedblleft}x+y\text{ is
@@ -2445,12 +2448,12 @@ set $Q_{0}$ and edge multiset%
 allowed, but we do not make them distinguishable.)
 
 \item A quiver $Q=\left(  Q_{0},Q_{1},s,t\right)  $ is said to be
-\textit{acyclic} if there is no sequence $\left(  a_{0},a_{1},\ldots
-,a_{n}\right)  $ of elements of $Q_{0}$ such that $a_{0}=a_{n}$ and such that
-$Q$ has an arrow from $a_{i}$ to $a_{i+1}$ for every $i\in\left\{
-0,1,\ldots,n-1\right\}  $. (This is equivalent to \cite[Definition
-2.1.7]{Lampe}.) Notice that this does not mean that the \textit{undirected}
-version of $Q$ has no cycles.
+\textit{acyclic} if there is no sequence \newline$\left(  a_{0},a_{1}%
+,\ldots,a_{n}\right)  $ of elements of $Q_{0}$ such that $n>0$ and
+$a_{0}=a_{n}$ and such that $Q$ has an arrow from $a_{i}$ to $a_{i+1}$ for
+every $i\in\left\{  0,1,\ldots,n-1\right\}  $. (This is equivalent to
+\cite[Definition 2.1.7]{Lampe}.) Notice that this does not mean that the
+\textit{undirected} version of $Q$ has no cycles.
 
 \item Let $Q=\left(  Q_{0},Q_{1},s,t\right)  $. Then, a \textit{sink} of $Q$
 means a vertex $v\in Q_{0}$ such that no $e\in Q_{1}$ starts at $v$ (in other
@@ -2466,27 +2469,27 @@ $s\left(  e\right)  $ and $t\left(  e\right)  $. We model this as a change to
 the functions $s$ and $t$, not as a change to the arrow itself.} all arrows
 ending at $i$. (To be really pedantic: We define $\mu_{i}\left(  Q\right)  $
 as the quiver $\left(  Q_{0},Q_{1},s^{\prime},t^{\prime}\right)  $, where%
-\[
-s^{\prime}\left(  e\right)  =\left\{
+\begin{align*}
+s^{\prime}\left(  e\right)   &  =\left\{
 \begin{array}
 [c]{c}%
 t\left(  e\right)  ,\ \ \ \ \ \ \ \ \ \ \text{if }t\left(  e\right)  =i;\\
 s\left(  e\right)  ,\ \ \ \ \ \ \ \ \ \ \text{if }t\left(  e\right)  \neq i
 \end{array}
-\right.  \ \ \ \ \ \ \ \ \ \ \text{and}\ \ \ \ \ \ \ \ \ \ t^{\prime}\left(
-e\right)  =\left\{
+\right.  \ \ \ \ \ \ \ \ \ \ \text{for each }e\in Q_{1}\\
+\text{and}\ \ \ \ \ \ \ \ \ \ t^{\prime}\left(  e\right)   &  =\left\{
 \begin{array}
 [c]{c}%
 s\left(  e\right)  ,\ \ \ \ \ \ \ \ \ \ \text{if }t\left(  e\right)  =i;\\
 t\left(  e\right)  ,\ \ \ \ \ \ \ \ \ \ \text{if }t\left(  e\right)  \neq i
 \end{array}
-\right.
-\]
-for all $i\in Q_{0}$.) If $i\in Q_{0}$ is a source of $Q$, then the
-\textit{mutation} $\mu_{i}\left(  Q\right)  $ of $Q$ at $i$ is the quiver
-obtained from $Q$ by turning all arrows starting at $i$. (Notice that if $i$
-is both a source and a sink of $Q$, then these two definitions give the same
-result; namely, $\mu_{i}\left(  Q\right)  =Q$ in this case.)
+\right.  \ \ \ \ \ \ \ \ \ \ \text{for each }e\in Q_{1}.
+\end{align*}
+) If $i\in Q_{0}$ is a source of $Q$, then the \textit{mutation} $\mu
+_{i}\left(  Q\right)  $ of $Q$ at $i$ is the quiver obtained from $Q$ by
+turning all arrows starting at $i$. (Notice that if $i$ is both a source and a
+sink of $Q$, then these two definitions give the same result; namely, $\mu
+_{i}\left(  Q\right)  =Q$ in this case.)
 
 If $Q$ is an acyclic quiver, then $\mu_{i}\left(  Q\right)  $ is acyclic as
 well (whenever $i\in Q_{0}$ is a sink or a source of $Q$).
@@ -3147,11 +3150,14 @@ so that $\sum_{k=0}^{d}P_{k}\left(  \alpha\right)  x^{k}=P\left(
 $x$ instead of $x$ and $y$).
 
 Therefore, Lemma \ref{lem.polyeq} \textbf{(a)} (applied to $\sum_{k=0}%
-^{d}P_{k}\left(  \alpha\right)  X^{k}$ instead of $P$) yields that $\sum
-_{k=0}^{d}P_{k}\left(  \alpha\right)  X^{k}=0$ as polynomials (in the
-indeterminate $X$). In other words, all coefficients of the polynomial
-$\sum_{k=0}^{d}P_{k}\left(  \alpha\right)  X^{k}$ are $0$. In other words,
-$P_{k}\left(  \alpha\right)  =0$ for all $k\in\left\{  0,1,\ldots,d\right\}  $.
+^{d}P_{k}\left(  \alpha\right)  X^{k}$ instead of $P$) yields that
+\[
+\sum_{k=0}^{d}P_{k}\left(  \alpha\right)  X^{k}=0
+\]
+as polynomials (in the indeterminate $X$). In other words, all coefficients of
+the polynomial $\sum_{k=0}^{d}P_{k}\left(  \alpha\right)  X^{k}$ are $0$. In
+other words, $P_{k}\left(  \alpha\right)  =0$ for all $k\in\left\{
+0,1,\ldots,d\right\}  $.
 
 Now, let us forget that we fixed $\alpha$. We thus have shown that
 $P_{k}\left(  \alpha\right)  =0$ for all $k\in\left\{  0,1,\ldots,d\right\}  $
@@ -5102,19 +5108,26 @@ Here are some more exercises from the theory of recurrent sequences. I am not
 going particularly deep here, but we may encounter generalizations later.
 
 First, an example: If we \textquotedblleft split\textquotedblright\ the
-Fibonacci sequence $\left(  f_{0},f_{1},f_{2},\ldots\right)  =\left(
-1,1,2,3,5,8,\ldots\right)  $ into two subsequences $\left(  f_{0},f_{2}%
-,f_{4},\ldots\right)  =\left(  1,2,5,13,\ldots\right)  $ and $\left(
-f_{1},f_{3},f_{5},\ldots\right)  =\left(  1,3,8,21,\ldots\right)  $ (each of
-which contains every other Fibonacci number), then it turns out that each of
-these two subsequences is $\left(  3,-1\right)  $-recurrent\footnote{In other
-words, we have $f_{2n}=3f_{2\left(  n-1\right)  }+\left(  -1\right)
-f_{2\left(  n-2\right)  }$ and $f_{2n+1}=3f_{2\left(  n-1\right)  +1}+\left(
--1\right)  f_{2\left(  n-2\right)  +1}$ for every $n\geq2$.}. This is rather
-easy to prove, but one can always ask for generalizations: What happens if we
-start with an arbitrary $\left(  a,b\right)  $-recurrent sequence, instead of
-the Fibonacci numbers? What happens if we split it into three, four or more
-subsequences? The answer is rather nice:
+Fibonacci sequence
+\[
+\left(  f_{0},f_{1},f_{2},\ldots\right)  =\left(  1,1,2,3,5,8,\ldots\right)
+\]
+into two subsequences
+\[
+\left(  f_{0},f_{2},f_{4},\ldots\right)  =\left(  1,2,5,13,\ldots\right)
+\qquad\text{and} \qquad\left(  f_{1},f_{3},f_{5},\ldots\right)  =\left(
+1,3,8,21,\ldots\right)
+\]
+(each of which contains every other Fibonacci number), then it turns out that
+each of these two subsequences is $\left(  3,-1\right)  $%
+-recurrent\footnote{In other words, we have $f_{2n}=3f_{2\left(  n-1\right)
+}+\left(  -1\right)  f_{2\left(  n-2\right)  }$ and $f_{2n+1}=3f_{2\left(
+n-1\right)  +1}+\left(  -1\right)  f_{2\left(  n-2\right)  +1}$ for every
+$n\geq2$.}. This is rather easy to prove, but one can always ask for
+generalizations: What happens if we start with an arbitrary $\left(
+a,b\right)  $-recurrent sequence, instead of the Fibonacci numbers? What
+happens if we split it into three, four or more subsequences? The answer is
+rather nice:
 
 \begin{exercise}
 \label{exe.ps2.2.2}Let $a$ and $b$ be complex numbers. Let $\left(
@@ -5346,6 +5359,8 @@ recent paper on cluster algebras\footnote{Specifically, Exercise
 \ref{exe.ps2.2.S} is part of \cite[Definition 1]{LS2}, but I have reindexed
 the sequence and fixed the missing upper bound in the sum.}:
 
+\Needspace{4cm}
+
 \begin{exercise}
 \label{exe.ps2.2.S}Let $r\in\mathbb{Z}$. Define a sequence $\left(
 c_{0},c_{1},c_{2},\ldots\right)  $ of integers recursively by $c_{0}=0$,
@@ -5525,7 +5540,7 @@ under the map $\alpha:X\rightarrow Y$ by $x^{\alpha}$ or $x\alpha$ instead of
 $\alpha\left(  x\right)  $), and they define composition \textquotedblleft the
 other way round\textquotedblright\ (i.e., they write $\alpha\circ\beta$ for
 what we call $\beta\circ\alpha$). They have reasons for what they are doing,
-but we prefer the classical notation because most of the literature agrees
+but I shall use the classical notation because most of the literature agrees
 with it.
 \end{definition}
 
@@ -9534,6 +9549,8 @@ _{i=1}^{n}a_{i,\sigma\left(  i\right)  }\\
 Proposition \ref{prop.det.scale} is thus proven.
 \end{proof}
 
+\Needspace{8cm}
+
 \begin{exercise}
 \label{exe.ps4.5}Let $a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p$ be elements of
 $\mathbb{K}$.
@@ -10594,8 +10611,11 @@ behind Lemma \ref{lem.prodrule} is that if you expand the product%
 +\cdots+p_{n,m_{n}}\right)  ,
 \end{align*}
 then you get a sum of $m_{1}m_{2}\cdots m_{n}$ terms, each of which has the
-form $p_{1,k_{1}}p_{2,k_{2}}\cdots p_{n,k_{n}}=\prod_{i=1}^{n}p_{i,k_{i}}$ for
-some $\left(  k_{1},k_{2},\ldots,k_{n}\right)  \in\left[  m_{1}\right]
+form
+\[
+p_{1,k_{1}}p_{2,k_{2}}\cdots p_{n,k_{n}}=\prod_{i=1}^{n}p_{i,k_{i}}
+\]
+for some $\left(  k_{1},k_{2},\ldots,k_{n}\right)  \in\left[  m_{1}\right]
 \times\left[  m_{2}\right]  \times\cdots\times\left[  m_{n}\right]  $. (More
 precisely, it is the sum of all such terms.) A formal proof of Lemma
 \ref{lem.prodrule} could be obtained by induction over $n$ using the
@@ -10654,11 +10674,11 @@ m\right]  \times\left[  m\right]  \times\cdots\times\left[  m\right]
 \left[  n\right]  ,\left[  m\right]  \right)  .
 \]
 So the map $\Phi$ takes a function $\kappa$ from $\left[  n\right]  $ to
-$\left[  m\right]  $, and outputs the list $\left(  \kappa\left(  1\right)
-,\kappa\left(  2\right)  ,\ldots,\kappa\left(  n\right)  \right)  $ of all its
-values. Clearly, the map $\Phi$ is injective (since a function $\kappa
-\in\operatorname*{Map}\left(  \left[  n\right]  ,\left[  m\right]  \right)  $
-can be reconstructed from the list $\left(  \kappa\left(  1\right)
+$\left[  m\right]  $, and outputs the list \newline$\left(  \kappa\left(
+1\right)  ,\kappa\left(  2\right)  ,\ldots,\kappa\left(  n\right)  \right)  $
+of all its values. Clearly, the map $\Phi$ is injective (since a function
+$\kappa\in\operatorname*{Map}\left(  \left[  n\right]  ,\left[  m\right]
+\right)  $ can be reconstructed from the list $\left(  \kappa\left(  1\right)
 ,\kappa\left(  2\right)  ,\ldots,\kappa\left(  n\right)  \right)  =\Phi\left(
 \kappa\right)  $) and surjective (since every list of $n$ elements of $\left[
 m\right]  $ is the list of values of some function $\kappa\in
@@ -10850,8 +10870,12 @@ positive. Assume that (\ref{pf.cor.det.product.a.1}) holds for $u=U-1$. We
 need to show that (\ref{pf.cor.det.product.a.1}) holds for $u=U$.
 
 We have assumed that (\ref{pf.cor.det.product.a.1}) holds for $u=U-1$. In
-other words, $\det\left(  B_{1}B_{2}\cdots B_{U-1}\right)  =\prod_{i=1}%
-^{U-1}\det\left(  B_{i}\right)  $. Now,%
+other words,
+\[
+\det\left(  B_{1}B_{2}\cdots B_{U-1}\right)  =\prod_{i=1}^{U-1}\det\left(
+B_{i}\right)  .
+\]
+Now,%
 \begin{align*}
 \det\underbrace{\left(  B_{1}B_{2}\cdots B_{U}\right)  }_{=\left(  B_{1}%
 B_{2}\cdots B_{U-1}\right)  B_{U}}  &  =\det\left(  \left(  B_{1}B_{2}\cdots
@@ -12199,12 +12223,15 @@ a_{i,g_{\sigma\left(  i\right)  }}\right)  \left(  -1\right)  ^{\sigma
 \det\left(  \operatorname*{rows}\nolimits_{g_{1},g_{2},\ldots,g_{n}}B\right)
 . \label{pf.thm.cauchy-binet.short.15}%
 \end{align}
-Finally, we recall that $\mathbf{I}$ was defined as the set $\left\{  \left(
-k_{1},k_{2},\ldots,k_{n}\right)  \in\left[  m\right]  ^{n}\ \mid\ k_{1}%
-<k_{2}<\cdots<k_{n}\right\}  $. Thus, summing over all $\left(  g_{1}%
-,g_{2},\ldots,g_{n}\right)  \in\mathbf{I}$ means the same as summing over all
-$\left(  g_{1},g_{2},\ldots,g_{n}\right)  \in\left[  m\right]  ^{n}$
-satisfying $g_{1}<g_{2}<\cdots<g_{n}$. In other words,%
+Finally, we recall that $\mathbf{I}$ was defined as the set
+\[
+\left\{  \left(  k_{1},k_{2},\ldots,k_{n}\right)  \in\left[  m\right]
+^{n}\ \mid\ k_{1}<k_{2}<\cdots<k_{n}\right\}  .
+\]
+Thus, summing over all $\left(  g_{1},g_{2},\ldots,g_{n}\right)  \in
+\mathbf{I}$ means the same as summing over all $\left(  g_{1},g_{2}%
+,\ldots,g_{n}\right)  \in\left[  m\right]  ^{n}$ satisfying $g_{1}%
+<g_{2}<\cdots<g_{n}$. In other words,%
 \[
 \sum_{\left(  g_{1},g_{2},\ldots,g_{n}\right)  \in\mathbf{I}}=\sum
 _{\substack{\left(  g_{1},g_{2},\ldots,g_{n}\right)  \in\left[  m\right]
@@ -13876,7 +13903,8 @@ x_{2}^{3}-x_{4}x_{2}^{2} & x_{2}^{2}-x_{4}x_{2} & x_{2}-x_{4} & 1\\
 x_{3}^{3}-x_{4}x_{3}^{2} & x_{3}^{2}-x_{4}x_{3} & x_{3}-x_{4} & 1\\
 x_{4}^{3}-x_{4}x_{4}^{2} & x_{4}^{2}-x_{4}x_{4} & x_{4}-x_{4} & 1
 \end{array}
-\right)  =\left(
+\right) \\
+&  =\left(
 \begin{array}
 [c]{cccc}%
 x_{1}^{3}-x_{4}x_{1}^{2} & x_{1}^{2}-x_{4}x_{1} & x_{1}-x_{4} & 1\\
@@ -14018,46 +14046,52 @@ that $j+1\in\left\{  2,3,\ldots,U\right\}  \subseteq\left\{  1,2,\ldots
 ,U\right\}  $. Thus, $j$ and $j+1$ are two distinct elements of $\left\{
 1,2,\ldots,U\right\}  $.
 \par
-Now,%
-\begin{align*}
-&  \underbrace{\sum_{k=1}^{U}}_{=\sum_{k\in\left\{  1,2,\ldots,U\right\}  }%
-}x_{i}^{U-k}\underbrace{c_{k,j}}_{\substack{=%
-\begin{cases}
-1, & \text{if }k=j;\\
--x_{U}, & \text{if }k=j+1;\\
-0, & \text{otherwise}%
-\end{cases}
-\\\text{(by the definition of }c_{k,j}\text{)}}}\\
-&  =\sum_{k\in\left\{  1,2,\ldots,U\right\}  }x_{i}^{U-k}%
-\begin{cases}
-1, & \text{if }k=j;\\
--x_{U}, & \text{if }k=j+1;\\
-0, & \text{otherwise}%
-\end{cases}
-\\
-&  =x_{i}^{U-j}\underbrace{%
+The definition of $c_{j,j}$ yields%
+\[
+c_{j,j}=%
 \begin{cases}
 1, & \text{if }j=j;\\
 -x_{U}, & \text{if }j=j+1;\\
 0, & \text{otherwise}%
 \end{cases}
-}_{\substack{=1\\\text{(since }j=j\text{)}}}+\underbrace{x_{i}^{U-\left(
-j+1\right)  }}_{=x_{i}^{U-j-1}}\underbrace{%
+=1\ \ \ \ \ \ \ \ \ \ \left(  \text{since }j=j\right)  .
+\]
+The definition of $c_{j+1,j}$ yields%
+\[
+c_{j+1,j}=%
 \begin{cases}
 1, & \text{if }j+1=j;\\
 -x_{U}, & \text{if }j+1=j+1;\\
 0, & \text{otherwise}%
 \end{cases}
-}_{\substack{=-x_{U}\\\text{(since }j+1=j+1\text{)}}}\\
-&  \ \ \ \ \ \ \ \ \ \ +\sum_{\substack{k\in\left\{  1,2,\ldots,U\right\}
-;\\k\notin\left\{  j,j+1\right\}  }}x_{i}^{U-k}\underbrace{%
+=-x_{U}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }j+1=j+1\right)  .
+\]
+For every $k\in\left\{  1,2,\ldots,U\right\}  $ satisfying $k\notin\left\{
+j,j+1\right\}  $, we have%
+\begin{align}
+c_{k,j}  &  =%
 \begin{cases}
 1, & \text{if }k=j;\\
 -x_{U}, & \text{if }k=j+1;\\
 0, & \text{otherwise}%
 \end{cases}
-}_{\substack{=0\\\text{(since neither }k=j\text{ nor }k=j+1\\\text{(since
-}k\notin\left\{  j,j+1\right\}  \text{))}}}\\
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }c_{k,j}\right)
+\nonumber\\
+&  =0\ \ \ \ \ \ \ \ \ \ \left(  \text{since neither }k=j\text{ nor
+}k=j+1\text{ (because }k\notin\left\{  j,j+1\right\}  \text{)}\right)
+\label{pf.thm.vander-det.B=AUC.pf.1.pf.6}%
+\end{align}
+\par
+Now,%
+\begin{align*}
+&  \underbrace{\sum_{k=1}^{U}}_{=\sum_{k\in\left\{  1,2,\ldots,U\right\}  }%
+}x_{i}^{U-k}c_{k,j}\\
+&  =\sum_{k\in\left\{  1,2,\ldots,U\right\}  }x_{i}^{U-k}c_{k,j}\\
+&  =x_{i}^{U-j}\underbrace{c_{j,j}}_{=1}+\underbrace{x_{i}^{U-\left(
+j+1\right)  }}_{=x_{i}^{U-j-1}}\underbrace{c_{j+1,j}}_{=-x_{U}}+\sum
+_{\substack{k\in\left\{  1,2,\ldots,U\right\}  ;\\k\notin\left\{
+j,j+1\right\}  }}x_{i}^{U-k}\underbrace{c_{k,j}}_{\substack{=0\\\text{(by
+(\ref{pf.thm.vander-det.B=AUC.pf.1.pf.6}))}}}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
@@ -14069,8 +14103,9 @@ from}\\
 \right) \\
 &  =x_{i}^{U-j}1+x_{i}^{U-j-1}\left(  -x_{U}\right)  +\underbrace{\sum
 _{\substack{k\in\left\{  1,2,\ldots,U\right\}  ;\\k\notin\left\{
-j,j+1\right\}  }}x_{i}^{U-k}0}_{=0}=x_{i}^{U-j}1+x_{i}^{U-j-1}\left(
--x_{U}\right)  =x_{i}^{U-j}-x_{i}^{U-j-1}x_{U}=x_{i}^{U-j}-x_{U}x_{i}^{U-j-1}.
+j,j+1\right\}  }}x_{i}^{U-k}0}_{=0}\\
+&  =x_{i}^{U-j}1+x_{i}^{U-j-1}\left(  -x_{U}\right)  =x_{i}^{U-j}%
+-x_{i}^{U-j-1}x_{U}=x_{i}^{U-j}-x_{U}x_{i}^{U-j-1}.
 \end{align*}
 Comparing this with (\ref{pf.thm.vander-det.B=AUC.pf.1.pf.1}), we obtain
 $b_{i,j}=\sum_{k=1}^{U}x_{i}^{U-k}c_{k,j}$. Thus,
@@ -14347,13 +14382,14 @@ x_{i}-x_{U}, & \text{if }i=j;\\
 x_{i}-x_{U}, & \text{if }i=i;\\
 0, & \text{otherwise}%
 \end{cases}
-\\\text{(by the definition of }d_{i,i}\text{)}}}=\prod_{i=1}^{U-1}\underbrace{%
+\\\text{(by the definition of }d_{i,i}\text{)}}}\\
+&  =\prod_{i=1}^{U-1}\underbrace{%
 \begin{cases}
 x_{i}-x_{U}, & \text{if }i=i;\\
 0, & \text{otherwise}%
 \end{cases}
-}_{\substack{=x_{i}-x_{U}\\\text{(since }i=i\text{)}}}\\
-&  =\prod_{i=1}^{U-1}\left(  x_{i}-x_{U}\right)  .
+}_{\substack{=x_{i}-x_{U}\\\text{(since }i=i\text{)}}}=\prod_{i=1}%
+^{U-1}\left(  x_{i}-x_{U}\right)  .
 \end{align*}
 
 \end{verlong}
@@ -14437,8 +14473,8 @@ DA_{U-1}  &  =\left(  \sum_{k=1}^{U-1}d_{i,k}x_{k}^{\left(  U-1\right)
 \begin{array}
 [c]{c}%
 \text{by the definition of the product }DA_{U-1}\text{,}\\
-\text{since }D=\left(  d_{i,j}\right)  _{1\leq i\leq U-1,\ 1\leq j\leq
-U-1}\text{ and }A_{U-1}=\left(  x_{i}^{\left(  U-1\right)  -j}\right)  _{1\leq
+\text{since }D=\left(  d_{i,j}\right)  _{1\leq i\leq U-1,\ 1\leq j\leq U-1}\\
+\text{and }A_{U-1}=\left(  x_{i}^{\left(  U-1\right)  -j}\right)  _{1\leq
 i\leq U-1,\ 1\leq j\leq U-1}%
 \end{array}
 \right)  ,
@@ -14611,13 +14647,14 @@ G}\\\text{(since }G=\left\{  \left(  i,j\right)  \in\mathbb{Z}^{2}%
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we renamed the index }\left(
 j,i\right)  \text{ as }\left(  i,j\right)  \text{ in the product}\right) \\
 &  =\prod_{\left(  i,j\right)  \in G}\left(  \left(  -1\right)  \left(
-x_{i}-x_{j}\right)  \right)  =\underbrace{\left(  -1\right)  ^{\left\vert
-G\right\vert }}_{\substack{=\left(  -1\right)  ^{n\left(  n-1\right)
-/2}\\\text{(since }\left\vert G\right\vert =n\left(  n-1\right)  /2\text{)}%
-}}\underbrace{\prod_{\left(  i,j\right)  \in G}}_{\substack{=\prod
-_{\substack{\left(  i,j\right)  \in\mathbb{Z}^{2};\\1\leq i<j\leq
-n}}\\\text{(since }G=\left\{  \left(  i,j\right)  \in\mathbb{Z}^{2}%
-\ \mid\ 1\leq i<j\leq n\right\}  \text{)}}}\left(  x_{i}-x_{j}\right) \\
+x_{i}-x_{j}\right)  \right) \\
+&  =\underbrace{\left(  -1\right)  ^{\left\vert G\right\vert }}%
+_{\substack{=\left(  -1\right)  ^{n\left(  n-1\right)  /2}\\\text{(since
+}\left\vert G\right\vert =n\left(  n-1\right)  /2\text{)}}}\underbrace{\prod
+_{\left(  i,j\right)  \in G}}_{\substack{=\prod_{\substack{\left(  i,j\right)
+\in\mathbb{Z}^{2};\\1\leq i<j\leq n}}\\\text{(since }G=\left\{  \left(
+i,j\right)  \in\mathbb{Z}^{2}\ \mid\ 1\leq i<j\leq n\right\}  \text{)}%
+}}\left(  x_{i}-x_{j}\right) \\
 &  =\left(  -1\right)  ^{n\left(  n-1\right)  /2}\underbrace{\prod
 _{\substack{\left(  i,j\right)  \in\mathbb{Z}^{2};\\1\leq i<j\leq n}}}%
 _{=\prod_{1\leq i<j\leq n}}\left(  x_{i}-x_{j}\right)  =\left(  -1\right)
@@ -14653,10 +14690,12 @@ n}\right)  ^{T}\right)  =\det\left(  \left(  x_{i}^{j-1}\right)  _{1\leq i\leq
 n,\ 1\leq j\leq n}\right)
 \]
 (by Exercise \ref{exe.ps4.4}, applied to $A=\left(  x_{i}^{j-1}\right)
-_{1\leq i\leq n,\ 1\leq j\leq n}$), this yields $\det\left(  \left(
-x_{i}^{j-1}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  =\prod_{1\leq
-j<i\leq n}\left(  x_{i}-x_{j}\right)  $. This proves Theorem
-\ref{thm.vander-det} \textbf{(c)}.
+_{1\leq i\leq n,\ 1\leq j\leq n}$), this yields%
+\[
+\det\left(  \left(  x_{i}^{j-1}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}\right)  =\prod_{1\leq j<i\leq n}\left(  x_{i}-x_{j}\right)  .
+\]
+This proves Theorem \ref{thm.vander-det} \textbf{(c)}.
 \end{verlong}
 \end{proof}
 
@@ -14765,8 +14804,9 @@ a_{1},a_{2},\ldots,a_{n}\right)  $, there is a polynomial $P_{\left(
 a_{1},a_{2},\ldots,a_{n}\right)  }$ in $n$ indeterminates $X_{1},X_{2}%
 ,\ldots,X_{n}$ such that%
 \[
-\det A=P_{\left(  a_{1},a_{2},\ldots,a_{n}\right)  }\cdot\prod_{1\leq i<j\leq
-n}\left(  x_{i}-x_{j}\right)  .
+\det A=P_{\left(  a_{1},a_{2},\ldots,a_{n}\right)  }\left(  x_{1},x_{2}%
+,\ldots,x_{n}\right)  \cdot\prod_{1\leq i<j\leq n}\left(  x_{i}-x_{j}\right)
+.
 \]
 
 
@@ -14784,16 +14824,16 @@ a_{1},a_{2},\ldots,a_{n}\right)  }$ is:
 For example,%
 \begin{align*}
 P_{\left(  n-1,n-2,\ldots,0\right)  }  &  =1;\\
-P_{\left(  n,n-2,n-3,\ldots,0\right)  }  &  =\sum_{i=1}^{n}x_{i}=x_{1}%
-+x_{2}+\cdots+x_{n};\\
+P_{\left(  n,n-2,n-3,\ldots,0\right)  }  &  =\sum_{i=1}^{n}X_{i}=X_{1}%
++X_{2}+\cdots+X_{n};\\
 P_{\left(  n,n-1,\ldots,n-k+1,n-k-1,n-k-2,\ldots,0\right)  }  &  =\sum_{1\leq
-i_{1}<i_{2}<\cdots<i_{k}\leq n}x_{i_{1}}x_{i_{2}}\cdots x_{i_{k}}\\
+i_{1}<i_{2}<\cdots<i_{k}\leq n}X_{i_{1}}X_{i_{2}}\cdots X_{i_{k}}\\
 &  \ \ \ \ \ \ \ \ \ \ \text{for every }k\in\left\{  0,1,\ldots,n\right\}  ;\\
 P_{\left(  n+1,n-2,n-3,\ldots,0\right)  }  &  =\sum_{1\leq i\leq j\leq n}%
-x_{i}x_{j};\\
+X_{i}X_{j};\\
 P_{\left(  n+1,n-1,n-3,n-4,\ldots,0\right)  }  &  =\sum_{1\leq i<j\leq
-n}\left(  x_{i}^{2}x_{j}+x_{i}x_{j}^{2}\right)  +2\sum_{1\leq i\leq j\leq
-k\leq n}x_{i}x_{j}x_{k}.
+n}\left(  X_{i}^{2}X_{j}+X_{i}X_{j}^{2}\right)  +2\sum_{1\leq i<j<k\leq
+n}X_{i}X_{j}X_{k}.
 \end{align*}
 
 
@@ -15778,8 +15818,9 @@ nothing to do with its meaning with \textquotedblleft$1\leq j\leq
 v$\textquotedblright. However, it is easy to distinguish between these two
 kinds of \textquotedblleft$j$\textquotedblright, because the former always
 appears with a subscript, whereas the latter never does.}. Hence, the
-definition of $\operatorname*{rows}\nolimits_{i_{1},i_{2},\ldots,i_{u}}\left(
-\operatorname*{cols}\nolimits_{j_{1},j_{2},\ldots,j_{v}}A\right)  $ yields%
+definition of \newline$\operatorname*{rows}\nolimits_{i_{1},i_{2},\ldots
+,i_{u}}\left(  \operatorname*{cols}\nolimits_{j_{1},j_{2},\ldots,j_{v}%
+}A\right)  $ yields%
 \[
 \operatorname*{rows}\nolimits_{i_{1},i_{2},\ldots,i_{u}}\left(
 \operatorname*{cols}\nolimits_{j_{1},j_{2},\ldots,j_{v}}A\right)  =\left(
@@ -15817,7 +15858,7 @@ other. I hope the reader can easily tell them apart by the fact that the
 always appears with a subscript, whereas the second \textquotedblleft%
 $i$\textquotedblright\ never does.} (here, we renamed the index $\left(
 x,j\right)  $ as $\left(  i,j\right)  $). Hence, the definition of
-$\operatorname*{cols}\nolimits_{j_{1},j_{2},\ldots,j_{v}}\left(
+\newline$\operatorname*{cols}\nolimits_{j_{1},j_{2},\ldots,j_{v}}\left(
 \operatorname*{rows}\nolimits_{i_{1},i_{2},\ldots,i_{u}}A\right)  $ yields%
 \[
 \operatorname*{cols}\nolimits_{j_{1},j_{2},\ldots,j_{v}}\left(
@@ -15846,21 +15887,28 @@ This proves Proposition \ref{prop.submatrix.easy} \textbf{(d)}.
 
 \textbf{(e)} We have $A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq
 m}$. Thus, the definition of $\operatorname*{sub}\nolimits_{i_{1},i_{2}%
-,\ldots,i_{u}}^{j_{1},j_{2},\ldots,j_{v}}A$ yields $\operatorname*{sub}%
-\nolimits_{i_{1},i_{2},\ldots,i_{u}}^{j_{1},j_{2},\ldots,j_{v}}A=\left(
-a_{i_{x},j_{y}}\right)  _{1\leq x\leq u,\ 1\leq y\leq v}=\left(
-a_{i_{i},j_{j}}\right)  _{1\leq i\leq u,\ 1\leq j\leq v}$ (here, we have
-renamed the index $\left(  x,y\right)  $ as $\left(  i,j\right)  $).
-Therefore, the definition of $\left(  \operatorname*{sub}\nolimits_{i_{1}%
-,i_{2},\ldots,i_{u}}^{j_{1},j_{2},\ldots,j_{v}}A\right)  ^{T}$ yields $\left(
+,\ldots,i_{u}}^{j_{1},j_{2},\ldots,j_{v}}A$ yields
+\[
 \operatorname*{sub}\nolimits_{i_{1},i_{2},\ldots,i_{u}}^{j_{1},j_{2}%
-,\ldots,j_{v}}A\right)  ^{T}=\left(  a_{i_{j},j_{i}}\right)  _{1\leq i\leq
-v,\ 1\leq j\leq u}=\left(  a_{i_{y},j_{x}}\right)  _{1\leq x\leq v,\ 1\leq
-y\leq u}$ (here, we have renamed the index $\left(  i,j\right)  $ as $\left(
+,\ldots,j_{v}}A=\left(  a_{i_{x},j_{y}}\right)  _{1\leq x\leq u,\ 1\leq y\leq
+v}=\left(  a_{i_{i},j_{j}}\right)  _{1\leq i\leq u,\ 1\leq j\leq v}%
+\]
+(here, we have renamed the index $\left(  x,y\right)  $ as $\left(
+i,j\right)  $). Therefore, the definition of $\left(  \operatorname*{sub}%
+\nolimits_{i_{1},i_{2},\ldots,i_{u}}^{j_{1},j_{2},\ldots,j_{v}}A\right)  ^{T}$
+yields
+\[
+\left(  \operatorname*{sub}\nolimits_{i_{1},i_{2},\ldots,i_{u}}^{j_{1}%
+,j_{2},\ldots,j_{v}}A\right)  ^{T}=\left(  a_{i_{j},j_{i}}\right)  _{1\leq
+i\leq v,\ 1\leq j\leq u}=\left(  a_{i_{y},j_{x}}\right)  _{1\leq x\leq
+v,\ 1\leq y\leq u}%
+\]
+(here, we have renamed the index $\left(  i,j\right)  $ as $\left(
 x,y\right)  $).
 
 On the other hand, the definition of $A^{T}$ yields $A^{T}=\left(
-a_{j,i}\right)  _{1\leq i\leq m,\ 1\leq j\leq n}$. Hence, the definition of
+a_{j,i}\right)  _{1\leq i\leq m,\ 1\leq j\leq n}$ (since $A=\left(
+a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq m}$). Hence, the definition of
 $\operatorname*{sub}\nolimits_{j_{1},j_{2},\ldots,j_{v}}^{i_{1},i_{2}%
 ,\ldots,i_{u}}\left(  A^{T}\right)  $ yields $\operatorname*{sub}%
 \nolimits_{j_{1},j_{2},\ldots,j_{v}}^{i_{1},i_{2},\ldots,i_{u}}\left(
@@ -16234,8 +16282,8 @@ $\underbrace{g_{n-0}}_{=g_{n}=\operatorname*{id}}\left(  i\right)
 positive. Assume that (\ref{pf.lem.laplace.gp.a.claim}) holds for $q=Q-1$. We
 need to show that (\ref{pf.lem.laplace.gp.a.claim}) holds for $q=Q$.
 
-Now, we have $Q\leq n-i-1$ (since $Q\in\left\{  0,1,\ldots,n-i-1\right\}  $)
-and $Q\geq1$ (since $Q$ is positive and belongs to $\left\{  0,1,\ldots
+We have $Q\leq n-i-1$ (since $Q\in\left\{  0,1,\ldots,n-i-1\right\}  $) and
+$Q\geq1$ (since $Q$ is positive and belongs to $\left\{  0,1,\ldots
 ,n-i-1\right\}  $). Hence, $n-\underbrace{Q}_{\substack{\leq
 n-i-1<n-1\\\text{(since }i\geq1>0\text{)}}}>n-\left(  n-1\right)  =1$. Hence,
 $n-Q\geq1$. Also, $n-\underbrace{Q}_{\geq1}\leq n-1$. Combining $n-Q\geq1$
@@ -16406,14 +16454,12 @@ But we assumed that (\ref{pf.lem.laplace.gp.c.claim}) holds for $q=Q-1$. In
 other words, we have $g_{n-\left(  Q-1\right)  }\left(  n\right)  =n-\left(
 Q-1\right)  $. Since $n-\left(  Q-1\right)  =n-Q+1$, this rewrites as
 $g_{n-Q+1}\left(  n\right)  =n-Q+1$. Now,%
-\[
-\underbrace{g_{n-Q}}_{=s_{n-Q}\circ g_{n-Q+1}}\left(  n\right)  =\left(
+\begin{align*}
+\underbrace{g_{n-Q}}_{=s_{n-Q}\circ g_{n-Q+1}}\left(  n\right)   &  =\left(
 s_{n-Q}\circ g_{n-Q+1}\right)  \left(  n\right)  =s_{n-Q}\left(
-\underbrace{g_{n-Q+1}\left(  n\right)  }_{=n-Q+1}\right)  =s_{n-Q}\left(
-n-Q+1\right)  =n-Q
-\]
-
-
+\underbrace{g_{n-Q+1}\left(  n\right)  }_{=n-Q+1}\right) \\
+&  =s_{n-Q}\left(  n-Q+1\right)  =n-Q.
+\end{align*}
 In other words, (\ref{pf.lem.laplace.gp.c.claim}) holds for $q=Q$. This
 completes the induction step. Thus, the induction proof of
 (\ref{pf.lem.laplace.gp.c.claim}) is complete.
@@ -16447,11 +16493,12 @@ $1\leq i\leq n$, so that $i\in\left[  n\right]  $. Also, $p\leq i$ (since
 $i\geq p$) and $i\leq n-1<n$, so that $p\leq i<n$. Hence, Lemma
 \ref{lem.laplace.gp} \textbf{(b)} shows that we have $g_{p}\left(  i\right)
 =i+1$, qed.}. In other words,%
-\[
+\begin{align*}
 \left(  g_{p}\left(  p\right)  ,g_{p}\left(  p+1\right)  ,\ldots,g_{p}\left(
-n-1\right)  \right)  =\left(  p+1,\left(  p+1\right)  +1,\ldots,\left(
-n-1\right)  +1\right)  =\left(  p+1,p+2,\ldots,n\right)  .
-\]
+n-1\right)  \right)   &  =\left(  p+1,\left(  p+1\right)  +1,\ldots,\left(
+n-1\right)  +1\right) \\
+&  =\left(  p+1,p+2,\ldots,n\right)  .
+\end{align*}
 
 
 Now,%
@@ -16622,9 +16669,9 @@ $j\in\left[  n\right]  \setminus\left\{  p\right\}  $, we have%
 \begin{align*}
 \left(  g_{p}^{\prime}\circ h\right)  \left(  j\right)   &  =g_{p}^{\prime
 }\left(  \underbrace{h\left(  j\right)  }_{\substack{=\left(  g_{p}\right)
-^{-1}\left(  j\right)  \\\text{(by the definition of }h\text{)}}}\right)
-=g_{p}^{\prime}\left(  \left(  g_{p}\right)  ^{-1}\left(  j\right)  \right)
-=g_{p}\left(  \left(  g_{p}\right)  ^{-1}\left(  j\right)  \right)
+^{-1}\left(  j\right)  \\\text{(by the definition of }h\text{)}}}\right) \\
+&  =g_{p}^{\prime}\left(  \left(  g_{p}\right)  ^{-1}\left(  j\right)
+\right)  =g_{p}\left(  \left(  g_{p}\right)  ^{-1}\left(  j\right)  \right)
 \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }g_{p}^{\prime}\right)
 \\
 &  =j=\operatorname*{id}\left(  j\right)  .
@@ -16635,12 +16682,15 @@ invertible. In other words, the map $g_{p}^{\prime}$ is bijective. This
 completes the proof of Lemma \ref{lem.laplace.gp} \textbf{(f)}.
 
 \textbf{(g)} For every $\sigma\in\left\{  \tau\in S_{n}\ \mid\ \tau\left(
-n\right)  =n\right\}  $, we have $g_{q}\circ\sigma\circ\left(  g_{p}\right)
-^{-1}\in\left\{  \tau\in S_{n}\ \mid\ \tau\left(  p\right)  =q\right\}
-$\ \ \ \ \footnote{\textit{Proof.} Let $\sigma\in\left\{  \tau\in S_{n}%
-\ \mid\ \tau\left(  n\right)  =n\right\}  $. Thus, $\sigma$ is an element
-$\tau$ of $S_{n}$ satisfying $\tau\left(  n\right)  =n$. In other words,
-$\sigma$ is an element of $S_{n}$ and satisfies $\sigma\left(  n\right)  =n$.
+n\right)  =n\right\}  $, we have%
+\[
+g_{q}\circ\sigma\circ\left(  g_{p}\right)  ^{-1}\in\left\{  \tau\in
+S_{n}\ \mid\ \tau\left(  p\right)  =q\right\}
+\]
+\footnote{\textit{Proof.} Let $\sigma\in\left\{  \tau\in S_{n}\ \mid
+\ \tau\left(  n\right)  =n\right\}  $. Thus, $\sigma$ is an element $\tau$ of
+$S_{n}$ satisfying $\tau\left(  n\right)  =n$. In other words, $\sigma$ is an
+element of $S_{n}$ and satisfies $\sigma\left(  n\right)  =n$.
 \par
 We have $g_{p}\left(  n\right)  =p$ (by Lemma \ref{lem.laplace.gp}
 \textbf{(c)}). Thus, $\left(  g_{p}\right)  ^{-1}\left(  p\right)  =n$.
@@ -16667,12 +16717,15 @@ S_{n}\ \mid\ \tau\left(  p\right)  =q\right\}  ,
 qed.}. Thus, the map $T$ is well-defined.
 
 Furthermore, for every $\sigma\in\left\{  \tau\in S_{n}\ \mid\ \tau\left(
-p\right)  =q\right\}  $, we have $\left(  g_{q}\right)  ^{-1}\circ\sigma\circ
-g_{p}\in\left\{  \tau\in S_{n}\ \mid\ \tau\left(  n\right)  =n\right\}
-$\ \ \ \ \footnote{\textit{Proof.} Let $\sigma\in\left\{  \tau\in S_{n}%
-\ \mid\ \tau\left(  p\right)  =q\right\}  $. Thus, $\sigma$ is an element
-$\tau$ of $S_{n}$ satisfying $\tau\left(  p\right)  =q$. In other words,
-$\sigma$ is an element of $S_{n}$ and satisfies $\sigma\left(  p\right)  =q$.
+p\right)  =q\right\}  $, we have
+\[
+\left(  g_{q}\right)  ^{-1}\circ\sigma\circ g_{p}\in\left\{  \tau\in
+S_{n}\ \mid\ \tau\left(  n\right)  =n\right\}
+\]
+\footnote{\textit{Proof.} Let $\sigma\in\left\{  \tau\in S_{n}\ \mid
+\ \tau\left(  p\right)  =q\right\}  $. Thus, $\sigma$ is an element $\tau$ of
+$S_{n}$ satisfying $\tau\left(  p\right)  =q$. In other words, $\sigma$ is an
+element of $S_{n}$ and satisfies $\sigma\left(  p\right)  =q$.
 \par
 We have $g_{p}\left(  n\right)  =p$ (by Lemma \ref{lem.laplace.gp}
 \textbf{(c)}). Moreover, $g_{q}\left(  n\right)  =q$ (by Lemma
@@ -17016,11 +17069,11 @@ A_{\sim p,\sim q}  &  =\operatorname*{sub}\nolimits_{1,2,\ldots,\widehat{p}%
 ,\ldots,n\right)  =\left(  g_{p}\left(  1\right)  ,g_{p}\left(  2\right)
 ,\ldots,g_{p}\left(  n-1\right)  \right)  \right) \nonumber\\
 &  =\left(  a_{g_{p}\left(  x\right)  ,g_{q}\left(  y\right)  }\right)
-_{1\leq x\leq n-1,\ 1\leq y\leq n-1}\ \ \ \ \ \ \ \ \ \ \left(  \text{by the
-definition of }\operatorname*{sub}\nolimits_{g_{p}\left(  1\right)
-,g_{p}\left(  2\right)  ,\ldots,g_{p}\left(  n-1\right)  }^{g_{q}\left(
-1\right)  ,g_{q}\left(  2\right)  ,\ldots,g_{q}\left(  n-1\right)  }A\right)
-\nonumber\\
+_{1\leq x\leq n-1,\ 1\leq y\leq n-1}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\operatorname*{sub}%
+\nolimits_{g_{p}\left(  1\right)  ,g_{p}\left(  2\right)  ,\ldots,g_{p}\left(
+n-1\right)  }^{g_{q}\left(  1\right)  ,g_{q}\left(  2\right)  ,\ldots
+,g_{q}\left(  n-1\right)  }A\right) \nonumber\\
 &  =\left(  a_{g_{p}\left(  i\right)  ,g_{q}\left(  j\right)  }\right)
 _{1\leq i\leq n-1,\ 1\leq j\leq n-1}\label{pf.lem.laplace.Apq.A}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we renamed the index }\left(
@@ -17744,8 +17797,8 @@ don't think it can be obtained from Proposition \ref{prop.tridiag.rec}).}.
 
 Our recursive algorithms for computing $\det A$ also yield another
 observation: The determinant $\det A$ depends not on the $2\left(  n-1\right)
-$ elements $b_{1},b_{2},\ldots,b_{n-1},c_{1},c_{2},\ldots,c_{n-1}$ but only on
-the products $b_{1}c_{1},b_{2}c_{2},\ldots,b_{n-1}c_{n-1}$.
+$ elements \newline$b_{1},b_{2},\ldots,b_{n-1},c_{1},c_{2},\ldots,c_{n-1}$ but
+only on the products $b_{1}c_{1},b_{2}c_{2},\ldots,b_{n-1}c_{n-1}$.
 
 \begin{exercise}
 \label{exe.tridiag.cf}Define $A_{x,y}$ as in Proposition
@@ -18482,8 +18535,8 @@ C_{\sim p,\sim q}  &  =\operatorname*{sub}\nolimits_{1,2,\ldots,\widehat{p}%
 ,u_{n-1}\right)  \right) \\
 &  =\left(  \underbrace{c_{u_{x},v_{y}}}_{\substack{=a_{u_{x},v_{y}%
 }\\\text{(by (\ref{pf.prop.laplace.0.CA.pf.1}),}\\\text{applied to }%
-q=v_{y}\text{)}}}\right)  _{1\leq x\leq n-1,\ 1\leq y\leq n-1}%
-\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\operatorname*{sub}%
+q=v_{y}\text{)}}}\right)  _{1\leq x\leq n-1,\ 1\leq y\leq n-1}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\operatorname*{sub}%
 \nolimits_{u_{1},u_{2},\ldots,u_{n-1}}^{v_{1},v_{2},\ldots,v_{n-1}}C\text{,
 since }C=\left(  c_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right) \\
 &  =\left(  a_{u_{x},v_{y}}\right)  _{1\leq x\leq n-1,\ 1\leq y\leq n-1}.
@@ -18499,11 +18552,10 @@ A_{\sim p,\sim q}  &  =\operatorname*{sub}\nolimits_{1,2,\ldots,\widehat{p}%
 ,v_{2},\ldots,v_{n-1}}A\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(
 1,2,\ldots,\widehat{p},\ldots,n\right)  =\left(  u_{1},u_{2},\ldots
 ,u_{n-1}\right)  \right) \\
-&  =\left(  a_{u_{x},v_{y}}\right)  _{1\leq x\leq n-1,\ 1\leq y\leq
-n-1}\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }%
-\operatorname*{sub}\nolimits_{u_{1},u_{2},\ldots,u_{n-1}}^{v_{1},v_{2}%
-,\ldots,v_{n-1}}A\text{, since }A=\left(  a_{i,j}\right)  _{1\leq i\leq
-n,\ 1\leq j\leq n}\right)  ,
+&  =\left(  a_{u_{x},v_{y}}\right)  _{1\leq x\leq n-1,\ 1\leq y\leq n-1}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\operatorname*{sub}%
+\nolimits_{u_{1},u_{2},\ldots,u_{n-1}}^{v_{1},v_{2},\ldots,v_{n-1}}A\text{,
+since }A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  ,
 \end{align*}
 this yields $C_{\sim p,\sim q}=A_{\sim p,\sim q}$. This proves
 (\ref{pf.prop.laplace.0.CA}).}. Now, $\det C=0$, so that%
@@ -18629,8 +18681,8 @@ n$-matrix. Then, $\operatorname*{adj}\left(  A^{T}\right)  =\left(
 
 \begin{proof}
 [Proof of Proposition \ref{prop.adj.transpose}.]Let $i\in\left\{
-1,2,\ldots,n\right\}  $ and $j\in\left\{  1,2,\ldots,n\right\}  $. From
-$i\in\left\{  1,2,\ldots,n\right\}  $, we obtain $1\leq i\leq n$, so that
+1,2,\ldots,n\right\}  $ and $j\in\left\{  1,2,\ldots,n\right\}  $. \newline
+From $i\in\left\{  1,2,\ldots,n\right\}  $, we obtain $1\leq i\leq n$, so that
 $n\geq1$ and thus $n-1\in\mathbb{N}$.
 
 The definition of $A_{\sim i,\sim j}$ yields $A_{\sim i,\sim j}%
@@ -18801,10 +18853,14 @@ product of two matrices shows that%
 &  A\cdot\operatorname*{adj}A\nonumber\\
 &  =\left(  \sum_{k=1}^{n}a_{i,k}\left(  -1\right)  ^{k+j}\det\left(  A_{\sim
 j,\sim k}\right)  \right)  _{1\leq i\leq n,\ 1\leq j\leq n}\nonumber\\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }A=\left(  a_{i,j}\right)  _{1\leq
-i\leq n,\ 1\leq j\leq n}\text{ and }\operatorname*{adj}A=\left(  \left(
--1\right)  ^{i+j}\det\left(  A_{\sim j,\sim i}\right)  \right)  _{1\leq i\leq
-n,\ 1\leq j\leq n}\right) \nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since }A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\\
+\text{and }\operatorname*{adj}A=\left(  \left(  -1\right)  ^{i+j}\det\left(
+A_{\sim j,\sim i}\right)  \right)  _{1\leq i\leq n,\ 1\leq j\leq n}%
+\end{array}
+\right) \nonumber\\
 &  =\left(  \sum_{q=1}^{n}\underbrace{a_{i,q}\left(  -1\right)  ^{q+j}%
 }_{=\left(  -1\right)  ^{q+j}a_{i,q}}\det\left(  A_{\sim j,\sim q}\right)
 \right)  _{1\leq i\leq n,\ 1\leq j\leq n}\nonumber\\
@@ -18996,10 +19052,14 @@ a_{i,k}\left(  -1\right)  ^{k+j}\det\left(  A_{\sim j,\sim k}\right)
 }_{\substack{=\sum_{q=1}^{n}a_{i,q}\left(  -1\right)  ^{q+j}\det\left(
 A_{\sim j,\sim q}\right)  \\\text{(here, we renamed the summation index
 }k\text{ as }q\text{)}}}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\nonumber\\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }A=\left(  a_{i,j}\right)  _{1\leq
-i\leq n,\ 1\leq j\leq n}\text{ and }\operatorname*{adj}A=\left(  \left(
--1\right)  ^{i+j}\det\left(  A_{\sim j,\sim i}\right)  \right)  _{1\leq i\leq
-n,\ 1\leq j\leq n}\right) \nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since }A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\\
+\text{and }\operatorname*{adj}A=\left(  \left(  -1\right)  ^{i+j}\det\left(
+A_{\sim j,\sim i}\right)  \right)  _{1\leq i\leq n,\ 1\leq j\leq n}%
+\end{array}
+\right) \nonumber\\
 &  =\left(  \sum_{q=1}^{n}\underbrace{a_{i,q}\left(  -1\right)  ^{q+j}%
 }_{=\left(  -1\right)  ^{q+j}a_{i,q}}\det\left(  A_{\sim j,\sim q}\right)
 \right)  _{1\leq i\leq n,\ 1\leq j\leq n}\nonumber\\
@@ -20265,9 +20325,14 @@ $A$, respectively). Now,%
 (\ref{pf.thm.cramer.short.cpj}))}}}\det\left(  \underbrace{C_{\sim p,\sim j}%
 }_{\substack{=A_{\sim p,\sim j}\\\text{(by (\ref{pf.thm.cramer.short.CA}))}%
 }}\right) \nonumber\\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem \ref{thm.laplace.gen}
-\textbf{(b)}, applied to }C\text{, }c_{i,j}\text{ and }j\text{ instead of
-}A\text{, }a_{i,j}\text{ and }q\right) \nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{by Theorem \ref{thm.laplace.gen} \textbf{(b)}, applied}\\
+\text{to }C\text{, }c_{i,j}\text{ and }j\text{ instead of }A\text{, }%
+a_{i,j}\text{ and }q
+\end{array}
+\right) \nonumber\\
 &  =\sum_{p=1}^{n}\left(  -1\right)  ^{p+j}b_{p}\det\left(  A_{\sim p,\sim
 j}\right)  . \label{pf.thm.cramer.short.detAshj}%
 \end{align}
@@ -20348,8 +20413,8 @@ Now, let us forget that we fixed $i$. We thus have proven
 ,n\right\}  $. Now, let $d$ be the vector $\left(  \det\left(  A_{1}%
 ^{\#}\right)  ,\det\left(  A_{2}^{\#}\right)  ,\ldots,\det\left(  A_{n}%
 ^{\#}\right)  \right)  ^{T}$. Thus,%
-\[
-d=\left(  \det\left(  A_{1}^{\#}\right)  ,\det\left(  A_{2}^{\#}\right)
+\begin{align*}
+d  &  =\left(  \det\left(  A_{1}^{\#}\right)  ,\det\left(  A_{2}^{\#}\right)
 ,\ldots,\det\left(  A_{n}^{\#}\right)  \right)  ^{T}=\left(
 \begin{array}
 [c]{c}%
@@ -20358,9 +20423,10 @@ d=\left(  \det\left(  A_{1}^{\#}\right)  ,\det\left(  A_{2}^{\#}\right)
 \vdots\\
 \det\left(  A_{n}^{\#}\right)
 \end{array}
-\right)  =\left(  \det\left(  A_{i}^{\#}\right)  \right)  _{1\leq i\leq
-n,\ 1\leq j\leq1}.
-\]
+\right) \\
+&  =\left(  \det\left(  A_{i}^{\#}\right)  \right)  _{1\leq i\leq n,\ 1\leq
+j\leq1}.
+\end{align*}
 The definition of the product of two matrices shows that%
 \begin{align*}
 A\cdot d  &  =\left(  \underbrace{\sum_{k=1}^{n}a_{i,k}\det\left(  A_{k}%
@@ -20516,9 +20582,10 @@ Applying (\ref{pf.thm.cramer.u-th-col-C}) to $u=q$, we obtain
 Thus,%
 \begin{align*}
 \left(  c_{1,q},c_{2,q},\ldots,c_{n,q}\right)  ^{T}  &  =\left(  \text{the
-}q\text{-th column of }C\right)  =\left(  \text{the }q\text{-th column of
-}A\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{pf.thm.cramer.C.1}),
-applied to }u=q\right) \\
+}q\text{-th column of }C\right) \\
+&  =\left(  \text{the }q\text{-th column of }A\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{pf.thm.cramer.C.1}), applied to
+}u=q\right) \\
 &  =\left(  a_{1,q},a_{2,q},\ldots,a_{n,q}\right)  ^{T}%
 \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{pf.thm.cramer.u-th-col-A}), applied
 to }u=q\right)  .
@@ -20596,23 +20663,29 @@ A_{\sim p,\sim j}  &  =\operatorname*{sub}\nolimits_{1,2,\ldots,\widehat{p}%
 ,u_{2},\ldots,u_{n-1}}A\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(
 1,2,\ldots,\widehat{p},\ldots,n\right)  =\left(  v_{1},v_{2},\ldots
 ,v_{n-1}\right)  \right) \\
-&  =\left(  a_{v_{x},u_{y}}\right)  _{1\leq x\leq n-1,\ 1\leq y\leq
-n-1}\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }%
-\operatorname*{sub}\nolimits_{v_{1},v_{2},\ldots,v_{n-1}}^{u_{1},u_{2}%
-,\ldots,u_{n-1}}A\text{, since }A=\left(  a_{i,j}\right)  _{1\leq i\leq
-n,\ 1\leq j\leq n}\right)  ,
+&  =\left(  a_{v_{x},u_{y}}\right)  _{1\leq x\leq n-1,\ 1\leq y\leq n-1}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\operatorname*{sub}%
+\nolimits_{v_{1},v_{2},\ldots,v_{n-1}}^{u_{1},u_{2},\ldots,u_{n-1}}A\text{,
+since }A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  ,
 \end{align*}
 this yields $C_{\sim p,\sim j}=A_{\sim p,\sim j}$. This proves
-(\ref{pf.thm.cramer.CA}).}. Now,%
+(\ref{pf.thm.cramer.CA}).}.
+
+Now,%
 \begin{align}
 \det\left(  \underbrace{A_{j}^{\#}}_{=C}\right)   &  =\det C=\sum_{p=1}%
 ^{n}\left(  -1\right)  ^{p+j}\underbrace{c_{p,j}}_{\substack{=b_{p}\\\text{(by
 (\ref{pf.thm.cramer.cpj}))}}}\det\left(  \underbrace{C_{\sim p,\sim j}%
 }_{\substack{=A_{\sim p,\sim j}\\\text{(by (\ref{pf.thm.cramer.CA}))}}}\right)
 \nonumber\\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem \ref{thm.laplace.gen}
-\textbf{(b)}, applied to }C\text{, }c_{i,j}\text{ and }j\text{ instead of
-}A\text{, }a_{i,j}\text{ and }q\right) \nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{by Theorem \ref{thm.laplace.gen} \textbf{(b)}, applied to }C\text{,
+}c_{i,j}\text{ and }j\\
+\text{instead of }A\text{, }a_{i,j}\text{ and }q
+\end{array}
+\right) \nonumber\\
 &  =\sum_{p=1}^{n}\left(  -1\right)  ^{p+j}b_{p}\det\left(  A_{\sim p,\sim
 j}\right)  . \label{pf.thm.cramer.detAshj}%
 \end{align}
@@ -20704,8 +20777,8 @@ Now, let us forget that we fixed $i$. We thus have proven
 Now, let $d$ be the vector $\left(  \det\left(  A_{1}^{\#}\right)
 ,\det\left(  A_{2}^{\#}\right)  ,\ldots,\det\left(  A_{n}^{\#}\right)
 \right)  ^{T}$. Thus,%
-\[
-d=\left(  \det\left(  A_{1}^{\#}\right)  ,\det\left(  A_{2}^{\#}\right)
+\begin{align*}
+d  &  =\left(  \det\left(  A_{1}^{\#}\right)  ,\det\left(  A_{2}^{\#}\right)
 ,\ldots,\det\left(  A_{n}^{\#}\right)  \right)  ^{T}=\left(
 \begin{array}
 [c]{c}%
@@ -20714,9 +20787,10 @@ d=\left(  \det\left(  A_{1}^{\#}\right)  ,\det\left(  A_{2}^{\#}\right)
 \vdots\\
 \det\left(  A_{n}^{\#}\right)
 \end{array}
-\right)  =\left(  \det\left(  A_{i}^{\#}\right)  \right)  _{1\leq i\leq
-n,\ 1\leq j\leq1}.
-\]
+\right) \\
+&  =\left(  \det\left(  A_{i}^{\#}\right)  \right)  _{1\leq i\leq n,\ 1\leq
+j\leq1}.
+\end{align*}
 
 
 The definition of the product of two matrices shows that%
@@ -21411,8 +21485,8 @@ from $Q$ by a sequence of mutations at sinks. This solves Exercise
 
 \begin{proof}
 [Solution to Exercise \ref{exe.ps1.1.2}.]For every $N\in\mathbb{N}$, we let
-$\left[  N\right]  $ denote the $N$-element set $\left\{  1,2,\ldots
-,N\right\}  $.
+$\left[  N\right]  $ denote the $N$-element set \newline$\left\{
+1,2,\ldots,N\right\}  $.
 
 For every $i\in\mathbb{N}$ and $j\in\mathbb{N}$, we define a \textit{filled
 }$\left(  i,j\right)  $\textit{-set} to mean a subset $S$ of $\left[
@@ -22448,8 +22522,8 @@ Let us first consider Case 1. In this case, we have $N=0$. Hence,%
 \dfrac{1}{2^{N}}\left(  2Na^{N-1}x_{1}-\left(  N-1\right)  a^{N}x_{0}\right)
 &  =\underbrace{\dfrac{1}{2^{0}}}_{=1}\left(  \underbrace{2\cdot0a^{0-1}x_{1}%
 }_{=0}-\underbrace{\left(  0-1\right)  a^{0}}_{=-1}x_{0}\right) \\
-&  =1\left(  0-\left(  -1\right)  x_{0}\right)  =1x_{0}=x_{0}=x_{N}%
-\ \ \ \ \ \ \ \ \ \ \left(  \text{since }0=N\right)  .
+&  =1\left(  0-\left(  -1\right)  x_{0}\right)  =1x_{0}=x_{0}\\
+&  =x_{N}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }0=N\right)  .
 \end{align*}
 In other words, $x_{N}=\dfrac{1}{2^{N}}\left(  2Na^{N-1}x_{1}-\left(
 N-1\right)  a^{N}x_{0}\right)  $. Hence, (\ref{sol.ps2.2.1.goal}) is proven in
@@ -22859,8 +22933,9 @@ number of lacunar subsets of $\left\{  1,2,\ldots,N-2\right\}  $ equals%
 &  \ \ \ \ \ \ \ \ \ \ +\underbrace{\left(  \text{the number of lacunar
 subsets of }\left\{  1,2,\ldots,N-2\right\}  \text{ which have type 2}\right)
 }_{=f_{N-1}}\\
-&  =f_{N-2}+f_{N-1}=f_{N-1}+f_{N-2}=f_{N}\ \ \ \ \ \ \ \ \ \ \left(  \text{by
-the recursion of the Fibonacci numbers}\right)  .
+&  =f_{N-2}+f_{N-1}=f_{N-1}+f_{N-2}\\
+&  =f_{N}\ \ \ \ \ \ \ \ \ \ \left(  \text{by the recursion of the Fibonacci
+numbers}\right)  .
 \end{align*}
 This proves (\ref{sol.ps2.2.3.goal2}) in Case 3.
 
@@ -23018,11 +23093,12 @@ c_{N}  &  =r\underbrace{c_{N-1}}_{\substack{=\sum_{i=0}^{N-2}\left(
 ^{i}\right)  \dbinom{N-2-i}{i-1}r^{N-1-2i}}_{=\sum_{i=1}^{N-2}\left(
 -1\right)  ^{i}\left(  \dbinom{N-2-i}{i}+\dbinom{N-2-i}{i-1}\right)
 r^{N-1-2i}}\\
-&  =\left(  -1\right)  ^{0}\dbinom{N-1-0}{0}r^{N-1-2\cdot0}+\sum_{i=1}%
-^{N-2}\left(  -1\right)  ^{i}\underbrace{\left(  \dbinom{N-2-i}{i}%
-+\dbinom{N-2-i}{i-1}\right)  }_{\substack{=\dbinom{\left(  N-1-i\right)
--1}{i}+\dbinom{\left(  N-1-i\right)  -1}{i-1}\\=\dbinom{N-1-i}{i}\\\text{(by
-(\ref{sol.ps2.2.S.rec1}), applied to }a=N-1-i\text{)}}}r^{N-1-2i}\\
+&  =\left(  -1\right)  ^{0}\dbinom{N-1-0}{0}r^{N-1-2\cdot0}\\
+&  \ \ \ \ \ \ \ \ \ \ +\sum_{i=1}^{N-2}\left(  -1\right)  ^{i}%
+\underbrace{\left(  \dbinom{N-2-i}{i}+\dbinom{N-2-i}{i-1}\right)
+}_{\substack{=\dbinom{\left(  N-1-i\right)  -1}{i}+\dbinom{\left(
+N-1-i\right)  -1}{i-1}\\=\dbinom{N-1-i}{i}\\\text{(by (\ref{sol.ps2.2.S.rec1}%
+), applied to }a=N-1-i\text{)}}}r^{N-1-2i}\\
 &  =\left(  -1\right)  ^{0}\dbinom{N-1-0}{0}r^{N-1-2\cdot0}+\sum_{i=1}%
 ^{N-2}\left(  -1\right)  ^{i}\dbinom{N-1-i}{i}r^{N-1-2i}\\
 &  =\sum_{i=0}^{N-2}\left(  -1\right)  ^{i}\dbinom{N-1-i}{i}r^{N-1-2i}.
@@ -23647,17 +23723,18 @@ k+1\right)  $ (since $\sigma\left(  1\right)  \leq\sigma\left(  2\right)
 <\sigma\left(  2\right)  <\cdots<\sigma\left(  n\right)  $.
 
 Let $i\in\left\{  1,2,\ldots,n\right\}  $. Then, $\sigma\left(  i\right)  $ is
-the $i$-th smallest among the numbers $\sigma\left(  1\right)  ,\sigma\left(
-2\right)  ,\ldots,\sigma\left(  n\right)  $ (because $\sigma\left(  1\right)
-<\sigma\left(  2\right)  <\cdots<\sigma\left(  n\right)  $). But since the
-numbers $\sigma\left(  1\right)  ,\sigma\left(  2\right)  ,\ldots
-,\sigma\left(  n\right)  $ are just the numbers $1,2,\ldots,n$ (possibly in a
-different order)\footnote{since $\sigma$ is a permutation of $\left\{
-1,2,\ldots,n\right\}  $}, it is clear that the $i$-th smallest among these
-numbers is $i$. Thus, $\sigma\left(  i\right)  =i$ (since $\sigma\left(
-i\right)  $ is the $i$-th smallest among the numbers $\sigma\left(  1\right)
-,\sigma\left(  2\right)  ,\ldots,\sigma\left(  n\right)  $). Hence,
-$\sigma\left(  i\right)  =i=\operatorname*{id}\left(  i\right)  $.
+the $i$-th smallest among the numbers \newline$\sigma\left(  1\right)
+,\sigma\left(  2\right)  ,\ldots,\sigma\left(  n\right)  $ (because
+$\sigma\left(  1\right)  <\sigma\left(  2\right)  <\cdots<\sigma\left(
+n\right)  $). But since the numbers $\sigma\left(  1\right)  ,\sigma\left(
+2\right)  ,\ldots,\sigma\left(  n\right)  $ are just the numbers
+$1,2,\ldots,n$ (possibly in a different order)\footnote{since $\sigma$ is a
+permutation of $\left\{  1,2,\ldots,n\right\}  $}, it is clear that the $i$-th
+smallest among these numbers is $i$. Thus, $\sigma\left(  i\right)  =i$ (since
+$\sigma\left(  i\right)  $ is the $i$-th smallest among the numbers
+$\sigma\left(  1\right)  ,\sigma\left(  2\right)  ,\ldots,\sigma\left(
+n\right)  $). Hence, $\sigma\left(  i\right)  =i=\operatorname*{id}\left(
+i\right)  $.
 
 Let us now forget that we fixed $i$. Thus, we have shown that $\sigma\left(
 i\right)  =\operatorname*{id}\left(  i\right)  $ for every $i\in\left\{
@@ -23959,13 +24036,13 @@ $A\setminus B$ of two sets $A$ and $B$ even if $B$ is not a subset of $A$, so
 the statement (\ref{sol.ps2.2.5.a.equalsets}) still makes sense.]
 
 \textit{Proof of (\ref{sol.ps2.2.5.a.equalsets}):} Let $\sigma\in S_{n}$ and
-$k\in\left\{  1,2,\ldots,n-1\right\}  $. Let $\left(  i,j\right)
+$k\in\left\{  1,2,\ldots,n-1\right\}  $. Let \newline$\left(  i,j\right)
 \in\operatorname*{Inv}\left(  \sigma\right)  \setminus\left\{  \left(
 \sigma^{-1}\left(  k+1\right)  ,\sigma^{-1}\left(  k\right)  \right)
 \right\}  $. Thus, $\left(  i,j\right)  \in\operatorname*{Inv}\left(
-\sigma\right)  $ and $\left(  i,j\right)  \neq\left(  \sigma^{-1}\left(
-k+1\right)  ,\sigma^{-1}\left(  k\right)  \right)  $. Therefore, $\left(
-\sigma\left(  j\right)  ,\sigma\left(  i\right)  \right)  \neq\left(
+\sigma\right)  $ and \newline$\left(  i,j\right)  \neq\left(  \sigma
+^{-1}\left(  k+1\right)  ,\sigma^{-1}\left(  k\right)  \right)  $. Therefore,
+$\left(  \sigma\left(  j\right)  ,\sigma\left(  i\right)  \right)  \neq\left(
 k,k+1\right)  $\ \ \ \ \footnote{\textit{Proof.} Assume the contrary. Thus,
 $\left(  \sigma\left(  j\right)  ,\sigma\left(  i\right)  \right)  =\left(
 k,k+1\right)  $. Hence, $\sigma\left(  j\right)  =k$ and $\sigma\left(
@@ -24018,9 +24095,9 @@ k+1\right)  \right)  \right\}  $ (since $\left(  i,j\right)  \in
 Now, let us forget that we fixed $\left(  i,j\right)  $. We thus have shown
 that every $\left(  i,j\right)  \in\operatorname*{Inv}\left(  \sigma\right)
 \setminus\left\{  \left(  \sigma^{-1}\left(  k+1\right)  ,\sigma^{-1}\left(
-k\right)  \right)  \right\}  $ satisfies $\left(  i,j\right)  \in
-\operatorname*{Inv}\left(  s_{k}\circ\sigma\right)  \setminus\left\{  \left(
-\sigma^{-1}\left(  k\right)  ,\sigma^{-1}\left(  k+1\right)  \right)
+k\right)  \right)  \right\}  $ satisfies \newline$\left(  i,j\right)
+\in\operatorname*{Inv}\left(  s_{k}\circ\sigma\right)  \setminus\left\{
+\left(  \sigma^{-1}\left(  k\right)  ,\sigma^{-1}\left(  k+1\right)  \right)
 \right\}  $. In other words,%
 \begin{align}
 &  \operatorname*{Inv}\left(  \sigma\right)  \setminus\left\{  \left(
@@ -24097,8 +24174,8 @@ We shall first show that for every $\sigma\in S_{n}$, we have%
 
 \textit{Proof of (\ref{sol.ps2.2.5.a.part1}):} Let $\sigma\in S_{n}$. Assume
 that $\sigma^{-1}\left(  k\right)  <\sigma^{-1}\left(  k+1\right)  $. Then,
-$\left(  \sigma^{-1}\left(  k\right)  ,\sigma^{-1}\left(  k+1\right)  \right)
-$ is a pair of integers satisfying $1\leq\sigma^{-1}\left(  k\right)
+\newline$\left(  \sigma^{-1}\left(  k\right)  ,\sigma^{-1}\left(  k+1\right)
+\right)  $ is a pair of integers satisfying $1\leq\sigma^{-1}\left(  k\right)
 <\sigma^{-1}\left(  k+1\right)  \leq n$ and $\left(  s_{k}\circ\sigma\right)
 \left(  \sigma^{-1}\left(  k\right)  \right)  >\left(  s_{k}\circ
 \sigma\right)  \left(  \sigma^{-1}\left(  k+1\right)  \right)  $%
@@ -24109,10 +24186,11 @@ $ is a pair of integers satisfying $1\leq\sigma^{-1}\left(  k\right)
 ^{-1}\left(  k+1\right)  \right)  =k$, so that $\left(  s_{k}\circ
 \sigma\right)  \left(  \sigma^{-1}\left(  k\right)  \right)  =k+1>k=\left(
 s_{k}\circ\sigma\right)  \left(  \sigma^{-1}\left(  k+1\right)  \right)  $}.
-In other words, $\left(  \sigma^{-1}\left(  k\right)  ,\sigma^{-1}\left(
-k+1\right)  \right)  $ is an inversion of $s_{k}\circ\sigma$. In other words,
-$\left(  \sigma^{-1}\left(  k\right)  ,\sigma^{-1}\left(  k+1\right)  \right)
-\in\operatorname*{Inv}\left(  s_{k}\circ\sigma\right)  $. Hence,%
+In other words, \newline$\left(  \sigma^{-1}\left(  k\right)  ,\sigma
+^{-1}\left(  k+1\right)  \right)  $ is an inversion of $s_{k}\circ\sigma$. In
+other words, $\left(  \sigma^{-1}\left(  k\right)  ,\sigma^{-1}\left(
+k+1\right)  \right)  \in\operatorname*{Inv}\left(  s_{k}\circ\sigma\right)  $.
+Hence,%
 \begin{equation}
 \left\vert \operatorname*{Inv}\left(  s_{k}\circ\sigma\right)  \setminus
 \left\{  \left(  \sigma^{-1}\left(  k\right)  ,\sigma^{-1}\left(  k+1\right)
@@ -24776,9 +24854,9 @@ This solves Exercise \ref{exe.ps2.2.5} \textbf{(b)}.
 
 \begin{proof}
 [Solution to Exercise \ref{exe.ps2.2.6}.]We need to show that if
-$p\in\mathbb{N}$ and $\left(  k_{1},k_{2},\ldots,k_{p}\right)  \in\left\{
-1,2,\ldots,n-1\right\}  ^{p}$ are such that $\sigma=s_{k_{1}}\circ s_{k_{2}%
-}\circ\cdots\circ s_{k_{p}}$, then $p\equiv\ell\left(  \sigma\right)
+$p\in\mathbb{N}$ and \newline$\left(  k_{1},k_{2},\ldots,k_{p}\right)
+\in\left\{  1,2,\ldots,n-1\right\}  ^{p}$ are such that $\sigma=s_{k_{1}}\circ
+s_{k_{2}}\circ\cdots\circ s_{k_{p}}$, then $p\equiv\ell\left(  \sigma\right)
 \operatorname{mod}2$.
 
 Let $p\in\mathbb{N}$ and $\left(  k_{1},k_{2},\ldots,k_{p}\right)  \in\left\{
@@ -24804,9 +24882,9 @@ completes the solution of Exercise \ref{exe.ps2.2.6}.
 
 \begin{proof}
 [Solution to Exercise \ref{exe.ps2.2.7}.]We have $n\geq2$. Thus, the
-permutation $s_{1}$ is well-defined. (This is the permutation which switches
-$1$ with $2$ while leaving all other elements of $\left\{  1,2,\ldots
-,n\right\}  $ unchanged.)
+permutation $s_{1}\in S_{n}$ is well-defined. (This is the permutation which
+switches $1$ with $2$ while leaving all other elements of $\left\{
+1,2,\ldots,n\right\}  $ unchanged.)
 
 Let $A_{n}$ denote the set of all even permutations in $S_{n}$. Let $C_{n}$
 denote the set of all odd permutations in $S_{n}$. The sign of a permutation
@@ -26272,7 +26350,8 @@ n\equiv3\operatorname{mod}4
 \end{array}
 \right.  =1$ (since $n\equiv0\operatorname{mod}4$ or $n\equiv
 1\operatorname{mod}4$ (since $n\equiv0\operatorname{mod}4$)), this yields
-$\left(  -1\right)  ^{w_{0}}=\left\{
+\[
+\left(  -1\right)  ^{w_{0}}=\left\{
 \begin{array}
 [c]{c}%
 1,\ \ \ \ \ \ \ \ \ \ \text{if }n\equiv0\operatorname{mod}4\text{ or }%
@@ -26280,7 +26359,9 @@ n\equiv1\operatorname{mod}4;\\
 -1,\ \ \ \ \ \ \ \ \ \ \text{if }n\equiv2\operatorname{mod}4\text{ or }%
 n\equiv3\operatorname{mod}4
 \end{array}
-\right.  $. Thus, (\ref{sol.ps4.1c.extra}) is proven in Case 1.
+\right.  .
+\]
+Thus, (\ref{sol.ps4.1c.extra}) is proven in Case 1.
 
 Let us next consider Case 2. In this case, we have $n\equiv1\operatorname{mod}%
 4$. Thus, $n=4m+1$ for some $m\in\mathbb{Z}$. Consider this $m$. We have
@@ -26300,7 +26381,8 @@ n\equiv3\operatorname{mod}4
 \end{array}
 \right.  =1$ (since $n\equiv0\operatorname{mod}4$ or $n\equiv
 1\operatorname{mod}4$ (since $n\equiv1\operatorname{mod}4$)), this yields
-$\left(  -1\right)  ^{w_{0}}=\left\{
+\[
+\left(  -1\right)  ^{w_{0}}=\left\{
 \begin{array}
 [c]{c}%
 1,\ \ \ \ \ \ \ \ \ \ \text{if }n\equiv0\operatorname{mod}4\text{ or }%
@@ -26308,7 +26390,9 @@ n\equiv1\operatorname{mod}4;\\
 -1,\ \ \ \ \ \ \ \ \ \ \text{if }n\equiv2\operatorname{mod}4\text{ or }%
 n\equiv3\operatorname{mod}4
 \end{array}
-\right.  $. Thus, (\ref{sol.ps4.1c.extra}) is proven in Case 2.
+\right.  .
+\]
+Thus, (\ref{sol.ps4.1c.extra}) is proven in Case 2.
 
 Let us next consider Case 3. In this case, we have $n\equiv2\operatorname{mod}%
 4$. Thus, $n=4m+2$ for some $m\in\mathbb{Z}$. Consider this $m$. We have%
@@ -26334,7 +26418,8 @@ n\equiv3\operatorname{mod}4
 \end{array}
 \right.  =-1$ (since $n\equiv2\operatorname{mod}4$ or $n\equiv
 3\operatorname{mod}4$ (since $n\equiv2\operatorname{mod}4$)), this yields
-$\left(  -1\right)  ^{w_{0}}=\left\{
+\[
+\left(  -1\right)  ^{w_{0}}=\left\{
 \begin{array}
 [c]{c}%
 1,\ \ \ \ \ \ \ \ \ \ \text{if }n\equiv0\operatorname{mod}4\text{ or }%
@@ -26342,7 +26427,9 @@ n\equiv1\operatorname{mod}4;\\
 -1,\ \ \ \ \ \ \ \ \ \ \text{if }n\equiv2\operatorname{mod}4\text{ or }%
 n\equiv3\operatorname{mod}4
 \end{array}
-\right.  $. Thus, (\ref{sol.ps4.1c.extra}) is proven in Case 3.
+\right.  .
+\]
+Thus, (\ref{sol.ps4.1c.extra}) is proven in Case 3.
 
 Let us finally consider Case 4. In this case, we have $n\equiv
 3\operatorname{mod}4$. Thus, $n=4m+3$ for some $m\in\mathbb{Z}$. Consider this
@@ -26369,7 +26456,8 @@ n\equiv3\operatorname{mod}4
 \end{array}
 \right.  =-1$ (since $n\equiv2\operatorname{mod}4$ or $n\equiv
 3\operatorname{mod}4$ (since $n\equiv3\operatorname{mod}4$)), this yields
-$\left(  -1\right)  ^{w_{0}}=\left\{
+\[
+\left(  -1\right)  ^{w_{0}}=\left\{
 \begin{array}
 [c]{c}%
 1,\ \ \ \ \ \ \ \ \ \ \text{if }n\equiv0\operatorname{mod}4\text{ or }%
@@ -26377,7 +26465,9 @@ n\equiv1\operatorname{mod}4;\\
 -1,\ \ \ \ \ \ \ \ \ \ \text{if }n\equiv2\operatorname{mod}4\text{ or }%
 n\equiv3\operatorname{mod}4
 \end{array}
-\right.  $. Thus, (\ref{sol.ps4.1c.extra}) is proven in Case 4.
+\right.  .
+\]
+Thus, (\ref{sol.ps4.1c.extra}) is proven in Case 4.
 
 We now have proven (\ref{sol.ps4.1c.extra}) in each of the four Cases 1, 2, 3
 and 4. Thus, (\ref{sol.ps4.1c.extra}) always holds. This finishes our solution
@@ -26536,11 +26626,14 @@ We can cancel $\left(  -1\right)  ^{\phi_{2}\circ\phi_{1}^{-1}}$ from this
 equality (since $\left(  -1\right)  ^{\phi_{2}\circ\phi_{1}^{-1}}\in\left\{
 1,-1\right\}  $ is a nonzero integer), and thus obtain $\left(  -1\right)
 ^{\phi_{1}\circ\sigma\circ\phi_{1}^{-1}}=\left(  -1\right)  ^{\phi_{2}%
-\circ\sigma\circ\phi_{2}^{-1}}$. Hence, $\left(  -1\right)  _{\phi_{1}%
-}^{\sigma}=\left(  -1\right)  ^{\phi_{1}\circ\sigma\circ\phi_{1}^{-1}}=\left(
--1\right)  ^{\phi_{2}\circ\sigma\circ\phi_{2}^{-1}}=\left(  -1\right)
-_{\phi_{2}}^{\sigma}$. As we know, this completes the solution of Exercise
-\ref{exe.ps4.2} \textbf{(a)}.
+\circ\sigma\circ\phi_{2}^{-1}}$. Hence,%
+\[
+\left(  -1\right)  _{\phi_{1}}^{\sigma}=\left(  -1\right)  ^{\phi_{1}%
+\circ\sigma\circ\phi_{1}^{-1}}=\left(  -1\right)  ^{\phi_{2}\circ\sigma
+\circ\phi_{2}^{-1}}=\left(  -1\right)  _{\phi_{2}}^{\sigma}.
+\]
+As we know, this completes the solution of Exercise \ref{exe.ps4.2}
+\textbf{(a)}.
 
 \textbf{(b)} Fix a bijection $\phi:X\rightarrow\left\{  1,2,\ldots,n\right\}
 $ for some $n\in\mathbb{N}$. (Such a bijection always exists.) We shall denote
@@ -27687,8 +27780,9 @@ i-j\right)   &  =\prod_{1\leq i<j\leq n}\left(  \underbrace{\left(
 \sigma\circ\tau\right)  \left(  i\right)  }_{=\sigma\left(  \tau\left(
 i\right)  \right)  }-\underbrace{\left(  \sigma\circ\tau\right)  \left(
 j\right)  }_{=\sigma\left(  \tau\left(  j\right)  \right)  }\right)
-=\prod_{1\leq i<j\leq n}\left(  \sigma\left(  \tau\left(  i\right)  \right)
--\sigma\left(  \tau\left(  j\right)  \right)  \right) \nonumber\\
+\nonumber\\
+&  =\prod_{1\leq i<j\leq n}\left(  \sigma\left(  \tau\left(  i\right)
+\right)  -\sigma\left(  \tau\left(  j\right)  \right)  \right) \nonumber\\
 &  =\left(  -1\right)  ^{\sigma}\cdot\left(  -1\right)  ^{\tau}\cdot
 \prod_{1\leq i<j\leq n}\left(  i-j\right)  \ \ \ \ \ \ \ \ \ \ \left(
 \text{by (\ref{sol.perm.sign.pseudoexplicit.d.1})}\right)  .
@@ -27866,16 +27960,16 @@ applying (\ref{sol.perm.cycles.short.a.jp}) to $p+1$ instead of $p$, we obtain
 $j_{p+1}=\sigma\left(  i_{p+1}\right)  $. But $q=j_{p}=\sigma\left(
 i_{p}\right)  $ (by the definition of $j_{p}$) and thus $\sigma^{-1}\left(
 q\right)  =i_{p}$. Hence,
-\[
+\begin{align*}
 \left(  \sigma\circ\operatorname*{cyc}\nolimits_{i_{1},i_{2},\ldots,i_{k}%
-}\circ\sigma^{-1}\right)  \left(  q\right)  =\sigma\left(  \operatorname*{cyc}%
-\nolimits_{i_{1},i_{2},\ldots,i_{k}}\left(  \underbrace{\sigma^{-1}\left(
-q\right)  }_{=i_{p}}\right)  \right)  =\sigma\left(
-\underbrace{\operatorname*{cyc}\nolimits_{i_{1},i_{2},\ldots,i_{k}}\left(
-i_{p}\right)  }_{\substack{=i_{p+1}\\\text{(by
-(\ref{sol.perm.cycles.short.a.cyc-manifest.1}))}}}\right)  =\sigma\left(
-i_{p+1}\right)  .
-\]
+}\circ\sigma^{-1}\right)  \left(  q\right)   &  =\sigma\left(
+\operatorname*{cyc}\nolimits_{i_{1},i_{2},\ldots,i_{k}}\left(
+\underbrace{\sigma^{-1}\left(  q\right)  }_{=i_{p}}\right)  \right)
+=\sigma\left(  \underbrace{\operatorname*{cyc}\nolimits_{i_{1},i_{2}%
+,\ldots,i_{k}}\left(  i_{p}\right)  }_{\substack{=i_{p+1}\\\text{(by
+(\ref{sol.perm.cycles.short.a.cyc-manifest.1}))}}}\right) \\
+&  =\sigma\left(  i_{p+1}\right)  .
+\end{align*}
 Compared with%
 \begin{align*}
 \operatorname*{cyc}\nolimits_{j_{1},j_{2},\ldots,j_{k}}\left(  \underbrace{q}%
@@ -27919,9 +28013,9 @@ On the other hand, $q\in\left[  n\right]  \setminus\left\{  j_{1},j_{2}%
 ,j_{k}\right\}  $) and thus $\operatorname*{cyc}\nolimits_{j_{1},j_{2}%
 ,\ldots,j_{k}}\left(  q\right)  =q$ (by
 (\ref{sol.perm.cycles.short.a.cyc-manifest.2'})). Compared with
-(\ref{sol.perm.cycles.short.a.qq.pf.5}), this yields $\left(  \sigma
-\circ\operatorname*{cyc}\nolimits_{i_{1},i_{2},\ldots,i_{k}}\circ\sigma
-^{-1}\right)  \left(  q\right)  =\operatorname*{cyc}\nolimits_{j_{1}%
+(\ref{sol.perm.cycles.short.a.qq.pf.5}), this yields \newline$\left(
+\sigma\circ\operatorname*{cyc}\nolimits_{i_{1},i_{2},\ldots,i_{k}}\circ
+\sigma^{-1}\right)  \left(  q\right)  =\operatorname*{cyc}\nolimits_{j_{1}%
 ,j_{2},\ldots,j_{k}}\left(  q\right)  $. Thus,
 (\ref{sol.perm.cycles.short.a.qq}) is proven in Case 2.
 
@@ -28554,16 +28648,16 @@ applying (\ref{sol.perm.cycles.a.jp}) to $p+1$ instead of $p$, we obtain
 $j_{p+1}=\sigma\left(  i_{p+1}\right)  $. But $q=j_{p}=\sigma\left(
 i_{p}\right)  $ (by the definition of $j_{p}$) and thus $\sigma^{-1}\left(
 q\right)  =i_{p}$. Hence,
-\[
+\begin{align*}
 \left(  \sigma\circ\operatorname*{cyc}\nolimits_{i_{1},i_{2},\ldots,i_{k}%
-}\circ\sigma^{-1}\right)  \left(  q\right)  =\sigma\left(  \operatorname*{cyc}%
-\nolimits_{i_{1},i_{2},\ldots,i_{k}}\left(  \underbrace{\sigma^{-1}\left(
-q\right)  }_{=i_{p}}\right)  \right)  =\sigma\left(
-\underbrace{\operatorname*{cyc}\nolimits_{i_{1},i_{2},\ldots,i_{k}}\left(
-i_{p}\right)  }_{\substack{=i_{p+1}\\\text{(by
-(\ref{sol.perm.cycles.a.cyc-manifest.1}))}}}\right)  =\sigma\left(
-i_{p+1}\right)  .
-\]
+}\circ\sigma^{-1}\right)  \left(  q\right)   &  =\sigma\left(
+\operatorname*{cyc}\nolimits_{i_{1},i_{2},\ldots,i_{k}}\left(
+\underbrace{\sigma^{-1}\left(  q\right)  }_{=i_{p}}\right)  \right)
+=\sigma\left(  \underbrace{\operatorname*{cyc}\nolimits_{i_{1},i_{2}%
+,\ldots,i_{k}}\left(  i_{p}\right)  }_{\substack{=i_{p+1}\\\text{(by
+(\ref{sol.perm.cycles.a.cyc-manifest.1}))}}}\right) \\
+&  =\sigma\left(  i_{p+1}\right)  .
+\end{align*}
 Compared with%
 \begin{align*}
 \operatorname*{cyc}\nolimits_{j_{1},j_{2},\ldots,j_{k}}\left(  \underbrace{q}%
@@ -28607,8 +28701,8 @@ On the other hand, $q\in\left[  n\right]  \setminus\left\{  j_{1},j_{2}%
 ,j_{k}\right\}  $) and thus $\operatorname*{cyc}\nolimits_{j_{1},j_{2}%
 ,\ldots,j_{k}}\left(  q\right)  =q$ (by
 (\ref{sol.perm.cycles.a.cyc-manifest.2'})). Compared with
-(\ref{sol.perm.cycles.a.qq.pf.5}), this yields $\left(  \sigma\circ
-\operatorname*{cyc}\nolimits_{i_{1},i_{2},\ldots,i_{k}}\circ\sigma
+(\ref{sol.perm.cycles.a.qq.pf.5}), this yields \newline$\left(  \sigma
+\circ\operatorname*{cyc}\nolimits_{i_{1},i_{2},\ldots,i_{k}}\circ\sigma
 ^{-1}\right)  \left(  q\right)  =\operatorname*{cyc}\nolimits_{j_{1}%
 ,j_{2},\ldots,j_{k}}\left(  q\right)  $. Thus, (\ref{sol.perm.cycles.a.qq}) is
 proven in Case 2.
@@ -28636,13 +28730,15 @@ i_{1}\right)  ,\sigma\left(  i_{2}\right)  ,\ldots,\sigma\left(  i_{k}\right)
 \right)  $). This solves Exercise \ref{exe.perm.cycles} \textbf{(a)}.
 
 \textbf{(b)} Let $p\in\left\{  0,1,\ldots,n-k\right\}  $. Then, $p\geq0$ and
-$p\leq n-k$. Hence, $\left\{  p+1,p+2,\ldots,p+k\right\}  \subseteq\left\{
-1,2,\ldots,n\right\}  $ (since $\underbrace{p}_{\geq0}+1\geq1$ and
-$\underbrace{p}_{\leq n-k}+k\leq n-k+k=n$). Thus, the elements $p+1,p+2,\ldots
-,p+k$ belong to $\left\{  1,2,\ldots,n\right\}  =\left[  n\right]  $. Hence,
-$\operatorname*{cyc}\nolimits_{p+1,p+2,\ldots,p+k}$ is well-defined. We let
-$\sigma$ denote the permutation $\operatorname*{cyc}\nolimits_{p+1,p+2,\ldots
-,p+k}$.
+$p\leq n-k$. Hence,
+\[
+\left\{  p+1,p+2,\ldots,p+k\right\}  \subseteq\left\{  1,2,\ldots,n\right\}
+\]
+(since $\underbrace{p}_{\geq0}+1\geq1$ and $\underbrace{p}_{\leq n-k}+k\leq
+n-k+k=n$). Thus, the elements $p+1,p+2,\ldots,p+k$ belong to $\left\{
+1,2,\ldots,n\right\}  =\left[  n\right]  $. Hence, $\operatorname*{cyc}%
+\nolimits_{p+1,p+2,\ldots,p+k}$ is well-defined. We let $\sigma$ denote the
+permutation $\operatorname*{cyc}\nolimits_{p+1,p+2,\ldots,p+k}$.
 
 The permutation $\operatorname*{cyc}\nolimits_{p+1,p+2,\ldots,p+k}$ is defined
 to be the permutation in $S_{n}$ which sends $p+1,p+2,\ldots,p+k$ to
@@ -28669,9 +28765,13 @@ and%
 \item The permutation $\operatorname*{cyc}\nolimits_{p+1,p+2,\ldots,p+k}$
 leaves all other elements of $\left[  n\right]  $ fixed (where
 \textquotedblleft other\textquotedblright\ means \textquotedblleft other than
-$p+1,p+2,\ldots,p+k$\textquotedblright). In other words, $\operatorname*{cyc}%
-\nolimits_{p+1,p+2,\ldots,p+k}\left(  q\right)  =q$ for every $q\in\left[
-n\right]  \setminus\left\{  p+1,p+2,\ldots,p+k\right\}  $. In other words,%
+$p+1,p+2,\ldots,p+k$\textquotedblright). In other words,
+\[
+\operatorname*{cyc}\nolimits_{p+1,p+2,\ldots,p+k}\left(  q\right)
+=q\ \ \ \ \ \ \ \ \ \ \text{for every }q\in\left[  n\right]  \setminus\left\{
+p+1,p+2,\ldots,p+k\right\}  .
+\]
+In other words,%
 \begin{equation}
 \sigma\left(  q\right)  =q\ \ \ \ \ \ \ \ \ \ \text{for every }q\in\left[
 n\right]  \setminus\left\{  p+1,p+2,\ldots,p+k\right\}
@@ -29190,12 +29290,12 @@ map $\alpha^{-1}\times\beta^{-1}:\left[  n\right]  \times\left[  n\right]
 Now, every $\left(  i,j\right)  \in\left[  n\right]  \times\left[  n\right]  $
 satisfies
 \begin{align*}
-\left(  \left(  \alpha^{-1}\times\beta^{-1}\right)  \circ\left(  \alpha
-\times\beta\right)  \right)  \left(  i,j\right)   &  =\left(  \alpha
-^{-1}\times\beta^{-1}\right)  \left(  \underbrace{\left(  \alpha\times
-\beta\right)  \left(  i,j\right)  }_{\substack{=\left(  \alpha\left(
-i\right)  ,\beta\left(  j\right)  \right)  \\\text{(by the definition of
-}\alpha\times\beta\text{)}}}\right) \\
+&  \left(  \left(  \alpha^{-1}\times\beta^{-1}\right)  \circ\left(
+\alpha\times\beta\right)  \right)  \left(  i,j\right) \\
+&  =\left(  \alpha^{-1}\times\beta^{-1}\right)  \left(  \underbrace{\left(
+\alpha\times\beta\right)  \left(  i,j\right)  }_{\substack{=\left(
+\alpha\left(  i\right)  ,\beta\left(  j\right)  \right)  \\\text{(by the
+definition of }\alpha\times\beta\text{)}}}\right) \\
 &  =\left(  \alpha^{-1}\times\beta^{-1}\right)  \left(  \alpha\left(
 i\right)  ,\beta\left(  j\right)  \right)  =\left(  \underbrace{\alpha
 ^{-1}\left(  \alpha\left(  i\right)  \right)  }_{=i},\underbrace{\beta
@@ -29774,10 +29874,13 @@ Hence,%
 \operatorname*{Inv}\sigma\right\vert
 \]
 (since the map $\tau\times\tau$ is a bijection (since $\tau\times\tau$ is
-invertible)). Thus, $\left\vert \operatorname*{Inv}\left(  \sigma\circ
-\tau\right)  \setminus\operatorname*{Inv}\tau\right\vert =\left\vert
-\operatorname*{Inv}\sigma\right\vert =\ell\left(  \sigma\right)  $ (by Lemma
-\ref{lem.sol.exeadd.perm.Inv.sub.l}). Hence,%
+invertible)). Thus,
+\[
+\left\vert \operatorname*{Inv}\left(  \sigma\circ\tau\right)  \setminus
+\operatorname*{Inv}\tau\right\vert =\left\vert \operatorname*{Inv}%
+\sigma\right\vert =\ell\left(  \sigma\right)
+\]
+(by Lemma \ref{lem.sol.exeadd.perm.Inv.sub.l}). Hence,%
 \begin{align*}
 \ell\left(  \sigma\right)   &  =\left\vert \operatorname*{Inv}\left(
 \sigma\circ\tau\right)  \setminus\operatorname*{Inv}\tau\right\vert
@@ -31522,7 +31625,8 @@ Now, let us come to the actual solution of Exercise \ref{exe.ps4.6k}.
 
 \begin{proof}
 [Solution to Exercise \ref{exe.ps4.6k}.]Let us write the $n\times n$-matrix
-$A$ in the form $A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$.
+$A$ in the form \newline$A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq
+j\leq n}$.
 
 \textbf{(a)} We need to prove that if we add a scalar multiple of a row of $A$
 to another row of $A$, then the determinant of $A$ does not change. In other
@@ -32011,8 +32115,8 @@ $ is a well-defined element of $S_{i}$ (since $%
 s_{i}, & \text{if }i<M;\\
 t, & \text{if }i=M
 \end{cases}
-=t$ (since $i=M$) and $M=i$ (since $i=M$)). Thus,
-(\ref{pf.lem.prodrule.S.Psi.pf.fn1.1}) is proven in Case 2.
+=t$ (since $i=M$) and $i=M$). Thus, (\ref{pf.lem.prodrule.S.Psi.pf.fn1.1}) is
+proven in Case 2.
 \par
 We have now proven (\ref{pf.lem.prodrule.S.Psi.pf.fn1.1}) in each of the two
 Cases 1 and 2. Thus, (\ref{pf.lem.prodrule.S.Psi.pf.fn1.1}) always holds
@@ -32061,17 +32165,20 @@ t, & \text{if }M=M
 =t$ (since $M=M$).
 
 But the definition of $\Psi$ yields
-\begin{align*}
-\Psi\left(  q_{1},q_{2},\ldots,q_{M}\right)   &  =\left(  \underbrace{\left(
+\[
+\Psi\left(  q_{1},q_{2},\ldots,q_{M}\right)  =\left(  \underbrace{\left(
 q_{1},q_{2},\ldots,q_{M-1}\right)  }_{=\left(  s_{1},s_{2},\ldots
-,s_{M-1}\right)  },\underbrace{q_{M}}_{=t}\right) \\
-&  =\left(  \left(  s_{1},s_{2},\ldots,s_{M-1}\right)  ,t\right)  .
-\end{align*}
+,s_{M-1}\right)  },\underbrace{q_{M}}_{=t}\right)  =\left(  \left(
+s_{1},s_{2},\ldots,s_{M-1}\right)  ,t\right)  .
+\]
 Comparing this with $\Psi\underbrace{\left(  q_{1},q_{2},\ldots,q_{M}\right)
 }_{=\left(  s_{1},s_{2},\ldots,s_{M-1},t\right)  }=\Psi\left(  s_{1}%
-,s_{2},\ldots,s_{M-1},t\right)  $, we obtain $\Psi\left(  s_{1},s_{2}%
-,\ldots,s_{M-1},t\right)  =\left(  \left(  s_{1},s_{2},\ldots,s_{M-1}\right)
-,t\right)  $. This proves (\ref{pf.lem.prodrule.S.Psi.pf.1}).
+,s_{2},\ldots,s_{M-1},t\right)  $, we obtain
+\[
+\Psi\left(  s_{1},s_{2},\ldots,s_{M-1},t\right)  =\left(  \left(  s_{1}%
+,s_{2},\ldots,s_{M-1}\right)  ,t\right)  .
+\]
+This proves (\ref{pf.lem.prodrule.S.Psi.pf.1}).
 
 Now, we have $\Phi\circ\Psi=\operatorname*{id}$%
 \ \ \ \ \footnote{\textit{Proof.} Let $\alpha\in S_{1}\times S_{2}\times
@@ -32119,10 +32226,10 @@ Now, $\beta=\left(  \underbrace{\gamma}_{=\left(  s_{1},s_{2},\ldots
 of this equality, we obtain%
 \begin{align*}
 \left(  \Psi\circ\Phi\right)  \left(  \beta\right)   &  =\left(  \Psi\circ
-\Phi\right)  \left(  \left(  s_{1},s_{2},\ldots,s_{M-1}\right)  ,t\right) \\
-&  =\Psi\left(  \underbrace{\Phi\left(  \left(  s_{1},s_{2},\ldots
-,s_{M-1}\right)  ,t\right)  }_{\substack{=\left(  s_{1},s_{2},\ldots
-,s_{M-1},t\right)  \\\text{(by the definition of }\Phi\text{)}}}\right) \\
+\Phi\right)  \left(  \left(  s_{1},s_{2},\ldots,s_{M-1}\right)  ,t\right)
+=\Psi\left(  \underbrace{\Phi\left(  \left(  s_{1},s_{2},\ldots,s_{M-1}%
+\right)  ,t\right)  }_{\substack{=\left(  s_{1},s_{2},\ldots,s_{M-1},t\right)
+\\\text{(by the definition of }\Phi\text{)}}}\right) \\
 &  =\Psi\left(  s_{1},s_{2},\ldots,s_{M-1},t\right)  =\left(  \left(
 s_{1},s_{2},\ldots,s_{M-1}\right)  ,t\right)  \ \ \ \ \ \ \ \ \ \ \left(
 \text{by (\ref{pf.lem.prodrule.S.Psi})}\right) \\
@@ -32157,8 +32264,8 @@ is a bijection (since $\Psi$ is a bijection).
 \end{verlong}
 
 For every $\left(  k_{1},k_{2},\ldots,k_{M-1}\right)  \in S_{1}\times
-S_{2}\times\cdots\times S_{M-1}$, we define an element $g_{\left(  k_{1}%
-,k_{2},\ldots,k_{M-1}\right)  }\in\mathbb{K}$ by
+S_{2}\times\cdots\times S_{M-1}$, we define an element \newline$g_{\left(
+k_{1},k_{2},\ldots,k_{M-1}\right)  }\in\mathbb{K}$ by
 \begin{equation}
 g_{\left(  k_{1},k_{2},\ldots,k_{M-1}\right)  }=\prod_{i=1}^{M-1}p_{i,k_{i}}.
 \label{pf.lem.prodrule.S.g=}%
@@ -32189,7 +32296,7 @@ $\left(  s_{1},s_{2},\ldots,s_{M}\right)  \in S_{1}\times S_{2}\times
 \prod_{i=1}^{M}p_{i,s_{i}}=\left(  \prod_{i=1}^{M-1}p_{i,s_{i}}\right)
 p_{M,s_{M}} \label{pf.lem.prodrule.S.splioff}%
 \end{equation}
-(indeed, this follows by splitting off the factor for $i=M$ from the sum
+(indeed, this follows by splitting off the factor for $i=M$ from the product
 $\prod_{i=1}^{M}p_{i,s_{i}}$).
 
 Now, if we split off the factor for $i=M$ from the product $\prod_{i=1}%
@@ -32300,13 +32407,17 @@ $\left(
 a & 1\\
 b & 0
 \end{array}
-\right)  $. Thus, $\det B=\det\left(
+\right)  $. Thus,%
+\[
+\det B=\det\left(
 \begin{array}
 [c]{cc}%
 a & 1\\
 b & 0
 \end{array}
-\right)  =a\cdot0-1\cdot b=-b$.
+\right)  =a\cdot0-1\cdot b=-b.
+\]
+
 
 Let $A$ be the $2\times2$-matrix $\left(
 \begin{array}
@@ -32586,9 +32697,9 @@ j-1\right)  +\left(  i-1\right)  =i+j-2\right)  .
 This proves (\ref{sol.ps4.pascal.1}).
 
 Now, we have $B=\left(  \dbinom{i-1}{j-1}\right)  _{1\leq i\leq n,\ 1\leq
-j\leq n}$ and therefore $B^{T}=\left(  \dbinom{j-1}{i-1}\right)  _{1\leq i\leq
-n,\ 1\leq j\leq n}$ (by the definition of $B^{T}$). Hence, the definition of
-the product $BB^{T}$ shows that%
+j\leq n}$ and therefore \newline$B^{T}=\left(  \dbinom{j-1}{i-1}\right)
+_{1\leq i\leq n,\ 1\leq j\leq n}$ (by the definition of $B^{T}$). Hence, the
+definition of the product $BB^{T}$ shows that%
 \[
 BB^{T}=\left(  \underbrace{\sum_{k=1}^{n}\dbinom{i-1}{k-1}\dbinom{j-1}{k-1}%
 }_{\substack{=\dbinom{i+j-2}{i-1}\\\text{(by (\ref{sol.ps4.pascal.1}))}%
@@ -32796,7 +32907,7 @@ inversions of }\mathbf{a}\right)  \right\vert \nonumber\\
 
 
 \item For every permutation $\tau\in S_{n}$, we denote by $\mathbf{a}\circ
-\tau$ the $n$-tuple $\left(  a_{\tau\left(  1\right)  },a_{\tau\left(
+\tau$ the $n$-tuple \newline$\left(  a_{\tau\left(  1\right)  },a_{\tau\left(
 2\right)  },\ldots,a_{\tau\left(  n\right)  }\right)  $ of integers.
 \end{itemize}
 
@@ -34501,9 +34612,12 @@ $v$.
 From $\sigma\left(  u\right)  =\sigma\left(  v\right)  $, we obtain $u=v$
 (since the map $\sigma$ is injective). This contradicts the assumption that
 $u$ and $v$ are distinct. This contradiction shows that our assumption was
-wrong, qed.}. Hence, $\left\vert \left\{  \sigma\left(  i\right)
-,\sigma\left(  i+1\right)  ,\ldots,\sigma\left(  n\right)  \right\}
-\right\vert =n-i+1$.
+wrong, qed.}. Hence,
+\[
+\left\vert \left\{  \sigma\left(  i\right)  ,\sigma\left(  i+1\right)
+,\ldots,\sigma\left(  n\right)  \right\}  \right\vert =n-i+1.
+\]
+
 
 The $i$ integers $\tau\left(  1\right)  ,\tau\left(  2\right)  ,\ldots
 ,\tau\left(  i\right)  $ are pairwise distinct\footnote{\textit{Proof.} Assume
@@ -34517,8 +34631,12 @@ $v$.
 From $\tau\left(  u\right)  =\tau\left(  v\right)  $, we obtain $u=v$ (since
 the map $\tau$ is injective). This contradicts the assumption that $u$ and $v$
 are distinct. This contradiction shows that our assumption was wrong, qed.}.
-Hence, $\left\vert \left\{  \tau\left(  1\right)  ,\tau\left(  2\right)
-,\ldots,\tau\left(  i\right)  \right\}  \right\vert =i$.
+Hence,
+\[
+\left\vert \left\{  \tau\left(  1\right)  ,\tau\left(  2\right)  ,\ldots
+,\tau\left(  i\right)  \right\}  \right\vert =i.
+\]
+
 
 Now, from (\ref{pf.lem.sorting.nmu.stronger.subset1}) and
 (\ref{pf.lem.sorting.nmu.stronger.subset2}), we see that $A$ and $B$ are two
@@ -34814,7 +34932,8 @@ x_{U}^{U-j}-x_{U}x_{U}^{U-j-1}, & \text{if }1<j<U;\\
 x_{U}^{U}-x_{U}^{2}x_{U}^{U-2}, & \text{if }j=1;\\
 x_{U}^{U-j}-x_{U}x_{U}^{U-j-1}, & \text{if }1<j<U
 \end{cases}
-\ \ \ \ \ \ \ \ \ \ \left(  \text{since }j<U\text{ (since }j\in\left\{
+\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }j<U\text{ (since }j\in\left\{
 1,2,\ldots,U-1\right\}  \text{)}\right) \\
 &  =%
 \begin{cases}
@@ -34877,7 +34996,8 @@ x_{i}^{U-j}-x_{U}x_{i}^{U-j-1}, & \text{if }1<j<U;\\
 x_{i}^{U}-x_{U}^{2}x_{i}^{U-2}, & \text{if }j=1;\\
 x_{i}^{U-j}-x_{U}x_{i}^{U-j-1}, & \text{if }1<j<U
 \end{cases}
-\ \ \ \ \ \ \ \ \ \ \left(
+\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
 \text{since }j<U\text{ (since }j\in\left\{  1,2,\ldots,U-1\right\} \\
@@ -35165,9 +35285,14 @@ satisfies%
 &  \sum_{k=1}^{m+1}\dbinom{m}{k-1}x_{i}^{k-1}y_{j}^{m-\left(  k-1\right)  }\\
 &  =\sum_{k=0}^{m}\dbinom{m}{k}x_{i}^{k}y_{j}^{m-k}\ \ \ \ \ \ \ \ \ \ \left(
 \text{here, we have substituted }k\text{ for }k-1\text{ in the sum}\right) \\
-&  =\left(  x_{i}+y_{j}\right)  ^{m}\ \ \ \ \ \ \ \ \ \ \left(  \text{since
-the binomial formula yields }\left(  x_{i}+y_{j}\right)  ^{m}=\sum_{k=0}%
-^{m}\dbinom{m}{k}x_{i}^{k}y_{j}^{m-k}\right)  ,
+&  =\left(  x_{i}+y_{j}\right)  ^{m}\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since the binomial formula yields}\\
+\left(  x_{i}+y_{j}\right)  ^{m}=\sum_{k=0}^{m}\dbinom{m}{k}x_{i}^{k}%
+y_{j}^{m-k}%
+\end{array}
+\right)  ,
 \end{align*}
 this rewrites as%
 \[
@@ -35463,7 +35588,7 @@ n-1+k+1\text{)}}}\nonumber\\
 -k}p_{\ell}y_{j}^{\ell-k}+\sum_{\ell=n}^{n-1+k}x_{i}^{k}\dbinom{\ell}{\ell
 -k}\underbrace{p_{\ell}}_{\substack{=0\\\text{(by
 (\ref{sol.vander-det.xi+yj.short.c.pk=0})}\\\text{(since }\ell\in\left\{
-n,n+1,\ldots,n-1+k\right\}  \subseteq\left\{  n,n+1,n+2,\ldots\right\}
+n,n+1,\ldots,n-1+k\right\}  \\\subseteq\left\{  n,n+1,n+2,\ldots\right\}
 \text{))}}}y_{j}^{\ell-k}\right) \nonumber\\
 &  =\sum_{k=0}^{n-1}\left(  \sum_{\ell=k}^{n-1}x_{i}^{k}\dbinom{\ell}{\ell
 -k}p_{\ell}y_{j}^{\ell-k}+\underbrace{\sum_{\ell=n}^{n-1+k}x_{i}^{k}%
@@ -35779,12 +35904,13 @@ k+1\right)  -1=k\text{)}}}\\
 \end{align*}
 (here, we renamed the summation index $k$ as $\ell$). Hence,
 (\ref{sol.vander-det.xi+yj.c.CD.1}) becomes%
-\[
-CD=\left(  \underbrace{\sum_{k=1}^{n}c_{i,k}y_{j}^{k-1}}_{=\sum_{\ell=0}%
-^{n-1}\dbinom{n-i+\ell}{\ell}p_{n-i+\ell}y_{j}^{\ell}}\right)  _{1\leq i\leq
-n,\ 1\leq j\leq n}=\left(  \sum_{\ell=0}^{n-1}\dbinom{n-i+\ell}{\ell
-}p_{n-i+\ell}y_{j}^{\ell}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}.
-\]
+\begin{align*}
+CD  &  =\left(  \underbrace{\sum_{k=1}^{n}c_{i,k}y_{j}^{k-1}}_{=\sum_{\ell
+=0}^{n-1}\dbinom{n-i+\ell}{\ell}p_{n-i+\ell}y_{j}^{\ell}}\right)  _{1\leq
+i\leq n,\ 1\leq j\leq n}\\
+&  =\left(  \sum_{\ell=0}^{n-1}\dbinom{n-i+\ell}{\ell}p_{n-i+\ell}y_{j}^{\ell
+}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}.
+\end{align*}
 
 
 Now, $B=\left(  x_{i}^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ and
@@ -35824,7 +35950,7 @@ n-1+k+1\text{)}}}\nonumber\\
 -k}p_{\ell}y_{j}^{\ell-k}+\sum_{\ell=n}^{n-1+k}x_{i}^{k}\dbinom{\ell}{\ell
 -k}\underbrace{p_{\ell}}_{\substack{=0\\\text{(by
 (\ref{sol.vander-det.xi+yj.c.pk=0})}\\\text{(since }\ell\in\left\{
-n,n+1,\ldots,n-1+k\right\}  \subseteq\left\{  n,n+1,n+2,\ldots\right\}
+n,n+1,\ldots,n-1+k\right\}  \\\subseteq\left\{  n,n+1,n+2,\ldots\right\}
 \text{))}}}y_{j}^{\ell-k}\right) \nonumber\\
 &  =\sum_{k=0}^{n-1}\left(  \sum_{\ell=k}^{n-1}x_{i}^{k}\dbinom{\ell}{\ell
 -k}p_{\ell}y_{j}^{\ell-k}+\underbrace{\sum_{\ell=n}^{n-1+k}x_{i}^{k}%
@@ -36185,11 +36311,11 @@ b_{\sigma\left(  k\right)  }=\sum\limits_{\sigma\in S_{n}}\left(  -1\right)
 +b_{2}+\cdots+b_{n}\\\text{(by (\ref{sol.det.schur-lem.sum-over-k}))}}}\\
 &  =\sum\limits_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\left(
 \prod\limits_{i=1}^{n}a_{\sigma\left(  i\right)  ,i}\right)  \left(
-b_{1}+b_{2}+\cdots+b_{n}\right)  =\left(  b_{1}+b_{2}+\cdots+b_{n}\right)
-\underbrace{\sum\limits_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}%
-\prod\limits_{i=1}^{n}a_{\sigma\left(  i\right)  ,i}}_{\substack{=\det\left(
-\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  \\\text{(by
-(\ref{sol.det.schur-lem.2}))}}}\\
+b_{1}+b_{2}+\cdots+b_{n}\right) \\
+&  =\left(  b_{1}+b_{2}+\cdots+b_{n}\right)  \underbrace{\sum\limits_{\sigma
+\in S_{n}}\left(  -1\right)  ^{\sigma}\prod\limits_{i=1}^{n}a_{\sigma\left(
+i\right)  ,i}}_{\substack{=\det\left(  \left(  a_{i,j}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}\right)  \\\text{(by (\ref{sol.det.schur-lem.2}))}}}\\
 &  =\left(  b_{1}+b_{2}+\cdots+b_{n}\right)  \det\left(  \left(
 a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  .
 \end{align*}
@@ -36579,8 +36705,9 @@ Exercise \ref{exe.ps4.6k} \textbf{(b)}, these operations do not change the
 determinant of the matrix. Thus, if we denote by $C$ the result of these
 operations, then $\det C=\det B=\det A$. On the other hand, it is easy to see
 that%
-\[
-C=\left(
+\begin{align*}
+&  C\\
+&  =\left(
 \begin{array}
 [c]{cccccc}%
 x-a_{1} & 0 & 0 & \cdots & 0 & 0\\
@@ -36592,7 +36719,7 @@ a_{1} & a_{1}+a_{2} & a_{1}+a_{2}+a_{3} & \cdots & a_{1}+a_{2}+\cdots+a_{n} &
 x+a_{1}+a_{2}+\cdots+a_{n}%
 \end{array}
 \right)  .
-\]
+\end{align*}
 This is a lower-triangular matrix. Thus, Exercise \ref{exe.ps4.3} shows that
 its determinant is the product of its diagonal entries. In other words,%
 \begin{align*}
@@ -36804,12 +36931,12 @@ $1\leq i\leq n+1$ and $1\leq j\leq n+1$.
 \par
 The definition of $s_{i,n+1}$ yields $s_{i,n+1}=1$ (since $i\leq n+1$). Now,%
 \begin{align*}
-\sum_{k=1}^{n+1}s_{i,k}c_{k,j}  &  =\underbrace{\sum_{r=1}^{n+1}}_{=\sum
-_{r\in\left\{  1,2,\ldots,n+1\right\}  }}s_{i,r}\underbrace{c_{r,j}%
-}_{\substack{=\delta_{r,j}\left(  x-a_{j}\right)  +\delta_{r,n+1}\sum
-_{k=1}^{j}a_{k}\\\text{(by the definition of }c_{r,j}\text{)}}%
-}\ \ \ \ \ \ \ \ \ \ \left(  \text{here, we renamed the summation index
-}k\text{ as }r\right) \\
+&  \sum_{k=1}^{n+1}s_{i,k}c_{k,j}\\
+&  =\underbrace{\sum_{r=1}^{n+1}}_{=\sum_{r\in\left\{  1,2,\ldots,n+1\right\}
+}}s_{i,r}\underbrace{c_{r,j}}_{\substack{=\delta_{r,j}\left(  x-a_{j}\right)
++\delta_{r,n+1}\sum_{k=1}^{j}a_{k}\\\text{(by the definition of }%
+c_{r,j}\text{)}}}\ \ \ \ \ \ \ \ \ \ \left(  \text{here, we renamed the
+summation index }k\text{ as }r\right) \\
 &  =\sum_{r\in\left\{  1,2,\ldots,n+1\right\}  }s_{i,r}\left(  \delta
 _{r,j}\left(  x-a_{j}\right)  +\delta_{r,n+1}\sum_{k=1}^{j}a_{k}\right) \\
 &  =\underbrace{\sum_{r\in\left\{  1,2,\ldots,n+1\right\}  }s_{i,r}%
@@ -36926,9 +37053,13 @@ Thus,%
 \begin{align*}
 \det\left(  \underbrace{US}_{=SC}\right)   &  =\det\left(  SC\right)
 =\underbrace{\det S}_{=1}\cdot\det C\\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem \ref{thm.det(AB)}, applied to
-}n+1\text{, }S\text{ and }C\text{ instead of }n\text{, }A\text{ and }B\right)
-\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{by Theorem \ref{thm.det(AB)}, applied to }n+1\text{, }S\text{ and }C\\
+\text{instead of }n\text{, }A\text{ and }B
+\end{array}
+\right) \\
 &  =\det C=\left(  x+\sum_{i=1}^{n}a_{i}\right)  \prod_{i=1}^{n}\left(
 x-a_{i}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
 (\ref{sol.det.a1a2anx.short.detC})}\right)  .
@@ -37314,12 +37445,12 @@ The definition of $s_{i,n+1}$ yields $s_{i,n+1}=%
 \end{cases}
 =1$ (since $i\leq n+1$). Now,%
 \begin{align*}
-\sum_{k=1}^{n+1}s_{i,k}c_{k,j}  &  =\underbrace{\sum_{r=1}^{n+1}}_{=\sum
-_{r\in\left\{  1,2,\ldots,n+1\right\}  }}s_{i,r}\underbrace{c_{r,j}%
-}_{\substack{=\delta_{r,j}\left(  x-a_{j}\right)  +\delta_{r,n+1}\sum
-_{k=1}^{j}a_{k}\\\text{(by the definition of }c_{r,j}\text{)}}%
-}\ \ \ \ \ \ \ \ \ \ \left(  \text{here, we renamed the summation index
-}k\text{ as }r\right) \\
+&  \sum_{k=1}^{n+1}s_{i,k}c_{k,j}\\
+&  =\underbrace{\sum_{r=1}^{n+1}}_{=\sum_{r\in\left\{  1,2,\ldots,n+1\right\}
+}}s_{i,r}\underbrace{c_{r,j}}_{\substack{=\delta_{r,j}\left(  x-a_{j}\right)
++\delta_{r,n+1}\sum_{k=1}^{j}a_{k}\\\text{(by the definition of }%
+c_{r,j}\text{)}}}\ \ \ \ \ \ \ \ \ \ \left(  \text{here, we renamed the
+summation index }k\text{ as }r\right) \\
 &  =\sum_{r\in\left\{  1,2,\ldots,n+1\right\}  }s_{i,r}\left(  \delta
 _{r,j}\left(  x-a_{j}\right)  +\delta_{r,n+1}\sum_{k=1}^{j}a_{k}\right) \\
 &  =\underbrace{\sum_{r\in\left\{  1,2,\ldots,n+1\right\}  }s_{i,r}%
@@ -37672,6 +37803,39 @@ b_{j}, & \text{if }i\equiv j+1\operatorname{mod}n;\\
 \end{equation}
 for every $\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}$.
 
+For every $i\in\left\{  1,2,\ldots,n\right\}  $, we have%
+\begin{align}
+a_{i,i}  &  =%
+\begin{cases}
+a_{i}, & \text{if }i=i;\\
+b_{i}, & \text{if }i\equiv i+1\operatorname{mod}n;\\
+0, & \text{otherwise}%
+\end{cases}
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{sol.det.2diags.short.aij}), applied
+to }\left(  i,i\right)  \text{ instead of }\left(  i,j\right)  \right)
+\nonumber\\
+&  =a_{i}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }i=i\right)
+\label{sol.det.2diags.short.aii}%
+\end{align}
+and%
+\begin{align}
+a_{i,z\left(  i\right)  }  &  =%
+\begin{cases}
+a_{z\left(  i\right)  }, & \text{if }i=z\left(  i\right)  ;\\
+b_{z\left(  i\right)  }, & \text{if }i\equiv z\left(  i\right)
++1\operatorname{mod}n;\\
+0, & \text{otherwise}%
+\end{cases}
+\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{sol.det.2diags.short.aij}),
+applied to }\left(  i,z\left(  i\right)  \right)  \text{ instead of }\left(
+i,j\right)  \right) \nonumber\\
+&  =a_{i}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }i\equiv z\left(  i\right)
++1\operatorname{mod}n\text{ (by (\ref{sol.det.2diags.short.zmod}))}\right)  .
+\label{sol.det.2diags.short.aizi}%
+\end{align}
+
+
 It is now easy to see that if $\sigma\in S_{n}$ satisfies $\sigma
 \notin\left\{  \operatorname*{id},z\right\}  $, then
 \begin{equation}
@@ -37729,40 +37893,10 @@ and}\\
 a_{i,z\left(  i\right)  }+\underbrace{\sum_{\substack{\sigma\in S_{n}%
 ;\\\sigma\notin\left\{  \operatorname*{id},z\right\}  }}\left(  -1\right)
 ^{\sigma}0}_{=0}\\
-&  =\prod_{i=1}^{n}\underbrace{a_{i,i}}_{\substack{=%
-\begin{cases}
-a_{i}, & \text{if }i=i;\\
-b_{i}, & \text{if }i\equiv i+1\operatorname{mod}n;\\
-0, & \text{otherwise}%
-\end{cases}
-\\\text{(by (\ref{sol.det.2diags.short.aij}), applied to }\left(  i,i\right)
-\text{ instead of }\left(  i,j\right)  \text{)}}}+\left(  -1\right)
-^{n-1}\prod_{i=1}^{n}\underbrace{a_{i,z\left(  i\right)  }}_{\substack{=%
-\begin{cases}
-a_{z\left(  i\right)  }, & \text{if }i=z\left(  i\right)  ;\\
-b_{z\left(  i\right)  }, & \text{if }i\equiv z\left(  i\right)
-+1\operatorname{mod}n;\\
-0, & \text{otherwise}%
-\end{cases}
-\\\text{(by (\ref{sol.det.2diags.short.aij}), applied to }\left(  i,z\left(
-i\right)  \right)  \text{ instead of }\left(  i,j\right)  \text{)}}}\\
-&  =\prod_{i=1}^{n}\underbrace{%
-\begin{cases}
-a_{i}, & \text{if }i=i;\\
-b_{i}, & \text{if }i\equiv i+1\operatorname{mod}n;\\
-0, & \text{otherwise}%
-\end{cases}
-}_{\substack{=a_{i}\\\text{(since }i=i\text{)}}}+\left(  -1\right)
-^{n-1}\prod_{i=1}^{n}\underbrace{%
-\begin{cases}
-a_{z\left(  i\right)  }, & \text{if }i=z\left(  i\right)  ;\\
-b_{z\left(  i\right)  }, & \text{if }i\equiv z\left(  i\right)
-+1\operatorname{mod}n;\\
-0, & \text{otherwise}%
-\end{cases}
-}_{\substack{=b_{z\left(  i\right)  }\\\text{(since }i\equiv z\left(
-i\right)  +1\operatorname{mod}n\text{ (by (\ref{sol.det.2diags.short.zmod}%
-)))}}}\\
+&  =\prod_{i=1}^{n}\underbrace{a_{i,i}}_{\substack{=a_{i}\\\text{(by
+(\ref{sol.det.2diags.short.aii}))}}}+\left(  -1\right)  ^{n-1}\prod_{i=1}%
+^{n}\underbrace{a_{i,z\left(  i\right)  }}_{\substack{=b_{z\left(  i\right)
+}\\\text{(by (\ref{sol.det.2diags.short.aizi}))}}}\\
 &  =\prod_{i=1}^{n}a_{i}+\left(  -1\right)  ^{n-1}\underbrace{\prod_{i=1}%
 ^{n}b_{z\left(  i\right)  }}_{\substack{=\prod_{i=1}^{n}b_{i}\\\text{(here, we
 have substituted }i\\\text{for }z\left(  i\right)  \text{ in the
@@ -38629,16 +38763,16 @@ We have $c_{k-1}=1$ (by the definition of $c_{k-1}$).
 
 Now, $0\leq k-2$ (since $k\geq2$). Hence, Proposition \ref{prop.tridiag.rec}
 \textbf{(c)} (applied to $x=0$ and $y=k$) yields%
-\[
-\det\left(  A_{0,k}\right)  =a_{k}\det\left(  A_{0,k-1}\right)  -b_{k-1}%
-\underbrace{c_{k-1}}_{=1}\det\left(  A_{0,k-2}\right)  =a_{k}\det\left(
-A_{0,k-1}\right)  -b_{k-1}\det\left(  A_{0,k-2}\right)  .
-\]
+\begin{align*}
+\det\left(  A_{0,k}\right)   &  =a_{k}\det\left(  A_{0,k-1}\right)
+-b_{k-1}\underbrace{c_{k-1}}_{=1}\det\left(  A_{0,k-2}\right) \\
+&  =a_{k}\det\left(  A_{0,k-1}\right)  -b_{k-1}\det\left(  A_{0,k-2}\right)  .
+\end{align*}
 Comparing this with%
 \begin{align*}
 u_{k}  &  =a_{k}\underbrace{u_{k-1}}_{=\det\left(  A_{0,k-1}\right)  }%
--b_{k-1}\underbrace{u_{k-2}}_{=\det\left(  A_{0,k-2}\right)  }%
-\ \ \ \ \ \ \ \ \ \ \left(  \text{by the recursive definition of }\left(
+-b_{k-1}\underbrace{u_{k-2}}_{=\det\left(  A_{0,k-2}\right)  }\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the recursive definition of }\left(
 u_{0},u_{1},\ldots,u_{n}\right)  \right) \\
 &  =a_{k}\det\left(  A_{0,k-1}\right)  -b_{k-1}\det\left(  A_{0,k-2}\right)  ,
 \end{align*}
@@ -38789,12 +38923,13 @@ words, we have $\det\left(  A_{n-\left(  K-1\right)  -1,n}\right)
 Since $n-\left(  K-1\right)  =n-K+1$, this rewrites as $\det\left(
 A_{n-K+1-1,n}\right)  =p_{n-K+1}\det\left(  A_{n-K+1,n}\right)  $. Solving
 this for $\det\left(  A_{n-K+1,n}\right)  $, we obtain%
-\begin{equation}
-\det\left(  A_{n-K+1,n}\right)  =\dfrac{\det\left(  A_{n-K+1-1,n}\right)
+\begin{align}
+\det\left(  A_{n-K+1,n}\right)   &  =\dfrac{\det\left(  A_{n-K+1-1,n}\right)
 }{p_{n-K+1}}=\dfrac{1}{p_{n-K+1}}\det\left(  \underbrace{A_{n-K+1-1,n}%
-}_{=A_{n-K,n}}\right)  =\dfrac{1}{p_{n-K+1}}\det\left(  A_{n-K,n}\right)  .
+}_{=A_{n-K,n}}\right) \nonumber\\
+&  =\dfrac{1}{p_{n-K+1}}\det\left(  A_{n-K,n}\right)  .
 \label{sol.tridiag.cf.main.pf.2}%
-\end{equation}
+\end{align}
 
 
 We have $K\in\left\{  1,2,\ldots,n-1\right\}  $ (since $K$ is positive and
@@ -39629,9 +39764,9 @@ d_{i-n,k-m}c_{k-m,j}^{\prime}, & \text{if }i>n\text{ and }j\leq\ell;\\
 
 \textit{Proof of (\ref{sol.block2x2.mult.short.entrywise}):} Let $\left(
 i,j\right)  \in\left\{  1,2,\ldots,n+n^{\prime}\right\}  \times\left\{
-1,2,\ldots,\ell+\ell^{\prime}\right\}  $. Thus, $i\in\left\{  1,2,\ldots
-,n+n^{\prime}\right\}  $ and $j\in\left\{  1,2,\ldots,\ell+\ell^{\prime
-}\right\}  $. We must be in one of the following four cases:
+1,2,\ldots,\ell+\ell^{\prime}\right\}  $. Thus, \newline$i\in\left\{
+1,2,\ldots,n+n^{\prime}\right\}  $ and $j\in\left\{  1,2,\ldots,\ell
++\ell^{\prime}\right\}  $. We must be in one of the following four cases:
 
 \textit{Case 1:} We have $i\leq n$ and $j\leq\ell$.
 
@@ -40878,8 +41013,8 @@ $ (by the definition of $\mathbf{d}_{q}$)).
 \textbf{(a)} We have%
 \begin{align*}
 \operatorname*{cols}\nolimits_{1,2,\ldots,\widehat{q},\ldots,m}A  &
-=\operatorname*{cols}\nolimits_{u_{1},u_{2},\ldots,u_{m-1}}%
-A\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(  1,2,\ldots,\widehat{q}%
+=\operatorname*{cols}\nolimits_{u_{1},u_{2},\ldots,u_{m-1}}A\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(  1,2,\ldots,\widehat{q}%
 ,\ldots,m\right)  =\left(  u_{1},u_{2},\ldots,u_{m-1}\right)  \right) \\
 &  =\left(  a_{i,u_{y}}\right)  _{1\leq i\leq n,\ 1\leq y\leq m-1}%
 \end{align*}
@@ -40907,10 +41042,10 @@ This proves Lemma \ref{lem.block2x2.tridet.last-row-minor} \textbf{(a)}.
 q}$ yields%
 \begin{align*}
 A_{\sim n,\sim q}  &  =\operatorname*{sub}\nolimits_{1,2,\ldots,\widehat{n}%
-,\ldots,n}^{1,2,\ldots,\widehat{q},\ldots,m}A=\operatorname*{sub}%
-\nolimits_{1,2,\ldots,n-1}^{1,2,\ldots,\widehat{q},\ldots,m}%
-A\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(  1,2,\ldots,\widehat{n}%
-,\ldots,n\right)  =\left(  1,2,\ldots,n-1\right)  \right) \\
+,\ldots,n}^{1,2,\ldots,\widehat{q},\ldots,m}A\\
+&  =\operatorname*{sub}\nolimits_{1,2,\ldots,n-1}^{1,2,\ldots,\widehat{q}%
+,\ldots,m}A\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(  1,2,\ldots
+,\widehat{n},\ldots,n\right)  =\left(  1,2,\ldots,n-1\right)  \right) \\
 &  =\operatorname*{sub}\nolimits_{1,2,\ldots,n-1}^{u_{1},u_{2},\ldots,u_{m-1}%
 }A\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(  1,2,\ldots,\widehat{q}%
 ,\ldots,m\right)  =\left(  u_{1},u_{2},\ldots,u_{m-1}\right)  \right) \\
@@ -41105,7 +41240,7 @@ d_{i-n,j-n}, & \text{if }i>n\text{ and }j>n
 
 
 Now, for every $q\in\left\{  1,2,\ldots,M\right\}  $, let us denote the
-$n\times\left(  M-1\right)  $-matrix $\operatorname*{cols}%
+$n\times\left(  M-1\right)  $-matrix \newline$\operatorname*{cols}%
 \nolimits_{1,2,\ldots,\widehat{q},\ldots,M}B$ by $B_{q}^{\prime}$. Thus,%
 \[
 B_{q}^{\prime}=\operatorname*{cols}\nolimits_{1,2,\ldots,\widehat{q},\ldots
@@ -41390,7 +41525,8 @@ b_{i,\mathbf{d}_{n+q}\left(  j\right)  -n}, & \text{if }i\leq n\text{ and
 d_{i-n,\mathbf{d}_{n+q}\left(  j\right)  -n}, & \text{if }i>n\text{ and
 }\mathbf{d}_{n+q}\left(  j\right)  >n
 \end{cases}
-\ \ \ \ \ \ \ \ \ \ \left(  \text{by
+\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
 (\ref{sol.block2x2.tridet.indstep.minor.pf.1}), applied to }\left(
 i,\mathbf{d}_{n+q}\left(  j\right)  \right)  \text{ instead of }\left(
 i,j\right)  \right) \\
@@ -41493,7 +41629,8 @@ b_{i,\mathbf{d}_{n+q}\left(  j\right)  -n}, & \text{if }i\leq n\text{ and
 d_{i-n,\mathbf{d}_{n+q}\left(  j\right)  -n}, & \text{if }i>n\text{ and
 }\mathbf{d}_{n+q}\left(  j\right)  >n
 \end{cases}
-\ \ \ \ \ \ \ \ \ \ \left(  \text{by
+\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
 (\ref{sol.block2x2.tridet.indstep.minor.pf.1}), applied to }\left(
 i,\mathbf{d}_{n+q}\left(  j\right)  \right)  \text{ instead of }\left(
 i,j\right)  \right) \\
@@ -41557,7 +41694,8 @@ b_{i,\mathbf{d}_{q}\left(  j-n\right)  }, & \text{if }i\leq n\text{ and
 0, & \text{if }i>n\text{ and }j\leq n;\\
 d_{i-n,\mathbf{d}_{q}\left(  j-n\right)  }, & \text{if }i>n\text{ and }j>n
 \end{cases}
-\right)  _{1\leq i\leq n+M-1,\ 1\leq j\leq n+M-1}=\left(
+\right)  _{1\leq i\leq n+M-1,\ 1\leq j\leq n+M-1}\\
+&  =\left(
 \begin{array}
 [c]{cc}%
 A & B_{q}^{\prime}\\
@@ -41659,9 +41797,10 @@ n+M\right)  +q}u_{n+M,q}\det\left(  U_{\sim\left(  n+M\right)  ,\sim q}\right)
 \nonumber\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }0\leq n\leq n+M\right) \nonumber\\
 &  =\underbrace{\sum_{q=1}^{n}\left(  -1\right)  ^{\left(  n+M\right)
-+q}0\det\left(  U_{\sim\left(  n+M\right)  ,\sim q}\right)  }_{=0}%
-+\sum_{q=n+1}^{n+M}\left(  -1\right)  ^{\left(  n+M\right)  +q}u_{n+M,q}%
-\det\left(  U_{\sim\left(  n+M\right)  ,\sim q}\right) \nonumber\\
++q}0\det\left(  U_{\sim\left(  n+M\right)  ,\sim q}\right)  }_{=0}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ +\sum_{q=n+1}^{n+M}\left(  -1\right)  ^{\left(
+n+M\right)  +q}u_{n+M,q}\det\left(  U_{\sim\left(  n+M\right)  ,\sim q}\right)
+\nonumber\\
 &  =\sum_{q=n+1}^{n+M}\left(  -1\right)  ^{\left(  n+M\right)  +q}%
 u_{n+M,q}\det\left(  U_{\sim\left(  n+M\right)  ,\sim q}\right) \nonumber\\
 &  =\sum_{q=1}^{M}\underbrace{\left(  -1\right)  ^{\left(  n+M\right)
@@ -41958,7 +42097,7 @@ We know that $j_{1}$ is an element $j\in\left\{  1,2,\ldots,n\right\}  $
 satisfying $a_{i}=b_{j}$. In other words, $j_{1}$ is an element of $\left\{
 1,2,\ldots,n\right\}  $ satisfying $a_{i}=b_{j_{1}}$.
 \par
-We know that $j_{2}$ is an element $j\in\left\{  2,2,\ldots,n\right\}  $
+We know that $j_{2}$ is an element $j\in\left\{  1,2,\ldots,n\right\}  $
 satisfying $a_{i}=b_{j}$. In other words, $j_{2}$ is an element of $\left\{
 1,2,\ldots,n\right\}  $ satisfying $a_{i}=b_{j_{2}}$.
 \par
@@ -42068,9 +42207,9 @@ $\sigma_{2}=\operatorname*{id}$) shows that $A=\operatorname*{id}$.
 But (\ref{pf.lem.adj(AB).set.increase.A}) shows that%
 \begin{align*}
 \left(  a_{1},a_{2},\ldots,a_{n}\right)   &  =\left(  b_{A\left(  1\right)
-},b_{A\left(  2\right)  },\ldots,b_{A\left(  n\right)  }\right)  =\left(
-b_{\operatorname*{id}\left(  1\right)  },b_{\operatorname*{id}\left(
-2\right)  },\ldots,b_{\operatorname*{id}\left(  n\right)  }\right)
+},b_{A\left(  2\right)  },\ldots,b_{A\left(  n\right)  }\right) \\
+&  =\left(  b_{\operatorname*{id}\left(  1\right)  },b_{\operatorname*{id}%
+\left(  2\right)  },\ldots,b_{\operatorname*{id}\left(  n\right)  }\right)
 \ \ \ \ \ \ \ \ \ \ \left(  \text{since }A=\operatorname*{id}\right) \\
 &  =\left(  b_{1},b_{2},\ldots,b_{n}\right)  \ \ \ \ \ \ \ \ \ \ \left(
 \text{since }b_{\operatorname*{id}\left(  i\right)  }=b_{i}\text{ for every
@@ -42400,15 +42539,14 @@ Also, $\left(  t_{1},t_{2},\ldots,t_{n-1}\right)  =\left(  1,2,\ldots
 t_{1},t_{2},\ldots,t_{n-1}\right)  $ is an element of $\left[  n\right]
 ^{n-1}$ and satisfies $t_{1}<t_{2}<\cdots<t_{n-1}$. In other words, $\left(
 t_{1},t_{2},\ldots,t_{n-1}\right)  $ is an element $\left(  k_{1},k_{2}%
-,\ldots,k_{n-1}\right)  \in\left[  n\right]  ^{n-1}$ satisfying $\left(
-k_{1},k_{2},\ldots,k_{n-1}\right)  \in\left[  n\right]  ^{n-1}$. In other
-words,
+,\ldots,k_{n-1}\right)  \in\left[  n\right]  ^{n-1}$ satisfying $k_{1}%
+<k_{2}<\cdots<k_{n-1}$. In other words,
 \[
 \left(  t_{1},t_{2},\ldots,t_{n-1}\right)  \in\left\{  \left(  k_{1}%
 ,k_{2},\ldots,k_{n-1}\right)  \in\left[  n\right]  ^{n-1}\ \mid\ k_{1}%
 <k_{2}<\cdots<k_{n-1}\right\}  =\mathbf{I}.
 \]
-Thus, $\left(  1,2,\ldots,\widehat{k},\ldots,n\right)  \in\left(  t_{1}%
+Thus, $\left(  1,2,\ldots,\widehat{k},\ldots,n\right)  =\left(  t_{1}%
 ,t_{2},\ldots,t_{n-1}\right)  =\mathbf{I}$, qed.}. Hence, we can define a map%
 \[
 \Phi:\left\{  1,2,\ldots,n\right\}  \rightarrow\mathbf{I}%
@@ -42771,11 +42909,11 @@ Hence,%
 \underbrace{\operatorname*{cols}\nolimits_{g_{1},g_{2},\ldots,g_{u}}\left(
 \operatorname*{rows}\nolimits_{i_{1},i_{2},\ldots,i_{u}}A\right)
 }_{=\operatorname*{sub}\nolimits_{i_{1},i_{2},\ldots,i_{u}}^{g_{1}%
-,g_{2},\ldots,g_{u}}A}\right)  \cdot\det\left(
-\underbrace{\operatorname*{rows}\nolimits_{g_{1},g_{2},\ldots,g_{u}}\left(
-\operatorname*{cols}\nolimits_{j_{1},j_{2},\ldots,j_{u}}B\right)
-}_{=\operatorname*{sub}\nolimits_{g_{1},g_{2},\ldots,g_{u}}^{j_{1}%
-,j_{2},\ldots,j_{u}}B}\right) \\
+,g_{2},\ldots,g_{u}}A}\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \cdot\det\left(  \underbrace{\operatorname*{rows}%
+\nolimits_{g_{1},g_{2},\ldots,g_{u}}\left(  \operatorname*{cols}%
+\nolimits_{j_{1},j_{2},\ldots,j_{u}}B\right)  }_{=\operatorname*{sub}%
+\nolimits_{g_{1},g_{2},\ldots,g_{u}}^{j_{1},j_{2},\ldots,j_{u}}B}\right) \\
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
