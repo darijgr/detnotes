@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Tuesday, April 26, 2016 17:19:03}
+%TCIDATA{LastRevised=Tuesday, April 26, 2016 23:00:03}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -3598,11 +3598,11 @@ Since $n+n=2n$, this rewrites as $\dbinom{2n}{n}=\sum_{k=0}^{n}\dbinom{n}%
 Proposition \ref{prop.vandermonde.consequences} \textbf{(a)} (applied to $-y$
 instead of $y$) yields%
 \begin{align*}
-\dbinom{x+\left(  -y\right)  }{n} &  =\sum_{k=0}^{n}\dbinom{x}{k}\dbinom
+\dbinom{x+\left(  -y\right)  }{n}  &  =\sum_{k=0}^{n}\dbinom{x}{k}\dbinom
 {-y}{n-k}=\sum_{k=0}^{n}\dbinom{x}{n-k}\underbrace{\dbinom{-y}{n-\left(
 n-k\right)  }}_{=\dbinom{-y}{k}}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we substituted }n-k\text{ for
-}k\text{ in the sum}\right)  \\
+}k\text{ in the sum}\right) \\
 &  =\sum_{k=0}^{n}\dbinom{x}{n-k}\underbrace{\dbinom{-y}{k}}%
 _{\substack{=\left(  -1\right)  ^{k}\dbinom{k-\left(  -y\right)  -1}%
 {k}\\\text{(by (\ref{eq.binom.upper-neg}), applied to }k\text{ and }-y\text{
@@ -4761,6 +4761,28 @@ Source: \cite[(5.55)]{GKP}; see also
 \href{http://www.artofproblemsolving.com/community/c6h262752}{http://www.artofproblemsolving.com/community/c6h262752}
 .
 \end{noncompile}
+
+The following exercise is a variation on (\ref{eq.binom.int}):
+
+\begin{addexercise}
+\label{exeadd.choose.a/b}Let $a$ and $b$ be two integers such that $b\neq0$.
+Let $n\in\mathbb{N}$. Show that there exists some $N\in\mathbb{N}$ such that
+$b^{N}\dbinom{a/b}{n}\in\mathbb{Z}$.
+
+[\textbf{Hint:} I am not aware of a combinatorial solution to this exercise!
+(I.e., I don't know what the numbers $b^{N}\dbinom{a/b}{n}$ count, even when
+they are nonnegative.) All solutions that I know use some (elementary) number
+theory. For the probably most slickest (although unmotivated) solution, basic
+modular arithmetic suffices; here is a roadmap: First, show that if $b$ and
+$c$ are integers such that $c>0$, then there exists an $s\in\mathbb{Z}$ such
+that $b^{c-1}\equiv sb^{c}\operatorname{mod}c$\ \ \ \ \footnotemark. Apply
+this to $c=n!$ and conclude that $b^{n!}\left(  a/b-i\right)  \equiv
+b^{n!}\left(  sa-i\right)  \operatorname{mod}n!$ for every $i\in\mathbb{Z}$.
+Now use $\dbinom{sa}{n}\in\mathbb{Z}$.]
+\end{addexercise}
+
+\footnotetext{To prove this, argue that at least two of $b^{0},b^{1}%
+,\ldots,b^{c}$ are congruent modulo $c$.}
 
 \section{\label{chp.recur}Recurrent sequences}
 
@@ -22463,6 +22485,283 @@ k\\\text{instead of }m\text{ and }n\text{))}}}\\
 .
 \end{align*}
 This proves Corollary \ref{cor.AoPS262752.X=n}.
+\end{proof}
+
+\subsection{Solution to Additional exercise \ref{exeadd.choose.a/b}}
+
+Before we solve Additional exercise \ref{exeadd.choose.a/b}, let us prove two
+basic facts in modular arithmetic:
+
+\begin{proposition}
+\label{prop.exeadd.choose.a/b.lem1}Let $b$ and $c$ be two integers such that
+$c>0$. Then, there exists an $s\in\mathbb{Z}$ such that $b^{c-1}\equiv
+sb^{c}\operatorname{mod}c$.
+\end{proposition}
+
+\begin{proof}
+[Proof of Proposition \ref{prop.exeadd.choose.a/b.lem1}.]For every integer
+$m$, let $m\%c$ denote the remainder obtained when $m$ is divided by $c$.
+Thus, every integer $m$ satisfies%
+\begin{equation}
+m\%c\in\left\{  0,1,\ldots,c-1\right\}
+\label{pf.prop.exeadd.choose.a/b.lem1.rem.1}%
+\end{equation}
+and%
+\begin{equation}
+m\%c\equiv m\operatorname{mod}c. \label{pf.prop.exeadd.choose.a/b.lem1.rem.2}%
+\end{equation}
+
+
+We shall now show that two of the $c+1$ integers $b^{0}\%c,b^{1}%
+\%c,\ldots,b^{c}\%c$ are equal.
+
+Indeed, assume the contrary (for the sake of contradiction). Thus, the $c+1$
+integers $b^{0}\%c,b^{1}\%c,\ldots,b^{c}\%c$ are pairwise distinct. Hence,%
+\[
+\left\vert \left\{  b^{0}\%c,b^{1}\%c,\ldots,b^{c}\%c\right\}  \right\vert
+=c+1.
+\]
+But we have $b^{i}\%c\in\left\{  0,1,\ldots,c-1\right\}  $ for each
+$i\in\left\{  0,1,\ldots,c\right\}  $ (by
+(\ref{pf.prop.exeadd.choose.a/b.lem1.rem.1}), applied to $m=b^{i}$). Thus,%
+\[
+\left\{  b^{0}\%c,b^{1}\%c,\ldots,b^{c}\%c\right\}  \subseteq\left\{
+0,1,\ldots,c-1\right\}  .
+\]
+Therefore,%
+\[
+\left\vert \left\{  b^{0}\%c,b^{1}\%c,\ldots,b^{c}\%c\right\}  \right\vert
+\leq\left\vert \left\{  0,1,\ldots,c-1\right\}  \right\vert =c,
+\]
+so that%
+\[
+c\geq\left\vert \left\{  b^{0}\%c,b^{1}\%c,\ldots,b^{c}\%c\right\}
+\right\vert =c+1.
+\]
+This contradicts $c<c+1$. This contradiction shows that our assumption was
+wrong. Hence, we have proven that two of the $c+1$ integers $b^{0}%
+\%c,b^{1}\%c,\ldots,b^{c}\%c$ are equal. In other words, there exist two
+distinct elements $u$ and $v$ of $\left\{  0,1,\ldots,c\right\}  $ such that
+$b^{u}\%c=b^{v}\%c$. Consider these $u$ and $v$.
+
+We can WLOG assume that $u\leq v$ (since otherwise, we can simply switch $u$
+with $v$, and nothing changes). Assume this. Thus, $u\leq v$, so that $u<v$
+(since $u$ and $v$ are distinct).
+
+Now, (\ref{pf.prop.exeadd.choose.a/b.lem1.rem.2}) (applied to $m=b^{u}$)
+yields $b^{u}\%c\equiv b^{u}\operatorname{mod}c$. Also,
+(\ref{pf.prop.exeadd.choose.a/b.lem1.rem.2}) (applied to $m=b^{v}$) yields
+$b^{v}\%c\equiv b^{v}\operatorname{mod}c$. Thus, $b^{u}\equiv b^{u}%
+\%c=b^{v}\%c\equiv b^{v}\operatorname{mod}c$.
+
+Also, $u\in\left\{  0,1,\ldots,c\right\}  $, so that $0\leq u$. Also,
+$v\in\left\{  0,1,\ldots,c\right\}  $, so that $v\leq c$. Hence,
+$c-v\in\mathbb{N}$. Thus, $b^{c-v}$ is a well-defined integer.
+
+Also, $0\leq u<v$, so that $0\leq v-1$ (since $0$ and $v$ are integers). Thus,
+$v-1\in\mathbb{N}$, so that $b^{v-1}$ is a well-defined integer.
+
+But $u<v$, and thus $u\leq v-1$ (since $u$ and $v$ are integers). Hence,
+$\left(  v-1\right)  -u\in\mathbb{N}$. Thus, $b^{\left(  v-1\right)  -u}$ is a
+well-defined integer. Set $t=b^{\left(  v-1\right)  -u}$. Thus, $t$ is an integer.
+
+Now, $v-1=\left(  \left(  v-1\right)  -u\right)  +u$, and thus%
+\begin{align*}
+b^{v-1}  &  =b^{\left(  \left(  v-1\right)  -u\right)  +u}%
+=\underbrace{b^{\left(  v-1\right)  -u}}_{=t}b^{u}\ \ \ \ \ \ \ \ \ \ \left(
+\text{since }0\leq u\leq v-1\right) \\
+&  =t\underbrace{b^{u}}_{\equiv b^{v}\operatorname{mod}c}\equiv tb^{v}%
+\operatorname{mod}c.
+\end{align*}
+
+
+Now, $c-1=\left(  v-1\right)  +\left(  c-v\right)  $, so that%
+\begin{align*}
+b^{c-1}  &  =b^{\left(  v-1\right)  +\left(  c-v\right)  }=\underbrace{b^{v-1}%
+}_{\equiv tb^{v}\operatorname{mod}c}b^{c-v}\ \ \ \ \ \ \ \ \ \ \left(
+\text{since }v-1\in\mathbb{N}\text{ and }c-v\in\mathbb{N}\right) \\
+&  \equiv t\underbrace{b^{v}b^{c-v}}_{=b^{v+\left(  c-v\right)  }=b^{c}%
+}=tb^{c}\operatorname{mod}c.
+\end{align*}
+Hence, there exists an $s\in\mathbb{Z}$ such that $b^{c-1}\equiv
+sb^{c}\operatorname{mod}c$ (namely, $s=t$). This proves Proposition
+\ref{prop.exeadd.choose.a/b.lem1}.
+\end{proof}
+
+\begin{lemma}
+\label{lem.exeadd.choose.a/b.prod-of-congs}Let $n\in\mathbb{N}$. Let $c$ be a
+positive integer. Let $u_{0},u_{1},\ldots,u_{n-1}$ be $n$ integers. Let
+$v_{0},v_{1},\ldots,v_{n-1}$ be $n$ integers. Let $d$ be an integer. Assume
+that%
+\begin{equation}
+du_{i}\equiv dv_{i}\operatorname{mod}c\ \ \ \ \ \ \ \ \ \ \text{for each }%
+i\in\left\{  0,1,\ldots,n-1\right\}  .
+\label{eq.lem.exeadd.choose.a/b.prod-of-congs.cond}%
+\end{equation}
+Then,%
+\[
+d\prod_{i=0}^{n-1}u_{i}\equiv d\prod_{i=0}^{n-1}v_{i}\operatorname{mod}c.
+\]
+
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.exeadd.choose.a/b.prod-of-congs}.]We claim that%
+\begin{equation}
+d\prod_{i=0}^{k-1}u_{i}\equiv d\prod_{i=0}^{k-1}v_{i}\operatorname{mod}c
+\label{pf.lem.exeadd.choose.a/b.prod-of-congs.goal}%
+\end{equation}
+for each $k\in\left\{  0,1,\ldots,n\right\}  $
+
+\textit{Proof of (\ref{pf.lem.exeadd.choose.a/b.prod-of-congs.goal}):} We
+shall prove (\ref{pf.lem.exeadd.choose.a/b.prod-of-congs.goal}) by induction
+over $c$:
+
+\textit{Induction base:} We have $d\underbrace{\prod_{i=0}^{0-1}u_{i}%
+}_{=\left(  \text{empty product}\right)  =1}=d$. Comparing this with
+\newline$d\underbrace{\prod_{i=0}^{0-1}v_{i}}_{=\left(  \text{empty
+product}\right)  =1}=d$, we obtain $d\prod_{i=0}^{0-1}u_{i}=d\prod_{i=0}%
+^{0-1}v_{i}$. Hence, $d\prod_{i=0}^{0-1}u_{i}\equiv d\prod_{i=0}^{0-1}%
+v_{i}\operatorname{mod}c$. In other words,
+(\ref{pf.lem.exeadd.choose.a/b.prod-of-congs.goal}) holds for $k=0$. This
+completes the induction base.
+
+\textit{Induction step:} Let $K\in\left\{  0,1,\ldots,n\right\}  $ be
+positive. Assume that (\ref{pf.lem.exeadd.choose.a/b.prod-of-congs.goal})
+holds for $k=K-1$. We must show that
+(\ref{pf.lem.exeadd.choose.a/b.prod-of-congs.goal}) holds for $k=K$.
+
+We have $K\in\left\{  1,2,\ldots,n\right\}  $ (since $K\in\left\{
+0,1,\ldots,n\right\}  $ and $K$ is positive). Hence, $K-1\in\left\{
+0,1,\ldots,n-1\right\}  $.
+
+We have assumed that (\ref{pf.lem.exeadd.choose.a/b.prod-of-congs.goal}) holds
+for $k=K-1$. In other words, we have%
+\begin{equation}
+d\prod_{i=0}^{\left(  K-1\right)  -1}u_{i}\equiv d\prod_{i=0}^{\left(
+K-1\right)  -1}v_{i}\operatorname{mod}c.
+\label{pf.lem.exeadd.choose.a/b.prod-of-congs.goal.pf.1}%
+\end{equation}
+
+
+Now,%
+\begin{align*}
+d\underbrace{\prod_{i=0}^{K-1}u_{i}}_{=\left(  \prod_{i=0}^{\left(
+K-1\right)  -1}u_{i}\right)  u_{K-1}}  &  =\underbrace{d\left(  \prod
+_{i=0}^{\left(  K-1\right)  -1}u_{i}\right)  }_{\substack{\equiv d\prod
+_{i=0}^{\left(  K-1\right)  -1}v_{i}\operatorname{mod}c\\\text{(by
+(\ref{pf.lem.exeadd.choose.a/b.prod-of-congs.goal.pf.1}))}}}u_{K-1}\\
+&  \equiv\left(  d\prod_{i=0}^{\left(  K-1\right)  -1}v_{i}\right)
+u_{K-1}=\underbrace{du_{K-1}}_{\substack{\equiv dv_{K-1}\operatorname{mod}%
+c\\\text{(by (\ref{eq.lem.exeadd.choose.a/b.prod-of-congs.cond}), applied to
+}i=K-1\text{)}}}\prod_{i=0}^{\left(  K-1\right)  -1}v_{i}\\
+&  \equiv dv_{K-1}\prod_{i=0}^{\left(  K-1\right)  -1}v_{i}%
+=d\underbrace{\left(  \prod_{i=0}^{\left(  K-1\right)  -1}v_{i}\right)
+v_{K-1}}_{=\prod_{i=0}^{K-1}v_{i}}=d\prod_{i=0}^{K-1}v_{i}\operatorname{mod}c.
+\end{align*}
+In other words, (\ref{pf.lem.exeadd.choose.a/b.prod-of-congs.goal}) holds for
+$k=K$. This completes the induction step. Thus,
+(\ref{pf.lem.exeadd.choose.a/b.prod-of-congs.goal}) is proven by induction.
+
+Now, (\ref{pf.lem.exeadd.choose.a/b.prod-of-congs.goal}) (applied to $k=n$)
+yields%
+\[
+d\prod_{i=0}^{n-1}u_{i}\equiv d\prod_{i=0}^{n-1}v_{i}\operatorname{mod}c.
+\]
+This proves Lemma \ref{lem.exeadd.choose.a/b.prod-of-congs}.
+\end{proof}
+
+\begin{proof}
+[Solution to Additional exercise \ref{exeadd.choose.a/b}.]Set $c=n!$. Notice
+that $c$ is a positive integer (since $c=n!=1\cdot2\cdot\cdots\cdot n$);
+hence, $n-1\in\mathbb{N}$.
+
+Proposition \ref{prop.exeadd.choose.a/b.lem1} shows that there exists an
+$s\in\mathbb{Z}$ such that $b^{c-1}\equiv sb^{c}\operatorname{mod}c$. Consider
+this $s$.
+
+For every $i\in\mathbb{Z}$, we have%
+\begin{align}
+b^{c-1}\left(  a-bi\right)   &  =\underbrace{b^{c-1}}_{\equiv sb^{c}%
+\operatorname{mod}c}a-\underbrace{b^{c-1}b}_{=b^{c}}i\nonumber\\
+&  \equiv sb^{c}a-b^{c}i=\underbrace{b^{c}}_{=b^{c-1}b}\left(  sa-i\right)
+=b^{c-1}b\left(  sa-i\right)  \operatorname{mod}c.
+\label{sol.exeadd.choose.a/b.congr}%
+\end{align}
+Thus, in particular, (\ref{sol.exeadd.choose.a/b.congr}) holds for every
+$i\in\left\{  0,1,\ldots,n-1\right\}  $. Hence, Lemma
+\ref{lem.exeadd.choose.a/b.prod-of-congs} (applied to $d=b^{c-1}$,
+$u_{i}=a-bi$ and $v_{i}=b\left(  sa-i\right)  $) yields%
+\begin{equation}
+b^{c-1}\prod_{i=0}^{n-1}\left(  a-bi\right)  \equiv b^{c-1}\prod_{i=0}%
+^{n-1}\left(  b\left(  sa-i\right)  \right)  \operatorname{mod}c.
+\label{sol.exeadd.choose.a/b.congr.prod}%
+\end{equation}
+
+
+Now, recall that%
+\begin{align}
+\dbinom{X}{n} &  =\dfrac{X\left(  X-1\right)  \cdots\left(  X-n+1\right)
+}{n!}=\underbrace{\dfrac{1}{n!}}_{\substack{=\dfrac{1}{c}\\\text{(since
+}n!=c\text{)}}}\underbrace{X\left(  X-1\right)  \cdots\left(  X-n+1\right)
+}_{=\prod_{i=0}^{n-1}\left(  X-i\right)  }\nonumber\\
+&  =\dfrac{1}{c}\prod_{i=0}^{n-1}\left(  X-i\right)
+.\label{sol.exeadd.choose.a/b.congr.Xn}%
+\end{align}
+If we substitute $sa$ for $X$ in this polynomial identity, then we obtain%
+\[
+\dbinom{sa}{n}=\dfrac{1}{c}\prod_{i=0}^{n-1}\left(  sa-i\right)  =\dfrac
+{\prod_{i=0}^{n-1}\left(  sa-i\right)  }{c}.
+\]
+Thus,%
+\[
+\dfrac{\prod_{i=0}^{n-1}\left(  sa-i\right)  }{c}=\dbinom{sa}{n}\in\mathbb{Z}%
+\]
+(by (\ref{eq.binom.int}) (applied to $m=sa$)). In other words, $c\mid
+\prod_{i=0}^{n-1}\left(  sa-i\right)  $. In other words,
+\begin{equation}
+\prod_{i=0}^{n-1}\left(  sa-i\right)  \equiv0\operatorname{mod}%
+c.\label{sol.exeadd.choose.a/b.congr.prod0}%
+\end{equation}
+Now, (\ref{sol.exeadd.choose.a/b.congr.prod}) becomes%
+\[
+b^{c-1}\prod_{i=0}^{n-1}\left(  a-bi\right)  \equiv b^{c-1}\underbrace{\prod
+_{i=0}^{n-1}\left(  b\left(  sa-i\right)  \right)  }_{=b^{n}\prod_{i=0}%
+^{n-1}\left(  sa-i\right)  }=b^{c-1}b^{n}\underbrace{\prod_{i=0}^{n-1}\left(
+sa-i\right)  }_{\substack{\equiv0\operatorname{mod}c\\\text{(by
+(\ref{sol.exeadd.choose.a/b.congr.prod0}))}}}\equiv0\operatorname{mod}c.
+\]
+In other words,
+\begin{equation}
+c\mid b^{c-1}\prod_{i=0}^{n-1}\left(  a-bi\right)
+.\label{sol.exeadd.choose.a/b.divi}%
+\end{equation}
+
+
+If we substitute $a/b$ for $X$ in the polynomial identity
+(\ref{sol.exeadd.choose.a/b.congr.Xn}), then we obtain%
+\begin{align*}
+\dbinom{a/b}{n}  &  =\dfrac{1}{c}\prod_{i=0}^{n-1}\underbrace{\left(
+a/b-i\right)  }_{=\dfrac{1}{b}\left(  a-bi\right)  }=\dfrac{1}{c}%
+\underbrace{\prod_{i=0}^{n-1}\left(  \dfrac{1}{b}\left(  a-bi\right)  \right)
+}_{=\left(  \dfrac{1}{b}\right)  ^{n}\prod_{i=0}^{n-1}\left(  a-bi\right)  }\\
+&  =\dfrac{1}{c}\underbrace{\left(  \dfrac{1}{b}\right)  ^{n}}_{=\dfrac
+{1}{b^{n}}}\prod_{i=0}^{n-1}\left(  a-bi\right)  =\dfrac{1}{c}\cdot\dfrac
+{1}{b^{n}}\prod_{i=0}^{n-1}\left(  a-bi\right)  .
+\end{align*}
+Multiplying this equality with $b^{n+\left(  c-1\right)  }$, we obtain%
+\begin{align*}
+b^{n+\left(  c-1\right)  }\dbinom{a/b}{n}  &  =b^{n+\left(  c-1\right)  }%
+\cdot\dfrac{1}{c}\cdot\dfrac{1}{b^{n}}\prod_{i=0}^{n-1}\left(  a-bi\right)
+=\dfrac{1}{c}\cdot\underbrace{b^{n+\left(  c-1\right)  }\cdot\dfrac{1}{b^{n}}%
+}_{=b^{c-1}}\prod_{i=0}^{n-1}\left(  a-bi\right) \\
+&  =\dfrac{1}{c}\cdot b^{c-1}\prod_{i=0}^{n-1}\left(  a-bi\right)
+=\dfrac{b^{c-1}\prod_{i=0}^{n-1}\left(  a-bi\right)  }{c}\in\mathbb{Z}%
+\end{align*}
+(by (\ref{sol.exeadd.choose.a/b.divi})). Hence, there exists some
+$N\in\mathbb{N}$ such that $b^{N}\dbinom{a/b}{n}\in\mathbb{Z}$ (namely,
+$N=n+\left(  c-1\right)  $). This solves Additional exercise
+\ref{exeadd.choose.a/b}.
 \end{proof}
 
 \subsection{Solution to Exercise \ref{exe.ps2.2.1}}
