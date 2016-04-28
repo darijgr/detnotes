@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Wednesday, April 27, 2016 23:15:45}
+%TCIDATA{LastRevised=Thursday, April 28, 2016 19:53:02}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -9585,7 +9585,8 @@ $\mathbb{K}$.
 \textbf{(a)} Find a simple formula for the determinant%
 \[
 \det\left(
-\begin{array}[c]{cccc}
+\begin{array}
+[c]{cccc}%
 a & b & c & d\\
 l & 0 & 0 & e\\
 k & 0 & 0 & f\\
@@ -22746,7 +22747,7 @@ c\mid b^{c-1}\prod_{i=0}^{n-1}\left(  a-bi\right)  .
 If we substitute $a/b$ for $X$ in the polynomial identity
 (\ref{sol.exeadd.choose.a/b.congr.Xn}), then we obtain%
 \begin{align*}
-\dbinom{a/b}{n}  &  =\dfrac{1}{c}\prod_{i=0}^{n-1}\underbrace{\left(
+\dbinom{a/b}{n} &  =\dfrac{1}{c}\prod_{i=0}^{n-1}\underbrace{\left(
 a/b-i\right)  }_{=\dfrac{1}{b}\left(  a-bi\right)  }=\dfrac{1}{c}%
 \underbrace{\prod_{i=0}^{n-1}\left(  \dfrac{1}{b}\left(  a-bi\right)  \right)
 }_{=\left(  \dfrac{1}{b}\right)  ^{n}\prod_{i=0}^{n-1}\left(  a-bi\right)  }\\
@@ -22756,10 +22757,10 @@ a/b-i\right)  }_{=\dfrac{1}{b}\left(  a-bi\right)  }=\dfrac{1}{c}%
 \end{align*}
 Multiplying this equality with $b^{n+\left(  c-1\right)  }$, we obtain%
 \begin{align*}
-b^{n+\left(  c-1\right)  }\dbinom{a/b}{n}  &  =b^{n+\left(  c-1\right)  }%
+b^{n+\left(  c-1\right)  }\dbinom{a/b}{n} &  =b^{n+\left(  c-1\right)  }%
 \cdot\dfrac{1}{c}\cdot\dfrac{1}{b^{n}}\prod_{i=0}^{n-1}\left(  a-bi\right)
 =\dfrac{1}{c}\cdot\underbrace{b^{n+\left(  c-1\right)  }\cdot\dfrac{1}{b^{n}}%
-}_{=b^{c-1}}\prod_{i=0}^{n-1}\left(  a-bi\right) \\
+}_{=b^{c-1}}\prod_{i=0}^{n-1}\left(  a-bi\right)  \\
 &  =\dfrac{1}{c}\cdot b^{c-1}\prod_{i=0}^{n-1}\left(  a-bi\right)
 =\dfrac{b^{c-1}\prod_{i=0}^{n-1}\left(  a-bi\right)  }{c}\in\mathbb{Z}%
 \end{align*}
@@ -22768,6 +22769,15 @@ $N\in\mathbb{N}$ such that $b^{N}\dbinom{a/b}{n}\in\mathbb{Z}$ (namely,
 $N=n+\left(  c-1\right)  $). This solves Additional exercise
 \ref{exeadd.choose.a/b}.
 \end{proof}
+
+\begin{remark}
+Our above solution of Additional exercise \ref{exeadd.choose.a/b} shows that
+the $N$ in this exercise can be taken to be $n+\left(  n!-1\right)  $. This
+is, however, far from being the best possible value of $N$. A much better
+value that also works is $\min\left\{  0,2n-1\right\}  $. Proving this,
+however, would require a different idea (namely, studying the exponents of
+primes in $n!$).
+\end{remark}
 
 \subsection{Solution to Exercise \ref{exe.ps2.2.1}}
 
@@ -30533,7 +30543,8 @@ solution, however, is tedious (particularly for part \textbf{(b)} of this
 exercise). Let us show a smarter way.
 
 \textbf{(a)} Let $A$ be the matrix $\left(
-\begin{array}[c]{cccc}
+\begin{array}
+[c]{cccc}%
 a & b & c & d\\
 l & 0 & 0 & e\\
 k & 0 & 0 & f\\
@@ -42265,7 +42276,8 @@ This solves Exercise \ref{exe.ps4.5} \textbf{(b)}.
 \textbf{(a)} We have%
 \begin{align*}
 &  \det\left(
-\begin{array}[c]{cccc}
+\begin{array}
+[c]{cccc}%
 a & b & c & d\\
 l & 0 & 0 & e\\
 k & 0 & 0 & f\\
@@ -42273,7 +42285,8 @@ j & i & h & g
 \end{array}
 \right) \\
 &  =-\det\left(
-\begin{array}[c]{cccc}
+\begin{array}
+[c]{cccc}%
 a & b & c & d\\
 j & i & h & g\\
 k & 0 & 0 & f\\
@@ -42288,7 +42301,8 @@ l & 0 & 0 & e
 \end{array}
 \right) \\
 &  =\det\left(
-\begin{array}[c]{cccc}
+\begin{array}
+[c]{cccc}%
 c & b & a & d\\
 h & i & j & g\\
 0 & 0 & k & f\\
@@ -42303,12 +42317,14 @@ h & i & j & g\\
 \end{array}
 \right) \\
 &  =\underbrace{\det\left(
-\begin{array}[c]{cc}
+\begin{array}
+[c]{cc}%
 c & b\\
 h & i
 \end{array}
 \right)  }_{=ci-bh}\cdot\underbrace{\det\left(
-\begin{array}[c]{cc}
+\begin{array}
+[c]{cc}%
 k & f\\
 l & e
 \end{array}
@@ -42317,18 +42333,21 @@ l & e
 \begin{array}
 [c]{c}%
 \text{by Exercise \ref{exe.block2x2.tridet}, applied to }\left(
-\begin{array}[c]{cc}
+\begin{array}
+[c]{cc}%
 c & b\\
 h & i
 \end{array}
 \right)  \text{,}\\
 \left(
-\begin{array}[c]{cc}
+\begin{array}
+[c]{cc}%
 a & d\\
 j & g
 \end{array}
 \right)  \text{, }\left(
-\begin{array}[c]{cc}
+\begin{array}
+[c]{cc}%
 k & f\\
 l & e
 \end{array}
