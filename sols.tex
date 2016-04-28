@@ -9585,12 +9585,12 @@ $\mathbb{K}$.
 \textbf{(a)} Find a simple formula for the determinant%
 \[
 \det\left(
-\begin{matrix}
+\begin{array}[c]{cccc}
 a & b & c & d\\
 l & 0 & 0 & e\\
 k & 0 & 0 & f\\
 j & i & h & g
-\end{matrix}
+\end{array}
 \right)  .
 \]
 
@@ -30533,12 +30533,12 @@ solution, however, is tedious (particularly for part \textbf{(b)} of this
 exercise). Let us show a smarter way.
 
 \textbf{(a)} Let $A$ be the matrix $\left(
-\begin{matrix}
+\begin{array}[c]{cccc}
 a & b & c & d\\
 l & 0 & 0 & e\\
 k & 0 & 0 & f\\
 j & i & h & g
-\end{matrix}
+\end{array}
 \right)  $. We want to find $\det A$.
 
 We write the matrix $A$ in the form $A=\left(  a_{u,v}\right)  _{1\leq
@@ -42265,20 +42265,20 @@ This solves Exercise \ref{exe.ps4.5} \textbf{(b)}.
 \textbf{(a)} We have%
 \begin{align*}
 &  \det\left(
-\begin{matrix}
+\begin{array}[c]{cccc}
 a & b & c & d\\
 l & 0 & 0 & e\\
 k & 0 & 0 & f\\
 j & i & h & g
-\end{matrix}
+\end{array}
 \right) \\
 &  =-\det\left(
-\begin{matrix}
+\begin{array}[c]{cccc}
 a & b & c & d\\
 j & i & h & g\\
 k & 0 & 0 & f\\
 l & 0 & 0 & e
-\end{matrix}
+\end{array}
 \right) \\
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
@@ -42288,12 +42288,12 @@ l & 0 & 0 & e
 \end{array}
 \right) \\
 &  =\det\left(
-\begin{matrix}
+\begin{array}[c]{cccc}
 c & b & a & d\\
 h & i & j & g\\
 0 & 0 & k & f\\
 0 & 0 & l & e
-\end{matrix}
+\end{array}
 \right) \\
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
@@ -42303,35 +42303,35 @@ h & i & j & g\\
 \end{array}
 \right) \\
 &  =\underbrace{\det\left(
-\begin{matrix}
+\begin{array}[c]{cc}
 c & b\\
 h & i
-\end{matrix}
+\end{array}
 \right)  }_{=ci-bh}\cdot\underbrace{\det\left(
-\begin{matrix}
+\begin{array}[c]{cc}
 k & f\\
 l & e
-\end{matrix}
+\end{array}
 \right)  }_{=ek-lf}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
 \text{by Exercise \ref{exe.block2x2.tridet}, applied to }\left(
-\begin{matrix}
+\begin{array}[c]{cc}
 c & b\\
 h & i
-\end{matrix}
+\end{array}
 \right)  \text{,}\\
 \left(
-\begin{matrix}
+\begin{array}[c]{cc}
 a & d\\
 j & g
-\end{matrix}
+\end{array}
 \right)  \text{, }\left(
-\begin{matrix}
+\begin{array}[c]{cc}
 k & f\\
 l & e
-\end{matrix}
+\end{array}
 \right)  \text{, }2\text{ and }2\text{ instead of }A\text{, }B\text{,
 }D\text{, }m\text{ and }n
 \end{array}
