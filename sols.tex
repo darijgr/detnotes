@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Tuesday, April 26, 2016 23:00:03}
+%TCIDATA{LastRevised=Wednesday, April 27, 2016 23:10:44}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -3623,11 +3623,11 @@ $0\leq x\leq n$. We notice that every integer $k\geq x$ satisfies%
 \dbinom{k}{k-x}=\dbinom{k}{x} \label{pf.prop.vandermonde.consequences.e.1}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{pf.prop.vandermonde.consequences.e.1}):} Let
-$k$ be an integer such that $k\geq x$. Thus, $k-x\in\mathbb{N}$. Also, $k\geq
-k-x$ (since $x\in\mathbb{N}$). Hence, (\ref{eq.binom.symm}) (applied to $k$
-and $x$ instead of $m$ and $n$) yields $\dbinom{k}{x}=\dbinom{k}{k-x}$. This
-proves (\ref{pf.prop.vandermonde.consequences.e.1}).}. Furthermore,
-$n-x\in\mathbb{N}$ (since $x\leq n$). Hence, we can apply Proposition
+$k$ be an integer such that $k\geq x$. Thus, $k-x\in\mathbb{N}$. Recall that
+$k\geq x$. Hence, (\ref{eq.binom.symm}) (applied to $k$ and $x$ instead of $m$
+and $n$) yields $\dbinom{k}{x}=\dbinom{k}{k-x}$. This proves
+(\ref{pf.prop.vandermonde.consequences.e.1}).}. Furthermore, $n-x\in
+\mathbb{N}$ (since $x\leq n$). Hence, we can apply Proposition
 \ref{prop.vandermonde.consequences} \textbf{(a)} to $y$, $-x-1$ and $n-x$
 instead of $x$, $y$ and $n$. As a result, we obtain%
 \begin{align*}
@@ -3705,6 +3705,9 @@ then $\underbrace{\dbinom{k}{x}}_{=0}\dbinom{n-k}{y}=0$. Hence, for the rest
 of this proof of $\dbinom{k}{x}\dbinom{n-k}{y}=0$, we can WLOG assume that we
 don't have $k<x$. Assume this.
 \par
+We have $k\leq n$ (since $k\in\left\{  0,1,\ldots,n\right\}  $) and thus
+$n-k\in\mathbb{N}$.
+\par
 We have $k\geq x$ (since we don't have $k<x$), and thus $n-\underbrace{k}%
 _{\geq x}\leq n-x<y$ (since $n<x+y$). Hence, $\dbinom{n-k}{y}=0$ (by
 (\ref{eq.binom.0}), applied to $n-k$ and $y$ instead of $m$ and $n$).
@@ -3715,9 +3718,9 @@ $\sum_{k=0}^{n}\underbrace{\dbinom{k}{x}\dbinom{n-k}{y}}_{=0}=\sum_{k=0}%
 \ref{prop.vandermonde.consequences} \textbf{(f)} is proven in Case 1.
 
 Let us now consider Case 2. In this case, we have $n\geq x+y$. Hence, $n-y\geq
-x\geq0$ (since $x\in\mathbb{N}$), so that $\left(  n-y\right)  -x\in
-\mathbb{N}$. Also, $n-y\in\mathbb{N}$ (since $n-y\geq0$). Moreover, $x\leq
-n-y$. Therefore, we can apply Proposition \ref{prop.vandermonde.consequences}
+x$ (since $x\in\mathbb{N}$), so that $\left(  n-y\right)  -x\in\mathbb{N}$.
+Also, $n-y\geq x\geq0$ and thus $n-y\in\mathbb{N}$. Moreover, $x\leq n-y$.
+Therefore, we can apply Proposition \ref{prop.vandermonde.consequences}
 \textbf{(e)} to $-y-1$ and $n-y$ instead of $y$ and $n$. As a result, we
 obtain%
 \begin{align}
@@ -3835,14 +3838,13 @@ and $y\in\mathbb{N}$) and $\underbrace{n}_{\geq x+y}+1\geq x+y+1$. Hence,
 yields
 \[
 \dbinom{n+1}{x+y+1}=\dbinom{n+1}{\left(  n+1\right)  -\left(  x+y+1\right)
-}=\dbinom{n+1}{n-x-y}.
+}=\dbinom{n+1}{n-x-y}%
 \]
-Comparing this with (\ref{pf.prop.vandermonde.consequences.f.9}), we obtain%
+(since $\left(  n+1\right)  -\left(  x+y+1\right)  =n-x-y$). Comparing this
+with (\ref{pf.prop.vandermonde.consequences.f.9}), we obtain%
 \[
 \dbinom{n+1}{x+y+1}=\sum_{k=0}^{n}\dbinom{k}{x}\dbinom{n-k}{y}.
 \]
-
-
 Thus, Proposition \ref{prop.vandermonde.consequences} \textbf{(f)} is proven
 in Case 2.
 
@@ -3851,7 +3853,8 @@ We have now proven Proposition \ref{prop.vandermonde.consequences}
 \ref{prop.vandermonde.consequences} \textbf{(f)} always holds.
 
 \textbf{(g)} Let $x\in\mathbb{Z}$ and $y\in\mathbb{N}$ and $n\in\mathbb{N}$ be
-such that $x+y\geq0$ and $n\geq x$. We must be in one of the following two cases:
+such that $x+y\geq0$ and $n\geq x$. We have $x+y\in\mathbb{N}$ (since
+$x+y\geq0$). We must be in one of the following two cases:
 
 \textit{Case 1:} We have $x+y<n$.
 
@@ -3862,13 +3865,13 @@ $\dbinom{x+y}{n}=0$ (by (\ref{eq.binom.0}), applied to $m=x+y$). But every
 $k\in\left\{  0,1,\ldots,x+y\right\}  $ satisfies $\dbinom{y}{n+k-x}%
 =0$\ \ \ \ \footnote{\textit{Proof.} Let $k\in\left\{  0,1,\ldots,x+y\right\}
 $. Then, $k\geq0$, so that $n+\underbrace{k}_{\geq0}-x\geq n-x>y$ (since
-$n>x+y$ (since $x+y<n$)). In other words, $y<n+k-x$. Hence, $\dbinom{y}%
-{n+k-x}=0$ (by (\ref{eq.binom.0}), applied to $y$ and $n+k-x$ instead of $m$
-and $n$). Qed.}. Thus, $\sum_{k=0}^{x+y}\dbinom{x}{k}\underbrace{\dbinom
-{y}{n+k-x}}_{=0}=\sum_{k=0}^{x+y}\dbinom{x}{k}0=0$. Compared with
-$\dbinom{x+y}{n}=0$, this yields $\dbinom{x+y}{n}=\sum_{k=0}^{x+y}\dbinom
-{x}{k}\dbinom{y}{n+k-x}$. Thus, Proposition
-\ref{prop.vandermonde.consequences} \textbf{(g)} is proven in Case 1.
+$n>x+y$ (since $x+y<n$)). In other words, $y<n+k-x$. Also, $n+k-x>y\geq0$, so
+that $n+k-x\in\mathbb{N}$. Hence, $\dbinom{y}{n+k-x}=0$ (by (\ref{eq.binom.0}%
+), applied to $y$ and $n+k-x$ instead of $m$ and $n$). Qed.}. Thus,
+$\sum_{k=0}^{x+y}\dbinom{x}{k}\underbrace{\dbinom{y}{n+k-x}}_{=0}=\sum
+_{k=0}^{x+y}\dbinom{x}{k}0=0$. Compared with $\dbinom{x+y}{n}=0$, this yields
+$\dbinom{x+y}{n}=\sum_{k=0}^{x+y}\dbinom{x}{k}\dbinom{y}{n+k-x}$. Thus,
+Proposition \ref{prop.vandermonde.consequences} \textbf{(g)} is proven in Case 1.
 
 Let us now consider Case 2. In this case, we have $x+y\geq n$. Hence,
 $\dbinom{x+y}{n}=\dbinom{x+y}{x+y-n}$ (by (\ref{eq.binom.symm}), applied to
@@ -3907,8 +3910,9 @@ But every $k\in\mathbb{N}$ satisfying $k>x+y-n$ satisfies
 \end{equation}
 \footnote{\textit{Proof.} Let $k\in\mathbb{N}$ be such that $k>x+y-n$. Then,
 $n+\underbrace{k}_{>x+y-n}-x>n+\left(  x+y-n\right)  -x=y$. In other words,
-$y<n+k-x$. Hence, (\ref{eq.binom.0}) (applied to $y$ and $n+k-x$ instead of
-$m$ and $n$) yields $\dbinom{y}{n+k-x}=0$, qed.}. Hence,
+$y<n+k-x$. Also, $n+k-x>y\geq0$, so that $n+k-x\in\mathbb{N}$. Hence,
+(\ref{eq.binom.0}) (applied to $y$ and $n+k-x$ instead of $m$ and $n$) yields
+$\dbinom{y}{n+k-x}=0$, qed.}. Hence,
 \begin{align*}
 &  \sum_{k=0}^{x+y}\dbinom{x}{k}\dbinom{y}{n+k-x}\\
 &  =\sum_{k=0}^{x+y-n}\dbinom{x}{k}\dbinom{y}{n+k-x}+\sum_{k=\left(
@@ -4370,9 +4374,9 @@ k\\\text{instead of }m\text{ and }n\text{ (since }n\geq k\text{))}}}\dbinom
 (here, we have renamed the summation index $k$ as $i$). This proves
 Proposition \ref{prop.binom.bin-id} \textbf{(e)}.
 
-\textbf{(f)} Let $a\in\mathbb{N}$ and $b\in\mathbb{N}$. Let us first work with
-polynomials in the indeterminate $X$ (rather than functions in the variable
-$x\in\mathbb{Z}$). Recall that%
+\textbf{(f)} Let $a\in\mathbb{N}$, $b\in\mathbb{N}$ and $x\in\mathbb{Z}$. Let
+us first work with polynomials in the indeterminate $X$ (rather than functions
+in the variable $x\in\mathbb{Z}$). Recall that%
 \begin{equation}
 \dbinom{X}{a}\dbinom{X}{b}=\sum_{i=a}^{a+b}\dbinom{i}{a}\dbinom{a}%
 {a+b-i}\dbinom{X}{i}. \label{pf.prop.binom.bin-id.f.1}%
@@ -4538,11 +4542,12 @@ Substituting $X=x$ in this equality, we obtain%
 \]
 This proves Proposition \ref{prop.binom.bin-id} \textbf{(f)}.
 
-\textbf{(g)} From (\ref{eq.binom.upper-neg}) (applied to $m=-x-1$ and $n=a$),
-we obtain $\dbinom{-x-1}{a}=\left(  -1\right)  ^{a}\dbinom{a-\left(
--x-1\right)  -1}{a}=\left(  -1\right)  ^{a}\dbinom{a+x}{a}$ (since $a-\left(
--x-1\right)  -1=a+x$). The same argument (applied to $b$ instead of $a$) shows
-that $\dbinom{-x-1}{b}=\left(  -1\right)  ^{b}\dbinom{b+x}{b}$.
+\textbf{(g)} Let $a\in\mathbb{N}$, $b\in\mathbb{N}$ and $x\in\mathbb{Z}$. From
+(\ref{eq.binom.upper-neg}) (applied to $m=-x-1$ and $n=a$), we obtain
+$\dbinom{-x-1}{a}=\left(  -1\right)  ^{a}\dbinom{a-\left(  -x-1\right)  -1}%
+{a}=\left(  -1\right)  ^{a}\dbinom{a+x}{a}$ (since $a-\left(  -x-1\right)
+-1=a+x$). The same argument (applied to $b$ instead of $a$) shows that
+$\dbinom{-x-1}{b}=\left(  -1\right)  ^{b}\dbinom{b+x}{b}$.
 
 Now, Proposition \ref{prop.binom.bin-id} \textbf{(f)} (applied to $-x-1$
 instead of $x$) shows that%
@@ -4608,8 +4613,8 @@ different ways, and then concluding that the results are equal).
 [\textbf{Hint:} How many $\left(  x+y+1\right)  $-element subsets does the set
 $\left\{  1,2,\ldots,n+1\right\}  $ have? Now, for a given $k\in\left\{
 0,1,\ldots,n\right\}  $, how many $\left(  x+y+1\right)  $-element subsets
-whose $\left(  x+1\right)  $-th smallest element is $k$ does the set $\left\{
-1,2,\ldots,n+1\right\}  $ have?]
+whose $\left(  x+1\right)  $-th smallest element is $k+1$ does the set
+$\left\{  1,2,\ldots,n+1\right\}  $ have?]
 \end{addexercise}
 
 \begin{addexercise}
@@ -22701,12 +22706,12 @@ b^{c-1}\prod_{i=0}^{n-1}\left(  a-bi\right)  \equiv b^{c-1}\prod_{i=0}%
 
 Now, recall that%
 \begin{align}
-\dbinom{X}{n} &  =\dfrac{X\left(  X-1\right)  \cdots\left(  X-n+1\right)
+\dbinom{X}{n}  &  =\dfrac{X\left(  X-1\right)  \cdots\left(  X-n+1\right)
 }{n!}=\underbrace{\dfrac{1}{n!}}_{\substack{=\dfrac{1}{c}\\\text{(since
 }n!=c\text{)}}}\underbrace{X\left(  X-1\right)  \cdots\left(  X-n+1\right)
 }_{=\prod_{i=0}^{n-1}\left(  X-i\right)  }\nonumber\\
-&  =\dfrac{1}{c}\prod_{i=0}^{n-1}\left(  X-i\right)
-.\label{sol.exeadd.choose.a/b.congr.Xn}%
+&  =\dfrac{1}{c}\prod_{i=0}^{n-1}\left(  X-i\right)  .
+\label{sol.exeadd.choose.a/b.congr.Xn}%
 \end{align}
 If we substitute $sa$ for $X$ in this polynomial identity, then we obtain%
 \[
@@ -22720,8 +22725,8 @@ Thus,%
 (by (\ref{eq.binom.int}) (applied to $m=sa$)). In other words, $c\mid
 \prod_{i=0}^{n-1}\left(  sa-i\right)  $. In other words,
 \begin{equation}
-\prod_{i=0}^{n-1}\left(  sa-i\right)  \equiv0\operatorname{mod}%
-c.\label{sol.exeadd.choose.a/b.congr.prod0}%
+\prod_{i=0}^{n-1}\left(  sa-i\right)  \equiv0\operatorname{mod}c.
+\label{sol.exeadd.choose.a/b.congr.prod0}%
 \end{equation}
 Now, (\ref{sol.exeadd.choose.a/b.congr.prod}) becomes%
 \[
@@ -22733,8 +22738,8 @@ sa-i\right)  }_{\substack{\equiv0\operatorname{mod}c\\\text{(by
 \]
 In other words,
 \begin{equation}
-c\mid b^{c-1}\prod_{i=0}^{n-1}\left(  a-bi\right)
-.\label{sol.exeadd.choose.a/b.divi}%
+c\mid b^{c-1}\prod_{i=0}^{n-1}\left(  a-bi\right)  .
+\label{sol.exeadd.choose.a/b.divi}%
 \end{equation}
 
 
