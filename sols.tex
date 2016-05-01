@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Sunday, May 01, 2016 00:17:32}
+%TCIDATA{LastRevised=Sunday, May 01, 2016 14:27:49}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -1895,8 +1895,8 @@ _{\substack{s\in S;\\\mathcal{B}\left(  s\right)  }}a_{s}.
 
 \end{itemize}
 
-\subsection{\label{sect.polynomials-emergency}Polynomials: a brief
-introduction}
+\subsection{\label{sect.polynomials-emergency}Polynomials: a precise
+definition}
 
 As I have already mentioned in the above list of prerequisites, the notion of
 polynomials (in one and in several indeterminates) will be used in these
@@ -1936,21 +1936,21 @@ $n$ variables opaque, and functioning only for finitely many variables).
 More often than not, the polynomials we will be using will be polynomials in
 one variable. These are usually handled well in good books on abstract algebra
 -- e.g., in \cite[\S 4.5]{Walker87}, in \cite[Appendix G]{Hungerford}, in
-\cite[Chapter III, \S 5]{Hungerford-03}, in \cite[\S 4.1, \S 4.2]%
-{HoffmanKunze} (although in \cite[\S 4.1, \S 4.2]{HoffmanKunze}, only
-polynomials over fields are studied, but the definition applies to commutative
-rings mutatis mutandis), and in \cite[Chapter III, \S 6]{BirkMac}. Most of
-these treatments rely on the notion of a \textit{commutative ring}, which is
-not difficult but somewhat abstract (I shall introduce it below in Section
-\ref{sect.commring}).
+\cite[Chapter III, \S 5]{Hungerford-03}, in \cite[Chapter A-3]{Rotman15}, in
+\cite[\S 4.1, \S 4.2]{HoffmanKunze} (although in \cite[\S 4.1, \S 4.2]%
+{HoffmanKunze}, only polynomials over fields are studied, but the definition
+applies to commutative rings mutatis mutandis), in \cite[\S 8]{AmaEsc05}, and
+in \cite[Chapter III, \S 6]{BirkMac}. Most of these treatments rely on the
+notion of a \textit{commutative ring}, which is not difficult but somewhat
+abstract (I shall introduce it below in Section \ref{sect.commring}).
 
 Let me give a brief survey of the notion of univariate polynomials (i.e.,
-polynomials in one variable); I shall define them as sequences. For the sake
+polynomials in one variable). I shall define them as sequences. For the sake
 of simplicity, I shall only talk of polynomials with rational coefficients.
-Similarly, one can obtain polynomials with integer coefficients, with real
+Similarly, one can define polynomials with integer coefficients, with real
 coefficients, or with complex coefficients; of course, one then has to replace
 each \textquotedblleft$\mathbb{Q}$\textquotedblright\ by a \textquotedblleft%
-$\mathbb{Z}$\textquotedblright, a \textquotedblleft$\mathbb{R}$%
+$\mathbb{Z}$\textquotedblright, an \textquotedblleft$\mathbb{R}$%
 \textquotedblright\ or a \textquotedblleft$\mathbb{C}$\textquotedblright.
 
 The rough idea behind the definition of a polynomial is that a polynomial with
@@ -1969,8 +1969,8 @@ for instance, $-15$ and $0$ are polynomials.
 
 This is, of course, not a valid definition. One problem with it that it does
 not explain what a \textquotedblleft formal expression\textquotedblright\ is.
-For starters, we want an expression that is well-defined -- i.e., that we can
-substitute a rational number for $X$ and obtain a valid term. For example,
+For starters, we want an expression that is well-defined -- i.e., into that we
+can substitute a rational number for $X$ and obtain a valid term. For example,
 $X-+\cdot5$ is not well-defined, so it does not fit our bill; neither is the
 \textquotedblleft empty expression\textquotedblright. Furthermore, when do we
 want two \textquotedblleft formal expressions\textquotedblright\ to be viewed
@@ -2061,14 +2061,16 @@ and a new complex $\alpha$ might perhaps no longer satisfy $p\left(
 but ruling this out is not obvious if you regard polynomials as functions.
 \par
 \item (This requires some familiarity with finite fields:) Treating
-polynomials as functions works halfway well for polynomials with integer,
-rational, real and complex coefficients. But we will eventually want to
-consider polynomials with coefficients in any arbitrary commutative ring
-$\mathbb{K}$. An example for a commutative ring $\mathbb{K}$ is the finite
-field $\mathbb{F}_{p}$ with $p$ elements, where $p$ is a prime. If we define
-polynomials with coefficients in $\mathbb{F}_{p}$ as functions $\mathbb{F}%
-_{p}\rightarrow\mathbb{F}_{p}$, then we really run into problems; for example,
-the polynomials $X$ and $X^{p}$ over this field become identical as functions!
+polynomials as functions works reasonably well for polynomials with integer,
+rational, real and complex coefficients (as long as one is not too demanding).
+But we will eventually want to consider polynomials with coefficients in any
+arbitrary commutative ring $\mathbb{K}$. An example for a commutative ring
+$\mathbb{K}$ is the finite field $\mathbb{F}_{p}$ with $p$ elements, where $p$
+is a prime. (This finite field $\mathbb{F}_{p}$ is better known as the ring of
+integers modulo $p$.) If we define polynomials with coefficients in
+$\mathbb{F}_{p}$ as functions $\mathbb{F}_{p}\rightarrow\mathbb{F}_{p}$, then
+we really run into problems; for example, the polynomials $X$ and $X^{p}$ over
+this field become identical as functions!
 \end{itemize}
 }. Also, if we equated polynomials with the functions they describe, then we
 would waste the word \textquotedblleft polynomial\textquotedblright\ on a
@@ -2096,7 +2098,11 @@ finite subset $J$ of $\mathbb{N}$ such that every $k\in\mathbb{N}\setminus J$
 satisfies $p_{k}=0$\textquotedblright. (See Definition \ref{def.allbutfin} for
 the general definition of \textquotedblleft all but finitely
 many\textquotedblright, and Section \ref{sect.infperm} for some practice with
-this concept.)
+this concept.) More concretely, the condition
+(\ref{eq.def.polynomial-univar.finite}) can be rewritten as follows: The
+sequence $\left(  p_{0},p_{1},p_{2},\ldots\right)  $ contains only zeroes from
+some point on (i.e., there exists some $N\in\mathbb{N}$ such that
+$p_{N}=p_{N+1}=p_{N+2}=\cdots=0$).
 
 For the remainder of this definition, \textquotedblleft univariate polynomial
 with rational coefficients\textquotedblright\ will be abbreviated as
@@ -2262,7 +2268,7 @@ X^{n}=\left(  \underbrace{0,0,\ldots,0}_{n\text{ zeroes}},1,0,0,0,\ldots
 \]
 
 
-This polynomial $X$ finally provides an answer to the question
+This polynomial $X$ finally provides an answer to the questions
 \textquotedblleft what is an indeterminate\textquotedblright\ and
 \textquotedblleft what is a formal expression\textquotedblright. Namely, let
 $\left(  p_{0},p_{1},p_{2},\ldots\right)  \in\mathbb{Q}\left[  X\right]  $ be
@@ -2396,12 +2402,16 @@ Polynomials in multiple variables are (in my opinion) treated the best in
 monoid ring. However, this treatment is rather abstract and uses a good deal
 of algebraic language\footnote{Also, the book \cite{Lang02} is notorious for
 its unpolished writing; it is best read with Bergman's companion
-\cite{Bergman-Lang} at hand.}. The treatments in \cite[\S 4.5]{Walker87} and
-\cite[Chapter IV, \S 4]{BirkMac} use the above-mentioned recursive shortcut
-that makes them inferior (in my opinion). A neat (and rather elementary)
-treatment of polynomials in $n$ variables (for finite $n$) can be found in
-\cite[Chapter III, \S 5]{Hungerford-03}; it generalizes the viewpoint we used
-in Definition \ref{def.polynomial-univar} for univariate polynomials above.
+\cite{Bergman-Lang} at hand.}. The treatments in \cite[\S 4.5]{Walker87}, in
+\cite[Chapter A-3]{Rotman15} and in \cite[Chapter IV, \S 4]{BirkMac} use the
+above-mentioned recursive shortcut that makes them inferior (in my opinion). A
+neat (and rather elementary) treatment of polynomials in $n$ variables (for
+finite $n$) can be found in \cite[Chapter III, \S 5]{Hungerford-03} and in
+\cite[\S 8]{AmaEsc05}; it generalizes the viewpoint we used in Definition
+\ref{def.polynomial-univar} for univariate polynomials above\footnote{You are
+reading right: The analysis textbook \cite{AmaEsc05} is one of the few sources
+I am aware of to define the (algebraic!) notion of polynomials precisely and
+well.}.
 
 \section{\label{chp.quivers}On acyclic quivers and mutations}
 
@@ -43602,6 +43612,11 @@ Course in Enumeration}, Graduate Texts in Mathematics \#238, Springer 2007.}
 \bibitem[AigZie]{AigZie}Martin Aigner, G\"{u}nter M. Ziegler, \textit{Proofs
 from the Book}, 4th edition, Springer 2010.
 
+\bibitem[AmaEsc05]{AmaEsc05}%
+\href{http://www.springer.com/us/book/9783764377557}{Herbert Amann, Joachim
+Escher, \textit{Analysis I}, translated from the German by Gary Brookfield,
+Birkh\"{a}user 2005}.
+
 \bibitem[AndDos]{AndDos}Titu Andreescu, Gabriel Dospinescu, \textit{Problems
 from the Book}, XYZ Press 2008.
 
@@ -43785,6 +43800,9 @@ American Mathematical Society, Volume 103, Number 4, August 1988, pp.
 Determinant and the Pfaffian: Algebraic and Combinatorial Approaches},
 Computational Discrete Mathematics, Lecture Notes in Computer Science, Volume
 2122, 2001, pp. 119--135.
+
+\bibitem[Rotman15]{Rotman15}Joseph J. Rotman, \textit{Advanced Modern Algebra:
+Part 1}, Graduate Studies in Mathematics \#165, 3rd edition, AMS 2015.
 
 \bibitem[Silvest]{Silvest}%
 \href{http://www.mth.kcl.ac.uk/~jrs/gazette/blocks.pdf}{John R. Silvester,
