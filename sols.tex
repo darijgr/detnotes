@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, April 29, 2016 01:34:19}
+%TCIDATA{LastRevised=Sunday, May 01, 2016 00:17:32}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -17690,9 +17690,9 @@ c_{x+1} & a_{x+2} & b_{x+2} & \cdots & 0 & 0 & 0\\
 Now, let us write the matrix $B$ in the form $B=\left(  v_{i,j}\right)
 _{1\leq i\leq y-x-1,\ 1\leq j\leq y-x-1}$. Thus,
 \begin{align*}
-&  \left(  v_{1,y-x-1},v_{2,y-x-1},\ldots,v_{y-x-1,y-x-1}\right) \\
+&  \left(  v_{1,y-x-1},v_{2,y-x-1},\ldots,v_{y-x-1,y-x-1}\right)  ^{T}\\
 &  =\left(  \text{the last column of the matrix }B\right)  =\left(
-0,0,\ldots,0,b_{y-1}\right)
+0,0,\ldots,0,b_{y-1}\right)  ^{T}%
 \end{align*}
 (because of (\ref{pf.prop.tridiag.rec.c.5})). In other words, we have%
 \begin{align}
@@ -17761,7 +17761,7 @@ This proves Proposition \ref{prop.tridiag.rec} \textbf{(c)}.
 similar to the proof of Proposition \ref{prop.tridiag.rec} \textbf{(c)}. The
 main difference is that we now have to perform Laplace expansion along the
 $1$-st row (instead of the $\left(  y-x\right)  $-th row) and then Laplace
-expansion along the $1$-st column (instead of the $\left(  y-x\right)  $-th column).
+expansion along the $1$-st column (instead of the $\left(  y-x-1\right)  $-th column).
 \end{proof}
 
 Proposition \ref{prop.tridiag.rec} gives us two fast recursive algorithms to
@@ -18229,7 +18229,7 @@ a_{2,1}^{\prime} & a_{2,2}^{\prime}%
 \begin{array}
 [c]{cc}%
 b_{1,1}^{\prime} & b_{1,2}^{\prime}\\
-b_{1,1}^{\prime} & b_{2,2}^{\prime}%
+b_{2,1}^{\prime} & b_{2,2}^{\prime}%
 \end{array}
 \right)  $, $C^{\prime}=\left(
 \begin{array}
