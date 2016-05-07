@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Wednesday, May 04, 2016 12:20:16}
+%TCIDATA{LastRevised=Friday, May 06, 2016 20:09:52}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -11273,17 +11273,19 @@ working with areas somewhat awkward. This can be circumvented by the notion of
 a \textit{signed area}. (The signed area of a triangle $ABC$ is its regular
 area if the triangle is \textquotedblleft directed clockwise\textquotedblright%
 , and otherwise it is the negative of its area.) The signed area of the
-triangle $0AB$ is $\det\left(
+triangle $0AB$ is $\dfrac{1}{2}\det\left(
 \begin{array}
 [c]{cc}%
 x_{A} & x_{B}\\
 y_{A} & y_{B}%
 \end{array}
-\right)  $.
+\right)  $. (Here, $0$ stands for the origin; i.e., \textquotedblleft the
+triangle $0AB$\textquotedblright\ means the triangle with vertices at the
+origin, at $A$ and at $B$.)
 
 If $A=\left(  x_{A},y_{A}\right)  $, $B=\left(  x_{B},y_{B}\right)  $ and
 $C=\left(  x_{C},y_{C}\right)  $ are three points in $\mathbb{R}^{2}$, then
-the area of triangle $ABC$ is $\dfrac{1}{2}\det\left(
+the signed area of triangle $ABC$ is $\dfrac{1}{2}\det\left(
 \begin{array}
 [c]{ccc}%
 x_{A} & x_{B} & x_{C}\\
@@ -13095,7 +13097,7 @@ We now know that the map $\overline{\gamma}$ is both injective and surjective.
 In other words, $\overline{\gamma}$ is bijective. Hence, $\overline{\gamma}$
 is a bijective map $\left\{  1,2,\ldots,n-1\right\}  \rightarrow\left\{
 1,2,\ldots,n-1\right\}  $. In other words, $\overline{\gamma}$ is a
-permutation of $\left\{  1,2,\ldots,n\right\}  $. In other words,
+permutation of $\left\{  1,2,\ldots,n-1\right\}  $. In other words,
 $\overline{\gamma}\in S_{n-1}$ (since $S_{n-1}$ is the set of all permutations
 of the set $\left\{  1,2,\ldots,n-1\right\}  $), qed.}. Hence, we can define a
 map $\Psi:T\rightarrow S_{n-1}$ by setting%
@@ -38808,25 +38810,25 @@ $\sigma\left(  p\right)  \equiv z\left(  p\right)  \operatorname{mod}n$). This
 contradicts $\sigma\left(  p\right)  \neq z\left(  p\right)  $. This
 contradiction proves that our assumption was wrong, qed.}. If we have
 $p\neq\sigma\left(  p\right)  $, then (\ref{sol.det.2diags.exi})
-holds\footnote{\textit{Proof.} Assume the contrary. Thus, $p\neq\sigma\left(
-p\right)  $. So we know that $p\neq\sigma\left(  p\right)  $ and
-$p\not \equiv \sigma\left(  p\right)  +1\operatorname{mod}n$. Consequently,
-there exists an $i\in\left[  n\right]  $ satisfying $i\neq\sigma\left(
-i\right)  $ and $i\not \equiv \sigma\left(  i\right)  +1\operatorname{mod}n$
-(namely, $i=p$). In other words, (\ref{sol.det.2diags.exi}) holds. Qed.}.
-Hence, for the rest of this proof of (\ref{sol.det.2diags.exi}), we can WLOG
-assume that we don't have $p\neq\sigma\left(  p\right)  $. Assume this.
+holds\footnote{\textit{Proof.} Assume that $p\neq\sigma\left(  p\right)  $. So
+we know that $p\neq\sigma\left(  p\right)  $ and $p\not \equiv \sigma\left(
+p\right)  +1\operatorname{mod}n$. Consequently, there exists an $i\in\left[
+n\right]  $ satisfying $i\neq\sigma\left(  i\right)  $ and $i\not \equiv
+\sigma\left(  i\right)  +1\operatorname{mod}n$ (namely, $i=p$). In other
+words, (\ref{sol.det.2diags.exi}) holds. Qed.}. Hence, for the rest of this
+proof of (\ref{sol.det.2diags.exi}), we can WLOG assume that we don't have
+$p\neq\sigma\left(  p\right)  $. Assume this.
 
 We have $p=\sigma\left(  p\right)  $ (since we don't have $p\neq\sigma\left(
-p\right)  $). Hence, there exists a $K\in\left[  n\right]  $ such that
-$\sigma\left(  K\right)  =K$ (namely, $K=p$). Let $k$ be the largest such $K$.
-Thus, $k$ is an element of $\left[  n\right]  $ satisfying $\sigma\left(
-k\right)  =k$\ \ \ \ \footnote{\textit{Proof.} We know that $k$ is the largest
-$K\in\left[  n\right]  $ such that $\sigma\left(  K\right)  =K$ (by the
-definition of $k$). Hence, $k$ is an element $K$ of $\left[  n\right]  $ such
-that $\sigma\left(  K\right)  =K$. In other words, $k$ is an element of
-$\left[  n\right]  $ satisfying $\sigma\left(  k\right)  =k$. Qed.}.
-Moreover,
+p\right)  $). In other words, $\sigma\left(  p\right)  =p$. Hence, there
+exists a $K\in\left[  n\right]  $ such that $\sigma\left(  K\right)  =K$
+(namely, $K=p$). Let $k$ be the largest such $K$. Thus, $k$ is an element of
+$\left[  n\right]  $ satisfying $\sigma\left(  k\right)  =k$%
+\ \ \ \ \footnote{\textit{Proof.} We know that $k$ is the largest $K\in\left[
+n\right]  $ such that $\sigma\left(  K\right)  =K$ (by the definition of $k$).
+Hence, $k$ is an element $K$ of $\left[  n\right]  $ such that $\sigma\left(
+K\right)  =K$. In other words, $k$ is an element of $\left[  n\right]  $
+satisfying $\sigma\left(  k\right)  =k$. Qed.}. Moreover,
 \begin{equation}
 \text{every }K\in\left[  n\right]  \text{ satisfying }\sigma\left(  K\right)
 =K\text{ must satisfy }K\leq k \label{sol.det.2diags.exi.pf.max}%
@@ -41347,7 +41349,7 @@ j+1, & \text{if }j\geq q
 j, & \text{if }j<q;\\
 j+1, & \text{if }j\geq q
 \end{cases}
-$ (by the definition of $\mathbf{d}_{q}$)).
+$ (by the definition of $\mathbf{d}_{q}\left(  j\right)  $)).
 
 \textbf{(a)} We have%
 \begin{align*}
@@ -41719,19 +41721,20 @@ for every $\left(  i,j\right)  \in\left\{  1,2,\ldots,n+M-1\right\}  ^{2}$.
 i,j\right)  \in\left\{  1,2,\ldots,n+M-1\right\}  ^{2}$. Thus, $i\in\left\{
 1,2,\ldots,n+M-1\right\}  $ and $j\in\left\{  1,2,\ldots,n+M-1\right\}  $.
 \par
-The definition of $\mathbf{d}_{n+q}$ yields $\mathbf{d}_{n+q}\left(  j\right)
-=%
+The definition of $\mathbf{d}_{n+q}\left(  j\right)  $ yields $\mathbf{d}%
+_{n+q}\left(  j\right)  =%
 \begin{cases}
 j, & \text{if }j<n+q;\\
 j+1, & \text{if }j\geq n+q
 \end{cases}
-$. The definition of $\mathbf{d}_{q}$ yields $\mathbf{d}_{q}\left(
-j-n\right)  =%
+$. The definition of $\mathbf{d}_{q}\left(  j-n\right)  $ yields
+$\mathbf{d}_{q}\left(  j-n\right)  =%
 \begin{cases}
 j-n, & \text{if }j-n<q;\\
 j-n+1, & \text{if }j-n\geq q
 \end{cases}
-$ and $\mathbf{d}_{q}\left(  j\right)  =%
+$. The definition of $\mathbf{d}_{q}\left(  j\right)  $ yields $\mathbf{d}%
+_{q}\left(  j\right)  =%
 \begin{cases}
 j, & \text{if }j<q;\\
 j+1, & \text{if }j\geq q
@@ -41760,8 +41763,8 @@ j+1, & \text{if }j-n\geq q
 \right)  .
 \end{align*}
 Subtracting $n$ from both sides of this equality, we obtain
-\[
-\mathbf{d}_{n+q}\left(  j\right)  -n=%
+\begin{align*}
+\mathbf{d}_{n+q}\left(  j\right)  -n  &  =%
 \begin{cases}
 j, & \text{if }j-n<q;\\
 j+1, & \text{if }j-n\geq q
@@ -41769,10 +41772,23 @@ j+1, & \text{if }j-n\geq q
 -n=%
 \begin{cases}
 j-n, & \text{if }j-n<q;\\
+j+1-n, & \text{if }j-n\geq q
+\end{cases}
+\\
+&  =%
+\begin{cases}
+j-n, & \text{if }j-n<q;\\
 j-n+1, & \text{if }j-n\geq q
 \end{cases}
-=\mathbf{d}_{q}\left(  j-n\right)  .
-\]
+\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since }j+1-n=j-n+1\text{ in}\\
+\text{the case when }j-n\geq q
+\end{array}
+\right) \\
+&  =\mathbf{d}_{q}\left(  j-n\right)  .
+\end{align*}
 \par
 Notice that%
 \begin{align*}
@@ -41781,13 +41797,13 @@ Notice that%
 j, & \text{if }j<n+q;\\
 j+1, & \text{if }j\geq n+q
 \end{cases}
-\geq%
+\\
+&  \geq%
 \begin{cases}
 j, & \text{if }j<n+q;\\
 j, & \text{if }j\geq n+q
 \end{cases}
-\\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }j+1\geq j\text{ in the case when
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }j+1\geq j\text{ in the case when
 }j\geq n+q\right) \\
 &  =j.
 \end{align*}
