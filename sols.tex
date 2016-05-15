@@ -18401,7 +18401,7 @@ q}\right)  .
 \textbf{(b)} For every $q\in\left\{  1,2,\ldots,n\right\}  $ satisfying $q\neq
 r$, we have%
 \[
-0=\sum_{p=1}^{n}\left(  -1\right)  ^{p+q}a_{r,q}\det\left(  A_{\sim p,\sim
+0=\sum_{p=1}^{n}\left(  -1\right)  ^{p+q}a_{p,r}\det\left(  A_{\sim p,\sim
 q}\right)  .
 \]
 
@@ -18628,7 +18628,217 @@ This proves Proposition \ref{prop.laplace.0} \textbf{(a)}.
 
 \textbf{(b)} This proof is rather similar to the proof of Proposition
 \ref{prop.laplace.0} \textbf{(a)}, except that rows are now replaced by
-columns. We leave the details to the reader.
+columns. Let me nevertheless show this proof in full detail, for the sake of completeness:
+
+Let $q\in\left\{  1,2,\ldots,n\right\}  $ be such that $q\neq r$.
+
+Let $w$ be the $r$-th column of $A$ (regarded, as usual, as a column vector).
+Thus, $w=\left(  \text{the }r\text{-th column of }A\right)  $.
+
+Let $C$ be the $n\times n$-matrix obtained from $A$ by replacing the $q$-th
+column of $A$ by the column vector $w$. Thus,%
+\begin{align}
+&  \left(  \left(  \text{the }u\text{-th column of }C\right)  =\left(
+\text{the }u\text{-th column of }A\right)  \right.
+\label{pf.prop.laplace.0.b.Cu}\\
+&  \ \ \ \ \ \ \ \ \ \ \left.  \text{for all }u\in\left\{  1,2,\ldots
+,n\right\}  \text{ satisfying }u\neq q\right)  ,\nonumber
+\end{align}
+whereas%
+\begin{equation}
+\left(  \text{the }q\text{-th column of }C\right)
+=w.\label{pf.prop.laplace.0.b.Cp}%
+\end{equation}
+The matrix $C$ has two equal column\footnote{\textit{Proof.} We have $r\neq q$
+(since $q\neq r$). Hence, (\ref{pf.prop.laplace.0.b.Cu}) (applied to $u=r$)
+yields%
+\begin{align*}
+\left(  \text{the }r\text{-th column of }C\right)   &  =\left(  \text{the
+}r\text{-th column of }A\right)  =w\ \ \ \ \ \ \ \ \ \ \left(  \text{since
+}w=\left(  \text{the }r\text{-th column of }A\right)  \right)  \\
+&  =\left(  \text{the }q\text{-th column of }C\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{pf.prop.laplace.0.b.Cp})}\right)  .
+\end{align*}
+In other words, the $r$-th column of $C$ and the $q$-th column of $C$ are
+equal. Since $r\neq q$, this shows that the matrix $C$ has two equal columns.
+Qed.}. Hence, $\det C=0$ (by Exercise \ref{exe.ps4.6} \textbf{(f)}, applied to
+$C$ instead of $A$).
+
+Let us write the $n\times n$-matrix $C$ in the form $C=\left(  c_{i,j}\right)
+_{1\leq i\leq n,\ 1\leq j\leq n}$. Thus, for every $u\in\left\{
+1,2,\ldots,n\right\}  $, we have%
+\begin{equation}
+\left(  \text{the }u\text{-th column of }C\right)  =\left(
+\begin{array}
+[c]{c}%
+c_{1,u}\\
+c_{2,u}\\
+\vdots\\
+c_{n,u}%
+\end{array}
+\right)  .\label{pf.prop.laplace.0.b.u-th-row}%
+\end{equation}
+Applying this to $u=q$, we obtain%
+\[
+\left(  \text{the }q\text{-th column of }C\right)  =\left(
+\begin{array}
+[c]{c}%
+c_{1,q}\\
+c_{2,q}\\
+\vdots\\
+c_{n,q}%
+\end{array}
+\right)  ,
+\]
+so that%
+\begin{align*}
+\left(
+\begin{array}
+[c]{c}%
+c_{1,q}\\
+c_{2,q}\\
+\vdots\\
+c_{n,q}%
+\end{array}
+\right)   &  =\left(  \text{the }q\text{-th column of }C\right)  =w=\left(
+\text{the }r\text{-th column of }A\right)  \\
+&  =\left(
+\begin{array}
+[c]{c}%
+a_{1,r}\\
+a_{2,r}\\
+\vdots\\
+a_{n,r}%
+\end{array}
+\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }A=\left(  a_{i,j}\right)
+_{1\leq i\leq n,\ 1\leq j\leq n}\right)  .
+\end{align*}
+In other words,%
+\begin{equation}
+c_{p,q}=a_{p,r}\ \ \ \ \ \ \ \ \ \ \text{for every }p\in\left\{
+1,2,\ldots,n\right\}  .\label{pf.prop.laplace.0.b.cpq}%
+\end{equation}
+
+
+On the other hand,%
+\begin{equation}
+c_{p,u}=a_{p,u}\ \ \ \ \ \ \ \ \ \ \text{for every }p\in\left\{
+1,2,\ldots,n\right\}  \text{ and }u\in\left\{  1,2,\ldots,n\right\}  \text{
+satisfying }u\neq q\label{pf.prop.laplace.0.b.cuq}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.prop.laplace.0.b.cuq}):} Let $u\in\left\{
+1,2,\ldots,n\right\}  $ be such that $u\neq q$. Thus,%
+\begin{align*}
+\left(
+\begin{array}
+[c]{c}%
+c_{1,u}\\
+c_{2,u}\\
+\vdots\\
+c_{n,u}%
+\end{array}
+\right)   &  =\left(  \text{the }u\text{-th column of }C\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{pf.prop.laplace.0.b.u-th-row}%
+)}\right)  \\
+&  =\left(  \text{the }u\text{-th column of }A\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{pf.prop.laplace.0.b.Cu})}\right)
+\\
+&  =\left(
+\begin{array}
+[c]{c}%
+a_{1,u}\\
+a_{2,u}\\
+\vdots\\
+a_{n,u}%
+\end{array}
+\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }A=\left(  a_{i,j}\right)
+_{1\leq i\leq n,\ 1\leq j\leq n}\right)  .
+\end{align*}
+In other words, $c_{p,u}=a_{p,u}$ for every $p\in\left\{  1,2,\ldots
+,n\right\}  $. This proves (\ref{pf.prop.laplace.0.b.cuq}).}. Now, it is easy
+to see that%
+\begin{equation}
+C_{\sim p,\sim q}=A_{\sim p,\sim q}\ \ \ \ \ \ \ \ \ \ \text{for every }%
+p\in\left\{  1,2,\ldots,n\right\}  \label{pf.prop.laplace.0.b.CA}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.prop.laplace.0.b.CA}):} Let $p\in\left\{
+1,2,\ldots,n\right\}  $.
+\par
+Let $\left(  u_{1},u_{2},\ldots,u_{n-1}\right)  $ denote the $\left(
+n-1\right)  $-tuple $\left(  1,2,\ldots,\widehat{q},\ldots,n\right)  $. Thus,
+$\left(  u_{1},u_{2},\ldots,u_{n-1}\right)  =\left(  1,2,\ldots,\widehat{q}%
+,\ldots,n\right)  $, so that $\left\{  u_{1},u_{2},\ldots,u_{n-1}\right\}
+=\left\{  1,2,\ldots,\widehat{q},\ldots,n\right\}  =\left\{  1,2,\ldots
+,n\right\}  \setminus\left\{  q\right\}  $.
+\par
+Now, let $y\in\left\{  1,2,\ldots,n-1\right\}  $. Then, $u_{y}\in\left\{
+u_{1},u_{2},\ldots,u_{n-1}\right\}  =\left\{  1,2,\ldots,n\right\}
+\setminus\left\{  q\right\}  $, so that $u_{y}\neq q$. Hence,%
+\begin{equation}
+c_{p,u_{y}}=a_{p,u_{y}}\ \ \ \ \ \ \ \ \ \ \text{for every }p\in\left\{
+1,2,\ldots,n\right\}  \label{pf.prop.laplace.0.b.CA.pf.1}%
+\end{equation}
+(by (\ref{pf.prop.laplace.0.b.cuq}), applied to $u=u_{y}$).
+\par
+Let us now forget that we fixed $y$. We thus have shown that
+(\ref{pf.prop.laplace.0.b.CA.pf.1}) holds for every $y\in\left\{
+1,2,\ldots,n-1\right\}  $.
+\par
+Let $\left(  v_{1},v_{2},\ldots,v_{n-1}\right)  $ denote the $\left(
+n-1\right)  $-tuple $\left(  1,2,\ldots,\widehat{p},\ldots,n\right)  $. Thus,
+$\left(  v_{1},v_{2},\ldots,v_{n-1}\right)  =\left(  1,2,\ldots,\widehat{p}%
+,\ldots,n\right)  $.
+\par
+Now, the definition of $C_{\sim p,\sim q}$ yields%
+\begin{align*}
+C_{\sim p,\sim q} &  =\operatorname*{sub}\nolimits_{1,2,\ldots,\widehat{p}%
+,\ldots,n}^{1,2,\ldots,\widehat{q},\ldots,n}C=\operatorname*{sub}%
+\nolimits_{v_{1},v_{2},\ldots,v_{n-1}}^{1,2,\ldots,\widehat{q},\ldots,n}C\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(  1,2,\ldots,\widehat{p}%
+,\ldots,n\right)  =\left(  v_{1},v_{2},\ldots,v_{n-1}\right)  \right)  \\
+&  =\operatorname*{sub}\nolimits_{v_{1},v_{2},\ldots,v_{n-1}}^{u_{1}%
+,u_{2},\ldots,u_{n-1}}C\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(
+1,2,\ldots,\widehat{q},\ldots,n\right)  =\left(  u_{1},u_{2},\ldots
+,u_{n-1}\right)  \right)  \\
+&  =\left(  \underbrace{c_{v_{x},u_{y}}}_{\substack{=a_{v_{x},u_{y}%
+}\\\text{(by (\ref{pf.prop.laplace.0.b.CA.pf.1}),}\\\text{applied to }%
+p=v_{x}\text{)}}}\right)  _{1\leq x\leq n-1,\ 1\leq y\leq n-1}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\operatorname*{sub}%
+\nolimits_{v_{1},v_{2},\ldots,v_{n-1}}^{u_{1},u_{2},\ldots,u_{n-1}}C\text{,
+since }C=\left(  c_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  \\
+&  =\left(  a_{v_{x},u_{y}}\right)  _{1\leq x\leq n-1,\ 1\leq y\leq n-1}.
+\end{align*}
+Compared with%
+\begin{align*}
+A_{\sim p,\sim q} &  =\operatorname*{sub}\nolimits_{1,2,\ldots,\widehat{p}%
+,\ldots,n}^{1,2,\ldots,\widehat{q},\ldots,n}A=\operatorname*{sub}%
+\nolimits_{v_{1},v_{2},\ldots,v_{n-1}}^{1,2,\ldots,\widehat{q},\ldots,n}A\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(  1,2,\ldots,\widehat{p}%
+,\ldots,n\right)  =\left(  v_{1},v_{2},\ldots,v_{n-1}\right)  \right)  \\
+&  =\operatorname*{sub}\nolimits_{v_{1},v_{2},\ldots,v_{n-1}}^{u_{1}%
+,u_{2},\ldots,u_{n-1}}A\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(
+1,2,\ldots,\widehat{q},\ldots,n\right)  =\left(  u_{1},u_{2},\ldots
+,u_{n-1}\right)  \right)  \\
+&  =\left(  a_{v_{x},u_{y}}\right)  _{1\leq x\leq n-1,\ 1\leq y\leq n-1}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }%
+a\operatorname*{sub}\nolimits_{v_{1},v_{2},\ldots,v_{n-1}}^{u_{1},u_{2}%
+,\ldots,u_{n-1}}A\text{, since }A=\left(  a_{i,j}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}\right)  ,
+\end{align*}
+this yields $C_{\sim p,\sim q}=A_{\sim p,\sim q}$. This proves
+(\ref{pf.prop.laplace.0.b.CA}).}. Now, $\det C=0$, so that%
+\begin{align*}
+0 &  =\det C=\sum_{p=1}^{n}\left(  -1\right)  ^{p+q}\underbrace{c_{p,q}%
+}_{\substack{=a_{p,r}\\\text{(by (\ref{pf.prop.laplace.0.b.cpq}))}}%
+}\det\left(  \underbrace{C_{\sim p,\sim q}}_{\substack{=A_{\sim p,\sim
+q}\\\text{(by (\ref{pf.prop.laplace.0.b.CA}))}}}\right)  \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem \ref{thm.laplace.gen}
+\textbf{(b)}, applied to }C\text{ and }c_{i,j}\text{ instead of }A\text{ and
+}a_{i,j}\right)  \\
+&  =\sum_{q=1}^{n}\left(  -1\right)  ^{p+q}a_{p,r}\det\left(  A_{\sim p,\sim
+q}\right)  .
+\end{align*}
+This proves Proposition \ref{prop.laplace.0} \textbf{(b)}.
 \end{proof}
 \end{verlong}
 
