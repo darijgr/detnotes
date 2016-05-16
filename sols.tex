@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Sunday, May 15, 2016 23:51:27}
+%TCIDATA{LastRevised=Monday, May 16, 2016 12:16:18}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -22392,15 +22392,15 @@ $p$ and $q$ instead of $A$, $B$, $u$ and $v$) yields%
 \mid\left(  A_{\bullet,\sim v}\right)  _{\bullet,r}\right)  \det\left(
 \operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{p},\ldots,\widehat{q}%
 ,\ldots,n}\left(  \left(  A_{\bullet,\sim v}\right)  _{\bullet,\sim r}\right)
-\right)  \\
+\right) \\
 &  =\left(  -1\right)  ^{n}\left(  \det\left(  \underbrace{\left(
 A_{\bullet,\sim u}\right)  _{\sim p,\bullet}}_{=A_{\sim p,\sim u}}\right)
 \det\left(  \underbrace{\left(  A_{\bullet,\sim v}\right)  _{\sim q,\bullet}%
-}_{=A_{\sim q,\sim v}}\right)  \right.  \\
+}_{=A_{\sim q,\sim v}}\right)  \right. \\
 &  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \left.  -\det\left(
 \underbrace{\left(  A_{\bullet,\sim u}\right)  _{\sim q,\bullet}}_{=A_{\sim
 q,\sim u}}\right)  \det\left(  \underbrace{\left(  A_{\bullet,\sim v}\right)
-_{\sim p,\bullet}}_{=A_{\sim p,\sim v}}\right)  \right)  \\
+_{\sim p,\bullet}}_{=A_{\sim p,\sim v}}\right)  \right) \\
 &  =\left(  -1\right)  ^{n}\left(  \det\left(  A_{\sim p,\sim u}\right)
 \det\left(  A_{\sim q,\sim v}\right)  -\det\left(  A_{\sim q,\sim u}\right)
 \det\left(  A_{\sim p,\sim v}\right)  \right)  .
@@ -22409,25 +22409,25 @@ Hence,%
 \begin{align*}
 &  \left(  -1\right)  ^{n}\left(  \det\left(  A_{\sim p,\sim u}\right)
 \det\left(  A_{\sim q,\sim v}\right)  -\det\left(  A_{\sim q,\sim u}\right)
-\det\left(  A_{\sim p,\sim v}\right)  \right)  \\
+\det\left(  A_{\sim p,\sim v}\right)  \right) \\
 &  =\underbrace{\sum_{r=1}^{n-1}}_{=\sum_{r\in\left\{  1,2,\ldots,n-1\right\}
 }}\left(  -1\right)  ^{r}\det\left(  A_{\bullet,\sim u}\mid\left(
 A_{\bullet,\sim v}\right)  _{\bullet,r}\right)  \det\left(
 \operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{p},\ldots,\widehat{q}%
 ,\ldots,n}\left(  \left(  A_{\bullet,\sim v}\right)  _{\bullet,\sim r}\right)
-\right)  \\
+\right) \\
 &  =\sum_{r\in\left\{  1,2,\ldots,n-1\right\}  }\left(  -1\right)  ^{r}%
 \det\left(  A_{\bullet,\sim u}\mid\left(  A_{\bullet,\sim v}\right)
 _{\bullet,r}\right)  \det\left(  \operatorname*{rows}\nolimits_{1,2,\ldots
 ,\widehat{p},\ldots,\widehat{q},\ldots,n}\left(  \left(  A_{\bullet,\sim
-v}\right)  _{\bullet,\sim r}\right)  \right)  \\
+v}\right)  _{\bullet,\sim r}\right)  \right) \\
 &  =\sum_{\substack{r\in\left\{  1,2,\ldots,n-1\right\}  ;\\r\neq u}}\left(
 -1\right)  ^{r}\underbrace{\det\left(  A_{\bullet,\sim u}\mid\left(
 A_{\bullet,\sim v}\right)  _{\bullet,r}\right)  }_{\substack{=0\\\text{(by
 Proposition \ref{prop.addcol.props3} \textbf{(e)})}}}\det\left(
 \operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{p},\ldots,\widehat{q}%
 ,\ldots,n}\left(  \left(  A_{\bullet,\sim v}\right)  _{\bullet,\sim r}\right)
-\right)  \\
+\right) \\
 &  \ \ \ \ \ \ \ \ \ \ +\underbrace{\left(  -1\right)  ^{u}\det\left(
 A_{\bullet,\sim u}\mid\left(  A_{\bullet,\sim v}\right)  _{\bullet,u}\right)
 }_{\substack{=\left(  -1\right)  ^{n}\det A\\\text{(by Proposition
@@ -22437,21 +22437,21 @@ A_{\bullet,\sim u}\mid\left(  A_{\bullet,\sim v}\right)  _{\bullet,u}\right)
 _{\bullet,\sim u}\right)  }_{\substack{=\operatorname*{sub}%
 \nolimits_{1,2,\ldots,\widehat{p},\ldots,\widehat{q},\ldots,n}^{1,2,\ldots
 ,\widehat{u},\ldots,\widehat{v},\ldots,n}A\\\text{(by (\ref{pf.thm.desnanot.2}%
-))}}}\right)  \\
+))}}}\right) \\
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
 \text{here, we have split off the addend for }r=u\text{ from the sum,}\\
 \text{since }u\in\left\{  1,2,\ldots,n-1\right\}
 \end{array}
-\right)  \\
+\right) \\
 &  =\underbrace{\sum_{\substack{r\in\left\{  1,2,\ldots,n-1\right\}  ;\\r\neq
 u}}\left(  -1\right)  ^{r}0\det\left(  \operatorname*{rows}%
 \nolimits_{1,2,\ldots,\widehat{p},\ldots,\widehat{q},\ldots,n}\left(  \left(
 A_{\bullet,\sim v}\right)  _{\bullet,\sim r}\right)  \right)  }_{=0}\\
 &  \ \ \ \ \ \ \ \ \ \ +\left(  -1\right)  ^{n}\det A\cdot\det\left(
 \operatorname*{sub}\nolimits_{1,2,\ldots,\widehat{p},\ldots,\widehat{q}%
-,\ldots,n}^{1,2,\ldots,\widehat{u},\ldots,\widehat{v},\ldots,n}A\right)  \\
+,\ldots,n}^{1,2,\ldots,\widehat{u},\ldots,\widehat{v},\ldots,n}A\right) \\
 &  =\left(  -1\right)  ^{n}\det A\cdot\det\left(  \operatorname*{sub}%
 \nolimits_{1,2,\ldots,\widehat{p},\ldots,\widehat{q},\ldots,n}^{1,2,\ldots
 ,\widehat{u},\ldots,\widehat{v},\ldots,n}A\right)  .
@@ -22461,12 +22461,12 @@ obtain%
 \begin{align*}
 &  \left(  -1\right)  ^{n}\left(  -1\right)  ^{n}\left(  \det\left(  A_{\sim
 p,\sim u}\right)  \det\left(  A_{\sim q,\sim v}\right)  -\det\left(  A_{\sim
-q,\sim u}\right)  \det\left(  A_{\sim p,\sim v}\right)  \right)  \\
+q,\sim u}\right)  \det\left(  A_{\sim p,\sim v}\right)  \right) \\
 &  =\underbrace{\left(  -1\right)  ^{n}\left(  -1\right)  ^{n}}%
 _{\substack{=\left(  -1\right)  ^{n+n}=1\\\text{(since }n+n=2n\text{ is
 even)}}}\det A\cdot\det\left(  \operatorname*{sub}\nolimits_{1,2,\ldots
 ,\widehat{p},\ldots,\widehat{q},\ldots,n}^{1,2,\ldots,\widehat{u}%
-,\ldots,\widehat{v},\ldots,n}A\right)  \\
+,\ldots,\widehat{v},\ldots,n}A\right) \\
 &  =\det A\cdot\det\left(  \operatorname*{sub}\nolimits_{1,2,\ldots
 ,\widehat{p},\ldots,\widehat{q},\ldots,n}^{1,2,\ldots,\widehat{u}%
 ,\ldots,\widehat{v},\ldots,n}A\right)  .
@@ -22475,12 +22475,12 @@ Thus,%
 \begin{align*}
 &  \det A\cdot\det\left(  \operatorname*{sub}\nolimits_{1,2,\ldots
 ,\widehat{p},\ldots,\widehat{q},\ldots,n}^{1,2,\ldots,\widehat{u}%
-,\ldots,\widehat{v},\ldots,n}A\right)  \\
+,\ldots,\widehat{v},\ldots,n}A\right) \\
 &  =\underbrace{\left(  -1\right)  ^{n}\left(  -1\right)  ^{n}}%
 _{\substack{=\left(  -1\right)  ^{n+n}=1\\\text{(since }n+n=2n\text{ is
 even)}}}\left(  \det\left(  A_{\sim p,\sim u}\right)  \det\left(  A_{\sim
 q,\sim v}\right)  -\det\left(  A_{\sim q,\sim u}\right)  \det\left(  A_{\sim
-p,\sim v}\right)  \right)  \\
+p,\sim v}\right)  \right) \\
 &  =\det\left(  A_{\sim p,\sim u}\right)  \det\left(  A_{\sim q,\sim
 v}\right)  -\det\left(  A_{\sim q,\sim u}\right)  \det\left(  A_{\sim p,\sim
 v}\right)  .
@@ -45246,19 +45246,121 @@ Proposition \ref{prop.unrows.basics} \textbf{(d)} claims that the $w$-th
 column of the matrix $A_{\bullet,\sim v}$ equals the $w$-th column of the
 matrix $A$ (whenever $v\in\left\{  1,2,\ldots,m\right\}  $ and $w\in\left\{
 1,2,\ldots,v-1\right\}  $). Let us prove this: Let $v\in\left\{
-1,2,\ldots,m\right\}  $ and \newline$w\in\left\{  1,2,\ldots,v-1\right\}  $.
-Thus, $w<v$ (since $w\in\left\{  1,2,\ldots,v-1\right\}  $). But the matrix
+1,2,\ldots,m\right\}  $ and $w\in\left\{  1,2,\ldots,v-1\right\}  $. Thus,
+$w<v$ (since $w\in\left\{  1,2,\ldots,v-1\right\}  $). But the matrix
 $A_{\bullet,\sim v}$ results from the matrix $A$ by removing the $v$-th
 column; clearly, this removal does not change the $w$-th column (because
 $w<v$). Thus, the $w$-th column of the matrix $A_{\bullet,\sim v}$ equals the
 $w$-th column of the matrix $A$. So Proposition \ref{prop.unrows.basics}
-\textbf{(d)} is proven.
+\textbf{(d)} is proven.\footnote{If you found this proof insufficiently
+rigorous, let me show a formal proof of Proposition \ref{prop.unrows.basics}
+\textbf{(d)}. First, I shall introduce a notation:
+\par
+\begin{itemize}
+\item For every $j\in\mathbb{Z}$ and $r\in\mathbb{Z}$, let $\mathbf{d}%
+_{r}\left(  j\right)  $ be the integer $%
+\begin{cases}
+j, & \text{if }j<r;\\
+j+1, & \text{if }j\geq r
+\end{cases}
+$.
+\end{itemize}
+\par
+We make the following observation:
+\par
+\textit{Observation 1:} If $n\in\mathbb{N}$ and $m\in\mathbb{N}$, if
+$A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq m}\in\mathbb{K}%
+^{n\times m}$ is an $n\times m$-matrix, and if $v$ is an element of $\left\{
+1,2,\ldots,m\right\}  $, then $A_{\bullet,\sim v}=\left(  a_{i,\mathbf{d}%
+_{v}\left(  j\right)  }\right)  _{1\leq i\leq n,\ 1\leq j\leq m-1}$.
+\par
+\textit{Proof of Observation 1:} Let $n\in\mathbb{N}$ and $m\in\mathbb{N}$.
+Let $A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq m}\in
+\mathbb{K}^{n\times m}$ be an $n\times m$-matrix. Let $v$ be an element of
+$\left\{  1,2,\ldots,m\right\}  $. Recalling how $\mathbf{d}_{v}\left(
+j\right)  $ is defined for every $j\in\mathbb{Z}$, we see that%
+\begin{align*}
+\left(  \mathbf{d}_{v}\left(  1\right)  ,\mathbf{d}_{v}\left(  2\right)
+,\ldots,\mathbf{d}_{v}\left(  m-1\right)  \right)   &  =\left(  1,2,\ldots
+,v-1,v+1,v+2,\ldots,m\right)  \\
+&  =\left(  1,2,\ldots,\widehat{v},\ldots,m\right)  .
+\end{align*}
+But the definition of $A_{\bullet,\sim v}$ yields
+\begin{align*}
+A_{\bullet,\sim v} &  =\operatorname*{cols}\nolimits_{1,2,\ldots
+,\widehat{v},\ldots,m}A=\operatorname*{cols}\nolimits_{\mathbf{d}_{v}\left(
+1\right)  ,\mathbf{d}_{v}\left(  2\right)  ,\ldots,\mathbf{d}_{v}\left(
+m-1\right)  }A\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(  1,2,\ldots,\widehat{v}%
+,\ldots,m\right)  =\left(  \mathbf{d}_{v}\left(  1\right)  ,\mathbf{d}%
+_{v}\left(  2\right)  ,\ldots,\mathbf{d}_{v}\left(  m-1\right)  \right)
+\right)  \\
+&  =\left(  a_{i,\mathbf{d}_{v}\left(  y\right)  }\right)  _{1\leq i\leq
+n,\ 1\leq y\leq m-1}\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{by the definition of }\operatorname*{cols}\nolimits_{\mathbf{d}%
+_{v}\left(  1\right)  ,\mathbf{d}_{v}\left(  2\right)  ,\ldots,\mathbf{d}%
+_{v}\left(  n-1\right)  }A\\
+\text{(since }A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+m}\text{)}%
+\end{array}
+\right)  \\
+&  =\left(  a_{i,\mathbf{d}_{v}\left(  j\right)  }\right)  _{1\leq i\leq
+n,\ 1\leq j\leq m-1}\ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have renamed
+the index }\left(  i,y\right)  \text{ as }\left(  i,j\right)  \right)  .
+\end{align*}
+This proves Observation 1.
+\par
+Let us now prove Proposition \ref{prop.unrows.basics} \textbf{(d)}. Indeed,
+let $v\in\left\{  1,2,\ldots,m\right\}  $ and $w\in\left\{  1,2,\ldots
+,v-1\right\}  $. Then, $w<v$ (since $w\in\left\{  1,2,\ldots,v-1\right\}  $).
+Write the $n\times m$-matrix $A$ as $A=\left(  a_{i,j}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq m}$. The definition of $\mathbf{d}_{v}\left(  w\right)  $ now
+yields $\mathbf{d}_{v}\left(  w\right)  =%
+\begin{cases}
+w, & \text{if }w<v;\\
+w+1, & \text{if }w\geq v
+\end{cases}
+=w$ (since $w<v$). Now, the definition of $\left(  A_{\bullet,\sim v}\right)
+_{\bullet,w}$ yields%
+\begin{align*}
+\left(  A_{\bullet,\sim v}\right)  _{\bullet,w}  & =\left(  \text{the
+}w\text{-th column of the matrix }A_{\bullet,\sim v}\right)  \\
+& =\left(
+\begin{array}
+[c]{c}%
+a_{1,\mathbf{d}_{v}\left(  w\right)  }\\
+a_{2,\mathbf{d}_{v}\left(  w\right)  }\\
+\vdots\\
+a_{n,\mathbf{d}_{v}\left(  w\right)  }%
+\end{array}
+\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }A_{\bullet,\sim v}=\left(
+a_{i,\mathbf{d}_{v}\left(  j\right)  }\right)  _{1\leq i\leq n,\ 1\leq j\leq
+m-1}\right)  \\
+& =\left(
+\begin{array}
+[c]{c}%
+a_{1,w}\\
+a_{2,w}\\
+\vdots\\
+a_{n,w}%
+\end{array}
+\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\mathbf{d}_{v}\left(
+w\right)  =w\right)  \\
+& =\left(  \text{the }w\text{-th column of the matrix }A\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }A=\left(  a_{i,j}\right)  _{1\leq
+i\leq n,\ 1\leq j\leq m}\right)  \\
+& =A_{\bullet,w}.
+\end{align*}
+This proves Proposition \ref{prop.unrows.basics} \textbf{(d)}.}
 
 Proposition \ref{prop.unrows.basics} \textbf{(e)} claims that the $w$-th
 column of the matrix $A_{\bullet,\sim v}$ equals the $\left(  w+1\right)  $-th
 column of the matrix $A$ (whenever $v\in\left\{  1,2,\ldots,m\right\}  $ and
-$w\in\left\{  v,v+1,\ldots,m-1\right\}  $). Let us prove this: Let
-$v\in\left\{  1,2,\ldots,m\right\}  $ and $w\in\left\{  v,v+1,\ldots
+$w\in\left\{  v,v+1,\ldots,m-1\right\}  $). Let us prove this:
+
+Let $v\in\left\{  1,2,\ldots,m\right\}  $ and $w\in\left\{  v,v+1,\ldots
 ,m-1\right\}  $. Thus, $w+1>w\geq v$ (since $w\in\left\{  v,v+1,\ldots
 ,m-1\right\}  $). But the matrix $A_{\bullet,\sim v}$ results from the matrix
 $A$ by removing the $v$-th column; this removal moves the $\left(  w+1\right)
@@ -45266,7 +45368,12 @@ $-th column of $A$ one step leftwards (since $w+1>v$). In other words, the
 $\left(  w+1\right)  $-th column of $A$ becomes the $w$-th column of the new
 matrix $A_{\bullet,\sim v}$. In other words, the $w$-th column of the matrix
 $A_{\bullet,\sim v}$ equals the $\left(  w+1\right)  $-th column of the matrix
-$A$. So Proposition \ref{prop.unrows.basics} \textbf{(e)} is proven.
+$A$. So Proposition \ref{prop.unrows.basics} \textbf{(e)} is
+proven.\footnote{Again, a more rigorous proof of Proposition
+\ref{prop.unrows.basics} \textbf{(e)} can be obtained similarly to our
+rigorous proof of Proposition \ref{prop.unrows.basics} \textbf{(d)} in the
+previous footnote. (The main difference is that we have $\mathbf{d}_{v}\left(
+w\right)  =w+1$ instead of $\mathbf{d}_{v}\left(  w\right)  =w$ this time.)}
 
 Proposition \ref{prop.unrows.basics} \textbf{(f)} is the analogue of
 Proposition \ref{prop.unrows.basics} \textbf{(d)} for rows instead of columns
@@ -45344,44 +45451,9 @@ we have
 j\right)  \right)  \ \ \ \ \ \ \ \ \ \ \text{for each }j\in\mathbb{Z}.
 \]
 \par
-\textit{Proof of Observation 1:} Let $n\in\mathbb{N}$ and $m\in\mathbb{N}$.
-Let $A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq m}\in
-\mathbb{K}^{n\times m}$ be an $n\times m$-matrix. Let $v$ be an element of
-$\left\{  1,2,\ldots,m\right\}  $. Recalling how $\mathbf{d}_{v}\left(
-j\right)  $ is defined for every $j\in\mathbb{Z}$, we see that%
-\begin{align*}
-\left(  \mathbf{d}_{v}\left(  1\right)  ,\mathbf{d}_{v}\left(  2\right)
-,\ldots,\mathbf{d}_{v}\left(  m-1\right)  \right)   &  =\left(  1,2,\ldots
-,v-1,v+1,v+2,\ldots,m\right) \\
-&  =\left(  1,2,\ldots,\widehat{v},\ldots,m\right)  .
-\end{align*}
-But the definition of $A_{\bullet,\sim v}$ yields
-\begin{align*}
-A_{\bullet,\sim v}  &  =\operatorname*{cols}\nolimits_{1,2,\ldots
-,\widehat{v},\ldots,m}A=\operatorname*{cols}\nolimits_{\mathbf{d}_{v}\left(
-1\right)  ,\mathbf{d}_{v}\left(  2\right)  ,\ldots,\mathbf{d}_{v}\left(
-m-1\right)  }A\\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(  1,2,\ldots,\widehat{v}%
-,\ldots,m\right)  =\left(  \mathbf{d}_{v}\left(  1\right)  ,\mathbf{d}%
-_{v}\left(  2\right)  ,\ldots,\mathbf{d}_{v}\left(  m-1\right)  \right)
-\right) \\
-&  =\left(  a_{i,\mathbf{d}_{v}\left(  y\right)  }\right)  _{1\leq i\leq
-n,\ 1\leq y\leq m-1}\\
-&  \ \ \ \ \ \ \ \ \ \ \left(
-\begin{array}
-[c]{c}%
-\text{by the definition of }\operatorname*{cols}\nolimits_{\mathbf{d}%
-_{v}\left(  1\right)  ,\mathbf{d}_{v}\left(  2\right)  ,\ldots,\mathbf{d}%
-_{v}\left(  n-1\right)  }A\\
-\text{(since }A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq
-m}\text{)}%
-\end{array}
-\right) \\
-&  =\left(  a_{i,\mathbf{d}_{v}\left(  j\right)  }\right)  _{1\leq i\leq
-n,\ 1\leq j\leq m-1}\ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have renamed
-the index }\left(  i,y\right)  \text{ as }\left(  i,j\right)  \right)  .
-\end{align*}
-This proves Observation 1.
+\textit{Proof of Observation 1:} Observation 1 was already proven in a
+previous footnote (namely, the one where we gave a rigorous proof of
+Proposition \ref{prop.unrows.basics} \textbf{(d)}).
 \par
 \textit{Proof of Observation 2:} Let $n\in\mathbb{N}$ and $m\in\mathbb{N}$.
 Let $A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq m}\in
@@ -45391,8 +45463,8 @@ $\mathbf{d}_{w,v}\left(  j\right)  $ is defined for every $j\in\mathbb{Z}$, we
 find that%
 \begin{align*}
 &  \left(  \mathbf{d}_{w,v}\left(  1\right)  ,\mathbf{d}_{w,v}\left(
-2\right)  ,\ldots,\mathbf{d}_{w,v}\left(  m-2\right)  \right) \\
-&  =\left(  1,2,\ldots,w-1,w+1,w+2,\ldots,v-1,v+1,v+2,\ldots,m\right) \\
+2\right)  ,\ldots,\mathbf{d}_{w,v}\left(  m-2\right)  \right)  \\
+&  =\left(  1,2,\ldots,w-1,w+1,w+2,\ldots,v-1,v+1,v+2,\ldots,m\right)  \\
 &  =\left(  1,2,\ldots,\widehat{w},\ldots,\widehat{v},\ldots,m\right)  .
 \end{align*}
 Now,%
@@ -45405,7 +45477,7 @@ Now,%
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(  1,2,\ldots,\widehat{w}%
 ,\ldots,\widehat{v},\ldots,m\right)  =\left(  \mathbf{d}_{w,v}\left(
 1\right)  ,\mathbf{d}_{w,v}\left(  2\right)  ,\ldots,\mathbf{d}_{w,v}\left(
-m-2\right)  \right)  \right) \\
+m-2\right)  \right)  \right)  \\
 &  =\left(  a_{i,\mathbf{d}_{w,v}\left(  y\right)  }\right)  _{1\leq i\leq
 n,\ 1\leq y\leq m-2}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(
@@ -45417,7 +45489,7 @@ _{w,v}\left(  1\right)  ,\mathbf{d}_{w,v}\left(  2\right)  ,\ldots
 \text{(since }A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq
 m}\text{)}%
 \end{array}
-\right) \\
+\right)  \\
 &  =\left(  a_{i,\mathbf{d}_{w,v}\left(  j\right)  }\right)  _{1\leq i\leq
 n,\ 1\leq j\leq m-2}\ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have renamed
 the index }\left(  i,y\right)  \text{ as }\left(  i,j\right)  \right)  .
@@ -45462,9 +45534,9 @@ j+1, & \text{if }j+1<v;\\
 \left(  j+1\right)  +1, & \text{if }j+1\geq v
 \end{cases}
 \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\mathbf{d}_{v}\left(
-j+1\right)  \right) \\
+j+1\right)  \right)  \\
 &  =\left(  j+1\right)  +1\ \ \ \ \ \ \ \ \ \ \left(  \text{since }j+1\geq
-v\text{ (since }j\geq v-1\text{)}\right) \\
+v\text{ (since }j\geq v-1\text{)}\right)  \\
 &  =j+2=\mathbf{d}_{w,v}\left(  j\right)  ;
 \end{align*}
 thus, $\mathbf{d}_{w,v}\left(  j\right)  =\mathbf{d}_{v}\left(  \mathbf{d}%
@@ -45484,7 +45556,7 @@ n,\ 1\leq j\leq m-1}$. Hence, Observation 1 (applied to $m-1$, $A_{\bullet
 ,\sim v}$, $a_{i,\mathbf{d}_{v}\left(  j\right)  }$ and $w$ instead of $m$,
 $A$, $a_{i,j}$ and $v$) yields%
 \begin{align*}
-\left(  A_{\bullet,\sim v}\right)  _{\bullet,\sim w}  &  =\left(
+\left(  A_{\bullet,\sim v}\right)  _{\bullet,\sim w} &  =\left(
 a_{i,\mathbf{d}_{v}\left(  \mathbf{d}_{w}\left(  j\right)  \right)  }\right)
 _{1\leq i\leq n,\ 1\leq j\leq\left(  m-1\right)  -1}=\left(
 \underbrace{a_{i,\mathbf{d}_{v}\left(  \mathbf{d}_{w}\left(  j\right)
