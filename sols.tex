@@ -9643,12 +9643,10 @@ In the next exercises, we shall talk about rows and columns; let us first make
 some pedantic remarks about these notions.
 
 If $n\in\mathbb{N}$, then an $n\times1$-matrix is said to be a \textit{column
-vector} of length\footnote{The word \textquotedblleft length\textquotedblright%
-\ here has nothing to do with the length of a segment in geometry. Probably,
-among the words used in mathematics, \textquotedblleft
-length\textquotedblright\ is one of those with the most different meanings.}
-$n$, whereas a $1\times n$-matrix is said to be a \textit{row vector} of
-length $n$. Column vectors and row vectors store exactly the same kind of data
+vector} with $n$ entries\footnote{It is also called a \textit{column vector}
+of size $n$.},
+whereas a $1\times n$-matrix is said to be a \textit{row vector} with
+$n$ entries. Column vectors and row vectors store exactly the same kind of data
 (namely, $n$ elements of $\mathbb{K}$), so you might wonder why I make a
 difference between them (and also why I distinguish them from $n$-tuples of
 elements of $\mathbb{K}$, which also contain precisely the same kind of data).
@@ -9713,15 +9711,15 @@ a_{1} & a_{2} & \cdots & a_{n}%
 \end{array}
 \right)  $ with the $n$-tuple $\left(  a_{1},a_{2},\ldots,a_{n}\right)
 \in\mathbb{K}^{n}$. Thus, $\mathbb{K}^{n}$ becomes the set of all row vectors
-of length $n$.\ \ \ \ \footnote{Some algebraists, instead, identify column
+with $n$ entries.\ \ \ \ \footnote{Some algebraists, instead, identify column
 vectors with $n$-tuples, so that $\mathbb{K}^{n}$ is then the set of all
-column vectors of length $n$. This is a valid convention as well, but one must
+column vectors with $n$ entries. This is a valid convention as well, but one must
 be careful not to use it simultaneously with the other convention (i.e., with
 the convention that row vectors are identified with $n$-tuples); this is why
 we will not use it.}
 
-The column vectors of length $n$ are in 1-to-1 correspondence with the row
-vectors of length $n$, and this correspondence is given by taking the
+The column vectors with $n$ entries are in 1-to-1 correspondence with the row
+vectors with $n$ entries, and this correspondence is given by taking the
 transpose: The column vector $v$ corresponds to the row vector $v^{T}$, and
 conversely, the row vector $w$ corresponds to the column vector $w^{T}$. In
 particular, every column vector $\left(
@@ -9744,13 +9742,13 @@ The rows of a matrix are row vectors; the columns of a matrix are column
 vectors. Thus, terms like \textquotedblleft the sum of two rows of a matrix
 $A$\textquotedblright\ or \textquotedblleft$-3$ times a column of a matrix
 $A$\textquotedblright\ make sense: Rows and columns are vectors, and thus can
-be added (when they have the same length) and multiplied by elements of
+be added (when they have the same number of entries) and multiplied by elements of
 $\mathbb{K}$.
 
 Let $n\in\mathbb{N}$ and $j\in\left\{  1,2,\ldots,n\right\}  $. If $v$ is a
-column vector of length $n$ (that is, an $n\times1$-matrix), then the
+column vector with $n$ entries (that is, an $n\times1$-matrix), then the
 $j$\textit{-th entry of }$v$ means the $\left(  j,1\right)  $-th entry of $v$.
-If $v$ is a row vector of length $n$ (that is, a $1\times n$-matrix), then the
+If $v$ is a row vector with $n$ entries (that is, a $1\times n$-matrix), then the
 $j$\textit{-th entry of }$v$ means the $\left(  1,j\right)  $-th entry of $v$.
 For example, the $2$-nd entry of the row vector $\left(
 \begin{array}
@@ -11658,9 +11656,9 @@ Thus, (\ref{eq.exam.cauchy-binet.0}) is proven again.
 \begin{example}
 \label{exam.cauchy-binet.1}Let us see what Theorem \ref{thm.cauchy-binet} says
 for $n=1$. Indeed, let $m\in\mathbb{N}$; let $A=\left(  a_{1},a_{2}%
-,\ldots,a_{m}\right)  $ be a $1\times m$-matrix (i.e., a row vector of length
-$m$), and let $B=\left(  b_{1},b_{2},\ldots,b_{m}\right)  ^{T}$ be an
-$m\times1$-matrix (i.e., a column vector of length $m$). Then, $AB$ is the
+,\ldots,a_{m}\right)  $ be a $1\times m$-matrix (i.e., a row vector with
+$m$ entries), and let $B=\left(  b_{1},b_{2},\ldots,b_{m}\right)  ^{T}$ be an
+$m\times1$-matrix (i.e., a column vector with $m$ entries). Then, $AB$ is the
 $1\times1$-matrix $\left(
 \begin{array}
 [c]{c}%
@@ -18646,8 +18644,8 @@ column of $A$ by the column vector $w$. Thus,%
 \end{align}
 whereas%
 \begin{equation}
-\left(  \text{the }q\text{-th column of }C\right)
-=w.\label{pf.prop.laplace.0.b.Cp}%
+\left(  \text{the }q\text{-th column of }C\right)  =w.
+\label{pf.prop.laplace.0.b.Cp}%
 \end{equation}
 The matrix $C$ has two equal column\footnote{\textit{Proof.} We have $r\neq q$
 (since $q\neq r$). Hence, (\ref{pf.prop.laplace.0.b.Cu}) (applied to $u=r$)
@@ -18655,7 +18653,7 @@ yields%
 \begin{align*}
 \left(  \text{the }r\text{-th column of }C\right)   &  =\left(  \text{the
 }r\text{-th column of }A\right)  =w\ \ \ \ \ \ \ \ \ \ \left(  \text{since
-}w=\left(  \text{the }r\text{-th column of }A\right)  \right)  \\
+}w=\left(  \text{the }r\text{-th column of }A\right)  \right) \\
 &  =\left(  \text{the }q\text{-th column of }C\right)
 \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{pf.prop.laplace.0.b.Cp})}\right)  .
 \end{align*}
@@ -18676,7 +18674,7 @@ c_{2,u}\\
 \vdots\\
 c_{n,u}%
 \end{array}
-\right)  .\label{pf.prop.laplace.0.b.u-th-row}%
+\right)  . \label{pf.prop.laplace.0.b.u-th-row}%
 \end{equation}
 Applying this to $u=q$, we obtain%
 \[
@@ -18701,7 +18699,7 @@ c_{2,q}\\
 c_{n,q}%
 \end{array}
 \right)   &  =\left(  \text{the }q\text{-th column of }C\right)  =w=\left(
-\text{the }r\text{-th column of }A\right)  \\
+\text{the }r\text{-th column of }A\right) \\
 &  =\left(
 \begin{array}
 [c]{c}%
@@ -18716,7 +18714,7 @@ _{1\leq i\leq n,\ 1\leq j\leq n}\right)  .
 In other words,%
 \begin{equation}
 c_{p,q}=a_{p,r}\ \ \ \ \ \ \ \ \ \ \text{for every }p\in\left\{
-1,2,\ldots,n\right\}  .\label{pf.prop.laplace.0.b.cpq}%
+1,2,\ldots,n\right\}  . \label{pf.prop.laplace.0.b.cpq}%
 \end{equation}
 
 
@@ -18724,7 +18722,7 @@ On the other hand,%
 \begin{equation}
 c_{p,u}=a_{p,u}\ \ \ \ \ \ \ \ \ \ \text{for every }p\in\left\{
 1,2,\ldots,n\right\}  \text{ and }u\in\left\{  1,2,\ldots,n\right\}  \text{
-satisfying }u\neq q\label{pf.prop.laplace.0.b.cuq}%
+satisfying }u\neq q \label{pf.prop.laplace.0.b.cuq}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{pf.prop.laplace.0.b.cuq}):} Let $u\in\left\{
 1,2,\ldots,n\right\}  $ be such that $u\neq q$. Thus,%
@@ -18739,10 +18737,9 @@ c_{n,u}%
 \end{array}
 \right)   &  =\left(  \text{the }u\text{-th column of }C\right)
 \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{pf.prop.laplace.0.b.u-th-row}%
-)}\right)  \\
+)}\right) \\
 &  =\left(  \text{the }u\text{-th column of }A\right)
-\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{pf.prop.laplace.0.b.Cu})}\right)
-\\
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{pf.prop.laplace.0.b.Cu})}\right) \\
 &  =\left(
 \begin{array}
 [c]{c}%
@@ -18791,34 +18788,34 @@ $\left(  v_{1},v_{2},\ldots,v_{n-1}\right)  =\left(  1,2,\ldots,\widehat{p}%
 \par
 Now, the definition of $C_{\sim p,\sim q}$ yields%
 \begin{align*}
-C_{\sim p,\sim q} &  =\operatorname*{sub}\nolimits_{1,2,\ldots,\widehat{p}%
+C_{\sim p,\sim q}  &  =\operatorname*{sub}\nolimits_{1,2,\ldots,\widehat{p}%
 ,\ldots,n}^{1,2,\ldots,\widehat{q},\ldots,n}C=\operatorname*{sub}%
 \nolimits_{v_{1},v_{2},\ldots,v_{n-1}}^{1,2,\ldots,\widehat{q},\ldots,n}C\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(  1,2,\ldots,\widehat{p}%
-,\ldots,n\right)  =\left(  v_{1},v_{2},\ldots,v_{n-1}\right)  \right)  \\
+,\ldots,n\right)  =\left(  v_{1},v_{2},\ldots,v_{n-1}\right)  \right) \\
 &  =\operatorname*{sub}\nolimits_{v_{1},v_{2},\ldots,v_{n-1}}^{u_{1}%
 ,u_{2},\ldots,u_{n-1}}C\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(
 1,2,\ldots,\widehat{q},\ldots,n\right)  =\left(  u_{1},u_{2},\ldots
-,u_{n-1}\right)  \right)  \\
+,u_{n-1}\right)  \right) \\
 &  =\left(  \underbrace{c_{v_{x},u_{y}}}_{\substack{=a_{v_{x},u_{y}%
 }\\\text{(by (\ref{pf.prop.laplace.0.b.CA.pf.1}),}\\\text{applied to }%
 p=v_{x}\text{)}}}\right)  _{1\leq x\leq n-1,\ 1\leq y\leq n-1}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\operatorname*{sub}%
 \nolimits_{v_{1},v_{2},\ldots,v_{n-1}}^{u_{1},u_{2},\ldots,u_{n-1}}C\text{,
-since }C=\left(  c_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  \\
+since }C=\left(  c_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right) \\
 &  =\left(  a_{v_{x},u_{y}}\right)  _{1\leq x\leq n-1,\ 1\leq y\leq n-1}.
 \end{align*}
 Compared with%
 \begin{align*}
-A_{\sim p,\sim q} &  =\operatorname*{sub}\nolimits_{1,2,\ldots,\widehat{p}%
+A_{\sim p,\sim q}  &  =\operatorname*{sub}\nolimits_{1,2,\ldots,\widehat{p}%
 ,\ldots,n}^{1,2,\ldots,\widehat{q},\ldots,n}A=\operatorname*{sub}%
 \nolimits_{v_{1},v_{2},\ldots,v_{n-1}}^{1,2,\ldots,\widehat{q},\ldots,n}A\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(  1,2,\ldots,\widehat{p}%
-,\ldots,n\right)  =\left(  v_{1},v_{2},\ldots,v_{n-1}\right)  \right)  \\
+,\ldots,n\right)  =\left(  v_{1},v_{2},\ldots,v_{n-1}\right)  \right) \\
 &  =\operatorname*{sub}\nolimits_{v_{1},v_{2},\ldots,v_{n-1}}^{u_{1}%
 ,u_{2},\ldots,u_{n-1}}A\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(
 1,2,\ldots,\widehat{q},\ldots,n\right)  =\left(  u_{1},u_{2},\ldots
-,u_{n-1}\right)  \right)  \\
+,u_{n-1}\right)  \right) \\
 &  =\left(  a_{v_{x},u_{y}}\right)  _{1\leq x\leq n-1,\ 1\leq y\leq n-1}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }%
 a\operatorname*{sub}\nolimits_{v_{1},v_{2},\ldots,v_{n-1}}^{u_{1},u_{2}%
@@ -18828,13 +18825,13 @@ n,\ 1\leq j\leq n}\right)  ,
 this yields $C_{\sim p,\sim q}=A_{\sim p,\sim q}$. This proves
 (\ref{pf.prop.laplace.0.b.CA}).}. Now, $\det C=0$, so that%
 \begin{align*}
-0 &  =\det C=\sum_{p=1}^{n}\left(  -1\right)  ^{p+q}\underbrace{c_{p,q}%
+0  &  =\det C=\sum_{p=1}^{n}\left(  -1\right)  ^{p+q}\underbrace{c_{p,q}%
 }_{\substack{=a_{p,r}\\\text{(by (\ref{pf.prop.laplace.0.b.cpq}))}}%
 }\det\left(  \underbrace{C_{\sim p,\sim q}}_{\substack{=A_{\sim p,\sim
-q}\\\text{(by (\ref{pf.prop.laplace.0.b.CA}))}}}\right)  \\
+q}\\\text{(by (\ref{pf.prop.laplace.0.b.CA}))}}}\right) \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem \ref{thm.laplace.gen}
 \textbf{(b)}, applied to }C\text{ and }c_{i,j}\text{ instead of }A\text{ and
-}a_{i,j}\right)  \\
+}a_{i,j}\right) \\
 &  =\sum_{q=1}^{n}\left(  -1\right)  ^{p+q}a_{p,r}\det\left(  A_{\sim p,\sim
 q}\right)  .
 \end{align*}
@@ -19490,11 +19487,11 @@ The following is a simple consequence of Theorem \ref{thm.adj.inverse}:
 
 \begin{corollary}
 \label{cor.adj.kernel}Let $n\in\mathbb{N}$. Let $A$ be an $n\times n$-matrix.
-Let $v$ be a column vector of length $n$. If $Av=0_{n\times1}$, then $\det
+Let $v$ be a column vector with $n$ entries. If $Av=0_{n\times1}$, then $\det
 A\cdot v=0_{n\times1}$.
 
 (Recall that $0_{n\times1}$ denotes the $n\times1$ zero matrix, i.e., the
-column vector of length $n$ whose all entries are $0$.)
+column vector with $n$ entries whose all entries are $0$.)
 \end{corollary}
 
 \begin{proof}
@@ -20508,8 +20505,8 @@ solving systems of linear equations.
 
 \begin{theorem}
 \label{thm.cramer}Let $n\in\mathbb{N}$. Let $A$ be an $n\times n$-matrix. Let
-$b=\left(  b_{1},b_{2},\ldots,b_{n}\right)  ^{T}$ be a column vector of length
-$n$ (that is, an $n\times1$-matrix).\footnotemark
+$b=\left(  b_{1},b_{2},\ldots,b_{n}\right)  ^{T}$ be a column vector with
+$n$ entries (that is, an $n\times1$-matrix).\footnotemark
 
 For every $j\in\left\{  1,2,\ldots,n\right\}  $, let $A_{j}^{\#}$ be the
 $n\times n$-matrix obtained from $A$ by replacing the $j$-th column of $A$
@@ -20543,7 +20540,7 @@ b_{n}%
 \begin{remark}
 A system of $n$ linear equations in $n$ variables $x_{1},x_{2},\ldots,x_{n}$
 can be written in the form $Ax=b$, where $A$ is a fixed $n\times n$-matrix and
-$b$ is a column vector of length $n$ (and where $x$ is the column vector
+$b$ is a column vector with $n$ entries (and where $x$ is the column vector
 $\left(  x_{1},x_{2},\ldots,x_{n}\right)  ^{T}$ containing all the variables).
 When the matrix $A$ is invertible, it thus has a unique solution: namely,
 $x=A^{-1}b$ (just multiply the equation $Ax=b$ from the left with $A^{-1}$ to
