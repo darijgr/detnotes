@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Monday, May 16, 2016 15:38:50}
+%TCIDATA{LastRevised=Monday, May 16, 2016 23:48:06}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -47796,8 +47796,8 @@ v\right)  $, $p$ and $m+1$ instead of $u$ and $v$) yields
 \[
 \left(  \left(  A\mid v\right)  _{\bullet,\sim\left(  m+1\right)  }\right)
 _{\sim p,\bullet}=\left(  \left(  A\mid v\right)  _{\sim p,\bullet}\right)
-_{\bullet,\left(  m+1\right)  }=\left(  A\mid v\right)  _{\sim p,\sim\left(
-m+1\right)  }.
+_{\bullet,\sim\left(  m+1\right)  }=\left(  A\mid v\right)  _{\sim
+p,\sim\left(  m+1\right)  }.
 \]
 Hence,%
 \[
@@ -47976,8 +47976,8 @@ $n\times\left(  n-1\right)  $-matrix (since $A$ is an $n\times n$-matrix).
 
 Furthermore, the definition of $A_{\bullet,r}$ yields%
 \begin{align*}
-A_{\bullet,r} &  =\left(  \text{the }r\text{-th column of the matrix
-}A\right)  \\
+A_{\bullet,r}  &  =\left(  \text{the }r\text{-th column of the matrix
+}A\right) \\
 &  =\left(
 \begin{array}
 [c]{c}%
@@ -47987,7 +47987,7 @@ a_{2,r}\\
 a_{n,r}%
 \end{array}
 \right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }A=\left(  a_{i,j}\right)
-_{1\leq i\leq n,\ 1\leq j\leq n}\right)  \\
+_{1\leq i\leq n,\ 1\leq j\leq n}\right) \\
 &  =\left(  a_{1,r},a_{2,r},\ldots,a_{n,r}\right)  ^{T}.
 \end{align*}
 Thus, Proposition \ref{prop.addcol.props2} \textbf{(a)} (applied to
@@ -47996,13 +47996,13 @@ $v_{i}$) yields%
 \begin{equation}
 \det\left(  A_{\bullet,\sim q}\mid A_{\bullet,r}\right)  =\sum_{i=1}%
 ^{n}\left(  -1\right)  ^{n+i}a_{i,r}\det\left(  \left(  A_{\bullet,\sim
-q}\right)  _{\sim i,\bullet}\right)
-.\label{pf.lem.sol.prop.addcol.props3.bc.short.1}%
+q}\right)  _{\sim i,\bullet}\right)  .
+\label{pf.lem.sol.prop.addcol.props3.bc.short.1}%
 \end{equation}
 But every $i\in\left\{  1,2,\ldots,n\right\}  $ satisfies%
 \begin{equation}
-\left(  A_{\bullet,\sim q}\right)  _{\sim i,\bullet}=A_{\sim i,\sim
-q}\label{pf.lem.sol.prop.addcol.props3.bc.short.2}%
+\left(  A_{\bullet,\sim q}\right)  _{\sim i,\bullet}=A_{\sim i,\sim q}
+\label{pf.lem.sol.prop.addcol.props3.bc.short.2}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{pf.lem.sol.prop.addcol.props3.bc.short.2}):}
 Let $i\in\left\{  1,2,\ldots,n\right\}  $. Then, Proposition
@@ -48011,8 +48011,8 @@ $m$, $u$ and $v$) yields $\left(  A_{\bullet,\sim q}\right)  _{\sim i,\bullet
 }=\left(  A_{\sim i,\bullet}\right)  _{\bullet,\sim q}=A_{\sim i,\sim q}$.
 This proves (\ref{pf.lem.sol.prop.addcol.props3.bc.short.2}).} and%
 \begin{equation}
-\left(  -1\right)  ^{n+i}=\left(  -1\right)  ^{n+q}\left(  -1\right)
-^{i+q}\label{pf.lem.sol.prop.addcol.props3.bc.short.3}%
+\left(  -1\right)  ^{n+i}=\left(  -1\right)  ^{n+q}\left(  -1\right)  ^{i+q}
+\label{pf.lem.sol.prop.addcol.props3.bc.short.3}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{pf.lem.sol.prop.addcol.props3.bc.short.3}):}
 Let $i\in\left\{  1,2,\ldots,n\right\}  $. Then, $\left(  -1\right)
@@ -48028,13 +48028,13 @@ Let $i\in\left\{  1,2,\ldots,n\right\}  $. Then, $\left(  -1\right)
 (\ref{pf.lem.sol.prop.addcol.props3.bc.short.3}))}}}a_{i,r}\det\left(
 \underbrace{\left(  A_{\bullet,\sim q}\right)  _{\sim i,\bullet}%
 }_{\substack{=A_{\sim i,\sim q}\\\text{(by
-(\ref{pf.lem.sol.prop.addcol.props3.bc.short.2}))}}}\right)  \\
+(\ref{pf.lem.sol.prop.addcol.props3.bc.short.2}))}}}\right) \\
 &  =\sum_{i=1}^{n}\left(  -1\right)  ^{n+q}\left(  -1\right)  ^{i+q}%
-a_{i,r}\det\left(  A_{\sim i,\sim q}\right)  \\
+a_{i,r}\det\left(  A_{\sim i,\sim q}\right) \\
 &  =\left(  -1\right)  ^{n+q}\sum_{i=1}^{n}\left(  -1\right)  ^{i+q}%
-a_{i,r}\det\left(  A_{\sim i,\sim q}\right)  \\
+a_{i,r}\det\left(  A_{\sim i,\sim q}\right) \\
 &  =\left(  -1\right)  ^{n+q}\sum_{p=1}^{n}\left(  -1\right)  ^{p+q}%
-a_{p,r}\det\left(  A_{\sim p,\sim q}\right)  \\
+a_{p,r}\det\left(  A_{\sim p,\sim q}\right) \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have renamed the summation index
 }i\text{ as }p\right)  .
 \end{align*}
@@ -48185,7 +48185,7 @@ matrix $\left(  A_{\bullet,\sim q}\mid A_{\bullet,r}\right)  $ (namely, once
 as one of the columns of $A_{\bullet,\sim q}$, and another time as the
 attached column). Therefore, the matrix $\left(  A_{\bullet,\sim q}\mid
 A_{\bullet,r}\right)  $ has two equal columns. Exercise \ref{exe.ps4.6}
-\textbf{(f)} shows that $\det\left(  A_{\bullet,\sim q}\mid A_{\bullet
+\textbf{(f)} thus shows that $\det\left(  A_{\bullet,\sim q}\mid A_{\bullet
 ,r}\right)  =0$. This proves Proposition \ref{prop.addcol.props3} \textbf{(c)} again.]
 
 \textbf{(d)} Let $p\in\left\{  1,2,\ldots,n\right\}  $ and $q\in\left\{
@@ -49025,8 +49025,8 @@ v\right)  $, $p$ and $m+1$ instead of $u$ and $v$) yields
 \[
 \left(  \left(  A\mid v\right)  _{\bullet,\sim\left(  m+1\right)  }\right)
 _{\sim p,\bullet}=\left(  \left(  A\mid v\right)  _{\sim p,\bullet}\right)
-_{\bullet,\left(  m+1\right)  }=\left(  A\mid v\right)  _{\sim p,\sim\left(
-m+1\right)  }.
+_{\bullet,\sim\left(  m+1\right)  }=\left(  A\mid v\right)  _{\sim
+p,\sim\left(  m+1\right)  }.
 \]
 Hence,%
 \[
@@ -49275,8 +49275,8 @@ other words, $A_{\bullet,\sim q}\in\mathbb{K}^{n\times\left(  n-1\right)  }$.
 Furthermore, $A_{\bullet,r}$ is the $r$-th column of the matrix $A$ (by the
 definition of $A_{\bullet,r}$). Thus,%
 \begin{align*}
-A_{\bullet,r} &  =\left(  \text{the }r\text{-th column of the matrix
-}A\right)  \\
+A_{\bullet,r}  &  =\left(  \text{the }r\text{-th column of the matrix
+}A\right) \\
 &  =\left(
 \begin{array}
 [c]{c}%
@@ -49286,7 +49286,7 @@ a_{2,r}\\
 a_{n,r}%
 \end{array}
 \right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }A=\left(  a_{i,j}\right)
-_{1\leq i\leq n,\ 1\leq j\leq n}\right)  \\
+_{1\leq i\leq n,\ 1\leq j\leq n}\right) \\
 &  =\left(  a_{1,r},a_{2,r},\ldots,a_{n,r}\right)  ^{T}.
 \end{align*}
 Thus, Proposition \ref{prop.addcol.props2} \textbf{(a)} (applied to
@@ -49295,13 +49295,13 @@ $v_{i}$) yields%
 \begin{equation}
 \det\left(  A_{\bullet,\sim q}\mid A_{\bullet,r}\right)  =\sum_{i=1}%
 ^{n}\left(  -1\right)  ^{n+i}a_{i,r}\det\left(  \left(  A_{\bullet,\sim
-q}\right)  _{\sim i,\bullet}\right)
-.\label{pf.lem.sol.prop.addcol.props3.bc.1}%
+q}\right)  _{\sim i,\bullet}\right)  .
+\label{pf.lem.sol.prop.addcol.props3.bc.1}%
 \end{equation}
 But every $i\in\left\{  1,2,\ldots,n\right\}  $ satisfies%
 \begin{equation}
-\left(  A_{\bullet,\sim q}\right)  _{\sim i,\bullet}=A_{\sim i,\sim
-q}\label{pf.lem.sol.prop.addcol.props3.bc.2}%
+\left(  A_{\bullet,\sim q}\right)  _{\sim i,\bullet}=A_{\sim i,\sim q}
+\label{pf.lem.sol.prop.addcol.props3.bc.2}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{pf.lem.sol.prop.addcol.props3.bc.2}):} Let
 $i\in\left\{  1,2,\ldots,n\right\}  $. Then, Proposition
@@ -49311,8 +49311,8 @@ $m$, $u$ and $v$) yields $\left(  A_{\bullet,\sim q}\right)  _{\sim i,\bullet
 Hence, $\left(  A_{\bullet,\sim q}\right)  _{\sim i,\bullet}=A_{\sim i,\sim
 q}$. This proves (\ref{pf.lem.sol.prop.addcol.props3.bc.2}).} and%
 \begin{equation}
-\left(  -1\right)  ^{n+i}=\left(  -1\right)  ^{n+q}\left(  -1\right)
-^{i+q}\label{pf.lem.sol.prop.addcol.props3.bc.3}%
+\left(  -1\right)  ^{n+i}=\left(  -1\right)  ^{n+q}\left(  -1\right)  ^{i+q}
+\label{pf.lem.sol.prop.addcol.props3.bc.3}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{pf.lem.sol.prop.addcol.props3.bc.3}):} Let
 $i\in\left\{  1,2,\ldots,n\right\}  $. Then, $\left(  -1\right)  ^{n+q}\left(
@@ -49328,13 +49328,13 @@ i+q\right)  =n+i+2q\equiv n+i\operatorname{mod}2$). This proves
 (\ref{pf.lem.sol.prop.addcol.props3.bc.3}))}}}a_{i,r}\det\left(
 \underbrace{\left(  A_{\bullet,\sim q}\right)  _{\sim i,\bullet}%
 }_{\substack{=A_{\sim i,\sim q}\\\text{(by
-(\ref{pf.lem.sol.prop.addcol.props3.bc.2}))}}}\right)  \\
+(\ref{pf.lem.sol.prop.addcol.props3.bc.2}))}}}\right) \\
 &  =\sum_{i=1}^{n}\left(  -1\right)  ^{n+q}\left(  -1\right)  ^{i+q}%
-a_{i,r}\det\left(  A_{\sim i,\sim q}\right)  \\
+a_{i,r}\det\left(  A_{\sim i,\sim q}\right) \\
 &  =\left(  -1\right)  ^{n+q}\sum_{i=1}^{n}\left(  -1\right)  ^{i+q}%
-a_{i,r}\det\left(  A_{\sim i,\sim q}\right)  \\
+a_{i,r}\det\left(  A_{\sim i,\sim q}\right) \\
 &  =\left(  -1\right)  ^{n+q}\sum_{p=1}^{n}\left(  -1\right)  ^{p+q}%
-a_{p,r}\det\left(  A_{\sim p,\sim q}\right)  \\
+a_{p,r}\det\left(  A_{\sim p,\sim q}\right) \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have renamed the summation index
 }i\text{ as }p\right)  .
 \end{align*}
@@ -49492,7 +49492,7 @@ matrix $\left(  A_{\bullet,\sim q}\mid A_{\bullet,r}\right)  $ (namely, once
 as one of the columns of $A_{\bullet,\sim q}$, and another time as the
 attached column). Therefore, the matrix $\left(  A_{\bullet,\sim q}\mid
 A_{\bullet,r}\right)  $ has two equal columns. Exercise \ref{exe.ps4.6}
-\textbf{(f)} shows that $\det\left(  A_{\bullet,\sim q}\mid A_{\bullet
+\textbf{(f)} thus shows that $\det\left(  A_{\bullet,\sim q}\mid A_{\bullet
 ,r}\right)  =0$. This proves Proposition \ref{prop.addcol.props3} \textbf{(c)} again.]
 
 \textbf{(d)} Let $p\in\left\{  1,2,\ldots,n\right\}  $ and $q\in\left\{
