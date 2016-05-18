@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Tuesday, May 17, 2016 22:26:20}
+%TCIDATA{LastRevised=Tuesday, May 17, 2016 23:09:31}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -22558,6 +22558,63 @@ well-defined elements of $\mathbb{K}$. Prove that%
 \]
 
 \end{exercise}
+
+\begin{example}
+\label{exam.exe.desnanot.jaw}If we set $n=4$, $B=\left(
+\begin{array}
+[c]{ccc}%
+a & a^{\prime} & a^{\prime\prime}\\
+b & b^{\prime} & b^{\prime\prime}\\
+c & c^{\prime} & c^{\prime\prime}\\
+d & d^{\prime} & d^{\prime\prime}%
+\end{array}
+\right)  $, $q=3$, $u=1$, $v=2$ and $w=3$, then Exercise
+\ref{exe.desnanot.jaw} says that%
+\begin{align*}
+& \det\left(
+\begin{array}
+[c]{ccc}%
+b & b^{\prime} & b^{\prime\prime}\\
+c & c^{\prime} & c^{\prime\prime}\\
+d & d^{\prime} & d^{\prime\prime}%
+\end{array}
+\right)  \cdot\det\left(
+\begin{array}
+[c]{cc}%
+a & a^{\prime}\\
+d & d^{\prime}%
+\end{array}
+\right)  +\det\left(
+\begin{array}
+[c]{ccc}%
+a & a^{\prime} & a^{\prime\prime}\\
+b & b^{\prime} & b^{\prime\prime}\\
+d & d^{\prime} & d^{\prime\prime}%
+\end{array}
+\right)  \cdot\det\left(
+\begin{array}
+[c]{cc}%
+c & c^{\prime}\\
+d & d^{\prime}%
+\end{array}
+\right)  \\
+& =\det\left(
+\begin{array}
+[c]{ccc}%
+a & a^{\prime} & a^{\prime\prime}\\
+c & c^{\prime} & c^{\prime\prime}\\
+d & d^{\prime} & d^{\prime\prime}%
+\end{array}
+\right)  \cdot\det\left(
+\begin{array}
+[c]{cc}%
+b & b^{\prime}\\
+d & d^{\prime}%
+\end{array}
+\right)  .
+\end{align*}
+
+\end{example}
 
 \begin{remark}
 Exercise \ref{exe.desnanot.jaw} appears in \cite[proof of Theorem 7]%
@@ -49829,7 +49886,7 @@ instead of $A$, $p$, $q$, $u$ and $v$) yields%
 \begin{align*}
 &  \det C\cdot\det\left(  \operatorname*{sub}\nolimits_{1,2,\ldots
 ,\widehat{v},\ldots,\widehat{w},\ldots,n}^{1,2,\ldots,\widehat{q}%
-,\ldots,\widehat{n},\ldots,n}C\right)  \\
+,\ldots,\widehat{n},\ldots,n}C\right) \\
 &  =\underbrace{\det\left(  C_{\sim v,\sim q}\right)  }_{\substack{=-\left(
 -1\right)  ^{n+u}\beta_{u,v}\\\text{(by (\ref{sol.desnanot.jaw.1}))}}%
 }\cdot\underbrace{\det\left(  C_{\sim w,\sim n}\right)  }_{\substack{=\alpha
@@ -49839,7 +49896,7 @@ v,\sim n}\right)  }_{\substack{=\alpha_{v}\\\text{(by
 q}\right)  }_{\substack{=-\left(  -1\right)  ^{n+u}\beta_{u,w}\\\text{(by
 (\ref{sol.desnanot.jaw.2}))}}}\\
 &  =\left(  -\left(  -1\right)  ^{n+u}\beta_{u,v}\right)  \cdot\alpha
-_{w}-\alpha_{v}\cdot\left(  -\left(  -1\right)  ^{n+u}\beta_{u,w}\right)  \\
+_{w}-\alpha_{v}\cdot\left(  -\left(  -1\right)  ^{n+u}\beta_{u,w}\right) \\
 &  =-\left(  -1\right)  ^{n+u}\beta_{u,v}\cdot\alpha_{w}+\alpha_{v}%
 \cdot\left(  -1\right)  ^{n+u}\beta_{u,w}\\
 &  =\alpha_{v}\cdot\left(  -1\right)  ^{n+u}\beta_{u,w}-\left(  -1\right)
@@ -49849,7 +49906,7 @@ _{v}\beta_{u,w}-\beta_{u,v}\alpha_{w}\right)  .
 Hence,%
 \begin{align*}
 &  \left(  -1\right)  ^{n+u}\left(  \alpha_{v}\beta_{u,w}-\beta_{u,v}%
-\alpha_{w}\right)  \\
+\alpha_{w}\right) \\
 &  =\underbrace{\det C}_{\substack{=\left(  -1\right)  ^{n+u}\alpha
 _{u}\\\text{(by (\ref{sol.desnanot.jaw.6}))}}}\cdot\underbrace{\det\left(
 \operatorname*{sub}\nolimits_{1,2,\ldots,\widehat{v},\ldots,\widehat{w}%
