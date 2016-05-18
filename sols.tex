@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Tuesday, May 17, 2016 21:01:56}
+%TCIDATA{LastRevised=Tuesday, May 17, 2016 22:26:20}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -21131,19 +21131,21 @@ This proves Theorem \ref{thm.cramer} \textbf{(b)}.
 
 \subsection{The Desnanot-Jacobi identity}
 
-We now move towards more exotic places. In this section, we shall prove the
-\textit{Desnanot-Jacobi identity}, also known as \textit{Lewis Carroll
-identity}\footnote{See \cite[\S 3.5]{Bresso99} for the history of this
-identity (as well as for a proof different from ours, and for an application).
-In a nutshell: Desnanot discovered it in 1819; Jacobi proved it in 1833 (and
-again in 1841); in 1866, Charles Lutwidge Dodgson (better known as Lewis
-Carroll, although his mathematical works were not printed under this pen name)
-popularized it by publishing an algorithm for evaluating determinants that
-made heavy use of this identity.}. We will need some notations to state this
-identity in the generality I want; but first I shall state the two best known
-particular cases (from which the general version can actually be easily
-derived, although this is not the way I will take):\footnote{We shall use the
-notations of Definition \ref{def.submatrix.minor} throughout this section.}
+We now move towards more exotic places. In this section\footnote{which,
+unfortunately, has become more technical and tedious than it promised to be --
+for which I apologize}, we shall prove the \textit{Desnanot-Jacobi identity},
+also known as \textit{Lewis Carroll identity}\footnote{See \cite[\S 3.5]%
+{Bresso99} for the history of this identity (as well as for a proof different
+from ours, and for an application). In a nutshell: Desnanot discovered it in
+1819; Jacobi proved it in 1833 (and again in 1841); in 1866, Charles Lutwidge
+Dodgson (better known as Lewis Carroll, although his mathematical works were
+not printed under this pen name) popularized it by publishing an algorithm for
+evaluating determinants that made heavy use of this identity.}. We will need
+some notations to state this identity in the generality I want; but first I
+shall state the two best known particular cases (from which the general
+version can actually be easily derived, although this is not the way I will
+take):\footnote{We shall use the notations of Definition
+\ref{def.submatrix.minor} throughout this section.}
 
 \begin{proposition}
 \label{prop.desnanot.1n}Let $n\in\mathbb{N}$ be such that $n\geq2$. Let
@@ -21900,6 +21902,230 @@ p,\bullet}\right)  0}_{=0}=\det\left(  A_{\sim v,\bullet}\right)  \det C.
 This proves Proposition \ref{prop.desnanot.AC}.
 \end{proof}
 
+Now, let us show a purely technical lemma (gathering a few equalities for easy
+access in a proof further down):
+
+\begin{lemma}
+\label{lem.desnanot.AB.tech}Let $n$ be a positive integer. Let $B\in
+\mathbb{K}^{n\times\left(  n-1\right)  }$. Let $u$ and $v$ be two elements of
+$\left\{  1,2,\ldots,n\right\}  $ such that $u<v$.
+
+Consider the vector $\left(  I_{n}\right)  _{\bullet,u}\in\mathbb{K}%
+^{n\times1}$. (This is the $u$-th column of the identity matrix $I_{n}$.\ \ \ \ \footnotemark)
+
+Define an $n\times n$-matrix $C\in\mathbb{K}^{n\times n}$ by
+\[
+C=\left(  B\mid\left(  I_{n}\right)  _{\bullet,u}\right)  .
+\]
+Then, the following holds:
+
+\textbf{(a)} We have%
+\[
+\det\left(  C_{\sim v,\sim q}\right)  =-\left(  -1\right)  ^{n+u}\det\left(
+\operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{u},\ldots,\widehat{v}%
+,\ldots,n}\left(  B_{\bullet,\sim q}\right)  \right)
+\]
+for every $q\in\left\{  1,2,\ldots,n-1\right\}  $.
+
+\textbf{(b)} We have%
+\begin{equation}
+\left(  -1\right)  ^{n+q}\det\left(  C_{\sim v,\sim q}\right)  =-\left(
+-1\right)  ^{q+u}\det\left(  \operatorname*{rows}\nolimits_{1,2,\ldots
+,\widehat{u},\ldots,\widehat{v},\ldots,n}\left(  B_{\bullet,\sim q}\right)
+\right)  \label{pf.prop.desnanot.AB.1}%
+\end{equation}
+for every $q\in\left\{  1,2,\ldots,n-1\right\}  $.
+
+\textbf{(c)} We have%
+\begin{equation}
+C_{\sim v,\sim n}=B_{\sim v,\bullet}. \label{pf.prop.desnanot.AB.2}%
+\end{equation}
+
+
+\textbf{(d)} We have
+\begin{equation}
+C_{\bullet,q}=B_{\bullet,q} \label{pf.prop.desnanot.AB.3}%
+\end{equation}
+for every $q\in\left\{  1,2,\ldots,n-1\right\}  $.
+
+\textbf{(e)} Any $A\in\mathbb{K}^{n\times\left(  n-1\right)  }$ satisfies%
+\begin{equation}
+\det\left(  A\mid C_{\bullet,n}\right)  =\left(  -1\right)  ^{n+u}\det\left(
+A_{\sim u,\bullet}\right)  . \label{pf.prop.desnanot.AB.4}%
+\end{equation}
+
+
+\textbf{(f)} We have
+\begin{equation}
+\det C=\left(  -1\right)  ^{n+u}\det\left(  B_{\sim u,\bullet}\right)  .
+\label{pf.prop.desnanot.AB.5}%
+\end{equation}
+
+\end{lemma}
+
+\footnotetext{Explicitly,
+\[
+\left(  I_{n}\right)  _{\bullet,u}=\left(  \underbrace{0,0,\ldots
+,0}_{u-1\text{ zeroes}},1,\underbrace{0,0,\ldots,0}_{n-u\text{ zeroes}%
+}\right)  ^{T}.
+\]
+}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.desnanot.AB.tech}.]We have $n-1\in\mathbb{N}$ (since
+$n$ is a positive integer).
+
+\textbf{(a)} Let $q\in\left\{  1,2,\ldots,n-1\right\}  $. From $C=\left(
+B\mid\left(  I_{n}\right)  _{\bullet,u}\right)  $, we obtain%
+\[
+C_{\bullet,\sim q}=\left(  B\mid\left(  I_{n}\right)  _{\bullet,u}\right)
+_{\bullet,\sim q}=\left(  B_{\bullet,\sim q}\mid\left(  I_{n}\right)
+_{\bullet,u}\right)
+\]
+(by Proposition \ref{prop.addcol.props1} \textbf{(c)}, applied to $n-1$, $B$
+and $\left(  I_{n}\right)  _{\bullet,u}$ instead of $m$, $A$ and $v$). But
+Proposition \ref{prop.unrows.basics} \textbf{(c)} (applied to $n$, $n$, $C$,
+$v$ and $q$ instead of $n$, $m$, $A$, $u$ and $v$) yields $\left(
+C_{\bullet,\sim q}\right)  _{\sim v,\bullet}=\left(  C_{\sim v,\bullet
+}\right)  _{\bullet,\sim q}=C_{\sim v,\sim q}$. Hence,%
+\begin{equation}
+C_{\sim v,\sim q}=\left(  \underbrace{C_{\bullet,\sim q}}_{=\left(
+B_{\bullet,\sim q}\mid\left(  I_{n}\right)  _{\bullet,u}\right)  }\right)
+_{\sim v,\bullet}=\left(  B_{\bullet,\sim q}\mid\left(  I_{n}\right)
+_{\bullet,u}\right)  _{\sim v,\bullet}=\left(  \left(  B_{\bullet,\sim
+q}\right)  _{\sim v,\bullet}\mid\left(  \left(  I_{n}\right)  _{\bullet
+,u}\right)  _{\sim v,\bullet}\right)  \label{pf.prop.desnanot.AB.1.pf.1}%
+\end{equation}
+(by Proposition \ref{prop.addcol.props1} \textbf{(e)}, applied to $n$, $n-2$,
+$B_{\bullet,\sim q}$, $\left(  I_{n}\right)  _{\bullet,u}$ and $v$ instead of
+$n$, $m$, $A$, $v$ and $p$).
+
+On the other hand, Proposition \ref{prop.unrows.basics} \textbf{(c)} (applied
+to $n$, $n-1$, $B$, $v$ and $q$ instead of $n$, $m$, $A$, $u$ and $v$) yields
+$\left(  B_{\bullet,\sim q}\right)  _{\sim v,\bullet}=\left(  B_{\sim
+v,\bullet}\right)  _{\bullet,\sim q}=B_{\sim v,\sim q}$. Now,
+(\ref{pf.prop.desnanot.AB.1.pf.1}) becomes%
+\[
+C_{\sim v,\sim q}=\left(  \underbrace{\left(  B_{\bullet,\sim q}\right)
+_{\sim v,\bullet}}_{=\left(  B_{\sim v,\bullet}\right)  _{\bullet,\sim q}}%
+\mid\underbrace{\left(  \left(  I_{n}\right)  _{\bullet,u}\right)  _{\sim
+v,\bullet}}_{\substack{=\left(  I_{n-1}\right)  _{\bullet,u}\\\text{(by
+Proposition \ref{prop.unrows.basics-I})}}}\right)  =\left(  \left(  B_{\sim
+v,\bullet}\right)  _{\bullet,\sim q}\mid\left(  I_{n-1}\right)  _{\bullet
+,u}\right)  .
+\]
+Hence,%
+\[
+\det\underbrace{\left(  C_{\sim v,\sim q}\right)  }_{=\left(  \left(  B_{\sim
+v,\bullet}\right)  _{\bullet,\sim q}\mid\left(  I_{n-1}\right)  _{\bullet
+,u}\right)  }=\det\left(  \left(  B_{\sim v,\bullet}\right)  _{\bullet,\sim
+q}\mid\left(  I_{n-1}\right)  _{\bullet,u}\right)  =\left(  -1\right)
+^{\left(  n-1\right)  +u}\det\left(  \left(  B_{\sim v,\bullet}\right)  _{\sim
+u,\sim q}\right)
+\]
+(by Proposition \ref{prop.addcol.props3} \textbf{(d)}, applied to $n-1$,
+$B_{\sim v,\bullet}$ and $u$ instead of $n$, $A$ and $p$). Thus,%
+\begin{align*}
+\det\left(  C_{\sim v,\sim q}\right)   &  =\underbrace{\left(  -1\right)
+^{\left(  n-1\right)  +u}}_{\substack{=\left(  -1\right)  ^{n+u+1}%
+\\\text{(since }\left(  n-1\right)  +u=\left(  n+u+1\right)  -2\\\equiv
+n+u+1\operatorname{mod}2\text{)}}}\det\left(  \underbrace{\left(  B_{\sim
+v,\bullet}\right)  _{\sim u,\sim q}}_{\substack{=\operatorname*{rows}%
+\nolimits_{1,2,\ldots,\widehat{u},\ldots,\widehat{v},\ldots,n}\left(
+B_{\bullet,\sim q}\right)  \\\text{(by Proposition \ref{prop.unrows.basics}
+\textbf{(l)},}\\\text{applied to }B\text{ and }n-1\text{ instead of }A\text{
+and }m\text{)}}}\right) \\
+&  =\underbrace{\left(  -1\right)  ^{n+u+1}}_{=-\left(  -1\right)  ^{n+u}}%
+\det\left(  \operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{u}%
+,\ldots,\widehat{v},\ldots,n}\left(  B_{\bullet,\sim q}\right)  \right) \\
+&  =-\left(  -1\right)  ^{n+u}\det\left(  \operatorname*{rows}%
+\nolimits_{1,2,\ldots,\widehat{u},\ldots,\widehat{v},\ldots,n}\left(
+B_{\bullet,\sim q}\right)  \right)  .
+\end{align*}
+This proves Lemma \ref{lem.desnanot.AB.tech} \textbf{(a)}.
+
+\textbf{(b)} Let $q\in\left\{  1,2,\ldots,n-1\right\}  $. Then,%
+\begin{align*}
+&  \left(  -1\right)  ^{n+q}\underbrace{\det\left(  C_{\sim v,\sim q}\right)
+}_{\substack{=-\left(  -1\right)  ^{n+u}\det\left(  \operatorname*{rows}%
+\nolimits_{1,2,\ldots,\widehat{u},\ldots,\widehat{v},\ldots,n}\left(
+B_{\bullet,\sim q}\right)  \right)  \\\text{(by Lemma
+\ref{lem.desnanot.AB.tech} \textbf{(a)})}}}\\
+&  =\left(  -1\right)  ^{n+q}\left(  -\left(  -1\right)  ^{n+u}\det\left(
+\operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{u},\ldots,\widehat{v}%
+,\ldots,n}\left(  B_{\bullet,\sim q}\right)  \right)  \right) \\
+&  =-\underbrace{\left(  -1\right)  ^{n+q}\left(  -1\right)  ^{n+u}%
+}_{\substack{=\left(  -1\right)  ^{\left(  n+q\right)  +\left(  n+u\right)
+}=\left(  -1\right)  ^{q+u}\\\text{(since }\left(  n+q\right)  +\left(
+n+u\right)  =2n+q+u\equiv q+u\operatorname{mod}2\text{)}}}\det\left(
+\operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{u},\ldots,\widehat{v}%
+,\ldots,n}\left(  B_{\bullet,\sim q}\right)  \right) \\
+&  =-\left(  -1\right)  ^{q+u}\det\left(  \operatorname*{rows}%
+\nolimits_{1,2,\ldots,\widehat{u},\ldots,\widehat{v},\ldots,n}\left(
+B_{\bullet,\sim q}\right)  \right)  .
+\end{align*}
+This proves Lemma \ref{lem.desnanot.AB.tech} \textbf{(b)}.
+
+\textbf{(c)} We have $C=\left(  B\mid\left(  I_{n}\right)  _{\bullet
+,u}\right)  $. Thus,%
+\begin{align*}
+C_{\sim v,\sim n}  &  =\left(  B\mid\left(  I_{n}\right)  _{\bullet,u}\right)
+_{\sim v,\sim n}=\left(  B\mid\left(  I_{n}\right)  _{\bullet,u}\right)
+_{\sim v,\sim\left(  \left(  n-1\right)  +1\right)  }%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }n=\left(  n-1\right)  +1\right) \\
+&  =B_{\sim v,\bullet}\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{by Proposition \ref{prop.addcol.props1} \textbf{(f)}, applied to}\\
+n-1\text{, }B\text{ and }\left(  I_{n}\right)  _{\bullet,u}\text{ instead of
+}m\text{, }A\text{ and }v
+\end{array}
+\right)  .
+\end{align*}
+This proves Lemma \ref{lem.desnanot.AB.tech} \textbf{(c)}.
+
+\textbf{(d)} Let $q\in\left\{  1,2,\ldots,n-1\right\}  $. From $C=\left(
+B\mid\left(  I_{n}\right)  _{\bullet,u}\right)  $, we obtain%
+\[
+C_{\bullet,q}=\left(  B\mid\left(  I_{n}\right)  _{\bullet,u}\right)
+_{\bullet,q}=B_{\bullet,q}%
+\]
+(by Proposition \ref{prop.addcol.props1} \textbf{(a)}, applied to $n-1$, $B$
+and $\left(  I_{n}\right)  _{\bullet,u}$ instead of $m$, $A$ and $v$). This
+proves Lemma \ref{lem.desnanot.AB.tech} \textbf{(d)}.
+
+\textbf{(e)} Let $A\in\mathbb{K}^{\left(  n-1\right)  \times n}$. Proposition
+\ref{prop.addcol.props1} \textbf{(b)} (applied to $n-1$, $B$ and $\left(
+I_{n}\right)  _{\bullet,u}$ instead of $m$, $A$ and $v$) yields $\left(
+B\mid\left(  I_{n}\right)  _{\bullet,u}\right)  _{\bullet,\left(  \left(
+n-1\right)  +1\right)  }=\left(  I_{n}\right)  _{\bullet,u}$. This rewrites as
+$\left(  B\mid\left(  I_{n}\right)  _{\bullet,u}\right)  _{\bullet,n}=\left(
+I_{n}\right)  _{\bullet,u}$ (since $\left(  n-1\right)  +1=n$). Now,
+$C=\left(  B\mid\left(  I_{n}\right)  _{\bullet,u}\right)  $, so that%
+\[
+C_{\bullet,n}=\left(  B\mid\left(  I_{n}\right)  _{\bullet,u}\right)
+_{\bullet,n}=\left(  I_{n}\right)  _{\bullet,u}.
+\]
+Hence,%
+\[
+\det\left(  A\mid\underbrace{C_{\bullet,n}}_{=\left(  I_{n}\right)
+_{\bullet,u}}\right)  =\det\left(  A\mid\left(  I_{n}\right)  _{\bullet
+,u}\right)  =\left(  -1\right)  ^{n+u}\det\left(  A_{\sim u,\bullet}\right)
+\]
+(by Proposition \ref{prop.addcol.props2} \textbf{(b)}, applied to $p=u$). This
+proves Lemma \ref{lem.desnanot.AB.tech} \textbf{(e)}.
+
+\textbf{(f)} We have%
+\[
+\det\underbrace{C}_{=\left(  B\mid\left(  I_{n}\right)  _{\bullet,u}\right)
+}=\det\left(  B\mid\left(  I_{n}\right)  _{\bullet,u}\right)  =\left(
+-1\right)  ^{n+u}\det\left(  B_{\sim u,\bullet}\right)
+\]
+(by Proposition \ref{prop.addcol.props2} \textbf{(b)}, applied to $B$ and $u$
+instead of $A$ and $p$). This proves Lemma \ref{lem.desnanot.AB.tech}
+\textbf{(f)}.
+\end{proof}
+
 Next, we claim the following:
 
 \begin{proposition}
@@ -21995,196 +22221,10 @@ z & z^{\prime}%
 [Proof of Proposition \ref{prop.desnanot.AB}.]We have $n-1\in\mathbb{N}$
 (since $n$ is a positive integer).
 
-Consider the vector $\left(  I_{n}\right)  _{\bullet,u}\in\mathbb{K}%
-^{n\times1}$. (This is the $u$-th column of the identity matrix $I_{n}%
-$.\ \ \ \ \footnote{Explicitly,
-\[
-\left(  I_{n}\right)  _{\bullet,u}=\left(  \underbrace{0,0,\ldots
-,0}_{u-1\text{ zeroes}},1,\underbrace{0,0,\ldots,0}_{n-u\text{ zeroes}%
-}\right)  ^{T}.
-\]
-})
+Define an $n\times n$-matrix $C\in\mathbb{K}^{n\times n}$ as in Lemma
+\ref{lem.desnanot.AB.tech}.
 
-Define an $n\times n$-matrix $C\in\mathbb{K}^{n\times n}$ by
-\[
-C=\left(  B\mid\left(  I_{n}\right)  _{\bullet,u}\right)  .
-\]
-Then, the following holds:
-
-\begin{itemize}
-\item We have%
-\begin{equation}
-\left(  -1\right)  ^{n+q}\det\left(  C_{\sim v,\sim q}\right)  =-\left(
--1\right)  ^{q+u}\det\left(  \operatorname*{rows}\nolimits_{1,2,\ldots
-,\widehat{u},\ldots,\widehat{v},\ldots,n}\left(  B_{\bullet,\sim q}\right)
-\right)  \label{pf.prop.desnanot.AB.1}%
-\end{equation}
-for every $q\in\left\{  1,2,\ldots,n-1\right\}  $%
-\ \ \ \ \footnote{\textit{Proof of (\ref{pf.prop.desnanot.AB.1}):} Let
-$q\in\left\{  1,2,\ldots,n-1\right\}  $. Thus, $1\leq q\leq n-1$, so that
-$1\leq n-1$, so that $n-1\geq1$ and therefore $n-1\in\mathbb{N}$. Notice that
-$\left(  n+q\right)  +\left(  \left(  n-1\right)  +u\right)  =2n+q+u-1\equiv
-q+u-1\equiv q+u+1\operatorname{mod}2$; thus, $\left(  -1\right)  ^{\left(
-n+q\right)  +\left(  \left(  n-1\right)  +u\right)  }=\left(  -1\right)
-^{q+u+1}=-\left(  -1\right)  ^{q+u}$.
-\par
-From $C=\left(  B\mid\left(  I_{n}\right)  _{\bullet,u}\right)  $, we obtain%
-\[
-C_{\bullet,\sim q}=\left(  B\mid\left(  I_{n}\right)  _{\bullet,u}\right)
-_{\bullet,\sim q}=\left(  B_{\bullet,\sim q}\mid\left(  I_{n}\right)
-_{\bullet,u}\right)
-\]
-(by Proposition \ref{prop.addcol.props1} \textbf{(c)}, applied to $n-1$, $B$
-and $\left(  I_{n}\right)  _{\bullet,u}$ instead of $m$, $A$ and $v$). But
-Proposition \ref{prop.unrows.basics} \textbf{(c)} (applied to $n$, $n$, $C$,
-$v$ and $q$ instead of $n$, $m$, $A$, $u$ and $v$) yields $\left(
-C_{\bullet,\sim q}\right)  _{\sim v,\bullet}=\left(  C_{\sim v,\bullet
-}\right)  _{\bullet,\sim q}=C_{\sim v,\sim q}$. Hence,%
-\begin{equation}
-C_{\sim v,\sim q}=\left(  \underbrace{C_{\bullet,\sim q}}_{=\left(
-B_{\bullet,\sim q}\mid\left(  I_{n}\right)  _{\bullet,u}\right)  }\right)
-_{\sim v,\bullet}=\left(  B_{\bullet,\sim q}\mid\left(  I_{n}\right)
-_{\bullet,u}\right)  _{\sim v,\bullet}=\left(  \left(  B_{\bullet,\sim
-q}\right)  _{\sim v,\bullet}\mid\left(  \left(  I_{n}\right)  _{\bullet
-,u}\right)  _{\sim v,\bullet}\right)  \label{pf.prop.desnanot.AB.1.pf.1}%
-\end{equation}
-(by Proposition \ref{prop.addcol.props1} \textbf{(e)}, applied to $n$, $n-2$,
-$B_{\bullet,\sim q}$, $\left(  I_{n}\right)  _{\bullet,u}$ and $v$ instead of
-$n$, $m$, $A$, $v$ and $p$).
-\par
-On the other hand, Proposition \ref{prop.unrows.basics} \textbf{(c)} (applied
-to $n$, $n-1$, $B$, $v$ and $q$ instead of $n$, $m$, $A$, $u$ and $v$) yields
-$\left(  B_{\bullet,\sim q}\right)  _{\sim v,\bullet}=\left(  B_{\sim
-v,\bullet}\right)  _{\bullet,\sim q}=B_{\sim v,\sim q}$. Now,
-(\ref{pf.prop.desnanot.AB.1.pf.1}) becomes%
-\[
-C_{\sim v,\sim q}=\left(  \underbrace{\left(  B_{\bullet,\sim q}\right)
-_{\sim v,\bullet}}_{=\left(  B_{\sim v,\bullet}\right)  _{\bullet,\sim q}}%
-\mid\underbrace{\left(  \left(  I_{n}\right)  _{\bullet,u}\right)  _{\sim
-v,\bullet}}_{\substack{=\left(  I_{n-1}\right)  _{\bullet,u}\\\text{(by
-Proposition \ref{prop.unrows.basics-I})}}}\right)  =\left(  \left(  B_{\sim
-v,\bullet}\right)  _{\bullet,\sim q}\mid\left(  I_{n-1}\right)  _{\bullet
-,u}\right)  .
-\]
-Hence,%
-\[
-\det\underbrace{\left(  C_{\sim v,\sim q}\right)  }_{=\left(  \left(  B_{\sim
-v,\bullet}\right)  _{\bullet,\sim q}\mid\left(  I_{n-1}\right)  _{\bullet
-,u}\right)  }=\det\left(  \left(  B_{\sim v,\bullet}\right)  _{\bullet,\sim
-q}\mid\left(  I_{n-1}\right)  _{\bullet,u}\right)  =\left(  -1\right)
-^{\left(  n-1\right)  +u}\det\left(  \left(  B_{\sim v,\bullet}\right)  _{\sim
-u,\sim q}\right)
-\]
-(by Proposition \ref{prop.addcol.props3} \textbf{(d)}, applied to $n-1$,
-$B_{\sim v,\bullet}$ and $u$ instead of $n$, $A$ and $p$). Thus,%
-\begin{align*}
-\det\left(  C_{\sim v,\sim q}\right)   &  =\left(  -1\right)  ^{\left(
-n-1\right)  +u}\det\left(  \underbrace{\left(  B_{\sim v,\bullet}\right)
-_{\sim u,\sim q}}_{\substack{=\operatorname*{rows}\nolimits_{1,2,\ldots
-,\widehat{u},\ldots,\widehat{v},\ldots,n}\left(  B_{\bullet,\sim q}\right)
-\\\text{(by Proposition \ref{prop.unrows.basics} \textbf{(l)},}\\\text{applied
-to }B\text{ and }n-1\text{ instead of }A\text{ and }m\text{)}}}\right) \\
-&  =\left(  -1\right)  ^{\left(  n-1\right)  +u}\det\left(
-\operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{u},\ldots,\widehat{v}%
-,\ldots,n}\left(  B_{\bullet,\sim q}\right)  \right)  .
-\end{align*}
-Hence,%
-\begin{align*}
-&  \left(  -1\right)  ^{n+q}\underbrace{\det\left(  C_{\sim v,\sim q}\right)
-}_{=\left(  -1\right)  ^{\left(  n-1\right)  +u}\det\left(
-\operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{u},\ldots,\widehat{v}%
-,\ldots,n}\left(  B_{\bullet,\sim q}\right)  \right)  }\\
-&  =\underbrace{\left(  -1\right)  ^{n+q}\left(  -1\right)  ^{\left(
-n-1\right)  +u}}_{=\left(  -1\right)  ^{\left(  n+q\right)  +\left(  \left(
-n-1\right)  +u\right)  }=-\left(  -1\right)  ^{q+u}}\det\left(
-\operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{u},\ldots,\widehat{v}%
-,\ldots,n}\left(  B_{\bullet,\sim q}\right)  \right) \\
-&  =-\left(  -1\right)  ^{q+u}\det\left(  \operatorname*{rows}%
-\nolimits_{1,2,\ldots,\widehat{u},\ldots,\widehat{v},\ldots,n}\left(
-B_{\bullet,\sim q}\right)  \right)  .
-\end{align*}
-This proves (\ref{pf.prop.desnanot.AB.1}).}.
-
-\item We have%
-\begin{equation}
-C_{\sim v,\sim n}=B_{\sim v,\bullet} \label{pf.prop.desnanot.AB.2}%
-\end{equation}
-\footnote{\textit{Proof of (\ref{pf.prop.desnanot.AB.2}):} We have $C=\left(
-B\mid\left(  I_{n}\right)  _{\bullet,u}\right)  $. Thus,%
-\begin{align*}
-C_{\sim v,\sim n}  &  =\left(  B\mid\left(  I_{n}\right)  _{\bullet,u}\right)
-_{\sim v,\sim n}=\left(  B\mid\left(  I_{n}\right)  _{\bullet,u}\right)
-_{\sim v,\sim\left(  \left(  n-1\right)  +1\right)  }%
-\ \ \ \ \ \ \ \ \ \ \left(  \text{since }n=\left(  n-1\right)  +1\right) \\
-&  =B_{\sim v,\bullet}\ \ \ \ \ \ \ \ \ \ \left(
-\begin{array}
-[c]{c}%
-\text{by Proposition \ref{prop.addcol.props1} \textbf{(f)}, applied to}\\
-n-1\text{, }B\text{ and }\left(  I_{n}\right)  _{\bullet,u}\text{ instead of
-}m\text{, }A\text{ and }v
-\end{array}
-\right)  .
-\end{align*}
-This proves (\ref{pf.prop.desnanot.AB.2}).}.
-
-\item We have
-\begin{equation}
-C_{\bullet,q}=B_{\bullet,q} \label{pf.prop.desnanot.AB.3}%
-\end{equation}
-for every $q\in\left\{  1,2,\ldots,n-1\right\}  $%
-\ \ \ \ \footnote{\textit{Proof of (\ref{pf.prop.desnanot.AB.3}):} Let
-$q\in\left\{  1,2,\ldots,n-1\right\}  $. From $C=\left(  B\mid\left(
-I_{n}\right)  _{\bullet,u}\right)  $, we obtain%
-\[
-C_{\bullet,q}=\left(  B\mid\left(  I_{n}\right)  _{\bullet,u}\right)
-_{\bullet,q}=B_{\bullet,q}%
-\]
-(by Proposition \ref{prop.addcol.props1} \textbf{(a)}, applied to $n-1$, $B$
-and $\left(  I_{n}\right)  _{\bullet,u}$ instead of $m$, $A$ and $v$). This
-proves (\ref{pf.prop.desnanot.AB.3}).}.
-
-\item We have%
-\begin{equation}
-\det\left(  A\mid C_{\bullet,n}\right)  =\left(  -1\right)  ^{n+u}\det\left(
-A_{\sim u,\bullet}\right)  \label{pf.prop.desnanot.AB.4}%
-\end{equation}
-\footnote{\textit{Proof of (\ref{pf.prop.desnanot.AB.4}):} Proposition
-\ref{prop.addcol.props1} \textbf{(b)} (applied to $n-1$, $B$ and $\left(
-I_{n}\right)  _{\bullet,u}$ instead of $m$, $A$ and $v$) yields $\left(
-B\mid\left(  I_{n}\right)  _{\bullet,u}\right)  _{\bullet,\left(  \left(
-n-1\right)  +1\right)  }=\left(  I_{n}\right)  _{\bullet,u}$. This rewrites as
-$\left(  B\mid\left(  I_{n}\right)  _{\bullet,u}\right)  _{\bullet,n}=\left(
-I_{n}\right)  _{\bullet,u}$ (since $\left(  n-1\right)  +1=n$). Now,
-$C=\left(  B\mid\left(  I_{n}\right)  _{\bullet,u}\right)  $, so that%
-\[
-C_{\bullet,n}=\left(  B\mid\left(  I_{n}\right)  _{\bullet,u}\right)
-_{\bullet,n}=\left(  I_{n}\right)  _{\bullet,u}.
-\]
-Hence,%
-\[
-\det\left(  A\mid\underbrace{C_{\bullet,n}}_{=\left(  I_{n}\right)
-_{\bullet,u}}\right)  =\det\left(  A\mid\left(  I_{n}\right)  _{\bullet
-,u}\right)  =\left(  -1\right)  ^{n+u}\det\left(  A_{\sim u,\bullet}\right)
-\]
-(by Proposition \ref{prop.addcol.props2} \textbf{(b)}, applied to $p=u$). This
-proves (\ref{pf.prop.desnanot.AB.4}).}.
-
-\item We have
-\begin{equation}
-\det C=\left(  -1\right)  ^{n+u}\det\left(  B_{\sim u,\bullet}\right)
-\label{pf.prop.desnanot.AB.5}%
-\end{equation}
-\footnote{\textit{Proof of (\ref{pf.prop.desnanot.AB.5}):} We have%
-\[
-\det\underbrace{C}_{=\left(  B\mid\left(  I_{n}\right)  _{\bullet,u}\right)
-}=\det\left(  B\mid\left(  I_{n}\right)  _{\bullet,u}\right)  =\left(
--1\right)  ^{n+u}\det\left(  B_{\sim u,\bullet}\right)
-\]
-(by Proposition \ref{prop.addcol.props2} \textbf{(b)}, applied to $B$ and $u$
-instead of $A$ and $p$). This proves (\ref{pf.prop.desnanot.AB.5}).}.
-\end{itemize}
-
-But Proposition \ref{prop.desnanot.AC} yields%
+Proposition \ref{prop.desnanot.AC} yields%
 \begin{align*}
 &  \det\left(  A_{\sim v,\bullet}\right)  \det C\\
 &  =\sum_{q=1}^{n}\underbrace{\left(  -1\right)  ^{n+q}\det\left(  A\mid
@@ -22493,14 +22533,49 @@ Now that Theorem \ref{thm.desnanot} is proven, we conclude that Proposition
 (because in Exercise \ref{exe.unrows.basics} \textbf{(b)}, these two
 propositions have been derived from Theorem \ref{thm.desnanot}).
 
+\begin{exercise}
+\label{exe.desnanot.jaw}Let $n$ be a positive integer. Let $B\in
+\mathbb{K}^{n\times\left(  n-1\right)  }$. Fix $q\in\left\{  1,2,\ldots
+,n-1\right\}  $. For every $x\in\left\{  1,2,\ldots,n\right\}  $, set
+\[
+\alpha_{x}=\det\left(  B_{\sim x,\bullet}\right)  \text{.}%
+\]
+For every two elements $x$ and $y$ of $\left\{  1,2,\ldots,n\right\}  $
+satisfying $x<y$, set%
+\[
+\beta_{x,y}=\det\left(  \operatorname*{rows}\nolimits_{1,2,\ldots
+,\widehat{x},\ldots,\widehat{y},\ldots,n}\left(  B_{\bullet,\sim q}\right)
+\right)  .
+\]
+(Note that this depends on $q$, but we do not mention $q$ in the notation
+because $q$ is fixed.)
+
+Let $u$, $v$ and $w$ be three elements of $\left\{  1,2,\ldots,n\right\}  $
+such that $u<v<w$. Thus, $\beta_{u,v}$, $\beta_{v,w}$ and $\beta_{u,w}$ are
+well-defined elements of $\mathbb{K}$. Prove that%
+\[
+\alpha_{u}\beta_{v,w}+\alpha_{w}\beta_{u,v}=\alpha_{v}\beta_{u,w}.
+\]
+
+\end{exercise}
+
+\begin{remark}
+Exercise \ref{exe.desnanot.jaw} appears in \cite[proof of Theorem 7]%
+{KenWil14}, where it (or, rather, a certain transformation of determinant
+expressions that relies on it) is called the \textquotedblleft jaw
+move\textquotedblright.
+\end{remark}
+
 \begin{verlong}
-[TODO: section on jaw move, and section on Pl\"{u}cker]
+[TODO: section on Pl\"{u}cker relation]
 \end{verlong}
 
 \subsection{Additional exercises}
 
 Here are a few more additional exercises, with no solutions given and no
 importance to the rest of the text.
+
+\Needspace{8cm}
 
 \begin{addexercise}
 \label{exeadd.det.anotherpattern}Compute the determinant of the horrible
@@ -45671,7 +45746,7 @@ column vector
 \]
 Hence, we have shown that%
 \begin{align*}
-\left(  \left(  I_{n}\right)  _{\bullet,u}\right)  _{\sim v,\bullet} &
+\left(  \left(  I_{n}\right)  _{\bullet,u}\right)  _{\sim v,\bullet}  &
 =\left(  \underbrace{0,0,\ldots,0}_{u-1\text{ zeroes}}%
 ,1,\underbrace{0,0,\ldots,0}_{n-u-1\text{ zeroes}}\right)  ^{T}\\
 &  =\left(  \underbrace{0,0,\ldots,0}_{u-1\text{ zeroes}}%
@@ -45764,8 +45839,8 @@ I_{n}\right)  _{\bullet,u}\right)  _{\sim v,\bullet}$ is well-defined (since
 $u$ and $v$ belong to $\left\{  1,2,\ldots,n\right\}  $). Now, the definition
 of $\left(  I_{n}\right)  _{\bullet,u}$ yields%
 \begin{align*}
-\left(  I_{n}\right)  _{\bullet,u} &  =\left(  \text{the }u\text{-th column of
-the matrix }I_{n}\right)  \\
+\left(  I_{n}\right)  _{\bullet,u}  &  =\left(  \text{the }u\text{-th column
+of the matrix }I_{n}\right) \\
 &  =\left(
 \begin{array}
 [c]{c}%
@@ -45775,7 +45850,7 @@ the matrix }I_{n}\right)  \\
 \delta_{n,u}%
 \end{array}
 \right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }I_{n}=\left(  \delta
-_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  \\
+_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right) \\
 &  =\left(  \delta_{i,u}\right)  _{1\leq i\leq n,\ 1\leq j\leq1}.
 \end{align*}
 Hence, Observation 1 (applied to $1$, $\left(  I_{n}\right)  _{\bullet,u}$,
@@ -45788,9 +45863,9 @@ _{i,u}\\\text{(by Observation 2)}}}\right)  _{1\leq i\leq n-1,\ 1\leq j\leq
 \]
 Comparing this with%
 \begin{align*}
-\left(  I_{n-1}\right)  _{\bullet,u} &  =\left(  \text{the }u\text{-th column
+\left(  I_{n-1}\right)  _{\bullet,u}  &  =\left(  \text{the }u\text{-th column
 of the matrix }I_{n-1}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the
-definition of }\left(  I_{n-1}\right)  _{\bullet,u}\right)  \\
+definition of }\left(  I_{n-1}\right)  _{\bullet,u}\right) \\
 &  =\left(
 \begin{array}
 [c]{c}%
@@ -45800,7 +45875,7 @@ definition of }\left(  I_{n-1}\right)  _{\bullet,u}\right)  \\
 \delta_{n-1,u}%
 \end{array}
 \right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }I_{n-1}=\left(  \delta
-_{i,j}\right)  _{1\leq i\leq n-1,\ 1\leq j\leq n-1}\right)  \\
+_{i,j}\right)  _{1\leq i\leq n-1,\ 1\leq j\leq n-1}\right) \\
 &  =\left(  \delta_{i,u}\right)  _{1\leq i\leq n-1,\ 1\leq j\leq1},
 \end{align*}
 we obtain $\left(  \left(  I_{n}\right)  _{\bullet,u}\right)  _{\sim
@@ -49615,6 +49690,198 @@ This proves Proposition \ref{prop.addcol.props3} \textbf{(f)}.
 \ref{prop.addcol.props3}. Thus, Exercise \ref{exe.prop.addcol.props} is solved.
 \end{proof}
 
+\subsection{Solution to Exercise \ref{exe.desnanot.jaw}}
+
+\begin{proof}
+[Solution to Exercise \ref{exe.desnanot.jaw}.]We have $u<v$ and $u<w$. Define
+an $n\times n$-matrix $C\in\mathbb{K}^{n\times n}$ as in Lemma
+\ref{lem.desnanot.AB.tech}.
+
+Lemma \ref{lem.desnanot.AB.tech} \textbf{(a)} yields%
+\begin{align}
+\det\left(  C_{\sim v,\sim q}\right)   &  =-\left(  -1\right)  ^{n+u}%
+\underbrace{\det\left(  \operatorname*{rows}\nolimits_{1,2,\ldots
+,\widehat{u},\ldots,\widehat{v},\ldots,n}\left(  B_{\bullet,\sim q}\right)
+\right)  }_{\substack{=\beta_{u,v}\\\text{(since }\beta_{u,v}=\det\left(
+\operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{u},\ldots,\widehat{v}%
+,\ldots,n}\left(  B_{\bullet,\sim q}\right)  \right)  \\\text{(by the
+definition of }\beta_{u,v}\text{))}}}\nonumber\\
+&  =-\left(  -1\right)  ^{n+u}\beta_{u,v}. \label{sol.desnanot.jaw.1}%
+\end{align}
+
+
+Lemma \ref{lem.desnanot.AB.tech} \textbf{(a)} (applied to $w$ instead of $v$)
+yields%
+\begin{align}
+\det\left(  C_{\sim w,\sim q}\right)   &  =-\left(  -1\right)  ^{n+u}%
+\underbrace{\det\left(  \operatorname*{rows}\nolimits_{1,2,\ldots
+,\widehat{u},\ldots,\widehat{w},\ldots,n}\left(  B_{\bullet,\sim q}\right)
+\right)  }_{\substack{=\beta_{u,w}\\\text{(since }\beta_{u,w}=\det\left(
+\operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{u},\ldots,\widehat{w}%
+,\ldots,n}\left(  B_{\bullet,\sim q}\right)  \right)  \\\text{(by the
+definition of }\beta_{u,w}\text{))}}}\nonumber\\
+&  =-\left(  -1\right)  ^{n+u}\beta_{u,w}. \label{sol.desnanot.jaw.2}%
+\end{align}
+
+
+Moreover,
+\begin{equation}
+\operatorname*{sub}\nolimits_{1,2,\ldots,\widehat{v},\ldots,\widehat{w}%
+,\ldots,n}^{1,2,\ldots,\widehat{q},\ldots,\widehat{n},\ldots,n}%
+C=\operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{v},\ldots,\widehat{w}%
+,\ldots,n}\left(  B_{\bullet,\sim q}\right)  \label{sol.desnanot.jaw.3}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.desnanot.jaw.3}):} From $C=\left(
+B\mid\left(  I_{n}\right)  _{\bullet,u}\right)  $, we obtain
+\[
+C_{\bullet,\sim n}=\left(  B\mid\left(  I_{n}\right)  _{\bullet,u}\right)
+_{\bullet,\sim n}=\left(  B\mid\left(  I_{n}\right)  _{\bullet,u}\right)
+_{\bullet,\sim\left(  \left(  n-1\right)  +n\right)  }=B
+\]
+(by Proposition \ref{prop.addcol.props1} \textbf{(d)}, applied to $n-1$, $B$
+and $\left(  I_{n}\right)  _{\bullet,u}$ instead of $m$, $A$ and $v$).
+\par
+Proposition \ref{prop.submatrix.easy} \textbf{(d)} (applied to $n$, $C$,
+$n-2$, $\left(  1,2,\ldots,\widehat{v},\ldots,\widehat{w},\ldots,n\right)  $,
+$n-2$ and $\left(  1,2,\ldots,\widehat{q},\ldots,\widehat{n},\ldots,n\right)
+$ instead of $m$, $A$, $u$, $\left(  i_{1},i_{2},\ldots,i_{u}\right)  $, $v$
+and $\left(  j_{1},j_{2},\ldots,j_{v}\right)  $) yields%
+\begin{align}
+\operatorname*{sub}\nolimits_{1,2,\ldots,\widehat{v},\ldots,\widehat{w}%
+,\ldots,n}^{1,2,\ldots,\widehat{q},\ldots,\widehat{n},\ldots,n}C  &
+=\operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{v},\ldots,\widehat{w}%
+,\ldots,n}\left(  \operatorname*{cols}\nolimits_{1,2,\ldots,\widehat{q}%
+,\ldots,\widehat{n},\ldots,n}C\right) \label{sol.desnanot.jaw.3.pf.1}\\
+&  =\operatorname*{cols}\nolimits_{1,2,\ldots,\widehat{q},\ldots
+,\widehat{n},\ldots,n}\left(  \operatorname*{rows}\nolimits_{1,2,\ldots
+,\widehat{v},\ldots,\widehat{w},\ldots,n}C\right)  .\nonumber
+\end{align}
+\par
+But $n$ is a positive integer; hence, $n\in\left\{  1,2,\ldots,n\right\}  $.
+Also, $q\in\left\{  1,2,\ldots,n-1\right\}  $. Thus, Proposition
+\ref{prop.unrows.basics} \textbf{(h)} (applied to $n$, $C$, $n$ and $q$
+instead of $m$, $A$, $v$ and $w$) yields%
+\[
+\left(  C_{\bullet,\sim n}\right)  _{\bullet,\sim q}=\operatorname*{cols}%
+\nolimits_{1,2,\ldots,\widehat{q},\ldots,\widehat{n},\ldots,n}C.
+\]
+Hence,%
+\[
+\operatorname*{cols}\nolimits_{1,2,\ldots,\widehat{q},\ldots,\widehat{n}%
+,\ldots,n}C=\left(  \underbrace{C_{\bullet,\sim n}}_{=B}\right)
+_{\bullet,\sim q}=B_{\bullet,\sim q}.
+\]
+Hence, (\ref{sol.desnanot.jaw.3.pf.1}) becomes%
+\begin{align*}
+\operatorname*{sub}\nolimits_{1,2,\ldots,\widehat{v},\ldots,\widehat{w}%
+,\ldots,n}^{1,2,\ldots,\widehat{q},\ldots,\widehat{n},\ldots,n}C  &
+=\operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{v},\ldots,\widehat{w}%
+,\ldots,n}\left(  \underbrace{\operatorname*{cols}\nolimits_{1,2,\ldots
+,\widehat{q},\ldots,\widehat{n},\ldots,n}C}_{=B_{\bullet,\sim q}}\right) \\
+&  =\operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{v},\ldots
+,\widehat{w},\ldots,n}\left(  B_{\bullet,\sim q}\right)  .
+\end{align*}
+This proves (\ref{sol.desnanot.jaw.3}).}. Taking determinants on both sides of
+this equality, we obtain%
+\begin{equation}
+\det\left(  \operatorname*{sub}\nolimits_{1,2,\ldots,\widehat{v}%
+,\ldots,\widehat{w},\ldots,n}^{1,2,\ldots,\widehat{q},\ldots,\widehat{n}%
+,\ldots,n}C\right)  =\det\left(  \operatorname*{rows}\nolimits_{1,2,\ldots
+,\widehat{v},\ldots,\widehat{w},\ldots,n}\left(  B_{\bullet,\sim q}\right)
+\right)  =\beta_{v,w} \label{sol.desnanot.jaw.3b}%
+\end{equation}
+(since $\beta_{v,w}=\det\left(  \operatorname*{rows}\nolimits_{1,2,\ldots
+,\widehat{v},\ldots,\widehat{w},\ldots,n}\left(  B_{\bullet,\sim q}\right)
+\right)  $ (by the definition of $\beta_{v,w}$)).
+
+Lemma \ref{lem.desnanot.AB.tech} \textbf{(c)} yields $C_{\sim v,\sim
+n}=B_{\sim v,\bullet}$. Thus,%
+\begin{equation}
+\det\left(  \underbrace{C_{\sim v,\sim n}}_{=B_{\sim v,\bullet}}\right)
+=\det\left(  B_{\sim v,\bullet}\right)  =\alpha_{v} \label{sol.desnanot.jaw.4}%
+\end{equation}
+(since $\alpha_{v}=\det\left(  B_{\sim v,\bullet}\right)  $ (by the definition
+of $\alpha_{v}$)).
+
+Lemma \ref{lem.desnanot.AB.tech} \textbf{(c)} (applied to $w$ instead of $v$)
+yields $C_{\sim w,\sim n}=B_{\sim w,\bullet}$. Thus,%
+\begin{equation}
+\det\left(  \underbrace{C_{\sim w,\sim n}}_{=B_{\sim w,\bullet}}\right)
+=\det\left(  B_{\sim w,\bullet}\right)  =\alpha_{w} \label{sol.desnanot.jaw.5}%
+\end{equation}
+(since $\alpha_{w}=\det\left(  B_{\sim w,\bullet}\right)  $ (by the definition
+of $\alpha_{w}$)).
+
+Lemma \ref{lem.desnanot.AB.tech} \textbf{(f)} yields%
+\begin{equation}
+\det C=\left(  -1\right)  ^{n+u}\underbrace{\det\left(  B_{\sim u,\bullet
+}\right)  }_{\substack{=\alpha_{u}\\\text{(since }\alpha_{u}=\det\left(
+B_{\sim u,\bullet}\right)  \\\text{(by the definition of }\alpha_{u}\text{))}%
+}}=\left(  -1\right)  ^{n+u}\alpha_{u}. \label{sol.desnanot.jaw.6}%
+\end{equation}
+
+
+Now, $q\in\left\{  1,2,\ldots,n-1\right\}  $, so that $q\leq n-1<n$. Also,
+$n\in\left\{  1,2,\ldots,n\right\}  $ (since $n$ is a positive integer) and
+$q\in\left\{  1,2,\ldots,n-1\right\}  \subseteq\left\{  1,2,\ldots,n\right\}
+$. Hence, Theorem \ref{thm.desnanot} (applied to $C$, $v$, $w$, $q$ and $n$
+instead of $A$, $p$, $q$, $u$ and $v$) yields%
+\begin{align*}
+&  \det C\cdot\det\left(  \operatorname*{sub}\nolimits_{1,2,\ldots
+,\widehat{v},\ldots,\widehat{w},\ldots,n}^{1,2,\ldots,\widehat{q}%
+,\ldots,\widehat{n},\ldots,n}C\right)  \\
+&  =\underbrace{\det\left(  C_{\sim v,\sim q}\right)  }_{\substack{=-\left(
+-1\right)  ^{n+u}\beta_{u,v}\\\text{(by (\ref{sol.desnanot.jaw.1}))}}%
+}\cdot\underbrace{\det\left(  C_{\sim w,\sim n}\right)  }_{\substack{=\alpha
+_{w}\\\text{(by (\ref{sol.desnanot.jaw.5}))}}}-\underbrace{\det\left(  C_{\sim
+v,\sim n}\right)  }_{\substack{=\alpha_{v}\\\text{(by
+(\ref{sol.desnanot.jaw.4}))}}}\cdot\underbrace{\det\left(  C_{\sim w,\sim
+q}\right)  }_{\substack{=-\left(  -1\right)  ^{n+u}\beta_{u,w}\\\text{(by
+(\ref{sol.desnanot.jaw.2}))}}}\\
+&  =\left(  -\left(  -1\right)  ^{n+u}\beta_{u,v}\right)  \cdot\alpha
+_{w}-\alpha_{v}\cdot\left(  -\left(  -1\right)  ^{n+u}\beta_{u,w}\right)  \\
+&  =-\left(  -1\right)  ^{n+u}\beta_{u,v}\cdot\alpha_{w}+\alpha_{v}%
+\cdot\left(  -1\right)  ^{n+u}\beta_{u,w}\\
+&  =\alpha_{v}\cdot\left(  -1\right)  ^{n+u}\beta_{u,w}-\left(  -1\right)
+^{n+u}\beta_{u,v}\cdot\alpha_{w}=\left(  -1\right)  ^{n+u}\left(  \alpha
+_{v}\beta_{u,w}-\beta_{u,v}\alpha_{w}\right)  .
+\end{align*}
+Hence,%
+\begin{align*}
+&  \left(  -1\right)  ^{n+u}\left(  \alpha_{v}\beta_{u,w}-\beta_{u,v}%
+\alpha_{w}\right)  \\
+&  =\underbrace{\det C}_{\substack{=\left(  -1\right)  ^{n+u}\alpha
+_{u}\\\text{(by (\ref{sol.desnanot.jaw.6}))}}}\cdot\underbrace{\det\left(
+\operatorname*{sub}\nolimits_{1,2,\ldots,\widehat{v},\ldots,\widehat{w}%
+,\ldots,n}^{1,2,\ldots,\widehat{q},\ldots,\widehat{n},\ldots,n}C\right)
+}_{\substack{=\beta_{v,w}\\\text{(by (\ref{sol.desnanot.jaw.3b}))}}}\\
+&  =\left(  -1\right)  ^{n+u}\alpha_{u}\beta_{v,w}.
+\end{align*}
+Multiplying both sides of this equality by $\left(  -1\right)  ^{n+u}$, we
+find%
+\[
+\left(  -1\right)  ^{n+u}\left(  -1\right)  ^{n+u}\left(  \alpha_{v}%
+\beta_{u,w}-\beta_{u,v}\alpha_{w}\right)  =\underbrace{\left(  -1\right)
+^{n+u}\left(  -1\right)  ^{n+u}}_{\substack{=\left(  -1\right)  ^{\left(
+n+u\right)  +\left(  n+u\right)  }=1\\\text{(since }\left(  n+u\right)
++\left(  n+u\right)  =2\left(  n+u\right)  \text{ is even)}}}\alpha_{u}%
+\beta_{v,w}=\alpha_{u}\beta_{v,w}.
+\]
+Hence,%
+\begin{align*}
+&  \alpha_{u}\beta_{v,w}\\
+&  =\underbrace{\left(  -1\right)  ^{n+u}\left(  -1\right)  ^{n+u}%
+}_{\substack{=\left(  -1\right)  ^{\left(  n+u\right)  +\left(  n+u\right)
+}=1\\\text{(since }\left(  n+u\right)  +\left(  n+u\right)  =2\left(
+n+u\right)  \text{ is even)}}}\left(  \alpha_{v}\beta_{u,w}-\beta_{u,v}%
+\alpha_{w}\right)  =\alpha_{v}\beta_{u,w}-\beta_{u,v}\alpha_{w}=\alpha
+_{v}\beta_{u,w}-\alpha_{w}\beta_{u,v}.
+\end{align*}
+Adding $\alpha_{w}\beta_{u,v}$ to both sides of this equality, we obtain
+$\alpha_{u}\beta_{v,w}+\alpha_{w}\beta_{u,v}=\alpha_{v}\beta_{u,w}$. This
+solves Exercise \ref{exe.desnanot.jaw}.
+\end{proof}
+
 \begin{thebibliography}{999999999}                                                                                        %
 
 
@@ -49741,6 +50008,10 @@ Hungerford, \textit{Algebra}, 12th printing, Springer 2003.}
 
 \bibitem[Hunger14]{Hungerford}Thomas W. Hungerford, \textit{Abstract Algebra:
 An Introduction}, 3rd edition, Brooks/Cole 2014.
+
+\bibitem[KenWil14]{KenWil14}\href{http://arxiv.org/abs/1411.7425v1}{Richard W.
+Kenyon, David B. Wilson, \textit{The space of circular planar electrical
+networks}, arXiv:1411.7425v1.}
 
 \bibitem[Knuth88]{Knuth-fib}%
 \href{http://dx.doi.org/10.1016/0893-9659(89)90131-6}{Donald E. Knuth,
