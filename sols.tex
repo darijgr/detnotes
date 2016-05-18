@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Monday, May 16, 2016 23:48:06}
+%TCIDATA{LastRevised=Tuesday, May 17, 2016 21:01:56}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -45577,8 +45577,8 @@ Similarly, we can prove Proposition \ref{prop.unrows.basics} \textbf{(i)}%
 same applies to Proposition \ref{prop.unrows.basics} \textbf{(k)}.}: Let
 $v\in\left\{  1,2,\ldots,m\right\}  $ and $w\in\left\{  v,v+1,\ldots
 ,m-1\right\}  $. We need to show that $\left(  A_{\bullet,\sim v}\right)
-_{\bullet,\sim w}=\operatorname*{cols}\nolimits_{1,2,\ldots,\widehat{w}%
-,\ldots,\widehat{v},\ldots,m}A$. The matrix $\left(  A_{\bullet,\sim
+_{\bullet,\sim w}=\operatorname*{cols}\nolimits_{1,2,\ldots,\widehat{v}%
+,\ldots,\widehat{w+1},\ldots,m}A$. The matrix $\left(  A_{\bullet,\sim
 v}\right)  _{\bullet,\sim w}$ is obtained from the matrix $A$ by first
 removing the $v$-th column (thus obtaining an $n\times\left(  m-1\right)
 $-matrix) and then removing the $w$-th column (from the resulting
@@ -45671,7 +45671,7 @@ column vector
 \]
 Hence, we have shown that%
 \begin{align*}
-\left(  \left(  I_{n}\right)  _{\bullet,u}\right)  _{\sim v,\bullet}  &
+\left(  \left(  I_{n}\right)  _{\bullet,u}\right)  _{\sim v,\bullet} &
 =\left(  \underbrace{0,0,\ldots,0}_{u-1\text{ zeroes}}%
 ,1,\underbrace{0,0,\ldots,0}_{n-u-1\text{ zeroes}}\right)  ^{T}\\
 &  =\left(  \underbrace{0,0,\ldots,0}_{u-1\text{ zeroes}}%
@@ -45756,11 +45756,16 @@ Now, let $n$, $u$ and $v$ be as in Proposition \ref{prop.unrows.basics-I}.
 Then, Observation 3 (applied to $m=n$) yields $I_{n}=\left(  \delta
 _{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$. But Observation 3 (applied
 to $m=n-1$) yields $I_{n-1}=\left(  \delta_{i,j}\right)  _{1\leq i\leq
-n-1,\ 1\leq j\leq n-1}$. Now, the definition of $\left(  I_{n}\right)
-_{\bullet,u}$ yields%
+n-1,\ 1\leq j\leq n-1}$.
+\par
+From $u<v\leq n$, we obtain $u\in\left\{  1,2,\ldots,n-1\right\}  $, so that
+$\left(  I_{n-1}\right)  _{\bullet,u}$ is well-defined. Also, $\left(  \left(
+I_{n}\right)  _{\bullet,u}\right)  _{\sim v,\bullet}$ is well-defined (since
+$u$ and $v$ belong to $\left\{  1,2,\ldots,n\right\}  $). Now, the definition
+of $\left(  I_{n}\right)  _{\bullet,u}$ yields%
 \begin{align*}
-\left(  I_{n}\right)  _{\bullet,u}  &  =\left(  \text{the }u\text{-th column
-of the matrix }I_{n}\right) \\
+\left(  I_{n}\right)  _{\bullet,u} &  =\left(  \text{the }u\text{-th column of
+the matrix }I_{n}\right)  \\
 &  =\left(
 \begin{array}
 [c]{c}%
@@ -45770,7 +45775,7 @@ of the matrix }I_{n}\right) \\
 \delta_{n,u}%
 \end{array}
 \right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }I_{n}=\left(  \delta
-_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right) \\
+_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  \\
 &  =\left(  \delta_{i,u}\right)  _{1\leq i\leq n,\ 1\leq j\leq1}.
 \end{align*}
 Hence, Observation 1 (applied to $1$, $\left(  I_{n}\right)  _{\bullet,u}$,
@@ -45783,9 +45788,9 @@ _{i,u}\\\text{(by Observation 2)}}}\right)  _{1\leq i\leq n-1,\ 1\leq j\leq
 \]
 Comparing this with%
 \begin{align*}
-\left(  I_{n-1}\right)  _{\bullet,u}  &  =\left(  \text{the }u\text{-th column
+\left(  I_{n-1}\right)  _{\bullet,u} &  =\left(  \text{the }u\text{-th column
 of the matrix }I_{n-1}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the
-definition of }\left(  I_{n-1}\right)  _{\bullet,u}\right) \\
+definition of }\left(  I_{n-1}\right)  _{\bullet,u}\right)  \\
 &  =\left(
 \begin{array}
 [c]{c}%
@@ -45795,7 +45800,7 @@ definition of }\left(  I_{n-1}\right)  _{\bullet,u}\right) \\
 \delta_{n-1,u}%
 \end{array}
 \right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }I_{n-1}=\left(  \delta
-_{i,j}\right)  _{1\leq i\leq n-1,\ 1\leq j\leq n-1}\right) \\
+_{i,j}\right)  _{1\leq i\leq n-1,\ 1\leq j\leq n-1}\right)  \\
 &  =\left(  \delta_{i,u}\right)  _{1\leq i\leq n-1,\ 1\leq j\leq1},
 \end{align*}
 we obtain $\left(  \left(  I_{n}\right)  _{\bullet,u}\right)  _{\sim
@@ -47159,7 +47164,7 @@ n-2\right)  }A=\left(  a_{\mathbf{d}_{w,u}\left(  x\right)  ,j}\right)
 _{1\leq x\leq n-2,\ 1\leq j\leq m}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }%
 \operatorname*{rows}\nolimits_{\mathbf{d}_{w,v}\left(  1\right)
-,\mathbf{d}_{w,v}\left(  2\right)  ,\ldots,\mathbf{d}_{w,v}\left(  m-2\right)
+,\mathbf{d}_{w,v}\left(  2\right)  ,\ldots,\mathbf{d}_{w,v}\left(  n-2\right)
 }A\right) \\
 &  =\left(  a_{\mathbf{d}_{w,u}\left(  i\right)  ,j}\right)  _{1\leq i\leq
 n-2,\ 1\leq j\leq m}%
@@ -47286,8 +47291,18 @@ proves Proposition \ref{prop.unrows.basics} \textbf{(l)}.
 \end{proof}
 
 \begin{proof}
-[Proof of Proposition \ref{prop.unrows.basics-I}.]For any two objects $i$ and
-$j$, we define an integer $\delta_{i,j}$ by $%
+[Proof of Proposition \ref{prop.unrows.basics-I}.]We have $u<v\leq n$ (since
+$v\in\left\{  1,2,\ldots,n\right\}  $) and thus $u\leq n-1$ (since $u$ and $n$
+are integers). Combining this with $u\geq1$ (since $u\in\left\{
+1,2,\ldots,n\right\}  $), we obtain $u\in\left\{  1,2,\ldots,n-1\right\}  $.
+Hence, the column vector $\left(  I_{n-1}\right)  _{\bullet,u}\in
+\mathbb{K}^{\left(  n-1\right)  \times1}$ is well-defined. Also, the column
+vector $\left(  I_{n}\right)  _{\bullet,u}\in\mathbb{K}^{n\times1}$ is
+well-defined (since $u\in\left\{  1,2,\ldots,n\right\}  $), and therefore the
+column vector $\left(  \left(  I_{n}\right)  _{\bullet,u}\right)  _{\sim
+v,\bullet}\in\mathbb{K}^{\left(  n-1\right)  \times1}$ is well-defined.
+
+For any two objects $i$ and $j$, we define an integer $\delta_{i,j}$ by $%
 \begin{cases}
 1, & \text{if }i=j;\\
 0, & \text{if }i\neq j
