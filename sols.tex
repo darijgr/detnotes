@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Tuesday, May 17, 2016 23:26:09}
+%TCIDATA{LastRevised=Wednesday, May 18, 2016 10:21:21}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -45803,7 +45803,7 @@ column vector
 \]
 Hence, we have shown that%
 \begin{align*}
-\left(  \left(  I_{n}\right)  _{\bullet,u}\right)  _{\sim v,\bullet}  &
+\left(  \left(  I_{n}\right)  _{\bullet,u}\right)  _{\sim v,\bullet} &
 =\left(  \underbrace{0,0,\ldots,0}_{u-1\text{ zeroes}}%
 ,1,\underbrace{0,0,\ldots,0}_{n-u-1\text{ zeroes}}\right)  ^{T}\\
 &  =\left(  \underbrace{0,0,\ldots,0}_{u-1\text{ zeroes}}%
@@ -45822,7 +45822,8 @@ j\right)  $ be the integer $%
 j, & \text{if }j<r;\\
 j+1, & \text{if }j\geq r
 \end{cases}
-$. For any two objects $i$ and $j$, we define an integer $\delta_{i,j}$ by $%
+$. For any two objects $i$ and $j$, we define an integer $\delta_{i,j}$ by
+$\delta_{i,j}=%
 \begin{cases}
 1, & \text{if }i=j;\\
 0, & \text{if }i\neq j
@@ -45896,8 +45897,8 @@ I_{n}\right)  _{\bullet,u}\right)  _{\sim v,\bullet}$ is well-defined (since
 $u$ and $v$ belong to $\left\{  1,2,\ldots,n\right\}  $). Now, the definition
 of $\left(  I_{n}\right)  _{\bullet,u}$ yields%
 \begin{align*}
-\left(  I_{n}\right)  _{\bullet,u}  &  =\left(  \text{the }u\text{-th column
-of the matrix }I_{n}\right) \\
+\left(  I_{n}\right)  _{\bullet,u} &  =\left(  \text{the }u\text{-th column of
+the matrix }I_{n}\right)  \\
 &  =\left(
 \begin{array}
 [c]{c}%
@@ -45907,7 +45908,7 @@ of the matrix }I_{n}\right) \\
 \delta_{n,u}%
 \end{array}
 \right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }I_{n}=\left(  \delta
-_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right) \\
+_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  \\
 &  =\left(  \delta_{i,u}\right)  _{1\leq i\leq n,\ 1\leq j\leq1}.
 \end{align*}
 Hence, Observation 1 (applied to $1$, $\left(  I_{n}\right)  _{\bullet,u}$,
@@ -45920,9 +45921,9 @@ _{i,u}\\\text{(by Observation 2)}}}\right)  _{1\leq i\leq n-1,\ 1\leq j\leq
 \]
 Comparing this with%
 \begin{align*}
-\left(  I_{n-1}\right)  _{\bullet,u}  &  =\left(  \text{the }u\text{-th column
+\left(  I_{n-1}\right)  _{\bullet,u} &  =\left(  \text{the }u\text{-th column
 of the matrix }I_{n-1}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the
-definition of }\left(  I_{n-1}\right)  _{\bullet,u}\right) \\
+definition of }\left(  I_{n-1}\right)  _{\bullet,u}\right)  \\
 &  =\left(
 \begin{array}
 [c]{c}%
@@ -45932,7 +45933,7 @@ definition of }\left(  I_{n-1}\right)  _{\bullet,u}\right) \\
 \delta_{n-1,u}%
 \end{array}
 \right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }I_{n-1}=\left(  \delta
-_{i,j}\right)  _{1\leq i\leq n-1,\ 1\leq j\leq n-1}\right) \\
+_{i,j}\right)  _{1\leq i\leq n-1,\ 1\leq j\leq n-1}\right)  \\
 &  =\left(  \delta_{i,u}\right)  _{1\leq i\leq n-1,\ 1\leq j\leq1},
 \end{align*}
 we obtain $\left(  \left(  I_{n}\right)  _{\bullet,u}\right)  _{\sim
@@ -47434,7 +47435,8 @@ well-defined (since $u\in\left\{  1,2,\ldots,n\right\}  $), and therefore the
 column vector $\left(  \left(  I_{n}\right)  _{\bullet,u}\right)  _{\sim
 v,\bullet}\in\mathbb{K}^{\left(  n-1\right)  \times1}$ is well-defined.
 
-For any two objects $i$ and $j$, we define an integer $\delta_{i,j}$ by $%
+For any two objects $i$ and $j$, we define an integer $\delta_{i,j}$ by
+$\delta_{i,j}=%
 \begin{cases}
 1, & \text{if }i=j;\\
 0, & \text{if }i\neq j
@@ -47793,7 +47795,7 @@ A\mid v\right)  $ by removing its $\left(  m+1\right)  $-th column; thus,
 ,2},\ldots,A_{\bullet,m}. \label{pf.prop.addcol.props1.short.d.2}%
 \end{equation}
 Comparing (\ref{pf.prop.addcol.props1.short.d.1}) with
-(\ref{pf.prop.addcol.props1.short.d.2}), we see the columns of the matrix
+(\ref{pf.prop.addcol.props1.short.d.2}), we see that the columns of the matrix
 $\left(  A\mid v\right)  _{\bullet,\sim\left(  m+1\right)  }$ are precisely
 the columns of the matrix $A$. Thus, these two matrices must be identical. In
 other words, $\left(  A\mid v\right)  _{\bullet,\sim\left(  m+1\right)  }=A$.
@@ -48042,7 +48044,7 @@ i,\bullet}\right)
 Proposition \ref{prop.addcol.props2} \textbf{(a)}.
 
 \textbf{(b)} Let $p\in\left\{  1,2,\ldots,n\right\}  $. For any two objects
-$i$ and $j$, we define an integer $\delta_{i,j}$ by $%
+$i$ and $j$, we define an integer $\delta_{i,j}$ by $\delta_{i,j}=%
 \begin{cases}
 1, & \text{if }i=j;\\
 0, & \text{if }i\neq j
@@ -49253,7 +49255,7 @@ i,\bullet}\right)
 Proposition \ref{prop.addcol.props2} \textbf{(a)}.
 
 \textbf{(b)} Let $p\in\left\{  1,2,\ldots,n\right\}  $. For any two objects
-$i$ and $j$, we define an integer $\delta_{i,j}$ by $%
+$i$ and $j$, we define an integer $\delta_{i,j}$ by $\delta_{i,j}=%
 \begin{cases}
 1, & \text{if }i=j;\\
 0, & \text{if }i\neq j
@@ -49886,7 +49888,7 @@ instead of $A$, $p$, $q$, $u$ and $v$) yields%
 \begin{align*}
 &  \det C\cdot\det\left(  \operatorname*{sub}\nolimits_{1,2,\ldots
 ,\widehat{v},\ldots,\widehat{w},\ldots,n}^{1,2,\ldots,\widehat{q}%
-,\ldots,\widehat{n},\ldots,n}C\right)  \\
+,\ldots,\widehat{n},\ldots,n}C\right) \\
 &  =\underbrace{\det\left(  C_{\sim v,\sim q}\right)  }_{\substack{=-\left(
 -1\right)  ^{n+u}\beta_{u,v}\\\text{(by (\ref{sol.desnanot.jaw.1}))}}%
 }\cdot\underbrace{\det\left(  C_{\sim w,\sim n}\right)  }_{\substack{=\alpha
@@ -49896,7 +49898,7 @@ v,\sim n}\right)  }_{\substack{=\alpha_{v}\\\text{(by
 q}\right)  }_{\substack{=-\left(  -1\right)  ^{n+u}\beta_{u,w}\\\text{(by
 (\ref{sol.desnanot.jaw.2}))}}}\\
 &  =\left(  -\left(  -1\right)  ^{n+u}\beta_{u,v}\right)  \cdot\alpha
-_{w}-\alpha_{v}\cdot\left(  -\left(  -1\right)  ^{n+u}\beta_{u,w}\right)  \\
+_{w}-\alpha_{v}\cdot\left(  -\left(  -1\right)  ^{n+u}\beta_{u,w}\right) \\
 &  =-\left(  -1\right)  ^{n+u}\beta_{u,v}\cdot\alpha_{w}+\alpha_{v}%
 \cdot\left(  -1\right)  ^{n+u}\beta_{u,w}\\
 &  =\alpha_{v}\cdot\left(  -1\right)  ^{n+u}\beta_{u,w}-\left(  -1\right)
