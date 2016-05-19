@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, May 19, 2016 01:07:54}
+%TCIDATA{LastRevised=Thursday, May 19, 2016 01:53:13}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -23543,6 +23543,106 @@ c & 0 & 0 & 0 & 0 & 0 & d
 \right)  .
 \]
 
+\end{addexercise}
+
+\begin{addexercise}
+\label{exeadd.det.laplace-multi}Let $n\in\mathbb{N}$. Let $A\in\mathbb{K}%
+^{n\times n}$. We shall use the notation introduced in Definition
+\ref{def.submatrix}.
+
+For any subset $I$ of $\left\{  1,2,\ldots,n\right\}  $, we introduce the
+following three notations:
+
+\begin{itemize}
+\item Let $\sum I$ denote the sum of all elements of $I$. (Thus, $\sum
+I=\sum_{i\in I}i$.)
+
+\item Let $\widetilde{I}$ denote the complement $\left\{  1,2,\ldots
+,n\right\}  \setminus I$.
+
+\item Let $w\left(  I\right)  $ denote the list of all elements of $I$, in
+increasing order (with no element occuring twice). (For example, $w\left(
+\left\{  3,4,8\right\}  \right)  =\left(  3,4,8\right)  $.)
+\end{itemize}
+
+\textbf{(a)} For every $P\subseteq\left\{  1,2,\ldots,n\right\}  $, prove
+that
+\[
+\det A=\sum_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+Q\right\vert =\left\vert P\right\vert }}\left(  -1\right)  ^{\sum P+\sum
+Q}\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+Q\right)  }A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(
+\widetilde{P}\right)  }^{w\left(  \widetilde{Q}\right)  }A\right)  .
+\]
+
+
+\textbf{(b)} For every $Q\subseteq\left\{  1,2,\ldots,n\right\}  $, prove
+that
+\[
+\det A=\sum_{\substack{P\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+P\right\vert =\left\vert Q\right\vert }}\left(  -1\right)  ^{\sum P+\sum
+Q}\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+Q\right)  }A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(
+\widetilde{P}\right)  }^{w\left(  \widetilde{Q}\right)  }A\right)  .
+\]
+
+\end{addexercise}
+
+\begin{remark}
+The rather unwieldy claims of Additional exercise
+\ref{exeadd.det.laplace-multi} are actually an important generalization of
+Theorem \ref{thm.laplace.gen}, known as \textquotedblleft Laplace expansion in
+multiple rows (resp. columns)\textquotedblright. They appear (for example) in
+\cite[Theorem 3.61]{Gill} and in \cite[Theorem 2.4.1]{Prasolov}. Theorem
+\ref{thm.laplace.gen} \textbf{(a)} can be recovered from Additional exercise
+\ref{exeadd.det.laplace-multi} \textbf{(b)} by setting $P=\left\{  p\right\}
+$; similarly for the part \textbf{(b)}.
+\end{remark}
+
+\begin{addexercise}
+\label{exeadd.det.pluecker.multi}Let $n$ and $k$ be positive integers such
+that $k\leq n$. Let $A\in\mathbb{K}^{n\times\left(  n-k\right)  }$ and
+$B\in\mathbb{K}^{n\times\left(  n+k\right)  }$.
+
+Let us use the notations from Definition \ref{def.unrows}. For any subset $I$
+of $\left\{  1,2,\ldots,n+k\right\}  $, we introduce the following five notations:
+
+\begin{itemize}
+\item Let $\sum I$ denote the sum of all elements of $I$. (Thus, $\sum
+I=\sum_{i\in I}i$.)
+
+\item Let $\widetilde{I}$ denote the complement $\left\{  1,2,\ldots
+,n+k\right\}  \setminus I$.
+
+\item Let $w\left(  I\right)  $ denote the list of all elements of $I$, in
+increasing order (with no element occuring twice). (For example, $w\left(
+\left\{  3,4,8\right\}  \right)  =\left(  3,4,8\right)  $.)
+
+\item Let $\left(  A\mid B_{\bullet,I}\right)  $ denote the $n\times\left(
+n-k+\left\vert I\right\vert \right)  $-matrix whose columns are
+$\underbrace{A_{\bullet,1},A_{\bullet,2},\ldots,A_{\bullet,n-k}}_{\text{the
+columns of }A},B_{\bullet,i_{1}},B_{\bullet,i_{2}},\ldots,B_{\bullet,i_{\ell}%
+}$ (from left to right), where $\left(  i_{1},i_{2},\ldots,i_{\ell}\right)
+=w\left(  I\right)  $.
+
+\item Let $B_{\bullet,\sim I}$ denote the $n\times\left(  n+k-\left\vert
+I\right\vert \right)  $-matrix whose columns are $B_{\bullet,j_{1}}%
+,B_{\bullet,j_{2}},\ldots,B_{\bullet,j_{m}}$ (from left to right), where
+$\left(  j_{1},j_{2},\ldots,j_{m}\right)  =w\left(  \widetilde{I}\right)  $.
+(Equivalently, $B_{\bullet,\sim I}=\operatorname*{cols}\nolimits_{w\left(
+\widetilde{I}\right)  }B$, using the notations of Definition
+\ref{def.rowscols}.)
+\end{itemize}
+
+Then, prove that%
+\[
+\sum_{\substack{I\subseteq\left\{  1,2,\ldots,n+k\right\}  ;\\\left\vert
+I\right\vert =k}}\left(  -1\right)  ^{\sum I+\left(  1+2+\cdots+k\right)
+}\det\left(  A\mid B_{\bullet,I}\right)  \det\left(  B_{\bullet,\sim
+I}\right)  =0.
+\]
+(Note that this generalizes Theorem \ref{thm.pluecker.plu}; indeed, the latter
+theorem is the particular case for $k=1$.)
 \end{addexercise}
 
 \begin{addexercise}
@@ -51088,7 +51188,7 @@ Vandermonde's Determinant}, Journal of Graph Theory, Vol. 3 (1979), pp. 305--307
 \bibitem[Gill12]{Gill}%
 \href{http://cseweb.ucsd.edu/~gill/CILASite/Resources/LinearAlgebra.pdf}{S.
 Gill Williamson, \textit{Matrix Canonical Forms: notational skills and proof
-techniques}, 2012.}
+techniques}, 15 July 2015.}
 
 \bibitem[Goodman]{Goodman}Frederick M. Goodman, \textit{Algebra: Abstract and
 Concrete}, edition 2.6, 1 May 2015.\newline%
