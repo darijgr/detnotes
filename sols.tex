@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Wednesday, May 18, 2016 20:38:28}
+%TCIDATA{LastRevised=Thursday, May 19, 2016 01:07:54}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -9537,10 +9537,10 @@ lower-triangular, and its diagonal entries are $1,1,\ldots,1$. Hence, Exercise
 \end{example}
 
 \begin{definition}
-The \textit{transpose} of a matrix $A=\left(  a_{i,j}\right)  _{1\leq i\leq
-n,\ 1\leq j\leq m}$ is defined to be the matrix $\left(  a_{j,i}\right)
-_{1\leq i\leq m,\ 1\leq j\leq n}$. It is denoted by $A^{T}$. For instance,
-$\left(
+\label{def.transpose}The \textit{transpose} of a matrix $A=\left(
+a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq m}$ is defined to be the matrix
+$\left(  a_{j,i}\right)  _{1\leq i\leq m,\ 1\leq j\leq n}$. It is denoted by
+$A^{T}$. For instance, $\left(
 \begin{array}
 [c]{ccc}%
 1 & 2 & -1\\
@@ -21129,7 +21129,7 @@ This proves Theorem \ref{thm.cramer} \textbf{(b)}.
 \end{proof}
 \end{verlong}
 
-\subsection{The Desnanot-Jacobi identity}
+\subsection{\label{sect.desnanot}The Desnanot-Jacobi identity}
 
 We now move towards more exotic places. In this section\footnote{which,
 unfortunately, has become more technical and tedious than it promised to be --
@@ -21552,8 +21552,8 @@ A_{\bullet,\sim q}\right)  .
 \label{prop.unrows.basics-I}Let $n\in\mathbb{N}$. Let $u$ and $v$ be two
 elements of $\left\{  1,2,\ldots,n\right\}  $ such that $u<v$. Then, $\left(
 \left(  I_{n}\right)  _{\bullet,u}\right)  _{\sim v,\bullet}=\left(
-I_{n-1}\right)  _{\bullet,u}$. (Recall that $I_{m}$ denotes the $m\times
-m$-identity matrix for each $m\in\mathbb{N}$.)
+I_{n-1}\right)  _{\bullet,u}$. (Recall that $I_{m}$ denotes the $m\times m$
+identity matrix for each $m\in\mathbb{N}$.)
 \end{proposition}
 
 \begin{exercise}
@@ -22623,9 +22623,900 @@ expressions that relies on it) is called the \textquotedblleft jaw
 move\textquotedblright.
 \end{remark}
 
+\subsection{The Pl\"{u}cker relation}
+
+The following section is devoted to the \textit{Pl\"{u}cker relations}, or,
+rather, one of the many things that tend to carry this name in the
+literature\footnote{Most of the relevant literature, unfortunately, is not
+very elementary, as the Pl\"{u}cker relations are at their most useful in the
+algebraic geometry of the Grassmannian and of flag varieties
+(\textquotedblleft Schubert calculus\textquotedblright). See \cite{KleLak72},
+\cite[\S 3.4]{Jacobs10} and \cite[\S 9.1]{Fulton-Young} for expositions (all
+three, however, well above the level of the present notes).}. The proofs will
+be fairly short, since we did much of the necessary work in Section
+\ref{sect.desnanot} already.
+
+We shall use the notations of Definition \ref{def.unrows} throughout this section.
+
+We begin with the following identity:
+
+\begin{proposition}
+\label{prop.pluecker.pre.row}Let $n$ be a positive integer. Let $B\in
+\mathbb{K}^{n\times\left(  n-1\right)  }$. Then:
+
+\textbf{(a)} We have%
+\[
+\sum_{r=1}^{n}\left(  -1\right)  ^{r}\det\left(  B_{\sim r,\bullet}\right)
+B_{r,\bullet}=0_{1\times\left(  n-1\right)  }.
+\]
+(Recall that the product $\det\left(  B_{\sim r,\bullet}\right)  B_{r,\bullet
+}$ in this equality is the product of the scalar $\det\left(  B_{\sim
+r,\bullet}\right)  \in\mathbb{K}$ with the row vector $B_{r,\bullet}%
+\in\mathbb{K}^{1\times\left(  n-1\right)  }$; as all such products, it is
+computed entrywise, i.e., by the formula $\lambda\left(  a_{1},a_{2}%
+,\ldots,a_{n-1}\right)  =\left(  \lambda a_{1},\lambda a_{2},\ldots,\lambda
+a_{n-1}\right)  $.)
+
+\textbf{(b)} Write the matrix $B$ in the form $B=\left(  b_{i,j}\right)
+_{1\leq i\leq n,\ 1\leq j\leq n-1}$. Then,
+\[
+\sum_{r=1}^{n}\left(  -1\right)  ^{r}\det\left(  B_{\sim r,\bullet}\right)
+b_{r,q}=0
+\]
+for every $q\in\left\{  1,2,\ldots,n-1\right\}  $.
+\end{proposition}
+
+Note that part \textbf{(a)} of Proposition \ref{prop.pluecker.pre.row} claims
+an equality between two column vectors (indeed, $B_{r,\bullet}$ is a column
+vector with $n-1$ entries for each $r\in\left\{  1,2,\ldots,n\right\}  $),
+whereas part \textbf{(b)} claims an equality between two elements of
+$\mathbb{K}$ (for each $q\in\left\{  1,2,\ldots,n-1\right\}  $). That said,
+the two parts are essentially restatements of one another, and we will derive
+part \textbf{(a)} from part \textbf{(b)} soon enough. Let us first illustrate
+Proposition \ref{prop.pluecker.pre.row} on an example:
+
+\begin{example}
+\label{exam.prop.pluecker.pre.row}For this example, set $n=4$ and $B=\left(
+\begin{array}
+[c]{ccc}%
+a & a^{\prime} & a^{\prime\prime}\\
+b & b^{\prime} & b^{\prime\prime}\\
+c & c^{\prime} & c^{\prime\prime}\\
+d & d^{\prime} & d^{\prime\prime}%
+\end{array}
+\right)  $. Then, Proposition \ref{prop.pluecker.pre.row} \textbf{(a)} says
+that%
+\begin{align*}
+&  -\det\left(
+\begin{array}
+[c]{ccc}%
+b & b^{\prime} & b^{\prime\prime}\\
+c & c^{\prime} & c^{\prime\prime}\\
+d & d^{\prime} & d^{\prime\prime}%
+\end{array}
+\right)  \cdot\left(
+\begin{array}
+[c]{ccc}%
+a & a^{\prime} & a^{\prime\prime}%
+\end{array}
+\right)  +\det\left(
+\begin{array}
+[c]{ccc}%
+a & a^{\prime} & a^{\prime\prime}\\
+c & c^{\prime} & c^{\prime\prime}\\
+d & d^{\prime} & d^{\prime\prime}%
+\end{array}
+\right)  \cdot\left(
+\begin{array}
+[c]{ccc}%
+b & b^{\prime} & b^{\prime\prime}%
+\end{array}
+\right) \\
+&  \ \ \ \ \ \ \ \ \ \ -\det\left(
+\begin{array}
+[c]{ccc}%
+a & a^{\prime} & a^{\prime\prime}\\
+b & b^{\prime} & b^{\prime\prime}\\
+d & d^{\prime} & d^{\prime\prime}%
+\end{array}
+\right)  \cdot\left(
+\begin{array}
+[c]{ccc}%
+c & c^{\prime} & c^{\prime\prime}%
+\end{array}
+\right)  +\det\left(
+\begin{array}
+[c]{ccc}%
+a & a^{\prime} & a^{\prime\prime}\\
+b & b^{\prime} & b^{\prime\prime}\\
+c & c^{\prime} & c^{\prime\prime}%
+\end{array}
+\right)  \cdot\left(
+\begin{array}
+[c]{ccc}%
+d & d^{\prime} & d^{\prime\prime}%
+\end{array}
+\right) \\
+&  =0_{1\times3}.
+\end{align*}
+Proposition \ref{prop.pluecker.pre.row} \textbf{(b)} (applied to $q=3$) yields%
+\begin{align*}
+&  -\det\left(
+\begin{array}
+[c]{ccc}%
+b & b^{\prime} & b^{\prime\prime}\\
+c & c^{\prime} & c^{\prime\prime}\\
+d & d^{\prime} & d^{\prime\prime}%
+\end{array}
+\right)  \cdot a^{\prime\prime}+\det\left(
+\begin{array}
+[c]{ccc}%
+a & a^{\prime} & a^{\prime\prime}\\
+c & c^{\prime} & c^{\prime\prime}\\
+d & d^{\prime} & d^{\prime\prime}%
+\end{array}
+\right)  \cdot b^{\prime\prime}\\
+&  \ \ \ \ \ \ \ \ \ \ -\det\left(
+\begin{array}
+[c]{ccc}%
+a & a^{\prime} & a^{\prime\prime}\\
+b & b^{\prime} & b^{\prime\prime}\\
+d & d^{\prime} & d^{\prime\prime}%
+\end{array}
+\right)  \cdot c^{\prime\prime}+\det\left(
+\begin{array}
+[c]{ccc}%
+a & a^{\prime} & a^{\prime\prime}\\
+b & b^{\prime} & b^{\prime\prime}\\
+c & c^{\prime} & c^{\prime\prime}%
+\end{array}
+\right)  \cdot\left(
+\begin{array}
+[c]{ccc}%
+d & d^{\prime} & d^{\prime\prime}%
+\end{array}
+\right) \\
+&  =0.
+\end{align*}
+
+\end{example}
+
+\begin{proof}
+[Proof of Proposition \ref{prop.pluecker.pre.row}.]\textbf{(b)} Let
+$q\in\left\{  1,2,\ldots,n-1\right\}  $.
+
+\begin{vershort}
+We shall use the notation introduced in Definition \ref{def.addcol}. We know
+that $B$ is an $n\times\left(  n-1\right)  $-matrix (since $B\in
+\mathbb{K}^{n\times\left(  n-1\right)  }$). Thus, $\left(  B\mid B_{\bullet
+,q}\right)  $ is an $n\times n$-matrix. This $n\times n$-matrix $\left(  B\mid
+B_{\bullet,q}\right)  $ is defined as the $n\times\left(  \left(  n-1\right)
++1\right)  $-matrix whose columns are $B_{\bullet,1},B_{\bullet,2}%
+,\ldots,B_{\bullet,n-1},B_{\bullet,q}$; thus, it has two equal columns
+(indeed, the column vector $B_{\bullet,q}$ appears twice among the columns
+$B_{\bullet,1},B_{\bullet,2},\ldots,B_{\bullet,n-1},B_{\bullet,q}$). Thus,
+Exercise \ref{exe.ps4.6} \textbf{(f)} (applied to $A=\left(  B\mid
+B_{\bullet,q}\right)  $) shows that $\det\left(  B\mid B_{\bullet,q}\right)
+=0$.
+\end{vershort}
+
 \begin{verlong}
-[TODO: section on Pl\"{u}cker relation]
+We shall use the notation introduced in Definition \ref{def.addcol}. We know
+that $B$ is an $n\times\left(  n-1\right)  $-matrix (since $B\in
+\mathbb{K}^{n\times\left(  n-1\right)  }$); hence, $B_{\bullet,q}$ is an
+$n\times1$-matrix. Thus, $\left(  B\mid B_{\bullet,q}\right)  $ is an
+$n\times\left(  \left(  n-1\right)  +1\right)  $-matrix. In other words,
+$\left(  B\mid B_{\bullet,q}\right)  $ is an $n\times n$-matrix (since
+$\left(  n-1\right)  +1=n$). We have%
+\begin{equation}
+\det\left(  B\mid B_{\bullet,q}\right)  =0
+\label{pf.prop.pluecker.pre.row.det=0}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.prop.pluecker.pre.row.det=0}):} Let
+$A=\left(  B\mid B_{\bullet,q}\right)  $. Thus, $A$ is an $n\times n$-matrix
+(since $\left(  B\mid B_{\bullet,q}\right)  $ is an $n\times n$-matrix). The
+definition of $A_{\bullet,n}$ yields that $A_{\bullet,n}$ is the $n$-th column
+of the matrix $A$. Thus,%
+\[
+A_{\bullet,n}=\left(  \text{the }n\text{-th column of the matrix }A\right)  .
+\]
+Hence,%
+\begin{align}
+&  \left(  \text{the }n\text{-th column of the matrix }A\right) \nonumber\\
+&  =A_{\bullet,n}=\left(  B\mid B_{\bullet,q}\right)  _{\bullet,n}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }A=\left(  B\mid B_{\bullet,q}\right)
+\right) \nonumber\\
+&  =\left(  B\mid B_{\bullet,q}\right)  _{\bullet,\left(  \left(  n-1\right)
++1\right)  }\ \ \ \ \ \ \ \ \ \ \left(  \text{since }n=\left(  n-1\right)
++1\right) \nonumber\\
+&  =B_{\bullet,q}\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{by Proposition \ref{prop.addcol.props1} \textbf{(b)}, applied to
+}n-1\text{, }B\text{ and }B_{\bullet,q}\\
+\text{instead of }m\text{, }A\text{ and }v
+\end{array}
+\right)  . \label{pf.prop.pluecker.pre.row.det=0.pf.1}%
+\end{align}
+\par
+On the other hand, $n\in\left\{  1,2,\ldots,n\right\}  $ (since $n$ is a
+positive integer) and $q\in\left\{  1,2,\ldots,n-1\right\}  \subseteq\left\{
+1,2,\ldots,n\right\}  $. Furthermore, $q\in\left\{  1,2,\ldots,n-1\right\}  $,
+thus $q\leq n-1<n$. Hence, $q\neq n$. Hence, $q$ and $n$ are two distinct
+elements of $\left\{  1,2,\ldots,n\right\}  $.
+\par
+But $q\in\left\{  1,2,\ldots,n\right\}  $. Hence, the definition of
+$A_{\bullet,q}$ yields that $A_{\bullet,q}$ is the $q$-th column of the matrix
+$A$. Thus,%
+\[
+A_{\bullet,q}=\left(  \text{the }q\text{-th column of the matrix }A\right)  .
+\]
+Hence,%
+\begin{align*}
+&  \left(  \text{the }q\text{-th column of the matrix }A\right) \\
+&  =A_{\bullet,q}=\left(  B\mid B_{\bullet,q}\right)  _{\bullet,q}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }A=\left(  B\mid B_{\bullet,q}\right)
+\right) \\
+&  =B_{\bullet,q}\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{by Proposition \ref{prop.addcol.props1} \textbf{(a)}, applied to
+}n-1\text{, }B\text{ and }B_{\bullet,q}\\
+\text{instead of }m\text{, }A\text{ and }v
+\end{array}
+\right) \\
+&  =\left(  \text{the }n\text{-th column of the matrix }A\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{pf.prop.pluecker.pre.row.det=0.pf.1})}\right)  .
+\end{align*}
+Hence, there exist two distinct elements $u$ and $v$ of $\left\{
+1,2,\ldots,n\right\}  $ such that
+\[
+\left(  \text{the }u\text{-th column of the matrix }A\right)  =\left(
+\text{the }v\text{-th column of the matrix }A\right)
+\]
+(namely, $u=q$ and $v=n$). In other words, the matrix $A$ has two equal
+columns. Thus, $\det A=0$ (by Exercise \ref{exe.ps4.6} \textbf{(f)}). This
+rewrites as $\det\left(  B\mid B_{\bullet,q}\right)  =0$ (since $A=\left(
+B\mid B_{\bullet,q}\right)  $). This proves
+(\ref{pf.prop.pluecker.pre.row.det=0}).}.
 \end{verlong}
+
+But $B_{\bullet,q}$ is the $q$-th column of the matrix $B$ (by the definition
+of $B_{\bullet,q}$). Thus,%
+\begin{align*}
+B_{\bullet,q}  &  =\left(  \text{the }q\text{-th column of the matrix
+}B\right) \\
+&  =\left(
+\begin{array}
+[c]{c}%
+b_{1,q}\\
+b_{2,q}\\
+\vdots\\
+b_{n,q}%
+\end{array}
+\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }B=\left(  b_{i,j}\right)
+_{1\leq i\leq n,\ 1\leq j\leq n-1}\right) \\
+&  =\left(  b_{1,q},b_{2,q},\ldots,b_{n,q}\right)  ^{T}.
+\end{align*}
+Hence, Proposition \ref{prop.addcol.props2} \textbf{(a)} (applied to $B$,
+$B_{\bullet,q}$ and $b_{i,q}$ instead of $A$, $v$ and $v_{i}$) yields%
+\[
+\det\left(  B\mid B_{\bullet,q}\right)  =\sum_{i=1}^{n}\left(  -1\right)
+^{n+i}b_{i,q}\det\left(  B_{\sim i,\bullet}\right)  .
+\]
+Comparing this with $\det\left(  B\mid B_{\bullet,q}\right)  =0$, we obtain%
+\[
+0=\sum_{i=1}^{n}\left(  -1\right)  ^{n+i}b_{i,q}\det\left(  B_{\sim i,\bullet
+}\right)  .
+\]
+Multiplying both sides of this equality by $\left(  -1\right)  ^{n}$, we
+obtain%
+\begin{align*}
+0  &  =\left(  -1\right)  ^{n}\sum_{i=1}^{n}\left(  -1\right)  ^{n+i}%
+b_{i,q}\det\left(  B_{\sim i,\bullet}\right) \\
+&  =\sum_{i=1}^{n}\underbrace{\left(  -1\right)  ^{n}\left(  -1\right)
+^{n+i}}_{\substack{=\left(  -1\right)  ^{n+\left(  n+i\right)  }=\left(
+-1\right)  ^{i}\\\text{(since }n+\left(  n+i\right)  =2n+i\equiv
+i\operatorname{mod}2\text{)}}}\underbrace{b_{i,q}\det\left(  B_{\sim
+i,\bullet}\right)  }_{=\det\left(  B_{\sim i,\bullet}\right)  b_{i,q}}\\
+&  =\sum_{i=1}^{n}\left(  -1\right)  ^{i}\det\left(  B_{\sim i,\bullet
+}\right)  b_{i,q}=\sum_{r=1}^{n}\left(  -1\right)  ^{r}\det\left(  B_{\sim
+r,\bullet}\right)  b_{r,q}%
+\end{align*}
+(here, we renamed the summation index $i$ as $r$). This proves Proposition
+\ref{prop.pluecker.pre.row} \textbf{(b)}.
+
+\textbf{(a)} Write the matrix $B$ in the form $B=\left(  b_{i,j}\right)
+_{1\leq i\leq n,\ 1\leq j\leq n-1}$. For every $r\in\left\{  1,2,\ldots
+,n\right\}  $, we have%
+\begin{align*}
+B_{r,\bullet}  &  =\left(  \text{the }r\text{-th row of the matrix }B\right)
+\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since }B_{r,\bullet}\text{ is the }r\text{-th row of the matrix }B\\
+\text{(by the definition of }B_{r,\bullet}\text{)}%
+\end{array}
+\right) \\
+&  =\left(  b_{r,1},b_{r,2},\ldots,b_{r,n-1}\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }B=\left(  b_{i,j}\right)  _{1\leq
+i\leq n,\ 1\leq j\leq n-1}\right) \\
+&  =\left(  b_{r,j}\right)  _{1\leq i\leq1,\ 1\leq j\leq n-1}.
+\end{align*}
+Thus,%
+\begin{align*}
+&  \sum_{r=1}^{n}\left(  -1\right)  ^{r}\det\left(  B_{\sim r,\bullet}\right)
+\underbrace{B_{r,\bullet}}_{=\left(  b_{r,j}\right)  _{1\leq i\leq1,\ 1\leq
+j\leq n-1}}\\
+&  =\sum_{r=1}^{n}\underbrace{\left(  -1\right)  ^{r}\det\left(  B_{\sim
+r,\bullet}\right)  \left(  b_{r,j}\right)  _{1\leq i\leq1,\ 1\leq j\leq n-1}%
+}_{=\left(  \left(  -1\right)  ^{r}\det\left(  B_{\sim r,\bullet}\right)
+b_{r,j}\right)  _{1\leq i\leq1,\ 1\leq j\leq n-1}}=\sum_{r=1}^{n}\left(
+\left(  -1\right)  ^{r}\det\left(  B_{\sim r,\bullet}\right)  b_{r,j}\right)
+_{1\leq i\leq1,\ 1\leq j\leq n-1}\\
+&  =\left(  \underbrace{\sum_{r=1}^{n}\left(  -1\right)  ^{r}\det\left(
+B_{\sim r,\bullet}\right)  b_{r,j}}_{\substack{=0\\\text{(by Proposition
+\ref{prop.pluecker.pre.row} \textbf{(b)}, applied to }q=j\text{)}}}\right)
+_{1\leq i\leq1,\ 1\leq j\leq n-1}=\left(  0\right)  _{1\leq i\leq1,\ 1\leq
+j\leq n-1}=0_{1\times\left(  n-1\right)  }.
+\end{align*}
+This proves Proposition \ref{prop.pluecker.pre.row} \textbf{(a)}.
+\end{proof}
+
+Let us next state a variant of Proposition \ref{prop.pluecker.pre.row} where
+rows are replaced by columns (and $n$ is renamed as $n+1$):
+
+\begin{proposition}
+\label{prop.pluecker.pre.col}Let $n\in\mathbb{N}$. Let $B\in\mathbb{K}%
+^{n\times\left(  n+1\right)  }$. Then:
+
+\textbf{(a)} We have%
+\[
+\sum_{r=1}^{n+1}\left(  -1\right)  ^{r}\det\left(  B_{\bullet,\sim r}\right)
+B_{\bullet,r}=0_{n\times1}.
+\]
+
+
+\textbf{(b)} Write the matrix $B$ in the form $B=\left(  b_{i,j}\right)
+_{1\leq i\leq n,\ 1\leq j\leq n+1}$. Then,
+\[
+\sum_{r=1}^{n+1}\left(  -1\right)  ^{r}\det\left(  B_{\bullet,\sim r}\right)
+b_{q,r}=0
+\]
+for every $q\in\left\{  1,2,\ldots,n\right\}  $.
+\end{proposition}
+
+\begin{example}
+\label{exam.prop.pluecker.pre.col}For this example, set $n=2$ and $B=\left(
+\begin{array}
+[c]{ccc}%
+a & a^{\prime} & a^{\prime\prime}\\
+b & b^{\prime} & b^{\prime\prime}%
+\end{array}
+\right)  $. Then, Proposition \ref{prop.pluecker.pre.col} \textbf{(a)} says
+that%
+\begin{align*}
+&  -\det\left(
+\begin{array}
+[c]{cc}%
+a^{\prime} & a^{\prime\prime}\\
+b^{\prime} & b^{\prime\prime}%
+\end{array}
+\right)  \cdot\left(
+\begin{array}
+[c]{c}%
+a\\
+b
+\end{array}
+\right)  +\det\left(
+\begin{array}
+[c]{cc}%
+a & a^{\prime\prime}\\
+b & b^{\prime\prime}%
+\end{array}
+\right)  \cdot\left(
+\begin{array}
+[c]{c}%
+a^{\prime}\\
+b^{\prime}%
+\end{array}
+\right)  -\det\left(
+\begin{array}
+[c]{cc}%
+a & a^{\prime}\\
+b & b^{\prime}%
+\end{array}
+\right)  \cdot\left(
+\begin{array}
+[c]{c}%
+a^{\prime\prime}\\
+b^{\prime\prime}%
+\end{array}
+\right) \\
+&  =0_{2\times1}.
+\end{align*}
+Proposition \ref{prop.pluecker.pre.col} \textbf{(b)} (applied to $q=2$) yields%
+\[
+-\det\left(
+\begin{array}
+[c]{cc}%
+a^{\prime} & a^{\prime\prime}\\
+b^{\prime} & b^{\prime\prime}%
+\end{array}
+\right)  \cdot b+\det\left(
+\begin{array}
+[c]{cc}%
+a & a^{\prime\prime}\\
+b & b^{\prime\prime}%
+\end{array}
+\right)  \cdot b^{\prime}-\det\left(
+\begin{array}
+[c]{cc}%
+a & a^{\prime}\\
+b & b^{\prime}%
+\end{array}
+\right)  \cdot b^{\prime\prime}=0.
+\]
+
+\end{example}
+
+We shall obtain Proposition \ref{prop.pluecker.pre.col} by applying
+Proposition \ref{prop.pluecker.pre.row} to $n+1$ and $B^{T}$
+\ \ \ \ \footnote{Recall that $B^{T}$ denotes the transpose of the matrix $B$
+(see Definition \ref{def.transpose}).} instead of $n$ and $B$. For this, we
+shall need a really simple lemma:
+
+\begin{lemma}
+\label{lem.unrows.transpose.1}Let $n\in\mathbb{N}$ and $m\in\mathbb{N}$. Let
+$r\in\left\{  1,2,\ldots,m\right\}  $. Let $B\in\mathbb{K}^{n\times m}$. Then,
+$\left(  B^{T}\right)  _{\sim r,\bullet}=\left(  B_{\bullet,\sim r}\right)
+^{T}$.
+\end{lemma}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Lemma \ref{lem.unrows.transpose.1}.]Taking the transpose of a matrix
+turns all its columns into rows. Thus, if we remove the $r$-th row from $B$
+and then take the transpose of the resulting matrix, then we obtain the same
+matrix as if we first take the transpose of $B$ and then remove the $r$-th row
+from it. Translating this statement into formulas, we obtain precisely
+$\left(  B^{T}\right)  _{\sim r,\bullet}=\left(  B_{\bullet,\sim r}\right)
+^{T}$. Thus, Lemma \ref{lem.unrows.transpose.1} is proven.\footnote{A more
+formal proof of this could be given using Proposition
+\ref{prop.submatrix.easy} \textbf{(e)}.}
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Lemma \ref{lem.unrows.transpose.1}.]We shall use the notations
+defined in Definition \ref{def.submatrix} and in Definition \ref{def.rowscols}%
+. The definition of $B_{\bullet,\sim r}$ yields
+\[
+B_{\bullet,\sim r}=\operatorname*{cols}\nolimits_{1,2,\ldots,\widehat{r}%
+,\ldots,m}B=\operatorname*{sub}\nolimits_{1,2,\ldots,n}^{1,2,\ldots
+,\widehat{r},\ldots,m}B
+\]
+(by Proposition \ref{prop.submatrix.easy} \textbf{(c)}, applied to $A=B$ and
+$v=m-1$ and $\left(  j_{1},j_{2},\ldots,j_{v}\right)  =\left(  1,2,\ldots
+,\widehat{r},\ldots,m\right)  $). Hence,%
+\begin{equation}
+\left(  \underbrace{B_{\bullet,\sim r}}_{=\operatorname*{sub}%
+\nolimits_{1,2,\ldots,n}^{1,2,\ldots,\widehat{r},\ldots,m}B}\right)
+^{T}=\left(  \operatorname*{sub}\nolimits_{1,2,\ldots,n}^{1,2,\ldots
+,\widehat{r},\ldots,m}B\right)  ^{T}=\operatorname*{sub}\nolimits_{1,2,\ldots
+,\widehat{r},\ldots,m}^{1,2,\ldots,n}\left(  B^{T}\right)
+\label{pf.lem.unrows.transpose.1.1}%
+\end{equation}
+(by Proposition \ref{prop.submatrix.easy} \textbf{(e)}, applied to $A=B$,
+$u=n$, $v=m-1$, $\left(  i_{1},i_{2},\ldots,i_{u}\right)  =\left(
+1,2,\ldots,n\right)  $ and $\left(  j_{1},j_{2},\ldots,j_{v}\right)  =\left(
+1,2,\ldots,\widehat{r},\ldots,m\right)  $).
+
+On the other hand, $B^{T}$ is an $m\times n$-matrix (since $B$ is an $n\times
+m$-matrix (since $B\in\mathbb{K}^{n\times m}$)). Hence, the definition of
+$\left(  B^{T}\right)  _{\sim r,\bullet}$ yields%
+\[
+\left(  B^{T}\right)  _{\sim r,\bullet}=\operatorname*{rows}%
+\nolimits_{1,2,\ldots,\widehat{r},\ldots,m}\left(  B^{T}\right)
+=\operatorname*{sub}\nolimits_{1,2,\ldots,\widehat{r},\ldots,m}^{1,2,\ldots
+,n}\left(  B^{T}\right)
+\]
+(by Proposition \ref{prop.submatrix.easy} \textbf{(b)}, applied to $m$, $n$,
+$B^{T}$, $m-1$ and $\left(  1,2,\ldots,\widehat{r},\ldots,m\right)  $ instead
+of $n$, $m$, $A$, $u$ and $\left(  i_{1},i_{2},\ldots,i_{u}\right)  $).
+Comparing this with (\ref{pf.lem.unrows.transpose.1.1}), we obtain $\left(
+B^{T}\right)  _{\sim r,\bullet}=\left(  B_{\bullet,\sim r}\right)  ^{T}$.
+Thus, Lemma \ref{lem.unrows.transpose.1} is proven.
+\end{proof}
+\end{verlong}
+
+\begin{proof}
+[Proof of Proposition \ref{prop.pluecker.pre.col}.]\textbf{(b)} Let
+$q\in\left\{  1,2,\ldots,n\right\}  $. Thus, \newline$q\in\left\{
+1,2,\ldots,n\right\}  =\left\{  1,2,\ldots,\left(  n+1\right)  -1\right\}  $
+(since $n=\left(  n+1\right)  -1$).
+
+We have $B=\left(  b_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n+1}$. Thus,
+the definition of $B^{T}$ yields%
+\[
+B^{T}=\left(  b_{j,i}\right)  _{1\leq i\leq n+1,\ 1\leq j\leq n}=\left(
+b_{j,i}\right)  _{1\leq i\leq n+1,\ 1\leq j\leq\left(  n+1\right)  -1}%
+\]
+(since $n=\left(  n+1\right)  -1$). Also, $B^{T}=\left(  b_{j,i}\right)
+_{1\leq i\leq n+1,\ 1\leq j\leq\left(  n+1\right)  -1}\in\mathbb{K}^{\left(
+n+1\right)  \times\left(  \left(  n+1\right)  -1\right)  }$. Thus, Proposition
+\ref{prop.pluecker.pre.row} \textbf{(b)} (applied to $n+1$, $B^{T}$ and
+$b_{j,i}$ instead of $n$, $B$ and $b_{i,j}$) yields%
+\begin{equation}
+\sum_{r=1}^{n+1}\left(  -1\right)  ^{r}\det\left(  \left(  B^{T}\right)
+_{\sim r,\bullet}\right)  b_{q,r}=0. \label{pf.prop.pluecker.pre.col.b.1}%
+\end{equation}
+But every $r\in\left\{  1,2,\ldots,n+1\right\}  $ satisfies%
+\begin{equation}
+\det\left(  \left(  B^{T}\right)  _{\sim r,\bullet}\right)  =\det\left(
+B_{\bullet,\sim r}\right)  \label{pf.prop.pluecker.pre.col.b.2}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.prop.pluecker.pre.col.b.2}):} Let
+$r\in\left\{  1,2,\ldots,n+1\right\}  $. Then, $B_{\bullet,\sim r}%
+\in\mathbb{K}^{n\times n}$ (since $B\in\mathbb{K}^{n\times\left(  n+1\right)
+}$). In other words, $B_{\bullet,\sim r}$ is an $n\times n$-matrix. Thus,
+Exercise \ref{exe.ps4.4} (applied to $A=B_{\bullet,\sim r}$) yields
+$\det\left(  \left(  B_{\bullet,\sim r}\right)  ^{T}\right)  =\det\left(
+B_{\bullet,\sim r}\right)  $.
+\par
+But Lemma \ref{lem.unrows.transpose.1} (applied to $m=n+1$) yields $\left(
+B^{T}\right)  _{\sim r,\bullet}=\left(  B_{\bullet,\sim r}\right)  ^{T}$.
+Thus, $\det\left(  \underbrace{\left(  B^{T}\right)  _{\sim r,\bullet}%
+}_{=\left(  B_{\bullet,\sim r}\right)  ^{T}}\right)  =\det\left(  \left(
+B_{\bullet,\sim r}\right)  ^{T}\right)  =\det\left(  B_{\bullet,\sim
+r}\right)  $. This proves (\ref{pf.prop.pluecker.pre.col.b.2}).}. Hence,
+(\ref{pf.prop.pluecker.pre.col.b.1}) yields%
+\[
+0=\sum_{r=1}^{n+1}\left(  -1\right)  ^{r}\underbrace{\det\left(  \left(
+B^{T}\right)  _{\sim r,\bullet}\right)  }_{\substack{=\det\left(
+B_{\bullet,\sim r}\right)  \\\text{(by (\ref{pf.prop.pluecker.pre.col.b.2}))}%
+}}b_{q,r}=\sum_{r=1}^{n+1}\left(  -1\right)  ^{r}\det\left(  B_{\bullet,\sim
+r}\right)  b_{q,r}.
+\]
+This proves Proposition \ref{prop.pluecker.pre.col} \textbf{(b)}.
+
+\textbf{(a)} Write the matrix $B$ in the form $B=\left(  b_{i,j}\right)
+_{1\leq i\leq n,\ 1\leq j\leq n+1}$. For every $r\in\left\{  1,2,\ldots
+,n+1\right\}  $, we have%
+\begin{align*}
+B_{\bullet,r}  &  =\left(  \text{the }r\text{-th column of the matrix
+}B\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since }B_{\bullet,r}\text{ is the }r\text{-th column of the matrix }B\\
+\text{(by the definition of }B_{\bullet,r}\text{)}%
+\end{array}
+\right) \\
+&  =\left(
+\begin{array}
+[c]{c}%
+b_{1,r}\\
+b_{2,r}\\
+\vdots\\
+b_{n,r}%
+\end{array}
+\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }B=\left(  b_{i,j}\right)
+_{1\leq i\leq n,\ 1\leq j\leq n+1}\right) \\
+&  =\left(  b_{i,r}\right)  _{1\leq i\leq n,\ 1\leq j\leq1}.
+\end{align*}
+Thus,%
+\begin{align*}
+&  \sum_{r=1}^{n+1}\left(  -1\right)  ^{r}\det\left(  B_{\bullet,\sim
+r}\right)  \underbrace{B_{\bullet,r}}_{=\left(  b_{i,r}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq1}}\\
+&  =\sum_{r=1}^{n+1}\underbrace{\left(  -1\right)  ^{r}\det\left(
+B_{\bullet,\sim r}\right)  \left(  b_{i,r}\right)  _{1\leq i\leq n,\ 1\leq
+j\leq1}}_{=\left(  \left(  -1\right)  ^{r}\det\left(  B_{\bullet,\sim
+r}\right)  b_{i,r}\right)  _{1\leq i\leq n,\ 1\leq j\leq1}}=\sum_{r=1}%
+^{n+1}\left(  \left(  -1\right)  ^{r}\det\left(  B_{\bullet,\sim r}\right)
+b_{i,r}\right)  _{1\leq i\leq n,\ 1\leq j\leq1}\\
+&  =\left(  \underbrace{\sum_{r=1}^{n+1}\left(  -1\right)  ^{r}\det\left(
+B_{\bullet,\sim r}\right)  b_{i,r}}_{\substack{=0\\\text{(by Proposition
+\ref{prop.pluecker.pre.col} \textbf{(b)}, applied to }q=i\text{)}}}\right)
+_{1\leq i\leq n,\ 1\leq j\leq1}=\left(  0\right)  _{1\leq i\leq n,\ 1\leq
+j\leq1}=0_{n\times1}.
+\end{align*}
+This proves Proposition \ref{prop.pluecker.pre.col} \textbf{(a)}.
+\end{proof}
+
+\begin{remark}
+\label{rmk.pluecker.pre.col.cramer}Proposition \ref{prop.pluecker.pre.col}
+\textbf{(a)} can be viewed as a restatement of Cramer's rule (Theorem
+\ref{thm.cramer} \textbf{(a)}). More precisely, it is easy to derive one of
+these two facts from the other (although neither of the two is difficult to
+prove to begin with). Let us sketch one direction of this argument: namely,
+let us derive Theorem \ref{thm.cramer} \textbf{(a)} from Proposition
+\ref{prop.pluecker.pre.col} \textbf{(a)}.
+
+Indeed, let $n$, $A$, $b=\left(  b_{1},b_{2},\ldots,b_{n}\right)  ^{T}$ and
+$A_{j}^{\#}$ be as in Theorem \ref{thm.cramer} \textbf{(a)}. We want to prove
+that $A\cdot\left(  \det\left(  A_{1}^{\#}\right)  ,\det\left(  A_{2}%
+^{\#}\right)  ,\ldots,\det\left(  A_{n}^{\#}\right)  \right)  ^{T}=\det A\cdot
+b$.
+
+Let $B=\left(  A\mid b\right)  $ (using the notations of Definition
+\ref{def.addcol}); this is an $n\times\left(  n+1\right)  $-matrix.
+
+Fix $r\in\left\{  1,2,\ldots,n\right\}  $. The matrix $B_{\bullet,\sim r}$
+differs from the matrix $A_{r}^{\#}$ only in the order of its columns: More precisely,
+
+\begin{itemize}
+\item the matrix $B_{\bullet,\sim r}$ is obtained from the matrix $A$ by
+removing the $r$-th column and attaching the column vector $b$ to the right
+edge, whereas
+
+\item the matrix $A_{r}^{\#}$ is obtained from the matrix $A$ by replacing the
+$r$-th column by the column vector $b$.
+\end{itemize}
+
+Thus, the matrix $B_{\bullet,\sim r}$ can be obtained from the matrix
+$A_{r}^{\#}$ by first switching the $r$-th and $\left(  r+1\right)  $-th
+columns, then switching the $\left(  r+1\right)  $-th and $\left(  r+2\right)
+$-th columns, etc., until finally switching the $\left(  n-1\right)  $-th and
+$n$-th columns. Each of these switches multiplies the determinant by $-1$ (by
+Exercise \ref{exe.ps4.6} \textbf{(b)}); thus, our sequence of switches
+multiplies the determinant by $\left(  -1\right)  ^{n-r}=\left(  -1\right)
+^{n+r}$. Hence,
+\begin{equation}
+\det\left(  B_{\bullet,\sim r}\right)  =\left(  -1\right)  ^{n+r}\det\left(
+A_{r}^{\#}\right)  . \label{eq.rmk.pluecker.pre.col.cramer.1}%
+\end{equation}
+
+
+Now, forget that we fixed $r$. It is easy to see that every $\left(
+v_{1},v_{2},\ldots,v_{n}\right)  ^{T}\in\mathbb{K}^{1\times n}$ satisfies%
+\[
+A\cdot\left(  v_{1},v_{2},\ldots,v_{n}\right)  ^{T}=\sum_{r=1}^{n}%
+v_{r}A_{\bullet,r}.
+\]
+Applying this to $\left(  v_{1},v_{2},\ldots,v_{n}\right)  ^{T}=\left(
+\det\left(  A_{1}^{\#}\right)  ,\det\left(  A_{2}^{\#}\right)  ,\ldots
+,\det\left(  A_{n}^{\#}\right)  \right)  ^{T}$, we obtain%
+\begin{equation}
+A\cdot\left(  \det\left(  A_{1}^{\#}\right)  ,\det\left(  A_{2}^{\#}\right)
+,\ldots,\det\left(  A_{n}^{\#}\right)  \right)  ^{T}=\sum_{r=1}^{n}\det\left(
+A_{r}^{\#}\right)  A_{\bullet,r}. \label{eq.rmk.pluecker.pre.col.cramer.2}%
+\end{equation}
+But Proposition \ref{prop.pluecker.pre.col} \textbf{(a)} yields%
+\begin{align*}
+0_{n\times1}  &  =\sum_{r=1}^{n+1}\left(  -1\right)  ^{r}\det\left(
+B_{\bullet,\sim r}\right)  B_{\bullet,r}\\
+&  =\sum_{r=1}^{n}\left(  -1\right)  ^{r}\underbrace{\det\left(
+B_{\bullet,\sim r}\right)  }_{\substack{=\left(  -1\right)  ^{n+r}\det\left(
+A_{r}^{\#}\right)  \\\text{(by (\ref{eq.rmk.pluecker.pre.col.cramer.1}))}%
+}}\underbrace{B_{\bullet,r}}_{\substack{=A_{\bullet,r}\\\text{(since
+}B=\left(  A\mid b\right)  \text{ and }r\leq n\text{)}}}\\
+&  \ \ \ \ \ \ \ \ \ \ +\left(  -1\right)  ^{n+1}\det\left(
+\underbrace{B_{\bullet,\sim\left(  n+1\right)  }}_{\substack{=A\\\text{(since
+}B=\left(  A\mid b\right)  \text{)}}}\right)  \underbrace{B_{\bullet,n+1}%
+}_{\substack{=b\\\text{(since }B=\left(  A\mid b\right)  \text{)}}}\\
+&  =\sum_{r=1}^{n}\underbrace{\left(  -1\right)  ^{r}\left(  -1\right)
+^{n+r}}_{=\left(  -1\right)  ^{n}}\det\left(  A_{r}^{\#}\right)  A_{\bullet
+,r}+\underbrace{\left(  -1\right)  ^{n+1}}_{=-\left(  -1\right)  ^{n}}\det
+A\cdot b\\
+&  =\sum_{r=1}^{n}\left(  -1\right)  ^{n}\det\left(  A_{r}^{\#}\right)
+A_{\bullet,r}-\left(  -1\right)  ^{n}\det A\cdot b\\
+&  =\left(  -1\right)  ^{n}\left(  \sum_{r=1}^{n}\det\left(  A_{r}%
+^{\#}\right)  A_{\bullet,r}-\det A\cdot b\right)  .
+\end{align*}
+Multiplying both sides of this equality by $\left(  -1\right)  ^{n}$, we
+obtain%
+\begin{align*}
+0_{n\times1}  &  =\underbrace{\left(  -1\right)  ^{n}\left(  -1\right)  ^{n}%
+}_{=1}\left(  \sum_{r=1}^{n}\det\left(  A_{r}^{\#}\right)  A_{\bullet,r}-\det
+A\cdot b\right) \\
+&  =\sum_{r=1}^{n}\det\left(  A_{r}^{\#}\right)  A_{\bullet,r}-\det A\cdot b.
+\end{align*}
+Hence,
+\[
+\det A\cdot b=\sum_{r=1}^{n}\det\left(  A_{r}^{\#}\right)  A_{\bullet
+,r}=A\cdot\left(  \det\left(  A_{1}^{\#}\right)  ,\det\left(  A_{2}%
+^{\#}\right)  ,\ldots,\det\left(  A_{n}^{\#}\right)  \right)  ^{T}%
+\]
+(by (\ref{eq.rmk.pluecker.pre.col.cramer.2})). Thus, we have derived Theorem
+\ref{thm.cramer} \textbf{(a)} from Proposition \ref{prop.pluecker.pre.col}
+\textbf{(a)}. Essentially the same argument (but read backwards) can be used
+to derive Proposition \ref{prop.pluecker.pre.col} \textbf{(a)} from Theorem
+\ref{thm.cramer} \textbf{(a)}.
+\end{remark}
+
+Now, we can easily prove the \textit{Pl\"{u}cker identity}:
+
+\begin{theorem}
+\label{thm.pluecker.plu}Let $n$ be a positive integer. Let $A\in
+\mathbb{K}^{n\times\left(  n-1\right)  }$ and $B\in\mathbb{K}^{n\times\left(
+n+1\right)  }$. Then,%
+\[
+\sum_{r=1}^{n+1}\left(  -1\right)  ^{r}\det\left(  A\mid B_{\bullet,r}\right)
+\det\left(  B_{\bullet,\sim r}\right)  =0
+\]
+(where we are using the notations from Definition \ref{def.addcol} and from
+Definition \ref{def.unrows}).
+\end{theorem}
+
+\begin{example}
+\label{exam.thm.pluecker.plu}If $n=3$, $A=\left(
+\begin{array}
+[c]{cc}%
+a & a^{\prime}\\
+b & b^{\prime}\\
+c & c^{\prime}%
+\end{array}
+\right)  $ and $B=\left(
+\begin{array}
+[c]{cccc}%
+x_{1} & x_{2} & x_{3} & x_{4}\\
+y_{1} & y_{2} & y_{3} & y_{4}\\
+z_{1} & z_{2} & z_{3} & z_{4}%
+\end{array}
+\right)  $, then Theorem \ref{thm.pluecker.plu} says that%
+\begin{align*}
+&  -\det\left(
+\begin{array}
+[c]{ccc}%
+a & a^{\prime} & x_{1}\\
+b & b^{\prime} & y_{1}\\
+c & c^{\prime} & z_{1}%
+\end{array}
+\right)  \det\left(
+\begin{array}
+[c]{ccc}%
+x_{2} & x_{3} & x_{4}\\
+y_{2} & y_{3} & y_{4}\\
+z_{2} & z_{3} & z_{4}%
+\end{array}
+\right) \\
+&  \ \ \ \ \ \ \ \ \ \ +\det\left(
+\begin{array}
+[c]{ccc}%
+a & a^{\prime} & x_{2}\\
+b & b^{\prime} & y_{2}\\
+c & c^{\prime} & z_{2}%
+\end{array}
+\right)  \det\left(
+\begin{array}
+[c]{ccc}%
+x_{1} & x_{3} & x_{4}\\
+y_{1} & y_{3} & y_{4}\\
+z_{1} & z_{3} & z_{4}%
+\end{array}
+\right) \\
+&  \ \ \ \ \ \ \ \ \ \ -\det\left(
+\begin{array}
+[c]{ccc}%
+a & a^{\prime} & x_{3}\\
+b & b^{\prime} & y_{3}\\
+c & c^{\prime} & z_{3}%
+\end{array}
+\right)  \det\left(
+\begin{array}
+[c]{ccc}%
+x_{1} & x_{2} & x_{4}\\
+y_{1} & y_{2} & y_{4}\\
+z_{1} & z_{2} & z_{4}%
+\end{array}
+\right) \\
+&  \ \ \ \ \ \ \ \ \ \ +\det\left(
+\begin{array}
+[c]{ccc}%
+a & a^{\prime} & x_{4}\\
+b & b^{\prime} & y_{4}\\
+c & c^{\prime} & z_{4}%
+\end{array}
+\right)  \det\left(
+\begin{array}
+[c]{ccc}%
+x_{1} & x_{2} & x_{3}\\
+y_{1} & y_{2} & y_{3}\\
+z_{1} & z_{2} & z_{3}%
+\end{array}
+\right) \\
+&  =0.
+\end{align*}
+
+\end{example}
+
+\begin{proof}
+[Proof of Theorem \ref{thm.pluecker.plu}.]Write the matrix $B$ in the form
+$B=\left(  b_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n+1}$.
+
+Let $r\in\left\{  1,2,\ldots,n+1\right\}  $. Then,%
+\begin{align*}
+B_{\bullet,r}  &  =\left(  \text{the }r\text{-th column of the matrix
+}B\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since }B_{\bullet,r}\text{ is the }r\text{-th column of the matrix }B\\
+\text{(by the definition of }B_{\bullet,r}\text{)}%
+\end{array}
+\right) \\
+&  =\left(
+\begin{array}
+[c]{c}%
+b_{1,r}\\
+b_{2,r}\\
+\vdots\\
+b_{n,r}%
+\end{array}
+\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }B=\left(  b_{i,j}\right)
+_{1\leq i\leq n,\ 1\leq j\leq n+1}\right) \\
+&  =\left(  b_{1,r},b_{2,r},\ldots,b_{n,r}\right)  ^{T}.
+\end{align*}
+Hence, Proposition \ref{prop.addcol.props2} \textbf{(a)} (applied to
+$B_{\bullet,r}$ and $b_{i,r}$ instead of $v$ and $v_{i}$) shows that%
+\begin{equation}
+\det\left(  A\mid B_{\bullet,r}\right)  =\sum_{i=1}^{n}\left(  -1\right)
+^{n+i}b_{i,r}\det\left(  A_{\sim i,\bullet}\right)  .
+\label{pf.thm.pluecker.plu.1}%
+\end{equation}
+
+
+Now, forget that we fixed $r$. We thus have proven
+(\ref{pf.thm.pluecker.plu.1}) for each $r\in\left\{  1,2,\ldots,n+1\right\}
+$. Now,%
+\begin{align*}
+&  \sum_{r=1}^{n+1}\left(  -1\right)  ^{r}\underbrace{\det\left(  A\mid
+B_{\bullet,r}\right)  }_{\substack{=\sum_{i=1}^{n}\left(  -1\right)
+^{n+i}b_{i,r}\det\left(  A_{\sim i,\bullet}\right)  \\\text{(by
+(\ref{pf.thm.pluecker.plu.1}))}}}\det\left(  B_{\bullet,\sim r}\right) \\
+&  =\sum_{r=1}^{n+1}\left(  -1\right)  ^{r}\left(  \sum_{i=1}^{n}\left(
+-1\right)  ^{n+i}b_{i,r}\det\left(  A_{\sim i,\bullet}\right)  \right)
+\det\left(  B_{\bullet,\sim r}\right) \\
+&  =\underbrace{\sum_{r=1}^{n+1}\sum_{i=1}^{n}}_{=\sum_{i=1}^{n}\sum
+_{r=1}^{n+1}}\underbrace{\left(  -1\right)  ^{r}\left(  -1\right)
+^{n+i}b_{i,r}\det\left(  A_{\sim i,\bullet}\right)  \det\left(  B_{\bullet
+,\sim r}\right)  }_{=\left(  -1\right)  ^{r}\det\left(  B_{\bullet,\sim
+r}\right)  b_{i,r}\cdot\left(  -1\right)  ^{n+i}\det\left(  A_{\sim i,\bullet
+}\right)  }\\
+&  =\sum_{i=1}^{n}\sum_{r=1}^{n+1}\left(  -1\right)  ^{r}\det\left(
+B_{\bullet,\sim r}\right)  b_{i,r}\cdot\left(  -1\right)  ^{n+i}\det\left(
+A_{\sim i,\bullet}\right) \\
+&  =\sum_{i=1}^{n}\underbrace{\left(  \sum_{r=1}^{n+1}\left(  -1\right)
+^{r}\det\left(  B_{\bullet,\sim r}\right)  b_{i,r}\right)  }%
+_{\substack{=0\\\text{(by Proposition \ref{prop.pluecker.pre.col}
+\textbf{(b)},}\\\text{applied to }q=i\text{)}}}\left(  -1\right)  ^{n+i}%
+\det\left(  A_{\sim i,\bullet}\right) \\
+&  =\sum_{i=1}^{n}0\left(  -1\right)  ^{n+i}\det\left(  A_{\sim i,\bullet
+}\right)  =0.
+\end{align*}
+This proves Theorem \ref{thm.pluecker.plu}.
+\end{proof}
+
+\begin{remark}
+Theorem \ref{thm.pluecker.plu} is essentially equivalent to \cite[\S 9.1,
+Exercise 1]{Fulton-Young}, to \cite[(QR)]{KleLak72} and to \cite[Theorem
+3.4.11 (the \textquotedblleft necessary\textquotedblright\ part)]{Jacobs10}.
+\end{remark}
+
+\begin{verlong}
+\begin{remark}
+\label{rmk.thm.pluecker.plu.GR}Theorem \ref{thm.pluecker.plu} is equivalent to
+Proposition 14.4 in the detailed version of the paper\newline[GriRob14] Darij
+Grinberg, Tom Roby, \textit{\textit{Iterative properties of birational
+rowmotion}}, \href{http://arxiv.org/abs/1402.6178v6}{arXiv:1402.6178v6}.
+
+More precisely, Theorem \ref{thm.pluecker.plu} is exactly Proposition 14.4 in
+[GriRob14] (applied to $n=u$ and $w_{i}=B_{\bullet,i}$). Conversely,
+Proposition 14.4 in [GriRob14] is precisely Theorem \ref{thm.pluecker.plu}
+(applied to $u=n$ and $B=\left(  w_{1}\mid w_{2}\mid\cdots\mid w_{u+1}\right)
+$, where we are using the notations of [GriRob14]).
+\end{remark}
+\end{verlong}
+
+\begin{exercise}
+\label{exe.pluecker.rederive-AC}Use Theorem \ref{thm.pluecker.plu} to give a
+new proof of Proposition \ref{prop.desnanot.AC}.
+\end{exercise}
 
 \subsection{Additional exercises}
 
@@ -49793,11 +50684,11 @@ C=\operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{v},\ldots,\widehat{w}%
 \footnote{\textit{Proof of (\ref{sol.desnanot.jaw.3}):} From $C=\left(
 B\mid\left(  I_{n}\right)  _{\bullet,u}\right)  $, we obtain
 \begin{align*}
-C_{\bullet,\sim n}  & =\left(  B\mid\left(  I_{n}\right)  _{\bullet,u}\right)
-_{\bullet,\sim n}=\left(  B\mid\left(  I_{n}\right)  _{\bullet,u}\right)
-_{\bullet,\sim\left(  \left(  n-1\right)  +1\right)  }%
-\ \ \ \ \ \ \ \ \ \ \left(  \text{since }n=\left(  n-1\right)  +1\right)  \\
-& =B
+C_{\bullet,\sim n}  &  =\left(  B\mid\left(  I_{n}\right)  _{\bullet
+,u}\right)  _{\bullet,\sim n}=\left(  B\mid\left(  I_{n}\right)  _{\bullet
+,u}\right)  _{\bullet,\sim\left(  \left(  n-1\right)  +1\right)
+}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }n=\left(  n-1\right)  +1\right) \\
+&  =B
 \end{align*}
 (by Proposition \ref{prop.addcol.props1} \textbf{(d)}, applied to $n-1$, $B$
 and $\left(  I_{n}\right)  _{\bullet,u}$ instead of $m$, $A$ and $v$).
@@ -49809,10 +50700,10 @@ $ instead of $m$, $A$, $u$, $\left(  i_{1},i_{2},\ldots,i_{u}\right)  $, $v$
 and $\left(  j_{1},j_{2},\ldots,j_{v}\right)  $) yields%
 \begin{align}
 \operatorname*{sub}\nolimits_{1,2,\ldots,\widehat{v},\ldots,\widehat{w}%
-,\ldots,n}^{1,2,\ldots,\widehat{q},\ldots,\widehat{n},\ldots,n}C &
+,\ldots,n}^{1,2,\ldots,\widehat{q},\ldots,\widehat{n},\ldots,n}C  &
 =\operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{v},\ldots,\widehat{w}%
 ,\ldots,n}\left(  \operatorname*{cols}\nolimits_{1,2,\ldots,\widehat{q}%
-,\ldots,\widehat{n},\ldots,n}C\right)  \label{sol.desnanot.jaw.3.pf.1}\\
+,\ldots,\widehat{n},\ldots,n}C\right) \label{sol.desnanot.jaw.3.pf.1}\\
 &  =\operatorname*{cols}\nolimits_{1,2,\ldots,\widehat{q},\ldots
 ,\widehat{n},\ldots,n}\left(  \operatorname*{rows}\nolimits_{1,2,\ldots
 ,\widehat{v},\ldots,\widehat{w},\ldots,n}C\right)  .\nonumber
@@ -49835,10 +50726,10 @@ _{\bullet,\sim q}=B_{\bullet,\sim q}.
 Hence, (\ref{sol.desnanot.jaw.3.pf.1}) becomes%
 \begin{align*}
 \operatorname*{sub}\nolimits_{1,2,\ldots,\widehat{v},\ldots,\widehat{w}%
-,\ldots,n}^{1,2,\ldots,\widehat{q},\ldots,\widehat{n},\ldots,n}C &
+,\ldots,n}^{1,2,\ldots,\widehat{q},\ldots,\widehat{n},\ldots,n}C  &
 =\operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{v},\ldots,\widehat{w}%
 ,\ldots,n}\left(  \underbrace{\operatorname*{cols}\nolimits_{1,2,\ldots
-,\widehat{q},\ldots,\widehat{n},\ldots,n}C}_{=B_{\bullet,\sim q}}\right)  \\
+,\widehat{q},\ldots,\widehat{n},\ldots,n}C}_{=B_{\bullet,\sim q}}\right) \\
 &  =\operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{v},\ldots
 ,\widehat{w},\ldots,n}\left(  B_{\bullet,\sim q}\right)  .
 \end{align*}
@@ -49849,7 +50740,7 @@ this equality, we obtain%
 ,\ldots,\widehat{w},\ldots,n}^{1,2,\ldots,\widehat{q},\ldots,\widehat{n}%
 ,\ldots,n}C\right)  =\det\left(  \operatorname*{rows}\nolimits_{1,2,\ldots
 ,\widehat{v},\ldots,\widehat{w},\ldots,n}\left(  B_{\bullet,\sim q}\right)
-\right)  =\beta_{v,w}\label{sol.desnanot.jaw.3b}%
+\right)  =\beta_{v,w} \label{sol.desnanot.jaw.3b}%
 \end{equation}
 (since $\beta_{v,w}=\det\left(  \operatorname*{rows}\nolimits_{1,2,\ldots
 ,\widehat{v},\ldots,\widehat{w},\ldots,n}\left(  B_{\bullet,\sim q}\right)
@@ -49943,6 +50834,176 @@ $\alpha_{u}\beta_{v,w}+\alpha_{w}\beta_{u,v}=\alpha_{v}\beta_{u,w}$. This
 solves Exercise \ref{exe.desnanot.jaw}.
 \end{proof}
 
+\subsection{Solution to Exercise \ref{exe.pluecker.rederive-AC}}
+
+\begin{proof}
+[Second proof of Proposition \ref{prop.desnanot.AC}.]Recall that $I_{m}$
+denotes the $m\times m$ identity matrix for each $m\in\mathbb{N}$. Thus,
+$I_{n}$ is the $n\times n$ identity matrix. Hence, $\left(  I_{n}\right)
+_{\bullet,v}$ is a well-defined $n\times1$-matrix (since $v\in\left\{
+1,2,\ldots,n\right\}  $).
+
+We know that $C$ is an $n\times n$-matrix (since $C\in\mathbb{K}^{n\times n}%
+$), and that $\left(  I_{n}\right)  _{\bullet,v}$ is an $n\times1$-matrix.
+Thus, $\left(  C\mid\left(  I_{n}\right)  _{\bullet,v}\right)  $ is an
+$n\times\left(  n+1\right)  $-matrix. In other words, $\left(  C\mid\left(
+I_{n}\right)  _{\bullet,v}\right)  \in\mathbb{K}^{n\times\left(  n+1\right)
+}$.
+
+Set $B=\left(  C\mid\left(  I_{n}\right)  _{\bullet,v}\right)  $. Thus,
+$B=\left(  C\mid\left(  I_{n}\right)  _{\bullet,v}\right)  \in\mathbb{K}%
+^{n\times\left(  n+1\right)  }$. We have%
+\begin{equation}
+B_{\bullet,r}=C_{\bullet,r}\ \ \ \ \ \ \ \ \ \ \text{for every }r\in\left\{
+1,2,\ldots,n\right\}  \label{sol.pluecker.rederive-AC.1}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.pluecker.rederive-AC.1}):} Let
+$r\in\left\{  1,2,\ldots,n\right\}  $. Proposition \ref{prop.addcol.props1}
+\textbf{(a)} (applied to $n$, $C$, $\left(  I_{n}\right)  _{\bullet,v}$ and
+$r$ instead of $m$, $A$, $v$ and $q$) yields $\left(  C\mid\left(
+I_{n}\right)  _{\bullet,v}\right)  _{\bullet,r}=C_{\bullet,q}$. Now, from
+$B=\left(  C\mid\left(  I_{n}\right)  _{\bullet,v}\right)  $, we obtain
+$B_{\bullet,r}=\left(  C\mid\left(  I_{n}\right)  _{\bullet,v}\right)
+_{\bullet,r}=C_{\bullet,q}$. This proves (\ref{sol.pluecker.rederive-AC.1}).}.
+Furthermore,%
+\begin{equation}
+\det\left(  A\mid B_{\bullet,n+1}\right)  =\left(  -1\right)  ^{n+v}%
+\det\left(  A_{\sim v,\bullet}\right)  \label{sol.pluecker.rederive-AC.2}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.pluecker.rederive-AC.2}):} Proposition
+\ref{prop.addcol.props1} \textbf{(b)} (applied to $n$, $C$ and $\left(
+I_{n}\right)  _{\bullet,v}$ instead of $m$, $A$ and $v$) yields $\left(
+C\mid\left(  I_{n}\right)  _{\bullet,v}\right)  _{\bullet,n+1}=\left(
+I_{n}\right)  _{\bullet,v}$. Now, from $B=\left(  C\mid\left(  I_{n}\right)
+_{\bullet,v}\right)  $, we obtain $B_{\bullet,n+1}=\left(  C\mid\left(
+I_{n}\right)  _{\bullet,v}\right)  _{\bullet,n+1}=\left(  I_{n}\right)
+_{\bullet,v}$. Hence,%
+\[
+\det\left(  A\mid\underbrace{B_{\bullet,n+1}}_{=\left(  I_{n}\right)
+_{\bullet,v}}\right)  =\det\left(  A\mid\left(  I_{n}\right)  _{\bullet
+,v}\right)  =\left(  -1\right)  ^{n+v}\det\left(  A_{\sim v,\bullet}\right)
+\]
+(by Proposition \ref{prop.addcol.props2} \textbf{(b)}, applied to $p=v$). This
+proves (\ref{sol.pluecker.rederive-AC.2}).}. Moreover,%
+\begin{equation}
+\det\left(  B_{\bullet,\sim r}\right)  =\left(  -1\right)  ^{n+v}\det\left(
+C_{\sim v,\sim r}\right)  \ \ \ \ \ \ \ \ \ \ \text{for every }r\in\left\{
+1,2,\ldots,n\right\}  \label{sol.pluecker.rederive-AC.3}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.pluecker.rederive-AC.3}):} Let
+$r\in\left\{  1,2,\ldots,n\right\}  $. From $B=\left(  C\mid\left(
+I_{n}\right)  _{\bullet,v}\right)  $, we obtain $B_{\bullet,\sim r}=\left(
+C\mid\left(  I_{n}\right)  _{\bullet,v}\right)  _{\bullet,\sim r}=\left(
+C_{\bullet,\sim r}\mid\left(  I_{n}\right)  _{\bullet,v}\right)  $ (by
+Proposition \ref{prop.addcol.props1} \textbf{(a)}, applied to $n$, $C$,
+$\left(  I_{n}\right)  _{\bullet,v}$ and $r$ instead of $m$, $A$, $v$ and
+$q$). Hence,%
+\begin{equation}
+\det\left(  \underbrace{B_{\bullet,\sim r}}_{=\left(  C_{\bullet,\sim r}%
+\mid\left(  I_{n}\right)  _{\bullet,v}\right)  }\right)  =\det\left(
+C_{\bullet,\sim r}\mid\left(  I_{n}\right)  _{\bullet,v}\right)  =\left(
+-1\right)  ^{n+v}\det\left(  \left(  C_{\bullet,\sim r}\right)  _{\sim
+v,\bullet}\right)  \label{sol.pluecker.rederive-AC.3.pf.1}%
+\end{equation}
+(by Proposition \ref{prop.addcol.props2} \textbf{(b)}, applied to $v$ and
+$C_{\bullet,\sim r}$ instead of $p$ and $A$). But Proposition
+\ref{prop.unrows.basics} \textbf{(c)} (applied to $n$, $C$, $v$ and $r$
+instead of $m$, $A$, $u$ and $v$) yields $\left(  C_{\bullet,\sim r}\right)
+_{\sim v,\bullet}=\left(  C_{\sim v,\bullet}\right)  _{\bullet,\sim r}=C_{\sim
+v,\sim r}$. Now, (\ref{sol.pluecker.rederive-AC.3.pf.1}) becomes%
+\[
+\det\left(  B_{\bullet,\sim r}\right)  =\left(  -1\right)  ^{n+v}\det\left(
+\underbrace{\left(  C_{\bullet,\sim r}\right)  _{\sim v,\bullet}}_{=C_{\sim
+v,\sim r}}\right)  =\left(  -1\right)  ^{n+v}\det\left(  C_{\sim v,\sim
+r}\right)  .
+\]
+This proves (\ref{sol.pluecker.rederive-AC.3}).}. Finally,%
+\begin{equation}
+B_{\bullet,\sim\left(  n+1\right)  }=C \label{sol.pluecker.rederive-AC.4}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.pluecker.rederive-AC.4}):} Proposition
+\ref{prop.addcol.props1} \textbf{(d)} (applied to $n$, $C$ and $\left(
+I_{n}\right)  _{\bullet,v}$ instead of $m$, $A$ and $v$) yields $\left(
+C\mid\left(  I_{n}\right)  _{\bullet,v}\right)  _{\bullet,\sim\left(
+n+1\right)  }=C$. Now, from $B=\left(  C\mid\left(  I_{n}\right)  _{\bullet
+,v}\right)  $, we obtain $B_{\bullet,\sim\left(  n+1\right)  }=\left(
+C\mid\left(  I_{n}\right)  _{\bullet,v}\right)  _{\bullet,\sim\left(
+n+1\right)  }=C$. This proves (\ref{sol.pluecker.rederive-AC.4}).}.
+
+Now, Theorem \ref{thm.pluecker.plu} yields%
+\begin{align*}
+0  &  =\sum_{r=1}^{n+1}\left(  -1\right)  ^{r}\det\left(  A\mid B_{\bullet
+,r}\right)  \det\left(  B_{\bullet,\sim r}\right) \\
+&  =\sum_{r=1}^{n}\left(  -1\right)  ^{r}\det\left(  A\mid
+\underbrace{B_{\bullet,r}}_{\substack{=C_{\bullet,r}\\\text{(by
+(\ref{sol.pluecker.rederive-AC.1}))}}}\right)  \underbrace{\det\left(
+B_{\bullet,\sim r}\right)  }_{\substack{=\left(  -1\right)  ^{n+v}\det\left(
+C_{\sim v,\sim r}\right)  \\\text{(by (\ref{sol.pluecker.rederive-AC.3}))}}}\\
+&  \ \ \ \ \ \ \ \ \ \ +\left(  -1\right)  ^{n+1}\underbrace{\det\left(  A\mid
+B_{\bullet,n+1}\right)  }_{\substack{=\left(  -1\right)  ^{n+v}\det\left(
+A_{\sim v,\bullet}\right)  \\\text{(by (\ref{sol.pluecker.rederive-AC.2}))}%
+}}\det\left(  \underbrace{B_{\bullet,\sim\left(  n+1\right)  }}%
+_{\substack{=C\\\text{(by (\ref{sol.pluecker.rederive-AC.4}))}}}\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have split off the addend for
+}r=n+1\text{ from the sum}\right) \\
+&  =\sum_{r=1}^{n}\left(  -1\right)  ^{r}\underbrace{\det\left(  A\mid
+C_{\bullet,r}\right)  \left(  -1\right)  ^{n+v}}_{=\left(  -1\right)
+^{n+v}\det\left(  A\mid C_{\bullet,r}\right)  }\det\left(  C_{\sim v,\sim
+r}\right) \\
+&  \ \ \ \ \ \ \ \ \ \ +\underbrace{\left(  -1\right)  ^{n+1}\left(
+-1\right)  ^{n+v}}_{\substack{=\left(  -1\right)  ^{\left(  n+1\right)
++\left(  n+v\right)  }=\left(  -1\right)  ^{v+1}\\\text{(since }\left(
+n+1\right)  +\left(  n+v\right)  =2n+\left(  v+1\right)  \equiv
+v+1\operatorname{mod}2\text{)}}}\det\left(  A_{\sim v,\bullet}\right)  \det
+C\\
+&  =\sum_{r=1}^{n}\underbrace{\left(  -1\right)  ^{r}\left(  -1\right)
+^{n+v}}_{=\left(  -1\right)  ^{r+\left(  n+v\right)  }}\det\left(  A\mid
+C_{\bullet,r}\right)  \det\left(  C_{\sim v,\sim r}\right) \\
+&  \ \ \ \ \ \ \ \ \ \ +\underbrace{\left(  -1\right)  ^{v+1}}_{=-\left(
+-1\right)  ^{v}}\det\left(  A_{\sim v,\bullet}\right)  \det C\\
+&  =\sum_{r=1}^{n}\left(  -1\right)  ^{r+\left(  n+v\right)  }\det\left(
+A\mid C_{\bullet,r}\right)  \det\left(  C_{\sim v,\sim r}\right)  -\left(
+-1\right)  ^{v}\det\left(  A_{\sim v,\bullet}\right)  \det C.
+\end{align*}
+Adding $\left(  -1\right)  ^{v}\det\left(  A_{\sim v,\bullet}\right)  \det C$
+to both sides of this equality, we obtain%
+\[
+\left(  -1\right)  ^{v}\det\left(  A_{\sim v,\bullet}\right)  \det
+C=\sum_{r=1}^{n}\left(  -1\right)  ^{r+\left(  n+v\right)  }\det\left(  A\mid
+C_{\bullet,r}\right)  \det\left(  C_{\sim v,\sim r}\right)  .
+\]
+Multiplying both sides of this equality by $\left(  -1\right)  ^{v}$, we find%
+\begin{align*}
+&  \left(  -1\right)  ^{v}\left(  -1\right)  ^{v}\det\left(  A_{\sim
+v,\bullet}\right)  \det C\\
+&  =\left(  -1\right)  ^{v}\sum_{r=1}^{n}\left(  -1\right)  ^{r+\left(
+n+v\right)  }\det\left(  A\mid C_{\bullet,r}\right)  \det\left(  C_{\sim
+v,\sim r}\right) \\
+&  =\sum_{r=1}^{n}\underbrace{\left(  -1\right)  ^{v}\left(  -1\right)
+^{r+\left(  n+v\right)  }}_{\substack{=\left(  -1\right)  ^{v+\left(
+r+\left(  n+v\right)  \right)  }=\left(  -1\right)  ^{n+r}\\\text{(since
+}v+\left(  r+\left(  n+v\right)  \right)  =2v+n+r\equiv n+r\operatorname{mod}%
+2\text{)}}}\det\left(  A\mid C_{\bullet,r}\right)  \det\left(  C_{\sim v,\sim
+r}\right) \\
+&  =\sum_{r=1}^{n}\left(  -1\right)  ^{n+r}\det\left(  A\mid C_{\bullet
+,r}\right)  \det\left(  C_{\sim v,\sim r}\right) \\
+&  =\sum_{q=1}^{n}\left(  -1\right)  ^{n+q}\det\left(  A\mid C_{\bullet
+,q}\right)  \det\left(  C_{\sim v,\sim q}\right)
+\end{align*}
+(here, we have renamed the summation index $r$ as $q$). Hence,%
+\begin{align*}
+&  \sum_{q=1}^{n}\left(  -1\right)  ^{n+q}\det\left(  A\mid C_{\bullet
+,q}\right)  \det\left(  C_{\sim v,\sim q}\right) \\
+&  =\underbrace{\left(  -1\right)  ^{v}\left(  -1\right)  ^{v}}%
+_{\substack{=\left(  -1\right)  ^{v+v}=1\\\text{(since }v+v=2v\text{ is
+even)}}}\det\left(  A_{\sim v,\bullet}\right)  \det C=\det\left(  A_{\sim
+v,\bullet}\right)  \det C.
+\end{align*}
+This proves Proposition \ref{prop.desnanot.AC} again.
+\end{proof}
+
+Thus, Exercise \ref{exe.pluecker.rederive-AC} is proven.
+
 \begin{thebibliography}{999999999}                                                                                        %
 
 
@@ -50017,6 +51078,10 @@ Monthly, Vol. 111, No. 3 (March 2004), pp. 189--197.}
 \textit{Rhombus Tilings of a Hexagon with Three Fixed Border Tiles},
 arXiv:math/9712261v2.} Published in: J. Combin. Theory Ser. A 88 (1999), pp. 368--378.
 
+\bibitem[Fulton97]{Fulton-Young}William Fulton, \textit{Young Tableaux: With
+Applications to Representation Theory and Geometry}, Cambridge University
+Press 1997.
+
 \bibitem[Gessel79]{Gessel-Vand}Ira Gessel, \textit{Tournaments and
 Vandermonde's Determinant}, Journal of Graph Theory, Vol. 3 (1979), pp. 305--307.
 
@@ -50070,9 +51135,16 @@ Hungerford, \textit{Algebra}, 12th printing, Springer 2003.}
 \bibitem[Hunger14]{Hungerford}Thomas W. Hungerford, \textit{Abstract Algebra:
 An Introduction}, 3rd edition, Brooks/Cole 2014.
 
+\bibitem[Jacobs10]{Jacobs10}Nathan Jacobson, \textit{Finite-Dimensional
+Division Algebras Over Fields}, corrected 2nd printing, Springer 2010.
+
 \bibitem[KenWil14]{KenWil14}\href{http://arxiv.org/abs/1411.7425v1}{Richard W.
 Kenyon, David B. Wilson, \textit{The space of circular planar electrical
 networks}, arXiv:1411.7425v1.}
+
+\bibitem[KleLak72]{KleLak72}S. L. Kleiman and Dan Laksov, \textit{Schubert
+Calculus}, The American Mathematical Monthly, Vol. 79, No. 10, (Dec., 1972),
+pp. 1061--1082.
 
 \bibitem[Knuth88]{Knuth-fib}%
 \href{http://dx.doi.org/10.1016/0893-9659(89)90131-6}{Donald E. Knuth,
