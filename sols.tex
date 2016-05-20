@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, May 19, 2016 02:06:36}
+%TCIDATA{LastRevised=Thursday, May 19, 2016 22:53:11}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -25368,7 +25368,6 @@ d\prod_{i=0}^{\left(  K-1\right)  -1}u_{i}\equiv d\prod_{i=0}^{\left(
 K-1\right)  -1}v_{i}\operatorname{mod}c.
 \label{pf.lem.exeadd.choose.a/b.prod-of-congs.goal.pf.1}%
 \end{equation}
-
 
 Now,%
 \begin{align*}
@@ -51106,6 +51105,878 @@ This proves Proposition \ref{prop.desnanot.AC} again.
 \end{proof}
 
 Thus, Exercise \ref{exe.pluecker.rederive-AC} is proven.
+
+\subsection{Solution to Additional exercise \ref{exeadd.det.rk1upd}}
+
+In this section, we shall use the following notation:
+
+\begin{definition}
+\label{def.exeadd.det.rk1upd.scalar}If $B$ is any $1\times1$-matrix, then
+$\operatorname*{ent}B$ will denote the $\left(  1,1\right)  $-th entry of $B$.
+(This entry is, of course, the only entry of $B$. Thus, the $1\times1$-matrix
+$B$ satisfies $B=\left(
+\begin{array}
+[c]{c}%
+\operatorname*{ent}B
+\end{array}
+\right)  $.)
+\end{definition}
+
+We can now restate Additional exercise \ref{exeadd.det.rk1upd} in a form that
+uses no abuse of notation (such as identifying $1\times1$-matrices with
+elements of $\mathbb{K}$):
+
+\begin{theorem}
+\label{thm.exeadd.det.rk1upd.claim}Let $n\in\mathbb{N}$. Let $u$ be a column
+vector with $n$ entries, and let $v$ be a row vector with $n$ entries. (Thus,
+$uv$ is an $n\times n$-matrix, whereas $vu$ is a $1\times1$-matrix.) Let $A$
+be an $n\times n$-matrix. Then,%
+\[
+\det\left(  A+uv\right)  =\det A+\operatorname*{ent}\left(  v\left(
+\operatorname*{adj}A\right)  u\right)  .
+\]
+
+\end{theorem}
+
+Before we prove this theorem, let us make some preparations. First comes a
+simple fact:
+
+\begin{proposition}
+\label{prop.exeadd.det.rk1upd.claim.ent(vBu)}Let $n\in\mathbb{N}$ and
+$m\in\mathbb{N}$. Let $u=\left(  u_{1},u_{2},\ldots,u_{m}\right)  ^{T}%
+\in\mathbb{K}^{m\times1}$ and $v=\left(  v_{1},v_{2},\ldots,v_{n}\right)
+\in\mathbb{K}^{1\times n}$. Let $B=\left(  b_{i,j}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq m}\in\mathbb{K}^{n\times m}$. Then,%
+\[
+\operatorname*{ent}\left(  vBu\right)  =\sum_{i=1}^{n}\sum_{j=1}^{m}u_{j}%
+v_{i}b_{i,j}.
+\]
+
+\end{proposition}
+
+\begin{proof}
+[Proof of Proposition \ref{prop.exeadd.det.rk1upd.claim.ent(vBu)}.]We have
+\[
+u=\left(  u_{1},u_{2},\ldots,u_{m}\right)  ^{T}=\left(
+\begin{array}
+[c]{c}%
+u_{1}\\
+u_{2}\\
+\vdots\\
+u_{m}%
+\end{array}
+\right)  =\left(  u_{i}\right)  _{1\leq i\leq m,\ 1\leq j\leq1}%
+\]
+and%
+\[
+v=\left(  v_{1},v_{2},\ldots,v_{n}\right)  =\left(  v_{j}\right)  _{1\leq
+i\leq1,\ 1\leq j\leq n}.
+\]
+The definition of the product of two matrices yields%
+\[
+vB=\left(  \sum_{k=1}^{n}v_{k}b_{k,j}\right)  _{1\leq i\leq1,\ 1\leq j\leq m}%
+\]
+(since $v=\left(  v_{j}\right)  _{1\leq i\leq1,\ 1\leq j\leq n}$ and
+$B=\left(  b_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq m}$). Thus,%
+\[
+vB=\left(  \underbrace{\sum_{k=1}^{n}v_{k}b_{k,j}}_{\substack{=\sum_{p=1}%
+^{n}v_{p}b_{p,j}\\\text{(here, we have renamed the}\\\text{summation index
+}k\text{ as }p\text{)}}}\right)  _{1\leq i\leq1,\ 1\leq j\leq m}=\left(
+\sum_{p=1}^{n}v_{p}b_{p,j}\right)  _{1\leq i\leq1,\ 1\leq j\leq m}.
+\]
+
+
+Now, the definition of the product of two matrices yields%
+\begin{equation}
+\left(  vB\right)  u=\left(  \sum_{k=1}^{m}\left(  \sum_{p=1}^{n}v_{p}%
+b_{p,k}\right)  u_{k}\right)  _{1\leq i\leq1,\ 1\leq j\leq1}
+\label{pf.prop.exeadd.det.rk1upd.claim.ent(vBu).1}%
+\end{equation}
+(since $vB=\left(  \sum_{p=1}^{n}v_{p}b_{p,j}\right)  _{1\leq i\leq1,\ 1\leq
+j\leq m}$ and $u=\left(  u_{i}\right)  _{1\leq i\leq m,\ 1\leq j\leq1}$). In
+particular, $\left(  vB\right)  u$ is a $1\times1$-matrix. The definition of
+$\operatorname*{ent}\left(  \left(  vB\right)  u\right)  $ shows that
+$\operatorname*{ent}\left(  \left(  vB\right)  u\right)  $ is the $\left(
+1,1\right)  $-th entry of this matrix $\left(  vB\right)  u$. Thus,%
+\begin{align*}
+\operatorname*{ent}\left(  \left(  vB\right)  u\right)   &  =\left(  \text{the
+}\left(  1,1\right)  \text{-th entry of the matrix }\underbrace{\left(
+vB\right)  u}_{\substack{=\left(  \sum_{k=1}^{m}\left(  \sum_{p=1}^{n}%
+v_{p}b_{p,k}\right)  u_{k}\right)  _{1\leq i\leq1,\ 1\leq j\leq1}\\\text{(by
+(\ref{pf.prop.exeadd.det.rk1upd.claim.ent(vBu).1}))}}}\right) \\
+&  =\left(  \text{the }\left(  1,1\right)  \text{-th entry of the matrix
+}\left(  \sum_{k=1}^{m}\left(  \sum_{p=1}^{n}v_{p}b_{p,k}\right)
+u_{k}\right)  _{1\leq i\leq1,\ 1\leq j\leq1}\right) \\
+&  =\sum_{k=1}^{m}\left(  \sum_{p=1}^{n}v_{p}b_{p,k}\right)  u_{k}%
+=\underbrace{\sum_{k=1}^{m}\sum_{p=1}^{n}}_{=\sum_{p=1}^{n}\sum_{k=1}^{m}%
+}\underbrace{v_{p}b_{p,k}u_{k}}_{=u_{k}v_{p}b_{p,k}}\\
+&  =\sum_{p=1}^{n}\sum_{k=1}^{m}u_{k}v_{p}b_{p,k}=\sum_{i=1}^{n}\sum_{k=1}%
+^{m}u_{k}v_{i}b_{i,k}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have renamed the summation index
+}p\text{ as }i\right) \\
+&  =\sum_{i=1}^{n}\sum_{j=1}^{m}u_{j}v_{i}b_{i,j}%
+\end{align*}
+(here, we have renamed the summation index $k$ as $j$). Since $\left(
+vB\right)  u=vBu$, this rewrites as%
+\[
+\operatorname*{ent}\left(  vBu\right)  =\sum_{i=1}^{n}\sum_{j=1}^{m}u_{j}%
+v_{i}b_{i,j}.
+\]
+This proves Proposition \ref{prop.exeadd.det.rk1upd.claim.ent(vBu)}.
+\end{proof}
+
+From Proposition \ref{prop.exeadd.det.rk1upd.claim.ent(vBu)}, we can easily
+obtain the following:
+
+\begin{corollary}
+\label{cor.exeadd.det.rk1upd.claim.ent(v(adjA)u)}Let $n\in\mathbb{N}$. Let
+$u=\left(  u_{1},u_{2},\ldots,u_{n}\right)  ^{T}\in\mathbb{K}^{n\times1}$ and
+$v=\left(  v_{1},v_{2},\ldots,v_{n}\right)  \in\mathbb{K}^{1\times n}$. Let
+$A$ be an $n\times n$-matrix. Then,%
+\[
+\operatorname*{ent}\left(  v\left(  \operatorname*{adj}A\right)  u\right)
+=\sum_{i=1}^{n}\sum_{j=1}^{n}\left(  -1\right)  ^{i+j}u_{j}v_{i}\det\left(
+A_{\sim j,\sim i}\right)  .
+\]
+(Here, we are using the notations introduced in Definition
+\ref{def.submatrix.minor}.)
+\end{corollary}
+
+\begin{proof}
+[Proof of Corollary \ref{cor.exeadd.det.rk1upd.claim.ent(v(adjA)u)}.]The
+definition of $\operatorname*{adj}A$ yields%
+\[
+\operatorname*{adj}A=\left(  \left(  -1\right)  ^{i+j}\det\left(  A_{\sim
+j,\sim i}\right)  \right)  _{1\leq i\leq n,\ 1\leq j\leq n}.
+\]
+Hence, Proposition \ref{prop.exeadd.det.rk1upd.claim.ent(vBu)} (applied to
+$m=n$, $B=\operatorname*{adj}A$ and $b_{i,j}=\left(  -1\right)  ^{i+j}%
+\det\left(  A_{\sim j,\sim i}\right)  $) yields%
+\begin{align*}
+\operatorname*{ent}\left(  v\left(  \operatorname*{adj}A\right)  u\right)   &
+=\sum_{i=1}^{n}\sum_{j=1}^{n}\underbrace{u_{j}v_{i}\left(  -1\right)  ^{i+j}%
+}_{=\left(  -1\right)  ^{i+j}u_{j}v_{i}}\det\left(  A_{\sim j,\sim i}\right)
+\\
+&  =\sum_{i=1}^{n}\sum_{j=1}^{n}\left(  -1\right)  ^{i+j}u_{j}v_{i}\det\left(
+A_{\sim j,\sim i}\right)  .
+\end{align*}
+This proves Corollary \ref{cor.exeadd.det.rk1upd.claim.ent(v(adjA)u)}.
+\end{proof}
+
+Next, we state something slightly more interesting:
+
+\begin{proposition}
+\label{prop.exeadd.det.rk1upd.claim.AB+uv}Let $n\in\mathbb{N}$ and
+$m\in\mathbb{N}$. Let $A\in\mathbb{K}^{n\times m}$ and $B\in\mathbb{K}%
+^{n\times m}$. Let $u\in\mathbb{K}^{n\times1}$ and $v\in\mathbb{K}^{n\times1}%
+$. Then,%
+\[
+\left(  A\mid u\right)  \left(  B\mid v\right)  ^{T}=AB^{T}+uv^{T}.
+\]
+(Here, we are using the notations introduced in Definition \ref{def.addcol}.)
+\end{proposition}
+
+\begin{example}
+If we set $n=2$, $m=3$, $A=\left(
+\begin{array}
+[c]{ccc}%
+a & a^{\prime} & a^{\prime\prime}\\
+b & b^{\prime} & b^{\prime\prime}%
+\end{array}
+\right)  $, $B=\left(
+\begin{array}
+[c]{ccc}%
+c & c^{\prime} & c^{\prime\prime}\\
+d & d^{\prime} & d^{\prime\prime}%
+\end{array}
+\right)  $, $u=\left(
+\begin{array}
+[c]{c}%
+x\\
+y
+\end{array}
+\right)  $ and $v=\left(
+\begin{array}
+[c]{c}%
+z\\
+w
+\end{array}
+\right)  $, then Proposition \ref{prop.exeadd.det.rk1upd.claim.AB+uv} says
+that%
+\begin{align*}
+&  \left(
+\begin{array}
+[c]{cccc}%
+a & a^{\prime} & a^{\prime\prime} & x\\
+b & b^{\prime} & b^{\prime\prime} & y
+\end{array}
+\right)  \left(
+\begin{array}
+[c]{cccc}%
+c & c^{\prime} & c^{\prime\prime} & z\\
+d & d^{\prime} & d^{\prime\prime} & w
+\end{array}
+\right)  ^{T}\\
+&  =\left(
+\begin{array}
+[c]{ccc}%
+a & a^{\prime} & a^{\prime\prime}\\
+b & b^{\prime} & b^{\prime\prime}%
+\end{array}
+\right)  \left(
+\begin{array}
+[c]{ccc}%
+c & c^{\prime} & c^{\prime\prime}\\
+d & d^{\prime} & d^{\prime\prime}%
+\end{array}
+\right)  ^{T}+\left(
+\begin{array}
+[c]{c}%
+x\\
+y
+\end{array}
+\right)  \left(
+\begin{array}
+[c]{c}%
+z\\
+w
+\end{array}
+\right)  ^{T}.
+\end{align*}
+
+\end{example}
+
+\begin{proof}
+[First proof of Proposition \ref{prop.exeadd.det.rk1upd.claim.AB+uv}
+(sketched).]We can apply Exercise \ref{exe.block2x2.mult} to $n$, $0$, $m$,
+$1$, $n$, $0$, $A$, $u$, $0_{0\times m}$, $0_{0\times1}$, $B^{T}$,
+$0_{m\times0}$, $v^{T}$ and $0_{1\times0}$ instead of $n$, $n^{\prime}$, $m$,
+$m^{\prime}$, $\ell$, $\ell^{\prime}$, $A$, $B$, $C$, $D$, $A^{\prime}$,
+$B^{\prime}$, $C^{\prime}$ and $D^{\prime}$. As a result, we obtain%
+\[
+\left(
+\begin{array}
+[c]{cc}%
+A & u\\
+0_{0\times m} & 0_{0\times1}%
+\end{array}
+\right)  \left(
+\begin{array}
+[c]{cc}%
+B^{T} & 0_{m\times0}\\
+v^{T} & 0_{1\times0}%
+\end{array}
+\right)  =\left(
+\begin{array}
+[c]{cc}%
+AB^{T}+uv^{T} & A0_{m\times0}+u0_{1\times0}\\
+0_{0\times m}B^{T}+0_{0\times1}v^{T} & 0_{0\times m}0_{m\times0}+0_{0\times
+1}0_{1\times0}%
+\end{array}
+\right)
+\]
+(where we are using the notations introduced in Definition \ref{def.block2x2}%
+). In view of the equalities%
+\[
+\left(
+\begin{array}
+[c]{cc}%
+A & u\\
+0_{0\times m} & 0_{0\times1}%
+\end{array}
+\right)  =\left(  A\mid u\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{this is
+rather obvious}\right)  ,
+\]%
+\[
+\left(
+\begin{array}
+[c]{cc}%
+B^{T} & 0_{m\times0}\\
+v^{T} & 0_{1\times0}%
+\end{array}
+\right)  =\left(  B\mid v\right)  ^{T}\ \ \ \ \ \ \ \ \ \ \left(  \text{this
+is easy to see}\right)
+\]
+and%
+\begin{align*}
+&  \left(
+\begin{array}
+[c]{cc}%
+AB^{T}+uv^{T} & A0_{m\times0}+u0_{1\times0}\\
+0_{0\times m}B^{T}+0_{0\times1}v^{T} & 0_{0\times m}0_{m\times0}+0_{0\times
+1}0_{1\times0}%
+\end{array}
+\right) \\
+&  =\left(
+\begin{array}
+[c]{cc}%
+AB^{T}+uv^{T} & 0_{n\times0}\\
+0_{0\times n} & 0_{0\times0}%
+\end{array}
+\right)  =AB^{T}+uv^{T},
+\end{align*}
+this rewrites as $\left(  A\mid u\right)  \left(  B\mid v\right)  ^{T}%
+=AB^{T}+uv^{T}$. This proves Proposition
+\ref{prop.exeadd.det.rk1upd.claim.AB+uv}.
+\end{proof}
+
+We shall now give another, self-contained proof of Proposition
+\ref{prop.exeadd.det.rk1upd.claim.AB+uv}, based upon the following simple fact:
+
+\begin{proposition}
+\label{prop.exeadd.det.rk1upd.claim.AB}Let $n\in\mathbb{N}$ and $m\in
+\mathbb{N}$. Let $A\in\mathbb{K}^{n\times m}$ and $B\in\mathbb{K}^{n\times m}%
+$. Then,%
+\[
+AB^{T}=\sum_{k=1}^{m}A_{\bullet,k}\left(  B_{\bullet,k}\right)  ^{T}.
+\]
+(Here, we are using the notations introduced in Definition \ref{def.unrows}.)
+\end{proposition}
+
+\begin{proof}
+[Proof of Proposition \ref{prop.exeadd.det.rk1upd.claim.AB}.]The matrix $A$ is
+an $n\times m$-matrix (since $A\in\mathbb{K}^{n\times m}$). Write this
+$n\times m$-matrix $A$ in the form $A=\left(  a_{i,j}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq m}$.
+
+The matrix $B$ is an $n\times m$-matrix (since $B\in\mathbb{K}^{n\times m}$).
+Write this $n\times m$-matrix $B$ in the form $B=\left(  b_{i,j}\right)
+_{1\leq i\leq n,\ 1\leq j\leq m}$. From $B=\left(  b_{i,j}\right)  _{1\leq
+i\leq n,\ 1\leq j\leq m}$, we obtain $B^{T}=\left(  b_{j,i}\right)  _{1\leq
+i\leq m,\ 1\leq j\leq n}$.
+
+The definition of the product of two matrices yields%
+\begin{equation}
+AB^{T}=\left(  \sum_{k=1}^{m}a_{i,k}b_{j,k}\right)  _{1\leq i\leq n,\ 1\leq
+j\leq n} \label{pf.prop.exeadd.det.rk1upd.claim.AB.0}%
+\end{equation}
+(since $A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq m}$ and
+$B^{T}=\left(  b_{j,i}\right)  _{1\leq i\leq m,\ 1\leq j\leq n}$).
+
+Let us now fix $p\in\left\{  1,2,\ldots,m\right\}  $. Then, $A_{\bullet,p}$ is
+the $p$-th column of the matrix $A$ (by the definition of $A_{\bullet,p}$).
+Thus,%
+\begin{align*}
+A_{\bullet,p}  &  =\left(  \text{the }p\text{-th column of the matrix
+}A\right) \\
+&  =\left(
+\begin{array}
+[c]{c}%
+a_{1,p}\\
+a_{2,p}\\
+\vdots\\
+a_{n,p}%
+\end{array}
+\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }A=\left(  a_{i,j}\right)
+_{1\leq i\leq n,\ 1\leq j\leq m}\right) \\
+&  =\left(  a_{i,p}\right)  _{1\leq i\leq n,\ 1\leq j\leq1}.
+\end{align*}
+The same argument (applied to $B$ and $b_{i,j}$ instead of $A$ and $a_{i,j}$)
+yields $B_{\bullet,p}=\left(  b_{i,p}\right)  _{1\leq i\leq n,\ 1\leq j\leq1}%
+$. Hence, $\left(  B_{\bullet,p}\right)  ^{T}=\left(  b_{j,p}\right)  _{1\leq
+i\leq1,\ 1\leq j\leq n}$.
+
+Now, the definition of the product of two matrices yields%
+\begin{align}
+A_{\bullet,p}\left(  B_{\bullet,p}\right)  ^{T}  &  =\left(  \underbrace{\sum
+_{k=1}^{1}a_{i,p}b_{j,p}}_{=a_{i,p}b_{j,p}}\right)  _{1\leq i\leq n,\ 1\leq
+j\leq n}\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since }A_{\bullet,p}=\left(  a_{i,p}\right)  _{1\leq i\leq n,\ 1\leq
+j\leq1}\\
+\text{and }\left(  B_{\bullet,p}\right)  ^{T}=\left(  b_{j,p}\right)  _{1\leq
+i\leq1,\ 1\leq j\leq n}%
+\end{array}
+\right) \nonumber\\
+&  =\left(  a_{i,p}b_{j,p}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}.
+\label{pf.prop.exeadd.det.rk1upd.claim.AB.1}%
+\end{align}
+
+
+Now, let us forget that we fixed $p$. We thus have proven
+(\ref{pf.prop.exeadd.det.rk1upd.claim.AB.1}) for each $p\in\left\{
+1,2,\ldots,m\right\}  $. Now,%
+\begin{align*}
+\sum_{k=1}^{m}\underbrace{A_{\bullet,k}\left(  B_{\bullet,k}\right)  ^{T}%
+}_{\substack{=\left(  a_{i,k}b_{j,k}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}\\\text{(by (\ref{pf.prop.exeadd.det.rk1upd.claim.AB.1}), applied to
+}p=k\text{)}}}  &  =\sum_{k=1}^{m}\left(  a_{i,k}b_{j,k}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}\\
+&  =\left(  \sum_{k=1}^{m}a_{i,k}b_{j,k}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}.
+\end{align*}
+Comparing this with (\ref{pf.prop.exeadd.det.rk1upd.claim.AB.0}), we obtain
+$AB^{T}=\sum_{k=1}^{m}A_{\bullet,k}\left(  B_{\bullet,k}\right)  ^{T}$. This
+proves Proposition \ref{prop.exeadd.det.rk1upd.claim.AB}.
+\end{proof}
+
+\begin{proof}
+[Second proof of Proposition \ref{prop.exeadd.det.rk1upd.claim.AB+uv}.]We have
+$\left(  A\mid u\right)  \in\mathbb{K}^{n\times\left(  m+1\right)  }$ (since
+$A\in\mathbb{K}^{n\times m}$ and $u\in\mathbb{K}^{n\times1}$) and $\left(
+B\mid v\right)  \in\mathbb{K}^{n\times\left(  m+1\right)  }$ (since
+$B\in\mathbb{K}^{n\times m}$ and $v\in\mathbb{K}^{n\times1}$). Thus,
+Proposition \ref{prop.exeadd.det.rk1upd.claim.AB} (applied to $m+1$, $\left(
+A\mid u\right)  $ and $\left(  B\mid v\right)  $ instead of $m$, $A$ and $B$)
+yields%
+\begin{align*}
+&  \left(  A\mid u\right)  \left(  B\mid v\right)  ^{T}\\
+&  =\sum_{k=1}^{m+1}\left(  A\mid u\right)  _{\bullet,k}\left(  \left(  B\mid
+v\right)  _{\bullet,k}\right)  ^{T}\\
+&  =\sum_{k=1}^{m}\underbrace{\left(  A\mid u\right)  _{\bullet,k}%
+}_{\substack{=A_{\bullet,k}\\\text{(by Proposition \ref{prop.addcol.props1}
+\textbf{(a)},}\\\text{applied to }u\text{ and }k\text{ instead of }v\text{ and
+}q\text{)}}}\left(  \underbrace{\left(  B\mid v\right)  _{\bullet,k}%
+}_{\substack{=B_{\bullet,k}\\\text{(by Proposition \ref{prop.addcol.props1}
+\textbf{(a)},}\\\text{applied to }B\text{ and }k\text{ instead of }A\text{ and
+}q\text{)}}}\right)  ^{T}\\
+&  \ \ \ \ \ \ \ \ \ \ +\underbrace{\left(  A\mid u\right)  _{\bullet,m+1}%
+}_{\substack{=u\\\text{(by Proposition \ref{prop.addcol.props1} \textbf{(b)}%
+,}\\\text{applied to }u\text{ instead of }v\text{)}}}\left(
+\underbrace{\left(  B\mid v\right)  _{\bullet,m+1}}_{\substack{=v\\\text{(by
+Proposition \ref{prop.addcol.props1} \textbf{(b)},}\\\text{applied to }B\text{
+instead of }A\text{)}}}\right)  ^{T}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have split off the addend for
+}k=m+1\text{ from the sum}\right)  \\
+&  =\sum_{k=1}^{m}A_{\bullet,k}\left(  B_{\bullet,k}\right)  ^{T}+uv^{T}.
+\end{align*}
+Comparing this with%
+\[
+\underbrace{AB^{T}}_{\substack{=\sum_{k=1}^{m}A_{\bullet,k}\left(
+B_{\bullet,k}\right)  ^{T}\\\text{(by Proposition
+\ref{prop.exeadd.det.rk1upd.claim.AB})}}}+uv^{T}=\sum_{k=1}^{m}A_{\bullet
+,k}\left(  B_{\bullet,k}\right)  ^{T}+uv^{T},
+\]
+we obtain $\left(  A\mid u\right)  \left(  B\mid v\right)  ^{T}=AB^{T}+uv^{T}%
+$. Thus, Proposition \ref{prop.exeadd.det.rk1upd.claim.AB+uv} is proven again.
+\end{proof}
+
+\begin{corollary}
+\label{cor.exeadd.det.rk1upd.claim.A+uv}Let $n\in\mathbb{N}$. Let
+$u\in\mathbb{K}^{1\times n}$ and $v\in\mathbb{K}^{n\times1}$. Let $A$ be an
+$n\times n$-matrix. Then,%
+\[
+A+uv=\left(  A\mid u\right)  \left(  I_{n}\mid v^{T}\right)  ^{T}.
+\]
+(Here, we are using the notations introduced in Definition \ref{def.addcol}.)
+\end{corollary}
+
+\begin{proof}
+[Proof of Corollary \ref{cor.exeadd.det.rk1upd.claim.A+uv}.]We have
+$v\in\mathbb{K}^{n\times1}$ and thus $v^{T}\in\mathbb{K}^{1\times n}$. Also,
+$I_{n}\in\mathbb{K}^{n\times n}$. Thus, Proposition
+\ref{prop.exeadd.det.rk1upd.claim.AB+uv} (applied to $n$, $I_{n}$ and $v^{T}$
+instead of $m$, $B$ and $v$) yields%
+\[
+\left(  A\mid u\right)  \left(  I_{n}\mid v^{T}\right)  ^{T}%
+=A\underbrace{\left(  I_{n}\right)  ^{T}}_{=I_{n}}+u\underbrace{\left(
+v^{T}\right)  ^{T}}_{\substack{=v\\\text{(since }\left(  C^{T}\right)
+^{T}=C\text{ for any}\\\text{matrix }C\text{)}}}=\underbrace{AI_{n}}%
+_{=A}+uv=A+uv.
+\]
+This proves Corollary \ref{cor.exeadd.det.rk1upd.claim.A+uv}.
+\end{proof}
+
+Next, we state some simple facts about determinants:
+
+\begin{lemma}
+\label{lem.exeadd.det.rk1upd.adjI}Let $n\in\mathbb{N}$. Then:
+
+\textbf{(a)} Every $u\in\left\{  1,2,\ldots,n\right\}  $ satisfies
+$\det\left(  \left(  I_{n}\right)  _{\sim u,\sim u}\right)  =1$.
+
+\textbf{(b)} If $u$ and $v$ are two elements of $\left\{  1,2,\ldots
+,n\right\}  $ such that $u\neq v$, then $\det\left(  \left(  I_{n}\right)
+_{\sim u,\sim v}\right)  =0$.
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.exeadd.det.rk1upd.adjI}.]There are myriad ways to
+prove Lemma \ref{lem.exeadd.det.rk1upd.adjI} (for example, one can prove part
+\textbf{(a)} by showing that $\left(  I_{n}\right)  _{\sim u,\sim u}=I_{n-1}$,
+and prove part \textbf{(b)} by arguing that the matrix $\left(  I_{n}\right)
+_{\sim u,\sim v}$ has a row consisting of zeroes\footnote{or, what also
+suffices, a column consisting of zeroes}). The proof we will now give is not
+the simplest one, but the shortest one (using what we have proven so far):
+
+For any two objects $i$ and $j$, define an integer $\delta_{i,j}\in\mathbb{K}$
+by $\delta_{i,j}=%
+\begin{cases}
+1, & \text{if }i=j;\\
+0, & \text{if }i\neq j
+\end{cases}
+$. Then, $I_{n}=\left(  \delta_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$
+(by the definition of $I_{n}$).
+
+Now, Theorem \ref{thm.adj.inverse} (applied to $A=I_{n}$) yields $I_{n}%
+\cdot\operatorname*{adj}\left(  I_{n}\right)  =\operatorname*{adj}\left(
+I_{n}\right)  \cdot I_{n}=\det\left(  I_{n}\right)  \cdot I_{n}$. Thus,
+$\operatorname*{adj}\left(  I_{n}\right)  \cdot I_{n}=\underbrace{\det\left(
+I_{n}\right)  }_{=1}\cdot I_{n}=I_{n}$, so that $I_{n}=\operatorname*{adj}%
+\left(  I_{n}\right)  \cdot I_{n}=\operatorname*{adj}\left(  I_{n}\right)  $
+(since $BI_{n}=I_{n}$ for any $m\in\mathbb{N}$ and any $m\times n$-matrix
+$B$). Thus,%
+\[
+I_{n}=\operatorname*{adj}\left(  I_{n}\right)  =\left(  \left(  -1\right)
+^{i+j}\det\left(  \left(  I_{n}\right)  _{\sim j,\sim i}\right)  \right)
+_{1\leq i\leq n,\ 1\leq j\leq n}%
+\]
+(by the definition of $\operatorname*{adj}\left(  I_{n}\right)  $). Hence,%
+\[
+\left(  \left(  -1\right)  ^{i+j}\det\left(  \left(  I_{n}\right)  _{\sim
+j,\sim i}\right)  \right)  _{1\leq i\leq n,\ 1\leq j\leq n}=I_{n}=\left(
+\delta_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}.
+\]
+In other words,%
+\begin{equation}
+\left(  -1\right)  ^{i+j}\det\left(  \left(  I_{n}\right)  _{\sim j,\sim
+i}\right)  =\delta_{i,j} \label{pf.lem.exeadd.det.rk1upd.adjI.1}%
+\end{equation}
+for every $i\in\left\{  1,2,\ldots,n\right\}  $ and $j\in\left\{
+1,2,\ldots,n\right\}  $.
+
+\textbf{(a)} Let $u\in\left\{  1,2,\ldots,n\right\}  $. Then,
+(\ref{pf.lem.exeadd.det.rk1upd.adjI.1}) (applied to $i=u$ and $j=u$) yields%
+\[
+\left(  -1\right)  ^{u+u}\det\left(  \left(  I_{n}\right)  _{\sim u,\sim
+u}\right)  =\delta_{u,u}=1\ \ \ \ \ \ \ \ \ \ \left(  \text{since }u=u\right)
+.
+\]
+Comparing this with $\underbrace{\left(  -1\right)  ^{u+u}}%
+_{\substack{=1\\\text{(since }u+u=2u\text{ is even)}}}\det\left(  \left(
+I_{n}\right)  _{\sim u,\sim u}\right)  =\det\left(  \left(  I_{n}\right)
+_{\sim u,\sim u}\right)  $, we obtain $\det\left(  \left(  I_{n}\right)
+_{\sim u,\sim u}\right)  =1$. This proves Lemma
+\ref{lem.exeadd.det.rk1upd.adjI} \textbf{(a)}.
+
+\textbf{(b)} Let $u$ and $v$ be two elements of $\left\{  1,2,\ldots
+,n\right\}  $ such that $u\neq v$. Then,
+(\ref{pf.lem.exeadd.det.rk1upd.adjI.1}) (applied to $i=v$ and $j=u$) yields%
+\[
+\left(  -1\right)  ^{v+u}\det\left(  \left(  I_{n}\right)  _{\sim u,\sim
+v}\right)  =\delta_{v,u}=0\ \ \ \ \ \ \ \ \ \ \left(  \text{since }v\neq
+u\text{ (since }u\neq v\text{)}\right)  .
+\]
+Multiplying both sides of this equality by $\left(  -1\right)  ^{v+u}$, we
+obtain%
+\[
+\left(  -1\right)  ^{v+u}\left(  -1\right)  ^{v+u}\det\left(  \left(
+I_{n}\right)  _{\sim u,\sim v}\right)  =0.
+\]
+Comparing this with
+\[
+\underbrace{\left(  -1\right)  ^{v+u}\left(  -1\right)  ^{v+u}}%
+_{\substack{=\left(  -1\right)  ^{\left(  v+u\right)  +\left(  v+u\right)
+}=1\\\text{(since }\left(  v+u\right)  +\left(  v+u\right)  =2\left(
+v+u\right)  \text{ is even)}}}\det\left(  \left(  I_{n}\right)  _{\sim u,\sim
+v}\right)  =\det\left(  \left(  I_{n}\right)  _{\sim u,\sim v}\right)  ,
+\]
+we obtain $\det\left(  \left(  I_{n}\right)  _{\sim u,\sim v}\right)  =0$.
+Lemma \ref{lem.exeadd.det.rk1upd.adjI} \textbf{(b)} is thus proven.
+\end{proof}
+
+\begin{proposition}
+\label{prop.exeadd.det.rk1upd.Iv}Let $n\in\mathbb{N}$. Let $v=\left(
+v_{1},v_{2},\ldots,v_{n}\right)  ^{T}\in\mathbb{K}^{n\times1}$ and
+$k\in\left\{  1,2,\ldots,n\right\}  $. Then,%
+\[
+\det\left(  \left(  I_{n}\mid v\right)  _{\bullet,\sim k}\right)  =\left(
+-1\right)  ^{n+k}v_{k}.
+\]
+(Here, we are using the notations introduced in Definition \ref{def.unrows}.)
+\end{proposition}
+
+\begin{proof}
+[Proof of Proposition \ref{prop.exeadd.det.rk1upd.Iv}.]We have $I_{n}%
+\in\mathbb{K}^{n\times n}$ and thus $\left(  I_{n}\right)  _{\bullet,\sim
+k}\in\mathbb{K}^{n\times\left(  n-1\right)  }$. Every $i\in\left\{
+1,2,\ldots,n\right\}  $ satisfies%
+\begin{equation}
+\left(  \left(  I_{n}\right)  _{\bullet,\sim k}\right)  _{\sim i,\bullet
+}=\left(  I_{n}\right)  _{\sim i,\sim k}
+\label{pf.prop.exeadd.det.rk1upd.Iv.1}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.prop.exeadd.det.rk1upd.Iv.1}):} Let
+$i\in\left\{  1,2,\ldots,n\right\}  $. Proposition \ref{prop.unrows.basics}
+\textbf{(c)} (applied to $n$, $I_{n}$, $i$ and $k$ instead of $m$, $A$, $u$
+and $v$) shows that $\left(  \left(  I_{n}\right)  _{\bullet,\sim k}\right)
+_{\sim i,\bullet}=\left(  \left(  I_{n}\right)  _{\sim i,\bullet}\right)
+_{\bullet,\sim k}=\left(  I_{n}\right)  _{\sim i,\sim k}$. This proves
+(\ref{pf.prop.exeadd.det.rk1upd.Iv.1}).}.
+
+Proposition \ref{prop.addcol.props1} \textbf{(d)} (applied to $m=n$, $A=I_{n}$
+and $q=k$) yields $\left(  I_{n}\mid v\right)  _{\bullet,\sim k}=\left(
+\left(  I_{n}\right)  _{\bullet,\sim k}\mid v\right)  $. Hence,%
+\begin{align*}
+&  \det\underbrace{\left(  \left(  I_{n}\mid v\right)  _{\bullet,\sim
+k}\right)  }_{=\left(  \left(  I_{n}\right)  _{\bullet,\sim k}\mid v\right)
+}\\
+&  =\det\left(  \left(  I_{n}\right)  _{\bullet,\sim k}\mid v\right)  \\
+&  =\underbrace{\sum_{i=1}^{n}}_{=\sum_{i\in\left\{  1,2,\ldots,n\right\}  }%
+}\left(  -1\right)  ^{n+i}v_{i}\det\left(  \underbrace{\left(  \left(
+I_{n}\right)  _{\bullet,\sim k}\right)  _{\sim i,\bullet}}_{\substack{=\left(
+I_{n}\right)  _{\sim i,\sim k}\\\text{(by
+(\ref{pf.prop.exeadd.det.rk1upd.Iv.1}))}}}\right)  \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Proposition \ref{prop.addcol.props2}
+\textbf{(a)}, applied to }A=\left(  I_{n}\right)  _{\bullet,\sim k}\right)  \\
+&  =\sum_{i\in\left\{  1,2,\ldots,n\right\}  }\left(  -1\right)  ^{n+i}%
+v_{i}\det\left(  \left(  I_{n}\right)  _{\sim i,\sim k}\right)  \\
+&  =\left(  -1\right)  ^{n+k}v_{k}\underbrace{\det\left(  \left(
+I_{n}\right)  _{\sim k,\sim k}\right)  }_{\substack{=1\\\text{(by Lemma
+\ref{lem.exeadd.det.rk1upd.adjI} \textbf{(a)},}\\\text{applied to }k\text{
+instead of }u\text{)}}}\\
+&  \ \ \ \ \ \ \ \ \ \ +\sum_{\substack{i\in\left\{  1,2,\ldots,n\right\}
+;\\i\neq k}}\left(  -1\right)  ^{n+i}v_{i}\underbrace{\det\left(  \left(
+I_{n}\right)  _{\sim i,\sim k}\right)  }_{\substack{=0\\\text{(by Lemma
+\ref{lem.exeadd.det.rk1upd.adjI} \textbf{(b)},}\\\text{applied to }i\text{ and
+}k\text{ instead of }u\text{ and }v\text{)}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have split off the addend for
+}i=k\text{ from the sum}\right)  \\
+&  =\left(  -1\right)  ^{n+k}v_{k}+\underbrace{\sum_{\substack{i\in\left\{
+1,2,\ldots,n\right\}  ;\\i\neq k}}\left(  -1\right)  ^{n+i}v_{i}0}%
+_{=0}=\left(  -1\right)  ^{n+k}v_{k}.
+\end{align*}
+This proves Proposition \ref{prop.exeadd.det.rk1upd.Iv}.
+\end{proof}
+
+\begin{proposition}
+\label{prop.exeadd.det.rk1upd.det(ABT)}Let $n\in\mathbb{N}$. Let
+$A\in\mathbb{K}^{n\times\left(  n+1\right)  }$ and $B\in\mathbb{K}%
+^{n\times\left(  n+1\right)  }$. Then,%
+\[
+\det\left(  AB^{T}\right)  =\sum_{k=1}^{n+1}\det\left(  A_{\bullet,\sim
+k}\right)  \det\left(  B_{\bullet,\sim k}\right)  .
+\]
+(Here, we are using the notations introduced in Definition \ref{def.unrows}.)
+\end{proposition}
+
+\begin{proof}
+[Proof of Proposition \ref{prop.exeadd.det.rk1upd.det(ABT)}.]Let us use the
+notations introduced in Definition \ref{def.rowscols}. Clearly, $n+1$ is a
+positive integer (since $n\in\mathbb{N}$).
+
+Also, $A$ is an $n\times\left(  n+1\right)  $-matrix (since $A\in
+\mathbb{K}^{n\times\left(  n+1\right)  }$). In other words, $A$ is an $\left(
+\left(  n+1\right)  -1\right)  \times\left(  n+1\right)  $-matrix (since
+$n=\left(  n+1\right)  -1$).
+
+Also, $B$ is an $n\times\left(  n+1\right)  $-matrix (since $B\in
+\mathbb{K}^{n\times\left(  n+1\right)  }$). Hence, $B^{T}$ is an $\left(
+n+1\right)  \times n$-matrix. In other words, $A$ is an $\left(  n+1\right)
+\times\left(  \left(  n+1\right)  -1\right)  $-matrix (since $n=\left(
+n+1\right)  -1$).
+
+Now, every $k\in\left\{  1,2,\ldots,n+1\right\}  $ satisfies%
+\begin{equation}
+\operatorname*{cols}\nolimits_{1,2,\ldots,\widehat{k},\ldots,n+1}%
+A=A_{\bullet,\sim k} \label{pf.prop.exeadd.det.rk1upd.det(ABT).1}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.prop.exeadd.det.rk1upd.det(ABT).1}):} Let
+$k\in\left\{  1,2,\ldots,n+1\right\}  $. Then, the definition of
+$A_{\bullet,\sim k}$ yields $A_{\bullet,\sim k}=\operatorname*{cols}%
+\nolimits_{1,2,\ldots,\widehat{k},\ldots,n+1}A$ (since $A\in\mathbb{K}%
+^{n\times\left(  n+1\right)  }$). This proves
+(\ref{pf.prop.exeadd.det.rk1upd.det(ABT).1}).} and%
+\begin{equation}
+\operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{k},\ldots,n+1}\left(
+B^{T}\right)  =\left(  B_{\bullet,\sim k}\right)  ^{T}
+\label{pf.prop.exeadd.det.rk1upd.det(ABT).2}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.prop.exeadd.det.rk1upd.det(ABT).2}):} Let
+$k\in\left\{  1,2,\ldots,n+1\right\}  $. Then, the definition of $\left(
+B^{T}\right)  _{\sim k,\bullet}$ yields $\left(  B^{T}\right)  _{\sim
+k,\bullet}=\operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{k},\ldots
+,n+1}\left(  B^{T}\right)  $ (since $B^{T}\in\mathbb{K}^{\left(  n+1\right)
+\times n}$ (since $B^{T}$ is an $\left(  n+1\right)  \times n$-matrix)). But
+Lemma \ref{lem.unrows.transpose.1} (applied to $m=n+1$ and $r=k$) yields
+$\left(  B^{T}\right)  _{\sim k,\bullet}=\left(  B_{\bullet,\sim k}\right)
+^{T}$. Comparing this with $\left(  B^{T}\right)  _{\sim k,\bullet
+}=\operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{k},\ldots,n+1}\left(
+B^{T}\right)  $, we obtain $\operatorname*{rows}\nolimits_{1,2,\ldots
+,\widehat{k},\ldots,n+1}\left(  B^{T}\right)  =\left(  B_{\bullet,\sim
+k}\right)  ^{T}$. This proves (\ref{pf.prop.exeadd.det.rk1upd.det(ABT).2}).}
+and%
+\begin{equation}
+\det\left(  \operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{k},\ldots
+,n+1}\left(  B^{T}\right)  \right)  =\det\left(  B_{\bullet,\sim k}\right)
+\label{pf.prop.exeadd.det.rk1upd.det(ABT).3}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.prop.exeadd.det.rk1upd.det(ABT).3}):} Let
+$k\in\left\{  1,2,\ldots,n+1\right\}  $. From $B\in\mathbb{K}^{n\times\left(
+n+1\right)  }$, we obtain $B_{\bullet,\sim k}\in\mathbb{K}^{n\times n}$. In
+other words, $B_{\bullet,\sim k}$ is an $n\times n$-matrix. Hence, Exercise
+\ref{exe.ps4.4} (applied to $B_{\bullet,\sim k}$ instead of $A$) yields
+$\det\left(  \left(  B_{\bullet,\sim k}\right)  ^{T}\right)  =\det\left(
+B_{\bullet,\sim k}\right)  $. Now,%
+\[
+\det\left(  \underbrace{\operatorname*{rows}\nolimits_{1,2,\ldots
+,\widehat{k},\ldots,n+1}\left(  B^{T}\right)  }_{\substack{=\left(
+B_{\bullet,\sim k}\right)  ^{T}\\\text{(by
+(\ref{pf.prop.exeadd.det.rk1upd.det(ABT).2}))}}}\right)  =\det\left(  \left(
+B_{\bullet,\sim k}\right)  ^{T}\right)  =\det\left(  B_{\bullet,\sim
+k}\right)  .
+\]
+This proves (\ref{pf.prop.exeadd.det.rk1upd.det(ABT).3}).}.
+
+Now, Lemma \ref{lem.adj(AB).cauchy-binet} (applied to $n+1$ and $B^{T}$
+instead of $n$ and $B$) yields%
+\begin{align*}
+\det\left(  AB^{T}\right)   &  =\sum_{k=1}^{n+1}\det\left(
+\underbrace{\operatorname*{cols}\nolimits_{1,2,\ldots,\widehat{k},\ldots
+,n+1}A}_{\substack{=A_{\bullet,\sim k}\\\text{(by
+(\ref{pf.prop.exeadd.det.rk1upd.det(ABT).1}))}}}\right)  \cdot\underbrace{\det
+\left(  \operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{k},\ldots
+,n+1}\left(  B^{T}\right)  \right)  }_{\substack{=\det\left(  B_{\bullet,\sim
+k}\right)  \\\text{(by (\ref{pf.prop.exeadd.det.rk1upd.det(ABT).3}))}}}\\
+&  =\sum_{k=1}^{n+1}\det\left(  A_{\bullet,\sim k}\right)  \det\left(
+B_{\bullet,\sim k}\right)  .
+\end{align*}
+This proves Proposition \ref{prop.exeadd.det.rk1upd.det(ABT)}.
+\end{proof}
+
+Now we are more than ready to easily prove Theorem
+\ref{thm.exeadd.det.rk1upd.claim}:
+
+\begin{proof}
+[Proof of Theorem \ref{thm.exeadd.det.rk1upd.claim}.]We shall use the
+notations introduced in Definition \ref{def.submatrix.minor}, in Definition
+\ref{def.addcol} and in Definition \ref{def.unrows}.
+
+We know that $u$ is a column vector with $n$ entries; in other words,
+$u\in\mathbb{K}^{n\times1}$. Also, $v$ is a row vector with $n$ entries; in
+other words, $v\in\mathbb{K}^{1\times n}$. Hence, $v^{T}\in\mathbb{K}%
+^{n\times1}$.
+
+From $A\in\mathbb{K}^{n\times n}$ and $u\in\mathbb{K}^{n\times1}$, we obtain
+$\left(  A\mid u\right)  \in\mathbb{K}^{n\times\left(  n+1\right)  }$. From
+$I_{n}\in\mathbb{K}^{n\times n}$ and $v^{T}\in\mathbb{K}^{n\times1}$, we
+obtain $\left(  I_{n}\mid v^{T}\right)  \in\mathbb{K}^{n\times\left(
+n+1\right)  }$.
+
+Write the vector $v$ in the form $v=\left(  v_{1},v_{2},\ldots,v_{n}\right)
+$. (This is possible, since $v$ is a row vector with $n$ entries.) From
+$v=\left(  v_{1},v_{2},\ldots,v_{n}\right)  $, we obtain $v^{T}=\left(
+v_{1},v_{2},\ldots,v_{n}\right)  ^{T}$.
+
+Write the vector $u$ in the form $u=\left(  u_{1},u_{2},\ldots,u_{n}\right)
+^{T}$. (This is possible, since $u$ is a column vector with $n$ entries.)
+Then, every $k\in\left\{  1,2,\ldots,n\right\}  $ satisfies%
+\begin{equation}
+\det\left(  \left(  A\mid u\right)  _{\bullet,\sim k}\right)  =\sum_{j=1}%
+^{n}\left(  -1\right)  ^{n+j}u_{j}\det\left(  A_{\sim j,\sim k}\right)
+\label{pf.thm.exeadd.det.rk1upd.claim.1}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.thm.exeadd.det.rk1upd.claim.1}):} Let
+$k\in\left\{  1,2,\ldots,n\right\}  $. Then, $A_{\bullet,\sim k}\in
+\mathbb{K}^{n\times\left(  n-1\right)  }$ (since $A\in\mathbb{K}^{n\times n}%
+$). Proposition \ref{prop.addcol.props1} \textbf{(c)} (applied to $n$, $u$ and
+$k$ instead of $m$, $v$ and $q$) shows that $\left(  A\mid u\right)
+_{\bullet,\sim k}=\left(  A_{\bullet,\sim k}\mid u\right)  $. Hence,%
+\begin{align*}
+\det\left(  \underbrace{\left(  A\mid u\right)  _{\bullet,\sim k}}_{=\left(
+A_{\bullet,\sim k}\mid u\right)  }\right)   &  =\det\left(  A_{\bullet,\sim
+k}\mid u\right) \\
+&  =\sum_{i=1}^{n}\left(  -1\right)  ^{n+i}u_{i}\det\left(
+\underbrace{\left(  A_{\bullet,\sim k}\right)  _{\sim i,\bullet}%
+}_{\substack{=A_{\sim i,\sim k}\\\text{(since Proposition
+\ref{prop.unrows.basics} \textbf{(c)} (applied to}\\n\text{, }i\text{ and
+}k\text{ instead of }m\text{, }u\text{ and }v\text{) shows that}\\\left(
+A_{\bullet,\sim k}\right)  _{\sim i,\bullet}=\left(  A_{\sim i,\bullet
+}\right)  _{\bullet,\sim k}=A_{\sim i,\sim k}\text{)}}}\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{by Proposition \ref{prop.addcol.props2} \textbf{(a)}, applied to}\\
+A_{\bullet,\sim k}\text{, }u\text{ and }u_{i}\text{ instead of }A\text{,
+}v\text{ and }v_{i}%
+\end{array}
+\right) \\
+&  =\sum_{i=1}^{n}\left(  -1\right)  ^{n+i}u_{i}\det\left(  A_{\sim i,\sim
+k}\right)  =\sum_{j=1}^{n}\left(  -1\right)  ^{n+j}u_{j}\det\left(  A_{\sim
+j,\sim k}\right)
+\end{align*}
+(here, we have renamed the summation index $i$ as $j$). This proves
+(\ref{pf.thm.exeadd.det.rk1upd.claim.1}).}.
+
+Now,%
+\begin{align*}
+&  \det\left(  \underbrace{A+uv}_{\substack{=\left(  A\mid u\right)  \left(
+I_{n}\mid v^{T}\right)  ^{T}\\\text{(by Corollary
+\ref{cor.exeadd.det.rk1upd.claim.A+uv})}}}\right)  \\
+&  =\det\left(  \left(  A\mid u\right)  \left(  I_{n}\mid v^{T}\right)
+^{T}\right)  =\sum_{k=1}^{n+1}\det\left(  \left(  A\mid u\right)
+_{\bullet,\sim k}\right)  \det\left(  \left(  I_{n}\mid v^{T}\right)
+_{\bullet,\sim k}\right)  \\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{by Proposition \ref{prop.exeadd.det.rk1upd.det(ABT)}, applied to
+}\left(  A\mid u\right)  \text{ and }\left(  I_{n}\mid v^{T}\right)  \\
+\text{instead of }A\text{ and }B
+\end{array}
+\right)  \\
+&  =\sum_{k=1}^{n}\underbrace{\det\left(  \left(  A\mid u\right)
+_{\bullet,\sim k}\right)  }_{\substack{=\sum_{j=1}^{n}\left(  -1\right)
+^{n+j}u_{j}\det\left(  A_{\sim j,\sim k}\right)  \\\text{(by
+(\ref{pf.thm.exeadd.det.rk1upd.claim.1}))}}}\underbrace{\det\left(  \left(
+I_{n}\mid v^{T}\right)  _{\bullet,\sim k}\right)  }_{\substack{=\left(
+-1\right)  ^{n+k}v_{k}\\\text{(by Proposition \ref{prop.exeadd.det.rk1upd.Iv}%
+,}\\\text{applied to }v^{T}\text{ instead of }v\text{)}}}\\
+&  \ \ \ \ \ \ \ \ \ \ +\det\left(  \underbrace{\left(  A\mid u\right)
+_{\bullet,\sim\left(  n+1\right)  }}_{\substack{=A\\\text{(by Proposition
+\ref{prop.addcol.props1} \textbf{(d)}, applied}\\\text{to }n\text{ and
+}u\text{ instead of }m\text{ and }v\text{)}}}\right)  \det\left(
+\underbrace{\left(  I_{n}\mid v^{T}\right)  _{\bullet,\sim\left(  n+1\right)
+}}_{\substack{=I_{n}\\\text{(by Proposition \ref{prop.addcol.props1}
+\textbf{(d)}, applied}\\\text{to }n\text{, }I_{n}\text{ and }v^{T}\text{
+instead of }m\text{, }A\text{ and }v\text{)}}}\right)  \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have split off the addend for
+}k=n+1\text{ from the sum}\right)  \\
+&  =\underbrace{\sum_{k=1}^{n}\left(  \sum_{j=1}^{n}\left(  -1\right)
+^{n+j}u_{j}\det\left(  A_{\sim j,\sim k}\right)  \right)  \cdot\left(
+-1\right)  ^{n+k}v_{k}}_{=\sum_{k=1}^{n}\sum_{j=1}^{n}\left(  -1\right)
+^{n+j}u_{j}\det\left(  A_{\sim j,\sim k}\right)  \cdot\left(  -1\right)
+^{n+k}v_{k}}+\det A\cdot\underbrace{\det\left(  I_{n}\right)  }_{=1}\\
+&  =\sum_{k=1}^{n}\sum_{j=1}^{n}\left(  -1\right)  ^{n+j}u_{j}\det\left(
+A_{\sim j,\sim k}\right)  \cdot\left(  -1\right)  ^{n+k}v_{k}+\det A.
+\end{align*}
+Subtracting $\det A$ from both sides of this equality, we obtain%
+\begin{align*}
+&  \det\left(  A+uv\right)  -\det A\\
+&  =\sum_{k=1}^{n}\sum_{j=1}^{n}\left(  -1\right)  ^{n+j}u_{j}\det\left(
+A_{\sim j,\sim k}\right)  \cdot\left(  -1\right)  ^{n+k}v_{k}\\
+&  =\sum_{i=1}^{n}\sum_{j=1}^{n}\underbrace{\left(  -1\right)  ^{n+j}u_{j}%
+\det\left(  A_{\sim j,\sim i}\right)  \cdot\left(  -1\right)  ^{n+i}v_{i}%
+}_{=\left(  -1\right)  ^{n+i}\left(  -1\right)  ^{n+j}u_{j}v_{i}\det\left(
+A_{\sim j,\sim i}\right)  }\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have renamed the summation index
+}k\text{ as }i\text{ in the first sum}\right)  \\
+&  =\sum_{i=1}^{n}\sum_{j=1}^{n}\underbrace{\left(  -1\right)  ^{n+i}\left(
+-1\right)  ^{n+j}}_{\substack{=\left(  -1\right)  ^{\left(  n+i\right)
++\left(  n+j\right)  }=\left(  -1\right)  ^{i+j}\\\text{(since }\left(
+n+i\right)  +\left(  n+j\right)  =2n+i+j\equiv i+j\operatorname{mod}2\text{)}%
+}}u_{j}v_{i}\det\left(  A_{\sim j,\sim i}\right)  \\
+&  =\sum_{i=1}^{n}\sum_{j=1}^{n}\left(  -1\right)  ^{i+j}u_{j}v_{i}\det\left(
+A_{\sim j,\sim i}\right)  .
+\end{align*}
+Comparing this with%
+\[
+\operatorname*{ent}\left(  v\left(  \operatorname*{adj}A\right)  u\right)
+=\sum_{i=1}^{n}\sum_{j=1}^{n}\left(  -1\right)  ^{i+j}u_{j}v_{i}\det\left(
+A_{\sim j,\sim i}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Corollary
+\ref{cor.exeadd.det.rk1upd.claim.ent(v(adjA)u)}}\right)  ,
+\]
+we obtain $\det\left(  A+uv\right)  -\det A=\operatorname*{ent}\left(
+v\left(  \operatorname*{adj}A\right)  u\right)  $. In other words,
+$\det\left(  A+uv\right)  =\det A+\operatorname*{ent}\left(  v\left(
+\operatorname*{adj}A\right)  u\right)  $. This proves Theorem
+\ref{thm.exeadd.det.rk1upd.claim}.
+\end{proof}
+
+Now, Theorem \ref{thm.exeadd.det.rk1upd.claim} is proven; in other words,
+Additional exercise \ref{exeadd.det.rk1upd} is solved (since Theorem
+\ref{thm.exeadd.det.rk1upd.claim} is just a restatement of the claim of this exercise).
 
 \begin{thebibliography}{999999999}                                                                                        %
 
