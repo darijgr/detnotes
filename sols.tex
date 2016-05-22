@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, May 19, 2016 22:53:11}
+%TCIDATA{LastRevised=Saturday, May 21, 2016 20:04:24}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -22668,13 +22668,13 @@ for every $q\in\left\{  1,2,\ldots,n-1\right\}  $.
 \end{proposition}
 
 Note that part \textbf{(a)} of Proposition \ref{prop.pluecker.pre.row} claims
-an equality between two column vectors (indeed, $B_{r,\bullet}$ is a column
-vector with $n-1$ entries for each $r\in\left\{  1,2,\ldots,n\right\}  $),
-whereas part \textbf{(b)} claims an equality between two elements of
-$\mathbb{K}$ (for each $q\in\left\{  1,2,\ldots,n-1\right\}  $). That said,
-the two parts are essentially restatements of one another, and we will derive
-part \textbf{(a)} from part \textbf{(b)} soon enough. Let us first illustrate
-Proposition \ref{prop.pluecker.pre.row} on an example:
+an equality between two row vectors (indeed, $B_{r,\bullet}$ is a row vector
+with $n-1$ entries for each $r\in\left\{  1,2,\ldots,n\right\}  $), whereas
+part \textbf{(b)} claims an equality between two elements of $\mathbb{K}$ (for
+each $q\in\left\{  1,2,\ldots,n-1\right\}  $). That said, the two parts are
+essentially restatements of one another, and we will derive part \textbf{(a)}
+from part \textbf{(b)} soon enough. Let us first illustrate Proposition
+\ref{prop.pluecker.pre.row} on an example:
 
 \begin{example}
 \label{exam.prop.pluecker.pre.row}For this example, set $n=4$ and $B=\left(
@@ -22712,7 +22712,7 @@ d & d^{\prime} & d^{\prime\prime}%
 [c]{ccc}%
 b & b^{\prime} & b^{\prime\prime}%
 \end{array}
-\right) \\
+\right)  \\
 &  \ \ \ \ \ \ \ \ \ \ -\det\left(
 \begin{array}
 [c]{ccc}%
@@ -22737,7 +22737,7 @@ c & c^{\prime} & c^{\prime\prime}%
 [c]{ccc}%
 d & d^{\prime} & d^{\prime\prime}%
 \end{array}
-\right) \\
+\right)  \\
 &  =0_{1\times3}.
 \end{align*}
 Proposition \ref{prop.pluecker.pre.row} \textbf{(b)} (applied to $q=3$) yields%
@@ -22771,12 +22771,7 @@ a & a^{\prime} & a^{\prime\prime}\\
 b & b^{\prime} & b^{\prime\prime}\\
 c & c^{\prime} & c^{\prime\prime}%
 \end{array}
-\right)  \cdot\left(
-\begin{array}
-[c]{ccc}%
-d & d^{\prime} & d^{\prime\prime}%
-\end{array}
-\right) \\
+\right)  \cdot d^{\prime\prime}\\
 &  =0.
 \end{align*}
 
@@ -23079,13 +23074,13 @@ $\left(  B^{T}\right)  _{\sim r,\bullet}=\left(  B_{\bullet,\sim r}\right)
 \begin{vershort}
 \begin{proof}
 [Proof of Lemma \ref{lem.unrows.transpose.1}.]Taking the transpose of a matrix
-turns all its columns into rows. Thus, if we remove the $r$-th row from $B$
-and then take the transpose of the resulting matrix, then we obtain the same
-matrix as if we first take the transpose of $B$ and then remove the $r$-th row
-from it. Translating this statement into formulas, we obtain precisely
-$\left(  B^{T}\right)  _{\sim r,\bullet}=\left(  B_{\bullet,\sim r}\right)
-^{T}$. Thus, Lemma \ref{lem.unrows.transpose.1} is proven.\footnote{A more
-formal proof of this could be given using Proposition
+turns all its columns into rows. Thus, if we remove the $r$-th \textbf{row}
+from $B$ and then take the transpose of the resulting matrix, then we obtain
+the same matrix as if we first take the transpose of $B$ and then remove the
+$r$-th \textbf{column} from it. Translating this statement into formulas, we
+obtain precisely $\left(  B^{T}\right)  _{\sim r,\bullet}=\left(
+B_{\bullet,\sim r}\right)  ^{T}$. Thus, Lemma \ref{lem.unrows.transpose.1} is
+proven.\footnote{A more formal proof of this could be given using Proposition
 \ref{prop.submatrix.easy} \textbf{(e)}.}
 \end{proof}
 \end{vershort}
@@ -23564,7 +23559,7 @@ I=\sum_{i\in I}i$.)
 ,n\right\}  \setminus I$.
 
 \item Let $w\left(  I\right)  $ denote the list of all elements of $I$, in
-increasing order (with no element occuring twice). (For example, $w\left(
+increasing order (with no element occurring twice). (For example, $w\left(
 \left\{  3,4,8\right\}  \right)  =\left(  3,4,8\right)  $.)
 \end{itemize}
 
@@ -23618,7 +23613,7 @@ I=\sum_{i\in I}i$.)
 ,n+k\right\}  \setminus I$.
 
 \item Let $w\left(  I\right)  $ denote the list of all elements of $I$, in
-increasing order (with no element occuring twice). (For example, $w\left(
+increasing order (with no element occurring twice). (For example, $w\left(
 \left\{  3,4,8\right\}  \right)  =\left(  3,4,8\right)  $.)
 
 \item Let $\left(  A\mid B_{\bullet,I}\right)  $ denote the $n\times\left(
@@ -25369,6 +25364,7 @@ K-1\right)  -1}v_{i}\operatorname{mod}c.
 \label{pf.lem.exeadd.choose.a/b.prod-of-congs.goal.pf.1}%
 \end{equation}
 
+
 Now,%
 \begin{align*}
 d\underbrace{\prod_{i=0}^{K-1}u_{i}}_{=\left(  \prod_{i=0}^{\left(
@@ -25399,7 +25395,7 @@ This proves Lemma \ref{lem.exeadd.choose.a/b.prod-of-congs}.
 \begin{proof}
 [Solution to Additional exercise \ref{exeadd.choose.a/b}.]Set $c=n!$. Notice
 that $c$ is a positive integer (since $c=n!=1\cdot2\cdot\cdots\cdot n$);
-hence, $n-1\in\mathbb{N}$.
+hence, $c-1\in\mathbb{N}$.
 
 Proposition \ref{prop.exeadd.choose.a/b.lem1} shows that there exists an
 $s\in\mathbb{Z}$ such that $b^{c-1}\equiv sb^{c}\operatorname{mod}c$. Consider
@@ -51538,7 +51534,7 @@ v\right)  _{\bullet,k}\right)  ^{T}\\
 Proposition \ref{prop.addcol.props1} \textbf{(b)},}\\\text{applied to }B\text{
 instead of }A\text{)}}}\right)  ^{T}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have split off the addend for
-}k=m+1\text{ from the sum}\right)  \\
+}k=m+1\text{ from the sum}\right) \\
 &  =\sum_{k=1}^{m}A_{\bullet,k}\left(  B_{\bullet,k}\right)  ^{T}+uv^{T}.
 \end{align*}
 Comparing this with%
@@ -51712,16 +51708,16 @@ and $q=k$) yields $\left(  I_{n}\mid v\right)  _{\bullet,\sim k}=\left(
 &  \det\underbrace{\left(  \left(  I_{n}\mid v\right)  _{\bullet,\sim
 k}\right)  }_{=\left(  \left(  I_{n}\right)  _{\bullet,\sim k}\mid v\right)
 }\\
-&  =\det\left(  \left(  I_{n}\right)  _{\bullet,\sim k}\mid v\right)  \\
+&  =\det\left(  \left(  I_{n}\right)  _{\bullet,\sim k}\mid v\right) \\
 &  =\underbrace{\sum_{i=1}^{n}}_{=\sum_{i\in\left\{  1,2,\ldots,n\right\}  }%
 }\left(  -1\right)  ^{n+i}v_{i}\det\left(  \underbrace{\left(  \left(
 I_{n}\right)  _{\bullet,\sim k}\right)  _{\sim i,\bullet}}_{\substack{=\left(
 I_{n}\right)  _{\sim i,\sim k}\\\text{(by
-(\ref{pf.prop.exeadd.det.rk1upd.Iv.1}))}}}\right)  \\
+(\ref{pf.prop.exeadd.det.rk1upd.Iv.1}))}}}\right) \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Proposition \ref{prop.addcol.props2}
-\textbf{(a)}, applied to }A=\left(  I_{n}\right)  _{\bullet,\sim k}\right)  \\
+\textbf{(a)}, applied to }A=\left(  I_{n}\right)  _{\bullet,\sim k}\right) \\
 &  =\sum_{i\in\left\{  1,2,\ldots,n\right\}  }\left(  -1\right)  ^{n+i}%
-v_{i}\det\left(  \left(  I_{n}\right)  _{\sim i,\sim k}\right)  \\
+v_{i}\det\left(  \left(  I_{n}\right)  _{\sim i,\sim k}\right) \\
 &  =\left(  -1\right)  ^{n+k}v_{k}\underbrace{\det\left(  \left(
 I_{n}\right)  _{\sim k,\sim k}\right)  }_{\substack{=1\\\text{(by Lemma
 \ref{lem.exeadd.det.rk1upd.adjI} \textbf{(a)},}\\\text{applied to }k\text{
@@ -51732,7 +51728,7 @@ I_{n}\right)  _{\sim i,\sim k}\right)  }_{\substack{=0\\\text{(by Lemma
 \ref{lem.exeadd.det.rk1upd.adjI} \textbf{(b)},}\\\text{applied to }i\text{ and
 }k\text{ instead of }u\text{ and }v\text{)}}}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have split off the addend for
-}i=k\text{ from the sum}\right)  \\
+}i=k\text{ from the sum}\right) \\
 &  =\left(  -1\right)  ^{n+k}v_{k}+\underbrace{\sum_{\substack{i\in\left\{
 1,2,\ldots,n\right\}  ;\\i\neq k}}\left(  -1\right)  ^{n+i}v_{i}0}%
 _{=0}=\left(  -1\right)  ^{n+k}v_{k}.
@@ -51903,19 +51899,19 @@ Now,%
 \begin{align*}
 &  \det\left(  \underbrace{A+uv}_{\substack{=\left(  A\mid u\right)  \left(
 I_{n}\mid v^{T}\right)  ^{T}\\\text{(by Corollary
-\ref{cor.exeadd.det.rk1upd.claim.A+uv})}}}\right)  \\
+\ref{cor.exeadd.det.rk1upd.claim.A+uv})}}}\right) \\
 &  =\det\left(  \left(  A\mid u\right)  \left(  I_{n}\mid v^{T}\right)
 ^{T}\right)  =\sum_{k=1}^{n+1}\det\left(  \left(  A\mid u\right)
 _{\bullet,\sim k}\right)  \det\left(  \left(  I_{n}\mid v^{T}\right)
-_{\bullet,\sim k}\right)  \\
+_{\bullet,\sim k}\right) \\
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
 \text{by Proposition \ref{prop.exeadd.det.rk1upd.det(ABT)}, applied to
-}\left(  A\mid u\right)  \text{ and }\left(  I_{n}\mid v^{T}\right)  \\
+}\left(  A\mid u\right)  \text{ and }\left(  I_{n}\mid v^{T}\right) \\
 \text{instead of }A\text{ and }B
 \end{array}
-\right)  \\
+\right) \\
 &  =\sum_{k=1}^{n}\underbrace{\det\left(  \left(  A\mid u\right)
 _{\bullet,\sim k}\right)  }_{\substack{=\sum_{j=1}^{n}\left(  -1\right)
 ^{n+j}u_{j}\det\left(  A_{\sim j,\sim k}\right)  \\\text{(by
@@ -51930,9 +51926,9 @@ _{\bullet,\sim\left(  n+1\right)  }}_{\substack{=A\\\text{(by Proposition
 \underbrace{\left(  I_{n}\mid v^{T}\right)  _{\bullet,\sim\left(  n+1\right)
 }}_{\substack{=I_{n}\\\text{(by Proposition \ref{prop.addcol.props1}
 \textbf{(d)}, applied}\\\text{to }n\text{, }I_{n}\text{ and }v^{T}\text{
-instead of }m\text{, }A\text{ and }v\text{)}}}\right)  \\
+instead of }m\text{, }A\text{ and }v\text{)}}}\right) \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have split off the addend for
-}k=n+1\text{ from the sum}\right)  \\
+}k=n+1\text{ from the sum}\right) \\
 &  =\underbrace{\sum_{k=1}^{n}\left(  \sum_{j=1}^{n}\left(  -1\right)
 ^{n+j}u_{j}\det\left(  A_{\sim j,\sim k}\right)  \right)  \cdot\left(
 -1\right)  ^{n+k}v_{k}}_{=\sum_{k=1}^{n}\sum_{j=1}^{n}\left(  -1\right)
@@ -51951,12 +51947,12 @@ A_{\sim j,\sim k}\right)  \cdot\left(  -1\right)  ^{n+k}v_{k}\\
 }_{=\left(  -1\right)  ^{n+i}\left(  -1\right)  ^{n+j}u_{j}v_{i}\det\left(
 A_{\sim j,\sim i}\right)  }\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have renamed the summation index
-}k\text{ as }i\text{ in the first sum}\right)  \\
+}k\text{ as }i\text{ in the first sum}\right) \\
 &  =\sum_{i=1}^{n}\sum_{j=1}^{n}\underbrace{\left(  -1\right)  ^{n+i}\left(
 -1\right)  ^{n+j}}_{\substack{=\left(  -1\right)  ^{\left(  n+i\right)
 +\left(  n+j\right)  }=\left(  -1\right)  ^{i+j}\\\text{(since }\left(
 n+i\right)  +\left(  n+j\right)  =2n+i+j\equiv i+j\operatorname{mod}2\text{)}%
-}}u_{j}v_{i}\det\left(  A_{\sim j,\sim i}\right)  \\
+}}u_{j}v_{i}\det\left(  A_{\sim j,\sim i}\right) \\
 &  =\sum_{i=1}^{n}\sum_{j=1}^{n}\left(  -1\right)  ^{i+j}u_{j}v_{i}\det\left(
 A_{\sim j,\sim i}\right)  .
 \end{align*}
