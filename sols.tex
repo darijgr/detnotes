@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, May 21, 2016 21:12:11}
+%TCIDATA{LastRevised=Saturday, May 21, 2016 22:25:33}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -21169,8 +21169,8 @@ n,\sim1}\right)  .
 $A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ be an $n\times
 n$-matrix. Let $\widetilde{A}$ be the $\left(  n-2\right)  \times\left(
 n-2\right)  $-matrix $\left(  a_{i+2,j+2}\right)  _{1\leq i\leq n-2,\ 1\leq
-j\leq n-2}$. (In other words, $A^{\prime}$ is what remains of the matrix $A$
-when we remove the first two rows and the first two columns.) Then,%
+j\leq n-2}$. (In other words, $\widetilde{A}$ is what remains of the matrix
+$A$ when we remove the first two rows and the first two columns.) Then,%
 \begin{align*}
 &  \det A\cdot\det\widetilde{A}\\
 &  =\det\left(  A_{\sim1,\sim1}\right)  \cdot\det\left(  A_{\sim2,\sim
@@ -51074,9 +51074,9 @@ v+1\operatorname{mod}2\text{)}}}\det\left(  A_{\sim v,\bullet}\right)  \det
 C\\
 &  =\sum_{r=1}^{n}\underbrace{\left(  -1\right)  ^{r}\left(  -1\right)
 ^{n+v}}_{=\left(  -1\right)  ^{r+\left(  n+v\right)  }}\det\left(  A\mid
-C_{\bullet,r}\right)  \det\left(  C_{\sim v,\sim r}\right) \\
-&  \ \ \ \ \ \ \ \ \ \ +\underbrace{\left(  -1\right)  ^{v+1}}_{=-\left(
--1\right)  ^{v}}\det\left(  A_{\sim v,\bullet}\right)  \det C\\
+C_{\bullet,r}\right)  \det\left(  C_{\sim v,\sim r}\right)
++\underbrace{\left(  -1\right)  ^{v+1}}_{=-\left(  -1\right)  ^{v}}\det\left(
+A_{\sim v,\bullet}\right)  \det C\\
 &  =\sum_{r=1}^{n}\left(  -1\right)  ^{r+\left(  n+v\right)  }\det\left(
 A\mid C_{\bullet,r}\right)  \det\left(  C_{\sim v,\sim r}\right)  -\left(
 -1\right)  ^{v}\det\left(  A_{\sim v,\bullet}\right)  \det C.
@@ -51471,8 +51471,8 @@ Let us now fix $p\in\left\{  1,2,\ldots,m\right\}  $. Then, $A_{\bullet,p}$ is
 the $p$-th column of the matrix $A$ (by the definition of $A_{\bullet,p}$).
 Thus,%
 \begin{align*}
-A_{\bullet,p} &  =\left(  \text{the }p\text{-th column of the matrix
-}A\right)  \\
+A_{\bullet,p}  &  =\left(  \text{the }p\text{-th column of the matrix
+}A\right) \\
 &  =\left(
 \begin{array}
 [c]{c}%
@@ -51482,7 +51482,7 @@ a_{2,p}\\
 a_{n,p}%
 \end{array}
 \right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }A=\left(  a_{i,j}\right)
-_{1\leq i\leq n,\ 1\leq j\leq m}\right)  \\
+_{1\leq i\leq n,\ 1\leq j\leq m}\right) \\
 &  =\left(  a_{i,p}\right)  _{1\leq i\leq n,\ 1\leq j\leq1}.
 \end{align*}
 The same argument (applied to $B$ and $b_{i,j}$ instead of $A$ and $a_{i,j}$)
@@ -51727,16 +51727,16 @@ and $q=k$) yields $\left(  I_{n}\mid v\right)  _{\bullet,\sim k}=\left(
 &  \det\underbrace{\left(  \left(  I_{n}\mid v\right)  _{\bullet,\sim
 k}\right)  }_{=\left(  \left(  I_{n}\right)  _{\bullet,\sim k}\mid v\right)
 }\\
-&  =\det\left(  \left(  I_{n}\right)  _{\bullet,\sim k}\mid v\right)  \\
+&  =\det\left(  \left(  I_{n}\right)  _{\bullet,\sim k}\mid v\right) \\
 &  =\underbrace{\sum_{i=1}^{n}}_{=\sum_{i\in\left\{  1,2,\ldots,n\right\}  }%
 }\left(  -1\right)  ^{n+i}v_{i}\det\left(  \underbrace{\left(  \left(
 I_{n}\right)  _{\bullet,\sim k}\right)  _{\sim i,\bullet}}_{\substack{=\left(
 I_{n}\right)  _{\sim i,\sim k}\\\text{(by
-(\ref{pf.prop.exeadd.det.rk1upd.Iv.1}))}}}\right)  \\
+(\ref{pf.prop.exeadd.det.rk1upd.Iv.1}))}}}\right) \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Proposition \ref{prop.addcol.props2}
-\textbf{(a)}, applied to }A=\left(  I_{n}\right)  _{\bullet,\sim k}\right)  \\
+\textbf{(a)}, applied to }A=\left(  I_{n}\right)  _{\bullet,\sim k}\right) \\
 &  =\sum_{i\in\left\{  1,2,\ldots,n\right\}  }\left(  -1\right)  ^{n+i}%
-v_{i}\det\left(  \left(  I_{n}\right)  _{\sim i,\sim k}\right)  \\
+v_{i}\det\left(  \left(  I_{n}\right)  _{\sim i,\sim k}\right) \\
 &  =\left(  -1\right)  ^{n+k}v_{k}\underbrace{\det\left(  \left(
 I_{n}\right)  _{\sim k,\sim k}\right)  }_{\substack{=1\\\text{(by Lemma
 \ref{lem.exeadd.det.rk1upd.adjI} \textbf{(a)},}\\\text{applied to }k\text{
@@ -51746,7 +51746,7 @@ I_{n}\right)  _{\sim i,\sim k}\right)  }_{\substack{=0\\\text{(by Lemma
 \ref{lem.exeadd.det.rk1upd.adjI} \textbf{(b)},}\\\text{applied to }i\text{ and
 }k\\\text{instead of }u\text{ and }v\text{)}}}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have split off the addend for
-}i=k\text{ from the sum}\right)  \\
+}i=k\text{ from the sum}\right) \\
 &  =\left(  -1\right)  ^{n+k}v_{k}+\underbrace{\sum_{\substack{i\in\left\{
 1,2,\ldots,n\right\}  ;\\i\neq k}}\left(  -1\right)  ^{n+i}v_{i}0}%
 _{=0}=\left(  -1\right)  ^{n+k}v_{k}.
