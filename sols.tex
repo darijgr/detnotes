@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Monday, May 23, 2016 21:22:17}
+%TCIDATA{LastRevised=Wednesday, May 25, 2016 12:58:44}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -11390,14 +11390,21 @@ c^{\prime\prime} & c^{\prime}%
 \right)  $. For every $q\in\left\{  1,2,\ldots,v\right\}  $, we have%
 \begin{align}
 &  \left(  \text{the }q\text{-th column of }\operatorname*{cols}%
-\nolimits_{j_{1},j_{2},\ldots,j_{v}}A\right) \nonumber\\
-&  =\left(  a_{1,j_{q}},a_{2,j_{q}},\ldots,a_{n,j_{q}}\right)  ^{T}%
-\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\operatorname*{cols}\nolimits_{j_{1}%
-,j_{2},\ldots,j_{v}}A=\left(  a_{i,j_{y}}\right)  _{1\leq i\leq n,\ 1\leq
-y\leq v}\right) \nonumber\\
+\nolimits_{j_{1},j_{2},\ldots,j_{v}}A\right)  \nonumber\\
+&  =\left(
+\begin{array}
+[c]{c}%
+a_{1,j_{q}}\\
+a_{2,j_{q}}\\
+\vdots\\
+a_{n,j_{q}}%
+\end{array}
+\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\operatorname*{cols}%
+\nolimits_{j_{1},j_{2},\ldots,j_{v}}A=\left(  a_{i,j_{y}}\right)  _{1\leq
+i\leq n,\ 1\leq y\leq v}\right)  \nonumber\\
 &  =\left(  \text{the }j_{q}\text{-th column of }A\right)
 \ \ \ \ \ \ \ \ \ \ \left(  \text{since }A=\left(  a_{i,j}\right)  _{1\leq
-i\leq n,\ 1\leq j\leq m}\right)  . \label{eq.def.rowscols.b.col=col}%
+i\leq n,\ 1\leq j\leq m}\right)  .\label{eq.def.rowscols.b.col=col}%
 \end{align}
 Thus, $\operatorname*{cols}\nolimits_{j_{1},j_{2},\ldots,j_{v}}A$ is the
 $n\times v$-matrix whose columns (from left to right) are the columns labelled
@@ -33752,7 +33759,8 @@ Define a map $\kappa:\left[  n\right]  \rightarrow\left[  n\right]  $ by
 i,\ \ \ \ \ \ \ \ \ \ \text{if }i\neq u;\\
 v,\ \ \ \ \ \ \ \ \ \ \text{if }i=u
 \end{array}
-\right.  \ \ \ \ \ \ \ \ \ \ \text{for every }i\in\left[  n\right]  \right)  .
+\right.  \ \ \ \ \ \ \ \ \ \ \text{for every }i\in\left[  n\right]  \right)
+.
 \]
 The definition of $\kappa$ shows that $\kappa\left(  v\right)  =v$ (since
 $v\neq u$) but also $\kappa\left(  u\right)  =v$. Thus, $\kappa\left(
@@ -33761,7 +33769,7 @@ map $\kappa$ is not injective, and thus not bijective; in particular, $\kappa$
 is not a permutation. Thus, $\kappa\notin S_{n}$. But every $i\in\left\{
 1,2,\ldots,n\right\}  $ and $j\in\left\{  1,2,\ldots,n\right\}  $ satisfy%
 \begin{equation}
-a_{\kappa\left(  i\right)  ,j}=a_{i,j}\label{sol.ps4.6.e.short.3}%
+a_{\kappa\left(  i\right)  ,j}=a_{i,j} \label{sol.ps4.6.e.short.3}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{sol.ps4.6.e.short.3}):} Let $i\in\left\{
 1,2,\ldots,n\right\}  $ and $j\in\left\{  1,2,\ldots,n\right\}  $. We must
@@ -33785,8 +33793,8 @@ v,\ \ \ \ \ \ \ \ \ \ \text{if }i=u
 Let us now consider Case 2. In this case, we have $i=u$. Thus, $\kappa\left(
 i\right)  =\kappa\left(  u\right)  =v$ (since $i=u$). Hence,%
 \begin{align*}
-a_{\kappa\left(  i\right)  ,j} &  =a_{v,j}=a_{u,j}\ \ \ \ \ \ \ \ \ \ \left(
-\text{by (\ref{sol.ps4.6.e.short.1a})}\right)  \\
+a_{\kappa\left(  i\right)  ,j}  &  =a_{v,j}=a_{u,j}\ \ \ \ \ \ \ \ \ \ \left(
+\text{by (\ref{sol.ps4.6.e.short.1a})}\right) \\
 &  =a_{i,j}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }u=i\right)  .
 \end{align*}
 Thus, (\ref{sol.ps4.6.e.short.3}) is proven in Case 2.
@@ -33809,7 +33817,8 @@ Define a map $\kappa:\left[  n\right]  \rightarrow\left[  n\right]  $ by
 i,\ \ \ \ \ \ \ \ \ \ \text{if }i\neq u;\\
 v,\ \ \ \ \ \ \ \ \ \ \text{if }i=u
 \end{array}
-\right.  \ \ \ \ \ \ \ \ \ \ \text{for every }i\in\left[  n\right]  \right)  .
+\right.  \ \ \ \ \ \ \ \ \ \ \text{for every }i\in\left[  n\right]  \right)
+.
 \]
 Then, $\kappa\notin S_{n}$\ \ \ \ \footnote{\textit{Proof.} Assume the
 contrary. Then, $\kappa\in S_{n}$. Thus, $\kappa$ is a permutation. Hence, the
@@ -33834,7 +33843,7 @@ v\right)  \neq\kappa\left(  u\right)  $. This contradiction proves that our
 assumption was wrong, qed.}. But every $i\in\left\{  1,2,\ldots,n\right\}  $
 and $j\in\left\{  1,2,\ldots,n\right\}  $ satisfy%
 \begin{equation}
-a_{\kappa\left(  i\right)  ,j}=a_{i,j}\label{sol.ps4.6.e.3}%
+a_{\kappa\left(  i\right)  ,j}=a_{i,j} \label{sol.ps4.6.e.3}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{sol.ps4.6.e.3}):} Let $i\in\left\{
 1,2,\ldots,n\right\}  $ and $j\in\left\{  1,2,\ldots,n\right\}  $. We must
@@ -33863,8 +33872,8 @@ v,\ \ \ \ \ \ \ \ \ \ \text{if }i=u
 \end{array}
 \right.  =v$ (since $i=u$). Hence,%
 \begin{align*}
-a_{\kappa\left(  i\right)  ,j} &  =a_{v,j}=\left(  \text{the }\left(
-v,j\right)  \text{-th entry of the matrix }A\right)  \\
+a_{\kappa\left(  i\right)  ,j}  &  =a_{v,j}=\left(  \text{the }\left(
+v,j\right)  \text{-th entry of the matrix }A\right) \\
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
@@ -33872,14 +33881,14 @@ v,j\right)  \text{-th entry of the matrix }A\right)  \\
 matrix }A\right)  =a_{v,j}\\
 \text{(by (\ref{sol.ps4.6.aij}), applied to }v\text{ instead of }i\text{)}%
 \end{array}
-\right)  \\
+\right) \\
 &  =\left(  \text{the }j\text{-th entry of }\underbrace{\text{the }v\text{-th
 row of }A}_{\substack{=\left(  \text{the }u\text{-th row of }A\right)
 \\\text{(by (\ref{sol.ps4.6.e.1}))}}}\right)  =\left(  \text{the }j\text{-th
-entry of the }u\text{-th row of }A\right)  \\
+entry of the }u\text{-th row of }A\right) \\
 &  =\left(  \text{the }\left(  u,j\right)  \text{-th entry of the matrix
 }A\right)  =a_{u,j}\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{sol.ps4.6.aij}),
-applied to }u\text{ instead of }i\right)  \\
+applied to }u\text{ instead of }i\right) \\
 &  =a_{i,j}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }u=i\right)  .
 \end{align*}
 Thus, (\ref{sol.ps4.6.e.3}) is proven in Case 2.
