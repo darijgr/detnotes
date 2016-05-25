@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Wednesday, May 25, 2016 13:06:05}
+%TCIDATA{LastRevised=Wednesday, May 25, 2016 13:28:10}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -13643,11 +13643,12 @@ qed.}.
 
 From (\ref{eq.det.eq.2}), we obtain%
 \begin{align*}
-\det A &  =\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\underbrace{\prod
-_{i=1}^{n}a_{i,\sigma\left(  i\right)  }}_{=\left(  \prod_{i=1}^{n-1}%
-a_{i,\sigma\left(  i\right)  }\right)  a_{n,\sigma\left(  n\right)  }}%
-=\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\left(  \prod_{i=1}%
-^{n-1}a_{i,\sigma\left(  i\right)  }\right)  a_{n,\sigma\left(  n\right)  }\\
+\det A  &  =\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}%
+\underbrace{\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }}_{=\left(
+\prod_{i=1}^{n-1}a_{i,\sigma\left(  i\right)  }\right)  a_{n,\sigma\left(
+n\right)  }}=\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\left(
+\prod_{i=1}^{n-1}a_{i,\sigma\left(  i\right)  }\right)  a_{n,\sigma\left(
+n\right)  }\\
 &  =\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  n\right)  =n}}\left(
 -1\right)  ^{\sigma}\left(  \prod_{i=1}^{n-1}a_{i,\sigma\left(  i\right)
 }\right)  \underbrace{a_{n,\sigma\left(  n\right)  }}_{\substack{=a_{n,n}%
@@ -13658,7 +13659,7 @@ S_{n};\\\sigma\left(  n\right)  \neq n}}\left(  -1\right)  ^{\sigma}\left(
 (\ref{pf.thm.laplace.pre.1}))}}}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since every }\sigma\in S_{n}\text{
 satisfies either }\sigma\left(  n\right)  =n\text{ or }\sigma\left(  n\right)
-\neq n\text{ (but not both)}\right)  \\
+\neq n\text{ (but not both)}\right) \\
 &  =\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  n\right)  =n}}\left(
 -1\right)  ^{\sigma}\left(  \prod_{i=1}^{n-1}a_{i,\sigma\left(  i\right)
 }\right)  a_{n,n}+\underbrace{\sum_{\substack{\sigma\in S_{n};\\\sigma\left(
@@ -13686,14 +13687,14 @@ a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ be an $n\times n$-matrix.
 Assume that%
 \begin{equation}
 a_{i,n}=0\ \ \ \ \ \ \ \ \ \ \text{for every }i\in\left\{  1,2,\ldots
-,n-1\right\}  .\label{eq.cor.laplace.pre.col.ass}%
+,n-1\right\}  . \label{eq.cor.laplace.pre.col.ass}%
 \end{equation}
 Then, $\det A=a_{n,n}\cdot\det\left(  \left(  a_{i,j}\right)  _{1\leq i\leq
 n-1,\ 1\leq j\leq n-1}\right)  $.
 \end{corollary}
 
 \begin{proof}
-[Proof of Corollary \ref{cor.laplace.pre.col}.] We have $n-1\in\mathbb{N}$
+[Proof of Corollary \ref{cor.laplace.pre.col}.]We have $n-1\in\mathbb{N}$
 (since $n$ is a positive integer).
 
 We have $A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$, and thus
@@ -13705,7 +13706,8 @@ definition of the transpose matrix $A^{T}$). Also, for every $j\in\left\{
 $a_{i,j}$) yields
 \begin{equation}
 \det\left(  A^{T}\right)  =a_{n,n}\cdot\det\left(  \left(  a_{j,i}\right)
-_{1\leq i\leq n-1,\ 1\leq j\leq n-1}\right)  .\label{pf.cor.laplace.pre.col.1}%
+_{1\leq i\leq n-1,\ 1\leq j\leq n-1}\right)  .
+\label{pf.cor.laplace.pre.col.1}%
 \end{equation}
 
 
@@ -13736,12 +13738,12 @@ j\leq n-1}\right)
 
 Now,%
 \begin{align*}
-\det A  & =\det\left(  A^{T}\right)  =a_{n,n}\cdot\underbrace{\det\left(
+\det A  &  =\det\left(  A^{T}\right)  =a_{n,n}\cdot\underbrace{\det\left(
 \left(  a_{j,i}\right)  _{1\leq i\leq n-1,\ 1\leq j\leq n-1}\right)  }%
 _{=\det\left(  \left(  a_{i,j}\right)  _{1\leq i\leq n-1,\ 1\leq j\leq
 n-1}\right)  }\ \ \ \ \ \ \ \ \ \ \left(  \text{by
-(\ref{pf.cor.laplace.pre.col.1})}\right)  \\
-& =a_{n,n}\cdot\det\left(  \left(  a_{i,j}\right)  _{1\leq i\leq n-1,\ 1\leq
+(\ref{pf.cor.laplace.pre.col.1})}\right) \\
+&  =a_{n,n}\cdot\det\left(  \left(  a_{i,j}\right)  _{1\leq i\leq n-1,\ 1\leq
 j\leq n-1}\right)  .
 \end{align*}
 This proves Corollary \ref{cor.laplace.pre.col}.
@@ -22050,7 +22052,10 @@ A_{\sim u,\bullet}\right)  . \label{pf.prop.desnanot.AB.4}%
 
 \begin{proof}
 [Proof of Lemma \ref{lem.desnanot.AB.tech}.]We have $n-1\in\mathbb{N}$ (since
-$n$ is a positive integer).
+$n$ is a positive integer). Also, $u<v\leq n$ (since $v\in\left\{
+1,2,\ldots,n\right\}  $) and thus $u\leq n-1$ (since $u$ and $n$ are
+integers). Combining this with $u\geq1$ (since $u\in\left\{  1,2,\ldots
+,n\right\}  $), we obtain $u\in\left\{  1,2,\ldots,n-1\right\}  $.
 
 \textbf{(a)} Let $q\in\left\{  1,2,\ldots,n-1\right\}  $. From $C=\left(
 B\mid\left(  I_{n}\right)  _{\bullet,u}\right)  $, we obtain%
@@ -22174,9 +22179,9 @@ proves Lemma \ref{lem.desnanot.AB.tech} \textbf{(d)}.
 \textbf{(e)} Let $A\in\mathbb{K}^{\left(  n-1\right)  \times n}$. Proposition
 \ref{prop.addcol.props1} \textbf{(b)} (applied to $n-1$, $B$ and $\left(
 I_{n}\right)  _{\bullet,u}$ instead of $m$, $A$ and $v$) yields $\left(
-B\mid\left(  I_{n}\right)  _{\bullet,u}\right)  _{\bullet,\left(  \left(
-n-1\right)  +1\right)  }=\left(  I_{n}\right)  _{\bullet,u}$. This rewrites as
-$\left(  B\mid\left(  I_{n}\right)  _{\bullet,u}\right)  _{\bullet,n}=\left(
+B\mid\left(  I_{n}\right)  _{\bullet,u}\right)  _{\bullet,\left(  n-1\right)
++1}=\left(  I_{n}\right)  _{\bullet,u}$. This rewrites as $\left(
+B\mid\left(  I_{n}\right)  _{\bullet,u}\right)  _{\bullet,n}=\left(
 I_{n}\right)  _{\bullet,u}$ (since $\left(  n-1\right)  +1=n$). Now,
 $C=\left(  B\mid\left(  I_{n}\right)  _{\bullet,u}\right)  $, so that%
 \[
@@ -22308,7 +22313,7 @@ Proposition \ref{prop.desnanot.AC} yields%
 C_{\bullet,q}\right)  }_{=\det\left(  A\mid C_{\bullet,q}\right)  \left(
 -1\right)  ^{n+q}}\det\left(  C_{\sim v,\sim q}\right)  =\sum_{q=1}^{n}%
 \det\left(  A\mid C_{\bullet,q}\right)  \left(  -1\right)  ^{n+q}\det\left(
-C_{\sim v,\sim q}\right) \\
+C_{\sim v,\sim q}\right)  \\
 &  =\sum_{q=1}^{n-1}\det\left(  A\mid\underbrace{C_{\bullet,q}}%
 _{\substack{=B_{\bullet,q}\\\text{(by (\ref{pf.prop.desnanot.AB.3}))}%
 }}\right)  \underbrace{\left(  -1\right)  ^{n+q}\det\left(  C_{\sim v,\sim
@@ -22321,9 +22326,9 @@ q}\right)  }_{\substack{=-\left(  -1\right)  ^{q+u}\det\left(
 \\\text{(by (\ref{pf.prop.desnanot.AB.4}))}}}\underbrace{\left(  -1\right)
 ^{n+n}}_{\substack{=1\\\text{(since }n+n=2n\text{ is even)}}}\det\left(
 \underbrace{C_{\sim v,\sim n}}_{\substack{=B_{\sim v,\bullet}\\\text{(by
-(\ref{pf.prop.desnanot.AB.2}))}}}\right) \\
+(\ref{pf.prop.desnanot.AB.2}))}}}\right)  \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have split off the addend for
-}q=n\text{ from the sum}\right) \\
+}q=n\text{ from the sum}\right)  \\
 &  =\underbrace{\sum_{q=1}^{n-1}\det\left(  A\mid B_{\bullet,q}\right)
 \left(  -\left(  -1\right)  ^{q+u}\det\left(  \operatorname*{rows}%
 \nolimits_{1,2,\ldots,\widehat{u},\ldots,\widehat{v},\ldots,n}\left(
@@ -22332,18 +22337,18 @@ B_{\bullet,\sim q}\right)  \right)  \right)  }_{=-\sum_{q=1}^{n-1}\left(
 \operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{u},\ldots,\widehat{v}%
 ,\ldots,n}\left(  B_{\bullet,\sim q}\right)  \right)  }\\
 &  \ \ \ \ \ \ \ \ \ \ +\left(  -1\right)  ^{n+u}\det\left(  A_{\sim
-u,\bullet}\right)  \det\left(  B_{\sim v,\bullet}\right) \\
+u,\bullet}\right)  \det\left(  B_{\sim v,\bullet}\right)  \\
 &  =-\sum_{q=1}^{n-1}\left(  -1\right)  ^{q+u}\det\left(  A\mid B_{\bullet
 ,q}\right)  \det\left(  \operatorname*{rows}\nolimits_{1,2,\ldots
 ,\widehat{u},\ldots,\widehat{v},\ldots,n}\left(  B_{\bullet,\sim q}\right)
-\right) \\
+\right)  \\
 &  \ \ \ \ \ \ \ \ \ \ +\left(  -1\right)  ^{n+u}\det\left(  A_{\sim
 u,\bullet}\right)  \det\left(  B_{\sim v,\bullet}\right)  .
 \end{align*}
-Adding $\sum_{q=1}^{n-1}\det\left(  A\mid B_{\bullet,q}\right)  \det\left(
-\operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{u},\ldots,\widehat{v}%
-,\ldots,n}\left(  B_{\bullet,\sim q}\right)  \right)  $ to both sides of this
-equality, we obtain%
+Adding $\sum_{q=1}^{n-1}\left(  -1\right)  ^{q+u}\det\left(  A\mid
+B_{\bullet,q}\right)  \det\left(  \operatorname*{rows}\nolimits_{1,2,\ldots
+,\widehat{u},\ldots,\widehat{v},\ldots,n}\left(  B_{\bullet,\sim q}\right)
+\right)  $ to both sides of this equality, we obtain%
 \begin{align*}
 &  \sum_{q=1}^{n-1}\left(  -1\right)  ^{q+u}\det\left(  A\mid B_{\bullet
 ,q}\right)  \det\left(  \operatorname*{rows}\nolimits_{1,2,\ldots
@@ -22358,7 +22363,7 @@ this equality, we find%
 &  \sum_{q=1}^{n-1}\left(  -1\right)  ^{q+u}\det\left(  A\mid B_{\bullet
 ,q}\right)  \det\left(  \operatorname*{rows}\nolimits_{1,2,\ldots
 ,\widehat{u},\ldots,\widehat{v},\ldots,n}\left(  B_{\bullet,\sim q}\right)
-\right) \\
+\right)  \\
 &  =\left(  -1\right)  ^{n+u}\det\left(  A_{\sim u,\bullet}\right)
 \det\left(  B_{\sim v,\bullet}\right)  -\det\left(  A_{\sim v,\bullet}\right)
 \underbrace{\det C}_{\substack{=\left(  -1\right)  ^{n+u}\det\left(  B_{\sim
@@ -22370,7 +22375,7 @@ v,\bullet}\right)  \left(  -1\right)  ^{n+u}}_{=\left(  -1\right)  ^{n+u}%
 \\
 &  =\left(  -1\right)  ^{n+u}\det\left(  A_{\sim u,\bullet}\right)
 \det\left(  B_{\sim v,\bullet}\right)  -\left(  -1\right)  ^{n+u}\det\left(
-A_{\sim v,\bullet}\right)  \det\left(  B_{\sim u,\bullet}\right) \\
+A_{\sim v,\bullet}\right)  \det\left(  B_{\sim u,\bullet}\right)  \\
 &  =\left(  -1\right)  ^{n+u}\left(  \det\left(  A_{\sim u,\bullet}\right)
 \det\left(  B_{\sim v,\bullet}\right)  -\det\left(  A_{\sim v,\bullet}\right)
 \det\left(  B_{\sim u,\bullet}\right)  \right)  .
@@ -22381,13 +22386,13 @@ obtain%
 &  \left(  -1\right)  ^{u}\sum_{q=1}^{n-1}\left(  -1\right)  ^{q+u}\det\left(
 A\mid B_{\bullet,q}\right)  \det\left(  \operatorname*{rows}%
 \nolimits_{1,2,\ldots,\widehat{u},\ldots,\widehat{v},\ldots,n}\left(
-B_{\bullet,\sim q}\right)  \right) \\
+B_{\bullet,\sim q}\right)  \right)  \\
 &  =\underbrace{\left(  -1\right)  ^{u}\left(  -1\right)  ^{n+u}%
 }_{\substack{=\left(  -1\right)  ^{u+\left(  n+u\right)  }=\left(  -1\right)
 ^{n}\\\text{(since }u+\left(  n+u\right)  =2u+n\equiv n\operatorname{mod}%
 2\text{)}}}\left(  \det\left(  A_{\sim u,\bullet}\right)  \det\left(  B_{\sim
 v,\bullet}\right)  -\det\left(  A_{\sim v,\bullet}\right)  \det\left(  B_{\sim
-u,\bullet}\right)  \right) \\
+u,\bullet}\right)  \right)  \\
 &  =\left(  -1\right)  ^{n}\left(  \det\left(  A_{\sim u,\bullet}\right)
 \det\left(  B_{\sim v,\bullet}\right)  -\det\left(  A_{\sim v,\bullet}\right)
 \det\left(  B_{\sim u,\bullet}\right)  \right)  ,
@@ -22396,21 +22401,21 @@ so that%
 \begin{align*}
 &  \left(  -1\right)  ^{n}\left(  \det\left(  A_{\sim u,\bullet}\right)
 \det\left(  B_{\sim v,\bullet}\right)  -\det\left(  A_{\sim v,\bullet}\right)
-\det\left(  B_{\sim u,\bullet}\right)  \right) \\
+\det\left(  B_{\sim u,\bullet}\right)  \right)  \\
 &  =\left(  -1\right)  ^{u}\sum_{q=1}^{n-1}\left(  -1\right)  ^{q+u}%
 \det\left(  A\mid B_{\bullet,q}\right)  \det\left(  \operatorname*{rows}%
 \nolimits_{1,2,\ldots,\widehat{u},\ldots,\widehat{v},\ldots,n}\left(
-B_{\bullet,\sim q}\right)  \right) \\
+B_{\bullet,\sim q}\right)  \right)  \\
 &  =\sum_{q=1}^{n-1}\underbrace{\left(  -1\right)  ^{u}\left(  -1\right)
 ^{q+u}}_{\substack{=\left(  -1\right)  ^{u+\left(  q+u\right)  }=\left(
 -1\right)  ^{q}\\\text{(since }u+\left(  q+u\right)  =2u+q\equiv
 q\operatorname{mod}2\text{)}}}\det\left(  A\mid B_{\bullet,q}\right)
 \det\left(  \operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{u}%
-,\ldots,\widehat{v},\ldots,n}\left(  B_{\bullet,\sim q}\right)  \right) \\
+,\ldots,\widehat{v},\ldots,n}\left(  B_{\bullet,\sim q}\right)  \right)  \\
 &  =\sum_{q=1}^{n-1}\left(  -1\right)  ^{q}\det\left(  A\mid B_{\bullet
 ,q}\right)  \det\left(  \operatorname*{rows}\nolimits_{1,2,\ldots
 ,\widehat{u},\ldots,\widehat{v},\ldots,n}\left(  B_{\bullet,\sim q}\right)
-\right) \\
+\right)  \\
 &  =\sum_{r=1}^{n-1}\left(  -1\right)  ^{r}\det\left(  A\mid B_{\bullet
 ,r}\right)  \det\left(  \operatorname*{rows}\nolimits_{1,2,\ldots
 ,\widehat{u},\ldots,\widehat{v},\ldots,n}\left(  B_{\bullet,\sim r}\right)
@@ -49289,8 +49294,8 @@ This proves Lemma \ref{lem.sol.prop.addcol.props3.bc.short}.
 \begin{proof}
 [Proof of Proposition \ref{prop.addcol.props3}.]\textbf{(a)} Proposition
 \ref{prop.addcol.props3} \textbf{(a)} simply says that if we remove the $n$-th
-column from the matrix $A$, and then reattach this column back to $A$ (at its
-right edge), then we get the original matrix $A$ back. This should be
+column from the matrix $A$, and then reattach this column back to the matrix
+(at its right edge), then we get the original matrix $A$ back. This should be
 completely obvious\footnote{Nevertheless, let me give a formal proof of
 Proposition \ref{prop.addcol.props3} \textbf{(a)} as well:
 \par
@@ -49378,8 +49383,8 @@ This proves Proposition \ref{prop.addcol.props3} \textbf{(b)}.
 \ref{prop.addcol.props3} \textbf{(b)}: Let $q\in\left\{  1,2,\ldots,n\right\}
 $. The matrix $\left(  A_{\bullet,\sim q}\mid A_{\bullet,q}\right)  $ is
 obtained from the matrix $A$ by removing the $q$-th column and then
-reattaching this column to the right end of the matrix $A$. This procedure can
-be replaced by the following procedure, which clearly leads to the same result:
+reattaching this column to the right end of the matrix. This procedure can be
+replaced by the following procedure, which clearly leads to the same result:
 
 \begin{itemize}
 \item Switch the $q$-th column of $A$ with the $\left(  q+1\right)  $-th column;
@@ -50677,8 +50682,8 @@ we obtain $\det\left(  A_{\bullet,\sim q}\mid A_{\bullet,q}\right)  =\left(
 \ref{prop.addcol.props3} \textbf{(b)}: Let $q\in\left\{  1,2,\ldots,n\right\}
 $. The matrix $\left(  A_{\bullet,\sim q}\mid A_{\bullet,q}\right)  $ is
 obtained from the matrix $A$ by removing the $q$-th column and then
-reattaching this column to the right end of the matrix $A$. This procedure can
-be replaced by the following procedure, which clearly leads to the same result:
+reattaching this column to the right end of the matrix. This procedure can be
+replaced by the following procedure, which clearly leads to the same result:
 
 \begin{itemize}
 \item Switch the $q$-th column of $A$ with the $\left(  q+1\right)  $-th column;
