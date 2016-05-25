@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Wednesday, May 25, 2016 12:58:44}
+%TCIDATA{LastRevised=Wednesday, May 25, 2016 13:06:05}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -11390,7 +11390,7 @@ c^{\prime\prime} & c^{\prime}%
 \right)  $. For every $q\in\left\{  1,2,\ldots,v\right\}  $, we have%
 \begin{align}
 &  \left(  \text{the }q\text{-th column of }\operatorname*{cols}%
-\nolimits_{j_{1},j_{2},\ldots,j_{v}}A\right)  \nonumber\\
+\nolimits_{j_{1},j_{2},\ldots,j_{v}}A\right) \nonumber\\
 &  =\left(
 \begin{array}
 [c]{c}%
@@ -11401,10 +11401,10 @@ a_{n,j_{q}}%
 \end{array}
 \right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\operatorname*{cols}%
 \nolimits_{j_{1},j_{2},\ldots,j_{v}}A=\left(  a_{i,j_{y}}\right)  _{1\leq
-i\leq n,\ 1\leq y\leq v}\right)  \nonumber\\
+i\leq n,\ 1\leq y\leq v}\right) \nonumber\\
 &  =\left(  \text{the }j_{q}\text{-th column of }A\right)
 \ \ \ \ \ \ \ \ \ \ \left(  \text{since }A=\left(  a_{i,j}\right)  _{1\leq
-i\leq n,\ 1\leq j\leq m}\right)  .\label{eq.def.rowscols.b.col=col}%
+i\leq n,\ 1\leq j\leq m}\right)  . \label{eq.def.rowscols.b.col=col}%
 \end{align}
 Thus, $\operatorname*{cols}\nolimits_{j_{1},j_{2},\ldots,j_{v}}A$ is the
 $n\times v$-matrix whose columns (from left to right) are the columns labelled
@@ -13643,12 +13643,11 @@ qed.}.
 
 From (\ref{eq.det.eq.2}), we obtain%
 \begin{align*}
-\det A  &  =\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}%
-\underbrace{\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }}_{=\left(
-\prod_{i=1}^{n-1}a_{i,\sigma\left(  i\right)  }\right)  a_{n,\sigma\left(
-n\right)  }}=\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\left(
-\prod_{i=1}^{n-1}a_{i,\sigma\left(  i\right)  }\right)  a_{n,\sigma\left(
-n\right)  }\\
+\det A &  =\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\underbrace{\prod
+_{i=1}^{n}a_{i,\sigma\left(  i\right)  }}_{=\left(  \prod_{i=1}^{n-1}%
+a_{i,\sigma\left(  i\right)  }\right)  a_{n,\sigma\left(  n\right)  }}%
+=\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\left(  \prod_{i=1}%
+^{n-1}a_{i,\sigma\left(  i\right)  }\right)  a_{n,\sigma\left(  n\right)  }\\
 &  =\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  n\right)  =n}}\left(
 -1\right)  ^{\sigma}\left(  \prod_{i=1}^{n-1}a_{i,\sigma\left(  i\right)
 }\right)  \underbrace{a_{n,\sigma\left(  n\right)  }}_{\substack{=a_{n,n}%
@@ -13659,7 +13658,7 @@ S_{n};\\\sigma\left(  n\right)  \neq n}}\left(  -1\right)  ^{\sigma}\left(
 (\ref{pf.thm.laplace.pre.1}))}}}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since every }\sigma\in S_{n}\text{
 satisfies either }\sigma\left(  n\right)  =n\text{ or }\sigma\left(  n\right)
-\neq n\text{ (but not both)}\right) \\
+\neq n\text{ (but not both)}\right)  \\
 &  =\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  n\right)  =n}}\left(
 -1\right)  ^{\sigma}\left(  \prod_{i=1}^{n-1}a_{i,\sigma\left(  i\right)
 }\right)  a_{n,n}+\underbrace{\sum_{\substack{\sigma\in S_{n};\\\sigma\left(
@@ -13676,6 +13675,76 @@ a_{i,j}\right)  _{1\leq i\leq n-1,\ 1\leq j\leq n-1}\right)  \\\text{(by Lemma
 j\leq n-1}\right)  .
 \end{align*}
 This proves Theorem \ref{thm.laplace.pre}.
+\end{proof}
+
+Let us finally state an analogue of Theorem \ref{thm.laplace.pre} in which the
+last column (rather than the last row) is required to consist mostly of zeroes:
+
+\begin{corollary}
+\label{cor.laplace.pre.col}Let $n$ be a positive integer. Let $A=\left(
+a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ be an $n\times n$-matrix.
+Assume that%
+\begin{equation}
+a_{i,n}=0\ \ \ \ \ \ \ \ \ \ \text{for every }i\in\left\{  1,2,\ldots
+,n-1\right\}  .\label{eq.cor.laplace.pre.col.ass}%
+\end{equation}
+Then, $\det A=a_{n,n}\cdot\det\left(  \left(  a_{i,j}\right)  _{1\leq i\leq
+n-1,\ 1\leq j\leq n-1}\right)  $.
+\end{corollary}
+
+\begin{proof}
+[Proof of Corollary \ref{cor.laplace.pre.col}.] We have $n-1\in\mathbb{N}$
+(since $n$ is a positive integer).
+
+We have $A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$, and thus
+$A^{T}=\left(  a_{j,i}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ (by the
+definition of the transpose matrix $A^{T}$). Also, for every $j\in\left\{
+1,2,\ldots,n-1\right\}  $, we have $a_{j,n}=0$ (by
+(\ref{eq.cor.laplace.pre.col.ass}), applied to $i=j$). Thus, Theorem
+\ref{thm.laplace.pre} (applied to $A^{T}$ and $a_{j,i}$ instead of $A$ and
+$a_{i,j}$) yields
+\begin{equation}
+\det\left(  A^{T}\right)  =a_{n,n}\cdot\det\left(  \left(  a_{j,i}\right)
+_{1\leq i\leq n-1,\ 1\leq j\leq n-1}\right)  .\label{pf.cor.laplace.pre.col.1}%
+\end{equation}
+
+
+But Exercise \ref{exe.ps4.4} shows that $\det\left(  A^{T}\right)  =\det A$.
+Thus, $\det A=\det\left(  A^{T}\right)  $. Also, the definition of the
+transpose of a matrix shows that $\left(  \left(  a_{i,j}\right)  _{1\leq
+i\leq n-1,\ 1\leq j\leq n-1}\right)  ^{T}=\left(  a_{j,i}\right)  _{1\leq
+i\leq n-1,\ 1\leq j\leq n-1}$. Thus,%
+\[
+\det\left(  \left(  \left(  a_{i,j}\right)  _{1\leq i\leq n-1,\ 1\leq j\leq
+n-1}\right)  ^{T}\right)  =\det\left(  \left(  a_{j,i}\right)  _{1\leq i\leq
+n-1,\ 1\leq j\leq n-1}\right)  .
+\]
+Comparing this with%
+\[
+\det\left(  \left(  \left(  a_{i,j}\right)  _{1\leq i\leq n-1,\ 1\leq j\leq
+n-1}\right)  ^{T}\right)  =\det\left(  \left(  a_{i,j}\right)  _{1\leq i\leq
+n-1,\ 1\leq j\leq n-1}\right)
+\]
+(by Exercise \ref{exe.ps4.4}, applied to $n-1$ and $\left(  a_{i,j}\right)
+_{1\leq i\leq n-1,\ 1\leq j\leq n-1}$ instead of $n$ and $A$), we obtain%
+\[
+\det\left(  \left(  a_{j,i}\right)  _{1\leq i\leq n-1,\ 1\leq j\leq
+n-1}\right)  =\det\left(  \left(  a_{i,j}\right)  _{1\leq i\leq n-1,\ 1\leq
+j\leq n-1}\right)
+\]
+
+
+Now,%
+\begin{align*}
+\det A  & =\det\left(  A^{T}\right)  =a_{n,n}\cdot\underbrace{\det\left(
+\left(  a_{j,i}\right)  _{1\leq i\leq n-1,\ 1\leq j\leq n-1}\right)  }%
+_{=\det\left(  \left(  a_{i,j}\right)  _{1\leq i\leq n-1,\ 1\leq j\leq
+n-1}\right)  }\ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{pf.cor.laplace.pre.col.1})}\right)  \\
+& =a_{n,n}\cdot\det\left(  \left(  a_{i,j}\right)  _{1\leq i\leq n-1,\ 1\leq
+j\leq n-1}\right)  .
+\end{align*}
+This proves Corollary \ref{cor.laplace.pre.col}.
 \end{proof}
 
 \subsection{The Vandermonde determinant}
