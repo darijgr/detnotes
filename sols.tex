@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Wednesday, May 25, 2016 13:28:10}
+%TCIDATA{LastRevised=Thursday, May 26, 2016 02:19:24}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -15442,8 +15442,9 @@ a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  .
 
 \end{exercise}
 
-Exercise \ref{exe.cauchy-det-lem} is known as the \textit{Chi\'o pivotal
-condensation theorem}.
+Exercise \ref{exe.cauchy-det-lem} is known as the \textit{Chio pivotal
+condensation theorem}\footnote{See \cite[footnote 2]{Heinig} and
+\cite[\S 2]{Abeles} for some hints about its history.}.
 
 \begin{remark}
 Exercise \ref{exe.cauchy-det-lem} gives a way to reduce the computation of an
@@ -15459,11 +15460,17 @@ Exercise \ref{exe.cauchy-det-lem} holds even without the assumption that
 $a_{n,n}$ be invertible, as long as we assume (instead) that $n\geq2$. (If we
 don't assume that $n\geq2$, then the $a_{n,n}^{n-2}$ on the right hand side of
 (\ref{eq.exe.cauchy-det-lem}) will not be defined for non-invertible $a_{n,n}%
-$.) Proving this is beyond these notes, though.
+$.) Proving this is beyond these notes, though. (A proof of this generalized
+version of Exercise \ref{exe.cauchy-det-lem} can be found in \cite{KarZha16}.
+It can also be obtained as a particular case of \cite[(4)]{BerBru08}\footnotemark.)
 \end{remark}
 
-The next exercises are just diversions; they have nothing to do with
-invertibility or with the Cauchy determinant.
+\footnotetext{In more detail: If we apply \cite[(4)]{BerBru08} to $k=n-1$,
+then the right hand side is precisely $\det\left(  \left(  a_{i,j}%
+a_{n,n}-a_{i,n}a_{n,j}\right)  _{1\leq i\leq n-1,\ 1\leq j\leq n-1}\right)  $,
+and so the formula becomes (\ref{eq.exe.cauchy-det-lem}).}The next exercises
+are just diversions; they have nothing to do with invertibility or with the
+Cauchy determinant.
 
 \begin{exercise}
 \label{exe.det.schur-lem}Let $n\in\mathbb{N}$. Let $\left(  a_{i,j}\right)
@@ -22313,7 +22320,7 @@ Proposition \ref{prop.desnanot.AC} yields%
 C_{\bullet,q}\right)  }_{=\det\left(  A\mid C_{\bullet,q}\right)  \left(
 -1\right)  ^{n+q}}\det\left(  C_{\sim v,\sim q}\right)  =\sum_{q=1}^{n}%
 \det\left(  A\mid C_{\bullet,q}\right)  \left(  -1\right)  ^{n+q}\det\left(
-C_{\sim v,\sim q}\right)  \\
+C_{\sim v,\sim q}\right) \\
 &  =\sum_{q=1}^{n-1}\det\left(  A\mid\underbrace{C_{\bullet,q}}%
 _{\substack{=B_{\bullet,q}\\\text{(by (\ref{pf.prop.desnanot.AB.3}))}%
 }}\right)  \underbrace{\left(  -1\right)  ^{n+q}\det\left(  C_{\sim v,\sim
@@ -22326,9 +22333,9 @@ q}\right)  }_{\substack{=-\left(  -1\right)  ^{q+u}\det\left(
 \\\text{(by (\ref{pf.prop.desnanot.AB.4}))}}}\underbrace{\left(  -1\right)
 ^{n+n}}_{\substack{=1\\\text{(since }n+n=2n\text{ is even)}}}\det\left(
 \underbrace{C_{\sim v,\sim n}}_{\substack{=B_{\sim v,\bullet}\\\text{(by
-(\ref{pf.prop.desnanot.AB.2}))}}}\right)  \\
+(\ref{pf.prop.desnanot.AB.2}))}}}\right) \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have split off the addend for
-}q=n\text{ from the sum}\right)  \\
+}q=n\text{ from the sum}\right) \\
 &  =\underbrace{\sum_{q=1}^{n-1}\det\left(  A\mid B_{\bullet,q}\right)
 \left(  -\left(  -1\right)  ^{q+u}\det\left(  \operatorname*{rows}%
 \nolimits_{1,2,\ldots,\widehat{u},\ldots,\widehat{v},\ldots,n}\left(
@@ -22337,11 +22344,11 @@ B_{\bullet,\sim q}\right)  \right)  \right)  }_{=-\sum_{q=1}^{n-1}\left(
 \operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{u},\ldots,\widehat{v}%
 ,\ldots,n}\left(  B_{\bullet,\sim q}\right)  \right)  }\\
 &  \ \ \ \ \ \ \ \ \ \ +\left(  -1\right)  ^{n+u}\det\left(  A_{\sim
-u,\bullet}\right)  \det\left(  B_{\sim v,\bullet}\right)  \\
+u,\bullet}\right)  \det\left(  B_{\sim v,\bullet}\right) \\
 &  =-\sum_{q=1}^{n-1}\left(  -1\right)  ^{q+u}\det\left(  A\mid B_{\bullet
 ,q}\right)  \det\left(  \operatorname*{rows}\nolimits_{1,2,\ldots
 ,\widehat{u},\ldots,\widehat{v},\ldots,n}\left(  B_{\bullet,\sim q}\right)
-\right)  \\
+\right) \\
 &  \ \ \ \ \ \ \ \ \ \ +\left(  -1\right)  ^{n+u}\det\left(  A_{\sim
 u,\bullet}\right)  \det\left(  B_{\sim v,\bullet}\right)  .
 \end{align*}
@@ -22363,7 +22370,7 @@ this equality, we find%
 &  \sum_{q=1}^{n-1}\left(  -1\right)  ^{q+u}\det\left(  A\mid B_{\bullet
 ,q}\right)  \det\left(  \operatorname*{rows}\nolimits_{1,2,\ldots
 ,\widehat{u},\ldots,\widehat{v},\ldots,n}\left(  B_{\bullet,\sim q}\right)
-\right)  \\
+\right) \\
 &  =\left(  -1\right)  ^{n+u}\det\left(  A_{\sim u,\bullet}\right)
 \det\left(  B_{\sim v,\bullet}\right)  -\det\left(  A_{\sim v,\bullet}\right)
 \underbrace{\det C}_{\substack{=\left(  -1\right)  ^{n+u}\det\left(  B_{\sim
@@ -22375,7 +22382,7 @@ v,\bullet}\right)  \left(  -1\right)  ^{n+u}}_{=\left(  -1\right)  ^{n+u}%
 \\
 &  =\left(  -1\right)  ^{n+u}\det\left(  A_{\sim u,\bullet}\right)
 \det\left(  B_{\sim v,\bullet}\right)  -\left(  -1\right)  ^{n+u}\det\left(
-A_{\sim v,\bullet}\right)  \det\left(  B_{\sim u,\bullet}\right)  \\
+A_{\sim v,\bullet}\right)  \det\left(  B_{\sim u,\bullet}\right) \\
 &  =\left(  -1\right)  ^{n+u}\left(  \det\left(  A_{\sim u,\bullet}\right)
 \det\left(  B_{\sim v,\bullet}\right)  -\det\left(  A_{\sim v,\bullet}\right)
 \det\left(  B_{\sim u,\bullet}\right)  \right)  .
@@ -22386,13 +22393,13 @@ obtain%
 &  \left(  -1\right)  ^{u}\sum_{q=1}^{n-1}\left(  -1\right)  ^{q+u}\det\left(
 A\mid B_{\bullet,q}\right)  \det\left(  \operatorname*{rows}%
 \nolimits_{1,2,\ldots,\widehat{u},\ldots,\widehat{v},\ldots,n}\left(
-B_{\bullet,\sim q}\right)  \right)  \\
+B_{\bullet,\sim q}\right)  \right) \\
 &  =\underbrace{\left(  -1\right)  ^{u}\left(  -1\right)  ^{n+u}%
 }_{\substack{=\left(  -1\right)  ^{u+\left(  n+u\right)  }=\left(  -1\right)
 ^{n}\\\text{(since }u+\left(  n+u\right)  =2u+n\equiv n\operatorname{mod}%
 2\text{)}}}\left(  \det\left(  A_{\sim u,\bullet}\right)  \det\left(  B_{\sim
 v,\bullet}\right)  -\det\left(  A_{\sim v,\bullet}\right)  \det\left(  B_{\sim
-u,\bullet}\right)  \right)  \\
+u,\bullet}\right)  \right) \\
 &  =\left(  -1\right)  ^{n}\left(  \det\left(  A_{\sim u,\bullet}\right)
 \det\left(  B_{\sim v,\bullet}\right)  -\det\left(  A_{\sim v,\bullet}\right)
 \det\left(  B_{\sim u,\bullet}\right)  \right)  ,
@@ -22401,21 +22408,21 @@ so that%
 \begin{align*}
 &  \left(  -1\right)  ^{n}\left(  \det\left(  A_{\sim u,\bullet}\right)
 \det\left(  B_{\sim v,\bullet}\right)  -\det\left(  A_{\sim v,\bullet}\right)
-\det\left(  B_{\sim u,\bullet}\right)  \right)  \\
+\det\left(  B_{\sim u,\bullet}\right)  \right) \\
 &  =\left(  -1\right)  ^{u}\sum_{q=1}^{n-1}\left(  -1\right)  ^{q+u}%
 \det\left(  A\mid B_{\bullet,q}\right)  \det\left(  \operatorname*{rows}%
 \nolimits_{1,2,\ldots,\widehat{u},\ldots,\widehat{v},\ldots,n}\left(
-B_{\bullet,\sim q}\right)  \right)  \\
+B_{\bullet,\sim q}\right)  \right) \\
 &  =\sum_{q=1}^{n-1}\underbrace{\left(  -1\right)  ^{u}\left(  -1\right)
 ^{q+u}}_{\substack{=\left(  -1\right)  ^{u+\left(  q+u\right)  }=\left(
 -1\right)  ^{q}\\\text{(since }u+\left(  q+u\right)  =2u+q\equiv
 q\operatorname{mod}2\text{)}}}\det\left(  A\mid B_{\bullet,q}\right)
 \det\left(  \operatorname*{rows}\nolimits_{1,2,\ldots,\widehat{u}%
-,\ldots,\widehat{v},\ldots,n}\left(  B_{\bullet,\sim q}\right)  \right)  \\
+,\ldots,\widehat{v},\ldots,n}\left(  B_{\bullet,\sim q}\right)  \right) \\
 &  =\sum_{q=1}^{n-1}\left(  -1\right)  ^{q}\det\left(  A\mid B_{\bullet
 ,q}\right)  \det\left(  \operatorname*{rows}\nolimits_{1,2,\ldots
 ,\widehat{u},\ldots,\widehat{v},\ldots,n}\left(  B_{\bullet,\sim q}\right)
-\right)  \\
+\right) \\
 &  =\sum_{r=1}^{n-1}\left(  -1\right)  ^{r}\det\left(  A\mid B_{\bullet
 ,r}\right)  \det\left(  \operatorname*{rows}\nolimits_{1,2,\ldots
 ,\widehat{u},\ldots,\widehat{v},\ldots,n}\left(  B_{\bullet,\sim r}\right)
@@ -52089,6 +52096,11 @@ Additional exercise \ref{exeadd.det.rk1upd} is solved (since Theorem
 \begin{thebibliography}{999999999}                                                                                        %
 
 
+\bibitem[Abeles14]{Abeles}%
+\href{http://www.sciencedirect.com/science/article/pii/S0024379514002249}{Francine
+F. Abeles, \textit{Chi\`{o}'s and Dodgson's determinantal identities}, Linear
+Algebra and its Applications, Volume 454, 1 August 2014, pp. 130--137}.
+
 \bibitem[Aigner07]{Aigner07}%
 \href{http://doi.org/10.1007/978-3-540-39035-0}{Martin Aigner, \textit{A
 Course in Enumeration}, Graduate Texts in Mathematics \#238, Springer 2007.}
@@ -52208,6 +52220,10 @@ in Combinatorics}, August 25, 2015. arXiv preprint
 \bibitem[Hefferon]{Hefferon}Jim Hefferon, \textit{Linear Algebra}, version of
 22 December 2014,\newline\url{http://joshua.smcvt.edu/linearalgebra/} .
 
+\bibitem[Heinig11]{Heinig}\href{http://arxiv.org/abs/1103.2717v3}{Peter
+Christian Heinig, \textit{Chio Condensation and Random Sign Matrices},
+arXiv:1103.2717v3}.
+
 \bibitem[Herstein]{Herstein}I. N. Herstein, \textit{Topics in Algebra}, 2nd
 edition, John Wiley \& Sons, 1975.
 
@@ -52223,6 +52239,11 @@ An Introduction}, 3rd edition, Brooks/Cole 2014.
 
 \bibitem[Jacobs10]{Jacobs10}Nathan Jacobson, \textit{Finite-Dimensional
 Division Algebras Over Fields}, corrected 2nd printing, Springer 2010.
+
+\bibitem[KarZha16]{KarZha16}%
+\href{http://web.mit.edu/~darij/www/primes2015/kazh-exp.pdf}{Karthik Karnik,
+Anya Zhang, \textit{Combinatorial proof of Chi\'{o} Pivotal Condensation}, 10
+January 2016.}
 
 \bibitem[KenWil14]{KenWil14}\href{http://arxiv.org/abs/1411.7425v1}{Richard W.
 Kenyon, David B. Wilson, \textit{The space of circular planar electrical
