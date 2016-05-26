@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, May 26, 2016 02:26:07}
+%TCIDATA{LastRevised=Thursday, May 26, 2016 02:59:02}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -13732,7 +13732,7 @@ _{1\leq i\leq n-1,\ 1\leq j\leq n-1}$ instead of $n$ and $A$), we obtain%
 \[
 \det\left(  \left(  a_{j,i}\right)  _{1\leq i\leq n-1,\ 1\leq j\leq
 n-1}\right)  =\det\left(  \left(  a_{i,j}\right)  _{1\leq i\leq n-1,\ 1\leq
-j\leq n-1}\right)
+j\leq n-1}\right)  .
 \]
 
 
@@ -13868,8 +13868,9 @@ has the advantage of demonstrating how to use Theorem \ref{thm.laplace.pre}.
 \begin{align}
 \det A  &  =1yz^{2}+xy^{2}\cdot1+x^{2}\cdot1z-1y^{2}z-x\cdot1z^{2}-x^{2}%
 y\cdot1\nonumber\\
-&  =yz^{2}+xy^{2}+x^{2}z-y^{2}z-xz^{2}-x^{2}y=yz\left(  z-y\right)  +zx\left(
-x-z\right)  +xy\left(  y-x\right)  . \label{eq.exa.vander-det.3.1}%
+&  =yz^{2}+xy^{2}+x^{2}z-y^{2}z-xz^{2}-x^{2}y\nonumber\\
+&  =yz\left(  z-y\right)  +zx\left(  x-z\right)  +xy\left(  y-x\right)  .
+\label{eq.exa.vander-det.3.1}%
 \end{align}
 On the other hand, Theorem \ref{thm.vander-det} \textbf{(c)} (applied to
 $n=3$, $x_{1}=x$, $x_{2}=y$ and $x_{3}=z$) yields $\det A=\left(  y-x\right)
@@ -15433,12 +15434,12 @@ $-y_{1},-y_{2},\ldots,-y_{n}$ instead of $y_{1},y_{2},\ldots,y_{n}$.
 \label{exe.cauchy-det-lem}Let $n$ be a positive integer. Let $\left(
 a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ be an $n\times n$-matrix
 such that $a_{n,n}$ is invertible (in $\mathbb{K}$). Prove that
-\begin{equation}
-\det\left(  \left(  a_{i,j}a_{n,n}-a_{i,n}a_{n,j}\right)  _{1\leq i\leq
-n-1,\ 1\leq j\leq n-1}\right)  =a_{n,n}^{n-2}\cdot\det\left(  \left(
-a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  .
-\label{eq.exe.cauchy-det-lem}%
-\end{equation}
+\begin{align}
+&  \det\left(  \left(  a_{i,j}a_{n,n}-a_{i,n}a_{n,j}\right)  _{1\leq i\leq
+n-1,\ 1\leq j\leq n-1}\right) \nonumber\\
+&  =a_{n,n}^{n-2}\cdot\det\left(  \left(  a_{i,j}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}\right)  . \label{eq.exe.cauchy-det-lem}%
+\end{align}
 
 \end{exercise}
 
@@ -18728,16 +18729,16 @@ column of $A$ by the column vector $w$. Thus,%
 \end{align}
 whereas%
 \begin{equation}
-\left(  \text{the }q\text{-th column of }C\right)  =w.
-\label{pf.prop.laplace.0.b.Cp}%
+\left(  \text{the }q\text{-th column of }C\right)
+=w.\label{pf.prop.laplace.0.b.Cp}%
 \end{equation}
-The matrix $C$ has two equal column\footnote{\textit{Proof.} We have $r\neq q$
-(since $q\neq r$). Hence, (\ref{pf.prop.laplace.0.b.Cu}) (applied to $u=r$)
+The matrix $C$ has two equal columns\footnote{\textit{Proof.} We have $r\neq
+q$ (since $q\neq r$). Hence, (\ref{pf.prop.laplace.0.b.Cu}) (applied to $u=r$)
 yields%
 \begin{align*}
 \left(  \text{the }r\text{-th column of }C\right)   &  =\left(  \text{the
 }r\text{-th column of }A\right)  =w\ \ \ \ \ \ \ \ \ \ \left(  \text{since
-}w=\left(  \text{the }r\text{-th column of }A\right)  \right) \\
+}w=\left(  \text{the }r\text{-th column of }A\right)  \right)  \\
 &  =\left(  \text{the }q\text{-th column of }C\right)
 \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{pf.prop.laplace.0.b.Cp})}\right)  .
 \end{align*}
@@ -33989,9 +33990,9 @@ $\ \ \ \ \footnote{More precisely, the columns of $A$ are the transposes of
 the rows of $A^{T}$.}). Hence, Exercise \ref{exe.ps4.6} \textbf{(e)} (applied
 to $A^{T}$ instead of $A$) yields $\det\left(  A^{T}\right)  =0$.
 
-But Exercise \ref{exe.ps4.4} yields $\det\left(  A^{T}\right)  =\det A$. This
-rewrites as $\det A=0$ (since $\det\left(  A^{T}\right)  =\det A$). This
-solves Exercise \ref{exe.ps4.6} \textbf{(f)}.
+But Exercise \ref{exe.ps4.4} yields $\det\left(  A^{T}\right)  =\det A$.
+Hence, $\det A=\det\left(  A^{T}\right)  =0$. This solves Exercise
+\ref{exe.ps4.6} \textbf{(f)}.
 
 \textbf{(g)} Let $B$ be the $n\times n$-matrix obtained from $A$ by
 multiplying the $k$-th row by $\lambda$. Thus,
@@ -34540,13 +34541,16 @@ Thus, $\left(  A^{\prime}\right)  ^{T}$ is the $n\times n$-matrix whose rows
 equal the corresponding rows of $A^{T}$ except (perhaps) the $k$-th row
 (because the columns of $A$ correspond to the rows of $A^{T}$%
 \ \ \ \ \footnote{More precisely, the columns of $A$ are the transposes of the
-rows of $A^{T}$.}).
+rows of $A^{T}$.}, and similarly the columns of $A^{\prime}$ correspond to the
+rows of $\left(  A^{\prime}\right)  ^{T}$).
 
 Also, we know that $B$ is the $n\times n$-matrix obtained from $A$ by adding
 the $k$-th column of $A^{\prime}$ to the $k$-th column of $A$. Hence, $B^{T}$
 is the $n\times n$-matrix obtained from $A^{T}$ by adding the $k$-th row of
 $\left(  A^{\prime}\right)  ^{T}$ to the $k$-th row of $A^{T}$ (because the
-columns of $A$ correspond to the rows of $A^{T}$).
+columns of $A$ correspond to the rows of $A^{T}$, and similarly the columns of
+$A^{\prime}$ correspond to the rows of $\left(  A^{\prime}\right)  ^{T}$, and
+similarly the columns of $B$ correspond to the rows of $B^{T}$).
 
 Hence, Exercise \ref{exe.ps4.6} \textbf{(i)} (applied to $A^{T}$, $\left(
 A^{\prime}\right)  ^{T}$ and $B^{T}$ instead of $A$, $A^{\prime}$ and $B$)
