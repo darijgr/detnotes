@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, May 26, 2016 02:59:02}
+%TCIDATA{LastRevised=Thursday, May 26, 2016 23:57:04}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -8225,8 +8225,13 @@ $\operatorname*{Inv}\left(  \sigma^{-1}\right)  \subseteq\operatorname*{Inv}%
 \tau$ holds if and only if $\ell\left(  \tau\right)  =\ell\left(  \tau
 \circ\sigma^{-1}\right)  +\ell\left(  \sigma\right)  $.
 
-\textbf{(d)} Assume that $\operatorname*{Inv}\sigma=\operatorname*{Inv}\tau$.
-Prove that $\sigma=\tau$.
+\textbf{(d)} Prove that if $\operatorname*{Inv}\sigma=\operatorname*{Inv}\tau
+$, then $\sigma=\tau$.
+
+\textbf{(e)} Prove that $\ell\left(  \sigma\circ\tau\right)  =\ell\left(
+\sigma\right)  +\ell\left(  \tau\right)  $ holds if and only if $\left(
+\operatorname*{Inv}\sigma\right)  \cap\left(  \operatorname*{Inv}\left(
+\tau^{-1}\right)  \right)  =\varnothing$.
 \end{addexercise}
 
 Additional exercise \ref{exeadd.perm.Inv.sub} \textbf{(d)} shows that if two
@@ -18729,8 +18734,8 @@ column of $A$ by the column vector $w$. Thus,%
 \end{align}
 whereas%
 \begin{equation}
-\left(  \text{the }q\text{-th column of }C\right)
-=w.\label{pf.prop.laplace.0.b.Cp}%
+\left(  \text{the }q\text{-th column of }C\right)  =w.
+\label{pf.prop.laplace.0.b.Cp}%
 \end{equation}
 The matrix $C$ has two equal columns\footnote{\textit{Proof.} We have $r\neq
 q$ (since $q\neq r$). Hence, (\ref{pf.prop.laplace.0.b.Cu}) (applied to $u=r$)
@@ -18738,7 +18743,7 @@ yields%
 \begin{align*}
 \left(  \text{the }r\text{-th column of }C\right)   &  =\left(  \text{the
 }r\text{-th column of }A\right)  =w\ \ \ \ \ \ \ \ \ \ \left(  \text{since
-}w=\left(  \text{the }r\text{-th column of }A\right)  \right)  \\
+}w=\left(  \text{the }r\text{-th column of }A\right)  \right) \\
 &  =\left(  \text{the }q\text{-th column of }C\right)
 \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{pf.prop.laplace.0.b.Cp})}\right)  .
 \end{align*}
@@ -33100,9 +33105,10 @@ holds if and only if $\ell\left(  \tau\right)  =\ell\left(  \tau\circ
 \sigma^{-1}\right)  +\ell\left(  \sigma\right)  $. This solves Additional
 exercise \ref{exeadd.perm.Inv.sub} \textbf{(c)}.
 
-\textbf{(d)} We WLOG assume that $\ell\left(  \sigma\right)  \geq\ell\left(
-\tau\right)  $ (since otherwise, we can simply switch $\sigma$ and $\tau$). We
-have $\operatorname*{Inv}\sigma\subseteq\operatorname*{Inv}\tau$ (since
+\textbf{(d)} Assume that $\operatorname*{Inv}\sigma=\operatorname*{Inv}\tau$.
+We WLOG assume that $\ell\left(  \sigma\right)  \geq\ell\left(  \tau\right)  $
+(since otherwise, we can simply switch $\sigma$ and $\tau$). We have
+$\operatorname*{Inv}\sigma\subseteq\operatorname*{Inv}\tau$ (since
 $\operatorname*{Inv}\sigma=\operatorname*{Inv}\tau$). But Additional exercise
 \ref{exeadd.perm.Inv.sub} \textbf{(c)} shows that $\operatorname*{Inv}%
 \sigma\subseteq\operatorname*{Inv}\tau$ holds if and only if $\ell\left(
@@ -33129,6 +33135,286 @@ to $\tau\circ\sigma^{-1}$ instead of $\sigma$) yields $\tau\circ\sigma
 that $\sigma=\tau\circ\underbrace{\sigma^{-1}\circ\sigma}_{=\operatorname*{id}%
 }=\tau\circ\operatorname*{id}=\tau$. This solves Additional exercise
 \ref{exeadd.perm.Inv.sub} \textbf{(d)}.
+
+\textbf{(e)} Let us first prove the logical implication%
+\begin{equation}
+\left(  \operatorname*{Inv}\tau\subseteq\operatorname*{Inv}\left(  \sigma
+\circ\tau\right)  \right)  \ \Longrightarrow\ \left(  \left(
+\operatorname*{Inv}\sigma\right)  \cap\left(  \operatorname*{Inv}\left(
+\tau^{-1}\right)  \right)  =\varnothing\right)  .
+\label{sol.exeadd.perm.Inv.sub.e.1}%
+\end{equation}
+
+
+\textit{Proof of (\ref{sol.exeadd.perm.Inv.sub.e.1}):} Assume that
+$\operatorname*{Inv}\tau\subseteq\operatorname*{Inv}\left(  \sigma\circ
+\tau\right)  $ holds. We will prove that $\left(  \operatorname*{Inv}%
+\sigma\right)  \cap\left(  \operatorname*{Inv}\left(  \tau^{-1}\right)
+\right)  =\varnothing$.
+
+Indeed, fix $c\in\left(  \operatorname*{Inv}\sigma\right)  \cap\left(
+\operatorname*{Inv}\left(  \tau^{-1}\right)  \right)  $. Thus, $c\in\left(
+\operatorname*{Inv}\sigma\right)  \cap\left(  \operatorname*{Inv}\left(
+\tau^{-1}\right)  \right)  \subseteq\operatorname*{Inv}\sigma$ and
+$c\in\left(  \operatorname*{Inv}\sigma\right)  \cap\left(  \operatorname*{Inv}%
+\left(  \tau^{-1}\right)  \right)  \subseteq\operatorname*{Inv}\left(
+\tau^{-1}\right)  $.
+
+We have $c\in\operatorname*{Inv}\sigma$. In other words, $c$ is an inversion
+of $\sigma$ (since $\operatorname*{Inv}\sigma$ is the set of all inversions of
+$\sigma$). In other words, $c$ is a pair $\left(  i,j\right)  $ of integers
+satisfying $1\leq i<j\leq n$ and $\sigma\left(  i\right)  >\sigma\left(
+j\right)  $ (by the definition of an \textquotedblleft inversion of $\sigma
+$\textquotedblright). In other words, there exists a pair $\left(  i,j\right)
+$ of integers satisfying $1\leq i<j\leq n$, $\sigma\left(  i\right)
+>\sigma\left(  j\right)  $ and $c=\left(  i,j\right)  $. Let us denote this
+pair $\left(  i,j\right)  $ by $\left(  u,v\right)  $. Thus, $\left(
+u,v\right)  $ is a pair of integers satisfying $1\leq u<v\leq n$,
+$\sigma\left(  u\right)  >\sigma\left(  v\right)  $ and $c=\left(  u,v\right)
+$. We have $v>u$ (since $u<v$). Thus, $\tau\left(  \tau^{-1}\left(  v\right)
+\right)  =v>u=\tau\left(  \tau^{-1}\left(  u\right)  \right)  $.
+
+We have $\left(  u,v\right)  =c\in\operatorname*{Inv}\left(  \tau^{-1}\right)
+$. In other words, $\left(  u,v\right)  $ is an inversion of $\tau^{-1}$
+(since $\operatorname*{Inv}\left(  \tau^{-1}\right)  $ is the set of all
+inversions of $\tau^{-1}$). In other words, $\left(  u,v\right)  $ is a pair
+$\left(  i,j\right)  $ of integers satisfying $1\leq i<j\leq n$ and $\tau
+^{-1}\left(  i\right)  >\tau^{-1}\left(  j\right)  $ (by the definition of an
+\textquotedblleft inversion of $\tau^{-1}$\textquotedblright). In other words,
+$\left(  u,v\right)  $ is a pair of integers satisfying $1\leq u<v\leq n$ and
+$\tau^{-1}\left(  u\right)  >\tau^{-1}\left(  v\right)  $. From $\tau
+^{-1}\left(  u\right)  >\tau^{-1}\left(  v\right)  $, we obtain $\tau
+^{-1}\left(  v\right)  <\tau^{-1}\left(  u\right)  $.
+
+We have $\tau^{-1}\left(  u\right)  \in\left\{  1,2,\ldots,n\right\}  $ (since
+$\tau\in S_{n}$), so that $\tau^{-1}\left(  u\right)  \leq n$. Also,
+$\tau^{-1}\left(  v\right)  \in\left\{  1,2,\ldots,n\right\}  $ (since
+$\tau\in S_{n}$) and thus $1\leq\tau^{-1}\left(  v\right)  $. Altogether, we
+thus know that $\left(  \tau^{-1}\left(  v\right)  ,\tau^{-1}\left(  u\right)
+\right)  $ is a pair of integers satisfying $1\leq\tau^{-1}\left(  v\right)
+<\tau^{-1}\left(  u\right)  \leq n$ and $\tau\left(  \tau^{-1}\left(
+v\right)  \right)  >\tau\left(  \tau^{-1}\left(  u\right)  \right)  $. In
+other words, $\left(  \tau^{-1}\left(  v\right)  ,\tau^{-1}\left(  u\right)
+\right)  $ is a pair $\left(  i,j\right)  $ of integers satisfying $1\leq
+i<j\leq n$ and $\tau\left(  i\right)  >\tau\left(  j\right)  $. In other
+words, $\left(  \tau^{-1}\left(  v\right)  ,\tau^{-1}\left(  u\right)
+\right)  $ is an inversion of $\tau$ (by the definition of an
+\textquotedblleft inversion of $\tau$\textquotedblright). In other words,
+$\left(  \tau^{-1}\left(  v\right)  ,\tau^{-1}\left(  u\right)  \right)
+\in\operatorname*{Inv}\tau$ (since $\operatorname*{Inv}\tau$ is the set of all
+inversions of $\tau$).
+
+Hence, $\left(  \tau^{-1}\left(  v\right)  ,\tau^{-1}\left(  u\right)
+\right)  \in\operatorname*{Inv}\tau\subseteq\operatorname*{Inv}\left(
+\sigma\circ\tau\right)  $. In other words, $\left(  \tau^{-1}\left(  v\right)
+,\tau^{-1}\left(  u\right)  \right)  $ is an inversion of $\sigma\circ\tau$
+(since $\operatorname*{Inv}\left(  \sigma\circ\tau\right)  $ is the set of all
+inversions of $\sigma\circ\tau$). In other words, $\left(  \tau^{-1}\left(
+v\right)  ,\tau^{-1}\left(  u\right)  \right)  $ is a pair $\left(
+i,j\right)  $ of integers satisfying $1\leq i<j\leq n$ and $\left(
+\sigma\circ\tau\right)  \left(  i\right)  >\left(  \sigma\circ\tau\right)
+\left(  j\right)  $ (by the definition of an \textquotedblleft inversion of
+$\sigma\circ\tau$\textquotedblright). In other words, $\left(  \tau
+^{-1}\left(  v\right)  ,\tau^{-1}\left(  u\right)  \right)  $ is a pair of
+integers satisfying $1\leq\tau^{-1}\left(  v\right)  <\tau^{-1}\left(
+u\right)  \leq n$ and $\left(  \sigma\circ\tau\right)  \left(  \tau
+^{-1}\left(  v\right)  \right)  >\left(  \sigma\circ\tau\right)  \left(
+\tau^{-1}\left(  u\right)  \right)  $.
+
+In particular, we have $\left(  \sigma\circ\tau\right)  \left(  \tau
+^{-1}\left(  v\right)  \right)  >\left(  \sigma\circ\tau\right)  \left(
+\tau^{-1}\left(  u\right)  \right)  $. This rewrites as $\sigma\left(
+v\right)  >\sigma\left(  u\right)  $ (since $\left(  \sigma\circ\tau\right)
+\left(  \tau^{-1}\left(  v\right)  \right)  =\left(  \sigma\circ
+\underbrace{\tau\circ\tau^{-1}}_{=\operatorname*{id}}\right)  \left(
+v\right)  =\sigma\left(  v\right)  $ and $\left(  \sigma\circ\tau\right)
+\left(  \tau^{-1}\left(  u\right)  \right)  =\left(  \sigma\circ
+\underbrace{\tau\circ\tau^{-1}}_{=\operatorname*{id}}\right)  \left(
+u\right)  =\sigma\left(  u\right)  $). But this contradicts $\sigma\left(
+u\right)  >\sigma\left(  v\right)  $.
+
+Now, forget that we fixed $c$. We thus have found a contradiction for each
+$c\in\left(  \operatorname*{Inv}\sigma\right)  \cap\left(  \operatorname*{Inv}%
+\left(  \tau^{-1}\right)  \right)  $. Hence, there exists no $c\in\left(
+\operatorname*{Inv}\sigma\right)  \cap\left(  \operatorname*{Inv}\left(
+\tau^{-1}\right)  \right)  $. In other words, $\left(  \operatorname*{Inv}%
+\sigma\right)  \cap\left(  \operatorname*{Inv}\left(  \tau^{-1}\right)
+\right)  $ is the empty set. In other words, $\left(  \operatorname*{Inv}%
+\sigma\right)  \cap\left(  \operatorname*{Inv}\left(  \tau^{-1}\right)
+\right)  =\varnothing$.
+
+Now, forget our assumption that $\operatorname*{Inv}\tau\subseteq
+\operatorname*{Inv}\left(  \sigma\circ\tau\right)  $. We thus have proven that
+if $\operatorname*{Inv}\tau\subseteq\operatorname*{Inv}\left(  \sigma\circ
+\tau\right)  $, then $\left(  \operatorname*{Inv}\sigma\right)  \cap\left(
+\operatorname*{Inv}\left(  \tau^{-1}\right)  \right)  =\varnothing$. In other
+words, we have proven the implication (\ref{sol.exeadd.perm.Inv.sub.e.1}).
+
+Next, we shall prove the logical implication%
+\begin{equation}
+\left(  \left(  \operatorname*{Inv}\sigma\right)  \cap\left(
+\operatorname*{Inv}\left(  \tau^{-1}\right)  \right)  =\varnothing\right)
+\ \Longrightarrow\ \left(  \operatorname*{Inv}\tau\subseteq\operatorname*{Inv}%
+\left(  \sigma\circ\tau\right)  \right)  . \label{sol.exeadd.perm.Inv.sub.e.2}%
+\end{equation}
+
+
+\textit{Proof of (\ref{sol.exeadd.perm.Inv.sub.e.2}):} Assume that $\left(
+\operatorname*{Inv}\sigma\right)  \cap\left(  \operatorname*{Inv}\left(
+\tau^{-1}\right)  \right)  =\varnothing$ holds. We will prove that
+$\operatorname*{Inv}\tau\subseteq\operatorname*{Inv}\left(  \sigma\circ
+\tau\right)  $.
+
+Indeed, let $c\in\left(  \operatorname*{Inv}\tau\right)  \setminus\left(
+\operatorname*{Inv}\left(  \sigma\circ\tau\right)  \right)  $. We shall prove
+a contradiction.
+
+We have $c\in\left(  \operatorname*{Inv}\tau\right)  \setminus\left(
+\operatorname*{Inv}\left(  \sigma\circ\tau\right)  \right)  \subseteq
+\operatorname*{Inv}\tau$. In other words, $c$ is an inversion of $\tau$ (since
+$\operatorname*{Inv}\tau$ is the set of all inversions of $\tau$). In other
+words, $c$ is a pair $\left(  i,j\right)  $ of integers satisfying $1\leq
+i<j\leq n$ and $\tau\left(  i\right)  >\tau\left(  j\right)  $ (by the
+definition of an \textquotedblleft inversion of $\tau$\textquotedblright). In
+other words, there exists a pair $\left(  i,j\right)  $ of integers satisfying
+$1\leq i<j\leq n$, $\tau\left(  i\right)  >\tau\left(  j\right)  $ and
+$c=\left(  i,j\right)  $. Let us denote this pair $\left(  i,j\right)  $ by
+$\left(  u,v\right)  $. Thus, $\left(  u,v\right)  $ is a pair of integers
+satisfying $1\leq u<v\leq n$, $\tau\left(  u\right)  >\tau\left(  v\right)  $
+and $c=\left(  u,v\right)  $. We have $v>u$ (since $u<v$) and $\tau\left(
+v\right)  <\tau\left(  u\right)  $ (since $\tau\left(  u\right)  >\tau\left(
+v\right)  $).
+
+From $\tau\in S_{n}$, we obtain $\tau\left(  v\right)  \in\left\{
+1,2,\ldots,n\right\}  $ and thus $1\leq\tau\left(  v\right)  $. From $\tau\in
+S_{n}$, we obtain $\tau\left(  u\right)  \in\left\{  1,2,\ldots,n\right\}  $
+and thus $\tau\left(  u\right)  \leq n$. Also, $\tau^{-1}\left(  \tau\left(
+v\right)  \right)  =v>u=\tau^{-1}\left(  \tau\left(  u\right)  \right)  $.
+Altogether, we thus know that $\left(  \tau\left(  v\right)  ,\tau\left(
+u\right)  \right)  $ is a pair of integers satisfying $1\leq\tau\left(
+v\right)  <\tau\left(  u\right)  \leq n$ and $\tau^{-1}\left(  \tau\left(
+v\right)  \right)  >\tau^{-1}\left(  \tau\left(  u\right)  \right)  $. In
+other words, $\left(  \tau\left(  v\right)  ,\tau\left(  u\right)  \right)  $
+is a pair $\left(  i,j\right)  $ of integers satisfying $1\leq i<j\leq n$ and
+$\tau^{-1}\left(  i\right)  >\tau^{-1}\left(  j\right)  $. In other words,
+$\left(  \tau\left(  v\right)  ,\tau\left(  u\right)  \right)  $ is an
+inversion of $\tau^{-1}$ (by the definition of an \textquotedblleft inversion
+of $\tau^{-1}$\textquotedblright). In other words, $\left(  \tau\left(
+v\right)  ,\tau\left(  u\right)  \right)  \in\operatorname*{Inv}\left(
+\tau^{-1}\right)  $ (since $\operatorname*{Inv}\left(  \tau^{-1}\right)  $ is
+the set of all inversions of $\tau^{-1}$).
+
+On the other hand, $\left(  u,v\right)  =c\in\left(  \operatorname*{Inv}%
+\tau\right)  \setminus\left(  \operatorname*{Inv}\left(  \sigma\circ
+\tau\right)  \right)  $, so that $\left(  u,v\right)  \notin%
+\operatorname*{Inv}\left(  \sigma\circ\tau\right)  $. From this, it is easy to
+obtain that $\left(  \sigma\circ\tau\right)  \left(  u\right)  \leq\left(
+\sigma\circ\tau\right)  \left(  v\right)  $\ \ \ \ \footnote{\textit{Proof.}
+Assume the contrary. Thus, we don't have $\left(  \sigma\circ\tau\right)
+\left(  u\right)  \leq\left(  \sigma\circ\tau\right)  \left(  v\right)  $.
+Hence, we have $\left(  \sigma\circ\tau\right)  \left(  u\right)  >\left(
+\sigma\circ\tau\right)  \left(  v\right)  $. Thus, $\left(  u,v\right)  $ is a
+pair of integers satisfying $1\leq u<v\leq n$ and $\left(  \sigma\circ
+\tau\right)  \left(  u\right)  >\left(  \sigma\circ\tau\right)  \left(
+v\right)  $. In other words, $\left(  u,v\right)  $ is a pair $\left(
+i,j\right)  $ of integers satisfying $1\leq i<j\leq n$ and $\left(
+\sigma\circ\tau\right)  \left(  i\right)  >\left(  \sigma\circ\tau\right)
+\left(  j\right)  $. In other words, $\left(  u,v\right)  $ is an inversion of
+$\sigma\circ\tau$ (by the definition of an \textquotedblleft inversion of
+$\sigma\circ\tau$\textquotedblright). In other words, $\left(  u,v\right)
+\in\operatorname*{Inv}\left(  \sigma\circ\tau\right)  $ (since
+$\operatorname*{Inv}\left(  \sigma\circ\tau\right)  $ is the set of all
+inversions of $\sigma\circ\tau$). This contradicts $\left(  u,v\right)
+\notin\operatorname*{Inv}\left(  \sigma\circ\tau\right)  $. This contradiction
+proves that our assumption was wrong, qed.}. But the map $\sigma\circ\tau$ is
+injective\footnote{\textit{Proof.} We have $\sigma\circ\tau\in S_{n}$. Hence,
+$\sigma\circ\tau$ is a permutation of $\left\{  1,2,\ldots,n\right\}  $ (since
+$S_{n}$ is the set of all permutations of $\left\{  1,2,\ldots,n\right\}  $).
+Thus, $\sigma\circ\tau$ is a bijective map. So the map $\sigma\circ\tau$ is
+bijective, and therefore injective. Qed.}. But $u<v$ and therefore $u\neq v$.
+Hence, $\left(  \sigma\circ\tau\right)  \left(  u\right)  \neq\left(
+\sigma\circ\tau\right)  \left(  v\right)  $ (since the map $\sigma\circ\tau$
+is injective). Combining this with $\left(  \sigma\circ\tau\right)  \left(
+u\right)  \leq\left(  \sigma\circ\tau\right)  \left(  v\right)  $, we obtain
+$\left(  \sigma\circ\tau\right)  \left(  u\right)  <\left(  \sigma\circ
+\tau\right)  \left(  v\right)  $. Hence, $\sigma\left(  \tau\left(  u\right)
+\right)  =\left(  \sigma\circ\tau\right)  \left(  u\right)  <\left(
+\sigma\circ\tau\right)  \left(  v\right)  =\sigma\left(  \tau\left(  v\right)
+\right)  $. In other words, $\sigma\left(  \tau\left(  v\right)  \right)
+>\sigma\left(  \tau\left(  u\right)  \right)  $.
+
+Now, we know that $\left(  \tau\left(  v\right)  ,\tau\left(  u\right)
+\right)  $ is a pair of integers satisfying $1\leq\tau\left(  v\right)
+<\tau\left(  u\right)  \leq n$ and $\sigma\left(  \tau\left(  v\right)
+\right)  >\sigma\left(  \tau\left(  u\right)  \right)  $. In other words,
+$\left(  \tau\left(  v\right)  ,\tau\left(  u\right)  \right)  $ is a pair
+$\left(  i,j\right)  $ of integers satisfying $1\leq i<j\leq n$ and
+$\sigma\left(  i\right)  >\sigma\left(  j\right)  $. In other words, $\left(
+\tau\left(  v\right)  ,\tau\left(  u\right)  \right)  $ is an inversion of
+$\sigma$ (by the definition of an \textquotedblleft inversion of $\sigma
+$\textquotedblright). In other words, $\left(  \tau\left(  v\right)
+,\tau\left(  u\right)  \right)  \in\operatorname*{Inv}\sigma$ (since
+$\operatorname*{Inv}\sigma$ is the set of all inversions of $\sigma$).
+Combining this with $\left(  \tau\left(  v\right)  ,\tau\left(  u\right)
+\right)  \in\operatorname*{Inv}\left(  \tau^{-1}\right)  $, we obtain $\left(
+\tau\left(  v\right)  ,\tau\left(  u\right)  \right)  \in\left(
+\operatorname*{Inv}\sigma\right)  \cap\left(  \operatorname*{Inv}\left(
+\tau^{-1}\right)  \right)  =\varnothing$. Thus, the set $\varnothing$ has at
+least one element (namely, the element $\left(  \tau\left(  v\right)
+,\tau\left(  u\right)  \right)  $). This contradicts the fact that the set
+$\varnothing$ has no elements.
+
+Now, forget that we fixed $c$. We thus have derived a contradiction for each
+$c\in\left(  \operatorname*{Inv}\tau\right)  \setminus\left(
+\operatorname*{Inv}\left(  \sigma\circ\tau\right)  \right)  $. Hence, there
+exists no $c\in\left(  \operatorname*{Inv}\tau\right)  \setminus\left(
+\operatorname*{Inv}\left(  \sigma\circ\tau\right)  \right)  $. In other words,
+$\left(  \operatorname*{Inv}\tau\right)  \setminus\left(  \operatorname*{Inv}%
+\left(  \sigma\circ\tau\right)  \right)  $ is the empty set. In other words,
+$\operatorname*{Inv}\tau\subseteq\operatorname*{Inv}\left(  \sigma\circ
+\tau\right)  $.
+
+Now, forget our assumption that $\left(  \operatorname*{Inv}\sigma\right)
+\cap\left(  \operatorname*{Inv}\left(  \tau^{-1}\right)  \right)
+=\varnothing$. We thus have proven that if $\left(  \operatorname*{Inv}%
+\sigma\right)  \cap\left(  \operatorname*{Inv}\left(  \tau^{-1}\right)
+\right)  =\varnothing$, then $\operatorname*{Inv}\tau\subseteq
+\operatorname*{Inv}\left(  \sigma\circ\tau\right)  $. In other words, we have
+proven the implication (\ref{sol.exeadd.perm.Inv.sub.e.2}).
+
+Combining the two implications (\ref{sol.exeadd.perm.Inv.sub.e.1}) and
+(\ref{sol.exeadd.perm.Inv.sub.e.2}), we obtain the logical equivalence%
+\[
+\left(  \operatorname*{Inv}\tau\subseteq\operatorname*{Inv}\left(  \sigma
+\circ\tau\right)  \right)  \ \Longleftrightarrow\ \left(  \left(
+\operatorname*{Inv}\sigma\right)  \cap\left(  \operatorname*{Inv}\left(
+\tau^{-1}\right)  \right)  =\varnothing\right)  .
+\]
+On the other hand, Additional exercise \ref{exeadd.perm.Inv.sub} \textbf{(a)}
+yields that we have the logical equivalence%
+\[
+\left(  \ell\left(  \sigma\circ\tau\right)  =\ell\left(  \sigma\right)
++\ell\left(  \tau\right)  \right)  \ \Longleftrightarrow\ \left(
+\operatorname*{Inv}\tau\subseteq\operatorname*{Inv}\left(  \sigma\circ
+\tau\right)  \right)  .
+\]
+Hence, we have the following chain of logical equivalences:%
+\begin{align*}
+\left(  \ell\left(  \sigma\circ\tau\right)  =\ell\left(  \sigma\right)
++\ell\left(  \tau\right)  \right)  \   & \Longleftrightarrow\ \left(
+\operatorname*{Inv}\tau\subseteq\operatorname*{Inv}\left(  \sigma\circ
+\tau\right)  \right)  \\
+\   & \Longleftrightarrow\ \left(  \left(  \operatorname*{Inv}\sigma\right)
+\cap\left(  \operatorname*{Inv}\left(  \tau^{-1}\right)  \right)
+=\varnothing\right)  .
+\end{align*}
+
+
+In other words, $\ell\left(  \sigma\circ\tau\right)  =\ell\left(
+\sigma\right)  +\ell\left(  \tau\right)  $ holds if and only if $\left(
+\operatorname*{Inv}\sigma\right)  \cap\left(  \operatorname*{Inv}\left(
+\tau^{-1}\right)  \right)  =\varnothing$. This solves Additional exercise
+\ref{exeadd.perm.Inv.sub} \textbf{(e)}.
 \end{proof}
 
 \subsection{Solution to Exercise \ref{exe.ps4.3}}
