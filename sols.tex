@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, May 27, 2016 00:42:19}
+%TCIDATA{LastRevised=Friday, May 27, 2016 19:09:11}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -15703,7 +15703,7 @@ $\sum_{q=1}^{3}a_{2,q}\det\left(  B_{2,q}\right)  $).
 However, we can slightly modify our formula, sacrificing the cyclic symmetry
 but making it generalize. Namely, let us rewrite $a_{1,3}a_{3,2}%
 -a_{1,2}a_{3,3}$ as $-\left(  a_{1,2}a_{3,3}-a_{1,3}a_{3,2}\right)  $ and
-$a_{1,2}a_{3,1}-a_{1,1}a_{3,2}$ as $\left(  a_{1,1}a_{3,2}-a_{1,2}%
+$a_{1,2}a_{3,1}-a_{1,1}a_{3,2}$ as $-\left(  a_{1,1}a_{3,2}-a_{1,2}%
 a_{3,1}\right)  $; we thus obtain
 \begin{align}
 &  \det A\nonumber\\
@@ -15752,9 +15752,9 @@ a_{3,1} & a_{3,3}%
 a_{1,1} & a_{1,2}\\
 a_{3,1} & a_{3,2}%
 \end{array}
-\right) \nonumber\\
-&  =\sum_{q=1}^{3}\left(  -1\right)  ^{q}a_{2,q}\det\left(  C_{2,q}\right)  ,
-\label{eq.exa.laplace.3x3.3}%
+\right)  \nonumber\\
+&  =\sum_{q=1}^{3}\left(  -1\right)  ^{q}a_{2,q}\det\left(  C_{2,q}\right)
+,\label{eq.exa.laplace.3x3.3}%
 \end{align}
 where $C_{2,q}$ means the matrix obtained from $A$ by crossing out the $2$-nd
 row and the $q$-th column. This formula (unlike (\ref{eq.exa.laplace.3x3.2}))
@@ -23603,10 +23603,11 @@ Grinberg, Tom Roby, \textit{\textit{Iterative properties of birational
 rowmotion}}, \href{http://arxiv.org/abs/1402.6178v6}{arXiv:1402.6178v6}.
 
 More precisely, Theorem \ref{thm.pluecker.plu} is exactly Proposition 14.4 in
-[GriRob14] (applied to $n=u$ and $w_{i}=B_{\bullet,i}$). Conversely,
-Proposition 14.4 in [GriRob14] is precisely Theorem \ref{thm.pluecker.plu}
-(applied to $u=n$ and $B=\left(  w_{1}\mid w_{2}\mid\cdots\mid w_{u+1}\right)
-$, where we are using the notations of [GriRob14]).
+the detailed version of [GriRob14] (applied to $u=n$ and $w_{i}=B_{\bullet,i}%
+$). Conversely, Proposition 14.4 in the detailed version of [GriRob14] is
+precisely Theorem \ref{thm.pluecker.plu} (applied to $n=u$ and $B=\left(
+w_{1}\mid w_{2}\mid\cdots\mid w_{u+1}\right)  $, where we are using the
+notations of [GriRob14]).
 \end{remark}
 \end{verlong}
 
@@ -40284,7 +40285,8 @@ We have $1\leq i\leq j$. Thus, $0\leq i-1\leq j-1$. Now,
 \sum_{k=1}^{n+1}u_{i,k}s_{k,j}  &  =\sum_{k=1}^{j}u_{i,k}=\underbrace{\sum
 _{k=1}^{i}u_{i,k}}_{\substack{=\sum_{k=1}^{i-1}u_{i,k}+u_{i,i}\\\text{(here,
 we have split off the}\\\text{addend for }k=i\text{ from the sum)}}%
-}+\sum_{k=i+1}^{j}u_{i,k}\\
+}+\sum_{k=i+1}^{j}u_{i,k}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }1\leq i\leq
+j\right) \\
 &  =\sum_{k=1}^{i-1}\underbrace{u_{i,k}}_{\substack{=a_{k}\\\text{(by the
 definition of }u_{i,k}\text{,}\\\text{since }k<i\text{)}}}+\underbrace{u_{i,i}%
 }_{\substack{=x\\\text{(by the definition of }u_{i,i}\text{,}\\\text{since
@@ -40739,7 +40741,8 @@ We have $1\leq i\leq j$. Thus, $0\leq i-1\leq j-1$. Now,
 \sum_{k=1}^{n+1}u_{i,k}s_{k,j}  &  =\sum_{k=1}^{j}u_{i,k}=\underbrace{\sum
 _{k=1}^{i}u_{i,k}}_{\substack{=\sum_{k=1}^{i-1}u_{i,k}+u_{i,i}\\\text{(here,
 we have split off the}\\\text{addend for }k=i\text{ from the sum)}}%
-}+\sum_{k=i+1}^{j}u_{i,k}\\
+}+\sum_{k=i+1}^{j}u_{i,k}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }1\leq i\leq
+j\right) \\
 &  =\sum_{k=1}^{i-1}\underbrace{u_{i,k}}_{\substack{=%
 \begin{cases}
 a_{k}, & \text{if }k<i;\\
@@ -47212,8 +47215,8 @@ j\right)  $ be the integer $%
 j, & \text{if }j<r;\\
 j+1, & \text{if }j\geq r
 \end{cases}
-$. For any two objects $i$ and $j$, we define an integer $\delta_{i,j}$ by
-$\delta_{i,j}=%
+$. For any two objects $i$ and $j$, we define an element $\delta_{i,j}%
+\in\mathbb{K}$ by $\delta_{i,j}=%
 \begin{cases}
 1, & \text{if }i=j;\\
 0, & \text{if }i\neq j
@@ -48838,8 +48841,8 @@ well-defined (since $u\in\left\{  1,2,\ldots,n\right\}  $), and therefore the
 column vector $\left(  \left(  I_{n}\right)  _{\bullet,u}\right)  _{\sim
 v,\bullet}\in\mathbb{K}^{\left(  n-1\right)  \times1}$ is well-defined.
 
-For any two objects $i$ and $j$, we define an integer $\delta_{i,j}$ by
-$\delta_{i,j}=%
+For any two objects $i$ and $j$, we define an element $\delta_{i,j}%
+\in\mathbb{K}$ by $\delta_{i,j}=%
 \begin{cases}
 1, & \text{if }i=j;\\
 0, & \text{if }i\neq j
@@ -49447,7 +49450,8 @@ i,\bullet}\right)
 Proposition \ref{prop.addcol.props2} \textbf{(a)}.
 
 \textbf{(b)} Let $p\in\left\{  1,2,\ldots,n\right\}  $. For any two objects
-$i$ and $j$, we define an integer $\delta_{i,j}$ by $\delta_{i,j}=%
+$i$ and $j$, we define an element $\delta_{i,j}\in\mathbb{K}$ by $\delta
+_{i,j}=%
 \begin{cases}
 1, & \text{if }i=j;\\
 0, & \text{if }i\neq j
@@ -50658,7 +50662,8 @@ i,\bullet}\right)
 Proposition \ref{prop.addcol.props2} \textbf{(a)}.
 
 \textbf{(b)} Let $p\in\left\{  1,2,\ldots,n\right\}  $. For any two objects
-$i$ and $j$, we define an integer $\delta_{i,j}$ by $\delta_{i,j}=%
+$i$ and $j$, we define an element $\delta_{i,j}\in\mathbb{K}$ by $\delta
+_{i,j}=%
 \begin{cases}
 1, & \text{if }i=j;\\
 0, & \text{if }i\neq j
@@ -52011,7 +52016,7 @@ _{\sim u,\sim v}$ has a row consisting of zeroes\footnote{or, what also
 suffices, a column consisting of zeroes}). The proof we will now give is not
 the simplest one, but the shortest one (using what we have proven so far):
 
-For any two objects $i$ and $j$, define an integer $\delta_{i,j}\in\mathbb{K}$
+For any two objects $i$ and $j$, define an element $\delta_{i,j}\in\mathbb{K}$
 by $\delta_{i,j}=%
 \begin{cases}
 1, & \text{if }i=j;\\
