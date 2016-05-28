@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, May 27, 2016 23:09:53}
+%TCIDATA{LastRevised=Friday, May 27, 2016 23:27:49}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -2840,13 +2840,35 @@ call this \textquotedblleft unordered samples without
 replacement\textquotedblright.)
 
 \begin{remark}
-\textbf{Caution:} Proposition \ref{prop.binom.subsets} does not hold for
-negative $m$ ! Indeed, when $m\in\mathbb{Z}$ is negative, then $\dbinom{m}{n}$
-is positive for $n$ even and negative for $n$ odd (easy exercise), and so an
+\textbf{Caution:} Proposition \ref{prop.binom.subsets} says nothing about
+binomial coefficients $\dbinom{m}{n}$ with negative $m$. Indeed, there are no
+$m$-element sets $S$ when $m$ is negative; thus, Proposition
+\ref{prop.binom.subsets} would be vacuously true\footnotemark\ when $m$ is
+negative, but this would not help us computing binomial coefficients
+$\dbinom{m}{n}$ with negative $m$.
+
+Actually, when $m\in\mathbb{Z}$ is negative, the number $\dbinom{m}{n}$ is
+positive for $n$ even and negative for $n$ odd (easy exercise), and so an
 interpretation of $\dbinom{m}{n}$ as a number of ways to do something is
 rather unlikely. (On the other hand, $\left(  -1\right)  ^{n}\dbinom{m}{n}$
 does have such an interpretation.)
 \end{remark}
+
+\footnotetext{A mathematical statement of the form \textquotedblleft if
+$\mathcal{A}$, then $\mathcal{B}$\textquotedblright\ is said to be
+\textit{vacuously true} if $\mathcal{A}$ never holds. For example, the
+statement \textquotedblleft if $0=1$, then every integer is
+odd\textquotedblright\ is vacuously true, because $0=1$ is false. Proposition
+\ref{prop.binom.subsets} is vacuously true when $m$ is negative, because the
+condition \textquotedblleft$S$ is an $m$-element set\textquotedblright\ never
+holds when $m$ is negative.
+\par
+By the laws of logic, a vacuously true statement is always true! This may
+sound counterintuitive, but really makes a lot of sense: A statement
+\textquotedblleft if $\mathcal{A}$, then $\mathcal{B}$\textquotedblright\ only
+says anything about situations where $\mathcal{A}$ holds. If $\mathcal{A}$
+never holds, then it therefore says nothing. And saying nothing is a safe way
+to remain truthful.}
 
 \subsubsection{Upper negation}
 
