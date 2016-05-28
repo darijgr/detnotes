@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, May 28, 2016 01:32:45}
+%TCIDATA{LastRevised=Saturday, May 28, 2016 01:41:00}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -2412,177 +2412,6 @@ finite $n$) can be found in \cite[Chapter III, \S 5]{Hungerford-03} and in
 reading right: The analysis textbook \cite{AmaEsc05} is one of the few sources
 I am aware of to define the (algebraic!) notion of polynomials precisely and
 well.}.
-
-\section{\label{chp.quivers}On acyclic quivers and mutations}
-
-\begin{remark}
-Chapter \ref{chp.quivers} is rough and will probably be rewritten at some
-point (as well as moved to a more appropriate place somewhere near the end of
-the notes). Since the rest of these notes does not depend on this chapter, I
-recommend to \textbf{skip it} when reading the notes.
-\end{remark}
-
-In this chapter, we will use the following notations (which come from
-\cite[\S 2.1.1]{Lampe}):
-
-\begin{itemize}
-\item A \textit{quiver} means a tuple $Q=\left(  Q_{0},Q_{1},s,t\right)  $,
-where $Q_{0}$ and $Q_{1}$ are two finite sets and where $s$ and $t$ are two
-maps from $Q_{1}$ to $Q_{0}$. We call the elements of $Q_{0}$ the
-\textit{vertices} of the quiver $Q$, and we call the elements of $Q_{1}$ the
-\textit{arrows} of the quiver $Q$. For every $e\in Q_{1}$, we call $s\left(
-e\right)  $ the \textit{starting point} of $e$ (and we say that $e$
-\textit{starts at }$s\left(  e\right)  $), and we call $t\left(  e\right)  $
-the \textit{terminal point} of $e$ (and we say that $e$ \textit{ends at}
-$t\left(  e\right)  $). Furthermore, if $e\in Q_{1}$, then we say that $e$ is
-an \textit{arrow from }$s\left(  e\right)  $ \textit{to }$t\left(  e\right)  $.
-
-So the notion of a quiver is one of many different versions of the notion of a
-finite directed graph. (Notice that it is a version which allows multiple
-arrows, and which distinguishes between them -- i.e., the quiver stores not
-just the information of how many arrows there are from a vertex to another,
-but it actually has them all as distinguishable objects in $Q_{1}$. Lampe
-himself seems to later tacitly switch to a different notion of quivers, where
-edges from a given to vertex to another are indistinguishable and only exist
-as a number. This does not matter for the next exercise, which works just as
-well with either notion of a quiver; but I just wanted to have it mentioned.
-
-\item The \textit{underlying undirected graph} of a quiver $Q=\left(
-Q_{0},Q_{1},s,t\right)  $ is defined as the undirected multigraph with vertex
-set $Q_{0}$ and edge multiset%
-\[
-\left\{  \left\{  s\left(  e\right)  ,t\left(  e\right)  \right\}
-\ \mid\ e\in Q_{1}\right\}  _{\operatorname*{multiset}}.
-\]
-(\textquotedblleft Multigraph\textquotedblright\ means that multiple edges are
-allowed, but we do not make them distinguishable.)
-
-\item A quiver $Q=\left(  Q_{0},Q_{1},s,t\right)  $ is said to be
-\textit{acyclic} if there is no sequence \newline$\left(  a_{0},a_{1}%
-,\ldots,a_{n}\right)  $ of elements of $Q_{0}$ such that $n>0$ and
-$a_{0}=a_{n}$ and such that $Q$ has an arrow from $a_{i}$ to $a_{i+1}$ for
-every $i\in\left\{  0,1,\ldots,n-1\right\}  $. (This is equivalent to
-\cite[Definition 2.1.7]{Lampe}.) Notice that this does not mean that the
-\textit{undirected} version of $Q$ has no cycles.
-
-\item Let $Q=\left(  Q_{0},Q_{1},s,t\right)  $. Then, a \textit{sink} of $Q$
-means a vertex $v\in Q_{0}$ such that no $e\in Q_{1}$ starts at $v$ (in other
-words, no arrow of $Q$ starts at $v$). A \textit{source} of $Q$ means a vertex
-$v\in Q_{0}$ such that no $e\in Q_{1}$ ends at $v$ (in other words, no arrow
-of $Q$ ends at $v$).
-
-\item Let $Q=\left(  Q_{0},Q_{1},s,t\right)  $. If $i\in Q_{0}$ is a sink of
-$Q$, then the \textit{mutation} $\mu_{i}\left(  Q\right)  $ of $Q$ at $i$ is
-the quiver obtained from $Q$ simply by turning\footnote{To \textit{turn} an
-arrow $e$ means to reverse its direction, i.e., to switch the values of
-$s\left(  e\right)  $ and $t\left(  e\right)  $. We model this as a change to
-the functions $s$ and $t$, not as a change to the arrow itself.} all arrows
-ending at $i$. (To be really pedantic: We define $\mu_{i}\left(  Q\right)  $
-as the quiver $\left(  Q_{0},Q_{1},s^{\prime},t^{\prime}\right)  $, where%
-\begin{align*}
-s^{\prime}\left(  e\right)   &  =\left\{
-\begin{array}
-[c]{c}%
-t\left(  e\right)  ,\ \ \ \ \ \ \ \ \ \ \text{if }t\left(  e\right)  =i;\\
-s\left(  e\right)  ,\ \ \ \ \ \ \ \ \ \ \text{if }t\left(  e\right)  \neq i
-\end{array}
-\right.  \ \ \ \ \ \ \ \ \ \ \text{for each }e\in Q_{1}\\
-\text{and}\ \ \ \ \ \ \ \ \ \ t^{\prime}\left(  e\right)   &  =\left\{
-\begin{array}
-[c]{c}%
-s\left(  e\right)  ,\ \ \ \ \ \ \ \ \ \ \text{if }t\left(  e\right)  =i;\\
-t\left(  e\right)  ,\ \ \ \ \ \ \ \ \ \ \text{if }t\left(  e\right)  \neq i
-\end{array}
-\right.  \ \ \ \ \ \ \ \ \ \ \text{for each }e\in Q_{1}.
-\end{align*}
-) If $i\in Q_{0}$ is a source of $Q$, then the \textit{mutation} $\mu
-_{i}\left(  Q\right)  $ of $Q$ at $i$ is the quiver obtained from $Q$ by
-turning all arrows starting at $i$. (Notice that if $i$ is both a source and a
-sink of $Q$, then these two definitions give the same result; namely, $\mu
-_{i}\left(  Q\right)  =Q$ in this case.)
-
-If $Q$ is an acyclic quiver, then $\mu_{i}\left(  Q\right)  $ is acyclic as
-well (whenever $i\in Q_{0}$ is a sink or a source of $Q$).
-
-We use the word \textquotedblleft mutation\textquotedblright\ not only for the
-quiver $\mu_{i}\left(  Q\right)  $, but also for the operation that transforms
-$Q$ into $\mu_{i}\left(  Q\right)  $. (We have defined this operation only if
-$i$ is a sink or a source of $Q$. It can be viewed as a particular case of the
-more general definition of mutation given in \cite[Definition 2.2.1]{Lampe},
-at least if one gives up the ability to distinguish different arrows from one
-vertex to another.)
-\end{itemize}
-
-\Needspace{15\baselineskip}
-
-\begin{exercise}
-\label{exe.ps1.1.1}Let $Q=\left(  Q_{0},Q_{1},s,t\right)  $ be an acyclic quiver.
-
-\textbf{(a)} Let $A$ and $B$ be two subsets of $Q_{0}$ such that $A\cap
-B=\varnothing$ and $A\cup B=Q_{0}$. Assume that there exists no arrow of $Q$
-that starts at a vertex in $B$ and ends at a vertex in $A$. Then, by turning
-all arrows of $Q$ which start at a vertex in $A$ and end at a vertex in $B$,
-we obtain a new acyclic quiver $\operatorname*{mut}\nolimits_{A,B}Q$.
-
-(When we say \textquotedblleft turning all arrows of $Q$ which start at a
-vertex in $A$ and end at a vertex in $B$\textquotedblright, we mean
-\textquotedblleft turning all arrows $e$ of $Q$ which satisfy $s\left(
-e\right)  \in A$ and $t\left(  e\right)  \in B$\textquotedblright. We do
-\textbf{not} mean that we fix a vertex $a$ in $A$ and a vertex $b$ in $B$, and
-only turn the arrows from $a$ to $b$.)
-
-For example, if $Q=%
-%TCIMACRO{\TeXButton{x}{\xymatrix{
-%3 \ar[r] & 4 \\
-%1 \ar[u] \ar[ru] \ar[r] & 2 \ar[u]
-%}}}%
-%BeginExpansion
-\xymatrix{
-3 \ar[r] & 4 \\
-1 \ar[u] \ar[ru] \ar[r] & 2 \ar[u]
-}%
-%EndExpansion
-$ and $A=\left\{  1,3\right\}  $ and $B=\left\{  2,4\right\}  $, then
-\newline$\operatorname*{mut}\nolimits_{A,B}Q=%
-%TCIMACRO{\TeXButton{x}{\xymatrix{
-%3 & 4 \ar[l] \ar[ld] \\
-%1 \ar[u] & 2 \ar[u] \ar[l]
-%}}}%
-%BeginExpansion
-\xymatrix{
-3 & 4 \ar[l] \ar[ld] \\
-1 \ar[u] & 2 \ar[u] \ar[l]
-}%
-%EndExpansion
-$.
-
-Prove that $\operatorname*{mut}\nolimits_{A,B}Q$ can be obtained from $Q$ by a
-sequence of mutations at sinks. (More precisely, there exists a sequence
-$\left(  Q^{\left(  0\right)  },Q^{\left(  1\right)  },\ldots,Q^{\left(
-\ell\right)  }\right)  $ of acyclic quivers such that $Q^{\left(  0\right)
-}=Q$, $Q^{\left(  \ell\right)  }=\operatorname*{mut}\nolimits_{A,B}Q$, and for
-every $i\in\left\{  1,2,\ldots,\ell\right\}  $, the quiver $Q^{\left(
-i\right)  }$ is obtained from $Q^{\left(  i-1\right)  }$ by mutation at a sink
-of $Q^{\left(  i-1\right)  }$.)
-
-[In our above example, we can mutate at $4$ first and then at $2$.]
-
-\textbf{(b)} If $i\in Q_{0}$ is a \textbf{source} of $Q$, then show that the
-mutation $\mu_{i}\left(  Q\right)  $ can be obtained from $Q$ by a sequence of
-mutations at sinks.
-
-\textbf{(c)} Assume now that the underlying \textbf{undirected} graph of $Q$
-is a tree. (In particular, $Q$ cannot have more than one edge between two
-vertices, as these would form a cycle in the underlying undirected graph!)
-Show that any acyclic quiver which can be obtained from $Q$ by turning some of
-its arrows can also be obtained from $Q$ by a sequence of mutations at sinks.
-\end{exercise}
-
-\begin{remark}
-More general results than those of Exercise \ref{exe.ps1.1.1} are stated (for
-directed graphs rather than quivers, but it is easy to translate from one
-language into another) in \cite{Pretzel}.
-\end{remark}
 
 \section{\label{chp.binom}On binomial coefficients}
 
@@ -24179,362 +24008,182 @@ and if $d=\deg P$ and $e=\deg Q$, then the polynomials $P$ and $Q$ have a
 common root \textbf{if and only if} their resultant is $0$.
 \end{remark}
 
+\section{\label{chp.quivers}On acyclic quivers and mutations}
+
+\begin{remark}
+Chapter \ref{chp.quivers} does not have much to do with the rest of these
+notes; it is merely an unrelated exercise. It is also somewhat rough and might
+be rewritten at some point (as well as moved to a more appropriate place
+somewhere near the end of the notes).
+\end{remark}
+
+In this chapter, we will use the following notations (which come from
+\cite[\S 2.1.1]{Lampe}):
+
+\begin{itemize}
+\item A \textit{quiver} means a tuple $Q=\left(  Q_{0},Q_{1},s,t\right)  $,
+where $Q_{0}$ and $Q_{1}$ are two finite sets and where $s$ and $t$ are two
+maps from $Q_{1}$ to $Q_{0}$. We call the elements of $Q_{0}$ the
+\textit{vertices} of the quiver $Q$, and we call the elements of $Q_{1}$ the
+\textit{arrows} of the quiver $Q$. For every $e\in Q_{1}$, we call $s\left(
+e\right)  $ the \textit{starting point} of $e$ (and we say that $e$
+\textit{starts at }$s\left(  e\right)  $), and we call $t\left(  e\right)  $
+the \textit{terminal point} of $e$ (and we say that $e$ \textit{ends at}
+$t\left(  e\right)  $). Furthermore, if $e\in Q_{1}$, then we say that $e$ is
+an \textit{arrow from }$s\left(  e\right)  $ \textit{to }$t\left(  e\right)  $.
+
+So the notion of a quiver is one of many different versions of the notion of a
+finite directed graph. (Notice that it is a version which allows multiple
+arrows, and which distinguishes between them -- i.e., the quiver stores not
+just the information of how many arrows there are from a vertex to another,
+but it actually has them all as distinguishable objects in $Q_{1}$. Lampe
+himself seems to later tacitly switch to a different notion of quivers, where
+edges from a given to vertex to another are indistinguishable and only exist
+as a number. This does not matter for the next exercise, which works just as
+well with either notion of a quiver; but I just wanted to have it mentioned.
+
+\item The \textit{underlying undirected graph} of a quiver $Q=\left(
+Q_{0},Q_{1},s,t\right)  $ is defined as the undirected multigraph with vertex
+set $Q_{0}$ and edge multiset%
+\[
+\left\{  \left\{  s\left(  e\right)  ,t\left(  e\right)  \right\}
+\ \mid\ e\in Q_{1}\right\}  _{\operatorname*{multiset}}.
+\]
+(\textquotedblleft Multigraph\textquotedblright\ means that multiple edges are
+allowed, but we do not make them distinguishable.)
+
+\item A quiver $Q=\left(  Q_{0},Q_{1},s,t\right)  $ is said to be
+\textit{acyclic} if there is no sequence \newline$\left(  a_{0},a_{1}%
+,\ldots,a_{n}\right)  $ of elements of $Q_{0}$ such that $n>0$ and
+$a_{0}=a_{n}$ and such that $Q$ has an arrow from $a_{i}$ to $a_{i+1}$ for
+every $i\in\left\{  0,1,\ldots,n-1\right\}  $. (This is equivalent to
+\cite[Definition 2.1.7]{Lampe}.) Notice that this does not mean that the
+\textit{undirected} version of $Q$ has no cycles.
+
+\item Let $Q=\left(  Q_{0},Q_{1},s,t\right)  $. Then, a \textit{sink} of $Q$
+means a vertex $v\in Q_{0}$ such that no $e\in Q_{1}$ starts at $v$ (in other
+words, no arrow of $Q$ starts at $v$). A \textit{source} of $Q$ means a vertex
+$v\in Q_{0}$ such that no $e\in Q_{1}$ ends at $v$ (in other words, no arrow
+of $Q$ ends at $v$).
+
+\item Let $Q=\left(  Q_{0},Q_{1},s,t\right)  $. If $i\in Q_{0}$ is a sink of
+$Q$, then the \textit{mutation} $\mu_{i}\left(  Q\right)  $ of $Q$ at $i$ is
+the quiver obtained from $Q$ simply by turning\footnote{To \textit{turn} an
+arrow $e$ means to reverse its direction, i.e., to switch the values of
+$s\left(  e\right)  $ and $t\left(  e\right)  $. We model this as a change to
+the functions $s$ and $t$, not as a change to the arrow itself.} all arrows
+ending at $i$. (To be really pedantic: We define $\mu_{i}\left(  Q\right)  $
+as the quiver $\left(  Q_{0},Q_{1},s^{\prime},t^{\prime}\right)  $, where%
+\begin{align*}
+s^{\prime}\left(  e\right)   &  =\left\{
+\begin{array}
+[c]{c}%
+t\left(  e\right)  ,\ \ \ \ \ \ \ \ \ \ \text{if }t\left(  e\right)  =i;\\
+s\left(  e\right)  ,\ \ \ \ \ \ \ \ \ \ \text{if }t\left(  e\right)  \neq i
+\end{array}
+\right.  \ \ \ \ \ \ \ \ \ \ \text{for each }e\in Q_{1}\\
+\text{and}\ \ \ \ \ \ \ \ \ \ t^{\prime}\left(  e\right)   &  =\left\{
+\begin{array}
+[c]{c}%
+s\left(  e\right)  ,\ \ \ \ \ \ \ \ \ \ \text{if }t\left(  e\right)  =i;\\
+t\left(  e\right)  ,\ \ \ \ \ \ \ \ \ \ \text{if }t\left(  e\right)  \neq i
+\end{array}
+\right.  \ \ \ \ \ \ \ \ \ \ \text{for each }e\in Q_{1}.
+\end{align*}
+) If $i\in Q_{0}$ is a source of $Q$, then the \textit{mutation} $\mu
+_{i}\left(  Q\right)  $ of $Q$ at $i$ is the quiver obtained from $Q$ by
+turning all arrows starting at $i$. (Notice that if $i$ is both a source and a
+sink of $Q$, then these two definitions give the same result; namely, $\mu
+_{i}\left(  Q\right)  =Q$ in this case.)
+
+If $Q$ is an acyclic quiver, then $\mu_{i}\left(  Q\right)  $ is acyclic as
+well (whenever $i\in Q_{0}$ is a sink or a source of $Q$).
+
+We use the word \textquotedblleft mutation\textquotedblright\ not only for the
+quiver $\mu_{i}\left(  Q\right)  $, but also for the operation that transforms
+$Q$ into $\mu_{i}\left(  Q\right)  $. (We have defined this operation only if
+$i$ is a sink or a source of $Q$. It can be viewed as a particular case of the
+more general definition of mutation given in \cite[Definition 2.2.1]{Lampe},
+at least if one gives up the ability to distinguish different arrows from one
+vertex to another.)
+\end{itemize}
+
+\Needspace{15\baselineskip}
+
+\begin{exercise}
+\label{exe.ps1.1.1}Let $Q=\left(  Q_{0},Q_{1},s,t\right)  $ be an acyclic quiver.
+
+\textbf{(a)} Let $A$ and $B$ be two subsets of $Q_{0}$ such that $A\cap
+B=\varnothing$ and $A\cup B=Q_{0}$. Assume that there exists no arrow of $Q$
+that starts at a vertex in $B$ and ends at a vertex in $A$. Then, by turning
+all arrows of $Q$ which start at a vertex in $A$ and end at a vertex in $B$,
+we obtain a new acyclic quiver $\operatorname*{mut}\nolimits_{A,B}Q$.
+
+(When we say \textquotedblleft turning all arrows of $Q$ which start at a
+vertex in $A$ and end at a vertex in $B$\textquotedblright, we mean
+\textquotedblleft turning all arrows $e$ of $Q$ which satisfy $s\left(
+e\right)  \in A$ and $t\left(  e\right)  \in B$\textquotedblright. We do
+\textbf{not} mean that we fix a vertex $a$ in $A$ and a vertex $b$ in $B$, and
+only turn the arrows from $a$ to $b$.)
+
+For example, if $Q=%
+%TCIMACRO{\TeXButton{x}{\xymatrix{
+%3 \ar[r] & 4 \\
+%1 \ar[u] \ar[ru] \ar[r] & 2 \ar[u]
+%}}}%
+%BeginExpansion
+\xymatrix{
+3 \ar[r] & 4 \\
+1 \ar[u] \ar[ru] \ar[r] & 2 \ar[u]
+}%
+%EndExpansion
+$ and $A=\left\{  1,3\right\}  $ and $B=\left\{  2,4\right\}  $, then
+\newline$\operatorname*{mut}\nolimits_{A,B}Q=%
+%TCIMACRO{\TeXButton{x}{\xymatrix{
+%3 & 4 \ar[l] \ar[ld] \\
+%1 \ar[u] & 2 \ar[u] \ar[l]
+%}}}%
+%BeginExpansion
+\xymatrix{
+3 & 4 \ar[l] \ar[ld] \\
+1 \ar[u] & 2 \ar[u] \ar[l]
+}%
+%EndExpansion
+$.
+
+Prove that $\operatorname*{mut}\nolimits_{A,B}Q$ can be obtained from $Q$ by a
+sequence of mutations at sinks. (More precisely, there exists a sequence
+$\left(  Q^{\left(  0\right)  },Q^{\left(  1\right)  },\ldots,Q^{\left(
+\ell\right)  }\right)  $ of acyclic quivers such that $Q^{\left(  0\right)
+}=Q$, $Q^{\left(  \ell\right)  }=\operatorname*{mut}\nolimits_{A,B}Q$, and for
+every $i\in\left\{  1,2,\ldots,\ell\right\}  $, the quiver $Q^{\left(
+i\right)  }$ is obtained from $Q^{\left(  i-1\right)  }$ by mutation at a sink
+of $Q^{\left(  i-1\right)  }$.)
+
+[In our above example, we can mutate at $4$ first and then at $2$.]
+
+\textbf{(b)} If $i\in Q_{0}$ is a \textbf{source} of $Q$, then show that the
+mutation $\mu_{i}\left(  Q\right)  $ can be obtained from $Q$ by a sequence of
+mutations at sinks.
+
+\textbf{(c)} Assume now that the underlying \textbf{undirected} graph of $Q$
+is a tree. (In particular, $Q$ cannot have more than one edge between two
+vertices, as these would form a cycle in the underlying undirected graph!)
+Show that any acyclic quiver which can be obtained from $Q$ by turning some of
+its arrows can also be obtained from $Q$ by a sequence of mutations at sinks.
+\end{exercise}
+
+\begin{remark}
+More general results than those of Exercise \ref{exe.ps1.1.1} are stated (for
+directed graphs rather than quivers, but it is easy to translate from one
+language into another) in \cite{Pretzel}.
+\end{remark}
+
 \section{Solutions}
 
 This section contains solutions (or, sometimes, solution sketches) to some of
 the exercises in the text, as well as occasional remarks. I do not recommend
 reading them before trying to solve the problem on your own.
-
-\subsection{Solution to Exercise \ref{exe.ps1.1.1}}
-
-\begin{proof}
-[Solution to Exercise \ref{exe.ps1.1.1}.]\textbf{(a)} We prove the claim by
-induction over $\left\vert B\right\vert $.
-
-\textit{Induction base:} Assume that $\left\vert B\right\vert =0$. Thus,
-$B=\varnothing$, and thus there are no arrows of $Q$ which start at a vertex
-in $A$ and at a vertex in $B$. Hence, $\operatorname*{mut}\nolimits_{A,B}Q=Q$,
-and this can clearly be obtained from $Q$ by a sequence of mutations at sinks
-(namely, by the empty sequence). Thus, Exercise \ref{exe.ps1.1.1} \textbf{(a)}
-holds if $\left\vert B\right\vert =0$. This completes the induction
-base.\footnote{Yes, this was a completely honest induction base. You don't
-need to start at $\left\vert B\right\vert =1$ unless you want to use something
-like $\left\vert B\right\vert >1$ in the induction step (but even then, you
-should also handle the case $\left\vert B\right\vert =0$ case).}
-
-\textit{Induction step:} Let $N\in\mathbb{N}$. Assume that Exercise
-\ref{exe.ps1.1.1} \textbf{(a)} holds whenever $\left\vert B\right\vert =N$. We
-now need to prove that Exercise \ref{exe.ps1.1.1} \textbf{(a)} holds whenever
-$\left\vert B\right\vert =N+1$.
-
-So let $A$ and $B$ be two subsets of $Q_{0}$ such that $A\cap B=\varnothing$
-and $A\cup B=Q_{0}$. Assume that there exists no arrow of $Q$ that starts at a
-vertex in $B$ and ends at a vertex in $A$. Assume further that $\left\vert
-B\right\vert =N+1$. We need to prove that $\operatorname*{mut}\nolimits_{A,B}%
-Q$ can be obtained from $Q$ by a sequence of mutations at sinks.
-
-Notice that $B=Q_{0}\setminus A$ (since $A\cap B=\varnothing$ and $A\cup
-B=Q_{0}$).
-
-It is easy to see that there exist some $b\in B$ such that%
-\begin{equation}
-\text{there is no }e\in Q_{1}\text{ satisfying }t\left(  e\right)  =b\text{
-and }s\left(  e\right)  \in B \label{sol.ps1.exe.1.1.a.3}%
-\end{equation}
-\footnote{\textit{Proof.} Assume the contrary. Thus, for every $b\in B$, there
-is an $e\in Q_{1}$ satisfying $t\left(  e\right)  =b$ and $s\left(  e\right)
-\in B$. Let us fix such an $e$ (for each $b\in B$), and denote it by $e_{b}$.
-\par
-Thus, for every $b\in B$, we have $e_{b}\in Q_{1}$ and $t\left(  e_{b}\right)
-=b$ and $s\left(  e_{b}\right)  \in B$. We can thus define a sequence $\left(
-b_{0},b_{1},b_{2},\ldots\right)  $ of vertices in $B$ recursively as follows:
-Set $b_{0}=b$, and set $b_{i+1}=s\left(  e_{b_{i}}\right)  $ for every
-$i\in\mathbb{N}$. Thus, $\left(  b_{0},b_{1},b_{2},\ldots\right)  $ is an
-infinite sequence of elements of $B$. Since $B$ is a finite set, this sequence
-must thus pass through an element twice (to say the least). In other words,
-there are two positive integers $u$ and $v$ such that $u<v$ and $b_{u}=b_{v}$.
-Consider these $u$ and $v$.
-\par
-Now, for every $i\in\mathbb{N}$, we have $t\left(  e_{b_{i}}\right)  =b_{i}$
-(by the definition of $e_{b_{i}}$) and $s\left(  e_{b_{i}}\right)  =b_{i+1}$.
-Thus, for every $i\in\mathbb{N}$, the arrow $e_{b_{i}}$ is an arrow from
-$b_{i+1}$ to $b_{i}$. Thus, there is an arrow from $b_{i+1}$ to $b_{i}$ for
-every $i\in\mathbb{N}$. In particular, we have an arrow from $b_{v}$ to
-$b_{v-1}$, an arrow from $b_{v-1}$ to $b_{v-2}$, etc., and an arrow from
-$b_{u+1}$ to $b_{u}$. Since $b_{u}=b_{v}$, these arrows form a cycle in $Q$,
-which contradicts the hypothesis that the quiver $Q$ is acyclic. This
-contradiction proves that our assumption was wrong, qed.}. Fix such a $b$.
-Clearly, $b\notin A$ (since $b\in B=Q_{0}\setminus A$).
-
-Now, $A\cup\left\{  b\right\}  $ and $B\setminus\left\{  b\right\}  $ are two
-subsets of $Q_{0}$ such that $\left(  A\cup\left\{  b\right\}  \right)
-\cap\left(  B\setminus\left\{  b\right\}  \right)  =\varnothing$ and $\left(
-A\cup\left\{  b\right\}  \right)  \cup\left(  B\setminus\left\{  b\right\}
-\right)  =Q_{0}$\ \ \ \ \footnote{\textit{Proof.} These are easy exercises in
-set theory. Use $A\cap B=\varnothing$ and $A\cup B=Q_{0}$ and $b\in B$.}.
-Furthermore, there exists no arrow of $Q$ that starts at a vertex in
-$B\setminus\left\{  b\right\}  $ and ends at a vertex in $A\cup\left\{
-b\right\}  $\ \ \ \ \footnote{\textit{Proof.} Assume the contrary. Thus, there
-exists an arrow of $Q$ that starts at a vertex in $B\setminus\left\{
-b\right\}  $ and ends at a vertex in $A\cup\left\{  b\right\}  $. Let $e$ be
-such an arrow. Then, $s\left(  e\right)  \in B\setminus\left\{  b\right\}  $
-and $t\left(  e\right)  \in A\cup\left\{  b\right\}  $.
-\par
-We have $s\left(  e\right)  \in B\setminus\left\{  b\right\}  \subseteq B$.
-Thus, $t\left(  e\right)  \neq b$ (because having $t\left(  e\right)  =b$
-would contradict (\ref{sol.ps1.exe.1.1.a.3})). Combined with $t\left(
-e\right)  \in A\cup\left\{  b\right\}  $, this yields $t\left(  e\right)
-\in\left(  A\cup\left\{  b\right\}  \right)  \setminus\left\{  b\right\}
-\subseteq A$. Thus, $e$ is an arrow of $Q$ that starts at a vertex in $B$
-(since $s\left(  e\right)  \in B$) and ends at a vertex in $A$ (since
-$t\left(  e\right)  \in A$). This contradicts our hypothesis that there exists
-no arrow of $Q$ that starts at a vertex in $B$ and ends at a vertex in $A$.
-This is the desired contradiction, and so we are done.}. Hence,
-$\operatorname*{mut}\nolimits_{A\cup\left\{  b\right\}  ,B\setminus\left\{
-b\right\}  }Q$ is a well-defined acyclic quiver. Moreover, since $b\in B$, we
-have $\left\vert B\setminus\left\{  b\right\}  \right\vert
-=\underbrace{\left\vert B\right\vert }_{=N+1}-1=N+1-1=N$. Thus, Exercise
-\ref{exe.ps1.1.1} \textbf{(a)} can be applied to $A\cup\left\{  b\right\}  $
-and $B\setminus\left\{  b\right\}  $ instead of $A$ and $B$ (by the induction
-hypothesis). As a consequence, we conclude that $\operatorname*{mut}%
-\nolimits_{A\cup\left\{  b\right\}  ,B\setminus\left\{  b\right\}  }Q$ can be
-obtained from $Q$ by a sequence of mutations at sinks.
-
-We shall now prove that $\operatorname*{mut}\nolimits_{A,B}Q$ can be obtained
-from $\operatorname*{mut}\nolimits_{A\cup\left\{  b\right\}  ,B\setminus
-\left\{  b\right\}  }Q$ by a mutation at a sink. In fact, $b$ is a sink of
-$\operatorname*{mut}\nolimits_{A\cup\left\{  b\right\}  ,B\setminus\left\{
-b\right\}  }Q$\ \ \ \ \footnote{\textit{Proof.} Assume the contrary. Thus,
-there exists an arrow $e$ of $\operatorname*{mut}\nolimits_{A\cup\left\{
-b\right\}  ,B\setminus\left\{  b\right\}  }Q$ which starts at $b$. Consider
-this $e$.
-\par
-Recall that $\operatorname*{mut}\nolimits_{A\cup\left\{  b\right\}
-,B\setminus\left\{  b\right\}  }Q$ was obtained from $Q$ by turning all arrows
-of $Q$ which start at a vertex in $A\cup\left\{  b\right\}  $ and end at a
-vertex in $B\setminus\left\{  b\right\}  $. Thus, every arrow of
-$\operatorname*{mut}\nolimits_{A\cup\left\{  b\right\}  ,B\setminus\left\{
-b\right\}  }Q$ which starts at a vertex in $B\setminus\left\{  b\right\}  $
-and ends at a vertex in $A\cup\left\{  b\right\}  $ has originally been going
-in the opposite direction in $Q$ (because there exists no arrow of $Q$ that
-starts at a vertex in $B\setminus\left\{  b\right\}  $ and ends at a vertex in
-$A\cup\left\{  b\right\}  $), while all the other arrows of
-$\operatorname*{mut}\nolimits_{A\cup\left\{  b\right\}  ,B\setminus\left\{
-b\right\}  }Q$ have been copied over unchanged from $Q$. The arrow $e$ of
-$\operatorname*{mut}\nolimits_{A\cup\left\{  b\right\}  ,B\setminus\left\{
-b\right\}  }Q$ starts at $b$ (which is not an element of $B\setminus\left\{
-b\right\}  $), so it does \textbf{not} start at a vertex in $B\setminus
-\left\{  b\right\}  $ and end at a vertex in $A\cup\left\{  b\right\}  $;
-therefore, the preceding sentence shows that this arrow $e$ has been copied
-over unchanged from $Q$. In other words, the arrow $e$ starts at $b$ when
-considered as an arrow of $Q$ as well. In other words, $s\left(  e\right)
-=b$. (Recall that the functions $s$ and $t$ are part of the quiver $Q$; thus,
-they map every arrow of $Q$ to its starting point and its terminal point,
-respectively. The same arrows might have different starting points and
-terminal points when regarded as arrows of $\operatorname*{mut}%
-\nolimits_{A\cup\left\{  b\right\}  ,B\setminus\left\{  b\right\}  }Q$.)
-\par
-Recall that there exists no arrow of $Q$ that starts at a vertex in $B$ and
-ends at a vertex in $A$. Thus, an arrow of $Q$ which starts at a vertex in $B$
-must not end at a vertex in $A$. In particular, the arrow $e$ of $Q$ must not
-end at a vertex in $A$ (because it starts at $b\in B$). Hence, the arrow $e$
-of $Q$ ends at a vertex in $Q_{0}\setminus A=B$. In other words, $t\left(
-e\right)  \in B$.
-\par
-We cannot have $t\left(  e\right)  =s\left(  e\right)  $ (because otherwise,
-the arrow $e$ would form a cycle, but the quiver $Q$ is acyclic). Hence,
-$t\left(  e\right)  \neq s\left(  e\right)  =b$ (since $e$ starts at $b$).
-Combined with $t\left(  e\right)  \in B$, this yields $t\left(  e\right)  \in
-B\setminus\left\{  b\right\}  $.
-\par
-Thus, the arrow $e$ of $Q$ starts at a vertex in $A\cup\left\{  b\right\}  $
-(since $s\left(  e\right)  =b\in A\cup\left\{  b\right\}  $) and ends at a
-vertex in $B\setminus\left\{  b\right\}  $ (since $t\left(  e\right)  \in
-B\setminus\left\{  b\right\}  $). As we know, $\operatorname*{mut}%
-\nolimits_{A\cup\left\{  b\right\}  ,B\setminus\left\{  b\right\}  }Q$ was
-obtained from $Q$ by turning all such arrows. Hence, the arrow $e$ must have
-been turned when it became an arrow of $\operatorname*{mut}\nolimits_{A\cup
-\left\{  b\right\}  ,B\setminus\left\{  b\right\}  }Q$. But this contradicts
-the fact that the arrow $e$ has been copied over unchanged from $Q$. This
-contradiction proves that our assumption was wrong, qed.}. Hence, the mutation
-$\mu_{b}\left(  \operatorname*{mut}\nolimits_{A\cup\left\{  b\right\}
-,B\setminus\left\{  b\right\}  }Q\right)  $ is well-defined. We now have%
-\begin{equation}
-\operatorname*{mut}\nolimits_{A,B}Q=\mu_{b}\left(  \operatorname*{mut}%
-\nolimits_{A\cup\left\{  b\right\}  ,B\setminus\left\{  b\right\}  }Q\right)
-\label{sol.ps1.exe.1.1.a.7}%
-\end{equation}
-\footnote{\textit{Proof of (\ref{sol.ps1.exe.1.1.a.7}):} We have $Q_{0}%
-=A\cup\underbrace{B}_{=\left\{  b\right\}  \cup\left(  B\setminus\left\{
-b\right\}  \right)  }=A\cup\left\{  b\right\}  \cup\left(  B\setminus\left\{
-b\right\}  \right)  $.
-\par
-Recall that the quiver $\operatorname*{mut}\nolimits_{A\cup\left\{  b\right\}
-,B\setminus\left\{  b\right\}  }Q$ was obtained from $Q$ by turning all arrows
-of $Q$ which start at a vertex in $A\cup\left\{  b\right\}  $ and end at a
-vertex in $B\setminus\left\{  b\right\}  $. Furthermore, the quiver $\mu
-_{b}\left(  \operatorname*{mut}\nolimits_{A\cup\left\{  b\right\}
-,B\setminus\left\{  b\right\}  }Q\right)  $ was obtained from
-$\operatorname*{mut}\nolimits_{A\cup\left\{  b\right\}  ,B\setminus\left\{
-b\right\}  }Q$ by turning all arrows ending at $b$. Thus, $\mu_{b}\left(
-\operatorname*{mut}\nolimits_{A\cup\left\{  b\right\}  ,B\setminus\left\{
-b\right\}  }Q\right)  $ can be obtained from $Q$ by a two-step process, where
-\par
-\begin{itemize}
-\item in the first step, we turn all arrows of $Q$ which start at a vertex in
-$A\cup\left\{  b\right\}  $ and end at a vertex in $B\setminus\left\{
-b\right\}  $;
-\par
-\item in the second step, we turn all arrows ending at $b$.
-\end{itemize}
-\par
-Now, let us analyze what this two-step process does to an arrow of $Q$,
-depending on where the arrow starts and ends:
-\par
-\begin{enumerate}
-\item If $e$ is an arrow of $Q$ which ends at a vertex in $A$, then this arrow
-never gets turned during our process. Indeed, let $e$ be such an arrow. Then,
-$e$ ends at a vertex in $A$, and thus does not end at a vertex in $B$ (since
-$A\cap B=\varnothing$); therefore, it does not end at a vertex in
-$B\setminus\left\{  b\right\}  $ either. Hence, the first step does not turn
-it. Therefore, after the first step, it still does not end at a vertex in $B$
-(since it did not end at a vertex in $B$ originally). In particular, it does
-not end at $b$ (since $b\in B$). Hence, it does not get turned at the second
-step either. So, $e$ never turns, and thus retains its original direction
-throughout the process.
-\par
-\item If $e$ is an arrow of $Q$ which ends at $b$, then this arrow gets turned
-once (namely, at the second step). Thus, its direction is reversed at the end
-of the process.
-\par
-\item If $e$ is an arrow of $Q$ which starts at a vertex in $A$ and ends at a
-vertex in $B\setminus\left\{  b\right\}  $, then this arrow gets turned once
-(namely, at the first step). Here is why: Let $e$ be an arrow of $Q$ which
-starts at a vertex in $A$ and ends at a vertex in $B\setminus\left\{
-b\right\}  $. Then, $e$ starts at a vertex in $A\cup\left\{  b\right\}  $ and
-ends at a vertex in $B\setminus\left\{  b\right\}  $ (since $A\subseteq
-A\cup\left\{  b\right\}  $). Thus, it gets turned at the first step. After
-this, it becomes an arrow which ends at a vertex in $A$ (because originally it
-started at a vertex in $A$), and so it does not end at $b$ (because $b\notin
-A$). Therefore, it does not turn at the second step; hence, it has turned
-exactly once altogether. Its direction is therefore reversed at the end of the
-process.
-\par
-\item If $e$ is an arrow of $Q$ which starts at $b$ and ends at a vertex in
-$B\setminus\left\{  b\right\}  $, then this arrow gets turned twice (once at
-each step). Indeed, let $e$ be such an arrow. Then, $e$ starts at a vertex in
-$A\cup\left\{  b\right\}  $ (namely, at $b$) and ends at a vertex in
-$B\setminus\left\{  b\right\}  $. Hence, it gets turned at the first step.
-After that, it ends at $b$ (because it used to start at $b$ before it was
-turned), and therefore it gets turned again at the second step. Hence, the
-direction of $e$ at the end of the two-step process is again the same as it
-was in $Q$.
-\par
-\item If $e$ is an arrow of $Q$ which starts at a vertex in $B\setminus
-\left\{  b\right\}  $ and ends at a vertex in $B\setminus\left\{  b\right\}
-$, then this arrow never gets turned. Indeed, it starts at a vertex in
-$B\setminus\left\{  b\right\}  $; thus, it does \textbf{not} start at a vertex
-in $A\cup\left\{  b\right\}  $ (since $\underbrace{B}_{=Q_{0}\setminus
-A}\setminus\left\{  b\right\}  =\left(  Q_{0}\setminus A\right)
-\setminus\left\{  b\right\}  =Q_{0}\setminus\left(  A\cup\left\{  b\right\}
-\right)  $). Hence, it does not get turned at the first step. Moreover, in
-$Q$, this arrow $e$ does not end at $b$ (because it ends at a vertex in
-$B\setminus\left\{  b\right\}  $); thus it does not end at $b$ after the first
-step either (since it does not get turned at the first step). Hence, it does
-not get turned at the second step either. Therefore, $e$ never gets turned,
-and thus retains its original direction from $Q$ after the two-step process.
-\end{enumerate}
-\par
-The five cases we have just considered cover all possibilities (because every
-arrow $e$ either ends at a vertex in $A$ or ends at $b$ or ends at a vertex in
-$B\setminus\left\{  b\right\}  $; and in the latter case, it either starts at
-a vertex in $A$, or starts at $b$, or starts at a vertex in $B\setminus
-\left\{  b\right\}  $ (since $Q_{0}=A\cup\left\{  b\right\}  \cup\left(
-B\setminus\left\{  b\right\}  \right)  $)). From our case analysis, we can
-draw the following conclusions:
-\par
-\begin{itemize}
-\item If $e$ is an arrow of $Q$ which starts at a vertex in $A$ and ends at a
-vertex in $B$, then the arrow $e$ has reversed its orientation at the end of
-the two-step process. (This follows from our Cases 2 and 3 above.)
-\par
-\item If $e$ is an arrow of $Q$ which starts at a vertex in $B$ or ends at a
-vertex in $A$, then this arrow $e$ has the same orientation at the end of the
-two-step process as it did in $Q$. (Indeed, let us prove this. Let $e$ be an
-arrow of $Q$ which starts at a vertex in $B$ or ends at a vertex in $A$. We
-need to show that $e$ has the same orientation at the end of the two-step
-process as it did in $Q$. If $e$ ends at a vertex in $A$, then this follows
-from our analysis of Case 1. So let us assume that $e$ does not end at a
-vertex in $A$. Hence, $e$ must start at a vertex in $B$ (since $e$ starts at a
-vertex in $B$ or ends at a vertex in $A$). In other words, $s\left(  e\right)
-\in B$. Hence, $t\left(  e\right)  \neq b$ (because if we had $t\left(
-e\right)  =b$, then $e$ would contradict (\ref{sol.ps1.exe.1.1.a.3})). But
-also $t\left(  e\right)  \notin A$ (since $e$ does not end at a vertex in
-$A$), so that $t\left(  e\right)  \in Q_{0}\setminus A=B$ and thus $t\left(
-e\right)  \in B\setminus\left\{  b\right\}  $ (since $t\left(  e\right)  \neq
-b$). Hence, the arrow $e$ ends at a vertex in $B\setminus\left\{  b\right\}
-$. It also starts at a vertex in $B$; thus, it either starts at $b$ or it
-starts at a vertex in $B\setminus\left\{  b\right\}  $. Our claim now follows
-from our analysis of Case 4 (in the case when $e$ starts at $b$) and from our
-analysis of Case 5 (in the case when $e$ starts at a vertex in $B\setminus
-\left\{  b\right\}  $). In either case, our claim is proven.)
-\end{itemize}
-\par
-To summarize, the outcome of our two-step process is that every arrow $e$ of
-$Q$ which starts at a vertex in $A$ and ends at a vertex in $B$ reverses its
-orientation, while all other arrows preserve their orientation. In other
-words, the outcome of our two-step process is the same as the outcome of
-turning all arrows of $Q$ which start at a vertex in $A$ and end at a vertex
-in $B$. But the latter outcome is $\operatorname*{mut}\nolimits_{A,B}Q$
-(because this is how $\operatorname*{mut}\nolimits_{A,B}Q$ was defined), while
-the former outcome is $\mu_{b}\left(  \operatorname*{mut}\nolimits_{A\cup
-\left\{  b\right\}  ,B\setminus\left\{  b\right\}  }Q\right)  $ (since we know
-that $\mu_{b}\left(  \operatorname*{mut}\nolimits_{A\cup\left\{  b\right\}
-,B\setminus\left\{  b\right\}  }Q\right)  $ can be obtained from $Q$ by our
-two-step process). Thus, we have obtained $\mu_{b}\left(  \operatorname*{mut}%
-\nolimits_{A\cup\left\{  b\right\}  ,B\setminus\left\{  b\right\}  }Q\right)
-=\operatorname*{mut}\nolimits_{A,B}Q$. This proves (\ref{sol.ps1.exe.1.1.a.7}%
-).}. Therefore, $\operatorname*{mut}\nolimits_{A,B}Q$ can be obtained from
-$\operatorname*{mut}\nolimits_{A\cup\left\{  b\right\}  ,B\setminus\left\{
-b\right\}  }Q$ by a single mutation at a sink (namely, at the sink $b$). Since
-$\operatorname*{mut}\nolimits_{A\cup\left\{  b\right\}  ,B\setminus\left\{
-b\right\}  }Q$ (in turn) can be obtained from $Q$ by a sequence of mutations
-at sinks, this shows that $\operatorname*{mut}\nolimits_{A,B}Q$ can be
-obtained from $Q$ by a sequence of mutations at sinks (namely, we first need
-to mutate at the sinks that give us $\operatorname*{mut}\nolimits_{A\cup
-\left\{  b\right\}  ,B\setminus\left\{  b\right\}  }Q$, and then we have to
-mutate at $b$). This proves that Exercise \ref{exe.ps1.1.1} \textbf{(a)} holds
-whenever $\left\vert B\right\vert =N+1$. The induction step is complete, and
-thus Exercise \ref{exe.ps1.1.1} \textbf{(a)} is solved.
-
-\textbf{(b)} Let $i\in Q_{0}$ be a source in $Q$. Let $A=\left\{  i\right\}  $
-and $B=Q_{0}\setminus A$. Then, $A$ and $B$ are two subsets of $Q_{0}$ such
-that $A\cap B=\varnothing$ and $A\cup B=Q_{0}$. There exists no arrow of $Q$
-that starts at a vertex in $B$ and ends at a vertex in $A$%
-\ \ \ \ \footnote{\textit{Proof.} Assume the contrary. Then, there exists an
-arrow of $Q$ which starts at a vertex in $B$ and ends at a vertex in $A$. Let
-$e$ be such an arrow. Then, $e$ ends at a vertex in $A$. In other words,
-$t\left(  e\right)  \in A=\left\{  i\right\}  $, so that $t\left(  e\right)
-=i$. In other words, $e$ ends at $i$. But this is impossible, since $i$ is a
-source. This contradiction proves that our assumption was wrong, qed.}. Hence,
-the quiver $\operatorname*{mut}\nolimits_{A,B}Q$ is well-defined. Moreover,
-this quiver $\operatorname*{mut}\nolimits_{A,B}Q$ is obtained by turning all
-arrows of $Q$ which start at a vertex in $A$ and end at a vertex in $B$. But
-these arrows are precisely the arrows of $Q$ starting at $i$%
-\ \ \ \ \footnote{\textit{Proof.} Each arrow of $Q$ which starts at a vertex
-in $A$ and ends at a vertex in $B$ must be an arrow starting at $i$ (because
-it starts at a vertex in $A=\left\{  i\right\}  $, but the only vertex in
-$\left\{  i\right\}  $ is $i$). It thus remains to prove the converse -- i.e.,
-to prove that each arrow of $Q$ starting at $i$ is an arrow of $Q$ which
-starts at a vertex in $A$ and ends at a vertex in $B$. So let $e$ be an arrow
-of $Q$ starting at $i$. Then, $e$ clearly starts at a vertex in $A$ (since
-$i\in\left\{  i\right\}  =A$). It remains to prove that $e$ ends at a vertex
-in $B$. But $Q$ is acyclic, and thus we cannot have $s\left(  e\right)
-=t\left(  e\right)  $ (since otherwise, the arrow $e$ would form a trivial
-cycle). Hence, $s\left(  e\right)  \neq t\left(  e\right)  $. But $s\left(
-e\right)  =i$ (since $e$ starts at $i$), so that $t\left(  e\right)  \neq
-s\left(  e\right)  =i$ and thus $t\left(  e\right)  \in Q_{0}\setminus
-\underbrace{\left\{  i\right\}  }_{=A}=Q_{0}\setminus A=B$. Hence, $e$ ends at
-a vertex in $B$. This completes our proof.}. Hence, $\operatorname*{mut}%
-\nolimits_{A,B}Q$ is obtained by turning all arrows of $Q$ starting at $i$.
-But this is exactly how we defined $\mu_{i}\left(  Q\right)  $. Therefore,
-$\operatorname*{mut}\nolimits_{A,B}Q=\mu_{i}\left(  Q\right)  $. Now, Exercise
-\ref{exe.ps1.1.1} \textbf{(a)} shows that $\operatorname*{mut}\nolimits_{A,B}%
-Q$ can be obtained from $Q$ by a sequence of mutations at sinks. Hence,
-$\mu_{i}\left(  Q\right)  $ can be obtained from $Q$ by a sequence of
-mutations at sinks (since $\operatorname*{mut}\nolimits_{A,B}Q=\mu_{i}\left(
-Q\right)  $). Exercise \ref{exe.ps1.1.1} \textbf{(b)} is proven.
-
-\textbf{(c)} Let $Q^{\prime}$ be any acyclic quiver which can be obtained from
-$Q$ by turning some of its arrows. We need to prove that $Q^{\prime}$ can also
-be obtained from $Q$ by a sequence of mutations at sinks. But \cite[proof of
-Proposition 2.2.8]{Lampe} shows that $Q^{\prime}$ can be obtained from $Q$ by
-a sequence of mutations at sinks and sources. Since every mutation at a source
-can be simulated by a sequence of mutations at sinks (by Exercise
-\ref{exe.ps1.1.1} \textbf{(b)}), this yields that $Q^{\prime}$ can be obtained
-from $Q$ by a sequence of mutations at sinks. This solves Exercise
-\ref{exe.ps1.1.1} \textbf{(c)}.
-\end{proof}
 
 \subsection{Solution to Exercise \ref{exe.prop.binom.subsets}}
 
@@ -53440,6 +53089,359 @@ $\det\left(  A+uv\right)  =\det A+\operatorname*{ent}\left(  v\left(
 Now, Theorem \ref{thm.exeadd.det.rk1upd.claim} is proven; in other words,
 Additional exercise \ref{exeadd.det.rk1upd} is solved (since Theorem
 \ref{thm.exeadd.det.rk1upd.claim} is just a restatement of the claim of this exercise).
+
+
+
+\subsection{Solution to Exercise \ref{exe.ps1.1.1}}
+
+\begin{proof}
+[Solution to Exercise \ref{exe.ps1.1.1}.]\textbf{(a)} We prove the claim by
+induction over $\left\vert B\right\vert $.
+
+\textit{Induction base:} Assume that $\left\vert B\right\vert =0$. Thus,
+$B=\varnothing$, and thus there are no arrows of $Q$ which start at a vertex
+in $A$ and at a vertex in $B$. Hence, $\operatorname*{mut}\nolimits_{A,B}Q=Q$,
+and this can clearly be obtained from $Q$ by a sequence of mutations at sinks
+(namely, by the empty sequence). Thus, Exercise \ref{exe.ps1.1.1} \textbf{(a)}
+holds if $\left\vert B\right\vert =0$. This completes the induction
+base.\footnote{Yes, this was a completely honest induction base. You don't
+need to start at $\left\vert B\right\vert =1$ unless you want to use something
+like $\left\vert B\right\vert >1$ in the induction step (but even then, you
+should also handle the case $\left\vert B\right\vert =0$ case).}
+
+\textit{Induction step:} Let $N\in\mathbb{N}$. Assume that Exercise
+\ref{exe.ps1.1.1} \textbf{(a)} holds whenever $\left\vert B\right\vert =N$. We
+now need to prove that Exercise \ref{exe.ps1.1.1} \textbf{(a)} holds whenever
+$\left\vert B\right\vert =N+1$.
+
+So let $A$ and $B$ be two subsets of $Q_{0}$ such that $A\cap B=\varnothing$
+and $A\cup B=Q_{0}$. Assume that there exists no arrow of $Q$ that starts at a
+vertex in $B$ and ends at a vertex in $A$. Assume further that $\left\vert
+B\right\vert =N+1$. We need to prove that $\operatorname*{mut}\nolimits_{A,B}%
+Q$ can be obtained from $Q$ by a sequence of mutations at sinks.
+
+Notice that $B=Q_{0}\setminus A$ (since $A\cap B=\varnothing$ and $A\cup
+B=Q_{0}$).
+
+It is easy to see that there exist some $b\in B$ such that%
+\begin{equation}
+\text{there is no }e\in Q_{1}\text{ satisfying }t\left(  e\right)  =b\text{
+and }s\left(  e\right)  \in B \label{sol.ps1.exe.1.1.a.3}%
+\end{equation}
+\footnote{\textit{Proof.} Assume the contrary. Thus, for every $b\in B$, there
+is an $e\in Q_{1}$ satisfying $t\left(  e\right)  =b$ and $s\left(  e\right)
+\in B$. Let us fix such an $e$ (for each $b\in B$), and denote it by $e_{b}$.
+\par
+Thus, for every $b\in B$, we have $e_{b}\in Q_{1}$ and $t\left(  e_{b}\right)
+=b$ and $s\left(  e_{b}\right)  \in B$. We can thus define a sequence $\left(
+b_{0},b_{1},b_{2},\ldots\right)  $ of vertices in $B$ recursively as follows:
+Set $b_{0}=b$, and set $b_{i+1}=s\left(  e_{b_{i}}\right)  $ for every
+$i\in\mathbb{N}$. Thus, $\left(  b_{0},b_{1},b_{2},\ldots\right)  $ is an
+infinite sequence of elements of $B$. Since $B$ is a finite set, this sequence
+must thus pass through an element twice (to say the least). In other words,
+there are two positive integers $u$ and $v$ such that $u<v$ and $b_{u}=b_{v}$.
+Consider these $u$ and $v$.
+\par
+Now, for every $i\in\mathbb{N}$, we have $t\left(  e_{b_{i}}\right)  =b_{i}$
+(by the definition of $e_{b_{i}}$) and $s\left(  e_{b_{i}}\right)  =b_{i+1}$.
+Thus, for every $i\in\mathbb{N}$, the arrow $e_{b_{i}}$ is an arrow from
+$b_{i+1}$ to $b_{i}$. Thus, there is an arrow from $b_{i+1}$ to $b_{i}$ for
+every $i\in\mathbb{N}$. In particular, we have an arrow from $b_{v}$ to
+$b_{v-1}$, an arrow from $b_{v-1}$ to $b_{v-2}$, etc., and an arrow from
+$b_{u+1}$ to $b_{u}$. Since $b_{u}=b_{v}$, these arrows form a cycle in $Q$,
+which contradicts the hypothesis that the quiver $Q$ is acyclic. This
+contradiction proves that our assumption was wrong, qed.}. Fix such a $b$.
+Clearly, $b\notin A$ (since $b\in B=Q_{0}\setminus A$).
+
+Now, $A\cup\left\{  b\right\}  $ and $B\setminus\left\{  b\right\}  $ are two
+subsets of $Q_{0}$ such that $\left(  A\cup\left\{  b\right\}  \right)
+\cap\left(  B\setminus\left\{  b\right\}  \right)  =\varnothing$ and $\left(
+A\cup\left\{  b\right\}  \right)  \cup\left(  B\setminus\left\{  b\right\}
+\right)  =Q_{0}$\ \ \ \ \footnote{\textit{Proof.} These are easy exercises in
+set theory. Use $A\cap B=\varnothing$ and $A\cup B=Q_{0}$ and $b\in B$.}.
+Furthermore, there exists no arrow of $Q$ that starts at a vertex in
+$B\setminus\left\{  b\right\}  $ and ends at a vertex in $A\cup\left\{
+b\right\}  $\ \ \ \ \footnote{\textit{Proof.} Assume the contrary. Thus, there
+exists an arrow of $Q$ that starts at a vertex in $B\setminus\left\{
+b\right\}  $ and ends at a vertex in $A\cup\left\{  b\right\}  $. Let $e$ be
+such an arrow. Then, $s\left(  e\right)  \in B\setminus\left\{  b\right\}  $
+and $t\left(  e\right)  \in A\cup\left\{  b\right\}  $.
+\par
+We have $s\left(  e\right)  \in B\setminus\left\{  b\right\}  \subseteq B$.
+Thus, $t\left(  e\right)  \neq b$ (because having $t\left(  e\right)  =b$
+would contradict (\ref{sol.ps1.exe.1.1.a.3})). Combined with $t\left(
+e\right)  \in A\cup\left\{  b\right\}  $, this yields $t\left(  e\right)
+\in\left(  A\cup\left\{  b\right\}  \right)  \setminus\left\{  b\right\}
+\subseteq A$. Thus, $e$ is an arrow of $Q$ that starts at a vertex in $B$
+(since $s\left(  e\right)  \in B$) and ends at a vertex in $A$ (since
+$t\left(  e\right)  \in A$). This contradicts our hypothesis that there exists
+no arrow of $Q$ that starts at a vertex in $B$ and ends at a vertex in $A$.
+This is the desired contradiction, and so we are done.}. Hence,
+$\operatorname*{mut}\nolimits_{A\cup\left\{  b\right\}  ,B\setminus\left\{
+b\right\}  }Q$ is a well-defined acyclic quiver. Moreover, since $b\in B$, we
+have $\left\vert B\setminus\left\{  b\right\}  \right\vert
+=\underbrace{\left\vert B\right\vert }_{=N+1}-1=N+1-1=N$. Thus, Exercise
+\ref{exe.ps1.1.1} \textbf{(a)} can be applied to $A\cup\left\{  b\right\}  $
+and $B\setminus\left\{  b\right\}  $ instead of $A$ and $B$ (by the induction
+hypothesis). As a consequence, we conclude that $\operatorname*{mut}%
+\nolimits_{A\cup\left\{  b\right\}  ,B\setminus\left\{  b\right\}  }Q$ can be
+obtained from $Q$ by a sequence of mutations at sinks.
+
+We shall now prove that $\operatorname*{mut}\nolimits_{A,B}Q$ can be obtained
+from $\operatorname*{mut}\nolimits_{A\cup\left\{  b\right\}  ,B\setminus
+\left\{  b\right\}  }Q$ by a mutation at a sink. In fact, $b$ is a sink of
+$\operatorname*{mut}\nolimits_{A\cup\left\{  b\right\}  ,B\setminus\left\{
+b\right\}  }Q$\ \ \ \ \footnote{\textit{Proof.} Assume the contrary. Thus,
+there exists an arrow $e$ of $\operatorname*{mut}\nolimits_{A\cup\left\{
+b\right\}  ,B\setminus\left\{  b\right\}  }Q$ which starts at $b$. Consider
+this $e$.
+\par
+Recall that $\operatorname*{mut}\nolimits_{A\cup\left\{  b\right\}
+,B\setminus\left\{  b\right\}  }Q$ was obtained from $Q$ by turning all arrows
+of $Q$ which start at a vertex in $A\cup\left\{  b\right\}  $ and end at a
+vertex in $B\setminus\left\{  b\right\}  $. Thus, every arrow of
+$\operatorname*{mut}\nolimits_{A\cup\left\{  b\right\}  ,B\setminus\left\{
+b\right\}  }Q$ which starts at a vertex in $B\setminus\left\{  b\right\}  $
+and ends at a vertex in $A\cup\left\{  b\right\}  $ has originally been going
+in the opposite direction in $Q$ (because there exists no arrow of $Q$ that
+starts at a vertex in $B\setminus\left\{  b\right\}  $ and ends at a vertex in
+$A\cup\left\{  b\right\}  $), while all the other arrows of
+$\operatorname*{mut}\nolimits_{A\cup\left\{  b\right\}  ,B\setminus\left\{
+b\right\}  }Q$ have been copied over unchanged from $Q$. The arrow $e$ of
+$\operatorname*{mut}\nolimits_{A\cup\left\{  b\right\}  ,B\setminus\left\{
+b\right\}  }Q$ starts at $b$ (which is not an element of $B\setminus\left\{
+b\right\}  $), so it does \textbf{not} start at a vertex in $B\setminus
+\left\{  b\right\}  $ and end at a vertex in $A\cup\left\{  b\right\}  $;
+therefore, the preceding sentence shows that this arrow $e$ has been copied
+over unchanged from $Q$. In other words, the arrow $e$ starts at $b$ when
+considered as an arrow of $Q$ as well. In other words, $s\left(  e\right)
+=b$. (Recall that the functions $s$ and $t$ are part of the quiver $Q$; thus,
+they map every arrow of $Q$ to its starting point and its terminal point,
+respectively. The same arrows might have different starting points and
+terminal points when regarded as arrows of $\operatorname*{mut}%
+\nolimits_{A\cup\left\{  b\right\}  ,B\setminus\left\{  b\right\}  }Q$.)
+\par
+Recall that there exists no arrow of $Q$ that starts at a vertex in $B$ and
+ends at a vertex in $A$. Thus, an arrow of $Q$ which starts at a vertex in $B$
+must not end at a vertex in $A$. In particular, the arrow $e$ of $Q$ must not
+end at a vertex in $A$ (because it starts at $b\in B$). Hence, the arrow $e$
+of $Q$ ends at a vertex in $Q_{0}\setminus A=B$. In other words, $t\left(
+e\right)  \in B$.
+\par
+We cannot have $t\left(  e\right)  =s\left(  e\right)  $ (because otherwise,
+the arrow $e$ would form a cycle, but the quiver $Q$ is acyclic). Hence,
+$t\left(  e\right)  \neq s\left(  e\right)  =b$ (since $e$ starts at $b$).
+Combined with $t\left(  e\right)  \in B$, this yields $t\left(  e\right)  \in
+B\setminus\left\{  b\right\}  $.
+\par
+Thus, the arrow $e$ of $Q$ starts at a vertex in $A\cup\left\{  b\right\}  $
+(since $s\left(  e\right)  =b\in A\cup\left\{  b\right\}  $) and ends at a
+vertex in $B\setminus\left\{  b\right\}  $ (since $t\left(  e\right)  \in
+B\setminus\left\{  b\right\}  $). As we know, $\operatorname*{mut}%
+\nolimits_{A\cup\left\{  b\right\}  ,B\setminus\left\{  b\right\}  }Q$ was
+obtained from $Q$ by turning all such arrows. Hence, the arrow $e$ must have
+been turned when it became an arrow of $\operatorname*{mut}\nolimits_{A\cup
+\left\{  b\right\}  ,B\setminus\left\{  b\right\}  }Q$. But this contradicts
+the fact that the arrow $e$ has been copied over unchanged from $Q$. This
+contradiction proves that our assumption was wrong, qed.}. Hence, the mutation
+$\mu_{b}\left(  \operatorname*{mut}\nolimits_{A\cup\left\{  b\right\}
+,B\setminus\left\{  b\right\}  }Q\right)  $ is well-defined. We now have%
+\begin{equation}
+\operatorname*{mut}\nolimits_{A,B}Q=\mu_{b}\left(  \operatorname*{mut}%
+\nolimits_{A\cup\left\{  b\right\}  ,B\setminus\left\{  b\right\}  }Q\right)
+\label{sol.ps1.exe.1.1.a.7}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.ps1.exe.1.1.a.7}):} We have $Q_{0}%
+=A\cup\underbrace{B}_{=\left\{  b\right\}  \cup\left(  B\setminus\left\{
+b\right\}  \right)  }=A\cup\left\{  b\right\}  \cup\left(  B\setminus\left\{
+b\right\}  \right)  $.
+\par
+Recall that the quiver $\operatorname*{mut}\nolimits_{A\cup\left\{  b\right\}
+,B\setminus\left\{  b\right\}  }Q$ was obtained from $Q$ by turning all arrows
+of $Q$ which start at a vertex in $A\cup\left\{  b\right\}  $ and end at a
+vertex in $B\setminus\left\{  b\right\}  $. Furthermore, the quiver $\mu
+_{b}\left(  \operatorname*{mut}\nolimits_{A\cup\left\{  b\right\}
+,B\setminus\left\{  b\right\}  }Q\right)  $ was obtained from
+$\operatorname*{mut}\nolimits_{A\cup\left\{  b\right\}  ,B\setminus\left\{
+b\right\}  }Q$ by turning all arrows ending at $b$. Thus, $\mu_{b}\left(
+\operatorname*{mut}\nolimits_{A\cup\left\{  b\right\}  ,B\setminus\left\{
+b\right\}  }Q\right)  $ can be obtained from $Q$ by a two-step process, where
+\par
+\begin{itemize}
+\item in the first step, we turn all arrows of $Q$ which start at a vertex in
+$A\cup\left\{  b\right\}  $ and end at a vertex in $B\setminus\left\{
+b\right\}  $;
+\par
+\item in the second step, we turn all arrows ending at $b$.
+\end{itemize}
+\par
+Now, let us analyze what this two-step process does to an arrow of $Q$,
+depending on where the arrow starts and ends:
+\par
+\begin{enumerate}
+\item If $e$ is an arrow of $Q$ which ends at a vertex in $A$, then this arrow
+never gets turned during our process. Indeed, let $e$ be such an arrow. Then,
+$e$ ends at a vertex in $A$, and thus does not end at a vertex in $B$ (since
+$A\cap B=\varnothing$); therefore, it does not end at a vertex in
+$B\setminus\left\{  b\right\}  $ either. Hence, the first step does not turn
+it. Therefore, after the first step, it still does not end at a vertex in $B$
+(since it did not end at a vertex in $B$ originally). In particular, it does
+not end at $b$ (since $b\in B$). Hence, it does not get turned at the second
+step either. So, $e$ never turns, and thus retains its original direction
+throughout the process.
+\par
+\item If $e$ is an arrow of $Q$ which ends at $b$, then this arrow gets turned
+once (namely, at the second step). Thus, its direction is reversed at the end
+of the process.
+\par
+\item If $e$ is an arrow of $Q$ which starts at a vertex in $A$ and ends at a
+vertex in $B\setminus\left\{  b\right\}  $, then this arrow gets turned once
+(namely, at the first step). Here is why: Let $e$ be an arrow of $Q$ which
+starts at a vertex in $A$ and ends at a vertex in $B\setminus\left\{
+b\right\}  $. Then, $e$ starts at a vertex in $A\cup\left\{  b\right\}  $ and
+ends at a vertex in $B\setminus\left\{  b\right\}  $ (since $A\subseteq
+A\cup\left\{  b\right\}  $). Thus, it gets turned at the first step. After
+this, it becomes an arrow which ends at a vertex in $A$ (because originally it
+started at a vertex in $A$), and so it does not end at $b$ (because $b\notin
+A$). Therefore, it does not turn at the second step; hence, it has turned
+exactly once altogether. Its direction is therefore reversed at the end of the
+process.
+\par
+\item If $e$ is an arrow of $Q$ which starts at $b$ and ends at a vertex in
+$B\setminus\left\{  b\right\}  $, then this arrow gets turned twice (once at
+each step). Indeed, let $e$ be such an arrow. Then, $e$ starts at a vertex in
+$A\cup\left\{  b\right\}  $ (namely, at $b$) and ends at a vertex in
+$B\setminus\left\{  b\right\}  $. Hence, it gets turned at the first step.
+After that, it ends at $b$ (because it used to start at $b$ before it was
+turned), and therefore it gets turned again at the second step. Hence, the
+direction of $e$ at the end of the two-step process is again the same as it
+was in $Q$.
+\par
+\item If $e$ is an arrow of $Q$ which starts at a vertex in $B\setminus
+\left\{  b\right\}  $ and ends at a vertex in $B\setminus\left\{  b\right\}
+$, then this arrow never gets turned. Indeed, it starts at a vertex in
+$B\setminus\left\{  b\right\}  $; thus, it does \textbf{not} start at a vertex
+in $A\cup\left\{  b\right\}  $ (since $\underbrace{B}_{=Q_{0}\setminus
+A}\setminus\left\{  b\right\}  =\left(  Q_{0}\setminus A\right)
+\setminus\left\{  b\right\}  =Q_{0}\setminus\left(  A\cup\left\{  b\right\}
+\right)  $). Hence, it does not get turned at the first step. Moreover, in
+$Q$, this arrow $e$ does not end at $b$ (because it ends at a vertex in
+$B\setminus\left\{  b\right\}  $); thus it does not end at $b$ after the first
+step either (since it does not get turned at the first step). Hence, it does
+not get turned at the second step either. Therefore, $e$ never gets turned,
+and thus retains its original direction from $Q$ after the two-step process.
+\end{enumerate}
+\par
+The five cases we have just considered cover all possibilities (because every
+arrow $e$ either ends at a vertex in $A$ or ends at $b$ or ends at a vertex in
+$B\setminus\left\{  b\right\}  $; and in the latter case, it either starts at
+a vertex in $A$, or starts at $b$, or starts at a vertex in $B\setminus
+\left\{  b\right\}  $ (since $Q_{0}=A\cup\left\{  b\right\}  \cup\left(
+B\setminus\left\{  b\right\}  \right)  $)). From our case analysis, we can
+draw the following conclusions:
+\par
+\begin{itemize}
+\item If $e$ is an arrow of $Q$ which starts at a vertex in $A$ and ends at a
+vertex in $B$, then the arrow $e$ has reversed its orientation at the end of
+the two-step process. (This follows from our Cases 2 and 3 above.)
+\par
+\item If $e$ is an arrow of $Q$ which starts at a vertex in $B$ or ends at a
+vertex in $A$, then this arrow $e$ has the same orientation at the end of the
+two-step process as it did in $Q$. (Indeed, let us prove this. Let $e$ be an
+arrow of $Q$ which starts at a vertex in $B$ or ends at a vertex in $A$. We
+need to show that $e$ has the same orientation at the end of the two-step
+process as it did in $Q$. If $e$ ends at a vertex in $A$, then this follows
+from our analysis of Case 1. So let us assume that $e$ does not end at a
+vertex in $A$. Hence, $e$ must start at a vertex in $B$ (since $e$ starts at a
+vertex in $B$ or ends at a vertex in $A$). In other words, $s\left(  e\right)
+\in B$. Hence, $t\left(  e\right)  \neq b$ (because if we had $t\left(
+e\right)  =b$, then $e$ would contradict (\ref{sol.ps1.exe.1.1.a.3})). But
+also $t\left(  e\right)  \notin A$ (since $e$ does not end at a vertex in
+$A$), so that $t\left(  e\right)  \in Q_{0}\setminus A=B$ and thus $t\left(
+e\right)  \in B\setminus\left\{  b\right\}  $ (since $t\left(  e\right)  \neq
+b$). Hence, the arrow $e$ ends at a vertex in $B\setminus\left\{  b\right\}
+$. It also starts at a vertex in $B$; thus, it either starts at $b$ or it
+starts at a vertex in $B\setminus\left\{  b\right\}  $. Our claim now follows
+from our analysis of Case 4 (in the case when $e$ starts at $b$) and from our
+analysis of Case 5 (in the case when $e$ starts at a vertex in $B\setminus
+\left\{  b\right\}  $). In either case, our claim is proven.)
+\end{itemize}
+\par
+To summarize, the outcome of our two-step process is that every arrow $e$ of
+$Q$ which starts at a vertex in $A$ and ends at a vertex in $B$ reverses its
+orientation, while all other arrows preserve their orientation. In other
+words, the outcome of our two-step process is the same as the outcome of
+turning all arrows of $Q$ which start at a vertex in $A$ and end at a vertex
+in $B$. But the latter outcome is $\operatorname*{mut}\nolimits_{A,B}Q$
+(because this is how $\operatorname*{mut}\nolimits_{A,B}Q$ was defined), while
+the former outcome is $\mu_{b}\left(  \operatorname*{mut}\nolimits_{A\cup
+\left\{  b\right\}  ,B\setminus\left\{  b\right\}  }Q\right)  $ (since we know
+that $\mu_{b}\left(  \operatorname*{mut}\nolimits_{A\cup\left\{  b\right\}
+,B\setminus\left\{  b\right\}  }Q\right)  $ can be obtained from $Q$ by our
+two-step process). Thus, we have obtained $\mu_{b}\left(  \operatorname*{mut}%
+\nolimits_{A\cup\left\{  b\right\}  ,B\setminus\left\{  b\right\}  }Q\right)
+=\operatorname*{mut}\nolimits_{A,B}Q$. This proves (\ref{sol.ps1.exe.1.1.a.7}%
+).}. Therefore, $\operatorname*{mut}\nolimits_{A,B}Q$ can be obtained from
+$\operatorname*{mut}\nolimits_{A\cup\left\{  b\right\}  ,B\setminus\left\{
+b\right\}  }Q$ by a single mutation at a sink (namely, at the sink $b$). Since
+$\operatorname*{mut}\nolimits_{A\cup\left\{  b\right\}  ,B\setminus\left\{
+b\right\}  }Q$ (in turn) can be obtained from $Q$ by a sequence of mutations
+at sinks, this shows that $\operatorname*{mut}\nolimits_{A,B}Q$ can be
+obtained from $Q$ by a sequence of mutations at sinks (namely, we first need
+to mutate at the sinks that give us $\operatorname*{mut}\nolimits_{A\cup
+\left\{  b\right\}  ,B\setminus\left\{  b\right\}  }Q$, and then we have to
+mutate at $b$). This proves that Exercise \ref{exe.ps1.1.1} \textbf{(a)} holds
+whenever $\left\vert B\right\vert =N+1$. The induction step is complete, and
+thus Exercise \ref{exe.ps1.1.1} \textbf{(a)} is solved.
+
+\textbf{(b)} Let $i\in Q_{0}$ be a source in $Q$. Let $A=\left\{  i\right\}  $
+and $B=Q_{0}\setminus A$. Then, $A$ and $B$ are two subsets of $Q_{0}$ such
+that $A\cap B=\varnothing$ and $A\cup B=Q_{0}$. There exists no arrow of $Q$
+that starts at a vertex in $B$ and ends at a vertex in $A$%
+\ \ \ \ \footnote{\textit{Proof.} Assume the contrary. Then, there exists an
+arrow of $Q$ which starts at a vertex in $B$ and ends at a vertex in $A$. Let
+$e$ be such an arrow. Then, $e$ ends at a vertex in $A$. In other words,
+$t\left(  e\right)  \in A=\left\{  i\right\}  $, so that $t\left(  e\right)
+=i$. In other words, $e$ ends at $i$. But this is impossible, since $i$ is a
+source. This contradiction proves that our assumption was wrong, qed.}. Hence,
+the quiver $\operatorname*{mut}\nolimits_{A,B}Q$ is well-defined. Moreover,
+this quiver $\operatorname*{mut}\nolimits_{A,B}Q$ is obtained by turning all
+arrows of $Q$ which start at a vertex in $A$ and end at a vertex in $B$. But
+these arrows are precisely the arrows of $Q$ starting at $i$%
+\ \ \ \ \footnote{\textit{Proof.} Each arrow of $Q$ which starts at a vertex
+in $A$ and ends at a vertex in $B$ must be an arrow starting at $i$ (because
+it starts at a vertex in $A=\left\{  i\right\}  $, but the only vertex in
+$\left\{  i\right\}  $ is $i$). It thus remains to prove the converse -- i.e.,
+to prove that each arrow of $Q$ starting at $i$ is an arrow of $Q$ which
+starts at a vertex in $A$ and ends at a vertex in $B$. So let $e$ be an arrow
+of $Q$ starting at $i$. Then, $e$ clearly starts at a vertex in $A$ (since
+$i\in\left\{  i\right\}  =A$). It remains to prove that $e$ ends at a vertex
+in $B$. But $Q$ is acyclic, and thus we cannot have $s\left(  e\right)
+=t\left(  e\right)  $ (since otherwise, the arrow $e$ would form a trivial
+cycle). Hence, $s\left(  e\right)  \neq t\left(  e\right)  $. But $s\left(
+e\right)  =i$ (since $e$ starts at $i$), so that $t\left(  e\right)  \neq
+s\left(  e\right)  =i$ and thus $t\left(  e\right)  \in Q_{0}\setminus
+\underbrace{\left\{  i\right\}  }_{=A}=Q_{0}\setminus A=B$. Hence, $e$ ends at
+a vertex in $B$. This completes our proof.}. Hence, $\operatorname*{mut}%
+\nolimits_{A,B}Q$ is obtained by turning all arrows of $Q$ starting at $i$.
+But this is exactly how we defined $\mu_{i}\left(  Q\right)  $. Therefore,
+$\operatorname*{mut}\nolimits_{A,B}Q=\mu_{i}\left(  Q\right)  $. Now, Exercise
+\ref{exe.ps1.1.1} \textbf{(a)} shows that $\operatorname*{mut}\nolimits_{A,B}%
+Q$ can be obtained from $Q$ by a sequence of mutations at sinks. Hence,
+$\mu_{i}\left(  Q\right)  $ can be obtained from $Q$ by a sequence of
+mutations at sinks (since $\operatorname*{mut}\nolimits_{A,B}Q=\mu_{i}\left(
+Q\right)  $). Exercise \ref{exe.ps1.1.1} \textbf{(b)} is proven.
+
+\textbf{(c)} Let $Q^{\prime}$ be any acyclic quiver which can be obtained from
+$Q$ by turning some of its arrows. We need to prove that $Q^{\prime}$ can also
+be obtained from $Q$ by a sequence of mutations at sinks. But \cite[proof of
+Proposition 2.2.8]{Lampe} shows that $Q^{\prime}$ can be obtained from $Q$ by
+a sequence of mutations at sinks and sources. Since every mutation at a source
+can be simulated by a sequence of mutations at sinks (by Exercise
+\ref{exe.ps1.1.1} \textbf{(b)}), this yields that $Q^{\prime}$ can be obtained
+from $Q$ by a sequence of mutations at sinks. This solves Exercise
+\ref{exe.ps1.1.1} \textbf{(c)}.
+\end{proof}
 
 \begin{thebibliography}{999999999}                                                                                        %
 
