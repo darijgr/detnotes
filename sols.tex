@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, May 28, 2016 01:41:00}
+%TCIDATA{LastRevised=Saturday, May 28, 2016 01:54:09}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -2415,14 +2415,10 @@ well.}.
 
 \section{\label{chp.binom}On binomial coefficients}
 
-Let me now switch to a different subject. The present chapter is about
-\textit{binomial coefficients} and some of their properties. This subject has
-little to do with cluster algebras, but it proves two lemmas in the long
-Lee--Schiffler paper \cite{LS} (specifically, our Exercise \ref{exe.ps1.1.3}
-is \cite[Lemma 5.11]{LS}, and our Proposition \ref{exe.ps1.1.4} is \cite[Lemma
-5.12]{LS}); besides, it is highly useful in many fields of mathematics and
-provides good opportunities to practice the arts of mathematical induction and
-of finding bijections.
+The present chapter is about \textit{binomial coefficients}. They are used in
+almost every part of mathematics, and studying them provides good
+opportunities to practice the arts of mathematical induction and of finding
+combinatorial bijections.
 
 Identities involving binomial coefficients are legion, and books have been
 written about them (let me mention \cite[Chapter 5]{GKP} as a highly readable
@@ -4015,6 +4011,19 @@ Notice that the integers $c_{i,j}$ in Exercise \ref{exe.ps1.1.2} can depend on
 the $n$ (besides depending on $i$ and $j$). We just have not included the $n$
 in the notation because it is fixed.
 
+We shall now state two results that are used by Lee and Schiffler in their
+celebrated proof of positivity for cluster algebras \cite{LS} (one of the
+recent breakthroughs in cluster algebra theory). Specifically, our Exercise
+\ref{exe.ps1.1.3} is (essentially) \cite[Lemma 5.11]{LS}, and our Proposition
+\ref{exe.ps1.1.4} is (essentially) \cite[Lemma 5.12]{LS}\footnote{We say
+\textquotedblleft essentially\textquotedblright\ because the $X$ in
+\cite[Lemma 5.11]{LS} and in \cite[Lemma 5.12]{LS} is a variable ranging over
+the nonnegative integers rather than an indeterminate. But this does not make
+much of a difference (indeed, Lemma \ref{lem.polyeq} \textbf{(b)} allows us to
+easily derive our Exercise \ref{exe.ps1.1.3} and Proposition \ref{exe.ps1.1.4}
+from \cite[Lemma 5.11]{LS} and \cite[Lemma 5.12]{LS}, and of course the
+converse implication is obvious).}.
+
 \begin{exercise}
 \label{exe.ps1.1.3}Let $a$, $b$ and $c$ be three nonnegative integers. Prove
 that the polynomial $\dbinom{aX+b}{c}$ in the variable $X$ (this is a
@@ -4051,7 +4060,7 @@ $\left\{  1,3\right\}  \cup\left\{  2,3,5\right\}  \neq\left[  5\right]  $).
 For every $i\in\mathbb{N}$, we let $e_{i}$ be the number of all $\left[
 i\right]  $-junctions. Then, if $S$ is any $i$-element set, then%
 \begin{equation}
-e_{i}\text{ is the number of all }S\text{-junctions} \label{sol.ps1.1.4.1}%
+e_{i}\text{ is the number of all }S\text{-junctions}\label{sol.ps1.1.4.1}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{sol.ps1.1.4.1}):} Let $S$ be any $i$-element
 set. We know that $e_{i}$ is the number of all $\left[  i\right]  $-junctions.
@@ -4077,7 +4086,7 @@ This proves (\ref{sol.ps1.1.4.1}).}.
 
 Now, let us show that%
 \begin{equation}
-\dbinom{x}{a}\dbinom{x}{b}=\sum_{i=0}^{a+b}e_{i}\dbinom{x}{i}
+\dbinom{x}{a}\dbinom{x}{b}=\sum_{i=0}^{a+b}e_{i}\dbinom{x}{i}%
 \label{sol.ps1.1.4.xclaim}%
 \end{equation}
 for every $x\in\mathbb{N}$.
@@ -53089,8 +53098,6 @@ $\det\left(  A+uv\right)  =\det A+\operatorname*{ent}\left(  v\left(
 Now, Theorem \ref{thm.exeadd.det.rk1upd.claim} is proven; in other words,
 Additional exercise \ref{exeadd.det.rk1upd} is solved (since Theorem
 \ref{thm.exeadd.det.rk1upd.claim} is just a restatement of the claim of this exercise).
-
-
 
 \subsection{Solution to Exercise \ref{exe.ps1.1.1}}
 
