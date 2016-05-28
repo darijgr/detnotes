@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, May 27, 2016 23:27:49}
+%TCIDATA{LastRevised=Friday, May 27, 2016 23:30:29}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -2819,6 +2819,100 @@ for every $m\in\mathbb{N}$.
 Proposition \ref{prop.binom.mm}.
 \end{proof}
 
+\subsubsection{The recurrence relation of the binomial coefficients}
+
+\begin{proposition}
+\label{prop.binom.rec}\textbf{(a)} We have%
+\begin{equation}
+\dbinom{X}{n}=\dbinom{X-1}{n}+\dbinom{X-1}{n-1} \label{eq.binom.rec}%
+\end{equation}
+for any $n\in\left\{  1,2,3,\ldots\right\}  $.
+
+\textbf{(b)} We have%
+\begin{equation}
+\dbinom{m}{n}=\dbinom{m-1}{n-1}+\dbinom{m-1}{n} \label{eq.binom.rec.m}%
+\end{equation}
+for any $m\in\mathbb{Z}$ and $n\in\left\{  1,2,3,\ldots\right\}  $.
+\end{proposition}
+
+\begin{proof}
+[Proof of Proposition \ref{prop.binom.rec}.]\textbf{(a)} Let $n\in\left\{
+1,2,3,\ldots\right\}  $. We have $n!=n\cdot\left(  n-1\right)  !$, so that
+$\left(  n-1\right)  !=n!/n$ and thus $\dfrac{1}{\left(  n-1\right)  !}%
+=\dfrac{1}{n!/n}=\dfrac{1}{n!}\cdot n$.
+
+The definition of $\dbinom{X}{n-1}$ yields
+\begin{align*}
+\dbinom{X}{n-1}  &  =\dfrac{X\left(  X-1\right)  \cdots\left(  X-\left(
+n-1\right)  +1\right)  }{\left(  n-1\right)  !}\\
+&  =\dfrac{1}{\left(  n-1\right)  !}\left(  X\left(  X-1\right)  \cdots\left(
+X-\left(  n-1\right)  +1\right)  \right)  .
+\end{align*}
+Substituting $X-1$ for $X$ in this equality, we obtain%
+\begin{align}
+\dbinom{X-1}{n-1}  &  =\underbrace{\dfrac{1}{\left(  n-1\right)  !}}%
+_{=\dfrac{1}{n!}\cdot n}\left(  \left(  X-1\right)  \underbrace{\left(
+\left(  X-1\right)  -1\right)  }_{=X-2}\cdots\underbrace{\left(  \left(
+X-1\right)  -\left(  n-1\right)  +1\right)  }_{=X-n+1}\right) \nonumber\\
+&  =\dfrac{1}{n!}\cdot n\left(  \left(  X-1\right)  \left(  X-2\right)
+\cdots\left(  X-n+1\right)  \right)  . \label{eq.binom.rec.pf.1}%
+\end{align}
+
+
+On the other hand,
+\[
+\dbinom{X}{n}=\dfrac{X\left(  X-1\right)  \cdots\left(  X-n+1\right)  }%
+{n!}=\dfrac{1}{n!}\left(  X\left(  X-1\right)  \cdots\left(  X-n+1\right)
+\right)  .
+\]
+Substituting $X-1$ for $X$ in this equality, we find%
+\begin{align*}
+\dbinom{X-1}{n}  &  =\dfrac{1}{n!}\left(  \left(  X-1\right)
+\underbrace{\left(  \left(  X-1\right)  -1\right)  }_{=X-2}\cdots
+\underbrace{\left(  \left(  X-1\right)  -n+1\right)  }_{=X-n}\right) \\
+&  =\dfrac{1}{n!}\underbrace{\left(  \left(  X-1\right)  \left(  X-2\right)
+\cdots\left(  X-n\right)  \right)  }_{=\left(  \left(  X-1\right)  \left(
+X-2\right)  \cdots\left(  X-n+1\right)  \right)  \cdot\left(  X-n\right)  }\\
+&  =\dfrac{1}{n!}\left(  \left(  X-1\right)  \left(  X-2\right)  \cdots\left(
+X-n+1\right)  \right)  \cdot\left(  X-n\right) \\
+&  =\dfrac{1}{n!}\left(  X-n\right)  \cdot\left(  \left(  X-1\right)  \left(
+X-2\right)  \cdots\left(  X-n+1\right)  \right)  .
+\end{align*}
+Adding (\ref{eq.binom.rec.pf.1}) to this equality, we obtain%
+\begin{align*}
+&  \dbinom{X-1}{n}+\dbinom{X-1}{n-1}\\
+&  =\dfrac{1}{n!}\left(  X-n\right)  \cdot\left(  \left(  X-1\right)  \left(
+X-2\right)  \cdots\left(  X-n+1\right)  \right) \\
+&  \ \ \ \ \ \ \ \ \ \ +\dfrac{1}{n!}\cdot n\left(  \left(  X-1\right)
+\left(  X-2\right)  \cdots\left(  X-n+1\right)  \right) \\
+&  =\dfrac{1}{n!}\underbrace{\left(  \left(  X-n\right)  +n\right)  }%
+_{=X}\cdot\left(  \left(  X-1\right)  \left(  X-2\right)  \cdots\left(
+X-n+1\right)  \right) \\
+&  =\dfrac{1}{n!}\underbrace{X\cdot\left(  \left(  X-1\right)  \left(
+X-2\right)  \cdots\left(  X-n+1\right)  \right)  }_{=X\left(  X-1\right)
+\cdots\left(  X-n+1\right)  }=\dfrac{1}{n!}\left(  X\left(  X-1\right)
+\cdots\left(  X-n+1\right)  \right)  =\dbinom{X}{n}.
+\end{align*}
+This proves Proposition \ref{prop.binom.rec} \textbf{(a)}.
+
+\textbf{(b)} Let $m\in\mathbb{Z}$ and $n\in\left\{  1,2,3,\ldots\right\}  $.
+Then, (\ref{eq.binom.rec.m}) follows by substituting $m$ for $X$ in
+(\ref{eq.binom.rec}). This proves Proposition \ref{prop.binom.rec}
+\textbf{(b)}.
+\end{proof}
+
+The formula (\ref{eq.binom.rec.m}) is known as the \textit{recurrence relation
+of the binomial coefficients}\footnote{Often it is extended to the case $n=0$
+by setting $\dbinom{X}{-1}=0$. It then follows from (\ref{eq.binom.00}) in
+this case.
+\par
+The formula (\ref{eq.binom.rec.m}) is responsible for the fact that
+\textquotedblleft every number in Pascal's triangle is the sum of the two
+numbers above it\textquotedblright. (Of course, if you use this fact as a
+\textit{definition} of Pascal's triangle, then (\ref{eq.binom.rec.m}) is
+conversely responsible for the fact that the numbers in this triangle are the
+binomial coefficients.)}.
+
 \subsubsection{The combinatorial interpretation of binomial coefficients}
 
 \begin{proposition}
@@ -2947,100 +3041,6 @@ have the following:
 \textquotedblleft$m$\textquotedblright\ by \textquotedblleft$X$%
 \textquotedblright\ in our proof of Proposition \ref{prop.binom.upper-neg}.
 \end{proof}
-
-\subsubsection{The recurrence relation of the binomial coefficients}
-
-\begin{proposition}
-\label{prop.binom.rec}\textbf{(a)} We have%
-\begin{equation}
-\dbinom{X}{n}=\dbinom{X-1}{n}+\dbinom{X-1}{n-1} \label{eq.binom.rec}%
-\end{equation}
-for any $n\in\left\{  1,2,3,\ldots\right\}  $.
-
-\textbf{(b)} We have%
-\begin{equation}
-\dbinom{m}{n}=\dbinom{m-1}{n-1}+\dbinom{m-1}{n} \label{eq.binom.rec.m}%
-\end{equation}
-for any $m\in\mathbb{Z}$ and $n\in\left\{  1,2,3,\ldots\right\}  $.
-\end{proposition}
-
-\begin{proof}
-[Proof of Proposition \ref{prop.binom.rec}.]\textbf{(a)} Let $n\in\left\{
-1,2,3,\ldots\right\}  $. We have $n!=n\cdot\left(  n-1\right)  !$, so that
-$\left(  n-1\right)  !=\dfrac{n!}{n}$ and thus $\dfrac{1}{\left(  n-1\right)
-!}=1/\dfrac{n!}{n}=\dfrac{1}{n!}\cdot n$.
-
-The definition of $\dbinom{X}{n-1}$ yields
-\begin{align*}
-\dbinom{X}{n-1}  &  =\dfrac{X\left(  X-1\right)  \cdots\left(  X-\left(
-n-1\right)  +1\right)  }{\left(  n-1\right)  !}\\
-&  =\dfrac{1}{\left(  n-1\right)  !}\left(  X\left(  X-1\right)  \cdots\left(
-X-\left(  n-1\right)  +1\right)  \right)  .
-\end{align*}
-Substituting $X-1$ for $X$ in this equality, we obtain%
-\begin{align}
-\dbinom{X-1}{n-1}  &  =\underbrace{\dfrac{1}{\left(  n-1\right)  !}}%
-_{=\dfrac{1}{n!}\cdot n}\left(  \left(  X-1\right)  \underbrace{\left(
-\left(  X-1\right)  -1\right)  }_{=X-2}\cdots\underbrace{\left(  \left(
-X-1\right)  -\left(  n-1\right)  +1\right)  }_{=X-n+1}\right) \nonumber\\
-&  =\dfrac{1}{n!}\cdot n\left(  \left(  X-1\right)  \left(  X-2\right)
-\cdots\left(  X-n+1\right)  \right)  . \label{eq.binom.rec.pf.1}%
-\end{align}
-
-
-On the other hand,
-\[
-\dbinom{X}{n}=\dfrac{X\left(  X-1\right)  \cdots\left(  X-n+1\right)  }%
-{n!}=\dfrac{1}{n!}\left(  X\left(  X-1\right)  \cdots\left(  X-n+1\right)
-\right)  .
-\]
-Substituting $X-1$ for $X$ in this equality, we find%
-\begin{align*}
-\dbinom{X-1}{n}  &  =\dfrac{1}{n!}\left(  \left(  X-1\right)
-\underbrace{\left(  \left(  X-1\right)  -1\right)  }_{=X-2}\cdots
-\underbrace{\left(  \left(  X-1\right)  -n+1\right)  }_{=X-n}\right) \\
-&  =\dfrac{1}{n!}\underbrace{\left(  \left(  X-1\right)  \left(  X-2\right)
-\cdots\left(  X-n\right)  \right)  }_{=\left(  \left(  X-1\right)  \left(
-X-2\right)  \cdots\left(  X-n+1\right)  \right)  \cdot\left(  X-n\right)  }\\
-&  =\dfrac{1}{n!}\left(  \left(  X-1\right)  \left(  X-2\right)  \cdots\left(
-X-n+1\right)  \right)  \cdot\left(  X-n\right) \\
-&  =\dfrac{1}{n!}\left(  X-n\right)  \cdot\left(  \left(  X-1\right)  \left(
-X-2\right)  \cdots\left(  X-n+1\right)  \right)  .
-\end{align*}
-Adding (\ref{eq.binom.rec.pf.1}) to this equality, we obtain%
-\begin{align*}
-&  \dbinom{X-1}{n}+\dbinom{X-1}{n-1}\\
-&  =\dfrac{1}{n!}\left(  X-n\right)  \cdot\left(  \left(  X-1\right)  \left(
-X-2\right)  \cdots\left(  X-n+1\right)  \right) \\
-&  \ \ \ \ \ \ \ \ \ \ +\dfrac{1}{n!}\cdot n\left(  \left(  X-1\right)
-\left(  X-2\right)  \cdots\left(  X-n+1\right)  \right) \\
-&  =\dfrac{1}{n!}\underbrace{\left(  \left(  X-n\right)  +n\right)  }%
-_{=X}\cdot\left(  \left(  X-1\right)  \left(  X-2\right)  \cdots\left(
-X-n+1\right)  \right) \\
-&  =\dfrac{1}{n!}\underbrace{X\cdot\left(  \left(  X-1\right)  \left(
-X-2\right)  \cdots\left(  X-n+1\right)  \right)  }_{=X\left(  X-1\right)
-\cdots\left(  X-n+1\right)  }=\dfrac{1}{n!}\left(  X\left(  X-1\right)
-\cdots\left(  X-n+1\right)  \right)  =\dbinom{X}{n}.
-\end{align*}
-This proves Proposition \ref{prop.binom.rec} \textbf{(a)}.
-
-\textbf{(b)} Let $m\in\mathbb{Z}$ and $n\in\left\{  1,2,3,\ldots\right\}  $.
-Then, (\ref{eq.binom.rec.m}) follows by substituting $m$ for $X$ in
-(\ref{eq.binom.rec}). This proves Proposition \ref{prop.binom.rec}
-\textbf{(b)}.
-\end{proof}
-
-The formula (\ref{eq.binom.rec.m}) is known as the \textit{recurrence relation
-of the binomial coefficients}\footnote{Often it is extended to the case $n=0$
-by setting $\dbinom{X}{-1}=0$. It then follows from (\ref{eq.binom.00}) in
-this case.
-\par
-The formula (\ref{eq.binom.rec.m}) is responsible for the fact that
-\textquotedblleft every number in Pascal's triangle is the sum of the two
-numbers above it\textquotedblright. (Of course, if you use this fact as a
-\textit{definition} of Pascal's triangle, then (\ref{eq.binom.rec.m}) is
-conversely responsible for the fact that the numbers in this triangle are the
-binomial coefficients.)}.
 
 \subsubsection{Binomial coefficients of integers are integers}
 
