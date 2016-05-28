@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, May 28, 2016 09:38:47}
+%TCIDATA{LastRevised=Saturday, May 28, 2016 16:57:37}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -2760,6 +2760,20 @@ and without regard for the order in which they are picked out. (Probabilists
 call this \textquotedblleft unordered samples without
 replacement\textquotedblright.)
 
+\begin{example}
+Proposition \ref{prop.binom.subsets} (applied to $m=4$, $n=2$ and $S=\left\{
+0,1,2,3\right\}  $) shows that $\dbinom{4}{2}$ is the number of all
+$2$-element subsets of $\left\{  0,1,2,3\right\}  $ (since $\left\{
+0,1,2,3\right\}  $ is a $4$-element set). And indeed, this is easy to verify
+by brute force: The $2$-element subsets of $\left\{  0,1,2,3\right\}  $ are%
+\[
+\left\{  0,1\right\}  ,\ \left\{  0,2\right\}  ,\ \left\{  0,3\right\}
+,\ \left\{  1,2\right\}  ,\ \left\{  1,3\right\}  \text{ and }\left\{
+2,3\right\}  ,
+\]
+so there are $6=\dbinom{4}{2}$ of them.
+\end{example}
+
 \begin{remark}
 \textbf{Caution:} Proposition \ref{prop.binom.subsets} says nothing about
 binomial coefficients $\dbinom{m}{n}$ with negative $m$. Indeed, there are no
@@ -2952,9 +2966,14 @@ $n\in\mathbb{N}$.
 Proposition \ref{prop.binom.binomial} is the famous \textit{binomial formula}
 (also known as the \textit{binomial theorem} or the \textit{binomial
 expression}) and has a well-known standard proof by induction over $n$ (using
-(\ref{eq.binom.rec.m}) and (\ref{eq.binom.00})). Some versions of it hold for
+(\ref{eq.binom.rec.m}) and (\ref{eq.binom.00}))\footnote{See Exercise
+\ref{exe.prop.binom.binomial} for this proof.}. Some versions of it hold for
 negative $n$ as well (but not in the exact form (\ref{eq.binom.binomial}), and
 not without restrictions).
+
+\begin{exercise}
+\label{exe.prop.binom.binomial}Prove Proposition \ref{prop.binom.binomial}.
+\end{exercise}
 
 \subsubsection{The absorption identity}
 
@@ -25048,6 +25067,140 @@ In other words, $\dbinom{m}{n}$ is the number of all $n$-element subsets of
 $S$. This proves Proposition \ref{prop.binom.subsets}.
 \end{proof}
 \end{verlong}
+
+\subsection{Solution to Exercise \ref{exe.prop.binom.binomial}}
+
+In order to solve Exercise \ref{exe.prop.binom.binomial}, we need to prove
+Proposition \ref{prop.binom.binomial}.
+
+\begin{proof}
+[Proof of Proposition \ref{prop.binom.binomial}.]We shall prove Proposition
+\ref{prop.binom.binomial} by induction over $n$:
+
+\textit{Induction base:} We have%
+\[
+\sum_{k=0}^{0}\dbinom{0}{k}X^{k}Y^{0-k}=\underbrace{\dbinom{0}{0}%
+}_{\substack{=1\\\text{(by (\ref{eq.binom.00}), applied to }m=0\text{)}%
+}}\underbrace{X^{0}}_{=1}\underbrace{Y^{0-0}}_{=Y^{0}=1}=1.
+\]
+Comparing this with $\left(  X+Y\right)  ^{0}=1$, we obtain $\left(
+X+Y\right)  ^{0}=\sum_{k=0}^{0}\dbinom{0}{k}X^{k}Y^{0-k}$. In other words,
+Proposition \ref{prop.binom.binomial} holds for $n=0$. This completes the
+induction base.
+
+\textit{Induction step:} Let $N$ be a positive integer. Assume that
+Proposition \ref{prop.binom.binomial} holds for $n=N-1$. We must now prove
+that Proposition \ref{prop.binom.binomial} holds for $n=N$.
+
+Notice that $N\geq1$ (since $N$ is a positive integer), so that $N-1\geq0$.
+
+We have assumed that Proposition \ref{prop.binom.binomial} holds for $n=N-1$.
+In other words, we have%
+\begin{equation}
+\left(  X+Y\right)  ^{N-1}=\sum_{k=0}^{N-1}\dbinom{N-1}{k}X^{k}Y^{\left(
+N-1\right)  -k}. \label{pf.prop.binom.binomial.ihyp}%
+\end{equation}
+
+
+Now,%
+\begin{align}
+&  \left(  X+Y\right)  ^{N}\nonumber\\
+&  =\left(  X+Y\right)  \underbrace{\left(  X+Y\right)  ^{N-1}}%
+_{\substack{=\sum_{k=0}^{N-1}\dbinom{N-1}{k}X^{k}Y^{\left(  N-1\right)
+-k}\\\text{(by (\ref{pf.prop.binom.binomial.ihyp}))}}}\nonumber\\
+&  =\left(  X+Y\right)  \left(  \sum_{k=0}^{N-1}\dbinom{N-1}{k}X^{k}Y^{\left(
+N-1\right)  -k}\right)  \nonumber\\
+&  =\underbrace{X\sum_{k=0}^{N-1}\dbinom{N-1}{k}X^{k}Y^{\left(  N-1\right)
+-k}}_{=\sum_{k=0}^{N-1}\dbinom{N-1}{k}XX^{k}Y^{\left(  N-1\right)  -k}%
+}+\underbrace{Y\sum_{k=0}^{N-1}\dbinom{N-1}{k}X^{k}Y^{\left(  N-1\right)  -k}%
+}_{=\sum_{k=0}^{N-1}\dbinom{N-1}{k}X^{k}YY^{\left(  N-1\right)  -k}%
+}\nonumber\\
+&  =\sum_{k=0}^{N-1}\underbrace{\dbinom{N-1}{k}}_{\substack{=\dbinom
+{N-1}{\left(  k+1\right)  -1}\\\text{(since }k=\left(  k+1\right)  -1\text{)}%
+}}\underbrace{XX^{k}}_{=X^{k+1}}\underbrace{Y^{\left(  N-1\right)  -k}%
+}_{\substack{=Y^{N-\left(  k+1\right)  }\\\text{(since }\left(  N-1\right)
+-k=N-\left(  k+1\right)  \text{)}}}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ +\sum_{k=0}^{N-1}\dbinom{N-1}{k}X^{k}%
+\underbrace{YY^{\left(  N-1\right)  -k}}_{\substack{=Y^{\left(  \left(
+N-1\right)  -k\right)  +1}=Y^{N-k}\\\text{(since }\left(  \left(  N-1\right)
+-k\right)  +1=N-k\text{)}}}\nonumber\\
+&  =\underbrace{\sum_{k=0}^{N-1}\dbinom{N-1}{\left(  k+1\right)  -1}%
+X^{k+1}Y^{N-\left(  k+1\right)  }}_{\substack{=\sum_{k=1}^{N}\dbinom{N-1}%
+{k-1}X^{k}Y^{N-k}\\\text{(here, we have substituted }k\text{ for }k+1\text{ in
+the sum)}}}+\sum_{k=0}^{N-1}\dbinom{N-1}{k}X^{k}Y^{N-k}\nonumber\\
+&  =\sum_{k=1}^{N}\dbinom{N-1}{k-1}X^{k}Y^{N-k}+\sum_{k=0}^{N-1}\dbinom
+{N-1}{k}X^{k}Y^{N-k}.\label{pf.prop.binom.binomial.1}%
+\end{align}
+But recall that $N-1\geq0$, so that $N-1\in\mathbb{N}$. Clearly, $N-1<N$.
+Hence, (\ref{eq.binom.0}) (applied to $m=N-1$ and $n=N$) yields $\dbinom
+{N-1}{N}=0$.
+
+On the other hand, $N$ is a positive integer. Hence, $N\in\left\{
+1,2,\ldots,N\right\}  $. Thus, we can split off the addend for $k=N$ from the
+sum $\sum_{k=1}^{N}\dbinom{N-1}{k}X^{k}Y^{N-k}$. We thus obtain%
+\begin{align}
+\sum_{k=1}^{N}\dbinom{N-1}{k}X^{k}Y^{N-k}  &  =\sum_{k=1}^{N-1}\dbinom{N-1}%
+{k}X^{k}Y^{N-k}+\underbrace{\dbinom{N-1}{N}}_{=0}X^{N}Y^{N-N}\nonumber\\
+&  =\sum_{k=1}^{N-1}\dbinom{N-1}{k}X^{k}Y^{N-k}+\underbrace{0X^{N}Y^{N-N}%
+}_{=0}\nonumber\\
+&  =\sum_{k=1}^{N-1}\dbinom{N-1}{k}X^{k}Y^{N-k}.
+\label{pf.prop.binom.binomial.4b1}%
+\end{align}
+
+
+Furthermore, $N-1\geq0$, so that $0\in\left\{  0,1,\ldots,N-1\right\}  $.
+Hence, we can split off the addend for $k=0$ from the sum $\sum_{k=0}%
+^{N-1}\dbinom{N-1}{k}X^{k}Y^{N-k}$. We thus obtain%
+\begin{align*}
+&  \sum_{k=0}^{N-1}\dbinom{N-1}{k}X^{k}Y^{N-k}\\
+&  =\underbrace{\dbinom{N-1}{0}}_{\substack{=1\\\text{(by (\ref{eq.binom.00}),
+applied to }m=N-1\text{)}}}X^{0}Y^{N-0}+\sum_{k=1}^{N-1}\dbinom{N-1}{k}%
+X^{k}Y^{N-k}\\
+&  =X^{0}Y^{N-0}+\sum_{k=1}^{N-1}\dbinom{N-1}{k}X^{k}Y^{N-k}.
+\end{align*}
+Comparing this with%
+\begin{align*}
+&  \underbrace{\dbinom{N}{0}}_{\substack{=1\\\text{(by (\ref{eq.binom.00}),
+applied to }m=N\text{)}}}X^{0}Y^{N-0}+\underbrace{\sum_{k=1}^{N}\dbinom
+{N-1}{k}X^{k}Y^{N-k}}_{\substack{=\sum_{k=1}^{N-1}\dbinom{N-1}{k}X^{k}%
+Y^{N-k}\\\text{(by (\ref{pf.prop.binom.binomial.4b1}))}}}\\
+&  =X^{0}Y^{N-0}+\sum_{k=1}^{N-1}\dbinom{N-1}{k}X^{k}Y^{N-k},
+\end{align*}
+we obtain%
+\begin{equation}
+\sum_{k=0}^{N-1}\dbinom{N-1}{k}X^{k}Y^{N-k}=\dbinom{N}{0}X^{0}Y^{N-0}%
++\sum_{k=1}^{N}\dbinom{N-1}{k}X^{k}Y^{N-k}. \label{pf.prop.binom.binomial.4b}%
+\end{equation}
+Now, (\ref{pf.prop.binom.binomial.1}) becomes%
+\begin{align*}
+&  \left(  X+Y\right)  ^{N}\\
+&  =\sum_{k=1}^{N}\dbinom{N-1}{k-1}X^{k}Y^{N-k}+\underbrace{\sum_{k=0}%
+^{N-1}\dbinom{N-1}{k}X^{k}Y^{N-k}}_{\substack{=\dbinom{N}{0}X^{0}Y^{N-0}%
++\sum_{k=1}^{N}\dbinom{N-1}{k}X^{k}Y^{N-k}\\\text{(by
+(\ref{pf.prop.binom.binomial.4b}))}}}\\
+&  =\sum_{k=1}^{N}\dbinom{N-1}{k-1}X^{k}Y^{N-k}+\dbinom{N}{0}X^{0}Y^{N-0}%
++\sum_{k=1}^{N}\dbinom{N-1}{k}X^{k}Y^{N-k}\\
+&  =\dbinom{N}{0}X^{0}Y^{N-0}+\underbrace{\sum_{k=1}^{N}\dbinom{N-1}{k-1}%
+X^{k}Y^{N-k}+\sum_{k=1}^{N}\dbinom{N-1}{k}X^{k}Y^{N-k}}_{=\sum_{k=1}%
+^{N}\left(  \dbinom{N-1}{k-1}+\dbinom{N-1}{k}\right)  X^{k}Y^{N-k}}\\
+&  =\dbinom{N}{0}X^{0}Y^{N-0}+\sum_{k=1}^{N}\left(  \dbinom{N-1}{k-1}%
++\dbinom{N-1}{k}\right)  X^{k}Y^{N-k}.
+\end{align*}
+Comparing this with%
+\begin{align*}
+&  \sum_{k=0}^{N}\dbinom{N}{k}X^{k}Y^{N-k}\\
+&  =\dbinom{N}{0}X^{0}Y^{N-0}+\sum_{k=1}^{N}\underbrace{\dbinom{N}{k}%
+}_{\substack{=\dbinom{N-1}{k-1}+\dbinom{N-1}{k}\\\text{(by
+(\ref{eq.binom.rec.m}), applied to }m=N\text{ and }n=k\text{)}}}X^{k}Y^{N-k}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have split off the addend for
+}k=0\text{ from the sum}\right) \\
+&  =\dbinom{N}{0}X^{0}Y^{N-0}+\sum_{k=1}^{N}\left(  \dbinom{N-1}{k-1}%
++\dbinom{N-1}{k}\right)  X^{k}Y^{N-k},
+\end{align*}
+we obtain $\left(  X+Y\right)  ^{N}=\sum_{k=0}^{N}\dbinom{N}{k}X^{k}Y^{N-k}$.
+In other words, Proposition \ref{prop.binom.binomial} holds for $n=N$. Hence,
+Proposition \ref{prop.binom.binomial} is proven by induction.
+\end{proof}
 
 \subsection{Solution to Exercise \ref{exe.ps1.1.2}}
 
