@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, May 27, 2016 22:56:30}
+%TCIDATA{LastRevised=Friday, May 27, 2016 23:09:53}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -2610,9 +2610,9 @@ Let us first define binomial coefficients:
 \begin{definition}
 \label{def.binom}Let $n\in\mathbb{N}$.
 
-\textbf{(a)} The binomial coefficient $\dbinom{X}{n}$ is a polynomial of
-degree $n$ in one indeterminate $X$, with rational coefficients. It is defined
-by%
+\textbf{(a)} The \textit{formal binomial coefficient} $\dbinom{X}{n}$ is a
+polynomial of degree $n$ in one indeterminate $X$, with rational coefficients.
+It is defined by%
 \[
 \dbinom{X}{n}=\dfrac{X\left(  X-1\right)  \cdots\left(  X-n+1\right)  }{n!}.
 \]
@@ -2621,9 +2621,9 @@ X-1\right)  \cdots\left(  X-n+1\right)  $) is an empty product. By convention,
 an empty product is always defined to be $1$.)
 
 \textbf{(b)} The polynomial $\dbinom{X}{n}=\dfrac{X\left(  X-1\right)
-\cdots\left(  X-n+1\right)  }{n!}$ can be evaluated at every integer or
-rational number or even complex number (i.e., we can substitute any such
-number for $X$), or at any other polynomial (for example, we can substitute
+\cdots\left(  X-n+1\right)  }{n!}$ can be evaluated at any integer (i.e., we
+can substitute any integer for $X$), or at any rational number, or even at any
+complex number, or at any other polynomial (for example, we can substitute
 $X^{2}+2$ for $X$ to obtain $\dbinom{X^{2}+2}{n}$, which is again a polynomial).
 
 Whenever $m$ is an integer (or rational number, or complex number), we denote
@@ -2712,10 +2712,8 @@ for any $m\in\mathbb{N}$ and $n\in\mathbb{N}$ satisfying $m\geq n$.
 \textbf{Caution:} The formula (\ref{eq.binom.formula}) holds only for
 $m\in\mathbb{N}$ and $n\in\mathbb{N}$ satisfying $m\geq n$. Thus, neither
 $\dbinom{-3}{2}$ nor $\dbinom{1/3}{3}$ nor $\dbinom{2}{5}$ nor the
-\textbf{polynomial} $\dbinom{X}{3}$ can be evaluated using this formula! The
-definition $\dbinom{X}{n}=\dfrac{X\left(  X-1\right)  \cdots\left(
-X-n+1\right)  }{n!}$ of binomial coefficients is a lot more general than
-(\ref{eq.binom.formula}).
+\textbf{polynomial} $\dbinom{X}{3}$ can be evaluated using this formula!
+Definition \ref{def.binom} is a lot more general than (\ref{eq.binom.formula}).
 \end{remark}
 
 \begin{proof}
@@ -3090,7 +3088,8 @@ $n\in\mathbb{N}$.
 \end{proposition}
 
 Proposition \ref{prop.binom.binomial} is the famous \textit{binomial formula}
-and has a well-known standard proof by induction over $n$ (using
+(also known as the \textit{binomial theorem} or the \textit{binomial
+expression}) and has a well-known standard proof by induction over $n$ (using
 (\ref{eq.binom.rec.m}) and (\ref{eq.binom.00})). Some versions of it hold for
 negative $n$ as well (but not in the exact form (\ref{eq.binom.binomial}), and
 not without restrictions).
@@ -3480,29 +3479,29 @@ Recalling how $P$ and $Q$ are defined, we can rewrite this as $\dbinom{X+Y}%
 
 The argument that we used at the end of the above proof to derive Theorem
 \ref{thm.vandermonde} from (\ref{pf.thm.vandermonde.eq.xy}) is a very common
-argument that appears in proofs of equalities for binomial coefficients.
-Binomial coefficients are polynomials that can be evaluated at many different
-values\footnote{For example, terms like $\dbinom{-1/2}{3}$, $\dbinom
-{2+\sqrt{3}}{5}$ and $\dbinom{-7}{0}$ make perfect sense. Generally,
-$\dbinom{X}{n}$ is a polynomial in $X$ with rational coefficients, and thus we
-can substitute any complex number for $X$. So $\dbinom{m}{n}$ is well-defined
-for all $m\in\mathbb{C}$ and $n\in\mathbb{N}$. (But we cannot substitute
-arbitrary complex numbers for $n$. So far we have only defined $\dbinom{X}{n}$
-for $n\in\mathbb{N}$. It is usual to define $\dbinom{X}{n}$ to mean $0$ for
-negative integers $n$, and using analysis (specifically, the $\Gamma$
-function) it is possible to give a reasonable meaning to $\dbinom{m}{n}$ for
-$m$ and $n$ being reals, but this will no longer be a polynomial in $m$.)},
-but their combinatorial interpretation (via counting subsets) only makes sense
-when they are evaluated at nonnegative integers. Thus, if we want to prove an
-identity of the form $P=Q$ (where $P$ and $Q$ are two polynomials, say, in two
-indeterminates $X$ and $Y$) using the combinatorial interpretation of binomial
-coefficients, then a reasonable tactic is to first show that $P\left(
-x,y\right)  =Q\left(  x,y\right)  $ for all $x\in\mathbb{N}$ and
-$y\in\mathbb{N}$ (using combinatorics), and then to use something like Lemma
-\ref{lem.polyeq} in order to conclude that $P$ and $Q$ are equal as
-polynomials. We shall see this tactic used a few more times.\footnote{This
-tactic is called \textquotedblleft the polynomial argument\textquotedblright%
-\ in \cite[\S 5.1]{GKP}.}
+argument that appears in proofs of equalities for formal binomial
+coefficients. Formal binomial coefficients $\dbinom{X}{n}$ are polynomials
+that can be evaluated at many different values\footnote{For example, terms
+like $\dbinom{-1/2}{3}$, $\dbinom{2+\sqrt{3}}{5}$ and $\dbinom{-7}{0}$ make
+perfect sense. Generally, $\dbinom{X}{n}$ is a polynomial in $X$ with rational
+coefficients, and thus we can substitute any complex number for $X$. So
+$\dbinom{m}{n}$ is well-defined for all $m\in\mathbb{C}$ and $n\in\mathbb{N}$.
+(But we cannot substitute arbitrary complex numbers for $n$. So far we have
+only defined $\dbinom{X}{n}$ for $n\in\mathbb{N}$. It is usual to define
+$\dbinom{X}{n}$ to mean $0$ for negative integers $n$, and using analysis
+(specifically, the $\Gamma$ function) it is possible to give a reasonable
+meaning to $\dbinom{m}{n}$ for $m$ and $n$ being reals, but this will no
+longer be a polynomial in $m$.)}, but their combinatorial interpretation (via
+counting subsets) only makes sense when they are evaluated at nonnegative
+integers. Thus, if we want to prove an identity of the form $P=Q$ (where $P$
+and $Q$ are two polynomials, say, in two indeterminates $X$ and $Y$) using the
+combinatorial interpretation of binomial coefficients, then a reasonable
+tactic is to first show that $P\left(  x,y\right)  =Q\left(  x,y\right)  $ for
+all $x\in\mathbb{N}$ and $y\in\mathbb{N}$ (using combinatorics), and then to
+use something like Lemma \ref{lem.polyeq} in order to conclude that $P$ and
+$Q$ are equal as polynomials. We shall see this tactic used a few more
+times.\footnote{This tactic is called \textquotedblleft the polynomial
+argument\textquotedblright\ in \cite[\S 5.1]{GKP}.}
 
 But we promised an algebraic proof of Theorem \ref{thm.vandermonde} as well;
 let us show it now:
@@ -43494,7 +43493,8 @@ Write the $m\times\ell^{\prime}$-matrix $B^{\prime}$ in the form $B^{\prime
 }$.
 
 Write the $m^{\prime}\times\ell$-matrix $C^{\prime}$ in the form $C^{\prime
-}=\left(  c_{i,j}^{\prime}\right)  _{1\leq i\leq m^{\prime},\ 1\leq j\leq\ell}$.
+}=\left(  c_{i,j}^{\prime}\right)  _{1\leq i\leq m^{\prime},\ 1\leq j\leq\ell
+}$.
 
 Write the $m^{\prime}\times\ell^{\prime}$-matrix $D^{\prime}$ in the form
 $D^{\prime}=\left(  d_{i,j}^{\prime}\right)  _{1\leq i\leq m^{\prime},\ 1\leq
