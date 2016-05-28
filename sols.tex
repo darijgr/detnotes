@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, May 27, 2016 23:30:29}
+%TCIDATA{LastRevised=Saturday, May 28, 2016 01:32:05}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -2963,6 +2963,19 @@ sound counterintuitive, but really makes a lot of sense: A statement
 says anything about situations where $\mathcal{A}$ holds. If $\mathcal{A}$
 never holds, then it therefore says nothing. And saying nothing is a safe way
 to remain truthful.}
+
+\begin{remark}
+Some authors (for example, those of \cite{LeLeMe16}) use
+(\ref{eq.binom.subsets}) as the \textit{definition} of $\dbinom{m}{n}$. This
+is a legitimate definition of $\dbinom{m}{n}$ in the case when $m$ and $n$ are
+nonnegative integers (and, of course, equivalent to our definition); but it is
+not as general as ours, since it does not extend to negative (or non-integer)
+$m$.
+\end{remark}
+
+\begin{exercise}
+\label{exe.prop.binom.subsets}Prove Proposition \ref{prop.binom.subsets}.
+\end{exercise}
 
 \subsubsection{Upper negation}
 
@@ -24521,6 +24534,860 @@ can be simulated by a sequence of mutations at sinks (by Exercise
 from $Q$ by a sequence of mutations at sinks. This solves Exercise
 \ref{exe.ps1.1.1} \textbf{(c)}.
 \end{proof}
+
+\subsection{Solution to Exercise \ref{exe.prop.binom.subsets}}
+
+\begin{vershort}
+Exercise \ref{exe.prop.binom.subsets} asks us to prove Proposition
+\ref{prop.binom.subsets}.
+
+First, let us handle two trivial cases of Proposition \ref{prop.binom.subsets}:
+
+\begin{lemma}
+\label{lem.sol.prop.binom.subsets.n=0}Proposition \ref{prop.binom.subsets}
+holds in the case when $n=0$.
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.prop.binom.subsets.n=0}.]Let $m\in\mathbb{N}$,
+and let $S$ be an $m$-element set. Then, the set $S$ has exactly one
+$0$-element subset (namely, the empty set $\varnothing$). Thus, the number of
+all $0$-element subsets of $S$ is $1$.
+
+On the other hand, $\dbinom{m}{0}=1$ (by (\ref{eq.binom.00})). Thus,
+$\dbinom{m}{0}$ is the number of all $0$-element subsets of $S$ (since the
+number of all $0$-element subsets of $S$ is $1$).
+
+Now, forget that we fixed $m$ and $S$. We thus have shown that if
+$m\in\mathbb{N}$ and if $S$ is an $m$-element set, then $\dbinom{m}{0}$ is the
+number of all $0$-element subsets of $S$. In other words, Proposition
+\ref{prop.binom.subsets} holds in the case when $n=0$. This proves Lemma
+\ref{lem.sol.prop.binom.subsets.n=0}.
+\end{proof}
+
+\begin{lemma}
+\label{lem.sol.prop.binom.subsets.m=0}Proposition \ref{prop.binom.subsets}
+holds in the case when $m=0$.
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.prop.binom.subsets.m=0}.]Let $m$, $n$ and $S$ be
+as in Proposition \ref{prop.binom.subsets}. Assume that $m=0$. We then must
+prove that Proposition \ref{prop.binom.subsets} holds for these $m$, $n$ and
+$S$.
+
+If $n=0$, then this follows from Lemma \ref{lem.sol.prop.binom.subsets.n=0}.
+Hence, for the rest of this proof, we can WLOG assume that $n\neq0$. Assume this.
+
+From $n\neq0$, we conclude that $n$ is a positive integer. Hence, $n>0=m$, so
+that $m<n$. Thus, (\ref{eq.binom.0}) yields $\dbinom{m}{n}=0$.
+
+But $S$ is an $m$-element set, i.e., a $0$-element set (since $m=0$). In other
+words, $S=\varnothing$. Hence, $S$ has no $n$-element
+subsets\footnote{\textit{Proof.} Assume the contrary. Thus, $S$ has an
+$n$-element subset. Let $Q$ be such a subset. Thus, $Q\subseteq S$ and
+$\left\vert Q\right\vert =n$. Since $Q\subseteq S=\varnothing$, we have
+$Q=\varnothing$ and thus $\left\vert Q\right\vert =0$. This contradicts
+$\left\vert Q\right\vert =n\neq0$. This contradiction shows that our
+assumption was wrong, qed.}. In other words, the number of all $n$-elements of
+$S$ is $0$. Since $\dbinom{m}{n}$ is also $0$, this shows that $\dbinom{m}{n}$
+is the number of all $n$-elements of $S$. Hence, Proposition
+\ref{prop.binom.subsets} holds for our $m$, $n$ and $S$. This proves Lemma
+\ref{lem.sol.prop.binom.subsets.m=0}.
+\end{proof}
+
+\begin{proof}
+[Proof of Proposition \ref{prop.binom.subsets}.]We shall prove Proposition
+\ref{prop.binom.subsets} by induction over $m$:
+
+\textit{Induction base:} Lemma \ref{lem.sol.prop.binom.subsets.m=0} shows that
+Proposition \ref{prop.binom.subsets} holds in the case when $m=0$. This
+completes the induction base.
+
+\textit{Induction step:} Let $M$ be a positive integer. Assume that
+Proposition \ref{prop.binom.subsets} holds for $m=M-1$. We now must prove that
+Proposition \ref{prop.binom.subsets} holds for $m=M$.
+
+We have assumed that Proposition \ref{prop.binom.subsets} holds for $m=M-1$.
+In other words, if $n\in\mathbb{N}$, and if $S$ is an $\left(  M-1\right)
+$-element set, then%
+\begin{equation}
+\dbinom{M-1}{n}\text{ is the number of all }n\text{-element subsets of }S.
+\label{pf.prop.binom.subsets.ihyp}%
+\end{equation}
+
+
+Now, let $n\in\mathbb{N}$, and let $S$ be an $M$-element set. We shall show
+that
+\begin{equation}
+\dbinom{M}{n}\text{ is the number of all }n\text{-element subsets of }S.
+\label{pf.prop.binom.subsets.igoal}%
+\end{equation}
+
+
+\textit{Proof of (\ref{pf.prop.binom.subsets.igoal}):} If $n=0$, then
+(\ref{pf.prop.binom.subsets.igoal}) follows from Lemma
+\ref{lem.sol.prop.binom.subsets.n=0}\footnote{\textit{Proof.} Lemma
+\ref{lem.sol.prop.binom.subsets.n=0} yields that Proposition
+\ref{prop.binom.subsets} holds for $n=0$. Hence, we can apply Proposition
+\ref{prop.binom.subsets} to $n=0$ and $m=M$. We thus obtain that $\dbinom
+{M}{0}$ is the number of all $0$-element subsets of $S$. If $n=0$, then this
+rewrites as follows: $\dbinom{M}{n}$ is the number of all $n$-element subsets
+of $S$. Hence, if $n=0$, then (\ref{pf.prop.binom.subsets.igoal}) holds.}.
+Thus, for the rest of this proof of (\ref{pf.prop.binom.subsets.igoal}), we
+can WLOG assume that $n\neq0$. Assume this.
+
+Now, $n$ is a positive integer (since $n\in\mathbb{N}$ and $n\neq0$); thus,
+$n-1\in\mathbb{N}$.
+
+Now, $S$ is an $M$-element set; thus, $\left\vert S\right\vert =M>0$. Hence,
+the set $S$ is nonempty. In other words, there exists an $s\in S$. Fix such an
+$s$. Then, $\left\vert S\setminus\left\{  s\right\}  \right\vert
+=\underbrace{\left\vert S\right\vert }_{=M}-1=M-1$. In other words,
+$S\setminus\left\{  s\right\}  $ is an $\left(  M-1\right)  $-element set.
+Hence, (\ref{pf.prop.binom.subsets.ihyp}) (applied to $S\setminus\left\{
+s\right\}  $ instead of $S$) yields that%
+\begin{equation}
+\dbinom{M-1}{n}\text{ is the number of all }n\text{-element subsets of
+}S\setminus\left\{  s\right\}  . \label{pf.prop.binom.subsets.ihyp.1}%
+\end{equation}
+Also, (\ref{pf.prop.binom.subsets.ihyp}) (applied to $n-1$ and $S\setminus
+\left\{  s\right\}  $ instead of $n$ and $S$) yields that%
+\begin{equation}
+\dbinom{M-1}{n-1}\text{ is the number of all }\left(  n-1\right)
+\text{-element subsets of }S\setminus\left\{  s\right\}  .
+\label{pf.prop.binom.subsets.ihyp.2}%
+\end{equation}
+
+
+Now, the $n$-element subsets of $S$ can be classified into two types: the ones
+that contain $s$, and the ones that don't. We can count them separately:
+
+\begin{itemize}
+\item The $n$-element subsets of $S$ that contain $s$ are in bijection with
+the $\left(  n-1\right)  $-element subsets of $S\setminus\left\{  s\right\}
+$. More precisely: To each $\left(  n-1\right)  $-element subset $U$ of
+$S\setminus\left\{  s\right\}  $, we can assign a unique $n$-element subset of
+$S$ that contains $s$ (namely, $U\cup\left\{  s\right\}  $); and this
+assignment is bijective (i.e., each $n$-element subset of $S$ that contains
+$s$ gets assigned to exactly one $\left(  n-1\right)  $-element subsets of
+$S\setminus\left\{  s\right\}  $).\ \ \ \ \footnote{Let me restate this in
+even more formal terms:
+\par
+Let $\mathbf{A}$ be the set of all $\left(  n-1\right)  $-element subsets of
+$S\setminus\left\{  s\right\}  $. Let $\mathbf{B}$ be the set of all
+$n$-element subsets of $S$ that contain $s$. Then, the map%
+\[
+\mathbf{A}\rightarrow\mathbf{B},\ \ \ \ \ \ \ \ \ \ U\mapsto U\cup\left\{
+s\right\}
+\]
+is well-defined and bijective.
+\par
+(If you want to prove this formally, you need to prove two statements:
+\par
+\begin{enumerate}
+\item The map $\mathbf{A}\rightarrow\mathbf{B},\ U\mapsto U\cup\left\{
+s\right\}  $ is well-defined (i.e., we have $U\cup\left\{  s\right\}
+\in\mathbf{B}$ for each $U\in\mathbf{A}$).
+\par
+\item This map is bijective.
+\end{enumerate}
+\par
+Proving the first statement is straightforward. The best way to prove the
+second statement is to show that the map $\mathbf{A}\rightarrow\mathbf{B}%
+,\ U\mapsto U\cup\left\{  s\right\}  $ has an inverse -- namely, the map
+$\mathbf{B}\rightarrow\mathbf{A},\ V\mapsto V\setminus\left\{  s\right\}  $.
+Of course, you would also have to show that this latter map is well-defined,
+too.)} Hence,
+\begin{align}
+&  \left(  \text{the number of all }n\text{-element subsets of }S\text{ that
+contain }s\right) \nonumber\\
+&  =\left(  \text{the number of all }\left(  n-1\right)  \text{-element
+subsets of }S\setminus\left\{  s\right\}  \right) \nonumber\\
+&  =\dbinom{M-1}{n-1}\ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{pf.prop.binom.subsets.ihyp.2})}\right)  .
+\label{pf.prop.binom.subsets.i1}%
+\end{align}
+
+
+\item The $n$-element subsets of $S$ that don't contain $s$ are precisely the
+$n$-element subsets of $S\setminus\left\{  s\right\}  $ (because the subsets
+of $S$ that don't contain $s$ are precisely the subsets of $S\setminus\left\{
+s\right\}  $). Hence,%
+\begin{align}
+&  \left(  \text{the number of all }n\text{-element subsets of }S\text{ that
+don't contain }s\right) \nonumber\\
+&  =\left(  \text{the number of all }n\text{-element subsets of }%
+S\setminus\left\{  s\right\}  \right) \nonumber\\
+&  =\dbinom{M-1}{n}\ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{pf.prop.binom.subsets.ihyp.1})}\right)  .
+\label{pf.prop.binom.subsets.i2}%
+\end{align}
+
+\end{itemize}
+
+Now, every $n$-element subset of $S$ either contains $s$ or does not. Hence,%
+\begin{align*}
+&  \left(  \text{the number of all }n\text{-element subsets of }S\right) \\
+&  =\underbrace{\left(  \text{the number of all }n\text{-element subsets of
+}S\text{ that contain }s\right)  }_{\substack{=\dbinom{M-1}{n-1}\\\text{(by
+(\ref{pf.prop.binom.subsets.i1}))}}}\\
+&  \ \ \ \ \ \ \ \ \ \ +\underbrace{\left(  \text{the number of all
+}n\text{-element subsets of }S\text{ that don't contain }s\right)
+}_{\substack{=\dbinom{M-1}{n}\\\text{(by (\ref{pf.prop.binom.subsets.i2}))}%
+}}\\
+&  =\dbinom{M-1}{n-1}+\dbinom{M-1}{n}.
+\end{align*}
+Compared with
+\[
+\dbinom{M}{n}=\dbinom{M-1}{n-1}+\dbinom{M-1}{n}\ \ \ \ \ \ \ \ \ \ \left(
+\text{by (\ref{eq.binom.rec.m}), applied to }m=M\right)  ,
+\]
+this yields $\left(  \text{the number of all }n\text{-element subsets of
+}S\right)  =\dbinom{M}{n}$. Hence, (\ref{pf.prop.binom.subsets.igoal}) is proven.
+
+Now, forget that we fixed $n$ and $S$. We thus have shown that every
+$n\in\mathbb{N}$ and every $M$-element set $S$ satisfy
+(\ref{pf.prop.binom.subsets.igoal}). In other words, Proposition
+\ref{prop.binom.subsets} holds for $m=M$. This completes the inducton step.
+Thus, Proposition \ref{prop.binom.subsets} is proven by induction.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+In order to solve Exercise \ref{exe.prop.binom.subsets}, we need to prove
+Proposition \ref{prop.binom.subsets}. We shall do this in detail; but first,
+let us introduce a notation:
+
+\begin{definition}
+\label{def.sol.prop.binom.subsets.Pm}Let $S$ be a set. Let $m\in\mathbb{N}$.
+Then, $\mathcal{P}_{m}\left(  S\right)  $ will denote the set of all
+$m$-element subsets of $S$.
+\end{definition}
+
+\begin{proposition}
+\label{prop.sol.prop.binom.subsets.Pm.lem}\textbf{(a)} We have $\mathcal{P}%
+_{0}\left(  S\right)  =\left\{  \varnothing\right\}  $ for every set $S$.
+
+\textbf{(b)} For every positive integer $m$, we have $\mathcal{P}_{m}\left(
+\varnothing\right)  =\varnothing$.
+
+\textbf{(c)} Let $S$ be a set. Let $s\in S$. Let $m$ be a positive integer.
+Then, $\mathcal{P}_{m}\left(  S\setminus\left\{  s\right\}  \right)
+\subseteq\mathcal{P}_{m}\left(  S\right)  $. Furthermore, the map%
+\begin{align*}
+\mathcal{P}_{m-1}\left(  S\setminus\left\{  s\right\}  \right)   &
+\rightarrow\mathcal{P}_{m}\left(  S\right)  \setminus\mathcal{P}_{m}\left(
+S\setminus\left\{  s\right\}  \right)  ,\\
+U  &  \mapsto U\cup\left\{  s\right\}
+\end{align*}
+is well-defined and a bijection.
+\end{proposition}
+
+Let us briefly explain what Proposition
+\ref{prop.sol.prop.binom.subsets.Pm.lem} says. Proposition
+\ref{prop.sol.prop.binom.subsets.Pm.lem} \textbf{(a)} says that the only
+$0$-element subset of any set $S$ is $\varnothing$. Proposition
+\ref{prop.sol.prop.binom.subsets.Pm.lem} \textbf{(b)} says that the empty set
+$\varnothing$ has no $m$-element subsets when $m$ is a positive integer.
+Proposition \ref{prop.sol.prop.binom.subsets.Pm.lem} \textbf{(c)} says that if
+$s$ is an element of a set $S$, and if $m$ is a positive integer, then:
+
+\begin{itemize}
+\item all $m$-element subsets of $S\setminus\left\{  s\right\}  $ are
+$m$-element subsets of $S$ as well;
+
+\item the $m$-element subsets of $S$ which are \textbf{not} $m$-element
+subsets of $S\setminus\left\{  s\right\}  $ are in bijection with the $\left(
+m-1\right)  $-element subsets of $S\setminus\left\{  s\right\}  $; this
+bijection sends an $\left(  m-1\right)  $-element $U$ of $S\setminus\left\{
+s\right\}  $ to the $m$-element subset $U\cup\left\{  s\right\}  $ of $S$.
+\end{itemize}
+
+This restatement should make Proposition
+\ref{prop.sol.prop.binom.subsets.Pm.lem} obvious (or, at least, intuitively
+clear). For the sake of completeness, let me also give a formal proof:
+
+\begin{proof}
+[Proof of Proposition \ref{prop.sol.prop.binom.subsets.Pm.lem}.]\textbf{(a)}
+Let $S$ be a set. The set $\varnothing$ is clearly a $0$-element subset of
+$S$, and furthermore is the only $0$-element subset of $S$ (since
+$\varnothing$ is the only $0$-element set). Now, the definition of
+$\mathcal{P}_{0}\left(  S\right)  $ shows that $\mathcal{P}_{0}\left(
+S\right)  $ is the set of all $0$-element subsets of $S$. Thus,%
+\[
+\mathcal{P}_{0}\left(  S\right)  =\left(  \text{the set of all }%
+0\text{-element subsets of }S\right)  =\left\{  \varnothing\right\}
+\]
+(since $\varnothing$ is the only $0$-element subset of $S$). This proves
+Proposition \ref{prop.sol.prop.binom.subsets.Pm.lem} \textbf{(a)}.
+
+\textbf{(b)} Let $m$ be a positive integer. Then, there exist no $m$-element
+subsets of $\varnothing$\ \ \ \ \footnote{\textit{Proof.} Let $U$ be an
+$m$-element subset of $\varnothing$. Thus, $U$ is an $m$-element set; hence,
+$\left\vert U\right\vert =m>0$ (since $m$ is positive). But $U$ is a subset of
+$\varnothing$; hence, $\left\vert U\right\vert \leq\left\vert \varnothing
+\right\vert =0$. This contradicts $\left\vert U\right\vert >0$.
+\par
+Now, forget that we fixed $U$. We thus have found a contradiction for every
+$m$-element subset $U$ of $\varnothing$. Hence, there exist no $m$-element
+subsets of $\varnothing$. Qed.}. Now, the definition of $\mathcal{P}%
+_{m}\left(  \varnothing\right)  $ shows that $\mathcal{P}_{m}\left(
+\varnothing\right)  $ is the set of all $m$-element subsets of $\varnothing$.
+Hence,
+\[
+\mathcal{P}_{m}\left(  \varnothing\right)  =\left(  \text{the set of all
+}m\text{-element subsets of }\varnothing\right)  =\varnothing
+\]
+(since there exist no $m$-element subsets of $\varnothing$). This proves
+Proposition \ref{prop.sol.prop.binom.subsets.Pm.lem} \textbf{(b)}.
+
+\textbf{(c)} We have $m-1\in\mathbb{N}$ (since $m$ is a positive integer). We
+know that $\mathcal{P}_{m}\left(  S\setminus\left\{  s\right\}  \right)  $ is
+the set of all $m$-element subsets of $S\setminus\left\{  s\right\}  $ (by the
+definition of $\mathcal{P}_{m}\left(  S\setminus\left\{  s\right\}  \right)
+$). Also, $\mathcal{P}_{m}\left(  S\right)  $ is the set of all $m$-element
+subsets of $S$ (by the definition of $\mathcal{P}_{m}\left(  S\right)  $).
+Finally, $\mathcal{P}_{m-1}\left(  S\setminus\left\{  s\right\}  \right)  $ is
+the set of all $\left(  m-1\right)  $-element subsets of $S\setminus\left\{
+s\right\}  $ (by the definition of $\mathcal{P}_{m-1}\left(  S\setminus
+\left\{  s\right\}  \right)  $).
+
+For every $U\in\mathcal{P}_{m}\left(  S\setminus\left\{  s\right\}  \right)
+$, we have $U\in\mathcal{P}_{m}\left(  S\right)  $%
+\ \ \ \ \footnote{\textit{Proof.} Let $U\in\mathcal{P}_{m}\left(
+S\setminus\left\{  s\right\}  \right)  $. We must show that $U\in
+\mathcal{P}_{m}\left(  S\right)  $.
+\par
+We have $U\in\mathcal{P}_{m}\left(  S\setminus\left\{  s\right\}  \right)  $.
+In other words, $U$ is an $m$-element subset of $S\setminus\left\{  s\right\}
+$ (since $\mathcal{P}_{m}\left(  S\setminus\left\{  s\right\}  \right)  $ is
+the set of all $m$-element subsets of $S\setminus\left\{  s\right\}  $). Thus,
+$U$ is an $m$-element set; hence, $\left\vert U\right\vert =m$. Also, $U$ is a
+subset of $S\setminus\left\{  s\right\}  $; thus, $U\subseteq S\setminus
+\left\{  s\right\}  \subseteq S$. Therefore, $U$ is a subset of $S$. Hence,
+$U$ is an $m$-element subset of $S$. In other words, $U\in\mathcal{P}%
+_{m}\left(  S\right)  $ (since $\mathcal{P}_{m}\left(  S\right)  $ is the set
+of all $m$-element subsets of $S$). Qed.}. In other words, $\mathcal{P}%
+_{m}\left(  S\setminus\left\{  s\right\}  \right)  \subseteq\mathcal{P}%
+_{m}\left(  S\right)  $.
+
+For every $U\in\mathcal{P}_{m-1}\left(  S\setminus\left\{  s\right\}  \right)
+$, we have $U\cup\left\{  s\right\}  \in\mathcal{P}_{m}\left(  S\right)
+\setminus\mathcal{P}_{m}\left(  S\setminus\left\{  s\right\}  \right)
+$\ \ \ \ \footnote{\textit{Proof.} Let $U\in\mathcal{P}_{m-1}\left(
+S\setminus\left\{  s\right\}  \right)  $. We must prove that $U\cup\left\{
+s\right\}  \in\mathcal{P}_{m}\left(  S\right)  \setminus\mathcal{P}_{m}\left(
+S\setminus\left\{  s\right\}  \right)  $.
+\par
+Let $V=U\cup\left\{  s\right\}  $.
+\par
+We have $U\in\mathcal{P}_{m-1}\left(  S\setminus\left\{  s\right\}  \right)
+$. In other words, $U$ is an $\left(  m-1\right)  $-element subset of
+$S\setminus\left\{  s\right\}  $ (since $\mathcal{P}_{m-1}\left(
+S\setminus\left\{  s\right\}  \right)  $ is the set of all $\left(
+m-1\right)  $-element subsets of $S\setminus\left\{  s\right\}  $). Thus, $U$
+is an $\left(  m-1\right)  $-element set; in other words, $\left\vert
+U\right\vert =m-1$. Furthermore, $U$ is a subset of $S\setminus\left\{
+s\right\}  $; hence, $U\subseteq S\setminus\left\{  s\right\}  $. Now,
+\[
+V=\underbrace{U}_{\subseteq S\setminus\left\{  s\right\}  \subseteq S}%
+\cup\underbrace{\left\{  s\right\}  }_{\substack{\subseteq S\\\text{(since
+}s\in S\text{)}}}\subseteq S\cup S=S.
+\]
+In other words, $V$ is a subset of $S$.
+\par
+We have $s\in\left\{  s\right\}  $ and thus $s\notin S\setminus\left\{
+s\right\}  $. If we had $s\in U$, then we would have $s\in U\subseteq
+S\setminus\left\{  s\right\}  $, which would contradict $s\notin
+S\setminus\left\{  s\right\}  $. Thus, we cannot have $s\in U$. In other
+words, we have $s\notin U$. Hence, $\left\vert U\cup\left\{  s\right\}
+\right\vert =\underbrace{\left\vert U\right\vert }_{=m-1}+1=\left(
+m-1\right)  +1=m$. Thus, $\left\vert \underbrace{V}_{=U\cup\left\{  s\right\}
+}\right\vert =\left\vert U\cup\left\{  s\right\}  \right\vert =m$. In other
+words, $V$ is an $m$-element set. Thus, $V$ is an $m$-element subset of $S$.
+In other words, $V\in\mathcal{P}_{m}\left(  S\right)  $ (since $\mathcal{P}%
+_{m}\left(  S\right)  $ is the set of all $m$-element subsets of $S$).
+\par
+Now, we shall prove that $V\notin\mathcal{P}_{m}\left(  S\setminus\left\{
+s\right\}  \right)  $. Indeed, assume the contrary (for the sake of
+contradiction). Thus, $V\in\mathcal{P}_{m}\left(  S\setminus\left\{
+s\right\}  \right)  $. In other words, $V$ is an $m$-element subset of
+$S\setminus\left\{  s\right\}  $ (since $\mathcal{P}_{m}\left(  S\setminus
+\left\{  s\right\}  \right)  $ is the set of all $m$-element subsets of
+$S\setminus\left\{  s\right\}  $). Hence, $V$ is a subset of $S\setminus
+\left\{  s\right\}  $. In other words, $V\subseteq S\setminus\left\{
+s\right\}  $. Thus, $s\in\left\{  s\right\}  \subseteq U\cup\left\{
+s\right\}  =V\subseteq S\setminus\left\{  s\right\}  $, which contradicts
+$s\notin S\setminus\left\{  s\right\}  $. This contradiction proves that our
+assumption was false. Hence, $V\notin\mathcal{P}_{m}\left(  S\setminus\left\{
+s\right\}  \right)  $ is proven.
+\par
+Combining $V\in\mathcal{P}_{m}\left(  S\right)  $ with $V\notin\mathcal{P}%
+_{m}\left(  S\setminus\left\{  s\right\}  \right)  $, we obtain $V\in
+\mathcal{P}_{m}\left(  S\right)  \setminus\mathcal{P}_{m}\left(
+S\setminus\left\{  s\right\}  \right)  $. Thus, $U\cup\left\{  s\right\}
+=V\in\mathcal{P}_{m}\left(  S\right)  \setminus\mathcal{P}_{m}\left(
+S\setminus\left\{  s\right\}  \right)  $, qed.}. Hence, we can define a map%
+\[
+\alpha:\mathcal{P}_{m-1}\left(  S\setminus\left\{  s\right\}  \right)
+\rightarrow\mathcal{P}_{m}\left(  S\right)  \setminus\mathcal{P}_{m}\left(
+S\setminus\left\{  s\right\}  \right)
+\]
+by
+\begin{equation}
+\left(  \alpha\left(  U\right)  =U\cup\left\{  s\right\}
+\ \ \ \ \ \ \ \ \ \ \text{for every }U\in\mathcal{P}_{m-1}\left(
+S\setminus\left\{  s\right\}  \right)  \right)  .
+\label{pf.prop.sol.prop.binom.subsets.Pm.lem.c.alpha()=}%
+\end{equation}
+Consider this map $\alpha$.
+
+For every $V\in\mathcal{P}_{m}\left(  S\right)  \setminus\mathcal{P}%
+_{m}\left(  S\setminus\left\{  s\right\}  \right)  $, we have $V\setminus
+\left\{  s\right\}  \in\mathcal{P}_{m-1}\left(  S\setminus\left\{  s\right\}
+\right)  $\ \ \ \ \footnote{\textit{Proof.} Let $V\in\mathcal{P}_{m}\left(
+S\right)  \setminus\mathcal{P}_{m}\left(  S\setminus\left\{  s\right\}
+\right)  $. We must prove that $V\setminus\left\{  s\right\}  \in
+\mathcal{P}_{m-1}\left(  S\setminus\left\{  s\right\}  \right)  $.
+\par
+Let $W=V\setminus\left\{  s\right\}  $.
+\par
+We have $V\notin\mathcal{P}_{m}\left(  S\setminus\left\{  s\right\}  \right)
+$ (since $V\in\mathcal{P}_{m}\left(  S\right)  \setminus\mathcal{P}_{m}\left(
+S\setminus\left\{  s\right\}  \right)  $).
+\par
+We have $V\in\mathcal{P}_{m}\left(  S\right)  \setminus\mathcal{P}_{m}\left(
+S\setminus\left\{  s\right\}  \right)  \subseteq\mathcal{P}_{m}\left(
+S\right)  $. In other words, $V$ is an $m$-element subset of $S$ (since
+$\mathcal{P}_{m}\left(  S\right)  $ is the set of all $m$-element subsets of
+$S$). Thus, $V$ is an $m$-element set. In other words, $\left\vert
+V\right\vert =m$. Also, $V$ is a subset of $S$. In other words, $V\subseteq
+S$.
+\par
+Notice that $W=\underbrace{V}_{\subseteq S}\setminus\left\{  s\right\}
+\subseteq S\setminus\left\{  s\right\}  $. In other words, $W$ is a subset of
+$S\setminus\left\{  s\right\}  $.
+\par
+Now, we shall prove that $s\in V$. Indeed, assume the contrary. Thus, $s\notin
+V$. Hence, $V\setminus\left\{  s\right\}  =V$, so that $V=V\setminus\left\{
+s\right\}  \subseteq S\setminus\left\{  s\right\}  $. Hence, $V$ is a subset
+of $S\setminus\left\{  s\right\}  $. Thus, $V$ is an $m$-element subset of
+$S\setminus\left\{  s\right\}  $. In other words, $V\in\mathcal{P}_{m}\left(
+S\setminus\left\{  s\right\}  \right)  $ (since $\mathcal{P}_{m}\left(
+S\setminus\left\{  s\right\}  \right)  $ is the set of all $m$-element subsets
+of $S\setminus\left\{  s\right\}  $). This contradicts $V\notin\mathcal{P}%
+_{m}\left(  S\setminus\left\{  s\right\}  \right)  $. This contradiction
+proves that our assumption was wrong.
+\par
+Hence, $s\in V$ is proven. Thus, $\left\vert V\setminus\left\{  s\right\}
+\right\vert =\underbrace{\left\vert V\right\vert }_{=m}-1=m-1$. In other
+words, $V\setminus\left\{  s\right\}  $ is an $\left(  m-1\right)  $-element
+set. In other words, $W$ is an $\left(  m-1\right)  $-element set (since
+$W=V\setminus\left\{  s\right\}  $). Thus, $W$ is an $\left(  m-1\right)
+$-element subset of $S\setminus\left\{  s\right\}  $. In other words,
+$W\in\mathcal{P}_{m-1}\left(  S\setminus\left\{  s\right\}  \right)  $ (since
+$\mathcal{P}_{m-1}\left(  S\setminus\left\{  s\right\}  \right)  $ is the set
+of all $\left(  m-1\right)  $-element subsets of $S\setminus\left\{
+s\right\}  $). Hence, $V\setminus\left\{  s\right\}  =W\in\mathcal{P}%
+_{m-1}\left(  S\setminus\left\{  s\right\}  \right)  $. Qed.}. Hence, we can
+define a map%
+\[
+\beta:\mathcal{P}_{m}\left(  S\right)  \setminus\mathcal{P}_{m}\left(
+S\setminus\left\{  s\right\}  \right)  \rightarrow\mathcal{P}_{m-1}\left(
+S\setminus\left\{  s\right\}  \right)
+\]
+by%
+\[
+\left(  \beta\left(  V\right)  =V\setminus\left\{  s\right\}
+\ \ \ \ \ \ \ \ \ \ \text{for every }V\in\mathcal{P}_{m}\left(  S\right)
+\setminus\mathcal{P}_{m}\left(  S\setminus\left\{  s\right\}  \right)
+\right)  .
+\]
+Consider this map $\beta$.
+
+We have $\alpha\circ\beta=\operatorname*{id}$\ \ \ \ \footnote{\textit{Proof.}
+Let $V\in\mathcal{P}_{m}\left(  S\right)  \setminus\mathcal{P}_{m}\left(
+S\setminus\left\{  s\right\}  \right)  $. We shall show that $\left(
+\alpha\circ\beta\right)  \left(  V\right)  =\operatorname*{id}\left(
+V\right)  $.
+\par
+We have $V\notin\mathcal{P}_{m}\left(  S\setminus\left\{  s\right\}  \right)
+$ (since $V\in\mathcal{P}_{m}\left(  S\right)  \setminus\mathcal{P}_{m}\left(
+S\setminus\left\{  s\right\}  \right)  $).
+\par
+We have $V\in\mathcal{P}_{m}\left(  S\right)  \setminus\mathcal{P}_{m}\left(
+S\setminus\left\{  s\right\}  \right)  \subseteq\mathcal{P}_{m}\left(
+S\right)  $. In other words, $V$ is an $m$-element subset of $S$ (since
+$\mathcal{P}_{m}\left(  S\right)  $ is the set of all $m$-element subsets of
+$S$). Thus, $V$ is a subset of $S$. In other words, $V\subseteq S$.
+\par
+Now, we shall prove that $s\in V$. Indeed, assume the contrary. Thus, $s\notin
+V$. Hence, $V\setminus\left\{  s\right\}  =V$, so that $V=\underbrace{V}%
+_{\subseteq S}\setminus\left\{  s\right\}  \subseteq S\setminus\left\{
+s\right\}  $. Hence, $V$ is a subset of $S\setminus\left\{  s\right\}  $.
+Thus, $V$ is an $m$-element subset of $S\setminus\left\{  s\right\}  $. In
+other words, $V\in\mathcal{P}_{m}\left(  S\setminus\left\{  s\right\}
+\right)  $ (since $\mathcal{P}_{m}\left(  S\setminus\left\{  s\right\}
+\right)  $ is the set of all $m$-element subsets of $S\setminus\left\{
+s\right\}  $). This contradicts $V\notin\mathcal{P}_{m}\left(  S\setminus
+\left\{  s\right\}  \right)  $. This contradiction proves that our assumption
+was wrong.
+\par
+Hence, $s\in V$ is proven. Thus, $V\cup\left\{  s\right\}  =V$. Now,
+\begin{align*}
+\left(  \alpha\circ\beta\right)  \left(  V\right)   &  =\alpha\left(
+\beta\left(  V\right)  \right)  =\underbrace{\beta\left(  V\right)
+}_{\substack{=V\setminus\left\{  s\right\}  \\\text{(by the definition of
+}\beta\text{)}}}\cup\left\{  s\right\}  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
+the definition of }\alpha\right) \\
+&  =\left(  V\setminus\left\{  s\right\}  \right)  \cup\left\{  s\right\}
+=V\cup\left\{  s\right\}  =V=\operatorname*{id}\left(  V\right)  .
+\end{align*}
+\par
+Now, forget that we fixed $V$. We thus have shown that $\left(  \alpha
+\circ\beta\right)  \left(  V\right)  =\operatorname*{id}\left(  V\right)  $
+for every $V\in\mathcal{P}_{m}\left(  S\right)  \setminus\mathcal{P}%
+_{m}\left(  S\setminus\left\{  s\right\}  \right)  $. In other words,
+$\alpha\circ\beta=\operatorname*{id}$. Qed.} and $\beta\circ\alpha
+=\operatorname*{id}$\ \ \ \ \footnote{\textit{Proof.} Let $U\in\mathcal{P}%
+_{m-1}\left(  S\setminus\left\{  s\right\}  \right)  $. We shall prove that
+$\left(  \beta\circ\alpha\right)  \left(  U\right)  =\operatorname*{id}\left(
+U\right)  $.
+\par
+We have $U\in\mathcal{P}_{m-1}\left(  S\setminus\left\{  s\right\}  \right)
+$. In other words, $U$ is an $\left(  m-1\right)  $-element subset of
+$S\setminus\left\{  s\right\}  $ (since $\mathcal{P}_{m-1}\left(
+S\setminus\left\{  s\right\}  \right)  $ is the set of all $\left(
+m-1\right)  $-element subsets of $S\setminus\left\{  s\right\}  $). Thus, $U$
+is a subset of $S\setminus\left\{  s\right\}  $; hence, $U\subseteq
+S\setminus\left\{  s\right\}  $.
+\par
+We have $s\in\left\{  s\right\}  $ and thus $s\notin S\setminus\left\{
+s\right\}  $. If we had $s\in U$, then we would have $s\in U\subseteq
+S\setminus\left\{  s\right\}  $, which would contradict $s\notin
+S\setminus\left\{  s\right\}  $. Thus, we cannot have $s\in U$. In other
+words, we have $s\notin U$. Hence, $U\setminus\left\{  s\right\}  =U$.
+\par
+Now,%
+\begin{align*}
+\left(  \beta\circ\alpha\right)  \left(  U\right)   &  =\beta\left(
+\alpha\left(  U\right)  \right)  =\underbrace{\alpha\left(  U\right)
+}_{\substack{=U\cup\left\{  s\right\}  \\\text{(by the definition of }%
+\alpha\text{)}}}\setminus\left\{  s\right\}  \ \ \ \ \ \ \ \ \ \ \left(
+\text{by the definition of }\beta\right) \\
+&  =\left(  U\cup\left\{  s\right\}  \right)  \setminus\left\{  s\right\}
+=U\setminus\left\{  s\right\}  =U=\operatorname*{id}\left(  U\right)  .
+\end{align*}
+\par
+Now, forget that we fixed $U$. Thus, we have shown that $\left(  \beta
+\circ\alpha\right)  \left(  U\right)  =\operatorname*{id}\left(  U\right)  $
+for each $U\in\mathcal{P}_{m-1}\left(  S\setminus\left\{  s\right\}  \right)
+$. In other words, $\beta\circ\alpha=\operatorname*{id}$, qed.}. These two
+equalities show that the maps $\alpha$ and $\beta$ are mutually inverse. Thus,
+the map $\alpha$ is invertible, i.e., is a bijection.
+
+But $\alpha$ is the map
+\begin{align*}
+\mathcal{P}_{m-1}\left(  S\setminus\left\{  s\right\}  \right)   &
+\rightarrow\mathcal{P}_{m}\left(  S\right)  \setminus\mathcal{P}_{m}\left(
+S\setminus\left\{  s\right\}  \right)  ,\\
+U  &  \mapsto U\cup\left\{  s\right\}
+\end{align*}
+(because $\alpha$ is the map $\mathcal{P}_{m-1}\left(  S\setminus\left\{
+s\right\}  \right)  \rightarrow\mathcal{P}_{m}\left(  S\right)  \setminus
+\mathcal{P}_{m}\left(  S\setminus\left\{  s\right\}  \right)  $ defined by
+(\ref{pf.prop.sol.prop.binom.subsets.Pm.lem.c.alpha()=})).
+
+We know that the map $\alpha$ is well-defined and a bijection. In other words,
+the map
+\begin{align*}
+\mathcal{P}_{m-1}\left(  S\setminus\left\{  s\right\}  \right)   &
+\rightarrow\mathcal{P}_{m}\left(  S\right)  \setminus\mathcal{P}_{m}\left(
+S\setminus\left\{  s\right\}  \right)  ,\\
+U  &  \mapsto U\cup\left\{  s\right\}
+\end{align*}
+is well-defined and a bijection (since $\alpha$ is the map
+\begin{align*}
+\mathcal{P}_{m-1}\left(  S\setminus\left\{  s\right\}  \right)   &
+\rightarrow\mathcal{P}_{m}\left(  S\right)  \setminus\mathcal{P}_{m}\left(
+S\setminus\left\{  s\right\}  \right)  ,\\
+U  &  \mapsto U\cup\left\{  s\right\}
+\end{align*}
+). This proves Proposition \ref{prop.sol.prop.binom.subsets.Pm.lem}
+\textbf{(c)}.
+\end{proof}
+
+We can now prove Proposition \ref{prop.binom.subsets} in a slightly rewritten form:
+
+\begin{proposition}
+\label{prop.sol.prop.binom.subsets.binom}Let $m\in\mathbb{N}$. Let $S$ be a
+finite set. Then,%
+\[
+\left\vert \mathcal{P}_{m}\left(  S\right)  \right\vert =\dbinom{\left\vert
+S\right\vert }{m}.
+\]
+
+\end{proposition}
+
+\begin{proof}
+[Proof of Proposition \ref{prop.sol.prop.binom.subsets.binom}.]We shall prove
+Proposition \ref{prop.sol.prop.binom.subsets.binom} by induction over
+$\left\vert S\right\vert $ (using the fact that $\left\vert S\right\vert
+\in\mathbb{N}$ for any finite set $S$):
+
+\textit{Induction base:} We must show that Proposition
+\ref{prop.sol.prop.binom.subsets.binom} holds for $\left\vert S\right\vert
+=0$. So, let $m\in\mathbb{N}$, and let $S$ be a finite set satisfying
+$\left\vert S\right\vert =0$. We must then prove Proposition
+\ref{prop.sol.prop.binom.subsets.binom}.
+
+We have $\left\vert S\right\vert =0$ and thus $S=\varnothing$. We now want to
+prove that%
+\begin{equation}
+\left\vert \mathcal{P}_{m}\left(  S\right)  \right\vert =\dbinom{\left\vert
+S\right\vert }{m}. \label{eq.prop.sol.prop.binom.subsets.binom.ibas.goal}%
+\end{equation}
+
+
+We are in one of the following two cases:
+
+\textit{Case 1:} We have $m=0$.
+
+\textit{Case 2:} We have $m\neq0$.
+
+Let us first consider Case 1. In this case, we have $m=0$. Hence,%
+\[
+\mathcal{P}_{m}\left(  S\right)  =\mathcal{P}_{0}\left(  S\right)  =\left\{
+\varnothing\right\}  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Proposition
+\ref{prop.sol.prop.binom.subsets.Pm.lem} \textbf{(a)}}\right)
+\]
+and thus $\left\vert \underbrace{\mathcal{P}_{m}\left(  S\right)  }_{=\left\{
+\varnothing\right\}  }\right\vert =\left\vert \left\{  \varnothing\right\}
+\right\vert =1$. Comparing this with%
+\begin{align*}
+\dbinom{\left\vert S\right\vert }{m}  &  =\dbinom{\left\vert S\right\vert }%
+{0}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }m=0\right) \\
+&  =1\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{eq.binom.00}), applied to
+}\left\vert S\right\vert \text{ instead of }m\right)  ,
+\end{align*}
+we obtain $\left\vert \mathcal{P}_{m}\left(  S\right)  \right\vert
+=\dbinom{\left\vert S\right\vert }{m}$. Thus,
+(\ref{eq.prop.sol.prop.binom.subsets.binom.ibas.goal}) is proven in Case 1.
+
+Let us now consider Case 2. In this case, we have $m\neq0$. Combined with
+$m\in\mathbb{N}$, this yields $m\in\mathbb{N}\setminus\left\{  0\right\}
+=\left\{  1,2,3,\ldots\right\}  $. In other words, $m$ is a positive integer.
+Thus, $m>0$, so that $0<m$. Hence, (\ref{eq.binom.0}) (applied to $0$ and $m$
+instead of $m$ and $n$) yields $\dbinom{0}{m}=0$. But Proposition
+\ref{prop.sol.prop.binom.subsets.Pm.lem} \textbf{(b)} yields $\mathcal{P}%
+_{m}\left(  \varnothing\right)  =\varnothing$. Now,
+\[
+\left\vert \mathcal{P}_{m}\left(  \underbrace{S}_{=\varnothing}\right)
+\right\vert =\left\vert \underbrace{\mathcal{P}_{m}\left(  \varnothing\right)
+}_{=\varnothing}\right\vert =\left\vert \varnothing\right\vert =0.
+\]
+Comparing this with%
+\begin{align*}
+\dbinom{\left\vert S\right\vert }{m}  &  =\dbinom{0}{m}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left\vert S\right\vert =0\right) \\
+&  =0,
+\end{align*}
+we obtain $\left\vert \mathcal{P}_{m}\left(  S\right)  \right\vert
+=\dbinom{\left\vert S\right\vert }{m}$. Thus,
+(\ref{eq.prop.sol.prop.binom.subsets.binom.ibas.goal}) is proven in Case 2.
+
+We now have proven (\ref{eq.prop.sol.prop.binom.subsets.binom.ibas.goal}) in
+each of the two Cases 1 and 2. Since these two Cases cover all possibilities,
+this yields that (\ref{eq.prop.sol.prop.binom.subsets.binom.ibas.goal}) always
+holds. In other words, we have $\left\vert \mathcal{P}_{m}\left(  S\right)
+\right\vert =\dbinom{\left\vert S\right\vert }{m}$. In other words,
+Proposition \ref{prop.sol.prop.binom.subsets.binom} holds. Thus, Proposition
+\ref{prop.sol.prop.binom.subsets.binom} is proven for $\left\vert S\right\vert
+=0$. This completes the induction base.
+
+\textit{Induction step:} Let $N$ be a positive integer. Assume that
+Proposition \ref{prop.sol.prop.binom.subsets.binom} holds for $\left\vert
+S\right\vert =N-1$. We must then show that Proposition
+\ref{prop.sol.prop.binom.subsets.binom} holds for $\left\vert S\right\vert =N$.
+
+We have assumed that Proposition \ref{prop.sol.prop.binom.subsets.binom} holds
+for $\left\vert S\right\vert =N-1$. In other words, every $m\in\mathbb{N}$ and
+every finite set $S$ satisfying $\left\vert S\right\vert =N-1$ satisfy%
+\begin{equation}
+\left\vert \mathcal{P}_{m}\left(  S\right)  \right\vert =\dbinom{\left\vert
+S\right\vert }{m}. \label{eq.prop.sol.prop.binom.subsets.binom.istep.hyp}%
+\end{equation}
+
+
+Let now $m\in\mathbb{N}$, and let $S$ be a finite set satisfying $\left\vert
+S\right\vert =N$. We shall show that%
+\begin{equation}
+\left\vert \mathcal{P}_{m}\left(  S\right)  \right\vert =\dbinom{\left\vert
+S\right\vert }{m}. \label{eq.prop.sol.prop.binom.subsets.binom.istep.goal}%
+\end{equation}
+
+
+\textit{Proof of (\ref{eq.prop.sol.prop.binom.subsets.binom.istep.goal}):} We
+have $\left\vert S\right\vert =N>0$ (since $N$ is positive). Hence, the set
+$S$ is nonempty. In other words, the set $S$ has at least one element $s$. Fix
+such an $s$.
+
+We are in one of the following two cases:
+
+\textit{Case 1:} We have $m=0$.
+
+\textit{Case 2:} We have $m\neq0$.
+
+Let us first consider Case 1. In this case, we have $m=0$. Hence,%
+\[
+\mathcal{P}_{m}\left(  S\right)  =\mathcal{P}_{0}\left(  S\right)  =\left\{
+\varnothing\right\}  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Proposition
+\ref{prop.sol.prop.binom.subsets.Pm.lem} \textbf{(a)}}\right)
+\]
+and thus $\left\vert \underbrace{\mathcal{P}_{m}\left(  S\right)  }_{=\left\{
+\varnothing\right\}  }\right\vert =\left\vert \left\{  \varnothing\right\}
+\right\vert =1$. Comparing this with%
+\begin{align*}
+\dbinom{\left\vert S\right\vert }{m}  &  =\dbinom{\left\vert S\right\vert }%
+{0}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }m=0\right) \\
+&  =1\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{eq.binom.00}), applied to
+}\left\vert S\right\vert \text{ instead of }m\right)  ,
+\end{align*}
+we obtain $\left\vert \mathcal{P}_{m}\left(  S\right)  \right\vert
+=\dbinom{\left\vert S\right\vert }{m}$. Thus,
+(\ref{eq.prop.sol.prop.binom.subsets.binom.istep.goal}) is proven in Case 1.
+
+Let us now consider Case 2. In this case, we have $m\neq0$. Combined with
+$m\in\mathbb{N}$, this yields $m\in\mathbb{N}\setminus\left\{  0\right\}
+=\left\{  1,2,3,\ldots\right\}  $. In other words, $m$ is a positive integer.
+Hence, Proposition \ref{prop.sol.prop.binom.subsets.Pm.lem} \textbf{(c)}
+yields that $\mathcal{P}_{m}\left(  S\setminus\left\{  s\right\}  \right)
+\subseteq\mathcal{P}_{m}\left(  S\right)  $, and that the map%
+\begin{align*}
+\mathcal{P}_{m-1}\left(  S\setminus\left\{  s\right\}  \right)   &
+\rightarrow\mathcal{P}_{m}\left(  S\right)  \setminus\mathcal{P}_{m}\left(
+S\setminus\left\{  s\right\}  \right)  ,\\
+U  &  \mapsto U\cup\left\{  s\right\}
+\end{align*}
+is well-defined and a bijection.
+
+So there exists a bijection from $\mathcal{P}_{m-1}\left(  S\setminus\left\{
+s\right\}  \right)  $ to $\mathcal{P}_{m}\left(  S\right)  \setminus
+\mathcal{P}_{m}\left(  S\setminus\left\{  s\right\}  \right)  $ (namely, the
+map
+\begin{align*}
+\mathcal{P}_{m-1}\left(  S\setminus\left\{  s\right\}  \right)   &
+\rightarrow\mathcal{P}_{m}\left(  S\right)  \setminus\mathcal{P}_{m}\left(
+S\setminus\left\{  s\right\}  \right)  ,\\
+U  &  \mapsto U\cup\left\{  s\right\}
+\end{align*}
+). Hence, $\left\vert \mathcal{P}_{m}\left(  S\right)  \setminus
+\mathcal{P}_{m}\left(  S\setminus\left\{  s\right\}  \right)  \right\vert
+=\left\vert \mathcal{P}_{m-1}\left(  S\setminus\left\{  s\right\}  \right)
+\right\vert $.
+
+But $s\in S$ and thus $\left\vert S\setminus\left\{  s\right\}  \right\vert
+=\underbrace{\left\vert S\right\vert }_{=N}-1=N-1$. Hence,
+(\ref{eq.prop.sol.prop.binom.subsets.binom.istep.hyp}) (applied to
+$S\setminus\left\{  s\right\}  $ instead of $S$) yields
+\[
+\left\vert \mathcal{P}_{m}\left(  S\setminus\left\{  s\right\}  \right)
+\right\vert =\dbinom{\left\vert S\setminus\left\{  s\right\}  \right\vert }%
+{m}=\dbinom{N-1}{m}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left\vert
+S\setminus\left\{  s\right\}  \right\vert =N-1\right)  .
+\]
+Also, $m$ is a positive integer; thus, $m-1\in\mathbb{N}$. Hence,
+(\ref{eq.prop.sol.prop.binom.subsets.binom.istep.hyp}) (applied to $m-1$ and
+$S\setminus\left\{  s\right\}  $ instead of $m$ and $S$) yields
+\[
+\left\vert \mathcal{P}_{m-1}\left(  S\setminus\left\{  s\right\}  \right)
+\right\vert =\dbinom{\left\vert S\setminus\left\{  s\right\}  \right\vert
+}{m-1}=\dbinom{N-1}{m-1}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left\vert
+S\setminus\left\{  s\right\}  \right\vert =N-1\right)  .
+\]
+
+
+Now, recall that $\mathcal{P}_{m}\left(  S\setminus\left\{  s\right\}
+\right)  \subseteq\mathcal{P}_{m}\left(  S\right)  $. Thus,%
+\begin{align*}
+\left\vert \mathcal{P}_{m}\left(  S\right)  \right\vert  &
+=\underbrace{\left\vert \mathcal{P}_{m}\left(  S\setminus\left\{  s\right\}
+\right)  \right\vert }_{=\dbinom{N-1}{m}}+\underbrace{\left\vert
+\mathcal{P}_{m}\left(  S\right)  \setminus\mathcal{P}_{m}\left(
+S\setminus\left\{  s\right\}  \right)  \right\vert }_{\substack{=\left\vert
+\mathcal{P}_{m-1}\left(  S\setminus\left\{  s\right\}  \right)  \right\vert
+\\=\dbinom{N-1}{m-1}}}\\
+&  =\dbinom{N-1}{m}+\dbinom{N-1}{m-1}=\dbinom{N-1}{m-1}+\dbinom{N-1}{m}.
+\end{align*}
+Comparing this with%
+\begin{align*}
+\dbinom{\left\vert S\right\vert }{m}  &  =\dbinom{N}{m}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left\vert S\right\vert =N\right) \\
+&  =\dbinom{N-1}{m-1}+\dbinom{N-1}{m}\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{by (\ref{eq.binom.rec.m}), applied to }N\text{ and }m\\
+\text{instead of }m\text{ and }n
+\end{array}
+\right)  ,
+\end{align*}
+we obtain $\left\vert \mathcal{P}_{m}\left(  S\right)  \right\vert
+=\dbinom{\left\vert S\right\vert }{m}$. Thus,
+(\ref{eq.prop.sol.prop.binom.subsets.binom.istep.goal}) is proven in Case 2.
+
+We now have proven (\ref{eq.prop.sol.prop.binom.subsets.binom.istep.goal}) in
+each of the two Cases 1 and 2. Since these two Cases cover all possibilities,
+this yields that (\ref{eq.prop.sol.prop.binom.subsets.binom.istep.goal})
+always holds. In other words, we have $\left\vert \mathcal{P}_{m}\left(
+S\right)  \right\vert =\dbinom{\left\vert S\right\vert }{m}$.
+
+Now, forget that we fixed $m$ and $S$. We thus have shown that if
+$m\in\mathbb{N}$, and if $S$ is a finite set satisfying $\left\vert
+S\right\vert =N$, then $\left\vert \mathcal{P}_{m}\left(  S\right)
+\right\vert =\dbinom{\left\vert S\right\vert }{m}$. In other words,
+Proposition \ref{prop.sol.prop.binom.subsets.binom} is proven for $\left\vert
+S\right\vert =N$. This completes the induction step. The induction proof of
+Proposition \ref{prop.sol.prop.binom.subsets.binom} is thus complete.
+\end{proof}
+
+\begin{proof}
+[Proof of Proposition \ref{prop.binom.subsets}.]Let $m\in\mathbb{N}$ and
+$n\in\mathbb{N}$. Let $S$ be an $m$-element set. Thus, $S$ is a finite set.
+Moreover, $\left\vert S\right\vert =m$ (since $S$ is an $m$-element set).
+
+But $\mathcal{P}_{n}\left(  S\right)  $ is the set of all $n$-element subsets
+of $S$ (by the definition of $\mathcal{P}_{n}\left(  S\right)  $). Hence,%
+\[
+\mathcal{P}_{n}\left(  S\right)  =\left(  \text{the set of all }%
+n\text{-element subsets of }S\right)  .
+\]
+Thus,%
+\begin{align*}
+&  \left\vert \underbrace{\mathcal{P}_{n}\left(  S\right)  }_{=\left(
+\text{the set of all }n\text{-element subsets of }S\right)  }\right\vert \\
+&  =\left\vert \left(  \text{the set of all }n\text{-element subsets of
+}S\right)  \right\vert \\
+&  =\left(  \text{the number of all }n\text{-element subsets of }S\right)  .
+\end{align*}
+Comparing this with%
+\begin{align*}
+\left\vert \mathcal{P}_{n}\left(  S\right)  \right\vert  &  =\dbinom
+{\left\vert S\right\vert }{n}\ \ \ \ \ \ \ \ \ \ \left(  \text{by Proposition
+\ref{prop.sol.prop.binom.subsets.binom}, applied to }n\text{ instead of
+}m\right) \\
+&  =\dbinom{m}{n}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left\vert
+S\right\vert =m\right)  ,
+\end{align*}
+we obtain%
+\[
+\dbinom{m}{n}=\left(  \text{the number of all }n\text{-element subsets of
+}S\right)  .
+\]
+In other words, $\dbinom{m}{n}$ is the number of all $n$-element subsets of
+$S$. This proves Proposition \ref{prop.binom.subsets}.
+\end{proof}
+\end{verlong}
 
 \subsection{Solution to Exercise \ref{exe.ps1.1.2}}
 
