@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, May 27, 2016 19:09:11}
+%TCIDATA{LastRevised=Friday, May 27, 2016 22:56:30}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -2603,22 +2603,43 @@ few of these identities.
 
 \subsection{Definitions and basic properties}
 
-Recall that for every $n\in\mathbb{N}$, the binomial coefficient $\dbinom
-{X}{n}$ is a polynomial in $X$ of degree $n$, with rational coefficients. It
-is defined by%
+\subsubsection{The definition}
+
+Let us first define binomial coefficients:
+
+\begin{definition}
+\label{def.binom}Let $n\in\mathbb{N}$.
+
+\textbf{(a)} The binomial coefficient $\dbinom{X}{n}$ is a polynomial of
+degree $n$ in one indeterminate $X$, with rational coefficients. It is defined
+by%
 \[
 \dbinom{X}{n}=\dfrac{X\left(  X-1\right)  \cdots\left(  X-n+1\right)  }{n!}.
 \]
-\footnote{When $n=0$, then the numerator of this fraction (i.e., the product
-$X\left(  X-1\right)  \cdots\left(  X-n+1\right)  $) is an empty product. By
-convention, an empty product is always defined to be $1$.} This polynomial can
-be evaluated at every integer or rational number or even complex number (i.e.,
-we can substitute any such number for $X$), or at any other polynomial (for
-example, we can substitute $X^{2}+2$ for $X$ to obtain $\dbinom{X^{2}+2}{n}$,
-which is again a polynomial). Whenever $m$ is an integer (or rational number,
-or complex number), we denote by $\dbinom{m}{n}$ the result of evaluating the
-polynomial $\dbinom{X}{n}$ at $X=m$. These numbers $\dbinom{m}{n}$ are the
-so-called \textit{binomial coefficients}, and form the so-called
+(When $n=0$, then the numerator of this fraction (i.e., the product $X\left(
+X-1\right)  \cdots\left(  X-n+1\right)  $) is an empty product. By convention,
+an empty product is always defined to be $1$.)
+
+\textbf{(b)} The polynomial $\dbinom{X}{n}=\dfrac{X\left(  X-1\right)
+\cdots\left(  X-n+1\right)  }{n!}$ can be evaluated at every integer or
+rational number or even complex number (i.e., we can substitute any such
+number for $X$), or at any other polynomial (for example, we can substitute
+$X^{2}+2$ for $X$ to obtain $\dbinom{X^{2}+2}{n}$, which is again a polynomial).
+
+Whenever $m$ is an integer (or rational number, or complex number), we denote
+by $\dbinom{m}{n}$ the result of evaluating the polynomial $\dbinom{X}{n}$ at
+$X=m$. These numbers $\dbinom{m}{n}$ are the so-called \textit{binomial
+coefficients}.
+\end{definition}
+
+\begin{example}
+The binomial coefficient $\dbinom{4}{2}$ is the result of evaluating the
+polynomial $\dbinom{X}{2}=\dfrac{X\left(  X-1\right)  }{2!}=\dfrac{X\left(
+X-1\right)  }{2}$ at $X=4$; thus, it equals $\dfrac{4\left(  4-1\right)  }%
+{2}=6$.
+\end{example}
+
+The binomial coefficients $\dbinom{m}{n}$ form the so-called
 \textit{\href{https://en.wikipedia.org/wiki/Pascal's_triangle}{\textit{Pascal's
 triangle}}}\footnote{More precisely, the numbers $\dbinom{m}{n}$ for
 $m\in\mathbb{N}$ and $n\in\left\{  0,1,\ldots,m\right\}  $ form Pascal's
@@ -2626,54 +2647,82 @@ triangle. Nevertheless, the \textquotedblleft other\textquotedblright%
 \ binomial coefficients (particularly the ones where $m$ is a negative
 integer) are highly useful.}. Let us state a few basic properties of these numbers:
 
-\begin{itemize}
-\item We have%
+\subsubsection{Simple formulas}
+
+\begin{proposition}
+\label{prop.binom.mn}We have%
 \begin{equation}
 \dbinom{m}{n}=\dfrac{m\left(  m-1\right)  \cdots\left(  m-n+1\right)  }{n!}
 \label{eq.binom.mn}%
 \end{equation}
-for every $m\in\mathbb{Z}$ and $n\in\mathbb{N}$. (This follows by evaluating
-both sides of the identity $\dbinom{X}{n}=\dfrac{X\left(  X-1\right)
-\cdots\left(  X-n+1\right)  }{n!}$ at $X=m$.)
+for every $m\in\mathbb{Z}$ and $n\in\mathbb{N}$.
+\end{proposition}
+
+\begin{proof}
+[Proof of Proposition \ref{prop.binom.mn}.]Let $m\in\mathbb{Z}$ and
+$n\in\mathbb{N}$. The equality (\ref{eq.binom.mn}) follows by evaluating both
+sides of the identity $\dbinom{X}{n}=\dfrac{X\left(  X-1\right)  \cdots\left(
+X-n+1\right)  }{n!}$ at $X=m$. Thus, Proposition \ref{prop.binom.mn} is proven.
+\end{proof}
 
 The equality (\ref{eq.binom.mn}) is how the binomial coefficients $\dbinom
 {m}{n}$ are usually defined in textbooks. Thus, our detour through polynomials
-was not necessary. (But this detour will reveal to be useful soon, when we
-will prove some properties of binomial coefficients.)
+was not necessary in order to define them. (But this detour will reveal to be
+useful soon, when we will prove some properties of binomial coefficients.)
 
-\item We have
+\begin{proposition}
+\label{prop.binom.00}\textbf{(a)} We have
 \begin{equation}
 \dbinom{X}{0}=1 \label{eq.binom.00X}%
 \end{equation}
-\footnote{\textit{Proof.} The definition of $\dbinom{X}{0}$ yields $\dbinom
-{X}{0}=\dfrac{X\left(  X-1\right)  \cdots\left(  X-0+1\right)  }{0!}$. Since
-$X\left(  X-1\right)  \cdots\left(  X-0+1\right)  =\left(  \text{a product of
-}0\text{ integers}\right)  =1$, this rewrites as $\dbinom{X}{0}=\dfrac{1}%
-{0!}=1$ (since $0!=1$), qed.}. Thus,
+
+
+\textbf{(b)} We have%
 \begin{equation}
 \dbinom{m}{0}=1 \label{eq.binom.00}%
 \end{equation}
-for every $m\in\mathbb{Z}$. (This follows by substituting $0$ for $m$ in
-(\ref{eq.binom.00X}).)
+for every $m\in\mathbb{Z}$.
+\end{proposition}
 
-\item We have%
+\begin{proof}
+[Proof of Proposition \ref{prop.binom.00}.]\textbf{(a)} The definition of
+$\dbinom{X}{0}$ yields
+\[
+\dbinom{X}{0}=\dfrac{X\left(  X-1\right)  \cdots\left(  X-0+1\right)  }{0!}.
+\]
+Since $X\left(  X-1\right)  \cdots\left(  X-0+1\right)  =\left(  \text{a
+product of }0\text{ integers}\right)  =1$, this rewrites as $\dbinom{X}%
+{0}=\dfrac{1}{0!}=1$ (since $0!=1$). This proves Proposition
+\ref{prop.binom.00} \textbf{(a)}.
+
+\textbf{(b)} Let $m\in\mathbb{Z}$. Then, (\ref{eq.binom.00}) follows by
+substituting $m$ for $X$ in (\ref{eq.binom.00X}). This proves Proposition
+\ref{prop.binom.00} \textbf{(b)}.
+\end{proof}
+
+\begin{proposition}
+\label{prop.binom.formula}We have%
 \begin{equation}
 \dbinom{m}{n}=\dfrac{m!}{n!\left(  m-n\right)  !} \label{eq.binom.formula}%
 \end{equation}
-for any $m\in\mathbb{N}$ and $n\in\mathbb{N}$ satisfying $m\geq n$%
-\ \ \ \ \footnote{\textbf{Caution:} This formula holds only for $m\in
-\mathbb{N}$ and $n\in\mathbb{N}$ satisfying $m\geq n$. Thus, neither
+for any $m\in\mathbb{N}$ and $n\in\mathbb{N}$ satisfying $m\geq n$.
+\end{proposition}
+
+\begin{remark}
+\textbf{Caution:} The formula (\ref{eq.binom.formula}) holds only for
+$m\in\mathbb{N}$ and $n\in\mathbb{N}$ satisfying $m\geq n$. Thus, neither
 $\dbinom{-3}{2}$ nor $\dbinom{1/3}{3}$ nor $\dbinom{2}{5}$ nor the
 \textbf{polynomial} $\dbinom{X}{3}$ can be evaluated using this formula! The
 definition $\dbinom{X}{n}=\dfrac{X\left(  X-1\right)  \cdots\left(
 X-n+1\right)  }{n!}$ of binomial coefficients is a lot more general than
 (\ref{eq.binom.formula}).
-\par
-For the sake of completeness, let us give a \textit{proof of
-(\ref{eq.binom.formula}):} Let $m\in\mathbb{N}$ and $n\in\mathbb{N}$ be such
-that $m\geq n$. Then, evaluating both sides of the identity $\dbinom{X}%
-{n}=\dfrac{X\left(  X-1\right)  \cdots\left(  X-n+1\right)  }{n!}$ at $X=m$,
-we obtain%
+\end{remark}
+
+\begin{proof}
+[Proof of Proposition \ref{prop.binom.formula}.]Let $m\in\mathbb{N}$ and
+$n\in\mathbb{N}$ be such that $m\geq n$. Then, evaluating both sides of the
+identity $\dbinom{X}{n}=\dfrac{X\left(  X-1\right)  \cdots\left(
+X-n+1\right)  }{n!}$ at $X=m$, we obtain%
 \[
 \dbinom{m}{n}=\dfrac{m\left(  m-1\right)  \cdots\left(  m-n+1\right)  }{n!},
 \]
@@ -2690,25 +2739,34 @@ so that $\dfrac{m!}{\left(  m-n\right)  !}=m\left(  m-1\right)  \cdots\left(
 m-n+1\right)  $. Comparing this with $n!\cdot\dbinom{m}{n}=m\left(
 m-1\right)  \cdots\left(  m-n+1\right)  $, we obtain $n!\cdot\dbinom{m}%
 {n}=\dfrac{m!}{\left(  m-n\right)  !}$. Dividing this equality by $n!$, we
-obtain $\dbinom{m}{n}=\dfrac{m!}{n!\left(  m-n\right)  !}$. Thus,
-(\ref{eq.binom.formula}) is proven.}.
+obtain $\dbinom{m}{n}=\dfrac{m!}{n!\left(  m-n\right)  !}$. Thus, Proposition
+\ref{prop.binom.formula} is proven.
+\end{proof}
 
-\item We have
+\begin{proposition}
+\label{prop.binom.0}We have
 \begin{equation}
 \dbinom{m}{n}=0 \label{eq.binom.0}%
 \end{equation}
-for every $m\in\mathbb{N}$ and $n\in\mathbb{N}$ satisfying $m<n$%
-\ \ \ \ \footnote{\textbf{Caution:} This is not true if we drop the condition
-$m\in\mathbb{N}$.
-\par
-Again for the sake of completeness, let us give a \textit{proof of
-(\ref{eq.binom.0}):} Let $m\in\mathbb{N}$ and $n\in\mathbb{N}$ be such that
-$m<n$. Evaluating both sides of the identity $\dbinom{X}{n}=\dfrac{X\left(
-X-1\right)  \cdots\left(  X-n+1\right)  }{n!}$ at $X=m$, we obtain%
+for every $m\in\mathbb{N}$ and $n\in\mathbb{N}$ satisfying $m<n$.
+\end{proposition}
+
+\begin{remark}
+\textbf{Caution:} The formula (\ref{eq.binom.0}) is not true if we drop the
+condition $m\in\mathbb{N}$. For example, $\dbinom{-3}{2}=6\neq0$ despite
+$-3<2$.
+\end{remark}
+
+\begin{proof}
+[Proof of Proposition \ref{prop.binom.0}.]Let $m\in\mathbb{N}$ and
+$n\in\mathbb{N}$ be such that $m<n$. Evaluating both sides of the identity
+$\dbinom{X}{n}=\dfrac{X\left(  X-1\right)  \cdots\left(  X-n+1\right)  }{n!}$
+at $X=m$, we obtain%
 \[
 \dbinom{m}{n}=\dfrac{m\left(  m-1\right)  \cdots\left(  m-n+1\right)  }{n!}.
 \]
-\par
+
+
 But $m\geq0$ (since $m\in\mathbb{N}$) and $m<n$. Hence, $m-m$ is one of the
 $n$ integers $m,m-1,\ldots,m-n+1$. Thus, one of the $n$ factors of the product
 $m\left(  m-1\right)  \cdots\left(  m-n+1\right)  $ is $m-m=0$. Therefore, the
@@ -2720,63 +2778,93 @@ Hence,%
 \dbinom{m}{n}  &  =\dfrac{m\left(  m-1\right)  \cdots\left(  m-n+1\right)
 }{n!}=\dfrac{0}{n!}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }m\left(
 m-1\right)  \cdots\left(  m-n+1\right)  =0\right) \\
-&  =0,
+&  =0.
 \end{align*}
-qed.}.
+This proves Proposition \ref{prop.binom.0}.
+\end{proof}
 
-\item We have%
+\begin{proposition}
+\label{prop.binom.symm}We have%
 \begin{equation}
 \dbinom{m}{n}=\dbinom{m}{m-n} \label{eq.binom.symm}%
 \end{equation}
-for any $m\in\mathbb{N}$ and $n\in\mathbb{N}$ satisfying $m\geq n$%
-\ \ \ \ \footnote{\textit{Proof of (\ref{eq.binom.symm}):} Let $m\in
-\mathbb{N}$ and $n\in\mathbb{N}$ be such that $m\geq n$. Then, $m-n\in
-\mathbb{N}$ (since $m\geq n$) and $m\geq m-n$ (since $n\geq0$ (since
-$n\in\mathbb{N}$)). Hence, (\ref{eq.binom.formula}) (applied to $m-n$ instead
-of $n$) yields
+for any $m\in\mathbb{N}$ and $n\in\mathbb{N}$ satisfying $m\geq n$.
+\end{proposition}
+
+\begin{proof}
+[Proof of Proposition \ref{prop.binom.symm}.]Let $m\in\mathbb{N}$ and
+$n\in\mathbb{N}$ be such that $m\geq n$. Then, $m-n\in\mathbb{N}$ (since
+$m\geq n$) and $m\geq m-n$ (since $n\geq0$ (since $n\in\mathbb{N}$)). Hence,
+(\ref{eq.binom.formula}) (applied to $m-n$ instead of $n$) yields
 \[
 \dbinom{m}{m-n}=\dfrac{m!}{\left(  m-n\right)  !\left(  m-\left(  m-n\right)
 \right)  !}=\dfrac{m!}{\left(  m-\left(  m-n\right)  \right)  !\left(
 m-n\right)  !}=\dfrac{m!}{n!\left(  m-n\right)  !}%
 \]
 (since $m-\left(  m-n\right)  =n$). Compared with (\ref{eq.binom.formula}),
-this yields $\dbinom{m}{n}=\dbinom{m}{m-n}$, qed.}.
+this yields $\dbinom{m}{n}=\dbinom{m}{m-n}$. Proposition \ref{prop.binom.symm}
+is thus proven.
+\end{proof}
 
-\item We have%
+\begin{proposition}
+\label{prop.binom.mm}We have%
 \begin{equation}
 \dbinom{m}{m}=1 \label{eq.binom.mm}%
 \end{equation}
-for every $m\in\mathbb{N}$\ \ \ \ \footnote{\textit{Proof of
-(\ref{eq.binom.mm}):} Let $m\in\mathbb{N}$. Then, (\ref{eq.binom.symm})
-(applied to $n=m$) yields $\dbinom{m}{m}=\dbinom{m}{m-m}=\dbinom{m}{0}=1$
-(according to (\ref{eq.binom.00})). This proves (\ref{eq.binom.mm}).}.
+for every $m\in\mathbb{N}$.
+\end{proposition}
 
-\item If $m\in\mathbb{N}$ and $n\in\mathbb{N}$, and if $S$ is an $m$-element
-set, then
+\begin{proof}
+[Proof of Proposition \ref{prop.binom.mm}.]Let $m\in\mathbb{N}$. Then,
+(\ref{eq.binom.symm}) (applied to $n=m$) yields $\dbinom{m}{m}=\dbinom{m}%
+{m-m}=\dbinom{m}{0}=1$ (according to (\ref{eq.binom.00})). This proves
+Proposition \ref{prop.binom.mm}.
+\end{proof}
+
+\subsubsection{The combinatorial interpretation of binomial coefficients}
+
+\begin{proposition}
+\label{prop.binom.subsets}If $m\in\mathbb{N}$ and $n\in\mathbb{N}$, and if $S$
+is an $m$-element set, then
 \begin{equation}
 \dbinom{m}{n}\text{ is the number of all }n\text{-element subsets of
 }S\text{.} \label{eq.binom.subsets}%
 \end{equation}
-In less formal terms, this says that $\dbinom{m}{n}$ is the number of ways to
-pick out $n$ among $m$ given objects, without replacement\footnote{That is,
-one must not pick out the same object twice.} and without regard for the order
-in which they are picked out. (Probabilists call this \textquotedblleft
-unordered samples without replacement\textquotedblright.)
 
-Notice that this does not hold for negative $m$ ! Indeed, when $m\in
-\mathbb{Z}$ is negative, then $\dbinom{m}{n}$ is positive for $n$ even and
-negative for $n$ odd (easy exercise), and so an interpretation of $\dbinom
-{m}{n}$ as a number of ways to do something is rather unlikely. (On the other
-hand, $\left(  -1\right)  ^{n}\dbinom{m}{n}$ does have such an interpretation.)
+\end{proposition}
 
-\item We have%
+In less formal terms, Proposition \ref{prop.binom.subsets} says the following:
+If $m\in\mathbb{N}$ and $n\in\mathbb{N}$, then $\dbinom{m}{n}$ is the number
+of ways to pick out $n$ among $m$ given objects, without
+replacement\footnote{That is, one must not pick out the same object twice.}
+and without regard for the order in which they are picked out. (Probabilists
+call this \textquotedblleft unordered samples without
+replacement\textquotedblright.)
+
+\begin{remark}
+\textbf{Caution:} Proposition \ref{prop.binom.subsets} does not hold for
+negative $m$ ! Indeed, when $m\in\mathbb{Z}$ is negative, then $\dbinom{m}{n}$
+is positive for $n$ even and negative for $n$ odd (easy exercise), and so an
+interpretation of $\dbinom{m}{n}$ as a number of ways to do something is
+rather unlikely. (On the other hand, $\left(  -1\right)  ^{n}\dbinom{m}{n}$
+does have such an interpretation.)
+\end{remark}
+
+\subsubsection{Upper negation}
+
+\begin{proposition}
+\label{prop.binom.upper-neg}We have%
 \begin{equation}
 \dbinom{m}{n}=\left(  -1\right)  ^{n}\dbinom{n-m-1}{n}
 \label{eq.binom.upper-neg}%
 \end{equation}
-for any $m\in\mathbb{Z}$ and $n\in\mathbb{N}$\ \ \ \ \footnote{\textit{Proof
-of (\ref{eq.binom.upper-neg}):} Let $m\in\mathbb{Z}$ and $n\in\mathbb{N}$.
-\par
+for any $m\in\mathbb{Z}$ and $n\in\mathbb{N}$.
+\end{proposition}
+
+\begin{proof}
+[Proof of Proposition \ref{prop.binom.upper-neg}.]Let $m\in\mathbb{Z}$ and
+$n\in\mathbb{N}$.
+
 Evaluating both sides of the identity $\dbinom{X}{n}=\dfrac{X\left(
 X-1\right)  \cdots\left(  X-n+1\right)  }{n!}$ at $X=n-m-1$, we obtain%
 \begin{align*}
@@ -2816,37 +2904,59 @@ Compared with $\dbinom{m}{n}=\dfrac{m\left(  m-1\right)  \cdots\left(
 m-n+1\right)  }{n!}$ (which is obtained by evaluating both sides of the
 identity $\dbinom{X}{n}=\dfrac{X\left(  X-1\right)  \cdots\left(
 X-n+1\right)  }{n!}$ at $X=m$), this yields $\dbinom{m}{n}=\left(  -1\right)
-^{n}\dbinom{n-m-1}{n}$, qed.}. This formula is known as the \textit{upper
-negation formula} and holds more generally for any $m$ for which it makes
-sense (in particular, $m$ can be a polynomial or a complex number). In
-particular, we have%
+^{n}\dbinom{n-m-1}{n}$. Proposition \ref{prop.binom.upper-neg} is therefore proven.
+\end{proof}
+
+The formula (\ref{eq.binom.upper-neg}) is known as the \textit{upper negation
+formula} and holds more generally for any $m$ for which it makes sense (in
+particular, $m$ can be a polynomial or a complex number). In particular, we
+have the following:
+
+\begin{proposition}
+\label{prop.binom.upper-neg.X}We have%
 \begin{equation}
 \dbinom{X}{n}=\left(  -1\right)  ^{n}\dbinom{n-X-1}{n}
 \label{eq.binom.upper-neg.X}%
 \end{equation}
-(an identity between polynomials in $X$) for every $n\in\mathbb{N}%
-$\ \ \ \ \footnote{\textit{Proof of (\ref{eq.binom.upper-neg.X}):} To prove
-(\ref{eq.binom.upper-neg.X}), just replace every appearance of
-\textquotedblleft$m$\textquotedblright\ by \textquotedblleft$X$%
-\textquotedblright\ in our proof of (\ref{eq.binom.upper-neg}).}.
+(an identity between polynomials in $X$) for every $n\in\mathbb{N}$.
+\end{proposition}
 
-\item We have%
+\begin{proof}
+[Proof of Proposition \ref{prop.binom.upper-neg.X}.]To prove Proposition
+\ref{prop.binom.upper-neg.X}, just replace every appearance of
+\textquotedblleft$m$\textquotedblright\ by \textquotedblleft$X$%
+\textquotedblright\ in our proof of Proposition \ref{prop.binom.upper-neg}.
+\end{proof}
+
+\subsubsection{The recurrence relation of the binomial coefficients}
+
+\begin{proposition}
+\label{prop.binom.rec}\textbf{(a)} We have%
 \begin{equation}
 \dbinom{X}{n}=\dbinom{X-1}{n}+\dbinom{X-1}{n-1} \label{eq.binom.rec}%
 \end{equation}
-for any $n\in\left\{  1,2,3,\ldots\right\}  $\ \ \ \ \footnote{\textit{Proof
-of (\ref{eq.binom.rec}):} Let $n\in\left\{  1,2,3,\ldots\right\}  $. We have
-$n!=n\cdot\left(  n-1\right)  !$, so that $\left(  n-1\right)  !=\dfrac{n!}%
-{n}$ and thus $\dfrac{1}{\left(  n-1\right)  !}=1/\dfrac{n!}{n}=\dfrac{1}%
-{n!}\cdot n$.
-\par
+for any $n\in\left\{  1,2,3,\ldots\right\}  $.
+
+\textbf{(b)} We have%
+\begin{equation}
+\dbinom{m}{n}=\dbinom{m-1}{n-1}+\dbinom{m-1}{n} \label{eq.binom.rec.m}%
+\end{equation}
+for any $m\in\mathbb{Z}$ and $n\in\left\{  1,2,3,\ldots\right\}  $.
+\end{proposition}
+
+\begin{proof}
+[Proof of Proposition \ref{prop.binom.rec}.]\textbf{(a)} Let $n\in\left\{
+1,2,3,\ldots\right\}  $. We have $n!=n\cdot\left(  n-1\right)  !$, so that
+$\left(  n-1\right)  !=\dfrac{n!}{n}$ and thus $\dfrac{1}{\left(  n-1\right)
+!}=1/\dfrac{n!}{n}=\dfrac{1}{n!}\cdot n$.
+
 The definition of $\dbinom{X}{n-1}$ yields
-\[
-\dbinom{X}{n-1}=\dfrac{X\left(  X-1\right)  \cdots\left(  X-\left(
-n-1\right)  +1\right)  }{\left(  n-1\right)  !}=\dfrac{1}{\left(  n-1\right)
-!}\left(  X\left(  X-1\right)  \cdots\left(  X-\left(  n-1\right)  +1\right)
-\right)  .
-\]
+\begin{align*}
+\dbinom{X}{n-1}  &  =\dfrac{X\left(  X-1\right)  \cdots\left(  X-\left(
+n-1\right)  +1\right)  }{\left(  n-1\right)  !}\\
+&  =\dfrac{1}{\left(  n-1\right)  !}\left(  X\left(  X-1\right)  \cdots\left(
+X-\left(  n-1\right)  +1\right)  \right)  .
+\end{align*}
 Substituting $X-1$ for $X$ in this equality, we obtain%
 \begin{align}
 \dbinom{X-1}{n-1}  &  =\underbrace{\dfrac{1}{\left(  n-1\right)  !}}%
@@ -2856,7 +2966,8 @@ X-1\right)  -\left(  n-1\right)  +1\right)  }_{=X-n+1}\right) \nonumber\\
 &  =\dfrac{1}{n!}\cdot n\left(  \left(  X-1\right)  \left(  X-2\right)
 \cdots\left(  X-n+1\right)  \right)  . \label{eq.binom.rec.pf.1}%
 \end{align}
-\par
+
+
 On the other hand,
 \[
 \dbinom{X}{n}=\dfrac{X\left(  X-1\right)  \cdots\left(  X-n+1\right)  }%
@@ -2880,26 +2991,29 @@ Adding (\ref{eq.binom.rec.pf.1}) to this equality, we obtain%
 \begin{align*}
 &  \dbinom{X-1}{n}+\dbinom{X-1}{n-1}\\
 &  =\dfrac{1}{n!}\left(  X-n\right)  \cdot\left(  \left(  X-1\right)  \left(
-X-2\right)  \cdots\left(  X-n+1\right)  \right)  +\dfrac{1}{n!}\cdot n\left(
-\left(  X-1\right)  \left(  X-2\right)  \cdots\left(  X-n+1\right)  \right) \\
+X-2\right)  \cdots\left(  X-n+1\right)  \right) \\
+&  \ \ \ \ \ \ \ \ \ \ +\dfrac{1}{n!}\cdot n\left(  \left(  X-1\right)
+\left(  X-2\right)  \cdots\left(  X-n+1\right)  \right) \\
 &  =\dfrac{1}{n!}\underbrace{\left(  \left(  X-n\right)  +n\right)  }%
 _{=X}\cdot\left(  \left(  X-1\right)  \left(  X-2\right)  \cdots\left(
 X-n+1\right)  \right) \\
 &  =\dfrac{1}{n!}\underbrace{X\cdot\left(  \left(  X-1\right)  \left(
 X-2\right)  \cdots\left(  X-n+1\right)  \right)  }_{=X\left(  X-1\right)
 \cdots\left(  X-n+1\right)  }=\dfrac{1}{n!}\left(  X\left(  X-1\right)
-\cdots\left(  X-n+1\right)  \right)  =\dbinom{X}{n},
+\cdots\left(  X-n+1\right)  \right)  =\dbinom{X}{n}.
 \end{align*}
-qed.}. Thus,%
-\begin{equation}
-\dbinom{m}{n}=\dbinom{m-1}{n-1}+\dbinom{m-1}{n} \label{eq.binom.rec.m}%
-\end{equation}
-for any $m\in\mathbb{Z}$ and $n\in\left\{  1,2,3,\ldots\right\}  $. (This is
-the result of substituting $m$ for $X$ in (\ref{eq.binom.rec}).) The formula
-(\ref{eq.binom.rec.m}) is known as the \textit{recurrence relation of the
-binomial coefficients}\footnote{Often it is extended to the case $n=0$ by
-setting $\dbinom{X}{-1}=0$. It then follows from (\ref{eq.binom.00}) in this
-case.
+This proves Proposition \ref{prop.binom.rec} \textbf{(a)}.
+
+\textbf{(b)} Let $m\in\mathbb{Z}$ and $n\in\left\{  1,2,3,\ldots\right\}  $.
+Then, (\ref{eq.binom.rec.m}) follows by substituting $m$ for $X$ in
+(\ref{eq.binom.rec}). This proves Proposition \ref{prop.binom.rec}
+\textbf{(b)}.
+\end{proof}
+
+The formula (\ref{eq.binom.rec.m}) is known as the \textit{recurrence relation
+of the binomial coefficients}\footnote{Often it is extended to the case $n=0$
+by setting $\dbinom{X}{-1}=0$. It then follows from (\ref{eq.binom.00}) in
+this case.
 \par
 The formula (\ref{eq.binom.rec.m}) is responsible for the fact that
 \textquotedblleft every number in Pascal's triangle is the sum of the two
@@ -2908,72 +3022,95 @@ numbers above it\textquotedblright. (Of course, if you use this fact as a
 conversely responsible for the fact that the numbers in this triangle are the
 binomial coefficients.)}.
 
-\item We have%
+\subsubsection{Binomial coefficients of integers are integers}
+
+\begin{proposition}
+\label{prop.binom.int}We have%
 \begin{equation}
 \dbinom{m}{n}\in\mathbb{Z} \label{eq.binom.int}%
 \end{equation}
-for any $m\in\mathbb{Z}$ and $n\in\mathbb{N}$\ \ \ \ \footnote{\textit{Proof
-of (\ref{eq.binom.int}):} Let $m\in\mathbb{Z}$ and $n\in\mathbb{N}$. We need
-to show that $\dbinom{m}{n}\in\mathbb{Z}$. We are in one of the following two
-cases:
-\par
+for any $m\in\mathbb{Z}$ and $n\in\mathbb{N}$.
+\end{proposition}
+
+\begin{proof}
+[Proof of Proposition \ref{prop.binom.int}.]Let $m\in\mathbb{Z}$ and
+$n\in\mathbb{N}$. We need to show (\ref{eq.binom.int}). We are in one of the
+following two cases:
+
 \textit{Case 1:} We have $m\geq0$.
-\par
+
 \textit{Case 2:} We have $m<0$.
-\par
+
 Let us first consider Case 1. In this case, we have $m\geq0$. Hence,
 $m\in\mathbb{N}$. Thus, there exists an $m$-element set $S$ (for example,
-$S=\left\{  1,2,\ldots,m\right\}  $). Consider such $S$. Then, $\dbinom{m}{n}$
-is the number of all $n$-element subsets of $S$ (because of
+$S=\left\{  1,2,\ldots,m\right\}  $). Consider such an $S$. Then, $\dbinom
+{m}{n}$ is the number of all $n$-element subsets of $S$ (because of
 (\ref{eq.binom.subsets})). Hence, $\dbinom{m}{n}$ is a nonnegative integer, so
 that $\dbinom{m}{n}\in\mathbb{N}\subseteq\mathbb{Z}$. This proves
 (\ref{eq.binom.int}) in Case 1.
-\par
-Let us now consider Case 2. In this case, we have $m<0$. Thus, $m+1\leq0$, so
-that $n-m-1=n-\underbrace{\left(  m+1\right)  }_{\leq0}\geq n\geq0$. Hence,
+
+Let us now consider Case 2. In this case, we have $m<0$. Thus, $m\leq-1$
+(since $m$ is an integer), so that $m+1\leq0$, so that
+$n-m-1=n-\underbrace{\left(  m+1\right)  }_{\leq0}\geq n\geq0$. Hence,
 $n-m-1\in\mathbb{N}$. Therefore, there exists an $\left(  n-m-1\right)
 $-element set $S$ (for example, $S=\left\{  1,2,\ldots,n-m-1\right\}  $).
-Consider such $S$. Then, $\dbinom{n-m-1}{n}$ is the number of all $n$-element
-subsets of $S$ (because of (\ref{eq.binom.subsets}), applied to $n-m-1$
-instead of $m$). Hence, $\dbinom{n-m-1}{n}\in\mathbb{N}\subseteq\mathbb{Z}$.
-Now, (\ref{eq.binom.upper-neg}) shows that $\dbinom{m}{n}=\left(  -1\right)
-^{n}\underbrace{\dbinom{n-m-1}{n}}_{\in\mathbb{Z}}\in\left(  -1\right)
-^{n}\mathbb{Z}\subseteq\mathbb{Z}$ (where $\left(  -1\right)  ^{n}\mathbb{Z}$
-means $\left\{  \left(  -1\right)  ^{n}z\ \mid\ z\in\mathbb{Z}\right\}  $).
-This proves (\ref{eq.binom.int}) in Case 2.
-\par
-We thus have proven (\ref{eq.binom.int}) in each of the two Cases 1 and 2, and
-can therefore conclude that (\ref{eq.binom.int}) always holds.
-\par
-This is the simplest proof of (\ref{eq.binom.int}) that I am aware of. There
-is another which proceeds by induction on $m$ (using (\ref{eq.binom.rec})),
-but this induction needs two induction steps ($m\rightarrow m+1$ and
-$m\rightarrow m-1$) in order to reach all integers (positive and negative).
-There is yet another proof using basic number theory (specifically, checking
-how often a prime $p$ appears in the numerator and the denominator of
-$\dbinom{m}{n}=\dfrac{m\left(  m-1\right)  \cdots\left(  m-n+1\right)  }{n!}%
-$), but this is not quite easy.}.
+Consider such an $S$. Then, $\dbinom{n-m-1}{n}$ is the number of all
+$n$-element subsets of $S$ (because of (\ref{eq.binom.subsets}), applied to
+$n-m-1$ instead of $m$). Hence, $\dbinom{n-m-1}{n}\in\mathbb{N}\subseteq
+\mathbb{Z}$. Now, (\ref{eq.binom.upper-neg}) shows that $\dbinom{m}{n}=\left(
+-1\right)  ^{n}\underbrace{\dbinom{n-m-1}{n}}_{\in\mathbb{Z}}\in\left(
+-1\right)  ^{n}\mathbb{Z}\subseteq\mathbb{Z}$ (where $\left(  -1\right)
+^{n}\mathbb{Z}$ means $\left\{  \left(  -1\right)  ^{n}z\ \mid\ z\in
+\mathbb{Z}\right\}  $). This proves (\ref{eq.binom.int}) in Case 2.
 
-\item We have%
+We thus have proven (\ref{eq.binom.int}) in each of the two Cases 1 and 2, and
+can therefore conclude that (\ref{eq.binom.int}) always holds. Thus,
+Proposition \ref{prop.binom.int} is proven.
+\end{proof}
+
+This was the simplest proof of Proposition \ref{prop.binom.int} that I am
+aware of. There is another which proceeds by induction on $m$ (using
+(\ref{eq.binom.rec})), but this induction needs two induction steps
+($m\rightarrow m+1$ and $m\rightarrow m-1$) in order to reach all integers
+(positive and negative). There is yet another proof using basic number theory
+(specifically, checking how often a prime $p$ appears in the numerator and the
+denominator of $\dbinom{m}{n}=\dfrac{m\left(  m-1\right)  \cdots\left(
+m-n+1\right)  }{n!}$), but this is not quite easy.
+
+\subsubsection{The binomial formula}
+
+\begin{proposition}
+\label{prop.binom.binomial}We have%
 \begin{equation}
 \left(  X+Y\right)  ^{n}=\sum_{k=0}^{n}\dbinom{n}{k}X^{k}Y^{n-k}
 \label{eq.binom.binomial}%
 \end{equation}
 (as an equality between two polynomials in $X$ and $Y$) for every
-$n\in\mathbb{N}$. This is the famous \textit{binomial formula} and has a
-well-known standard proof by induction over $n$ (using (\ref{eq.binom.rec.m})
-and (\ref{eq.binom.00})). Some versions of it hold for negative $n$ as well
-(but not in the exact form (\ref{eq.binom.binomial}), and not without restrictions).
+$n\in\mathbb{N}$.
+\end{proposition}
 
-\item We have%
+Proposition \ref{prop.binom.binomial} is the famous \textit{binomial formula}
+and has a well-known standard proof by induction over $n$ (using
+(\ref{eq.binom.rec.m}) and (\ref{eq.binom.00})). Some versions of it hold for
+negative $n$ as well (but not in the exact form (\ref{eq.binom.binomial}), and
+not without restrictions).
+
+\subsubsection{The absorption identity}
+
+\begin{proposition}
+\label{prop.binom.X-1}We have%
 \begin{equation}
 \dbinom{X}{n}=\dfrac{X}{n}\dbinom{X-1}{n-1} \label{eq.binom.X-1}%
 \end{equation}
-for any $n\in\left\{  1,2,3,\ldots\right\}  $\ \ \ \ \footnote{\textit{Proof
-of (\ref{eq.binom.X-1}):} Let $n\in\left\{  1,2,3,\ldots\right\}  $. The
-definition of $\dbinom{X}{n-1}$ yields $\dbinom{X}{n-1}=\dfrac{X\left(
-X-1\right)  \cdots\left(  X-\left(  n-1\right)  +1\right)  }{\left(
-n-1\right)  !}$. Substituting $X-1$ for $X$ in this equality, we obtain%
+for any $n\in\left\{  1,2,3,\ldots\right\}  $.
+\end{proposition}
+
+\begin{proof}
+[Proof of Proposition \ref{prop.binom.X-1}.]Let $n\in\left\{  1,2,3,\ldots
+\right\}  $. The definition of $\dbinom{X}{n-1}$ yields $\dbinom{X}%
+{n-1}=\dfrac{X\left(  X-1\right)  \cdots\left(  X-\left(  n-1\right)
++1\right)  }{\left(  n-1\right)  !}$. Substituting $X-1$ for $X$ in this
+equality, we obtain%
 \begin{align*}
 \dbinom{X-1}{n-1}  &  =\dfrac{\left(  X-1\right)  \left(  \left(  X-1\right)
 -1\right)  \cdots\left(  \left(  X-1\right)  -\left(  n-1\right)  +1\right)
@@ -2985,11 +3122,11 @@ n-1\right)  !}$. Substituting $X-1$ for $X$ in this equality, we obtain%
 n-1\right)  +1=X-n+1$). Multiplying both sides of this equality by $\dfrac
 {X}{n}$, we obtain%
 \begin{align*}
-\dfrac{X}{n}\cdot\dbinom{X-1}{n-1}  &  =\dfrac{X}{n}\cdot\dfrac{\left(
-X-1\right)  \left(  X-2\right)  \cdots\left(  X-n+1\right)  }{\left(
-n-1\right)  !}=\dfrac{X\left(  X-1\right)  \left(  X-2\right)  \cdots\left(
-X-n+1\right)  }{n\left(  n-1\right)  !}\\
-&  =\dfrac{X\left(  X-1\right)  \cdots\left(  X-n+1\right)  }{n!}%
+\dfrac{X}{n}\dbinom{X-1}{n-1}  &  =\dfrac{X}{n}\cdot\dfrac{\left(  X-1\right)
+\left(  X-2\right)  \cdots\left(  X-n+1\right)  }{\left(  n-1\right)  !}\\
+&  =\dfrac{X\left(  X-1\right)  \left(  X-2\right)  \cdots\left(
+X-n+1\right)  }{n\left(  n-1\right)  !}=\dfrac{X\left(  X-1\right)
+\cdots\left(  X-n+1\right)  }{n!}%
 \end{align*}
 (since $X\left(  X-1\right)  \left(  X-2\right)  \cdots\left(  X-n+1\right)
 =X\left(  X-1\right)  \cdots\left(  X-n+1\right)  $ and $n\left(  n-1\right)
@@ -2998,15 +3135,36 @@ X-n+1\right)  }{n\left(  n-1\right)  !}\\
 \dbinom{X}{n}=\dfrac{X\left(  X-1\right)  \cdots\left(  X-n+1\right)  }{n!},
 \]
 this yields $\dbinom{X}{n}=\dfrac{X}{n}\dbinom{X-1}{n-1}$. This proves
-(\ref{eq.binom.X-1}).}.
+Proposition \ref{prop.binom.X-1}.
+\end{proof}
 
-\item If $a\in\mathbb{N}$ and $i\in\mathbb{N}$ are such that $i\geq a$, then%
+The relation (\ref{eq.binom.X-1}) (and the identity obtained from it by
+substituting an integer $m$ for $X$) is called the \textit{absorption
+identity} in \cite[\S 5.1]{GKP}.
+
+\subsubsection{Trinomial revision}
+
+\begin{proposition}
+\label{prop.binom.trinom-rev}\textbf{(a)} If $a\in\mathbb{N}$ and
+$i\in\mathbb{N}$ are such that $i\geq a$, then%
 \begin{equation}
-\dbinom{X}{i}\dbinom{i}{a}=\dbinom{X}{a}\dbinom{X-a}{i-a}
+\dbinom{X}{i}\dbinom{i}{a}=\dbinom{X}{a}\dbinom{X-a}{i-a}.
 \label{eq.binom.trinom-rev}%
 \end{equation}
-\footnote{\textit{Proof of (\ref{eq.binom.trinom-rev}):} Let $a\in\mathbb{N}$
-and $i\in\mathbb{N}$ be such that $i\geq a$. We have%
+
+
+\textbf{(b)} If $m\in\mathbb{Z}$, $a\in\mathbb{N}$ and $i\in\mathbb{N}$ are
+such that $i\geq a$, then%
+\begin{equation}
+\dbinom{m}{i}\dbinom{i}{a}=\dbinom{m}{a}\dbinom{m-a}{i-a}.
+\label{eq.binom.trinom-rev.m}%
+\end{equation}
+
+\end{proposition}
+
+\begin{proof}
+[Proof of Proposition \ref{prop.binom.trinom-rev}.]\textbf{(a)} Let
+$a\in\mathbb{N}$ and $i\in\mathbb{N}$ be such that $i\geq a$. We have%
 \begin{align*}
 &  \underbrace{\dbinom{X}{a}}_{\substack{=\dfrac{X\left(  X-1\right)
 \cdots\left(  X-a+1\right)  }{a!}\\\text{(by the definition of }\dbinom{X}%
@@ -3018,15 +3176,16 @@ X-a\right)  -\left(  i-a\right)  +1\right)  }{\left(  i-a\right)
 \dfrac{\left(  X-a\right)  \left(  \left(  X-a\right)  -1\right)
 \cdots\left(  \left(  X-a\right)  -\left(  i-a\right)  +1\right)  }{\left(
 i-a\right)  !}\\
-&  =\dfrac{1}{a!\cdot\left(  i-a\right)  !}\underbrace{\left(  X\left(
-X-1\right)  \cdots\left(  X-a+1\right)  \right)  \cdot\left(  \left(
-X-a\right)  \left(  \left(  X-a\right)  -1\right)  \cdots\left(  \left(
-X-a\right)  -\left(  i-a\right)  +1\right)  \right)  }_{\substack{=X\left(
-X-1\right)  \cdots\left(  \left(  X-a\right)  -\left(  i-a\right)  +1\right)
-\\=X\left(  X-1\right)  \cdots\left(  X-i+1\right)  \\\text{(since }\left(
-X-a\right)  -\left(  i-a\right)  =X-i\text{)}}}\\
-&  =\dfrac{1}{a!\cdot\left(  i-a\right)  !}X\left(  X-1\right)  \cdots\left(
-X-i+1\right)  .
+&  =\dfrac{1}{a!\cdot\left(  i-a\right)  !}\\
+&  \ \ \ \ \ \ \ \ \ \ \cdot\underbrace{\left(  X\left(  X-1\right)
+\cdots\left(  X-a+1\right)  \right)  \cdot\left(  \left(  X-a\right)  \left(
+\left(  X-a\right)  -1\right)  \cdots\left(  \left(  X-a\right)  -\left(
+i-a\right)  +1\right)  \right)  }_{\substack{=X\left(  X-1\right)
+\cdots\left(  \left(  X-a\right)  -\left(  i-a\right)  +1\right)  \\=X\left(
+X-1\right)  \cdots\left(  X-i+1\right)  \\\text{(since }\left(  X-a\right)
+-\left(  i-a\right)  =X-i\text{)}}}\\
+&  =\dfrac{1}{a!\cdot\left(  i-a\right)  !}\cdot X\left(  X-1\right)
+\cdots\left(  X-i+1\right)  .
 \end{align*}
 Compared with%
 \begin{align*}
@@ -3037,26 +3196,26 @@ i-a\right)  !}\\\text{(by (\ref{eq.binom.formula}), applied to }m=i\text{ and
 }n=a\text{)}}}\\
 &  =\dfrac{X\left(  X-1\right)  \cdots\left(  X-i+1\right)  }{i!}\cdot
 \dfrac{i!}{a!\left(  i-a\right)  !}=\dfrac{1}{a!\cdot\left(  i-a\right)
-!}X\left(  X-1\right)  \cdots\left(  X-i+1\right)  ,
+!}\cdot X\left(  X-1\right)  \cdots\left(  X-i+1\right)  ,
 \end{align*}
 this yields $\dbinom{X}{i}\dbinom{i}{a}=\dbinom{X}{a}\dbinom{X-a}{i-a}$. This
-proves (\ref{eq.binom.trinom-rev}).
-\par
-Notice that we used (\ref{eq.binom.formula}) to simplify $\dbinom{i}{a}$ in
+proves Proposition \ref{prop.binom.trinom-rev} \textbf{(a)}.
+
+[Notice that we used (\ref{eq.binom.formula}) to simplify $\dbinom{i}{a}$ in
 this proof. Do not be tempted to use (\ref{eq.binom.formula}) to simplify
 $\dbinom{X}{i}$, $\dbinom{X}{a}$ and $\dbinom{X-a}{i-a}$: The $X$ in these
 expressions is a polynomial indeterminate, and (\ref{eq.binom.formula}) cannot
-be applied to it!}. In particular, if $m\in\mathbb{Z}$, $a\in\mathbb{N}$ and
-$i\in\mathbb{N}$ are such that $i\geq a$, then%
-\begin{equation}
-\dbinom{m}{i}\dbinom{i}{a}=\dbinom{m}{a}\dbinom{m-a}{i-a}
-\label{eq.binom.trinom-rev.m}%
-\end{equation}
-\footnote{This formula is obtained from (\ref{eq.binom.trinom-rev}) by
-substituting $m$ for $X$.}. This is a simple and yet highly useful formula,
-which Graham, Knuth and Patashnik call \textit{trinomial revision} in
-\cite[Table 174]{GKP}.
-\end{itemize}
+be applied to it!]
+
+\textbf{(b)} Let $m\in\mathbb{Z}$, $a\in\mathbb{N}$ and $i\in\mathbb{N}$ be
+such that $i\geq a$. The formula (\ref{eq.binom.trinom-rev.m}) is obtained
+from (\ref{eq.binom.trinom-rev}) by substituting $m$ for $X$. This proves
+Proposition \ref{prop.binom.trinom-rev} \textbf{(b)}.
+\end{proof}
+
+Proposition \ref{prop.binom.trinom-rev} \textbf{(b)} is a simple and yet
+highly useful formula, which Graham, Knuth and Patashnik call
+\textit{trinomial revision} in \cite[Table 174]{GKP}.
 
 \subsection{Binomial coefficients and polynomials}
 
@@ -15752,9 +15911,9 @@ a_{3,1} & a_{3,3}%
 a_{1,1} & a_{1,2}\\
 a_{3,1} & a_{3,2}%
 \end{array}
-\right)  \nonumber\\
-&  =\sum_{q=1}^{3}\left(  -1\right)  ^{q}a_{2,q}\det\left(  C_{2,q}\right)
-,\label{eq.exa.laplace.3x3.3}%
+\right) \nonumber\\
+&  =\sum_{q=1}^{3}\left(  -1\right)  ^{q}a_{2,q}\det\left(  C_{2,q}\right)  ,
+\label{eq.exa.laplace.3x3.3}%
 \end{align}
 where $C_{2,q}$ means the matrix obtained from $A$ by crossing out the $2$-nd
 row and the $q$-th column. This formula (unlike (\ref{eq.exa.laplace.3x3.2}))
@@ -43335,8 +43494,7 @@ Write the $m\times\ell^{\prime}$-matrix $B^{\prime}$ in the form $B^{\prime
 }$.
 
 Write the $m^{\prime}\times\ell$-matrix $C^{\prime}$ in the form $C^{\prime
-}=\left(  c_{i,j}^{\prime}\right)  _{1\leq i\leq m^{\prime},\ 1\leq j\leq\ell
-}$.
+}=\left(  c_{i,j}^{\prime}\right)  _{1\leq i\leq m^{\prime},\ 1\leq j\leq\ell}$.
 
 Write the $m^{\prime}\times\ell^{\prime}$-matrix $D^{\prime}$ in the form
 $D^{\prime}=\left(  d_{i,j}^{\prime}\right)  _{1\leq i\leq m^{\prime},\ 1\leq
@@ -52603,7 +52761,7 @@ Journal of Combinatorics Vol 11(2) A5 (2006), also available as
 \href{http://arxiv.org/abs/math.CO/0602357}{arXiv:math.CO/0602357}.
 
 \bibitem[LeLeMe16]{LeLeMe16}Eric Lehman, F. Thomson Leighton, Albert R. Meyer,
-\textit{Mathematics for Computer Science}, revised Wednesday 11th May,
+\textit{Mathematics for Computer Science}, revised Wednesday 20th May,
 2016,\newline\url{https://courses.csail.mit.edu/6.042/spring16/mcs.pdf} .
 
 \bibitem[Loehr11]{Loehr-BC}%
