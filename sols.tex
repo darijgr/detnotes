@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, May 28, 2016 16:57:37}
+%TCIDATA{LastRevised=Monday, July 04, 2016 00:07:13}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -11542,12 +11542,11 @@ $\left\vert \mathcal{Z}\right\vert =n$. (This bijection sends an $n$-tuple
 $\left(  g_{1},g_{2},\ldots,g_{n}\right)  $ to the subset $\left\{
 g_{1},g_{2},\ldots,g_{n}\right\}  $.)
 \par
-The proof of (\ref{eq.thm.cauchy-binet.fn1.alt}) given in
-\cite[Chapter 29]{AigZie} uses the
-\textit{Lindstr\"{o}m-Gessel-Viennot lemma} (which it calls the
-\textquotedblleft lemma of Gessel-Viennot\textquotedblright) and is highly
-worth reading.}. Before we prove Theorem \ref{thm.cauchy-binet}, let us give
-some examples for its use. First, here is a simple fact:
+The proof of (\ref{eq.thm.cauchy-binet.fn1.alt}) given in \cite[Chapter
+29]{AigZie} uses the \textit{Lindstr\"{o}m-Gessel-Viennot lemma} (which it
+calls the \textquotedblleft lemma of Gessel-Viennot\textquotedblright) and is
+highly worth reading.}. Before we prove Theorem \ref{thm.cauchy-binet}, let us
+give some examples for its use. First, here is a simple fact:
 
 \begin{lemma}
 \label{lem.increasing-sequences}Let $n\in\mathbb{N}$.
@@ -23226,12 +23225,12 @@ $\left(  B^{T}\right)  _{\sim r,\bullet}=\left(  B_{\bullet,\sim r}\right)
 \begin{vershort}
 \begin{proof}
 [Proof of Lemma \ref{lem.unrows.transpose.1}.]Taking the transpose of a matrix
-turns all its columns into rows. Thus, if we remove the $r$-th \textbf{row}
+turns all its columns into rows. Thus, if we remove the $r$-th \textbf{column}
 from $B$ and then take the transpose of the resulting matrix, then we obtain
 the same matrix as if we first take the transpose of $B$ and then remove the
-$r$-th \textbf{column} from it. Translating this statement into formulas, we
-obtain precisely $\left(  B^{T}\right)  _{\sim r,\bullet}=\left(
-B_{\bullet,\sim r}\right)  ^{T}$. Thus, Lemma \ref{lem.unrows.transpose.1} is
+$r$-th \textbf{row} from it. Translating this statement into formulas, we
+obtain precisely $\left(  B_{\bullet,\sim r}\right)  ^{T}=\left(
+B^{T}\right)  _{\sim r,\bullet}$. Thus, Lemma \ref{lem.unrows.transpose.1} is
 proven.\footnote{A more formal proof of this could be given using Proposition
 \ref{prop.submatrix.easy} \textbf{(e)}.}
 \end{proof}
@@ -23764,7 +23763,7 @@ Theorem \ref{thm.laplace.gen}, known as \textquotedblleft Laplace expansion in
 multiple rows (resp. columns)\textquotedblright. They appear (for example) in
 \cite[Theorem 3.61]{Gill} and in \cite[Theorem 2.4.1]{Prasolov}. Theorem
 \ref{thm.laplace.gen} \textbf{(a)} can be recovered from Additional exercise
-\ref{exeadd.det.laplace-multi} \textbf{(b)} by setting $P=\left\{  p\right\}
+\ref{exeadd.det.laplace-multi} \textbf{(a)} by setting $P=\left\{  p\right\}
 $; similarly for the part \textbf{(b)}.
 \end{remark}
 
@@ -24022,11 +24021,11 @@ The matrix $A$ in Additional exercise \ref{exeadd.det.resultant} is called the
 \href{https://en.wikipedia.org/wiki/Sylvester_matrix}{\textit{Sylvester
 matrix}} of the polynomials $P$ and $Q$ (for degrees $d$ and $e$); its
 determinant $\det A$ is known as their
-\href{https://en.wikipedia.org/wiki/Resultant}{\textit{resultant}}
-(at least when $d$ and $e$ are actually the degrees of $P$ and $Q$). According
-to the exercise, the condition $\det A=0$ is necessary for $P$ and $Q$ to have
-a common root. In the general case, the converse does not hold: For one, you
-can always force $\det A$ to be $0$ by taking $d>\deg P$ and $e>\deg Q$ (so
+\href{https://en.wikipedia.org/wiki/Resultant}{\textit{resultant}} (at least
+when $d$ and $e$ are actually the degrees of $P$ and $Q$). According to the
+exercise, the condition $\det A=0$ is necessary for $P$ and $Q$ to have a
+common root. In the general case, the converse does not hold: For one, you can
+always force $\det A$ to be $0$ by taking $d>\deg P$ and $e>\deg Q$ (so
 $p_{d}=0$ and $q_{e}=0$, and thus the $1$-st column of $A$ consists of
 zeroes). More importantly, the resultant of the two polynomials $X^{3}-1$ and
 $X^{2}+X+1$ is $0$, but they only have common roots in $\mathbb{C}$, not in
@@ -25110,7 +25109,7 @@ Now,%
 _{\substack{=\sum_{k=0}^{N-1}\dbinom{N-1}{k}X^{k}Y^{\left(  N-1\right)
 -k}\\\text{(by (\ref{pf.prop.binom.binomial.ihyp}))}}}\nonumber\\
 &  =\left(  X+Y\right)  \left(  \sum_{k=0}^{N-1}\dbinom{N-1}{k}X^{k}Y^{\left(
-N-1\right)  -k}\right)  \nonumber\\
+N-1\right)  -k}\right) \nonumber\\
 &  =\underbrace{X\sum_{k=0}^{N-1}\dbinom{N-1}{k}X^{k}Y^{\left(  N-1\right)
 -k}}_{=\sum_{k=0}^{N-1}\dbinom{N-1}{k}XX^{k}Y^{\left(  N-1\right)  -k}%
 }+\underbrace{Y\sum_{k=0}^{N-1}\dbinom{N-1}{k}X^{k}Y^{\left(  N-1\right)  -k}%
@@ -25130,7 +25129,7 @@ X^{k+1}Y^{N-\left(  k+1\right)  }}_{\substack{=\sum_{k=1}^{N}\dbinom{N-1}%
 {k-1}X^{k}Y^{N-k}\\\text{(here, we have substituted }k\text{ for }k+1\text{ in
 the sum)}}}+\sum_{k=0}^{N-1}\dbinom{N-1}{k}X^{k}Y^{N-k}\nonumber\\
 &  =\sum_{k=1}^{N}\dbinom{N-1}{k-1}X^{k}Y^{N-k}+\sum_{k=0}^{N-1}\dbinom
-{N-1}{k}X^{k}Y^{N-k}.\label{pf.prop.binom.binomial.1}%
+{N-1}{k}X^{k}Y^{N-k}. \label{pf.prop.binom.binomial.1}%
 \end{align}
 But recall that $N-1\geq0$, so that $N-1\in\mathbb{N}$. Clearly, $N-1<N$.
 Hence, (\ref{eq.binom.0}) (applied to $m=N-1$ and $n=N$) yields $\dbinom
@@ -51646,19 +51645,19 @@ for every $i\in\left\{  1,2,\ldots,n\right\}  $ and $j\in\left\{
 Now, for every $i\in\left\{  1,2,\ldots,n\right\}  $ and $j\in\left\{
 1,2,\ldots,m\right\}  $, we have%
 \begin{align*}
-a_{i,j}  &  =\left(  \text{the }\left(  i,j\right)  \text{-th entry of the
+a_{i,j} &  =\left(  \text{the }\left(  i,j\right)  \text{-th entry of the
 matrix }A\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
-(\ref{pf.lem.sol.prop.addcol.props.cols.Bij})}\right) \\
+(\ref{pf.lem.sol.prop.addcol.props.cols.Aij})}\right)  \\
 &  =\left(  \text{the }i\text{-th entry of }\underbrace{\text{the }j\text{-th
 column of the matrix }A}_{\substack{=\left(  \text{the }j\text{-th column of
 the matrix }B\right)  \\\text{(by (\ref{pf.lem.sol.prop.addcol.props.cols.q=q}%
-), applied to }q=j\text{)}}}\right) \\
+), applied to }q=j\text{)}}}\right)  \\
 &  =\left(  \text{the }i\text{-th entry of the }j\text{-th column of the
-matrix }B\right) \\
+matrix }B\right)  \\
 &  =\left(  \text{the }\left(  i,j\right)  \text{-th entry of the matrix
-}B\right) \\
+}B\right)  \\
 &  =b_{i,j}\ \ \ \ \ \ \ \ \ \ \left(  \text{by
-(\ref{pf.lem.sol.prop.addcol.props.cols.Aij})}\right)  .
+(\ref{pf.lem.sol.prop.addcol.props.cols.Bij})}\right)  .
 \end{align*}
 Hence, $\left(  \underbrace{a_{i,j}}_{=b_{i,j}}\right)  _{1\leq i\leq
 n,\ 1\leq j\leq m}=\left(  b_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq m}=B$
