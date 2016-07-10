@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Sunday, July 10, 2016 18:05:42}
+%TCIDATA{LastRevised=Sunday, July 10, 2016 18:55:49}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -18526,6 +18526,26 @@ Curiously, there is also a formula for the case when $n=m$ and $CD=DC$ (see
 
 We notice that Exercise \ref{exe.block2x2.tridet} allows us to solve Exercise
 \ref{exe.ps4.5} in a new way.
+
+An analogue of Exercise \ref{exe.block2x2.tridet} exists in which the
+$0_{m\times n}$ in the lower-left part of the matrix is replaced by a
+$0_{n\times m}$ in the upper-right part:
+
+\begin{exercise}
+\label{exe.block2x2.tridet.transposed}Let $n\in\mathbb{N}$ and $m\in
+\mathbb{N}$. Let $A$ be an $n\times n$-matrix. Let $C$ be an $m\times
+n$-matrix. Let $D$ be an $m\times m$-matrix. Prove that%
+\[
+\det\left(
+\begin{array}
+[c]{cc}%
+A & 0_{n\times m}\\
+C & D
+\end{array}
+\right)  =\det A\cdot\det D.
+\]
+
+\end{exercise}
 
 \begin{exercise}
 \label{exe.det.creative}Invent and solve an exercise on computing determinants.
@@ -46170,6 +46190,459 @@ A & B\\
 \right)  =\det A\cdot\det D$. In other words, Exercise
 \ref{exe.block2x2.tridet} holds for $m=M$. This completes the induction step.
 Hence, Exercise \ref{exe.block2x2.tridet} is solved by induction.
+\end{proof}
+\end{verlong}
+
+\subsection{Solution to Exercise \ref{exe.block2x2.tridet.transposed}}
+
+There are two ways to solve Exercise \ref{exe.block2x2.tridet.transposed}: One
+way is to essentially repeat our above solution to Exercise
+\ref{exe.block2x2.tridet} with some straightforward modifications (for
+example, we must use Theorem \ref{thm.laplace.gen} \textbf{(b)} instead of
+Theorem \ref{thm.laplace.gen} \textbf{(a)}). Another way is to derive Exercise
+\ref{exe.block2x2.tridet.transposed} from Exercise \ref{exe.block2x2.tridet}
+using transpose matrices. Let me show the latter way. We begin with a simple lemma:
+
+\begin{lemma}
+\label{lem.block2x2.transpose}Let $n$, $n^{\prime}$, $m$ and $m^{\prime}$ be
+four nonnegative integers. Let $A\in\mathbb{K}^{n\times m}$, $B\in
+\mathbb{K}^{n\times m^{\prime}}$, $C\in\mathbb{K}^{n^{\prime}\times m}$ and
+$D\in\mathbb{K}^{n^{\prime}\times m^{\prime}}$. Then,%
+\[
+\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+C & D
+\end{array}
+\right)  ^{T}=\left(
+\begin{array}
+[c]{cc}%
+A^{T} & C^{T}\\
+B^{T} & D^{T}%
+\end{array}
+\right)  .
+\]
+
+\end{lemma}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Lemma \ref{lem.block2x2.transpose}.]Lemma
+\ref{lem.block2x2.transpose} results in a straightforward way by recalling the
+definitions of $\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+C & D
+\end{array}
+\right)  ^{T}$ and $\left(
+\begin{array}
+[c]{cc}%
+A^{T} & C^{T}\\
+B^{T} & D^{T}%
+\end{array}
+\right)  $ and comparing.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Lemma \ref{lem.block2x2.transpose}.]Write the $n\times m$-matrix $A$
+in the form $A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq m}$.
+Thus, $A^{T}=\left(  a_{j,i}\right)  _{1\leq i\leq m,\ 1\leq j\leq n}$ (by the
+definition of $A^{T}$).
+
+Write the $n\times m^{\prime}$-matrix $B$ in the form $B=\left(
+b_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq m^{\prime}}$. Thus,
+$B^{T}=\left(  b_{j,i}\right)  _{1\leq i\leq m^{\prime},\ 1\leq j\leq n}$ (by
+the definition of $B^{T}$).
+
+Write the $n^{\prime}\times m$-matrix $C$ in the form $C=\left(
+a_{i,j}\right)  _{1\leq i\leq n^{\prime},\ 1\leq j\leq m}$. Thus,
+$C^{T}=\left(  c_{j,i}\right)  _{1\leq i\leq m,\ 1\leq j\leq n^{\prime}}$ (by
+the definition of $C^{T}$).
+
+Write the $n^{\prime}\times m^{\prime}$-matrix $D$ in the form $D=\left(
+b_{i,j}\right)  _{1\leq i\leq n^{\prime},\ 1\leq j\leq m^{\prime}}$. Thus,
+$D^{T}=\left(  d_{j,i}\right)  _{1\leq i\leq m^{\prime},\ 1\leq j\leq
+n^{\prime}}$ (by the definition of $D^{T}$).
+
+We have $A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq m}$,
+$B=\left(  b_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq m^{\prime}}$,
+$C=\left(  a_{i,j}\right)  _{1\leq i\leq n^{\prime},\ 1\leq j\leq m}$ and
+$D=\left(  b_{i,j}\right)  _{1\leq i\leq n^{\prime},\ 1\leq j\leq m^{\prime}}%
+$. Hence, (\ref{eq.def.block2x2.formal}) yields%
+\[
+\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+C & D
+\end{array}
+\right)  =\left(
+\begin{cases}
+a_{i,j}, & \text{if }i\leq n\text{ and }j\leq m;\\
+b_{i,j-m}, & \text{if }i\leq n\text{ and }j>m;\\
+c_{i-n,j}, & \text{if }i>n\text{ and }j\leq m;\\
+d_{i-n,j-m}, & \text{if }i>n\text{ and }j>m
+\end{cases}
+\right)  _{1\leq i\leq n+n^{\prime},\ 1\leq j\leq m+m^{\prime}}.
+\]
+Hence, the definition of the transpose matrix $\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+C & D
+\end{array}
+\right)  ^{T}$ yields%
+\begin{align}
+&  \left(
+\begin{array}
+[c]{cc}%
+A & B\\
+C & D
+\end{array}
+\right)  ^{T}\nonumber\\
+&  =\left(
+\begin{cases}
+a_{j,i}, & \text{if }j\leq n\text{ and }i\leq m;\\
+b_{j,i-m}, & \text{if }j\leq n\text{ and }i>m;\\
+c_{j-n,i}, & \text{if }j>n\text{ and }i\leq m;\\
+d_{j-n,i-m}, & \text{if }j>n\text{ and }i>m
+\end{cases}
+\right)  _{1\leq i\leq m+m^{\prime},\ 1\leq j\leq n+n^{\prime}}.
+\label{pf.lem.block2x2.transpose.1}%
+\end{align}
+
+
+On the other hand, $A^{T}=\left(  a_{j,i}\right)  _{1\leq i\leq m,\ 1\leq
+j\leq n}$, $C^{T}=\left(  c_{j,i}\right)  _{1\leq i\leq m,\ 1\leq j\leq
+n^{\prime}}$, $B^{T}=\left(  b_{j,i}\right)  _{1\leq i\leq m^{\prime},\ 1\leq
+j\leq n}$ and $D^{T}=\left(  d_{j,i}\right)  _{1\leq i\leq m^{\prime},\ 1\leq
+j\leq n^{\prime}}$. Hence, (\ref{eq.def.block2x2.formal}) (applied to $m$,
+$m^{\prime}$, $n$, $n^{\prime}$, $A^{T}$, $C^{T}$, $B^{T}$, $D^{T}$, $a_{j,i}%
+$, $c_{j,i}$, $b_{j,i}$ and $d_{j,i}$ instead of $n$, $n^{\prime}$, $m$,
+$m^{\prime}$, $A$, $B$, $C$, $D$, $a_{i,j}$, $b_{i,j}$, $c_{i,j}$ and
+$d_{i,j}$) yields%
+\begin{align}
+&  \left(
+\begin{array}
+[c]{cc}%
+A^{T} & C^{T}\\
+B^{T} & D^{T}%
+\end{array}
+\right) \nonumber\\
+&  =\left(
+\begin{cases}
+a_{j,i}, & \text{if }i\leq m\text{ and }j\leq n;\\
+c_{j-n,i}, & \text{if }i\leq m\text{ and }j>n;\\
+b_{j,i-m}, & \text{if }i>m\text{ and }j\leq n;\\
+d_{j-n,i-m}, & \text{if }i>m\text{ and }j>n
+\end{cases}
+\right)  _{1\leq i\leq m+m^{\prime},\ 1\leq j\leq n+n^{\prime}}.
+\label{pf.lem.block2x2.transpose.2}%
+\end{align}
+
+
+But every $\left(  i,j\right)  \in\left\{  1,2,\ldots,m+m^{\prime}\right\}
+\times\left\{  1,2,\ldots,n+n^{\prime}\right\}  $ satisfies%
+\begin{align*}
+&
+\begin{cases}
+a_{j,i}, & \text{if }j\leq n\text{ and }i\leq m;\\
+b_{j,i-m}, & \text{if }j\leq n\text{ and }i>m;\\
+c_{j-n,i}, & \text{if }j>n\text{ and }i\leq m;\\
+d_{j-n,i-m}, & \text{if }j>n\text{ and }i>m
+\end{cases}
+\\
+&  =%
+\begin{cases}
+a_{j,i}, & \text{if }j\leq n\text{ and }i\leq m;\\
+c_{j-n,i}, & \text{if }j>n\text{ and }i\leq m;\\
+b_{j,i-m}, & \text{if }j\leq n\text{ and }i>m;\\
+d_{j-n,i-m}, & \text{if }j>n\text{ and }i>m
+\end{cases}
+\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have switched the second and the
+third cases}\right) \\
+&  =%
+\begin{cases}
+a_{j,i}, & \text{if }i\leq m\text{ and }j\leq n;\\
+c_{j-n,i}, & \text{if }j>n\text{ and }i\leq m;\\
+b_{j,i-m}, & \text{if }j\leq n\text{ and }i>m;\\
+d_{j-n,i-m}, & \text{if }j>n\text{ and }i>m
+\end{cases}
+\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(  j\leq n\text{ and }i\leq
+m\right)  \text{ is equivalent to }\left(  i\leq m\text{ and }j\leq n\right)
+\right) \\
+&  =%
+\begin{cases}
+a_{j,i}, & \text{if }i\leq m\text{ and }j\leq n;\\
+c_{j-n,i}, & \text{if }i\leq m\text{ and }j>n;\\
+b_{j,i-m}, & \text{if }j\leq n\text{ and }i>m;\\
+d_{j-n,i-m}, & \text{if }j>n\text{ and }i>m
+\end{cases}
+\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(  j>n\text{ and }i\leq
+m\right)  \text{ is equivalent to }\left(  i\leq m\text{ and }j>n\right)
+\right)
+\end{align*}%
+\begin{align*}
+&  =%
+\begin{cases}
+a_{j,i}, & \text{if }i\leq m\text{ and }j\leq n;\\
+c_{j-n,i}, & \text{if }i\leq m\text{ and }j>n;\\
+b_{j,i-m}, & \text{if }i>m\text{ and }j\leq n;\\
+d_{j-n,i-m}, & \text{if }j>n\text{ and }i>m
+\end{cases}
+\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(  j\leq n\text{ and
+}i>m\right)  \text{ is equivalent to }\left(  i>m\text{ and }j\leq n\right)
+\right) \\
+&  =%
+\begin{cases}
+a_{j,i}, & \text{if }i\leq m\text{ and }j\leq n;\\
+c_{j-n,i}, & \text{if }i\leq m\text{ and }j>n;\\
+b_{j,i-m}, & \text{if }i>m\text{ and }j\leq n;\\
+d_{j-n,i-m}, & \text{if }i>m\text{ and }j>n
+\end{cases}
+\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(  j>n\text{ and }i>m\right)
+\text{ is equivalent to }\left(  i>m\text{ and }j>n\right)  \right)  .
+\end{align*}
+In other words,%
+\begin{align*}
+&  \left(
+\begin{cases}
+a_{j,i}, & \text{if }j\leq n\text{ and }i\leq m;\\
+b_{j,i-m}, & \text{if }j\leq n\text{ and }i>m;\\
+c_{j-n,i}, & \text{if }j>n\text{ and }i\leq m;\\
+d_{j-n,i-m}, & \text{if }j>n\text{ and }i>m
+\end{cases}
+\right)  _{1\leq i\leq m+m^{\prime},\ 1\leq j\leq n+n^{\prime}}\\
+&  =\left(
+\begin{cases}
+a_{j,i}, & \text{if }i\leq m\text{ and }j\leq n;\\
+c_{j-n,i}, & \text{if }i\leq m\text{ and }j>n;\\
+b_{j,i-m}, & \text{if }i>m\text{ and }j\leq n;\\
+d_{j-n,i-m}, & \text{if }i>m\text{ and }j>n
+\end{cases}
+\right)  _{1\leq i\leq m+m^{\prime},\ 1\leq j\leq n+n^{\prime}}.
+\end{align*}
+Comparing this with (\ref{pf.lem.block2x2.transpose.2}), we obtain%
+\begin{align*}
+\left(
+\begin{array}
+[c]{cc}%
+A^{T} & C^{T}\\
+B^{T} & D^{T}%
+\end{array}
+\right)   &  =\left(
+\begin{cases}
+a_{j,i}, & \text{if }j\leq n\text{ and }i\leq m;\\
+b_{j,i-m}, & \text{if }j\leq n\text{ and }i>m;\\
+c_{j-n,i}, & \text{if }j>n\text{ and }i\leq m;\\
+d_{j-n,i-m}, & \text{if }j>n\text{ and }i>m
+\end{cases}
+\right)  _{1\leq i\leq m+m^{\prime},\ 1\leq j\leq n+n^{\prime}}\\
+&  =\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+C & D
+\end{array}
+\right)  ^{T}%
+\end{align*}
+(by (\ref{pf.lem.block2x2.transpose.1})). This proves Lemma
+\ref{lem.block2x2.transpose}.
+\end{proof}
+\end{verlong}
+
+Now, we can comfortably solve Exercise \ref{exe.block2x2.tridet.transposed}:
+
+\begin{vershort}
+\begin{proof}
+[Solution to Exercise \ref{exe.block2x2.tridet.transposed}.]Exercise
+\ref{exe.ps4.4} (applied to $n+m$ and $\left(
+\begin{array}
+[c]{cc}%
+A & 0_{n\times m}\\
+C & D
+\end{array}
+\right)  $ insead of $n$ and $A$) shows that
+\[
+\det\left(  \left(
+\begin{array}
+[c]{cc}%
+A & 0_{n\times m}\\
+C & D
+\end{array}
+\right)  ^{T}\right)  =\det\left(
+\begin{array}
+[c]{cc}%
+A & 0_{n\times m}\\
+C & D
+\end{array}
+\right)  .
+\]
+Hence,%
+\begin{align*}
+&  \det\left(
+\begin{array}
+[c]{cc}%
+A & 0_{n\times m}\\
+C & D
+\end{array}
+\right)  \\
+&  =\det\left(  \underbrace{\left(
+\begin{array}
+[c]{cc}%
+A & 0_{n\times m}\\
+C & D
+\end{array}
+\right)  ^{T}}_{\substack{=\left(
+\begin{array}
+[c]{cc}%
+A^{T} & C^{T}\\
+\left(  0_{n\times m}\right)  ^{T} & D^{T}%
+\end{array}
+\right)  \\\text{(by Lemma \ref{lem.block2x2.transpose} (applied to }n\text{,
+}m\text{, }n\text{, }m\\\text{and }0_{n\times m}\text{ instead of }n\text{,
+}n^{\prime}\text{, }m\text{, }m^{\prime}\text{ and }B\text{))}}}\right)
+=\det\underbrace{\left(
+\begin{array}
+[c]{cc}%
+A^{T} & C^{T}\\
+\left(  0_{n\times m}\right)  ^{T} & D^{T}%
+\end{array}
+\right)  }_{\substack{=\left(
+\begin{array}
+[c]{cc}%
+A^{T} & C^{T}\\
+0_{m\times n} & D^{T}%
+\end{array}
+\right)  \\\text{(since }\left(  0_{n\times m}\right)  ^{T}=0_{m\times
+n}\text{)}}}\\
+&  =\det\left(
+\begin{array}
+[c]{cc}%
+A^{T} & C^{T}\\
+0_{m\times n} & D^{T}%
+\end{array}
+\right)  =\underbrace{\det\left(  A^{T}\right)  }_{\substack{=\det
+A\\\text{(by Exercise \ref{exe.ps4.4})}}}\cdot\underbrace{\det\left(
+D^{T}\right)  }_{\substack{=\det D\\\text{(by Exercise \ref{exe.ps4.4}%
+}\\\text{(applied to }m\text{ and }D\text{ instead}\\\text{of }n\text{ and
+}A\text{))}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Exercise \ref{exe.block2x2.tridet}
+(applied to }A^{T}\text{, }C^{T}\text{ and }D^{T}\text{ instead of }A\text{,
+}B\text{ and }D\text{)}\right)  \\
+&  =\det A\cdot\det D.
+\end{align*}
+This solves Exercise \ref{exe.block2x2.tridet.transposed}.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Solution to Exercise \ref{exe.block2x2.tridet.transposed}.]The matrix $A$ is
+an $n\times n$-matrix; hence, its transpose $A^{T}$ is an $n\times n$-matrix.
+In other words, $A^{T}\in\mathbb{K}^{n\times n}$.
+
+The matrix $C$ is an $m\times n$-matrix; hence, its transpose $C^{T}$ is an
+$n\times m$-matrix. In other words, $C^{T}\in\mathbb{K}^{n\times m}$.
+
+The matrix $D$ is an $m\times m$-matrix; hence, its transpose $D^{T}$ is an
+$m\times m$-matrix. In other words, $D^{T}\in\mathbb{K}^{m\times m}$.
+
+Clearly, $\left(  0_{n\times m}\right)  ^{T}=0_{m\times n}$.
+
+The matrix $\left(
+\begin{array}
+[c]{cc}%
+A & 0_{n\times m}\\
+C & D
+\end{array}
+\right)  $ is an $\left(  n+m\right)  \times\left(  n+m\right)  $-matrix.
+Hence, Exercise \ref{exe.ps4.4} (applied to $n+m$ and $\left(
+\begin{array}
+[c]{cc}%
+A & 0_{n\times m}\\
+C & D
+\end{array}
+\right)  $ insead of $n$ and $A$) shows that
+\[
+\det\left(  \left(
+\begin{array}
+[c]{cc}%
+A & 0_{n\times m}\\
+C & D
+\end{array}
+\right)  ^{T}\right)  =\det\left(
+\begin{array}
+[c]{cc}%
+A & 0_{n\times m}\\
+C & D
+\end{array}
+\right)  .
+\]
+Hence,%
+\begin{align*}
+&  \det\left(
+\begin{array}
+[c]{cc}%
+A & 0_{n\times m}\\
+C & D
+\end{array}
+\right)  \\
+&  =\det\left(  \underbrace{\left(
+\begin{array}
+[c]{cc}%
+A & 0_{n\times m}\\
+C & D
+\end{array}
+\right)  ^{T}}_{\substack{=\left(
+\begin{array}
+[c]{cc}%
+A^{T} & C^{T}\\
+\left(  0_{n\times m}\right)  ^{T} & D^{T}%
+\end{array}
+\right)  \\\text{(by Lemma \ref{lem.block2x2.transpose} (applied to }n\text{,
+}m\text{, }n\text{, }m\\\text{and }0_{n\times m}\text{ instead of }n\text{,
+}n^{\prime}\text{, }m\text{, }m^{\prime}\text{ and }B\text{))}}}\right)
+=\det\underbrace{\left(
+\begin{array}
+[c]{cc}%
+A^{T} & C^{T}\\
+\left(  0_{n\times m}\right)  ^{T} & D^{T}%
+\end{array}
+\right)  }_{\substack{=\left(
+\begin{array}
+[c]{cc}%
+A^{T} & C^{T}\\
+0_{m\times n} & D^{T}%
+\end{array}
+\right)  \\\text{(since }\left(  0_{n\times m}\right)  ^{T}=0_{m\times
+n}\text{)}}}\\
+&  =\det\left(
+\begin{array}
+[c]{cc}%
+A^{T} & C^{T}\\
+0_{m\times n} & D^{T}%
+\end{array}
+\right)  =\underbrace{\det\left(  A^{T}\right)  }_{\substack{=\det
+A\\\text{(by Exercise \ref{exe.ps4.4})}}}\cdot\underbrace{\det\left(
+D^{T}\right)  }_{\substack{=\det D\\\text{(by Exercise \ref{exe.ps4.4}%
+}\\\text{(applied to }m\text{ and }D\text{ instead}\\\text{of }n\text{ and
+}A\text{))}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Exercise \ref{exe.block2x2.tridet}
+(applied to }A^{T}\text{, }C^{T}\text{ and }D^{T}\text{ instead of }A\text{,
+}B\text{ and }D\text{)}\right)  \\
+&  =\det A\cdot\det D.
+\end{align*}
+This solves Exercise \ref{exe.block2x2.tridet.transposed}.
 \end{proof}
 \end{verlong}
 
