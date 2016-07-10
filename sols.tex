@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Monday, July 04, 2016 00:08:23}
+%TCIDATA{LastRevised=Sunday, July 10, 2016 14:37:34}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -9137,6 +9137,11 @@ of two matrices $A$ and $B$ for which the products $AB$ and $BA$ are distinct,
 or one of them is well-defined but the other is not\footnote{This happens if
 $A$ has as many columns as $B$ has rows, but $B$ does not have as many columns
 as $A$ has rows.}.
+
+A sum $\sum_{i\in I}A_{i}$ of finitely many matrices $A_{i}$ is defined in the
+same way as a sum of numbers or of elements of a commutative ring. However, a
+product $\prod_{i\in I}A_{i}$ of finitely many matrices $A_{i}$ (in general)
+cannot be defined, because the result would depend on the order of multiplication.
 
 For every $n\in\mathbb{N}$, we let $I_{n}$ denote the $n\times n$-matrix
 $\left(  \delta_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$, where
@@ -23671,9 +23676,7 @@ new proof of Proposition \ref{prop.desnanot.AC}.
 \subsection{Additional exercises}
 
 Here are a few more additional exercises, with no solutions given and no
-importance to the rest of the text.
-
-\Needspace{8cm}
+importance to the rest of the text.\Needspace{8cm}
 
 \begin{addexercise}
 \label{exeadd.det.anotherpattern}\textbf{(a)} Compute the determinant of the
