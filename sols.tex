@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Sunday, July 10, 2016 18:55:49}
+%TCIDATA{LastRevised=Sunday, July 10, 2016 20:12:46}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -2423,7 +2423,7 @@ combinatorial bijections.
 Identities involving binomial coefficients are legion, and books have been
 written about them (let me mention \cite[Chapter 5]{GKP} as a highly readable
 introduction; but, e.g., \href{http://www.math.wvu.edu/~gould/}{Henry W.
-Gould's website} goes far further down the rabbit hole). We shall only study a
+Gould's website} goes far deeper down the rabbit hole). We shall only study a
 few of these identities.
 
 \subsection{Definitions and basic properties}
@@ -2471,7 +2471,8 @@ triangle}}}\footnote{More precisely, the numbers $\dbinom{m}{n}$ for
 $m\in\mathbb{N}$ and $n\in\left\{  0,1,\ldots,m\right\}  $ form Pascal's
 triangle. Nevertheless, the \textquotedblleft other\textquotedblright%
 \ binomial coefficients (particularly the ones where $m$ is a negative
-integer) are highly useful.}. Let us state a few basic properties of these numbers:
+integer) are highly useful, too.}. Let us state a few basic properties of
+these numbers:
 
 \subsubsection{Simple formulas}
 
@@ -4859,8 +4860,9 @@ Two of the most famous integer sequences defined recursively are the Fibonacci
 sequence and the Lucas sequence:
 
 \begin{itemize}
-\item The \href{https://en.wikipedia.org/wiki/Fibonacci_number}{Fibonacci
-sequence} is the sequence $\left(  f_{0},f_{1},f_{2},\ldots\right)  $ of
+\item The
+\textit{\href{https://en.wikipedia.org/wiki/Fibonacci_number}{Fibonacci
+sequence}} is the sequence $\left(  f_{0},f_{1},f_{2},\ldots\right)  $ of
 integers which is defined recursively by $f_{0}=0$, $f_{1}=1$, and
 $f_{n}=f_{n-1}+f_{n-2}$ for all $n\geq2$. Its first terms are%
 \begin{align*}
@@ -4875,10 +4877,10 @@ f_{11}  &  =89,\ \ \ \ \ \ \ \ \ \ f_{12}=144,\ \ \ \ \ \ \ \ \ \ f_{13}=233.
 course, the recursive definition then needs to be modified to require
 $f_{2}=1$ instead of $f_{0}=0$.)
 
-\item The \href{https://en.wikipedia.org/wiki/Lucas_number}{Lucas sequence} is
-the sequence $\left(  \ell_{0},\ell_{1},\ell_{2},\ldots\right)  $ of integers
-which is defined recursively by $\ell_{0}=2$, $\ell_{1}=1$, and $\ell_{n}%
-=\ell_{n-1}+\ell_{n-2}$ for all $n\geq2$. Its first terms are%
+\item The \textit{\href{https://en.wikipedia.org/wiki/Lucas_number}{Lucas
+sequence}} is the sequence $\left(  \ell_{0},\ell_{1},\ell_{2},\ldots\right)
+$ of integers which is defined recursively by $\ell_{0}=2$, $\ell_{1}=1$, and
+$\ell_{n}=\ell_{n-1}+\ell_{n-2}$ for all $n\geq2$. Its first terms are%
 \begin{align*}
 \ell_{0}  &  =2,\ \ \ \ \ \ \ \ \ \ \ell_{1}=1,\ \ \ \ \ \ \ \ \ \ \ell
 _{2}=3,\ \ \ \ \ \ \ \ \ \ \ell_{3}=4,\ \ \ \ \ \ \ \ \ \ \ell_{4}%
@@ -20349,11 +20351,12 @@ the same way as in $\mathbb{K}^{n\times n}$). This is because the sum and the
 product of any two lower-triangular $n\times n$-matrices over $\mathbb{K}$ are
 again lower-triangular\footnote{Check this! (For the sum, it is clear, but for
 the product, it is an instructive exercise.)}, and because the matrices
-$0_{n\times n}$ and $I_{n}$ are lower-triangular).
+$0_{n\times n}$ and $I_{n}$ are lower-triangular.
 
 \item In contrast, the set of all invertible $2\times2$-matrices over
 $\mathbb{K}$ is \textbf{not} a noncommutative ring (for example, because the
-sum of the two invertible matrices $I_{2}$ and $-I_{2}$ is not invertible).
+sum of the two invertible matrices $I_{2}$ and $-I_{2}$ is not
+invertible\footnote{unless the ring $\mathbb{K}$ is trivial}).
 
 \item If $\mathbb{K}$ is a commutative ring, then the set of all $3\times
 3$-matrices (over $\mathbb{K}$) of the form $\left(
@@ -46495,7 +46498,7 @@ Hence,%
 A & 0_{n\times m}\\
 C & D
 \end{array}
-\right)  \\
+\right) \\
 &  =\det\left(  \underbrace{\left(
 \begin{array}
 [c]{cc}%
@@ -46538,7 +46541,7 @@ D^{T}\right)  }_{\substack{=\det D\\\text{(by Exercise \ref{exe.ps4.4}%
 }A\text{))}}}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Exercise \ref{exe.block2x2.tridet}
 (applied to }A^{T}\text{, }C^{T}\text{ and }D^{T}\text{ instead of }A\text{,
-}B\text{ and }D\text{)}\right)  \\
+}B\text{ and }D\text{)}\right) \\
 &  =\det A\cdot\det D.
 \end{align*}
 This solves Exercise \ref{exe.block2x2.tridet.transposed}.
@@ -46596,7 +46599,7 @@ Hence,%
 A & 0_{n\times m}\\
 C & D
 \end{array}
-\right)  \\
+\right) \\
 &  =\det\left(  \underbrace{\left(
 \begin{array}
 [c]{cc}%
@@ -46639,7 +46642,7 @@ D^{T}\right)  }_{\substack{=\det D\\\text{(by Exercise \ref{exe.ps4.4}%
 }A\text{))}}}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Exercise \ref{exe.block2x2.tridet}
 (applied to }A^{T}\text{, }C^{T}\text{ and }D^{T}\text{ instead of }A\text{,
-}B\text{ and }D\text{)}\right)  \\
+}B\text{ and }D\text{)}\right) \\
 &  =\det A\cdot\det D.
 \end{align*}
 This solves Exercise \ref{exe.block2x2.tridet.transposed}.
