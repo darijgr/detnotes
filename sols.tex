@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, July 15, 2016 14:57:55}
+%TCIDATA{LastRevised=Friday, July 15, 2016 22:43:38}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -36620,7 +36620,7 @@ $\prod_{i=1}^{M}p_{i,s_{i}}$).
 Now, if we split off the factor for $i=M$ from the product $\prod_{i=1}%
 ^{M}\sum_{k\in S_{i}}p_{i,k}$, we obtain
 \begin{align*}
-\prod_{i=1}^{M}\sum_{k\in S_{i}}p_{i,k}  &  =\underbrace{\left(  \prod
+\prod_{i=1}^{M}\sum_{k\in S_{i}}p_{i,k} &  =\underbrace{\left(  \prod
 _{i=1}^{M-1}\sum_{k\in S_{i}}p_{i,k}\right)  }_{\substack{=\sum_{x\in
 S_{1}\times S_{2}\times\cdots\times S_{M-1}}g_{x}\\\text{(by
 (\ref{pf.lem.prodrule.S.L1}))}}}\underbrace{\left(  \sum_{k\in S_{M}}%
@@ -36637,9 +36637,7 @@ x,y\right)  \in\left(  S_{1}\times S_{2}\times\cdots\times S_{M-1}\right)
 X=S_{1}\times S_{2}\times\cdots\times S_{M-1}\text{, }Y=S_{M}\text{, }%
 q_{x}=g_{x}\text{ and }r_{y}=p_{M,y}%
 \end{array}
-\right) \\
-&  =\sum_{\left(  x,y\right)  \in\left(  S_{1}\times S_{2}\times\cdots\times
-S_{M-1}\right)  \times S_{M}}g_{x}p_{M,y}\\
+\right)  \\
 &  =\sum_{\left(  s_{1},s_{2},\ldots,s_{M}\right)  \in S_{1}\times S_{2}%
 \times\cdots\times S_{M}}\underbrace{g_{\left(  s_{1},s_{2},\ldots
 ,s_{M-1}\right)  }}_{\substack{=\prod_{i=1}^{M-1}p_{i,s_{i}}\\\text{(by the
@@ -36649,15 +36647,15 @@ definition of }g_{\left(  s_{1},s_{2},\ldots,s_{M-1}\right)  }\text{)}%
 \begin{array}
 [c]{c}%
 \text{here, we have substituted }\left(  \left(  s_{1},s_{2},\ldots
-,s_{M-1}\right)  ,s_{M}\right)  \text{ for }\left(  x,y\right) \\
+,s_{M-1}\right)  ,s_{M}\right)  \text{ for }\left(  x,y\right)  \\
 \text{in the sum, since the map}\\
 S_{1}\times S_{2}\times\cdots\times S_{M}\rightarrow\left(  S_{1}\times
 S_{2}\times\cdots\times S_{M-1}\right)  \times S_{M},\\
 \left(  s_{1},s_{2},\ldots,s_{M}\right)  \mapsto\left(  \left(  s_{1}%
-,s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right) \\
+,s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right)  \\
 \text{is a bijection}%
 \end{array}
-\right) \\
+\right)  \\
 &  =\sum_{\left(  s_{1},s_{2},\ldots,s_{M}\right)  \in S_{1}\times S_{2}%
 \times\cdots\times S_{M}}\underbrace{\left(  \prod_{i=1}^{M-1}p_{i,s_{i}%
 }\right)  p_{M,s_{M}}}_{\substack{=\prod_{i=1}^{M}p_{i,s_{i}}\\\text{(by
