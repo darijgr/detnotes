@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, July 15, 2016 22:43:38}
+%TCIDATA{LastRevised=Wednesday, July 20, 2016 15:09:48}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -17576,10 +17576,19 @@ q}\right)  \\\text{(by Lemma \ref{lem.laplace.Apq})}}}\\
 This proves Theorem \ref{thm.laplace.gen} \textbf{(b)}.
 \end{proof}
 
-The reader can easily see how Theorem \ref{thm.laplace.gen} \textbf{(b)} could
-be (alternatively) proven using Theorem \ref{thm.laplace.gen} \textbf{(a)} and
-Exercise \ref{exe.ps4.4}, and how Theorem \ref{thm.laplace.pre} could be seen
-as a particular case of Theorem \ref{thm.laplace.gen} \textbf{(a)}.
+Let me make three simple observations (which can easily be checked by the reader):
+
+\begin{itemize}
+\item Theorem \ref{thm.laplace.gen} \textbf{(b)} could be (alternatively)
+proven using Theorem \ref{thm.laplace.gen} \textbf{(a)} (applied to $A^{T}$
+and $a_{q,p}$ instead of $A$ and $a_{p,q}$) and Exercise \ref{exe.ps4.4}.
+
+\item Theorem \ref{thm.laplace.pre} is a particular case of Theorem
+\ref{thm.laplace.gen} \textbf{(a)}.
+
+\item Corollary \ref{cor.laplace.pre.col} is a particular case of Theorem
+\ref{thm.laplace.gen} \textbf{(b)}.
+\end{itemize}
 
 \begin{remark}
 Some books use Laplace expansion to define the notion of a determinant. For
@@ -33244,8 +33253,8 @@ Compared with%
 }\circ\sigma}  &  =\left(  -1\right)  ^{\operatorname*{cyc}\nolimits_{i_{1}%
 ,i_{2},\ldots,i_{k}}}\cdot\left(  -1\right)  ^{\sigma}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{eq.sign.prod}), applied to
-}\operatorname*{cyc}\nolimits_{1,2,\ldots,k}\text{ and }\sigma\text{ instead
-of }\sigma\text{ and }\tau\right) \\
+}\operatorname*{cyc}\nolimits_{i_{1},i_{2},\ldots,i_{k}}\text{ and }%
+\sigma\text{ instead of }\sigma\text{ and }\tau\right) \\
 &  =\left(  -1\right)  ^{\sigma}\cdot\left(  -1\right)  ^{\operatorname*{cyc}%
 \nolimits_{i_{1},i_{2},\ldots,i_{k}}},
 \end{align*}
@@ -36620,7 +36629,7 @@ $\prod_{i=1}^{M}p_{i,s_{i}}$).
 Now, if we split off the factor for $i=M$ from the product $\prod_{i=1}%
 ^{M}\sum_{k\in S_{i}}p_{i,k}$, we obtain
 \begin{align*}
-\prod_{i=1}^{M}\sum_{k\in S_{i}}p_{i,k} &  =\underbrace{\left(  \prod
+\prod_{i=1}^{M}\sum_{k\in S_{i}}p_{i,k}  &  =\underbrace{\left(  \prod
 _{i=1}^{M-1}\sum_{k\in S_{i}}p_{i,k}\right)  }_{\substack{=\sum_{x\in
 S_{1}\times S_{2}\times\cdots\times S_{M-1}}g_{x}\\\text{(by
 (\ref{pf.lem.prodrule.S.L1}))}}}\underbrace{\left(  \sum_{k\in S_{M}}%
@@ -36637,7 +36646,7 @@ x,y\right)  \in\left(  S_{1}\times S_{2}\times\cdots\times S_{M-1}\right)
 X=S_{1}\times S_{2}\times\cdots\times S_{M-1}\text{, }Y=S_{M}\text{, }%
 q_{x}=g_{x}\text{ and }r_{y}=p_{M,y}%
 \end{array}
-\right)  \\
+\right) \\
 &  =\sum_{\left(  s_{1},s_{2},\ldots,s_{M}\right)  \in S_{1}\times S_{2}%
 \times\cdots\times S_{M}}\underbrace{g_{\left(  s_{1},s_{2},\ldots
 ,s_{M-1}\right)  }}_{\substack{=\prod_{i=1}^{M-1}p_{i,s_{i}}\\\text{(by the
@@ -36647,15 +36656,15 @@ definition of }g_{\left(  s_{1},s_{2},\ldots,s_{M-1}\right)  }\text{)}%
 \begin{array}
 [c]{c}%
 \text{here, we have substituted }\left(  \left(  s_{1},s_{2},\ldots
-,s_{M-1}\right)  ,s_{M}\right)  \text{ for }\left(  x,y\right)  \\
+,s_{M-1}\right)  ,s_{M}\right)  \text{ for }\left(  x,y\right) \\
 \text{in the sum, since the map}\\
 S_{1}\times S_{2}\times\cdots\times S_{M}\rightarrow\left(  S_{1}\times
 S_{2}\times\cdots\times S_{M-1}\right)  \times S_{M},\\
 \left(  s_{1},s_{2},\ldots,s_{M}\right)  \mapsto\left(  \left(  s_{1}%
-,s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right)  \\
+,s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right) \\
 \text{is a bijection}%
 \end{array}
-\right)  \\
+\right) \\
 &  =\sum_{\left(  s_{1},s_{2},\ldots,s_{M}\right)  \in S_{1}\times S_{2}%
 \times\cdots\times S_{M}}\underbrace{\left(  \prod_{i=1}^{M-1}p_{i,s_{i}%
 }\right)  p_{M,s_{M}}}_{\substack{=\prod_{i=1}^{M}p_{i,s_{i}}\\\text{(by
