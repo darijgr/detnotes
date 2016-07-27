@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Wednesday, July 20, 2016 15:20:12}
+%TCIDATA{LastRevised=Wednesday, July 27, 2016 14:41:48}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -12279,10 +12279,10 @@ seen in one of the previous footnotes) and $\operatorname*{rows}%
 ,\ldots,k_{\sigma\left(  n\right)  }}B=\left(  b_{k_{\sigma\left(  i\right)
 },j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ (for similar reasons). Hence,
 we can apply Lemma \ref{lem.det.sigma} \textbf{(a)} to $\sigma$,
-$\operatorname*{rows}\nolimits_{k_{1},k_{2},\ldots,k_{n}}B$ and
+$\operatorname*{rows}\nolimits_{k_{1},k_{2},\ldots,k_{n}}B$, $b_{k_{i},j}$ and
 $\operatorname*{rows}\nolimits_{k_{\sigma\left(  1\right)  },k_{\sigma\left(
-2\right)  },\ldots,k_{\sigma\left(  n\right)  }}B$ instead of $\kappa$, $B$
-and $B_{\kappa}$. As a consequence, we obtain
+2\right)  },\ldots,k_{\sigma\left(  n\right)  }}B$ instead of $\kappa$, $B$,
+$b_{i,j}$ and $B_{\kappa}$. As a consequence, we obtain
 \[
 \det\left(  \operatorname*{rows}\nolimits_{k_{\sigma\left(  1\right)
 },k_{\sigma\left(  2\right)  },\ldots,k_{\sigma\left(  n\right)  }}B\right)
@@ -12616,10 +12616,10 @@ i\leq n,\ 1\leq j\leq n}$ and $\operatorname*{rows}\nolimits_{k_{\sigma\left(
 1\right)  },k_{\sigma\left(  2\right)  },\ldots,k_{\sigma\left(  n\right)  }%
 }B=\left(  b_{k_{\sigma\left(  i\right)  },j}\right)  _{1\leq i\leq n,\ 1\leq
 j\leq n}$. Hence, we can apply Lemma \ref{lem.det.sigma} \textbf{(a)} to
-$\sigma$, $\operatorname*{rows}\nolimits_{k_{1},k_{2},\ldots,k_{n}}B$ and
-$\operatorname*{rows}\nolimits_{k_{\sigma\left(  1\right)  },k_{\sigma\left(
-2\right)  },\ldots,k_{\sigma\left(  n\right)  }}B$ instead of $\kappa$, $B$
-and $B_{\kappa}$. As a consequence, we obtain
+$\sigma$, $\operatorname*{rows}\nolimits_{k_{1},k_{2},\ldots,k_{n}}B$,
+$b_{k_{i},j}$ and $\operatorname*{rows}\nolimits_{k_{\sigma\left(  1\right)
+},k_{\sigma\left(  2\right)  },\ldots,k_{\sigma\left(  n\right)  }}B$ instead
+of $\kappa$, $B$, $b_{i,j}$ and $B_{\kappa}$. As a consequence, we obtain
 \[
 \det\left(  \operatorname*{rows}\nolimits_{k_{\sigma\left(  1\right)
 },k_{\sigma\left(  2\right)  },\ldots,k_{\sigma\left(  n\right)  }}B\right)
@@ -52724,10 +52724,10 @@ B_{\bullet,r}=C_{\bullet,r}\ \ \ \ \ \ \ \ \ \ \text{for every }r\in\left\{
 $r\in\left\{  1,2,\ldots,n\right\}  $. Proposition \ref{prop.addcol.props1}
 \textbf{(a)} (applied to $n$, $C$, $\left(  I_{n}\right)  _{\bullet,v}$ and
 $r$ instead of $m$, $A$, $v$ and $q$) yields $\left(  C\mid\left(
-I_{n}\right)  _{\bullet,v}\right)  _{\bullet,r}=C_{\bullet,q}$. Now, from
+I_{n}\right)  _{\bullet,v}\right)  _{\bullet,r}=C_{\bullet,r}$. Now, from
 $B=\left(  C\mid\left(  I_{n}\right)  _{\bullet,v}\right)  $, we obtain
 $B_{\bullet,r}=\left(  C\mid\left(  I_{n}\right)  _{\bullet,v}\right)
-_{\bullet,r}=C_{\bullet,q}$. This proves (\ref{sol.pluecker.rederive-AC.1}).}.
+_{\bullet,r}=C_{\bullet,r}$. This proves (\ref{sol.pluecker.rederive-AC.1}).}.
 Furthermore,%
 \begin{equation}
 \det\left(  A\mid B_{\bullet,n+1}\right)  =\left(  -1\right)  ^{n+v}%
@@ -52758,7 +52758,7 @@ $r\in\left\{  1,2,\ldots,n\right\}  $. From $B=\left(  C\mid\left(
 I_{n}\right)  _{\bullet,v}\right)  $, we obtain $B_{\bullet,\sim r}=\left(
 C\mid\left(  I_{n}\right)  _{\bullet,v}\right)  _{\bullet,\sim r}=\left(
 C_{\bullet,\sim r}\mid\left(  I_{n}\right)  _{\bullet,v}\right)  $ (by
-Proposition \ref{prop.addcol.props1} \textbf{(a)}, applied to $n$, $C$,
+Proposition \ref{prop.addcol.props1} \textbf{(c)}, applied to $n$, $C$,
 $\left(  I_{n}\right)  _{\bullet,v}$ and $r$ instead of $m$, $A$, $v$ and
 $q$). Hence,%
 \begin{equation}
@@ -52782,7 +52782,7 @@ r}\right)  .
 \]
 This proves (\ref{sol.pluecker.rederive-AC.3}).}. Finally,%
 \begin{equation}
-B_{\bullet,\sim\left(  n+1\right)  }=C \label{sol.pluecker.rederive-AC.4}%
+B_{\bullet,\sim\left(  n+1\right)  }=C\label{sol.pluecker.rederive-AC.4}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{sol.pluecker.rederive-AC.4}):} Proposition
 \ref{prop.addcol.props1} \textbf{(d)} (applied to $n$, $C$ and $\left(
