@@ -80,6 +80,7 @@
 \newenvironment{addexercise}[1][]
 {\begin{exetwo}[#1]\begin{leftbar}}
 {\end{leftbar}\end{exetwo}}
+\newenvironment{statement}{\begin{quote}}{\end{quote}}
 \iffalse
 \newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
 \fi
@@ -7915,6 +7916,49 @@ n}a_{\left(  i,j\right)  }.
 
 \textbf{(d)} Use Exercise \ref{exe.perm.sign.pseudoexplicit} \textbf{(a)} to
 give a new solution to Exercise \ref{exe.ps2.2.5} \textbf{(b)}.
+\end{exercise}
+
+\begin{exercise}
+\label{exe.Ialbe}Let $n\in\mathbb{N}$. Let $I$ be a subset of $\left\{
+1,2,\ldots,n\right\}  $. Let $k=\left\vert I\right\vert $. Let $\left(
+a_{1},a_{2},\ldots,a_{k}\right)  $ be the list of all elements of $I$ in
+increasing order (with no repetitions). Let $\left(  b_{1},b_{2}%
+,\ldots,b_{n-k}\right)  $ be the list of all elements of $\left\{
+1,2,\ldots,n\right\}  \setminus I$ in increasing order (with no repetitions).
+Let $\alpha\in S_{k}$ and $\beta\in S_{n-k}$. Prove the following:
+
+\textbf{(a)} There exists a unique $\sigma\in S_{n}$ satisfying%
+\[
+\left(  \sigma\left(  1\right)  ,\sigma\left(  2\right)  ,\ldots,\sigma\left(
+n\right)  \right)  =\left(  a_{\alpha\left(  1\right)  },a_{\alpha\left(
+2\right)  },\ldots,a_{\alpha\left(  k\right)  },b_{\beta\left(  1\right)
+},b_{\beta\left(  2\right)  },\ldots,b_{\beta\left(  n-k\right)  }\right)  .
+\]
+Denote this $\sigma$ by $\sigma_{I,\alpha,\beta}$.
+
+\textbf{(b)} Let $\sum I$ denote the sum of all elements of $I$. (Thus, $\sum
+I=\sum_{i\in I}i$.) We have%
+\[
+\ell\left(  \sigma_{I,\alpha,\beta}\right)  =\ell\left(  \alpha\right)
++\ell\left(  \beta\right)  +\sum I-\left(  1+2+\cdots+k\right)
+\]
+and%
+\[
+\left(  -1\right)  ^{\sigma_{I,\alpha,\beta}}=\left(  -1\right)  ^{\alpha
+}\cdot\left(  -1\right)  ^{\beta}\cdot\left(  -1\right)  ^{\sum I-\left(
+1+2+\cdots+k\right)  }.
+\]
+
+
+\textbf{(c)} Forget that we fixed $\alpha$ and $\beta$. We thus have defined
+an element $\sigma_{I,\alpha,\beta}\in S_{n}$ for every $\alpha\in S_{k}$ and
+every $\beta\in S_{n-k}$. The map%
+\begin{align*}
+S_{k}\times S_{n-k}  &  \rightarrow\left\{  \tau\in S_{n}\ \mid\ \tau\left(
+\left\{  1,2,\ldots,k\right\}  \right)  =I\right\}  ,\\
+\left(  \alpha,\beta\right)   &  \mapsto\sigma_{I,\alpha,\beta}%
+\end{align*}
+is well-defined and a bijection.
 \end{exercise}
 
 \subsection{Cycles}
@@ -31881,6 +31925,3339 @@ this to $u=\ell\left(  \sigma\circ\tau\right)  $ and $v=\ell\left(
 \sigma\right)  +\ell\left(  \tau\right)  $, we obtain $\ell\left(  \sigma
 \circ\tau\right)  \equiv\ell\left(  \sigma\right)  +\ell\left(  \tau\right)
 \operatorname{mod}2$. Thus, Exercise \ref{exe.ps2.2.5} \textbf{(b)} is solved again.
+\end{proof}
+
+\subsection{Solution to Exercise \ref{exe.Ialbe}}
+
+Exercise \ref{exe.Ialbe} is an example of a combinatorial fact that one can
+easily convince oneself of (with some handwaving), but that is quite hard to
+prove in a formal, bulletproof way. Thus, the solution given below is going to
+be long, but we hope that the reader can avoid major parts of it by figuring
+them out independently.
+
+Before we start solving Exercise \ref{exe.Ialbe}, let us define some notations.
+
+For every $n\in\mathbb{N}$, we let $\left[  n\right]  $ denote the set
+$\left\{  1,2,\ldots,n\right\}  $.
+
+For every $n\in\mathbb{N}$ and every $n$-tuple $\mathbf{a}=\left(  a_{1}%
+,a_{2},\ldots,a_{n}\right)  $ of integers, we define the following notations:
+
+\begin{itemize}
+\item An \textit{inversion} of $\mathbf{a}$ will mean a pair $\left(
+i,j\right)  \in\left[  n\right]  ^{2}$ satisfying $i<j$ and $a_{i}>a_{j}$.
+
+\item We denote by $\operatorname*{Inv}\left(  \mathbf{a}\right)  $ the set of
+all inversions of $\mathbf{a}$. Thus, $\operatorname*{Inv}\left(
+\mathbf{a}\right)  \subseteq\left[  n\right]  ^{2}$. More precisely,%
+\begin{align}
+\operatorname*{Inv}\left(  \mathbf{a}\right)   &  =\left(  \text{the set of
+all inversions of }\mathbf{a}\right) \nonumber\\
+&  =\left\{  \left(  i,j\right)  \in\left[  n\right]  ^{2}\ \mid\ i<j\text{
+and }a_{i}>a_{j}\right\} \label{sol.exe.Ialbe.Inv.1}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since the inversions of }\mathbf{a}\text{ are the pairs }\left(
+i,j\right)  \in\left[  n\right]  ^{2}\text{ satisfying}\\
+i<j\text{ and }a_{i}>a_{j}\text{ (by the definition of an \textquotedblleft
+inversion\textquotedblright)}%
+\end{array}
+\right) \nonumber\\
+&  =\left\{  \left(  u,v\right)  \in\left[  n\right]  ^{2}\ \mid\ u<v\text{
+and }a_{u}>a_{v}\right\} \label{sol.exe.Ialbe.Inv.2}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we renamed the index }\left(
+i,j\right)  \text{ as }\left(  u,v\right)  \right)  .\nonumber
+\end{align}
+
+
+\item We denote by $\ell\left(  \mathbf{a}\right)  $ the number $\left\vert
+\operatorname*{Inv}\left(  \mathbf{a}\right)  \right\vert $. (This is
+well-defined because $\operatorname*{Inv}\left(  \mathbf{a}\right)  $ is
+finite (since $\operatorname*{Inv}\left(  \mathbf{a}\right)  \subseteq\left[
+n\right]  ^{2}$).) Thus,%
+\begin{align}
+\ell\left(  \mathbf{a}\right)   &  =\left\vert \underbrace{\operatorname*{Inv}%
+\left(  \mathbf{a}\right)  }_{=\left(  \text{the set of all inversions of
+}\mathbf{a}\right)  }\right\vert =\left\vert \left(  \text{the set of all
+inversions of }\mathbf{a}\right)  \right\vert \nonumber\\
+&  =\left(  \text{the number of all inversions of }\mathbf{a}\right)  .
+\label{sol.exe.Ialbe.l(a)}%
+\end{align}
+
+\end{itemize}
+
+Let us now notice something almost trivial:
+
+\begin{lemma}
+\label{lem.sol.exe.Ialbe.Inv=Inv}Let $P$ be a finite set of integers. Let
+$m=\left\vert P\right\vert $. Let $\sigma\in S_{m}$. Let $\left(  p_{1}%
+,p_{2},\ldots,p_{m}\right)  $ be the list of all elements of $P$ in increasing
+order (with no repetitions). Let $\operatorname*{Inv}\left(  \sigma\right)  $
+denote the set of all inversions of $\sigma$.
+
+\textbf{(a)} We have $\operatorname*{Inv}\left(  \sigma\right)
+=\operatorname*{Inv}\left(  p_{\sigma\left(  1\right)  },p_{\sigma\left(
+2\right)  },\ldots,p_{\sigma\left(  m\right)  }\right)  $.
+
+\textbf{(b)} We have $\ell\left(  \sigma\right)  =\ell\left(  p_{\sigma\left(
+1\right)  },p_{\sigma\left(  2\right)  },\ldots,p_{\sigma\left(  m\right)
+}\right)  $.
+\end{lemma}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exe.Ialbe.Inv=Inv}.]The inversions of $\sigma$
+are the pairs $\left(  i,j\right)  $ of integers satisfying $1\leq i<j\leq m$
+and $\sigma\left(  i\right)  >\sigma\left(  j\right)  $. Thus,
+$\operatorname*{Inv}\left(  \sigma\right)  $ (which is the set of all
+inversions of $\sigma$) is the set of all such pairs $\left(  i,j\right)  $.
+In other words,
+\begin{align}
+\operatorname*{Inv}\left(  \sigma\right)   &  =\left\{  \left(  i,j\right)
+\in\mathbb{Z}^{2}\ \mid\ 1\leq i<j\leq m\text{ and }\sigma\left(  i\right)
+>\sigma\left(  j\right)  \right\} \nonumber\\
+&  =\left\{  \left(  i,j\right)  \in\left[  m\right]  ^{2}\ \mid\ i<j\text{
+and }\sigma\left(  i\right)  >\sigma\left(  j\right)  \right\} \nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{because the pairs }\left(  i,j\right)  \in\mathbb{Z}^{2}\text{
+satisfying }1\leq i<j\leq m\\
+\text{are precisely the pairs }\left(  i,j\right)  \in\left[  m\right]
+^{2}\text{ satisfying }i<j
+\end{array}
+\right) \nonumber\\
+&  =\left\{  \left(  u,v\right)  \in\left[  m\right]  ^{2}\ \mid\ u<v\text{
+and }\sigma\left(  u\right)  >\sigma\left(  v\right)  \right\}
+\label{pf.lem.sol.exe.Ialbe.Inv=Inv.short.lhs=}%
+\end{align}
+(here, we have renamed the index $\left(  i,j\right)  $ as $\left(
+u,v\right)  $).
+
+But $\left(  p_{1},p_{2},\ldots,p_{m}\right)  $ is the list of all elements of
+$P$ in increasing order (with no repetitions). Thus, $\left(  p_{1}%
+,p_{2},\ldots,p_{m}\right)  $ is a strictly increasing list. In other words,
+$p_{1}<p_{2}<\cdots<p_{m}$. Hence, if $i$ and $j$ are two elements of $\left[
+m\right]  $, then we have the following logical equivalence:%
+\begin{equation}
+\left(  p_{i}>p_{j}\right)  \Longleftrightarrow\left(  i>j\right)  .
+\label{pf.lem.sol.exe.Ialbe.Inv=Inv.short.1}%
+\end{equation}
+
+
+But (\ref{sol.exe.Ialbe.Inv.2}) (applied to $m$, $\left(  p_{\sigma\left(
+1\right)  },p_{\sigma\left(  2\right)  },\ldots,p_{\sigma\left(  m\right)
+}\right)  $ and $p_{\sigma\left(  i\right)  }$ instead of $n$, $\mathbf{a}$
+and $a_{i}$) yields%
+\begin{align*}
+&  \operatorname*{Inv}\left(  p_{\sigma\left(  1\right)  },p_{\sigma\left(
+2\right)  },\ldots,p_{\sigma\left(  m\right)  }\right) \\
+&  =\left\{  \left(  u,v\right)  \in\left[  m\right]  ^{2}\ \mid\ u<v\text{
+and }\underbrace{p_{\sigma\left(  u\right)  }>p_{\sigma\left(  v\right)  }%
+}_{\substack{\text{this is equivalent to }\sigma\left(  u\right)
+>\sigma\left(  v\right)  \\\text{(by
+(\ref{pf.lem.sol.exe.Ialbe.Inv=Inv.short.1}), applied to }i=\sigma\left(
+u\right)  \text{ and }j=\sigma\left(  v\right)  \text{)}}}\right\} \\
+&  =\left\{  \left(  u,v\right)  \in\left[  m\right]  ^{2}\ \mid\ u<v\text{
+and }\sigma\left(  u\right)  >\sigma\left(  v\right)  \right\}
+=\operatorname*{Inv}\left(  \sigma\right)
+\end{align*}
+(by (\ref{pf.lem.sol.exe.Ialbe.Inv=Inv.short.lhs=})). This proves Lemma
+\ref{lem.sol.exe.Ialbe.Inv=Inv} \textbf{(a)}.
+
+\textbf{(b)} We know that $\ell\left(  \sigma\right)  $ is the number of all
+inversions of $\sigma$ (by the definition of $\ell\left(  \sigma\right)  $).
+In other words, $\ell\left(  \sigma\right)  $ is the size of the set of all
+inversions of $\sigma$. In other words, $\ell\left(  \sigma\right)  $ is the
+size of $\operatorname*{Inv}\left(  \sigma\right)  $ (since the set of all
+inversions of $\sigma$ is $\operatorname*{Inv}\left(  \sigma\right)  $).
+Hence,%
+\begin{align*}
+\ell\left(  \sigma\right)   &  =\left\vert \underbrace{\operatorname*{Inv}%
+\left(  \sigma\right)  }_{\substack{=\operatorname*{Inv}\left(  p_{\sigma
+\left(  1\right)  },p_{\sigma\left(  2\right)  },\ldots,p_{\sigma\left(
+m\right)  }\right)  \\\text{(by Lemma \ref{lem.sol.exe.Ialbe.Inv=Inv}
+\textbf{(a)})}}}\right\vert =\left\vert \operatorname*{Inv}\left(
+p_{\sigma\left(  1\right)  },p_{\sigma\left(  2\right)  },\ldots
+,p_{\sigma\left(  m\right)  }\right)  \right\vert \\
+&  =\ell\left(  p_{\sigma\left(  1\right)  },p_{\sigma\left(  2\right)
+},\ldots,p_{\sigma\left(  m\right)  }\right)
+\end{align*}
+(since $\ell\left(  p_{\sigma\left(  1\right)  },p_{\sigma\left(  2\right)
+},\ldots,p_{\sigma\left(  m\right)  }\right)  $ is defined as $\left\vert
+\operatorname*{Inv}\left(  p_{\sigma\left(  1\right)  },p_{\sigma\left(
+2\right)  },\ldots,p_{\sigma\left(  m\right)  }\right)  \right\vert $). This
+proves Lemma \ref{lem.sol.exe.Ialbe.Inv=Inv} \textbf{(b)}.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exe.Ialbe.Inv=Inv}.]We know that $\left(
+p_{1},p_{2},\ldots,p_{m}\right)  $ is the list of all elements of $P$ in
+increasing order (with no repetitions). Thus, $\left(  p_{1},p_{2}%
+,\ldots,p_{m}\right)  $ is a strictly increasing list. In other words, we have
+$p_{1}<p_{2}<\cdots<p_{m}$. In other words, if $u$ and $v$ are two elements of
+$\left[  m\right]  $ such that $u<v$, then%
+\begin{equation}
+p_{u}<p_{v}. \label{pf.lem.sol.exe.Ialbe.Inv=Inv.pupv}%
+\end{equation}
+
+
+\textbf{(a)} We have%
+\begin{equation}
+\operatorname*{Inv}\left(  p_{\sigma\left(  1\right)  },p_{\sigma\left(
+2\right)  },\ldots,p_{\sigma\left(  m\right)  }\right)  =\left\{  \left(
+u,v\right)  \in\left[  m\right]  ^{2}\ \mid\ u<v\text{ and }p_{\sigma\left(
+u\right)  }>p_{\sigma\left(  v\right)  }\right\}
+\label{pf.lem.sol.exe.Ialbe.Inv=Inv.a.Inv}%
+\end{equation}
+(by (\ref{sol.exe.Ialbe.Inv.2}), applied to $m$, $\left(  p_{\sigma\left(
+1\right)  },p_{\sigma\left(  2\right)  },\ldots,p_{\sigma\left(  m\right)
+}\right)  $ and $p_{\sigma\left(  i\right)  }$ instead of $n$, $\mathbf{a}$
+and $a_{i}$).
+
+Let $c\in\operatorname*{Inv}\left(  \sigma\right)  $. Thus, $c$ is an element
+of $\operatorname*{Inv}\left(  \sigma\right)  $. In other words, $c$ is an
+inversion of $\sigma$ (since $\operatorname*{Inv}\left(  \sigma\right)  $ is
+the set of all inversions of $\sigma$). In other words, $c$ is a pair $\left(
+i,j\right)  $ of integers satisfying $1\leq i<j\leq m$ and $\sigma\left(
+i\right)  >\sigma\left(  j\right)  $ (by the definition of an
+\textquotedblleft inversion of $\sigma$\textquotedblright).
+
+From $i<j\leq m$, we obtain $i\leq m$. From $1\leq i\leq m$, we obtain
+$i\in\left[  m\right]  $.
+
+From $1\leq i<j$, we obtain $1\leq j$. From $1\leq j\leq m$, we obtain
+$j\in\left[  m\right]  $.
+
+From $i\in\left[  m\right]  $ and $j\in\left[  m\right]  $, we obtain $\left(
+i,j\right)  \in\left[  m\right]  \times\left[  m\right]  =\left[  m\right]
+^{2}$. From $\sigma\left(  i\right)  >\sigma\left(  j\right)  $, we obtain
+$\sigma\left(  j\right)  <\sigma\left(  i\right)  $. Hence, $p_{\sigma\left(
+j\right)  }<p_{\sigma\left(  i\right)  }$ (by
+(\ref{pf.lem.sol.exe.Ialbe.Inv=Inv.pupv}), applied to $u=\sigma\left(
+j\right)  $ and $v=\sigma\left(  u\right)  $). In other words, $p_{\sigma
+\left(  i\right)  }>p_{\sigma\left(  j\right)  }$. Hence, $\left(  i,j\right)
+$ is an element of $\left[  m\right]  ^{2}$ and satisfies $i<j$ and
+$p_{\sigma\left(  i\right)  }>p_{\sigma\left(  j\right)  }$. In other words,
+$\left(  i,j\right)  $ is an element $\left(  u,v\right)  \in\left[  m\right]
+^{2}$ satisfying $u<v$ and $p_{\sigma\left(  u\right)  }>p_{\sigma\left(
+v\right)  }$. Thus,%
+\begin{align*}
+\left(  i,j\right)   &  \in\left\{  \left(  u,v\right)  \in\left[  m\right]
+^{2}\ \mid\ u<v\text{ and }p_{\sigma\left(  u\right)  }>p_{\sigma\left(
+v\right)  }\right\} \\
+&  =\operatorname*{Inv}\left(  p_{\sigma\left(  1\right)  },p_{\sigma\left(
+2\right)  },\ldots,p_{\sigma\left(  m\right)  }\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{pf.lem.sol.exe.Ialbe.Inv=Inv.a.Inv}%
+)}\right)  .
+\end{align*}
+Hence, $c=\left(  i,j\right)  \in\operatorname*{Inv}\left(  p_{\sigma\left(
+1\right)  },p_{\sigma\left(  2\right)  },\ldots,p_{\sigma\left(  m\right)
+}\right)  $.
+
+Now, forget that we fixed $c$. We thus have shown that every $c\in
+\operatorname*{Inv}\left(  \sigma\right)  $ satisfies $c\in\operatorname*{Inv}%
+\left(  p_{\sigma\left(  1\right)  },p_{\sigma\left(  2\right)  }%
+,\ldots,p_{\sigma\left(  m\right)  }\right)  $. In other words,
+\begin{equation}
+\operatorname*{Inv}\left(  \sigma\right)  \subseteq\operatorname*{Inv}\left(
+p_{\sigma\left(  1\right)  },p_{\sigma\left(  2\right)  },\ldots
+,p_{\sigma\left(  m\right)  }\right)  .
+\label{pf.lem.sol.exe.Ialbe.Inv=Inv.a.dir1}%
+\end{equation}
+
+
+On the other hand, let $d\in\operatorname*{Inv}\left(  p_{\sigma\left(
+1\right)  },p_{\sigma\left(  2\right)  },\ldots,p_{\sigma\left(  m\right)
+}\right)  $. Thus,%
+\begin{align*}
+d  &  \in\operatorname*{Inv}\left(  p_{\sigma\left(  1\right)  }%
+,p_{\sigma\left(  2\right)  },\ldots,p_{\sigma\left(  m\right)  }\right) \\
+&  =\left\{  \left(  u,v\right)  \in\left[  m\right]  ^{2}\ \mid\ u<v\text{
+and }p_{\sigma\left(  u\right)  }>p_{\sigma\left(  v\right)  }\right\}
+\end{align*}
+(by (\ref{pf.lem.sol.exe.Ialbe.Inv=Inv.a.Inv})). In other words, $d=\left(
+u,v\right)  $ for some $\left(  u,v\right)  \in\left[  m\right]  ^{2}$
+satisfying $u<v$ and $p_{\sigma\left(  u\right)  }>p_{\sigma\left(  v\right)
+}$. Consider this $\left(  u,v\right)  $.
+
+From $\left(  u,v\right)  \in\left[  m\right]  ^{2}$, we obtain $u\in\left[
+m\right]  $ and $v\in\left[  m\right]  $. From $u\in\left[  m\right]  $, we
+obtain $1\leq u$. From $v\in\left[  m\right]  $, we obtain $v\leq m$. Thus,
+$1\leq u<v\leq m$.
+
+From $u<v$, we obtain $u\neq v$. If we had $\sigma\left(  u\right)
+=\sigma\left(  v\right)  $, then we would have $\sigma^{-1}\left(
+\underbrace{\sigma\left(  u\right)  }_{=\sigma\left(  v\right)  }\right)
+=\sigma^{-1}\left(  \sigma\left(  v\right)  \right)  =v$, which would
+contradict $\sigma^{-1}\left(  \sigma\left(  u\right)  \right)  =u\neq v$.
+Thus, we cannot have $\sigma\left(  u\right)  =\sigma\left(  v\right)  $. In
+other words, we have $\sigma\left(  u\right)  \neq\sigma\left(  v\right)  $.
+
+Now, let us assume (for the sake of contradiction) that $\sigma\left(
+u\right)  <\sigma\left(  v\right)  $. Then, $p_{\sigma\left(  u\right)
+}<p_{\sigma\left(  v\right)  }$ (by (\ref{pf.lem.sol.exe.Ialbe.Inv=Inv.pupv}),
+applied to $\sigma\left(  u\right)  $ and $\sigma\left(  v\right)  $ instead
+of $u$ and $v$). This contradicts $p_{\sigma\left(  u\right)  }>p_{\sigma
+\left(  v\right)  }$. This contradiction proves that our assumption (that
+$\sigma\left(  u\right)  <\sigma\left(  v\right)  $) was false. Hence, we
+cannot have $\sigma\left(  u\right)  <\sigma\left(  v\right)  $. We thus have
+$\sigma\left(  u\right)  \geq\sigma\left(  v\right)  $. Combining this with
+$\sigma\left(  u\right)  \neq\sigma\left(  v\right)  $, we obtain
+$\sigma\left(  u\right)  >\sigma\left(  v\right)  $.
+
+So we know that $\left(  u,v\right)  $ is a pair of integers satisfying $1\leq
+u<v\leq m$ and $\sigma\left(  u\right)  >\sigma\left(  v\right)  $. In other
+words, $\left(  u,v\right)  $ is a pair $\left(  i,j\right)  $ of integers
+satisfying $1\leq i<j\leq m$ and $\sigma\left(  i\right)  >\sigma\left(
+j\right)  $. In other words, $\left(  u,v\right)  $ is an inversion of
+$\sigma$ (by the definition of an \textquotedblleft inversion of $\sigma
+$\textquotedblright). In other words, $\left(  u,v\right)  $ is an element of
+$\operatorname*{Inv}\left(  \sigma\right)  $ (since $\operatorname*{Inv}%
+\left(  \sigma\right)  $ is the set of all inversions of $\sigma$). In other
+words, $\left(  u,v\right)  \in\operatorname*{Inv}\left(  \sigma\right)  $.
+Thus, $d=\left(  u,v\right)  \in\operatorname*{Inv}\left(  \sigma\right)  $.
+
+Now, forget that we fixed $d$. We thus have shown that every \newline%
+$d\in\operatorname*{Inv}\left(  p_{\sigma\left(  1\right)  },p_{\sigma\left(
+2\right)  },\ldots,p_{\sigma\left(  m\right)  }\right)  $ satisfies
+$d\in\operatorname*{Inv}\left(  \sigma\right)  $. In other words,%
+\[
+\operatorname*{Inv}\left(  p_{\sigma\left(  1\right)  },p_{\sigma\left(
+2\right)  },\ldots,p_{\sigma\left(  m\right)  }\right)  \subseteq
+\operatorname*{Inv}\left(  \sigma\right)  .
+\]
+Combining this with (\ref{pf.lem.sol.exe.Ialbe.Inv=Inv.a.dir1}), we
+obtain$\operatorname*{Inv}\left(  \sigma\right)  =\operatorname*{Inv}\left(
+p_{\sigma\left(  1\right)  },p_{\sigma\left(  2\right)  },\ldots
+,p_{\sigma\left(  m\right)  }\right)  $. This proves Lemma
+\ref{lem.sol.exe.Ialbe.Inv=Inv} \textbf{(a)}.
+
+\textbf{(b)} Recall that $\ell\left(  \sigma\right)  $ is the number of
+inversions of $\sigma$ (indeed, this is how $\ell\left(  \sigma\right)  $ was
+defined). Thus,%
+\begin{align*}
+\ell\left(  \sigma\right)   &  =\left(  \text{the number of inversions of
+}\sigma\right) \\
+&  =\left\vert \underbrace{\left(  \text{the set of all inversions of }%
+\sigma\right)  }_{\substack{=\operatorname*{Inv}\left(  \sigma\right)
+\\\text{(since }\operatorname*{Inv}\left(  \sigma\right)  \text{ is the set of
+all inversions of }\sigma\text{)}}}\right\vert \\
+&  =\left\vert \underbrace{\operatorname*{Inv}\left(  \sigma\right)
+}_{\substack{=\operatorname*{Inv}\left(  p_{\sigma\left(  1\right)
+},p_{\sigma\left(  2\right)  },\ldots,p_{\sigma\left(  m\right)  }\right)
+\\\text{(by Lemma \ref{lem.sol.exe.Ialbe.Inv=Inv} \textbf{(a)})}}}\right\vert
+=\left\vert \operatorname*{Inv}\left(  p_{\sigma\left(  1\right)  }%
+,p_{\sigma\left(  2\right)  },\ldots,p_{\sigma\left(  m\right)  }\right)
+\right\vert .
+\end{align*}
+Comparing this with%
+\begin{align*}
+\ell\left(  p_{\sigma\left(  1\right)  },p_{\sigma\left(  2\right)  }%
+,\ldots,p_{\sigma\left(  m\right)  }\right)   &  =\left\vert
+\operatorname*{Inv}\left(  p_{\sigma\left(  1\right)  },p_{\sigma\left(
+2\right)  },\ldots,p_{\sigma\left(  m\right)  }\right)  \right\vert \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\ell\left(
+p_{\sigma\left(  1\right)  },p_{\sigma\left(  2\right)  },\ldots
+,p_{\sigma\left(  m\right)  }\right)  \right)  ,
+\end{align*}
+we obtain $\ell\left(  \sigma\right)  =\ell\left(  p_{\sigma\left(  1\right)
+},p_{\sigma\left(  2\right)  },\ldots,p_{\sigma\left(  m\right)  }\right)  $.
+This proves Lemma \ref{lem.sol.exe.Ialbe.Inv=Inv} \textbf{(b)}.
+\end{proof}
+\end{verlong}
+
+In the following, we shall use the following notation (known as
+\href{https://en.wikipedia.org/wiki/Iverson_bracket}{the \textit{Iverson
+bracket}}): If $\mathcal{A}$ is any logical statement, then $\left[
+\mathcal{A}\right]  $ will mean the integer $%
+\begin{cases}
+1, & \text{if }\mathcal{A}\text{ is true};\\
+0, & \text{if }\mathcal{A}\text{ is false}%
+\end{cases}
+$. For example, $\left[  1+1=2\right]  =1$ (since $1+1=2$ is true), whereas
+$\left[  1+1=1\right]  =0$ (since $1+1=1$ is false). Clearly, if $\mathcal{A}$
+and $\mathcal{B}$ are two equivalent logical statements, then $\left[
+\mathcal{A}\right]  =\left[  \mathcal{B}\right]  $.
+
+Now, let us show some more lemmas:
+
+\begin{lemma}
+\label{lem.sol.exe.Ialbe.iverson}Let $n\in\mathbb{N}$. Let $\mathbf{a}=\left(
+a_{1},a_{2},\ldots,a_{n}\right)  $ be an $n$-tuple of integers. Then,%
+\[
+\ell\left(  \mathbf{a}\right)  =\sum_{i=1}^{n}\sum_{j=1}^{n}\left[
+i<j\right]  \left[  a_{i}>a_{j}\right]  .
+\]
+
+\end{lemma}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exe.Ialbe.iverson}.]If $\mathcal{A}$ and
+$\mathcal{B}$ are two logical statements, then%
+\begin{equation}
+\left[  \mathcal{A}\right]  \left[  \mathcal{B}\right]  =\left[
+\mathcal{A}\text{ and }\mathcal{B}\right]
+\label{pf.lem.sol.exe.Ialbe.iverson.short.AandB}%
+\end{equation}
+(because both sides of this equality are $1$ if $\mathcal{A}$ and
+$\mathcal{B}$ are both satisfied, and both sides are $0$ if not).
+
+We have%
+\begin{align*}
+&  \underbrace{\sum_{i=1}^{n}\sum_{j=1}^{n}}_{=\sum_{i\in\left[  n\right]
+}\sum_{j\in\left[  n\right]  }=\sum_{\left(  i,j\right)  \in\left[  n\right]
+^{2}}}\underbrace{\left[  i<j\right]  \left[  a_{i}>a_{j}\right]
+}_{\substack{=\left[  i<j\text{ and }a_{i}>a_{j}\right]  \\\text{(by
+(\ref{pf.lem.sol.exe.Ialbe.iverson.short.AandB}))}}}\\
+&  =\sum_{\left(  i,j\right)  \in\left[  n\right]  ^{2}}\left[  i<j\text{ and
+}a_{i}>a_{j}\right] \\
+&  =\sum_{\substack{\left(  i,j\right)  \in\left[  n\right]  ^{2};\\i<j\text{
+and }a_{i}>a_{j}}}\underbrace{\left[  i<j\text{ and }a_{i}>a_{j}\right]
+}_{\substack{=1\\\text{(since }i<j\text{ and }a_{i}>a_{j}\text{)}}%
+}+\sum_{\substack{\left(  i,j\right)  \in\left[  n\right]  ^{2};\\\text{not
+}\left(  i<j\text{ and }a_{i}>a_{j}\right)  }}\underbrace{\left[  i<j\text{
+and }a_{i}>a_{j}\right]  }_{\substack{=0\\\text{(since not }\left(  i<j\text{
+and }a_{i}>a_{j}\right)  \text{)}}}\\
+&  =\sum_{\substack{\left(  i,j\right)  \in\left[  n\right]  ^{2};\\i<j\text{
+and }a_{i}>a_{j}}}1+\underbrace{\sum_{\substack{\left(  i,j\right)  \in\left[
+n\right]  ^{2};\\\text{not }\left(  i<j\text{ and }a_{i}>a_{j}\right)  }%
+}0}_{=0}=\sum_{\substack{\left(  i,j\right)  \in\left[  n\right]
+^{2};\\i<j\text{ and }a_{i}>a_{j}}}1\\
+&  =\left\vert \underbrace{\left\{  \left(  i,j\right)  \in\left[  n\right]
+^{2}\ \mid\ i<j\text{ and }a_{i}>a_{j}\right\}  }%
+_{\substack{=\operatorname*{Inv}\left(  \mathbf{a}\right)  \\\text{(by
+(\ref{sol.exe.Ialbe.Inv.1}))}}}\right\vert \cdot1=\left\vert
+\operatorname*{Inv}\left(  \mathbf{a}\right)  \right\vert \cdot1\\
+&  =\left\vert \operatorname*{Inv}\left(  \mathbf{a}\right)  \right\vert
+=\ell\left(  \mathbf{a}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }%
+\ell\left(  \mathbf{a}\right)  \text{ was defined to be }\left\vert
+\operatorname*{Inv}\left(  \mathbf{a}\right)  \right\vert \right)  .
+\end{align*}
+This proves Lemma \ref{lem.sol.exe.Ialbe.iverson}.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exe.Ialbe.iverson}.]We have%
+\begin{align*}
+\sum_{c\in\operatorname*{Inv}\left(  \mathbf{a}\right)  }1  &  =\sum
+_{c\in\left\{  \left(  u,v\right)  \in\left[  n\right]  ^{2}\ \mid\ u<v\text{
+and }a_{u}>a_{v}\right\}  }1\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\operatorname*{Inv}\left(
+\mathbf{a}\right)  =\left\{  \left(  u,v\right)  \in\left[  n\right]
+^{2}\ \mid\ u<v\text{ and }a_{u}>a_{v}\right\}  \text{ (by
+(\ref{sol.exe.Ialbe.Inv.2})}\right) \\
+&  =\underbrace{\sum_{\left(  i,j\right)  \in\left\{  \left(  u,v\right)
+\in\left[  n\right]  ^{2}\ \mid\ u<v\text{ and }a_{u}>a_{v}\right\}  }}%
+_{=\sum_{\substack{\left(  i,j\right)  \in\left[  n\right]  ^{2};\\i<j\text{
+and }a_{i}>a_{j}}}}1\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }\left(
+i,j\right)  \text{ for }c\text{ in the sum}\right) \\
+&  =\sum_{\substack{\left(  i,j\right)  \in\left[  n\right]  ^{2};\\i<j\text{
+and }a_{i}>a_{j}}}1.
+\end{align*}
+Comparing this with%
+\begin{align*}
+&  \sum_{\substack{\left(  i,j\right)  \in\left[  n\right]  ^{2}%
+;\\i<j}}\left[  a_{i}>a_{j}\right] \\
+&  =\sum_{\substack{\left(  i,j\right)  \in\left[  n\right]  ^{2};\\i<j\text{
+and }a_{i}>a_{j}}}\underbrace{\left[  a_{i}>a_{j}\right]  }%
+_{\substack{=1\\\text{(since }a_{i}>a_{j}\text{)}}}+\sum_{\substack{\left(
+i,j\right)  \in\left[  n\right]  ^{2};\\i<j\text{ and not }a_{i}>a_{j}%
+}}\underbrace{\left[  a_{i}>a_{j}\right]  }_{\substack{=0\\\text{(since we
+don't have }a_{i}>a_{j}\text{)}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since every }\left(  i,j\right)  \in\left[  n\right]  ^{2}\text{
+satisfies either }a_{i}>a_{j}\text{ or}\\
+\left(  \text{not }a_{i}>a_{j}\right)  \text{ (but not both)}%
+\end{array}
+\right) \\
+&  =\sum_{\substack{\left(  i,j\right)  \in\left[  n\right]  ^{2};\\i<j\text{
+and }a_{i}>a_{j}}}1+\underbrace{\sum_{\substack{\left(  i,j\right)  \in\left[
+n\right]  ^{2};\\i<j\text{ and not }a_{i}>a_{j}}}0}_{=0}=\sum
+_{\substack{\left(  i,j\right)  \in\left[  n\right]  ^{2};\\i<j\text{ and
+}a_{i}>a_{j}}}1,
+\end{align*}
+we obtain%
+\[
+\sum_{\substack{\left(  i,j\right)  \in\left[  n\right]  ^{2};\\i<j}}\left[
+a_{i}>a_{j}\right]  =\sum_{c\in\operatorname*{Inv}\left(  \mathbf{a}\right)
+}1=\left\vert \operatorname*{Inv}\left(  \mathbf{a}\right)  \right\vert
+\cdot1=\left\vert \operatorname*{Inv}\left(  \mathbf{a}\right)  \right\vert .
+\]
+Comparing this with%
+\[
+\ell\left(  \mathbf{a}\right)  =\left\vert \operatorname*{Inv}\left(
+\mathbf{a}\right)  \right\vert \ \ \ \ \ \ \ \ \ \ \left(  \text{by the
+definition of }\ell\left(  \mathbf{a}\right)  \right)  ,
+\]
+we obtain%
+\[
+\ell\left(  \mathbf{a}\right)  =\sum_{\substack{\left(  i,j\right)  \in\left[
+n\right]  ^{2};\\i<j}}\left[  a_{i}>a_{j}\right]  .
+\]
+Comparing this with%
+\begin{align*}
+&  \sum_{\left(  i,j\right)  \in\left[  n\right]  ^{2}}\left[  i<j\right]
+\left[  a_{i}>a_{j}\right] \\
+&  =\sum_{\substack{\left(  i,j\right)  \in\left[  n\right]  ^{2}%
+;\\i<j}}\underbrace{\left[  i<j\right]  }_{\substack{=1\\\text{(since
+}i<j\text{)}}}\left[  a_{i}>a_{j}\right]  +\sum_{\substack{\left(  i,j\right)
+\in\left[  n\right]  ^{2};\\\text{not }i<j}}\underbrace{\left[  i<j\right]
+}_{\substack{=0\\\text{(since we don't have }i<j\text{)}}}\left[  a_{i}%
+>a_{j}\right] \\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since every }\left(  i,j\right)  \in\left[  n\right]  ^{2}\text{
+satisfies either }i<j\text{ or}\\
+\left(  \text{not }i<j\right)  \text{ (but not both)}%
+\end{array}
+\right) \\
+&  =\sum_{\substack{\left(  i,j\right)  \in\left[  n\right]  ^{2}%
+;\\i<j}}\left[  a_{i}>a_{j}\right]  +\underbrace{\sum_{\substack{\left(
+i,j\right)  \in\left[  n\right]  ^{2};\\\text{not }i<j}}0\left[  a_{i}%
+>a_{j}\right]  }_{=0}=\sum_{\substack{\left(  i,j\right)  \in\left[  n\right]
+^{2};\\i<j}}\left[  a_{i}>a_{j}\right]  ,
+\end{align*}
+we obtain%
+\begin{align*}
+\ell\left(  \mathbf{a}\right)   &  =\underbrace{\sum_{\left(  i,j\right)
+\in\left[  n\right]  ^{2}}}_{=\sum_{i\in\left[  n\right]  }\sum_{j\in\left[
+n\right]  }}\left[  i<j\right]  \left[  a_{i}>a_{j}\right] \\
+&  =\underbrace{\sum_{i\in\left[  n\right]  }}_{\substack{=\sum_{i\in\left\{
+1,2,\ldots,n\right\}  }\\\text{(since }\left[  n\right]  =\left\{
+1,2,\ldots,n\right\}  \text{)}}}\underbrace{\sum_{j\in\left[  n\right]  }%
+}_{\substack{=\sum_{j\in\left\{  1,2,\ldots,n\right\}  }\\\text{(since
+}\left[  n\right]  =\left\{  1,2,\ldots,n\right\}  \text{)}}}\left[
+i<j\right]  \left[  a_{i}>a_{j}\right] \\
+&  =\underbrace{\sum_{i\in\left\{  1,2,\ldots,n\right\}  }}_{=\sum_{i=1}^{n}%
+}\underbrace{\sum_{j\in\left\{  1,2,\ldots,n\right\}  }}_{=\sum_{j=1}^{n}%
+}\left[  i<j\right]  \left[  a_{i}>a_{j}\right]  =\sum_{i=1}^{n}\sum_{j=1}%
+^{n}\left[  i<j\right]  \left[  a_{i}>a_{j}\right]  .
+\end{align*}
+This proves Lemma \ref{lem.sol.exe.Ialbe.iverson}.
+\end{proof}
+\end{verlong}
+
+\begin{lemma}
+\label{lem.sol.exe.Ialbe.ab}Let $n\in\mathbb{N}$ and $m\in\mathbb{N}$. Let
+$\mathbf{a}=\left(  a_{1},a_{2},\ldots,a_{n}\right)  $ be an $n$-tuple of
+integers. Let $\mathbf{b}=\left(  b_{1},b_{2},\ldots,b_{m}\right)  $ be an
+$m$-tuple of integers. Let $\mathbf{c}$ be the $\left(  n+m\right)  $-tuple
+$\left(  a_{1},a_{2},\ldots,a_{n},b_{1},b_{2},\ldots,b_{m}\right)  $ of
+integers. Then,%
+\[
+\ell\left(  \mathbf{c}\right)  =\ell\left(  \mathbf{a}\right)  +\ell\left(
+\mathbf{b}\right)  +\sum_{\left(  i,j\right)  \in\left[  n\right]
+\times\left[  m\right]  }\left[  a_{i}>b_{j}\right]  .
+\]
+
+\end{lemma}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exe.Ialbe.ab}.]Lemma
+\ref{lem.sol.exe.Ialbe.iverson} yields%
+\begin{equation}
+\ell\left(  \mathbf{a}\right)  =\sum_{i=1}^{n}\sum_{j=1}^{n}\left[
+i<j\right]  \left[  a_{i}>a_{j}\right]  .
+\label{pf.lem.sol.exe.Ialbe.ab.short.la=}%
+\end{equation}
+Also, Lemma \ref{lem.sol.exe.Ialbe.iverson} (applied to $m$, $\mathbf{b}$ and
+$b_{i}$ instead of $n$, $\mathbf{a}$ and $a_{i}$) yields%
+\begin{equation}
+\ell\left(  \mathbf{b}\right)  =\sum_{i=1}^{m}\sum_{j=1}^{m}\left[
+i<j\right]  \left[  b_{i}>b_{j}\right]  .
+\label{pf.lem.sol.exe.Ialbe.ab.short.lb=}%
+\end{equation}
+
+
+Write the $\left(  n+m\right)  $-tuple $\mathbf{c}$ in the form $\mathbf{c}%
+=\left(  c_{1},c_{2},\ldots,c_{n+m}\right)  $. Thus,%
+\[
+\left(  c_{1},c_{2},\ldots,c_{n+m}\right)  =\mathbf{c}=\left(  a_{1}%
+,a_{2},\ldots,a_{n},b_{1},b_{2},\ldots,b_{m}\right)
+\]
+(by the definition of $\mathbf{c}$). In other words,%
+\begin{equation}
+\left(  c_{i}=a_{i}\ \ \ \ \ \ \ \ \ \ \text{for every }i\in\left\{
+1,2,\ldots,n\right\}  \right)  \label{pf.lem.sol.exe.Ialbe.ab.short.ci.a}%
+\end{equation}
+and%
+\begin{equation}
+\left(  c_{i}=b_{i-n}\ \ \ \ \ \ \ \ \ \ \text{for every }i\in\left\{
+n+1,n+2,\ldots,n+m\right\}  \right)  .
+\label{pf.lem.sol.exe.Ialbe.ab.short.ci.b}%
+\end{equation}
+
+
+But Lemma \ref{lem.sol.exe.Ialbe.iverson} (applied to $n+m$, $\mathbf{c}$ and
+$c_{i}$ instead of $n$, $\mathbf{a}$ and $a_{i}$) yields%
+\begin{align}
+\ell\left(  \mathbf{c}\right)   &  =\sum_{i=1}^{n+m}\sum_{j=1}^{n+m}\left[
+i<j\right]  \left[  c_{i}>c_{j}\right] \nonumber\\
+&  =\sum_{i=1}^{n}\sum_{j=1}^{n+m}\left[  i<j\right]  \left[  c_{i}%
+>c_{j}\right]  +\sum_{i=n+1}^{n+m}\sum_{j=1}^{n+m}\left[  i<j\right]  \left[
+c_{i}>c_{j}\right]  \label{pf.lem.sol.exe.Ialbe.ab.short.1}%
+\end{align}
+(since $0\leq n\leq n+m$).
+
+But every $i\in\left\{  1,2,\ldots,n\right\}  $ satisfies%
+\begin{equation}
+\sum_{j=1}^{n+m}\left[  i<j\right]  \left[  c_{i}>c_{j}\right]  =\sum
+_{j=1}^{n}\left[  i<j\right]  \left[  a_{i}>a_{j}\right]  +\sum_{j=1}%
+^{m}\left[  a_{i}>b_{j}\right]  \label{pf.lem.sol.exe.Ialbe.ab.short.3a}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.sol.exe.Ialbe.ab.short.3a}):} Let
+$i\in\left\{  1,2,\ldots,n\right\}  $. Thus, $c_{i}=a_{i}$ (by
+(\ref{pf.lem.sol.exe.Ialbe.ab.short.ci.a})).
+\par
+For every $j\in\left\{  1,2,\ldots,n\right\}  $, we have%
+\begin{equation}
+c_{j}=a_{j} \label{pf.lem.sol.exe.Ialbe.ab.short.3a.pf.1}%
+\end{equation}
+(by (\ref{pf.lem.sol.exe.Ialbe.ab.short.ci.a}), applied to $j$ instead of
+$i$).
+\par
+For every $j\in\left\{  n+1,n+2,\ldots,n+m\right\}  $, we have%
+\begin{equation}
+c_{j}=b_{j-n} \label{pf.lem.sol.exe.Ialbe.ab.short.3a.pf.2}%
+\end{equation}
+(by (\ref{pf.lem.sol.exe.Ialbe.ab.short.ci.b}), applied to $j$ instead of
+$i$).
+\par
+We have $i\leq n$ (since $i\in\left\{  1,2,\ldots,n\right\}  $). For every
+$j\in\left\{  n+1,n+2,\ldots,n+m\right\}  $, we have $j\geq n+1>n\geq i$
+(since $i\leq n$), thus $i<j$, therefore%
+\begin{equation}
+\left[  i<j\right]  =1. \label{pf.lem.sol.exe.Ialbe.ab.short.3a.pf.3}%
+\end{equation}
+\par
+Recall that $0\leq n\leq n+m$. Hence,%
+\begin{align*}
+\sum_{j=1}^{n+m}\left[  i<j\right]  \left[  c_{i}>c_{j}\right]   &
+=\sum_{j=1}^{n}\left[  i<j\right]  \left[  \underbrace{c_{i}}_{=a_{i}%
+}>\underbrace{c_{j}}_{\substack{=a_{j}\\\text{(by
+(\ref{pf.lem.sol.exe.Ialbe.ab.short.3a.pf.1}))}}}\right]  +\sum_{j=n+1}%
+^{n+m}\underbrace{\left[  i<j\right]  }_{\substack{=1\\\text{(by
+(\ref{pf.lem.sol.exe.Ialbe.ab.short.3a.pf.3}))}}}\left[  \underbrace{c_{i}%
+}_{=a_{i}}>\underbrace{c_{j}}_{\substack{=b_{j-n}\\\text{(by
+(\ref{pf.lem.sol.exe.Ialbe.ab.short.3a.pf.2}))}}}\right] \\
+&  =\sum_{j=1}^{n}\left[  i<j\right]  \left[  a_{i}>a_{j}\right]
++\sum_{j=n+1}^{n+m}\left[  a_{i}>b_{j-n}\right] \\
+&  =\sum_{j=1}^{n}\left[  i<j\right]  \left[  a_{i}>a_{j}\right]  +\sum
+_{j=1}^{m}\left[  a_{i}>b_{j}\right] \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }j\text{ for
+}j-n\text{ in the second sum}\right)  .
+\end{align*}
+This proves (\ref{pf.lem.sol.exe.Ialbe.ab.short.3a}).}.
+
+Also, every $i\in\left\{  n+1,n+2,\ldots,n+m\right\}  $ satisfies%
+\begin{equation}
+\sum_{j=1}^{n+m}\left[  i<j\right]  \left[  c_{i}>c_{j}\right]  =\sum
+_{j=1}^{m}\left[  i-n<j\right]  \left[  b_{i-n}>b_{j}\right]
+\label{pf.lem.sol.exe.Ialbe.ab.short.3b}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.sol.exe.Ialbe.ab.short.3b}):} Let
+$i\in\left\{  n+1,n+2,\ldots,n+m\right\}  $. Thus, $c_{i}=b_{i-n}$ (by
+(\ref{pf.lem.sol.exe.Ialbe.ab.short.ci.b})).
+\par
+For every $j\in\left\{  n+1,n+2,\ldots,n+m\right\}  $, we have%
+\begin{equation}
+c_{j}=b_{j-n} \label{pf.lem.sol.exe.Ialbe.ab.short.3b.pf.2}%
+\end{equation}
+(by (\ref{pf.lem.sol.exe.Ialbe.ab.short.ci.b}), applied to $j$ instead of
+$i$).
+\par
+We have $i\geq n+1$ (since $i\in\left\{  n+1,n+2,\ldots,n+m\right\}  $) and
+thus $i\geq n+1>n$, so that $n<i$. For every $j\in\left\{  1,2,\ldots
+,n\right\}  $, we have $j\leq n\leq i$ (since $i\geq n$) and thus $i\geq j$.
+Hence, for every $j\in\left\{  1,2,\ldots,n\right\}  $, we don't have $i<j$.
+Thus, for every $j\in\left\{  1,2,\ldots,n\right\}  $, we have%
+\begin{equation}
+\left[  i<j\right]  =0. \label{pf.lem.sol.exe.Ialbe.ab.short.3b.pf.3}%
+\end{equation}
+\par
+Recall that $0\leq n\leq n+m$. Hence,%
+\begin{align*}
+\sum_{j=1}^{n+m}\left[  i<j\right]  \left[  c_{i}>c_{j}\right]   &
+=\sum_{j=1}^{n}\underbrace{\left[  i<j\right]  }_{\substack{=0\\\text{(by
+(\ref{pf.lem.sol.exe.Ialbe.ab.short.3b.pf.3}))}}}\left[  c_{i}>c_{j}\right]
++\sum_{j=n+1}^{n+m}\underbrace{\left[  i<j\right]  }_{\substack{=\left[
+i-n<j-n\right]  \\\text{(since }i<j\text{ is equivalent to}\\i-n<j-n\text{)}%
+}}\left[  \underbrace{c_{i}}_{=b_{i-n}}>\underbrace{c_{j}}_{\substack{=b_{j-n}%
+\\\text{(by (\ref{pf.lem.sol.exe.Ialbe.ab.short.3b.pf.2}))}}}\right] \\
+&  =\underbrace{\sum_{j=1}^{n}0\left[  c_{i}>c_{j}\right]  }_{=0}+\sum
+_{j=n+1}^{n+m}\left[  i-n<j-n\right]  \left[  b_{i-n}>b_{j-n}\right] \\
+&  =\sum_{j=n+1}^{n+m}\left[  i-n<j-n\right]  \left[  b_{i-n}>b_{j-n}\right]
+\\
+&  =\sum_{j=1}^{m}\left[  i-n<j\right]  \left[  b_{i-n}>b_{j}\right] \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }j\text{ for
+}j-n\text{ in the second sum}\right)  .
+\end{align*}
+This proves (\ref{pf.lem.sol.exe.Ialbe.ab.short.3b}).}.
+
+Now, (\ref{pf.lem.sol.exe.Ialbe.ab.short.1}) becomes%
+\begin{align*}
+&  \ell\left(  \mathbf{c}\right) \\
+&  =\sum_{i=1}^{n}\underbrace{\sum_{j=1}^{n+m}\left[  i<j\right]  \left[
+c_{i}>c_{j}\right]  }_{\substack{=\sum_{j=1}^{n}\left[  i<j\right]  \left[
+a_{i}>a_{j}\right]  +\sum_{j=1}^{m}\left[  a_{i}>b_{j}\right]  \\\text{(by
+(\ref{pf.lem.sol.exe.Ialbe.ab.short.3a}))}}}+\sum_{i=n+1}^{n+m}%
+\underbrace{\sum_{j=1}^{n+m}\left[  i<j\right]  \left[  c_{i}>c_{j}\right]
+}_{\substack{=\sum_{j=1}^{m}\left[  i-n<j\right]  \left[  b_{i-n}%
+>b_{j}\right]  \\\text{(by (\ref{pf.lem.sol.exe.Ialbe.ab.short.3b}))}}}\\
+&  =\underbrace{\sum_{i=1}^{n}\left(  \sum_{j=1}^{n}\left[  i<j\right]
+\left[  a_{i}>a_{j}\right]  +\sum_{j=1}^{m}\left[  a_{i}>b_{j}\right]
+\right)  }_{=\sum_{i=1}^{n}\sum_{j=1}^{n}\left[  i<j\right]  \left[
+a_{i}>a_{j}\right]  +\sum_{i=1}^{n}\sum_{j=1}^{m}\left[  a_{i}>b_{j}\right]
+}+\underbrace{\sum_{i=n+1}^{n+m}\sum_{j=1}^{m}\left[  i-n<j\right]  \left[
+b_{i-n}>b_{j}\right]  }_{\substack{=\sum_{i=1}^{m}\sum_{j=1}^{m}\left[
+i<j\right]  \left[  b_{i}>b_{j}\right]  \\\text{(here, we have substituted
+}i\text{ for }i-n\\\text{in the outer sum)}}}\\
+&  =\underbrace{\sum_{i=1}^{n}\sum_{j=1}^{n}\left[  i<j\right]  \left[
+a_{i}>a_{j}\right]  }_{\substack{=\ell\left(  \mathbf{a}\right)  \\\text{(by
+(\ref{pf.lem.sol.exe.Ialbe.ab.short.la=}))}}}+\underbrace{\sum_{i=1}^{n}%
+}_{\substack{=\sum_{i\in\left[  n\right]  }}}\underbrace{\sum_{j=1}^{m}%
+}_{\substack{=\sum_{j\in\left[  m\right]  }}}\left[  a_{i}>b_{j}\right]
++\underbrace{\sum_{i=1}^{m}\sum_{j=1}^{m}\left[  i<j\right]  \left[
+b_{i}>b_{j}\right]  }_{\substack{=\ell\left(  \mathbf{b}\right)  \\\text{(by
+(\ref{pf.lem.sol.exe.Ialbe.ab.short.lb=}))}}}\\
+&  =\ell\left(  \mathbf{a}\right)  +\underbrace{\sum_{i\in\left[  n\right]
+}\sum_{j\in\left[  m\right]  }}_{=\sum_{\left(  i,j\right)  \in\left[
+n\right]  \times\left[  m\right]  }}\left[  a_{i}>b_{j}\right]  +\ell\left(
+\mathbf{b}\right) \\
+&  =\ell\left(  \mathbf{a}\right)  +\sum_{\left(  i,j\right)  \in\left[
+n\right]  \times\left[  m\right]  }\left[  a_{i}>b_{j}\right]  +\ell\left(
+\mathbf{b}\right)  =\ell\left(  \mathbf{a}\right)  +\ell\left(  \mathbf{b}%
+\right)  +\sum_{\left(  i,j\right)  \in\left[  n\right]  \times\left[
+m\right]  }\left[  a_{i}>b_{j}\right]  .
+\end{align*}
+This proves Lemma \ref{lem.sol.exe.Ialbe.ab}.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exe.Ialbe.ab}.]We have $n+\underbrace{m}_{\geq
+0}\geq n$, so that $n\leq n+m$. Also, $n\geq0$, so that $0\leq n$.
+
+Lemma \ref{lem.sol.exe.Ialbe.iverson} yields%
+\begin{equation}
+\ell\left(  \mathbf{a}\right)  =\sum_{i=1}^{n}\sum_{j=1}^{n}\left[
+i<j\right]  \left[  a_{i}>a_{j}\right]  . \label{pf.lem.sol.exe.Ialbe.ab.la=}%
+\end{equation}
+Also, Lemma \ref{lem.sol.exe.Ialbe.iverson} (applied to $m$, $\mathbf{b}$ and
+$b_{i}$ instead of $n$, $\mathbf{a}$ and $a_{i}$) yields%
+\begin{equation}
+\ell\left(  \mathbf{b}\right)  =\sum_{i=1}^{m}\sum_{j=1}^{m}\left[
+i<j\right]  \left[  b_{i}>b_{j}\right]  . \label{pf.lem.sol.exe.Ialbe.ab.lb=}%
+\end{equation}
+
+
+Write the $\left(  n+m\right)  $-tuple $\mathbf{c}$ in the form $\mathbf{c}%
+=\left(  c_{1},c_{2},\ldots,c_{n+m}\right)  $. Thus,%
+\[
+\left(  c_{1},c_{2},\ldots,c_{n+m}\right)  =\mathbf{c}=\left(  a_{1}%
+,a_{2},\ldots,a_{n},b_{1},b_{2},\ldots,b_{m}\right)
+\]
+(by the definition of $\mathbf{c}$). In other words,%
+\begin{equation}
+c_{i}=%
+\begin{cases}
+a_{i}, & \text{if }i\leq n;\\
+b_{i-n}, & \text{if }i>n
+\end{cases}
+\ \ \ \ \ \ \ \ \ \ \text{for every }i\in\left\{  1,2,\ldots,n+m\right\}  .
+\label{pf.lem.sol.exe.Ialbe.ab.ci.1}%
+\end{equation}
+Now, we have%
+\begin{equation}
+c_{i}=a_{i}\ \ \ \ \ \ \ \ \ \ \text{for every }i\in\left\{  1,2,\ldots
+,n\right\}  \label{pf.lem.sol.exe.Ialbe.ab.ci.a}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.sol.exe.Ialbe.ab.ci.a}):} Let
+$i\in\left\{  1,2,\ldots,n\right\}  $. Then, $1\leq i\leq n$. Now,
+$n+\underbrace{m}_{\geq0}\geq n$, so that $n\leq n+m$ and thus $i\leq n\leq
+n+m$. Combining this with $1\leq i$, we obtain $1\leq i\leq n+m$, so that
+$i\in\left\{  1,2,\ldots,n+m\right\}  $. Thus,
+(\ref{pf.lem.sol.exe.Ialbe.ab.ci.1}) yields $c_{i}=%
+\begin{cases}
+a_{i}, & \text{if }i\leq n;\\
+b_{i-n}, & \text{if }i>n
+\end{cases}
+=a_{i}$ (since $i\leq n$). This proves (\ref{pf.lem.sol.exe.Ialbe.ab.ci.a}).}.
+Also,%
+\begin{equation}
+c_{i}=b_{i-n}\ \ \ \ \ \ \ \ \ \ \text{for every }i\in\left\{  n+1,n+2,\ldots
+,n+m\right\}  \label{pf.lem.sol.exe.Ialbe.ab.ci.b}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.sol.exe.Ialbe.ab.ci.a}):} Let
+$i\in\left\{  n+1,n+2,\ldots,n+m\right\}  $. Then, $n+1\leq i\leq n+m$. Now,
+$\underbrace{n}_{\geq0}+1\geq1$, so that $1\leq n+1\leq i$. Combining this
+with $i\leq n+m$, we obtain $1\leq i\leq n+m$, so that $i\in\left\{
+1,2,\ldots,n+m\right\}  $. Thus, (\ref{pf.lem.sol.exe.Ialbe.ab.ci.1}) yields
+$c_{i}=%
+\begin{cases}
+a_{i}, & \text{if }i\leq n;\\
+b_{i-n}, & \text{if }i>n
+\end{cases}
+=b_{i-n}$ (since $i>n$). This proves (\ref{pf.lem.sol.exe.Ialbe.ab.ci.b}).}.
+
+But recall that $\mathbf{c}=\left(  c_{1},c_{2},\ldots,c_{n+m}\right)  $ is an
+$\left(  n+m\right)  $-tuple of integers. Thus, Lemma
+\ref{lem.sol.exe.Ialbe.iverson} (applied to $n+m$, $\mathbf{c}$ and $c_{i}$
+instead of $n$, $\mathbf{a}$ and $a_{i}$) yields%
+\begin{align}
+\ell\left(  \mathbf{c}\right)   &  =\sum_{i=1}^{n+m}\sum_{j=1}^{n+m}\left[
+i<j\right]  \left[  c_{i}>c_{j}\right] \nonumber\\
+&  =\sum_{i=1}^{n}\sum_{j=1}^{n+m}\left[  i<j\right]  \left[  c_{i}%
+>c_{j}\right]  +\sum_{i=n+1}^{n+m}\sum_{j=1}^{n+m}\left[  i<j\right]  \left[
+c_{i}>c_{j}\right]  \label{pf.lem.sol.exe.Ialbe.ab.1}%
+\end{align}
+(since $0\leq n\leq n+m$). But every $i\in\left\{  1,2,\ldots,n\right\}  $
+satisfies%
+\begin{equation}
+\sum_{j=1}^{n+m}\left[  i<j\right]  \left[  c_{i}>c_{j}\right]  =\sum
+_{j=1}^{n}\left[  i<j\right]  \left[  a_{i}>a_{j}\right]  +\sum_{j=1}%
+^{m}\left[  a_{i}>b_{j}\right]  \label{pf.lem.sol.exe.Ialbe.ab.3a}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.sol.exe.Ialbe.ab.3a}):} Let
+$i\in\left\{  1,2,\ldots,n\right\}  $. Thus, $c_{i}=a_{i}$ (by
+(\ref{pf.lem.sol.exe.Ialbe.ab.ci.a})).
+\par
+For every $j\in\left\{  1,2,\ldots,n\right\}  $, we have%
+\begin{equation}
+c_{j}=a_{j} \label{pf.lem.sol.exe.Ialbe.ab.3a.pf.1}%
+\end{equation}
+(by (\ref{pf.lem.sol.exe.Ialbe.ab.ci.a}), applied to $j$ instead of $i$).
+\par
+For every $j\in\left\{  n+1,n+2,\ldots,n+m\right\}  $, we have%
+\begin{equation}
+c_{j}=b_{j-n} \label{pf.lem.sol.exe.Ialbe.ab.3a.pf.2}%
+\end{equation}
+(by (\ref{pf.lem.sol.exe.Ialbe.ab.ci.b}), applied to $j$ instead of $i$).
+\par
+We have $i\leq n$ (since $i\in\left\{  1,2,\ldots,n\right\}  $). For every
+$j\in\left\{  n+1,n+2,\ldots,n+m\right\}  $, we have $j\geq n+1>n\geq i$
+(since $i\leq n$). Hence, for every $j\in\left\{  n+1,n+2,\ldots,n+m\right\}
+$, we have $i<j$. Thus, for every $j\in\left\{  n+1,n+2,\ldots,n+m\right\}  $,
+we have%
+\begin{equation}
+\left[  i<j\right]  =1. \label{pf.lem.sol.exe.Ialbe.ab.3a.pf.3}%
+\end{equation}
+\par
+Recall that $0\leq n\leq n+m$. Hence,%
+\begin{align*}
+&  \sum_{j=1}^{n+m}\left[  i<j\right]  \left[  c_{i}>c_{j}\right] \\
+&  =\sum_{j=1}^{n}\left[  i<j\right]  \left[  \underbrace{c_{i}}_{=a_{i}%
+}>\underbrace{c_{j}}_{\substack{=a_{j}\\\text{(by
+(\ref{pf.lem.sol.exe.Ialbe.ab.3a.pf.1}))}}}\right]  +\sum_{j=n+1}%
+^{n+m}\underbrace{\left[  i<j\right]  }_{\substack{=1\\\text{(by
+(\ref{pf.lem.sol.exe.Ialbe.ab.3a.pf.3}))}}}\left[  \underbrace{c_{i}}_{=a_{i}%
+}>\underbrace{c_{j}}_{\substack{=b_{j-n}\\\text{(by
+(\ref{pf.lem.sol.exe.Ialbe.ab.3a.pf.2}))}}}\right] \\
+&  =\sum_{j=1}^{n}\left[  i<j\right]  \left[  a_{i}>a_{j}\right]
++\sum_{j=n+1}^{n+m}\left[  a_{i}>b_{j-n}\right] \\
+&  =\sum_{j=1}^{n}\left[  i<j\right]  \left[  a_{i}>a_{j}\right]  +\sum
+_{j=1}^{m}\left[  a_{i}>b_{j}\right] \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }j\text{ for
+}j-n\text{ in the second sum}\right)  .
+\end{align*}
+This proves (\ref{pf.lem.sol.exe.Ialbe.ab.3a}).}. Also, every $i\in\left\{
+n+1,n+2,\ldots,n+m\right\}  $ satisfies%
+\begin{equation}
+\sum_{j=1}^{n+m}\left[  i<j\right]  \left[  c_{i}>c_{j}\right]  =\sum
+_{j=1}^{m}\left[  i-n<j\right]  \left[  b_{i-n}>b_{j}\right]
+\label{pf.lem.sol.exe.Ialbe.ab.3b}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.sol.exe.Ialbe.ab.3b}):} Let
+$i\in\left\{  n+1,n+2,\ldots,n+m\right\}  $. Thus, $c_{i}=b_{i-n}$ (by
+(\ref{pf.lem.sol.exe.Ialbe.ab.ci.b})).
+\par
+For every $j\in\left\{  n+1,n+2,\ldots,n+m\right\}  $, we have%
+\begin{equation}
+c_{j}=b_{j-n} \label{pf.lem.sol.exe.Ialbe.ab.3b.pf.2}%
+\end{equation}
+(by (\ref{pf.lem.sol.exe.Ialbe.ab.ci.b}), applied to $j$ instead of $i$).
+\par
+We have $i\geq n+1$ (since $i\in\left\{  n+1,n+2,\ldots,n+m\right\}  $) and
+thus $i\geq n+1>n$, so that $n<i$. For every $j\in\left\{  1,2,\ldots
+,n\right\}  $, we have $j\leq n\leq i$ (since $i\geq n$) and thus $i\geq j$.
+Hence, for every $j\in\left\{  1,2,\ldots,n\right\}  $, we don't have $i<j$.
+Thus, for every $j\in\left\{  1,2,\ldots,n\right\}  $, we have%
+\begin{equation}
+\left[  i<j\right]  =0. \label{pf.lem.sol.exe.Ialbe.ab.3b.pf.3}%
+\end{equation}
+\par
+Recall that $0\leq n\leq n+m$. Hence,%
+\begin{align*}
+&  \sum_{j=1}^{n+m}\left[  i<j\right]  \left[  c_{i}>c_{j}\right] \\
+&  =\sum_{j=1}^{n}\underbrace{\left[  i<j\right]  }_{\substack{=0\\\text{(by
+(\ref{pf.lem.sol.exe.Ialbe.ab.3b.pf.3}))}}}\left[  c_{i}>c_{j}\right]
++\sum_{j=n+1}^{n+m}\underbrace{\left[  i<j\right]  }_{\substack{=\left[
+i-n<j-n\right]  \\\text{(since }i<j\text{ is equivalent to}\\i-n<j-n\text{)}%
+}}\left[  \underbrace{c_{i}}_{=b_{i-n}}>\underbrace{c_{j}}_{\substack{=b_{j-n}%
+\\\text{(by (\ref{pf.lem.sol.exe.Ialbe.ab.3b.pf.2}))}}}\right] \\
+&  =\underbrace{\sum_{j=1}^{n}0\left[  c_{i}>c_{j}\right]  }_{=0}+\sum
+_{j=n+1}^{n+m}\left[  i-n<j-n\right]  \left[  b_{i-n}>b_{j-n}\right] \\
+&  =\sum_{j=n+1}^{n+m}\left[  i-n<j-n\right]  \left[  b_{i-n}>b_{j-n}\right]
+\\
+&  =\sum_{j=1}^{m}\left[  i-n<j\right]  \left[  b_{i-n}>b_{j}\right] \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }j\text{ for
+}j-n\text{ in the second sum}\right)  .
+\end{align*}
+This proves (\ref{pf.lem.sol.exe.Ialbe.ab.3b}).}.
+
+Now, (\ref{pf.lem.sol.exe.Ialbe.ab.1}) becomes%
+\begin{align*}
+\ell\left(  \mathbf{c}\right)   &  =\sum_{i=1}^{n}\underbrace{\sum_{j=1}%
+^{n+m}\left[  i<j\right]  \left[  c_{i}>c_{j}\right]  }_{\substack{=\sum
+_{j=1}^{n}\left[  i<j\right]  \left[  a_{i}>a_{j}\right]  +\sum_{j=1}%
+^{m}\left[  a_{i}>b_{j}\right]  \\\text{(by (\ref{pf.lem.sol.exe.Ialbe.ab.3a}%
+))}}}\\
+&  \ \ \ \ \ \ \ \ \ \ +\sum_{i=n+1}^{n+m}\underbrace{\sum_{j=1}^{n+m}\left[
+i<j\right]  \left[  c_{i}>c_{j}\right]  }_{\substack{=\sum_{j=1}^{m}\left[
+i-n<j\right]  \left[  b_{i-n}>b_{j}\right]  \\\text{(by
+(\ref{pf.lem.sol.exe.Ialbe.ab.3b}))}}}\\
+&  =\underbrace{\sum_{i=1}^{n}\left(  \sum_{j=1}^{n}\left[  i<j\right]
+\left[  a_{i}>a_{j}\right]  +\sum_{j=1}^{m}\left[  a_{i}>b_{j}\right]
+\right)  }_{=\sum_{i=1}^{n}\sum_{j=1}^{n}\left[  i<j\right]  \left[
+a_{i}>a_{j}\right]  +\sum_{i=1}^{n}\sum_{j=1}^{m}\left[  a_{i}>b_{j}\right]
+}\\
+&  \ \ \ \ \ \ \ \ \ \ +\underbrace{\sum_{i=n+1}^{n+m}\sum_{j=1}^{m}\left[
+i-n<j\right]  \left[  b_{i-n}>b_{j}\right]  }_{\substack{=\sum_{i=1}^{m}%
+\sum_{j=1}^{m}\left[  i<j\right]  \left[  b_{i}>b_{j}\right]  \\\text{(here,
+we have substituted }i\text{ for }i-n\\\text{in the outer sum)}}}\\
+&  =\underbrace{\sum_{i=1}^{n}\sum_{j=1}^{n}\left[  i<j\right]  \left[
+a_{i}>a_{j}\right]  }_{\substack{=\ell\left(  \mathbf{a}\right)  \\\text{(by
+(\ref{pf.lem.sol.exe.Ialbe.ab.la=}))}}}+\underbrace{\sum_{i=1}^{n}%
+}_{\substack{=\sum_{i\in\left\{  1,2,\ldots,n\right\}  }=\sum_{i\in\left[
+n\right]  }\\\text{(since }\left\{  1,2,\ldots,n\right\}  =\left[  n\right]
+\\\text{(because }\left[  n\right]  =\left\{  1,2,\ldots,n\right\}
+\\\text{(by the definition of }\left[  n\right]  \text{)))}}}\underbrace{\sum
+_{j=1}^{m}}_{\substack{=\sum_{j\in\left\{  1,2,\ldots,m\right\}  }=\sum
+_{j\in\left[  m\right]  }\\\text{(since }\left\{  1,2,\ldots,m\right\}
+=\left[  m\right]  \\\text{(because }\left[  m\right]  =\left\{
+1,2,\ldots,m\right\}  \\\text{(by the definition of }\left[  m\right]
+\text{)))}}}\left[  a_{i}>b_{j}\right] \\
+&  \ \ \ \ \ \ \ \ \ \ +\underbrace{\sum_{i=1}^{m}\sum_{j=1}^{m}\left[
+i<j\right]  \left[  b_{i}>b_{j}\right]  }_{\substack{=\ell\left(
+\mathbf{b}\right)  \\\text{(by (\ref{pf.lem.sol.exe.Ialbe.ab.lb=}))}}}\\
+&  =\ell\left(  \mathbf{a}\right)  +\underbrace{\sum_{i\in\left[  n\right]
+}\sum_{j\in\left[  m\right]  }}_{=\sum_{\left(  i,j\right)  \in\left[
+n\right]  \times\left[  m\right]  }}\left[  a_{i}>b_{j}\right]  +\ell\left(
+\mathbf{b}\right) \\
+&  =\ell\left(  \mathbf{a}\right)  +\sum_{\left(  i,j\right)  \in\left[
+n\right]  \times\left[  m\right]  }\left[  a_{i}>b_{j}\right]  +\ell\left(
+\mathbf{b}\right)  =\ell\left(  \mathbf{a}\right)  +\ell\left(  \mathbf{b}%
+\right)  +\sum_{\left(  i,j\right)  \in\left[  n\right]  \times\left[
+m\right]  }\left[  a_{i}>b_{j}\right]  .
+\end{align*}
+This proves Lemma \ref{lem.sol.exe.Ialbe.ab}.
+\end{proof}
+\end{verlong}
+
+\begin{lemma}
+\label{lem.sol.exe.Ialbe.inclist}Let $S$ be a finite set of integers. Let
+$\left(  c_{1},c_{2},\ldots,c_{s}\right)  $ be a list of all elements of $S$
+(with no repetitions).
+
+\textbf{(a)} Then, the map $\left[  s\right]  \rightarrow S,\ h\mapsto c_{h}$
+is well-defined and a bijection.
+
+\textbf{(b)} Let $\pi\in S_{s}$. Then, $\left(  c_{\pi\left(  1\right)
+},c_{\pi\left(  2\right)  },\ldots,c_{\pi\left(  s\right)  }\right)  $ is a
+list of all elements of $S$ (with no repetitions).
+\end{lemma}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exe.Ialbe.inclist}.]Lemma
+\ref{lem.sol.exe.Ialbe.inclist} should really be intuitively obvious; let me
+merely sketch how to formalize the intuition.
+
+We have the following basic fact:
+
+\begin{statement}
+\textit{Statement 1:} Let $X$ and $Y$ be two sets. Let $\phi:X\rightarrow Y$
+be a map. Then, $\phi$ is a bijection if and only if each $i\in Y$ has exactly
+one preimage under $\phi$.
+\end{statement}
+
+Statement 1 is well-known and easy to prove; it is a rather useful (necessary
+and sufficient) criterion for proving the bijectivity of maps (particularly
+since it does not require proving injectivity and surjectivity separately).
+
+We assumed that $\left(  c_{1},c_{2},\ldots,c_{s}\right)  $ is a list of all
+elements of $S$ (with no repetitions). This means that the following two
+statements are valid:
+
+\begin{statement}
+\textit{Statement 2:} The list $\left(  c_{1},c_{2},\ldots,c_{s}\right)  $ is
+a list of elements of $S$. (In other words, we have $c_{h}\in S$ for every
+$h\in\left[  s\right]  $.)
+\end{statement}
+
+\begin{statement}
+\textit{Statement 3:} Each element of $S$ appears exactly once in the list
+$\left(  c_{1},c_{2},\ldots,c_{s}\right)  $. In other words, for each $i\in
+S$, there exists exactly one $h\in\left[  s\right]  $ satisfying $i=c_{h}$.
+\end{statement}
+
+Statement 2 shows that $c_{h}\in S$ for every $h\in\left[  s\right]  $. Thus,
+the map $\left[  s\right]  \rightarrow S,\ h\mapsto c_{h}$ is well-defined.
+Denote this map by $\alpha$. Thus, $\alpha\left(  h\right)  =c_{h}$ for every
+$h\in\left[  s\right]  $.
+
+\textbf{(a)} Statement 3 shows that, for each $i\in S$, there exists exactly
+one $h\in\left[  s\right]  $ satisfying $i=c_{h}$. Since $\alpha\left(
+h\right)  =c_{h}$ for every $h\in\left[  s\right]  $, we can rewrite this as
+follows: For each $i\in S$, there exists exactly one $h\in\left[  s\right]  $
+satisfying $i=\alpha\left(  h\right)  $. In other words, each $i\in S$ has
+exactly one preimage under $\alpha$. According to Statement 1 (applied to
+$X=\left[  s\right]  $, $Y=S$ and $\phi=\alpha$), this holds if and only if
+$\alpha$ is a bijection. Thus, $\alpha$ is a bijection. In other words, the
+map $\left[  s\right]  \rightarrow S,\ h\mapsto c_{h}$ is a bijection (because
+$\alpha$ is precisely this map). Thus, Lemma \ref{lem.sol.exe.Ialbe.inclist}
+\textbf{(a)} is proven.
+
+\textbf{(b)} We must prove that $\left(  c_{\pi\left(  1\right)  }%
+,c_{\pi\left(  2\right)  },\ldots,c_{\pi\left(  s\right)  }\right)  $ is a
+list of all elements of $S$ (with no repetitions). This means proving the
+following two statements:
+
+\begin{statement}
+\textit{Statement 4:} The list $\left(  c_{\pi\left(  1\right)  }%
+,c_{\pi\left(  2\right)  },\ldots,c_{\pi\left(  s\right)  }\right)  $ is a
+list of elements of $S$. (In other words, we have $c_{\pi\left(  h\right)
+}\in S$ for every $h\in\left[  s\right]  $.)
+\end{statement}
+
+\begin{statement}
+\textit{Statement 5:} Each element of $S$ appears exactly once in the list
+$\left(  c_{\pi\left(  1\right)  },c_{\pi\left(  2\right)  },\ldots
+,c_{\pi\left(  s\right)  }\right)  $. In other words, for each $i\in S$, there
+exists exactly one $h\in\left[  s\right]  $ satisfying $i=c_{\pi\left(
+h\right)  }$.
+\end{statement}
+
+\textit{Proof of Statement 4:} Statement 2 shows that $c_{h}\in S$ for every
+$h\in\left[  s\right]  $. Applying this to $\pi\left(  h\right)  $ instead of
+$h$, we conclude that $c_{\pi\left(  h\right)  }\in S$ for every $h\in\left[
+s\right]  $. This proves Statement 4.
+
+\textit{Proof of Statement 5:} The map $\alpha\circ\pi$ is a bijection (since
+it is the composition of the two bijections $\alpha$ and $\pi$). According to
+Statement 1 (applied to $X=\left[  s\right]  $, $Y=S$ and $\phi=\alpha\circ
+\pi$), this means that each $i\in S$ has exactly one preimage under
+$\alpha\circ\pi$. In other words, for each $i\in S$, there exists exactly one
+$h\in\left[  s\right]  $ satisfying $\left(  \alpha\circ\pi\right)  \left(
+h\right)  =i$. Since every $h\in\left[  s\right]  $ satisfies%
+\[
+\left(  \alpha\circ\pi\right)  \left(  h\right)  =\alpha\left(  \pi\left(
+h\right)  \right)  =c_{\pi\left(  h\right)  }\ \ \ \ \ \ \ \ \ \ \left(
+\text{by the definition of }\alpha\right)  ,
+\]
+we can rewrite this as follows: For each $i\in S$, there exists exactly one
+$h\in\left[  s\right]  $ satisfying $i=c_{\pi\left(  h\right)  }$. This proves
+Statement 5.
+
+Now, Statements 4 and 5 are proven; thus, $\left(  c_{\pi\left(  1\right)
+},c_{\pi\left(  2\right)  },\ldots,c_{\pi\left(  s\right)  }\right)  $ is a
+list of all elements of $S$ (with no repetitions). This proves Lemma
+\ref{lem.sol.exe.Ialbe.inclist} \textbf{(b)}.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exe.Ialbe.inclist}.]We have $\left[  s\right]
+=\left\{  1,2,\ldots,s\right\}  $ (by the definition of $\left[  s\right]  $).
+
+The list $\left(  c_{1},c_{2},\ldots,c_{s}\right)  $ be a list of all elements
+of $S$ (with no repetitions). In other words, the list $\left(  c_{1}%
+,c_{2},\ldots,c_{s}\right)  $ is a list of elements of $S$, and contains each
+element of $S$ exactly once.
+
+The list $\left(  c_{1},c_{2},\ldots,c_{s}\right)  $ contains each element of
+$S$ exactly once. In other words, for every $i\in S$, the list $\left(
+c_{1},c_{2},\ldots,c_{s}\right)  $ contains the element $i$ exactly once. In
+other words,
+\begin{equation}
+\text{for every }i\in S\text{, there exists a unique }p\in\left\{
+1,2,\ldots,s\right\}  \text{ such that }i=c_{p}.
+\label{pf.lem.sol.exe.Ialbe.inclist.exonce}%
+\end{equation}
+
+
+For every $h\in\left[  s\right]  $, the element $c_{h}$ of $S$ is
+well-defined\footnote{\textit{Proof.} Let $h\in\left[  s\right]  $. Then,
+$h\in\left[  s\right]  =\left\{  1,2,\ldots,s\right\}  $. Thus, the element
+$c_{h}$ of $S$ is well-defined (since $\left(  c_{1},c_{2},\ldots
+,c_{s}\right)  $ is a list of elements of $S$). Qed.}. Thus, the map $\left[
+s\right]  \rightarrow S,\ h\mapsto c_{h}$ is well-defined. Let us denote this
+map by $\phi$. Thus, $\phi$ is the map $\left[  s\right]  \rightarrow
+S,\ h\mapsto c_{h}$.
+
+The map $\phi$ is injective\footnote{\textit{Proof.} Let $g$ and $h$ be two
+elements of $\left[  s\right]  $ such that $\phi\left(  g\right)  =\phi\left(
+h\right)  $. We shall show that $g=h$.
+\par
+We have $g\in\left[  s\right]  =\left\{  1,2,\ldots,s\right\}  $ and
+$h\in\left[  s\right]  =\left\{  1,2,\ldots,s\right\}  $.
+\par
+The definition of $\phi$ yields $\phi\left(  g\right)  =c_{g}$. Hence,
+$c_{g}=\phi\left(  g\right)  =\phi\left(  h\right)  =c_{h}$ (by the definition
+of $\phi$). Hence, $h$ is an element of $\left\{  1,2,\ldots,s\right\}  $
+satisfying $c_{g}=c_{h}$. In other words, $h$ is an element $p\in\left\{
+1,2,\ldots,s\right\}  $ satisfying $c_{g}=c_{p}$.
+\par
+Also, $g$ is an element of $\left\{  1,2,\ldots,s\right\}  $ satisfying
+$c_{g}=c_{g}$. In other words, $g$ is an element $p\in\left\{  1,2,\ldots
+,s\right\}  $ satisfying $c_{g}=c_{p}$.
+\par
+But $c_{g}\in S$ (since $\left(  c_{1},c_{2},\ldots,c_{s}\right)  $ is a list
+of elements of $S$). Hence, (\ref{pf.lem.sol.exe.Ialbe.inclist.exonce})
+(applied to $i=c_{g}$) shows that there exists a unique $p\in\left\{
+1,2,\ldots,s\right\}  $ such that $c_{g}=c_{p}$. In particular, there exists
+\textbf{at most one} such $p$. In other words, if $u$ and $v$ are two elements
+$p\in\left\{  1,2,\ldots,s\right\}  $ satisfying $c_{g}=c_{p}$, then $u=v$.
+Applying this to $u=g$ and $v=h$, we obtain $g=h$ (since $g$ and $h$ are two
+elements $p\in\left\{  1,2,\ldots,s\right\}  $ satisfying $c_{g}=c_{p}$).
+\par
+Now, forget that we fixed $g$ and $h$. We thus have proven that if $g$ and $h$
+are two elements of $\left[  s\right]  $ such that $\phi\left(  g\right)
+=\phi\left(  h\right)  $, then $g=h$. In other words, the map $\phi$ is
+injective. Qed.} and surjective\footnote{\textit{Proof.} Let $i\in S$. Then,
+there exists a unique $p\in\left\{  1,2,\ldots,s\right\}  $ such that
+$i=c_{p}$ (by (\ref{pf.lem.sol.exe.Ialbe.inclist.exonce})). Consider this $p$.
+We have $p\in\left\{  1,2,\ldots,s\right\}  =\left[  s\right]  $ (since
+$\left[  s\right]  =\left\{  1,2,\ldots,s\right\}  $). Thus, $\phi\left(
+p\right)  $ is well-defined. Now, the definition of $\phi$ yields $\phi\left(
+p\right)  =c_{p}=i$. Thus, $i=\phi\left(  \underbrace{p}_{\in\left[  s\right]
+}\right)  \in\phi\left(  \left[  s\right]  \right)  $.
+\par
+Now, forget that we fixed $i$. We thus have shown that every $i\in S$
+satisfies $i\in\phi\left(  \left[  s\right]  \right)  $. In other words,
+$S\subseteq\phi\left(  \left[  s\right]  \right)  $. In other words, the map
+$\phi$ is surjective. Qed.}. Hence, this map $\phi$ is bijective. In other
+words, $\phi$ is a bijection. In other words, the map $\left[  s\right]
+\rightarrow S,\ h\mapsto c_{h}$ is a bijection (since $\phi$ is the map
+$\left[  s\right]  \rightarrow S,\ h\mapsto c_{h}$). This completes the proof
+of Lemma \ref{lem.sol.exe.Ialbe.inclist} \textbf{(a)}.
+
+\textbf{(b)} We know that $S_{s}$ is the set of all permutations of $\left\{
+1,2,\ldots,s\right\}  $ (by the definition of $S_{s}$). In other words,
+$S_{s}$ is the set of all permutations of $\left[  s\right]  $ (since
+$\left\{  1,2,\ldots,s\right\}  =\left[  s\right]  $). Now, $\pi$ is an
+element of $S_{s}$. In other words, $\pi$ is a permutation of $\left[
+s\right]  $ (since $S_{s}$ is the set of all permutations of $\left[
+s\right]  $). In other words, $\pi$ is a bijection $\left[  s\right]
+\rightarrow\left[  s\right]  $. So the map $\pi:\left[  s\right]
+\rightarrow\left[  s\right]  $ is bijective. Thus, this map $\pi$ is
+surjective and injective.
+
+The map $\pi$ is a map $\left[  s\right]  \rightarrow\left[  s\right]  $. In
+other words, $\pi$ is a map $\left\{  1,2,\ldots,s\right\}  \rightarrow
+\left\{  1,2,\ldots,s\right\}  $ (since $\left[  s\right]  =\left\{
+1,2,\ldots,s\right\}  $). Hence, for every $i\in\left\{  1,2,\ldots,s\right\}
+$, we have $\pi\left(  i\right)  \in\left\{  1,2,\ldots,s\right\}  $. Thus,
+for every $i\in\left\{  1,2,\ldots,s\right\}  $, the element $c_{\pi\left(
+i\right)  }$ is a well-defined element of $S$. Thus, $\left(  c_{\pi\left(
+1\right)  },c_{\pi\left(  2\right)  },\ldots,c_{\pi\left(  s\right)  }\right)
+$ is a list of elements of $S$.
+
+\begin{noncompile}
+The map $\phi\circ\pi:\left[  s\right]  \rightarrow S$ is bijective (since it
+is the composition of the two bijective maps $\phi$ and $\pi$), and thus
+injective and surjective.
+\end{noncompile}
+
+Let $i\in S$. We shall show that there exists a unique $p\in\left[  s\right]
+$ such that $i=c_{\pi\left(  p\right)  }$.
+
+If $g$ and $h$ are two elements $p\in\left[  s\right]  $ such that
+$i=c_{\pi\left(  p\right)  }$, then $g=h$\ \ \ \ \footnote{\textit{Proof.} Let
+$g$ and $h$ be two elements $p\in\left[  s\right]  $ such that $i=c_{\pi
+\left(  p\right)  }$. We must prove that $g=h$.
+\par
+We know that $g$ is an element $p\in\left[  s\right]  $ such that
+$i=c_{\pi\left(  p\right)  }$. In other words, $g$ is an element of $\left[
+s\right]  $ and satisfies $i=c_{\pi\left(  g\right)  }$. We have $\pi\left(
+g\right)  \in\left[  s\right]  $ (since $\pi$ is a map $\left[  s\right]
+\rightarrow\left[  s\right]  $) and thus $\phi\left(  \pi\left(  g\right)
+\right)  =c_{\pi\left(  g\right)  }$ (by the definition of $\phi$). Comparing
+this with $i=c_{\pi\left(  g\right)  }$, we obtain $\phi\left(  \pi\left(
+g\right)  \right)  =i$.
+\par
+We know that $h$ is an element $p\in\left[  s\right]  $ such that
+$i=c_{\pi\left(  p\right)  }$. In other words, $h$ is an element of $\left[
+s\right]  $ and satisfies $i=c_{\pi\left(  h\right)  }$. We have $\pi\left(
+h\right)  \in\left[  s\right]  $ (since $\pi$ is a map $\left[  s\right]
+\rightarrow\left[  s\right]  $) and thus $\phi\left(  \pi\left(  h\right)
+\right)  =c_{\pi\left(  h\right)  }$ (by the definition of $\phi$). Comparing
+this with $i=c_{\pi\left(  h\right)  }$, we obtain $\phi\left(  \pi\left(
+h\right)  \right)  =i$.
+\par
+Now, $\phi\left(  \pi\left(  g\right)  \right)  =i=\phi\left(  \pi\left(
+h\right)  \right)  $. This yields $\pi\left(  g\right)  =\pi\left(  h\right)
+$ (since the map $\phi$ is injective). Therefore, $g=h$ (since the map $\pi$
+is injective). Qed.}. In other words,
+\begin{equation}
+\text{there exists \textbf{at most one} }p\in\left[  s\right]  \text{ such
+that }i=c_{\pi\left(  p\right)  }. \label{pf.lem.sol.exe.Ialbe.inclist.b.1}%
+\end{equation}
+
+
+On the other hand, $i\in S=\phi\left(  \left[  s\right]  \right)  $ (since the
+map $\phi$ is surjective). In other words, there exists some $h\in\left[
+s\right]  $ such that $i=\phi\left(  h\right)  $. Consider this $h$. We have
+$h\in\left[  s\right]  =\pi\left(  \left[  s\right]  \right)  $ (since the map
+$\pi$ is surjective). In other words, there exists some $g\in\left[  s\right]
+$ such that $h=\pi\left(  g\right)  $. Consider this $g$.
+
+Now, the definition of $\phi$ yields $\phi\left(  h\right)  =c_{h}$, so that
+$c_{h}=\phi\left(  h\right)  =i$. Thus, $i=c_{h}=c_{\pi\left(  g\right)  }$
+(since $h=\pi\left(  g\right)  $). Thus, $g$ is an element of $\left[
+s\right]  $ and satisfies $i=c_{\pi\left(  g\right)  }$. In other words, $g$
+is a $p\in\left[  s\right]  $ such that $i=c_{\pi\left(  p\right)  }$. Hence,
+there exists \textbf{at least one} $p\in\left[  s\right]  $ such that
+$i=c_{\pi\left(  p\right)  }$ (namely, $p=g$). Combining this with
+(\ref{pf.lem.sol.exe.Ialbe.inclist.b.1}), we conclude that there exists a
+unique $p\in\left[  s\right]  $ such that $i=c_{\pi\left(  p\right)  }$. In
+other words, there exists a unique $p\in\left\{  1,2,\ldots,s\right\}  $ such
+that $i=c_{\pi\left(  p\right)  }$ (since $\left[  s\right]  =\left\{
+1,2,\ldots,s\right\}  $).
+
+Now, forget that we fixed $i$. We thus have shown that%
+\begin{equation}
+\text{for every }i\in S\text{, there exists a unique }p\in\left\{
+1,2,\ldots,s\right\}  \text{ such that }i=c_{\pi\left(  p\right)  }.
+\label{pf.lem.sol.exe.Ialbe.inclist.b.2}%
+\end{equation}
+In other words, the list $\left(  c_{\pi\left(  1\right)  },c_{\pi\left(
+2\right)  },\ldots,c_{\pi\left(  s\right)  }\right)  $ contains each element
+of $S$ exactly once. Since $\left(  c_{\pi\left(  1\right)  },c_{\pi\left(
+2\right)  },\ldots,c_{\pi\left(  s\right)  }\right)  $ is a list of elements
+of $S$, this yields that\newline$\left(  c_{\pi\left(  1\right)  }%
+,c_{\pi\left(  2\right)  },\ldots,c_{\pi\left(  s\right)  }\right)  $ is a
+list of all elements of $S$ (with no repetitions). This proves Lemma
+\ref{lem.sol.exe.Ialbe.inclist} \textbf{(b)}.
+\end{proof}
+\end{verlong}
+
+\begin{lemma}
+\label{lem.sol.exe.Ialbe.II}Let $I$ be a finite set of integers. Let
+$k=\left\vert I\right\vert $. Then,%
+\[
+\sum_{x\in I}\sum_{y\in I}\left[  x>y\right]  =0+1+\cdots+\left(  k-1\right)
+.
+\]
+
+\end{lemma}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exe.Ialbe.II}.]Let $\left(  i_{1},i_{2}%
+,\ldots,i_{k}\right)  $ be the list of all elements of $I$ in increasing order
+(with no repetitions). (Such a list exists, since $\left\vert I\right\vert
+=k$.) Then, Lemma \ref{lem.sol.exe.Ialbe.inclist} \textbf{(a)} (applied to
+$I$, $k$ and $\left(  i_{1},i_{2},\ldots,i_{k}\right)  $ instead of $S$, $s$
+and $\left(  c_{1},c_{2},\ldots,c_{s}\right)  $) shows that the map $\left[
+k\right]  \rightarrow I,\ h\mapsto i_{h}$ is well-defined and a bijection.
+
+We have $i_{1}<i_{2}<\cdots<i_{k}$ (because of how $\left(  i_{1},i_{2}%
+,\ldots,i_{k}\right)  $ was defined). Hence, if $u$ and $v$ are two elements
+of $\left[  k\right]  $, then $i_{u}>i_{v}$ holds if and only if $u>v$. In
+other of $u$ and $v$ are two elements of $\left[  k\right]  $, then%
+\begin{equation}
+\left[  i_{u}>i_{v}\right]  =\left[  u>v\right]  .
+\label{pf.lem.sol.exe.Ialbe.II.short.3}%
+\end{equation}
+
+
+Now, every $x\in I$ satisfies $\sum_{y\in I}\left[  x>y\right]  =\sum
+_{v\in\left[  k\right]  }\left[  x>i_{v}\right]  $ (here, we have substituted
+$i_{v}$ for $y$ in the sum, since the map $\left[  k\right]  \rightarrow
+I,\ h\mapsto i_{h}$ is a bijection). Thus,%
+\begin{align}
+\sum_{x\in I}\underbrace{\sum_{y\in I}\left[  x>y\right]  }_{=\sum
+_{v\in\left[  k\right]  }\left[  x>i_{v}\right]  }  &  =\sum_{x\in I}%
+\sum_{v\in\left[  k\right]  }\left[  x>i_{v}\right] \nonumber\\
+&  =\sum_{u\in\left[  k\right]  }\sum_{v\in\left[  k\right]  }%
+\underbrace{\left[  i_{u}>i_{v}\right]  }_{\substack{=\left[  u>v\right]
+\\\text{(by (\ref{pf.lem.sol.exe.Ialbe.II.short.3}))}}%
+}\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have substituted }i_{u}\\
+\text{for }x\text{ in the sum, since the}\\
+\text{map }\left[  k\right]  \rightarrow I,\ h\mapsto i_{h}\text{ is a
+bijection}%
+\end{array}
+\right) \nonumber\\
+&  =\sum_{u\in\left[  k\right]  }\sum_{v\in\left[  k\right]  }\left[
+u>v\right]  . \label{pf.lem.sol.exe.Ialbe.II.short.4}%
+\end{align}
+But every $u\in\left[  k\right]  $ satisfies%
+\begin{equation}
+\sum_{v\in\left[  k\right]  }\left[  u>v\right]  =u-1
+\label{pf.lem.sol.exe.Ialbe.II.short.5}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.sol.exe.Ialbe.II.short.5}):} Let
+$u\in\left[  k\right]  $. Then,%
+\begin{align*}
+\underbrace{\sum_{v\in\left[  k\right]  }}_{=\sum_{v=1}^{k}}\left[
+u>v\right]   &  =\sum_{v=1}^{k}\left[  u>v\right]  =\sum_{v=1}^{u-1}%
+\underbrace{\left[  u>v\right]  }_{\substack{=1\\\text{(since }%
+u>v\\\text{(since }v\leq u-1<u\text{))}}}+\sum_{v=u}^{k}\underbrace{\left[
+u>v\right]  }_{\substack{=0\\\text{(since we don't have }u>v\\\text{(since
+}v\geq u\text{))}}}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }1\leq u\leq
+k\right) \\
+&  =\sum_{v=1}^{u-1}1+\underbrace{\sum_{v=u}^{k}0}_{=0}=\sum_{v=1}%
+^{u-1}1=\left(  u-1\right)  1=u-1.
+\end{align*}
+This proves (\ref{pf.lem.sol.exe.Ialbe.II.short.5}).}.
+
+Now, (\ref{pf.lem.sol.exe.Ialbe.II.short.4}) becomes%
+\begin{align*}
+\sum_{x\in I}\sum_{y\in I}\left[  x>y\right]   &  =\underbrace{\sum
+_{u\in\left[  k\right]  }}_{=\sum_{u=1}^{k}}\underbrace{\sum_{v\in\left[
+k\right]  }\left[  u>v\right]  }_{\substack{=u-1\\\text{(by
+(\ref{pf.lem.sol.exe.Ialbe.II.short.5}))}}}=\sum_{u=1}^{k}\left(  u-1\right)
+\\
+&  =\sum_{u=0}^{k-1}u\ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have
+substituted }u\text{ for }u-1\text{ in the sum}\right) \\
+&  =0+1+\cdots+\left(  k-1\right)  .
+\end{align*}
+This proves Lemma \ref{lem.sol.exe.Ialbe.II}.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exe.Ialbe.II}.]We have $\left[  k\right]
+=\left\{  1,2,\ldots,k\right\}  $ (by the definition of $\left[  k\right]  $).
+
+Let $\left(  i_{1},i_{2},\ldots,i_{k}\right)  $ be the list of all elements of
+$I$ in increasing order (with no repetitions). (Such a list exists, since
+$\left\vert I\right\vert =k$.) Then, Lemma \ref{lem.sol.exe.Ialbe.inclist}
+\textbf{(a)} (applied to $I$, $k$ and $\left(  i_{1},i_{2},\ldots
+,i_{k}\right)  $ instead of $S$, $s$ and $\left(  c_{1},c_{2},\ldots
+,c_{s}\right)  $) shows that the map $\left[  k\right]  \rightarrow
+I,\ h\mapsto i_{h}$ is well-defined and a bijection.
+
+We know that $\left(  i_{1},i_{2},\ldots,i_{k}\right)  $ is the list of all
+elements of $I$ in increasing order (with no repetitions). Thus, $\left(
+i_{1},i_{2},\ldots,i_{k}\right)  $ is a strictly increasing list. In other
+words, we have $i_{1}<i_{2}<\cdots<i_{k}$. In other words, if $u$ and $v$ are
+two elements of $\left[  k\right]  $ such that $u<v$, then%
+\begin{equation}
+i_{u}<i_{v}. \label{pf.lem.sol.exe.Ialbe.II.1}%
+\end{equation}
+Moreover, if $u$ and $v$ are two elements of $\left[  k\right]  $ such that
+$u\leq v$, then%
+\begin{equation}
+i_{u}\leq i_{v} \label{pf.lem.sol.exe.Ialbe.II.2}%
+\end{equation}
+(since $i_{1}<i_{2}<\cdots<i_{k}$).
+
+Now, every two elements $u$ and $v$ of $\left[  k\right]  $ satisfy
+\begin{equation}
+\left[  i_{u}>i_{v}\right]  =\left[  u>v\right]
+\label{pf.lem.sol.exe.Ialbe.II.3}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.sol.exe.Ialbe.II.3}):} Let $u$ and $v$
+be two elements of $\left[  k\right]  $. We are in one of the following two
+cases:
+\par
+\textit{Case 1:} We have $u>v$.
+\par
+\textit{Case 2:} We have $u\leq v$.
+\par
+Let us first consider Case 1. In this case, we have $u>v$. Hence, $v<u$. Thus,
+(\ref{pf.lem.sol.exe.Ialbe.II.1}) (applied to $v$ and $u$ instead of $u$ and
+$v$) yields $i_{v}<i_{u}$. In other words, $i_{u}>i_{v}$. Hence, $\left[
+i_{u}>i_{v}\right]  =1$. But $u>v$, and thus $\left[  u>v\right]  =1$.
+Comparing this with $\left[  i_{u}>i_{v}\right]  =1$, we obtain $\left[
+i_{u}>i_{v}\right]  =\left[  u>v\right]  $. Thus,
+(\ref{pf.lem.sol.exe.Ialbe.II.3}) is proven in Case 1.
+\par
+Let us now consider Case 2. In this case, we have $u\leq v$. Hence, $i_{u}\leq
+i_{v}$ (by (\ref{pf.lem.sol.exe.Ialbe.II.2})). In other words, we don't have
+$i_{u}>i_{v}$. Hence, $\left[  i_{u}>i_{v}\right]  =0$. But $u\leq v$. In
+other words, we don't have $u>v$. Hence, $\left[  u>v\right]  =0$. Comparing
+this with $\left[  i_{u}>i_{v}\right]  =0$, we obtain $\left[  i_{u}%
+>i_{v}\right]  =\left[  u>v\right]  $. Thus, (\ref{pf.lem.sol.exe.Ialbe.II.3})
+is proven in Case 2.
+\par
+We thus have proven (\ref{pf.lem.sol.exe.Ialbe.II.3}) in each of the two Cases
+1 and 2. Since these two Cases cover all possibilities, this shows that
+(\ref{pf.lem.sol.exe.Ialbe.II.3}) always holds. Qed.}.
+
+Now, every $x\in I$ satisfies%
+\begin{align*}
+\sum_{y\in I}\left[  x>y\right]   &  =\sum_{h\in\left[  k\right]  }\left[
+x>i_{h}\right]  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have substituted }i_{h}\text{ for }y\text{ in the sum,}\\
+\text{since the map }\left[  k\right]  \rightarrow I,\ h\mapsto i_{h}\text{ is
+a bijection}%
+\end{array}
+\right) \\
+&  =\sum_{v\in\left[  k\right]  }\left[  x>i_{v}\right]
+\ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have renamed the summation index
+}h\text{ as }v\right)  .
+\end{align*}
+Thus,%
+\begin{align}
+&  \sum_{x\in I}\underbrace{\sum_{y\in I}\left[  x>y\right]  }_{=\sum
+_{v\in\left[  k\right]  }\left[  x>i_{v}\right]  }\nonumber\\
+&  =\sum_{x\in I}\sum_{v\in\left[  k\right]  }\left[  x>i_{v}\right]
+\nonumber\\
+&  =\sum_{h\in\left[  k\right]  }\sum_{v\in\left[  k\right]  }\left[
+i_{h}>i_{v}\right]  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have substituted }i_{h}\text{ for }x\text{ in the sum,}\\
+\text{since the map }\left[  k\right]  \rightarrow I,\ h\mapsto i_{h}\text{ is
+a bijection}%
+\end{array}
+\right) \nonumber\\
+&  =\sum_{u\in\left[  k\right]  }\sum_{v\in\left[  k\right]  }%
+\underbrace{\left[  i_{u}>i_{v}\right]  }_{\substack{=\left[  u>v\right]
+\\\text{(by (\ref{pf.lem.sol.exe.Ialbe.II.3}))}}}\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have renamed the summation}\\
+\text{index }h\text{ as }u\text{ in the outer sum}%
+\end{array}
+\right) \nonumber\\
+&  =\sum_{u\in\left[  k\right]  }\sum_{v\in\left[  k\right]  }\left[
+u>v\right]  . \label{pf.lem.sol.exe.Ialbe.II.4}%
+\end{align}
+But every $u\in\left[  k\right]  $ satisfies%
+\begin{equation}
+\sum_{v\in\left[  k\right]  }\left[  u>v\right]  =u-1
+\label{pf.lem.sol.exe.Ialbe.II.5}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.sol.exe.Ialbe.II.5}):} Let
+$u\in\left[  k\right]  $. Then, $u\in\left[  k\right]  =\left\{
+1,2,\ldots,k\right\}  $ (by the definition of $\left[  k\right]  $). Hence,
+$1\leq u\leq k$. Now,%
+\begin{align*}
+\underbrace{\sum_{v\in\left[  k\right]  }}_{\substack{=\sum_{v\in\left\{
+1,2,\ldots,k\right\}  }\\\text{(since }\left[  k\right]  =\left\{
+1,2,\ldots,k\right\}  \text{)}}}\left[  u>v\right]   &  =\underbrace{\sum
+_{v\in\left\{  1,2,\ldots,k\right\}  }}_{=\sum_{v=1}^{k}}\left[  u>v\right]
+=\sum_{v=1}^{k}\left[  u>v\right] \\
+&  =\sum_{v=1}^{u-1}\underbrace{\left[  u>v\right]  }%
+_{\substack{=1\\\text{(since }u>v\\\text{(since }v\leq u-1<u\text{))}}%
+}+\sum_{v=u}^{k}\underbrace{\left[  u>v\right]  }_{\substack{=0\\\text{(since
+we don't have }u>v\\\text{(since }v\geq u\text{))}}%
+}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }1\leq u\leq k\right) \\
+&  =\sum_{v=1}^{u-1}1+\underbrace{\sum_{v=u}^{k}0}_{=0}=\sum_{v=1}%
+^{u-1}1=\left(  u-1\right)  1=u-1.
+\end{align*}
+This proves (\ref{pf.lem.sol.exe.Ialbe.II.5}).}.
+
+Now, (\ref{pf.lem.sol.exe.Ialbe.II.4}) becomes%
+\begin{align*}
+\sum_{x\in I}\sum_{y\in I}\left[  x>y\right]   &  =\underbrace{\sum
+_{u\in\left[  k\right]  }}_{\substack{=\sum_{u\in\left\{  1,2,\ldots
+,k\right\}  }\\\text{(since }\left[  k\right]  =\left\{  1,2,\ldots,k\right\}
+\text{)}}}\underbrace{\sum_{v\in\left[  k\right]  }\left[  u>v\right]
+}_{\substack{=u-1\\\text{(by (\ref{pf.lem.sol.exe.Ialbe.II.5}))}%
+}}=\underbrace{\sum_{u\in\left\{  1,2,\ldots,k\right\}  }}_{=\sum_{u=1}^{k}%
+}\left(  u-1\right) \\
+&  =\sum_{u=1}^{k}\left(  u-1\right) \\
+&  =\sum_{u=0}^{k-1}u\ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have
+substituted }u\text{ for }u-1\text{ in the sum}\right) \\
+&  =0+1+\cdots+\left(  k-1\right)  .
+\end{align*}
+This proves Lemma \ref{lem.sol.exe.Ialbe.II}.
+\end{proof}
+\end{verlong}
+
+\begin{lemma}
+\label{lem.sol.exe.Ialbe.inclist2}Let $S$ be a finite set of integers. Let
+$\left(  c_{1},c_{2},\ldots,c_{s}\right)  $ be a list of all elements of $S$
+(with no repetitions).
+
+Let $p_{1},p_{2},\ldots,p_{s}$ be $s$ pairwise distinct elements of $S$. Then,
+there exists a $\pi\in S_{s}$ such that $\left(  p_{1},p_{2},\ldots
+,p_{s}\right)  =\left(  c_{\pi\left(  1\right)  },c_{\pi\left(  2\right)
+},\ldots,c_{\pi\left(  s\right)  }\right)  $.
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exe.Ialbe.inclist2}.]We know that $\left(
+c_{1},c_{2},\ldots,c_{s}\right)  $ is a list of all elements of $S$. Hence,
+$\left\{  c_{1},c_{2},\ldots,c_{s}\right\}  =S$.
+
+The elements $p_{1},p_{2},\ldots,p_{s}$ are pairwise distinct. In other words,
+if $i$ and $j$ are two distinct elements of $\left\{  1,2,\ldots,s\right\}  $,
+then%
+\begin{equation}
+p_{i}\neq p_{j}. \label{pf.lem.sol.exe.Ialbe.inclist2.1}%
+\end{equation}
+
+
+For every $i\in\left\{  1,2,\ldots,s\right\}  $, there exists an $h\in\left\{
+1,2,\ldots,s\right\}  $ such that $p_{i}=c_{h}$%
+\ \ \ \ \footnote{\textit{Proof.} Let $i\in\left\{  1,2,\ldots,s\right\}  $.
+Then, $p_{i}\in S$ (since $p_{1},p_{2},\ldots,p_{s}$ are $s$ elements of $S$).
+Thus, $p_{i}\in S=\left\{  c_{1},c_{2},\ldots,c_{s}\right\}  $. In other
+words, there exists an $h\in\left\{  1,2,\ldots,s\right\}  $ such that
+$p_{i}=c_{h}$. Qed.}. Fix such an $h$, and denote it by $h_{i}$. Thus, for
+every $i\in\left\{  1,2,\ldots,s\right\}  $, we have defined an $h_{i}%
+\in\left\{  1,2,\ldots,s\right\}  $ such that%
+\begin{equation}
+p_{i}=c_{h_{i}}. \label{pf.lem.sol.exe.Ialbe.inclist2.2}%
+\end{equation}
+
+
+Define a map $\varphi:\left\{  1,2,\ldots,s\right\}  \rightarrow\left\{
+1,2,\ldots,s\right\}  $ by%
+\[
+\left(  \varphi\left(  i\right)  =h_{i}\ \ \ \ \ \ \ \ \ \ \text{for every
+}i\in\left\{  1,2,\ldots,s\right\}  \right)  .
+\]
+Then, the map $\varphi$ is injective\footnote{\textit{Proof.} Let $i$ and $j$
+be two elements of $\left\{  1,2,\ldots,s\right\}  $ such that $\varphi\left(
+i\right)  =\varphi\left(  j\right)  $. We shall prove that $i=j$.
+\par
+The definition of $\varphi$ yields $\varphi\left(  i\right)  =h_{i}$ and
+$\varphi\left(  j\right)  =h_{j}$. But (\ref{pf.lem.sol.exe.Ialbe.inclist2.2})
+yields $p_{i}=c_{h_{i}}$. Also, (\ref{pf.lem.sol.exe.Ialbe.inclist2.2})
+(applied to $j$ instead of $i$) yields $p_{j}=c_{h_{j}}$. Now, $p_{i}%
+=c_{h_{i}}=c_{h_{j}}$ (since $h_{i}=\varphi\left(  i\right)  =\varphi\left(
+j\right)  =h_{j}$). Comparing this with $p_{j}=c_{h_{j}}$, we obtain
+$p_{i}=p_{j}$.
+\par
+If the elements $i$ and $j$ were distinct, then we would have $p_{i}\neq
+p_{j}$ (by (\ref{pf.lem.sol.exe.Ialbe.inclist2.1})); but this would contradict
+$p_{i}=p_{j}$. Hence, the elements $i$ and $j$ cannot be distinct. In other
+words, we have $i=j$.
+\par
+Now, forget that we fixed $i$ and $j$. We thus have proven that if $i$ and $j$
+are two elements of $\left\{  1,2,\ldots,s\right\}  $ such that $\varphi
+\left(  i\right)  =\varphi\left(  j\right)  $, then $i=j$. In other words, the
+map $\varphi$ is injective. Qed.} and therefore
+surjective\footnote{\textit{Proof.} It is well-known that any injective map
+from a finite set to itself is surjective. In other words, if $S$ is a finite
+set, and if $g:S\rightarrow S$ is an injective map, then $g$ is surjective.
+Applying this to $S=\left\{  1,2,\ldots,s\right\}  $ and $g=\varphi$, we
+conclude that $\varphi$ is surjective (since $\left\{  1,2,\ldots,s\right\}  $
+is a finite set, and since $\varphi$ is injective). Qed.}. Hence, the map
+$\varphi$ is bijective (since $\varphi$ is injective and surjective). Thus,
+$\varphi$ is a bijective map $\left\{  1,2,\ldots,s\right\}  \rightarrow
+\left\{  1,2,\ldots,s\right\}  $. In other words, $\varphi$ is a permutation
+of the set $\left\{  1,2,\ldots,s\right\}  $. In other words, $\varphi\in
+S_{s}$ (since $S_{s}$ is the set of all permutations of the set $\left\{
+1,2,\ldots,s\right\}  $). Furthermore, $\left(  p_{1},p_{2},\ldots
+,p_{s}\right)  =\left(  c_{\varphi\left(  1\right)  },c_{\varphi\left(
+2\right)  },\ldots,c_{\varphi\left(  s\right)  }\right)  $%
+\ \ \ \ \footnote{\textit{Proof.} For every $i\in\left\{  1,2,\ldots
+,s\right\}  $, we have $\varphi\left(  i\right)  =h_{i}$ (by the definition of
+$\varphi$) and thus $c_{\varphi\left(  i\right)  }=c_{h_{i}}=p_{i}$ (by
+(\ref{pf.lem.sol.exe.Ialbe.inclist2.2})). In other words, for every
+$i\in\left\{  1,2,\ldots,s\right\}  $, we have $p_{i}=c_{\varphi\left(
+i\right)  }$. In other words, we have $\left(  p_{1},p_{2},\ldots
+,p_{s}\right)  =\left(  c_{\varphi\left(  1\right)  },c_{\varphi\left(
+2\right)  },\ldots,c_{\varphi\left(  s\right)  }\right)  $. Qed.}. Hence,
+$\varphi$ is an element of $S_{s}$ and satisfies $\left(  p_{1},p_{2}%
+,\ldots,p_{s}\right)  =\left(  c_{\varphi\left(  1\right)  },c_{\varphi\left(
+2\right)  },\ldots,c_{\varphi\left(  s\right)  }\right)  $. Thus, there exists
+a $\pi\in S_{s}$ such that $\left(  p_{1},p_{2},\ldots,p_{s}\right)  =\left(
+c_{\pi\left(  1\right)  },c_{\pi\left(  2\right)  },\ldots,c_{\pi\left(
+s\right)  }\right)  $ (namely, $\pi=\varphi$). This proves Lemma
+\ref{lem.sol.exe.Ialbe.inclist2}.
+\end{proof}
+
+\begin{lemma}
+\label{lem.sol.exe.Ialbe.InotI}Let $n\in\mathbb{N}$. Let $I$ be a subset of
+$\left[  n\right]  $. Let $k=\left\vert I\right\vert $.
+
+Let $\left(  a_{1},a_{2},\ldots,a_{k}\right)  $ be a list of all elements of
+$I$ (with no repetitions). Let $\left(  b_{1},b_{2},\ldots,b_{n-k}\right)  $
+be a list of all elements of $\left[  n\right]  \setminus I$ (with no repetitions).
+
+\textbf{(a)} There exists a unique $\sigma\in S_{n}$ satisfying%
+\[
+\left(  \sigma\left(  1\right)  ,\sigma\left(  2\right)  ,\ldots,\sigma\left(
+n\right)  \right)  =\left(  a_{1},a_{2},\ldots,a_{k},b_{1},b_{2}%
+,\ldots,b_{n-k}\right)  .
+\]
+
+
+\textbf{(b)} Let $\sum I$ denote the sum of all elements of $I$. (Thus, $\sum
+I=\sum_{i\in I}i$.) Then,%
+\[
+\sum_{\left(  i,j\right)  \in\left[  k\right]  \times\left[  n-k\right]
+}\left[  a_{i}>b_{j}\right]  =\sum I-\left(  1+2+\cdots+k\right)  .
+\]
+
+\end{lemma}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exe.Ialbe.InotI}.]\textbf{(a)} The $k$ elements
+$a_{1},a_{2},\ldots,a_{k}$ belong to $I$ (since $\left(  a_{1},a_{2}%
+,\ldots,a_{k}\right)  $ is a list of all elements of $I$), and thus belong to
+$\left[  n\right]  $ as well (since $I\subseteq\left[  n\right]  $). Also, the
+$k$ elements $a_{1},a_{2},\ldots,a_{k}$ are pairwise distinct (since $\left(
+a_{1},a_{2},\ldots,a_{k}\right)  $ is a list with no repetitions).
+
+The $n-k$ elements $b_{1},b_{2},\ldots,b_{n-k}$ belong to $\left[  n\right]
+\setminus I$ (since $\left(  b_{1},b_{2},\ldots,b_{n-k}\right)  $ is a list of
+all elements of $\left[  n\right]  \setminus I$), and thus belong to $\left[
+n\right]  $ as well (since $\left[  n\right]  \setminus I\subseteq\left[
+n\right]  $). Also, the $n-k$ elements $b_{1},b_{2},\ldots,b_{n-k}$ are
+pairwise distinct (since $\left(  b_{1},b_{2},\ldots,b_{n-k}\right)  $ is a
+list with no repetitions).
+
+The $n$ elements $a_{1},a_{2},\ldots,a_{k},b_{1},b_{2},\ldots,b_{n-k}$ are
+pairwise distinct\footnote{\textit{Proof.} Assume the contrary. Thus, two of
+the $n$ elements $a_{1},a_{2},\ldots,a_{k},b_{1},b_{2},\ldots,b_{n-k}$ are
+equal. These two elements are either two of the elements $a_{1},a_{2}%
+,\ldots,a_{k}$, or two of the elements $b_{1},b_{2},\ldots,b_{n-k}$, or one of
+the former and one of the latter (in some order). Hence, we are in one of the
+following three cases:
+\par
+\textit{Case 1:} Two of the $k$ elements $a_{1},a_{2},\ldots,a_{k}$ are equal.
+\par
+\textit{Case 2:} Two of the $n-k$ elements $b_{1},b_{2},\ldots,b_{n-k}$ are
+equal.
+\par
+\textit{Case 3:} One of the $k$ elements $a_{1},a_{2},\ldots,a_{k}$ is equal
+to one of the elements $b_{1},b_{2},\ldots,b_{n-k}$.
+\par
+But Case 1 is impossible (since the $k$ elements $a_{1},a_{2},\ldots,a_{k}$
+are pairwise distinct), and Case 2 is also impossible (since the $n-k$
+elements $b_{1},b_{2},\ldots,b_{n-k}$ are pairwise distinct). Hence, we must
+be in Case 3. In other words, one of the $k$ elements $a_{1},a_{2}%
+,\ldots,a_{k}$ is equal to one of the elements $b_{1},b_{2},\ldots,b_{n-k}$.
+In other words, we must have $a_{i}=b_{j}$ for some $i\in\left\{
+1,2,\ldots,k\right\}  $ and some $j\in\left\{  1,2,\ldots,n-k\right\}  $.
+Consider these $i$ and $j$. We have $a_{i}\in I$ (since the $k$ elements
+$a_{1},a_{2},\ldots,a_{k}$ belong to $I$). But $b_{j}\in\left[  n\right]
+\setminus I$ (since the $n-k$ elements $b_{1},b_{2},\ldots,b_{n-k}$ belong to
+$\left[  n\right]  \setminus I$) and thus $b_{j}\notin I$. Hence, $a_{i}%
+=b_{j}\notin I$; but this contradicts $a_{i}\in I$. This contradiction proves
+that our assumption was wrong; qed.} and belong to $\left[  n\right]
+$\ \ \ \ \footnote{This is because the $k$ elements $a_{1},a_{2},\ldots,a_{k}$
+belong to $\left[  n\right]  $, and because the $n-k$ elements $b_{1}%
+,b_{2},\ldots,b_{n-k}$ belong to $\left[  n\right]  $.}. Furthermore, $\left(
+1,2,\ldots,n\right)  $ is a list of all elements of $\left[  n\right]  $ (with
+no repetition). Hence, Lemma \ref{lem.sol.exe.Ialbe.inclist2} (applied to
+$S=\left[  n\right]  $, $s=n$, $\left(  c_{1},c_{2},\ldots,c_{s}\right)
+=\left(  1,2,\ldots,n\right)  $ and $\left(  p_{1},p_{2},\ldots,p_{s}\right)
+=\left(  a_{1},a_{2},\ldots,a_{k},b_{1},b_{2},\ldots,b_{n-k}\right)  $) yields
+that there exists a $\pi\in S_{n}$ such that
+\[
+\left(  a_{1},a_{2},\ldots,a_{k},b_{1},b_{2},\ldots,b_{n-k}\right)  =\left(
+\pi\left(  1\right)  ,\pi\left(  2\right)  ,\ldots,\pi\left(  n\right)
+\right)  .
+\]
+Consider this $\pi$.
+
+We have $\pi\in S_{n}$ and $\left(  \pi\left(  1\right)  ,\pi\left(  2\right)
+,\ldots,\pi\left(  n\right)  \right)  =\left(  a_{1},a_{2},\ldots,a_{k}%
+,b_{1},b_{2},\ldots,b_{n-k}\right)  $.
+
+But our goal is to show that there exists a unique $\sigma\in S_{n}$
+satisfying%
+\begin{equation}
+\left(  \sigma\left(  1\right)  ,\sigma\left(  2\right)  ,\ldots,\sigma\left(
+n\right)  \right)  =\left(  a_{1},a_{2},\ldots,a_{k},b_{1},b_{2}%
+,\ldots,b_{n-k}\right)  . \label{pf.lem.sol.exe.Ialbe.InotI.short.a.1}%
+\end{equation}
+We already know that there exists \textbf{at least one} such $\sigma$ (namely,
+$\sigma=\pi$). Hence, it remains to show that there exists \textbf{at most
+one} such $\sigma$. In other words, it remains to show that if $\sigma_{1}$
+and $\sigma_{2}$ are two elements $\sigma\in S_{n}$ satisfying
+(\ref{pf.lem.sol.exe.Ialbe.InotI.short.a.1}), then $\sigma_{1}=\sigma_{2}$.
+
+So let $\sigma_{1}$ and $\sigma_{2}$ be two elements $\sigma\in S_{n}$
+satisfying (\ref{pf.lem.sol.exe.Ialbe.InotI.short.a.1}). We must prove that
+$\sigma_{1}=\sigma_{2}$.
+
+We know that $\sigma_{1}$ is an element $\sigma\in S_{n}$ satisfying
+(\ref{pf.lem.sol.exe.Ialbe.InotI.short.a.1}). In other words, $\sigma_{1}$ is
+an element of $S_{n}$ and satisfies%
+\begin{equation}
+\left(  \sigma_{1}\left(  1\right)  ,\sigma_{1}\left(  2\right)
+,\ldots,\sigma_{1}\left(  n\right)  \right)  =\left(  a_{1},a_{2},\ldots
+,a_{k},b_{1},b_{2},\ldots,b_{n-k}\right)  .
+\label{pf.lem.sol.exe.Ialbe.InotI.short.a.3a}%
+\end{equation}
+Similarly, $\sigma_{2}$ is an element of $S_{n}$ and satisfies%
+\begin{equation}
+\left(  \sigma_{2}\left(  1\right)  ,\sigma_{2}\left(  2\right)
+,\ldots,\sigma_{2}\left(  n\right)  \right)  =\left(  a_{1},a_{2},\ldots
+,a_{k},b_{1},b_{2},\ldots,b_{n-k}\right)  .
+\label{pf.lem.sol.exe.Ialbe.InotI.short.a.3b}%
+\end{equation}
+Comparing (\ref{pf.lem.sol.exe.Ialbe.InotI.short.a.3a}) with
+(\ref{pf.lem.sol.exe.Ialbe.InotI.short.a.3b}), we obtain \newline$\left(
+\sigma_{1}\left(  1\right)  ,\sigma_{1}\left(  2\right)  ,\ldots,\sigma
+_{1}\left(  n\right)  \right)  =\left(  \sigma_{2}\left(  1\right)
+,\sigma_{2}\left(  2\right)  ,\ldots,\sigma_{2}\left(  n\right)  \right)  $.
+In other words, $\sigma_{1}\left(  i\right)  =\sigma_{2}\left(  i\right)  $
+for every $i\in\left[  n\right]  $. Since both $\sigma_{1}$ and $\sigma_{2}$
+are maps $\left[  n\right]  \rightarrow\left[  n\right]  $, this shows that
+$\sigma_{1}=\sigma_{2}$. This is precisely what we wanted to show.
+
+Thus, we have proven that there exists \textbf{at most one} such $\sigma$
+satisfying (\ref{pf.lem.sol.exe.Ialbe.InotI.short.a.1}). As explained above,
+this completes the proof of Lemma \ref{lem.sol.exe.Ialbe.InotI} \textbf{(a)}.
+
+\textbf{(b)} Clearly,
+\begin{equation}
+\sum I=\sum_{i\in I}i=\sum_{x\in I}x
+\label{pf.lem.sol.exe.Ialbe.InotI.short.b.triv}%
+\end{equation}
+(here, we have renamed the summation index $i$ as $x$).
+
+We know that $\left(  a_{1},a_{2},\ldots,a_{k}\right)  $ is a list of all
+elements of $I$ (with no repetitions). Thus, Lemma
+\ref{lem.sol.exe.Ialbe.inclist} \textbf{(a)} (applied to $I$, $k$ and $\left(
+a_{1},a_{2},\ldots,a_{k}\right)  $ instead of $S$, $s$ and $\left(
+c_{1},c_{2},\ldots,c_{s}\right)  $) shows that the map $\left[  k\right]
+\rightarrow I,\ h\mapsto a_{h}$ is well-defined and a bijection.
+
+We know that $\left(  b_{1},b_{2},\ldots,b_{n-k}\right)  $ is a list of all
+elements of $\left[  n\right]  \setminus I$ (with no repetitions). Thus, Lemma
+\ref{lem.sol.exe.Ialbe.inclist} \textbf{(a)} (applied to $\left[  n\right]
+\setminus I$, $n-k$ and $\left(  b_{1},b_{2},\ldots,b_{n-k}\right)  $ instead
+of $S$, $s$ and $\left(  c_{1},c_{2},\ldots,c_{s}\right)  $) shows that the
+map $\left[  n-k\right]  \rightarrow\left[  n\right]  \setminus I,\ h\mapsto
+b_{h}$ is well-defined and a bijection.
+
+Now,%
+\begin{align}
+\underbrace{\sum_{\left(  i,j\right)  \in\left[  k\right]  \times\left[
+n-k\right]  }}_{=\sum_{i\in\left[  k\right]  }\sum_{j\in\left[  n-k\right]  }%
+}\left[  a_{i}>b_{j}\right]   &  =\sum_{i\in\left[  k\right]  }%
+\underbrace{\sum_{j\in\left[  n-k\right]  }\left[  a_{i}>b_{j}\right]
+}_{\substack{=\sum_{y\in\left[  n\right]  \setminus I}\left[  a_{i}>y\right]
+\\\text{(here, we have substituted }y\text{ for }b_{j}\\\text{in the sum,
+since the}\\\text{map }\left[  n-k\right]  \rightarrow\left[  n\right]
+\setminus I,\ h\mapsto b_{h}\text{ is a bijection)}}}=\sum_{i\in\left[
+k\right]  }\sum_{y\in\left[  n\right]  \setminus I}\left[  a_{i}>y\right]
+\nonumber\\
+&  =\sum_{x\in I}\sum_{y\in\left[  n\right]  \setminus I}\left[  x>y\right]
+\label{pf.lem.sol.exe.Ialbe.InotI.short.b.1}%
+\end{align}
+(here, we have substituted $x$ for $a_{i}$ in the outer sum, since the map
+$\left[  k\right]  \rightarrow I,\ h\mapsto a_{h}$ is a bijection). But every
+$x\in I$ satisfies%
+\begin{equation}
+\sum_{y\in\left[  n\right]  \setminus I}\left[  x>y\right]  =x-1-\sum_{y\in
+I}\left[  x>y\right]  \label{pf.lem.sol.exe.Ialbe.InotI.short.b.sum1}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.sol.exe.Ialbe.InotI.short.b.sum1}):}
+Let $x\in I$. Then, $x\in I\subseteq\left[  n\right]  $, so that $1\leq x\leq
+n$.
+\par
+Every $y\in\left[  n\right]  $ satisfies either $y\in I$ or $y\notin I$ (but
+not both). Hence,%
+\[
+\sum_{y\in\left[  n\right]  }\left[  x>y\right]  =\underbrace{\sum
+_{\substack{y\in\left[  n\right]  ;\\y\in I}}}_{\substack{=\sum_{y\in
+I}\\\text{(since }I\subseteq\left[  n\right]  \text{)}}}\left[  x>y\right]
++\underbrace{\sum_{\substack{y\in\left[  n\right]  ;\\y\notin I}}}%
+_{=\sum_{y\in\left[  n\right]  \setminus I}}\left[  x>y\right]  =\sum_{y\in
+I}\left[  x>y\right]  +\sum_{y\in\left[  n\right]  \setminus I}\left[
+x>y\right]  .
+\]
+Comparing this with%
+\begin{align*}
+\underbrace{\sum_{y\in\left[  n\right]  }}_{=\sum_{y=1}^{n}}\left[
+x>y\right]   &  =\sum_{y=1}^{n}\left[  x>y\right] \\
+&  =\sum_{y=1}^{x-1}\underbrace{\left[  x>y\right]  }%
+_{\substack{=1\\\text{(since }x>y\\\text{(since }y\leq x-1<x\text{))}}%
+}+\sum_{y=x}^{n}\underbrace{\left[  x>y\right]  }_{\substack{=0\\\text{(since
+we don't have }x>y\\\text{(since }y\geq x\text{))}}%
+}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }1\leq x\leq n\right) \\
+&  =\sum_{y=1}^{x-1}1+\underbrace{\sum_{y=x}^{n}0}_{=0}=\sum_{y=1}%
+^{x-1}1=\left(  x-1\right)  1=x-1,
+\end{align*}
+we obtain%
+\[
+\sum_{y\in I}\left[  x>y\right]  +\sum_{y\in\left[  n\right]  \setminus
+I}\left[  x>y\right]  =x-1.
+\]
+Subtracting $\sum_{y\in I}\left[  x>y\right]  $ from both sides of this
+equality, we obtain $\sum_{y\in\left[  n\right]  \setminus I}\left[
+x>y\right]  =x-1-\sum_{y\in I}\left[  x>y\right]  $. This proves
+(\ref{pf.lem.sol.exe.Ialbe.InotI.short.b.sum1}).}.
+
+Now, (\ref{pf.lem.sol.exe.Ialbe.InotI.short.b.1}) becomes%
+\begin{align*}
+&  \sum_{\left(  i,j\right)  \in\left[  k\right]  \times\left[  n-k\right]
+}\left[  a_{i}>b_{j}\right] \\
+&  =\sum_{x\in I}\underbrace{\sum_{y\in\left[  n\right]  \setminus I}\left[
+x>y\right]  }_{\substack{=x-1-\sum_{y\in I}\left[  x>y\right]  \\\text{(by
+(\ref{pf.lem.sol.exe.Ialbe.InotI.short.b.sum1}))}}}=\sum_{x\in I}\left(
+x-1-\sum_{y\in I}\left[  x>y\right]  \right) \\
+&  =\underbrace{\sum_{x\in I}x}_{\substack{=\sum I\\\text{(by
+(\ref{pf.lem.sol.exe.Ialbe.InotI.short.b.triv}))}}}-\underbrace{\sum_{x\in
+I}1}_{=\left\vert I\right\vert \cdot1=\left\vert I\right\vert =k}%
+-\underbrace{\sum_{x\in I}\sum_{y\in I}\left[  x>y\right]  }%
+_{\substack{=0+1+\cdots+\left(  k-1\right)  \\\text{(by Lemma
+\ref{lem.sol.exe.Ialbe.II})}}}=\sum I-k-\left(  0+1+\cdots+\left(  k-1\right)
+\right) \\
+&  =\sum I-\underbrace{\left(  \left(  0+1+\cdots+\left(  k-1\right)  \right)
++k\right)  }_{=0+1+\cdots+k=1+2+\cdots+k}=\sum I-\left(  1+2+\cdots+k\right)
+.
+\end{align*}
+This proves Lemma \ref{lem.sol.exe.Ialbe.InotI} \textbf{(b)}.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exe.Ialbe.InotI}.]\textbf{(a)} The list $\left(
+a_{1},a_{2},\ldots,a_{k}\right)  $ is a list of all elements of $I$, and thus
+belongs to $I^{k}$. Hence, $\left(  a_{1},a_{2},\ldots,a_{k}\right)  \in
+I^{k}\subseteq\left[  n\right]  ^{k}$ (since $I\subseteq\left[  n\right]  $).
+
+The list $\left(  b_{1},b_{2},\ldots,b_{n-k}\right)  $ is a list of all
+elements of $\left[  n\right]  \setminus I$, and thus belongs to $\left(
+\left[  n\right]  \setminus I\right)  ^{n-k}$. Hence, $\left(  b_{1}%
+,b_{2},\ldots,b_{n-k}\right)  \in\left(  \left[  n\right]  \setminus I\right)
+^{n-k}\subseteq\left[  n\right]  ^{n-k}$ (since $\left[  n\right]  \setminus
+I\subseteq\left[  n\right]  $).
+
+From $\left(  a_{1},a_{2},\ldots,a_{k}\right)  \in\left[  n\right]  ^{k}$ and
+$\left(  b_{1},b_{2},\ldots,b_{n-k}\right)  \in\left[  n\right]  ^{n-k}$, we
+obtain
+\[
+\left(  a_{1},a_{2},\ldots,a_{k},b_{1},b_{2},\ldots,b_{n-k}\right)  \in\left[
+n\right]  ^{k+\left(  n-k\right)  }=\left[  n\right]  ^{n}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }k+\left(  n-k\right)  =n\right)  .
+\]
+In other words, $\left(  a_{1},a_{2},\ldots,a_{k},b_{1},b_{2},\ldots
+,b_{n-k}\right)  $ is an $n$-tuple of elements of $\left[  n\right]  $. Denote
+this $n$-tuple by $\left(  c_{1},c_{2},\ldots,c_{n}\right)  $. Thus,%
+\[
+\left(  c_{1},c_{2},\ldots,c_{n}\right)  =\left(  a_{1},a_{2},\ldots
+,a_{k},b_{1},b_{2},\ldots,b_{n-k}\right)  .
+\]
+In other words,%
+\[
+c_{h}=%
+\begin{cases}
+a_{h}, & \text{if }h\leq k;\\
+b_{h-k}, & \text{if }h>k
+\end{cases}
+\ \ \ \ \ \ \ \ \ \ \text{for every }h\in\left\{  1,2,\ldots,n\right\}  .
+\]
+In other words,%
+\begin{equation}
+c_{h}=%
+\begin{cases}
+a_{h}, & \text{if }h\leq k;\\
+b_{h-k}, & \text{if }h>k
+\end{cases}
+\ \ \ \ \ \ \ \ \ \ \text{for every }h\in\left[  n\right]
+\label{pf.lem.sol.exe.Ialbe.InotI.a.ch=}%
+\end{equation}
+(since $\left\{  1,2,\ldots,n\right\}  =\left[  n\right]  $). Notice that%
+\begin{equation}
+c_{h}\notin I\ \ \ \ \ \ \ \ \ \ \text{for every }h\in\left[  n\right]  \text{
+satisfying }h>k \label{pf.lem.sol.exe.Ialbe.InotI.a.notinI}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.sol.exe.Ialbe.InotI.a.notinI}):} Let
+$h\in\left[  n\right]  $ be such that $h>k$. Then,%
+\begin{align*}
+c_{h}  &  =%
+\begin{cases}
+a_{h}, & \text{if }h\leq k;\\
+b_{h-k}, & \text{if }h>k
+\end{cases}
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{pf.lem.sol.exe.Ialbe.InotI.a.ch=}%
+)}\right) \\
+&  =b_{h-k}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }h>k\right) \\
+&  \in\left[  n\right]  \setminus I\ \ \ \ \ \ \ \ \ \ \left(  \text{since
+}\left(  b_{1},b_{2},\ldots,b_{n-k}\right)  \in\left(  \left[  n\right]
+\setminus I\right)  ^{n-k}\right)  .
+\end{align*}
+In other words, $c_{h}\in\left[  n\right]  $ and $c_{h}\notin I$. This proves
+(\ref{pf.lem.sol.exe.Ialbe.InotI.a.notinI}).}.
+
+It is well-known that if $U$ is a set, and if $V$ is a subset of $U$, then
+$V\cup\left(  U\setminus V\right)  =U$. Applying this to $U=\left[  n\right]
+$ and $V=I$, we obtain $I\cup\left(  \left[  n\right]  \setminus I\right)
+=\left[  n\right]  $ (since $I$ is a subset of $\left[  n\right]  $).
+
+Now, define a map $f:\left[  n\right]  \rightarrow\left[  n\right]  $ by%
+\[
+\left(  f\left(  h\right)  =c_{h}\ \ \ \ \ \ \ \ \ \ \text{for every }%
+h\in\left[  n\right]  \right)  .
+\]
+(This is well-defined, because $c_{h}$ is a well-defined element of $\left[
+n\right]  $ for every $h\in\left[  n\right]  $\ \ \ \ \footnote{Indeed, this
+follows from (\ref{pf.lem.sol.exe.Ialbe.InotI.a.ch=}).}.) We have%
+\begin{align*}
+\left(  f\left(  1\right)  ,f\left(  2\right)  ,\ldots,f\left(  n\right)
+\right)   &  =\left(  c_{1},c_{2},\ldots,c_{n}\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }f\left(  h\right)  =c_{h}\text{ for
+every }h\in\left[  n\right]  \right) \\
+&  =\left(  a_{1},a_{2},\ldots,a_{k},b_{1},b_{2},\ldots,b_{n-k}\right)
+\end{align*}
+and thus%
+\begin{align*}
+\left\{  f\left(  1\right)  ,f\left(  2\right)  ,\ldots,f\left(  n\right)
+\right\}   &  =\left\{  a_{1},a_{2},\ldots,a_{k},b_{1},b_{2},\ldots
+,b_{n-k}\right\} \\
+&  =\underbrace{\left\{  a_{1},a_{2},\ldots,a_{k}\right\}  }%
+_{\substack{=I\\\text{(since }\left\{  a_{1},a_{2},\ldots,a_{k}\right\}
+\text{ is a list}\\\text{of all elements of }I\text{)}}}\cup
+\underbrace{\left\{  b_{1},b_{2},\ldots,b_{n-k}\right\}  }_{\substack{=\left[
+n\right]  \setminus I\\\text{(since }\left\{  b_{1},b_{2},\ldots
+,b_{n-k}\right\}  \text{ is a list}\\\text{of all elements of }\left[
+n\right]  \setminus I\text{)}}}\\
+&  =I\cup\left(  \left[  n\right]  \setminus I\right)  =\left[  n\right]  .
+\end{align*}
+Now,%
+\[
+f\left(  \underbrace{\left[  n\right]  }_{=\left\{  1,2,\ldots,n\right\}
+}\right)  =f\left(  \left\{  1,2,\ldots,n\right\}  \right)  =\left\{  f\left(
+1\right)  ,f\left(  2\right)  ,\ldots,f\left(  n\right)  \right\}  =\left[
+n\right]  ,
+\]
+so that $\left[  n\right]  \subseteq\left[  n\right]  =f\left(  \left[
+n\right]  \right)  $. In other words, the map $f:\left[  n\right]
+\rightarrow\left[  n\right]  $ is surjective. From this, it is easy to
+conclude that this map $f$ is injective\footnote{\textit{First proof.} It is
+well-known that any surjective map from a finite set to itself is injective.
+In other words, if $S$ is a finite set, and if $g:S\rightarrow S$ is a
+surjective map, then $g$ is injective. Applying this to $S=\left[  n\right]  $
+and $g=f$, we conclude that $f$ is injective (since $\left[  n\right]  $ is a
+finite set, and since $f$ is surjective). Qed.
+\par
+\textit{Second proof.} Let us give a different proof of the injectivity of
+$f$, which does not use the finiteness of $\left[  n\right]  $.
+\par
+Let $g$ and $h$ be two elements of $\left[  n\right]  $ such that $f\left(
+g\right)  =f\left(  h\right)  $. We shall prove that $g=h$.
+\par
+We can WLOG assume that $g\leq h$ (since otherwise, we can simply switch $g$
+with $h$). Assume this.
+\par
+The definition of $f$ yields $f\left(  g\right)  =c_{g}$ and $f\left(
+h\right)  =c_{h}$. Thus, $c_{g}=f\left(  g\right)  =f\left(  h\right)  =c_{h}%
+$.
+\par
+For the sake of contradiction, let us assume that $g\neq h$. Combining this
+with $g\leq h$, we obtain $g<h$. We are in one of the following two cases:
+\par
+\textit{Case 1:} We have $g\leq k$.
+\par
+\textit{Case 2:} We have $g>k$.
+\par
+Let us first consider Case 1. In this case, we have $g\leq k$. Thus,
+(\ref{pf.lem.sol.exe.Ialbe.InotI.a.ch=}) (applied to $g$ instead of $h$)
+yields $c_{g}=%
+\begin{cases}
+a_{g}, & \text{if }g\leq k;\\
+b_{g-k}, & \text{if }g>k
+\end{cases}
+=a_{g}$ (since $g\leq k$). Thus, $c_{g}=a_{g}\in I$ (since $\left(
+a_{1},a_{2},\ldots,a_{k}\right)  \in I^{k}$). If we had $h>k$, then we would
+have%
+\[
+c_{g}=c_{h}\notin I\ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{pf.lem.sol.exe.Ialbe.InotI.a.notinI})}\right)  ,
+\]
+which would contradict $c_{g}\in I$. Thus, we cannot have $h>k$. Hence, we
+must have $h\leq k$. Thus, (\ref{pf.lem.sol.exe.Ialbe.InotI.a.ch=}) yields
+$c_{h}=%
+\begin{cases}
+a_{h}, & \text{if }h\leq k;\\
+b_{h-k}, & \text{if }h>k
+\end{cases}
+=a_{h}$ (since $h\leq k$). Now, $c_{g}=a_{g}$, so that $a_{g}=c_{g}%
+=c_{h}=a_{h}$.
+\par
+From $g\in\left[  n\right]  =\left\{  1,2,\ldots,n\right\}  $, we obtain
+$g\geq1$. Combining this with $g\leq k$, we obtain $g\in\left\{
+1,2,\ldots,k\right\}  $.
+\par
+From $h\in\left[  n\right]  =\left\{  1,2,\ldots,n\right\}  $, we obtain
+$h\geq1$. Combining this with $h\leq k$, we obtain $h\in\left\{
+1,2,\ldots,k\right\}  $.
+\par
+Now, $g$ and $h$ are two elements of $\left\{  1,2,\ldots,k\right\}  $ (since
+$g\in\left\{  1,2,\ldots,k\right\}  $ and $h\in\left\{  1,2,\ldots,k\right\}
+$). These two elements are distinct (since $g<h$).
+\par
+But $\left(  a_{1},a_{2},\ldots,a_{k}\right)  $ is a list of all elements of
+$I$ (with no repetitions). Thus, the list $\left(  a_{1},a_{2},\ldots
+,a_{k}\right)  $ contains no two repetitions. In other words, the elements
+$a_{1},a_{2},\ldots,a_{k}$ are pairwise distinct. In other words, if $u$ and
+$v$ are two distinct elements of $\left\{  1,2,\ldots,k\right\}  $, then
+$a_{u}\neq a_{v}$. Applying this to $u=g$ and $v=h$, we obtain $a_{g}\neq
+a_{h}$. This contradicts $a_{g}=a_{h}$. Hence, we have obtained a contradiction
+in Case 1.
+\par
+Let us now consider Case 2. In this case, we have $g>k$. Hence, $g\geq k+1$
+(since $g$ and $k$ are integers). But (\ref{pf.lem.sol.exe.Ialbe.InotI.a.ch=})
+(applied to $g$ instead of $h$) yields $c_{g}=%
+\begin{cases}
+a_{g}, & \text{if }g\leq k;\\
+b_{g-k}, & \text{if }g>k
+\end{cases}
+=b_{g-k}$ (since $g>k$). On the other hand, $g\leq h$, so that $h\geq g>k$.
+Thus, (\ref{pf.lem.sol.exe.Ialbe.InotI.a.ch=}) yields $c_{h}=%
+\begin{cases}
+a_{h}, & \text{if }h\leq k;\\
+b_{h-k}, & \text{if }h>k
+\end{cases}
+=b_{h-k}$ (since $h>k$). Now, $c_{g}=b_{g-k}$, so that $b_{g-k}=c_{g}%
+=c_{h}=b_{h-k}$.
+\par
+From $g\in\left[  n\right]  =\left\{  1,2,\ldots,n\right\}  $, we obtain
+$g\leq n$. Combining this with $g\geq k+1$, we obtain $g\in\left\{
+k+1,k+2,\ldots,n\right\}  $. Hence, $g-k\in\left\{  1,2,\ldots,n-k\right\}  $.
+\par
+From $h\in\left[  n\right]  =\left\{  1,2,\ldots,n\right\}  $, we obtain
+$h\leq n$. Combining this with $h\geq k+1$, we obtain $h\in\left\{
+k+1,k+2,\ldots,n\right\}  $. Hence, $h-k\in\left\{  1,2,\ldots,n-k\right\}  $.
+\par
+Now, $g-k$ and $h-k$ are two elements of $\left\{  1,2,\ldots,n-k\right\}  $
+(since $g-k\in\left\{  1,2,\ldots,n-k\right\}  $ and $h-k\in\left\{
+1,2,\ldots,n-k\right\}  $). These two elements are distinct (since
+$\underbrace{g}_{<h}-k<h-k$).
+\par
+But $\left(  b_{1},b_{2},\ldots,b_{n-k}\right)  $ is a list of all elements of
+$\left[  n\right]  \setminus I$ (with no repetitions). Thus, the list $\left(
+b_{1},b_{2},\ldots,b_{n-k}\right)  $ contains no two repetitions. In other
+words, the elements $b_{1},b_{2},\ldots,b_{n-k}$ are pairwise distinct. In
+other words, if $u$ and $v$ are two distinct elements of $\left\{
+1,2,\ldots,n-k\right\}  $, then $b_{u}\neq b_{v}$. Applying this to $u=g-k$
+and $v=h-k$, we obtain $b_{g-k}\neq b_{h-k}$. This contradicts $b_{g-k}%
+=b_{h-k}$. Hence, we have obtained a contradiction in Case 2.
+\par
+Now, we have obtained a contradiction in each of the two Cases 1 and 2. Thus,
+we always have a contradiction. This contradiction proves that our assumption
+(that $g\neq h$) was wrong. Hence, we cannot have $g\neq h$. We thus have
+$g=h$.
+\par
+Now, forget that we fixed $g$ and $h$. We thus have proven that if $g$ and $h$
+are two elements of $\left[  n\right]  $ such that $f\left(  g\right)
+=f\left(  h\right)  $, then $g=h$. In other words, the map $f$ is injective.
+Qed.}. Hence, the map $f$ is bijective (since $f$ is injective and
+surjective). Hence, $f$ is a bijective map $\left[  n\right]  \rightarrow
+\left[  n\right]  $. In other words, $f$ is a permutation of $\left[
+n\right]  $.
+
+But $S_{n}$ is the set of all permutations of $\left\{  1,2,\ldots,n\right\}
+$ (by the definition of $S_{n}$). In other words, $S_{n}$ is the set of all
+permutations of $\left[  n\right]  $ (since $\left[  n\right]  =\left\{
+1,2,\ldots,n\right\}  $). Now, $f$ is a permutation of $\left[  n\right]  $.
+In other words, $f$ is an element of $S_{n}$ (since $S_{n}$ is the set of all
+permutations of $\left[  n\right]  $). In other words, $f\in S_{n}$. Hence,
+$f$ is a $\sigma\in S_{n}$ satisfying%
+\begin{equation}
+\left(  \sigma\left(  1\right)  ,\sigma\left(  2\right)  ,\ldots,\sigma\left(
+n\right)  \right)  =\left(  a_{1},a_{2},\ldots,a_{k},b_{1},b_{2}%
+,\ldots,b_{n-k}\right)  \label{pf.lem.sol.exe.Ialbe.InotI.a.silis}%
+\end{equation}
+(since $f$ is an element of $S_{n}$ and satisfies \newline$\left(  f\left(
+1\right)  ,f\left(  2\right)  ,\ldots,f\left(  n\right)  \right)  =\left(
+a_{1},a_{2},\ldots,a_{k},b_{1},b_{2},\ldots,b_{n-k}\right)  $). Thus, there
+exists \textbf{at least one} $\sigma\in S_{n}$ satisfying
+(\ref{pf.lem.sol.exe.Ialbe.InotI.a.silis}).
+
+On the other hand, if $\sigma_{1}$ and $\sigma_{2}$ are two elements
+$\sigma\in S_{n}$ satisfying (\ref{pf.lem.sol.exe.Ialbe.InotI.a.silis}), then
+$\sigma_{1}=\sigma_{2}$\ \ \ \ \footnote{\textit{Proof.} Let $\sigma_{1}$ and
+$\sigma_{2}$ be two elements $\sigma\in S_{n}$ satisfying
+(\ref{pf.lem.sol.exe.Ialbe.InotI.a.silis}). We shall show that $\sigma
+_{1}=\sigma_{2}$.
+\par
+We know that $\sigma_{1}$ is an element $\sigma\in S_{n}$ satisfying
+(\ref{pf.lem.sol.exe.Ialbe.InotI.a.silis}). In other words, $\sigma_{1}$ is an
+element of $S_{n}$ and satisfies%
+\[
+\left(  \sigma_{1}\left(  1\right)  ,\sigma_{1}\left(  2\right)
+,\ldots,\sigma_{1}\left(  n\right)  \right)  =\left(  a_{1},a_{2},\ldots
+,a_{k},b_{1},b_{2},\ldots,b_{n-k}\right)  .
+\]
+\par
+We know that $\sigma_{2}$ is an element $\sigma\in S_{n}$ satisfying
+(\ref{pf.lem.sol.exe.Ialbe.InotI.a.silis}). In other words, $\sigma_{2}$ is an
+element of $S_{n}$ and satisfies%
+\[
+\left(  \sigma_{2}\left(  1\right)  ,\sigma_{2}\left(  2\right)
+,\ldots,\sigma_{2}\left(  n\right)  \right)  =\left(  a_{1},a_{2},\ldots
+,a_{k},b_{1},b_{2},\ldots,b_{n-k}\right)  .
+\]
+\par
+Now,
+\[
+\left(  \sigma_{1}\left(  1\right)  ,\sigma_{1}\left(  2\right)
+,\ldots,\sigma_{1}\left(  n\right)  \right)  =\left(  a_{1},a_{2},\ldots
+,a_{k},b_{1},b_{2},\ldots,b_{n-k}\right)  =\left(  \sigma_{2}\left(  1\right)
+,\sigma_{2}\left(  2\right)  ,\ldots,\sigma_{2}\left(  n\right)  \right)  .
+\]
+In other words, $\sigma_{1}\left(  i\right)  =\sigma_{2}\left(  i\right)  $
+for every $i\in\left\{  1,2,\ldots,n\right\}  $. In other words, $\sigma
+_{1}\left(  i\right)  =\sigma_{2}\left(  i\right)  $ for every $i\in\left[
+n\right]  $ (since $\left\{  1,2,\ldots,n\right\}  =\left[  n\right]  $).
+\par
+Now, $\sigma_{1}$ is an element of $S_{n}$. In other words, $\sigma_{1}$ is a
+permutation of $\left[  n\right]  $ (since $S_{n}$ is the set of all
+permutations of $\left[  n\right]  $). Hence, $\sigma_{1}$ is a map $\left[
+n\right]  \rightarrow\left[  n\right]  $. The same argument (applied to
+$\sigma_{2}$ instead of $\sigma_{1}$) shows that $\sigma_{2}$ is a map
+$\left[  n\right]  \rightarrow\left[  n\right]  $. Hence, $\sigma_{1}$ and
+$\sigma_{2}$ are maps $\left[  n\right]  \rightarrow\left[  n\right]  $. Thus,
+$\sigma_{1}=\sigma_{2}$ (because $\sigma_{1}\left(  i\right)  =\sigma
+_{2}\left(  i\right)  $ for every $i\in\left[  n\right]  $). Qed.}. In other
+words, there exists \textbf{at most one} $\sigma\in S_{n}$ satisfying
+(\ref{pf.lem.sol.exe.Ialbe.InotI.a.silis}).
+
+We have now proven that there exists \textbf{at least one} $\sigma\in S_{n}$
+satisfying (\ref{pf.lem.sol.exe.Ialbe.InotI.a.silis}), and that there exists
+\textbf{at most one} such $\sigma$. Hence, there exists a \textbf{unique}
+$\sigma\in S_{n}$ satisfying (\ref{pf.lem.sol.exe.Ialbe.InotI.a.silis}). This
+proves Lemma \ref{lem.sol.exe.Ialbe.InotI} \textbf{(a)}.
+
+\textbf{(b)} Clearly,
+\begin{equation}
+\sum I=\sum_{i\in I}i=\sum_{x\in I}x \label{pf.lem.sol.exe.Ialbe.InotI.b.triv}%
+\end{equation}
+(here, we have renamed the summation index $i$ as $x$).
+
+We know that $\left(  a_{1},a_{2},\ldots,a_{k}\right)  $ is a list of all
+elements of $I$ (with no repetitions). Thus, Lemma
+\ref{lem.sol.exe.Ialbe.inclist} \textbf{(a)} (applied to $I$, $k$ and $\left(
+a_{1},a_{2},\ldots,a_{k}\right)  $ instead of $S$, $s$ and $\left(
+c_{1},c_{2},\ldots,c_{s}\right)  $) shows that the map $\left[  k\right]
+\rightarrow I,\ h\mapsto a_{h}$ is well-defined and a bijection.
+
+We know that $\left(  b_{1},b_{2},\ldots,b_{n-k}\right)  $ is a list of all
+elements of $\left[  n\right]  \setminus I$ (with no repetitions). Thus, Lemma
+\ref{lem.sol.exe.Ialbe.inclist} \textbf{(a)} (applied to $\left[  n\right]
+\setminus I$, $n-k$ and $\left(  b_{1},b_{2},\ldots,b_{n-k}\right)  $ instead
+of $S$, $s$ and $\left(  c_{1},c_{2},\ldots,c_{s}\right)  $) shows that the
+map $\left[  n-k\right]  \rightarrow\left[  n\right]  \setminus I,\ h\mapsto
+b_{h}$ is well-defined and a bijection.
+
+Now,%
+\begin{align}
+&  \underbrace{\sum_{\left(  i,j\right)  \in\left[  k\right]  \times\left[
+n-k\right]  }}_{=\sum_{i\in\left[  k\right]  }\sum_{j\in\left[  n-k\right]  }%
+}\left[  a_{i}>b_{j}\right] \nonumber\\
+&  =\sum_{i\in\left[  k\right]  }\underbrace{\sum_{j\in\left[  n-k\right]
+}\left[  a_{i}>b_{j}\right]  }_{\substack{=\sum_{h\in\left[  n-k\right]
+}\left[  a_{i}>b_{h}\right]  \\\text{(here, we have renamed the}%
+\\\text{summation index }j\text{ as }h\text{)}}}=\sum_{i\in\left[  k\right]
+}\underbrace{\sum_{h\in\left[  n-k\right]  }\left[  a_{i}>b_{h}\right]
+}_{\substack{=\sum_{y\in\left[  n\right]  \setminus I}\left[  a_{i}>y\right]
+\\\text{(here, we have substituted }y\text{ for }b_{h}\text{ in the
+sum,}\\\text{since the map }\left[  n-k\right]  \rightarrow\left[  n\right]
+\setminus I,\ h\mapsto b_{h}\text{ is a bijection)}}}\nonumber\\
+&  =\sum_{i\in\left[  k\right]  }\sum_{y\in\left[  n\right]  \setminus
+I}\left[  a_{i}>y\right] \nonumber\\
+&  =\sum_{h\in\left[  k\right]  }\sum_{y\in\left[  n\right]  \setminus
+I}\left[  a_{h}>y\right]  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have renamed the}\\
+\text{summation index }i\text{ as }h\text{ in the outer sum}%
+\end{array}
+\right) \nonumber\\
+&  =\sum_{x\in I}\sum_{y\in\left[  n\right]  \setminus I}\left[  x>y\right]
+\label{pf.lem.sol.exe.Ialbe.InotI.b.1}%
+\end{align}
+(here, we have substituted $x$ for $a_{h}$ in the outer sum, since the map
+$\left[  k\right]  \rightarrow I,\ h\mapsto a_{h}$ is a bijection). But every
+$x\in I$ satisfies%
+\begin{equation}
+\sum_{y\in\left[  n\right]  \setminus I}\left[  x>y\right]  =x-1-\sum_{y\in
+I}\left[  x>y\right]  \label{pf.lem.sol.exe.Ialbe.InotI.b.sum1}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.sol.exe.Ialbe.InotI.b.sum1}):} Let
+$x\in I$. Then, $x\in I\subseteq\left[  n\right]  =\left\{  1,2,\ldots
+,n\right\}  $, so that $1\leq x\leq n$.
+\par
+Every $y\in\left[  n\right]  $ satisfies either $y\in I$ or $y\notin I$ (but
+not both). Hence,%
+\begin{align*}
+\sum_{y\in\left[  n\right]  }\left[  x>y\right]   &  =\underbrace{\sum
+_{\substack{y\in\left[  n\right]  ;\\y\in I}}}_{\substack{=\sum_{y\in
+I}\\\text{(since }I\subseteq\left[  n\right]  \text{)}}}\left[  x>y\right]
++\underbrace{\sum_{\substack{y\in\left[  n\right]  ;\\y\notin I}}}%
+_{=\sum_{y\in\left[  n\right]  \setminus I}}\left[  x>y\right] \\
+&  =\sum_{y\in I}\left[  x>y\right]  +\sum_{y\in\left[  n\right]  \setminus
+I}\left[  x>y\right]  .
+\end{align*}
+Comparing this with%
+\begin{align*}
+\underbrace{\sum_{y\in\left[  n\right]  }}_{\substack{=\sum_{y\in\left\{
+1,2,\ldots,n\right\}  }\\\text{(since }\left[  n\right]  =\left\{
+1,2,\ldots,n\right\}  \text{)}}}\left[  x>y\right]   &  =\underbrace{\sum
+_{y\in\left\{  1,2,\ldots,n\right\}  }}_{=\sum_{y=1}^{n}}\left[  x>y\right]
+=\sum_{y=1}^{n}\left[  x>y\right] \\
+&  =\sum_{y=1}^{x-1}\underbrace{\left[  x>y\right]  }%
+_{\substack{=1\\\text{(since }x>y\\\text{(since }y\leq x-1<x\text{))}}%
+}+\sum_{y=x}^{n}\underbrace{\left[  x>y\right]  }_{\substack{=0\\\text{(since
+we don't have }x>y\\\text{(since }y\geq x\text{))}}%
+}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }1\leq x\leq n\right) \\
+&  =\sum_{y=1}^{x-1}1+\underbrace{\sum_{y=x}^{n}0}_{=0}=\sum_{y=1}%
+^{x-1}1=\left(  x-1\right)  1=x-1,
+\end{align*}
+we obtain%
+\[
+\sum_{y\in I}\left[  x>y\right]  +\sum_{y\in\left[  n\right]  \setminus
+I}\left[  x>y\right]  =x-1.
+\]
+Subtracting $\sum_{y\in I}\left[  x>y\right]  $ from both sides of this
+equality, we obtain $\sum_{y\in\left[  n\right]  \setminus I}\left[
+x>y\right]  =x-1-\sum_{y\in I}\left[  x>y\right]  $. This proves
+(\ref{pf.lem.sol.exe.Ialbe.InotI.b.sum1}).}. Thus,
+(\ref{pf.lem.sol.exe.Ialbe.InotI.b.1}) becomes%
+\begin{align*}
+&  \sum_{\left(  i,j\right)  \in\left[  k\right]  \times\left[  n-k\right]
+}\left[  a_{i}>b_{j}\right] \\
+&  =\sum_{x\in I}\underbrace{\sum_{y\in\left[  n\right]  \setminus I}\left[
+x>y\right]  }_{\substack{=x-1-\sum_{y\in I}\left[  x>y\right]  \\\text{(by
+(\ref{pf.lem.sol.exe.Ialbe.InotI.b.sum1}))}}}\\
+&  =\sum_{x\in I}\left(  x-1-\sum_{y\in I}\left[  x>y\right]  \right)
+=\underbrace{\sum_{x\in I}x}_{\substack{=\sum I\\\text{(by
+(\ref{pf.lem.sol.exe.Ialbe.InotI.b.triv}))}}}-\underbrace{\sum_{x\in I}%
+1}_{=\left\vert I\right\vert \cdot1=\left\vert I\right\vert =k}%
+-\underbrace{\sum_{x\in I}\sum_{y\in I}\left[  x>y\right]  }%
+_{\substack{=0+1+\cdots+\left(  k-1\right)  \\\text{(by Lemma
+\ref{lem.sol.exe.Ialbe.II})}}}\\
+&  =\sum I-k-\left(  0+1+\cdots+\left(  k-1\right)  \right)  =\sum
+I-\underbrace{\left(  \left(  0+1+\cdots+\left(  k-1\right)  \right)
++k\right)  }_{=0+1+\cdots+k=1+2+\cdots+k}\\
+&  =\sum I-\left(  1+2+\cdots+k\right)  .
+\end{align*}
+This proves Lemma \ref{lem.sol.exe.Ialbe.InotI} \textbf{(b)}.
+\end{proof}
+\end{verlong}
+
+Let us now come to the actual solution of Exercise \ref{exe.Ialbe}:
+
+\begin{proof}
+[Solution to Exercise \ref{exe.Ialbe}.]We have $I\subseteq\left\{
+1,2,\ldots,n\right\}  =\left[  n\right]  $ (since $\left[  n\right]  =\left\{
+1,2,\ldots,n\right\}  $). Hence, $\left\vert \left[  n\right]  \setminus
+I\right\vert =\left\vert \underbrace{\left[  n\right]  }_{=\left\{
+1,2,\ldots,n\right\}  }\right\vert -\underbrace{\left\vert I\right\vert }%
+_{=k}=\underbrace{\left\vert \left\{  1,2,\ldots,n\right\}  \right\vert }%
+_{=n}-k=n-k$. Thus, $n-k=\left\vert \left[  n\right]  \setminus I\right\vert
+\in\mathbb{N}$ (since the cardinality of any finite set is $\in\mathbb{N}$).
+Hence, $n-k\geq0$, so that $k\leq n$. Also, $k=\left\vert I\right\vert
+\in\mathbb{N}$.
+
+We know that $\left(  a_{1},a_{2},\ldots,a_{k}\right)  $ is a list of all
+elements of $I$ (with no repetitions). Thus, Lemma
+\ref{lem.sol.exe.Ialbe.inclist} \textbf{(b)} (applied to $I$, $k$, $\left(
+a_{1},a_{2},\ldots,a_{k}\right)  $ and $\alpha$ instead of $S$, $s$, $\left(
+c_{1},c_{2},\ldots,c_{s}\right)  $ and $\pi$) shows that $\left(
+a_{\alpha\left(  1\right)  },a_{\alpha\left(  2\right)  },\ldots
+,a_{\alpha\left(  k\right)  }\right)  $ is a list of all elements of $I$ (with
+no repetitions).
+
+We know that $\left(  b_{1},b_{2},\ldots,b_{n-k}\right)  $ is a list of all
+elements of $\left\{  1,2,\ldots,n\right\}  \setminus I$ (with no
+repetitions). In other words, $\left(  b_{1},b_{2},\ldots,b_{n-k}\right)  $ is
+a list of all elements of $\left[  n\right]  \setminus I$ (with no
+repetitions) (since $\left[  n\right]  =\left\{  1,2,\ldots,n\right\}  $).
+Thus, Lemma \ref{lem.sol.exe.Ialbe.inclist} \textbf{(b)} (applied to $\left[
+n\right]  \setminus I$, $n-k$, $\left(  b_{1},b_{2},\ldots,b_{n-k}\right)  $
+and $\beta$ instead of $S$, $s$, $\left(  c_{1},c_{2},\ldots,c_{s}\right)  $
+and $\pi$) shows that $\left(  b_{\beta\left(  1\right)  },b_{\beta\left(
+2\right)  },\ldots,b_{\beta\left(  n-k\right)  }\right)  $ is a list of all
+elements of $\left[  n\right]  \setminus I$ (with no repetitions).
+
+\textbf{(a)} Lemma \ref{lem.sol.exe.Ialbe.InotI} \textbf{(a)} (applied to
+$\left(  a_{\alpha\left(  1\right)  },a_{\alpha\left(  2\right)  }%
+,\ldots,a_{\alpha\left(  k\right)  }\right)  $ and $\left(  b_{\beta\left(
+1\right)  },b_{\beta\left(  2\right)  },\ldots,b_{\beta\left(  n-k\right)
+}\right)  $ instead of $\left(  a_{1},a_{2},\ldots,a_{k}\right)  $ and
+$\left(  b_{1},b_{2},\ldots,b_{n-k}\right)  $) shows that there exists a
+unique $\sigma\in S_{n}$ satisfying%
+\[
+\left(  \sigma\left(  1\right)  ,\sigma\left(  2\right)  ,\ldots,\sigma\left(
+n\right)  \right)  =\left(  a_{\alpha\left(  1\right)  },a_{\alpha\left(
+2\right)  },\ldots,a_{\alpha\left(  k\right)  },b_{\beta\left(  1\right)
+},b_{\beta\left(  2\right)  },\ldots,b_{\beta\left(  n-k\right)  }\right)  .
+\]
+This solves Exercise \ref{exe.Ialbe} \textbf{(a)}.
+
+\textbf{(b)} Let $\mathbf{a}$ be the $k$-tuple $\left(  a_{\alpha\left(
+1\right)  },a_{\alpha\left(  2\right)  },\ldots,a_{\alpha\left(  k\right)
+}\right)  $ of integers. Recall that $\left(  a_{1},a_{2},\ldots,a_{k}\right)
+$ is the list of all elements of $I$ in increasing order (with no
+repetitions). Moreover, $k=\left\vert I\right\vert $. Hence, Lemma
+\ref{lem.sol.exe.Ialbe.Inv=Inv} \textbf{(b)} (applied to $I$, $k$, $\alpha$
+and $\left(  a_{1},a_{2},\ldots,a_{k}\right)  $ instead of $P$, $m$, $\sigma$
+and $\left(  p_{1},p_{2},\ldots,p_{m}\right)  $) satisfies%
+\begin{equation}
+\ell\left(  \alpha\right)  =\ell\left(  \underbrace{\left(  a_{\alpha\left(
+1\right)  },a_{\alpha\left(  2\right)  },\ldots,a_{\alpha\left(  k\right)
+}\right)  }_{=\mathbf{a}}\right)  =\ell\left(  \mathbf{a}\right)
+\label{sol.Ialbe.b.la}%
+\end{equation}
+
+
+Let $\mathbf{b}$ be the $\left(  n-k\right)  $-tuple $\left(  b_{\beta\left(
+1\right)  },b_{\beta\left(  2\right)  },\ldots,b_{\beta\left(  n-k\right)
+}\right)  $ of integers. Recall that \newline$\left(  b_{1},b_{2}%
+,\ldots,b_{n-k}\right)  $ is the list of all elements of $\left\{
+1,2,\ldots,n\right\}  \setminus I$ in increasing order (with no repetitions).
+In other words, $\left(  b_{1},b_{2},\ldots,b_{n-k}\right)  $ is the list of
+all elements of $\left[  n\right]  \setminus I$ in increasing order (with no
+repetitions) (since $\left[  n\right]  =\left\{  1,2,\ldots,n\right\}  $).
+Moreover, $n-k=\left\vert \left[  n\right]  \setminus I\right\vert $ (since
+$\left\vert \left[  n\right]  \setminus I\right\vert =n-k$). Hence, Lemma
+\ref{lem.sol.exe.Ialbe.Inv=Inv} \textbf{(b)} (applied to $\left[  n\right]
+\setminus I$, $n-k$, $\beta$ and $\left(  b_{1},b_{2},\ldots,b_{n-k}\right)  $
+instead of $P$, $m$, $\sigma$ and $\left(  p_{1},p_{2},\ldots,p_{m}\right)  $)
+satisfies%
+\begin{equation}
+\ell\left(  \beta\right)  =\ell\left(  \underbrace{\left(  b_{\beta\left(
+1\right)  },b_{\beta\left(  2\right)  },\ldots,b_{\beta\left(  n-k\right)
+}\right)  }_{=\mathbf{b}}\right)  =\ell\left(  \mathbf{b}\right)
+\label{sol.Ialbe.b.lb}%
+\end{equation}
+
+
+Let $\mathbf{c}$ be the $\left(  k+\left(  n-k\right)  \right)  $-tuple
+$\left(  a_{\alpha\left(  1\right)  },a_{\alpha\left(  2\right)  }%
+,\ldots,a_{\alpha\left(  k\right)  },b_{\beta\left(  1\right)  }%
+,b_{\beta\left(  2\right)  },\ldots,b_{\beta\left(  n-k\right)  }\right)  $ of integers.
+
+The permutation $\sigma_{I,\alpha,\beta}$ is the unique $\sigma\in S_{n}$
+satisfying%
+\begin{equation}
+\left(  \sigma\left(  1\right)  ,\sigma\left(  2\right)  ,\ldots,\sigma\left(
+n\right)  \right)  =\left(  a_{\alpha\left(  1\right)  },a_{\alpha\left(
+2\right)  },\ldots,a_{\alpha\left(  k\right)  },b_{\beta\left(  1\right)
+},b_{\beta\left(  2\right)  },\ldots,b_{\beta\left(  n-k\right)  }\right)  .
+\label{sol.Ialbe.b.1}%
+\end{equation}
+Thus, $\sigma_{I,\alpha,\beta}$ is a $\sigma\in S_{n}$ satisfying
+(\ref{sol.Ialbe.b.1}). In other words, we have%
+\begin{align}
+&  \left(  \sigma_{I,\alpha,\beta}\left(  1\right)  ,\sigma_{I,\alpha,\beta
+}\left(  2\right)  ,\ldots,\sigma_{I,\alpha,\beta}\left(  n\right)  \right)
+\nonumber\\
+&  =\left(  a_{\alpha\left(  1\right)  },a_{\alpha\left(  2\right)  }%
+,\ldots,a_{\alpha\left(  k\right)  },b_{\beta\left(  1\right)  }%
+,b_{\beta\left(  2\right)  },\ldots,b_{\beta\left(  n-k\right)  }\right)
+=\mathbf{c} \label{sol.Ialbe.b.2}%
+\end{align}
+(since $\mathbf{c}=\left(  a_{\alpha\left(  1\right)  },a_{\alpha\left(
+2\right)  },\ldots,a_{\alpha\left(  k\right)  },b_{\beta\left(  1\right)
+},b_{\beta\left(  2\right)  },\ldots,b_{\beta\left(  n-k\right)  }\right)  $).
+
+Now, $\left\{  1,2,\ldots,n\right\}  $ is a finite set of integers and
+satisfies $n=\left\vert \left\{  1,2,\ldots,n\right\}  \right\vert $.
+Moreover, $\left(  1,2,\ldots,n\right)  $ is the list of all elements of
+$\left\{  1,2,\ldots,n\right\}  $ in increasing order (with no repetitions).
+Hence, Lemma \ref{lem.sol.exe.Ialbe.Inv=Inv} \textbf{(b)} (applied to
+$\left\{  1,2,\ldots,n\right\}  $, $n$, $\sigma_{I,\alpha,\beta}$ and $\left(
+1,2,\ldots,n\right)  $) yields%
+\begin{align}
+\ell\left(  \sigma_{I,\alpha,\beta}\right)   &  =\ell\left(
+\underbrace{\left(  \sigma_{I,\alpha,\beta}\left(  1\right)  ,\sigma
+_{I,\alpha,\beta}\left(  2\right)  ,\ldots,\sigma_{I,\alpha,\beta}\left(
+n\right)  \right)  }_{\substack{=\mathbf{c}\\\text{(by (\ref{sol.Ialbe.b.2}%
+))}}}\right) \nonumber\\
+&  =\ell\left(  \mathbf{c}\right)  =\ell\left(  \mathbf{a}\right)
++\ell\left(  \mathbf{b}\right)  +\sum_{\left(  i,j\right)  \in\left[
+k\right]  \times\left[  n-k\right]  }\left[  a_{\alpha\left(  i\right)
+}>b_{\beta\left(  j\right)  }\right]  \label{sol.Ialbe.b.9}%
+\end{align}
+(by Lemma \ref{lem.sol.exe.Ialbe.ab} (applied to $k$, $n-k$, $\left(
+a_{\alpha\left(  1\right)  },a_{\alpha\left(  2\right)  },\ldots
+,a_{\alpha\left(  k\right)  }\right)  $ and $\left(  b_{\beta\left(  1\right)
+},b_{\beta\left(  2\right)  },\ldots,b_{\beta\left(  n-k\right)  }\right)  $
+instead of $n$, $m$, $\left(  a_{1},a_{2},\ldots,a_{n}\right)  $ and $\left(
+b_{1},b_{2},\ldots,b_{m}\right)  $)).
+
+Now, recall that $\left(  a_{\alpha\left(  1\right)  },a_{\alpha\left(
+2\right)  },\ldots,a_{\alpha\left(  k\right)  }\right)  $ is a list of all
+elements of $I$ (with no repetitions). Also, recall that $\left(
+b_{\beta\left(  1\right)  },b_{\beta\left(  2\right)  },\ldots,b_{\beta\left(
+n-k\right)  }\right)  $ is a list of all elements of $\left[  n\right]
+\setminus I$ (with no repetitions). Lemma \ref{lem.sol.exe.Ialbe.InotI}
+\textbf{(b)} (applied to $\left(  a_{\alpha\left(  1\right)  },a_{\alpha
+\left(  2\right)  },\ldots,a_{\alpha\left(  k\right)  }\right)  $ and $\left(
+b_{\beta\left(  1\right)  },b_{\beta\left(  2\right)  },\ldots,b_{\beta\left(
+n-k\right)  }\right)  $ instead of $\left(  a_{1},a_{2},\ldots,a_{k}\right)  $
+and $\left(  b_{1},b_{2},\ldots,b_{n-k}\right)  $) thus shows that%
+\[
+\sum_{\left(  i,j\right)  \in\left[  k\right]  \times\left[  n-k\right]
+}\left[  a_{\alpha\left(  i\right)  }>b_{\beta\left(  j\right)  }\right]
+=\sum I-\left(  1+2+\cdots+k\right)  .
+\]
+Hence, (\ref{sol.Ialbe.b.9}) becomes%
+\begin{align*}
+\ell\left(  \sigma_{I,\alpha,\beta}\right)   &  =\underbrace{\ell\left(
+\mathbf{a}\right)  }_{\substack{=\ell\left(  \alpha\right)  \\\text{(by
+(\ref{sol.Ialbe.b.la}))}}}+\underbrace{\ell\left(  \mathbf{b}\right)
+}_{\substack{=\ell\left(  \beta\right)  \\\text{(by (\ref{sol.Ialbe.b.lb}))}%
+}}+\underbrace{\sum_{\left(  i,j\right)  \in\left[  k\right]  \times\left[
+n-k\right]  }\left[  a_{\alpha\left(  i\right)  }>b_{\beta\left(  j\right)
+}\right]  }_{=\sum I-\left(  1+2+\cdots+k\right)  }\\
+&  =\ell\left(  \alpha\right)  +\ell\left(  \beta\right)  +\sum I-\left(
+1+2+\cdots+k\right)  .
+\end{align*}
+
+
+It thus remains to prove that $\left(  -1\right)  ^{\sigma_{I,\alpha,\beta}%
+}=\left(  -1\right)  ^{\alpha}\cdot\left(  -1\right)  ^{\beta}\cdot\left(
+-1\right)  ^{\sum I-\left(  1+2+\cdots+k\right)  }$.
+
+But the definition of $\left(  -1\right)  ^{\sigma_{I,\alpha,\beta}}$ yields
+\begin{align*}
+\left(  -1\right)  ^{\sigma_{I,\alpha,\beta}}  &  =\left(  -1\right)
+^{\ell\left(  \sigma_{I,\alpha,\beta}\right)  }=\left(  -1\right)
+^{\ell\left(  \alpha\right)  +\ell\left(  \beta\right)  +\sum I-\left(
+1+2+\cdots+k\right)  }\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\ell\left(  \sigma_{I,\alpha
+,\beta}\right)  =\ell\left(  \alpha\right)  +\ell\left(  \beta\right)  +\sum
+I-\left(  1+2+\cdots+k\right)  \right) \\
+&  =\left(  -1\right)  ^{\ell\left(  \alpha\right)  }\cdot\left(  -1\right)
+^{\ell\left(  \beta\right)  }\cdot\left(  -1\right)  ^{\sum I-\left(
+1+2+\cdots+k\right)  }.
+\end{align*}
+Comparing this with%
+\begin{align*}
+&  \underbrace{\left(  -1\right)  ^{\alpha}}_{\substack{=\left(  -1\right)
+^{\ell\left(  \alpha\right)  }\\\text{(by the definition of }\left(
+-1\right)  ^{\alpha}\text{)}}}\cdot\underbrace{\left(  -1\right)  ^{\beta}%
+}_{\substack{=\left(  -1\right)  ^{\ell\left(  \beta\right)  }\\\text{(by the
+definition of }\left(  -1\right)  ^{\beta}\text{)}}}\cdot\left(  -1\right)
+^{\sum I-\left(  1+2+\cdots+k\right)  }\\
+&  =\left(  -1\right)  ^{\ell\left(  \alpha\right)  }\cdot\left(  -1\right)
+^{\ell\left(  \beta\right)  }\cdot\left(  -1\right)  ^{\sum I-\left(
+1+2+\cdots+k\right)  },
+\end{align*}
+this yields $\left(  -1\right)  ^{\sigma_{I,\alpha,\beta}}=\left(  -1\right)
+^{\alpha}\cdot\left(  -1\right)  ^{\beta}\cdot\left(  -1\right)  ^{\sum
+I-\left(  1+2+\cdots+k\right)  }$. This completes the solution of Exercise
+\ref{exe.Ialbe} \textbf{(b)}.
+
+\begin{vershort}
+\textbf{(c)} For every $\left(  \alpha,\beta\right)  \in S_{k}\times S_{n-k}$,
+the permutation $\sigma_{I,\alpha,\beta}\in S_{n}$ satisfies%
+\begin{align}
+&  \left(  \sigma_{I,\alpha,\beta}\left(  1\right)  ,\sigma_{I,\alpha,\beta
+}\left(  2\right)  ,\ldots,\sigma_{I,\alpha,\beta}\left(  n\right)  \right)
+\nonumber\\
+&  =\left(  a_{\alpha\left(  1\right)  },a_{\alpha\left(  2\right)  }%
+,\ldots,a_{\alpha\left(  k\right)  },b_{\beta\left(  1\right)  }%
+,b_{\beta\left(  2\right)  },\ldots,b_{\beta\left(  n-k\right)  }\right)
+\label{sol.Ialbe.c.short.siIAB}%
+\end{align}
+\footnote{\textit{Proof of (\ref{sol.Ialbe.c.short.siIAB}):} Let $\left(
+\alpha,\beta\right)  \in S_{k}\times S_{n-k}$. The permutation $\sigma
+_{I,\alpha,\beta}$ is the unique $\sigma\in S_{n}$ satisfying%
+\begin{equation}
+\left(  \sigma\left(  1\right)  ,\sigma\left(  2\right)  ,\ldots,\sigma\left(
+n\right)  \right)  =\left(  a_{\alpha\left(  1\right)  },a_{\alpha\left(
+2\right)  },\ldots,a_{\alpha\left(  k\right)  },b_{\beta\left(  1\right)
+},b_{\beta\left(  2\right)  },\ldots,b_{\beta\left(  n-k\right)  }\right)  .
+\label{sol.Ialbe.c.short.siIAB.pf.1}%
+\end{equation}
+Thus, $\sigma_{I,\alpha,\beta}$ is a $\sigma\in S_{n}$ satisfying
+(\ref{sol.Ialbe.c.short.siIAB.pf.1}). In other words, we have%
+\begin{align}
+&  \left(  \sigma_{I,\alpha,\beta}\left(  1\right)  ,\sigma_{I,\alpha,\beta
+}\left(  2\right)  ,\ldots,\sigma_{I,\alpha,\beta}\left(  n\right)  \right)
+\nonumber\\
+&  =\left(  a_{\alpha\left(  1\right)  },a_{\alpha\left(  2\right)  }%
+,\ldots,a_{\alpha\left(  k\right)  },b_{\beta\left(  1\right)  }%
+,b_{\beta\left(  2\right)  },\ldots,b_{\beta\left(  n-k\right)  }\right)  .
+\end{align}
+Qed.}.
+
+For every $\left(  \alpha,\beta\right)  \in S_{k}\times S_{n-k}$, the element
+$\sigma_{I,\alpha,\beta}$ is a well-defined element of $\left\{  \tau\in
+S_{n}\ \mid\ \tau\left(  \left\{  1,2,\ldots,k\right\}  \right)  =I\right\}
+$\ \ \ \ \footnote{\textit{Proof.} Let $\left(  \alpha,\beta\right)  \in
+S_{k}\times S_{n-k}$. We must show that the element $\sigma_{I,\alpha,\beta}$
+is a well-defined element of $\left\{  \tau\in S_{n}\ \mid\ \tau\left(
+\left\{  1,2,\ldots,k\right\}  \right)  =I\right\}  $.
+\par
+Now,
+\begin{align*}
+&  \left(  \sigma_{I,\alpha,\beta}\left(  1\right)  ,\sigma_{I,\alpha,\beta
+}\left(  2\right)  ,\ldots,\sigma_{I,\alpha,\beta}\left(  k\right)  \right) \\
+&  =\left(  \text{the list of the first }k\text{ entries of the list
+}\underbrace{\left(  \sigma_{I,\alpha,\beta}\left(  1\right)  ,\sigma
+_{I,\alpha,\beta}\left(  2\right)  ,\ldots,\sigma_{I,\alpha,\beta}\left(
+n\right)  \right)  }_{\substack{=\left(  a_{\alpha\left(  1\right)
+},a_{\alpha\left(  2\right)  },\ldots,a_{\alpha\left(  k\right)  }%
+,b_{\beta\left(  1\right)  },b_{\beta\left(  2\right)  },\ldots,b_{\beta
+\left(  n-k\right)  }\right)  \\\text{(by (\ref{sol.Ialbe.c.short.siIAB}))}%
+}}\right) \\
+&  =\left(  \text{the list of the first }k\text{ entries of the list }\left(
+a_{\alpha\left(  1\right)  },a_{\alpha\left(  2\right)  },\ldots
+,a_{\alpha\left(  k\right)  },b_{\beta\left(  1\right)  },b_{\beta\left(
+2\right)  },\ldots,b_{\beta\left(  n-k\right)  }\right)  \right) \\
+&  =\left(  a_{\alpha\left(  1\right)  },a_{\alpha\left(  2\right)  }%
+,\ldots,a_{\alpha\left(  k\right)  }\right)  .
+\end{align*}
+Hence,%
+\[
+\left\{  \sigma_{I,\alpha,\beta}\left(  1\right)  ,\sigma_{I,\alpha,\beta
+}\left(  2\right)  ,\ldots,\sigma_{I,\alpha,\beta}\left(  k\right)  \right\}
+=\left\{  a_{\alpha\left(  1\right)  },a_{\alpha\left(  2\right)  }%
+,\ldots,a_{\alpha\left(  k\right)  }\right\}  =I
+\]
+(since $\left(  a_{\alpha\left(  1\right)  },a_{\alpha\left(  2\right)
+},\ldots,a_{\alpha\left(  k\right)  }\right)  $ is a list of all elements of
+$I$). Now,%
+\[
+\sigma_{I,\alpha,\beta}\left(  \left\{  1,2,\ldots,k\right\}  \right)
+=\left\{  \sigma_{I,\alpha,\beta}\left(  1\right)  ,\sigma_{I,\alpha,\beta
+}\left(  2\right)  ,\ldots,\sigma_{I,\alpha,\beta}\left(  k\right)  \right\}
+=I.
+\]
+\par
+So we know that $\sigma_{I,\alpha,\beta}$ is an element of $S_{n}$ and
+satisfies $\sigma_{I,\alpha,\beta}\left(  \left\{  1,2,\ldots,k\right\}
+\right)  =I$. In other words,%
+\[
+\sigma_{I,\alpha,\beta}\in\left\{  \tau\in S_{n}\ \mid\ \tau\left(  \left\{
+1,2,\ldots,k\right\}  \right)  =I\right\}  .
+\]
+We thus have proven that $\sigma_{I,\alpha,\beta}$ is a well-defined element
+of $\left\{  \tau\in S_{n}\ \mid\ \tau\left(  \left\{  1,2,\ldots,k\right\}
+\right)  =I\right\}  $. Qed.}. Hence, the map%
+\begin{align*}
+S_{k}\times S_{n-k}  &  \rightarrow\left\{  \tau\in S_{n}\ \mid\ \tau\left(
+\left\{  1,2,\ldots,k\right\}  \right)  =I\right\}  ,\\
+\left(  \alpha,\beta\right)   &  \mapsto\sigma_{I,\alpha,\beta}%
+\end{align*}
+is well-defined. Denote this map by $\mu$.
+\end{vershort}
+
+\begin{verlong}
+\textbf{(c)} For every $\left(  \alpha,\beta\right)  \in S_{k}\times S_{n-k}$,
+the element $\sigma_{I,\alpha,\beta}$ is a well-defined element of $\left\{
+\tau\in S_{n}\ \mid\ \tau\left(  \left\{  1,2,\ldots,k\right\}  \right)
+=I\right\}  $\ \ \ \ \footnote{\textit{Proof.} Let $\left(  \alpha
+,\beta\right)  \in S_{k}\times S_{n-k}$. We must show that the element
+$\sigma_{I,\alpha,\beta}$ is a well-defined element of $\left\{  \tau\in
+S_{n}\ \mid\ \tau\left(  \left\{  1,2,\ldots,k\right\}  \right)  =I\right\}
+$.
+\par
+We have $\left(  \alpha,\beta\right)  \in S_{k}\times S_{n-k}$. In other
+words, $\alpha\in S_{k}$ and $\beta\in S_{n-k}$. Hence, $\sigma_{I,\alpha
+,\beta}$ is a well-defined element of $S_{n}$.
+\par
+The permutation $\sigma_{I,\alpha,\beta}$ is the unique $\sigma\in S_{n}$
+satisfying%
+\begin{equation}
+\left(  \sigma\left(  1\right)  ,\sigma\left(  2\right)  ,\ldots,\sigma\left(
+n\right)  \right)  =\left(  a_{\alpha\left(  1\right)  },a_{\alpha\left(
+2\right)  },\ldots,a_{\alpha\left(  k\right)  },b_{\beta\left(  1\right)
+},b_{\beta\left(  2\right)  },\ldots,b_{\beta\left(  n-k\right)  }\right)  .
+\label{sol.Ialbe.c.wd.fn1.1}%
+\end{equation}
+Thus, $\sigma_{I,\alpha,\beta}$ is a $\sigma\in S_{n}$ satisfying
+(\ref{sol.Ialbe.c.wd.fn1.1}). In other words, we have%
+\begin{align*}
+&  \left(  \sigma_{I,\alpha,\beta}\left(  1\right)  ,\sigma_{I,\alpha,\beta
+}\left(  2\right)  ,\ldots,\sigma_{I,\alpha,\beta}\left(  n\right)  \right) \\
+&  =\left(  a_{\alpha\left(  1\right)  },a_{\alpha\left(  2\right)  }%
+,\ldots,a_{\alpha\left(  k\right)  },b_{\beta\left(  1\right)  }%
+,b_{\beta\left(  2\right)  },\ldots,b_{\beta\left(  n-k\right)  }\right)  .
+\end{align*}
+Now,
+\begin{align*}
+&  \left(  \sigma_{I,\alpha,\beta}\left(  1\right)  ,\sigma_{I,\alpha,\beta
+}\left(  2\right)  ,\ldots,\sigma_{I,\alpha,\beta}\left(  k\right)  \right) \\
+&  =\left(  \text{the list of the first }k\text{ entries of the list
+}\underbrace{\left(  \sigma_{I,\alpha,\beta}\left(  1\right)  ,\sigma
+_{I,\alpha,\beta}\left(  2\right)  ,\ldots,\sigma_{I,\alpha,\beta}\left(
+n\right)  \right)  }_{=\left(  a_{\alpha\left(  1\right)  },a_{\alpha\left(
+2\right)  },\ldots,a_{\alpha\left(  k\right)  },b_{\beta\left(  1\right)
+},b_{\beta\left(  2\right)  },\ldots,b_{\beta\left(  n-k\right)  }\right)
+}\right) \\
+&  =\left(  \text{the list of the first }k\text{ entries of the list }\left(
+a_{\alpha\left(  1\right)  },a_{\alpha\left(  2\right)  },\ldots
+,a_{\alpha\left(  k\right)  },b_{\beta\left(  1\right)  },b_{\beta\left(
+2\right)  },\ldots,b_{\beta\left(  n-k\right)  }\right)  \right) \\
+&  =\left(  a_{\alpha\left(  1\right)  },a_{\alpha\left(  2\right)  }%
+,\ldots,a_{\alpha\left(  k\right)  }\right)  .
+\end{align*}
+Hence,%
+\[
+\left\{  \sigma_{I,\alpha,\beta}\left(  1\right)  ,\sigma_{I,\alpha,\beta
+}\left(  2\right)  ,\ldots,\sigma_{I,\alpha,\beta}\left(  k\right)  \right\}
+=\left\{  a_{\alpha\left(  1\right)  },a_{\alpha\left(  2\right)  }%
+,\ldots,a_{\alpha\left(  k\right)  }\right\}  =I
+\]
+(since $\left(  a_{\alpha\left(  1\right)  },a_{\alpha\left(  2\right)
+},\ldots,a_{\alpha\left(  k\right)  }\right)  $ is a list of all elements of
+$I$ (with no repetitions)). Now,%
+\[
+\sigma_{I,\alpha,\beta}\left(  \left\{  1,2,\ldots,k\right\}  \right)
+=\left\{  \sigma_{I,\alpha,\beta}\left(  1\right)  ,\sigma_{I,\alpha,\beta
+}\left(  2\right)  ,\ldots,\sigma_{I,\alpha,\beta}\left(  k\right)  \right\}
+=I.
+\]
+\par
+So we know that $\sigma_{I,\alpha,\beta}$ is an element of $S_{n}$ and
+satisfies $\sigma_{I,\alpha,\beta}\left(  \left\{  1,2,\ldots,k\right\}
+\right)  =I$. In other words, $\sigma_{I,\alpha,\beta}$ is an element $\tau\in
+S_{n}$ satisfying $\tau\left(  \left\{  1,2,\ldots,k\right\}  \right)  =I$. In
+other words,%
+\[
+\sigma_{I,\alpha,\beta}\in\left\{  \tau\in S_{n}\ \mid\ \tau\left(  \left\{
+1,2,\ldots,k\right\}  \right)  =I\right\}  .
+\]
+We thus have proven that $\sigma_{I,\alpha,\beta}$ is a well-defined element
+of $\left\{  \tau\in S_{n}\ \mid\ \tau\left(  \left\{  1,2,\ldots,k\right\}
+\right)  =I\right\}  $. Qed.}. Hence, the map%
+\begin{align*}
+S_{k}\times S_{n-k}  &  \rightarrow\left\{  \tau\in S_{n}\ \mid\ \tau\left(
+\left\{  1,2,\ldots,k\right\}  \right)  =I\right\}  ,\\
+\left(  \alpha,\beta\right)   &  \mapsto\sigma_{I,\alpha,\beta}%
+\end{align*}
+is well-defined. Denote this map by $\mu$.
+\end{verlong}
+
+\begin{vershort}
+Now, it is easy to see that the map $\mu$ is
+injective\footnote{\textit{Proof.} Let $\left(  \alpha,\beta\right)  $ and
+$\left(  \alpha^{\prime},\beta^{\prime}\right)  $ be two elements of
+$S_{k}\times S_{n-k}$ satisfying $\mu\left(  \alpha,\beta\right)  =\mu\left(
+\alpha^{\prime},\beta^{\prime}\right)  $. We will show that $\left(
+\alpha,\beta\right)  =\left(  \alpha^{\prime},\beta^{\prime}\right)  $.
+\par
+The definition of $\mu\left(  \alpha,\beta\right)  $ yields $\mu\left(
+\alpha,\beta\right)  =\sigma_{I,\alpha,\beta}$. The definition of $\mu\left(
+\alpha^{\prime},\beta^{\prime}\right)  $ yields $\mu\left(  \alpha^{\prime
+},\beta^{\prime}\right)  =\sigma_{I,\alpha^{\prime},\beta^{\prime}}$. Hence,
+$\sigma_{I,\alpha^{\prime},\beta^{\prime}}=\mu\left(  \alpha^{\prime}%
+,\beta^{\prime}\right)  =\mu\left(  \alpha,\beta\right)  =\sigma
+_{I,\alpha,\beta}$.
+\par
+Now, (\ref{sol.Ialbe.c.short.siIAB}) (applied to $\left(  \alpha^{\prime
+},\beta^{\prime}\right)  $ instead of $\left(  \alpha,\beta\right)  $) yields%
+\begin{align*}
+&  \left(  \sigma_{I,\alpha^{\prime},\beta^{\prime}}\left(  1\right)
+,\sigma_{I,\alpha^{\prime},\beta^{\prime}}\left(  2\right)  ,\ldots
+,\sigma_{I,\alpha^{\prime},\beta^{\prime}}\left(  n\right)  \right) \\
+&  =\left(  a_{\alpha^{\prime}\left(  1\right)  },a_{\alpha^{\prime}\left(
+2\right)  },\ldots,a_{\alpha^{\prime}\left(  k\right)  },b_{\beta^{\prime
+}\left(  1\right)  },b_{\beta^{\prime}\left(  2\right)  },\ldots
+,b_{\beta^{\prime}\left(  n-k\right)  }\right)  .
+\end{align*}
+Comparing this with%
+\begin{align*}
+&  \left(  \sigma_{I,\alpha^{\prime},\beta^{\prime}}\left(  1\right)
+,\sigma_{I,\alpha^{\prime},\beta^{\prime}}\left(  2\right)  ,\ldots
+,\sigma_{I,\alpha^{\prime},\beta^{\prime}}\left(  n\right)  \right) \\
+&  =\left(  \sigma_{I,\alpha,\beta}\left(  1\right)  ,\sigma_{I,\alpha,\beta
+}\left(  2\right)  ,\ldots,\sigma_{I,\alpha,\beta}\left(  n\right)  \right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\sigma_{I,\alpha^{\prime}%
+,\beta^{\prime}}=\sigma_{I,\alpha,\beta}\right) \\
+&  =\left(  a_{\alpha\left(  1\right)  },a_{\alpha\left(  2\right)  }%
+,\ldots,a_{\alpha\left(  k\right)  },b_{\beta\left(  1\right)  }%
+,b_{\beta\left(  2\right)  },\ldots,b_{\beta\left(  n-k\right)  }\right)  ,
+\end{align*}
+we obtain%
+\begin{align*}
+&  \left(  a_{\alpha\left(  1\right)  },a_{\alpha\left(  2\right)  }%
+,\ldots,a_{\alpha\left(  k\right)  },b_{\beta\left(  1\right)  }%
+,b_{\beta\left(  2\right)  },\ldots,b_{\beta\left(  n-k\right)  }\right) \\
+&  =\left(  a_{\alpha^{\prime}\left(  1\right)  },a_{\alpha^{\prime}\left(
+2\right)  },\ldots,a_{\alpha^{\prime}\left(  k\right)  },b_{\beta^{\prime
+}\left(  1\right)  },b_{\beta^{\prime}\left(  2\right)  },\ldots
+,b_{\beta^{\prime}\left(  n-k\right)  }\right)  .
+\end{align*}
+In other words,%
+\begin{equation}
+\left(  a_{\alpha\left(  i\right)  }=a_{\alpha^{\prime}\left(  i\right)
+}\text{ for every }i\in\left\{  1,2,\ldots,k\right\}  \right)
+\label{sol.Ialbe.c.short.inj.pf.1}%
+\end{equation}
+and%
+\begin{equation}
+\left(  b_{\beta\left(  j\right)  }=b_{\beta^{\prime}\left(  j\right)  }\text{
+for every }j\in\left\{  1,2,\ldots,n-k\right\}  \right)  .
+\label{sol.Ialbe.c.short.inj.pf.2}%
+\end{equation}
+\par
+Now, we shall prove that $\alpha=\alpha^{\prime}$.
+\par
+Indeed, fix $i\in\left\{  1,2,\ldots,k\right\}  $. The list $\left(
+a_{1},a_{2},\ldots,a_{k}\right)  $ has no repetitions. In other words, the
+elements $a_{1},a_{2},\ldots,a_{k}$ are pairwise distinct. Thus, if $u$ and
+$v$ are two elements of $\left\{  1,2,\ldots,k\right\}  $ such that
+$a_{u}=a_{v}$, then $u=v$. Applying this to $u=\alpha\left(  i\right)  $ and
+$v=\alpha^{\prime}\left(  i\right)  $, we obtain $\alpha\left(  i\right)
+=\alpha^{\prime}\left(  i\right)  $ (since (\ref{sol.Ialbe.c.short.inj.pf.1})
+yields $a_{\alpha\left(  i\right)  }=a_{\alpha^{\prime}\left(  i\right)  }$).
+\par
+Now, forget that we fixed $i$. We thus have proven that $\alpha\left(
+i\right)  =\alpha^{\prime}\left(  i\right)  $ for every $i\in\left\{
+1,2,\ldots,k\right\}  $. Thus, $\alpha=\alpha^{\prime}$ (since $\alpha$ and
+$\alpha^{\prime}$ are permutations of $\left\{  1,2,\ldots,k\right\}  $).
+\par
+We have thus proven $\alpha=\alpha^{\prime}$ using the equalities
+(\ref{sol.Ialbe.c.short.inj.pf.1}). Similarly, we can prove $\beta
+=\beta^{\prime}$ using the equalities (\ref{sol.Ialbe.c.short.inj.pf.2}).
+\par
+Now, $\left(  \underbrace{\alpha}_{=\alpha^{\prime}},\underbrace{\beta
+}_{=\beta^{\prime}}\right)  =\left(  \alpha^{\prime},\beta^{\prime}\right)  $.
+\par
+Now, forget that we fixed $\left(  \alpha,\beta\right)  $ and $\left(
+\alpha^{\prime},\beta^{\prime}\right)  $. We thus have proven that if $\left(
+\alpha,\beta\right)  $ and $\left(  \alpha^{\prime},\beta^{\prime}\right)  $
+are two elements of $S_{k}\times S_{n-k}$ satisfying $\mu\left(  \alpha
+,\beta\right)  =\mu\left(  \alpha^{\prime},\beta^{\prime}\right)  $, then
+$\left(  \alpha,\beta\right)  =\left(  \alpha^{\prime},\beta^{\prime}\right)
+$. In other words, the map $\mu$ is injective. Qed.}.
+\end{vershort}
+
+\begin{verlong}
+For every $\left(  \alpha,\beta\right)  \in S_{k}\times S_{n-k}$ and every
+$i\in\left\{  1,2,\ldots,k\right\}  $, we have%
+\begin{equation}
+a_{\alpha\left(  i\right)  }=\sigma_{I,\alpha,\beta}\left(  i\right)
+\label{sol.Ialbe.c.aai=}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.Ialbe.c.aai=}):} Let $\left(
+\alpha,\beta\right)  \in S_{k}\times S_{n-k}$.
+\par
+The permutation $\sigma_{I,\alpha,\beta}$ is the unique $\sigma\in S_{n}$
+satisfying%
+\begin{equation}
+\left(  \sigma\left(  1\right)  ,\sigma\left(  2\right)  ,\ldots,\sigma\left(
+n\right)  \right)  =\left(  a_{\alpha\left(  1\right)  },a_{\alpha\left(
+2\right)  },\ldots,a_{\alpha\left(  k\right)  },b_{\beta\left(  1\right)
+},b_{\beta\left(  2\right)  },\ldots,b_{\beta\left(  n-k\right)  }\right)  .
+\label{sol.Ialbe.c.aai=.pf.1}%
+\end{equation}
+Thus, $\sigma_{I,\alpha,\beta}$ is a $\sigma\in S_{n}$ satisfying
+(\ref{sol.Ialbe.c.aai=.pf.1}). In other words, we have%
+\begin{align*}
+&  \left(  \sigma_{I,\alpha,\beta}\left(  1\right)  ,\sigma_{I,\alpha,\beta
+}\left(  2\right)  ,\ldots,\sigma_{I,\alpha,\beta}\left(  n\right)  \right) \\
+&  =\left(  a_{\alpha\left(  1\right)  },a_{\alpha\left(  2\right)  }%
+,\ldots,a_{\alpha\left(  k\right)  },b_{\beta\left(  1\right)  }%
+,b_{\beta\left(  2\right)  },\ldots,b_{\beta\left(  n-k\right)  }\right)  .
+\end{align*}
+Now,%
+\begin{align*}
+&  \left(  \sigma_{I,\alpha,\beta}\left(  1\right)  ,\sigma_{I,\alpha,\beta
+}\left(  2\right)  ,\ldots,\sigma_{I,\alpha,\beta}\left(  k\right)  \right) \\
+&  =\left(  \text{the list of the first }k\text{ entries of the list
+}\underbrace{\left(  \sigma_{I,\alpha,\beta}\left(  1\right)  ,\sigma
+_{I,\alpha,\beta}\left(  2\right)  ,\ldots,\sigma_{I,\alpha,\beta}\left(
+n\right)  \right)  }_{=\left(  a_{\alpha\left(  1\right)  },a_{\alpha\left(
+2\right)  },\ldots,a_{\alpha\left(  k\right)  },b_{\beta\left(  1\right)
+},b_{\beta\left(  2\right)  },\ldots,b_{\beta\left(  n-k\right)  }\right)
+}\right) \\
+&  =\left(  \text{the list of the first }k\text{ entries of the list }\left(
+a_{\alpha\left(  1\right)  },a_{\alpha\left(  2\right)  },\ldots
+,a_{\alpha\left(  k\right)  },b_{\beta\left(  1\right)  },b_{\beta\left(
+2\right)  },\ldots,b_{\beta\left(  n-k\right)  }\right)  \right) \\
+&  =\left(  a_{\alpha\left(  1\right)  },a_{\alpha\left(  2\right)  }%
+,\ldots,a_{\alpha\left(  k\right)  }\right)  .
+\end{align*}
+In other words, $\left(  a_{\alpha\left(  1\right)  },a_{\alpha\left(
+2\right)  },\ldots,a_{\alpha\left(  k\right)  }\right)  =\left(
+\sigma_{I,\alpha,\beta}\left(  1\right)  ,\sigma_{I,\alpha,\beta}\left(
+2\right)  ,\ldots,\sigma_{I,\alpha,\beta}\left(  k\right)  \right)  $. In
+other words, $a_{\alpha\left(  i\right)  }=\sigma_{I,\alpha,\beta}\left(
+i\right)  $ for every $i\in\left\{  1,2,\ldots,k\right\}  $. This proves
+(\ref{sol.Ialbe.c.aai=}).}. For every $\left(  \alpha,\beta\right)  \in
+S_{k}\times S_{n-k}$ and every $j\in\left\{  1,2,\ldots,n-k\right\}  $, we
+have%
+\begin{equation}
+b_{\beta\left(  j\right)  }=\sigma_{I,\alpha,\beta}\left(  k+j\right)
+\label{sol.Ialbe.c.bbj=}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.Ialbe.c.bbj=}):} Let $\left(
+\alpha,\beta\right)  \in S_{k}\times S_{n-k}$.
+\par
+The permutation $\sigma_{I,\alpha,\beta}$ is the unique $\sigma\in S_{n}$
+satisfying%
+\begin{equation}
+\left(  \sigma\left(  1\right)  ,\sigma\left(  2\right)  ,\ldots,\sigma\left(
+n\right)  \right)  =\left(  a_{\alpha\left(  1\right)  },a_{\alpha\left(
+2\right)  },\ldots,a_{\alpha\left(  k\right)  },b_{\beta\left(  1\right)
+},b_{\beta\left(  2\right)  },\ldots,b_{\beta\left(  n-k\right)  }\right)  .
+\label{sol.Ialbe.c.bbj=.pf.1}%
+\end{equation}
+Thus, $\sigma_{I,\alpha,\beta}$ is a $\sigma\in S_{n}$ satisfying
+(\ref{sol.Ialbe.c.bbj=.pf.1}). In other words, we have%
+\begin{align*}
+&  \left(  \sigma_{I,\alpha,\beta}\left(  1\right)  ,\sigma_{I,\alpha,\beta
+}\left(  2\right)  ,\ldots,\sigma_{I,\alpha,\beta}\left(  n\right)  \right) \\
+&  =\left(  a_{\alpha\left(  1\right)  },a_{\alpha\left(  2\right)  }%
+,\ldots,a_{\alpha\left(  k\right)  },b_{\beta\left(  1\right)  }%
+,b_{\beta\left(  2\right)  },\ldots,b_{\beta\left(  n-k\right)  }\right)  .
+\end{align*}
+Now,%
+\begin{align*}
+&  \left(  \sigma_{I,\alpha,\beta}\left(  k+1\right)  ,\sigma_{I,\alpha,\beta
+}\left(  k+2\right)  ,\ldots,\sigma_{I,\alpha,\beta}\left(  n\right)  \right)
+\\
+&  =\left(  \text{the list of the last }n-k\text{ entries of the list
+}\underbrace{\left(  \sigma_{I,\alpha,\beta}\left(  1\right)  ,\sigma
+_{I,\alpha,\beta}\left(  2\right)  ,\ldots,\sigma_{I,\alpha,\beta}\left(
+n\right)  \right)  }_{=\left(  a_{\alpha\left(  1\right)  },a_{\alpha\left(
+2\right)  },\ldots,a_{\alpha\left(  k\right)  },b_{\beta\left(  1\right)
+},b_{\beta\left(  2\right)  },\ldots,b_{\beta\left(  n-k\right)  }\right)
+}\right) \\
+&  =\left(  \text{the list of the last }n-k\text{ entries of the list }\left(
+a_{\alpha\left(  1\right)  },a_{\alpha\left(  2\right)  },\ldots
+,a_{\alpha\left(  k\right)  },b_{\beta\left(  1\right)  },b_{\beta\left(
+2\right)  },\ldots,b_{\beta\left(  n-k\right)  }\right)  \right) \\
+&  =\left(  b_{\beta\left(  1\right)  },b_{\beta\left(  2\right)  }%
+,\ldots,b_{\beta\left(  n-k\right)  }\right)  .
+\end{align*}
+In other words, $\left(  b_{\beta\left(  1\right)  },b_{\beta\left(  2\right)
+},\ldots,b_{\beta\left(  n-k\right)  }\right)  =\left(  \sigma_{I,\alpha
+,\beta}\left(  k+1\right)  ,\sigma_{I,\alpha,\beta}\left(  k+2\right)
+,\ldots,\sigma_{I,\alpha,\beta}\left(  n\right)  \right)  $. In other words,
+$b_{\beta\left(  j\right)  }=\sigma_{I,\alpha,\beta}\left(  k+j\right)  $ for
+every $i\in\left\{  1,2,\ldots,k\right\}  $. This proves
+(\ref{sol.Ialbe.c.bbj=}).}.
+
+The map $\mu$ is injective\footnote{\textit{Proof.} Let $\eta$ and $\xi$ be
+two elements of $S_{k}\times S_{n-k}$ such that $\mu\left(  \eta\right)
+=\mu\left(  \xi\right)  $. We shall prove that $\eta=\xi$.
+\par
+We have $\eta\in S_{k}\times S_{n-k}$. Hence, $\eta=\left(  \alpha
+,\beta\right)  $ for some $\alpha\in S_{k}$ and $\beta\in S_{n-k}$. Consider
+these $\alpha$ and $\beta$.
+\par
+We have $\xi\in S_{k}\times S_{n-k}$. Hence, $\xi=\left(  \alpha^{\prime
+},\beta^{\prime}\right)  $ for some $\alpha^{\prime}\in S_{k}$ and
+$\beta^{\prime}\in S_{n-k}$. Consider these $\alpha^{\prime}$ and
+$\beta^{\prime}$.
+\par
+We have $\eta=\left(  \alpha,\beta\right)  $ and thus $\mu\left(  \eta\right)
+=\mu\left(  \alpha,\beta\right)  =\sigma_{I,\alpha,\beta}$ (by the definition
+of the map $\mu$).
+\par
+We have $\xi=\left(  \alpha^{\prime},\beta^{\prime}\right)  $ and thus
+$\mu\left(  \xi\right)  =\mu\left(  \alpha^{\prime},\beta^{\prime}\right)
+=\sigma_{I,\alpha^{\prime},\beta^{\prime}}$ (by the definition of the map
+$\xi$).
+\par
+From $\mu\left(  \eta\right)  =\sigma_{I,\alpha,\beta}$, we obtain
+$\sigma_{I,\alpha,\beta}=\mu\left(  \eta\right)  =\mu\left(  \xi\right)
+=\sigma_{I,\alpha^{\prime},\beta^{\prime}}$.
+\par
+We have $\alpha\in S_{k}$. In other words, $\alpha$ is a permutation of
+$\left\{  1,2,\ldots,k\right\}  $ (since $S_{k}$ is the set of all
+permutations of $\left\{  1,2,\ldots,k\right\}  $). In other words, $\alpha$
+is a bijective map $\left\{  1,2,\ldots,k\right\}  \rightarrow\left\{
+1,2,\ldots,k\right\}  $.
+\par
+Let $i\in\left\{  1,2,\ldots,k\right\}  $. Then, $\alpha\left(  i\right)  $
+and $\alpha^{\prime}\left(  i\right)  $ are elements of $\left\{
+1,2,\ldots,k\right\}  $.
+\par
+Furthermore, (\ref{sol.Ialbe.c.aai=}) shows that $a_{\alpha\left(  i\right)
+}=\underbrace{\sigma_{I,\alpha,\beta}}_{=\sigma_{I,\alpha^{\prime}%
+,\beta^{\prime}}}\left(  i\right)  =\sigma_{I,\alpha^{\prime},\beta^{\prime}%
+}\left(  i\right)  $. But (\ref{sol.Ialbe.c.aai=}) (applied to $\left(
+\alpha^{\prime},\beta^{\prime}\right)  $ instead of $\left(  \alpha
+,\beta\right)  $) yields $a_{\alpha^{\prime}\left(  i\right)  }=\sigma
+_{I,\alpha^{\prime},\beta^{\prime}}\left(  i\right)  $. Comparing this with
+$a_{\alpha\left(  i\right)  }=\sigma_{I,\alpha^{\prime},\beta^{\prime}}\left(
+i\right)  $, we obtain $a_{\alpha\left(  i\right)  }=a_{\alpha^{\prime}\left(
+i\right)  }$.
+\par
+We know that $\left(  a_{1},a_{2},\ldots,a_{k}\right)  $ is a list with no
+repetitions. In other words, the elements $a_{1},a_{2},\ldots,a_{k}$ are
+pairwise distinct. In other words, if $u$ and $v$ are two elements of
+$\left\{  1,2,\ldots,k\right\}  $ such that $a_{u}=a_{v}$, then $u=v$.
+Applying this to $u=\alpha\left(  i\right)  $ and $v=\alpha^{\prime}\left(
+i\right)  $, we obtain $\alpha\left(  i\right)  =\alpha^{\prime}\left(
+i\right)  $ (since $a_{\alpha\left(  i\right)  }=a_{\alpha^{\prime}\left(
+i\right)  }$).
+\par
+Now, forget that we fixed $i$. We thus have shown that $\alpha\left(
+i\right)  =\alpha^{\prime}\left(  i\right)  $ for every $i\in\left\{
+1,2,\ldots,k\right\}  $. In other words, $\alpha=\alpha^{\prime}$ (since
+$\alpha$ and $\alpha^{\prime}$ are maps $\left\{  1,2,\ldots,k\right\}
+\rightarrow\left\{  1,2,\ldots,k\right\}  $).
+\par
+We have $\beta\in S_{n-k}$. In other words, $\beta$ is a permutation of
+$\left\{  1,2,\ldots,n-k\right\}  $ (since $S_{n-k}$ is the set of all
+permutations of $\left\{  1,2,\ldots,n-k\right\}  $). In other words, $\beta$
+is a bijective map $\left\{  1,2,\ldots,n-k\right\}  \rightarrow\left\{
+1,2,\ldots,n-k\right\}  $.
+\par
+Let $j\in\left\{  1,2,\ldots,n-k\right\}  $. Then, $\beta\left(  j\right)  $
+and $\beta^{\prime}\left(  j\right)  $ are elements of $\left\{
+1,2,\ldots,n-k\right\}  $.
+\par
+Furthermore, (\ref{sol.Ialbe.c.bbj=}) shows that $b_{\beta\left(  j\right)
+}=\underbrace{\sigma_{I,\alpha,\beta}}_{=\sigma_{I,\alpha^{\prime}%
+,\beta^{\prime}}}\left(  k+j\right)  =\sigma_{I,\alpha^{\prime},\beta^{\prime
+}}\left(  k+j\right)  $. But (\ref{sol.Ialbe.c.bbj=}) (applied to $\left(
+\alpha^{\prime},\beta^{\prime}\right)  $ instead of $\left(  \alpha
+,\beta\right)  $) yields $b_{\beta^{\prime}\left(  j\right)  }=\sigma
+_{I,\alpha^{\prime},\beta^{\prime}}\left(  k+j\right)  $. Comparing this with
+$b_{\beta\left(  j\right)  }=\sigma_{I,\alpha^{\prime},\beta^{\prime}}\left(
+k+j\right)  $, we obtain $b_{\beta\left(  j\right)  }=b_{\beta^{\prime}\left(
+j\right)  }$.
+\par
+We know that $\left(  b_{1},b_{2},\ldots,b_{n-k}\right)  $ is a list with no
+repetitions. In other words, the elements $b_{1},b_{2},\ldots,b_{n-k}$ are
+pairwise distinct. In other words, if $u$ and $v$ are two elements of
+$\left\{  1,2,\ldots,n-k\right\}  $ such that $b_{u}=b_{v}$, then $u=v$.
+Applying this to $u=\beta\left(  j\right)  $ and $v=\beta^{\prime}\left(
+j\right)  $, we obtain $\beta\left(  j\right)  =\beta^{\prime}\left(
+j\right)  $ (since $b_{\beta\left(  j\right)  }=b_{\beta^{\prime}\left(
+j\right)  }$).
+\par
+Now, forget that we fixed $j$. We thus have shown that $\beta\left(  j\right)
+=\beta^{\prime}\left(  j\right)  $ for every $j\in\left\{  1,2,\ldots
+,n-k\right\}  $. In other words, $\beta=\beta^{\prime}$ (since $\beta$ and
+$\beta^{\prime}$ are maps $\left\{  1,2,\ldots,n-k\right\}  \rightarrow
+\left\{  1,2,\ldots,n-k\right\}  $).
+\par
+Now, we have shown that $\alpha=\alpha^{\prime}$ and $\beta=\beta^{\prime}$.
+Now, $\eta=\left(  \underbrace{\alpha}_{=\alpha^{\prime}},\underbrace{\beta
+}_{=\beta^{\prime}}\right)  =\left(  \alpha^{\prime},\beta^{\prime}\right)
+=\xi$ (since $\xi=\left(  \alpha^{\prime},\beta^{\prime}\right)  $).
+\par
+Now, forget that we fixed $\eta$ and $\xi$. We thus have proven that if $\eta$
+and $\xi$ are two elements of $S_{k}\times S_{n-k}$ such that $\mu\left(
+\eta\right)  =\mu\left(  \xi\right)  $, then $\eta=\xi$. In other words, the
+map $\mu$ is injective. Qed.}.
+\end{verlong}
+
+Our next goal is to show that the map $\mu$ is surjective.
+
+In fact, let $\gamma\in\left\{  \tau\in S_{n}\ \mid\ \tau\left(  \left\{
+1,2,\ldots,k\right\}  \right)  =I\right\}  $. We shall construct an $\left(
+\alpha,\beta\right)  \in S_{k}\times S_{n-k}$ such that $\mu\left(
+\alpha,\beta\right)  =\gamma$.
+
+\begin{vershort}
+We have $\gamma\in\left\{  \tau\in S_{n}\ \mid\ \tau\left(  \left\{
+1,2,\ldots,k\right\}  \right)  =I\right\}  $. In other words, $\gamma$ is an
+element of $S_{n}$ and satisfies $\gamma\left(  \left\{  1,2,\ldots,k\right\}
+\right)  =I$.
+\end{vershort}
+
+\begin{verlong}
+We have $\gamma\in\left\{  \tau\in S_{n}\ \mid\ \tau\left(  \left\{
+1,2,\ldots,k\right\}  \right)  =I\right\}  $. In other words, $\gamma$ is an
+element $\tau$ of $S_{n}$ satisfying $\tau\left(  \left\{  1,2,\ldots
+,k\right\}  \right)  =I$. In other words, $\gamma$ is an element of $S_{n}$
+and satisfies $\gamma\left(  \left\{  1,2,\ldots,k\right\}  \right)  =I$.
+\end{verlong}
+
+\begin{vershort}
+We have $\gamma\in S_{n}$. In other words, $\gamma$ is a permutation of
+$\left\{  1,2,\ldots,n\right\}  $. Thus, $\gamma$ is a bijective map $\left\{
+1,2,\ldots,n\right\}  \rightarrow\left\{  1,2,\ldots,n\right\}  $, and
+therefore also an injective map.
+\end{vershort}
+
+\begin{verlong}
+We have $\gamma\in S_{n}$. In other words, $\gamma$ is a permutation of
+$\left\{  1,2,\ldots,n\right\}  $ (since $S_{n}$ is the set of all
+permutations of $\left\{  1,2,\ldots,n\right\}  $). In other words, $\gamma$
+is a bijective map $\left\{  1,2,\ldots,n\right\}  \rightarrow\left\{
+1,2,\ldots,n\right\}  $. The map $\gamma$ is bijective and thus injective.
+\end{verlong}
+
+Every $i\in\left\{  1,2,\ldots,k\right\}  $ satisfies $\gamma\left(  i\right)
+\in I$\ \ \ \ \footnote{\textit{Proof.} Let $i\in\left\{  1,2,\ldots
+,k\right\}  $. Then, $\gamma\left(  \underbrace{i}_{\in\left\{  1,2,\ldots
+,k\right\}  }\right)  \in\gamma\left(  \left\{  1,2,\ldots,k\right\}  \right)
+=I$, qed.}. Thus, $\gamma\left(  1\right)  ,\gamma\left(  2\right)
+,\ldots,\gamma\left(  k\right)  $ are $k$ elements of $I$.
+
+\begin{vershort}
+If $u$ and $v$ are two distinct elements of $\left\{  1,2,\ldots,k\right\}  $,
+then $\gamma\left(  u\right)  \neq\gamma\left(  v\right)  $ (since the map
+$\gamma$ is injective). In other words, the $k$ elements $\gamma\left(
+1\right)  ,\gamma\left(  2\right)  ,\ldots,\gamma\left(  k\right)  $ are
+pairwise distinct.
+\end{vershort}
+
+\begin{verlong}
+Now, if $u$ and $v$ are two distinct elements of $\left\{  1,2,\ldots
+,k\right\}  $, then $\gamma\left(  u\right)  \neq\gamma\left(  v\right)
+$\ \ \ \ \footnote{\textit{Proof.} Let $u$ and $v$ be two distinct elements of
+$\left\{  1,2,\ldots,k\right\}  $. Then, $u\in\left\{  1,2,\ldots,k\right\}
+\subseteq\left\{  1,2,\ldots,n\right\}  $ (since $k\leq n$) and $v\in\left\{
+1,2,\ldots,k\right\}  \subseteq\left\{  1,2,\ldots,n\right\}  $. Now, $u\neq
+v$ (since $u$ and $v$ are distinct), so that $\gamma\left(  u\right)
+\neq\gamma\left(  v\right)  $ (since the map $\gamma$ is injective). Qed.}. In
+other words, the elements $\gamma\left(  1\right)  ,\gamma\left(  2\right)
+,\ldots,\gamma\left(  k\right)  $ are pairwise distinct. Hence, $\gamma\left(
+1\right)  ,\gamma\left(  2\right)  ,\ldots,\gamma\left(  k\right)  $ are $k$
+pairwise distinct elements of $I$ (since $\gamma\left(  1\right)
+,\gamma\left(  2\right)  ,\ldots,\gamma\left(  k\right)  $ are $k$ elements of
+$I$).
+\end{verlong}
+
+On the other hand, recall that $\left(  a_{1},a_{2},\ldots,a_{k}\right)  $ is
+a list of all elements of $I$ (with no repetitions). Thus, Lemma
+\ref{lem.sol.exe.Ialbe.inclist2} (applied to $I$, $k$, $\left(  a_{1}%
+,a_{2},\ldots,a_{k}\right)  $ and \newline$\left(  \gamma\left(  1\right)
+,\gamma\left(  2\right)  ,\ldots,\gamma\left(  k\right)  \right)  $ instead of
+$S$, $s$, $\left(  c_{1},c_{2},\ldots,c_{s}\right)  $ and $\left(  p_{1}%
+,p_{2},\ldots,p_{s}\right)  $) yields that there exists a $\pi\in S_{k}$ such
+that $\left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)  ,\ldots
+,\gamma\left(  k\right)  \right)  =\left(  a_{\pi\left(  1\right)  }%
+,a_{\pi\left(  2\right)  },\ldots,a_{\pi\left(  k\right)  }\right)  $. Denote
+this $\pi$ by $\alpha$. Thus, $\alpha$ is a $\pi\in S_{k}$ such that $\left(
+\gamma\left(  1\right)  ,\gamma\left(  2\right)  ,\ldots,\gamma\left(
+k\right)  \right)  =\left(  a_{\pi\left(  1\right)  },a_{\pi\left(  2\right)
+},\ldots,a_{\pi\left(  k\right)  }\right)  $. In other words, $\alpha$ is an
+element of $S_{k}$ and satisfies
+\begin{equation}
+\left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)  ,\ldots,\gamma\left(
+k\right)  \right)  =\left(  a_{\alpha\left(  1\right)  },a_{\alpha\left(
+2\right)  },\ldots,a_{\alpha\left(  k\right)  }\right)  .
+\label{sol.Ialbe.c.gamma1}%
+\end{equation}
+
+
+\begin{vershort}
+Every $j\in\left\{  1,2,\ldots,n-k\right\}  $ satisfies $\gamma\left(
+k+j\right)  \in\left\{  1,2,\ldots,n\right\}  \setminus I$%
+\ \ \ \ \footnote{\textit{Proof.} Let $j\in\left\{  1,2,\ldots,n-k\right\}  $.
+Then, $k+j\in\left\{  k+1,k+2,\ldots,n\right\}  \subseteq\left\{
+1,2,\ldots,n\right\}  $. Hence, $\gamma\left(  k+j\right)  $ is well-defined.
+\par
+We must show that $\gamma\left(  k+j\right)  \in\left\{  1,2,\ldots,n\right\}
+\setminus I$.
+\par
+Indeed, assume the contrary. Thus, we don't have $\gamma\left(  k+j\right)
+\in\left\{  1,2,\ldots,n\right\}  \setminus I$. In other words, we have
+$\gamma\left(  k+j\right)  \notin\left\{  1,2,\ldots,n\right\}  \setminus I$.
+Combining $\gamma\left(  k+j\right)  \in\left\{  1,2,\ldots,n\right\}  $ with
+$\gamma\left(  k+j\right)  \notin\left\{  1,2,\ldots,n\right\}  \setminus I$,
+we obtain
+\[
+\gamma\left(  k+j\right)  \in\left\{  1,2,\ldots,n\right\}  \setminus\left(
+\left\{  1,2,\ldots,n\right\}  \setminus I\right)  \subseteq I=\gamma\left(
+\left\{  1,2,\ldots,k\right\}  \right)
+\]
+(since $\gamma\left(  \left\{  1,2,\ldots,k\right\}  \right)  =I$). In other
+words, there exists some $v\in\left\{  1,2,\ldots,k\right\}  $ such that
+$\gamma\left(  k+j\right)  =\gamma\left(  v\right)  $. Consider this $v$.
+Since $\gamma\left(  k+j\right)  =\gamma\left(  v\right)  $, we have $k+j=v$
+(because $\gamma$ is injective). Thus, $k+j=v\in\left\{  1,2,\ldots,k\right\}
+$, so that $k+j\leq k$. Therefore, $j\leq k-k=0$. This contradicts
+$j\in\left\{  1,2,\ldots,n-k\right\}  $. This contradiction shows that our
+assumption was wrong. Hence, $\gamma\left(  k+j\right)  \in\left\{
+1,2,\ldots,n\right\}  \setminus I$ is proven. Qed.}. Thus, $\gamma\left(
+k+1\right)  ,\gamma\left(  k+2\right)  ,\ldots,\gamma\left(  n\right)  $ are
+$n-k$ elements of $\left\{  1,2,\ldots,n\right\}  \setminus I$.
+\end{vershort}
+
+\begin{verlong}
+Every $j\in\left\{  1,2,\ldots,n-k\right\}  $ satisfies $\gamma\left(
+k+j\right)  \in\left\{  1,2,\ldots,n\right\}  \setminus I$%
+\ \ \ \ \footnote{\textit{Proof.} Let $j\in\left\{  1,2,\ldots,n-k\right\}  $.
+Then, $k+j\in\left\{  k+1,k+2,\ldots,n\right\}  \subseteq\left\{
+1,2,\ldots,n\right\}  $. Hence, $\gamma\left(  k+j\right)  $ is well-defined.
+\par
+We must show that $\gamma\left(  k+j\right)  \in\left\{  1,2,\ldots,n\right\}
+\setminus I$.
+\par
+Indeed, assume the contrary. Thus, we don't have $\gamma\left(  k+j\right)
+\in\left\{  1,2,\ldots,n\right\}  \setminus I$. In other words, we have
+$\gamma\left(  k+j\right)  \notin\left\{  1,2,\ldots,n\right\}  \setminus I$.
+Combining $\gamma\left(  k+j\right)  \in\left\{  1,2,\ldots,n\right\}  $
+(since $\gamma$ is a map $\left\{  1,2,\ldots,n\right\}  \rightarrow\left\{
+1,2,\ldots,n\right\}  $) with $\gamma\left(  k+j\right)  \notin\left\{
+1,2,\ldots,n\right\}  \setminus I$, we obtain
+\begin{align*}
+\gamma\left(  k+j\right)   &  \in\left\{  1,2,\ldots,n\right\}  \setminus
+\left(  \left\{  1,2,\ldots,n\right\}  \setminus I\right)
+=I\ \ \ \ \ \ \ \ \ \ \left(  \text{since }I\subseteq\left\{  1,2,\ldots
+,n\right\}  \right) \\
+&  =\left\{  a_{1},a_{2},\ldots,a_{k}\right\}  \ \ \ \ \ \ \ \ \ \ \left(
+\text{since }\left(  a_{1},a_{2},\ldots,a_{k}\right)  \text{ is a list of all
+elements of }I\right)  .
+\end{align*}
+In other words, $\gamma\left(  k+j\right)  =a_{p}$ for some $p\in\left\{
+1,2,\ldots,k\right\}  $. Consider this $p$. Clearly, $\alpha^{-1}\left(
+p\right)  $ is a well-defined element of $\left\{  1,2,\ldots,k\right\}  $
+(since $\alpha$ is a permutation of $\left\{  1,2,\ldots,k\right\}  $, while
+$p$ is an element of $\left\{  1,2,\ldots,k\right\}  $).
+\par
+But recall that $\left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)
+,\ldots,\gamma\left(  k\right)  \right)  =\left(  a_{\alpha\left(  1\right)
+},a_{\alpha\left(  2\right)  },\ldots,a_{\alpha\left(  k\right)  }\right)  $.
+In other words, $\gamma\left(  u\right)  =a_{\alpha\left(  u\right)  }$ for
+every $u\in\left\{  1,2,\ldots,k\right\}  $. Applying this to $u=\alpha
+^{-1}\left(  p\right)  $, we obtain $\gamma\left(  \alpha^{-1}\left(
+p\right)  \right)  =a_{\alpha\left(  \alpha^{-1}\left(  p\right)  \right)
+}=a_{p}$ (since $\alpha\left(  \alpha^{-1}\left(  p\right)  \right)  =p$).
+Comparing this with $\gamma\left(  k+j\right)  =a_{p}$, we obtain
+$\gamma\left(  k+j\right)  =\gamma\left(  \alpha^{-1}\left(  p\right)
+\right)  $.
+\par
+But the map $\gamma$ is injective. In other words, if $u$ and $v$ are two
+elements of $\left\{  1,2,\ldots,n\right\}  $ such that $\gamma\left(
+u\right)  =\gamma\left(  v\right)  $, then $u=v$. Applying this to $u=k+j$ and
+$v=\alpha^{-1}\left(  p\right)  $, we obtain $k+j=\alpha^{-1}\left(  p\right)
+$ (since $\gamma\left(  k+j\right)  =\gamma\left(  \alpha^{-1}\left(
+p\right)  \right)  $). But $\alpha^{-1}\left(  p\right)  \in\left\{
+1,2,\ldots,k\right\}  $, so that $\alpha^{-1}\left(  p\right)  \leq k$. Hence,
+$k+j=\alpha^{-1}\left(  p\right)  \leq k$, so that $j\leq k-k=0<1$. This
+contradicts $j\geq1$ (since $j\in\left\{  1,2,\ldots,n-k\right\}  $). This
+contradiction shows that our assumption was wrong. Hence, $\gamma\left(
+k+j\right)  \in\left\{  1,2,\ldots,n\right\}  \setminus I$ is proven. Qed.}.
+Thus, $\gamma\left(  k+1\right)  ,\gamma\left(  k+2\right)  ,\ldots
+,\gamma\left(  k+\left(  n-k\right)  \right)  $ are $n-k$ elements of
+$\left\{  1,2,\ldots,n\right\}  \setminus I$.
+\end{verlong}
+
+\begin{vershort}
+If $u$ and $v$ are two distinct elements of $\left\{  k+1,k+2,\ldots
+,n\right\}  $, then $\gamma\left(  u\right)  \neq\gamma\left(  v\right)  $
+(since the map $\gamma$ is injective). In other words, the $n-k$ elements
+\newline$\gamma\left(  k+1\right)  ,\gamma\left(  k+2\right)  ,\ldots
+,\gamma\left(  n\right)  $ are pairwise distinct.
+\end{vershort}
+
+\begin{verlong}
+Now, if $u$ and $v$ are two distinct elements of $\left\{  1,2,\ldots
+,n-k\right\}  $, then $\gamma\left(  k+u\right)  \neq\gamma\left(  k+v\right)
+$\ \ \ \ \footnote{\textit{Proof.} Let $u$ and $v$ be two distinct elements of
+$\left\{  1,2,\ldots,n-k\right\}  $. Then, $u\in\left\{  1,2,\ldots
+,n-k\right\}  $, so that $k+u\in\left\{  k+1,k+2,\ldots,n\right\}
+\subseteq\left\{  1,2,\ldots,n\right\}  $.The same argument (applied to $v$
+instead of $u$) shows that $k+v\in\left\{  1,2,\ldots,n\right\}  $. Now,
+$u\neq v$ (since $u$ and $v$ are distinct), so that $k+u\neq k+v$. Hence,
+$\gamma\left(  k+u\right)  \neq\gamma\left(  k+v\right)  $ (since the map
+$\gamma$ is injective). Qed.}. In other words, the elements $\gamma\left(
+k+1\right)  ,\gamma\left(  k+2\right)  ,\ldots,\gamma\left(  k+\left(
+n-k\right)  \right)  $ are pairwise distinct. Hence, $\gamma\left(
+k+1\right)  ,\gamma\left(  k+2\right)  ,\ldots,\gamma\left(  k+\left(
+n-k\right)  \right)  $ are $n-k$ pairwise distinct elements of $\left\{
+1,2,\ldots,n\right\}  \setminus I$ (since $\gamma\left(  k+1\right)
+,\gamma\left(  k+2\right)  ,\ldots,\gamma\left(  k+\left(  n-k\right)
+\right)  $ are $n-k$ elements of $\left\{  1,2,\ldots,n\right\}  \setminus I$).
+\end{verlong}
+
+\begin{vershort}
+On the other hand, recall that $\left(  b_{1},b_{2},\ldots,b_{n-k}\right)  $
+is a list of all elements of $\left\{  1,2,\ldots,n\right\}  \setminus I$
+(with no repetitions). Thus, Lemma \ref{lem.sol.exe.Ialbe.inclist2} (applied
+to $\left\{  1,2,\ldots,n\right\}  \setminus I$, $n-k$, \newline$\left(
+b_{1},b_{2},\ldots,b_{n-k}\right)  $ and $\left(  \gamma\left(  k+1\right)
+,\gamma\left(  k+2\right)  ,\ldots,\gamma\left(  n\right)  \right)  $ instead
+of $S$, $s$, $\left(  c_{1},c_{2},\ldots,c_{s}\right)  $ and $\left(
+p_{1},p_{2},\ldots,p_{s}\right)  $) yields that there exists a $\pi\in
+S_{n-k}$ such that \newline$\left(  \gamma\left(  k+1\right)  ,\gamma\left(
+k+2\right)  ,\ldots,\gamma\left(  n\right)  \right)  =\left(  b_{\pi\left(
+1\right)  },b_{\pi\left(  2\right)  },\ldots,b_{\pi\left(  n-k\right)
+}\right)  $. Denote this $\pi$ by $\beta$. Thus, $\beta$ is an element of
+$S_{n-k}$ and satisfies
+\begin{equation}
+\left(  \gamma\left(  k+1\right)  ,\gamma\left(  k+2\right)  ,\ldots
+,\gamma\left(  n\right)  \right)  =\left(  b_{\beta\left(  1\right)
+},b_{\beta\left(  2\right)  },\ldots,b_{\beta\left(  n-k\right)  }\right)  .
+\label{sol.Ialbe.c.short.gamma2}%
+\end{equation}
+
+\end{vershort}
+
+\begin{verlong}
+On the other hand, recall that $\left(  b_{1},b_{2},\ldots,b_{n-k}\right)  $
+is a list of all elements of $\left\{  1,2,\ldots,n\right\}  \setminus I$
+(with no repetitions). Thus, Lemma \ref{lem.sol.exe.Ialbe.inclist2} (applied
+to $\left\{  1,2,\ldots,n\right\}  \setminus I$, $n-k$, $\left(  b_{1}%
+,b_{2},\ldots,b_{n-k}\right)  $ and $\left(  \gamma\left(  k+1\right)
+,\gamma\left(  k+2\right)  ,\ldots,\gamma\left(  k+\left(  n-k\right)
+\right)  \right)  $ instead of $S$, $s$, $\left(  c_{1},c_{2},\ldots
+,c_{s}\right)  $ and $\left(  p_{1},p_{2},\ldots,p_{s}\right)  $) yields that
+there exists a $\pi\in S_{n-k}$ such that $\left(  \gamma\left(  k+1\right)
+,\gamma\left(  k+2\right)  ,\ldots,\gamma\left(  k+\left(  n-k\right)
+\right)  \right)  =\left(  b_{\pi\left(  1\right)  },b_{\pi\left(  2\right)
+},\ldots,b_{\pi\left(  n-k\right)  }\right)  $. Denote this $\pi$ by $\beta$.
+Thus, $\beta$ is a $\pi\in S_{n-k}$ such that $\left(  \gamma\left(
+k+1\right)  ,\gamma\left(  k+2\right)  ,\ldots,\gamma\left(  k+\left(
+n-k\right)  \right)  \right)  =\left(  b_{\pi\left(  1\right)  },b_{\pi\left(
+2\right)  },\ldots,b_{\pi\left(  n-k\right)  }\right)  $. In other words,
+$\beta$ is an element of $S_{n-k}$ and satisfies
+\begin{equation}
+\left(  \gamma\left(  k+1\right)  ,\gamma\left(  k+2\right)  ,\ldots
+,\gamma\left(  k+\left(  n-k\right)  \right)  \right)  =\left(  b_{\beta
+\left(  1\right)  },b_{\beta\left(  2\right)  },\ldots,b_{\beta\left(
+n-k\right)  }\right)  . \label{sol.Ialbe.c.gamma2}%
+\end{equation}
+
+\end{verlong}
+
+\begin{verlong}
+The permutation $\sigma_{I,\alpha,\beta}$ is the unique $\sigma\in S_{n}$
+satisfying%
+\begin{equation}
+\left(  \sigma\left(  1\right)  ,\sigma\left(  2\right)  ,\ldots,\sigma\left(
+n\right)  \right)  =\left(  a_{\alpha\left(  1\right)  },a_{\alpha\left(
+2\right)  },\ldots,a_{\alpha\left(  k\right)  },b_{\beta\left(  1\right)
+},b_{\beta\left(  2\right)  },\ldots,b_{\beta\left(  n-k\right)  }\right)  .
+\label{sol.Ialbe.c.sigma1}%
+\end{equation}
+Thus, $\sigma_{I,\alpha,\beta}$ is a $\sigma\in S_{n}$ satisfying
+(\ref{sol.Ialbe.c.sigma1}). In other words, we have%
+\begin{align}
+&  \left(  \sigma_{I,\alpha,\beta}\left(  1\right)  ,\sigma_{I,\alpha,\beta
+}\left(  2\right)  ,\ldots,\sigma_{I,\alpha,\beta}\left(  n\right)  \right)
+\nonumber\\
+&  =\left(  a_{\alpha\left(  1\right)  },a_{\alpha\left(  2\right)  }%
+,\ldots,a_{\alpha\left(  k\right)  },b_{\beta\left(  1\right)  }%
+,b_{\beta\left(  2\right)  },\ldots,b_{\beta\left(  n-k\right)  }\right)  .
+\label{sol.Ialbe.c.sigma2}%
+\end{align}
+
+\end{verlong}
+
+\begin{vershort}
+Now, let us introduce a notation: If $\left(  x_{1},x_{2},\ldots,x_{u}\right)
+$ and $\left(  y_{1},y_{2},\ldots,y_{v}\right)  $ are two lists, then we shall
+let $\left(  x_{1},x_{2},\ldots,x_{u}\right)  \ast\left(  y_{1},y_{2}%
+,\ldots,y_{v}\right)  $ denote the list \newline$\left(  x_{1},x_{2}%
+,\ldots,x_{u},y_{1},y_{2},\ldots,y_{v}\right)  $. Then,%
+\begin{align*}
+&  \left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)  ,\ldots
+,\gamma\left(  n\right)  \right) \\
+&  =\underbrace{\left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)
+,\ldots,\gamma\left(  k\right)  \right)  }_{\substack{=\left(  a_{\alpha
+\left(  1\right)  },a_{\alpha\left(  2\right)  },\ldots,a_{\alpha\left(
+k\right)  }\right)  \\\text{(by (\ref{sol.Ialbe.c.gamma1}))}}}\ast
+\underbrace{\left(  \gamma\left(  k+1\right)  ,\gamma\left(  k+2\right)
+,\ldots,\gamma\left(  n\right)  \right)  }_{\substack{=\left(  b_{\beta\left(
+1\right)  },b_{\beta\left(  2\right)  },\ldots,b_{\beta\left(  n-k\right)
+}\right)  \\\text{(by (\ref{sol.Ialbe.c.short.gamma2}))}}}\\
+&  =\left(  a_{\alpha\left(  1\right)  },a_{\alpha\left(  2\right)  }%
+,\ldots,a_{\alpha\left(  k\right)  }\right)  \ast\left(  b_{\beta\left(
+1\right)  },b_{\beta\left(  2\right)  },\ldots,b_{\beta\left(  n-k\right)
+}\right) \\
+&  =\left(  a_{\alpha\left(  1\right)  },a_{\alpha\left(  2\right)  }%
+,\ldots,a_{\alpha\left(  k\right)  },b_{\beta\left(  1\right)  }%
+,b_{\beta\left(  2\right)  },\ldots,b_{\beta\left(  n-k\right)  }\right) \\
+&  =\left(  \sigma_{I,\alpha,\beta}\left(  1\right)  ,\sigma_{I,\alpha,\beta
+}\left(  2\right)  ,\ldots,\sigma_{I,\alpha,\beta}\left(  n\right)  \right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{sol.Ialbe.c.short.siIAB})}\right)
+.
+\end{align*}
+In other words, $\gamma\left(  i\right)  =\sigma_{I,\alpha,\beta}\left(
+i\right)  $ for every $i\in\left\{  1,2,\ldots,n\right\}  $. In other words,
+$\gamma=\sigma_{I,\alpha,\beta}$ (since $\gamma$ and $\sigma_{I,\alpha,\beta}$
+are two maps $\left\{  1,2,\ldots,n\right\}  \rightarrow\left\{
+1,2,\ldots,n\right\}  $). But the definition of $\mu$ yields $\mu\left(
+\alpha,\beta\right)  =\sigma_{I,\alpha,\beta}$. Comparing this with
+$\gamma=\sigma_{I,\alpha,\beta}$, we obtain
+\[
+\gamma=\mu\underbrace{\left(  \alpha,\beta\right)  }_{\in S_{k}\times S_{n-k}%
+}\in\mu\left(  S_{k}\times S_{n-k}\right)  .
+\]
+
+\end{vershort}
+
+\begin{verlong}
+Now, let us introduce a notation: If $\left(  x_{1},x_{2},\ldots,x_{u}\right)
+$ and $\left(  y_{1},y_{2},\ldots,y_{v}\right)  $ are two lists, then we shall
+let $\left(  x_{1},x_{2},\ldots,x_{u}\right)  \ast\left(  y_{1},y_{2}%
+,\ldots,y_{v}\right)  $ denote the list \newline$\left(  x_{1},x_{2}%
+,\ldots,x_{u},y_{1},y_{2},\ldots,y_{v}\right)  $. Then,%
+\begin{align*}
+&  \left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)  ,\ldots
+,\gamma\left(  n\right)  \right) \\
+&  =\left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)  ,\ldots
+,\gamma\left(  k\right)  \right)  \ast\left(  \gamma\left(  k+1\right)
+,\gamma\left(  k+2\right)  ,\ldots,\gamma\left(  \underbrace{n}_{=k+\left(
+n-k\right)  }\right)  \right) \\
+&  =\underbrace{\left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)
+,\ldots,\gamma\left(  k\right)  \right)  }_{\substack{=\left(  a_{\alpha
+\left(  1\right)  },a_{\alpha\left(  2\right)  },\ldots,a_{\alpha\left(
+k\right)  }\right)  \\\text{(by (\ref{sol.Ialbe.c.gamma1}))}}}\ast
+\underbrace{\left(  \gamma\left(  k+1\right)  ,\gamma\left(  k+2\right)
+,\ldots,\gamma\left(  k+\left(  n-k\right)  \right)  \right)  }%
+_{\substack{=\left(  b_{\beta\left(  1\right)  },b_{\beta\left(  2\right)
+},\ldots,b_{\beta\left(  n-k\right)  }\right)  \\\text{(by
+(\ref{sol.Ialbe.c.gamma2}))}}}\\
+&  =\left(  a_{\alpha\left(  1\right)  },a_{\alpha\left(  2\right)  }%
+,\ldots,a_{\alpha\left(  k\right)  }\right)  \ast\left(  b_{\beta\left(
+1\right)  },b_{\beta\left(  2\right)  },\ldots,b_{\beta\left(  n-k\right)
+}\right) \\
+&  =\left(  a_{\alpha\left(  1\right)  },a_{\alpha\left(  2\right)  }%
+,\ldots,a_{\alpha\left(  k\right)  },b_{\beta\left(  1\right)  }%
+,b_{\beta\left(  2\right)  },\ldots,b_{\beta\left(  n-k\right)  }\right) \\
+&  =\left(  \sigma_{I,\alpha,\beta}\left(  1\right)  ,\sigma_{I,\alpha,\beta
+}\left(  2\right)  ,\ldots,\sigma_{I,\alpha,\beta}\left(  n\right)  \right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{sol.Ialbe.c.sigma2})}\right)  .
+\end{align*}
+In other words, $\gamma\left(  i\right)  =\sigma_{I,\alpha,\beta}\left(
+i\right)  $ for every $i\in\left\{  1,2,\ldots,n\right\}  $. In other words,
+$\gamma=\sigma_{I,\alpha,\beta}$ (since $\gamma$ and $\sigma_{I,\alpha,\beta}$
+are two maps $\left\{  1,2,\ldots,n\right\}  \rightarrow\left\{
+1,2,\ldots,n\right\}  $). But the definition of $\mu$ yields $\mu\left(
+\alpha,\beta\right)  =\sigma_{I,\alpha,\beta}$. Comparing this with
+$\gamma=\sigma_{I,\alpha,\beta}$, we obtain
+\[
+\gamma=\mu\underbrace{\left(  \alpha,\beta\right)  }_{\in S_{k}\times S_{n-k}%
+}\in\mu\left(  S_{k}\times S_{n-k}\right)  .
+\]
+
+\end{verlong}
+
+Now, forget that we fixed $\gamma$. We thus have shown that every
+\newline$\gamma\in\left\{  \tau\in S_{n}\ \mid\ \tau\left(  \left\{
+1,2,\ldots,k\right\}  \right)  =I\right\}  $ satisfies $\gamma\in\mu\left(
+S_{k}\times S_{n-k}\right)  $. In other words,%
+\[
+\left\{  \tau\in S_{n}\ \mid\ \tau\left(  \left\{  1,2,\ldots,k\right\}
+\right)  =I\right\}  \subseteq\mu\left(  S_{k}\times S_{n-k}\right)  .
+\]
+In other words, the map $\mu$ is surjective.
+
+So the map $\mu$ is both injective and surjective. In other words, $\mu$ is
+bijective. In other words, $\mu$ is a bijection. In other words, the map%
+\begin{align*}
+S_{k}\times S_{n-k}  &  \rightarrow\left\{  \tau\in S_{n}\ \mid\ \tau\left(
+\left\{  1,2,\ldots,k\right\}  \right)  =I\right\}  ,\\
+\left(  \alpha,\beta\right)   &  \mapsto\sigma_{I,\alpha,\beta}%
+\end{align*}
+is a bijection\footnote{since $\mu$ is the map
+\begin{align*}
+S_{k}\times S_{n-k}  &  \rightarrow\left\{  \tau\in S_{n}\ \mid\ \tau\left(
+\left\{  1,2,\ldots,k\right\}  \right)  =I\right\}  ,\\
+\left(  \alpha,\beta\right)   &  \mapsto\sigma_{I,\alpha,\beta}%
+\end{align*}
+}. This solves Exercise \ref{exe.Ialbe} \textbf{(c)}.
 \end{proof}
 
 \subsection{Solution to Exercise \ref{exe.perm.cycles}}
