@@ -26273,6 +26273,8 @@ This proves Corollary \ref{cor.AoPS262752.X=n}.
 
 \subsection{Solution to Additional exercise \ref{exeadd.choose.a/b}}
 
+\subsubsection{First solution}
+
 Before we solve Additional exercise \ref{exeadd.choose.a/b}, let us prove two
 basic facts in modular arithmetic:
 
@@ -26456,7 +26458,7 @@ This proves Lemma \ref{lem.exeadd.choose.a/b.prod-of-congs}.
 \end{proof}
 
 \begin{proof}
-[Solution to Additional exercise \ref{exeadd.choose.a/b}.]Set $c=n!$. Notice
+[First solution to Additional exercise \ref{exeadd.choose.a/b}.]Set $c=n!$. Notice
 that $c$ is a positive integer (since $c=n!=1\cdot2\cdot\cdots\cdot n$);
 hence, $c-1\in\mathbb{N}$.
 
@@ -26553,9 +26555,727 @@ Our above solution of Additional exercise \ref{exeadd.choose.a/b} shows that
 the $N$ in this exercise can be taken to be $n+\left(  n!-1\right)  $. This
 is, however, far from being the best possible value of $N$. A much better
 value that also works is $\max\left\{  0,2n-1\right\}  $. Proving this,
-however, would require a different idea (namely, studying the exponents of
-primes in $n!$).
+however, would require a different idea. The second solution below gives a
+proof of this better value. (Alternatively, this better value can be obtained
+by studying the exponents of primes appearing in $n!$.)
 \end{remark}
+
+\subsubsection{Second solution}
+
+We shall now prepare to give a second solution to Additional exercise
+\ref{exeadd.choose.a/b}. Our main goal is to prove the following fact:
+
+\begin{theorem}
+\label{thm.sol.exeadd.choose.a/b.sol2.main}Let $a$ and $b$ be two integers
+such that $b\neq0$. Let $n$ be a positive integer. Then, $b^{2n-1}\dbinom
+{a/b}{n}\in\mathbb{Z}$.
+\end{theorem}
+
+Clearly, Additional exercise \ref{exeadd.choose.a/b} immediately follows from
+Theorem \ref{thm.sol.exeadd.choose.a/b.sol2.main} in the case when $n\neq0$.
+(In the case when $n=0$, it holds for obvious reasons.)
+
+Before we start proving Theorem \ref{thm.sol.exeadd.choose.a/b.sol2.main}, let
+us show the following lemma:
+
+\begin{lemma}
+\label{lem.sol.exeadd.choose.a/b.sol2.lem}Let $b$ and $n$ be positive
+integers. Assume that every $k\in\left\{  1,2,\ldots,n-1\right\}  $ and
+$c\in\mathbb{Z}$ satisfy%
+\begin{equation}
+b^{2k-1}\dbinom{c/b}{k}\in\mathbb{Z}.
+\label{eq.lem.sol.exeadd.choose.a/b.sol2.lem.ass}%
+\end{equation}
+Then:
+
+\textbf{(a)} Every $u\in\mathbb{Z}$ and $v\in\mathbb{Z}$ satisfy%
+\[
+b^{2n-2}\left(  \dbinom{\left(  u+v\right)  /b}{n}-\dbinom{u/b}{n}%
+-\dbinom{v/b}{n}\right)  \in\mathbb{Z}.
+\]
+
+
+\textbf{(b)} Every $a\in\mathbb{Z}$ and $h\in\mathbb{N}$ satisfy%
+\[
+b^{2n-2}\left(  \dbinom{ha/b}{n}-h\dbinom{a/b}{n}\right)  \in\mathbb{Z}.
+\]
+
+
+\textbf{(c)} Every $a\in\mathbb{Z}$ satisfies%
+\[
+b^{2n-1}\dbinom{a/b}{n}\in\mathbb{Z}.
+\]
+
+\end{lemma}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exeadd.choose.a/b.sol2.lem}.]\textbf{(a)} Let
+$u\in\mathbb{Z}$ and $v\in\mathbb{Z}$. Substituting $u/b$ for $X$ in
+Proposition \ref{prop.binom.00} \textbf{(a)}, we obtain $\dbinom{u/b}{0}=1$.
+Similarly, $\dbinom{v/b}{0}=1$.
+
+Substituting $u/b$ and $v/b$ for $X$ and $Y$ in Theorem \ref{thm.vandermonde},
+we obtain%
+\begin{align*}
+\dbinom{u/b+v/b}{n}  &  =\sum_{k=0}^{n}\dbinom{u/b}{k}\dbinom{v/b}{n-k}\\
+&  =\underbrace{\dbinom{u/b}{0}}_{=1}\underbrace{\dbinom{v/b}{n-0}}%
+_{=\dbinom{v/b}{n}}+\sum_{k=1}^{n-1}\dbinom{u/b}{k}\dbinom{v/b}{n-k}%
++\dbinom{u/b}{n}\underbrace{\dbinom{v/b}{n-n}}_{=\dbinom{v/b}{0}=1}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have split off the addends for }k=0\text{ and}\\
+\text{for }k=n\text{ from the sum (since }0\text{ and }n\text{ are two
+distinct}\\
+\text{elements of }\left\{  0,1,\ldots,n\right\}  \text{)}%
+\end{array}
+\right) \\
+&  =\dbinom{v/b}{n}+\sum_{k=1}^{n-1}\dbinom{u/b}{k}\dbinom{v/b}{n-k}%
++\dbinom{u/b}{n}.
+\end{align*}
+Subtracting $\dbinom{u/b}{n}+\dbinom{v/b}{n}$ from this equality, we obtain%
+\begin{equation}
+\dbinom{u/b+v/b}{n}-\dbinom{u/b}{n}-\dbinom{v/b}{n}=\sum_{k=1}^{n-1}%
+\dbinom{u/b}{k}\dbinom{v/b}{n-k}.
+\label{pf.lem.sol.exeadd.choose.a/b.sol2.lem.short.a.1}%
+\end{equation}
+
+
+But for every $k\in\left\{  1,2,\ldots,n-1\right\}  $, the number
+$b^{2n-2}\dbinom{u/b}{k}\dbinom{v/b}{n-k}$ is an
+integer\footnote{\textit{Proof:} Let $k\in\left\{  1,2,\ldots,n-1\right\}  $.
+\par
+From (\ref{eq.lem.sol.exeadd.choose.a/b.sol2.lem.ass}) (applied to $c=u$), we
+obtain $b^{2k-1}\dbinom{u/b}{k}\in\mathbb{Z}$. In other words, the number
+$b^{2k-1}\dbinom{u/b}{k}$ is an integer.
+\par
+But we also have $n-k\in\left\{  1,2,\ldots,n-1\right\}  $ (since
+$k\in\left\{  1,2,\ldots,n-1\right\}  $). Thus, from
+(\ref{eq.lem.sol.exeadd.choose.a/b.sol2.lem.ass}) (applied to $n-k$ and $v$
+instead of $k$ and $c$), we obtain $b^{2\left(  n-k\right)  -1}\dbinom
+{v/b}{n-k}\in\mathbb{Z}$. In other words, the number $b^{2\left(  n-k\right)
+-1}\dbinom{v/b}{n-k}$ is an integer.
+\par
+Now, the numbers $b^{2k-1}\dbinom{u/b}{k}$ and $b^{2\left(  n-k\right)
+-1}\dbinom{v/b}{n-k}$ are integers. Hence, their product is an integer as
+well. In other words, the number $b^{2k-1}\dbinom{u/b}{k}\cdot b^{2\left(
+n-k\right)  -1}\dbinom{v/b}{n-k}$ is an integer. Since%
+\begin{align*}
+& b^{2k-1}\dbinom{u/b}{k}\cdot b^{2\left(  n-k\right)  -1}\dbinom{v/b}{n-k}\\
+& =\underbrace{b^{2k-1}b^{2\left(  n-k\right)  -1}}_{\substack{=b^{\left(
+2k-1\right)  +\left(  2\left(  n-k\right)  -1\right)  }=b^{2n-2}\\\text{(since
+}\left(  2k-1\right)  +\left(  2\left(  n-k\right)  -1\right)  =2n-2\text{)}%
+}}\dbinom{u/b}{k}\dbinom{v/b}{n-k}=b^{2n-2}\dbinom{u/b}{k}\dbinom{v/b}{n-k},
+\end{align*}
+this rewrites as follows: The number $b^{2n-2}\dbinom{u/b}{k}\dbinom{v/b}%
+{n-k}$ is an integer. Qed.}. Hence, $\sum_{k=1}^{n-1}b^{2n-2}\dbinom{u/b}%
+{k}\dbinom{v/b}{n-k}$ is a sum of $n-1$ integers, and thus itself is an
+integer. In other words,%
+\begin{equation}
+\sum_{k=1}^{n-1}b^{2n-2}\dbinom{u/b}{k}\dbinom{v/b}{n-k}\in\mathbb{Z}%
+.\label{pf.lem.sol.exeadd.choose.a/b.sol2.lem.short.a.5}%
+\end{equation}
+
+
+Now,%
+\begin{align*}
+&  b^{2n-2}\left(  \underbrace{\dbinom{\left(  u+v\right)  /b}{n}%
+}_{\substack{=\dbinom{u/b+v/b}{n}\\\text{(since }\left(  u+v\right)
+/b=u/b+v/b\text{)}}}-\dbinom{u/b}{n}-\dbinom{v/b}{n}\right) \\
+&  =b^{2n-2}\underbrace{\left(  \dbinom{u/b+v/b}{n}-\dbinom{u/b}{n}%
+-\dbinom{v/b}{n}\right)  }_{\substack{=\sum_{k=1}^{n-1}\dbinom{u/b}{k}%
+\dbinom{v/b}{n-k}\\\text{(by
+(\ref{pf.lem.sol.exeadd.choose.a/b.sol2.lem.short.a.1}))}}}\\
+&  =b^{2n-2}\sum_{k=1}^{n-1}\dbinom{u/b}{k}\dbinom{v/b}{n-k}=\sum_{k=1}%
+^{n-1}b^{2n-2}\dbinom{u/b}{k}\dbinom{v/b}{n-k}\in\mathbb{Z}%
+\end{align*}
+(by (\ref{pf.lem.sol.exeadd.choose.a/b.sol2.lem.short.a.5})). This proves
+Lemma \ref{lem.sol.exeadd.choose.a/b.sol2.lem} \textbf{(a)}.
+
+\textbf{(b)} Let $a\in\mathbb{Z}$ and $h\in\mathbb{N}$. For every
+$k\in\left\{  0,1,\ldots,h-1\right\}  $, the number \newline$b^{2n-2}\left(
+\dbinom{\left(  k+1\right)  a/b}{n}-\dbinom{ka/b}{n}-\dbinom{a/b}{n}\right)  $
+is an integer\footnote{\textit{Proof:} Let $k\in\left\{  0,1,\ldots
+,h-1\right\}  $. Then, Lemma \ref{lem.sol.exeadd.choose.a/b.sol2.lem}
+\textbf{(a)} (applied to $u=ka$ and $v=a$) yields%
+\[
+b^{2n-2}\left(  \dbinom{\left(  ka+a\right)  /b}{n}-\dbinom{ka/b}{n}%
+-\dbinom{a/b}{n}\right)  \in\mathbb{Z}.
+\]
+Since $ka+a=\left(  k+1\right)  a$, this rewrites as follows:%
+\[
+b^{2n-2}\left(  \dbinom{\left(  k+1\right)  a/b}{n}-\dbinom{ka/b}{n}%
+-\dbinom{a/b}{n}\right)  \in\mathbb{Z}.
+\]
+Qed.}. Hence,
+\[
+\sum_{k=0}^{h-1}b^{2n-2}\left(  \dbinom{\left(  k+1\right)  a/b}{n}%
+-\dbinom{ka/b}{n}-\dbinom{a/b}{n}\right)
+\]
+is a sum of $h$ integers, and thus itself is an integer. In other words,%
+\begin{equation}
+\sum_{k=0}^{h-1}b^{2n-2}\left(  \dbinom{\left(  k+1\right)  a/b}{n}%
+-\dbinom{ka/b}{n}-\dbinom{a/b}{n}\right)  \in\mathbb{Z}.
+\label{pf.lem.sol.exeadd.choose.a/b.sol2.lem.short.b.3}%
+\end{equation}
+
+
+But $1-1=0\leq h$. Hence, (\ref{eq.sum.telescope}) (applied to $\mathbb{A}%
+=\mathbb{Q}$, $u=1$, $v=h$ and $a_{s}=\dbinom{sa/b}{n}$) yields%
+\begin{align*}
+\sum_{s=1}^{h}\left(  \dbinom{sa/b}{n}-\dbinom{\left(  s-1\right)  a/b}%
+{n}\right)   &  =\dbinom{ha/b}{n}-\underbrace{\dbinom{\left(  1-1\right)
+a/b}{n}}_{\substack{=\dbinom{0}{n}\\\text{(since }\left(  1-1\right)
+a/b=0\text{)}}}\\
+&  =\dbinom{ha/b}{n}-\underbrace{\dbinom{0}{n}}_{\substack{=0\\\text{(by
+Proposition \ref{prop.binom.0},}\\\text{applied to }m=0\text{)}}%
+}=\dbinom{ha/b}{n}.
+\end{align*}
+Hence,%
+\begin{align}
+\dbinom{ha/b}{n}  &  =\sum_{s=1}^{h}\left(  \dbinom{sa/b}{n}-\dbinom{\left(
+s-1\right)  a/b}{n}\right) \nonumber\\
+&  =\sum_{k=0}^{h-1}\left(  \dbinom{\left(  k+1\right)  a/b}{n}-\dbinom
+{ka/b}{n}\right)  \label{pf.lem.sol.exeadd.choose.a/b.sol2.lem.short.b.6}%
+\end{align}
+(here, we have substituted $k+1$ for $s$ in the sum). Now,%
+\begin{align}
+&  \sum_{k=0}^{h-1}\left(  \dbinom{\left(  k+1\right)  a/b}{n}-\dbinom
+{ka/b}{n}-\dbinom{a/b}{n}\right) \nonumber\\
+&  =\underbrace{\sum_{k=0}^{h-1}\left(  \dbinom{\left(  k+1\right)  a/b}%
+{n}-\dbinom{ka/b}{n}\right)  }_{\substack{=\dbinom{ha/b}{n}\\\text{(by
+(\ref{pf.lem.sol.exeadd.choose.a/b.sol2.lem.short.b.6}))}}}-\underbrace{\sum
+_{k=0}^{h-1}\dbinom{a/b}{n}}_{=h\dbinom{a/b}{n}}\nonumber\\
+&  =\dbinom{ha/b}{n}-h\dbinom{a/b}{n}.
+\label{pf.lem.sol.exeadd.choose.a/b.sol2.lem.short.b.7}%
+\end{align}
+
+
+Now,
+\begin{align*}
+&  \sum_{k=0}^{h-1}b^{2n-2}\left(  \dbinom{\left(  k+1\right)  a/b}{n}%
+-\dbinom{ka/b}{n}-\dbinom{a/b}{n}\right) \\
+&  =b^{2n-2}\underbrace{\sum_{k=0}^{h-1}\left(  \dbinom{\left(  k+1\right)
+a/b}{n}-\dbinom{ka/b}{n}-\dbinom{a/b}{n}\right)  }_{\substack{=\dbinom
+{ha/b}{n}-h\dbinom{a/b}{n}\\\text{(by
+(\ref{pf.lem.sol.exeadd.choose.a/b.sol2.lem.short.b.7}))}}}\\
+&  =b^{2n-2}\left(  \dbinom{ha/b}{n}-h\dbinom{a/b}{n}\right)  .
+\end{align*}
+Thus,%
+\begin{align*}
+&  b^{2n-2}\left(  \dbinom{ha/b}{n}-h\dbinom{a/b}{n}\right) \\
+&  =\sum_{k=0}^{h-1}b^{2n-2}\left(  \dbinom{\left(  k+1\right)  a/b}%
+{n}-\dbinom{ka/b}{n}-\dbinom{a/b}{n}\right) \\
+&  \in\mathbb{Z}\ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{pf.lem.sol.exeadd.choose.a/b.sol2.lem.short.b.3})}\right)  .
+\end{align*}
+This proves Lemma \ref{lem.sol.exeadd.choose.a/b.sol2.lem} \textbf{(b)}.
+
+\textbf{(c)} Let $a\in\mathbb{Z}$. Proposition \ref{prop.binom.int} (applied
+to $m=a$) yields $\dbinom{a}{n}\in\mathbb{Z}$. In other words, $\dbinom{a}{n}$
+is an integer.
+
+Also, $2n-2\in\mathbb{N}$ (since $n$ is a positive integer). Thus, $b^{2n-2}$
+is an integer (since $b$ is an integer). Now, the numbers $b^{2n-2}$ and
+$\dbinom{a}{n}$ are both integers. Hence, their product must also be an
+integer. In other words, $b^{2n-2}\dbinom{a}{n}$ is an integer.
+
+But Lemma \ref{lem.sol.exeadd.choose.a/b.sol2.lem} \textbf{(b)} (applied to
+$h=b$) yields%
+\[
+b^{2n-2}\left(  \dbinom{ba/b}{n}-b\dbinom{a/b}{n}\right)  \in\mathbb{Z}.
+\]
+In other words, $b^{2n-2}\left(  \dbinom{ba/b}{n}-b\dbinom{a/b}{n}\right)  $
+is an integer. Denote this integer by $z$. Thus,%
+\begin{align*}
+z  &  =b^{2n-2}\left(  \dbinom{ba/b}{n}-b\dbinom{a/b}{n}\right)
+=b^{2n-2}\underbrace{\dbinom{ba/b}{n}}_{=\dbinom{a}{n}}-\underbrace{b^{2n-2}%
+b}_{=b^{\left(  2n-2\right)  +1}=b^{2n-1}}\dbinom{a/b}{n}\\
+&  =b^{2n-2}\dbinom{a}{n}-b^{2n-1}\dbinom{a/b}{n}.
+\end{align*}
+Solving this equality for $b^{2n-1}\dbinom{a/b}{n}$, we obtain
+\begin{equation}
+b^{2n-1}\dbinom{a/b}{n}=b^{2n-2}\dbinom{a}{n}-z.
+\label{pf.lem.sol.exeadd.choose.a/b.sol2.lem.short.c.3}%
+\end{equation}
+
+
+But the numbers $b^{2n-2}\dbinom{a}{n}$ and $z$ are integers. Hence, their
+difference is also an integer. In other words, $b^{2n-2}\dbinom{a}{n}-z$ is an
+integer. In other words, $b^{2n-2}\dbinom{a}{n}-z\in\mathbb{Z}$. Hence,
+(\ref{pf.lem.sol.exeadd.choose.a/b.sol2.lem.short.c.3}) becomes $b^{2n-1}%
+\dbinom{a/b}{n}=b^{2n-2}\dbinom{a}{n}-z\in\mathbb{Z}$. This proves Lemma
+\ref{lem.sol.exeadd.choose.a/b.sol2.lem} \textbf{(c)}.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exeadd.choose.a/b.sol2.lem}.]The integer $n$ is
+positive. Hence, $n-1\in\mathbb{N}$, so that $0\in\left\{  0,1,\ldots
+,n-1\right\}  $. Also, $n\in\mathbb{N}$ (since $n$ is a positive integer), so
+that $n\in\left\{  0,1,\ldots,n\right\}  $.
+
+\textbf{(a)} Let $u\in\mathbb{Z}$ and $v\in\mathbb{Z}$. Proposition
+\ref{prop.binom.00} \textbf{(a)} yields $\dbinom{X}{0}=1$ (an identity between
+two polynomials in $X$). Substituting $u/b$ for $X$ in this identity, we
+obtain $\dbinom{u/b}{0}=1$. Substituting $v/b$ for $X$ in the identity
+$\dbinom{X}{0}=1$, we obtain $\dbinom{v/b}{0}=1$.
+
+Theorem \ref{thm.vandermonde} yields%
+\[
+\dbinom{X+Y}{n}=\sum_{k=0}^{n}\dbinom{X}{k}\dbinom{Y}{n-k}%
+\]
+(an identity between polynomials in $X$ and $Y$). Substituting $u/b$ and $v/b$
+for $X$ and $Y$ in this identity, we obtain%
+\begin{align*}
+\dbinom{u/b+v/b}{n}  &  =\sum_{k=0}^{n}\dbinom{u/b}{k}\dbinom{v/b}{n-k}\\
+&  =\sum_{k=0}^{n-1}\dbinom{u/b}{k}\dbinom{v/b}{n-k}+\dbinom{u/b}%
+{n}\underbrace{\dbinom{v/b}{n-n}}_{=\dbinom{v/b}{0}=1}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have split off the addend for }k=n\text{ from}\\
+\text{the sum (since }n\in\left\{  0,1,\ldots,n\right\}  \text{)}%
+\end{array}
+\right) \\
+&  =\sum_{k=0}^{n-1}\dbinom{u/b}{k}\dbinom{v/b}{n-k}+\dbinom{u/b}{n}.
+\end{align*}
+Subtracting $\dbinom{u/b}{n}$ from this equality, we obtain%
+\begin{align*}
+&  \dbinom{u/b+v/b}{n}-\dbinom{u/b}{n}\\
+&  =\sum_{k=0}^{n-1}\dbinom{u/b}{k}\dbinom{v/b}{n-k}\\
+&  =\underbrace{\dbinom{u/b}{0}}_{=1}\underbrace{\dbinom{v/b}{n-0}}%
+_{=\dbinom{v/b}{n}}+\sum_{k=1}^{n-1}\dbinom{u/b}{k}\dbinom{v/b}{n-k}\\
+&  =\dbinom{v/b}{n}+\sum_{k=1}^{n-1}\dbinom{u/b}{k}\dbinom{v/b}{n-k}.
+\end{align*}
+Subtracting $\dbinom{v/b}{n}$ from this equality, we obtain%
+\begin{equation}
+\dbinom{u/b+v/b}{n}-\dbinom{u/b}{n}-\dbinom{v/b}{n}=\sum_{k=1}^{n-1}%
+\dbinom{u/b}{k}\dbinom{v/b}{n-k}.
+\label{pf.lem.sol.exeadd.choose.a/b.sol2.lem.a.1}%
+\end{equation}
+
+
+But for every $k\in\left\{  1,2,\ldots,n-1\right\}  $, we have%
+\begin{equation}
+b^{2n-2}\dbinom{u/b}{k}\dbinom{v/b}{n-k}\in\mathbb{Z}
+\label{pf.lem.sol.exeadd.choose.a/b.sol2.lem.a.3}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.sol.exeadd.choose.a/b.sol2.lem.a.3}):}
+Let $k\in\left\{  1,2,\ldots,n-1\right\}  $.
+\par
+From (\ref{eq.lem.sol.exeadd.choose.a/b.sol2.lem.ass}) (applied to $c=u$), we
+obtain $b^{2k-1}\dbinom{u/b}{k}\in\mathbb{Z}$. In other words, the number
+$b^{2k-1}\dbinom{u/b}{k}$ is an integer.
+\par
+But we also have $n-k\in\left\{  1,2,\ldots,n-1\right\}  $ (since
+$k\in\left\{  1,2,\ldots,n-1\right\}  $). Thus, from
+(\ref{eq.lem.sol.exeadd.choose.a/b.sol2.lem.ass}) (applied to $n-k$ and $v$
+instead of $k$ and $c$), we obtain $b^{2\left(  n-k\right)  -1}\dbinom
+{v/b}{n-k}\in\mathbb{Z}$. In other words, the number $b^{2\left(  n-k\right)
+-1}\dbinom{v/b}{n-k}$ is an integer.
+\par
+Now, the numbers $b^{2k-1}\dbinom{u/b}{k}$ and $b^{2\left(  n-k\right)
+-1}\dbinom{v/b}{n-k}$ are integers. Hence, their product is an integer as
+well. In other words, $b^{2k-1}\dbinom{u/b}{k}\cdot b^{2\left(  n-k\right)
+-1}\dbinom{v/b}{n-k}$ is an integer. In other words, $b^{2k-1}\dbinom{u/b}%
+{k}\cdot b^{2\left(  n-k\right)  -1}\dbinom{v/b}{n-k}\in\mathbb{Z}$. Since%
+\begin{align*}
+&  b^{2k-1}\dbinom{u/b}{k}\cdot b^{2\left(  n-k\right)  -1}\dbinom{v/b}{n-k}\\
+&  =\underbrace{b^{2k-1}b^{2\left(  n-k\right)  -1}}_{\substack{=b^{\left(
+2k-1\right)  +\left(  2\left(  n-k\right)  -1\right)  }=b^{2n-2}\\\text{(since
+}\left(  2k-1\right)  +\left(  2\left(  n-k\right)  -1\right)  =2n-2\text{)}%
+}}\dbinom{u/b}{k}\dbinom{v/b}{n-k}=b^{2n-2}\dbinom{u/b}{k}\dbinom{v/b}{n-k},
+\end{align*}
+this rewrites as $b^{2n-2}\dbinom{u/b}{k}\dbinom{v/b}{n-k}\in\mathbb{Z}$.
+Thus, (\ref{pf.lem.sol.exeadd.choose.a/b.sol2.lem.a.3}) is proven.}. In other
+words, for every $k\in\left\{  1,2,\ldots,n-1\right\}  $, the number
+$b^{2n-2}\dbinom{u/b}{k}\dbinom{v/b}{n-k}$ is an integer. Hence, $\sum
+_{k=1}^{n-1}b^{2n-2}\dbinom{u/b}{k}\dbinom{v/b}{n-k}$ is a sum of $n-1$
+integers, and thus itself is an integer. In other words,%
+\begin{equation}
+\sum_{k=1}^{n-1}b^{2n-2}\dbinom{u/b}{k}\dbinom{v/b}{n-k}\in\mathbb{Z}.
+\label{pf.lem.sol.exeadd.choose.a/b.sol2.lem.a.5}%
+\end{equation}
+
+
+Now,%
+\begin{align*}
+&  b^{2n-2}\left(  \underbrace{\dbinom{\left(  u+v\right)  /b}{n}%
+}_{\substack{=\dbinom{u/b+v/b}{n}\\\text{(since }\left(  u+v\right)
+/b=u/b+v/b\text{)}}}-\dbinom{u/b}{n}-\dbinom{v/b}{n}\right) \\
+&  =b^{2n-2}\underbrace{\left(  \dbinom{u/b+v/b}{n}-\dbinom{u/b}{n}%
+-\dbinom{v/b}{n}\right)  }_{\substack{=\sum_{k=1}^{n-1}\dbinom{u/b}{k}%
+\dbinom{v/b}{n-k}\\\text{(by (\ref{pf.lem.sol.exeadd.choose.a/b.sol2.lem.a.1}%
+))}}}\\
+&  =b^{2n-2}\sum_{k=1}^{n-1}\dbinom{u/b}{k}\dbinom{v/b}{n-k}=\sum_{k=1}%
+^{n-1}b^{2n-2}\dbinom{u/b}{k}\dbinom{v/b}{n-k}\in\mathbb{Z}%
+\end{align*}
+(by (\ref{pf.lem.sol.exeadd.choose.a/b.sol2.lem.a.5})). This proves Lemma
+\ref{lem.sol.exeadd.choose.a/b.sol2.lem} \textbf{(a)}.
+
+\textbf{(b)} Let $a\in\mathbb{Z}$ and $h\in\mathbb{N}$. For every
+$k\in\left\{  0,1,\ldots,h-1\right\}  $, we have%
+\begin{equation}
+b^{2n-2}\left(  \dbinom{\left(  k+1\right)  a/b}{n}-\dbinom{ka/b}{n}%
+-\dbinom{a/b}{n}\right)  \in\mathbb{Z}
+\label{pf.lem.sol.exeadd.choose.a/b.sol2.lem.b.1}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.sol.exeadd.choose.a/b.sol2.lem.b.1}):}
+Let $k\in\left\{  0,1,\ldots,h-1\right\}  $. Then, Lemma
+\ref{lem.sol.exeadd.choose.a/b.sol2.lem} \textbf{(a)} (applied to $u=ka$ and
+$v=a$) yields%
+\[
+b^{2n-2}\left(  \dbinom{\left(  ka+a\right)  /b}{n}-\dbinom{ka/b}{n}%
+-\dbinom{a/b}{n}\right)  \in\mathbb{Z}.
+\]
+Since $ka+a=\left(  k+1\right)  a$, this rewrites as follows:%
+\[
+b^{2n-2}\left(  \dbinom{\left(  k+1\right)  a/b}{n}-\dbinom{ka/b}{n}%
+-\dbinom{a/b}{n}\right)  \in\mathbb{Z}.
+\]
+Thus, (\ref{pf.lem.sol.exeadd.choose.a/b.sol2.lem.b.1}) is proven.}. In other
+words, for every $k\in\left\{  0,1,\ldots,h-1\right\}  $, the number
+\newline$b^{2n-2}\left(  \dbinom{\left(  k+1\right)  a/b}{n}-\dbinom{ka/b}%
+{n}-\dbinom{a/b}{n}\right)  $ is an integer. Hence,
+\[
+\sum_{k=0}^{h-1}b^{2n-2}\left(  \dbinom{\left(  k+1\right)  a/b}{n}%
+-\dbinom{ka/b}{n}-\dbinom{a/b}{n}\right)
+\]
+is a sum of $h$ integers, and thus itself is an integer. In other words,%
+\begin{equation}
+\sum_{k=0}^{h-1}b^{2n-2}\left(  \dbinom{\left(  k+1\right)  a/b}{n}%
+-\dbinom{ka/b}{n}-\dbinom{a/b}{n}\right)  \in\mathbb{Z}.
+\label{pf.lem.sol.exeadd.choose.a/b.sol2.lem.b.3}%
+\end{equation}
+
+
+But $h\in\mathbb{N}$ and thus $h\in\left\{  0,1,\ldots,h\right\}  $. Hence,
+\begin{align*}
+\sum_{k=0}^{h}\dbinom{ka/b}{n}  &  =\sum_{k=0}^{h-1}\dbinom{ka/b}{n}%
++\dbinom{ha/b}{n}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have split off the addend for }k=h\\
+\text{from the sum (since }h\in\left\{  0,1,\ldots,h\right\}  \text{)}%
+\end{array}
+\right)  .
+\end{align*}
+Subtracting $\dbinom{ha/b}{n}$ from this equality, we obtain%
+\begin{equation}
+\sum_{k=0}^{h}\dbinom{ka/b}{n}-\dbinom{ha/b}{n}=\sum_{k=0}^{h-1}\dbinom
+{ka/b}{n}. \label{pf.lem.sol.exeadd.choose.a/b.sol2.lem.b.5a}%
+\end{equation}
+
+
+On the other hand, $n$ is a positive integer. Hence, $0<n$. Thus, Proposition
+\ref{prop.binom.0} (applied to $m=0$) yields $\dbinom{0}{n}=0$.
+
+But $h\in\mathbb{N}$ and thus $0\in\left\{  0,1,\ldots,h\right\}  $. Hence,
+\begin{align}
+\sum_{k=0}^{h}\dbinom{ka/b}{n}  &  =\underbrace{\dbinom{0a/b}{n}%
+}_{\substack{=\dbinom{0}{n}\\\text{(since }0a/b=0\text{)}}}+\sum_{k=1}%
+^{h}\dbinom{ka/b}{n}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have split off the addend for }k=0\\
+\text{from the sum (since }0\in\left\{  0,1,\ldots,h\right\}  \text{)}%
+\end{array}
+\right) \nonumber\\
+&  =\underbrace{\dbinom{0}{n}}_{=0}+\sum_{k=1}^{h}\dbinom{ka/b}{n}=\sum
+_{k=1}^{h}\dbinom{ka/b}{n}\nonumber\\
+&  =\sum_{k=0}^{h-1}\dbinom{\left(  k+1\right)  a/b}{n}
+\label{pf.lem.sol.exeadd.choose.a/b.sol2.lem.b.5b}%
+\end{align}
+(here, we have substituted $k+1$ for $k$ in the sum).
+
+But%
+\begin{align}
+&  \sum_{k=0}^{h-1}\left(  \dbinom{\left(  k+1\right)  a/b}{n}-\dbinom
+{ka/b}{n}-\dbinom{a/b}{n}\right) \nonumber\\
+&  =\underbrace{\sum_{k=0}^{h-1}\dbinom{\left(  k+1\right)  a/b}{n}%
+}_{\substack{=\sum_{k=0}^{h}\dbinom{ka/b}{n}\\\text{(by
+(\ref{pf.lem.sol.exeadd.choose.a/b.sol2.lem.b.5b}))}}}-\underbrace{\sum
+_{k=0}^{h-1}\dbinom{ka/b}{n}}_{\substack{=\sum_{k=0}^{h}\dbinom{ka/b}%
+{n}-\dbinom{ha/b}{n}\\\text{(by
+(\ref{pf.lem.sol.exeadd.choose.a/b.sol2.lem.b.5a}))}}}-\underbrace{\sum
+_{k=0}^{h-1}\dbinom{a/b}{n}}_{=h\dbinom{a/b}{n}}\nonumber\\
+&  =\sum_{k=0}^{h}\dbinom{ka/b}{n}-\left(  \sum_{k=0}^{h}\dbinom{ka/b}%
+{n}-\dbinom{ha/b}{n}\right)  -h\dbinom{a/b}{n}\nonumber\\
+&  =\dbinom{ha/b}{n}-h\dbinom{a/b}{n}.
+\label{pf.lem.sol.exeadd.choose.a/b.sol2.lem.b.7}%
+\end{align}
+
+
+Now,
+\begin{align*}
+&  \sum_{k=0}^{h-1}b^{2n-2}\left(  \dbinom{\left(  k+1\right)  a/b}{n}%
+-\dbinom{ka/b}{n}-\dbinom{a/b}{n}\right) \\
+&  =b^{2n-2}\underbrace{\sum_{k=0}^{h-1}\left(  \dbinom{\left(  k+1\right)
+a/b}{n}-\dbinom{ka/b}{n}-\dbinom{a/b}{n}\right)  }_{\substack{=\dbinom
+{ha/b}{n}-h\dbinom{a/b}{n}\\\text{(by
+(\ref{pf.lem.sol.exeadd.choose.a/b.sol2.lem.b.7}))}}}\\
+&  =b^{2n-2}\left(  \dbinom{ha/b}{n}-h\dbinom{a/b}{n}\right)  .
+\end{align*}
+Thus,%
+\begin{align*}
+&  b^{2n-2}\left(  \dbinom{ha/b}{n}-h\dbinom{a/b}{n}\right) \\
+&  =\sum_{k=0}^{h-1}b^{2n-2}\left(  \dbinom{\left(  k+1\right)  a/b}%
+{n}-\dbinom{ka/b}{n}-\dbinom{a/b}{n}\right) \\
+&  \in\mathbb{Z}\ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{pf.lem.sol.exeadd.choose.a/b.sol2.lem.b.3})}\right)  .
+\end{align*}
+This proves Lemma \ref{lem.sol.exeadd.choose.a/b.sol2.lem} \textbf{(b)}.
+
+\textbf{(c)} Let $a\in\mathbb{Z}$. Proposition \ref{prop.binom.int} (applied
+to $m=a$) yields $\dbinom{a}{n}\in\mathbb{Z}$. In other words, $\dbinom{a}{n}$
+is an integer.
+
+Also, $n$ is a positive integer; thus, $n\geq1$, so that $n-1\in\mathbb{N}$
+and thus $2\left(  n-1\right)  \in\mathbb{N}$. Hence, $2n-2=2\left(
+n-1\right)  \in\mathbb{N}$. Thus, $b^{2n-2}$ is an integer (since $b$ is an
+integer). Now, the numbers $b^{2n-2}$ and $\dbinom{a}{n}$ are both integers.
+Hence, their product must also be an integer. In other words, $b^{2n-2}%
+\dbinom{a}{n}$ is an integer.
+
+But Lemma \ref{lem.sol.exeadd.choose.a/b.sol2.lem} \textbf{(b)} (applied to
+$h=b$) yields%
+\[
+b^{2n-2}\left(  \dbinom{ba/b}{n}-b\dbinom{a/b}{n}\right)  \in\mathbb{Z}.
+\]
+In other words, $b^{2n-2}\left(  \dbinom{ba/b}{n}-b\dbinom{a/b}{n}\right)  $
+is an integer. Denote this integer by $z$. Thus,%
+\begin{align*}
+z  &  =b^{2n-2}\left(  \dbinom{ba/b}{n}-b\dbinom{a/b}{n}\right) \\
+&  =b^{2n-2}\underbrace{\dbinom{ba/b}{n}}_{\substack{=\dbinom{a}%
+{n}\\\text{(since }ba/b=a\text{)}}}-\underbrace{b^{2n-2}b}%
+_{\substack{=b^{\left(  2n-2\right)  +1}=b^{2n-1}\\\text{(since }\left(
+2n-2\right)  +1=2n-1\text{)}}}\dbinom{a/b}{n}\\
+&  =b^{2n-2}\dbinom{a}{n}-b^{2n-1}\dbinom{a/b}{n}.
+\end{align*}
+Adding $b^{2n-1}\dbinom{a/b}{n}$ to both sides of this equality, we obtain
+$b^{2n-1}\dbinom{a/b}{n}+z=b^{2n-2}\dbinom{a}{n}$. Subtracting $z$ from this
+equality, we obtain
+\begin{equation}
+b^{2n-1}\dbinom{a/b}{n}=b^{2n-2}\dbinom{a}{n}-z.
+\label{pf.lem.sol.exeadd.choose.a/b.sol2.lem.c.3}%
+\end{equation}
+
+
+But the numbers $b^{2n-2}\dbinom{a}{n}$ and $z$ are integers. Hence, their
+difference is also an integer. In other words, $b^{2n-2}\dbinom{a}{n}-z$ is an
+integer. In other words, $b^{2n-2}\dbinom{a}{n}-z\in\mathbb{Z}$. Hence,
+(\ref{pf.lem.sol.exeadd.choose.a/b.sol2.lem.c.3}) becomes $b^{2n-1}%
+\dbinom{a/b}{n}=b^{2n-2}\dbinom{a}{n}-z\in\mathbb{Z}$. This proves Lemma
+\ref{lem.sol.exeadd.choose.a/b.sol2.lem} \textbf{(c)}.
+\end{proof}
+\end{verlong}
+
+Our next lemma is essentially Theorem
+\ref{thm.sol.exeadd.choose.a/b.sol2.main}, restricted to the case when $b$ is positive:
+
+\begin{lemma}
+\label{lem.sol.exeadd.choose.a/b.sol2.pos}Let $a$ and $b$ be two integers such
+that $b>0$. Let $n$ be a positive integer. Then, $b^{2n-1}\dbinom{a/b}{n}%
+\in\mathbb{Z}$.
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exeadd.choose.a/b.sol2.pos}.]We shall prove Lemma
+\ref{lem.sol.exeadd.choose.a/b.sol2.pos} by strong induction on $n$:
+
+\textit{Induction step:} Let $N$ be a positive integer. Assume that Lemma
+\ref{lem.sol.exeadd.choose.a/b.sol2.pos} holds in the case when $n<N$. We must
+show that Lemma \ref{lem.sol.exeadd.choose.a/b.sol2.pos} holds in the case
+when $n=N$.
+
+We have assumed that Lemma \ref{lem.sol.exeadd.choose.a/b.sol2.pos} holds in
+the case when $n<N$. In other words, the following statement holds:
+
+\begin{statement}
+\textit{Statement 1:} Let $a$ and $b$ be two integers such that $b>0$. Let $n$
+be a positive integer such that $n<N$. Then, $b^{2n-1}\dbinom{a/b}{n}%
+\in\mathbb{Z}$.
+\end{statement}
+
+Now, let us prove the following statement:
+
+\begin{statement}
+\textit{Statement 2:} Let $a$ and $b$ be two integers such that $b>0$. Then,
+$b^{2N-1}\dbinom{a/b}{N}\in\mathbb{Z}$.
+\end{statement}
+
+\textit{Proof of Statement 2:} Every $k\in\left\{  1,2,\ldots,N-1\right\}  $
+and $c\in\mathbb{Z}$ satisfy%
+\[
+b^{2k-1}\dbinom{c/b}{k}\in\mathbb{Z}%
+\]
+\footnote{\textit{Proof.} Let $k\in\left\{  1,2,\ldots,N-1\right\}  $ and
+$c\in\mathbb{Z}$. From $k\in\left\{  1,2,\ldots,N-1\right\}  $, we obtain
+$1\leq k\leq N-1$. Now, $k$ is a positive integer (since $1\leq k$) and
+satisfies $k<N$ (since $k\leq N-1<N$). Hence, Statement 1 (applied to $k$ and
+$c$ instead of $n$ and $a$) yields $b^{2k-1}\dbinom{c/b}{k}\in\mathbb{Z}$.
+Qed.}. Hence, Lemma \ref{lem.sol.exeadd.choose.a/b.sol2.lem} \textbf{(c)}
+(applied to $n=N$) yields $b^{2N-1}\dbinom{a/b}{N}\in\mathbb{Z}$. Thus,
+Statement 2 is proven.
+
+So we have proven Statement 2. In other words, we have proven that Lemma
+\ref{lem.sol.exeadd.choose.a/b.sol2.pos} holds in the case when $n=N$. This
+completes the induction step. Thus, the inductive proof of Lemma
+\ref{lem.sol.exeadd.choose.a/b.sol2.pos} is complete.
+\end{proof}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Theorem \ref{thm.sol.exeadd.choose.a/b.sol2.main}.]We must prove
+that $b^{2n-1}\dbinom{a/b}{n}\in\mathbb{Z}$. If $b>0$, then this follows
+immediately from Lemma \ref{lem.sol.exeadd.choose.a/b.sol2.pos}. Hence, for
+the rest of this proof, we WLOG assume that we don't have $b>0$. Hence,
+$b\leq0$, so that $b<0$ (since $b\neq0$). Therefore, $-b>0$. Thus, Lemma
+\ref{lem.sol.exeadd.choose.a/b.sol2.lem} (applied to $-a$ and $-b$ instead of
+$a$ and $b$) yields $\left(  -b\right)  ^{2n-1}\dbinom{\left(  -a\right)
+/\left(  -b\right)  }{n}\in\mathbb{Z}$. Since $\left(  -a\right)  /\left(
+-b\right)  =a/b$, this rewrites as $\left(  -b\right)  ^{2n-1}\dbinom{a/b}%
+{n}\in\mathbb{Z}$. In other words, $\left(  -b\right)  ^{2n-1}\dbinom{a/b}{n}$
+is an integer.
+
+But%
+\[
+\underbrace{\left(  -b\right)  ^{2n-1}}_{=\left(  -1\right)  ^{2n-1}b^{2n-1}%
+}\dbinom{a/b}{n}=\underbrace{\left(  -1\right)  ^{2n-1}}%
+_{\substack{=-1\\\text{(since }2n-1\text{ is odd)}}}b^{2n-1}\dbinom{a/b}%
+{n}=-b^{2n-1}\dbinom{a/b}{n}.
+\]
+In other words, the two numbers $\left(  -b\right)  ^{2n-1}\dbinom{a/b}{n}$
+and $b^{2n-1}\dbinom{a/b}{n}$ differ only in sign. Since the first of them is
+an integer, we thus conclude that so is the second. In other words,
+$b^{2n-1}\dbinom{a/b}{n}\in\mathbb{Z}$. This proves Theorem
+\ref{thm.sol.exeadd.choose.a/b.sol2.main}.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Theorem \ref{thm.sol.exeadd.choose.a/b.sol2.main}.]We must prove
+that $b^{2n-1}\dbinom{a/b}{n}\in\mathbb{Z}$. If $b>0$, then this follows
+immediately from Lemma \ref{lem.sol.exeadd.choose.a/b.sol2.pos}. Hence, for
+the rest of this proof, we can WLOG assume that we don't have $b>0$. Assume this.
+
+We have $b\leq0$ (since we don't have $b>0$). Combining this with $b\neq0$, we
+obtain $b<0$. Hence, $-b>0$. Thus, Lemma
+\ref{lem.sol.exeadd.choose.a/b.sol2.lem} (applied to $-a$ and $-b$ instead of
+$a$ and $b$) yields $\left(  -b\right)  ^{2n-1}\dbinom{\left(  -a\right)
+/\left(  -b\right)  }{n}\in\mathbb{Z}$. Since $\left(  -a\right)  /\left(
+-b\right)  =a/b$, this rewrites as $\left(  -b\right)  ^{2n-1}\dbinom{a/b}%
+{n}\in\mathbb{Z}$. In other words, $\left(  -b\right)  ^{2n-1}\dbinom{a/b}{n}$
+is an integer.
+
+Both numbers $\left(  -1\right)  ^{2n-1}$ and $\left(  -b\right)
+^{2n-1}\dbinom{a/b}{n}$ are integers. Hence, their product is also an integer.
+In other words, $\left(  -1\right)  ^{2n-1}\left(  -b\right)  ^{2n-1}%
+\dbinom{a/b}{n}$ is an integer. In other words,
+\[
+\left(  -1\right)  ^{2n-1}\left(  -b\right)  ^{2n-1}\dbinom{a/b}{n}%
+\in\mathbb{Z}.
+\]
+
+
+But $\left(  -1\right)  ^{2n-1}\left(  -b\right)  ^{2n-1}=\left(
+\underbrace{\left(  -1\right)  \left(  -b\right)  }_{=b}\right)
+^{2n-1}=b^{2n-1}$, so that \newline$b^{2n-1}=\left(  -1\right)  ^{2n-1}\left(
+-b\right)  ^{2n-1}$. Multiplying this equality by $\dbinom{a/b}{n}$, we find%
+\[
+b^{2n-1}\dbinom{a/b}{n}=\left(  -1\right)  ^{2n-1}\left(  -b\right)
+^{2n-1}\dbinom{a/b}{n}\in\mathbb{Z}.
+\]
+This proves Theorem \ref{thm.sol.exeadd.choose.a/b.sol2.main}.
+\end{proof}
+\end{verlong}
+
+Now, only some trivial bookkeeping remains to be done in order to solve
+Additional exercise \ref{exeadd.choose.a/b}. To simplify it, we state the
+following corollary from Theorem \ref{thm.sol.exeadd.choose.a/b.sol2.main}:
+
+\begin{corollary}
+\label{cor.sol.exeadd.choose.a/b.sol2.main}Let $a$ and $b$ be two integers
+such that $b\neq0$. Let $n\in\mathbb{N}$. Let $m=\max\left\{  0,2n-1\right\}
+$. Then, $b^{m}\dbinom{a/b}{n}\in\mathbb{Z}$.
+\end{corollary}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Corollary \ref{cor.sol.exeadd.choose.a/b.sol2.main}.]If $n=0$, then
+Corollary \ref{cor.sol.exeadd.choose.a/b.sol2.main}
+holds\footnote{\textit{Proof.} Assume that $n=0$. We must show that Corollary
+\ref{cor.sol.exeadd.choose.a/b.sol2.main} holds.
+\par
+We have $m=\max\left\{  0,2n-1\right\}  =0$ (since $2\underbrace{n}%
+_{=0}-1=0-1<0$). Hence, $b^{m}=b^{0}=1$ and thus
+\[
+\underbrace{b^{m}}_{=1}\dbinom{a/b}{n}=\dbinom{a/b}{n}=\dbinom{a/b}%
+{0}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }n=0\right)  .
+\]
+\par
+But substituting $a/b$ for $X$ in Proposition \ref{prop.binom.00}
+\textbf{(a)}, we find $\dbinom{a/b}{0}=1$. Thus, $b^{m}\dbinom{a/b}{n}%
+=\dbinom{a/b}{0}=1\in\mathbb{Z}$. Thus, Corollary
+\ref{cor.sol.exeadd.choose.a/b.sol2.main} holds.}. Hence, for the rest of this
+proof, we WLOG assume that $n\neq0$. Therefore, $n$ is a positive integer
+(since $n\in\mathbb{N}$). Therefore, $2n-1>0$, so that $\max\left\{
+0,2n-1\right\}  =2n-1$. Now, $m=\max\left\{  0,2n-1\right\}  =2n-1$, so that
+$b^{m}=b^{2n-1}$. Multiplying this equality by $\dbinom{a/b}{n}$, we find%
+\[
+b^{m}\dbinom{a/b}{n}=b^{2n-1}\dbinom{a/b}{n}\in\mathbb{Z}%
+\]
+(by Theorem \ref{thm.sol.exeadd.choose.a/b.sol2.main}). Corollary
+\ref{cor.sol.exeadd.choose.a/b.sol2.main} is thus proven.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Corollary \ref{cor.sol.exeadd.choose.a/b.sol2.main}.]If $n=0$, then
+Corollary \ref{cor.sol.exeadd.choose.a/b.sol2.main}
+holds\footnote{\textit{Proof.} Assume that $n=0$. We must show that Corollary
+\ref{cor.sol.exeadd.choose.a/b.sol2.main} holds.
+\par
+We have $2\underbrace{n}_{=0}-1=0-1=-1$ and $m=\max\left\{
+0,\underbrace{2n-1}_{=-1}\right\}  =\max\left\{  0,-1\right\}  =0$. Hence,
+$b^{m}=b^{0}=1$ and thus $\underbrace{b^{m}}_{=1}\dbinom{a/b}{n}=\dbinom
+{a/b}{n}=\dbinom{a/b}{0}$ (since $n=0$).
+\par
+But Proposition \ref{prop.binom.00} \textbf{(a)} yields $\dbinom{X}{0}=1$ (an
+identity between two polynomials in $X$). Substituting $a/b$ for $X$ in this
+identity, we obtain $\dbinom{a/b}{0}=1$. Thus, $b^{m}\dbinom{a/b}{n}%
+=\dbinom{a/b}{0}=1\in\mathbb{Z}$. Thus, Corollary
+\ref{cor.sol.exeadd.choose.a/b.sol2.main} holds. Qed.}. Hence, for the rest of
+this proof, we can WLOG assume that we don't have $n=0$. Assume this.
+
+We don't have $n=0$. Hence, we have $n\neq0$. Thus, $n$ is a positive integer
+(since $n\in\mathbb{N}$). Therefore, $n\geq1$, so that $2\underbrace{n}%
+_{\geq1}-1\geq2\cdot1-1=1>0$. Thus, $\max\left\{  0,2n-1\right\}  =2n-1$. Now,
+$m=\max\left\{  0,2n-1\right\}  =2n-1$, so that $b^{m}=b^{2n-1}$. Multiplying
+this equality by $\dbinom{a/b}{n}$, we find%
+\[
+b^{m}\dbinom{a/b}{n}=b^{2n-1}\dbinom{a/b}{n}\in\mathbb{Z}%
+\]
+(by Theorem \ref{thm.sol.exeadd.choose.a/b.sol2.main}). Corollary
+\ref{cor.sol.exeadd.choose.a/b.sol2.main} is thus proven.
+\end{proof}
+\end{verlong}
+
+\begin{proof}
+[Second solution to Additional exercise \ref{exeadd.choose.a/b}.]Let $m=\max\left\{
+0,2n-1\right\}  $. Then, \newline $m=\max\left\{  0,2n-1\right\}  \geq0$, so that
+$m\in\mathbb{N}$. Also, Corollary \ref{cor.sol.exeadd.choose.a/b.sol2.main}
+shows that $b^{m}\dbinom{a/b}{n}\in\mathbb{Z}$. Hence, there exists some
+$N\in\mathbb{N}$ such that $b^{N}\dbinom{a/b}{n}\in\mathbb{Z}$ (namely,
+$N=m$). This solves Additional exercise \ref{exeadd.choose.a/b}.
+\end{proof}
 
 \subsection{Solution to Exercise \ref{exe.ps2.2.1}}
 
