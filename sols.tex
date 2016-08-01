@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Monday, August 01, 2016 04:33:36}
+%TCIDATA{LastRevised=Tuesday, August 02, 2016 00:04:16}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -10853,8 +10853,8 @@ factors}}}}_{=\sum_{\left(  k_{1},k_{2},\ldots,k_{n}\right)  \in\left[
 \prod_{\substack{i\in\left[  n\right]  ;\\k_{i}=2}}b_{i}\right)  }\nonumber\\
 &  =\sum_{\left(  k_{1},k_{2},\ldots,k_{n}\right)  \in\left[  2\right]  ^{n}%
 }\left(  \prod_{\substack{i\in\left[  n\right]  ;\\k_{i}=1}}a_{i}\right)
-\left(  \prod_{\substack{i\in\left[  n\right]  ;\\k_{i}=2}}b_{i}\right)
-.\label{eq.rmk.prodrule.ai+bi.2}%
+\left(  \prod_{\substack{i\in\left[  n\right]  ;\\k_{i}=2}}b_{i}\right)  .
+\label{eq.rmk.prodrule.ai+bi.2}%
 \end{align}
 But there is a bijection between the set $\left[  2\right]  ^{n}$ and the
 powerset $\mathcal{P}\left(  \left[  n\right]  \right)  $ of $\left[
@@ -10877,7 +10877,7 @@ this bijection. Hence,%
 \begin{align*}
 &  \sum_{\left(  k_{1},k_{2},\ldots,k_{n}\right)  \in\left[  2\right]  ^{n}%
 }\left(  \prod_{\substack{i\in\left[  n\right]  ;\\k_{i}=1}}a_{i}\right)
-\left(  \prod_{\substack{i\in\left[  n\right]  ;\\k_{i}=2}}b_{i}\right)  \\
+\left(  \prod_{\substack{i\in\left[  n\right]  ;\\k_{i}=2}}b_{i}\right) \\
 &  =\sum_{I\subseteq\left[  n\right]  }\left(  \prod_{i\in I}a_{i}\right)
 \left(  \prod_{i\in\left[  n\right]  \setminus I}b_{i}\right)  .
 \end{align*}
@@ -32762,9 +32762,12 @@ them out independently.
 
 Before we start solving Exercise \ref{exe.Ialbe}, let us define some notations.
 
-For every $n\in\mathbb{N}$, we let $\left[  n\right]  $ denote the set
-$\left\{  1,2,\ldots,n\right\}  $.
+\begin{definition}
+\label{def.sol.exe.Ialbe.12n}For every $n\in\mathbb{N}$, we let $\left[
+n\right]  $ denote the set $\left\{  1,2,\ldots,n\right\}  $.
+\end{definition}
 
+\begin{definition}
 For every $n\in\mathbb{N}$ and every $n$-tuple $\mathbf{a}=\left(  a_{1}%
 ,a_{2},\ldots,a_{n}\right)  $ of integers, we define the following notations:
 
@@ -32784,9 +32787,9 @@ and }a_{i}>a_{j}\right\} \label{sol.exe.Ialbe.Inv.1}\\
 \begin{array}
 [c]{c}%
 \text{since the inversions of }\mathbf{a}\text{ are the pairs }\left(
-i,j\right)  \in\left[  n\right]  ^{2}\text{ satisfying}\\
-i<j\text{ and }a_{i}>a_{j}\text{ (by the definition of an \textquotedblleft
-inversion\textquotedblright)}%
+i,j\right)  \in\left[  n\right]  ^{2}\\
+\text{satisfying }i<j\text{ and }a_{i}>a_{j}\text{ (by the definition}\\
+\text{of an \textquotedblleft inversion\textquotedblright)}%
 \end{array}
 \right) \nonumber\\
 &  =\left\{  \left(  u,v\right)  \in\left[  n\right]  ^{2}\ \mid\ u<v\text{
@@ -32811,6 +32814,7 @@ inversions of }\mathbf{a}\right)  \right\vert \nonumber\\
 \end{align}
 
 \end{itemize}
+\end{definition}
 
 Let us now notice something almost trivial:
 
@@ -33398,7 +33402,7 @@ $i\in\left\{  n+1,n+2,\ldots,n+m\right\}  $. Thus, $c_{i}=b_{i-n}$ (by
 \par
 For every $j\in\left\{  n+1,n+2,\ldots,n+m\right\}  $, we have%
 \begin{equation}
-c_{j}=b_{j-n} \label{pf.lem.sol.exe.Ialbe.ab.short.3b.pf.2}%
+c_{j}=b_{j-n}\label{pf.lem.sol.exe.Ialbe.ab.short.3b.pf.2}%
 \end{equation}
 (by (\ref{pf.lem.sol.exe.Ialbe.ab.short.ci.b}), applied to $j$ instead of
 $i$).
@@ -33409,7 +33413,7 @@ thus $i\geq n+1>n$, so that $n<i$. For every $j\in\left\{  1,2,\ldots
 Hence, for every $j\in\left\{  1,2,\ldots,n\right\}  $, we don't have $i<j$.
 Thus, for every $j\in\left\{  1,2,\ldots,n\right\}  $, we have%
 \begin{equation}
-\left[  i<j\right]  =0. \label{pf.lem.sol.exe.Ialbe.ab.short.3b.pf.3}%
+\left[  i<j\right]  =0.\label{pf.lem.sol.exe.Ialbe.ab.short.3b.pf.3}%
 \end{equation}
 \par
 Recall that $0\leq n\leq n+m$. Hence,%
@@ -33420,14 +33424,14 @@ Recall that $0\leq n\leq n+m$. Hence,%
 +\sum_{j=n+1}^{n+m}\underbrace{\left[  i<j\right]  }_{\substack{=\left[
 i-n<j-n\right]  \\\text{(since }i<j\text{ is equivalent to}\\i-n<j-n\text{)}%
 }}\left[  \underbrace{c_{i}}_{=b_{i-n}}>\underbrace{c_{j}}_{\substack{=b_{j-n}%
-\\\text{(by (\ref{pf.lem.sol.exe.Ialbe.ab.short.3b.pf.2}))}}}\right] \\
+\\\text{(by (\ref{pf.lem.sol.exe.Ialbe.ab.short.3b.pf.2}))}}}\right]  \\
 &  =\underbrace{\sum_{j=1}^{n}0\left[  c_{i}>c_{j}\right]  }_{=0}+\sum
-_{j=n+1}^{n+m}\left[  i-n<j-n\right]  \left[  b_{i-n}>b_{j-n}\right] \\
+_{j=n+1}^{n+m}\left[  i-n<j-n\right]  \left[  b_{i-n}>b_{j-n}\right]  \\
 &  =\sum_{j=n+1}^{n+m}\left[  i-n<j-n\right]  \left[  b_{i-n}>b_{j-n}\right]
 \\
-&  =\sum_{j=1}^{m}\left[  i-n<j\right]  \left[  b_{i-n}>b_{j}\right] \\
+&  =\sum_{j=1}^{m}\left[  i-n<j\right]  \left[  b_{i-n}>b_{j}\right]  \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }j\text{ for
-}j-n\text{ in the second sum}\right)  .
+}j-n\text{ in the sum}\right)  .
 \end{align*}
 This proves (\ref{pf.lem.sol.exe.Ialbe.ab.short.3b}).}.
 
@@ -33544,7 +33548,7 @@ $\left(  n+m\right)  $-tuple of integers. Thus, Lemma
 instead of $n$, $\mathbf{a}$ and $a_{i}$) yields%
 \begin{align}
 \ell\left(  \mathbf{c}\right)   &  =\sum_{i=1}^{n+m}\sum_{j=1}^{n+m}\left[
-i<j\right]  \left[  c_{i}>c_{j}\right] \nonumber\\
+i<j\right]  \left[  c_{i}>c_{j}\right]  \nonumber\\
 &  =\sum_{i=1}^{n}\sum_{j=1}^{n+m}\left[  i<j\right]  \left[  c_{i}%
 >c_{j}\right]  +\sum_{i=n+1}^{n+m}\sum_{j=1}^{n+m}\left[  i<j\right]  \left[
 c_{i}>c_{j}\right]  \label{pf.lem.sol.exe.Ialbe.ab.1}%
@@ -33562,13 +33566,13 @@ $i\in\left\{  1,2,\ldots,n\right\}  $. Thus, $c_{i}=a_{i}$ (by
 \par
 For every $j\in\left\{  1,2,\ldots,n\right\}  $, we have%
 \begin{equation}
-c_{j}=a_{j} \label{pf.lem.sol.exe.Ialbe.ab.3a.pf.1}%
+c_{j}=a_{j}\label{pf.lem.sol.exe.Ialbe.ab.3a.pf.1}%
 \end{equation}
 (by (\ref{pf.lem.sol.exe.Ialbe.ab.ci.a}), applied to $j$ instead of $i$).
 \par
 For every $j\in\left\{  n+1,n+2,\ldots,n+m\right\}  $, we have%
 \begin{equation}
-c_{j}=b_{j-n} \label{pf.lem.sol.exe.Ialbe.ab.3a.pf.2}%
+c_{j}=b_{j-n}\label{pf.lem.sol.exe.Ialbe.ab.3a.pf.2}%
 \end{equation}
 (by (\ref{pf.lem.sol.exe.Ialbe.ab.ci.b}), applied to $j$ instead of $i$).
 \par
@@ -33578,23 +33582,23 @@ $j\in\left\{  n+1,n+2,\ldots,n+m\right\}  $, we have $j\geq n+1>n\geq i$
 $, we have $i<j$. Thus, for every $j\in\left\{  n+1,n+2,\ldots,n+m\right\}  $,
 we have%
 \begin{equation}
-\left[  i<j\right]  =1. \label{pf.lem.sol.exe.Ialbe.ab.3a.pf.3}%
+\left[  i<j\right]  =1.\label{pf.lem.sol.exe.Ialbe.ab.3a.pf.3}%
 \end{equation}
 \par
 Recall that $0\leq n\leq n+m$. Hence,%
 \begin{align*}
-&  \sum_{j=1}^{n+m}\left[  i<j\right]  \left[  c_{i}>c_{j}\right] \\
+&  \sum_{j=1}^{n+m}\left[  i<j\right]  \left[  c_{i}>c_{j}\right]  \\
 &  =\sum_{j=1}^{n}\left[  i<j\right]  \left[  \underbrace{c_{i}}_{=a_{i}%
 }>\underbrace{c_{j}}_{\substack{=a_{j}\\\text{(by
 (\ref{pf.lem.sol.exe.Ialbe.ab.3a.pf.1}))}}}\right]  +\sum_{j=n+1}%
 ^{n+m}\underbrace{\left[  i<j\right]  }_{\substack{=1\\\text{(by
 (\ref{pf.lem.sol.exe.Ialbe.ab.3a.pf.3}))}}}\left[  \underbrace{c_{i}}_{=a_{i}%
 }>\underbrace{c_{j}}_{\substack{=b_{j-n}\\\text{(by
-(\ref{pf.lem.sol.exe.Ialbe.ab.3a.pf.2}))}}}\right] \\
+(\ref{pf.lem.sol.exe.Ialbe.ab.3a.pf.2}))}}}\right]  \\
 &  =\sum_{j=1}^{n}\left[  i<j\right]  \left[  a_{i}>a_{j}\right]
-+\sum_{j=n+1}^{n+m}\left[  a_{i}>b_{j-n}\right] \\
++\sum_{j=n+1}^{n+m}\left[  a_{i}>b_{j-n}\right]  \\
 &  =\sum_{j=1}^{n}\left[  i<j\right]  \left[  a_{i}>a_{j}\right]  +\sum
-_{j=1}^{m}\left[  a_{i}>b_{j}\right] \\
+_{j=1}^{m}\left[  a_{i}>b_{j}\right]  \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }j\text{ for
 }j-n\text{ in the second sum}\right)  .
 \end{align*}
@@ -33611,7 +33615,7 @@ $i\in\left\{  n+1,n+2,\ldots,n+m\right\}  $. Thus, $c_{i}=b_{i-n}$ (by
 \par
 For every $j\in\left\{  n+1,n+2,\ldots,n+m\right\}  $, we have%
 \begin{equation}
-c_{j}=b_{j-n} \label{pf.lem.sol.exe.Ialbe.ab.3b.pf.2}%
+c_{j}=b_{j-n}\label{pf.lem.sol.exe.Ialbe.ab.3b.pf.2}%
 \end{equation}
 (by (\ref{pf.lem.sol.exe.Ialbe.ab.ci.b}), applied to $j$ instead of $i$).
 \par
@@ -33621,25 +33625,25 @@ thus $i\geq n+1>n$, so that $n<i$. For every $j\in\left\{  1,2,\ldots
 Hence, for every $j\in\left\{  1,2,\ldots,n\right\}  $, we don't have $i<j$.
 Thus, for every $j\in\left\{  1,2,\ldots,n\right\}  $, we have%
 \begin{equation}
-\left[  i<j\right]  =0. \label{pf.lem.sol.exe.Ialbe.ab.3b.pf.3}%
+\left[  i<j\right]  =0.\label{pf.lem.sol.exe.Ialbe.ab.3b.pf.3}%
 \end{equation}
 \par
 Recall that $0\leq n\leq n+m$. Hence,%
 \begin{align*}
-&  \sum_{j=1}^{n+m}\left[  i<j\right]  \left[  c_{i}>c_{j}\right] \\
+&  \sum_{j=1}^{n+m}\left[  i<j\right]  \left[  c_{i}>c_{j}\right]  \\
 &  =\sum_{j=1}^{n}\underbrace{\left[  i<j\right]  }_{\substack{=0\\\text{(by
 (\ref{pf.lem.sol.exe.Ialbe.ab.3b.pf.3}))}}}\left[  c_{i}>c_{j}\right]
 +\sum_{j=n+1}^{n+m}\underbrace{\left[  i<j\right]  }_{\substack{=\left[
 i-n<j-n\right]  \\\text{(since }i<j\text{ is equivalent to}\\i-n<j-n\text{)}%
 }}\left[  \underbrace{c_{i}}_{=b_{i-n}}>\underbrace{c_{j}}_{\substack{=b_{j-n}%
-\\\text{(by (\ref{pf.lem.sol.exe.Ialbe.ab.3b.pf.2}))}}}\right] \\
+\\\text{(by (\ref{pf.lem.sol.exe.Ialbe.ab.3b.pf.2}))}}}\right]  \\
 &  =\underbrace{\sum_{j=1}^{n}0\left[  c_{i}>c_{j}\right]  }_{=0}+\sum
-_{j=n+1}^{n+m}\left[  i-n<j-n\right]  \left[  b_{i-n}>b_{j-n}\right] \\
+_{j=n+1}^{n+m}\left[  i-n<j-n\right]  \left[  b_{i-n}>b_{j-n}\right]  \\
 &  =\sum_{j=n+1}^{n+m}\left[  i-n<j-n\right]  \left[  b_{i-n}>b_{j-n}\right]
 \\
-&  =\sum_{j=1}^{m}\left[  i-n<j\right]  \left[  b_{i-n}>b_{j}\right] \\
+&  =\sum_{j=1}^{m}\left[  i-n<j\right]  \left[  b_{i-n}>b_{j}\right]  \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }j\text{ for
-}j-n\text{ in the second sum}\right)  .
+}j-n\text{ in the sum}\right)  .
 \end{align*}
 This proves (\ref{pf.lem.sol.exe.Ialbe.ab.3b}).}.
 
@@ -35925,14 +35929,13 @@ is a list of all elements of $\left\{  1,2,\ldots,n\right\}  \setminus I$
 to $\left\{  1,2,\ldots,n\right\}  \setminus I$, $n-k$, $\left(  b_{1}%
 ,b_{2},\ldots,b_{n-k}\right)  $ and $\left(  \gamma\left(  k+1\right)
 ,\gamma\left(  k+2\right)  ,\ldots,\gamma\left(  k+\left(  n-k\right)
-\right)  \right)  $ instead of $S$, $s$, \newline
-$\left(  c_{1},c_{2},\ldots
-,c_{s}\right)  $ and $\left(  p_{1},p_{2},\ldots,p_{s}\right)  $) yields that
-there exists a $\pi\in S_{n-k}$ such that $\left(  \gamma\left(  k+1\right)
-,\gamma\left(  k+2\right)  ,\ldots,\gamma\left(  k+\left(  n-k\right)
-\right)  \right)  =\left(  b_{\pi\left(  1\right)  },b_{\pi\left(  2\right)
-},\ldots,b_{\pi\left(  n-k\right)  }\right)  $. Denote this $\pi$ by $\beta$.
-Thus, $\beta$ is a $\pi\in S_{n-k}$ such that $\left(  \gamma\left(
+\right)  \right)  $ instead of $S$, $s$, \newline$\left(  c_{1},c_{2}%
+,\ldots,c_{s}\right)  $ and $\left(  p_{1},p_{2},\ldots,p_{s}\right)  $)
+yields that there exists a $\pi\in S_{n-k}$ such that $\left(  \gamma\left(
+k+1\right)  ,\gamma\left(  k+2\right)  ,\ldots,\gamma\left(  k+\left(
+n-k\right)  \right)  \right)  =\left(  b_{\pi\left(  1\right)  },b_{\pi\left(
+2\right)  },\ldots,b_{\pi\left(  n-k\right)  }\right)  $. Denote this $\pi$ by
+$\beta$. Thus, $\beta$ is a $\pi\in S_{n-k}$ such that $\left(  \gamma\left(
 k+1\right)  ,\gamma\left(  k+2\right)  ,\ldots,\gamma\left(  k+\left(
 n-k\right)  \right)  \right)  =\left(  b_{\pi\left(  1\right)  },b_{\pi\left(
 2\right)  },\ldots,b_{\pi\left(  n-k\right)  }\right)  $. In other words,
