@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Wednesday, July 27, 2016 18:08:01}
+%TCIDATA{LastRevised=Monday, August 01, 2016 04:30:32}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -8980,6 +8980,16 @@ bc\right)  =\left(  ab\right)  c$ for all $a\in\mathbb{K}$, $b\in\mathbb{K}$
 and $c\in\mathbb{K}$. But in (\ref{eq.rings.nab}) and (\ref{eq.rings.nma}),
 the $n$ is an integer, not an element of $\mathbb{K}$.}
 
+The identities listed above are not hard to prove. Indeed, they are
+generalizations of well-known identities holding for rational numbers; and
+some of them (for example, (\ref{eq.rings.a**(n+m)}), (\ref{eq.rings.-(ab)**n}%
+) and (\ref{eq.rings.(a+b)**n})) can be proved in exactly the same way as
+those identities for rational numbers.\footnote{For instance, we can obtain a
+proof of (\ref{eq.rings.(a+b)**n}) by re-reading the solution to Exercise
+\ref{exe.prop.binom.binomial}, while replacing every $X$ by an $a$ and
+replacing every $Y$ by a $b$. Another proof of (\ref{eq.rings.(a+b)**n}) is
+given in the solution to Exercise \ref{exe.prod(ai+bi)} \textbf{(b)}.}
+
 Furthermore, finite sums such as $\sum_{s\in S}a_{s}$ (where $S$ is a finite
 set, and $a_{s}\in\mathbb{K}$ for every $s\in S$), and finite products such as
 $\prod_{s\in S}a_{s}$ (where $S$ is a finite set, and $a_{s}\in\mathbb{K}$ for
@@ -9020,6 +9030,28 @@ When you are reading about rings, it is important to know which meaning of
 \textquotedblleft ring\textquotedblright\ the author is subscribing to. (Often
 this can be inferred from the examples given.)
 \end{remark}
+
+\begin{exercise}
+\label{exe.prod(ai+bi)}Let $\mathbb{K}$ be a commutative ring. For every
+$n\in\mathbb{N}$, let $\left[  n\right]  $ denote the set $\left\{
+1,2,\ldots,n\right\}  $.
+
+\textbf{(a)} Let $n\in\mathbb{N}$. Let $a_{1},a_{2},\ldots,a_{n}$ be $n$
+elements of $\mathbb{K}$. Let $b_{1},b_{2},\ldots,b_{n}$ be $n$ further
+elements of $\mathbb{K}$. Prove that%
+\[
+\prod_{i=1}^{n}\left(  a_{i}+b_{i}\right)  =\sum_{I\subseteq\left[  n\right]
+}\left(  \prod_{i\in I}a_{i}\right)  \left(  \prod_{i\in\left[  n\right]
+\setminus I}b_{i}\right)  .
+\]
+(Here, as usual, the summation sign $\sum_{I\subseteq\left[  n\right]  }$
+means $\sum_{I\in\mathcal{P}\left(  \left[  n\right]  \right)  }$, where
+$\mathcal{P}\left(  \left[  n\right]  \right)  $ denotes the powerset of
+$\left[  n\right]  $.)
+
+\textbf{(b)} Use Exercise \ref{exe.prod(ai+bi)} to give a new proof of
+(\ref{eq.rings.(a+b)**n}).
+\end{exercise}
 
 \subsection{Matrices}
 
@@ -9543,29 +9575,36 @@ From (\ref{eq.det.eq.1}), we obtain%
 \begin{equation}
 \det A=\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\left(
 x_{1}+y_{\sigma\left(  1\right)  }\right)  \left(  x_{2}+y_{\sigma\left(
-2\right)  }\right)  \cdots\left(  x_{n}+y_{\sigma\left(  n\right)  }\right)  .
-\label{eq.exam.xi+yj.detA1}%
+2\right)  }\right)  \cdots\left(  x_{n}+y_{\sigma\left(  n\right)  }\right)
+.\label{eq.exam.xi+yj.detA1}%
 \end{equation}
 If we expand the product $\left(  x_{1}+y_{\sigma\left(  1\right)  }\right)
 \left(  x_{2}+y_{\sigma\left(  2\right)  }\right)  \cdots\left(
 x_{n}+y_{\sigma\left(  n\right)  }\right)  $, we obtain a sum of $2^{n}$
 terms:%
-\[
+\begin{equation}
 \left(  x_{1}+y_{\sigma\left(  1\right)  }\right)  \left(  x_{2}%
 +y_{\sigma\left(  2\right)  }\right)  \cdots\left(  x_{n}+y_{\sigma\left(
 n\right)  }\right)  =\sum_{I\subseteq\left[  n\right]  }\left(  \prod_{i\in
 I}x_{i}\right)  \left(  \prod_{i\in\left[  n\right]  \setminus I}%
-y_{\sigma\left(  i\right)  }\right)
-\]
+y_{\sigma\left(  i\right)  }\right)  \label{eq.exam.xi+yj.detA2}%
+\end{equation}
 (where $\left[  n\right]  $ means the set $\left\{  1,2,\ldots,n\right\}  $).
-Thus, (\ref{eq.exam.xi+yj.detA1}) becomes%
+(To obtain a fully rigorous proof of (\ref{eq.exam.xi+yj.detA2}), apply
+Exercise \ref{exe.prod(ai+bi)} \textbf{(a)} to $a_{i}=x_{i}$ and
+$b_{i}=y_{\sigma\left(  i\right)  }$.) Thus, (\ref{eq.exam.xi+yj.detA1})
+becomes%
 \begin{align*}
-\det A  &  =\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\left(
-x_{1}+y_{\sigma\left(  1\right)  }\right)  \left(  x_{2}+y_{\sigma\left(
-2\right)  }\right)  \cdots\left(  x_{n}+y_{\sigma\left(  n\right)  }\right) \\
+\det A &  =\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}%
+\underbrace{\left(  x_{1}+y_{\sigma\left(  1\right)  }\right)  \left(
+x_{2}+y_{\sigma\left(  2\right)  }\right)  \cdots\left(  x_{n}+y_{\sigma
+\left(  n\right)  }\right)  }_{\substack{=\sum_{I\subseteq\left[  n\right]
+}\left(  \prod_{i\in I}x_{i}\right)  \left(  \prod_{i\in\left[  n\right]
+\setminus I}y_{\sigma\left(  i\right)  }\right)  \\\text{(by
+(\ref{eq.exam.xi+yj.detA2}))}}}\\
 &  =\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\sum_{I\subseteq\left[
 n\right]  }\left(  \prod_{i\in I}x_{i}\right)  \left(  \prod_{i\in\left[
-n\right]  \setminus I}y_{\sigma\left(  i\right)  }\right) \\
+n\right]  \setminus I}y_{\sigma\left(  i\right)  }\right)  \\
 &  =\sum_{I\subseteq\left[  n\right]  }\sum_{\sigma\in S_{n}}\left(
 -1\right)  ^{\sigma}\left(  \prod_{i\in I}x_{i}\right)  \left(  \prod
 _{i\in\left[  n\right]  \setminus I}y_{\sigma\left(  i\right)  }\right)  .
@@ -9575,7 +9614,7 @@ show that every $I\subseteq\left[  n\right]  $ satisfies%
 \begin{equation}
 \sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\left(  \prod_{i\in I}%
 x_{i}\right)  \left(  \prod_{i\in\left[  n\right]  \setminus I}y_{\sigma
-\left(  i\right)  }\right)  =0. \label{eq.exam.xi+yj.detA4}%
+\left(  i\right)  }\right)  =0.\label{eq.exam.xi+yj.detA4}%
 \end{equation}
 So let us fix $I\subseteq\left[  n\right]  $, and try to prove
 (\ref{eq.exam.xi+yj.detA4}). We must be in one of the following two cases:
@@ -10793,6 +10832,62 @@ details (if you care about them), see the solution to the following exercise:
 \begin{exercise}
 \label{exe.prodrule}Prove Lemma \ref{lem.prodrule}.
 \end{exercise}
+
+\begin{remark}
+\label{rmk.prodrule.ai+bi}Lemma \ref{lem.prodrule} can be regarded as a
+generalization of Exercise \ref{exe.prod(ai+bi)} \textbf{(a)}. Indeed, let
+$n$, $\left(  a_{1},a_{2},\ldots,a_{n}\right)  $ and $\left(  b_{1}%
+,b_{2},\ldots,b_{n}\right)  $ be as in Exercise \ref{exe.prod(ai+bi)}
+\textbf{(a)}. For every $i\in\left[  n\right]  $, set $m_{i}=1$,
+$p_{i,1}=a_{i}$ and $p_{i,2}=b_{i}$. Then, Lemma \ref{lem.prodrule} yields%
+\begin{align}
+\prod_{i=1}^{n}\left(  a_{i}+b_{i}\right)   &  =\underbrace{\sum_{\left(
+k_{1},k_{2},\ldots,k_{n}\right)  \in\underbrace{\left[  2\right]
+\times\left[  2\right]  \times\cdots\times\left[  2\right]  }_{n\text{
+factors}}}}_{=\sum_{\left(  k_{1},k_{2},\ldots,k_{n}\right)  \in\left[
+2\right]  ^{n}}}\underbrace{\prod_{i=1}^{n}p_{i,k_{i}}}_{=\left(
+\prod_{\substack{i\in\left[  n\right]  ;\\k_{i}=1}}a_{i}\right)  \left(
+\prod_{\substack{i\in\left[  n\right]  ;\\k_{i}=2}}b_{i}\right)  }\nonumber\\
+&  =\sum_{\left(  k_{1},k_{2},\ldots,k_{n}\right)  \in\left[  2\right]  ^{n}%
+}\left(  \prod_{\substack{i\in\left[  n\right]  ;\\k_{i}=1}}a_{i}\right)
+\left(  \prod_{\substack{i\in\left[  n\right]  ;\\k_{i}=2}}b_{i}\right)  .
+\label{eq.rmk.prodrule.ai+bi.2}%
+\end{align}
+But there is a bijection between the set $\left[  2\right]  ^{n}$ and the
+powerset $\mathcal{P}\left(  \left[  n\right]  \right)  $ of $\left[
+n\right]  $: Namely, to every $n$-tuple $\left(  k_{1},k_{2},\ldots
+,k_{n}\right)  \in\left[  2\right]  ^{n}$, we can assign the set $\left\{
+i\in\left[  n\right]  \ \mid\ k_{i}=1\right\}  \in\mathcal{P}\left(  \left[
+n\right]  \right)  $. It is easy to see that this assignment really is a
+bijection $\left[  2\right]  ^{n}\rightarrow\mathcal{P}\left(  \left[
+n\right]  \right)  $, and that it furthermore has the property that every
+$n$-tuple $\left(  k_{1},k_{2},\ldots,k_{n}\right)  \in\left[  2\right]  ^{n}$
+satisfies%
+\[
+\left(  \prod_{\substack{i\in\left[  n\right]  ;\\k_{i}=1}}a_{i}\right)
+\left(  \prod_{\substack{i\in\left[  n\right]  ;\\k_{i}=2}}b_{i}\right)
+=\left(  \prod_{i\in I}a_{i}\right)  \left(  \prod_{i\in\left[  n\right]
+\setminus I}b_{i}\right)  ,
+\]
+where $I$ is the image of $\left(  k_{1},k_{2},\ldots,k_{n}\right)  $ under
+this bijection. Hence,%
+\begin{align*}
+&  \sum_{\left(  k_{1},k_{2},\ldots,k_{n}\right)  \in\left[  2\right]  ^{n}%
+}\left(  \prod_{\substack{i\in\left[  n\right]  ;\\k_{i}=1}}a_{i}\right)
+\left(  \prod_{\substack{i\in\left[  n\right]  ;\\k_{i}=2}}b_{i}\right) \\
+&  =\sum_{I\subseteq\left[  n\right]  }\left(  \prod_{i\in I}a_{i}\right)
+\left(  \prod_{i\in\left[  n\right]  \setminus I}b_{i}\right)  .
+\end{align*}
+
+
+Hence, (\ref{eq.rmk.prodrule.ai+bi.2}) rewrites as%
+\[
+\prod_{i=1}^{n}\left(  a_{i}+b_{i}\right)  =\sum_{I\subseteq\left[  n\right]
+}\left(  \prod_{i\in I}a_{i}\right)  \left(  \prod_{i\in\left[  n\right]
+\setminus I}b_{i}\right)  .
+\]
+But this is precisely the claim of Exercise \ref{exe.prod(ai+bi)} \textbf{(a)}.
+\end{remark}
 
 We shall use a corollary of Lemma \ref{lem.prodrule}:
 
@@ -26458,9 +26553,9 @@ This proves Lemma \ref{lem.exeadd.choose.a/b.prod-of-congs}.
 \end{proof}
 
 \begin{proof}
-[First solution to Additional exercise \ref{exeadd.choose.a/b}.]Set $c=n!$. Notice
-that $c$ is a positive integer (since $c=n!=1\cdot2\cdot\cdots\cdot n$);
-hence, $c-1\in\mathbb{N}$.
+[First solution to Additional exercise \ref{exeadd.choose.a/b}.]Set $c=n!$.
+Notice that $c$ is a positive integer (since $c=n!=1\cdot2\cdot\cdots\cdot
+n$); hence, $c-1\in\mathbb{N}$.
 
 Proposition \ref{prop.exeadd.choose.a/b.lem1} shows that there exists an
 $s\in\mathbb{Z}$ such that $b^{c-1}\equiv sb^{c}\operatorname{mod}c$. Consider
@@ -26662,8 +26757,8 @@ Now, the numbers $b^{2k-1}\dbinom{u/b}{k}$ and $b^{2\left(  n-k\right)
 well. In other words, the number $b^{2k-1}\dbinom{u/b}{k}\cdot b^{2\left(
 n-k\right)  -1}\dbinom{v/b}{n-k}$ is an integer. Since%
 \begin{align*}
-& b^{2k-1}\dbinom{u/b}{k}\cdot b^{2\left(  n-k\right)  -1}\dbinom{v/b}{n-k}\\
-& =\underbrace{b^{2k-1}b^{2\left(  n-k\right)  -1}}_{\substack{=b^{\left(
+&  b^{2k-1}\dbinom{u/b}{k}\cdot b^{2\left(  n-k\right)  -1}\dbinom{v/b}{n-k}\\
+&  =\underbrace{b^{2k-1}b^{2\left(  n-k\right)  -1}}_{\substack{=b^{\left(
 2k-1\right)  +\left(  2\left(  n-k\right)  -1\right)  }=b^{2n-2}\\\text{(since
 }\left(  2k-1\right)  +\left(  2\left(  n-k\right)  -1\right)  =2n-2\text{)}%
 }}\dbinom{u/b}{k}\dbinom{v/b}{n-k}=b^{2n-2}\dbinom{u/b}{k}\dbinom{v/b}{n-k},
@@ -26673,8 +26768,8 @@ this rewrites as follows: The number $b^{2n-2}\dbinom{u/b}{k}\dbinom{v/b}%
 {k}\dbinom{v/b}{n-k}$ is a sum of $n-1$ integers, and thus itself is an
 integer. In other words,%
 \begin{equation}
-\sum_{k=1}^{n-1}b^{2n-2}\dbinom{u/b}{k}\dbinom{v/b}{n-k}\in\mathbb{Z}%
-.\label{pf.lem.sol.exeadd.choose.a/b.sol2.lem.short.a.5}%
+\sum_{k=1}^{n-1}b^{2n-2}\dbinom{u/b}{k}\dbinom{v/b}{n-k}\in\mathbb{Z}.
+\label{pf.lem.sol.exeadd.choose.a/b.sol2.lem.short.a.5}%
 \end{equation}
 
 
@@ -27269,12 +27364,13 @@ b^{m}\dbinom{a/b}{n}=b^{2n-1}\dbinom{a/b}{n}\in\mathbb{Z}%
 \end{verlong}
 
 \begin{proof}
-[Second solution to Additional exercise \ref{exeadd.choose.a/b}.]Let $m=\max\left\{
-0,2n-1\right\}  $. Then, \newline $m=\max\left\{  0,2n-1\right\}  \geq0$, so that
-$m\in\mathbb{N}$. Also, Corollary \ref{cor.sol.exeadd.choose.a/b.sol2.main}
-shows that $b^{m}\dbinom{a/b}{n}\in\mathbb{Z}$. Hence, there exists some
-$N\in\mathbb{N}$ such that $b^{N}\dbinom{a/b}{n}\in\mathbb{Z}$ (namely,
-$N=m$). This solves Additional exercise \ref{exeadd.choose.a/b}.
+[Second solution to Additional exercise \ref{exeadd.choose.a/b}.]Let
+$m=\max\left\{  0,2n-1\right\}  $. Then, \newline$m=\max\left\{
+0,2n-1\right\}  \geq0$, so that $m\in\mathbb{N}$. Also, Corollary
+\ref{cor.sol.exeadd.choose.a/b.sol2.main} shows that $b^{m}\dbinom{a/b}{n}%
+\in\mathbb{Z}$. Hence, there exists some $N\in\mathbb{N}$ such that
+$b^{N}\dbinom{a/b}{n}\in\mathbb{Z}$ (namely, $N=m$). This solves Additional
+exercise \ref{exeadd.choose.a/b}.
 \end{proof}
 
 \subsection{Solution to Exercise \ref{exe.ps2.2.1}}
@@ -34638,8 +34734,8 @@ $I$ (with no repetitions). Thus, the list $\left(  a_{1},a_{2},\ldots
 $a_{1},a_{2},\ldots,a_{k}$ are pairwise distinct. In other words, if $u$ and
 $v$ are two distinct elements of $\left\{  1,2,\ldots,k\right\}  $, then
 $a_{u}\neq a_{v}$. Applying this to $u=g$ and $v=h$, we obtain $a_{g}\neq
-a_{h}$. This contradicts $a_{g}=a_{h}$. Hence, we have obtained a contradiction
-in Case 1.
+a_{h}$. This contradicts $a_{g}=a_{h}$. Hence, we have obtained a
+contradiction in Case 1.
 \par
 Let us now consider Case 2. In this case, we have $g>k$. Hence, $g\geq k+1$
 (since $g$ and $k$ are integers). But (\ref{pf.lem.sol.exe.Ialbe.InotI.a.ch=})
@@ -38420,6 +38516,1074 @@ In other words, $\ell\left(  \sigma\circ\tau\right)  =\ell\left(
 \tau^{-1}\right)  \right)  =\varnothing$. This solves Additional exercise
 \ref{exeadd.perm.Inv.sub} \textbf{(e)}.
 \end{proof}
+
+\subsection{Solution to Exercise \ref{exe.prod(ai+bi)}}
+
+\begin{vershort}
+\begin{proof}
+[Solution to Exercise \ref{exe.prod(ai+bi)}.]\textbf{(a)} We shall solve
+Exercise \ref{exe.prod(ai+bi)} \textbf{(a)} by induction over $n$:
+
+\textit{Induction base:} Exercise \ref{exe.prod(ai+bi)} \textbf{(a)} holds in
+the case when $n=0$\ \ \ \ \footnote{\textit{Proof.} Assume that $n=0$. We
+must show that Exercise \ref{exe.prod(ai+bi)} \textbf{(a)} holds in this case.
+\par
+We have $n=0$ and thus $\left[  n\right]  =\varnothing$. Hence, there is only
+one subset of $\left[  n\right]  $ (namely, $\varnothing$). Therefore,%
+\begin{align*}
+\sum_{I\subseteq\left[  n\right]  }\left(  \prod_{i\in I}a_{i}\right)  \left(
+\prod_{i\in\left[  n\right]  \setminus I}b_{i}\right)   &
+=\underbrace{\left(  \prod_{i\in\varnothing}a_{i}\right)  }%
+_{\substack{=\left(  \text{empty product}\right)  \\=1}}\underbrace{\left(
+\prod_{i\in\left[  n\right]  \setminus\varnothing}b_{i}\right)  }%
+_{\substack{=\prod_{i\in\varnothing}b_{i}\\\text{(since }\left[  n\right]
+\setminus\varnothing=\left[  n\right]  =\varnothing\text{)}}}=\prod
+_{i\in\varnothing}b_{i}\\
+&  =\left(  \text{empty product}\right)  =1.
+\end{align*}
+Comparing this with%
+\begin{align*}
+\prod_{i=1}^{n}\left(  a_{i}+b_{i}\right)   &  =\prod_{i=1}^{0}\left(
+a_{i}+b_{i}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }n=0\right) \\
+&  =\left(  \text{empty product}\right)  =1,
+\end{align*}
+we obtain $\prod_{i=1}^{n}\left(  a_{i}+b_{i}\right)  =\sum_{I\subseteq\left[
+n\right]  }\left(  \prod_{i\in I}a_{i}\right)  \left(  \prod_{i\in\left[
+n\right]  \setminus I}b_{i}\right)  $. Thus, Exercise \ref{exe.prod(ai+bi)}
+\textbf{(a)} holds in the case when $n=0$.}. This completes the induction base.
+
+\textit{Induction step:} Let $k$ be a positive integer. Assume that Exercise
+\ref{exe.prod(ai+bi)} \textbf{(a)} holds in the case when $n=k-1$. We must
+show that Exercise \ref{exe.prod(ai+bi)} \textbf{(a)} holds in the case when
+$n=k$.
+
+Let $\mathbb{K}$ be a commutative ring. Let $a_{1},a_{2},\ldots,a_{k}$ be $k$
+elements of $\mathbb{K}$. Let $b_{1},b_{2},\ldots,b_{k}$ be $k$ further
+elements of $\mathbb{K}$. We have assumed that Exercise \ref{exe.prod(ai+bi)}
+\textbf{(a)} holds in the case when $n=k-1$. Hence, we can apply Exercise
+\ref{exe.prod(ai+bi)} \textbf{(a)} to $k-1$, $\left(  a_{1},a_{2}%
+,\ldots,a_{k-1}\right)  $ and $\left(  b_{1},b_{2},\ldots,b_{k-1}\right)  $
+instead of $n$, $\left(  a_{1},a_{2},\ldots,a_{n}\right)  $ and $\left(
+b_{1},b_{2},\ldots,b_{n}\right)  $. We thus obtain%
+\begin{equation}
+\prod_{i=1}^{k-1}\left(  a_{i}+b_{i}\right)  =\sum_{I\subseteq\left[
+k-1\right]  }\left(  \prod_{i\in I}a_{i}\right)  \left(  \prod_{i\in\left[
+k-1\right]  \setminus I}b_{i}\right)  . \label{sol.prod(ai+bi).short.a.iass}%
+\end{equation}
+
+
+Now, $k$ is a positive integer. Thus, we have $k\in\left[  k\right]  $ and
+$\left[  k\right]  =\left[  k-1\right]  \cup\left\{  k\right\}  $, and
+$\left[  k-1\right]  =\left[  k\right]  \setminus\left\{  k\right\}  $.
+
+Let us introduce a notation: For any set $S$, we let $\mathcal{P}\left(
+S\right)  $ denote the powerset of $S$ (that is, the set of all subsets of
+$S$). Now, we observe the following fact:
+
+\begin{statement}
+\textit{Fact 1:} Let $S$ be any set. Let $s\in S$. Then, the map%
+\begin{align}
+\mathcal{P}\left(  S\setminus\left\{  s\right\}  \right)   &  \rightarrow
+\mathcal{P}\left(  S\right)  \setminus\mathcal{P}\left(  S\setminus\left\{
+s\right\}  \right)  ,\nonumber\\
+U  &  \mapsto U\cup\left\{  s\right\}
+\label{sol.prod(ai+bi).short.a.fact1map}%
+\end{align}
+is well-defined and a bijection.
+\end{statement}
+
+Fact 1 is easy to prove\footnote{The idea behind it is that the subsets of $S$
+which are \textbf{not} subsets of $S\setminus\left\{  s\right\}  $ are the
+subsets of $S$ that contain $s$, and each such subset can be written in the
+form $U\cup\left\{  s\right\}  $ for some $U\subseteq S\setminus\left\{
+s\right\}  $.
+\par
+If you want to prove Fact 1 formally, you need to prove two statements:
+\par
+\begin{enumerate}
+\item The map (\ref{sol.prod(ai+bi).short.a.fact1map}) is well-defined (i.e.,
+we have $U\cup\left\{  s\right\}  \in\mathcal{P}\left(  S\right)
+\setminus\mathcal{P}\left(  S\setminus\left\{  s\right\}  \right)  $ for each
+$U\in\mathcal{P}\left(  S\right)  $).
+\par
+\item This map is bijective.
+\end{enumerate}
+\par
+Proving the first statement is straightforward. The best way to prove the
+second statement is to show that the map
+(\ref{sol.prod(ai+bi).short.a.fact1map}) has an inverse -- namely, the map
+$\mathcal{P}\left(  S\right)  \setminus\mathcal{P}\left(  S\setminus\left\{
+s\right\}  \right)  \rightarrow\mathcal{P}\left(  S\setminus\left\{
+s\right\}  \right)  ,\ V\mapsto V\setminus\left\{  s\right\}  $. Of course,
+you would also have to show that this latter map is well-defined, too.}. We
+can apply Fact 1 to $S=\left[  k\right]  $ and $s=k$; we thus conclude that
+the map%
+\begin{align*}
+\mathcal{P}\left(  \left[  k\right]  \setminus\left\{  k\right\}  \right)   &
+\rightarrow\mathcal{P}\left(  \left[  k\right]  \right)  \setminus
+\mathcal{P}\left(  \left[  k\right]  \setminus\left\{  k\right\}  \right)  ,\\
+U  &  \mapsto U\cup\left\{  k\right\}
+\end{align*}
+is well-defined and a bijection. Since $\left[  k\right]  \setminus\left\{
+k\right\}  =\left[  k-1\right]  $, this rewrites as follows: The map%
+\begin{align*}
+\mathcal{P}\left(  \left[  k-1\right]  \right)   &  \rightarrow\mathcal{P}%
+\left(  \left[  k\right]  \right)  \setminus\mathcal{P}\left(  \left[
+k-1\right]  \right)  ,\\
+U  &  \mapsto U\cup\left\{  k\right\}
+\end{align*}
+is well-defined and a bijection.
+
+But $\left[  k-1\right]  \subseteq\left[  k\right]  $. Hence, every subset of
+$\left[  k-1\right]  $ is a subset of $\left[  k\right]  $.
+
+Let us make another helpful observation:
+
+\begin{statement}
+\textit{Fact 2:} Let $I$ be a subset of $\left[  k-1\right]  $. Then,%
+\begin{equation}
+\prod_{i\in\left[  k\right]  \setminus I}b_{i}=b_{k}\prod_{i\in\left[
+k-1\right]  \setminus I}b_{i} \label{sol.prod(ai+bi).short.a.fact2.1}%
+\end{equation}
+and%
+\begin{equation}
+\prod_{i\in I\cup\left\{  k\right\}  }a_{i}=a_{k}\prod_{i\in I}a_{i}
+\label{sol.prod(ai+bi).short.a.fact2.2}%
+\end{equation}
+and%
+\begin{equation}
+\prod_{i\in\left[  k\right]  \setminus\left(  I\cup\left\{  k\right\}
+\right)  }b_{i}=\prod_{i\in\left[  k-1\right]  \setminus I}b_{i}.
+\label{sol.prod(ai+bi).short.a.fact2.3}%
+\end{equation}
+
+\end{statement}
+
+\textit{Proof of Fact 2:} Let $I$ be a subset of $\left[  k-1\right]  $. Then,%
+\[
+\left(  \left[  k\right]  \setminus I\right)  \setminus\left\{  k\right\}
+=\left[  k\right]  \setminus\underbrace{\left(  I\cup\left\{  k\right\}
+\right)  }_{=\left\{  k\right\}  \cup I}=\left[  k\right]  \setminus\left(
+\left\{  k\right\}  \cup I\right)  =\underbrace{\left(  \left[  k\right]
+\setminus\left\{  k\right\}  \right)  }_{=\left[  k-1\right]  }\setminus
+I=\left[  k-1\right]  \setminus I.
+\]
+
+
+If we had $k\in I$, then we would have $k\in I\subseteq\left[  k-1\right]  $,
+which would contradict the fact that $k\notin\left[  k-1\right]  $. Thus, we
+cannot have $k\in I$. In other words, we have $k\notin I$. Combining
+$k\in\left[  k\right]  $ with $k\notin I$, we obtain $k\in\left[  k\right]
+\setminus I$. Hence, we can split off the factor for $i=k$ from the product
+$\prod_{i\in\left[  k\right]  \setminus I}b_{i}$. We thus obtain%
+\[
+\prod_{i\in\left[  k\right]  \setminus I}b_{i}=b_{k}\prod_{i\in\left(  \left[
+k\right]  \setminus I\right)  \setminus\left\{  k\right\}  }b_{i}=b_{k}%
+\prod_{i\in\left[  k-1\right]  \setminus I}b_{i}%
+\]
+(since $\left(  \left[  k\right]  \setminus I\right)  \setminus\left\{
+k\right\}  =\left[  k-1\right]  \setminus I$). This proves
+(\ref{sol.prod(ai+bi).short.a.fact2.1}).
+
+We have $k\notin I$ and thus $\left(  I\cup\left\{  k\right\}  \right)
+\setminus\left\{  k\right\}  =I$.
+
+We have $k\in\left\{  k\right\}  \subseteq I\cup\left\{  k\right\}  $. Thus,
+we can split off the factor for $i=k$ from the product $\prod_{i\in
+I\cup\left\{  k\right\}  }a_{i}$. Thus, we obtain%
+\[
+\prod_{i\in I\cup\left\{  k\right\}  }a_{i}=a_{k}\prod_{i\in\left(
+I\cup\left\{  k\right\}  \right)  \setminus\left\{  k\right\}  }a_{i}%
+=a_{k}\prod_{i\in I}a_{i}%
+\]
+(since $\left(  I\cup\left\{  k\right\}  \right)  \setminus\left\{  k\right\}
+=I$). This proves (\ref{sol.prod(ai+bi).short.a.fact2.2}).
+
+Recall that $\left[  k\right]  \setminus\left(  I\cup\left\{  k\right\}
+\right)  =\left[  k-1\right]  \setminus I$. Hence, $\prod_{i\in\left[
+k\right]  \setminus\left(  I\cup\left\{  k\right\}  \right)  }b_{i}%
+=\prod_{i\in\left[  k-1\right]  \setminus I}b_{i}$. This proves
+(\ref{sol.prod(ai+bi).short.a.fact2.3}). Thus, the proof of Fact 2 is complete.
+
+We have%
+\begin{align}
+&  \underbrace{\sum_{\substack{I\subseteq\left[  k\right]  ;\\I\in
+\mathcal{P}\left(  \left[  k-1\right]  \right)  }}}_{\substack{=\sum
+_{\substack{I\subseteq\left[  k\right]  ;\\I\subseteq\left[  k-1\right]
+}}=\sum_{I\subseteq\left[  k-1\right]  }\\\text{(since every subset of
+}\left[  k-1\right]  \\\text{is a subset of }\left[  k\right]  \text{)}%
+}}\left(  \prod_{i\in I}a_{i}\right)  \left(  \prod_{i\in\left[  k\right]
+\setminus I}b_{i}\right) \nonumber\\
+&  =\sum_{I\subseteq\left[  k-1\right]  }\left(  \prod_{i\in I}a_{i}\right)
+\underbrace{\left(  \prod_{i\in\left[  k\right]  \setminus I}b_{i}\right)
+}_{\substack{=b_{k}\prod_{i\in\left[  k-1\right]  \setminus I}b_{i}\\\text{(by
+(\ref{sol.prod(ai+bi).short.a.fact2.1}))}}}=\sum_{I\subseteq\left[
+k-1\right]  }\left(  \prod_{i\in I}a_{i}\right)  b_{k}\left(  \prod
+_{i\in\left[  k-1\right]  \setminus I}b_{i}\right) \nonumber\\
+&  =b_{k}\underbrace{\sum_{I\subseteq\left[  k-1\right]  }\left(  \prod_{i\in
+I}a_{i}\right)  \left(  \prod_{i\in\left[  k-1\right]  \setminus I}%
+b_{i}\right)  }_{\substack{=\prod_{i=1}^{k-1}\left(  a_{i}+b_{i}\right)
+\\\text{(by (\ref{sol.prod(ai+bi).short.a.iass}))}}}=b_{k}\prod_{i=1}%
+^{k-1}\left(  a_{i}+b_{i}\right)  \label{sol.prod(ai+bi).short.a.add1}%
+\end{align}
+and%
+\begin{align}
+&  \underbrace{\sum_{\substack{I\subseteq\left[  k\right]  ;\\I\notin%
+\mathcal{P}\left(  \left[  k-1\right]  \right)  }}}_{\substack{=\sum
+_{\substack{I\in\mathcal{P}\left(  \left[  k\right]  \right)  ;\\I\notin%
+\mathcal{P}\left(  \left[  k-1\right]  \right)  }}=\sum_{I\in\mathcal{P}%
+\left(  \left[  k\right]  \right)  \setminus\mathcal{P}\left(  \left[
+k-1\right]  \right)  }}}\left(  \prod_{i\in I}a_{i}\right)  \left(
+\prod_{i\in\left[  k\right]  \setminus I}b_{i}\right) \nonumber\\
+&  =\sum_{I\in\mathcal{P}\left(  \left[  k\right]  \right)  \setminus
+\mathcal{P}\left(  \left[  k-1\right]  \right)  }\left(  \prod_{i\in I}%
+a_{i}\right)  \left(  \prod_{i\in\left[  k\right]  \setminus I}b_{i}\right)
+\nonumber\\
+&  =\sum_{U\in\mathcal{P}\left(  \left[  k-1\right]  \right)  }\left(
+\prod_{i\in U\cup\left\{  k\right\}  }a_{i}\right)  \left(  \prod_{i\in\left[
+k\right]  \setminus\left(  U\cup\left\{  k\right\}  \right)  }b_{i}\right)
+\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have substituted }U\cup\left\{  k\right\}  \text{ for }I\text{
+in the sum,}\\
+\text{since the map }\mathcal{P}\left(  \left[  k-1\right]  \right)
+\rightarrow\mathcal{P}\left(  \left[  k\right]  \right)  \setminus
+\mathcal{P}\left(  \left[  k-1\right]  \right)  ,\ U\mapsto U\cup\left\{
+k\right\} \\
+\text{is a bijection}%
+\end{array}
+\right) \nonumber\\
+&  =\sum_{I\in\mathcal{P}\left(  \left[  k-1\right]  \right)  }%
+\underbrace{\left(  \prod_{i\in I\cup\left\{  k\right\}  }a_{i}\right)
+}_{\substack{=a_{k}\prod_{i\in I}a_{i}\\\text{(by
+(\ref{sol.prod(ai+bi).short.a.fact2.2}))}}}\underbrace{\left(  \prod
+_{i\in\left[  k\right]  \setminus\left(  I\cup\left\{  k\right\}  \right)
+}b_{i}\right)  }_{\substack{=\prod_{i\in\left[  k-1\right]  \setminus I}%
+b_{i}\\\text{(by (\ref{sol.prod(ai+bi).short.a.fact2.3}))}}}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have renamed the summation index
+}U\text{ as }I\right) \nonumber\\
+&  =\sum_{I\subseteq\left[  k-1\right]  }a_{k}\left(  \prod_{i\in I}%
+a_{i}\right)  \left(  \prod_{i\in\left[  k-1\right]  \setminus I}b_{i}\right)
+\nonumber\\
+&  =a_{k}\underbrace{\sum_{I\subseteq\left[  k-1\right]  }\left(  \prod_{i\in
+I}a_{i}\right)  \left(  \prod_{i\in\left[  k-1\right]  \setminus I}%
+b_{i}\right)  }_{\substack{=\prod_{i=1}^{k-1}\left(  a_{i}+b_{i}\right)
+\\\text{(by (\ref{sol.prod(ai+bi).short.a.iass}))}}}=a_{k}\prod_{i=1}%
+^{k-1}\left(  a_{i}+b_{i}\right)  . \label{sol.prod(ai+bi).short.a.add2}%
+\end{align}
+
+
+Now, every subset $I$ of $\left[  k\right]  $ satisfies either $I\in
+\mathcal{P}\left(  \left[  k-1\right]  \right)  $ or $I\notin\mathcal{P}%
+\left(  \left[  k-1\right]  \right)  $ (but not both). Hence,%
+\begin{align*}
+&  \sum_{I\subseteq\left[  k\right]  }\left(  \prod_{i\in I}a_{i}\right)
+\left(  \prod_{i\in\left[  k\right]  \setminus I}b_{i}\right) \\
+&  =\underbrace{\sum_{\substack{I\subseteq\left[  k\right]  ;\\I\in
+\mathcal{P}\left(  \left[  k-1\right]  \right)  }}\left(  \prod_{i\in I}%
+a_{i}\right)  \left(  \prod_{i\in\left[  k\right]  \setminus I}b_{i}\right)
+}_{\substack{=b_{k}\prod_{i=1}^{k-1}\left(  a_{i}+b_{i}\right)  \\\text{(by
+(\ref{sol.prod(ai+bi).short.a.add2}))}}}+\underbrace{\sum
+_{\substack{I\subseteq\left[  k\right]  ;\\I\notin\mathcal{P}\left(  \left[
+k-1\right]  \right)  }}\left(  \prod_{i\in I}a_{i}\right)  \left(  \prod
+_{i\in\left[  k-1\right]  \setminus I}b_{i}\right)  }_{\substack{=a_{k}%
+\prod_{i=1}^{k-1}\left(  a_{i}+b_{i}\right)  \\\text{(by
+(\ref{sol.prod(ai+bi).short.a.add2}))}}}\\
+&  =b_{k}\prod_{i=1}^{k-1}\left(  a_{i}+b_{i}\right)  +a_{k}\prod_{i=1}%
+^{k-1}\left(  a_{i}+b_{i}\right)  =\left(  b_{k}+a_{k}\right)  \prod
+_{i=1}^{k-1}\left(  a_{i}+b_{i}\right) \\
+&  =\left(  a_{k}+b_{k}\right)  \prod_{i=1}^{k-1}\left(  a_{i}+b_{i}\right)
+=\prod_{i=1}^{k}\left(  a_{i}+b_{i}\right)  .
+\end{align*}
+In other words,%
+\begin{equation}
+\prod_{i=1}^{k}\left(  a_{i}+b_{i}\right)  =\sum_{I\subseteq\left[  k\right]
+}\left(  \prod_{i\in I}a_{i}\right)  \left(  \prod_{i\in\left[  k\right]
+\setminus I}b_{i}\right)  . \label{sol.prod(ai+bi).short.a.almostthere}%
+\end{equation}
+
+
+Now, forget that we fixed $\mathbb{K}$, $\left(  a_{1},a_{2},\ldots
+,a_{k}\right)  $ and $\left(  b_{1},b_{2},\ldots,b_{k}\right)  $. We thus have
+proven (\ref{sol.prod(ai+bi).short.a.almostthere}) for every commutative ring
+$\mathbb{K}$, every $k$ elements $a_{1},a_{2},\ldots,a_{k}$ of $\mathbb{K}$,
+and every $k$ elements $b_{1},b_{2},\ldots,b_{k}$ of $\mathbb{K}$. In other
+words, we have proven that Exercise \ref{exe.prod(ai+bi)} \textbf{(a)} holds
+in the case when $n=k$. This completes the induction step. Exercise
+\ref{exe.prod(ai+bi)} \textbf{(a)} is thus proven by induction.
+
+\textbf{(b)} Let $a\in\mathbb{K}$, $b\in\mathbb{K}$ and $n\in\mathbb{N}$. We
+must prove (\ref{eq.rings.(a+b)**n}).
+
+For every $k\in\left\{  0,1,\ldots,n\right\}  $, we have%
+\begin{equation}
+\left(  \text{the number of all }I\subseteq\left[  n\right]  \text{ satisfying
+}\left\vert I\right\vert =k\right)  =\dbinom{n}{k}
+\label{sol.prod(ai+bi).short.b.num}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.prod(ai+bi).short.b.num}):} Let
+$k\in\left\{  0,1,\ldots,n\right\}  $.
+\par
+Clearly, $\left[  n\right]  $ is an $n$-element set. Thus, Proposition
+\ref{prop.binom.subsets} (applied to $n$, $k$ and $\left[  n\right]  $ instead
+of $m$, $n$ and $S$) shows that $\dbinom{n}{k}$ is the number of all
+$k$-element subsets of $\left[  n\right]  $. In other words,%
+\begin{align*}
+\dbinom{n}{k}  &  =\left(  \text{the number of all }k\text{-element subsets of
+}\left[  n\right]  \right) \\
+&  =\left(  \text{the number of all }I\subseteq\left[  n\right]  \text{
+satisfying }\left\vert I\right\vert =k\right)  .
+\end{align*}
+This proves (\ref{sol.prod(ai+bi).short.b.num}).}.
+
+But Exercise \ref{exe.prod(ai+bi)} \textbf{(a)} (applied to $a_{i}=a$ and
+$b_{i}=b$) yields%
+\[
+\prod_{i=1}^{n}\left(  a+b\right)  =\sum_{I\subseteq\left[  n\right]
+}\underbrace{\left(  \prod_{i\in I}a\right)  }_{=a^{\left\vert I\right\vert }%
+}\underbrace{\left(  \prod_{i\in\left[  n\right]  \setminus I}b\right)
+}_{\substack{=b^{\left\vert \left[  n\right]  \setminus I\right\vert
+}\\=b^{\left\vert \left[  n\right]  \right\vert -\left\vert I\right\vert
+}\\\text{(since }\left\vert \left[  n\right]  \setminus I\right\vert
+=\left\vert \left[  n\right]  \right\vert -\left\vert I\right\vert
+\\\text{(since }I\subseteq\left[  n\right]  \text{))}}}=\sum_{I\in
+\mathcal{P}\left(  \left[  n\right]  \right)  }a^{\left\vert I\right\vert
+}b^{\left\vert \left[  n\right]  \right\vert -\left\vert I\right\vert }.
+\]
+Comparing this with $\prod_{i=1}^{n}\left(  a+b\right)  =\left(  a+b\right)
+^{n}$, we obtain%
+\begin{align*}
+\left(  a+b\right)  ^{n}  &  =\underbrace{\sum_{I\subseteq\left[  n\right]  }%
+}_{\substack{=\sum_{k\in\left\{  0,1,\ldots,n\right\}  }\sum
+_{\substack{I\subseteq\left[  n\right]  ;\\\left\vert I\right\vert
+=k}}\\\text{(since every subset }I\text{ of }\left[  n\right]
+\\\text{satisfies }\left\vert I\right\vert \in\left\{  0,1,\ldots,n\right\}
+\\\text{(because }\left\vert I\right\vert \leq\left\vert \left[  n\right]
+\right\vert =n\text{))}}}a^{\left\vert I\right\vert }b^{\left\vert \left[
+n\right]  \right\vert -\left\vert I\right\vert }=\sum_{k\in\left\{
+0,1,\ldots,n\right\}  }\sum_{\substack{I\subseteq\left[  n\right]
+;\\\left\vert I\right\vert =k}}\underbrace{a^{\left\vert I\right\vert }%
+}_{\substack{=a^{k}\\\text{(since }\left\vert I\right\vert =k\text{)}%
+}}\underbrace{b^{\left\vert \left[  n\right]  \right\vert -\left\vert
+I\right\vert }}_{\substack{=b^{n-k}\\\text{(since }\left\vert \left[
+n\right]  \right\vert =n\\\text{and }\left\vert I\right\vert =k\text{)}}}\\
+&  =\underbrace{\sum_{k\in\left\{  0,1,\ldots,n\right\}  }}_{=\sum_{k=0}^{n}%
+}\underbrace{\sum_{\substack{I\subseteq\left[  n\right]  ;\\\left\vert
+I\right\vert =k}}a^{k}b^{n-k}}_{=\left(  \text{the number of all }%
+I\subseteq\left[  n\right]  \text{ satisfying }\left\vert I\right\vert
+=k\right)  a^{k}b^{n-k}}\\
+&  =\sum_{k=0}^{n}\underbrace{\left(  \text{the number of all }I\subseteq
+\left[  n\right]  \text{ satisfying }\left\vert I\right\vert =k\right)
+}_{\substack{=\dbinom{n}{k}\\\text{(by (\ref{sol.prod(ai+bi).short.b.num}))}%
+}}a^{k}b^{n-k}=\sum_{k=0}^{n}\dbinom{n}{k}a^{k}b^{n-k}.
+\end{align*}
+Thus, (\ref{eq.rings.(a+b)**n}) is proven. This solves Exercise
+\ref{exe.prod(ai+bi)} \textbf{(b)}.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+Before we start solving Exercise \ref{exe.prod(ai+bi)}, let us introduce a notation:
+
+\begin{definition}
+\label{def.sol.prod(ai+bi).powerset}Let $S$ be a set. Then, $\mathcal{P}%
+\left(  S\right)  $ will denote the powerset of $S$ (that is, the set of all
+subsets of $S$).
+\end{definition}
+
+\begin{proposition}
+\label{prop.sol.prod(ai+bi).powerset.lem}Let $S$ be a set. Let $s\in S$. Then,
+$\mathcal{P}\left(  S\setminus\left\{  s\right\}  \right)  \subseteq
+\mathcal{P}\left(  S\right)  $. Furthermore, the map%
+\begin{align*}
+\mathcal{P}\left(  S\setminus\left\{  s\right\}  \right)   &  \rightarrow
+\mathcal{P}\left(  S\right)  \setminus\mathcal{P}\left(  S\setminus\left\{
+s\right\}  \right)  ,\\
+U  &  \mapsto U\cup\left\{  s\right\}
+\end{align*}
+is well-defined and a bijection.
+\end{proposition}
+
+Proposition \ref{prop.sol.prod(ai+bi).powerset.lem} is an analogue (more
+precisely, a \textquotedblleft rougher\textquotedblright\ version) of
+Proposition \ref{prop.sol.prop.binom.subsets.Pm.lem} \textbf{(c)}; indeed, it
+differs from Proposition \ref{prop.sol.prop.binom.subsets.Pm.lem} \textbf{(c)}
+in that it concerns itself with arbitrary subsets rather than $m$-element and
+$\left(  m-1\right)  $-element subsets. Unsurprisingly, the proof of
+Proposition \ref{prop.sol.prod(ai+bi).powerset.lem} is analogous to that of
+Proposition \ref{prop.sol.prop.binom.subsets.Pm.lem}. For the sake of
+completeness, let me show this proof:
+
+\begin{proof}
+[Proof of Proposition \ref{prop.sol.prod(ai+bi).powerset.lem}.]We know that
+$\mathcal{P}\left(  S\setminus\left\{  s\right\}  \right)  $ is the set of all
+subsets of $S\setminus\left\{  s\right\}  $ (by the definition of
+$\mathcal{P}\left(  S\setminus\left\{  s\right\}  \right)  $). Also,
+$\mathcal{P}\left(  S\right)  $ is the set of all subsets of $S$ (by the
+definition of $\mathcal{P}\left(  S\right)  $).
+
+For every $U\in\mathcal{P}\left(  S\setminus\left\{  s\right\}  \right)  $, we
+have $U\in\mathcal{P}\left(  S\right)  $\ \ \ \ \footnote{\textit{Proof.} Let
+$U\in\mathcal{P}\left(  S\setminus\left\{  s\right\}  \right)  $. We must show
+that $U\in\mathcal{P}\left(  S\right)  $.
+\par
+We have $U\in\mathcal{P}\left(  S\setminus\left\{  s\right\}  \right)  $. In
+other words, $U$ is a subset of $S\setminus\left\{  s\right\}  $ (since
+$\mathcal{P}\left(  S\setminus\left\{  s\right\}  \right)  $ is the set of all
+subsets of $S\setminus\left\{  s\right\}  $). Thus, $U\subseteq S\setminus
+\left\{  s\right\}  \subseteq S$. Therefore, $U$ is a subset of $S$. In other
+words, $U\in\mathcal{P}\left(  S\right)  $ (since $\mathcal{P}\left(
+S\right)  $ is the set of all subsets of $S$). Qed.}. In other words,
+$\mathcal{P}\left(  S\setminus\left\{  s\right\}  \right)  \subseteq
+\mathcal{P}\left(  S\right)  $.
+
+For every $U\in\mathcal{P}\left(  S\setminus\left\{  s\right\}  \right)  $, we
+have $U\cup\left\{  s\right\}  \in\mathcal{P}\left(  S\right)  \setminus
+\mathcal{P}\left(  S\setminus\left\{  s\right\}  \right)  $%
+\ \ \ \ \footnote{\textit{Proof.} Let $U\in\mathcal{P}\left(  S\setminus
+\left\{  s\right\}  \right)  $. We must prove that $U\cup\left\{  s\right\}
+\in\mathcal{P}\left(  S\right)  \setminus\mathcal{P}\left(  S\setminus\left\{
+s\right\}  \right)  $.
+\par
+Let $V=U\cup\left\{  s\right\}  $.
+\par
+We have $U\in\mathcal{P}\left(  S\setminus\left\{  s\right\}  \right)  $. In
+other words, $U$ is a subset of $S\setminus\left\{  s\right\}  $ (since
+$\mathcal{P}\left(  S\setminus\left\{  s\right\}  \right)  $ is the set of all
+subsets of $S\setminus\left\{  s\right\}  $). Thus, $U\subseteq S\setminus
+\left\{  s\right\}  $. Now,
+\[
+V=\underbrace{U}_{\subseteq S\setminus\left\{  s\right\}  \subseteq S}%
+\cup\underbrace{\left\{  s\right\}  }_{\substack{\subseteq S\\\text{(since
+}s\in S\text{)}}}\subseteq S\cup S=S.
+\]
+In other words, $V$ is a subset of $S$. In other words, $V\in\mathcal{P}%
+\left(  S\right)  $ (since $\mathcal{P}\left(  S\right)  $ is the set of all
+subsets of $S$).
+\par
+Now, we shall prove that $V\notin\mathcal{P}\left(  S\setminus\left\{
+s\right\}  \right)  $. Indeed, assume the contrary (for the sake of
+contradiction). Thus, $V\in\mathcal{P}\left(  S\setminus\left\{  s\right\}
+\right)  $. In other words, $V$ is a subset of $S\setminus\left\{  s\right\}
+$ (since $\mathcal{P}\left(  S\setminus\left\{  s\right\}  \right)  $ is the
+set of all subsets of $S\setminus\left\{  s\right\}  $). In other words,
+$V\subseteq S\setminus\left\{  s\right\}  $. Thus, $s\in\left\{  s\right\}
+\subseteq U\cup\left\{  s\right\}  =V\subseteq S\setminus\left\{  s\right\}
+$, which contradicts $s\notin S\setminus\left\{  s\right\}  $. This
+contradiction proves that our assumption was false. Hence, $V\notin%
+\mathcal{P}\left(  S\setminus\left\{  s\right\}  \right)  $ is proven.
+\par
+Combining $V\in\mathcal{P}\left(  S\right)  $ with $V\notin\mathcal{P}\left(
+S\setminus\left\{  s\right\}  \right)  $, we obtain $V\in\mathcal{P}\left(
+S\right)  \setminus\mathcal{P}\left(  S\setminus\left\{  s\right\}  \right)
+$. Thus, $U\cup\left\{  s\right\}  =V\in\mathcal{P}\left(  S\right)
+\setminus\mathcal{P}\left(  S\setminus\left\{  s\right\}  \right)  $, qed.}.
+Hence, we can define a map%
+\[
+\alpha:\mathcal{P}\left(  S\setminus\left\{  s\right\}  \right)
+\rightarrow\mathcal{P}\left(  S\right)  \setminus\mathcal{P}\left(
+S\setminus\left\{  s\right\}  \right)
+\]
+by
+\begin{equation}
+\left(  \alpha\left(  U\right)  =U\cup\left\{  s\right\}
+\ \ \ \ \ \ \ \ \ \ \text{for every }U\in\mathcal{P}\left(  S\setminus\left\{
+s\right\}  \right)  \right)  .
+\label{pf.prop.sol.prod(ai+bi).powerset.lem.alpha()=}%
+\end{equation}
+Consider this map $\alpha$.
+
+For every $V\in\mathcal{P}\left(  S\right)  \setminus\mathcal{P}\left(
+S\setminus\left\{  s\right\}  \right)  $, we have $V\setminus\left\{
+s\right\}  \in\mathcal{P}\left(  S\setminus\left\{  s\right\}  \right)
+$\ \ \ \ \footnote{\textit{Proof.} Let $V\in\mathcal{P}\left(  S\right)
+\setminus\mathcal{P}\left(  S\setminus\left\{  s\right\}  \right)  $. We must
+prove that $V\setminus\left\{  s\right\}  \in\mathcal{P}\left(  S\setminus
+\left\{  s\right\}  \right)  $.
+\par
+Let $W=V\setminus\left\{  s\right\}  $.
+\par
+We have $V\notin\mathcal{P}\left(  S\setminus\left\{  s\right\}  \right)  $
+(since $V\in\mathcal{P}\left(  S\right)  \setminus\mathcal{P}\left(
+S\setminus\left\{  s\right\}  \right)  $).
+\par
+We have $V\in\mathcal{P}\left(  S\right)  \setminus\mathcal{P}\left(
+S\setminus\left\{  s\right\}  \right)  \subseteq\mathcal{P}\left(  S\right)
+$. In other words, $V$ is a subset of $S$ (since $\mathcal{P}\left(  S\right)
+$ is the set of all subsets of $S$). In other words, $V\subseteq S$.
+\par
+Notice that $W=\underbrace{V}_{\subseteq S}\setminus\left\{  s\right\}
+\subseteq S\setminus\left\{  s\right\}  $. In other words, $W$ is a subset of
+$S\setminus\left\{  s\right\}  $. In other words, $W\in\mathcal{P}\left(
+S\setminus\left\{  s\right\}  \right)  $ (since $\mathcal{P}\left(
+S\setminus\left\{  s\right\}  \right)  $ is the set of all subsets of
+$S\setminus\left\{  s\right\}  $). Hence, $V\setminus\left\{  s\right\}
+=W\in\mathcal{P}\left(  S\setminus\left\{  s\right\}  \right)  $. Qed.}.
+Hence, we can define a map%
+\[
+\beta:\mathcal{P}\left(  S\right)  \setminus\mathcal{P}\left(  S\setminus
+\left\{  s\right\}  \right)  \rightarrow\mathcal{P}\left(  S\setminus\left\{
+s\right\}  \right)
+\]
+by%
+\[
+\left(  \beta\left(  V\right)  =V\setminus\left\{  s\right\}
+\ \ \ \ \ \ \ \ \ \ \text{for every }V\in\mathcal{P}\left(  S\right)
+\setminus\mathcal{P}\left(  S\setminus\left\{  s\right\}  \right)  \right)  .
+\]
+Consider this map $\beta$.
+
+We have $\alpha\circ\beta=\operatorname*{id}$\ \ \ \ \footnote{\textit{Proof.}
+Let $V\in\mathcal{P}\left(  S\right)  \setminus\mathcal{P}\left(
+S\setminus\left\{  s\right\}  \right)  $. We shall show that $\left(
+\alpha\circ\beta\right)  \left(  V\right)  =\operatorname*{id}\left(
+V\right)  $.
+\par
+We have $V\notin\mathcal{P}\left(  S\setminus\left\{  s\right\}  \right)  $
+(since $V\in\mathcal{P}\left(  S\right)  \setminus\mathcal{P}\left(
+S\setminus\left\{  s\right\}  \right)  $).
+\par
+We have $V\in\mathcal{P}\left(  S\right)  \setminus\mathcal{P}\left(
+S\setminus\left\{  s\right\}  \right)  \subseteq\mathcal{P}\left(  S\right)
+$. In other words, $V$ is an subset of $S$ (since $\mathcal{P}\left(
+S\right)  $ is the set of all subsets of $S$). In other words, $V\subseteq S$.
+\par
+Now, we shall prove that $s\in V$. Indeed, assume the contrary. Thus, $s\notin
+V$. Hence, $V\setminus\left\{  s\right\}  =V$, so that $V=\underbrace{V}%
+_{\subseteq S}\setminus\left\{  s\right\}  \subseteq S\setminus\left\{
+s\right\}  $. Hence, $V$ is a subset of $S\setminus\left\{  s\right\}  $. In
+other words, $V\in\mathcal{P}\left(  S\setminus\left\{  s\right\}  \right)  $
+(since $\mathcal{P}\left(  S\setminus\left\{  s\right\}  \right)  $ is the set
+of all subsets of $S\setminus\left\{  s\right\}  $). This contradicts
+$V\notin\mathcal{P}\left(  S\setminus\left\{  s\right\}  \right)  $. This
+contradiction proves that our assumption was wrong.
+\par
+Hence, $s\in V$ is proven. Thus, $V\cup\left\{  s\right\}  =V$. Now,
+\begin{align*}
+\left(  \alpha\circ\beta\right)  \left(  V\right)   &  =\alpha\left(
+\beta\left(  V\right)  \right)  =\underbrace{\beta\left(  V\right)
+}_{\substack{=V\setminus\left\{  s\right\}  \\\text{(by the definition of
+}\beta\text{)}}}\cup\left\{  s\right\}  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
+the definition of }\alpha\right) \\
+&  =\left(  V\setminus\left\{  s\right\}  \right)  \cup\left\{  s\right\}
+=V\cup\left\{  s\right\}  =V=\operatorname*{id}\left(  V\right)  .
+\end{align*}
+\par
+Now, forget that we fixed $V$. We thus have shown that $\left(  \alpha
+\circ\beta\right)  \left(  V\right)  =\operatorname*{id}\left(  V\right)  $
+for every $V\in\mathcal{P}\left(  S\right)  \setminus\mathcal{P}\left(
+S\setminus\left\{  s\right\}  \right)  $. In other words, $\alpha\circ
+\beta=\operatorname*{id}$. Qed.} and $\beta\circ\alpha=\operatorname*{id}%
+$\ \ \ \ \footnote{\textit{Proof.} Let $U\in\mathcal{P}\left(  S\setminus
+\left\{  s\right\}  \right)  $. We shall prove that $\left(  \beta\circ
+\alpha\right)  \left(  U\right)  =\operatorname*{id}\left(  U\right)  $.
+\par
+We have $U\in\mathcal{P}\left(  S\setminus\left\{  s\right\}  \right)  $. In
+other words, $U$ is an subset of $S\setminus\left\{  s\right\}  $ (since
+$\mathcal{P}\left(  S\setminus\left\{  s\right\}  \right)  $ is the set of all
+subsets of $S\setminus\left\{  s\right\}  $). Hence, $U\subseteq
+S\setminus\left\{  s\right\}  $.
+\par
+We have $s\in\left\{  s\right\}  $ and thus $s\notin S\setminus\left\{
+s\right\}  $. If we had $s\in U$, then we would have $s\in U\subseteq
+S\setminus\left\{  s\right\}  $, which would contradict $s\notin
+S\setminus\left\{  s\right\}  $. Thus, we cannot have $s\in U$. In other
+words, we have $s\notin U$. Hence, $U\setminus\left\{  s\right\}  =U$.
+\par
+Now,%
+\begin{align*}
+\left(  \beta\circ\alpha\right)  \left(  U\right)   &  =\beta\left(
+\alpha\left(  U\right)  \right)  =\underbrace{\alpha\left(  U\right)
+}_{\substack{=U\cup\left\{  s\right\}  \\\text{(by the definition of }%
+\alpha\text{)}}}\setminus\left\{  s\right\}  \ \ \ \ \ \ \ \ \ \ \left(
+\text{by the definition of }\beta\right) \\
+&  =\left(  U\cup\left\{  s\right\}  \right)  \setminus\left\{  s\right\}
+=U\setminus\left\{  s\right\}  =U=\operatorname*{id}\left(  U\right)  .
+\end{align*}
+\par
+Now, forget that we fixed $U$. Thus, we have shown that $\left(  \beta
+\circ\alpha\right)  \left(  U\right)  =\operatorname*{id}\left(  U\right)  $
+for each $U\in\mathcal{P}\left(  S\setminus\left\{  s\right\}  \right)  $. In
+other words, $\beta\circ\alpha=\operatorname*{id}$, qed.}. These two
+equalities show that the maps $\alpha$ and $\beta$ are mutually inverse. Thus,
+the map $\alpha$ is invertible, i.e., is a bijection.
+
+But $\alpha$ is the map
+\begin{align*}
+\mathcal{P}\left(  S\setminus\left\{  s\right\}  \right)   &  \rightarrow
+\mathcal{P}\left(  S\right)  \setminus\mathcal{P}\left(  S\setminus\left\{
+s\right\}  \right)  ,\\
+U  &  \mapsto U\cup\left\{  s\right\}
+\end{align*}
+(because $\alpha$ is the map $\mathcal{P}\left(  S\setminus\left\{  s\right\}
+\right)  \rightarrow\mathcal{P}\left(  S\right)  \setminus\mathcal{P}\left(
+S\setminus\left\{  s\right\}  \right)  $ defined by
+(\ref{pf.prop.sol.prod(ai+bi).powerset.lem.alpha()=})).
+
+We know that the map $\alpha$ is well-defined and a bijection. In other words,
+the map
+\begin{align*}
+\mathcal{P}\left(  S\setminus\left\{  s\right\}  \right)   &  \rightarrow
+\mathcal{P}\left(  S\right)  \setminus\mathcal{P}\left(  S\setminus\left\{
+s\right\}  \right)  ,\\
+U  &  \mapsto U\cup\left\{  s\right\}
+\end{align*}
+is well-defined and a bijection (since $\alpha$ is the map
+\begin{align*}
+\mathcal{P}\left(  S\setminus\left\{  s\right\}  \right)   &  \rightarrow
+\mathcal{P}\left(  S\right)  \setminus\mathcal{P}\left(  S\setminus\left\{
+s\right\}  \right)  ,\\
+U  &  \mapsto U\cup\left\{  s\right\}
+\end{align*}
+). This proves Proposition \ref{prop.sol.prod(ai+bi).powerset.lem}.
+\end{proof}
+
+\begin{proof}
+[Solution to Exercise \ref{exe.prod(ai+bi)}.]\textbf{(a)} We shall prove that%
+\begin{equation}
+\prod_{i=1}^{k}\left(  a_{i}+b_{i}\right)  =\sum_{I\in\mathcal{P}\left(
+\left[  k\right]  \right)  }\left(  \prod_{i\in I}a_{i}\right)  \left(
+\prod_{i\in\left[  k\right]  \setminus I}b_{i}\right)
+\label{sol.prod(ai+bi).a.goal}%
+\end{equation}
+for every $k\in\left\{  0,1,\ldots,n\right\}  $.
+
+\textit{Proof of (\ref{sol.prod(ai+bi).a.goal}):} We shall prove
+(\ref{sol.prod(ai+bi).a.goal}) by induction over $k$:
+
+\textit{Induction base:} The equality (\ref{sol.prod(ai+bi).a.goal}) holds for
+$k=0$\ \ \ \ \footnote{\textit{Proof.} Assume that $k=0$. We must prove that
+the equality (\ref{sol.prod(ai+bi).a.goal}) holds.
+\par
+We have $k=0$, and thus
+\begin{align*}
+\left[  k\right]   &  =\left[  0\right]  =\left\{  1,2,\ldots,0\right\}
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\left[  0\right]
+\right) \\
+&  =\varnothing.
+\end{align*}
+Hence, $\mathcal{P}\left(  \left[  k\right]  \right)  =\mathcal{P}\left(
+\varnothing\right)  =\left\{  \varnothing\right\}  $. Thus, the sum
+$\sum_{I\in\mathcal{P}\left(  \left[  k\right]  \right)  }\left(  \prod_{i\in
+I}a_{i}\right)  \left(  \prod_{i\in\left[  k\right]  \setminus I}b_{i}\right)
+$ has only one addend -- namely, the addend for $I=\varnothing$. Therefore,
+this sum simplifies as follows:%
+\begin{align*}
+&  \sum_{I\in\mathcal{P}\left(  \left[  k\right]  \right)  }\left(
+\prod_{i\in I}a_{i}\right)  \left(  \prod_{i\in\left[  k\right]  \setminus
+I}b_{i}\right) \\
+&  =\underbrace{\left(  \prod_{i\in\varnothing}a_{i}\right)  }_{=\left(
+\text{empty product}\right)  =1}\left(  \prod_{i\in\left[  k\right]
+\setminus\varnothing}b_{i}\right)  =\prod_{i\in\left[  k\right]
+\setminus\varnothing}b_{i}=\prod_{i\in\varnothing}b_{i}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left[  k\right]  \setminus
+\varnothing=\left[  k\right]  =\varnothing\right) \\
+&  =\left(  \text{empty product}\right)  =1.
+\end{align*}
+Comparing this with%
+\begin{align*}
+\prod_{i=1}^{k}\left(  a_{i}+b_{i}\right)   &  =\prod_{i=1}^{0}\left(
+a_{i}+b_{i}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }k=0\right) \\
+&  =\left(  \text{empty product}\right)  =1,
+\end{align*}
+we obtain $\prod_{i=1}^{k}\left(  a_{i}+b_{i}\right)  =\sum_{I\in
+\mathcal{P}\left(  \left[  k\right]  \right)  }\left(  \prod_{i\in I}%
+a_{i}\right)  \left(  \prod_{i\in\left[  k\right]  \setminus I}b_{i}\right)
+$. In other words, the equality (\ref{sol.prod(ai+bi).a.goal}) holds. Qed.}.
+This completes the induction base.
+
+\textit{Induction step:} Let $K\in\left\{  0,1,\ldots,n\right\}  $ be
+positive. Assume that the equality (\ref{sol.prod(ai+bi).a.goal}) holds for
+$k=K-1$. We must prove that the equality (\ref{sol.prod(ai+bi).a.goal}) holds
+for $k=K$.
+
+We know that $K$ is a positive element of $\left\{  0,1,\ldots,n\right\}  $.
+In other words, $K\in\left\{  1,2,\ldots,n\right\}  $. Hence, $K-1\in\left\{
+0,1,\ldots,n-1\right\}  \subseteq\left\{  0,1,\ldots,n\right\}  $.
+
+We also know that the equality (\ref{sol.prod(ai+bi).a.goal}) holds for
+$k=K-1$. In other words, we have%
+\begin{equation}
+\prod_{i=1}^{K-1}\left(  a_{i}+b_{i}\right)  =\sum_{I\in\mathcal{P}\left(
+\left[  K-1\right]  \right)  }\left(  \prod_{i\in I}a_{i}\right)  \left(
+\prod_{i\in\left[  K-1\right]  \setminus I}b_{i}\right)
+\label{sol.prod(ai+bi).a.goal.pf.iass}%
+\end{equation}
+
+
+But $\left[  K\right]  =\left\{  1,2,\ldots,K\right\}  $ (by the definition of
+$\left[  K\right]  $) and $\left[  K-1\right]  =\left\{  1,2,\ldots
+,K-1\right\}  $ (by the definition of $\left[  K-1\right]  $). Thus,%
+\begin{align}
+\underbrace{\left[  K\right]  }_{=\left\{  1,2,\ldots,K\right\}  }%
+\setminus\left\{  K\right\}   &  =\left\{  1,2,\ldots,K\right\}
+\setminus\left\{  K\right\} \nonumber\\
+&  =\left\{  1,2,\ldots,K-1\right\}  \ \ \ \ \ \ \ \ \ \ \left(  \text{since
+}K\text{ is a positive integer}\right) \nonumber\\
+&  =\left[  K-1\right]  . \label{sol.prod(ai+bi).a.goal.pf.diff}%
+\end{align}
+Also, $K$ is a positive integer; hence, $K\in\left\{  1,2,\ldots,K\right\}
+=\left[  K\right]  $. Thus, Proposition
+\ref{prop.sol.prod(ai+bi).powerset.lem} (applied to $S=\left[  K\right]  $ and
+$s=K$) yields the following two facts:
+
+\begin{itemize}
+\item We have $\mathcal{P}\left(  \left[  K\right]  \setminus\left\{
+K\right\}  \right)  \subseteq\mathcal{P}\left(  \left[  K\right]  \right)  $.
+
+\item The map%
+\begin{align*}
+\mathcal{P}\left(  \left[  K\right]  \setminus\left\{  K\right\}  \right)   &
+\rightarrow\mathcal{P}\left(  \left[  K\right]  \right)  \setminus
+\mathcal{P}\left(  \left[  K\right]  \setminus\left\{  K\right\}  \right)  ,\\
+U  &  \mapsto U\cup\left\{  K\right\}
+\end{align*}
+is well-defined and a bijection.
+\end{itemize}
+
+Using (\ref{sol.prod(ai+bi).a.goal.pf.diff}), we can rewrite these two facts
+as follows:
+
+\begin{itemize}
+\item We have $\mathcal{P}\left(  \left[  K-1\right]  \right)  \subseteq
+\mathcal{P}\left(  \left[  K\right]  \right)  $.
+
+\item The map%
+\begin{align*}
+\mathcal{P}\left(  \left[  K-1\right]  \right)   &  \rightarrow\mathcal{P}%
+\left(  \left[  K\right]  \right)  \setminus\mathcal{P}\left(  \left[
+K-1\right]  \right)  ,\\
+U  &  \mapsto U\cup\left\{  K\right\}
+\end{align*}
+is well-defined and a bijection.
+\end{itemize}
+
+Now, we shall prove a helpful observation:
+
+\begin{statement}
+\textit{Observation 1:} Let $I\in\mathcal{P}\left(  \left[  K-1\right]
+\right)  $. Then,%
+\begin{equation}
+\prod_{i\in\left[  K\right]  \setminus I}b_{i}=b_{K}\prod_{i\in\left[
+K-1\right]  \setminus I}b_{i} \label{sol.prod(ai+bi).a.goal.pf.term1}%
+\end{equation}
+and%
+\begin{equation}
+\prod_{i\in I\cup\left\{  K\right\}  }a_{i}=a_{K}\prod_{i\in I}a_{i}
+\label{sol.prod(ai+bi).a.goal.pf.term2}%
+\end{equation}
+and%
+\begin{equation}
+\prod_{i\in\left[  K\right]  \setminus\left(  I\cup\left\{  K\right\}
+\right)  }b_{i}=\prod_{i\in\left[  K-1\right]  \setminus I}b_{i}.
+\label{sol.prod(ai+bi).a.goal.pf.term3}%
+\end{equation}
+
+\end{statement}
+
+\textit{Proof of Observation 1:} Let $I\in\mathcal{P}\left(  \left[
+K-1\right]  \right)  $. We must prove (\ref{sol.prod(ai+bi).a.goal.pf.term1}),
+(\ref{sol.prod(ai+bi).a.goal.pf.term2}) and
+(\ref{sol.prod(ai+bi).a.goal.pf.term3}).
+
+We have $I\in\mathcal{P}\left(  \left[  K-1\right]  \right)  $. In other
+words, $I$ is a subset of $\left[  K-1\right]  $ (since $\mathcal{P}\left(
+\left[  K-1\right]  \right)  $ is the set of all subsets of $\left[
+K-1\right]  $ (by the definition of $\mathcal{P}\left(  \left[  K-1\right]
+\right)  $)). In other words, $I\subseteq\left[  K-1\right]  $.
+
+We have%
+\[
+\left(  \left[  K\right]  \setminus I\right)  \setminus\left\{  K\right\}
+=\left[  K\right]  \setminus\underbrace{\left(  I\cup\left\{  K\right\}
+\right)  }_{=\left\{  K\right\}  \cup I}=\left[  K\right]  \setminus\left(
+\left\{  K\right\}  \cup I\right)  =\underbrace{\left(  \left[  K\right]
+\setminus\left\{  K\right\}  \right)  }_{=\left[  K-1\right]  }\setminus
+I=\left[  K-1\right]  \setminus I.
+\]
+
+
+If we had $K\in\left[  K-1\right]  $, then we would have $K\in\left[
+K-1\right]  =\left\{  1,2,\ldots,K-1\right\}  $ and thus $K\leq K-1$; but this
+would contradict $K>K-1$. Hence, we cannot have $K\in\left[  K-1\right]  $. In
+other words, we have $K\notin\left[  K-1\right]  $.
+
+If we had $K\in I$, then we would have $K\in I\subseteq\left[  K-1\right]  $,
+which would contradict the fact that $K\notin\left[  K-1\right]  $. Thus, we
+cannot have $K\in I$. In other words, we have $K\notin I$. Combining
+$K\in\left[  K\right]  $ with $K\notin I$, we obtain $K\in\left[  K\right]
+\setminus I$. Hence, we can split off the factor for $i=K$ from the product
+$\prod_{i\in\left[  K\right]  \setminus I}b_{i}$. We thus obtain%
+\[
+\prod_{i\in\left[  K\right]  \setminus I}b_{i}=b_{K}\prod_{i\in\left(  \left[
+K\right]  \setminus I\right)  \setminus\left\{  K\right\}  }b_{i}=b_{K}%
+\prod_{i\in\left[  K-1\right]  \setminus I}b_{i}%
+\]
+(since $\left(  \left[  K\right]  \setminus I\right)  \setminus\left\{
+K\right\}  =\left[  K-1\right]  \setminus I$). This proves
+(\ref{sol.prod(ai+bi).a.goal.pf.term1}).
+
+We have $K\notin I$ and thus $\left(  I\cup\left\{  K\right\}  \right)
+\setminus\left\{  K\right\}  =I$.
+
+We have $K\in\left\{  K\right\}  \subseteq I\cup\left\{  K\right\}  $. Thus,
+we can split off the factor for $i=K$ from the product $\prod_{i\in
+I\cup\left\{  K\right\}  }a_{i}$. Thus, we obtain%
+\[
+\prod_{i\in I\cup\left\{  K\right\}  }a_{i}=a_{K}\prod_{i\in\left(
+I\cup\left\{  K\right\}  \right)  \setminus\left\{  K\right\}  }a_{i}%
+=a_{K}\prod_{i\in I}a_{i}%
+\]
+(since $\left(  I\cup\left\{  K\right\}  \right)  \setminus\left\{  K\right\}
+=I$). This proves (\ref{sol.prod(ai+bi).a.goal.pf.term2}).
+
+Recall that $\left[  K\right]  \setminus\left(  I\cup\left\{  K\right\}
+\right)  =\left[  K-1\right]  \setminus I$. Hence, $\prod_{i\in\left[
+K\right]  \setminus\left(  I\cup\left\{  K\right\}  \right)  }b_{i}%
+=\prod_{i\in\left[  K-1\right]  \setminus I}b_{i}$. This proves
+(\ref{sol.prod(ai+bi).a.goal.pf.term3}). Thus, the proof of Observation 1 is complete.
+
+Now,%
+\begin{align}
+&  \underbrace{\sum_{\substack{I\in\mathcal{P}\left(  \left[  K\right]
+\right)  ;\\I\in\mathcal{P}\left(  \left[  K-1\right]  \right)  }%
+}}_{\substack{=\sum_{I\in\mathcal{P}\left(  \left[  K-1\right]  \right)
+}\\\text{(since }\mathcal{P}\left(  \left[  K-1\right]  \right)
+\subseteq\mathcal{P}\left(  \left[  K\right]  \right)  \text{)}}}\left(
+\prod_{i\in I}a_{i}\right)  \left(  \prod_{i\in\left[  K\right]  \setminus
+I}b_{i}\right) \nonumber\\
+&  =\sum_{I\in\mathcal{P}\left(  \left[  K-1\right]  \right)  }\left(
+\prod_{i\in I}a_{i}\right)  \underbrace{\left(  \prod_{i\in\left[  K\right]
+\setminus I}b_{i}\right)  }_{\substack{=b_{K}\prod_{i\in\left[  K-1\right]
+\setminus I}b_{i}\\\text{(by (\ref{sol.prod(ai+bi).a.goal.pf.term1}))}}%
+}=\sum_{I\in\mathcal{P}\left(  \left[  K-1\right]  \right)  }\left(
+\prod_{i\in I}a_{i}\right)  b_{K}\prod_{i\in\left[  K-1\right]  \setminus
+I}b_{i}\nonumber\\
+&  =b_{K}\underbrace{\sum_{I\in\mathcal{P}\left(  \left[  K-1\right]  \right)
+}\left(  \prod_{i\in I}a_{i}\right)  \left(  \prod_{i\in\left[  K-1\right]
+\setminus I}b_{i}\right)  }_{\substack{=\prod_{i=1}^{K-1}\left(  a_{i}%
++b_{i}\right)  \\\text{(by (\ref{sol.prod(ai+bi).a.goal.pf.iass}))}}%
+}=b_{K}\prod_{i=1}^{K-1}\left(  a_{i}+b_{i}\right)
+\label{sol.prod(ai+bi).a.goal.pf.add1}%
+\end{align}
+and%
+\begin{align}
+&  \underbrace{\sum_{\substack{I\in\mathcal{P}\left(  \left[  K\right]
+\right)  ;\\I\notin\mathcal{P}\left(  \left[  K-1\right]  \right)  }}}%
+_{=\sum_{I\in\mathcal{P}\left(  \left[  K\right]  \right)  \setminus
+\mathcal{P}\left(  \left[  K-1\right]  \right)  }}\left(  \prod_{i\in I}%
+a_{i}\right)  \left(  \prod_{i\in\left[  K\right]  \setminus I}b_{i}\right)
+\nonumber\\
+&  =\sum_{I\in\mathcal{P}\left(  \left[  K\right]  \right)  \setminus
+\mathcal{P}\left(  \left[  K-1\right]  \right)  }\left(  \prod_{i\in I}%
+a_{i}\right)  \left(  \prod_{i\in\left[  K\right]  \setminus I}b_{i}\right)
+\nonumber\\
+&  =\sum_{U\in\mathcal{P}\left(  \left[  K-1\right]  \right)  }\left(
+\prod_{i\in U\cup\left\{  K\right\}  }a_{i}\right)  \left(  \prod_{i\in\left[
+K\right]  \setminus\left(  U\cup\left\{  K\right\}  \right)  }b_{i}\right)
+\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have substituted }U\cup\left\{  K\right\}  \text{ for }U\text{
+in the sum, since}\\
+\text{the map }\mathcal{P}\left(  \left[  K-1\right]  \right)  \rightarrow
+\mathcal{P}\left(  \left[  K\right]  \right)  \setminus\mathcal{P}\left(
+\left[  K-1\right]  \right)  ,\ U\mapsto U\cup\left\{  K\right\} \\
+\text{is a bijection}%
+\end{array}
+\right) \nonumber\\
+&  =\sum_{I\in\mathcal{P}\left(  \left[  K-1\right]  \right)  }%
+\underbrace{\left(  \prod_{i\in I\cup\left\{  K\right\}  }a_{i}\right)
+}_{\substack{=a_{K}\prod_{i\in I}a_{i}\\\text{(by
+(\ref{sol.prod(ai+bi).a.goal.pf.term2}))}}}\underbrace{\left(  \prod
+_{i\in\left[  K\right]  \setminus\left(  I\cup\left\{  K\right\}  \right)
+}b_{i}\right)  }_{\substack{=\prod_{i\in\left[  K-1\right]  \setminus I}%
+b_{i}\\\text{(by (\ref{sol.prod(ai+bi).a.goal.pf.term3}))}}}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have renamed the summation index
+}U\text{ as }I\right) \nonumber\\
+&  =\sum_{I\in\mathcal{P}\left(  \left[  K-1\right]  \right)  }a_{K}\left(
+\prod_{i\in I}a_{i}\right)  \left(  \prod_{i\in\left[  K-1\right]  \setminus
+I}b_{i}\right) \nonumber\\
+&  =a_{K}\underbrace{\sum_{I\in\mathcal{P}\left(  \left[  K-1\right]  \right)
+}\left(  \prod_{i\in I}a_{i}\right)  \left(  \prod_{i\in\left[  K-1\right]
+\setminus I}b_{i}\right)  }_{\substack{=\prod_{i=1}^{K-1}\left(  a_{i}%
++b_{i}\right)  \\\text{(by (\ref{sol.prod(ai+bi).a.goal.pf.iass}))}}%
+}=a_{K}\prod_{i=1}^{K-1}\left(  a_{i}+b_{i}\right)  .
+\label{sol.prod(ai+bi).a.goal.pf.add2}%
+\end{align}
+
+
+Now,%
+\begin{align*}
+&  \sum_{I\in\mathcal{P}\left(  \left[  K\right]  \right)  }\left(
+\prod_{i\in I}a_{i}\right)  \left(  \prod_{i\in\left[  K\right]  \setminus
+I}b_{i}\right) \\
+&  =\underbrace{\sum_{\substack{I\in\mathcal{P}\left(  \left[  K\right]
+\right)  ;\\I\in\mathcal{P}\left(  \left[  K-1\right]  \right)  }}\left(
+\prod_{i\in I}a_{i}\right)  \left(  \prod_{i\in\left[  K\right]  \setminus
+I}b_{i}\right)  }_{\substack{=b_{K}\prod_{i=1}^{K-1}\left(  a_{i}%
++b_{i}\right)  \\\text{(by (\ref{sol.prod(ai+bi).a.goal.pf.add1}))}%
+}}+\underbrace{\sum_{\substack{I\in\mathcal{P}\left(  \left[  K\right]
+\right)  ;\\I\notin\mathcal{P}\left(  \left[  K-1\right]  \right)  }}\left(
+\prod_{i\in I}a_{i}\right)  \left(  \prod_{i\in\left[  K\right]  \setminus
+I}b_{i}\right)  }_{\substack{=a_{K}\prod_{i=1}^{K-1}\left(  a_{i}%
++b_{i}\right)  \\\text{(by (\ref{sol.prod(ai+bi).a.goal.pf.add2}))}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since every }I\in\mathcal{P}\left(  \left[  K\right]  \right)  \text{
+satisfies either }I\in\mathcal{P}\left(  \left[  K-1\right]  \right) \\
+\text{or }I\notin\mathcal{P}\left(  \left[  K-1\right]  \right)  \text{ (but
+not both)}%
+\end{array}
+\right) \\
+&  =b_{K}\prod_{i=1}^{K-1}\left(  a_{i}+b_{i}\right)  +a_{K}\prod_{i=1}%
+^{K-1}\left(  a_{i}+b_{i}\right)  =\underbrace{\left(  b_{K}+a_{K}\right)
+}_{=a_{K}+b_{K}}\prod_{i=1}^{K-1}\left(  a_{i}+b_{i}\right) \\
+&  =\left(  a_{K}+b_{K}\right)  \prod_{i=1}^{K-1}\left(  a_{i}+b_{i}\right)  .
+\end{align*}
+Comparing this with%
+\[
+\prod_{i=1}^{K}\left(  a_{i}+b_{i}\right)  =\left(  a_{K}+b_{K}\right)
+\prod_{i=1}^{K-1}\left(  a_{i}+b_{i}\right)
+\]
+(here, we have split off the factor for $i=K$ from the product, since
+$K\in\left\{  1,2,\ldots,K\right\}  $), we obtain%
+\[
+\prod_{i=1}^{K}\left(  a_{i}+b_{i}\right)  =\sum_{I\in\mathcal{P}\left(
+\left[  K\right]  \right)  }\left(  \prod_{i\in I}a_{i}\right)  \left(
+\prod_{i\in\left[  K\right]  \setminus I}b_{i}\right)  .
+\]
+In other words, the equality (\ref{sol.prod(ai+bi).a.goal}) holds for $k=K$.
+This completes the induction step. Thus, the induction proof of
+(\ref{sol.prod(ai+bi).a.goal}) is complete.
+
+Now, the equality (\ref{sol.prod(ai+bi).a.goal}) (applied to $k=n$) yields%
+\[
+\prod_{i=1}^{n}\left(  a_{i}+b_{i}\right)  =\underbrace{\sum_{I\in
+\mathcal{P}\left(  \left[  n\right]  \right)  }}_{=\sum_{I\subseteq\left[
+n\right]  }}\left(  \prod_{i\in I}a_{i}\right)  \left(  \prod_{i\in\left[
+n\right]  \setminus I}b_{i}\right)  =\sum_{I\subseteq\left[  n\right]
+}\left(  \prod_{i\in I}a_{i}\right)  \left(  \prod_{i\in\left[  n\right]
+\setminus I}b_{i}\right)  .
+\]
+This solves Exercise \ref{exe.prod(ai+bi)} \textbf{(a)}.
+
+\textbf{(b)} Let $a\in\mathbb{K}$, $b\in\mathbb{K}$ and $n\in\mathbb{N}$. We
+must prove (\ref{eq.rings.(a+b)**n}).
+
+The set $\mathcal{P}\left(  \left[  n\right]  \right)  $ is the set of all
+subsets of $\left[  n\right]  $ (by the definition of $\mathcal{P}\left(
+\left[  n\right]  \right)  $). Thus, the elements of $\mathcal{P}\left(
+\left[  n\right]  \right)  $ are precisely the subsets of $\left[  n\right]  $.
+
+Clearly, $\left\vert \underbrace{\left[  n\right]  }_{=\left\{  1,2,\ldots
+,n\right\}  }\right\vert =\left\vert \left\{  1,2,\ldots,n\right\}
+\right\vert =n$. In other words, $\left[  n\right]  $ is an $n$-element set.
+
+Every $I\in\mathcal{P}\left(  \left[  n\right]  \right)  $ satisfies
+$\left\vert I\right\vert \in\left\{  0,1,\ldots,n\right\}  $%
+\ \ \ \ \footnote{\textit{Proof.} Let $I\in\mathcal{P}\left(  \left[
+n\right]  \right)  $. Thus, $I$ is a subset of $\left[  n\right]  $ (since
+$\mathcal{P}\left(  \left[  n\right]  \right)  $ is the set of all subsets of
+$\left[  n\right]  $). Thus, $I$ is a finite set (since $\left[  n\right]  $
+is a finite set). Hence, $\left\vert I\right\vert \in\mathbb{N}$.
+\par
+But $I$ is a subset of $\left[  n\right]  $. In other words, $I\subseteq
+\left[  n\right]  $, so that $\left\vert I\right\vert \leq\left\vert \left[
+n\right]  \right\vert =n$. Combining this with $\left\vert I\right\vert
+\in\mathbb{N}$, we obtain $\left\vert I\right\vert \in\left\{  0,1,\ldots
+,n\right\}  $. Qed.}. Every $k\in\left\{  0,1,\ldots,n\right\}  $ satisfies%
+\begin{equation}
+\left\vert \left\{  I\in\mathcal{P}\left(  \left[  n\right]  \right)
+\ \mid\ \left\vert I\right\vert =k\right\}  \right\vert =\dbinom{n}{k}
+\label{sol.prod(ai+bi).b.lem}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.prod(ai+bi).b.lem}):} Let $k\in\left\{
+0,1,\ldots,n\right\}  $. Then, Proposition \ref{prop.binom.subsets} (applied
+to $n$, $k$ and $\left[  n\right]  $ instead of $m$, $n$ and $S$) shows that
+$\dbinom{n}{k}$ is the number of all $k$-element subsets of $\left[  n\right]
+$. In other words,%
+\[
+\dbinom{n}{k}=\left(  \text{the number of all }k\text{-element subsets of
+}\left[  n\right]  \right)  .
+\]
+Comparing this with%
+\begin{align*}
+&  \left\vert \left\{  I\in\mathcal{P}\left(  \left[  n\right]  \right)
+\ \mid\ \left\vert I\right\vert =k\right\}  \right\vert \\
+&  =\left(  \text{the number of all }I\in\mathcal{P}\left(  \left[  n\right]
+\right)  \text{ satisfying }\left\vert I\right\vert =k\right) \\
+&  =\left(  \text{the number of all subsets }I\text{ of }\left[  n\right]
+\text{ satisfying }\left\vert I\right\vert =k\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since the elements of }\mathcal{P}\left(
+\left[  n\right]  \right)  \text{ are precisely the subsets of }\left[
+n\right]  \right) \\
+&  =\left(  \text{the number of all }k\text{-element subsets of }\left[
+n\right]  \right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since the subsets }I\text{ of }\left[  n\right]  \text{ satisfying
+}\left\vert I\right\vert =k\text{ are}\\
+\text{precisely the }k\text{-element subsets of }\left[  n\right]
+\end{array}
+\right)  ,
+\end{align*}
+we obtain $\left\vert \left\{  I\in\mathcal{P}\left(  \left[  n\right]
+\right)  \ \mid\ \left\vert I\right\vert =k\right\}  \right\vert =\dbinom
+{n}{k}$. This proves (\ref{sol.prod(ai+bi).b.lem}).}.
+
+Exercise \ref{exe.prod(ai+bi)} \textbf{(a)} (applied to $a_{i}=a$ and
+$b_{i}=b$) yields%
+\[
+\prod_{i=1}^{n}\left(  a+b\right)  =\underbrace{\sum_{I\subseteq\left[
+n\right]  }}_{=\sum_{I\in\mathcal{P}\left(  \left[  n\right]  \right)  }%
+}\underbrace{\left(  \prod_{i\in I}a\right)  }_{=a^{\left\vert I\right\vert }%
+}\underbrace{\left(  \prod_{i\in\left[  n\right]  \setminus I}b\right)
+}_{\substack{=b^{\left\vert \left[  n\right]  \setminus I\right\vert
+}\\=b^{\left\vert \left[  n\right]  \right\vert -\left\vert I\right\vert
+}\\\text{(since }\left\vert \left[  n\right]  \setminus I\right\vert
+=\left\vert \left[  n\right]  \right\vert -\left\vert I\right\vert
+\\\text{(since }I\subseteq\left[  n\right]  \text{))}}}=\sum_{I\in
+\mathcal{P}\left(  \left[  n\right]  \right)  }a^{\left\vert I\right\vert
+}b^{\left\vert \left[  n\right]  \right\vert -\left\vert I\right\vert }.
+\]
+Comparing this with $\prod_{i=1}^{n}\left(  a+b\right)  =\left(  a+b\right)
+^{n}$, we obtain%
+\begin{align*}
+\left(  a+b\right)  ^{n}  &  =\underbrace{\sum_{I\in\mathcal{P}\left(  \left[
+n\right]  \right)  }}_{\substack{=\sum_{k\in\left\{  0,1,\ldots,n\right\}
+}\sum_{\substack{I\in\mathcal{P}\left(  \left[  n\right]  \right)
+;\\\left\vert I\right\vert =k}}\\\text{(since every }I\in\mathcal{P}\left(
+\left[  n\right]  \right)  \\\text{satisfies }\left\vert I\right\vert
+\in\left\{  0,1,\ldots,n\right\}  \text{)}}}a^{\left\vert I\right\vert
+}\underbrace{b^{\left\vert \left[  n\right]  \right\vert -\left\vert
+I\right\vert }}_{\substack{=b^{n-\left\vert I\right\vert }\\\text{(since
+}\left\vert \left[  n\right]  \right\vert =n\text{)}}}=\sum_{k\in\left\{
+0,1,\ldots,n\right\}  }\sum_{\substack{I\in\mathcal{P}\left(  \left[
+n\right]  \right)  ;\\\left\vert I\right\vert =k}}\underbrace{a^{\left\vert
+I\right\vert }}_{\substack{=a^{k}\\\text{(since }\left\vert I\right\vert
+=k\text{)}}}\underbrace{b^{n-\left\vert I\right\vert }}_{\substack{=b^{n-k}%
+\\\text{(since }\left\vert I\right\vert =k\text{)}}}\\
+&  =\underbrace{\sum_{k\in\left\{  0,1,\ldots,n\right\}  }}_{=\sum_{k=0}^{n}%
+}\underbrace{\sum_{\substack{I\in\mathcal{P}\left(  \left[  n\right]  \right)
+;\\\left\vert I\right\vert =k}}a^{k}b^{n-k}}_{=\left\vert \left\{
+I\in\mathcal{P}\left(  \left[  n\right]  \right)  \ \mid\ \left\vert
+I\right\vert =k\right\}  \right\vert a^{k}b^{n-k}}\\
+&  =\sum_{k=0}^{n}\underbrace{\left\vert \left\{  I\in\mathcal{P}\left(
+\left[  n\right]  \right)  \ \mid\ \left\vert I\right\vert =k\right\}
+\right\vert }_{\substack{=\dbinom{n}{k}\\\text{(by
+(\ref{sol.prod(ai+bi).b.lem}))}}}a^{k}b^{n-k}=\sum_{k=0}^{n}\dbinom{n}{k}%
+a^{k}b^{n-k}.
+\end{align*}
+Thus, (\ref{eq.rings.(a+b)**n}) is proven. This solves Exercise
+\ref{exe.prod(ai+bi)} \textbf{(b)}.
+\end{proof}
+\end{verlong}
 
 \subsection{Solution to Exercise \ref{exe.ps4.3}}
 
