@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Monday, August 01, 2016 04:30:32}
+%TCIDATA{LastRevised=Monday, August 01, 2016 04:33:36}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -9575,8 +9575,8 @@ From (\ref{eq.det.eq.1}), we obtain%
 \begin{equation}
 \det A=\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\left(
 x_{1}+y_{\sigma\left(  1\right)  }\right)  \left(  x_{2}+y_{\sigma\left(
-2\right)  }\right)  \cdots\left(  x_{n}+y_{\sigma\left(  n\right)  }\right)
-.\label{eq.exam.xi+yj.detA1}%
+2\right)  }\right)  \cdots\left(  x_{n}+y_{\sigma\left(  n\right)  }\right)  .
+\label{eq.exam.xi+yj.detA1}%
 \end{equation}
 If we expand the product $\left(  x_{1}+y_{\sigma\left(  1\right)  }\right)
 \left(  x_{2}+y_{\sigma\left(  2\right)  }\right)  \cdots\left(
@@ -9595,7 +9595,7 @@ Exercise \ref{exe.prod(ai+bi)} \textbf{(a)} to $a_{i}=x_{i}$ and
 $b_{i}=y_{\sigma\left(  i\right)  }$.) Thus, (\ref{eq.exam.xi+yj.detA1})
 becomes%
 \begin{align*}
-\det A &  =\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}%
+\det A  &  =\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}%
 \underbrace{\left(  x_{1}+y_{\sigma\left(  1\right)  }\right)  \left(
 x_{2}+y_{\sigma\left(  2\right)  }\right)  \cdots\left(  x_{n}+y_{\sigma
 \left(  n\right)  }\right)  }_{\substack{=\sum_{I\subseteq\left[  n\right]
@@ -9604,7 +9604,7 @@ x_{2}+y_{\sigma\left(  2\right)  }\right)  \cdots\left(  x_{n}+y_{\sigma
 (\ref{eq.exam.xi+yj.detA2}))}}}\\
 &  =\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\sum_{I\subseteq\left[
 n\right]  }\left(  \prod_{i\in I}x_{i}\right)  \left(  \prod_{i\in\left[
-n\right]  \setminus I}y_{\sigma\left(  i\right)  }\right)  \\
+n\right]  \setminus I}y_{\sigma\left(  i\right)  }\right) \\
 &  =\sum_{I\subseteq\left[  n\right]  }\sum_{\sigma\in S_{n}}\left(
 -1\right)  ^{\sigma}\left(  \prod_{i\in I}x_{i}\right)  \left(  \prod
 _{i\in\left[  n\right]  \setminus I}y_{\sigma\left(  i\right)  }\right)  .
@@ -9614,7 +9614,7 @@ show that every $I\subseteq\left[  n\right]  $ satisfies%
 \begin{equation}
 \sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\left(  \prod_{i\in I}%
 x_{i}\right)  \left(  \prod_{i\in\left[  n\right]  \setminus I}y_{\sigma
-\left(  i\right)  }\right)  =0.\label{eq.exam.xi+yj.detA4}%
+\left(  i\right)  }\right)  =0. \label{eq.exam.xi+yj.detA4}%
 \end{equation}
 So let us fix $I\subseteq\left[  n\right]  $, and try to prove
 (\ref{eq.exam.xi+yj.detA4}). We must be in one of the following two cases:
@@ -10835,10 +10835,13 @@ details (if you care about them), see the solution to the following exercise:
 
 \begin{remark}
 \label{rmk.prodrule.ai+bi}Lemma \ref{lem.prodrule} can be regarded as a
-generalization of Exercise \ref{exe.prod(ai+bi)} \textbf{(a)}. Indeed, let
-$n$, $\left(  a_{1},a_{2},\ldots,a_{n}\right)  $ and $\left(  b_{1}%
+generalization of Exercise \ref{exe.prod(ai+bi)} \textbf{(a)}. Indeed, let me
+sketch how Exercise \ref{exe.prod(ai+bi)} \textbf{(a)} can be derived from
+Lemma \ref{lem.prodrule}:
+
+Let $n$, $\left(  a_{1},a_{2},\ldots,a_{n}\right)  $ and $\left(  b_{1}%
 ,b_{2},\ldots,b_{n}\right)  $ be as in Exercise \ref{exe.prod(ai+bi)}
-\textbf{(a)}. For every $i\in\left[  n\right]  $, set $m_{i}=1$,
+\textbf{(a)}. For every $i\in\left[  n\right]  $, set $m_{i}=2$,
 $p_{i,1}=a_{i}$ and $p_{i,2}=b_{i}$. Then, Lemma \ref{lem.prodrule} yields%
 \begin{align}
 \prod_{i=1}^{n}\left(  a_{i}+b_{i}\right)   &  =\underbrace{\sum_{\left(
@@ -10850,8 +10853,8 @@ factors}}}}_{=\sum_{\left(  k_{1},k_{2},\ldots,k_{n}\right)  \in\left[
 \prod_{\substack{i\in\left[  n\right]  ;\\k_{i}=2}}b_{i}\right)  }\nonumber\\
 &  =\sum_{\left(  k_{1},k_{2},\ldots,k_{n}\right)  \in\left[  2\right]  ^{n}%
 }\left(  \prod_{\substack{i\in\left[  n\right]  ;\\k_{i}=1}}a_{i}\right)
-\left(  \prod_{\substack{i\in\left[  n\right]  ;\\k_{i}=2}}b_{i}\right)  .
-\label{eq.rmk.prodrule.ai+bi.2}%
+\left(  \prod_{\substack{i\in\left[  n\right]  ;\\k_{i}=2}}b_{i}\right)
+.\label{eq.rmk.prodrule.ai+bi.2}%
 \end{align}
 But there is a bijection between the set $\left[  2\right]  ^{n}$ and the
 powerset $\mathcal{P}\left(  \left[  n\right]  \right)  $ of $\left[
@@ -10874,7 +10877,7 @@ this bijection. Hence,%
 \begin{align*}
 &  \sum_{\left(  k_{1},k_{2},\ldots,k_{n}\right)  \in\left[  2\right]  ^{n}%
 }\left(  \prod_{\substack{i\in\left[  n\right]  ;\\k_{i}=1}}a_{i}\right)
-\left(  \prod_{\substack{i\in\left[  n\right]  ;\\k_{i}=2}}b_{i}\right) \\
+\left(  \prod_{\substack{i\in\left[  n\right]  ;\\k_{i}=2}}b_{i}\right)  \\
 &  =\sum_{I\subseteq\left[  n\right]  }\left(  \prod_{i\in I}a_{i}\right)
 \left(  \prod_{i\in\left[  n\right]  \setminus I}b_{i}\right)  .
 \end{align*}
@@ -35035,7 +35038,7 @@ $ is the list of all elements of $I$ in increasing order (with no
 repetitions). Moreover, $k=\left\vert I\right\vert $. Hence, Lemma
 \ref{lem.sol.exe.Ialbe.Inv=Inv} \textbf{(b)} (applied to $I$, $k$, $\alpha$
 and $\left(  a_{1},a_{2},\ldots,a_{k}\right)  $ instead of $P$, $m$, $\sigma$
-and $\left(  p_{1},p_{2},\ldots,p_{m}\right)  $) satisfies%
+and $\left(  p_{1},p_{2},\ldots,p_{m}\right)  $) yields%
 \begin{equation}
 \ell\left(  \alpha\right)  =\ell\left(  \underbrace{\left(  a_{\alpha\left(
 1\right)  },a_{\alpha\left(  2\right)  },\ldots,a_{\alpha\left(  k\right)
@@ -35057,7 +35060,7 @@ $\left\vert \left[  n\right]  \setminus I\right\vert =n-k$). Hence, Lemma
 \ref{lem.sol.exe.Ialbe.Inv=Inv} \textbf{(b)} (applied to $\left[  n\right]
 \setminus I$, $n-k$, $\beta$ and $\left(  b_{1},b_{2},\ldots,b_{n-k}\right)  $
 instead of $P$, $m$, $\sigma$ and $\left(  p_{1},p_{2},\ldots,p_{m}\right)  $)
-satisfies%
+yields%
 \begin{equation}
 \ell\left(  \beta\right)  =\ell\left(  \underbrace{\left(  b_{\beta\left(
 1\right)  },b_{\beta\left(  2\right)  },\ldots,b_{\beta\left(  n-k\right)
@@ -35922,7 +35925,8 @@ is a list of all elements of $\left\{  1,2,\ldots,n\right\}  \setminus I$
 to $\left\{  1,2,\ldots,n\right\}  \setminus I$, $n-k$, $\left(  b_{1}%
 ,b_{2},\ldots,b_{n-k}\right)  $ and $\left(  \gamma\left(  k+1\right)
 ,\gamma\left(  k+2\right)  ,\ldots,\gamma\left(  k+\left(  n-k\right)
-\right)  \right)  $ instead of $S$, $s$, $\left(  c_{1},c_{2},\ldots
+\right)  \right)  $ instead of $S$, $s$, \newline
+$\left(  c_{1},c_{2},\ldots
 ,c_{s}\right)  $ and $\left(  p_{1},p_{2},\ldots,p_{s}\right)  $) yields that
 there exists a $\pi\in S_{n-k}$ such that $\left(  \gamma\left(  k+1\right)
 ,\gamma\left(  k+2\right)  ,\ldots,\gamma\left(  k+\left(  n-k\right)
