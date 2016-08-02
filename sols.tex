@@ -24071,6 +24071,155 @@ of Lemma \ref{lem.det.laplace-multi.Apq} by permuting the rows of the
 matrices. Finally, prove Theorem \ref{thm.det.laplace-multi}.]
 \end{exercise}
 
+\subsection{The determinant of $A+B$}
+
+As Theorem \ref{thm.det(AB)} shows, the determinant of the product $AB$ of two
+square matrices can be easily and neatly expressed through the determinants of
+$A$ and $B$. In contrast, the determinant of a sum $A+B$ of two square
+matrices cannot be expressed in such a way\footnote{It is easy to find two
+$2\times2$-matrices $A_{1}$ and $B_{1}$ and two other $2\times2$-matrices
+$A_{2}$ and $B_{2}$ such that $\det\left(  A_{1}\right)  =\det\left(
+A_{2}\right)  $ and $\det\left(  B_{1}\right)  =\det\left(  B_{2}\right)  $
+but $\det\left(  A_{1}+B_{1}\right)  \neq\det\left(  A_{2}+B_{2}\right)  $.
+This shows that $\det\left(  A+B\right)  $ cannot generally be computed from
+$\det A$ and $\det B$.}. There is, however, a formula for $\det\left(
+A+B\right)  $ in terms of the determinants of submatrices of $A$ and $B$.
+While it is rather unwieldy (a far cry from the elegance of Theorem
+\ref{thm.det(AB)}), it is nevertheless useful sometimes; let us now show it:
+
+\begin{theorem}
+\label{thm.det(A+B)}Let $n\in\mathbb{N}$. For any subset $I$ of $\left\{
+1,2,\ldots,n\right\}  $, we let $\widetilde{I}$ denote the complement
+$\left\{  1,2,\ldots,n\right\}  \setminus I$ of $I$. (For instance, if $n=4$
+and $I=\left\{  1,4\right\}  $, then $\widetilde{I}=\left\{  2,3\right\}  $.)
+Let us use the notations introduced in Definition \ref{def.submatrix} and in
+Definition \ref{def.sect.laplace.notations}.
+
+Let $A$ and $B$ be two $n\times n$-matrices. Then,%
+\[
+\det\left(  A+B\right)  =\sum_{P\subseteq\left\{  1,2,\ldots,n\right\}  }%
+\sum_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+P\right\vert =\left\vert Q\right\vert }}\left(  -1\right)  ^{\sum P+\sum
+Q}\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+Q\right)  }A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(
+\widetilde{P}\right)  }^{w\left(  \widetilde{Q}\right)  }B\right)  .
+\]
+
+\end{theorem}
+
+\begin{example}
+For this example, set $n=2$, $A=\left(  a_{i,j}\right)  _{1\leq i\leq2,\ 1\leq
+j\leq2}$ and $B=\left(  b_{i,j}\right)  _{1\leq i\leq2,\ 1\leq j\leq2}$. Then,
+Theorem \ref{thm.det(A+B)} says that%
+\begin{align*}
+&  \det\left(  A+B\right) \\
+&  =\sum_{P\subseteq\left\{  1,2\right\}  }\sum_{\substack{Q\subseteq\left\{
+1,2\right\}  ;\\\left\vert P\right\vert =\left\vert Q\right\vert }}\left(
+-1\right)  ^{\sum P+\sum Q}\det\left(  \operatorname*{sub}\nolimits_{w\left(
+P\right)  }^{w\left(  Q\right)  }A\right)  \det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  \widetilde{P}\right)  }^{w\left(  \widetilde{Q}\right)
+}B\right) \\
+&  =\left(  -1\right)  ^{\sum\varnothing+\sum\varnothing}\det
+\underbrace{\left(  \operatorname*{sub}\nolimits_{{}}^{{}}A\right)
+}_{\substack{\text{this is the}\\0\times0\text{-matrix}}}\det\left(
+\operatorname*{sub}\nolimits_{1,2}^{1,2}B\right) \\
+&  \ \ \ \ \ \ \ \ \ \ +\left(  -1\right)  ^{\sum\left\{  1\right\}
++\sum\left\{  1\right\}  }\det\left(  \operatorname*{sub}\nolimits_{1}%
+^{1}A\right)  \det\left(  \operatorname*{sub}\nolimits_{2}^{2}B\right) \\
+&  \ \ \ \ \ \ \ \ \ \ +\left(  -1\right)  ^{\sum\left\{  1\right\}
++\sum\left\{  2\right\}  }\det\left(  \operatorname*{sub}\nolimits_{1}%
+^{2}A\right)  \det\left(  \operatorname*{sub}\nolimits_{2}^{1}B\right) \\
+&  \ \ \ \ \ \ \ \ \ \ +\left(  -1\right)  ^{\sum\left\{  2\right\}
++\sum\left\{  1\right\}  }\det\left(  \operatorname*{sub}\nolimits_{2}%
+^{1}A\right)  \det\left(  \operatorname*{sub}\nolimits_{1}^{2}B\right) \\
+&  \ \ \ \ \ \ \ \ \ \ +\left(  -1\right)  ^{\sum\left\{  2\right\}
++\sum\left\{  2\right\}  }\det\left(  \operatorname*{sub}\nolimits_{2}%
+^{2}A\right)  \det\left(  \operatorname*{sub}\nolimits_{1}^{1}B\right) \\
+&  \ \ \ \ \ \ \ \ \ \ +\left(  -1\right)  ^{\sum\left\{  1,2\right\}
++\sum\left\{  1,2\right\}  }\det\left(  \operatorname*{sub}\nolimits_{1,2}%
+^{1,2}A\right)  \det\underbrace{\left(  \operatorname*{sub}\nolimits_{{}}^{{}%
+}B\right)  }_{\substack{\text{this is the}\\0\times0\text{-matrix}}}\\
+&  =\underbrace{\det\left(  \text{the }0\times0\text{-matrix}\right)  }%
+_{=1}\det\left(
+\begin{array}
+[c]{cc}%
+b_{1,1} & b_{1,2}\\
+b_{2,1} & b_{2,2}%
+\end{array}
+\right)  +\det\left(
+\begin{array}
+[c]{c}%
+a_{1,1}%
+\end{array}
+\right)  \det\left(
+\begin{array}
+[c]{c}%
+b_{2,2}%
+\end{array}
+\right) \\
+&  \ \ \ \ \ \ \ \ \ \ -\det\left(
+\begin{array}
+[c]{c}%
+a_{1,2}%
+\end{array}
+\right)  \det\left(
+\begin{array}
+[c]{c}%
+b_{2,1}%
+\end{array}
+\right)  -\det\left(
+\begin{array}
+[c]{c}%
+a_{2,1}%
+\end{array}
+\right)  \det\left(
+\begin{array}
+[c]{c}%
+b_{1,2}%
+\end{array}
+\right) \\
+&  \ \ \ \ \ \ \ \ \ \ +\det\left(
+\begin{array}
+[c]{c}%
+a_{2,2}%
+\end{array}
+\right)  \det\left(
+\begin{array}
+[c]{c}%
+b_{1,1}%
+\end{array}
+\right)  +\det\left(
+\begin{array}
+[c]{cc}%
+a_{1,1} & a_{1,2}\\
+a_{2,1} & a_{2,2}%
+\end{array}
+\right)  \underbrace{\det\left(  \text{the }0\times0\text{-matrix}\right)
+}_{=1}\\
+&  =\det\left(
+\begin{array}
+[c]{cc}%
+b_{1,1} & b_{1,2}\\
+b_{2,1} & b_{2,2}%
+\end{array}
+\right)  +a_{1,1}b_{2,2}-a_{1,2}b_{2,1}-a_{2,1}b_{1,2}+a_{2,2}b_{1,1}%
++\det\left(
+\begin{array}
+[c]{cc}%
+a_{1,1} & a_{1,2}\\
+a_{2,1} & a_{2,2}%
+\end{array}
+\right)  .
+\end{align*}
+
+\end{example}
+
+\begin{exercise}
+\label{exe.det(A+B)}Prove Theorem \ref{thm.det(A+B)}.
+
+[\textbf{Hint:} Use Lemma \ref{lem.det.laplace-multi.Apq}.]
+\end{exercise}
+
 \subsection{Additional exercises}
 
 Here are a few more additional exercises, with no solutions given and no
@@ -60475,6 +60624,397 @@ This proves Theorem \ref{thm.det.laplace-multi} \textbf{(b)}.
 We have now proven both Lemma \ref{lem.det.laplace-multi.Apq} and
 Theorem \ref{thm.det.laplace-multi}. Thus,
 Exercise \ref{exe.det.laplace-multi} is solved.
+\end{proof}
+
+\subsection{Solution to Exercise \ref{exe.det(A+B)}}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Theorem \ref{thm.det(A+B)}.]Write the $n\times n$-matrix $A$ in the
+form $A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$. Write the
+$n\times n$-matrix $B$ in the form $B=\left(  b_{i,j}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}$.
+
+Let $\left[  n\right]  $ denote the set $\left\{  1,2,\ldots,n\right\}  $.
+Then, every subset $I$ of $\left[  n\right]  $ satisfies
+\begin{equation}
+\left[  n\right]  \setminus I=\widetilde{I} \label{sol.det(A+B).short.compl}%
+\end{equation}
+(because the definition of $\widetilde{I}$ yields $\widetilde{I}%
+=\underbrace{\left\{  1,2,\ldots,n\right\}  }_{=\left[  n\right]  }\setminus
+I=\left[  n\right]  \setminus I$).
+
+For every $\sigma\in S_{n}$ and every subset $P$ of $\left\{  1,2,\ldots
+,n\right\}  $, define an element $c_{\sigma,P}$ of $\mathbb{K}$ by
+\begin{equation}
+c_{\sigma,P}=\left(  -1\right)  ^{\sigma}\left(  \prod_{i\in P}a_{i,\sigma
+\left(  i\right)  }\right)  \left(  \prod_{i\in\left[  n\right]  \setminus
+P}b_{i,\sigma\left(  i\right)  }\right)  . \label{sol.det(A+B).short.c=}%
+\end{equation}
+
+
+If $P$ and $Q$ are two subsets of $\left\{  1,2,\ldots,n\right\}  $ satisfying
+$\left\vert Q\right\vert \neq\left\vert P\right\vert $, then%
+\begin{equation}
+\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)  =Q}}c_{\sigma,P}=0
+\label{sol.det(A+B).short.emptysum}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.det(A+B).short.emptysum}):} This can be
+shown in precisely the same way as (\ref{pf.thm.det.laplace-multi.emptysum})
+was shown in our proof of Theorem \ref{thm.det.laplace-multi}.}.
+
+If $P$ and $Q$ are two subsets of $\left\{  1,2,\ldots,n\right\}  $ satisfying
+$\left\vert Q\right\vert =\left\vert P\right\vert $, then%
+\begin{equation}
+\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)  =Q}}c_{\sigma
+,P}=\left(  -1\right)  ^{\sum P+\sum Q}\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)  }A\right)  \det\left(
+\operatorname*{sub}\nolimits_{w\left(  \widetilde{P}\right)  }^{w\left(
+\widetilde{Q}\right)  }B\right)  \label{sol.det(A+B).short.nonemptysum}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.det(A+B).short.nonemptysum}):} Let $P$
+and $Q$ be two subsets of $\left\{  1,2,\ldots,n\right\}  $ satisfying
+$\left\vert Q\right\vert =\left\vert P\right\vert $. From $\left\vert
+Q\right\vert =\left\vert P\right\vert $, we obtain $\left\vert P\right\vert
+=\left\vert Q\right\vert $. Lemma \ref{lem.det.laplace-multi.Apq} thus yields%
+\[
+\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)  =Q}}\left(
+-1\right)  ^{\sigma}\left(  \prod_{i\in P}a_{i,\sigma\left(  i\right)
+}\right)  \left(  \prod_{i\in\widetilde{P}}b_{i,\sigma\left(  i\right)
+}\right)  =\left(  -1\right)  ^{\sum P+\sum Q}\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)  }A\right)  \det\left(
+\operatorname*{sub}\nolimits_{w\left(  \widetilde{P}\right)  }^{w\left(
+\widetilde{Q}\right)  }B\right)  .
+\]
+But this is precisely the equality (\ref{sol.det(A+B).short.nonemptysum})
+(because of (\ref{sol.det(A+B).short.nonemptysum})). Thus,
+(\ref{sol.det(A+B).short.nonemptysum}) is proven.}.
+
+Adding the equalities $A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}$ and $B=\left(  b_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$, we
+obtain $A+B=\left(  a_{i,j}+b_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$.
+Thus, (\ref{eq.det.eq.2}) (applied to $A+B$ and $a_{i,j}+b_{i,j}$ instead of
+$A$ and $a_{i,j}$) yields%
+\begin{align}
+\det\left(  A+B\right)   &  =\sum_{\sigma\in S_{n}}\left(  -1\right)
+^{\sigma}\underbrace{\prod_{i=1}^{n}\left(  a_{i,\sigma\left(  i\right)
+}+b_{i,\sigma\left(  i\right)  }\right)  }_{\substack{=\sum_{I\subseteq\left[
+n\right]  }\left(  \prod_{i\in I}a_{i,\sigma\left(  i\right)  }\right)
+\left(  \prod_{i\in\left[  n\right]  \setminus I}b_{i,\sigma\left(  i\right)
+}\right)  \\\text{(by Exercise \ref{exe.prod(ai+bi)} \textbf{(a)}%
+,}\\\text{applied to }a_{i,\sigma\left(  i\right)  }\text{ and }%
+b_{i,\sigma\left(  i\right)  }\text{ instead of }a_{i}\text{ and }%
+b_{i}\text{)}}}\nonumber\\
+&  =\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\underbrace{\sum
+_{I\subseteq\left[  n\right]  }}_{=\sum_{I\subseteq\left\{  1,2,\ldots
+,n\right\}  }}\left(  \prod_{i\in I}a_{i,\sigma\left(  i\right)  }\right)
+\left(  \underbrace{\prod_{i\in\left[  n\right]  \setminus I}}%
+_{\substack{=\prod_{i\in\widetilde{I}}\\\text{(by
+(\ref{sol.det(A+B).short.compl}))}}}b_{i,\sigma\left(  i\right)  }\right)
+\nonumber\\
+&  =\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\underbrace{\sum
+_{I\subseteq\left\{  1,2,\ldots,n\right\}  }\left(  \prod_{i\in I}%
+a_{i,\sigma\left(  i\right)  }\right)  \left(  \prod_{i\in\widetilde{I}%
+}b_{i,\sigma\left(  i\right)  }\right)  }_{\substack{=\sum_{P\subseteq\left\{
+1,2,\ldots,n\right\}  }\left(  \prod_{i\in P}a_{i,\sigma\left(  i\right)
+}\right)  \left(  \prod_{i\in\widetilde{P}}b_{i,\sigma\left(  i\right)
+}\right)  \\\text{(here, we have renamed the summation index }I\text{ as
+}P\text{)}}}\nonumber\\
+&  =\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\sum_{P\subseteq\left\{
+1,2,\ldots,n\right\}  }\left(  \prod_{i\in P}a_{i,\sigma\left(  i\right)
+}\right)  \left(  \prod_{i\in\widetilde{P}}b_{i,\sigma\left(  i\right)
+}\right) \nonumber\\
+&  =\sum_{P\subseteq\left\{  1,2,\ldots,n\right\}  }\sum_{\sigma\in S_{n}%
+}\underbrace{\left(  -1\right)  ^{\sigma}\left(  \prod_{i\in P}a_{i,\sigma
+\left(  i\right)  }\right)  \left(  \prod_{i\in\widetilde{P}}b_{i,\sigma
+\left(  i\right)  }\right)  }_{\substack{=c_{\sigma,P}\\\text{(by
+(\ref{sol.det(A+B).short.c=}))}}}\nonumber\\
+&  =\sum_{P\subseteq\left\{  1,2,\ldots,n\right\}  }\sum_{\sigma\in S_{n}%
+}c_{\sigma,P}. \label{sol.det(A+B).short.1}%
+\end{align}
+
+
+But every subset $P$ of $\left\{  1,2,\ldots,n\right\}  $ satisfies%
+\begin{align*}
+&  \underbrace{\sum_{\sigma\in S_{n}}}_{\substack{=\sum_{Q\subseteq\left\{
+1,2,\ldots,n\right\}  }\sum_{\substack{\sigma\in S_{n};\\\sigma\left(
+P\right)  =Q}}\\\text{(because for every }\sigma\in S_{n}\text{, the
+set}\\\sigma\left(  P\right)  \text{ is a subset of }\left\{  1,2,\ldots
+,n\right\}  \text{)}}}c_{\sigma,P}\\
+&  =\sum_{Q\subseteq\left\{  1,2,\ldots,n\right\}  }\sum_{\substack{\sigma\in
+S_{n};\\\sigma\left(  P\right)  =Q}}c_{\sigma,P}=\sum_{\substack{Q\subseteq
+\left\{  1,2,\ldots,n\right\}  ;\\\left\vert Q\right\vert =\left\vert
+P\right\vert }}\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)
+=Q}}c_{\sigma,P}+\sum_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}
+;\\\left\vert Q\right\vert \neq\left\vert P\right\vert }}\underbrace{\sum
+_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)  =Q}}c_{\sigma,P}%
+}_{\substack{=0\\\text{(by (\ref{sol.det(A+B).short.emptysum}))}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since every subset }Q\text{ of }\left\{  1,2,\ldots,n\right\}  \text{
+satisfies}\\
+\text{either }\left\vert Q\right\vert =\left\vert P\right\vert \text{ or
+}\left\vert Q\right\vert \neq\left\vert P\right\vert \text{ (but not both)}%
+\end{array}
+\right)  \\
+&  =\sum_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+Q\right\vert =\left\vert P\right\vert }}\sum_{\substack{\sigma\in
+S_{n};\\\sigma\left(  P\right)  =Q}}c_{\sigma,P}+\underbrace{\sum
+_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+Q\right\vert \neq\left\vert P\right\vert }}0}_{=0}\\
+&  =\sum_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+Q\right\vert =\left\vert P\right\vert }}\underbrace{\sum_{\substack{\sigma\in
+S_{n};\\\sigma\left(  P\right)  =Q}}c_{\sigma,P}}_{\substack{=\left(
+-1\right)  ^{\sum P+\sum Q}\det\left(  \operatorname*{sub}\nolimits_{w\left(
+P\right)  }^{w\left(  Q\right)  }A\right)  \det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  \widetilde{P}\right)  }^{w\left(  \widetilde{Q}\right)
+}B\right)  \\\text{(by (\ref{sol.det(A+B).short.nonemptysum}))}}}\\
+&  =\sum_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+Q\right\vert =\left\vert P\right\vert }}\left(  -1\right)  ^{\sum P+\sum
+Q}\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+Q\right)  }A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(
+\widetilde{P}\right)  }^{w\left(  \widetilde{Q}\right)  }B\right)  .
+\end{align*}
+Hence, (\ref{sol.det(A+B).short.1}) becomes%
+\begin{align*}
+\det\left(  A+B\right)   &  =\sum_{P\subseteq\left\{  1,2,\ldots,n\right\}
+}\underbrace{\sum_{\sigma\in S_{n}}c_{\sigma,P}}_{=\sum_{\substack{Q\subseteq
+\left\{  1,2,\ldots,n\right\}  ;\\\left\vert Q\right\vert =\left\vert
+P\right\vert }}\left(  -1\right)  ^{\sum P+\sum Q}\det\left(
+\operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)
+}A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{P}%
+\right)  }^{w\left(  \widetilde{Q}\right)  }B\right)  }\\
+&  =\sum_{P\subseteq\left\{  1,2,\ldots,n\right\}  }\sum_{\substack{Q\subseteq
+\left\{  1,2,\ldots,n\right\}  ;\\\left\vert Q\right\vert =\left\vert
+P\right\vert }}\left(  -1\right)  ^{\sum P+\sum Q}\det\left(
+\operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)
+}A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{P}%
+\right)  }^{w\left(  \widetilde{Q}\right)  }B\right)  .
+\end{align*}
+This proves Theorem \ref{thm.det(A+B)}.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Theorem \ref{thm.det(A+B)}.]Write the $n\times n$-matrix $A$ in the
+form $A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$.
+
+Write the $n\times n$-matrix $B$ in the form $B=\left(  b_{i,j}\right)
+_{1\leq i\leq n,\ 1\leq j\leq n}$.
+
+Let $\left[  n\right]  $ denote the set $\left\{  1,2,\ldots,n\right\}  $.
+Then,
+\begin{equation}
+\left[  n\right]  \setminus I=\widetilde{I}\ \ \ \ \ \ \ \ \ \ \text{for every
+subset }I\text{ of }\left[  n\right]  \label{sol.det(A+B).compl}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.det(A+B).compl}):} Let $I$ be a subset of
+$\left[  n\right]  $. Then, $I\subseteq\left[  n\right]  =\left\{
+1,2,\ldots,n\right\}  $. Now, the definition of $\widetilde{I}$ yields
+$\widetilde{I}=\underbrace{\left\{  1,2,\ldots,n\right\}  }_{=\left[
+n\right]  }\setminus I=\left[  n\right]  \setminus I$. This proves
+(\ref{sol.det(A+B).compl}).}.
+
+For every $\sigma\in S_{n}$ and every subset $P$ of $\left\{  1,2,\ldots
+,n\right\}  $, define an element $c_{\sigma,P}$ of $\mathbb{K}$ by
+\begin{equation}
+c_{\sigma,P}=\left(  -1\right)  ^{\sigma}\left(  \prod_{i\in P}a_{i,\sigma
+\left(  i\right)  }\right)  \left(  \prod_{i\in\left[  n\right]  \setminus
+P}b_{i,\sigma\left(  i\right)  }\right)  . \label{sol.det(A+B).c=}%
+\end{equation}
+
+
+If $P$ and $Q$ are two subsets of $\left\{  1,2,\ldots,n\right\}  $ satisfying
+$\left\vert Q\right\vert \neq\left\vert P\right\vert $, then%
+\begin{equation}
+\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)  =Q}}c_{\sigma,P}=0
+\label{sol.det(A+B).emptysum}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.det(A+B).emptysum}):} Let $P$ and $Q$ be
+two subsets of $\left\{  1,2,\ldots,n\right\}  $ satisfying $\left\vert
+Q\right\vert \neq\left\vert P\right\vert $.
+\par
+Let $\sigma\in S_{n}$ be such that $\sigma\left(  P\right)  =Q$. We shall
+derive a contradiction.
+\par
+Indeed, Lemma \ref{lem.sol.det.laplace-multi.4} \textbf{(a)} shows that the
+set $\sigma\left(  P\right)  $ is a subset of $\left\{  1,2,\ldots,n\right\}
+$ satisfying $\left\vert \sigma\left(  P\right)  \right\vert =\left\vert
+P\right\vert $. Hence, $\left\vert P\right\vert =\left\vert \underbrace{\sigma
+\left(  P\right)  }_{=Q}\right\vert =\left\vert Q\right\vert \neq\left\vert
+P\right\vert $. This is absurd. Hence, we have found a contradiction.
+\par
+Now, forget that we fixed $\sigma$. We thus have found a contradiction for
+every $\sigma\in S_{n}$ satisfying $\sigma\left(  P\right)  =Q$. Thus, there
+exists no $\sigma\in S_{n}$ satisfying $\sigma\left(  P\right)  =Q$. Hence,
+the sum $\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)
+=Q}}c_{\sigma,P}$ is an empty sum. Thus, $\sum_{\substack{\sigma\in
+S_{n};\\\sigma\left(  P\right)  =Q}}c_{\sigma,P}=\left(  \text{empty
+sum}\right)  =0$. This proves (\ref{sol.det(A+B).emptysum}).}.
+
+If $P$ and $Q$ are two subsets of $\left\{  1,2,\ldots,n\right\}  $ satisfying
+$\left\vert Q\right\vert =\left\vert P\right\vert $, then%
+\begin{equation}
+\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)  =Q}}c_{\sigma
+,P}=\left(  -1\right)  ^{\sum P+\sum Q}\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)  }A\right)  \det\left(
+\operatorname*{sub}\nolimits_{w\left(  \widetilde{P}\right)  }^{w\left(
+\widetilde{Q}\right)  }B\right)  \label{sol.det(A+B).nonemptysum}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.det(A+B).nonemptysum}):} Let $P$ and $Q$
+be two subsets of $\left\{  1,2,\ldots,n\right\}  $ satisfying $\left\vert
+Q\right\vert =\left\vert P\right\vert $. From $\left\vert Q\right\vert
+=\left\vert P\right\vert $, we obtain $\left\vert P\right\vert =\left\vert
+Q\right\vert $. Lemma \ref{lem.det.laplace-multi.Apq} thus yields%
+\begin{align*}
+&  \sum_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)  =Q}}\left(
+-1\right)  ^{\sigma}\left(  \prod_{i\in P}a_{i,\sigma\left(  i\right)
+}\right)  \left(  \prod_{i\in\widetilde{P}}b_{i,\sigma\left(  i\right)
+}\right) \\
+&  =\left(  -1\right)  ^{\sum P+\sum Q}\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)  }A\right)  \det\left(
+\operatorname*{sub}\nolimits_{w\left(  \widetilde{P}\right)  }^{w\left(
+\widetilde{Q}\right)  }B\right)  .
+\end{align*}
+Now,%
+\begin{align*}
+&  \sum_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)  =Q}%
+}\underbrace{c_{\sigma,P}}_{=\left(  -1\right)  ^{\sigma}\left(  \prod_{i\in
+P}a_{i,\sigma\left(  i\right)  }\right)  \left(  \prod_{i\in\widetilde{P}%
+}b_{i,\sigma\left(  i\right)  }\right)  }\\
+&  =\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)  =Q}}\left(
+-1\right)  ^{\sigma}\left(  \prod_{i\in P}a_{i,\sigma\left(  i\right)
+}\right)  \left(  \prod_{i\in\widetilde{P}}b_{i,\sigma\left(  i\right)
+}\right) \\
+&  =\left(  -1\right)  ^{\sum P+\sum Q}\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)  }A\right)  \det\left(
+\operatorname*{sub}\nolimits_{w\left(  \widetilde{P}\right)  }^{w\left(
+\widetilde{Q}\right)  }B\right)  .
+\end{align*}
+This proves (\ref{sol.det(A+B).nonemptysum}).}.
+
+Adding the equalities $A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}$ and $B=\left(  b_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$, we
+obtain%
+\[
+A+B=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}+\left(
+b_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}=\left(  a_{i,j}%
++b_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}%
+\]
+(by the definition of the sum of two matrices). Thus, (\ref{eq.det.eq.2})
+(applied to $A+B$ and $a_{i,j}+b_{i,j}$ instead of $A$ and $a_{i,j}$) yields%
+\begin{align}
+\det\left(  A+B\right)   &  =\sum_{\sigma\in S_{n}}\left(  -1\right)
+^{\sigma}\underbrace{\prod_{i=1}^{n}\left(  a_{i,\sigma\left(  i\right)
+}+b_{i,\sigma\left(  i\right)  }\right)  }_{\substack{=\sum_{I\subseteq\left[
+n\right]  }\left(  \prod_{i\in I}a_{i,\sigma\left(  i\right)  }\right)
+\left(  \prod_{i\in\left[  n\right]  \setminus I}b_{i,\sigma\left(  i\right)
+}\right)  \\\text{(by Exercise \ref{exe.prod(ai+bi)} \textbf{(a)}%
+}\\\text{(applied to }a_{i,\sigma\left(  i\right)  }\text{ and }%
+b_{i,\sigma\left(  i\right)  }\text{ instead of }a_{i}\text{ and }%
+b_{i}\text{))}}}\nonumber\\
+&  =\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\underbrace{\sum
+_{I\subseteq\left[  n\right]  }}_{\substack{=\sum_{I\subseteq\left\{
+1,2,\ldots,n\right\}  }\\\text{(since }\left[  n\right]  =\left\{
+1,2,\ldots,n\right\}  \text{)}}}\left(  \prod_{i\in I}a_{i,\sigma\left(
+i\right)  }\right)  \left(  \underbrace{\prod_{i\in\left[  n\right]  \setminus
+I}}_{\substack{=\prod_{i\in\widetilde{I}}\\\text{(since }\left[  n\right]
+\setminus I=\widetilde{I}\\\text{(by (\ref{sol.det(A+B).compl})))}%
+}}b_{i,\sigma\left(  i\right)  }\right) \nonumber\\
+&  =\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\underbrace{\sum
+_{I\subseteq\left\{  1,2,\ldots,n\right\}  }\left(  \prod_{i\in I}%
+a_{i,\sigma\left(  i\right)  }\right)  \left(  \prod_{i\in\widetilde{I}%
+}b_{i,\sigma\left(  i\right)  }\right)  }_{\substack{=\sum_{P\subseteq\left\{
+1,2,\ldots,n\right\}  }\left(  \prod_{i\in P}a_{i,\sigma\left(  i\right)
+}\right)  \left(  \prod_{i\in\widetilde{P}}b_{i,\sigma\left(  i\right)
+}\right)  \\\text{(here, we have renamed the summation index }I\text{ as
+}P\text{)}}}\nonumber\\
+&  =\sum_{\sigma\in S_{n}}\underbrace{\left(  -1\right)  ^{\sigma}%
+\sum_{P\subseteq\left\{  1,2,\ldots,n\right\}  }\left(  \prod_{i\in
+P}a_{i,\sigma\left(  i\right)  }\right)  \left(  \prod_{i\in\widetilde{P}%
+}b_{i,\sigma\left(  i\right)  }\right)  }_{=\sum_{P\subseteq\left\{
+1,2,\ldots,n\right\}  }\left(  -1\right)  ^{\sigma}\left(  \prod_{i\in
+P}a_{i,\sigma\left(  i\right)  }\right)  \left(  \prod_{i\in\widetilde{P}%
+}b_{i,\sigma\left(  i\right)  }\right)  }\nonumber\\
+&  =\underbrace{\sum_{\sigma\in S_{n}}\sum_{P\subseteq\left\{  1,2,\ldots
+,n\right\}  }}_{=\sum_{P\subseteq\left\{  1,2,\ldots,n\right\}  }\sum
+_{\sigma\in S_{n}}}\underbrace{\left(  -1\right)  ^{\sigma}\left(  \prod_{i\in
+P}a_{i,\sigma\left(  i\right)  }\right)  \left(  \prod_{i\in\widetilde{P}%
+}b_{i,\sigma\left(  i\right)  }\right)  }_{\substack{=c_{\sigma,P}\\\text{(by
+(\ref{sol.det(A+B).c=}))}}}\nonumber\\
+&  =\sum_{P\subseteq\left\{  1,2,\ldots,n\right\}  }\sum_{\sigma\in S_{n}%
+}c_{\sigma,P}. \label{sol.det(A+B).1}%
+\end{align}
+
+
+But every subset $P$ of $\left\{  1,2,\ldots,n\right\}  $ satisfies%
+\begin{align*}
+&  \underbrace{\sum_{\sigma\in S_{n}}}_{\substack{=\sum_{Q\subseteq\left\{
+1,2,\ldots,n\right\}  }\sum_{\substack{\sigma\in S_{n};\\\sigma\left(
+P\right)  =Q}}\\\text{(because for every }\sigma\in S_{n}\text{, the
+set}\\\sigma\left(  P\right)  \text{ is a subset of }\left\{  1,2,\ldots
+,n\right\}  \text{)}}}c_{\sigma,P}\\
+&  =\sum_{Q\subseteq\left\{  1,2,\ldots,n\right\}  }\sum_{\substack{\sigma\in
+S_{n};\\\sigma\left(  P\right)  =Q}}c_{\sigma,P}\\
+&  =\sum_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+Q\right\vert =\left\vert P\right\vert }}\sum_{\substack{\sigma\in
+S_{n};\\\sigma\left(  P\right)  =Q}}c_{\sigma,P}+\sum_{\substack{Q\subseteq
+\left\{  1,2,\ldots,n\right\}  ;\\\left\vert Q\right\vert \neq\left\vert
+P\right\vert }}\underbrace{\sum_{\substack{\sigma\in S_{n};\\\sigma\left(
+P\right)  =Q}}c_{\sigma,P}}_{\substack{=0\\\text{(by
+(\ref{sol.det(A+B).emptysum}))}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since every subset }Q\text{ of }\left\{  1,2,\ldots,n\right\}  \text{
+satisfies}\\
+\text{either }\left\vert Q\right\vert =\left\vert P\right\vert \text{ or
+}\left\vert Q\right\vert \neq\left\vert P\right\vert \text{ (but not both)}%
+\end{array}
+\right)  \\
+&  =\sum_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+Q\right\vert =\left\vert P\right\vert }}\sum_{\substack{\sigma\in
+S_{n};\\\sigma\left(  P\right)  =Q}}c_{\sigma,P}+\underbrace{\sum
+_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+Q\right\vert \neq\left\vert P\right\vert }}0}_{=0}\\
+&  =\sum_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+Q\right\vert =\left\vert P\right\vert }}\underbrace{\sum_{\substack{\sigma\in
+S_{n};\\\sigma\left(  P\right)  =Q}}c_{\sigma,P}}_{\substack{=\left(
+-1\right)  ^{\sum P+\sum Q}\det\left(  \operatorname*{sub}\nolimits_{w\left(
+P\right)  }^{w\left(  Q\right)  }A\right)  \det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  \widetilde{P}\right)  }^{w\left(  \widetilde{Q}\right)
+}B\right)  \\\text{(by (\ref{sol.det(A+B).nonemptysum}))}}}\\
+&  =\sum_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+Q\right\vert =\left\vert P\right\vert }}\left(  -1\right)  ^{\sum P+\sum
+Q}\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+Q\right)  }A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(
+\widetilde{P}\right)  }^{w\left(  \widetilde{Q}\right)  }B\right)  .
+\end{align*}
+Hence, (\ref{sol.det(A+B).1}) becomes%
+\begin{align*}
+\det\left(  A+B\right)   &  =\sum_{P\subseteq\left\{  1,2,\ldots,n\right\}
+}\underbrace{\sum_{\sigma\in S_{n}}c_{\sigma,P}}_{=\sum_{\substack{Q\subseteq
+\left\{  1,2,\ldots,n\right\}  ;\\\left\vert Q\right\vert =\left\vert
+P\right\vert }}\left(  -1\right)  ^{\sum P+\sum Q}\det\left(
+\operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)
+}A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{P}%
+\right)  }^{w\left(  \widetilde{Q}\right)  }B\right)  }\\
+&  =\sum_{P\subseteq\left\{  1,2,\ldots,n\right\}  }\sum_{\substack{Q\subseteq
+\left\{  1,2,\ldots,n\right\}  ;\\\left\vert Q\right\vert =\left\vert
+P\right\vert }}\left(  -1\right)  ^{\sum P+\sum Q}\det\left(
+\operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)
+}A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{P}%
+\right)  }^{w\left(  \widetilde{Q}\right)  }B\right)  .
+\end{align*}
+This proves Theorem \ref{thm.det(A+B)}.
+\end{proof}
+\end{verlong}
+
+\begin{proof}
+[Solution to Exercise \ref{exe.det(A+B)}.]Exercise \ref{exe.det(A+B)} is
+solved, since Theorem \ref{thm.det(A+B)} is proven.
 \end{proof}
 
 \subsection{Solution to Additional exercise \ref{exeadd.det.rk1upd}}
