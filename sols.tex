@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Tuesday, August 02, 2016 14:48:15}
+%TCIDATA{LastRevised=Tuesday, August 02, 2016 22:30:23}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -24225,6 +24225,250 @@ a_{2,1} & a_{2,2}%
 [\textbf{Hint:} Use Lemma \ref{lem.det.laplace-multi.Apq}.]
 \end{exercise}
 
+Theorem \ref{thm.det(A+B)} takes a simpler form in the particular case when
+the matrix $B$ is diagonal (i.e., has all entries outside of its diagonal
+equal to $0$):
+
+\begin{corollary}
+\label{cor.det(A+D)}Let $n\in\mathbb{N}$. For every two objects $i$ and $j$,
+define $\delta_{i,j}\in\mathbb{K}$ by $\delta_{i,j}=%
+\begin{cases}
+1, & \text{if }i=j;\\
+0, & \text{if }i\neq j
+\end{cases}
+$.
+
+Let $A$ be an $n\times n$-matrix. Let $d_{1},d_{2},\ldots,d_{n}$ be $n$
+elements of $\mathbb{K}$. Let $D$ be the $n\times n$-matrix $\left(
+d_{i}\delta_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$. Then,%
+\[
+\det\left(  A+D\right)  =\sum_{P\subseteq\left\{  1,2,\ldots,n\right\}  }%
+\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+P\right)  }A\right)  \prod_{i\in\left\{  1,2,\ldots,n\right\}  \setminus
+P}d_{i}.
+\]
+
+\end{corollary}
+
+This corollary can easily be derived from Theorem \ref{thm.det(A+B)} using the
+following fact:
+
+\begin{lemma}
+\label{lem.diag.minors}Let $n\in\mathbb{N}$. For every two objects $i$ and
+$j$, define $\delta_{i,j}\in\mathbb{K}$ by $\delta_{i,j}=%
+\begin{cases}
+1, & \text{if }i=j;\\
+0, & \text{if }i\neq j
+\end{cases}
+$.
+
+Let $d_{1},d_{2},\ldots,d_{n}$ be $n$ elements of $\mathbb{K}$. Let $D$ be the
+$n\times n$-matrix $\left(  d_{i}\delta_{i,j}\right)  _{1\leq i\leq n,\ 1\leq
+j\leq n}$. Let $P$ and $Q$ be two subsets of $\left\{  1,2,\ldots,n\right\}  $
+such that $\left\vert P\right\vert =\left\vert Q\right\vert $. Then,%
+\[
+\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+Q\right)  }D\right)  =\delta_{P,Q}\prod_{i\in P}d_{i}.
+\]
+
+\end{lemma}
+
+Proving Corollary \ref{cor.det(A+D)} and Lemma \ref{lem.diag.minors} in detail
+is part of Exercise \ref{exe.det(A+B).diag} further below.
+
+A particular case of Corollary \ref{cor.det(A+D)} is the following fact:
+
+\begin{corollary}
+\label{cor.det(A+X)}Let $n\in\mathbb{N}$. Let $A$ be an $n\times n$-matrix.
+Let $x\in\mathbb{K}$. Then,%
+\begin{align}
+\det\left(  A+xI_{n}\right)   &  =\sum_{P\subseteq\left\{  1,2,\ldots
+,n\right\}  }\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)
+}^{w\left(  P\right)  }A\right)  x^{n-\left\vert P\right\vert }%
+\label{eq.cor.det(A+X).1}\\
+&  =\sum_{k=0}^{n}\left(  \sum_{\substack{P\subseteq\left\{  1,2,\ldots
+,n\right\}  ;\\\left\vert P\right\vert =n-k}}\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  P\right)  }^{w\left(  P\right)  }A\right)  \right)  x^{k}.
+\label{eq.cor.det(A+X).2}%
+\end{align}
+
+\end{corollary}
+
+\begin{exercise}
+\label{exe.det(A+B).diag}Prove Corollary \ref{cor.det(A+D)}, Lemma
+\ref{lem.diag.minors} and Corollary \ref{cor.det(A+X)}.
+\end{exercise}
+
+\begin{remark}
+\label{rmk.charpol}Let $n\in\mathbb{N}$. Let $A$ be an $n\times n$-matrix over
+the commutative ring $\mathbb{K}$. Consider the commutative ring
+$\mathbb{K}\left[  X\right]  $ of polynomials in the indeterminate $X$ over
+$\mathbb{K}$ (that is, polynomials in the indeterminate $X$ with coefficients
+lying in $\mathbb{K}$). We can then regard $A$ as a matrix over the ring
+$\mathbb{K}\left[  X\right]  $ as well (because every element of $\mathbb{K}$
+can be viewed as a constant polynomial in $\mathbb{K}\left[  X\right]  $).
+
+Consider the $n\times n$-matrix $A+XI_{n}$ over the commutative ring
+$\mathbb{K}\left[  X\right]  $. (For example, if $n=2$ and $A=\left(
+\begin{array}
+[c]{cc}%
+a & b\\
+c & d
+\end{array}
+\right)  $, then $A+XI_{n}=\left(
+\begin{array}
+[c]{cc}%
+a & b\\
+c & d
+\end{array}
+\right)  +X\left(
+\begin{array}
+[c]{cc}%
+1 & 0\\
+0 & 1
+\end{array}
+\right)  =\left(
+\begin{array}
+[c]{cc}%
+a+X & b\\
+c & d+X
+\end{array}
+\right)  $. In general, the matrix $A+XI_{n}$ is obtained from $A$ by adding
+an $X$ to each diagonal entry.)
+
+The determinant $\det\left(  A+XI_{n}\right)  $ is a polynomial in
+$\mathbb{K}\left[  X\right]  $. (For instance, for $n=2$ and $A=\left(
+\begin{array}
+[c]{cc}%
+a & b\\
+c & d
+\end{array}
+\right)  $, we have%
+\begin{align*}
+\det\left(  A+XI_{n}\right)   &  =\det\left(
+\begin{array}
+[c]{cc}%
+a+X & b\\
+c & d+X
+\end{array}
+\right)  =\left(  a+X\right)  \left(  d+X\right)  -bc\\
+&  =X^{2}+\left(  a+d\right)  X+\left(  ad-bc\right)  .
+\end{align*}
+)
+
+This polynomial $\det\left(  A+XI_{n}\right)  $ is a highly important object;
+it is a close relative of what is called the \textit{characteristic
+polynomial} of $A$. (More precisely, the characteristic polynomial of $A$ is
+either $\det\left(  XI_{n}-A\right)  $ or $\det\left(  A-XI_{n}\right)  $,
+depending on the conventions that one is using; thus, the polynomial
+$\det\left(  A+XI_{n}\right)  $ is either the characteristic polynomial of
+$-A$ or $\left(  -1\right)  ^{n}$ times this characteristic polynomial.) For
+more about the characteristic polynomial, see \cite[Section 4.5]{Artin} or
+\cite[Chapter Five, Section II, \S 3]{Hefferon} (or various other texts on
+linear algebra).
+
+Using Corollary \ref{cor.det(A+X)}, we can explicitly compute the coefficients
+of the polynomial $\det\left(  A+XI_{n}\right)  $. In fact,
+(\ref{eq.cor.det(A+X).2}) (applied to $\mathbb{K}\left[  X\right]  $ and $X$
+instead of $\mathbb{K}$ and $x$) yields%
+\[
+\det\left(  A+XI_{n}\right)  =\sum_{k=0}^{n}\left(  \sum_{\substack{P\subseteq
+\left\{  1,2,\ldots,n\right\}  ;\\\left\vert P\right\vert =n-k}}\det\left(
+\operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(  P\right)
+}A\right)  \right)  X^{k}.
+\]
+Hence, for every $k\in\left\{  0,1,\ldots,n\right\}  $, the coefficient of
+$X^{k}$ in the polynomial $\det\left(  A+XI_{n}\right)  $ is
+\[
+\sum_{\substack{P\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+P\right\vert =n-k}}\det\left(  \operatorname*{sub}\nolimits_{w\left(
+P\right)  }^{w\left(  P\right)  }A\right)  .
+\]
+In particular:
+
+\begin{itemize}
+\item The coefficient of $X^{n}$ in the polynomial $\det\left(  A+XI_{n}%
+\right)  $ is%
+\begin{align*}
+&  \sum_{\substack{P\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+P\right\vert =n-n}}\det\left(  \operatorname*{sub}\nolimits_{w\left(
+P\right)  }^{w\left(  P\right)  }A\right)  \\
+&  =\det\underbrace{\left(  \operatorname*{sub}\nolimits_{w\left(
+\varnothing\right)  }^{w\left(  \varnothing\right)  }A\right)  }_{=\left(
+\text{the }0\times0\text{-matrix}\right)  }\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since the only subset }P\text{ of }\left\{  1,2,\ldots,n\right\}  \\
+\text{satisfying }\left\vert P\right\vert =n-n\text{ is the empty set
+}\varnothing
+\end{array}
+\right)  \\
+&  =\det\left(  \text{the }0\times0\text{-matrix}\right)  =1.
+\end{align*}
+
+
+\item The coefficient of $X^{0}$ in the polynomial $\det\left(  A+XI_{n}%
+\right)  $ is%
+\begin{align*}
+&  \sum_{\substack{P\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+P\right\vert =n-0}}\det\left(  \operatorname*{sub}\nolimits_{w\left(
+P\right)  }^{w\left(  P\right)  }A\right)  \\
+&  =\det\underbrace{\left(  \operatorname*{sub}\nolimits_{w\left(  \left\{
+1,2,\ldots,n\right\}  \right)  }^{w\left(  \left\{  1,2,\ldots,n\right\}
+\right)  }A\right)  }_{=\operatorname*{sub}\nolimits_{1,2,\ldots
+,n}^{1,2,\ldots,n}A=A}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since the only subset }P\text{ of }\left\{  1,2,\ldots,n\right\}  \\
+\text{satisfying }\left\vert P\right\vert =n-0\text{ is the set }\left\{
+1,2,\ldots,n\right\}
+\end{array}
+\right)  \\
+&  =\det A.
+\end{align*}
+
+
+\item Write the matrix $A$ as $A=\left(  a_{i,j}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}$. Then, the coefficient of $X^{n-1}$ in the polynomial
+$\det\left(  A+XI_{n}\right)  $ is%
+\begin{align*}
+&  \sum_{\substack{P\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+P\right\vert =n-\left(  n-1\right)  }}\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  P\right)  }^{w\left(  P\right)  }A\right)  \\
+&  =\sum_{\substack{P\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+P\right\vert =1}}\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)
+}^{w\left(  P\right)  }A\right)  =\sum_{k=1}^{n}\det\underbrace{\left(
+\operatorname*{sub}\nolimits_{w\left(  \left\{  k\right\}  \right)
+}^{w\left(  \left\{  k\right\}  \right)  }A\right)  }%
+_{\substack{=\operatorname*{sub}\nolimits_{k}^{k}A=\left(
+\begin{array}
+[c]{c}%
+a_{k,k}%
+\end{array}
+\right)  \\\text{(this is a }1\times1\text{-matrix)}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since the subsets }P\text{ of }\left\{  1,2,\ldots,n\right\}  \\
+\text{satisfying }\left\vert P\right\vert =1\text{ are the sets }\left\{
+1\right\}  ,\left\{  2\right\}  ,\ldots,\left\{  n\right\}
+\end{array}
+\right)  \\
+&  =\sum_{k=1}^{n}\underbrace{\det\left(
+\begin{array}
+[c]{c}%
+a_{k,k}%
+\end{array}
+\right)  }_{=a_{k,k}}=\sum_{k=1}^{n}a_{k,k}.
+\end{align*}
+In other words, this coefficient is the sum of all diagonal entries of $A$.
+This sum is called the \textit{trace} of $A$, and is denoted by
+$\operatorname*{Tr}A$.
+\end{itemize}
+\end{remark}
+
 \subsection{Additional exercises}
 
 Here are a few more additional exercises, with no solutions given and no
@@ -24390,69 +24634,6 @@ of the matrix $A$ from Exercise \ref{exe.ps4.pascal}). Show that%
 \textbf{(b)} Use $\dbinom{n+m}{n}_{D}=\sum_{i=0}^{n}\dbinom{n}{i}\dbinom{m}%
 {i}2^{i}$ and the same tactic as in Exercise \ref{exe.ps4.pascal}.
 \end{noncompile}
-
-\begin{addexercise}
-\label{exeadd.det.charpoly}Let $n\in\mathbb{N}$. Let $A$ be an $n\times
-n$-matrix over the commutative ring $\mathbb{K}$. Consider the commutative
-ring $\mathbb{K}\left[  X\right]  $ of polynomials in the indeterminate $X$
-over $\mathbb{K}$ (that is, polynomials in the indeterminate $X$ with
-coefficients lying in $\mathbb{K}$). We can then regard $A$ as a matrix over
-the ring $\mathbb{K}\left[  X\right]  $ as well (because every element of
-$\mathbb{K}$ can be viewed as a constant polynomial in $\mathbb{K}\left[
-X\right]  $).
-
-Consider the $n\times n$-matrix $A+XI_{n}$ over the commutative ring
-$\mathbb{K}\left[  X\right]  $. (For example, if $n=2$ and $A=\left(
-\begin{array}
-[c]{cc}%
-a & b\\
-c & d
-\end{array}
-\right)  $, then $A+XI_{n}=\left(
-\begin{array}
-[c]{cc}%
-a & b\\
-c & d
-\end{array}
-\right)  +X\left(
-\begin{array}
-[c]{cc}%
-1 & 0\\
-0 & 1
-\end{array}
-\right)  =\left(
-\begin{array}
-[c]{cc}%
-a+X & b\\
-c & d+X
-\end{array}
-\right)  $. In general, the matrix $A+XI_{n}$ is obtained from $A$ by adding
-an $X$ to each diagonal entry.)
-
-The determinant $\det\left(  A+XI_{n}\right)  $ is a polynomial in
-$\mathbb{K}\left[  X\right]  $. (For instance, for $n=2$ and $A=\left(
-\begin{array}
-[c]{cc}%
-a & b\\
-c & d
-\end{array}
-\right)  $, we have%
-\begin{align*}
-\det\left(  A+XI_{n}\right)   &  =\det\left(
-\begin{array}
-[c]{cc}%
-a+X & b\\
-c & d+X
-\end{array}
-\right)  =\left(  a+X\right)  \left(  d+X\right)  -bc\\
-&  =X^{2}+\left(  a+d\right)  X+\left(  ad-bc\right)  .
-\end{align*}
-)
-
-What can you say about the coefficients of this polynomial? Most importantly,
-what are the coefficients before $X^{n}$, before $X^{n-1}$, and before $X^{0}$
-? Can you express the other coefficients as sums of determinants?
-\end{addexercise}
 
 \begin{addexercise}
 \label{exeadd.det.rk1upd}Let $n\in\mathbb{N}$. Let $u$ be a column vector with
@@ -58494,7 +58675,7 @@ k+1,k+2,\ldots,n\right)  }^{w\left(  \widetilde{Q}\right)  }B\right)  .
 \end{lemma}
 
 \begin{proof}
-[Proof of Lemma \ref{lem.sol.det.laplace-multi.1}.]
+[Proof of Lemma \ref{lem.sol.det.laplace-multi.1}.]We begin with some simple observations.
 
 \begin{vershort}
 The definition of $\widetilde{Q}$ yields $\widetilde{Q}=\left\{
@@ -59115,6 +59296,9 @@ $S_{n}\rightarrow S_{n},\ \sigma\mapsto\sigma\circ\gamma$ is a bijection
 \end{verlong}
 
 \begin{proof}
+[Proof of Lemma \ref{lem.det.laplace-multi.Apq}.]Let us begin by introducing
+some notations.
+
 \begin{verlong}
 For every $h\in\mathbb{N}$, we let $\operatorname*{id}\nolimits_{h}$ denote
 the identity permutation $\operatorname*{id}\nolimits_{\left\{  1,2,\ldots
@@ -61021,6 +61205,910 @@ This proves Theorem \ref{thm.det(A+B)}.
 \begin{proof}
 [Solution to Exercise \ref{exe.det(A+B)}.]Exercise \ref{exe.det(A+B)} is
 solved, since Theorem \ref{thm.det(A+B)} is proven.
+\end{proof}
+
+\subsection{Solution to Exercise \ref{exe.det(A+B).diag}}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.diag.minors}.]The set $P$ is a subset of $\left\{
+1,2,\ldots,n\right\}  $, and thus is finite (since $\left\{  1,2,\ldots
+,n\right\}  $ is finite). Hence, $\left\vert P\right\vert \in\mathbb{N}$.
+
+Define an element $k\in\mathbb{N}$ by $k=\left\vert P\right\vert $. Thus,
+$k=\left\vert P\right\vert =\left\vert Q\right\vert $.
+
+\begin{vershort}
+The list $w\left(  P\right)  $ is the list of all elements of $P$ in
+increasing order (with no repetitions), and thus has $k$ entries (since
+$\left\vert P\right\vert =k$). Thus, write this list $w\left(  P\right)  $ in
+the form $w\left(  P\right)  =\left(  p_{1},p_{2},\ldots,p_{k}\right)  $.
+Similarly, write the list $w\left(  Q\right)  $ in the form $w\left(
+Q\right)  =\left(  q_{1},q_{2},\ldots,q_{k}\right)  $.
+\end{vershort}
+
+\begin{verlong}
+We know that $w\left(  P\right)  $ is the list of all elements of $P$ in
+increasing order (with no repetitions) (by the definition of $w\left(
+P\right)  $). Thus, $w\left(  P\right)  $ is a list of $k$ elements (since
+$\left\vert P\right\vert =k$).
+
+Write $w\left(  P\right)  $ in the form $w\left(  P\right)  =\left(
+p_{1},p_{2},\ldots,p_{k}\right)  $. (This is possible, since $w\left(
+P\right)  $ is a list of $k$ elements.)
+
+We know that $w\left(  Q\right)  $ is the list of all elements of $Q$ in
+increasing order (with no repetitions) (by the definition of $w\left(
+Q\right)  $). Thus, $w\left(  Q\right)  $ is a list of $k$ elements (since
+$\left\vert Q\right\vert =k$).
+
+Write $w\left(  Q\right)  $ in the form $w\left(  Q\right)  =\left(
+q_{1},q_{2},\ldots,q_{k}\right)  $. (This is possible, since $w\left(
+Q\right)  $ is a list of $k$ elements.)
+\end{verlong}
+
+From $w\left(  P\right)  =\left(  p_{1},p_{2},\ldots,p_{k}\right)  $ and
+$w\left(  Q\right)  =\left(  q_{1},q_{2},\ldots,q_{k}\right)  $, we obtain%
+\begin{equation}
+\operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)
+}D=\operatorname*{sub}\nolimits_{\left(  p_{1},p_{2},\ldots,p_{k}\right)
+}^{\left(  q_{1},q_{2},\ldots,q_{k}\right)  }D=\operatorname*{sub}%
+\nolimits_{p_{1},p_{2},\ldots,p_{k}}^{q_{1},q_{2},\ldots,q_{k}}D=\left(
+d_{p_{x}}\delta_{p_{x},q_{y}}\right)  _{1\leq x\leq k,\ 1\leq y\leq k}
+\label{pf.lem.diag.minors.sub=}%
+\end{equation}
+(by the definition of $\operatorname*{sub}\nolimits_{p_{1},p_{2},\ldots,p_{k}%
+}^{q_{1},q_{2},\ldots,q_{k}}D$, since $D=\left(  d_{i}\delta_{i,j}\right)
+_{1\leq i\leq n,\ 1\leq j\leq n}$). Thus, in particular, we see that
+$\operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)  }D$ is
+a $k\times k$-matrix.
+
+\begin{vershort}
+Recall that $\left(  p_{1},p_{2},\ldots,p_{k}\right)  =w\left(  P\right)  $ is
+a list of all elements of $P$ (with no repetitions). Hence, $\left(
+p_{1},p_{2},\ldots,p_{k}\right)  $ is a list with no repetitions, and
+satisfies $\left\{  p_{1},p_{2},\ldots,p_{k}\right\}  =P$. Now, every $\left(
+x,y\right)  \in\left\{  1,2,\ldots,k\right\}  ^{2}$ satisfies%
+\begin{equation}
+\delta_{p_{x},p_{y}}=\delta_{x,y} \label{pf.lem.diag.minors.short.deldel}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.diag.minors.short.deldel}):} Let
+$\left(  x,y\right)  \in\left\{  1,2,\ldots,k\right\}  ^{2}$. Then, the
+integers $p_{1},p_{2},\ldots,p_{k}$ are pairwise distinct (since $\left(
+p_{1},p_{2},\ldots,p_{k}\right)  $ is a list with no repetitions). Hence,
+$p_{x}=p_{y}$ holds if and only if $x=y$. Thus, $%
+\begin{cases}
+1, & \text{if }p_{x}=p_{y};\\
+0, & \text{if }p_{x}\neq p_{y}%
+\end{cases}
+=%
+\begin{cases}
+1, & \text{if }x=y;\\
+0, & \text{if }x\neq y
+\end{cases}
+$. In view of $\delta_{p_{x},p_{y}}=%
+\begin{cases}
+1, & \text{if }p_{x}=p_{y};\\
+0, & \text{if }p_{x}\neq p_{y}%
+\end{cases}
+$ and $\delta_{x,y}=%
+\begin{cases}
+1, & \text{if }x=y;\\
+0, & \text{if }x\neq y
+\end{cases}
+$, this rewrites as $\delta_{p_{x},p_{y}}=\delta_{x,y}$. This proves
+(\ref{pf.lem.diag.minors.short.deldel}).}.
+\end{vershort}
+
+\begin{verlong}
+Notice that%
+\begin{equation}
+\delta_{p_{x},p_{y}}=\delta_{x,y}\ \ \ \ \ \ \ \ \ \ \text{for every }\left(
+x,y\right)  \in\left\{  1,2,\ldots,k\right\}  ^{2}
+\label{pf.lem.diag.minors.deldel}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.diag.minors.deldel}):} Let $\left(
+x,y\right)  \in\left\{  1,2,\ldots,k\right\}  ^{2}$. Thus, $x\in\left\{
+1,2,\ldots,k\right\}  $ and $y\in\left\{  1,2,\ldots,k\right\}  $. We are in
+one of the following two cases:
+\par
+\textit{Case 1:} We have $x=y$.
+\par
+\textit{Case 2:} We have $x\neq y$.
+\par
+Let us consider Case 1 first. In this case, we have $x=y$. Hence, $p_{x}%
+=p_{y}$. Thus, $\delta_{p_{x},p_{y}}=1$. Comparing this with $\delta_{x,y}=1$
+(since $x=y$), we obtain $\delta_{p_{x},p_{y}}=\delta_{x,y}$. Thus,
+(\ref{pf.lem.diag.minors.deldel}) is proven in Case 1.
+\par
+Now, let us consider Case 2. In this case, we have $x\neq y$. In other words,
+the elements $x$ and $y$ are distinct.
+\par
+But $w\left(  P\right)  $ is the list of all elements of $P$ in increasing
+order (with no repetitions). Thus, $w\left(  P\right)  $ is a list with no
+repetitions. In other words, $\left(  p_{1},p_{2},\ldots,p_{k}\right)  $ is a
+list with no repetitions (since $w\left(  P\right)  =\left(  p_{1}%
+,p_{2},\ldots,p_{k}\right)  $). In other words, the elements $p_{1}%
+,p_{2},\ldots,p_{k}$ are pairwise distinct. In other words, if $u$ and $v$ are
+any two distinct elements of $\left\{  1,2,\ldots,k\right\}  $, then
+$p_{u}\neq p_{v}$. Applying this to $u=x$ and $v=y$, we obtain $p_{x}\neq
+p_{y}$. Thus, $\delta_{p_{x},p_{y}}=0$. Comparing this with $\delta_{x,y}=0$
+(since $x\neq y$), we obtain $\delta_{p_{x},p_{y}}=\delta_{x,y}$. Thus,
+(\ref{pf.lem.diag.minors.deldel}) is proven in Case 2.
+\par
+We have now proven (\ref{pf.lem.diag.minors.deldel}) in each of the two Cases
+1 and 2. Since these two Cases cover all possibilities, we thus conclude that
+(\ref{pf.lem.diag.minors.deldel}) always holds.}.
+\end{verlong}
+
+\begin{vershort}
+Recall again that $\left(  p_{1},p_{2},\ldots,p_{k}\right)  $ is a list of all
+elements of $P$ (with no repetitions). Thus, the elements of $P$ are
+$p_{1},p_{2},\ldots,p_{k}$ (with no repetitions). Hence,%
+\begin{equation}
+\prod_{i\in P}d_{i}=d_{p_{1}}d_{p_{2}}\cdots d_{p_{k}}=\prod_{i=1}^{k}%
+d_{p_{i}}. \label{pf.lem.diag.minors.short.prod}%
+\end{equation}
+
+\end{vershort}
+
+\begin{verlong}
+Also,%
+\begin{equation}
+\prod_{i=1}^{k}d_{p_{i}}=\prod_{i\in P}d_{i} \label{pf.lem.diag.minors.prod}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.diag.minors.prod}):} Let us use the
+notation introduced in Definition \ref{def.sol.exe.Ialbe.12n}. Thus, $\left[
+k\right]  =\left\{  1,2,\ldots,k\right\}  $ (by the definition of $\left[
+k\right]  $).
+\par
+We know that $w\left(  P\right)  $ is a list of all elements of $P$ (with no
+repetitions). In other words, $\left(  p_{1},p_{2},\ldots,p_{k}\right)  $ is a
+list of all elements of $P$ (with no repetitions) (since $w\left(  P\right)
+=\left(  p_{1},p_{2},\ldots,p_{k}\right)  $). Thus, Lemma
+\ref{lem.sol.exe.Ialbe.inclist} \textbf{(a)} (applied to $P$, $k$ and $\left(
+p_{1},p_{2},\ldots,p_{k}\right)  $ instead of $S$, $s$ and $\left(
+c_{1},c_{2},\ldots,c_{s}\right)  $) shows that the map $\left[  k\right]
+\rightarrow P,\ h\mapsto p_{h}$ is well-defined and a bijection. In
+particular, this map is a bijection. Hence, we can substitute $p_{h}$ for $i$
+in the product $\prod_{i\in P}d_{i}$. We thus obtain%
+\[
+\prod_{i\in P}d_{i}=\underbrace{\prod_{h\in\left[  k\right]  }}%
+_{\substack{=\prod_{h\in\left\{  1,2,\ldots,k\right\}  }\\\text{(since
+}\left[  k\right]  =\left\{  1,2,\ldots,k\right\}  \text{)}}}d_{p_{h}%
+}=\underbrace{\prod_{h\in\left\{  1,2,\ldots,k\right\}  }}_{=\prod_{h=1}^{k}%
+}d_{p_{h}}=\prod_{h=1}^{k}d_{p_{h}}=\prod_{i=1}^{k}d_{p_{i}}%
+\]
+(here, we have renamed the index $h$ as $i$ in the product). This proves
+(\ref{pf.lem.diag.minors.prod}).}.
+\end{verlong}
+
+We are in one of the following two cases:
+
+\textit{Case 1:} We have $P\neq Q$.
+
+\textit{Case 2:} We have $P=Q$.
+
+\begin{vershort}
+Let us consider Case 1 first. In this case, we have $P\neq Q$. Hence,
+$\delta_{P,Q}=0$. On the other hand, there exists some $p\in P$ such that
+$p\notin Q$\ \ \ \ \footnote{\textit{Proof.} Assume the contrary (for the sake
+of contradiction). Hence, every $p\in P$ satisfies $p\in Q$. In other words,
+$P\subseteq Q$. But $\left\vert P\right\vert =\left\vert Q\right\vert
+\geq\left\vert Q\right\vert $.
+\par
+But if $X$ is a finite set, then every subset of $X$ that has size
+$\geq\left\vert X\right\vert $ must be $X$ itself. In other words, if $X$ is a
+finite set, and if $Y$ is a subset of $X$ satisfying $\left\vert Y\right\vert
+\geq\left\vert X\right\vert $, then $Y=X$. Applying this to $X=Q$ and $Y=P$,
+we conclude that $P=Q$ (since $P$ is a subset of $Q$, and since $Q$ is a
+finite set). This contradicts $P\neq Q$. This contradiction shows that our
+assumption was wrong; qed.}. Consider this $p$.
+\end{vershort}
+
+\begin{verlong}
+Let us consider Case 1 first. In this case, we have $P\neq Q$. Hence,
+$\delta_{P,Q}=0$. On the other hand, there exists some $p\in P$ such that
+$p\notin Q$\ \ \ \ \footnote{\textit{Proof.} Assume the contrary (for the sake
+of contradiction). Hence, every $p\in P$ satisfies $p\in Q$. In other words,
+$P\subseteq Q$. In other words, $P$ is a subset of $Q$. But $\left\vert
+P\right\vert =\left\vert Q\right\vert \geq\left\vert Q\right\vert $.
+\par
+We know that $Q$ is a subset of $\left\{  1,2,\ldots,n\right\}  $, and thus is
+a finite set (since $\left\{  1,2,\ldots,n\right\}  $ is a finite set).
+\par
+But if $X$ is a finite set, then every subset of $X$ that has size
+$\geq\left\vert X\right\vert $ must be $X$ itself. In other words, if $X$ is a
+finite set, and if $Y$ is a subset of $X$ satisfying $\left\vert Y\right\vert
+\geq\left\vert X\right\vert $, then $Y=X$. Applying this to $X=Q$ and $Y=P$,
+we conclude that $P=Q$ (since $P$ is a subset of $Q$). This contradicts $P\neq
+Q$. This contradiction shows that our assumption was wrong; qed.}. Consider
+this $p$.
+\end{verlong}
+
+\begin{vershort}
+Now, $p\in P=\left\{  p_{1},p_{2},\ldots,p_{k}\right\}  $. In other words,
+$p=p_{u}$ for some $u\in\left\{  1,2,\ldots,k\right\}  $. Consider this $u$.
+Every $y\in\left\{  1,2,\ldots,k\right\}  $ satisfies%
+\begin{equation}
+\delta_{p_{u},q_{y}}=0 \label{pf.lem.diag.minors.short.C1.1}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.diag.minors.short.C1.1}):} Let
+$y\in\left\{  1,2,\ldots,k\right\}  $.
+\par
+We know that $\left(  q_{1},q_{2},\ldots,q_{k}\right)  =w\left(  Q\right)  $
+is a list of all elements of $Q$. Hence, $\left\{  q_{1},q_{2},\ldots
+,q_{k}\right\}  =Q$. Now, $y\in\left\{  1,2,\ldots,k\right\}  $, so that
+$q_{y}\in\left\{  q_{1},q_{2},\ldots,q_{k}\right\}  =Q$. If we had
+$p_{u}=q_{y}$, then we would have $p=p_{u}=q_{y}\in Q$, which would contradict
+$p\notin Q$. Thus, we cannot have $p_{u}=q_{y}$. In other words, we have
+$p_{u}\neq q_{y}$. Hence, $\delta_{p_{u},q_{y}}=0$. This proves
+(\ref{pf.lem.diag.minors.short.C1.1}).}. Now,
+\begin{align*}
+&  \left(  \text{the }u\text{-th row of the matrix }%
+\underbrace{\operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+Q\right)  }D}_{=\left(  d_{p_{x}}\delta_{p_{x},q_{y}}\right)  _{1\leq x\leq
+k,\ 1\leq y\leq k}}\right) \\
+&  =\left(  \text{the }u\text{-th row of the matrix }\left(  d_{p_{x}}%
+\delta_{p_{x},q_{y}}\right)  _{1\leq x\leq k,\ 1\leq y\leq k}\right) \\
+&  =\left(  d_{p_{u}}\underbrace{\delta_{p_{u},q_{y}}}%
+_{\substack{=0\\\text{(by (\ref{pf.lem.diag.minors.short.C1.1}))}}}\right)
+_{1\leq x\leq1,\ 1\leq y\leq k}=\left(  \underbrace{d_{p_{u}}0}_{=0}\right)
+_{1\leq x\leq1,\ 1\leq y\leq k}=\left(  0\right)  _{1\leq x\leq1,\ 1\leq y\leq
+k}.
+\end{align*}
+In other words, the $u$-th row of the matrix $\operatorname*{sub}%
+\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)  }D$ consists of zeroes.
+Therefore, Exercise \ref{exe.ps4.6} \textbf{(c)} (applied to $k$ and
+$\operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)  }D$
+instead of $n$ and $A$) yields $\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)  }D\right)  =0$. Comparing
+this with $\underbrace{\delta_{P,Q}}_{=0}\prod_{i\in P}d_{i}=0$, we obtain
+$\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+Q\right)  }D\right)  =\delta_{P,Q}\prod_{i\in P}d_{i}$. Hence, Lemma
+\ref{lem.diag.minors} is proven in Case 1.
+\end{vershort}
+
+\begin{verlong}
+We know that $w\left(  P\right)  $ is a list of all elements of $P$. In other
+words, $\left(  p_{1},p_{2},\ldots,p_{k}\right)  $ is a list of all elements
+of $P$ (since $w\left(  P\right)  =\left(  p_{1},p_{2},\ldots,p_{k}\right)
+$). Hence, $\left\{  p_{1},p_{2},\ldots,p_{k}\right\}  =P$. Now, $p\in
+P=\left\{  p_{1},p_{2},\ldots,p_{k}\right\}  $. In other words, $p=p_{u}$ for
+some $u\in\left\{  1,2,\ldots,k\right\}  $. Consider this $u$. Every
+$y\in\left\{  1,2,\ldots,k\right\}  $ satisfies%
+\begin{equation}
+\delta_{p_{u},q_{y}}=0 \label{pf.lem.diag.minors.C1.1}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.diag.minors.C1.1}):} Let $y\in\left\{
+1,2,\ldots,k\right\}  $.
+\par
+We know that $w\left(  Q\right)  $ is a list of all elements of $Q$. In other
+words, $\left(  q_{1},q_{2},\ldots,q_{k}\right)  $ is a list of all elements
+of $Q$ (since $w\left(  Q\right)  =\left(  q_{1},q_{2},\ldots,q_{k}\right)
+$). Hence, $\left\{  q_{1},q_{2},\ldots,q_{k}\right\}  =Q$. Now, $y\in\left\{
+1,2,\ldots,k\right\}  $, so that $q_{y}\in\left\{  q_{1},q_{2},\ldots
+,q_{k}\right\}  =Q$. If we had $p_{u}=q_{y}$, then we would have
+$p=p_{u}=q_{y}\in Q$, which would contradict $p\notin Q$. Thus, we cannot have
+$p_{u}=q_{y}$. In other words, we have $p_{u}\neq q_{y}$. Hence,
+$\delta_{p_{u},q_{y}}=0$. This proves (\ref{pf.lem.diag.minors.C1.1}).}. Now,
+\begin{align*}
+&  \left(  \text{the }u\text{-th row of the matrix }%
+\underbrace{\operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+Q\right)  }D}_{=\left(  d_{p_{x}}\delta_{p_{x},q_{y}}\right)  _{1\leq x\leq
+k,\ 1\leq y\leq k}}\right) \\
+&  =\left(  \text{the }u\text{-th row of the matrix }\left(  d_{p_{x}}%
+\delta_{p_{x},q_{y}}\right)  _{1\leq x\leq k,\ 1\leq y\leq k}\right) \\
+&  =\left(  d_{p_{u}}\underbrace{\delta_{p_{u},q_{y}}}%
+_{\substack{=0\\\text{(by (\ref{pf.lem.diag.minors.C1.1}))}}}\right)  _{1\leq
+x\leq1,\ 1\leq y\leq k}=\left(  \underbrace{d_{p_{u}}0}_{=0}\right)  _{1\leq
+x\leq1,\ 1\leq y\leq k}=\left(  0\right)  _{1\leq x\leq1,\ 1\leq y\leq k}.
+\end{align*}
+In other words, the $u$-th row of the matrix $\operatorname*{sub}%
+\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)  }D$ consists of zeroes.
+Hence, a row of the matrix $\operatorname*{sub}\nolimits_{w\left(  P\right)
+}^{w\left(  Q\right)  }D$ consists of zeroes (namely, the $u$-th row). Hence,
+Exercise \ref{exe.ps4.6} \textbf{(c)} (applied to $k$ and $\operatorname*{sub}%
+\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)  }D$ instead of $n$ and
+$A$) yields $\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)
+}^{w\left(  Q\right)  }D\right)  =0$. Comparing this with $\underbrace{\delta
+_{P,Q}}_{=0}\prod_{i\in P}d_{i}=0$, we obtain $\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)  }D\right)  =\delta
+_{P,Q}\prod_{i\in P}d_{i}$. Hence, Lemma \ref{lem.diag.minors} is proven in
+Case 1.
+\end{verlong}
+
+\begin{vershort}
+Let us now consider Case 2. In this case, we have $P=Q$. Hence, $\delta
+_{P,Q}=1$. On the other hand, from $w\left(  Q\right)  =\left(  q_{1}%
+,q_{2},\ldots,q_{k}\right)  $, we obtain
+\[
+\left(  q_{1},q_{2},\ldots,q_{k}\right)  =w\left(  \underbrace{Q}_{=P}\right)
+=w\left(  P\right)  =\left(  p_{1},p_{2},\ldots,p_{k}\right)  .
+\]
+In other words, $q_{y}=p_{y}$ for every $y\in\left\{  1,2,\ldots,k\right\}  $.
+Thus, every $y\in\left\{  1,2,\ldots,k\right\}  $ satisfies%
+\begin{align}
+\delta_{p_{x},q_{y}}  &  =\delta_{p_{x},p_{y}}\ \ \ \ \ \ \ \ \ \ \left(
+\text{since }q_{y}=p_{y}\right) \nonumber\\
+&  =\delta_{x,y}\ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{pf.lem.diag.minors.short.deldel})}\right)  .
+\label{pf.lem.diag.minors.short.C2.2}%
+\end{align}
+Now, (\ref{pf.lem.diag.minors.sub=}) becomes%
+\[
+\operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)
+}D=\left(  d_{p_{x}}\underbrace{\delta_{p_{x},q_{y}}}_{\substack{=\delta
+_{x,y}\\\text{(by (\ref{pf.lem.diag.minors.short.C2.2}))}}}\right)  _{1\leq
+x\leq k,\ 1\leq y\leq k}=\left(  d_{p_{x}}\delta_{x,y}\right)  _{1\leq x\leq
+k,\ 1\leq y\leq k}=\left(  d_{p_{i}}\delta_{i,j}\right)  _{1\leq i\leq
+k,\ 1\leq j\leq k}%
+\]
+(here, we have renamed the index $\left(  x,y\right)  $ as $\left(
+i,j\right)  $).
+\end{vershort}
+
+\begin{verlong}
+Let us now consider Case 2. In this case, we have $P=Q$. Hence, $\delta
+_{P,Q}=1$. On the other hand, from $w\left(  Q\right)  =\left(  q_{1}%
+,q_{2},\ldots,q_{k}\right)  $, we obtain
+\[
+\left(  q_{1},q_{2},\ldots,q_{k}\right)  =w\left(  \underbrace{Q}_{=P}\right)
+=w\left(  P\right)  =\left(  p_{1},p_{2},\ldots,p_{k}\right)  .
+\]
+In other words,%
+\begin{equation}
+q_{y}=p_{y}\ \ \ \ \ \ \ \ \ \ \text{for every }y\in\left\{  1,2,\ldots
+,k\right\}  . \label{pf.lem.diag.minors.C2.1}%
+\end{equation}
+Now, (\ref{pf.lem.diag.minors.sub=}) becomes%
+\begin{align*}
+\operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)  }D  &
+=\left(  d_{p_{x}}\underbrace{\delta_{p_{x},q_{y}}}_{\substack{=\delta
+_{p_{x},p_{y}}\\\text{(by (\ref{pf.lem.diag.minors.C2.1}))}}}\right)  _{1\leq
+x\leq k,\ 1\leq y\leq k}=\left(  d_{p_{x}}\underbrace{\delta_{p_{x},p_{y}}%
+}_{\substack{=\delta_{x,y}\\\text{(by (\ref{pf.lem.diag.minors.deldel}))}%
+}}\right)  _{1\leq x\leq k,\ 1\leq y\leq k}\\
+&  =\left(  d_{p_{x}}\delta_{x,y}\right)  _{1\leq x\leq k,\ 1\leq y\leq
+k}=\left(  d_{p_{i}}\delta_{i,j}\right)  _{1\leq i\leq k,\ 1\leq j\leq k}%
+\end{align*}
+(here, we have renamed the index $\left(  x,y\right)  $ as $\left(
+i,j\right)  $).
+\end{verlong}
+
+\begin{vershort}
+But we have $d_{p_{i}}\delta_{i,j}=0$ for every $\left(  i,j\right)
+\in\left\{  1,2,\ldots,k\right\}  ^{2}$ satisfying $i<j$%
+\ \ \ \ \footnote{\textit{Proof.} Let $\left(  i,j\right)  \in\left\{
+1,2,\ldots,k\right\}  ^{2}$ be such that $i<j$. Thus, $i\neq j$ (since $i<j$),
+so that $\delta_{i,j}=0$. Thus, $d_{p_{i}}\underbrace{\delta_{i,j}}_{=0}=0$,
+qed.}. Hence, Exercise \ref{exe.ps4.3} (applied to $k$, $\operatorname*{sub}%
+\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)  }D$ and $d_{p_{i}}%
+\delta_{i,j}$ instead of $n$, $A$ and $a_{i,j}$) yields $\det\left(
+\operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)
+}D\right)  =\left(  d_{p_{1}}\delta_{1,1}\right)  \left(  d_{p_{2}}%
+\delta_{2,2}\right)  \cdots\left(  d_{p_{k}}\delta_{k,k}\right)  $ (since
+$\operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)
+}D=\left(  d_{p_{i}}\delta_{i,j}\right)  _{1\leq i\leq k,\ 1\leq j\leq k}$).
+Thus,%
+\begin{align*}
+\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+Q\right)  }D\right)   &  =\left(  d_{p_{1}}\delta_{1,1}\right)  \left(
+d_{p_{2}}\delta_{2,2}\right)  \cdots\left(  d_{p_{k}}\delta_{k,k}\right)
+=\prod_{i=1}^{k}\left(  d_{p_{i}}\underbrace{\delta_{i,i}}%
+_{\substack{=1\\\text{(since }i=i\text{)}}}\right) \\
+&  =\prod_{i=1}^{k}d_{p_{i}}=\prod_{i\in P}d_{i}\ \ \ \ \ \ \ \ \ \ \left(
+\text{by (\ref{pf.lem.diag.minors.short.prod})}\right)  .
+\end{align*}
+Comparing this with $\underbrace{\delta_{P,Q}}_{=1}\prod_{i\in P}d_{i}%
+=\prod_{i\in P}d_{i}$, we obtain $\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)  }D\right)  =\delta
+_{P,Q}\prod_{i\in P}d_{i}$. Hence, Lemma \ref{lem.diag.minors} is proven in
+Case 2.
+\end{vershort}
+
+\begin{verlong}
+But we have $d_{p_{i}}\delta_{i,j}=0$ for every $\left(  i,j\right)
+\in\left\{  1,2,\ldots,k\right\}  ^{2}$ satisfying $i<j$%
+\ \ \ \ \footnote{\textit{Proof.} Let $\left(  i,j\right)  \in\left\{
+1,2,\ldots,k\right\}  ^{2}$ be such that $i<j$. Thus, $i\neq j$ (since $i<j$),
+so that $\delta_{i,j}=0$. Thus, $d_{p_{i}}\underbrace{\delta_{i,j}}_{=0}=0$,
+qed.}. Hence, Exercise \ref{exe.ps4.3} (applied to $k$, $\operatorname*{sub}%
+\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)  }D$ and $d_{p_{i}}%
+\delta_{i,j}$ instead of $n$, $A$ and $a_{i,j}$) yields $\det\left(
+\operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)
+}D\right)  =\left(  d_{p_{1}}\delta_{1,1}\right)  \left(  d_{p_{2}}%
+\delta_{2,2}\right)  \cdots\left(  d_{p_{k}}\delta_{k,k}\right)  $ (since
+$\operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)
+}D=\left(  d_{p_{i}}\delta_{i,j}\right)  _{1\leq i\leq k,\ 1\leq j\leq k}$).
+Thus,%
+\begin{align*}
+\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+Q\right)  }D\right)   &  =\left(  d_{p_{1}}\delta_{1,1}\right)  \left(
+d_{p_{2}}\delta_{2,2}\right)  \cdots\left(  d_{p_{k}}\delta_{k,k}\right)
+=\prod_{i=1}^{k}\left(  d_{p_{i}}\underbrace{\delta_{i,i}}%
+_{\substack{=1\\\text{(since }i=i\text{)}}}\right) \\
+&  =\prod_{i=1}^{k}d_{p_{i}}=\prod_{i\in P}d_{i}\ \ \ \ \ \ \ \ \ \ \left(
+\text{by (\ref{pf.lem.diag.minors.prod})}\right)  .
+\end{align*}
+Comparing this with $\underbrace{\delta_{P,Q}}_{=1}\prod_{i\in P}d_{i}%
+=\prod_{i\in P}d_{i}$, we obtain $\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)  }D\right)  =\delta
+_{P,Q}\prod_{i\in P}d_{i}$. Hence, Lemma \ref{lem.diag.minors} is proven in
+Case 2.
+\end{verlong}
+
+We now have proven Lemma \ref{lem.diag.minors} in each of the two Cases 1 and
+2. Since these two Cases cover all possibilities, we thus conclude that Lemma
+\ref{lem.diag.minors} always holds.
+\end{proof}
+
+\begin{proof}
+[Proof of Corollary \ref{cor.det(A+D)}.]We start by making some general observations:
+
+\begin{vershort}
+For any subset $I$ of $\left\{  1,2,\ldots,n\right\}  $, we let $\widetilde{I}%
+$ denote the complement $\left\{  1,2,\ldots,n\right\}  \setminus I$ of $I$.
+Then, any two subsets $P$ and $Q$ of $\left\{  1,2,\ldots,n\right\}  $ satisfy%
+\begin{equation}
+\delta_{\widetilde{P},\widetilde{Q}}=\delta_{P,Q}
+\label{pf.cor.det(A+D).short.del=del}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.cor.det(A+D).short.del=del}):} Let $P$ and
+$Q$ be two subsets of $\left\{  1,2,\ldots,n\right\}  $. If $P=Q$, then
+$\widetilde{P}=\widetilde{Q}$ and thus $\delta_{\widetilde{P},\widetilde{Q}%
+}=1=\delta_{P,Q}$ (since $P=Q$ yields $\delta_{P,Q}=1$). Therefore, if $P=Q$,
+then (\ref{pf.cor.det(A+D).short.del=del}) holds. Hence, for the rest of the
+proof of (\ref{pf.cor.det(A+D).short.del=del}), we WLOG assume that we don't
+have $P=Q$. In other words, we have $P\neq Q$. Thus, $\delta_{P,Q}=0$.
+\par
+Now, the definition of $\widetilde{P}$ yields $\widetilde{P}=\left\{
+1,2,\ldots,n\right\}  \setminus P$. Hence, $\widetilde{P}$ is again a subset
+of $\left\{  1,2,\ldots,n\right\}  $. The definition of
+$\widetilde{\widetilde{P}}$ yields
+\[
+\widetilde{\widetilde{P}}=\left\{  1,2,\ldots,n\right\}  \setminus
+\underbrace{\widetilde{P}}_{=\left\{  1,2,\ldots,n\right\}  \setminus
+P}=\left\{  1,2,\ldots,n\right\}  \setminus\left(  \left\{  1,2,\ldots
+,n\right\}  \setminus P\right)  =P
+\]
+(since $P\subseteq\left\{  1,2,\ldots,n\right\}  $). Similarly,
+$\widetilde{\widetilde{Q}}=Q$. If we had $\widetilde{P}=\widetilde{Q}$, then
+we would have $\widetilde{\widetilde{P}}=\widetilde{\widetilde{Q}}$, which
+would contradict $\widetilde{\widetilde{P}}=P\neq Q=\widetilde{\widetilde{Q}}%
+$. Hence, we cannot have $\widetilde{P}=\widetilde{Q}$. Thus, we have
+$\widetilde{P}\neq\widetilde{Q}$, so that $\delta_{\widetilde{P}%
+,\widetilde{Q}}=0$. Compared with $\delta_{P,Q}=0$, this yields $\delta
+_{\widetilde{P},\widetilde{Q}}=\delta_{P,Q}$. This proves
+(\ref{pf.cor.det(A+D).short.del=del}).}.
+\end{vershort}
+
+\begin{verlong}
+For any subset $I$ of $\left\{  1,2,\ldots,n\right\}  $, we let $\widetilde{I}%
+$ denote the complement $\left\{  1,2,\ldots,n\right\}  \setminus I$ of $I$.
+Then, any two subsets $P$ and $Q$ of $\left\{  1,2,\ldots,n\right\}  $ satisfy%
+\begin{equation}
+\delta_{\widetilde{P},\widetilde{Q}}=\delta_{P,Q}
+\label{pf.cor.det(A+D).del=del}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.cor.det(A+D).del=del}):} Let $P$ and $Q$
+be two subsets of $\left\{  1,2,\ldots,n\right\}  $.
+\par
+The definition of $\widetilde{P}$ yields $\widetilde{P}=\left\{
+1,2,\ldots,n\right\}  \setminus P\subseteq\left\{  1,2,\ldots,n\right\}  $.
+Hence, $\widetilde{P}$ is again a subset of $\left\{  1,2,\ldots,n\right\}  $.
+Thus, the definition of $\widetilde{\widetilde{P}}$ yields
+\[
+\widetilde{\widetilde{P}}=\left\{  1,2,\ldots,n\right\}  \setminus
+\underbrace{\widetilde{P}}_{=\left\{  1,2,\ldots,n\right\}  \setminus
+P}=\left\{  1,2,\ldots,n\right\}  \setminus\left(  \left\{  1,2,\ldots
+,n\right\}  \setminus P\right)  =P
+\]
+(since $P\subseteq\left\{  1,2,\ldots,n\right\}  $). The same argument
+(applied to $Q$ instead of $P$) shows that $\widetilde{\widetilde{Q}}=Q$.
+\par
+If $P=Q$, then%
+\begin{align*}
+\delta_{\widetilde{P},\widetilde{Q}}  &  =\delta_{\widetilde{Q},\widetilde{Q}%
+}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }P=Q\right) \\
+&  =1\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\widetilde{Q}=\widetilde{Q}%
+\right) \\
+&  =\delta_{P,Q}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\delta_{P,Q}=1\text{
+(since }P=Q\text{)}\right)  .
+\end{align*}
+Hence, if $P=Q$, then (\ref{pf.cor.det(A+D).del=del}) is proven. Thus, for the
+rest of our proof of (\ref{pf.cor.det(A+D).del=del}), we can WLOG assume that
+we don't have $P=Q$. Assume this.
+\par
+We don't have $P=Q$. In other words, we have $P\neq Q$. Hence, $\delta
+_{P,Q}=0$. If we had $\widetilde{P}=\widetilde{Q}$, then we would have
+\begin{align*}
+\widetilde{\widetilde{P}}  &  =\widetilde{\widetilde{Q}}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\widetilde{P}=\widetilde{Q}\right) \\
+&  =Q,
+\end{align*}
+which would contradict $\widetilde{\widetilde{P}}=P\neq Q$. Hence, we cannot
+have $\widetilde{P}=\widetilde{Q}$. In other words, we have $\widetilde{P}%
+\neq\widetilde{Q}$. Hence, $\delta_{\widetilde{P},\widetilde{Q}}=0$. Comparing
+this with $\delta_{P,Q}=0$ (since $P\neq Q$), we obtain $\delta_{\widetilde{P}%
+,\widetilde{Q}}=\delta_{P,Q}$. This proves (\ref{pf.cor.det(A+D).del=del}).}.
+\end{verlong}
+
+\begin{vershort}
+Furthermore, if $P$ and $Q$ are two subsets of $\left\{  1,2,\ldots,n\right\}
+$ satisfying $\left\vert P\right\vert =\left\vert Q\right\vert $, then%
+\begin{equation}
+\det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{P}\right)
+}^{w\left(  \widetilde{Q}\right)  }D\right)  =\delta_{P,Q}\prod_{i\in\left\{
+1,2,\ldots,n\right\}  \setminus P}d_{i} \label{pf.cor.det(A+D).short.1}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.cor.det(A+D).short.1}):} Let $P$ and $Q$
+be two subsets of $\left\{  1,2,\ldots,n\right\}  $ satisfying $\left\vert
+P\right\vert =\left\vert Q\right\vert $.
+\par
+The definition of $\widetilde{P}$ yields $\widetilde{P}=\left\{
+1,2,\ldots,n\right\}  \setminus P\subseteq\left\{  1,2,\ldots,n\right\}  $. In
+other words, $\widetilde{P}$ is a subset of $\left\{  1,2,\ldots,n\right\}  $.
+The same argument (applied to $Q$ instead of $P$) shows that $\widetilde{Q}$
+is a subset of $\left\{  1,2,\ldots,n\right\}  $.
+\par
+We have%
+\begin{align*}
+\left\vert \underbrace{\widetilde{P}}_{=\left\{  1,2,\ldots,n\right\}
+\setminus P}\right\vert  &  =\left\vert \left\{  1,2,\ldots,n\right\}
+\setminus P\right\vert =\underbrace{\left\vert \left\{  1,2,\ldots,n\right\}
+\right\vert }_{=n}-\left\vert P\right\vert \ \ \ \ \ \ \ \ \ \ \left(
+\text{since }P\subseteq\left\{  1,2,\ldots,n\right\}  \right) \\
+&  =n-\left\vert P\right\vert .
+\end{align*}
+The same argument (applied to $Q$ instead of $P$) shows that $\left\vert
+\widetilde{Q}\right\vert =n-\left\vert Q\right\vert $. Now, $\left\vert
+\widetilde{P}\right\vert =n-\underbrace{\left\vert P\right\vert }_{=\left\vert
+Q\right\vert }=n-\left\vert Q\right\vert =\left\vert \widetilde{Q}\right\vert
+$. Thus, Lemma \ref{lem.diag.minors} (applied to $\widetilde{P}$ and
+$\widetilde{Q}$ instead of $P$ and $Q$) yields
+\[
+\det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{P}\right)
+}^{w\left(  \widetilde{Q}\right)  }D\right)  =\underbrace{\delta
+_{\widetilde{P},\widetilde{Q}}}_{\substack{=\delta_{P,Q}\\\text{(by
+(\ref{pf.cor.det(A+D).short.del=del}))}}}\underbrace{\prod_{i\in\widetilde{P}%
+}}_{\substack{=\prod_{i\in\left\{  1,2,\ldots,n\right\}  \setminus
+P}\\\text{(since }\widetilde{P}=\left\{  1,2,\ldots,n\right\}  \setminus
+P\text{)}}}d_{i}=\delta_{P,Q}\prod_{i\in\left\{  1,2,\ldots,n\right\}
+\setminus P}d_{i}.
+\]
+This proves (\ref{pf.cor.det(A+D).short.1}).}.
+\end{vershort}
+
+\begin{verlong}
+Furthermore, if $P$ and $Q$ are two subsets of $\left\{  1,2,\ldots,n\right\}
+$ satisfying $\left\vert P\right\vert =\left\vert Q\right\vert $, then%
+\begin{equation}
+\det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{P}\right)
+}^{w\left(  \widetilde{Q}\right)  }D\right)  =\delta_{P,Q}\prod_{i\in\left\{
+1,2,\ldots,n\right\}  \setminus P}d_{i} \label{pf.cor.det(A+D).1}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.cor.det(A+D).1}):} Let $P$ and $Q$ be two
+subsets of $\left\{  1,2,\ldots,n\right\}  $ satisfying $\left\vert
+P\right\vert =\left\vert Q\right\vert $.
+\par
+The definition of $\widetilde{P}$ yields $\widetilde{P}=\left\{
+1,2,\ldots,n\right\}  \setminus P\subseteq\left\{  1,2,\ldots,n\right\}  $. In
+other words, $\widetilde{P}$ is a subset of $\left\{  1,2,\ldots,n\right\}  $.
+The same argument (applied to $Q$ instead of $P$) shows that $\widetilde{Q}$
+is a subset of $\left\{  1,2,\ldots,n\right\}  $.
+\par
+We have%
+\begin{align*}
+\left\vert \underbrace{\widetilde{P}}_{=\left\{  1,2,\ldots,n\right\}
+\setminus P}\right\vert  &  =\left\vert \left\{  1,2,\ldots,n\right\}
+\setminus P\right\vert =\underbrace{\left\vert \left\{  1,2,\ldots,n\right\}
+\right\vert }_{=n}-\left\vert P\right\vert \ \ \ \ \ \ \ \ \ \ \left(
+\text{since }P\subseteq\left\{  1,2,\ldots,n\right\}  \right) \\
+&  =n-\left\vert P\right\vert .
+\end{align*}
+The same argument (applied to $Q$ instead of $P$) shows that $\left\vert
+\widetilde{Q}\right\vert =n-\left\vert Q\right\vert $. Now, $\left\vert
+\widetilde{P}\right\vert =n-\underbrace{\left\vert P\right\vert }_{=\left\vert
+Q\right\vert }=n-\left\vert Q\right\vert =\left\vert \widetilde{Q}\right\vert
+$. Thus, Lemma \ref{lem.diag.minors} (applied to $\widetilde{P}$ and
+$\widetilde{Q}$ instead of $P$ and $Q$) yields
+\[
+\det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{P}\right)
+}^{w\left(  \widetilde{Q}\right)  }D\right)  =\underbrace{\delta
+_{\widetilde{P},\widetilde{Q}}}_{\substack{=\delta_{P,Q}\\\text{(by
+(\ref{pf.cor.det(A+D).del=del}))}}}\underbrace{\prod_{i\in\widetilde{P}}%
+}_{\substack{=\prod_{i\in\left\{  1,2,\ldots,n\right\}  \setminus
+P}\\\text{(since }\widetilde{P}=\left\{  1,2,\ldots,n\right\}  \setminus
+P\text{)}}}d_{i}=\delta_{P,Q}\prod_{i\in\left\{  1,2,\ldots,n\right\}
+\setminus P}d_{i}.
+\]
+This proves (\ref{pf.cor.det(A+D).1}).}.
+\end{verlong}
+
+\begin{vershort}
+Now, every subset $P$ of $\left\{  1,2,\ldots,n\right\}  $ satisfies%
+\begin{align}
+&  \sum_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+P\right\vert =\left\vert Q\right\vert }}\left(  -1\right)  ^{\sum P+\sum
+Q}\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+Q\right)  }A\right)  \underbrace{\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  \widetilde{P}\right)  }^{w\left(  \widetilde{Q}\right)
+}D\right)  }_{\substack{=\delta_{P,Q}\prod_{i\in\left\{  1,2,\ldots,n\right\}
+\setminus P}d_{i}\\\text{(by (\ref{pf.cor.det(A+D).short.1}))}}}\nonumber\\
+&  =\sum_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+P\right\vert =\left\vert Q\right\vert }}\left(  -1\right)  ^{\sum P+\sum
+Q}\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+Q\right)  }A\right)  \delta_{P,Q}\prod_{i\in\left\{  1,2,\ldots,n\right\}
+\setminus P}d_{i}\nonumber\\
+&  =\underbrace{\left(  -1\right)  ^{\sum P+\sum P}}%
+_{\substack{=1\\\text{(since }\sum P+\sum P=2\sum P\text{ is even)}}%
+}\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+P\right)  }A\right)  \underbrace{\delta_{P,P}}_{=1}\prod_{i\in\left\{
+1,2,\ldots,n\right\}  \setminus P}d_{i}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ +\sum_{\substack{Q\subseteq\left\{  1,2,\ldots
+,n\right\}  ;\\\left\vert P\right\vert =\left\vert Q\right\vert ;\\Q\neq
+P}}\left(  -1\right)  ^{\sum P+\sum Q}\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)  }A\right)
+\underbrace{\delta_{P,Q}}_{\substack{=0\\\text{(since }P\neq Q\\\text{(since
+}Q\neq P\text{))}}}\prod_{i\in\left\{  1,2,\ldots,n\right\}  \setminus P}%
+d_{i}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have split off the addend for }Q=P\text{ from the sum}\\
+\text{(since }P\text{ is a subset }Q\text{ of }\left\{  1,2,\ldots,n\right\}
+\text{ satisfying }\left\vert P\right\vert =\left\vert Q\right\vert \text{)}%
+\end{array}
+\right) \nonumber\\
+&  =\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+P\right)  }A\right)  \prod_{i\in\left\{  1,2,\ldots,n\right\}  \setminus
+P}d_{i}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ +\underbrace{\sum_{\substack{Q\subseteq\left\{
+1,2,\ldots,n\right\}  ;\\\left\vert P\right\vert =\left\vert Q\right\vert
+;\\Q\neq P}}\left(  -1\right)  ^{\sum P+\sum Q}\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)  }A\right)  0\prod
+_{i\in\left\{  1,2,\ldots,n\right\}  \setminus P}d_{i}}_{=0}\nonumber\\
+&  =\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+P\right)  }A\right)  \prod_{i\in\left\{  1,2,\ldots,n\right\}  \setminus
+P}d_{i}. \label{pf.cor.det(A+D).short.6}%
+\end{align}
+
+\end{vershort}
+
+\begin{verlong}
+Now, let $P$ be a subset of $\left\{  1,2,\ldots,n\right\}  $. Then,%
+\begin{align}
+&  \sum_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+P\right\vert =\left\vert Q\right\vert }}\left(  -1\right)  ^{\sum P+\sum
+Q}\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+Q\right)  }A\right)  \underbrace{\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  \widetilde{P}\right)  }^{w\left(  \widetilde{Q}\right)
+}D\right)  }_{\substack{=\delta_{P,Q}\prod_{i\in\left\{  1,2,\ldots,n\right\}
+\setminus P}d_{i}\\\text{(by (\ref{pf.cor.det(A+D).1}))}}}\nonumber\\
+&  =\sum_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+P\right\vert =\left\vert Q\right\vert }}\left(  -1\right)  ^{\sum P+\sum
+Q}\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+Q\right)  }A\right)  \delta_{P,Q}\prod_{i\in\left\{  1,2,\ldots,n\right\}
+\setminus P}d_{i}\nonumber\\
+&  =\sum_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+P\right\vert =\left\vert Q\right\vert ;\\Q=P}}\left(  -1\right)  ^{\sum P+\sum
+Q}\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+Q\right)  }A\right)  \underbrace{\delta_{P,Q}}_{\substack{=1\\\text{(since
+}P=Q\\\text{(since }Q=P\text{))}}}\prod_{i\in\left\{  1,2,\ldots,n\right\}
+\setminus P}d_{i}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ +\sum_{\substack{Q\subseteq\left\{  1,2,\ldots
+,n\right\}  ;\\\left\vert P\right\vert =\left\vert Q\right\vert ;\\Q\neq
+P}}\left(  -1\right)  ^{\sum P+\sum Q}\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)  }A\right)
+\underbrace{\delta_{P,Q}}_{\substack{=0\\\text{(since }P\neq Q\\\text{(since
+}Q\neq P\text{))}}}\prod_{i\in\left\{  1,2,\ldots,n\right\}  \setminus P}%
+d_{i}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since every subset }Q\text{ of }\left\{  1,2,\ldots,n\right\}  \text{
+satisfying }\left\vert P\right\vert =\left\vert Q\right\vert \\
+\text{satisfies either }Q=P\text{ or }Q\neq P\text{ (but not both)}%
+\end{array}
+\right) \nonumber\\
+&  =\sum_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+P\right\vert =\left\vert Q\right\vert ;\\Q=P}}\left(  -1\right)  ^{\sum P+\sum
+Q}\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+Q\right)  }A\right)  \prod_{i\in\left\{  1,2,\ldots,n\right\}  \setminus
+P}d_{i}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ +\underbrace{\sum_{\substack{Q\subseteq\left\{
+1,2,\ldots,n\right\}  ;\\\left\vert P\right\vert =\left\vert Q\right\vert
+;\\Q\neq P}}\left(  -1\right)  ^{\sum P+\sum Q}\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)  }A\right)  0\prod
+_{i\in\left\{  1,2,\ldots,n\right\}  \setminus P}d_{i}}_{=0}\nonumber\\
+&  =\sum_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+P\right\vert =\left\vert Q\right\vert ;\\Q=P}}\left(  -1\right)  ^{\sum P+\sum
+Q}\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+Q\right)  }A\right)  \prod_{i\in\left\{  1,2,\ldots,n\right\}  \setminus
+P}d_{i}. \label{pf.cor.det(A+D).4}%
+\end{align}
+But $P$ is a subset $Q$ of $\left\{  1,2,\ldots,n\right\}  $ satisfying
+$\left\vert P\right\vert =\left\vert Q\right\vert $ and $Q=P$ (because
+$\left\vert P\right\vert =\left\vert P\right\vert $ and $P=P$). Also, $P$ is
+clearly the only such subset $Q$ (because any such subset $Q$ must satisfy
+$Q=P$). Hence, there exists exactly one subset $Q$ of $\left\{  1,2,\ldots
+,n\right\}  $ satisfying $\left\vert P\right\vert =\left\vert Q\right\vert $
+and $Q=P$: namely, the subset $P$. Thus, the sum
+\[
+\sum_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+P\right\vert =\left\vert Q\right\vert ;\\Q=P}}\left(  -1\right)  ^{\sum P+\sum
+Q}\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+Q\right)  }A\right)  \prod_{i\in\left\{  1,2,\ldots,n\right\}  \setminus
+P}d_{i}%
+\]
+has only one addend: namely, the addend for $Q=P$. Thus, this sum rewrites as
+follows:%
+\begin{align*}
+&  \sum_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+P\right\vert =\left\vert Q\right\vert ;\\Q=P}}\left(  -1\right)  ^{\sum P+\sum
+Q}\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+Q\right)  }A\right)  \prod_{i\in\left\{  1,2,\ldots,n\right\}  \setminus
+P}d_{i}\\
+&  =\underbrace{\left(  -1\right)  ^{\sum P+\sum P}}%
+_{\substack{=1\\\text{(since }\sum P+\sum P=2\sum P\text{ is even)}}%
+}\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+P\right)  }A\right)  \prod_{i\in\left\{  1,2,\ldots,n\right\}  \setminus
+P}d_{i}\\
+&  =\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+P\right)  }A\right)  \prod_{i\in\left\{  1,2,\ldots,n\right\}  \setminus
+P}d_{i}.
+\end{align*}
+Now, (\ref{pf.cor.det(A+D).4}) becomes%
+\begin{align}
+&  \sum_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+P\right\vert =\left\vert Q\right\vert }}\left(  -1\right)  ^{\sum P+\sum
+Q}\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+Q\right)  }A\right)  \underbrace{\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  \widetilde{P}\right)  }^{w\left(  \widetilde{Q}\right)
+}D\right)  }_{\substack{=\delta_{P,Q}\prod_{i\in\left\{  1,2,\ldots,n\right\}
+\setminus P}d_{i}\\\text{(by (\ref{pf.cor.det(A+D).1}))}}}\nonumber\\
+&  =\sum_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+P\right\vert =\left\vert Q\right\vert ;\\Q=P}}\left(  -1\right)  ^{\sum P+\sum
+Q}\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+Q\right)  }A\right)  \prod_{i\in\left\{  1,2,\ldots,n\right\}  \setminus
+P}d_{i}\nonumber\\
+&  =\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+P\right)  }A\right)  \prod_{i\in\left\{  1,2,\ldots,n\right\}  \setminus
+P}d_{i}. \label{pf.cor.det(A+D).6}%
+\end{align}
+
+
+Now, forget that we fixed $P$. We thus have proven that
+(\ref{pf.cor.det(A+D).6}) holds for every subset $P$ of $\left\{
+1,2,\ldots,n\right\}  $.
+\end{verlong}
+
+\begin{vershort}
+Now, Theorem \ref{thm.det(A+B)} (applied to $B=D$) yields%
+\begin{align*}
+&  \det\left(  A+D\right) \\
+&  =\sum_{P\subseteq\left\{  1,2,\ldots,n\right\}  }\underbrace{\sum
+_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+P\right\vert =\left\vert Q\right\vert }}\left(  -1\right)  ^{\sum P+\sum
+Q}\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+Q\right)  }A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(
+\widetilde{P}\right)  }^{w\left(  \widetilde{Q}\right)  }D\right)
+}_{\substack{=\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)
+}^{w\left(  P\right)  }A\right)  \prod_{i\in\left\{  1,2,\ldots,n\right\}
+\setminus P}d_{i}\\\text{(by (\ref{pf.cor.det(A+D).short.6}))}}}\\
+&  =\sum_{P\subseteq\left\{  1,2,\ldots,n\right\}  }\det\left(
+\operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(  P\right)
+}A\right)  \prod_{i\in\left\{  1,2,\ldots,n\right\}  \setminus P}d_{i}.
+\end{align*}
+This proves Corollary \ref{cor.det(A+D)}.
+\end{vershort}
+
+\begin{verlong}
+Now, Theorem \ref{thm.det(A+B)} (applied to $B=D$) yields%
+\begin{align*}
+&  \det\left(  A+D\right) \\
+&  =\sum_{P\subseteq\left\{  1,2,\ldots,n\right\}  }\underbrace{\sum
+_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+P\right\vert =\left\vert Q\right\vert }}\left(  -1\right)  ^{\sum P+\sum
+Q}\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+Q\right)  }A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(
+\widetilde{P}\right)  }^{w\left(  \widetilde{Q}\right)  }D\right)
+}_{\substack{=\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)
+}^{w\left(  P\right)  }A\right)  \prod_{i\in\left\{  1,2,\ldots,n\right\}
+\setminus P}d_{i}\\\text{(by (\ref{pf.cor.det(A+D).6}))}}}\\
+&  =\sum_{P\subseteq\left\{  1,2,\ldots,n\right\}  }\det\left(
+\operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(  P\right)
+}A\right)  \prod_{i\in\left\{  1,2,\ldots,n\right\}  \setminus P}d_{i}.
+\end{align*}
+This proves Corollary \ref{cor.det(A+D)}.
+\end{verlong}
+\end{proof}
+
+\begin{proof}
+[Proof of Corollary \ref{cor.det(A+X)}.]For every two objects $i$ and $j$,
+define $\delta_{i,j}\in\mathbb{K}$ by $\delta_{i,j}=%
+\begin{cases}
+1, & \text{if }i=j;\\
+0, & \text{if }i\neq j
+\end{cases}
+$. Then, $I_{n}=\left(  \delta_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$
+(by the definition of $I_{n}$). Now,%
+\[
+x\underbrace{I_{n}}_{=\left(  \delta_{i,j}\right)  _{1\leq i\leq n,\ 1\leq
+j\leq n}}=x\left(  \delta_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}=\left(  x\delta_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}%
+\]
+(by the definition of $x\left(  \delta_{i,j}\right)  _{1\leq i\leq n,\ 1\leq
+j\leq n}$). Hence, Corollary \ref{cor.det(A+D)} (applied to $d_{i}=x$ and
+$D=xI_{n}$) yields%
+\begin{align*}
+\det\left(  A+xI_{n}\right)   &  =\sum_{P\subseteq\left\{  1,2,\ldots
+,n\right\}  }\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)
+}^{w\left(  P\right)  }A\right)  \underbrace{\prod_{i\in\left\{
+1,2,\ldots,n\right\}  \setminus P}x}_{\substack{=x^{\left\vert \left\{
+1,2,\ldots,n\right\}  \setminus P\right\vert }=x^{\left\vert \left\{
+1,2,\ldots,n\right\}  \right\vert -\left\vert P\right\vert }\\\text{(since
+}\left\vert \left\{  1,2,\ldots,n\right\}  \setminus P\right\vert =\left\vert
+\left\{  1,2,\ldots,n\right\}  \right\vert -\left\vert P\right\vert
+\\\text{(since }P\subseteq\left\{  1,2,\ldots,n\right\}  \text{))}}}\\
+&  =\sum_{P\subseteq\left\{  1,2,\ldots,n\right\}  }\det\left(
+\operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(  P\right)
+}A\right)  \underbrace{x^{\left\vert \left\{  1,2,\ldots,n\right\}
+\right\vert -\left\vert P\right\vert }}_{\substack{=x^{n-\left\vert
+P\right\vert }\\\text{(since }\left\vert \left\{  1,2,\ldots,n\right\}
+\right\vert =n\text{)}}}\\
+&  =\sum_{P\subseteq\left\{  1,2,\ldots,n\right\}  }\det\left(
+\operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(  P\right)
+}A\right)  x^{n-\left\vert P\right\vert }.
+\end{align*}
+This proves (\ref{eq.cor.det(A+X).1}).
+
+Furthermore, every subset $P$ of $\left\{  1,2,\ldots,n\right\}  $ satisfies
+$\left\vert P\right\vert \in\left\{  0,1,\ldots,n\right\}  $%
+\ \ \ \ \footnote{\textit{Proof.} Let $P$ be a subset of $\left\{
+1,2,\ldots,n\right\}  $. Then, $P$ is a finite set (since $\left\{
+1,2,\ldots,n\right\}  $ is a finite set), so that $\left\vert P\right\vert
+\in\mathbb{N}$. Also, $P$ is a subset of $\left\{  1,2,\ldots,n\right\}  $,
+and thus we have $\left\vert P\right\vert \leq\left\vert \left\{
+1,2,\ldots,n\right\}  \right\vert =n$. Combined with $\left\vert P\right\vert
+\in\mathbb{N}$, this yields $\left\vert P\right\vert \in\left\{
+0,1,\ldots,n\right\}  $. Qed.}. Now,
+\begin{align*}
+\det\left(  A+xI_{n}\right)   &  =\underbrace{\sum_{P\subseteq\left\{
+1,2,\ldots,n\right\}  }}_{\substack{=\sum_{k\in\left\{  0,1,\ldots,n\right\}
+}\sum_{\substack{P\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+P\right\vert =k}}\\\text{(since every subset }P\text{ of }\left\{
+1,2,\ldots,n\right\}  \\\text{satisfies }\left\vert P\right\vert \in\left\{
+0,1,\ldots,n\right\}  \text{)}}}\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  P\right)  }^{w\left(  P\right)  }A\right)  x^{n-\left\vert
+P\right\vert }\\
+&  =\underbrace{\sum_{k\in\left\{  0,1,\ldots,n\right\}  }}_{=\sum_{k=0}^{n}%
+}\sum_{\substack{P\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+P\right\vert =k}}\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)
+}^{w\left(  P\right)  }A\right)  \underbrace{x^{n-\left\vert P\right\vert }%
+}_{\substack{=x^{n-k}\\\text{(since }\left\vert P\right\vert =k\text{)}}}\\
+&  =\sum_{k=0}^{n}\sum_{\substack{P\subseteq\left\{  1,2,\ldots,n\right\}
+;\\\left\vert P\right\vert =k}}\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  P\right)  }^{w\left(  P\right)  }A\right)  x^{n-k}\\
+&  =\sum_{k=0}^{n}\sum_{\substack{P\subseteq\left\{  1,2,\ldots,n\right\}
+;\\\left\vert P\right\vert =n-k}}\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  P\right)  }^{w\left(  P\right)  }A\right)
+\underbrace{x^{n-\left(  n-k\right)  }}_{\substack{=x^{k}\\\text{(since
+}n-\left(  n-k\right)  =k\text{)}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }n-k\text{ for
+}k\text{ in the outer sum}\right) \\
+&  =\sum_{k=0}^{n}\left(  \sum_{\substack{P\subseteq\left\{  1,2,\ldots
+,n\right\}  ;\\\left\vert P\right\vert =n-k}}\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  P\right)  }^{w\left(  P\right)  }A\right)  \right)  x^{k}.
+\end{align*}
+This proves (\ref{eq.cor.det(A+X).2}). The proof of Corollary
+\ref{cor.det(A+X)} is now complete.
+\end{proof}
+
+\begin{proof}
+[Solution to Exercise \ref{exe.det(A+B).diag}.]We have proven Lemma
+\ref{lem.diag.minors}, Corollary \ref{cor.det(A+D)} and Corollary
+\ref{cor.det(A+X)}. Exercise \ref{exe.det(A+B).diag} is thus solved.
 \end{proof}
 
 \subsection{Solution to Additional exercise \ref{exeadd.det.rk1upd}}
