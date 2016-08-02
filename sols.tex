@@ -23847,6 +23847,230 @@ notations of [GriRob14]).
 new proof of Proposition \ref{prop.desnanot.AC}.
 \end{exercise}
 
+\subsection{\label{sect.laplace}Laplace expansion in multiple rows/columns}
+
+In this section, I shall show a (somewhat unwieldy, but classical and
+important) generalization of Theorem \ref{thm.laplace.gen}. First, we shall
+need some notations:
+
+\begin{definition}
+\label{def.sect.laplace.notations}Throughout Section \ref{sect.laplace}, we
+shall use the following notations:
+
+\begin{itemize}
+\item If $I$ is a finite set of integers, then $\sum I$ shall denote the sum
+of all elements of $I$. (Thus, $\sum I=\sum_{i\in I}i$.)
+
+\item If $I$ is a finite set of integers, then $w\left(  I\right)  $ shall
+denote the list of all elements of $I$ in increasing order (with no
+repetitions). (For example, $w\left(  \left\{  3,4,8\right\}  \right)
+=\left(  3,4,8\right)  $.)
+\end{itemize}
+
+We shall also use the notation introduced in Definition \ref{def.submatrix}.
+If $n$, $m$, $A$, $\left(  i_{1},i_{2},\ldots,i_{u}\right)  $ and $\left(
+j_{1},j_{2},\ldots,j_{v}\right)  $ are as in Definition \ref{def.submatrix},
+then we shall use the notation $\operatorname*{sub}\nolimits_{\left(
+i_{1},i_{2},\ldots,i_{u}\right)  }^{\left(  j_{1},j_{2},\ldots,j_{v}\right)
+}A$ as a synonym for $\operatorname*{sub}\nolimits_{i_{1},i_{2},\ldots,i_{u}%
+}^{j_{1},j_{2},\ldots,j_{v}}A$.
+\end{definition}
+
+\begin{theorem}
+\label{thm.det.laplace-multi}Let $n\in\mathbb{N}$. Let $A\in\mathbb{K}%
+^{n\times n}$. For any subset $I$ of $\left\{  1,2,\ldots,n\right\}  $, we let
+$\widetilde{I}$ denote the complement $\left\{  1,2,\ldots,n\right\}
+\setminus I$ of $I$. (For instance, if $n=4$ and $I=\left\{  1,4\right\}  $,
+then $\widetilde{I}=\left\{  2,3\right\}  $.)
+
+\textbf{(a)} For every subset $P$ of $\left\{  1,2,\ldots,n\right\}  $, we
+have%
+\[
+\det A=\sum_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+Q\right\vert =\left\vert P\right\vert }}\left(  -1\right)  ^{\sum P+\sum
+Q}\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+Q\right)  }A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(
+\widetilde{P}\right)  }^{w\left(  \widetilde{Q}\right)  }A\right)  .
+\]
+
+
+\textbf{(b)} For every subset $Q$ of $\left\{  1,2,\ldots,n\right\}  $, we
+have%
+\[
+\det A=\sum_{\substack{P\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+P\right\vert =\left\vert Q\right\vert }}\left(  -1\right)  ^{\sum P+\sum
+Q}\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+Q\right)  }A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(
+\widetilde{P}\right)  }^{w\left(  \widetilde{Q}\right)  }A\right)  .
+\]
+
+\end{theorem}
+
+Theorem \ref{thm.det.laplace-multi} is actually a generalization of Theorem
+\ref{thm.laplace.gen}, known as \textquotedblleft Laplace expansion in
+multiple rows (resp. columns)\textquotedblright. It appears (for example) in
+\cite[Theorem 3.61]{Gill} and in \cite[Theorem 2.4.1]{Prasolov}. Theorem
+\ref{thm.laplace.gen} \textbf{(a)} can be recovered from Theorem
+\ref{thm.det.laplace-multi} \textbf{(a)} by setting $P=\left\{  p\right\}  $;
+similarly for the part \textbf{(b)}.
+
+\begin{example}
+Let us see what Theorem \ref{thm.det.laplace-multi} \textbf{(a)} says in a
+simple case. For this example, set $n=4$ and $A=\left(  a_{i,j}\right)
+_{1\leq i\leq4,\ 1\leq j\leq4}$. Also, set $P=\left\{  1,4\right\}
+\subseteq\left\{  1,2,3,4\right\}  $; thus, $w\left(  P\right)  =\left(
+1,4\right)  $, $\sum P=1+4=5$, $\left\vert P\right\vert =2$, $\widetilde{P}%
+=\left\{  2,3\right\}  $ and $w\left(  \widetilde{P}\right)  =\left(
+2,3\right)  $. Now, Theorem \ref{thm.det.laplace-multi} \textbf{(a)} says that%
+\begin{align*}
+&  \det A\\
+&  =\sum_{\substack{Q\subseteq\left\{  1,2,3,4\right\}  ;\\\left\vert
+Q\right\vert =2}}\left(  -1\right)  ^{5+\sum Q}\det\left(  \operatorname*{sub}%
+\nolimits_{1,4}^{w\left(  Q\right)  }A\right)  \det\left(  \operatorname*{sub}%
+\nolimits_{2,3}^{w\left(  \widetilde{Q}\right)  }A\right) \\
+&  =\left(  -1\right)  ^{5+\left(  1+2\right)  }\det\left(
+\operatorname*{sub}\nolimits_{1,4}^{1,2}A\right)  \det\left(
+\operatorname*{sub}\nolimits_{2,3}^{3,4}A\right) \\
+&  \ \ \ \ \ \ \ \ \ \ +\left(  -1\right)  ^{5+\left(  1+3\right)  }%
+\det\left(  \operatorname*{sub}\nolimits_{1,4}^{1,3}A\right)  \det\left(
+\operatorname*{sub}\nolimits_{2,3}^{2,4}A\right) \\
+&  \ \ \ \ \ \ \ \ \ \ +\left(  -1\right)  ^{5+\left(  1+4\right)  }%
+\det\left(  \operatorname*{sub}\nolimits_{1,4}^{1,4}A\right)  \det\left(
+\operatorname*{sub}\nolimits_{2,3}^{2,3}A\right) \\
+&  \ \ \ \ \ \ \ \ \ \ +\left(  -1\right)  ^{5+\left(  2+3\right)  }%
+\det\left(  \operatorname*{sub}\nolimits_{1,4}^{2,3}A\right)  \det\left(
+\operatorname*{sub}\nolimits_{2,3}^{1,4}A\right) \\
+&  \ \ \ \ \ \ \ \ \ \ +\left(  -1\right)  ^{5+\left(  2+4\right)  }%
+\det\left(  \operatorname*{sub}\nolimits_{1,4}^{2,4}A\right)  \det\left(
+\operatorname*{sub}\nolimits_{2,3}^{1,3}A\right) \\
+&  \ \ \ \ \ \ \ \ \ \ +\left(  -1\right)  ^{5+\left(  3+4\right)  }%
+\det\left(  \operatorname*{sub}\nolimits_{1,4}^{3,4}A\right)  \det\left(
+\operatorname*{sub}\nolimits_{2,3}^{1,2}A\right) \\
+&  =\det\left(
+\begin{array}
+[c]{cc}%
+a_{1,1} & a_{1,2}\\
+a_{4,1} & a_{4,2}%
+\end{array}
+\right)  \det\left(
+\begin{array}
+[c]{cc}%
+a_{2,3} & a_{2,4}\\
+a_{3,3} & a_{3,4}%
+\end{array}
+\right) \\
+&  \ \ \ \ \ \ \ \ \ \ -\det\left(
+\begin{array}
+[c]{cc}%
+a_{1,1} & a_{1,3}\\
+a_{4,1} & a_{4,3}%
+\end{array}
+\right)  \det\left(
+\begin{array}
+[c]{cc}%
+a_{2,2} & a_{2,4}\\
+a_{3,2} & a_{3,4}%
+\end{array}
+\right) \\
+&  \ \ \ \ \ \ \ \ \ \ +\det\left(
+\begin{array}
+[c]{cc}%
+a_{1,1} & a_{1,4}\\
+a_{4,1} & a_{4,4}%
+\end{array}
+\right)  \det\left(
+\begin{array}
+[c]{cc}%
+a_{2,2} & a_{2,3}\\
+a_{3,2} & a_{3,3}%
+\end{array}
+\right) \\
+&  \ \ \ \ \ \ \ \ \ \ +\det\left(
+\begin{array}
+[c]{cc}%
+a_{1,2} & a_{1,3}\\
+a_{4,2} & a_{4,3}%
+\end{array}
+\right)  \det\left(
+\begin{array}
+[c]{cc}%
+a_{2,1} & a_{2,4}\\
+a_{3,1} & a_{3,4}%
+\end{array}
+\right) \\
+&  \ \ \ \ \ \ \ \ \ \ -\det\left(
+\begin{array}
+[c]{cc}%
+a_{1,2} & a_{1,4}\\
+a_{4,2} & a_{4,4}%
+\end{array}
+\right)  \det\left(
+\begin{array}
+[c]{cc}%
+a_{2,1} & a_{2,3}\\
+a_{3,1} & a_{3,3}%
+\end{array}
+\right) \\
+&  \ \ \ \ \ \ \ \ \ \ +\det\left(
+\begin{array}
+[c]{cc}%
+a_{1,3} & a_{1,4}\\
+a_{4,3} & a_{4,4}%
+\end{array}
+\right)  \det\left(
+\begin{array}
+[c]{cc}%
+a_{2,1} & a_{2,2}\\
+a_{3,1} & a_{3,2}%
+\end{array}
+\right)  .
+\end{align*}
+
+\end{example}
+
+The following lemma will play a crucial role in our proof of Theorem
+\ref{thm.det.laplace-multi} (similar to the role that Lemma
+\ref{lem.laplace.Apq} played in our proof of Theorem \ref{thm.laplace.gen}):
+
+\begin{lemma}
+\label{lem.det.laplace-multi.Apq}Let $n\in\mathbb{N}$. For any subset $I$ of
+$\left\{  1,2,\ldots,n\right\}  $, we let $\widetilde{I}$ denote the
+complement $\left\{  1,2,\ldots,n\right\}  \setminus I$ of $I$.
+
+Let $A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ and
+$B=\left(  b_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ be two $n\times
+n$-matrices. Let $P$ and $Q$ be two subsets of $\left\{  1,2,\ldots,n\right\}
+$ such that $\left\vert P\right\vert =\left\vert Q\right\vert $. Then,%
+\begin{align*}
+&  \sum_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)  =Q}}\left(
+-1\right)  ^{\sigma}\left(  \prod_{i\in P}a_{i,\sigma\left(  i\right)
+}\right)  \left(  \prod_{i\in\widetilde{P}}b_{i,\sigma\left(  i\right)
+}\right) \\
+&  =\left(  -1\right)  ^{\sum P+\sum Q}\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)  }A\right)  \det\left(
+\operatorname*{sub}\nolimits_{w\left(  \widetilde{P}\right)  }^{w\left(
+\widetilde{Q}\right)  }B\right)  .
+\end{align*}
+
+\end{lemma}
+
+The proof of Lemma \ref{lem.det.laplace-multi.Apq} is similar (in its spirit)
+to the proof of Lemma \ref{lem.laplace.Apq}, but it requires a lot more
+bookkeeping (if one wants to make it rigorous). This proof shall be given in
+the solution to Exercise \ref{exe.det.laplace-multi}:
+
+\begin{exercise}
+\label{exe.det.laplace-multi}Prove Lemma \ref{lem.det.laplace-multi.Apq} and
+Theorem \ref{thm.det.laplace-multi}.
+
+[\textbf{Hint:} First, prove Lemma \ref{lem.det.laplace-multi.Apq} in the case
+when $P=\left\{  1,2,\ldots,k\right\}  $ for some $k\in\left\{  0,1,\ldots
+,n\right\}  $; in order to do so, use the bijection from Exercise
+\ref{exe.Ialbe} \textbf{(c)} (applied to $I=Q$). Then, derive the general case
+of Lemma \ref{lem.det.laplace-multi.Apq} by permuting the rows of the
+matrices. Finally, prove Theorem \ref{thm.det.laplace-multi}.]
+\end{exercise}
+
 \subsection{Additional exercises}
 
 Here are a few more additional exercises, with no solutions given and no
@@ -23889,60 +24113,6 @@ g & 0 & 0 & d & 0 & 0\\
 \]
 where $a,b,c,d,e,f,g,h,k,\ell,m,n$ are elements of $\mathbb{K}$.
 \end{addexercise}
-
-\begin{addexercise}
-\label{exeadd.det.laplace-multi}Let $n\in\mathbb{N}$. Let $A\in\mathbb{K}%
-^{n\times n}$. We shall use the notation introduced in Definition
-\ref{def.submatrix}.
-
-For any subset $I$ of $\left\{  1,2,\ldots,n\right\}  $, we introduce the
-following three notations:
-
-\begin{itemize}
-\item Let $\sum I$ denote the sum of all elements of $I$. (Thus, $\sum
-I=\sum_{i\in I}i$.)
-
-\item Let $\widetilde{I}$ denote the complement $\left\{  1,2,\ldots
-,n\right\}  \setminus I$.
-
-\item Let $w\left(  I\right)  $ denote the list of all elements of $I$, in
-increasing order (with no element occurring twice). (For example, $w\left(
-\left\{  3,4,8\right\}  \right)  =\left(  3,4,8\right)  $.)
-\end{itemize}
-
-\textbf{(a)} For every $P\subseteq\left\{  1,2,\ldots,n\right\}  $, prove
-that
-\[
-\det A=\sum_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
-Q\right\vert =\left\vert P\right\vert }}\left(  -1\right)  ^{\sum P+\sum
-Q}\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
-Q\right)  }A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(
-\widetilde{P}\right)  }^{w\left(  \widetilde{Q}\right)  }A\right)  .
-\]
-
-
-\textbf{(b)} For every $Q\subseteq\left\{  1,2,\ldots,n\right\}  $, prove
-that
-\[
-\det A=\sum_{\substack{P\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
-P\right\vert =\left\vert Q\right\vert }}\left(  -1\right)  ^{\sum P+\sum
-Q}\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
-Q\right)  }A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(
-\widetilde{P}\right)  }^{w\left(  \widetilde{Q}\right)  }A\right)  .
-\]
-
-\end{addexercise}
-
-\begin{remark}
-The rather unwieldy claims of Additional exercise
-\ref{exeadd.det.laplace-multi} are actually an important generalization of
-Theorem \ref{thm.laplace.gen}, known as \textquotedblleft Laplace expansion in
-multiple rows (resp. columns)\textquotedblright. They appear (for example) in
-\cite[Theorem 3.61]{Gill} and in \cite[Theorem 2.4.1]{Prasolov}. Theorem
-\ref{thm.laplace.gen} \textbf{(a)} can be recovered from Additional exercise
-\ref{exeadd.det.laplace-multi} \textbf{(a)} by setting $P=\left\{  p\right\}
-$; similarly for the part \textbf{(b)}.
-\end{remark}
 
 \begin{addexercise}
 \label{exeadd.det.pluecker.multi}Let $n$ and $k$ be positive integers such
@@ -58140,6 +58310,2172 @@ This proves Proposition \ref{prop.desnanot.AC} again.
 \end{proof}
 
 Thus, Exercise \ref{exe.pluecker.rederive-AC} is solved.
+
+\subsection{Solution to Exercise \ref{exe.det.laplace-multi}}
+
+Let us prepare for the proof of Lemma \ref{lem.det.laplace-multi.Apq} by
+showing a particular case:
+
+\begin{lemma}
+\label{lem.sol.det.laplace-multi.1}Let $n\in\mathbb{N}$. For any subset $I$ of
+$\left\{  1,2,\ldots,n\right\}  $, we let $\widetilde{I}$ denote the
+complement $\left\{  1,2,\ldots,n\right\}  \setminus I$ of $I$.
+
+Let $A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ and
+$B=\left(  b_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ be two $n\times
+n$-matrices. Let $Q$ be a subset of $\left\{  1,2,\ldots,n\right\}  $. Let
+$k=\left\vert Q\right\vert $. Then,%
+\begin{align*}
+&  \sum_{\substack{\sigma\in S_{n};\\\sigma\left(  \left\{  1,2,\ldots
+,k\right\}  \right)  =Q}}\left(  -1\right)  ^{\sigma}\left(  \prod
+_{i\in\left\{  1,2,\ldots,k\right\}  }a_{i,\sigma\left(  i\right)  }\right)
+\left(  \prod_{i\in\left\{  k+1,k+2,\ldots,n\right\}  }b_{i,\sigma\left(
+i\right)  }\right) \\
+&  =\left(  -1\right)  ^{\left(  1+2+\cdots+k\right)  +\sum Q}\det\left(
+\operatorname*{sub}\nolimits_{\left(  1,2,\ldots,k\right)  }^{w\left(
+Q\right)  }A\right)  \det\left(  \operatorname*{sub}\nolimits_{\left(
+k+1,k+2,\ldots,n\right)  }^{w\left(  \widetilde{Q}\right)  }B\right)  .
+\end{align*}
+
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.det.laplace-multi.1}.]%
+\begin{vershort}
+The definition of $\widetilde{Q}$ yields $\widetilde{Q}=\left\{
+1,2,\ldots,n\right\}  \setminus Q$. Since $Q$ is a subset of $\left\{
+1,2,\ldots,n\right\}  $, this leads to $\left\vert \widetilde{Q}\right\vert
+=\underbrace{\left\vert \left\{  1,2,\ldots,n\right\}  \right\vert }%
+_{=n}-\underbrace{\left\vert Q\right\vert }_{=k}=n-k$. Thus, $n-k=\left\vert
+\widetilde{Q}\right\vert \geq0$, so that $n\geq k$ and thus $k\in\left\{
+0,1,\ldots,n\right\}  $.
+\end{vershort}
+
+\begin{verlong}
+The definition of $\widetilde{Q}$ yields $\widetilde{Q}=\left\{
+1,2,\ldots,n\right\}  \setminus Q\subseteq\left\{  1,2,\ldots,n\right\}  $.
+Thus, $\widetilde{Q}$ is a finite set (since $\left\{  1,2,\ldots,n\right\}  $
+is a finite set). Hence, $\left\vert \widetilde{Q}\right\vert \in\mathbb{N}$.
+
+Also, $Q\subseteq\left\{  1,2,\ldots,n\right\}  $. Thus, $Q$ is a finite set
+(since $\left\{  1,2,\ldots,n\right\}  $ is a finite set). Hence, $\left\vert
+Q\right\vert \in\mathbb{N}$.
+
+Also,%
+\begin{align*}
+\left\vert \underbrace{\widetilde{Q}}_{=\left\{  1,2,\ldots,n\right\}
+\setminus Q}\right\vert  &  =\left\vert \left\{  1,2,\ldots,n\right\}
+\setminus Q\right\vert =\underbrace{\left\vert \left\{  1,2,\ldots,n\right\}
+\right\vert }_{=n}-\underbrace{\left\vert Q\right\vert }_{=k}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }Q\subseteq\left\{  1,2,\ldots
+,n\right\}  \right) \\
+&  =n-k.
+\end{align*}
+Hence, $n-k=\left\vert \widetilde{Q}\right\vert \in\mathbb{N}$; thus,
+$n-k\geq0$. In other words, $k\leq n$. Combined with $k\geq0$ (since
+$k=\left\vert Q\right\vert \in\mathbb{N}$), this yields $k\in\left\{
+0,1,\ldots,n\right\}  $.
+\end{verlong}
+
+Let $\left(  q_{1},q_{2},\ldots,q_{k}\right)  $ be the list of all elements of
+$Q$ in increasing order (with no repetitions). (This is well-defined, because
+$\left\vert Q\right\vert =k$.)
+
+Let $\left(  r_{1},r_{2},\ldots,r_{n-k}\right)  $ be the list of all elements
+of $\widetilde{Q}$ in increasing order (with no repetitions). (This is
+well-defined, because $\left\vert \widetilde{Q}\right\vert =n-k$.)
+
+\begin{vershort}
+The lists $w\left(  Q\right)  $ and $\left(  q_{1},q_{2},\ldots,q_{k}\right)
+$ must be identical (since they are both defined to be the list of all
+elements of $Q$ in increasing order (with no repetitions)). In other words, we
+have $w\left(  Q\right)  =\left(  q_{1},q_{2},\ldots,q_{k}\right)  $.
+Similarly, $w\left(  \widetilde{Q}\right)  =\left(  r_{1},r_{2},\ldots
+,r_{n-k}\right)  $.
+\end{vershort}
+
+\begin{verlong}
+But $w\left(  Q\right)  $ is the list of all elements of $Q$ in increasing
+order (with no repetitions) (by the definition of $w\left(  Q\right)  $).
+Thus,%
+\begin{align*}
+w\left(  Q\right)   &  =\left(  \text{the list of all elements of }Q\text{ in
+increasing order (with no repetitions)}\right) \\
+&  =\left(  q_{1},q_{2},\ldots,q_{k}\right)
+\end{align*}
+(since $\left(  q_{1},q_{2},\ldots,q_{k}\right)  $ is the list of all elements
+of $Q$ in increasing order (with no repetitions)).
+
+Also, $w\left(  \widetilde{Q}\right)  $ is the list of all elements of
+$\widetilde{Q}$ in increasing order (with no repetitions) (by the definition
+of $w\left(  \widetilde{Q}\right)  $). Thus,%
+\begin{align*}
+w\left(  \widetilde{Q}\right)   &  =\left(  \text{the list of all elements of
+}\widetilde{Q}\text{ in increasing order (with no repetitions)}\right) \\
+&  =\left(  r_{1},r_{2},\ldots,r_{n-k}\right)
+\end{align*}
+(since $\left(  r_{1},r_{2},\ldots,r_{n-k}\right)  $ is the list of all
+elements of $\widetilde{Q}$ in increasing order (with no repetitions)).
+\end{verlong}
+
+We know that $\left(  r_{1},r_{2},\ldots,r_{n-k}\right)  $ is the list of all
+elements of $\widetilde{Q}$ in increasing order (with no repetitions). In
+other words, $\left(  r_{1},r_{2},\ldots,r_{n-k}\right)  $ is the list of all
+elements of $\left\{  1,2,\ldots,n\right\}  \setminus Q$ in increasing order
+(with no repetitions) (since $\widetilde{Q}=\left\{  1,2,\ldots,n\right\}
+\setminus Q$). Thus, for every $\alpha\in S_{k}$ and $\beta\in S_{n-k}$, we
+can define an element $\sigma_{Q,\alpha,\beta}\in S_{n}$ according to Exercise
+\ref{exe.Ialbe} \textbf{(a)} (applied to $Q$, $\left(  q_{1},q_{2}%
+,\ldots,q_{k}\right)  $ and $\left(  r_{1},r_{2},\ldots,r_{n-k}\right)  $
+instead of $I$, $\left(  a_{1},a_{2},\ldots,a_{k}\right)  $ and $\left(
+b_{1},b_{2},\ldots,b_{n-k}\right)  $). Consider this $\sigma_{Q,\alpha,\beta}%
+$. Exercise \ref{exe.Ialbe} \textbf{(b)} (applied to $Q$, $\left(  q_{1}%
+,q_{2},\ldots,q_{k}\right)  $ and $\left(  r_{1},r_{2},\ldots,r_{n-k}\right)
+$ instead of $I$, $\left(  a_{1},a_{2},\ldots,a_{k}\right)  $ and $\left(
+b_{1},b_{2},\ldots,b_{n-k}\right)  $) shows that for every $\alpha\in S_{k}$
+and $\beta\in S_{n-k}$, we have%
+\[
+\ell\left(  \sigma_{Q,\alpha,\beta}\right)  =\ell\left(  \alpha\right)
++\ell\left(  \beta\right)  +\sum Q-\left(  1+2+\cdots+k\right)
+\]
+and%
+\begin{equation}
+\left(  -1\right)  ^{\sigma_{Q,\alpha,\beta}}=\left(  -1\right)  ^{\alpha
+}\cdot\left(  -1\right)  ^{\beta}\cdot\left(  -1\right)  ^{\sum Q-\left(
+1+2+\cdots+k\right)  }. \label{pf.lem.sol.det.laplace-multi.1.sign}%
+\end{equation}
+
+
+Exercise \ref{exe.Ialbe} \textbf{(c)} (applied to $Q$, $\left(  q_{1}%
+,q_{2},\ldots,q_{k}\right)  $ and $\left(  r_{1},r_{2},\ldots,r_{n-k}\right)
+$ instead of $I$, $\left(  a_{1},a_{2},\ldots,a_{k}\right)  $ and $\left(
+b_{1},b_{2},\ldots,b_{n-k}\right)  $) shows that the map%
+\begin{align*}
+S_{k}\times S_{n-k}  &  \rightarrow\left\{  \tau\in S_{n}\ \mid\ \tau\left(
+\left\{  1,2,\ldots,k\right\}  \right)  =Q\right\}  ,\\
+\left(  \alpha,\beta\right)   &  \mapsto\sigma_{Q,\alpha,\beta}%
+\end{align*}
+is well-defined and a bijection.
+
+We have $w\left(  Q\right)  =\left(  q_{1},q_{2},\ldots,q_{k}\right)  $. Thus,%
+\begin{align*}
+\operatorname*{sub}\nolimits_{\left(  1,2,\ldots,k\right)  }^{w\left(
+Q\right)  }A  &  =\operatorname*{sub}\nolimits_{\left(  1,2,\ldots,k\right)
+}^{\left(  q_{1},q_{2},\ldots,q_{k}\right)  }A=\operatorname*{sub}%
+\nolimits_{1,2,\ldots,k}^{q_{1},q_{2},\ldots,q_{k}}A=\left(  a_{x,q_{y}%
+}\right)  _{1\leq x\leq k,\ 1\leq y\leq k}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{by the definition of }\operatorname*{sub}\nolimits_{1,2,\ldots,k}%
+^{q_{1},q_{2},\ldots,q_{k}}A\text{,}\\
+\text{since }A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}%
+\end{array}
+\right) \\
+&  =\left(  a_{i,q_{j}}\right)  _{1\leq i\leq k,\ 1\leq j\leq k}%
+\end{align*}
+(here, we have renamed the index $\left(  x,y\right)  $ as $\left(
+i,j\right)  $). Thus,%
+\begin{align}
+\det\left(  \operatorname*{sub}\nolimits_{\left(  1,2,\ldots,k\right)
+}^{w\left(  Q\right)  }A\right)   &  =\sum_{\sigma\in S_{k}}\left(  -1\right)
+^{\sigma}\prod_{i=1}^{k}a_{i,q_{\sigma\left(  i\right)  }}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{by (\ref{def.sect.laplace.notations}), applied to }k\text{,
+}\operatorname*{sub}\nolimits_{\left(  1,2,\ldots,k\right)  }^{w\left(
+Q\right)  }A\text{ and }a_{i,q_{j}}\\
+\text{instead of }n\text{, }A\text{ and }a_{i,j}%
+\end{array}
+\right) \nonumber\\
+&  =\sum_{\alpha\in S_{k}}\left(  -1\right)  ^{\alpha}\prod_{i=1}%
+^{k}a_{i,q_{\alpha\left(  i\right)  }}
+\label{pf.lem.sol.det.laplace-multi.1.det1}%
+\end{align}
+(here, we have renamed the summation index $\sigma$ as $\alpha$).
+
+Also, $w\left(  \widetilde{Q}\right)  =\left(  r_{1},r_{2},\ldots
+,r_{n-k}\right)  $. Thus,%
+\begin{align*}
+\operatorname*{sub}\nolimits_{\left(  k+1,k+2,\ldots,n\right)  }^{w\left(
+\widetilde{Q}\right)  }B  &  =\operatorname*{sub}\nolimits_{\left(
+k+1,k+2,\ldots,n\right)  }^{\left(  r_{1},r_{2},\ldots,r_{n-k}\right)
+}B=\operatorname*{sub}\nolimits_{k+1,k+2,\ldots,n}^{r_{1},r_{2},\ldots
+,r_{n-k}}B=\left(  b_{k+i,r_{y}}\right)  _{1\leq x\leq n-k,\ 1\leq y\leq
+n-k}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{by the definition of }\operatorname*{sub}\nolimits_{k+1,k+2,\ldots
+,n}^{r_{1},r_{2},\ldots,r_{n-k}}B\text{,}\\
+\text{since }B=\left(  b_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}%
+\end{array}
+\right) \\
+&  =\left(  b_{k+i,r_{j}}\right)  _{1\leq i\leq n-k,\ 1\leq j\leq n-k}%
+\end{align*}
+(here, we have renamed the index $\left(  x,y\right)  $ as $\left(
+i,j\right)  $). Thus,%
+\begin{align}
+\det\left(  \operatorname*{sub}\nolimits_{\left(  k+1,k+2,\ldots,n\right)
+}^{w\left(  \widetilde{Q}\right)  }B\right)   &  =\sum_{\sigma\in S_{n-k}%
+}\left(  -1\right)  ^{\sigma}\prod_{i=1}^{n-k}b_{k+i,r_{\sigma\left(
+i\right)  }}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{by (\ref{def.sect.laplace.notations}), applied to }n-k\text{,
+}\operatorname*{sub}\nolimits_{\left(  k+1,k+2,\ldots,n\right)  }^{w\left(
+\widetilde{Q}\right)  }B\text{ and }b_{k+i,r_{j}}\\
+\text{instead of }n\text{, }A\text{ and }a_{i,j}%
+\end{array}
+\right) \nonumber\\
+&  =\sum_{\beta\in S_{n-k}}\left(  -1\right)  ^{\beta}\prod_{i=1}%
+^{n-k}b_{k+i,r_{\beta\left(  i\right)  }}
+\label{pf.lem.sol.det.laplace-multi.1.det2}%
+\end{align}
+(here, we have renamed the summation index $\sigma$ as $\beta$).
+
+\begin{vershort}
+Now, we claim the following: For any $\alpha\in S_{k}$ and $\beta\in S_{n-k}$,
+we have%
+\begin{equation}
+\prod_{i\in\left\{  1,2,\ldots,k\right\}  }a_{i,\sigma_{Q,\alpha,\beta}\left(
+i\right)  }=\prod_{i=1}^{k}a_{i,q_{\alpha\left(  i\right)  }}
+\label{pf.lem.sol.det.laplace-multi.1.short.factor1}%
+\end{equation}
+and%
+\begin{equation}
+\prod_{i\in\left\{  k+1,k+2,\ldots,n\right\}  }b_{i,\sigma_{Q,\alpha,\beta
+}\left(  i\right)  }=\prod_{i=1}^{n-k}b_{k+i,r_{\beta\left(  i\right)  }}.
+\label{pf.lem.sol.det.laplace-multi.1.short.factor2}%
+\end{equation}
+
+
+\textit{Proof of (\ref{pf.lem.sol.det.laplace-multi.1.short.factor1}) and
+(\ref{pf.lem.sol.det.laplace-multi.1.short.factor2}):} Let $\alpha\in S_{k}$
+and $\beta\in S_{n-k}$. The permutation $\sigma_{Q,\alpha,\beta}$ was defined
+as the unique $\sigma\in S_{n}$ satisfying%
+\begin{equation}
+\left(  \sigma\left(  1\right)  ,\sigma\left(  2\right)  ,\ldots,\sigma\left(
+n\right)  \right)  =\left(  q_{\alpha\left(  1\right)  },q_{\alpha\left(
+2\right)  },\ldots,q_{\alpha\left(  k\right)  },r_{\beta\left(  1\right)
+},r_{\beta\left(  2\right)  },\ldots,r_{\beta\left(  n-k\right)  }\right)  .
+\label{pf.lem.sol.det.laplace-multi.1.short.factor1.pf.1}%
+\end{equation}
+Hence, $\sigma_{Q,\alpha,\beta}$ is a $\sigma\in S_{n}$ satisfying
+(\ref{pf.lem.sol.det.laplace-multi.1.short.factor1.pf.1}). In other words,
+$\sigma_{Q,\alpha,\beta}$ is an element of $S_{n}$ and satisfies%
+\[
+\left(  \sigma_{Q,\alpha,\beta}\left(  1\right)  ,\sigma_{Q,\alpha,\beta
+}\left(  2\right)  ,\ldots,\sigma_{Q,\alpha,\beta}\left(  n\right)  \right)
+=\left(  q_{\alpha\left(  1\right)  },q_{\alpha\left(  2\right)  }%
+,\ldots,q_{\alpha\left(  k\right)  },r_{\beta\left(  1\right)  }%
+,r_{\beta\left(  2\right)  },\ldots,r_{\beta\left(  n-k\right)  }\right)  .
+\]
+In other words,%
+\begin{equation}
+\left(  \sigma_{Q,\alpha,\beta}\left(  i\right)  =q_{\alpha\left(  i\right)
+}\ \ \ \ \ \ \ \ \ \ \text{for every }i\in\left\{  1,2,\ldots,k\right\}
+\right)  \label{pf.lem.sol.det.laplace-multi.1.short.factor1.pf.4}%
+\end{equation}
+and%
+\begin{equation}
+\left(  \sigma_{Q,\alpha,\beta}\left(  i\right)  =r_{\beta\left(  i-k\right)
+}\ \ \ \ \ \ \ \ \ \ \text{for every }i\in\left\{  k+1,k+2,\ldots,n\right\}
+\right)  . \label{pf.lem.sol.det.laplace-multi.1.short.factor2.pf.4}%
+\end{equation}
+Now,%
+\[
+\underbrace{\prod_{i\in\left\{  1,2,\ldots,k\right\}  }}_{=\prod_{i=1}^{k}%
+}\underbrace{a_{i,\sigma_{Q,\alpha,\beta}\left(  i\right)  }}%
+_{\substack{=a_{i,q_{\alpha\left(  i\right)  }}\\\text{(since }\sigma
+_{Q,\alpha,\beta}\left(  i\right)  =q_{\alpha\left(  i\right)  }\\\text{(by
+(\ref{pf.lem.sol.det.laplace-multi.1.short.factor1.pf.4})))}}}=\prod_{i=1}%
+^{k}a_{i,q_{\alpha\left(  i\right)  }}.
+\]
+This proves (\ref{pf.lem.sol.det.laplace-multi.1.short.factor1}). Furthermore,%
+\[
+\underbrace{\prod_{i\in\left\{  k+1,k+2,\ldots,n\right\}  }}_{=\prod
+_{i=k+1}^{n}}\underbrace{b_{i,\sigma_{Q,\alpha,\beta}\left(  i\right)  }%
+}_{\substack{=b_{i,r_{\beta\left(  i-k\right)  }}\\\text{(since }%
+\sigma_{Q,\alpha,\beta}\left(  i\right)  =r_{\beta\left(  i-k\right)
+}\\\text{(by (\ref{pf.lem.sol.det.laplace-multi.1.short.factor2.pf.4})))}%
+}}=\prod_{i=k+1}^{n}b_{i,r_{\beta\left(  i-k\right)  }}=\prod_{i=1}%
+^{n-k}b_{k+i,r_{\beta\left(  i\right)  }}%
+\]
+(here, we have substituted $k+i$ for $i$ in the product). This proves
+(\ref{pf.lem.sol.det.laplace-multi.1.short.factor2}).
+
+Now,%
+\begin{align*}
+&  \underbrace{\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  \left\{
+1,2,\ldots,k\right\}  \right)  =Q}}}_{=\sum_{\sigma\in\left\{  \tau\in
+S_{n}\ \mid\ \tau\left(  \left\{  1,2,\ldots,k\right\}  \right)  =Q\right\}
+}}\left(  -1\right)  ^{\sigma}\left(  \prod_{i\in\left\{  1,2,\ldots
+,k\right\}  }a_{i,\sigma\left(  i\right)  }\right)  \left(  \prod
+_{i\in\left\{  k+1,k+2,\ldots,n\right\}  }b_{i,\sigma\left(  i\right)
+}\right) \\
+&  =\sum_{\sigma\in\left\{  \tau\in S_{n}\ \mid\ \tau\left(  \left\{
+1,2,\ldots,k\right\}  \right)  =Q\right\}  }\left(  -1\right)  ^{\sigma
+}\left(  \prod_{i\in\left\{  1,2,\ldots,k\right\}  }a_{i,\sigma\left(
+i\right)  }\right)  \left(  \prod_{i\in\left\{  k+1,k+2,\ldots,n\right\}
+}b_{i,\sigma\left(  i\right)  }\right) \\
+&  =\underbrace{\sum_{\left(  \alpha,\beta\right)  \in S_{k}\times S_{n-k}}%
+}_{=\sum_{\alpha\in S_{k}}\sum_{\beta\in S_{n-k}}}\left(  -1\right)
+^{\sigma_{Q,\alpha,\beta}}\underbrace{\left(  \prod_{i\in\left\{
+1,2,\ldots,k\right\}  }a_{i,\sigma_{Q,\alpha,\beta}\left(  i\right)  }\right)
+}_{\substack{=\prod_{i=1}^{k}a_{i,q_{\alpha\left(  i\right)  }}\\\text{(by
+(\ref{pf.lem.sol.det.laplace-multi.1.short.factor1}))}}}\underbrace{\left(
+\prod_{i\in\left\{  k+1,k+2,\ldots,n\right\}  }b_{i,\sigma_{Q,\alpha,\beta
+}\left(  i\right)  }\right)  }_{\substack{=\prod_{i=1}^{n-k}b_{k+i,r_{\beta
+\left(  i\right)  }}\\\text{(by
+(\ref{pf.lem.sol.det.laplace-multi.1.short.factor2}))}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have substituted }\sigma_{Q,\alpha,\beta}\text{ for }%
+\sigma\text{ in the sum, since the}\\
+\text{map }S_{k}\times S_{n-k}\rightarrow\left\{  \tau\in S_{n}\ \mid
+\ \tau\left(  \left\{  1,2,\ldots,k\right\}  \right)  =Q\right\}  ,\ \left(
+\alpha,\beta\right)  \mapsto\sigma_{Q,\alpha,\beta}\\
+\text{is a bijection}%
+\end{array}
+\right) \\
+&  =\sum_{\alpha\in S_{k}}\sum_{\beta\in S_{n-k}}\underbrace{\left(
+-1\right)  ^{\sigma_{Q,\alpha,\beta}}}_{\substack{=\left(  -1\right)
+^{\alpha}\cdot\left(  -1\right)  ^{\beta}\cdot\left(  -1\right)  ^{\sum
+Q-\left(  1+2+\cdots+k\right)  }\\\text{(by
+(\ref{pf.lem.sol.det.laplace-multi.1.sign}))}}}\left(  \prod_{i=1}%
+^{k}a_{i,q_{\alpha\left(  i\right)  }}\right)  \left(  \prod_{i=1}%
+^{n-k}b_{k+i,r_{\beta\left(  i\right)  }}\right) \\
+&  =\sum_{\alpha\in S_{k}}\sum_{\beta\in S_{n-k}}\left(  -1\right)  ^{\alpha
+}\cdot\left(  -1\right)  ^{\beta}\cdot\left(  -1\right)  ^{\sum Q-\left(
+1+2+\cdots+k\right)  }\left(  \prod_{i=1}^{k}a_{i,q_{\alpha\left(  i\right)
+}}\right)  \left(  \prod_{i=1}^{n-k}b_{k+i,r_{\beta\left(  i\right)  }%
+}\right)
+\end{align*}%
+\begin{align*}
+&  =\underbrace{\left(  -1\right)  ^{\sum Q-\left(  1+2+\cdots+k\right)  }%
+}_{\substack{=\left(  -1\right)  ^{\left(  1+2+\cdots+k\right)  +\sum
+Q}\\\text{(since }\sum Q-\left(  1+2+\cdots+k\right)  \\\equiv\sum Q+\left(
+1+2+\cdots+k\right)  \\=\left(  1+2+\cdots+k\right)  +\sum Q\operatorname{mod}%
+2\text{)}}}\underbrace{\left(  \sum_{\alpha\in S_{k}}\left(  -1\right)
+^{\alpha}\prod_{i=1}^{k}a_{i,q_{\alpha\left(  i\right)  }}\right)
+}_{\substack{=\det\left(  \operatorname*{sub}\nolimits_{\left(  1,2,\ldots
+,k\right)  }^{w\left(  Q\right)  }A\right)  \\\text{(by
+(\ref{pf.lem.sol.det.laplace-multi.1.det1}))}}}\underbrace{\left(  \sum
+_{\beta\in S_{n-k}}\left(  -1\right)  ^{\beta}\prod_{i=1}^{n-k}b_{k+i,r_{\beta
+\left(  i\right)  }}\right)  }_{\substack{=\det\left(  \operatorname*{sub}%
+\nolimits_{\left(  k+1,k+2,\ldots,n\right)  }^{w\left(  \widetilde{Q}\right)
+}B\right)  \\\text{(by (\ref{pf.lem.sol.det.laplace-multi.1.det2}))}}}\\
+&  =\left(  -1\right)  ^{\left(  1+2+\cdots+k\right)  +\sum Q}\det\left(
+\operatorname*{sub}\nolimits_{\left(  1,2,\ldots,k\right)  }^{w\left(
+Q\right)  }A\right)  \det\left(  \operatorname*{sub}\nolimits_{\left(
+k+1,k+2,\ldots,n\right)  }^{w\left(  \widetilde{Q}\right)  }B\right)  .
+\end{align*}
+This proves Lemma \ref{lem.sol.det.laplace-multi.1}.
+\end{vershort}
+
+\begin{verlong}
+For any $\alpha\in S_{k}$ and $\beta\in S_{n-k}$, we have%
+\begin{equation}
+\prod_{i\in\left\{  1,2,\ldots,k\right\}  }a_{i,\sigma_{Q,\alpha,\beta}\left(
+i\right)  }=\prod_{i=1}^{k}a_{i,q_{\alpha\left(  i\right)  }}
+\label{pf.lem.sol.det.laplace-multi.1.factor1}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.sol.det.laplace-multi.1.factor1}):}
+Let $\alpha\in S_{k}$ and $\beta\in S_{n-k}$. Now, $\sigma_{Q,\alpha,\beta}$
+is the unique $\sigma\in S_{n}$ satisfying%
+\begin{equation}
+\left(  \sigma\left(  1\right)  ,\sigma\left(  2\right)  ,\ldots,\sigma\left(
+n\right)  \right)  =\left(  q_{\alpha\left(  1\right)  },q_{\alpha\left(
+2\right)  },\ldots,q_{\alpha\left(  k\right)  },r_{\beta\left(  1\right)
+},r_{\beta\left(  2\right)  },\ldots,r_{\beta\left(  n-k\right)  }\right)
+\label{pf.lem.sol.det.laplace-multi.1.factor1.pf.1}%
+\end{equation}
+(because this is how $\sigma_{Q,\alpha,\beta}$ is defined). Hence,
+$\sigma_{Q,\alpha,\beta}$ is a $\sigma\in S_{n}$ satisfying
+(\ref{pf.lem.sol.det.laplace-multi.1.factor1.pf.1}). In other words,
+$\sigma_{Q,\alpha,\beta}$ is an element of $S_{n}$ and satisfies%
+\begin{align}
+&  \left(  \sigma_{Q,\alpha,\beta}\left(  1\right)  ,\sigma_{Q,\alpha,\beta
+}\left(  2\right)  ,\ldots,\sigma_{Q,\alpha,\beta}\left(  n\right)  \right)
+\nonumber\\
+&  =\left(  q_{\alpha\left(  1\right)  },q_{\alpha\left(  2\right)  }%
+,\ldots,q_{\alpha\left(  k\right)  },r_{\beta\left(  1\right)  }%
+,r_{\beta\left(  2\right)  },\ldots,r_{\beta\left(  n-k\right)  }\right)  .
+\label{pf.lem.sol.det.laplace-multi.1.factor1.pf.2}%
+\end{align}
+\par
+Now,%
+\begin{align*}
+&  \left(  \sigma_{Q,\alpha,\beta}\left(  1\right)  ,\sigma_{Q,\alpha,\beta
+}\left(  2\right)  ,\ldots,\sigma_{Q,\alpha,\beta}\left(  k\right)  \right) \\
+&  =\left(  \text{the list of the first }k\text{ entries of the list
+}\underbrace{\left(  \sigma_{Q,\alpha,\beta}\left(  1\right)  ,\sigma
+_{Q,\alpha,\beta}\left(  2\right)  ,\ldots,\sigma_{Q,\alpha,\beta}\left(
+n\right)  \right)  }_{\substack{=\left(  q_{\alpha\left(  1\right)
+},q_{\alpha\left(  2\right)  },\ldots,q_{\alpha\left(  k\right)  }%
+,r_{\beta\left(  1\right)  },r_{\beta\left(  2\right)  },\ldots,r_{\beta
+\left(  n-k\right)  }\right)  \\\text{(by
+(\ref{pf.lem.sol.det.laplace-multi.1.factor1.pf.2}))}}}\right) \\
+&  =\left(  \text{the list of the first }k\text{ entries of the list }\left(
+q_{\alpha\left(  1\right)  },q_{\alpha\left(  2\right)  },\ldots
+,q_{\alpha\left(  k\right)  },r_{\beta\left(  1\right)  },r_{\beta\left(
+2\right)  },\ldots,r_{\beta\left(  n-k\right)  }\right)  \right) \\
+&  =\left(  q_{\alpha\left(  1\right)  },q_{\alpha\left(  2\right)  }%
+,\ldots,q_{\alpha\left(  k\right)  }\right)  .
+\end{align*}
+In other words,%
+\begin{equation}
+\sigma_{Q,\alpha,\beta}\left(  i\right)  =q_{\alpha\left(  i\right)
+}\ \ \ \ \ \ \ \ \ \ \text{for every }i\in\left\{  1,2,\ldots,k\right\}  .
+\label{pf.lem.sol.det.laplace-multi.1.factor1.pf.4}%
+\end{equation}
+Hence,%
+\[
+\underbrace{\prod_{i\in\left\{  1,2,\ldots,k\right\}  }}_{=\prod_{i=1}^{k}%
+}\underbrace{a_{i,\sigma_{Q,\alpha,\beta}\left(  i\right)  }}%
+_{\substack{=a_{i,q_{\alpha\left(  i\right)  }}\\\text{(since }\sigma
+_{Q,\alpha,\beta}\left(  i\right)  =q_{\alpha\left(  i\right)  }\\\text{(by
+(\ref{pf.lem.sol.det.laplace-multi.1.factor1.pf.4})))}}}=\prod_{i=1}%
+^{k}a_{i,q_{\alpha\left(  i\right)  }}.
+\]
+This proves (\ref{pf.lem.sol.det.laplace-multi.1.factor1}).} and%
+\begin{equation}
+\prod_{i\in\left\{  k+1,k+2,\ldots,n\right\}  }b_{i,\sigma_{Q,\alpha,\beta
+}\left(  i\right)  }=\prod_{i=1}^{n-k}b_{k+i,r_{\beta\left(  i\right)  }}
+\label{pf.lem.sol.det.laplace-multi.1.factor2}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.sol.det.laplace-multi.1.factor2}):}
+Let $\alpha\in S_{k}$ and $\beta\in S_{n-k}$. Now, $\sigma_{Q,\alpha,\beta}$
+is the unique $\sigma\in S_{n}$ satisfying%
+\begin{equation}
+\left(  \sigma\left(  1\right)  ,\sigma\left(  2\right)  ,\ldots,\sigma\left(
+n\right)  \right)  =\left(  q_{\alpha\left(  1\right)  },q_{\alpha\left(
+2\right)  },\ldots,q_{\alpha\left(  k\right)  },r_{\beta\left(  1\right)
+},r_{\beta\left(  2\right)  },\ldots,r_{\beta\left(  n-k\right)  }\right)
+\label{pf.lem.sol.det.laplace-multi.1.factor2.pf.1}%
+\end{equation}
+(because this is how $\sigma_{Q,\alpha,\beta}$ is defined). Hence,
+$\sigma_{Q,\alpha,\beta}$ is a $\sigma\in S_{n}$ satisfying
+(\ref{pf.lem.sol.det.laplace-multi.1.factor2.pf.1}). In other words,
+$\sigma_{Q,\alpha,\beta}$ is an element of $S_{n}$ and satisfies%
+\begin{align}
+&  \left(  \sigma_{Q,\alpha,\beta}\left(  1\right)  ,\sigma_{Q,\alpha,\beta
+}\left(  2\right)  ,\ldots,\sigma_{Q,\alpha,\beta}\left(  n\right)  \right)
+\nonumber\\
+&  =\left(  q_{\alpha\left(  1\right)  },q_{\alpha\left(  2\right)  }%
+,\ldots,q_{\alpha\left(  k\right)  },r_{\beta\left(  1\right)  }%
+,r_{\beta\left(  2\right)  },\ldots,r_{\beta\left(  n-k\right)  }\right)  .
+\label{pf.lem.sol.det.laplace-multi.1.factor2.pf.2}%
+\end{align}
+\par
+Now,%
+\begin{align*}
+&  \left(  \sigma_{Q,\alpha,\beta}\left(  k+1\right)  ,\sigma_{Q,\alpha,\beta
+}\left(  k+2\right)  ,\ldots,\sigma_{Q,\alpha,\beta}\left(  n\right)  \right)
+\\
+&  =\left(  \text{the list of the last }n-k\text{ entries of the list
+}\underbrace{\left(  \sigma_{Q,\alpha,\beta}\left(  1\right)  ,\sigma
+_{Q,\alpha,\beta}\left(  2\right)  ,\ldots,\sigma_{Q,\alpha,\beta}\left(
+n\right)  \right)  }_{\substack{=\left(  q_{\alpha\left(  1\right)
+},q_{\alpha\left(  2\right)  },\ldots,q_{\alpha\left(  k\right)  }%
+,r_{\beta\left(  1\right)  },r_{\beta\left(  2\right)  },\ldots,r_{\beta
+\left(  n-k\right)  }\right)  \\\text{(by
+(\ref{pf.lem.sol.det.laplace-multi.1.factor2.pf.2}))}}}\right) \\
+&  =\left(  \text{the list of the last }n-k\text{ entries of the list }\left(
+q_{\alpha\left(  1\right)  },q_{\alpha\left(  2\right)  },\ldots
+,q_{\alpha\left(  k\right)  },r_{\beta\left(  1\right)  },r_{\beta\left(
+2\right)  },\ldots,r_{\beta\left(  n-k\right)  }\right)  \right) \\
+&  =\left(  r_{\beta\left(  1\right)  },r_{\beta\left(  2\right)  }%
+,\ldots,r_{\beta\left(  n-k\right)  }\right)  .
+\end{align*}
+In other words,%
+\begin{equation}
+\sigma_{Q,\alpha,\beta}\left(  k+i\right)  =r_{\beta\left(  i\right)
+}\ \ \ \ \ \ \ \ \ \ \text{for every }i\in\left\{  1,2,\ldots,n-k\right\}  .
+\label{pf.lem.sol.det.laplace-multi.1.factor2.pf.4}%
+\end{equation}
+Now,%
+\begin{align*}
+\underbrace{\prod_{i\in\left\{  k+1,k+2,\ldots,n\right\}  }}_{=\prod
+_{i=k+1}^{n}}b_{i,\sigma_{Q,\alpha,\beta}\left(  i\right)  }  &
+=\prod_{i=k+1}^{n}b_{i,\sigma_{Q,\alpha,\beta}\left(  i\right)  }=\prod
+_{i=1}^{n-k}\underbrace{b_{i+k,\sigma_{Q,\alpha,\beta}\left(  k+i\right)  }%
+}_{\substack{=b_{k+i,\sigma_{Q,\alpha,\beta}\left(  k+i\right)  }%
+\\\text{(since }i+k=k+i\text{)}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }i+k\text{ for
+}i\text{ in the product}\right) \\
+&  =\prod_{i=1}^{n-k}\underbrace{b_{k+i,\sigma_{Q,\alpha,\beta}\left(
+k+i\right)  }}_{\substack{=b_{k+i,r_{\beta\left(  i\right)  }}\\\text{(since
+}\sigma_{Q,\alpha,\beta}\left(  k+i\right)  =r_{\beta\left(  i\right)
+}\\\text{(by (\ref{pf.lem.sol.det.laplace-multi.1.factor2.pf.4})))}}%
+}=\prod_{i=1}^{n-k}b_{k+i,r_{\beta\left(  i\right)  }}.
+\end{align*}
+This proves (\ref{pf.lem.sol.det.laplace-multi.1.factor2}).}.
+
+Now,%
+\begin{align*}
+&  \underbrace{\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  \left\{
+1,2,\ldots,k\right\}  \right)  =Q}}}_{=\sum_{\sigma\in\left\{  \tau\in
+S_{n}\ \mid\ \tau\left(  \left\{  1,2,\ldots,k\right\}  \right)  =Q\right\}
+}}\left(  -1\right)  ^{\sigma}\left(  \prod_{i\in\left\{  1,2,\ldots
+,k\right\}  }a_{i,\sigma\left(  i\right)  }\right)  \left(  \prod
+_{i\in\left\{  k+1,k+2,\ldots,n\right\}  }b_{i,\sigma\left(  i\right)
+}\right) \\
+&  =\sum_{\sigma\in\left\{  \tau\in S_{n}\ \mid\ \tau\left(  \left\{
+1,2,\ldots,k\right\}  \right)  =Q\right\}  }\left(  -1\right)  ^{\sigma
+}\left(  \prod_{i\in\left\{  1,2,\ldots,k\right\}  }a_{i,\sigma\left(
+i\right)  }\right)  \left(  \prod_{i\in\left\{  k+1,k+2,\ldots,n\right\}
+}b_{i,\sigma\left(  i\right)  }\right) \\
+&  =\underbrace{\sum_{\left(  \alpha,\beta\right)  \in S_{k}\times S_{n-k}}%
+}_{=\sum_{\alpha\in S_{k}}\sum_{\beta\in S_{n-k}}}\left(  -1\right)
+^{\sigma_{Q,\alpha,\beta}}\underbrace{\left(  \prod_{i\in\left\{
+1,2,\ldots,k\right\}  }a_{i,\sigma_{Q,\alpha,\beta}\left(  i\right)  }\right)
+}_{\substack{=\prod_{i=1}^{k}a_{i,q_{\alpha\left(  i\right)  }}\\\text{(by
+(\ref{pf.lem.sol.det.laplace-multi.1.factor1}))}}}\underbrace{\left(
+\prod_{i\in\left\{  k+1,k+2,\ldots,n\right\}  }b_{i,\sigma_{Q,\alpha,\beta
+}\left(  i\right)  }\right)  }_{\substack{=\prod_{i=1}^{n-k}b_{k+i,r_{\beta
+\left(  i\right)  }}\\\text{(by (\ref{pf.lem.sol.det.laplace-multi.1.factor2}%
+))}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have substituted }\sigma_{Q,\alpha,\beta}\text{ for }%
+\sigma\text{ in the sum, since the}\\
+\text{map }S_{k}\times S_{n-k}\rightarrow\left\{  \tau\in S_{n}\ \mid
+\ \tau\left(  \left\{  1,2,\ldots,k\right\}  \right)  =Q\right\}  ,\ \left(
+\alpha,\beta\right)  \mapsto\sigma_{Q,\alpha,\beta}\\
+\text{is a bijection}%
+\end{array}
+\right) \\
+&  =\sum_{\alpha\in S_{k}}\sum_{\beta\in S_{n-k}}\underbrace{\left(
+-1\right)  ^{\sigma_{Q,\alpha,\beta}}}_{\substack{=\left(  -1\right)
+^{\alpha}\cdot\left(  -1\right)  ^{\beta}\cdot\left(  -1\right)  ^{\sum
+Q-\left(  1+2+\cdots+k\right)  }\\\text{(by
+(\ref{pf.lem.sol.det.laplace-multi.1.sign}))}}}\left(  \prod_{i=1}%
+^{k}a_{i,q_{\alpha\left(  i\right)  }}\right)  \left(  \prod_{i=1}%
+^{n-k}b_{k+i,r_{\beta\left(  i\right)  }}\right) \\
+&  =\sum_{\alpha\in S_{k}}\sum_{\beta\in S_{n-k}}\left(  -1\right)  ^{\alpha
+}\cdot\left(  -1\right)  ^{\beta}\cdot\left(  -1\right)  ^{\sum Q-\left(
+1+2+\cdots+k\right)  }\left(  \prod_{i=1}^{k}a_{i,q_{\alpha\left(  i\right)
+}}\right)  \left(  \prod_{i=1}^{n-k}b_{k+i,r_{\beta\left(  i\right)  }%
+}\right)
+\end{align*}%
+\begin{align*}
+&  =\left(  -1\right)  ^{\sum Q-\left(  1+2+\cdots+k\right)  }\underbrace{\sum
+_{\alpha\in S_{k}}\sum_{\beta\in S_{n-k}}\left(  -1\right)  ^{\alpha}%
+\cdot\left(  -1\right)  ^{\beta}\cdot\left(  \prod_{i=1}^{k}a_{i,q_{\alpha
+\left(  i\right)  }}\right)  \left(  \prod_{i=1}^{n-k}b_{k+i,r_{\beta\left(
+i\right)  }}\right)  }_{=\left(  \sum_{\alpha\in S_{k}}\left(  -1\right)
+^{\alpha}\prod_{i=1}^{k}a_{i,q_{\alpha\left(  i\right)  }}\right)  \left(
+\sum_{\beta\in S_{n-k}}\left(  -1\right)  ^{\beta}\prod_{i=1}^{n-k}%
+b_{k+i,r_{\beta\left(  i\right)  }}\right)  }\\
+&  =\underbrace{\left(  -1\right)  ^{\sum Q-\left(  1+2+\cdots+k\right)  }%
+}_{\substack{=\left(  -1\right)  ^{\left(  1+2+\cdots+k\right)  +\sum
+Q}\\\text{(since }\sum Q-\left(  1+2+\cdots+k\right)  \\\equiv\sum Q+\left(
+1+2+\cdots+k\right)  \\=\left(  1+2+\cdots+k\right)  +\sum Q\operatorname{mod}%
+2\text{)}}}\underbrace{\left(  \sum_{\alpha\in S_{k}}\left(  -1\right)
+^{\alpha}\prod_{i=1}^{k}a_{i,q_{\alpha\left(  i\right)  }}\right)
+}_{\substack{=\det\left(  \operatorname*{sub}\nolimits_{\left(  1,2,\ldots
+,k\right)  }^{w\left(  Q\right)  }A\right)  \\\text{(by
+(\ref{pf.lem.sol.det.laplace-multi.1.det1}))}}}\underbrace{\left(  \sum
+_{\beta\in S_{n-k}}\left(  -1\right)  ^{\beta}\prod_{i=1}^{n-k}b_{k+i,r_{\beta
+\left(  i\right)  }}\right)  }_{\substack{=\det\left(  \operatorname*{sub}%
+\nolimits_{\left(  k+1,k+2,\ldots,n\right)  }^{w\left(  \widetilde{Q}\right)
+}B\right)  \\\text{(by (\ref{pf.lem.sol.det.laplace-multi.1.det2}))}}}\\
+&  =\left(  -1\right)  ^{\left(  1+2+\cdots+k\right)  +\sum Q}\det\left(
+\operatorname*{sub}\nolimits_{\left(  1,2,\ldots,k\right)  }^{w\left(
+Q\right)  }A\right)  \det\left(  \operatorname*{sub}\nolimits_{\left(
+k+1,k+2,\ldots,n\right)  }^{w\left(  \widetilde{Q}\right)  }B\right)  .
+\end{align*}
+This proves Lemma \ref{lem.sol.det.laplace-multi.1}.
+\end{verlong}
+\end{proof}
+
+Before we move on to the proof of Lemma \ref{lem.det.laplace-multi.Apq}, let
+us show another simple lemma:
+
+\begin{lemma}
+\label{lem.sol.det.laplace-multi.group-bij}Let $n\in\mathbb{N}$. Let
+$\gamma\in S_{n}$. Then, the map $S_{n}\rightarrow S_{n},\ \sigma\mapsto
+\sigma\circ\gamma$ is a bijection.
+\end{lemma}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.det.laplace-multi.group-bij}.]It is easy to see
+that the maps $S_{n}\rightarrow S_{n},\ \sigma\mapsto\sigma\circ\gamma$ and
+$S_{n}\rightarrow S_{n},\ \sigma\mapsto\sigma\circ\gamma^{-1}$ are mutually
+inverse. Thus, the map $S_{n}\rightarrow S_{n},\ \sigma\mapsto\sigma
+\circ\gamma$ is invertible, i.e., a bijection. Lemma
+\ref{lem.sol.det.laplace-multi.group-bij} is proven.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.det.laplace-multi.group-bij}.]Let $\mathbf{A}$ be
+the map $S_{n}\rightarrow S_{n},\ \sigma\mapsto\sigma\circ\gamma$. Let
+$\mathbf{B}$ be the map $S_{n}\rightarrow S_{n},\ \sigma\mapsto\sigma
+\circ\gamma^{-1}$. Then, $\mathbf{A}\circ\mathbf{B}=\operatorname*{id}%
+\nolimits_{S_{n}}$\ \ \ \ \footnote{\textit{Proof.} Every $\sigma\in S_{n}$
+satisfies%
+\begin{align*}
+\left(  \mathbf{A}\circ\mathbf{B}\right)  \left(  \sigma\right)   &
+=\mathbf{A}\left(  \underbrace{\mathbf{B}\left(  \sigma\right)  }%
+_{\substack{=\sigma\circ\gamma^{-1}\\\text{(by the definition of }%
+\mathbf{B}\text{)}}}\right)  =\mathbf{A}\left(  \sigma\circ\gamma^{-1}\right)
+=\left(  \sigma\circ\gamma^{-1}\right)  \circ\gamma\ \ \ \ \ \ \ \ \ \ \left(
+\text{by the definition of }\mathbf{A}\right) \\
+&  =\sigma\circ\underbrace{\gamma^{-1}\circ\gamma}_{=\operatorname*{id}%
+}=\sigma\circ\operatorname*{id}=\sigma=\operatorname*{id}\nolimits_{S_{n}%
+}\left(  \sigma\right)  .
+\end{align*}
+In other words, $\mathbf{A}\circ\mathbf{B}=\operatorname*{id}\nolimits_{S_{n}%
+}$. Qed.} and $\mathbf{B}\circ\mathbf{A}=\operatorname*{id}\nolimits_{S_{n}}%
+$\ \ \ \ \footnote{\textit{Proof.} Every $\sigma\in S_{n}$ satisfies%
+\begin{align*}
+\left(  \mathbf{B}\circ\mathbf{A}\right)  \left(  \sigma\right)   &
+=\mathbf{B}\left(  \underbrace{\mathbf{A}\left(  \sigma\right)  }%
+_{\substack{=\sigma\circ\gamma\\\text{(by the definition of }\mathbf{A}%
+\text{)}}}\right)  =\mathbf{B}\left(  \sigma\circ\gamma\right)  =\left(
+\sigma\circ\gamma\right)  \circ\gamma^{-1}\ \ \ \ \ \ \ \ \ \ \left(  \text{by
+the definition of }\mathbf{B}\right) \\
+&  =\sigma\circ\underbrace{\gamma\circ\gamma^{-1}}_{=\operatorname*{id}%
+}=\sigma\circ\operatorname*{id}=\sigma=\operatorname*{id}\nolimits_{S_{n}%
+}\left(  \sigma\right)  .
+\end{align*}
+In other words, $\mathbf{B}\circ\mathbf{A}=\operatorname*{id}\nolimits_{S_{n}%
+}$. Qed.}. These two equalities show that the maps $\mathbf{A}$ and
+$\mathbf{B}$ are mutually inverse. Hence, the map $\mathbf{A}$ is invertible.
+In other words, the map $\mathbf{A}$ is a bijection. In other words, the map
+$S_{n}\rightarrow S_{n},\ \sigma\mapsto\sigma\circ\gamma$ is a bijection
+(since th map $\mathbf{A}$ is the map $S_{n}\rightarrow S_{n},\ \sigma
+\mapsto\sigma\circ\gamma$). This proves Lemma
+\ref{lem.sol.det.laplace-multi.group-bij}.
+\end{proof}
+\end{verlong}
+
+\begin{proof}
+\begin{verlong}
+For every $h\in\mathbb{N}$, we let $\operatorname*{id}\nolimits_{h}$ denote
+the identity permutation $\operatorname*{id}\nolimits_{\left\{  1,2,\ldots
+,h\right\}  }\in S_{h}$. For every $h\in\mathbb{N}$, we have%
+\begin{equation}
+\left(  -1\right)  ^{\operatorname*{id}\nolimits_{h}}=1.
+\label{pf.lem.det.laplace-multi.Apq.sign-1}%
+\end{equation}
+(Indeed, this is just a restatement of the well-known fact that $\left(
+-1\right)  ^{\operatorname*{id}}=1$, where $\operatorname*{id}%
+=\operatorname*{id}\nolimits_{h}$ is the identity permutation in $S_{h}$.)
+\end{verlong}
+
+\begin{vershort}
+Define $k\in\mathbb{N}$ by $k=\left\vert P\right\vert =\left\vert Q\right\vert
+$. (This makes sense, since we assumed that $\left\vert P\right\vert
+=\left\vert Q\right\vert $.)
+
+The definition of $\widetilde{P}$ yields $\widetilde{P}=\left\{
+1,2,\ldots,n\right\}  \setminus P$. Since $P$ is a subset of $\left\{
+1,2,\ldots,n\right\}  $, this leads to $\left\vert \widetilde{P}\right\vert
+=\underbrace{\left\vert \left\{  1,2,\ldots,n\right\}  \right\vert }%
+_{=n}-\underbrace{\left\vert P\right\vert }_{=k}=n-k$. Thus, $n-k=\left\vert
+\widetilde{P}\right\vert \geq0$, so that $n\geq k$ and thus $k\in\left\{
+0,1,\ldots,n\right\}  $.
+\end{vershort}
+
+\begin{verlong}
+The definition of $\widetilde{P}$ yields $\widetilde{P}=\left\{
+1,2,\ldots,n\right\}  \setminus P\subseteq\left\{  1,2,\ldots,n\right\}  $.
+Thus, $\widetilde{P}$ is a finite set (since $\left\{  1,2,\ldots,n\right\}  $
+is a finite set). Hence, $\left\vert \widetilde{P}\right\vert \in\mathbb{N}$.
+
+Also, $P\subseteq\left\{  1,2,\ldots,n\right\}  $. Thus, $P$ is a finite set
+(since $\left\{  1,2,\ldots,n\right\}  $ is a finite set). Hence, $\left\vert
+P\right\vert \in\mathbb{N}$. Thus, we can define $k\in\mathbb{N}$ by
+$k=\left\vert P\right\vert $. Consider this $k$. We have $k=\left\vert
+P\right\vert =\left\vert Q\right\vert $.
+
+Also,%
+\begin{align*}
+\left\vert \underbrace{\widetilde{P}}_{=\left\{  1,2,\ldots,n\right\}
+\setminus P}\right\vert  &  =\left\vert \left\{  1,2,\ldots,n\right\}
+\setminus P\right\vert =\underbrace{\left\vert \left\{  1,2,\ldots,n\right\}
+\right\vert }_{=n}-\underbrace{\left\vert P\right\vert }_{=k}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }P\subseteq\left\{  1,2,\ldots
+,n\right\}  \right) \\
+&  =n-k.
+\end{align*}
+Hence, $n-k=\left\vert \widetilde{P}\right\vert \in\mathbb{N}$; thus,
+$n-k\geq0$. In other words, $k\leq n$. Combined with $k\geq0$ (since
+$k=\left\vert P\right\vert \in\mathbb{N}$), this yields $k\in\left\{
+0,1,\ldots,n\right\}  $.
+\end{verlong}
+
+Let $\left(  p_{1},p_{2},\ldots,p_{k}\right)  $ be the list of all elements of
+$P$ in increasing order (with no repetitions). (This is well-defined, because
+$\left\vert P\right\vert =k$.)
+
+Let $\left(  r_{1},r_{2},\ldots,r_{n-k}\right)  $ be the list of all elements
+of $\widetilde{P}$ in increasing order (with no repetitions). (This is
+well-defined, because $\left\vert \widetilde{P}\right\vert =n-k$.)
+
+We know that $\left(  r_{1},r_{2},\ldots,r_{n-k}\right)  $ is the list of all
+elements of $\widetilde{P}$ in increasing order (with no repetitions). In
+other words, $\left(  r_{1},r_{2},\ldots,r_{n-k}\right)  $ is the list of all
+elements of $\left\{  1,2,\ldots,n\right\}  \setminus P$ in increasing order
+(with no repetitions) (since $\widetilde{P}=\left\{  1,2,\ldots,n\right\}
+\setminus P$). Thus, for every $\alpha\in S_{k}$ and $\beta\in S_{n-k}$, we
+can define an element $\sigma_{P,\alpha,\beta}\in S_{n}$ according to Exercise
+\ref{exe.Ialbe} \textbf{(a)} (applied to $P$, $\left(  p_{1},p_{2}%
+,\ldots,p_{k}\right)  $ and $\left(  r_{1},r_{2},\ldots,r_{n-k}\right)  $
+instead of $I$, $\left(  a_{1},a_{2},\ldots,a_{k}\right)  $ and $\left(
+b_{1},b_{2},\ldots,b_{n-k}\right)  $). Consider this $\sigma_{P,\alpha,\beta}%
+$. Exercise \ref{exe.Ialbe} \textbf{(b)} (applied to $P$, $\left(  p_{1}%
+,p_{2},\ldots,p_{k}\right)  $ and $\left(  r_{1},r_{2},\ldots,r_{n-k}\right)
+$ instead of $I$, $\left(  a_{1},a_{2},\ldots,a_{k}\right)  $ and $\left(
+b_{1},b_{2},\ldots,b_{n-k}\right)  $) shows that for every $\alpha\in S_{k}$
+and $\beta\in S_{n-k}$, we have%
+\[
+\ell\left(  \sigma_{P,\alpha,\beta}\right)  =\ell\left(  \alpha\right)
++\ell\left(  \beta\right)  +\sum P-\left(  1+2+\cdots+k\right)
+\]
+and%
+\begin{equation}
+\left(  -1\right)  ^{\sigma_{P,\alpha,\beta}}=\left(  -1\right)  ^{\alpha
+}\cdot\left(  -1\right)  ^{\beta}\cdot\left(  -1\right)  ^{\sum P-\left(
+1+2+\cdots+k\right)  }. \label{pf.lem.det.laplace-multi.Apq.sign-gen}%
+\end{equation}
+
+
+\begin{vershort}
+Now, consider the identity permutations $\operatorname*{id}\in S_{k}$ and
+$\operatorname*{id}\in S_{n-k}$. (These are (in general) two different
+permutations, although we denote them both by $\operatorname*{id}$.) They give
+rise to an element $\sigma_{P,\operatorname*{id}\nolimits_{k}%
+,\operatorname*{id}\nolimits_{n-k}}\in S_{n}$ (obtained by setting
+$\alpha=\operatorname*{id}\in S_{k}$ and $\beta=\operatorname*{id}\in S_{n-k}$
+in the definition of $\sigma_{P,\alpha,\beta}$). Denote this element
+$\sigma_{P,\operatorname*{id}\nolimits_{k},\operatorname*{id}\nolimits_{n-k}}$
+by $\gamma$. Thus, $\gamma=\sigma_{P,\operatorname*{id}\nolimits_{k}%
+,\operatorname*{id}\nolimits_{n-k}}$, so that%
+\begin{align}
+\left(  -1\right)  ^{\gamma}  &  =\left(  -1\right)  ^{\sigma
+_{P,\operatorname*{id},\operatorname*{id}}}=\underbrace{\left(  -1\right)
+^{\operatorname*{id}}}_{=1}\cdot\underbrace{\left(  -1\right)
+^{\operatorname*{id}}}_{=1}\cdot\left(  -1\right)  ^{\sum P-\left(
+1+2+\cdots+k\right)  }\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{pf.lem.det.laplace-multi.Apq.sign-gen})}\right) \nonumber\\
+&  =\left(  -1\right)  ^{\sum P-\left(  1+2+\cdots+k\right)  }.
+\label{pf.lem.det.laplace-multi.Apq.short.sign-gamma}%
+\end{align}
+
+\end{vershort}
+
+\begin{verlong}
+Now, $\operatorname*{id}\nolimits_{k}\in S_{k}$ and $\operatorname*{id}%
+\nolimits_{n-k}\in S_{n-k}$. Hence, an element $\sigma_{P,\operatorname*{id}%
+\nolimits_{k},\operatorname*{id}\nolimits_{n-k}}\in S_{n}$ is defined. Denote
+this element $\sigma_{P,\operatorname*{id}\nolimits_{k},\operatorname*{id}%
+\nolimits_{n-k}}$ by $\gamma$. Thus, $\gamma=\sigma_{P,\operatorname*{id}%
+\nolimits_{k},\operatorname*{id}\nolimits_{n-k}}$, so that%
+\begin{align}
+\left(  -1\right)  ^{\gamma}  &  =\left(  -1\right)  ^{\sigma
+_{P,\operatorname*{id}\nolimits_{k},\operatorname*{id}\nolimits_{n-k}}%
+}=\underbrace{\left(  -1\right)  ^{\operatorname*{id}\nolimits_{k}}%
+}_{\substack{=1\\\text{(by (\ref{pf.lem.det.laplace-multi.Apq.sign-1}%
+)}\\\text{(applied to }h=k\text{))}}}\cdot\underbrace{\left(  -1\right)
+^{\operatorname*{id}\nolimits_{n-k}}}_{\substack{=1\\\text{(by
+(\ref{pf.lem.det.laplace-multi.Apq.sign-1})}\\\text{(applied to }%
+h=n-k\text{))}}}\cdot\left(  -1\right)  ^{\sum P-\left(  1+2+\cdots+k\right)
+}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{pf.lem.det.laplace-multi.Apq.sign-gen})}\right) \nonumber\\
+&  =\left(  -1\right)  ^{\sum P-\left(  1+2+\cdots+k\right)  }.
+\label{pf.lem.det.laplace-multi.Apq.sign-gamma}%
+\end{align}
+
+\end{verlong}
+
+Now, we claim that%
+\begin{equation}
+\left(  \gamma\left(  i\right)  =p_{i}\ \ \ \ \ \ \ \ \ \ \text{for every
+}i\in\left\{  1,2,\ldots,k\right\}  \right)
+\label{pf.lem.det.laplace-multi.Apq.gamma-tuple1}%
+\end{equation}
+and%
+\begin{equation}
+\left(  \gamma\left(  k+i\right)  =r_{i}\ \ \ \ \ \ \ \ \ \ \text{for every
+}i\in\left\{  1,2,\ldots,n-k\right\}  \right)  .
+\label{pf.lem.det.laplace-multi.Apq.gamma-tuple2}%
+\end{equation}
+
+
+\begin{vershort}
+\textit{Proof of (\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple1}) and
+(\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple2}):} The permutation $\gamma$
+is $\sigma_{P,\operatorname*{id},\operatorname*{id}}$. In other words, the
+permutation $\gamma$ is the unique $\sigma\in S_{n}$ satisfying%
+\begin{equation}
+\left(  \sigma\left(  1\right)  ,\sigma\left(  2\right)  ,\ldots,\sigma\left(
+n\right)  \right)  =\left(  p_{\operatorname*{id}\left(  1\right)
+},p_{\operatorname*{id}\left(  2\right)  },\ldots,p_{\operatorname*{id}\left(
+k\right)  },r_{\operatorname*{id}\left(  1\right)  },r_{\operatorname*{id}%
+\left(  2\right)  },\ldots,r_{\operatorname*{id}\left(  n-k\right)  }\right)
+\label{pf.lem.det.laplace-multi.Apq.short.gamma-tuple.pf.1}%
+\end{equation}
+(because this is how $\sigma_{P,\operatorname*{id},\operatorname*{id}}$ was
+defined). Hence, $\gamma$ is a $\sigma\in S_{n}$ satisfying
+(\ref{pf.lem.det.laplace-multi.Apq.short.gamma-tuple.pf.1}) (since $\gamma
+=\sigma_{P,\operatorname*{id},\operatorname*{id}}$). In other words, $\gamma$
+is an element of $S_{n}$ and satisfies%
+\[
+\left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)  ,\ldots,\gamma\left(
+n\right)  \right)  =\left(  p_{\operatorname*{id}\left(  1\right)
+},p_{\operatorname*{id}\left(  2\right)  },\ldots,p_{\operatorname*{id}\left(
+k\right)  },r_{\operatorname*{id}\left(  1\right)  },r_{\operatorname*{id}%
+\left(  2\right)  },\ldots,r_{\operatorname*{id}\left(  n-k\right)  }\right)
+.
+\]
+Thus,%
+\begin{align*}
+\left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)  ,\ldots,\gamma\left(
+n\right)  \right)   &  =\left(  p_{\operatorname*{id}\left(  1\right)
+},p_{\operatorname*{id}\left(  2\right)  },\ldots,p_{\operatorname*{id}\left(
+k\right)  },r_{\operatorname*{id}\left(  1\right)  },r_{\operatorname*{id}%
+\left(  2\right)  },\ldots,r_{\operatorname*{id}\left(  n-k\right)  }\right)
+\\
+&  =\left(  p_{1},p_{2},\ldots,p_{k},r_{1},r_{2},\ldots,r_{n-k}\right)  .
+\end{align*}
+Hence,%
+\begin{equation}
+\left(  \gamma\left(  i\right)  =p_{i}\ \ \ \ \ \ \ \ \ \ \text{for every
+}i\in\left\{  1,2,\ldots,k\right\}  \right)
+\label{pf.lem.det.laplace-multi.Apq.short.gamma-tuple.pf.gamma1}%
+\end{equation}
+and%
+\begin{equation}
+\left(  \gamma\left(  i\right)  =r_{i-k}\ \ \ \ \ \ \ \ \ \ \text{for every
+}i\in\left\{  k+1,k+2,\ldots,n\right\}  \right)  .
+\label{pf.lem.det.laplace-multi.Apq.short.gamma-tuple.pf.gamma2}%
+\end{equation}
+Now, (\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple1}) follows immediately
+from (\ref{pf.lem.det.laplace-multi.Apq.short.gamma-tuple.pf.gamma1}).
+Furthermore, (\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple2}) follows from
+(\ref{pf.lem.det.laplace-multi.Apq.short.gamma-tuple.pf.gamma2}) (applied to
+$k+i$ instead of $i$). Hence, both
+(\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple1}) and
+(\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple2}) are proven.
+\end{vershort}
+
+\begin{verlong}
+\textit{Proof of (\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple1}) and
+(\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple2}):} The permutation
+$\sigma_{P,\operatorname*{id}\nolimits_{k},\operatorname*{id}\nolimits_{n-k}}$
+is the unique $\sigma\in S_{n}$ satisfying%
+\begin{equation}
+\left(  \sigma\left(  1\right)  ,\sigma\left(  2\right)  ,\ldots,\sigma\left(
+n\right)  \right)  =\left(  p_{\operatorname*{id}\nolimits_{k}\left(
+1\right)  },p_{\operatorname*{id}\nolimits_{k}\left(  2\right)  }%
+,\ldots,p_{\operatorname*{id}\nolimits_{k}\left(  k\right)  }%
+,r_{\operatorname*{id}\nolimits_{n-k}\left(  1\right)  },r_{\operatorname*{id}%
+\nolimits_{n-k}\left(  2\right)  },\ldots,r_{\operatorname*{id}\nolimits_{n-k}%
+\left(  n-k\right)  }\right)
+\label{pf.lem.det.laplace-multi.Apq.gamma-tuple.pf.1}%
+\end{equation}
+(because this is how $\sigma_{P,\operatorname*{id}\nolimits_{k}%
+,\operatorname*{id}\nolimits_{n-k}}$ is defined). Hence, $\sigma
+_{P,\operatorname*{id}\nolimits_{k},\operatorname*{id}\nolimits_{n-k}}$ is a
+$\sigma\in S_{n}$ satisfying
+(\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple.pf.1}). In other words,
+$\gamma$ is a $\sigma\in S_{n}$ satisfying
+(\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple.pf.1}) (since $\gamma
+=\sigma_{P,\operatorname*{id}\nolimits_{k},\operatorname*{id}\nolimits_{n-k}}%
+$). In other words, $\gamma$ is an element of $S_{n}$ and satisfies%
+\begin{align}
+&  \left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)  ,\ldots
+,\gamma\left(  n\right)  \right) \nonumber\\
+&  =\left(  p_{\operatorname*{id}\nolimits_{k}\left(  1\right)  }%
+,p_{\operatorname*{id}\nolimits_{k}\left(  2\right)  },\ldots
+,p_{\operatorname*{id}\nolimits_{k}\left(  k\right)  },r_{\operatorname*{id}%
+\nolimits_{n-k}\left(  1\right)  },r_{\operatorname*{id}\nolimits_{n-k}\left(
+2\right)  },\ldots,r_{\operatorname*{id}\nolimits_{n-k}\left(  n-k\right)
+}\right)  . \label{pf.lem.det.laplace-multi.Apq.gamma-tuple.pf.2}%
+\end{align}
+Now, $\left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)  ,\ldots
+,\gamma\left(  k\right)  \right)  =\left(  p_{\operatorname*{id}%
+\nolimits_{k}\left(  1\right)  },p_{\operatorname*{id}\nolimits_{k}\left(
+2\right)  },\ldots,p_{\operatorname*{id}\nolimits_{k}\left(  k\right)
+}\right)  $\ \ \ \ \footnote{\textit{Proof.} We have%
+\begin{align*}
+&  \left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)  ,\ldots
+,\gamma\left(  k\right)  \right) \\
+&  =\left(  \text{the list of the first }k\text{ entries of the list
+}\underbrace{\left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)
+,\ldots,\gamma\left(  n\right)  \right)  }_{\substack{=\left(
+p_{\operatorname*{id}\nolimits_{k}\left(  1\right)  },p_{\operatorname*{id}%
+\nolimits_{k}\left(  2\right)  },\ldots,p_{\operatorname*{id}\nolimits_{k}%
+\left(  k\right)  },r_{\operatorname*{id}\nolimits_{n-k}\left(  1\right)
+},r_{\operatorname*{id}\nolimits_{n-k}\left(  2\right)  },\ldots
+,r_{\operatorname*{id}\nolimits_{n-k}\left(  n-k\right)  }\right)  \\\text{(by
+(\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple.pf.2}))}}}\right) \\
+&  =\left(  \text{the list of the first }k\text{ entries of the list }\left(
+p_{\operatorname*{id}\nolimits_{k}\left(  1\right)  },p_{\operatorname*{id}%
+\nolimits_{k}\left(  2\right)  },\ldots,p_{\operatorname*{id}\nolimits_{k}%
+\left(  k\right)  },r_{\operatorname*{id}\nolimits_{n-k}\left(  1\right)
+},r_{\operatorname*{id}\nolimits_{n-k}\left(  2\right)  },\ldots
+,r_{\operatorname*{id}\nolimits_{n-k}\left(  n-k\right)  }\right)  \right) \\
+&  =\left(  p_{\operatorname*{id}\nolimits_{k}\left(  1\right)  }%
+,p_{\operatorname*{id}\nolimits_{k}\left(  2\right)  },\ldots
+,p_{\operatorname*{id}\nolimits_{k}\left(  k\right)  }\right)  ,
+\end{align*}
+qed.}. In other words, $\gamma\left(  i\right)  =p_{\operatorname*{id}%
+\nolimits_{k}\left(  i\right)  }$ for every $i\in\left\{  1,2,\ldots
+,k\right\}  $. Hence, for every $i\in\left\{  1,2,\ldots,k\right\}  $, we have
+$\gamma\left(  i\right)  =p_{\operatorname*{id}\nolimits_{k}\left(  i\right)
+}=p_{i}$ (since $\underbrace{\operatorname*{id}\nolimits_{k}}%
+_{=\operatorname*{id}\nolimits_{\left\{  1,2,\ldots,k\right\}  }}\left(
+i\right)  =\operatorname*{id}\nolimits_{\left\{  1,2,\ldots,k\right\}
+}\left(  i\right)  =i$). This proves
+(\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple1}).
+
+Furthermore, $\left(  \gamma\left(  k+1\right)  ,\gamma\left(  k+2\right)
+,\ldots,\gamma\left(  n\right)  \right)  =\left(  r_{\operatorname*{id}%
+\nolimits_{n-k}\left(  1\right)  },r_{\operatorname*{id}\nolimits_{n-k}\left(
+2\right)  },\ldots,r_{\operatorname*{id}\nolimits_{n-k}\left(  n-k\right)
+}\right)  $\ \ \ \ \footnote{\textit{Proof.} We have%
+\begin{align*}
+&  \left(  \gamma\left(  k+1\right)  ,\gamma\left(  k+2\right)  ,\ldots
+,\gamma\left(  n\right)  \right) \\
+&  =\left(  \text{the list of the last }n-k\text{ entries of the list
+}\underbrace{\left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)
+,\ldots,\gamma\left(  n\right)  \right)  }_{\substack{=\left(
+p_{\operatorname*{id}\nolimits_{k}\left(  1\right)  },p_{\operatorname*{id}%
+\nolimits_{k}\left(  2\right)  },\ldots,p_{\operatorname*{id}\nolimits_{k}%
+\left(  k\right)  },r_{\operatorname*{id}\nolimits_{n-k}\left(  1\right)
+},r_{\operatorname*{id}\nolimits_{n-k}\left(  2\right)  },\ldots
+,r_{\operatorname*{id}\nolimits_{n-k}\left(  n-k\right)  }\right)  \\\text{(by
+(\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple.pf.2}))}}}\right) \\
+&  =\left(  \text{the list of the last }n-k\text{ entries of the list }\left(
+p_{\operatorname*{id}\nolimits_{k}\left(  1\right)  },p_{\operatorname*{id}%
+\nolimits_{k}\left(  2\right)  },\ldots,p_{\operatorname*{id}\nolimits_{k}%
+\left(  k\right)  },r_{\operatorname*{id}\nolimits_{n-k}\left(  1\right)
+},r_{\operatorname*{id}\nolimits_{n-k}\left(  2\right)  },\ldots
+,r_{\operatorname*{id}\nolimits_{n-k}\left(  n-k\right)  }\right)  \right) \\
+&  =\left(  r_{\operatorname*{id}\nolimits_{n-k}\left(  1\right)
+},r_{\operatorname*{id}\nolimits_{n-k}\left(  2\right)  },\ldots
+,r_{\operatorname*{id}\nolimits_{n-k}\left(  n-k\right)  }\right)  ,
+\end{align*}
+qed.}. In other words, $\gamma\left(  k+i\right)  =r_{\operatorname*{id}%
+\nolimits_{n-k}\left(  i\right)  }$ for every $i\in\left\{  1,2,\ldots
+,n-k\right\}  $. Hence, for every $i\in\left\{  1,2,\ldots,n-k\right\}  $, we
+have $\gamma\left(  k+i\right)  =r_{\operatorname*{id}\nolimits_{n-k}\left(
+i\right)  }=r_{i}$ (since $\underbrace{\operatorname*{id}\nolimits_{n-k}%
+}_{=\operatorname*{id}\nolimits_{\left\{  1,2,\ldots,n-k\right\}  }}\left(
+i\right)  =\operatorname*{id}\nolimits_{\left\{  1,2,\ldots,n-k\right\}
+}\left(  i\right)  =i$). This proves
+(\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple2}). Hence, both
+(\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple1}) and
+(\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple2}) are proven.
+\end{verlong}
+
+\begin{verlong}
+Now, recall that $\gamma$ is an element of $S_{n}$. In other words, $\gamma$
+is a permutation of $\left\{  1,2,\ldots,n\right\}  $ (since $S_{n}$ is the
+set of all permutations of $\left\{  1,2,\ldots,n\right\}  $). Hence, $\gamma$
+is a bijective map $\left\{  1,2,\ldots,n\right\}  \rightarrow\left\{
+1,2,\ldots,n\right\}  $.
+\end{verlong}
+
+\begin{vershort}
+Define an $n\times n$-matrix $A^{\prime}$ by $A^{\prime}=\left(
+a_{\gamma\left(  i\right)  ,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$.
+Define an $n\times n$-matrix $B^{\prime}$ by $B^{\prime}=\left(
+b_{\gamma\left(  i\right)  ,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$.
+Then,%
+\begin{equation}
+\operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)
+}A=\operatorname*{sub}\nolimits_{\left(  1,2,\ldots,k\right)  }^{w\left(
+Q\right)  }\left(  A^{\prime}\right)
+\label{pf.lem.det.laplace-multi.Apq.short.sub1}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.det.laplace-multi.Apq.short.sub1}):}
+The lists $w\left(  P\right)  $ and $\left(  p_{1},p_{2},\ldots,p_{k}\right)
+$ must be identical (since they are both defined to be the list of all
+elements of $P$ in increasing order (with no repetitions)). In other words, we
+have $w\left(  P\right)  =\left(  p_{1},p_{2},\ldots,p_{k}\right)  $.
+\par
+Write the list $w\left(  Q\right)  $ in the form $w\left(  Q\right)  =\left(
+q_{1},q_{2},\ldots,q_{\ell}\right)  $ for some $\ell\in\mathbb{N}$. (Actually,
+$\ell=k$, but we will not use this.)
+\par
+From $w\left(  P\right)  =\left(  p_{1},p_{2},\ldots,p_{k}\right)  $ and
+$w\left(  Q\right)  =\left(  q_{1},q_{2},\ldots,q_{\ell}\right)  $, we obtain%
+\begin{align}
+\operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)  }A  &
+=\operatorname*{sub}\nolimits_{\left(  p_{1},p_{2},\ldots,p_{k}\right)
+}^{\left(  q_{1},q_{2},\ldots,q_{\ell}\right)  }A=\operatorname*{sub}%
+\nolimits_{p_{1},p_{2},\ldots,p_{k}}^{q_{1},q_{2},\ldots,q_{\ell}}A=\left(
+a_{p_{x},q_{y}}\right)  _{1\leq x\leq k,\ 1\leq y\leq\ell}%
+\label{pf.lem.det.laplace-multi.Apq.short.sub1.pf.1}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\operatorname*{sub}%
+\nolimits_{p_{1},p_{2},\ldots,p_{k}}^{q_{1},q_{2},\ldots,q_{\ell}}A\text{,
+since }A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)
+.\nonumber
+\end{align}
+\par
+On the other hand, from $w\left(  Q\right)  =\left(  q_{1},q_{2}%
+,\ldots,q_{\ell}\right)  $, we obtain%
+\begin{align*}
+\operatorname*{sub}\nolimits_{\left(  1,2,\ldots,k\right)  }^{w\left(
+Q\right)  }\left(  A^{\prime}\right)   &  =\operatorname*{sub}%
+\nolimits_{\left(  1,2,\ldots,k\right)  }^{\left(  q_{1},q_{2},\ldots,q_{\ell
+}\right)  }\left(  A^{\prime}\right)  =\operatorname*{sub}%
+\nolimits_{1,2,\ldots,k}^{q_{1},q_{2},\ldots,q_{\ell}}\left(  A^{\prime
+}\right)  =\left(  \underbrace{a_{\gamma\left(  x\right)  ,q_{y}}%
+}_{\substack{=a_{p_{x},q_{y}}\\\text{(since }\gamma\left(  x\right)
+=p_{x}\\\text{(by (\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple1}),
+applied}\\\text{to }i=x\text{))}}}\right)  _{1\leq x\leq k,\ 1\leq y\leq\ell
+}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\operatorname*{sub}%
+\nolimits_{1,2,\ldots,k}^{q_{1},q_{2},\ldots,q_{\ell}}\left(  A^{\prime
+}\right)  \text{, since }A^{\prime}=\left(  a_{\gamma\left(  i\right)
+,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right) \\
+&  =\left(  a_{p_{x},q_{y}}\right)  _{1\leq x\leq k,\ 1\leq y\leq\ell}.
+\end{align*}
+Comparing this with (\ref{pf.lem.det.laplace-multi.Apq.short.sub1.pf.1}), we
+obtain $\operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)
+}A=\operatorname*{sub}\nolimits_{\left(  1,2,\ldots,k\right)  }^{w\left(
+Q\right)  }\left(  A^{\prime}\right)  $. This proves
+(\ref{pf.lem.det.laplace-multi.Apq.short.sub1}).} and%
+\begin{equation}
+\operatorname*{sub}\nolimits_{w\left(  \widetilde{P}\right)  }^{w\left(
+\widetilde{Q}\right)  }B=\operatorname*{sub}\nolimits_{\left(  k+1,k+2,\ldots
+,n\right)  }^{w\left(  \widetilde{Q}\right)  }B
+\label{pf.lem.det.laplace-multi.Apq.short.sub2}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.det.laplace-multi.Apq.short.sub2}):}
+The lists $w\left(  \widetilde{P}\right)  $ and $\left(  r_{1},r_{2}%
+,\ldots,r_{n-k}\right)  $ must be identical (since they are both defined to be
+the list of all elements of $\widetilde{P}$ in increasing order (with no
+repetitions)). In other words, we have $w\left(  \widetilde{P}\right)
+=\left(  r_{1},r_{2},\ldots,r_{n-k}\right)  $.
+\par
+Write the list $w\left(  \widetilde{Q}\right)  $ in the form $w\left(
+\widetilde{Q}\right)  =\left(  q_{1},q_{2},\ldots,q_{\ell}\right)  $ for some
+$\ell\in\mathbb{N}$. (Actually, $\ell=n-k$, but we will not use this.)
+\par
+From $w\left(  \widetilde{P}\right)  =\left(  r_{1},r_{2},\ldots
+,r_{n-k}\right)  $ and $w\left(  \widetilde{Q}\right)  =\left(  q_{1}%
+,q_{2},\ldots,q_{\ell}\right)  $, we obtain%
+\begin{align}
+\operatorname*{sub}\nolimits_{w\left(  \widetilde{P}\right)  }^{w\left(
+\widetilde{Q}\right)  }B  &  =\operatorname*{sub}\nolimits_{\left(
+r_{1},r_{2},\ldots,r_{n-k}\right)  }^{\left(  q_{1},q_{2},\ldots,q_{\ell
+}\right)  }B=\operatorname*{sub}\nolimits_{r_{1},r_{2},\ldots,r_{n-k}}%
+^{q_{1},q_{2},\ldots,q_{\ell}}B=\left(  b_{r_{x},q_{y}}\right)  _{1\leq x\leq
+n-k,\ 1\leq y\leq\ell}\label{pf.lem.det.laplace-multi.Apq.short.sub2.pf.1}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\operatorname*{sub}%
+\nolimits_{r_{1},r_{2},\ldots,r_{n-k}}^{q_{1},q_{2},\ldots,q_{\ell}}B\text{,
+since }B=\left(  b_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)
+.\nonumber
+\end{align}
+\par
+On the other hand, from $w\left(  \widetilde{Q}\right)  =\left(  q_{1}%
+,q_{2},\ldots,q_{\ell}\right)  $, we obtain%
+\begin{align*}
+\operatorname*{sub}\nolimits_{\left(  k+1,k+2,\ldots,n\right)  }^{w\left(
+\widetilde{Q}\right)  }\left(  B^{\prime}\right)   &  =\operatorname*{sub}%
+\nolimits_{\left(  k+1,k+2,\ldots,n\right)  }^{\left(  q_{1},q_{2}%
+,\ldots,q_{\ell}\right)  }\left(  B^{\prime}\right)  =\operatorname*{sub}%
+\nolimits_{k+1,k+2,\ldots,n}^{q_{1},q_{2},\ldots,q_{\ell}}\left(  B^{\prime
+}\right)  =\left(  \underbrace{b_{\gamma\left(  k+x\right)  ,q_{y}}%
+}_{\substack{=b_{r_{x},q_{y}}\\\text{(since }\gamma\left(  k+x\right)
+=r_{x}\\\text{(by (\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple2}),
+applied}\\\text{to }i=x\text{))}}}\right)  _{1\leq x\leq n-k,\ 1\leq y\leq
+\ell}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\operatorname*{sub}%
+\nolimits_{k+1,k+2,\ldots,n}^{q_{1},q_{2},\ldots,q_{\ell}}\left(  B^{\prime
+}\right)  \text{, since }B^{\prime}=\left(  b_{\gamma\left(  i\right)
+,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right) \\
+&  =\left(  b_{r_{x},q_{y}}\right)  _{1\leq x\leq n-k,\ 1\leq y\leq\ell}.
+\end{align*}
+Comparing this with (\ref{pf.lem.det.laplace-multi.Apq.short.sub2.pf.1}), we
+obtain $\operatorname*{sub}\nolimits_{w\left(  \widetilde{P}\right)
+}^{w\left(  \widetilde{Q}\right)  }B=\operatorname*{sub}\nolimits_{\left(
+k+1,k+2,\ldots,n\right)  }^{w\left(  \widetilde{Q}\right)  }B$. This proves
+(\ref{pf.lem.det.laplace-multi.Apq.short.sub2}).}.
+\end{vershort}
+
+\begin{verlong}
+Define an $n\times n$-matrix $A^{\prime}$ by $A^{\prime}=\left(
+a_{\gamma\left(  i\right)  ,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$.
+Define an $n\times n$-matrix $B^{\prime}$ by $B^{\prime}=\left(
+b_{\gamma\left(  i\right)  ,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$.
+Then,%
+\begin{equation}
+\operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)
+}A=\operatorname*{sub}\nolimits_{\left(  1,2,\ldots,k\right)  }^{w\left(
+Q\right)  }\left(  A^{\prime}\right)
+\label{pf.lem.det.laplace-multi.Apq.sub1}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.det.laplace-multi.Apq.sub1}):} Recall
+that $w\left(  P\right)  $ is the list of all elements of $P$ in increasing
+order (with no repetitions) (by the definition of $w\left(  P\right)  $).
+Thus,%
+\begin{align*}
+w\left(  P\right)   &  =\left(  \text{the list of all elements of }P\text{ in
+increasing order (with no repetitions)}\right) \\
+&  =\left(  p_{1},p_{2},\ldots,p_{k}\right)
+\end{align*}
+(since $\left(  p_{1},p_{2},\ldots,p_{k}\right)  $ is the list of all elements
+of $P$ in increasing order (with no repetitions)).
+\par
+Write the list $w\left(  Q\right)  $ in the form $w\left(  Q\right)  =\left(
+q_{1},q_{2},\ldots,q_{\ell}\right)  $ for some $\ell\in\mathbb{N}$. (Actually,
+$\ell=k$, but we will not use this.)
+\par
+From $w\left(  P\right)  =\left(  p_{1},p_{2},\ldots,p_{k}\right)  $ and
+$w\left(  Q\right)  =\left(  q_{1},q_{2},\ldots,q_{\ell}\right)  $, we obtain%
+\begin{align}
+\operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)  }A  &
+=\operatorname*{sub}\nolimits_{\left(  p_{1},p_{2},\ldots,p_{k}\right)
+}^{\left(  q_{1},q_{2},\ldots,q_{\ell}\right)  }A=\operatorname*{sub}%
+\nolimits_{p_{1},p_{2},\ldots,p_{k}}^{q_{1},q_{2},\ldots,q_{\ell}}A=\left(
+a_{p_{x},q_{y}}\right)  _{1\leq x\leq k,\ 1\leq y\leq\ell}%
+\label{pf.lem.det.laplace-multi.Apq.sub1.pf.1}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\operatorname*{sub}%
+\nolimits_{p_{1},p_{2},\ldots,p_{k}}^{q_{1},q_{2},\ldots,q_{\ell}}A\text{,
+since }A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)
+.\nonumber
+\end{align}
+\par
+On the other hand, from $w\left(  Q\right)  =\left(  q_{1},q_{2}%
+,\ldots,q_{\ell}\right)  $, we obtain%
+\begin{align*}
+\operatorname*{sub}\nolimits_{\left(  1,2,\ldots,k\right)  }^{w\left(
+Q\right)  }\left(  A^{\prime}\right)   &  =\operatorname*{sub}%
+\nolimits_{\left(  1,2,\ldots,k\right)  }^{\left(  q_{1},q_{2},\ldots,q_{\ell
+}\right)  }\left(  A^{\prime}\right)  =\operatorname*{sub}%
+\nolimits_{1,2,\ldots,k}^{q_{1},q_{2},\ldots,q_{\ell}}\left(  A^{\prime
+}\right)  =\left(  \underbrace{a_{\gamma\left(  x\right)  ,q_{y}}%
+}_{\substack{=a_{p_{x},q_{y}}\\\text{(since }\gamma\left(  x\right)
+=p_{x}\\\text{(by (\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple1}),
+applied}\\\text{to }i=x\text{))}}}\right)  _{1\leq x\leq k,\ 1\leq y\leq\ell
+}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\operatorname*{sub}%
+\nolimits_{1,2,\ldots,k}^{q_{1},q_{2},\ldots,q_{\ell}}\left(  A^{\prime
+}\right)  \text{, since }A^{\prime}=\left(  a_{\gamma\left(  i\right)
+,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right) \\
+&  =\left(  a_{p_{x},q_{y}}\right)  _{1\leq x\leq k,\ 1\leq y\leq\ell}.
+\end{align*}
+Comparing this with (\ref{pf.lem.det.laplace-multi.Apq.sub1.pf.1}), we obtain
+$\operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)
+}A=\operatorname*{sub}\nolimits_{\left(  1,2,\ldots,k\right)  }^{w\left(
+Q\right)  }\left(  A^{\prime}\right)  $. This proves
+(\ref{pf.lem.det.laplace-multi.Apq.sub1}).} and%
+\begin{equation}
+\operatorname*{sub}\nolimits_{w\left(  \widetilde{P}\right)  }^{w\left(
+\widetilde{Q}\right)  }B=\operatorname*{sub}\nolimits_{\left(  k+1,k+2,\ldots
+,n\right)  }^{w\left(  \widetilde{Q}\right)  }B
+\label{pf.lem.det.laplace-multi.Apq.sub2}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.det.laplace-multi.Apq.sub2}):} Recall
+that $w\left(  \widetilde{P}\right)  $ is the list of all elements of
+$\widetilde{P}$ in increasing order (with no repetitions) (by the definition
+of $w\left(  \widetilde{P}\right)  $). Thus,%
+\begin{align*}
+w\left(  \widetilde{P}\right)   &  =\left(  \text{the list of all elements of
+}\widetilde{P}\text{ in increasing order (with no repetitions)}\right) \\
+&  =\left(  r_{1},r_{2},\ldots,r_{n-k}\right)
+\end{align*}
+(since $\left(  r_{1},r_{2},\ldots,r_{n-k}\right)  $ is the list of all
+elements of $\widetilde{P}$ in increasing order (with no repetitions)).
+\par
+Write the list $w\left(  \widetilde{Q}\right)  $ in the form $w\left(
+\widetilde{Q}\right)  =\left(  q_{1},q_{2},\ldots,q_{\ell}\right)  $ for some
+$\ell\in\mathbb{N}$. (Actually, $\ell=n-k$, but we will not use this.)
+\par
+From $w\left(  \widetilde{P}\right)  =\left(  r_{1},r_{2},\ldots
+,r_{n-k}\right)  $ and $w\left(  \widetilde{Q}\right)  =\left(  q_{1}%
+,q_{2},\ldots,q_{\ell}\right)  $, we obtain%
+\begin{align}
+\operatorname*{sub}\nolimits_{w\left(  \widetilde{P}\right)  }^{w\left(
+\widetilde{Q}\right)  }B  &  =\operatorname*{sub}\nolimits_{\left(
+r_{1},r_{2},\ldots,r_{n-k}\right)  }^{\left(  q_{1},q_{2},\ldots,q_{\ell
+}\right)  }B=\operatorname*{sub}\nolimits_{r_{1},r_{2},\ldots,r_{n-k}}%
+^{q_{1},q_{2},\ldots,q_{\ell}}B=\left(  b_{r_{x},q_{y}}\right)  _{1\leq x\leq
+n-k,\ 1\leq y\leq\ell}\label{pf.lem.det.laplace-multi.Apq.sub2.pf.1}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\operatorname*{sub}%
+\nolimits_{r_{1},r_{2},\ldots,r_{n-k}}^{q_{1},q_{2},\ldots,q_{\ell}}B\text{,
+since }B=\left(  b_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)
+.\nonumber
+\end{align}
+\par
+On the other hand, from $w\left(  \widetilde{Q}\right)  =\left(  q_{1}%
+,q_{2},\ldots,q_{\ell}\right)  $, we obtain%
+\begin{align*}
+\operatorname*{sub}\nolimits_{\left(  k+1,k+2,\ldots,n\right)  }^{w\left(
+\widetilde{Q}\right)  }\left(  B^{\prime}\right)   &  =\operatorname*{sub}%
+\nolimits_{\left(  k+1,k+2,\ldots,n\right)  }^{\left(  q_{1},q_{2}%
+,\ldots,q_{\ell}\right)  }\left(  B^{\prime}\right)  =\operatorname*{sub}%
+\nolimits_{k+1,k+2,\ldots,n}^{q_{1},q_{2},\ldots,q_{\ell}}\left(  B^{\prime
+}\right)  =\left(  \underbrace{b_{\gamma\left(  k+x\right)  ,q_{y}}%
+}_{\substack{=b_{r_{x},q_{y}}\\\text{(since }\gamma\left(  k+x\right)
+=r_{x}\\\text{(by (\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple2}),
+applied}\\\text{to }i=x\text{))}}}\right)  _{1\leq x\leq n-k,\ 1\leq y\leq
+\ell}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\operatorname*{sub}%
+\nolimits_{k+1,k+2,\ldots,n}^{q_{1},q_{2},\ldots,q_{\ell}}\left(  B^{\prime
+}\right)  \text{, since }B^{\prime}=\left(  b_{\gamma\left(  i\right)
+,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right) \\
+&  =\left(  b_{r_{x},q_{y}}\right)  _{1\leq x\leq n-k,\ 1\leq y\leq\ell}.
+\end{align*}
+Comparing this with (\ref{pf.lem.det.laplace-multi.Apq.sub2.pf.1}), we obtain
+$\operatorname*{sub}\nolimits_{w\left(  \widetilde{P}\right)  }^{w\left(
+\widetilde{Q}\right)  }B=\operatorname*{sub}\nolimits_{\left(  k+1,k+2,\ldots
+,n\right)  }^{w\left(  \widetilde{Q}\right)  }B$. This proves
+(\ref{pf.lem.det.laplace-multi.Apq.sub2}).}.
+\end{verlong}
+
+Lemma \ref{lem.sol.det.laplace-multi.group-bij} shows that the map
+$S_{n}\rightarrow S_{n},\ \sigma\mapsto\sigma\circ\gamma$ is a bijection.
+
+But $\gamma\left(  \left\{  1,2,\ldots,k\right\}  \right)  =P$%
+\ \ \ \ \footnote{\textit{Proof.} We have
+\begin{align*}
+\gamma\left(  \left\{  1,2,\ldots,k\right\}  \right)   &  =\left\{
+\gamma\left(  1\right)  ,\gamma\left(  2\right)  ,\ldots,\gamma\left(
+k\right)  \right\}  =\left\{  \underbrace{\gamma\left(  i\right)
+}_{\substack{=p_{i}\\\text{(by
+(\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple1}))}}}\ \mid\ i\in\left\{
+1,2,\ldots,k\right\}  \right\} \\
+&  =\left\{  p_{i}\ \mid\ i\in\left\{  1,2,\ldots,k\right\}  \right\}
+=\left\{  p_{1},p_{2},\ldots,p_{k}\right\}  =P
+\end{align*}
+(since $\left(  p_{1},p_{2},\ldots,p_{k}\right)  $ is a list of all elements
+of $P$). Qed.}. Hence, every $\sigma\in S_{n}$ satisfies%
+\begin{equation}
+\left(  \sigma\circ\gamma\right)  \left(  \left\{  1,2,\ldots,k\right\}
+\right)  =\sigma\left(  \underbrace{\gamma\left(  \left\{  1,2,\ldots
+,k\right\}  \right)  }_{=P}\right)  =\sigma\left(  P\right)  .
+\label{pf.lem.det.laplace-multi.Apq.3a}%
+\end{equation}
+
+
+\begin{vershort}
+Furthermore, every $\sigma\in S_{n}$ satisfies%
+\begin{equation}
+\prod_{i\in\left\{  1,2,\ldots,k\right\}  }a_{\gamma\left(  i\right)  ,\left(
+\sigma\circ\gamma\right)  \left(  i\right)  }=\prod_{i\in P}a_{i,\sigma\left(
+i\right)  } \label{pf.lem.det.laplace-multi.Apq.short.3b}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.det.laplace-multi.Apq.short.3b}):} Let
+$\sigma\in S_{n}$.
+\par
+We shall use the notation introduced in Definition \ref{def.sol.exe.Ialbe.12n}%
+. Thus, $\left[  k\right]  =\left\{  1,2,\ldots,k\right\}  $.
+\par
+Every $i\in\left\{  1,2,\ldots,k\right\}  $ satisfies $p_{i}=\gamma\left(
+i\right)  $ (by (\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple1})) and
+$\sigma\left(  \underbrace{p_{i}}_{=\gamma\left(  i\right)  }\right)
+=\sigma\left(  \gamma\left(  i\right)  \right)  =\left(  \sigma\circ
+\gamma\right)  \left(  i\right)  $. Hence, every $i\in\left\{  1,2,\ldots
+,k\right\}  $ satisfies%
+\begin{equation}
+a_{p_{i},\sigma\left(  p_{i}\right)  }=a_{\gamma\left(  i\right)  ,\left(
+\sigma\circ\gamma\right)  \left(  i\right)  }.
+\label{pf.lem.det.laplace-multi.Apq.short.3b.pf.1c}%
+\end{equation}
+\par
+Recall that $\left(  p_{1},p_{2},\ldots,p_{k}\right)  $ is the list of all
+elements of $P$ in increasing order (with no repetitions). Hence, Lemma
+\ref{lem.sol.exe.Ialbe.inclist} \textbf{(a)} (applied to $P$, $k$ and $\left(
+p_{1},p_{2},\ldots,p_{k}\right)  $ instead of $S$, $s$ and $\left(
+c_{1},c_{2},\ldots,c_{s}\right)  $) shows that the map $\left[  k\right]
+\rightarrow P,\ h\mapsto p_{h}$ is well-defined and a bijection. Hence, we can
+substitute $p_{h}$ for $i$ in the product $\prod_{i\in P}a_{i,\sigma\left(
+i\right)  }$. We thus obtain%
+\begin{align*}
+\prod_{i\in P}a_{i,\sigma\left(  i\right)  }  &  =\prod_{h\in\left[  k\right]
+}a_{p_{h},\sigma\left(  p_{h}\right)  }=\underbrace{\prod_{i\in\left[
+k\right]  }}_{\substack{=\prod_{i\in\left\{  1,2,\ldots,k\right\}
+}\\\text{(since }\left[  k\right]  =\left\{  1,2,\ldots,k\right\}  \text{)}%
+}}a_{p_{i},\sigma\left(  p_{i}\right)  }\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have renamed the index }h\text{
+as }i\text{ in the product}\right) \\
+&  =\prod_{i\in\left\{  1,2,\ldots,k\right\}  }\underbrace{a_{p_{i}%
+,\sigma\left(  p_{i}\right)  }}_{\substack{=a_{\gamma\left(  i\right)
+,\left(  \sigma\circ\gamma\right)  \left(  i\right)  }\\\text{(by
+(\ref{pf.lem.det.laplace-multi.Apq.short.3b.pf.1c}))}}}\\
+&  =\prod_{i\in\left\{  1,2,\ldots,k\right\}  }a_{\gamma\left(  i\right)
+,\left(  \sigma\circ\gamma\right)  \left(  i\right)  }.
+\end{align*}
+This proves (\ref{pf.lem.det.laplace-multi.Apq.short.3b}).} and%
+\begin{equation}
+\prod_{i\in\left\{  k+1,k+2,\ldots,n\right\}  }b_{\gamma\left(  i\right)
+,\left(  \sigma\circ\gamma\right)  \left(  i\right)  }=\prod_{i\in
+\widetilde{P}}b_{i,\sigma\left(  i\right)  }
+\label{pf.lem.det.laplace-multi.Apq.short.3c}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.det.laplace-multi.Apq.short.3c}):} Let
+$\sigma\in S_{n}$.
+\par
+We shall use the notation introduced in Definition \ref{def.sol.exe.Ialbe.12n}%
+. Thus, $\left[  n-k\right]  =\left\{  1,2,\ldots,n-k\right\}  $.
+\par
+Every $i\in\left\{  1,2,\ldots,n-k\right\}  $ satisfies $r_{i}=\gamma\left(
+k+i\right)  $ (by (\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple2})) and
+$\sigma\left(  \underbrace{r_{i}}_{=\gamma\left(  k+i\right)  }\right)
+=\sigma\left(  \gamma\left(  k+i\right)  \right)  =\left(  \sigma\circ
+\gamma\right)  \left(  k+i\right)  $. Hence, every $i\in\left\{
+1,2,\ldots,n-k\right\}  $ satisfies%
+\begin{equation}
+b_{r_{i},\sigma\left(  r_{i}\right)  }=b_{\gamma\left(  k+i\right)  ,\left(
+\sigma\circ\gamma\right)  \left(  k+i\right)  }.
+\label{pf.lem.det.laplace-multi.Apq.short.3c.pf.1c}%
+\end{equation}
+\par
+Recall that $\left(  r_{1},r_{2},\ldots,r_{n-k}\right)  $ is the list of all
+elements of $\widetilde{P}$ in increasing order (with no repetitions). Hence,
+Lemma \ref{lem.sol.exe.Ialbe.inclist} \textbf{(a)} (applied to $\widetilde{P}%
+$, $n-k$ and $\left(  r_{1},r_{2},\ldots,r_{n-k}\right)  $ instead of $S$, $s$
+and $\left(  c_{1},c_{2},\ldots,c_{s}\right)  $) shows that the map $\left[
+n-k\right]  \rightarrow\widetilde{P},\ h\mapsto r_{h}$ is well-defined and a
+bijection. Hence, we can substitute $r_{h}$ for $i$ in the product
+$\prod_{i\in\widetilde{P}}b_{i,\sigma\left(  i\right)  }$. We thus obtain%
+\begin{align*}
+\prod_{i\in\widetilde{P}}b_{i,\sigma\left(  i\right)  }  &  =\prod
+_{h\in\left[  n-k\right]  }b_{r_{h},\sigma\left(  r_{h}\right)  }%
+=\underbrace{\prod_{i\in\left[  n-k\right]  }}_{\substack{=\prod_{i\in\left\{
+1,2,\ldots,n-k\right\}  }\\\text{(since }\left[  n-k\right]  =\left\{
+1,2,\ldots,n-k\right\}  \text{)}}}b_{r_{i},\sigma\left(  r_{i}\right)  }\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have renamed the index }h\text{
+as }i\text{ in the product}\right) \\
+&  =\prod_{i\in\left\{  1,2,\ldots,n-k\right\}  }\underbrace{b_{r_{i}%
+,\sigma\left(  r_{i}\right)  }}_{\substack{=b_{\gamma\left(  k+i\right)
+,\left(  \sigma\circ\gamma\right)  \left(  k+i\right)  }\\\text{(by
+(\ref{pf.lem.det.laplace-multi.Apq.short.3c.pf.1c}))}}}\\
+&  =\prod_{i\in\left\{  1,2,\ldots,n-k\right\}  }b_{\gamma\left(  k+i\right)
+,\left(  \sigma\circ\gamma\right)  \left(  k+i\right)  }=\prod_{i\in\left\{
+k+1,k+2,\ldots,n\right\}  }b_{\gamma\left(  i\right)  ,\left(  \sigma
+\circ\gamma\right)  \left(  i\right)  }.\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }i\text{ for
+}k+i\text{ in the product}\right)  .
+\end{align*}
+This proves (\ref{pf.lem.det.laplace-multi.Apq.short.3c}).}.
+\end{vershort}
+
+\begin{verlong}
+Furthermore, every $\sigma\in S_{n}$ satisfies%
+\begin{equation}
+\prod_{i\in\left\{  1,2,\ldots,k\right\}  }a_{\gamma\left(  i\right)  ,\left(
+\sigma\circ\gamma\right)  \left(  i\right)  }=\prod_{i\in P}a_{i,\sigma\left(
+i\right)  } \label{pf.lem.det.laplace-multi.Apq.3b}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.det.laplace-multi.Apq.3b}):} Let
+$\sigma\in S_{n}$.
+\par
+We shall use the notation introduced in Definition \ref{def.sol.exe.Ialbe.12n}%
+. Thus, $\left[  k\right]  =\left\{  1,2,\ldots,k\right\}  $ (by the
+definition of $\left[  k\right]  $).
+\par
+Every $i\in\left\{  1,2,\ldots,k\right\}  $ satisfies%
+\begin{equation}
+p_{i}=\gamma\left(  i\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple1})}\right)
+\label{pf.lem.det.laplace-multi.Apq.3b.pf.1a}%
+\end{equation}
+and%
+\begin{equation}
+\sigma\left(  \underbrace{p_{i}}_{=\gamma\left(  i\right)  }\right)
+=\sigma\left(  \gamma\left(  i\right)  \right)  =\left(  \sigma\circ
+\gamma\right)  \left(  i\right)  .
+\label{pf.lem.det.laplace-multi.Apq.3b.pf.1b}%
+\end{equation}
+Hence, every $i\in\left\{  1,2,\ldots,k\right\}  $ satisfies%
+\begin{align}
+a_{p_{i},\sigma\left(  p_{i}\right)  }  &  =a_{p_{i},\left(  \sigma\circ
+\gamma\right)  \left(  i\right)  }\ \ \ \ \ \ \ \ \ \ \left(  \text{since
+}\sigma\left(  p_{i}\right)  =\left(  \sigma\circ\gamma\right)  \left(
+i\right)  \text{ (by (\ref{pf.lem.det.laplace-multi.Apq.3b.pf.1b}))}\right)
+\nonumber\\
+&  =a_{\gamma\left(  i\right)  ,\left(  \sigma\circ\gamma\right)  \left(
+i\right)  }\ \ \ \ \ \ \ \ \ \ \left(  \text{since }p_{i}=\gamma\left(
+i\right)  \text{ (by (\ref{pf.lem.det.laplace-multi.Apq.3b.pf.1a}))}\right)  .
+\label{pf.lem.det.laplace-multi.Apq.3b.pf.1c}%
+\end{align}
+\par
+Recall that $\left(  p_{1},p_{2},\ldots,p_{k}\right)  $ is the list of all
+elements of $P$ in increasing order (with no repetitions). Hence, Lemma
+\ref{lem.sol.exe.Ialbe.inclist} \textbf{(a)} (applied to $P$, $k$ and $\left(
+p_{1},p_{2},\ldots,p_{k}\right)  $ instead of $S$, $s$ and $\left(
+c_{1},c_{2},\ldots,c_{s}\right)  $) shows that the map $\left[  k\right]
+\rightarrow P,\ h\mapsto p_{h}$ is well-defined and a bijection. In
+particular, this map is a bijection. Hence, we can substitute $p_{h}$ for $i$
+in the product $\prod_{i\in P}a_{i,\sigma\left(  i\right)  }$. We thus obtain%
+\begin{align*}
+\prod_{i\in P}a_{i,\sigma\left(  i\right)  }  &  =\prod_{h\in\left[  k\right]
+}a_{p_{h},\sigma\left(  p_{h}\right)  }=\underbrace{\prod_{i\in\left[
+k\right]  }}_{\substack{=\prod_{i\in\left\{  1,2,\ldots,k\right\}
+}\\\text{(since }\left[  k\right]  =\left\{  1,2,\ldots,k\right\}  \text{)}%
+}}a_{p_{i},\sigma\left(  p_{i}\right)  }\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have renamed the index }h\text{
+as }i\text{ in the product}\right) \\
+&  =\prod_{i\in\left\{  1,2,\ldots,k\right\}  }\underbrace{a_{p_{i}%
+,\sigma\left(  p_{i}\right)  }}_{\substack{=a_{\gamma\left(  i\right)
+,\left(  \sigma\circ\gamma\right)  \left(  i\right)  }\\\text{(by
+(\ref{pf.lem.det.laplace-multi.Apq.3b.pf.1c}))}}}\\
+&  =\prod_{i\in\left\{  1,2,\ldots,k\right\}  }a_{\gamma\left(  i\right)
+,\left(  \sigma\circ\gamma\right)  \left(  i\right)  }.
+\end{align*}
+This proves (\ref{pf.lem.det.laplace-multi.Apq.3b}).} and%
+\begin{equation}
+\prod_{i\in\left\{  k+1,k+2,\ldots,n\right\}  }b_{\gamma\left(  i\right)
+,\left(  \sigma\circ\gamma\right)  \left(  i\right)  }=\prod_{i\in
+\widetilde{P}}b_{i,\sigma\left(  i\right)  }
+\label{pf.lem.det.laplace-multi.Apq.3c}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.det.laplace-multi.Apq.3c}):} Let
+$\sigma\in S_{n}$.
+\par
+We shall use the notation introduced in Definition \ref{def.sol.exe.Ialbe.12n}%
+. Thus, $\left[  n-k\right]  =\left\{  1,2,\ldots,n-k\right\}  $ (by the
+definition of $\left[  n-k\right]  $).
+\par
+Every $i\in\left\{  1,2,\ldots,n-k\right\}  $ satisfies%
+\begin{equation}
+r_{i}=\gamma\left(  k+i\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple2})}\right)
+\label{pf.lem.det.laplace-multi.Apq.3c.pf.1a}%
+\end{equation}
+and%
+\begin{equation}
+\sigma\left(  \underbrace{r_{i}}_{=\gamma\left(  k+i\right)  }\right)
+=\sigma\left(  \gamma\left(  k+i\right)  \right)  =\left(  \sigma\circ
+\gamma\right)  \left(  k+i\right)  .
+\label{pf.lem.det.laplace-multi.Apq.3c.pf.1b}%
+\end{equation}
+Hence, every $i\in\left\{  1,2,\ldots,n-k\right\}  $ satisfies%
+\begin{align}
+b_{r_{i},\sigma\left(  r_{i}\right)  }  &  =b_{r_{i},\left(  \sigma\circ
+\gamma\right)  \left(  k+i\right)  }\ \ \ \ \ \ \ \ \ \ \left(  \text{since
+}\sigma\left(  r_{i}\right)  =\left(  \sigma\circ\gamma\right)  \left(
+k+i\right)  \text{ (by (\ref{pf.lem.det.laplace-multi.Apq.3c.pf.1b}))}\right)
+\nonumber\\
+&  =b_{\gamma\left(  k+i\right)  ,\left(  \sigma\circ\gamma\right)  \left(
+k+i\right)  }\ \ \ \ \ \ \ \ \ \ \left(  \text{since }r_{i}=\gamma\left(
+k+i\right)  \text{ (by (\ref{pf.lem.det.laplace-multi.Apq.3c.pf.1a}))}\right)
+\nonumber\\
+&  =b_{\gamma\left(  i+k\right)  ,\left(  \sigma\circ\gamma\right)  \left(
+i+k\right)  }\ \ \ \ \ \ \ \ \ \ \left(  \text{since }k+i=i+k\right)  .
+\label{pf.lem.det.laplace-multi.Apq.3c.pf.1c}%
+\end{align}
+\par
+Recall that $\left(  r_{1},r_{2},\ldots,r_{n-k}\right)  $ is the list of all
+elements of $\widetilde{P}$ in increasing order (with no repetitions). Hence,
+Lemma \ref{lem.sol.exe.Ialbe.inclist} \textbf{(a)} (applied to $\widetilde{P}%
+$, $n-k$ and $\left(  r_{1},r_{2},\ldots,r_{n-k}\right)  $ instead of $S$, $s$
+and $\left(  c_{1},c_{2},\ldots,c_{s}\right)  $) shows that the map $\left[
+n-k\right]  \rightarrow\widetilde{P},\ h\mapsto r_{h}$ is well-defined and a
+bijection. In particular, this map is a bijection. Hence, we can substitute
+$r_{h}$ for $i$ in the product $\prod_{i\in\widetilde{P}}b_{i,\sigma\left(
+i\right)  }$. We thus obtain%
+\begin{align*}
+\prod_{i\in\widetilde{P}}b_{i,\sigma\left(  i\right)  }  &  =\prod
+_{h\in\left[  n-k\right]  }b_{r_{h},\sigma\left(  r_{h}\right)  }%
+=\underbrace{\prod_{i\in\left[  n-k\right]  }}_{\substack{=\prod_{i\in\left\{
+1,2,\ldots,n-k\right\}  }\\\text{(since }\left[  n-k\right]  =\left\{
+1,2,\ldots,n-k\right\}  \text{)}}}b_{r_{i},\sigma\left(  r_{i}\right)  }\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have renamed the index }h\text{
+as }i\text{ in the product}\right) \\
+&  =\underbrace{\prod_{i\in\left\{  1,2,\ldots,n-k\right\}  }}_{=\prod
+_{i=1}^{n-k}}\underbrace{b_{r_{i},\sigma\left(  r_{i}\right)  }}%
+_{\substack{=b_{\gamma\left(  i+k\right)  ,\left(  \sigma\circ\gamma\right)
+\left(  i+k\right)  }\\\text{(by (\ref{pf.lem.det.laplace-multi.Apq.3c.pf.1c}%
+))}}}\\
+&  =\prod_{i=1}^{n-k}b_{\gamma\left(  i+k\right)  ,\left(  \sigma\circ
+\gamma\right)  \left(  i+k\right)  }=\underbrace{\prod_{i=k+1}^{n}}%
+_{=\prod_{i\in\left\{  k+1,k+2,\ldots,n\right\}  }}b_{\gamma\left(  i\right)
+,\left(  \sigma\circ\gamma\right)  \left(  i\right)  }\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }i\text{ for
+}i+k\text{ in the product}\right) \\
+&  =\prod_{i\in\left\{  k+1,k+2,\ldots,n\right\}  }b_{\gamma\left(  i\right)
+,\left(  \sigma\circ\gamma\right)  \left(  i\right)  }.
+\end{align*}
+This proves (\ref{pf.lem.det.laplace-multi.Apq.3c}).}.
+\end{verlong}
+
+\begin{vershort}
+Now, Lemma \ref{lem.sol.det.laplace-multi.1} (applied to $A^{\prime}$,
+$a_{\gamma\left(  i\right)  ,j}$, $B^{\prime}$ and $b_{\gamma\left(  i\right)
+,j}$ instead of $A$, $a_{i,j}$, $B$ and $b_{i,j}$) yields%
+\begin{align*}
+&  \sum_{\substack{\sigma\in S_{n};\\\sigma\left(  \left\{  1,2,\ldots
+,k\right\}  \right)  =Q}}\left(  -1\right)  ^{\sigma}\left(  \prod
+_{i\in\left\{  1,2,\ldots,k\right\}  }a_{\gamma\left(  i\right)
+,\sigma\left(  i\right)  }\right)  \left(  \prod_{i\in\left\{  k+1,k+2,\ldots
+,n\right\}  }b_{\gamma\left(  i\right)  ,\sigma\left(  i\right)  }\right) \\
+&  =\left(  -1\right)  ^{\left(  1+2+\cdots+k\right)  +\sum Q}\det
+\underbrace{\left(  \operatorname*{sub}\nolimits_{\left(  1,2,\ldots,k\right)
+}^{w\left(  Q\right)  }\left(  A^{\prime}\right)  \right)  }%
+_{\substack{=\operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+Q\right)  }A\\\text{(by (\ref{pf.lem.det.laplace-multi.Apq.short.sub1}))}%
+}}\underbrace{\det\left(  \operatorname*{sub}\nolimits_{\left(  k+1,k+2,\ldots
+,n\right)  }^{w\left(  \widetilde{Q}\right)  }\left(  B^{\prime}\right)
+\right)  }_{\substack{=\operatorname*{sub}\nolimits_{w\left(  \widetilde{P}%
+\right)  }^{w\left(  \widetilde{Q}\right)  }B\\\text{(by
+(\ref{pf.lem.det.laplace-multi.Apq.short.sub2}))}}}\\
+&  =\left(  -1\right)  ^{\left(  1+2+\cdots+k\right)  +\sum Q}\det\left(
+\operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)
+}A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{P}%
+\right)  }^{w\left(  \widetilde{Q}\right)  }B\right)  .
+\end{align*}
+Comparing this with%
+\begin{align*}
+&  \sum_{\substack{\sigma\in S_{n};\\\sigma\left(  \left\{  1,2,\ldots
+,k\right\}  \right)  =Q}}\left(  -1\right)  ^{\sigma}\left(  \prod
+_{i\in\left\{  1,2,\ldots,k\right\}  }a_{\gamma\left(  i\right)
+,\sigma\left(  i\right)  }\right)  \left(  \prod_{i\in\left\{  k+1,k+2,\ldots
+,n\right\}  }b_{\gamma\left(  i\right)  ,\sigma\left(  i\right)  }\right) \\
+&  =\underbrace{\sum_{\substack{\sigma\in S_{n};\\\left(  \sigma\circ
+\gamma\right)  \left(  \left\{  1,2,\ldots,k\right\}  \right)  =Q}%
+}}_{\substack{=\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)
+=Q}}\\\text{(since every }\sigma\in S_{n}\\\text{satisfies }\left(
+\sigma\circ\gamma\right)  \left(  \left\{  1,2,\ldots,k\right\}  \right)
+=\sigma\left(  P\right)  \\\text{(by (\ref{pf.lem.det.laplace-multi.Apq.3a}%
+)))}}}\left(  -1\right)  ^{\sigma\circ\gamma}\\
+&  \ \ \ \ \ \ \ \ \ \ \underbrace{\left(  \prod_{i\in\left\{  1,2,\ldots
+,k\right\}  }a_{\gamma\left(  i\right)  ,\left(  \sigma\circ\gamma\right)
+\left(  i\right)  }\right)  }_{\substack{=\prod_{i\in P}a_{i,\sigma\left(
+i\right)  }\\\text{(by (\ref{pf.lem.det.laplace-multi.Apq.short.3b}))}%
+}}\underbrace{\left(  \prod_{i\in\left\{  k+1,k+2,\ldots,n\right\}  }%
+b_{\gamma\left(  i\right)  ,\left(  \sigma\circ\gamma\right)  \left(
+i\right)  }\right)  }_{\substack{=\prod_{i\in\widetilde{P}}b_{i,\sigma\left(
+i\right)  }\\\text{(by (\ref{pf.lem.det.laplace-multi.Apq.short.3c}))}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have substituted }\sigma\circ\gamma\text{ for }\sigma\text{ in
+the sum, since}\\
+\text{the map }S_{n}\rightarrow S_{n},\ \sigma\mapsto\sigma\circ\gamma\text{
+is a bijection}%
+\end{array}
+\right) \\
+&  =\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)  =Q}%
+}\underbrace{\left(  -1\right)  ^{\sigma\circ\gamma}}_{\substack{=\left(
+-1\right)  ^{\sigma}\cdot\left(  -1\right)  ^{\gamma}\\\text{(by
+(\ref{eq.sign.prod}), applied}\\\text{to }\tau=\gamma\text{)}}}\left(
+\prod_{i\in P}a_{i,\sigma\left(  i\right)  }\right)  \left(  \prod
+_{i\in\widetilde{P}}b_{i,\sigma\left(  i\right)  }\right) \\
+&  =\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)  =Q}}\left(
+-1\right)  ^{\sigma}\cdot\left(  -1\right)  ^{\gamma}\left(  \prod_{i\in
+P}a_{i,\sigma\left(  i\right)  }\right)  \left(  \prod_{i\in\widetilde{P}%
+}b_{i,\sigma\left(  i\right)  }\right) \\
+&  =\left(  -1\right)  ^{\gamma}\cdot\sum_{\substack{\sigma\in S_{n}%
+;\\\sigma\left(  P\right)  =Q}}\left(  -1\right)  ^{\sigma}\left(  \prod_{i\in
+P}a_{i,\sigma\left(  i\right)  }\right)  \left(  \prod_{i\in\widetilde{P}%
+}b_{i,\sigma\left(  i\right)  }\right)  ,
+\end{align*}
+we obtain%
+\begin{align*}
+&  \left(  -1\right)  ^{\left(  1+2+\cdots+k\right)  +\sum Q}\det\left(
+\operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)
+}A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{P}%
+\right)  }^{w\left(  \widetilde{Q}\right)  }B\right) \\
+&  =\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)  =Q}}\left(
+-1\right)  ^{\sigma}\cdot\left(  -1\right)  ^{\gamma}\left(  \prod_{i\in
+P}a_{i,\sigma\left(  i\right)  }\right)  \left(  \prod_{i\in\widetilde{P}%
+}b_{i,\sigma\left(  i\right)  }\right)  .
+\end{align*}
+Multiplying both sides of this equality by $\left(  -1\right)  ^{\sum
+P-\left(  1+2+\cdots+k\right)  }$, we obtain%
+\begin{align*}
+&  \left(  -1\right)  ^{\sum P-\left(  1+2+\cdots+k\right)  }\left(
+-1\right)  ^{\left(  1+2+\cdots+k\right)  +\sum Q}\det\left(
+\operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)
+}A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{P}%
+\right)  }^{w\left(  \widetilde{Q}\right)  }B\right) \\
+&  =\left(  -1\right)  ^{\sum P-\left(  1+2+\cdots+k\right)  }%
+\underbrace{\left(  -1\right)  ^{\gamma}}_{\substack{=\left(  -1\right)
+^{\sum P-\left(  1+2+\cdots+k\right)  }\\\text{(by
+(\ref{pf.lem.det.laplace-multi.Apq.short.sign-gamma}))}}}\cdot\sum_{\substack{\sigma
+\in S_{n};\\\sigma\left(  P\right)  =Q}}\left(  -1\right)  ^{\sigma}\left(
+\prod_{i\in P}a_{i,\sigma\left(  i\right)  }\right)  \left(  \prod
+_{i\in\widetilde{P}}b_{i,\sigma\left(  i\right)  }\right) \\
+&  =\underbrace{\left(  -1\right)  ^{\sum P-\left(  1+2+\cdots+k\right)
+}\left(  -1\right)  ^{\sum P-\left(  1+2+\cdots+k\right)  }}_{=\left(  \left(
+-1\right)  ^{\sum P-\left(  1+2+\cdots+k\right)  }\right)  ^{2}=1}\cdot
+\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)  =Q}}\left(
+-1\right)  ^{\sigma}\left(  \prod_{i\in P}a_{i,\sigma\left(  i\right)
+}\right)  \left(  \prod_{i\in\widetilde{P}}b_{i,\sigma\left(  i\right)
+}\right) \\
+&  =\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)  =Q}}\left(
+-1\right)  ^{\sigma}\left(  \prod_{i\in P}a_{i,\sigma\left(  i\right)
+}\right)  \left(  \prod_{i\in\widetilde{P}}b_{i,\sigma\left(  i\right)
+}\right)  .
+\end{align*}
+Thus,%
+\begin{align*}
+&  \sum_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)  =Q}}\left(
+-1\right)  ^{\sigma}\left(  \prod_{i\in P}a_{i,\sigma\left(  i\right)
+}\right)  \left(  \prod_{i\in\widetilde{P}}b_{i,\sigma\left(  i\right)
+}\right) \\
+&  =\underbrace{\left(  -1\right)  ^{\sum P-\left(  1+2+\cdots+k\right)
+}\left(  -1\right)  ^{\left(  1+2+\cdots+k\right)  +\sum Q}}%
+_{\substack{=\left(  -1\right)  ^{\left(  \sum P-\left(  1+2+\cdots+k\right)
+\right)  +\left(  \left(  1+2+\cdots+k\right)  +\sum Q\right)  }\\=\left(
+-1\right)  ^{\sum P+\sum Q}\\\text{(since }\left(  \sum P-\left(
+1+2+\cdots+k\right)  \right)  +\left(  \left(  1+2+\cdots+k\right)  +\sum
+Q\right)  =\sum P+\sum Q\text{)}}}\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)  }A\right)  \det\left(
+\operatorname*{sub}\nolimits_{w\left(  \widetilde{P}\right)  }^{w\left(
+\widetilde{Q}\right)  }B\right) \\
+&  =\left(  -1\right)  ^{\sum P+\sum Q}\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)  }A\right)  \det\left(
+\operatorname*{sub}\nolimits_{w\left(  \widetilde{P}\right)  }^{w\left(
+\widetilde{Q}\right)  }B\right)  .
+\end{align*}
+This proves Lemma \ref{lem.det.laplace-multi.Apq}.
+\end{vershort}
+
+\begin{verlong}
+Now, Lemma \ref{lem.sol.det.laplace-multi.1} (applied to $A^{\prime}$,
+$a_{\gamma\left(  i\right)  ,j}$, $B^{\prime}$ and $b_{\gamma\left(  i\right)
+,j}$ instead of $A$, $a_{i,j}$, $B$ and $b_{i,j}$) yields%
+\begin{align*}
+&  \sum_{\substack{\sigma\in S_{n};\\\sigma\left(  \left\{  1,2,\ldots
+,k\right\}  \right)  =Q}}\left(  -1\right)  ^{\sigma}\left(  \prod
+_{i\in\left\{  1,2,\ldots,k\right\}  }a_{\gamma\left(  i\right)
+,\sigma\left(  i\right)  }\right)  \left(  \prod_{i\in\left\{  k+1,k+2,\ldots
+,n\right\}  }b_{\gamma\left(  i\right)  ,\sigma\left(  i\right)  }\right) \\
+&  =\left(  -1\right)  ^{\left(  1+2+\cdots+k\right)  +\sum Q}\det
+\underbrace{\left(  \operatorname*{sub}\nolimits_{\left(  1,2,\ldots,k\right)
+}^{w\left(  Q\right)  }\left(  A^{\prime}\right)  \right)  }%
+_{\substack{=\operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+Q\right)  }A\\\text{(by (\ref{pf.lem.det.laplace-multi.Apq.sub1}))}%
+}}\underbrace{\det\left(  \operatorname*{sub}\nolimits_{\left(  k+1,k+2,\ldots
+,n\right)  }^{w\left(  \widetilde{Q}\right)  }\left(  B^{\prime}\right)
+\right)  }_{\substack{=\operatorname*{sub}\nolimits_{w\left(  \widetilde{P}%
+\right)  }^{w\left(  \widetilde{Q}\right)  }B\\\text{(by
+(\ref{pf.lem.det.laplace-multi.Apq.sub2}))}}}\\
+&  =\left(  -1\right)  ^{\left(  1+2+\cdots+k\right)  +\sum Q}\det\left(
+\operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)
+}A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{P}%
+\right)  }^{w\left(  \widetilde{Q}\right)  }B\right)  .
+\end{align*}
+Comparing this with%
+\begin{align*}
+&  \sum_{\substack{\sigma\in S_{n};\\\sigma\left(  \left\{  1,2,\ldots
+,k\right\}  \right)  =Q}}\left(  -1\right)  ^{\sigma}\left(  \prod
+_{i\in\left\{  1,2,\ldots,k\right\}  }a_{\gamma\left(  i\right)
+,\sigma\left(  i\right)  }\right)  \left(  \prod_{i\in\left\{  k+1,k+2,\ldots
+,n\right\}  }b_{\gamma\left(  i\right)  ,\sigma\left(  i\right)  }\right) \\
+&  =\underbrace{\sum_{\substack{\sigma\in S_{n};\\\left(  \sigma\circ
+\gamma\right)  \left(  \left\{  1,2,\ldots,k\right\}  \right)  =Q}%
+}}_{\substack{=\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)
+=Q}}\\\text{(since every }\sigma\in S_{n}\\\text{satisfies }\left(
+\sigma\circ\gamma\right)  \left(  \left\{  1,2,\ldots,k\right\}  \right)
+=\sigma\left(  P\right)  \\\text{(by (\ref{pf.lem.det.laplace-multi.Apq.3a}%
+)))}}}\left(  -1\right)  ^{\sigma\circ\gamma}\underbrace{\left(  \prod
+_{i\in\left\{  1,2,\ldots,k\right\}  }a_{\gamma\left(  i\right)  ,\left(
+\sigma\circ\gamma\right)  \left(  i\right)  }\right)  }_{\substack{=\prod
+_{i\in P}a_{i,\sigma\left(  i\right)  }\\\text{(by
+(\ref{pf.lem.det.laplace-multi.Apq.3b}))}}}\underbrace{\left(  \prod
+_{i\in\left\{  k+1,k+2,\ldots,n\right\}  }b_{\gamma\left(  i\right)  ,\left(
+\sigma\circ\gamma\right)  \left(  i\right)  }\right)  }_{\substack{=\prod
+_{i\in\widetilde{P}}b_{i,\sigma\left(  i\right)  }\\\text{(by
+(\ref{pf.lem.det.laplace-multi.Apq.3c}))}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have substituted }\sigma\circ\gamma\text{ for }\sigma\text{ in
+the sum, since}\\
+\text{the map }S_{n}\rightarrow S_{n},\ \sigma\mapsto\sigma\circ\gamma\text{
+is a bijection}%
+\end{array}
+\right) \\
+&  =\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)  =Q}%
+}\underbrace{\left(  -1\right)  ^{\sigma\circ\gamma}}_{\substack{=\left(
+-1\right)  ^{\sigma}\cdot\left(  -1\right)  ^{\gamma}\\\text{(by
+(\ref{eq.sign.prod}), applied}\\\text{to }\tau=\gamma\text{)}}}\left(
+\prod_{i\in P}a_{i,\sigma\left(  i\right)  }\right)  \left(  \prod
+_{i\in\widetilde{P}}b_{i,\sigma\left(  i\right)  }\right) \\
+&  =\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)  =Q}}\left(
+-1\right)  ^{\sigma}\cdot\left(  -1\right)  ^{\gamma}\left(  \prod_{i\in
+P}a_{i,\sigma\left(  i\right)  }\right)  \left(  \prod_{i\in\widetilde{P}%
+}b_{i,\sigma\left(  i\right)  }\right) \\
+&  =\left(  -1\right)  ^{\gamma}\cdot\sum_{\substack{\sigma\in S_{n}%
+;\\\sigma\left(  P\right)  =Q}}\left(  -1\right)  ^{\sigma}\left(  \prod_{i\in
+P}a_{i,\sigma\left(  i\right)  }\right)  \left(  \prod_{i\in\widetilde{P}%
+}b_{i,\sigma\left(  i\right)  }\right)  ,
+\end{align*}
+we obtain%
+\begin{align*}
+&  \left(  -1\right)  ^{\left(  1+2+\cdots+k\right)  +\sum Q}\det\left(
+\operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)
+}A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{P}%
+\right)  }^{w\left(  \widetilde{Q}\right)  }B\right) \\
+&  =\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)  =Q}}\left(
+-1\right)  ^{\sigma}\cdot\left(  -1\right)  ^{\gamma}\left(  \prod_{i\in
+P}a_{i,\sigma\left(  i\right)  }\right)  \left(  \prod_{i\in\widetilde{P}%
+}b_{i,\sigma\left(  i\right)  }\right)  .
+\end{align*}
+Multiplying both sides of this equality by $\left(  -1\right)  ^{\sum
+P-\left(  1+2+\cdots+k\right)  }$, we obtain%
+\begin{align*}
+&  \left(  -1\right)  ^{\sum P-\left(  1+2+\cdots+k\right)  }\left(
+-1\right)  ^{\left(  1+2+\cdots+k\right)  +\sum Q}\det\left(
+\operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)
+}A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{P}%
+\right)  }^{w\left(  \widetilde{Q}\right)  }B\right) \\
+&  =\left(  -1\right)  ^{\sum P-\left(  1+2+\cdots+k\right)  }%
+\underbrace{\left(  -1\right)  ^{\gamma}}_{\substack{=\left(  -1\right)
+^{\sum P-\left(  1+2+\cdots+k\right)  }\\\text{(by
+(\ref{pf.lem.det.laplace-multi.Apq.sign-gamma}))}}}\cdot\sum_{\substack{\sigma
+\in S_{n};\\\sigma\left(  P\right)  =Q}}\left(  -1\right)  ^{\sigma}\left(
+\prod_{i\in P}a_{i,\sigma\left(  i\right)  }\right)  \left(  \prod
+_{i\in\widetilde{P}}b_{i,\sigma\left(  i\right)  }\right) \\
+&  =\underbrace{\left(  -1\right)  ^{\sum P-\left(  1+2+\cdots+k\right)
+}\left(  -1\right)  ^{\sum P-\left(  1+2+\cdots+k\right)  }}%
+_{\substack{=\left(  \left(  -1\right)  ^{\sum P-\left(  1+2+\cdots+k\right)
+}\right)  ^{2}=\left(  -1\right)  ^{2\left(  \sum P-\left(  1+2+\cdots
++k\right)  \right)  }=1\\\text{(since }2\left(  \sum P-\left(  1+2+\cdots
++k\right)  \right)  \text{ is even)}}}\cdot\sum_{\substack{\sigma\in
+S_{n};\\\sigma\left(  P\right)  =Q}}\left(  -1\right)  ^{\sigma}\left(
+\prod_{i\in P}a_{i,\sigma\left(  i\right)  }\right)  \left(  \prod
+_{i\in\widetilde{P}}b_{i,\sigma\left(  i\right)  }\right) \\
+&  =\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)  =Q}}\left(
+-1\right)  ^{\sigma}\left(  \prod_{i\in P}a_{i,\sigma\left(  i\right)
+}\right)  \left(  \prod_{i\in\widetilde{P}}b_{i,\sigma\left(  i\right)
+}\right)  .
+\end{align*}
+Thus,%
+\begin{align*}
+&  \sum_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)  =Q}}\left(
+-1\right)  ^{\sigma}\left(  \prod_{i\in P}a_{i,\sigma\left(  i\right)
+}\right)  \left(  \prod_{i\in\widetilde{P}}b_{i,\sigma\left(  i\right)
+}\right) \\
+&  =\underbrace{\left(  -1\right)  ^{\sum P-\left(  1+2+\cdots+k\right)
+}\left(  -1\right)  ^{\left(  1+2+\cdots+k\right)  +\sum Q}}%
+_{\substack{=\left(  -1\right)  ^{\left(  \sum P-\left(  1+2+\cdots+k\right)
+\right)  +\left(  \left(  1+2+\cdots+k\right)  +\sum Q\right)  }\\=\left(
+-1\right)  ^{\sum P+\sum Q}\\\text{(since }\left(  \sum P-\left(
+1+2+\cdots+k\right)  \right)  +\left(  \left(  1+2+\cdots+k\right)  +\sum
+Q\right)  =\sum P+\sum Q\text{)}}}\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)  }A\right)  \det\left(
+\operatorname*{sub}\nolimits_{w\left(  \widetilde{P}\right)  }^{w\left(
+\widetilde{Q}\right)  }B\right) \\
+&  =\left(  -1\right)  ^{\sum P+\sum Q}\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)  }A\right)  \det\left(
+\operatorname*{sub}\nolimits_{w\left(  \widetilde{P}\right)  }^{w\left(
+\widetilde{Q}\right)  }B\right)  .
+\end{align*}
+This proves Lemma \ref{lem.det.laplace-multi.Apq}.
+\end{verlong}
+\end{proof}
+
+For the sake of convenience, let us restate a simplified particular case of
+Lemma \ref{lem.det.laplace-multi.Apq} for $A=B$:
+
+\begin{lemma}
+\label{lem.sol.det.laplace-multi.2}Let $n\in\mathbb{N}$. For any subset $I$ of
+$\left\{  1,2,\ldots,n\right\}  $, we let $\widetilde{I}$ denote the
+complement $\left\{  1,2,\ldots,n\right\}  \setminus I$ of $I$.
+
+Let $A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ be an
+$n\times n$-matrix. Let $P$ and $Q$ be two subsets of $\left\{  1,2,\ldots
+,n\right\}  $ such that $\left\vert P\right\vert =\left\vert Q\right\vert $.
+Then,%
+\[
+\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)  =Q}}\left(
+-1\right)  ^{\sigma}\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }=\left(
+-1\right)  ^{\sum P+\sum Q}\det\left(  \operatorname*{sub}\nolimits_{w\left(
+P\right)  }^{w\left(  Q\right)  }A\right)  \det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  \widetilde{P}\right)  }^{w\left(  \widetilde{Q}\right)
+}A\right)  .
+\]
+
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.det.laplace-multi.2}.]Every $\sigma\in S_{n}$
+satisfies%
+\begin{equation}
+\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }=\left(  \prod_{i\in
+P}a_{i,\sigma\left(  i\right)  }\right)  \left(  \prod_{i\in\widetilde{P}%
+}a_{i,\sigma\left(  i\right)  }\right)
+\label{pf.lem.sol.det.laplace-multi.2.1}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.sol.det.laplace-multi.2.1}):} Let
+$\sigma\in S_{n}$. Notice that $\widetilde{P}=\left\{  1,2,\ldots,n\right\}
+\setminus P$ (by the definition of $\widetilde{P}$). Now,%
+\begin{align*}
+\underbrace{\prod_{i=1}^{n}}_{=\prod_{i\in\left\{  1,2,\ldots,n\right\}  }%
+}a_{i,\sigma\left(  i\right)  }  &  =\prod_{i\in\left\{  1,2,\ldots,n\right\}
+}a_{i,\sigma\left(  i\right)  }=\left(  \underbrace{\prod_{\substack{i\in
+\left\{  1,2,\ldots,n\right\}  ;\\i\in P}}}_{\substack{=\prod_{i\in
+P}\\\text{(since }P\subseteq\left\{  1,2,\ldots,n\right\}  \text{)}%
+}}a_{i,\sigma\left(  i\right)  }\right)  \left(  \underbrace{\prod
+_{\substack{i\in\left\{  1,2,\ldots,n\right\}  ;\\i\notin P}}}%
+_{\substack{=\prod_{i\in\left\{  1,2,\ldots,n\right\}  \setminus P}%
+=\prod_{i\in\widetilde{P}}\\\text{(since }\left\{  1,2,\ldots,n\right\}
+\setminus P=\widetilde{P}\text{)}}}a_{i,\sigma\left(  i\right)  }\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since every }i\in\left\{  1,2,\ldots,n\right\}  \text{ satisfies either
+}i\in P\\
+\text{or }i\notin P\text{ (but not both)}%
+\end{array}
+\right) \\
+&  =\left(  \prod_{i\in P}a_{i,\sigma\left(  i\right)  }\right)  \left(
+\prod_{i\in\widetilde{P}}a_{i,\sigma\left(  i\right)  }\right)  .
+\end{align*}
+This proves (\ref{pf.lem.sol.det.laplace-multi.2.1}).}. Now,%
+\begin{align*}
+&  \sum_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)  =Q}}\left(
+-1\right)  ^{\sigma}\underbrace{\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }%
+}_{\substack{=\left(  \prod_{i\in P}a_{i,\sigma\left(  i\right)  }\right)
+\left(  \prod_{i\in\widetilde{P}}a_{i,\sigma\left(  i\right)  }\right)
+\\\text{(by (\ref{pf.lem.sol.det.laplace-multi.2.1}))}}}\\
+&  =\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)  =Q}}\left(
+-1\right)  ^{\sigma}\left(  \prod_{i\in P}a_{i,\sigma\left(  i\right)
+}\right)  \left(  \prod_{i\in\widetilde{P}}a_{i,\sigma\left(  i\right)
+}\right) \\
+&  =\left(  -1\right)  ^{\sum P+\sum Q}\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)  }A\right)  \det\left(
+\operatorname*{sub}\nolimits_{w\left(  \widetilde{P}\right)  }^{w\left(
+\widetilde{Q}\right)  }A\right)
+\end{align*}
+(by Lemma \ref{lem.det.laplace-multi.Apq} (applied to $B=A$ and $b_{i,j}%
+=a_{i,j}$)). This proves Lemma \ref{lem.sol.det.laplace-multi.2}.
+\end{proof}
+
+Another fact that we will need is very simple:
+
+\begin{lemma}
+\label{lem.sol.det.laplace-multi.4}Let $n\in\mathbb{N}$. Let $\sigma\in S_{n}%
+$. Let $P$ be a subset of $\left\{  1,2,\ldots,n\right\}  $.
+
+\textbf{(a)} The set $\sigma\left(  P\right)  $ is a subset of $\left\{
+1,2,\ldots,n\right\}  $ satisfying $\left\vert \sigma\left(  P\right)
+\right\vert =\left\vert P\right\vert $.
+
+\textbf{(b)} Let $Q$ be a subset of $\left\{  1,2,\ldots,n\right\}  $. Then,
+$\sigma^{-1}\left(  Q\right)  =P$ holds if and only if $\sigma\left(
+P\right)  =Q$.
+\end{lemma}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.det.laplace-multi.4}.] We have $\sigma\in S_{n}$.
+In  other words, $\sigma$ is a permutation of the set $\left\{  1,2,\ldots
+,n\right\}  $. In other words, $\sigma$ is a bijective map $\left\{
+1,2,\ldots,n\right\}  \rightarrow\left\{  1,2,\ldots,n\right\}  $. The map
+$\sigma$ is bijective, and therefore injective.
+
+\textbf{(a)} The following fact is well-known: If $X$ and $Y$ are two finite
+sets, if $f:X\rightarrow Y$ is an injective map, and if $U$ is a subset of
+$X$, then $\left\vert f\left(  U\right)  \right\vert =\left\vert U\right\vert
+$. Applying this fact to $X=\left\{  1,2,\ldots,n\right\}  $, $Y=\left\{
+1,2,\ldots,n\right\}  $, $f=\sigma$ and $U=P$, we obtain $\left\vert
+\sigma\left(  P\right)  \right\vert =\left\vert P\right\vert $ (since the map
+$\sigma$ is injective). This proves Lemma \ref{lem.sol.det.laplace-multi.4}
+\textbf{(a)}.
+
+\textbf{(b)} We have $\sigma\left(  \sigma^{-1}\left(  Q\right)  \right)  =Q$
+(since $\sigma$ is bijective). But if $U$ and $V$ are two subsets of $\left\{
+1,2,\ldots,n\right\}  $, then $U=V$ holds if and only if $\sigma\left(
+U\right)  =\sigma\left(  V\right)  $ (because $\sigma$ is bijective). Applying
+this to $U=\sigma^{-1}\left(  Q\right)  $ and $V=P$, we conclude that
+$\sigma^{-1}\left(  Q\right)  =P$ holds if and only if $\sigma\left(
+\sigma^{-1}\left(  Q\right)  \right)  =\sigma\left(  P\right)  $. Hence, we
+have the following chain of equivalences:%
+\[
+\left(  \sigma^{-1}\left(  Q\right)  =P\right)  \ \Longleftrightarrow\ \left(
+\underbrace{\sigma\left(  \sigma^{-1}\left(  Q\right)  \right)  }_{=Q}%
+=\sigma\left(  P\right)  \right)  \ \Longleftrightarrow\ \left(
+Q=\sigma\left(  P\right)  \right)  \ \Longleftrightarrow\ \left(
+\sigma\left(  P\right)  =Q\right)  .
+\]
+In other words, $\sigma^{-1}\left(  Q\right)  =P$ holds if and only if
+$\sigma\left(  P\right)  =Q$. Lemma \ref{lem.sol.det.laplace-multi.4}
+\textbf{(b)} is now proven.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.det.laplace-multi.4}.]We have $\sigma\in S_{n}$.
+In other words, $\sigma$ is a permutation of the set $\left\{  1,2,\ldots
+,n\right\}  $ (since $S_{n}$ is the set of all permutations of the set
+$\left\{  1,2,\ldots,n\right\}  $). In other words, $\sigma$ is a bijective
+map $\left\{  1,2,\ldots,n\right\}  \rightarrow\left\{  1,2,\ldots,n\right\}
+$. The map $\sigma$ is bijective, and therefore injective.
+
+\textbf{(a)} Clearly, the set $\sigma\left(  P\right)  $ is a subset of
+$\left\{  1,2,\ldots,n\right\}  $. It remains to prove that $\left\vert
+\sigma\left(  P\right)  \right\vert =\left\vert P\right\vert $.
+
+The following fact is well-known: If $X$ and $Y$ are two finite sets, if
+$f:X\rightarrow Y$ is an injective map, and if $U$ is a subset of $X$, then
+$\left\vert f\left(  U\right)  \right\vert =\left\vert U\right\vert $.
+Applying this fact to $X=\left\{  1,2,\ldots,n\right\}  $, $Y=\left\{
+1,2,\ldots,n\right\}  $, $f=\sigma$ and $U=P$, we obtain $\left\vert
+\sigma\left(  P\right)  \right\vert =\left\vert P\right\vert $ (since the map
+$\sigma$ is injective). This proves Lemma \ref{lem.sol.det.laplace-multi.4}
+\textbf{(a)}.
+
+\textbf{(b)} We shall first prove the logical implication%
+\begin{equation}
+\left(  \sigma^{-1}\left(  Q\right)  =P\right)  \ \Longrightarrow\ \left(
+\sigma\left(  P\right)  =Q\right)
+.\label{pf.lem.sol.det.laplace-multi.4.dir1}%
+\end{equation}
+
+
+\textit{Proof of (\ref{pf.lem.sol.det.laplace-multi.4.dir1}):} Assume that
+$\sigma^{-1}\left(  Q\right)  =P$. We shall show that $\sigma\left(  P\right)
+=Q$.
+
+We have $\sigma\left(  P\right)  \subseteq Q$\ \ \ \ \footnote{\textit{Proof.}
+Let $z\in\sigma\left(  P\right)  $. Thus, $z=\sigma\left(  p\right)  $ for
+some $p\in P$. Consider this $p$. We have $p\in P=\sigma^{-1}\left(  Q\right)
+$, so that $\sigma\left(  p\right)  \in Q$. Thus, $z=\sigma\left(  p\right)
+\in Q$.
+\par
+Now, forget that we fixed $z$. We thus have shown that $z\in Q$ for every
+$z\in\sigma\left(  P\right)  $. In other words, $\sigma\left(  P\right)
+\subseteq Q$. Qed.} and $Q\subseteq\sigma\left(  P\right)  $%
+\ \ \ \ \footnote{\textit{Proof.} Let $q\in Q$. Now, $\sigma^{-1}\left(
+q\right)  $ is a well-defined element of $\left\{  1,2,\ldots,n\right\}  $
+(since the map $\sigma$ is bijective). This element $\sigma^{-1}\left(
+q\right)  $ belongs to $\sigma^{-1}\left(  Q\right)  $ (since $\sigma\left(
+\sigma^{-1}\left(  q\right)  \right)  =q\in Q$). Thus, $\sigma^{-1}\left(
+q\right)  \in\sigma^{-1}\left(  Q\right)  =P$. Now, $q=\sigma\left(
+\underbrace{\sigma^{-1}\left(  q\right)  }_{\in P}\right)  \in\sigma\left(
+P\right)  $.
+\par
+Now, forget that we fixed $q$. We thus have shown that $q\in\sigma\left(
+P\right)  $ for every $q\in Q$. In other words, $Q\subseteq\sigma\left(
+P\right)  $. Qed.}. Combining these two relations, we obtain $\sigma\left(
+P\right)  =Q$.
+
+Now, forget that we assumed that $\sigma^{-1}\left(  Q\right)  =P$. We thus
+have proven that $\sigma\left(  P\right)  =Q$ under the assumption that
+$\sigma^{-1}\left(  Q\right)  =P$. In other words, we have proven the
+implication (\ref{pf.lem.sol.det.laplace-multi.4.dir1}).
+
+Next, we shall prove the logical implication%
+\begin{equation}
+\left(  \sigma\left(  P\right)  =Q\right)  \ \Longrightarrow\ \left(
+\sigma^{-1}\left(  Q\right)  =P\right)
+.\label{pf.lem.sol.det.laplace-multi.4.dir2}%
+\end{equation}
+
+
+\textit{Proof of (\ref{pf.lem.sol.det.laplace-multi.4.dir2}):} Assume that
+$\sigma\left(  P\right)  =Q$. We shall show that $\sigma^{-1}\left(  Q\right)
+=P$.
+
+We have $\sigma^{-1}\left(  Q\right)  \subseteq P$%
+\ \ \ \ \footnote{\textit{Proof.} Let $z\in\sigma^{-1}\left(  Q\right)  $.
+Thus, $\sigma\left(  z\right)  \in Q=\sigma\left(  P\right)  $. In other
+words, $\sigma\left(  z\right)  =\sigma\left(  p\right)  $ for some $p\in P$.
+Consider this $p$.
+\par
+The map $\sigma$ is injective. Thus, from $\sigma\left(  z\right)
+=\sigma\left(  p\right)  $, we obtain $z=p$. Hence, $z=p\in P$.
+\par
+Now, forget that we fixed $z$. We thus have shown that $z\in P$ for every
+$z\in\sigma^{-1}\left(  Q\right)  $. In other words, $\sigma^{-1}\left(
+Q\right)  \subseteq P$. Qed.} and $P\subseteq\sigma^{-1}\left(  Q\right)
+$\ \ \ \ \footnote{\textit{Proof.} Let $p\in P$. Then, $\sigma\left(
+\underbrace{p}_{\in P}\right)  \in\sigma\left(  P\right)  =Q$, so that
+$p\in\sigma^{-1}\left(  Q\right)  $.
+\par
+Now, forget that we fixed $p$. We thus have shown that $p\in\sigma^{-1}\left(
+Q\right)  $ for every $p\in P$. In other words, $P\subseteq\sigma^{-1}\left(
+Q\right)  $. Qed.}. Combining these two relations, we obtain $\sigma
+^{-1}\left(  Q\right)  =P$.
+
+Now, forget that we assumed that $\sigma\left(  P\right)  =Q$. We thus have
+proven that $\left(  \sigma^{-1}\left(  Q\right)  =P\right)  $ under the
+assumption that $\sigma\left(  P\right)  =Q$. In other words, we have proven
+the implication (\ref{pf.lem.sol.det.laplace-multi.4.dir2}).
+
+Combining the two implications (\ref{pf.lem.sol.det.laplace-multi.4.dir1}) and
+(\ref{pf.lem.sol.det.laplace-multi.4.dir2}), we obtain the logical equivalence
+$\left(  \sigma^{-1}\left(  Q\right)  =P\right)  \ \Longleftrightarrow
+\ \left(  \sigma\left(  P\right)  =Q\right)  $. In other words, $\sigma
+^{-1}\left(  Q\right)  =P$ holds if and only if $\sigma\left(  P\right)  =Q$.
+This proves Lemma \ref{lem.sol.det.laplace-multi.4} \textbf{(b)}.
+\end{proof}
+\end{verlong}
+
+We can now step to the proof of Theorem \ref{thm.det.laplace-multi}:
+
+\begin{proof}
+[Proof of Theorem \ref{thm.det.laplace-multi}.]Write the $n\times n$-matrix
+$A$ in the form $A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$.
+
+If $P$ and $Q$ are two subsets of $\left\{  1,2,\ldots,n\right\}  $ satisfying
+$\left\vert Q\right\vert \neq\left\vert P\right\vert $, then%
+\begin{equation}
+\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)  =Q}}\left(
+-1\right)  ^{\sigma}\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }=0
+\label{pf.thm.det.laplace-multi.emptysum}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.thm.det.laplace-multi.emptysum}):} Let $P$
+and $Q$ be two subsets of $\left\{  1,2,\ldots,n\right\}  $ satisfying
+$\left\vert Q\right\vert \neq\left\vert P\right\vert $.
+\par
+Let $\sigma\in S_{n}$ be such that $\sigma\left(  P\right)  =Q$. We shall
+derive a contradiction.
+\par
+Indeed, Lemma \ref{lem.sol.det.laplace-multi.4} \textbf{(a)} shows that the
+set $\sigma\left(  P\right)  $ is a subset of $\left\{  1,2,\ldots,n\right\}
+$ satisfying $\left\vert \sigma\left(  P\right)  \right\vert =\left\vert
+P\right\vert $. Hence, $\left\vert P\right\vert =\left\vert \underbrace{\sigma
+\left(  P\right)  }_{=Q}\right\vert =\left\vert Q\right\vert \neq\left\vert
+P\right\vert $. This is absurd. Hence, we have found a contradiction.
+\par
+Now, forget that we fixed $\sigma$. We thus have found a contradiction for
+every $\sigma\in S_{n}$ satisfying $\sigma\left(  P\right)  =Q$. Thus, there
+exists no $\sigma\in S_{n}$ satisfying $\sigma\left(  P\right)  =Q$. Hence,
+the sum $\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)  =Q}}\left(
+-1\right)  ^{\sigma}\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }$ is an empty
+sum. Thus,%
+\[
+\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)  =Q}}\left(
+-1\right)  ^{\sigma}\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }=\left(
+\text{empty sum}\right)  =0.
+\]
+This proves (\ref{pf.thm.det.laplace-multi.emptysum}).}.
+
+\textbf{(a)} Let $P$ be a subset of $\left\{  1,2,\ldots,n\right\}  $. Then,
+(\ref{eq.det.eq.2}) yields%
+\begin{align*}
+\det A  &  =\underbrace{\sum_{\sigma\in S_{n}}}_{\substack{=\sum
+_{Q\subseteq\left\{  1,2,\ldots,n\right\}  }\sum_{\substack{\sigma\in
+S_{n};\\\sigma\left(  P\right)  =Q}}\\\text{(because for every }\sigma\in
+S_{n}\text{, the set}\\\sigma\left(  P\right)  \text{ is a subset of }\left\{
+1,2,\ldots,n\right\}  \text{)}}}\left(  -1\right)  ^{\sigma}\prod_{i=1}%
+^{n}a_{i,\sigma\left(  i\right)  }=\sum_{Q\subseteq\left\{  1,2,\ldots
+,n\right\}  }\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)
+=Q}}\left(  -1\right)  ^{\sigma}\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)
+}\\
+&  =\sum_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+Q\right\vert =\left\vert P\right\vert }}\sum_{\substack{\sigma\in
+S_{n};\\\sigma\left(  P\right)  =Q}}\left(  -1\right)  ^{\sigma}\prod
+_{i=1}^{n}a_{i,\sigma\left(  i\right)  }+\sum_{\substack{Q\subseteq\left\{
+1,2,\ldots,n\right\}  ;\\\left\vert Q\right\vert \neq\left\vert P\right\vert
+}}\underbrace{\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)
+=Q}}\left(  -1\right)  ^{\sigma}\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }%
+}_{\substack{=0\\\text{(by (\ref{pf.thm.det.laplace-multi.emptysum}))}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since every subset }Q\text{ of }\left\{  1,2,\ldots,n\right\}  \text{
+satisfies}\\
+\text{either }\left\vert Q\right\vert =\left\vert P\right\vert \text{ or
+}\left\vert Q\right\vert \neq\left\vert P\right\vert \text{ (but not both)}%
+\end{array}
+\right) \\
+&  =\sum_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+Q\right\vert =\left\vert P\right\vert }}\sum_{\substack{\sigma\in
+S_{n};\\\sigma\left(  P\right)  =Q}}\left(  -1\right)  ^{\sigma}\prod
+_{i=1}^{n}a_{i,\sigma\left(  i\right)  }+\underbrace{\sum
+_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+Q\right\vert \neq\left\vert P\right\vert }}0}_{=0}\\
+&  =\sum_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+Q\right\vert =\left\vert P\right\vert }}\underbrace{\sum_{\substack{\sigma\in
+S_{n};\\\sigma\left(  P\right)  =Q}}\left(  -1\right)  ^{\sigma}\prod
+_{i=1}^{n}a_{i,\sigma\left(  i\right)  }}_{\substack{=\left(  -1\right)
+^{\sum P+\sum Q}\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)
+}^{w\left(  Q\right)  }A\right)  \det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  \widetilde{P}\right)  }^{w\left(  \widetilde{Q}\right)
+}A\right)  \\\text{(by Lemma \ref{lem.sol.det.laplace-multi.2}}\\\text{(since
+}\left\vert P\right\vert =\left\vert Q\right\vert \text{ (since }\left\vert
+Q\right\vert =\left\vert P\right\vert \text{))}}}\\
+&  =\sum_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+Q\right\vert =\left\vert P\right\vert }}\left(  -1\right)  ^{\sum P+\sum
+Q}\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+Q\right)  }A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(
+\widetilde{P}\right)  }^{w\left(  \widetilde{Q}\right)  }A\right)  .
+\end{align*}
+This proves Theorem \ref{thm.det.laplace-multi} \textbf{(a)}.
+
+\textbf{(b)} Let $Q$ be a subset of $\left\{  1,2,\ldots,n\right\}  $. Then,
+(\ref{eq.det.eq.2}) yields%
+\begin{align*}
+\det A  &  =\underbrace{\sum_{\sigma\in S_{n}}}_{\substack{=\sum
+_{P\subseteq\left\{  1,2,\ldots,n\right\}  }\sum_{\substack{\sigma\in
+S_{n};\\\sigma^{-1}\left(  Q\right)  =P}}\\\text{(because for every }\sigma\in
+S_{n}\text{, the set}\\\sigma^{-1}\left(  Q\right)  \text{ is a subset of
+}\left\{  1,2,\ldots,n\right\}  \text{)}}}\left(  -1\right)  ^{\sigma}%
+\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }\\
+&  =\sum_{P\subseteq\left\{  1,2,\ldots,n\right\}  }\underbrace{\sum
+_{\substack{\sigma\in S_{n};\\\sigma^{-1}\left(  Q\right)  =P}}}%
+_{\substack{=\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)
+=Q}}\\\text{(because for every }\sigma\in S_{n}\text{,}\\\text{the statement
+}\left(  \sigma^{-1}\left(  Q\right)  =P\right)  \\\text{is equivalent
+to}\\\text{the statement }\left(  \sigma\left(  P\right)  =Q\right)
+\\\text{(by Lemma \ref{lem.sol.det.laplace-multi.4} \textbf{(b)}))}}}\left(
+-1\right)  ^{\sigma}\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }\\
+&  =\sum_{P\subseteq\left\{  1,2,\ldots,n\right\}  }\sum_{\substack{\sigma\in
+S_{n};\\\sigma\left(  P\right)  =Q}}\left(  -1\right)  ^{\sigma}\prod
+_{i=1}^{n}a_{i,\sigma\left(  i\right)  }\\
+&  =\sum_{\substack{P\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+P\right\vert =\left\vert Q\right\vert }}\sum_{\substack{\sigma\in
+S_{n};\\\sigma\left(  P\right)  =Q}}\left(  -1\right)  ^{\sigma}\prod
+_{i=1}^{n}a_{i,\sigma\left(  i\right)  }+\sum_{\substack{P\subseteq\left\{
+1,2,\ldots,n\right\}  ;\\\left\vert P\right\vert \neq\left\vert Q\right\vert
+}}\underbrace{\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)
+=Q}}\left(  -1\right)  ^{\sigma}\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }%
+}_{\substack{=0\\\text{(by (\ref{pf.thm.det.laplace-multi.emptysum}))}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since every subset }P\text{ of }\left\{  1,2,\ldots,n\right\}  \text{
+satisfies}\\
+\text{either }\left\vert P\right\vert =\left\vert Q\right\vert \text{ or
+}\left\vert P\right\vert \neq\left\vert Q\right\vert \text{ (but not both)}%
+\end{array}
+\right) \\
+&  =\sum_{\substack{P\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+P\right\vert =\left\vert Q\right\vert }}\sum_{\substack{\sigma\in
+S_{n};\\\sigma\left(  P\right)  =Q}}\left(  -1\right)  ^{\sigma}\prod
+_{i=1}^{n}a_{i,\sigma\left(  i\right)  }+\underbrace{\sum
+_{\substack{P\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+P\right\vert \neq\left\vert Q\right\vert }}0}_{=0}\\
+&  =\sum_{\substack{P\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+P\right\vert =\left\vert Q\right\vert }}\underbrace{\sum_{\substack{\sigma\in
+S_{n};\\\sigma\left(  P\right)  =Q}}\left(  -1\right)  ^{\sigma}\prod
+_{i=1}^{n}a_{i,\sigma\left(  i\right)  }}_{\substack{=\left(  -1\right)
+^{\sum P+\sum Q}\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)
+}^{w\left(  Q\right)  }A\right)  \det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  \widetilde{P}\right)  }^{w\left(  \widetilde{Q}\right)
+}A\right)  \\\text{(by Lemma \ref{lem.sol.det.laplace-multi.2})}}}\\
+&  =\sum_{\substack{P\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+P\right\vert =\left\vert Q\right\vert }}\left(  -1\right)  ^{\sum P+\sum
+Q}\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+Q\right)  }A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(
+\widetilde{P}\right)  }^{w\left(  \widetilde{Q}\right)  }A\right)  .
+\end{align*}
+This proves Theorem \ref{thm.det.laplace-multi} \textbf{(b)}.
+\end{proof}
+
+\begin{proof}[Solution to Exercise \ref{exe.det.laplace-multi}.]
+We have now proven both Lemma \ref{lem.det.laplace-multi.Apq} and
+Theorem \ref{thm.det.laplace-multi}. Thus,
+Exercise \ref{exe.det.laplace-multi} is solved.
+\end{proof}
 
 \subsection{Solution to Additional exercise \ref{exeadd.det.rk1upd}}
 
