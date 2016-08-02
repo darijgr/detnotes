@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Tuesday, August 02, 2016 00:04:16}
+%TCIDATA{LastRevised=Tuesday, August 02, 2016 14:48:15}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -14698,10 +14698,15 @@ x_{1}-x_{4} & 0 & 0\\
 
 
 \begin{vershort}
-The matrix $D$ is lower-triangular (actually, diagonal), and thus Exercise
-\ref{exe.ps4.3} shows that its determinant is $\det D=\left(  x_{1}%
--x_{U}\right)  \left(  x_{2}-x_{U}\right)  \cdots\left(  x_{U-1}-x_{U}\right)
-=\prod_{i=1}^{U-1}\left(  x_{i}-x_{U}\right)  $.
+The matrix $D$ is lower-triangular (actually, diagonal\footnote{A square
+matrix $E=\left(  e_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ is said to
+be \textit{diagonal} if every $\left(  i,j\right)  \in\left\{  1,2,\ldots
+,n\right\}  ^{2}$ satisfying $i\neq j$ satisfies $e_{i,j}=0$. In other words,
+a square matrix is said to be \textit{diagonal} if it is both upper-triangular
+and lower-triangular.}), and thus Exercise \ref{exe.ps4.3} shows that its
+determinant is $\det D=\left(  x_{1}-x_{U}\right)  \left(  x_{2}-x_{U}\right)
+\cdots\left(  x_{U-1}-x_{U}\right)  =\prod_{i=1}^{U-1}\left(  x_{i}%
+-x_{U}\right)  $.
 \end{vershort}
 
 \begin{verlong}
@@ -33721,7 +33726,7 @@ $i\in\left\{  n+1,n+2,\ldots,n+m\right\}  $. Thus, $c_{i}=b_{i-n}$ (by
 \par
 For every $j\in\left\{  n+1,n+2,\ldots,n+m\right\}  $, we have%
 \begin{equation}
-c_{j}=b_{j-n}\label{pf.lem.sol.exe.Ialbe.ab.short.3b.pf.2}%
+c_{j}=b_{j-n} \label{pf.lem.sol.exe.Ialbe.ab.short.3b.pf.2}%
 \end{equation}
 (by (\ref{pf.lem.sol.exe.Ialbe.ab.short.ci.b}), applied to $j$ instead of
 $i$).
@@ -33732,7 +33737,7 @@ thus $i\geq n+1>n$, so that $n<i$. For every $j\in\left\{  1,2,\ldots
 Hence, for every $j\in\left\{  1,2,\ldots,n\right\}  $, we don't have $i<j$.
 Thus, for every $j\in\left\{  1,2,\ldots,n\right\}  $, we have%
 \begin{equation}
-\left[  i<j\right]  =0.\label{pf.lem.sol.exe.Ialbe.ab.short.3b.pf.3}%
+\left[  i<j\right]  =0. \label{pf.lem.sol.exe.Ialbe.ab.short.3b.pf.3}%
 \end{equation}
 \par
 Recall that $0\leq n\leq n+m$. Hence,%
@@ -33743,12 +33748,12 @@ Recall that $0\leq n\leq n+m$. Hence,%
 +\sum_{j=n+1}^{n+m}\underbrace{\left[  i<j\right]  }_{\substack{=\left[
 i-n<j-n\right]  \\\text{(since }i<j\text{ is equivalent to}\\i-n<j-n\text{)}%
 }}\left[  \underbrace{c_{i}}_{=b_{i-n}}>\underbrace{c_{j}}_{\substack{=b_{j-n}%
-\\\text{(by (\ref{pf.lem.sol.exe.Ialbe.ab.short.3b.pf.2}))}}}\right]  \\
+\\\text{(by (\ref{pf.lem.sol.exe.Ialbe.ab.short.3b.pf.2}))}}}\right] \\
 &  =\underbrace{\sum_{j=1}^{n}0\left[  c_{i}>c_{j}\right]  }_{=0}+\sum
-_{j=n+1}^{n+m}\left[  i-n<j-n\right]  \left[  b_{i-n}>b_{j-n}\right]  \\
+_{j=n+1}^{n+m}\left[  i-n<j-n\right]  \left[  b_{i-n}>b_{j-n}\right] \\
 &  =\sum_{j=n+1}^{n+m}\left[  i-n<j-n\right]  \left[  b_{i-n}>b_{j-n}\right]
 \\
-&  =\sum_{j=1}^{m}\left[  i-n<j\right]  \left[  b_{i-n}>b_{j}\right]  \\
+&  =\sum_{j=1}^{m}\left[  i-n<j\right]  \left[  b_{i-n}>b_{j}\right] \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }j\text{ for
 }j-n\text{ in the sum}\right)  .
 \end{align*}
@@ -33867,7 +33872,7 @@ $\left(  n+m\right)  $-tuple of integers. Thus, Lemma
 instead of $n$, $\mathbf{a}$ and $a_{i}$) yields%
 \begin{align}
 \ell\left(  \mathbf{c}\right)   &  =\sum_{i=1}^{n+m}\sum_{j=1}^{n+m}\left[
-i<j\right]  \left[  c_{i}>c_{j}\right]  \nonumber\\
+i<j\right]  \left[  c_{i}>c_{j}\right] \nonumber\\
 &  =\sum_{i=1}^{n}\sum_{j=1}^{n+m}\left[  i<j\right]  \left[  c_{i}%
 >c_{j}\right]  +\sum_{i=n+1}^{n+m}\sum_{j=1}^{n+m}\left[  i<j\right]  \left[
 c_{i}>c_{j}\right]  \label{pf.lem.sol.exe.Ialbe.ab.1}%
@@ -33885,13 +33890,13 @@ $i\in\left\{  1,2,\ldots,n\right\}  $. Thus, $c_{i}=a_{i}$ (by
 \par
 For every $j\in\left\{  1,2,\ldots,n\right\}  $, we have%
 \begin{equation}
-c_{j}=a_{j}\label{pf.lem.sol.exe.Ialbe.ab.3a.pf.1}%
+c_{j}=a_{j} \label{pf.lem.sol.exe.Ialbe.ab.3a.pf.1}%
 \end{equation}
 (by (\ref{pf.lem.sol.exe.Ialbe.ab.ci.a}), applied to $j$ instead of $i$).
 \par
 For every $j\in\left\{  n+1,n+2,\ldots,n+m\right\}  $, we have%
 \begin{equation}
-c_{j}=b_{j-n}\label{pf.lem.sol.exe.Ialbe.ab.3a.pf.2}%
+c_{j}=b_{j-n} \label{pf.lem.sol.exe.Ialbe.ab.3a.pf.2}%
 \end{equation}
 (by (\ref{pf.lem.sol.exe.Ialbe.ab.ci.b}), applied to $j$ instead of $i$).
 \par
@@ -33901,23 +33906,23 @@ $j\in\left\{  n+1,n+2,\ldots,n+m\right\}  $, we have $j\geq n+1>n\geq i$
 $, we have $i<j$. Thus, for every $j\in\left\{  n+1,n+2,\ldots,n+m\right\}  $,
 we have%
 \begin{equation}
-\left[  i<j\right]  =1.\label{pf.lem.sol.exe.Ialbe.ab.3a.pf.3}%
+\left[  i<j\right]  =1. \label{pf.lem.sol.exe.Ialbe.ab.3a.pf.3}%
 \end{equation}
 \par
 Recall that $0\leq n\leq n+m$. Hence,%
 \begin{align*}
-&  \sum_{j=1}^{n+m}\left[  i<j\right]  \left[  c_{i}>c_{j}\right]  \\
+&  \sum_{j=1}^{n+m}\left[  i<j\right]  \left[  c_{i}>c_{j}\right] \\
 &  =\sum_{j=1}^{n}\left[  i<j\right]  \left[  \underbrace{c_{i}}_{=a_{i}%
 }>\underbrace{c_{j}}_{\substack{=a_{j}\\\text{(by
 (\ref{pf.lem.sol.exe.Ialbe.ab.3a.pf.1}))}}}\right]  +\sum_{j=n+1}%
 ^{n+m}\underbrace{\left[  i<j\right]  }_{\substack{=1\\\text{(by
 (\ref{pf.lem.sol.exe.Ialbe.ab.3a.pf.3}))}}}\left[  \underbrace{c_{i}}_{=a_{i}%
 }>\underbrace{c_{j}}_{\substack{=b_{j-n}\\\text{(by
-(\ref{pf.lem.sol.exe.Ialbe.ab.3a.pf.2}))}}}\right]  \\
+(\ref{pf.lem.sol.exe.Ialbe.ab.3a.pf.2}))}}}\right] \\
 &  =\sum_{j=1}^{n}\left[  i<j\right]  \left[  a_{i}>a_{j}\right]
-+\sum_{j=n+1}^{n+m}\left[  a_{i}>b_{j-n}\right]  \\
++\sum_{j=n+1}^{n+m}\left[  a_{i}>b_{j-n}\right] \\
 &  =\sum_{j=1}^{n}\left[  i<j\right]  \left[  a_{i}>a_{j}\right]  +\sum
-_{j=1}^{m}\left[  a_{i}>b_{j}\right]  \\
+_{j=1}^{m}\left[  a_{i}>b_{j}\right] \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }j\text{ for
 }j-n\text{ in the second sum}\right)  .
 \end{align*}
@@ -33934,7 +33939,7 @@ $i\in\left\{  n+1,n+2,\ldots,n+m\right\}  $. Thus, $c_{i}=b_{i-n}$ (by
 \par
 For every $j\in\left\{  n+1,n+2,\ldots,n+m\right\}  $, we have%
 \begin{equation}
-c_{j}=b_{j-n}\label{pf.lem.sol.exe.Ialbe.ab.3b.pf.2}%
+c_{j}=b_{j-n} \label{pf.lem.sol.exe.Ialbe.ab.3b.pf.2}%
 \end{equation}
 (by (\ref{pf.lem.sol.exe.Ialbe.ab.ci.b}), applied to $j$ instead of $i$).
 \par
@@ -33944,23 +33949,23 @@ thus $i\geq n+1>n$, so that $n<i$. For every $j\in\left\{  1,2,\ldots
 Hence, for every $j\in\left\{  1,2,\ldots,n\right\}  $, we don't have $i<j$.
 Thus, for every $j\in\left\{  1,2,\ldots,n\right\}  $, we have%
 \begin{equation}
-\left[  i<j\right]  =0.\label{pf.lem.sol.exe.Ialbe.ab.3b.pf.3}%
+\left[  i<j\right]  =0. \label{pf.lem.sol.exe.Ialbe.ab.3b.pf.3}%
 \end{equation}
 \par
 Recall that $0\leq n\leq n+m$. Hence,%
 \begin{align*}
-&  \sum_{j=1}^{n+m}\left[  i<j\right]  \left[  c_{i}>c_{j}\right]  \\
+&  \sum_{j=1}^{n+m}\left[  i<j\right]  \left[  c_{i}>c_{j}\right] \\
 &  =\sum_{j=1}^{n}\underbrace{\left[  i<j\right]  }_{\substack{=0\\\text{(by
 (\ref{pf.lem.sol.exe.Ialbe.ab.3b.pf.3}))}}}\left[  c_{i}>c_{j}\right]
 +\sum_{j=n+1}^{n+m}\underbrace{\left[  i<j\right]  }_{\substack{=\left[
 i-n<j-n\right]  \\\text{(since }i<j\text{ is equivalent to}\\i-n<j-n\text{)}%
 }}\left[  \underbrace{c_{i}}_{=b_{i-n}}>\underbrace{c_{j}}_{\substack{=b_{j-n}%
-\\\text{(by (\ref{pf.lem.sol.exe.Ialbe.ab.3b.pf.2}))}}}\right]  \\
+\\\text{(by (\ref{pf.lem.sol.exe.Ialbe.ab.3b.pf.2}))}}}\right] \\
 &  =\underbrace{\sum_{j=1}^{n}0\left[  c_{i}>c_{j}\right]  }_{=0}+\sum
-_{j=n+1}^{n+m}\left[  i-n<j-n\right]  \left[  b_{i-n}>b_{j-n}\right]  \\
+_{j=n+1}^{n+m}\left[  i-n<j-n\right]  \left[  b_{i-n}>b_{j-n}\right] \\
 &  =\sum_{j=n+1}^{n+m}\left[  i-n<j-n\right]  \left[  b_{i-n}>b_{j-n}\right]
 \\
-&  =\sum_{j=1}^{m}\left[  i-n<j\right]  \left[  b_{i-n}>b_{j}\right]  \\
+&  =\sum_{j=1}^{m}\left[  i-n<j\right]  \left[  b_{i-n}>b_{j}\right] \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }j\text{ for
 }j-n\text{ in the sum}\right)  .
 \end{align*}
@@ -58489,7 +58494,8 @@ k+1,k+2,\ldots,n\right)  }^{w\left(  \widetilde{Q}\right)  }B\right)  .
 \end{lemma}
 
 \begin{proof}
-[Proof of Lemma \ref{lem.sol.det.laplace-multi.1}.]%
+[Proof of Lemma \ref{lem.sol.det.laplace-multi.1}.]
+
 \begin{vershort}
 The definition of $\widetilde{Q}$ yields $\widetilde{Q}=\left\{
 1,2,\ldots,n\right\}  \setminus Q$. Since $Q$ is a subset of $\left\{
@@ -59279,9 +59285,9 @@ k\right)  },r_{\operatorname*{id}\left(  1\right)  },r_{\operatorname*{id}%
 \end{equation}
 (because this is how $\sigma_{P,\operatorname*{id},\operatorname*{id}}$ was
 defined). Hence, $\gamma$ is a $\sigma\in S_{n}$ satisfying
-(\ref{pf.lem.det.laplace-multi.Apq.short.gamma-tuple.pf.1}) (since $\gamma
-=\sigma_{P,\operatorname*{id},\operatorname*{id}}$). In other words, $\gamma$
-is an element of $S_{n}$ and satisfies%
+(\ref{pf.lem.det.laplace-multi.Apq.short.gamma-tuple.pf.1}) (since
+$\gamma=\sigma_{P,\operatorname*{id},\operatorname*{id}}$). In other words,
+$\gamma$ is an element of $S_{n}$ and satisfies%
 \[
 \left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)  ,\ldots,\gamma\left(
 n\right)  \right)  =\left(  p_{\operatorname*{id}\left(  1\right)
@@ -60052,10 +60058,10 @@ P-\left(  1+2+\cdots+k\right)  }$, we obtain%
 &  =\left(  -1\right)  ^{\sum P-\left(  1+2+\cdots+k\right)  }%
 \underbrace{\left(  -1\right)  ^{\gamma}}_{\substack{=\left(  -1\right)
 ^{\sum P-\left(  1+2+\cdots+k\right)  }\\\text{(by
-(\ref{pf.lem.det.laplace-multi.Apq.short.sign-gamma}))}}}\cdot\sum_{\substack{\sigma
-\in S_{n};\\\sigma\left(  P\right)  =Q}}\left(  -1\right)  ^{\sigma}\left(
-\prod_{i\in P}a_{i,\sigma\left(  i\right)  }\right)  \left(  \prod
-_{i\in\widetilde{P}}b_{i,\sigma\left(  i\right)  }\right) \\
+(\ref{pf.lem.det.laplace-multi.Apq.short.sign-gamma}))}}}\cdot\sum
+_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)  =Q}}\left(  -1\right)
+^{\sigma}\left(  \prod_{i\in P}a_{i,\sigma\left(  i\right)  }\right)  \left(
+\prod_{i\in\widetilde{P}}b_{i,\sigma\left(  i\right)  }\right) \\
 &  =\underbrace{\left(  -1\right)  ^{\sum P-\left(  1+2+\cdots+k\right)
 }\left(  -1\right)  ^{\sum P-\left(  1+2+\cdots+k\right)  }}_{=\left(  \left(
 -1\right)  ^{\sum P-\left(  1+2+\cdots+k\right)  }\right)  ^{2}=1}\cdot
@@ -60322,8 +60328,8 @@ P\right)  =Q$.
 
 \begin{vershort}
 \begin{proof}
-[Proof of Lemma \ref{lem.sol.det.laplace-multi.4}.] We have $\sigma\in S_{n}$.
-In  other words, $\sigma$ is a permutation of the set $\left\{  1,2,\ldots
+[Proof of Lemma \ref{lem.sol.det.laplace-multi.4}.]We have $\sigma\in S_{n}$.
+In other words, $\sigma$ is a permutation of the set $\left\{  1,2,\ldots
 ,n\right\}  $. In other words, $\sigma$ is a bijective map $\left\{
 1,2,\ldots,n\right\}  \rightarrow\left\{  1,2,\ldots,n\right\}  $. The map
 $\sigma$ is bijective, and therefore injective.
@@ -60383,8 +60389,8 @@ $\sigma$ is injective). This proves Lemma \ref{lem.sol.det.laplace-multi.4}
 \textbf{(b)} We shall first prove the logical implication%
 \begin{equation}
 \left(  \sigma^{-1}\left(  Q\right)  =P\right)  \ \Longrightarrow\ \left(
-\sigma\left(  P\right)  =Q\right)
-.\label{pf.lem.sol.det.laplace-multi.4.dir1}%
+\sigma\left(  P\right)  =Q\right)  .
+\label{pf.lem.sol.det.laplace-multi.4.dir1}%
 \end{equation}
 
 
@@ -60423,8 +60429,8 @@ implication (\ref{pf.lem.sol.det.laplace-multi.4.dir1}).
 Next, we shall prove the logical implication%
 \begin{equation}
 \left(  \sigma\left(  P\right)  =Q\right)  \ \Longrightarrow\ \left(
-\sigma^{-1}\left(  Q\right)  =P\right)
-.\label{pf.lem.sol.det.laplace-multi.4.dir2}%
+\sigma^{-1}\left(  Q\right)  =P\right)  .
+\label{pf.lem.sol.det.laplace-multi.4.dir2}%
 \end{equation}
 
 
@@ -60620,10 +60626,10 @@ Q\right)  }A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(
 This proves Theorem \ref{thm.det.laplace-multi} \textbf{(b)}.
 \end{proof}
 
-\begin{proof}[Solution to Exercise \ref{exe.det.laplace-multi}.]
-We have now proven both Lemma \ref{lem.det.laplace-multi.Apq} and
-Theorem \ref{thm.det.laplace-multi}. Thus,
-Exercise \ref{exe.det.laplace-multi} is solved.
+\begin{proof}
+[Solution to Exercise \ref{exe.det.laplace-multi}.]We have now proven both
+Lemma \ref{lem.det.laplace-multi.Apq} and Theorem \ref{thm.det.laplace-multi}.
+Thus, Exercise \ref{exe.det.laplace-multi} is solved.
 \end{proof}
 
 \subsection{Solution to Exercise \ref{exe.det(A+B)}}
@@ -60757,7 +60763,7 @@ satisfies}\\
 \text{either }\left\vert Q\right\vert =\left\vert P\right\vert \text{ or
 }\left\vert Q\right\vert \neq\left\vert P\right\vert \text{ (but not both)}%
 \end{array}
-\right)  \\
+\right) \\
 &  =\sum_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
 Q\right\vert =\left\vert P\right\vert }}\sum_{\substack{\sigma\in
 S_{n};\\\sigma\left(  P\right)  =Q}}c_{\sigma,P}+\underbrace{\sum
@@ -60973,7 +60979,7 @@ satisfies}\\
 \text{either }\left\vert Q\right\vert =\left\vert P\right\vert \text{ or
 }\left\vert Q\right\vert \neq\left\vert P\right\vert \text{ (but not both)}%
 \end{array}
-\right)  \\
+\right) \\
 &  =\sum_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
 Q\right\vert =\left\vert P\right\vert }}\sum_{\substack{\sigma\in
 S_{n};\\\sigma\left(  P\right)  =Q}}c_{\sigma,P}+\underbrace{\sum
