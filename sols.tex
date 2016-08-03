@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Tuesday, August 02, 2016 22:30:23}
+%TCIDATA{LastRevised=Wednesday, August 03, 2016 17:47:41}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -18666,8 +18666,8 @@ a_{2} & b_{2,1} & b_{2,2}\\
 \end{remark}
 
 \begin{remark}
-You might wonder whether Exercise \ref{exe.block2x2.tridet} generalizes to a
-formula for $\det\left(
+\label{rmk.block2x2.det-gen}You might wonder whether Exercise
+\ref{exe.block2x2.tridet} generalizes to a formula for $\det\left(
 \begin{array}
 [c]{cc}%
 A & B\\
@@ -18676,10 +18676,11 @@ C & D
 \right)  $ when $A\in\mathbb{K}^{n\times n}$, $B\in\mathbb{K}^{n\times m}$,
 $C\in\mathbb{K}^{m\times n}$ and $D\in\mathbb{K}^{m\times m}$. The general
 answer is \textquotedblleft No\textquotedblright. However, when $D$ is
-invertible, there exists such a formula (involving
-\href{https://en.wikipedia.org/wiki/Schur_complement}{the Schur complement}).
-Curiously, there is also a formula for the case when $n=m$ and $CD=DC$ (see
-\cite[Theorem 3]{Silvest}).
+invertible, there exists such a formula (the
+\href{https://en.wikipedia.org/wiki/Schur_complement}{Schur complement}
+formula shown in Exercise \ref{exe.block2x2.schur} below). Curiously, there is
+also a formula for the case when $n=m$ and $CD=DC$ (see \cite[Theorem
+3]{Silvest}).
 \end{remark}
 
 We notice that Exercise \ref{exe.block2x2.tridet} allows us to solve Exercise
@@ -20456,6 +20457,161 @@ defined, I invite you to check that the two infinite matrices $A=\left(
 \right)  $ satisfy $AB=I_{\infty}$ but $BA\neq I_{\infty}$. This makes
 Corollary \ref{cor.matrices.inverse.AB} \textbf{(a)} all the more interesting.
 \end{remark}
+
+Here are some more exercises involving matrices in \textquotedblleft
+block-matrix form\textquotedblright:
+
+\begin{exercise}
+\label{exe.block2x2.VB+WD}Let $n\in\mathbb{N}$ and $m\in\mathbb{N}$. Let
+$A\in\mathbb{K}^{n\times n}$, $B\in\mathbb{K}^{n\times m}$, $C\in
+\mathbb{K}^{m\times n}$ and $D\in\mathbb{K}^{m\times m}$. Furthermore, let
+$W\in\mathbb{K}^{m\times m}$ and $V\in\mathbb{K}^{m\times n}$ be such that
+$VA=-WC$. Prove that%
+\[
+\det W\cdot\det\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+C & D
+\end{array}
+\right)  =\det A\cdot\det\left(  VB+WD\right)  .
+\]
+
+
+[\textbf{Hint:} Use Exercise \ref{exe.block2x2.mult} to simplify the product
+$\left(
+\begin{array}
+[c]{cc}%
+I_{n} & 0_{n\times m}\\
+V & W
+\end{array}
+\right)  \left(
+\begin{array}
+[c]{cc}%
+A & B\\
+C & D
+\end{array}
+\right)  $; then, take determinants.]
+\end{exercise}
+
+Exercise \ref{exe.block2x2.VB+WD} can often be used to compute the determinant
+of a matrix given in block-matrix form (i.e., determinants of the form
+$\det\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+C & D
+\end{array}
+\right)  $) by only computing determinants of smaller matrices (such as $W$,
+$A$ and $VB+WD$). It falls short of providing a general method for computing
+such determinants\footnote{Indeed, it only gives a formula for $\det
+W\cdot\det\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+C & D
+\end{array}
+\right)  $, not for $\det\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+C & D
+\end{array}
+\right)  $. If $\det W$ is invertible, then it allows for computing
+$\det\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+C & D
+\end{array}
+\right)  $; but Exercise \ref{exe.block2x2.VB+WD} gives no hint on how to find
+matrices $W$ and $V$ such that $\det W$ is invertible and such that $VA=-WC$.
+(Actually, such matrices do not always exist!)}, but it is one of the most
+general facts about them. The next two exercises are two special cases of
+Exercise \ref{exe.block2x2.VB+WD}:
+
+\begin{exercise}
+\label{exe.block2x2.schur}Let $n\in\mathbb{N}$ and $m\in\mathbb{N}$. Let
+$A\in\mathbb{K}^{n\times n}$, $B\in\mathbb{K}^{n\times m}$, $C\in
+\mathbb{K}^{m\times n}$ and $D\in\mathbb{K}^{m\times m}$ be such that the
+matrix $A$ is invertible. Prove that%
+\[
+\det\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+C & D
+\end{array}
+\right)  =\det A\cdot\det\left(  D-CA^{-1}B\right)  .
+\]
+
+\end{exercise}
+
+Exercise \ref{exe.block2x2.schur} is known as the \textit{Schur complement
+formula} (or, at least, it is one of several formulas sharing this name); and
+the matrix $D-CA^{-1}B$ appearing on its right hand side is known as the
+\textit{Schur complement} of the block $A$ in the matrix $\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+C & D
+\end{array}
+\right)  $.
+
+\begin{exercise}
+\label{exe.block2x2.jacobi}Let $n\in\mathbb{N}$ and $m\in\mathbb{N}$. Let
+$A\in\mathbb{K}^{n\times n}$, $B\in\mathbb{K}^{n\times m}$, $C\in
+\mathbb{K}^{m\times n}$ and $D\in\mathbb{K}^{m\times m}$. Let $A^{\prime}%
+\in\mathbb{K}^{n\times n}$, $B^{\prime}\in\mathbb{K}^{n\times m}$, $C^{\prime
+}\in\mathbb{K}^{m\times n}$ and $D^{\prime}\in\mathbb{K}^{m\times m}$. Assume
+that the matrix $\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+C & D
+\end{array}
+\right)  $ is invertible, and that its inverse is the matrix $\left(
+\begin{array}
+[c]{cc}%
+A^{\prime} & B^{\prime}\\
+C^{\prime} & D^{\prime}%
+\end{array}
+\right)  $. Prove that%
+\[
+\det A=\det\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+C & D
+\end{array}
+\right)  \cdot\det\left(  D^{\prime}\right)  .
+\]
+
+\end{exercise}
+
+Exercise \ref{exe.block2x2.jacobi} can be rewritten in the following more
+handy form:
+
+\begin{exercise}
+\label{exe.block2x2.jacobi.rewr}We shall use the notations introduced in
+Definition \ref{def.submatrix}.
+
+Let $n\in\mathbb{N}$. Let $A\in\mathbb{K}^{n\times n}$ be an invertible
+matrix. Let $k\in\left\{  0,1,\ldots,n\right\}  $. Prove that%
+\[
+\det\left(  \operatorname*{sub}\nolimits_{1,2,\ldots,k}^{1,2,\ldots
+,k}A\right)  =\det A\cdot\det\left(  \operatorname*{sub}%
+\nolimits_{k+1,k+2,\ldots,n}^{k+1,k+2,\ldots,n}\left(  A^{-1}\right)  \right)
+.
+\]
+
+\end{exercise}
+
+Exercise \ref{exe.block2x2.jacobi.rewr} is a particular case of the so-called
+\textit{Jacobi complementary minor theorem}\footnote{See \cite[(1)]{Lalonde}
+for the general case (whence Exercise \ref{exe.block2x2.jacobi.rewr} is
+obtained by setting $S=\left\{  k+1,k+2,\ldots,n\right\}  $ and $T=\left\{
+k+1,k+2,\ldots,n\right\}  $).}.
 
 \subsection{\label{sect.noncommring}Noncommutative rings}
 
@@ -24392,18 +24548,18 @@ In particular:
 \begin{align*}
 &  \sum_{\substack{P\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
 P\right\vert =n-n}}\det\left(  \operatorname*{sub}\nolimits_{w\left(
-P\right)  }^{w\left(  P\right)  }A\right)  \\
+P\right)  }^{w\left(  P\right)  }A\right) \\
 &  =\det\underbrace{\left(  \operatorname*{sub}\nolimits_{w\left(
 \varnothing\right)  }^{w\left(  \varnothing\right)  }A\right)  }_{=\left(
 \text{the }0\times0\text{-matrix}\right)  }\\
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
-\text{since the only subset }P\text{ of }\left\{  1,2,\ldots,n\right\}  \\
+\text{since the only subset }P\text{ of }\left\{  1,2,\ldots,n\right\} \\
 \text{satisfying }\left\vert P\right\vert =n-n\text{ is the empty set
 }\varnothing
 \end{array}
-\right)  \\
+\right) \\
 &  =\det\left(  \text{the }0\times0\text{-matrix}\right)  =1.
 \end{align*}
 
@@ -24413,7 +24569,7 @@ P\right)  }^{w\left(  P\right)  }A\right)  \\
 \begin{align*}
 &  \sum_{\substack{P\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
 P\right\vert =n-0}}\det\left(  \operatorname*{sub}\nolimits_{w\left(
-P\right)  }^{w\left(  P\right)  }A\right)  \\
+P\right)  }^{w\left(  P\right)  }A\right) \\
 &  =\det\underbrace{\left(  \operatorname*{sub}\nolimits_{w\left(  \left\{
 1,2,\ldots,n\right\}  \right)  }^{w\left(  \left\{  1,2,\ldots,n\right\}
 \right)  }A\right)  }_{=\operatorname*{sub}\nolimits_{1,2,\ldots
@@ -24421,11 +24577,11 @@ P\right)  }^{w\left(  P\right)  }A\right)  \\
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
-\text{since the only subset }P\text{ of }\left\{  1,2,\ldots,n\right\}  \\
+\text{since the only subset }P\text{ of }\left\{  1,2,\ldots,n\right\} \\
 \text{satisfying }\left\vert P\right\vert =n-0\text{ is the set }\left\{
 1,2,\ldots,n\right\}
 \end{array}
-\right)  \\
+\right) \\
 &  =\det A.
 \end{align*}
 
@@ -24436,7 +24592,7 @@ $\det\left(  A+XI_{n}\right)  $ is%
 \begin{align*}
 &  \sum_{\substack{P\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
 P\right\vert =n-\left(  n-1\right)  }}\det\left(  \operatorname*{sub}%
-\nolimits_{w\left(  P\right)  }^{w\left(  P\right)  }A\right)  \\
+\nolimits_{w\left(  P\right)  }^{w\left(  P\right)  }A\right) \\
 &  =\sum_{\substack{P\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
 P\right\vert =1}}\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)
 }^{w\left(  P\right)  }A\right)  =\sum_{k=1}^{n}\det\underbrace{\left(
@@ -24451,11 +24607,11 @@ a_{k,k}%
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
-\text{since the subsets }P\text{ of }\left\{  1,2,\ldots,n\right\}  \\
+\text{since the subsets }P\text{ of }\left\{  1,2,\ldots,n\right\} \\
 \text{satisfying }\left\vert P\right\vert =1\text{ are the sets }\left\{
 1\right\}  ,\left\{  2\right\}  ,\ldots,\left\{  n\right\}
 \end{array}
-\right)  \\
+\right) \\
 &  =\sum_{k=1}^{n}\underbrace{\det\left(
 \begin{array}
 [c]{c}%
@@ -53850,6 +54006,1265 @@ Exercise \ref{exe.adj(AB)}.
 \end{proof}
 \end{verlong}
 
+\subsection{Solution to Exercise \ref{exe.block2x2.VB+WD}}
+
+\begin{proof}
+[Solution to Exercise \ref{exe.block2x2.VB+WD}.]Note that $VB$ and $WD$ are
+$m\times m$-matrices. Hence, $VB+WD$ is an $m\times m$-matrix. Also, $\left(
+\begin{array}
+[c]{cc}%
+I_{n} & 0_{n\times m}\\
+V & W
+\end{array}
+\right)  $ and $\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+C & D
+\end{array}
+\right)  $ are $\left(  n+m\right)  \times\left(  n+m\right)  $-matrices.
+
+Exercise \ref{exe.block2x2.mult} (applied to $n$, $m$, $n$, $m$, $n$, $m$,
+$I_{n}$, $0_{n\times m}$, $V$, $W$, $A$, $B$, $C$ and $D$ instead of $n$,
+$n^{\prime}$, $m$, $m^{\prime}$, $\ell$, $\ell^{\prime}$, $A$, $B$, $C$, $D$,
+$A^{\prime}$, $B^{\prime}$, $C^{\prime}$ and $D^{\prime}$) yields%
+\begin{align*}
+\left(
+\begin{array}
+[c]{cc}%
+I_{n} & 0_{n\times m}\\
+V & W
+\end{array}
+\right)  \left(
+\begin{array}
+[c]{cc}%
+A & B\\
+C & D
+\end{array}
+\right)   &  =\left(
+\begin{array}
+[c]{cc}%
+I_{n}A+0_{n\times m}C & I_{n}B+0_{n\times m}D\\
+VA+WC & VB+WD
+\end{array}
+\right) \\
+&  =\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+0_{m\times n} & VB+WD
+\end{array}
+\right)
+\end{align*}
+(since $I_{n}A+\underbrace{0_{n\times m}C}_{=0_{n\times n}}=I_{n}A=A$,
+$I_{n}B+\underbrace{0_{n\times m}D}_{=0_{n\times m}}=I_{n}B=B$ and
+$\underbrace{VA}_{=-WC}+WC=-WC+WC=0_{m\times n}$). Taking determinants on both
+sides of this equality, we obtain%
+\begin{align*}
+\det\left(  \left(
+\begin{array}
+[c]{cc}%
+I_{n} & 0_{n\times m}\\
+V & W
+\end{array}
+\right)  \left(
+\begin{array}
+[c]{cc}%
+A & B\\
+C & D
+\end{array}
+\right)  \right)   &  =\det\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+0_{m\times n} & VB+WD
+\end{array}
+\right) \\
+&  =\det A\cdot\det\left(  VB+WD\right)
+\end{align*}
+(by Exercise \ref{exe.block2x2.tridet} (applied to $VB+WD$ instead of $D$)).
+Hence,%
+\begin{align*}
+&  \det A\cdot\det\left(  VB+WD\right) \\
+&  =\det\left(  \left(
+\begin{array}
+[c]{cc}%
+I_{n} & 0_{n\times m}\\
+V & W
+\end{array}
+\right)  \left(
+\begin{array}
+[c]{cc}%
+A & B\\
+C & D
+\end{array}
+\right)  \right) \\
+&  =\underbrace{\det\left(
+\begin{array}
+[c]{cc}%
+I_{n} & 0_{n\times m}\\
+V & W
+\end{array}
+\right)  }_{\substack{=\det\left(  I_{n}\right)  \cdot\det W\\\text{(by
+Exercise \ref{exe.block2x2.tridet.transposed} (applied}\\\text{to }%
+I_{n}\text{, }V\text{ and }W\text{ instead of }A\text{, }C\text{ and
+}D\text{))}}}\cdot\det\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+C & D
+\end{array}
+\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{by Theorem \ref{thm.det(AB)} (applied to }n+m\text{, }\left(
+\begin{array}
+[c]{cc}%
+I_{n} & 0_{n\times m}\\
+V & W
+\end{array}
+\right) \\
+\text{and }\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+C & D
+\end{array}
+\right)  \text{ instead of }n\text{, }A\text{ and }B\text{)}%
+\end{array}
+\right) \\
+&  =\underbrace{\det\left(  I_{n}\right)  }_{=1}\cdot\det W\cdot\det\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+C & D
+\end{array}
+\right)  =\det W\cdot\det\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+C & D
+\end{array}
+\right)  .
+\end{align*}
+This solves Exercise \ref{exe.block2x2.VB+WD}.
+\end{proof}
+
+\subsection{Solution to Exercise \ref{exe.block2x2.schur}}
+
+\begin{proof}
+[Solution to Exercise \ref{exe.block2x2.schur}.]Recall that $\det\left(
+I_{n}\right)  =1$. The same argument (applied to $m$ instead of $n$) yields
+$\det\left(  I_{m}\right)  =1$.
+
+The matrix $A$ is invertible; thus, it has an inverse $A^{-1}\in
+\mathbb{K}^{n\times n}$. The matrices $I_{m}\in\mathbb{K}^{m\times m}$ and
+$-CA^{-1}\in\mathbb{K}^{m\times n}$ satisfy $-\left(  CA^{-1}\right)
+A=-I_{m}C$ (since $-\left(  CA^{-1}A\right)  =-C\underbrace{A^{-1}A}_{=I_{n}%
+}=-CI_{n}=-\underbrace{C}_{=I_{m}C}=-I_{m}C$). Hence, Exercise
+\ref{exe.block2x2.VB+WD} (applied to $W=I_{m}$ and $V=-CA^{-1}$) yields%
+\begin{align*}
+\det\left(  I_{m}\right)  \cdot\det\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+C & D
+\end{array}
+\right)   &  =\det A\cdot\det\left(  -CA^{-1}B+\underbrace{I_{m}D}_{=D}\right)
+\\
+&  =\det A\cdot\det\left(  \underbrace{-CA^{-1}B+D}_{=D-CA^{-1}B}\right)
+=\det A\cdot\det\left(  D-CA^{-1}B\right)  .
+\end{align*}
+Hence,%
+\[
+\det A\cdot\det\left(  D-CA^{-1}B\right)  =\underbrace{\det\left(
+I_{m}\right)  }_{=1}\cdot\det\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+C & D
+\end{array}
+\right)  =\det\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+C & D
+\end{array}
+\right)  .
+\]
+This solves Exercise \ref{exe.block2x2.schur}.
+\end{proof}
+
+\subsection{Solution to Exercise \ref{exe.block2x2.jacobi}}
+
+Before we solve Exercise \ref{exe.block2x2.jacobi}, let us show two really
+simple facts:
+
+\begin{lemma}
+\label{lem.sol.block2x2.jacobi.InIm}Let $n\in\mathbb{N}$ and $m\in\mathbb{N}$.
+Then,%
+\[
+\left(
+\begin{array}
+[c]{cc}%
+I_{n} & 0_{n\times m}\\
+0_{m\times n} & I_{m}%
+\end{array}
+\right)  =I_{n+m}.
+\]
+
+\end{lemma}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.block2x2.jacobi.InIm}.]Easy, and left to the reader.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.block2x2.jacobi.InIm}.]For any two objects $i$
+and $j$, define an element $\delta_{i,j}\in\mathbb{K}$ by $\delta_{i,j}=%
+\begin{cases}
+1, & \text{if }i=j;\\
+0, & \text{if }i\neq j
+\end{cases}
+$.
+
+We have $I_{n}=\left(  \delta_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$
+(by the definition of $I_{n}$) and $0_{n\times m}=\left(  0\right)  _{1\leq
+i\leq n,\ 1\leq j\leq m}$ (by the definition of $0_{n\times m}$) and
+$0_{m\times n}=\left(  0\right)  _{1\leq i\leq m,\ 1\leq j\leq m}$ (by the
+definition of $0_{m\times n}$) and $I_{m}=\left(  \delta_{i,j}\right)  _{1\leq
+i\leq m,\ 1\leq j\leq m}$ (by the definition of $I_{m}$). Hence, the
+definition of $\left(
+\begin{array}
+[c]{cc}%
+I_{n} & 0_{n\times m}\\
+0_{m\times n} & I_{m}%
+\end{array}
+\right)  $ yields%
+\begin{align}
+&  \left(
+\begin{array}
+[c]{cc}%
+I_{n} & 0_{n\times m}\\
+0_{m\times n} & I_{m}%
+\end{array}
+\right) \nonumber\\
+&  =\left(
+\begin{cases}
+\delta_{i,j}, & \text{if }i\leq n\text{ and }j\leq n;\\
+0, & \text{if }i\leq n\text{ and }j>n;\\
+0, & \text{if }i>n\text{ and }j\leq n;\\
+\delta_{i-n,j-n}, & \text{if }i>n\text{ and }j>n
+\end{cases}
+\right)  _{1\leq i\leq n+m,\ 1\leq j\leq n+m}
+\label{pf.lem.sol.block2x2.jacobi.InIm.LHS}%
+\end{align}
+
+
+But every $\left(  i,j\right)  \in\left\{  1,2,\ldots,n+m\right\}  ^{2}$
+satisfy%
+\begin{equation}%
+\begin{cases}
+\delta_{i,j}, & \text{if }i\leq n\text{ and }j\leq n;\\
+0, & \text{if }i\leq n\text{ and }j>n;\\
+0, & \text{if }i>n\text{ and }j\leq n;\\
+\delta_{i-n,j-n}, & \text{if }i>n\text{ and }j>n
+\end{cases}
+=\delta_{i,j}\label{pf.lem.sol.block2x2.jacobi.InIm.deldel}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.sol.block2x2.jacobi.InIm.deldel}):}
+Let $\left(  i,j\right)  \in\left\{  1,2,\ldots,n+m\right\}  ^{2}$. We want to
+prove (\ref{pf.lem.sol.block2x2.jacobi.InIm.deldel}).
+\par
+We have $\left(  i,j\right)  \in\left\{  1,2,\ldots,n+m\right\}  ^{2}$. In
+other words, $i\in\left\{  1,2,\ldots,n+m\right\}  $ and $j\in\left\{
+1,2,\ldots,n+m\right\}  $. We are in one of the following two cases:
+\par
+\textit{Case 1:} We have $i\leq n$.
+\par
+\textit{Case 2:} We have $i>n$.
+\par
+Let us first consider Case 1. In this case, we have $i\leq n$. We are in one
+of the following two subcases:
+\par
+\textit{Subcase 1.1:} We have $j\leq n$.
+\par
+\textit{Subcase 1.2:} We have $j>n$.
+\par
+Let us first consider Subcase 1.1. In this case, we have $j\leq n$. Hence,
+\[%
+\begin{cases}
+\delta_{i,j}, & \text{if }i\leq n\text{ and }j\leq n;\\
+0, & \text{if }i\leq n\text{ and }j>n;\\
+0, & \text{if }i>n\text{ and }j\leq n;\\
+\delta_{i-n,j-n}, & \text{if }i>n\text{ and }j>n
+\end{cases}
+=\delta_{i,j}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }i\leq n\text{ and }j\leq
+n\right)  .
+\]
+Thus, (\ref{pf.lem.sol.block2x2.jacobi.InIm.deldel}) is proven in Subcase 1.1.
+\par
+Let us next consider Subcase 1.2. In this case, we have $j>n$. Hence, $n<j$,
+so that $i\leq n<j$. Thus, $i\neq j$, so that $\delta_{i,j}=0$. But%
+\begin{align*}%
+\begin{cases}
+\delta_{i,j}, & \text{if }i\leq n\text{ and }j\leq n;\\
+0, & \text{if }i\leq n\text{ and }j>n;\\
+0, & \text{if }i>n\text{ and }j\leq n;\\
+\delta_{i-n,j-n}, & \text{if }i>n\text{ and }j>n
+\end{cases}
+&  =0\ \ \ \ \ \ \ \ \ \ \left(  \text{since }i\leq n\text{ and }j>n\right)
+\\
+&  =\delta_{i,j}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\delta_{i,j}%
+=0\right)  .
+\end{align*}
+Thus, (\ref{pf.lem.sol.block2x2.jacobi.InIm.deldel}) is proven in Subcase 1.2.
+\par
+We now have proven (\ref{pf.lem.sol.block2x2.jacobi.InIm.deldel}) in each of
+the two Subcases 1.1 and 1.2. Since these two Subcases cover the whole Case 1,
+we can thus conclude that (\ref{pf.lem.sol.block2x2.jacobi.InIm.deldel}) holds
+in Case 1.
+\par
+Let us now consider Case 2. In this case, we have $i>n$. We are in one of the
+following two subcases:
+\par
+\textit{Subcase 2.1:} We have $j\leq n$.
+\par
+\textit{Subcase 2.2:} We have $j>n$.
+\par
+Let us first consider Subcase 1.1. In this case, we have $j\leq n$. Hence,
+$n\geq j$, and thus $i>n\geq j$. Hence, $i\neq j$, and thus $\delta_{i,j}=0$.
+But%
+\begin{align*}%
+\begin{cases}
+\delta_{i,j}, & \text{if }i\leq n\text{ and }j\leq n;\\
+0, & \text{if }i\leq n\text{ and }j>n;\\
+0, & \text{if }i>n\text{ and }j\leq n;\\
+\delta_{i-n,j-n}, & \text{if }i>n\text{ and }j>n
+\end{cases}
+&  =0\ \ \ \ \ \ \ \ \ \ \left(  \text{since }i>n\text{ and }j\leq n\right)
+\\
+&  =\delta_{i,j}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\delta_{i,j}%
+=0\right)  .
+\end{align*}
+Thus, (\ref{pf.lem.sol.block2x2.jacobi.InIm.deldel}) is proven in Subcase 2.1.
+\par
+Let us next consider Subcase 1.2. In this case, we have $j>n$. But the
+definition of $\delta_{i,j}$ yields $\delta_{i,j}=%
+\begin{cases}
+1, & \text{if }i=j;\\
+0, & \text{if }i\neq j
+\end{cases}
+$. Now,%
+\begin{align*}
+&
+\begin{cases}
+\delta_{i,j}, & \text{if }i\leq n\text{ and }j\leq n;\\
+0, & \text{if }i\leq n\text{ and }j>n;\\
+0, & \text{if }i>n\text{ and }j\leq n;\\
+\delta_{i-n,j-n}, & \text{if }i>n\text{ and }j>n
+\end{cases}
+\\
+&  =\delta_{i-n,j-n}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }i>n\text{ and
+}j>n\right)  \\
+&  =%
+\begin{cases}
+1, & \text{if }i-n=j-n;\\
+0, & \text{if }i-n\neq j-n
+\end{cases}
+\\
+&  =%
+\begin{cases}
+1, & \text{if }i=j;\\
+0, & \text{if }i\neq j
+\end{cases}
+\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since the statement }i-n=j-n\text{ is equivalent to }i=j\text{,}\\
+\text{and since the statement }i-n\neq j-n\text{ is equivalent to }i\neq j
+\end{array}
+\right)  \\
+&  =\delta_{i,j}.
+\end{align*}
+Thus, (\ref{pf.lem.sol.block2x2.jacobi.InIm.deldel}) is proven in Subcase 2.2.
+\par
+We now have proven (\ref{pf.lem.sol.block2x2.jacobi.InIm.deldel}) in each of
+the two Subcases 2.1 and 2.2. Since these two Subcases cover the whole Case 2,
+we can thus conclude that (\ref{pf.lem.sol.block2x2.jacobi.InIm.deldel}) holds
+in Case 2.
+\par
+We now have proven (\ref{pf.lem.sol.block2x2.jacobi.InIm.deldel}) in each of
+the two Cases 1 and 2. Since these two Cases cover all possibilities, we can
+thus conclude that (\ref{pf.lem.sol.block2x2.jacobi.InIm.deldel}) always
+holds. Qed.}.
+
+Now, (\ref{pf.lem.sol.block2x2.jacobi.InIm.LHS}) becomes%
+\begin{align*}
+&  \left(
+\begin{array}
+[c]{cc}%
+I_{n} & 0_{n\times m}\\
+0_{m\times n} & I_{m}%
+\end{array}
+\right)  \\
+&  =\left(  \underbrace{%
+\begin{cases}
+\delta_{i,j}, & \text{if }i\leq n\text{ and }j\leq n;\\
+0, & \text{if }i\leq n\text{ and }j>n;\\
+0, & \text{if }i>n\text{ and }j\leq n;\\
+\delta_{i-n,j-n}, & \text{if }i>n\text{ and }j>n
+\end{cases}
+}_{\substack{=\delta_{i,j}\\\text{(by
+(\ref{pf.lem.sol.block2x2.jacobi.InIm.deldel}))}}}\right)  _{1\leq i\leq
+n+m,\ 1\leq j\leq n+m}\\
+&  =\left(  \delta_{i,j}\right)  _{1\leq i\leq n+m,\ 1\leq j\leq n+m}.
+\end{align*}
+Comparing this with%
+\[
+I_{n+m}=\left(  \delta_{i,j}\right)  _{1\leq i\leq n+m,\ 1\leq j\leq
+n+m}\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }I_{n+m}\right)  ,
+\]
+we obtain $\left(
+\begin{array}
+[c]{cc}%
+I_{n} & 0_{n\times m}\\
+0_{m\times n} & I_{m}%
+\end{array}
+\right)  =I_{n+m}$. This proves Lemma \ref{lem.sol.block2x2.jacobi.InIm}.
+\end{proof}
+\end{verlong}
+
+\begin{lemma}
+\label{lem.sol.block2x2.jacobi.equal}Let $n$, $n^{\prime}$, $m$ and
+$m^{\prime}$ be four nonnegative integers.
+
+Let $A\in\mathbb{K}^{n\times m}$ and $A^{\prime}\in\mathbb{K}^{n\times m}$.
+Let $B\in\mathbb{K}^{n\times m^{\prime}}$ and $B^{\prime}\in\mathbb{K}%
+^{n\times m^{\prime}}$. Let $C\in\mathbb{K}^{n^{\prime}\times m}$ and
+$C^{\prime}\in\mathbb{K}^{n^{\prime}\times m}$. Let $D\in\mathbb{K}%
+^{n^{\prime}\times m^{\prime}}$ and $D^{\prime}\in\mathbb{K}^{n^{\prime}\times
+m^{\prime}}$. Assume that $\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+C & D
+\end{array}
+\right)  =\left(
+\begin{array}
+[c]{cc}%
+A^{\prime} & B^{\prime}\\
+C^{\prime} & D^{\prime}%
+\end{array}
+\right)  $. Then, $A=A^{\prime}$, $B=B^{\prime}$, $C=C^{\prime}$ and
+$D=D^{\prime}$.
+\end{lemma}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.block2x2.jacobi.equal}.]Easy, and left to the reader.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.block2x2.jacobi.equal}.]Write the matrix
+$A\in\mathbb{K}^{n\times m}$ in the form $A=\left(  a_{i,j}\right)  _{1\leq
+i\leq n,\ 1\leq j\leq m}$.
+
+Write the matrix $A^{\prime}\in\mathbb{K}^{n\times m}$ in the form $A^{\prime
+}=\left(  a_{i,j}^{\prime}\right)  _{1\leq i\leq n,\ 1\leq j\leq m}$.
+
+Write the matrix $B\in\mathbb{K}^{n\times m^{\prime}}$ in the form $B=\left(
+b_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq m^{\prime}}$.
+
+Write the matrix $B^{\prime}\in\mathbb{K}^{n\times m^{\prime}}$ in the form
+$B^{\prime}=\left(  b_{i,j}^{\prime}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+m^{\prime}}$.
+
+Write the matrix $C\in\mathbb{K}^{n^{\prime}\times m}$ in the form $C=\left(
+c_{i,j}\right)  _{1\leq i\leq n^{\prime},\ 1\leq j\leq m}$.
+
+Write the matrix $C^{\prime}\in\mathbb{K}^{n^{\prime}\times m}$ in the form
+$C^{\prime}=\left(  c_{i,j}^{\prime}\right)  _{1\leq i\leq n^{\prime},\ 1\leq
+j\leq m}$.
+
+Write the matrix $D\in\mathbb{K}^{n^{\prime}\times m^{\prime}}$ in the form
+$D=\left(  d_{i,j}\right)  _{1\leq i\leq n^{\prime},\ 1\leq j\leq m^{\prime}}$.
+
+Write the matrix $D^{\prime}\in\mathbb{K}^{n^{\prime}\times m^{\prime}}$ in
+the form $D^{\prime}=\left(  d_{i,j}^{\prime}\right)  _{1\leq i\leq n^{\prime
+},\ 1\leq j\leq m^{\prime}}$.
+
+We have $A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq m}$,
+$B=\left(  b_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq m^{\prime}}$,
+$C=\left(  c_{i,j}\right)  _{1\leq i\leq n^{\prime},\ 1\leq j\leq m}$ and
+$D=\left(  d_{i,j}\right)  _{1\leq i\leq n^{\prime},\ 1\leq j\leq m^{\prime}}%
+$. Hence, the definition of $\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+C & D
+\end{array}
+\right)  $ yields%
+\begin{align}
+&  \left(
+\begin{array}
+[c]{cc}%
+A & B\\
+C & D
+\end{array}
+\right) \nonumber\\
+&  =\left(
+\begin{cases}
+a_{i,j}, & \text{if }i\leq n\text{ and }j\leq m;\\
+b_{i,j-m}, & \text{if }i\leq n\text{ and }j>m;\\
+c_{i-n,j}, & \text{if }i>n\text{ and }j\leq m;\\
+d_{i-n,j-m}, & \text{if }i>n\text{ and }j>m
+\end{cases}
+\right)  _{1\leq i\leq n+n^{\prime},\ 1\leq j\leq m+m^{\prime}}.
+\label{pf.lem.sol.block2x2.jacobi.equal.1}%
+\end{align}
+
+
+We have $A^{\prime}=\left(  a_{i,j}^{\prime}\right)  _{1\leq i\leq n,\ 1\leq
+j\leq m}$, $B^{\prime}=\left(  b_{i,j}^{\prime}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq m^{\prime}}$, $C^{\prime}=\left(  c_{i,j}^{\prime}\right)
+_{1\leq i\leq n^{\prime},\ 1\leq j\leq m}$ and $D^{\prime}=\left(
+d_{i,j}^{\prime}\right)  _{1\leq i\leq n^{\prime},\ 1\leq j\leq m^{\prime}}$.
+Hence, the definition of $\left(
+\begin{array}
+[c]{cc}%
+A^{\prime} & B^{\prime}\\
+C^{\prime} & D^{\prime}%
+\end{array}
+\right)  $ yields%
+\begin{align}
+&  \left(
+\begin{array}
+[c]{cc}%
+A^{\prime} & B^{\prime}\\
+C^{\prime} & D^{\prime}%
+\end{array}
+\right) \nonumber\\
+&  =\left(
+\begin{cases}
+a_{i,j}^{\prime}, & \text{if }i\leq n\text{ and }j\leq m;\\
+b_{i,j-m}^{\prime}, & \text{if }i\leq n\text{ and }j>m;\\
+c_{i-n,j}^{\prime}, & \text{if }i>n\text{ and }j\leq m;\\
+d_{i-n,j-m}^{\prime}, & \text{if }i>n\text{ and }j>m
+\end{cases}
+\right)  _{1\leq i\leq n+n^{\prime},\ 1\leq j\leq m+m^{\prime}}.
+\label{pf.lem.sol.block2x2.jacobi.equal.2}%
+\end{align}
+Now, from (\ref{pf.lem.sol.block2x2.jacobi.equal.1}), we obtain%
+\begin{align*}
+&  \left(
+\begin{cases}
+a_{i,j}, & \text{if }i\leq n\text{ and }j\leq m;\\
+b_{i,j-m}, & \text{if }i\leq n\text{ and }j>m;\\
+c_{i-n,j}, & \text{if }i>n\text{ and }j\leq m;\\
+d_{i-n,j-m}, & \text{if }i>n\text{ and }j>m
+\end{cases}
+\right)  _{1\leq i\leq n+n^{\prime},\ 1\leq j\leq m+m^{\prime}}\\
+&  =\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+C & D
+\end{array}
+\right)  =\left(
+\begin{array}
+[c]{cc}%
+A^{\prime} & B^{\prime}\\
+C^{\prime} & D^{\prime}%
+\end{array}
+\right) \\
+&  =\left(
+\begin{cases}
+a_{i,j}^{\prime}, & \text{if }i\leq n\text{ and }j\leq m;\\
+b_{i,j-m}^{\prime}, & \text{if }i\leq n\text{ and }j>m;\\
+c_{i-n,j}^{\prime}, & \text{if }i>n\text{ and }j\leq m;\\
+d_{i-n,j-m}^{\prime}, & \text{if }i>n\text{ and }j>m
+\end{cases}
+\right)  _{1\leq i\leq n+n^{\prime},\ 1\leq j\leq m+m^{\prime}}%
+\end{align*}
+(by (\ref{pf.lem.sol.block2x2.jacobi.equal.2})). In other words,%
+\begin{align}
+&
+\begin{cases}
+a_{i,j}, & \text{if }i\leq n\text{ and }j\leq m;\\
+b_{i,j-m}, & \text{if }i\leq n\text{ and }j>m;\\
+c_{i-n,j}, & \text{if }i>n\text{ and }j\leq m;\\
+d_{i-n,j-m}, & \text{if }i>n\text{ and }j>m
+\end{cases}
+\nonumber\\
+&  =%
+\begin{cases}
+a_{i,j}^{\prime}, & \text{if }i\leq n\text{ and }j\leq m;\\
+b_{i,j-m}^{\prime}, & \text{if }i\leq n\text{ and }j>m;\\
+c_{i-n,j}^{\prime}, & \text{if }i>n\text{ and }j\leq m;\\
+d_{i-n,j-m}^{\prime}, & \text{if }i>n\text{ and }j>m
+\end{cases}
+\label{pf.lem.sol.block2x2.jacobi.equal.3}%
+\end{align}
+for every $\left(  i,j\right)  \in\left\{  1,2,\ldots,n+m\right\}  ^{2}$.
+
+Every $\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}  \times\left\{
+1,2,\ldots,m\right\}  $ satisfies $a_{i,j}=a_{i,j}^{\prime}$%
+\ \ \ \ \footnote{\textit{Proof.} Let $\left(  i,j\right)  \in\left\{
+1,2,\ldots,n\right\}  \times\left\{  1,2,\ldots,m\right\}  $. Thus,
+$i\in\left\{  1,2,\ldots,n\right\}  $ and $j\in\left\{  1,2,\ldots,m\right\}
+$.
+\par
+We have $i\in\left\{  1,2,\ldots,n\right\}  \subseteq\left\{  1,2,\ldots
+,n+n^{\prime}\right\}  $ (since $n\leq n+n^{\prime}$) and $i\leq n$ (since
+$i\in\left\{  1,2,\ldots,n\right\}  $). We have $j\in\left\{  1,2,\ldots
+,m\right\}  \subseteq\left\{  1,2,\ldots,m+m^{\prime}\right\}  $ (since $m\leq
+m+m^{\prime}$) and $j\leq m$ (since $j\in\left\{  1,2,\ldots,m\right\}  $).
+\par
+From $i\in\left\{  1,2,\ldots,n+n^{\prime}\right\}  $ and $j\in\left\{
+1,2,\ldots,m+m^{\prime}\right\}  $, we obtain $\left(  i,j\right)  \in\left\{
+1,2,\ldots,n+n^{\prime}\right\}  \times\left\{  1,2,\ldots,m+m^{\prime
+}\right\}  $. Now, $%
+\begin{cases}
+a_{i,j}, & \text{if }i\leq n\text{ and }j\leq m;\\
+b_{i,j-m}, & \text{if }i\leq n\text{ and }j>m;\\
+c_{i-n,j}, & \text{if }i>n\text{ and }j\leq m;\\
+d_{i-n,j-m}, & \text{if }i>n\text{ and }j>m
+\end{cases}
+=a_{i,j}$ (since $i\leq n$ and $j\leq m$). Hence,%
+\begin{align*}
+a_{i,j}  &  =%
+\begin{cases}
+a_{i,j}, & \text{if }i\leq n\text{ and }j\leq m;\\
+b_{i,j-m}, & \text{if }i\leq n\text{ and }j>m;\\
+c_{i-n,j}, & \text{if }i>n\text{ and }j\leq m;\\
+d_{i-n,j-m}, & \text{if }i>n\text{ and }j>m
+\end{cases}
+\\
+&  =%
+\begin{cases}
+a_{i,j}^{\prime}, & \text{if }i\leq n\text{ and }j\leq m;\\
+b_{i,j-m}^{\prime}, & \text{if }i\leq n\text{ and }j>m;\\
+c_{i-n,j}^{\prime}, & \text{if }i>n\text{ and }j\leq m;\\
+d_{i-n,j-m}^{\prime}, & \text{if }i>n\text{ and }j>m
+\end{cases}
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{pf.lem.sol.block2x2.jacobi.equal.3}%
+)}\right) \\
+&  =a_{i,j}^{\prime}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }i\leq n\text{ and
+}j\leq m\right)  .
+\end{align*}
+Qed.}. In other words, $\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+m}=\left(  a_{i,j}^{\prime}\right)  _{1\leq i\leq n,\ 1\leq j\leq m}$. Now,%
+\[
+A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq m}=\left(
+a_{i,j}^{\prime}\right)  _{1\leq i\leq n,\ 1\leq j\leq m}=A^{\prime}.
+\]
+
+
+Every $\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}  \times\left\{
+1,2,\ldots,m^{\prime}\right\}  $ satisfies $b_{i,j}=b_{i,j}^{\prime}%
+$\ \ \ \ \footnote{\textit{Proof.} Let $\left(  i,j\right)  \in\left\{
+1,2,\ldots,n\right\}  \times\left\{  1,2,\ldots,m^{\prime}\right\}  $. Thus,
+$i\in\left\{  1,2,\ldots,n\right\}  $ and $j\in\left\{  1,2,\ldots,m^{\prime
+}\right\}  $. We have $i\in\left\{  1,2,\ldots,n\right\}  \subseteq\left\{
+1,2,\ldots,n+n^{\prime}\right\}  $ (since $n\leq n+n^{\prime}$) and $i\leq n$
+(since $i\in\left\{  1,2,\ldots,n\right\}  $). We have $j\in\left\{
+1,2,\ldots,m^{\prime}\right\}  $ and thus $j+m\in\left\{  m+1,m+2,\ldots
+,m+m^{\prime}\right\}  \subseteq\left\{  1,2,\ldots,m+m^{\prime}\right\}  $
+(since $\underbrace{m}_{\geq0}+1\geq1$). Also, $\underbrace{j}_{>0}+m>m$.
+\par
+From $i\in\left\{  1,2,\ldots,n+n^{\prime}\right\}  $ and $j+m\in\left\{
+1,2,\ldots,m+m^{\prime}\right\}  $, we obtain $\left(  i,j+m\right)
+\in\left\{  1,2,\ldots,n+n^{\prime}\right\}  \times\left\{  1,2,\ldots
+,m+m^{\prime}\right\}  $. Now, $%
+\begin{cases}
+a_{i,j}, & \text{if }i\leq n\text{ and }j+m\leq m;\\
+b_{i,\left(  j+m\right)  -m}, & \text{if }i\leq n\text{ and }j+m>m;\\
+c_{i-n,j+m}, & \text{if }i>n\text{ and }j+m\leq m;\\
+d_{i-n,\left(  j+m\right)  -m}, & \text{if }i>n\text{ and }j+m>m
+\end{cases}
+=b_{i,\left(  j+m\right)  -m}$ (since $i\leq n$ and $j+m>m$). Hence,%
+\begin{align*}
+b_{i,\left(  j+m\right)  -m}  &  =%
+\begin{cases}
+a_{i,j}, & \text{if }i\leq n\text{ and }j+m\leq m;\\
+b_{i,\left(  j+m\right)  -m}, & \text{if }i\leq n\text{ and }j+m>m;\\
+c_{i-n,j+m}, & \text{if }i>n\text{ and }j+m\leq m;\\
+d_{i-n,\left(  j+m\right)  -m}, & \text{if }i>n\text{ and }j+m>m
+\end{cases}
+\\
+&  =%
+\begin{cases}
+a_{i,j}^{\prime}, & \text{if }i\leq n\text{ and }j+m\leq m;\\
+b_{i,\left(  j+m\right)  -m}^{\prime}, & \text{if }i\leq n\text{ and }j+m>m;\\
+c_{i-n,j+m}^{\prime}, & \text{if }i>n\text{ and }j+m\leq m;\\
+d_{i-n,\left(  j+m\right)  -m}^{\prime}, & \text{if }i>n\text{ and }j+m>m
+\end{cases}
+\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{by (\ref{pf.lem.sol.block2x2.jacobi.equal.3}) (applied}\\
+\text{to }\left(  i,j+m\right)  \text{ instead of }\left(  i,j\right)
+\text{)}%
+\end{array}
+\right) \\
+&  =b_{i,\left(  j+m\right)  -m}^{\prime}\ \ \ \ \ \ \ \ \ \ \left(
+\text{since }i\leq n\text{ and }j+m>m\right)  .
+\end{align*}
+This rewrites as $b_{i,j}=b_{i,j}^{\prime}$ (since $\left(  j+m\right)
+-m=j$). Qed.}. In other words, $\left(  b_{i,j}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq m^{\prime}}=\left(  b_{i,j}^{\prime}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq m^{\prime}}$. Now,%
+\[
+B=\left(  b_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq m^{\prime}}=\left(
+b_{i,j}^{\prime}\right)  _{1\leq i\leq n,\ 1\leq j\leq m^{\prime}}=B^{\prime
+}.
+\]
+
+
+Every $\left(  i,j\right)  \in\left\{  1,2,\ldots,n^{\prime}\right\}
+\times\left\{  1,2,\ldots,m\right\}  $ satisfies $c_{i,j}=c_{i,j}^{\prime}%
+$\ \ \ \ \footnote{\textit{Proof.} Let $\left(  i,j\right)  \in\left\{
+1,2,\ldots,n^{\prime}\right\}  \times\left\{  1,2,\ldots,m\right\}  $. Thus,
+$i\in\left\{  1,2,\ldots,n^{\prime}\right\}  $ and $j\in\left\{
+1,2,\ldots,m\right\}  $. We have $i\in\left\{  1,2,\ldots,n^{\prime}\right\}
+$ and thus $i+n\in\left\{  n+1,n+2,\ldots,n+n^{\prime}\right\}  \subseteq
+\left\{  1,2,\ldots,n+n^{\prime}\right\}  $ (since $\underbrace{n}_{\geq
+0}+1\geq n$). Also, $\underbrace{i}_{>0}+n>n$. We have $j\in\left\{
+1,2,\ldots,m\right\}  \subseteq\left\{  1,2,\ldots,m+m^{\prime}\right\}  $
+(since $m\leq m+m^{\prime}$) and $j\leq m$ (since $j\in\left\{  1,2,\ldots
+,m\right\}  $).
+\par
+From $i+n\in\left\{  1,2,\ldots,n+n^{\prime}\right\}  $ and $j\in\left\{
+1,2,\ldots,m+m^{\prime}\right\}  $, we obtain $\left(  i+n,j\right)
+\in\left\{  1,2,\ldots,n+n^{\prime}\right\}  \times\left\{  1,2,\ldots
+,m+m^{\prime}\right\}  $. Now, $%
+\begin{cases}
+a_{i+n,j}, & \text{if }i+n\leq n\text{ and }j\leq m;\\
+b_{i+n,j-m}, & \text{if }i+n\leq n\text{ and }j>m;\\
+c_{\left(  i+n\right)  -n,j}, & \text{if }i+n>n\text{ and }j\leq m;\\
+d_{\left(  i+n\right)  -n,j-m}, & \text{if }i+n>n\text{ and }j>m
+\end{cases}
+=c_{\left(  i+n\right)  -n,j}$ (since $i+n>n$ and $j\leq m$). Hence,%
+\begin{align*}
+c_{\left(  i+n\right)  -n,j}  &  =%
+\begin{cases}
+a_{i+n,j}, & \text{if }i+n\leq n\text{ and }j\leq m;\\
+b_{i+n,j-m}, & \text{if }i+n\leq n\text{ and }j>m;\\
+c_{\left(  i+n\right)  -n,j}, & \text{if }i+n>n\text{ and }j\leq m;\\
+d_{\left(  i+n\right)  -n,j-m}, & \text{if }i+n>n\text{ and }j>m
+\end{cases}
+\\
+&  =%
+\begin{cases}
+a_{i+n,j}^{\prime}, & \text{if }i+n\leq n\text{ and }j\leq m;\\
+b_{i+n,j-m}^{\prime}, & \text{if }i+n\leq n\text{ and }j>m;\\
+c_{\left(  i+n\right)  -n,j}^{\prime}, & \text{if }i+n>n\text{ and }j\leq m;\\
+d_{\left(  i+n\right)  -n,j-m}^{\prime}, & \text{if }i+n>n\text{ and }j>m
+\end{cases}
+\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{by (\ref{pf.lem.sol.block2x2.jacobi.equal.3}) (applied}\\
+\text{to }\left(  i+n,j\right)  \text{ instead of }\left(  i,j\right)
+\text{)}%
+\end{array}
+\right) \\
+&  =c_{\left(  i+n\right)  -n,j}^{\prime}\ \ \ \ \ \ \ \ \ \ \left(
+\text{since }i+n>n\text{ and }j\leq m\right)  .
+\end{align*}
+This rewrites as $c_{i,j}=c_{i,j}^{\prime}$ (since $\left(  i+n\right)
+-n=i$). Qed.}. In other words, $\left(  c_{i,j}\right)  _{1\leq i\leq
+n^{\prime},\ 1\leq j\leq m}=\left(  c_{i,j}^{\prime}\right)  _{1\leq i\leq
+n^{\prime},\ 1\leq j\leq m}$. Now,%
+\[
+C=\left(  c_{i,j}\right)  _{1\leq i\leq n^{\prime},\ 1\leq j\leq m}=\left(
+c_{i,j}^{\prime}\right)  _{1\leq i\leq n^{\prime},\ 1\leq j\leq m}=C^{\prime
+}.
+\]
+
+
+Every $\left(  i,j\right)  \in\left\{  1,2,\ldots,n^{\prime}\right\}
+\times\left\{  1,2,\ldots,m^{\prime}\right\}  $ satisfies $d_{i,j}%
+=d_{i,j}^{\prime}$\ \ \ \ \footnote{\textit{Proof.} Let $\left(  i,j\right)
+\in\left\{  1,2,\ldots,n^{\prime}\right\}  \times\left\{  1,2,\ldots
+,m^{\prime}\right\}  $. Thus, $i\in\left\{  1,2,\ldots,n^{\prime}\right\}  $
+and $j\in\left\{  1,2,\ldots,m^{\prime}\right\}  $. We have $i\in\left\{
+1,2,\ldots,n^{\prime}\right\}  $ and thus $i+n\in\left\{  n+1,n+2,\ldots
+,n+n^{\prime}\right\}  \subseteq\left\{  1,2,\ldots,n+n^{\prime}\right\}  $
+(since $\underbrace{n}_{\geq0}+1\geq n$). Also, $\underbrace{i}_{>0}+n>n$. We
+have $j\in\left\{  1,2,\ldots,m^{\prime}\right\}  $ and thus $j+m\in\left\{
+m+1,m+2,\ldots,m+m^{\prime}\right\}  \subseteq\left\{  1,2,\ldots,m+m^{\prime
+}\right\}  $ (since $\underbrace{m}_{\geq0}+1\geq m$). Also, $\underbrace{j}%
+_{>0}+m>m$.
+\par
+From $i+n\in\left\{  1,2,\ldots,n+n^{\prime}\right\}  $ and $j+m\in\left\{
+1,2,\ldots,m+m^{\prime}\right\}  $, we obtain $\left(  i+n,j+m\right)
+\in\left\{  1,2,\ldots,n+n^{\prime}\right\}  \times\left\{  1,2,\ldots
+,m+m^{\prime}\right\}  $. Now, $%
+\begin{cases}
+a_{i+n,j+m}, & \text{if }i+n\leq n\text{ and }j+m\leq m;\\
+b_{i+n,\left(  j+m\right)  -m}, & \text{if }i+n\leq n\text{ and }j+m>m;\\
+c_{\left(  i+n\right)  -n,j+m}, & \text{if }i+n>n\text{ and }j+m\leq m;\\
+d_{\left(  i+n\right)  -n,\left(  j+m\right)  -m}, & \text{if }i+n>n\text{ and
+}j+m>m
+\end{cases}
+=d_{\left(  i+n\right)  -n,\left(  j+m\right)  -m}$ (since $i+n>n$ and
+$j+m>m$). Hence,%
+\begin{align*}
+&  d_{\left(  i+n\right)  -n,\left(  j+m\right)  -m}\\
+&  =%
+\begin{cases}
+a_{i+n,j+m}, & \text{if }i+n\leq n\text{ and }j+m\leq m;\\
+b_{i+n,\left(  j+m\right)  -m}, & \text{if }i+n\leq n\text{ and }j+m>m;\\
+c_{\left(  i+n\right)  -n,j+m}, & \text{if }i+n>n\text{ and }j+m\leq m;\\
+d_{\left(  i+n\right)  -n,\left(  j+m\right)  -m}, & \text{if }i+n>n\text{ and
+}j+m>m
+\end{cases}
+\\
+&  =%
+\begin{cases}
+a_{i+n,j+m}^{\prime}, & \text{if }i+n\leq n\text{ and }j+m\leq m;\\
+b_{i+n,\left(  j+m\right)  -m}^{\prime}, & \text{if }i+n\leq n\text{ and
+}j+m>m;\\
+c_{\left(  i+n\right)  -n,j+m}^{\prime}, & \text{if }i+n>n\text{ and }j+m\leq
+m;\\
+d_{\left(  i+n\right)  -n,\left(  j+m\right)  -m}^{\prime}, & \text{if
+}i+n>n\text{ and }j+m>m
+\end{cases}
+\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{by (\ref{pf.lem.sol.block2x2.jacobi.equal.3}) (applied}\\
+\text{to }\left(  i+n,j+m\right)  \text{ instead of }\left(  i,j\right)
+\text{)}%
+\end{array}
+\right)  \\
+&  =d_{\left(  i+n\right)  -n,\left(  j+m\right)  -m}^{\prime}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }i+n>n\text{ and }j+m>m\right)  .
+\end{align*}
+This rewrites as $d_{i,j}=d_{i,j}^{\prime}$ (since $\left(  i+n\right)  -n=i$
+and $\left(  j+m\right)  -m=j$). Qed.}. In other words, $\left(
+d_{i,j}\right)  _{1\leq i\leq n^{\prime},\ 1\leq j\leq m^{\prime}}=\left(
+d_{i,j}^{\prime}\right)  _{1\leq i\leq n^{\prime},\ 1\leq j\leq m^{\prime}}$.
+Now,%
+\[
+D=\left(  d_{i,j}\right)  _{1\leq i\leq n^{\prime},\ 1\leq j\leq m^{\prime}%
+}=\left(  d_{i,j}^{\prime}\right)  _{1\leq i\leq n^{\prime},\ 1\leq j\leq
+m^{\prime}}=D^{\prime}.
+\]
+
+
+We now have shown that $A=A^{\prime}$, $B=B^{\prime}$, $C=C^{\prime}$ and
+$D=D^{\prime}$. This proves Lemma \ref{lem.sol.block2x2.jacobi.equal}.
+\end{proof}
+\end{verlong}
+
+\begin{proof}
+[Solution to Exercise \ref{exe.block2x2.jacobi}.]The matrix $\left(
+\begin{array}
+[c]{cc}%
+A^{\prime} & B^{\prime}\\
+C^{\prime} & D^{\prime}%
+\end{array}
+\right)  $ is the inverse of the matrix $\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+C & D
+\end{array}
+\right)  $. In other words, we have%
+\begin{align*}
+\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+C & D
+\end{array}
+\right)  \left(
+\begin{array}
+[c]{cc}%
+A^{\prime} & B^{\prime}\\
+C^{\prime} & D^{\prime}%
+\end{array}
+\right)   &  =I_{n+m}\ \ \ \ \ \ \ \ \ \ \text{and}\\
+\left(
+\begin{array}
+[c]{cc}%
+A^{\prime} & B^{\prime}\\
+C^{\prime} & D^{\prime}%
+\end{array}
+\right)  \left(
+\begin{array}
+[c]{cc}%
+A & B\\
+C & D
+\end{array}
+\right)   &  =I_{n+m}.
+\end{align*}
+But Lemma \ref{lem.sol.block2x2.jacobi.InIm} yields
+\[
+\left(
+\begin{array}
+[c]{cc}%
+I_{n} & 0_{n\times m}\\
+0_{m\times n} & I_{m}%
+\end{array}
+\right)  =I_{n+m}=\left(
+\begin{array}
+[c]{cc}%
+A^{\prime} & B^{\prime}\\
+C^{\prime} & D^{\prime}%
+\end{array}
+\right)  \left(
+\begin{array}
+[c]{cc}%
+A & B\\
+C & D
+\end{array}
+\right)  =\left(
+\begin{array}
+[c]{cc}%
+A^{\prime}A+B^{\prime}C & A^{\prime}B+B^{\prime}D\\
+C^{\prime}A+D^{\prime}C & C^{\prime}B+D^{\prime}D
+\end{array}
+\right)
+\]
+(by Exercise \ref{exe.block2x2.mult} (applied to $n$, $m$, $n$, $m$, $n$, $m$,
+$A^{\prime}$, $B^{\prime}$, $C^{\prime}$, $D^{\prime}$, $A$, $B$, $C$ and $D$
+instead of $n$, $n^{\prime}$, $m$, $m^{\prime}$, $\ell$, $\ell^{\prime}$, $A$,
+$B$, $C$, $D$, $A^{\prime}$, $B^{\prime}$, $C^{\prime}$ and $D^{\prime}$)).
+Thus, Lemma \ref{lem.sol.block2x2.jacobi.equal} (applied to $n$, $m$, $n$,
+$m$, $I_{n}$, $A^{\prime}A+B^{\prime}C$, $0_{n\times m}$, $A^{\prime
+}B+B^{\prime}D$, $0_{m\times n}$, $C^{\prime}A+D^{\prime}C$, $I_{m}$ and
+$C^{\prime}B+D^{\prime}D$ instead of $n$, $n^{\prime}$, $m$, $m^{\prime}$,
+$A$, $A^{\prime}$, $B$, $B^{\prime}$, $C$, $C^{\prime}$, $D$ and $D^{\prime}$)
+yields that $I_{n}=A^{\prime}A+B^{\prime}C$, $0_{n\times m}=A^{\prime
+}B+B^{\prime}D$, $0_{m\times n}=C^{\prime}A+D^{\prime}C$ and $I_{m}=C^{\prime
+}B+D^{\prime}D$.
+
+Recall that $\det\left(  I_{n}\right)  =1$. The same argument (applied to $m$
+instead of $n$) yields $\det\left(  I_{m}\right)  =1$. But from $I_{m}%
+=C^{\prime}B+D^{\prime}D$, we obtain $C^{\prime}B+D^{\prime}D=I_{m}$ and thus%
+\[
+\det\underbrace{\left(  C^{\prime}B+D^{\prime}D\right)  }_{=I_{m}}=\det\left(
+I_{m}\right)  =1.
+\]
+
+
+From $0_{m\times n}=C^{\prime}A+D^{\prime}C$, we obtain $C^{\prime
+}A=-D^{\prime}C$. Hence, Exercise \ref{exe.block2x2.VB+WD} (applied to
+$W=D^{\prime}$ and $V=C^{\prime}$) yields
+\[
+\det\left(  D^{\prime}\right)  \cdot\det\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+C & D
+\end{array}
+\right)  =\det A\cdot\underbrace{\det\left(  C^{\prime}B+D^{\prime}D\right)
+}_{=1}=\det A.
+\]
+Thus,%
+\[
+\det A=\det\left(  D^{\prime}\right)  \cdot\det\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+C & D
+\end{array}
+\right)  =\det\left(
+\begin{array}
+[c]{cc}%
+A & B\\
+C & D
+\end{array}
+\right)  \cdot\det\left(  D^{\prime}\right)  .
+\]
+This solves Exercise \ref{exe.block2x2.jacobi}.
+\end{proof}
+
+\subsection{Solution to Exercise \ref{exe.block2x2.jacobi.rewr}}
+
+Our solution to Exercise \ref{exe.block2x2.jacobi.rewr} below will use the
+following simple lemma:
+
+\begin{lemma}
+\label{lem.sol.block2x2.jacobi.rewr.1}Let $n\in\mathbb{N}$ and $m\in
+\mathbb{N}$. Let $A\in\mathbb{K}^{n\times m}$. Let $k\in\left\{
+0,1,\ldots,n\right\}  $ and $\ell\in\left\{  0,1,\ldots,m\right\}  $. Then,%
+\[
+A=\left(
+\begin{array}
+[c]{cc}%
+\operatorname*{sub}\nolimits_{1,2,\ldots,k}^{1,2,\ldots,\ell}A &
+\operatorname*{sub}\nolimits_{1,2,\ldots,k}^{\ell+1,\ell+2,\ldots,m}A\\
+\operatorname*{sub}\nolimits_{k+1,k+2,\ldots,n}^{1,2,\ldots,\ell}A &
+\operatorname*{sub}\nolimits_{k+1,k+2,\ldots,n}^{\ell+1,\ell+2,\ldots,m}A
+\end{array}
+\right)  .
+\]
+
+\end{lemma}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.block2x2.jacobi.rewr.1}.]In visual language,
+Lemma \ref{lem.sol.block2x2.jacobi.rewr.1} states a triviality: It says that
+if we cut the matrix $A$ horizontally (between its $k$-th and $\left(
+k+1\right)  $-st rows) and vertically (between its $\ell$-th and $\left(
+\ell+1\right)  $-st columns), then we obtain four little matrices (namely,
+$\operatorname*{sub}\nolimits_{1,2,\ldots,k}^{1,2,\ldots,\ell}A$,
+$\operatorname*{sub}\nolimits_{1,2,\ldots,k}^{\ell+1,\ell+2,\ldots,n}A$,
+$\operatorname*{sub}\nolimits_{k+1,k+2,\ldots,n}^{1,2,\ldots,\ell}A$ and
+$\operatorname*{sub}\nolimits_{k+1,k+2,\ldots,n}^{\ell+1,\ell+2,\ldots,n}A$)
+which can be assembled back to form $A$ (using the block-matrix construction).
+Turning this into a formal is straightforward.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.block2x2.jacobi.rewr.1}.]Write the matrix
+$A\in\mathbb{K}^{n\times m}$ in the form $A=\left(  a_{i,j}\right)  _{1\leq
+i\leq n,\ 1\leq j\leq m}$.
+
+We have $k\in\left\{  0,1,\ldots,n\right\}  $, thus $k\in\mathbb{N}$ and
+$k\leq n$. From $k\leq n$, we obtain $n-k\geq0$ and thus $n-k\in\mathbb{N}$.
+
+We have $\ell\in\left\{  0,1,\ldots,m\right\}  $, thus $\ell\in\mathbb{N}$ and
+$\ell\leq m$. From $\ell\leq m$, we obtain $m-\ell\geq0$ and thus $m-\ell
+\in\mathbb{N}$.
+
+The definition of $\operatorname*{sub}\nolimits_{1,2,\ldots,k}^{1,2,\ldots
+,\ell}A$ yields $\operatorname*{sub}\nolimits_{1,2,\ldots,k}^{1,2,\ldots,\ell
+}A=\left(  a_{i,j}\right)  _{1\leq i\leq k,\ 1\leq j\leq\ell}$ (since
+$A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq m}$).
+
+The definition of $\operatorname*{sub}\nolimits_{1,2,\ldots,k}^{\ell
++1,\ell+2,\ldots,m}A$ yields $\operatorname*{sub}\nolimits_{1,2,\ldots
+,k}^{\ell+1,\ell+2,\ldots,m}A=\left(  a_{i,\ell+j}\right)  _{1\leq i\leq
+k,\ 1\leq j\leq m-\ell}$ (since $A=\left(  a_{i,j}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq m}$).
+
+The definition of $\operatorname*{sub}\nolimits_{k+1,k+2,\ldots,n}%
+^{1,2,\ldots,\ell}A$ yields $\operatorname*{sub}\nolimits_{k+1,k+2,\ldots
+,n}^{1,2,\ldots,\ell}A=\left(  a_{k+i,j}\right)  _{1\leq i\leq n-k,\ 1\leq
+j\leq\ell}$ (since $A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+m}$).
+
+The definition of $\operatorname*{sub}\nolimits_{k+1,k+2,\ldots,n}%
+^{\ell+1,\ell+2,\ldots,m}A$ yields $\operatorname*{sub}%
+\nolimits_{k+1,k+2,\ldots,n}^{\ell+1,\ell+2,\ldots,m}A=\left(  a_{k+i,\ell
++j}\right)  _{1\leq i\leq n-k,\ 1\leq j\leq m-\ell}$ (since $A=\left(
+a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq m}$).
+
+We have $\operatorname*{sub}\nolimits_{1,2,\ldots,k}^{1,2,\ldots,\ell
+}A=\left(  a_{i,j}\right)  _{1\leq i\leq k,\ 1\leq j\leq\ell}$,
+$\operatorname*{sub}\nolimits_{1,2,\ldots,k}^{\ell+1,\ell+2,\ldots,m}A=\left(
+a_{i,\ell+j}\right)  _{1\leq i\leq k,\ 1\leq j\leq m-\ell}$,
+$\operatorname*{sub}\nolimits_{k+1,k+2,\ldots,n}^{1,2,\ldots,\ell}A=\left(
+a_{k+i,j}\right)  _{1\leq i\leq n-k,\ 1\leq j\leq\ell}$ and
+$\operatorname*{sub}\nolimits_{k+1,k+2,\ldots,n}^{\ell+1,\ell+2,\ldots
+,m}A=\left(  a_{k+i,\ell+j}\right)  _{1\leq i\leq n-k,\ 1\leq j\leq m-\ell}$.
+Hence, the definition of $\left(
+\begin{array}
+[c]{cc}%
+\operatorname*{sub}\nolimits_{1,2,\ldots,k}^{1,2,\ldots,\ell}A &
+\operatorname*{sub}\nolimits_{1,2,\ldots,k}^{\ell+1,\ell+2,\ldots,m}A\\
+\operatorname*{sub}\nolimits_{k+1,k+2,\ldots,n}^{1,2,\ldots,\ell}A &
+\operatorname*{sub}\nolimits_{k+1,k+2,\ldots,n}^{\ell+1,\ell+2,\ldots,m}A
+\end{array}
+\right)  $ yields%
+\begin{align}
+&  \left(
+\begin{array}
+[c]{cc}%
+\operatorname*{sub}\nolimits_{1,2,\ldots,k}^{1,2,\ldots,\ell}A &
+\operatorname*{sub}\nolimits_{1,2,\ldots,k}^{\ell+1,\ell+2,\ldots,m}A\\
+\operatorname*{sub}\nolimits_{k+1,k+2,\ldots,n}^{1,2,\ldots,\ell}A &
+\operatorname*{sub}\nolimits_{k+1,k+2,\ldots,n}^{\ell+1,\ell+2,\ldots,m}A
+\end{array}
+\right) \nonumber\\
+&  =\left(
+\begin{cases}
+a_{i,j}, & \text{if }i\leq k\text{ and }j\leq\ell;\\
+a_{i,\ell+\left(  j-\ell\right)  }, & \text{if }i\leq k\text{ and }j>\ell;\\
+a_{k+\left(  i-k\right)  ,j}, & \text{if }i>k\text{ and }j\leq\ell;\\
+a_{k+\left(  i-k\right)  ,\ell+\left(  j-\ell\right)  } & \text{if }i>k\text{
+and }j>\ell
+\end{cases}
+\right)  _{1\leq i\leq k+\left(  n-k\right)  ,\ 1\leq j\leq\ell+\left(
+m-\ell\right)  }\nonumber\\
+&  =\left(
+\begin{cases}
+a_{i,j}, & \text{if }i\leq k\text{ and }j\leq\ell;\\
+a_{i,\ell+\left(  j-\ell\right)  }, & \text{if }i\leq k\text{ and }j>\ell;\\
+a_{k+\left(  i-k\right)  ,j}, & \text{if }i>k\text{ and }j\leq\ell;\\
+a_{k+\left(  i-k\right)  ,\ell+\left(  j-\ell\right)  } & \text{if }i>k\text{
+and }j>\ell
+\end{cases}
+\right)  _{1\leq i\leq n,\ 1\leq j\leq m}
+\label{pf.lem.sol.block2x2.jacobi.rewr.1.1}%
+\end{align}
+(since $k+\left(  n-k\right)  =n$ and $\ell+\left(  m-\ell\right)  =m$).
+
+But every $\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}
+\times\left\{  1,2,\ldots,m\right\}  $ satisfies%
+\begin{align}
+&
+\begin{cases}
+a_{i,j}, & \text{if }i\leq k\text{ and }j\leq\ell;\\
+a_{i,\ell+\left(  j-\ell\right)  }, & \text{if }i\leq k\text{ and }j>\ell;\\
+a_{k+\left(  i-k\right)  ,j}, & \text{if }i>k\text{ and }j\leq\ell;\\
+a_{k+\left(  i-k\right)  ,\ell+\left(  j-\ell\right)  } & \text{if }i>k\text{
+and }j>\ell
+\end{cases}
+\nonumber\\
+&  =%
+\begin{cases}
+a_{i,j}, & \text{if }i\leq k\text{ and }j\leq\ell;\\
+a_{i,j}, & \text{if }i\leq k\text{ and }j>\ell;\\
+a_{k+\left(  i-k\right)  ,j}, & \text{if }i>k\text{ and }j\leq\ell;\\
+a_{k+\left(  i-k\right)  ,j} & \text{if }i>k\text{ and }j>\ell
+\end{cases}
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\ell+\left(  j-\ell\right)  =j\right)
+\nonumber\\
+&  =%
+\begin{cases}
+a_{i,j}, & \text{if }i\leq k\text{ and }j\leq\ell;\\
+a_{i,j}, & \text{if }i\leq k\text{ and }j>\ell;\\
+a_{i,j}, & \text{if }i>k\text{ and }j\leq\ell;\\
+a_{i,j} & \text{if }i>k\text{ and }j>\ell
+\end{cases}
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }k+\left(  i-k\right)  =i\right)
+\nonumber\\
+&  =a_{i,j}. \label{pf.lem.sol.block2x2.jacobi.rewr.1.2}%
+\end{align}
+Now, (\ref{pf.lem.sol.block2x2.jacobi.rewr.1.1}) becomes%
+\begin{align*}
+&  \left(
+\begin{array}
+[c]{cc}%
+\operatorname*{sub}\nolimits_{1,2,\ldots,k}^{1,2,\ldots,\ell}A &
+\operatorname*{sub}\nolimits_{1,2,\ldots,k}^{\ell+1,\ell+2,\ldots,m}A\\
+\operatorname*{sub}\nolimits_{k+1,k+2,\ldots,n}^{1,2,\ldots,\ell}A &
+\operatorname*{sub}\nolimits_{k+1,k+2,\ldots,n}^{\ell+1,\ell+2,\ldots,m}A
+\end{array}
+\right) \\
+&  =\left(  \underbrace{%
+\begin{cases}
+a_{i,j}, & \text{if }i\leq k\text{ and }j\leq\ell;\\
+a_{i,\ell+\left(  j-\ell\right)  }, & \text{if }i\leq k\text{ and }j>\ell;\\
+a_{k+\left(  i-k\right)  ,j}, & \text{if }i>k\text{ and }j\leq\ell;\\
+a_{k+\left(  i-k\right)  ,\ell+\left(  j-\ell\right)  } & \text{if }i>k\text{
+and }j>\ell
+\end{cases}
+}_{\substack{=a_{i,j}\\\text{(by (\ref{pf.lem.sol.block2x2.jacobi.rewr.1.2}%
+))}}}\right)  _{1\leq i\leq n,\ 1\leq j\leq m}\\
+&  =\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq m}=A.
+\end{align*}
+This proves Lemma \ref{lem.sol.block2x2.jacobi.rewr.1}.
+\end{proof}
+\end{verlong}
+
+\begin{proof}
+[Solution to Exercise \ref{exe.block2x2.jacobi.rewr}.]Lemma
+\ref{lem.sol.block2x2.jacobi.rewr.1} (applied to $m=n$ and $\ell=k$) yields%
+\begin{equation}
+A=\left(
+\begin{array}
+[c]{cc}%
+\operatorname*{sub}\nolimits_{1,2,\ldots,k}^{1,2,\ldots,k}A &
+\operatorname*{sub}\nolimits_{1,2,\ldots,k}^{k+1,k+2,\ldots,n}A\\
+\operatorname*{sub}\nolimits_{k+1,k+2,\ldots,n}^{1,2,\ldots,k}A &
+\operatorname*{sub}\nolimits_{k+1,k+2,\ldots,n}^{k+1,k+2,\ldots,n}A
+\end{array}
+\right)  . \label{sol.exe.block2x2.jacobi.rewr.A=}%
+\end{equation}
+But the matrix $A\in\mathbb{K}^{n\times n}$ is invertible. Its inverse is
+$A^{-1}\in\mathbb{K}^{n\times n}$. Lemma \ref{lem.sol.block2x2.jacobi.rewr.1}
+(applied to $n$, $k$ and $A^{-1}$ instead of $m$, $\ell$ and $A$) yields%
+\begin{equation}
+A^{-1}=\left(
+\begin{array}
+[c]{cc}%
+\operatorname*{sub}\nolimits_{1,2,\ldots,k}^{1,2,\ldots,k}\left(
+A^{-1}\right)  & \operatorname*{sub}\nolimits_{1,2,\ldots,k}^{k+1,k+2,\ldots
+,n}\left(  A^{-1}\right) \\
+\operatorname*{sub}\nolimits_{k+1,k+2,\ldots,n}^{1,2,\ldots,k}\left(
+A^{-1}\right)  & \operatorname*{sub}\nolimits_{k+1,k+2,\ldots,n}%
+^{k+1,k+2,\ldots,n}\left(  A^{-1}\right)
+\end{array}
+\right)  . \label{sol.exe.block2x2.jacobi.rewr.A-1=}%
+\end{equation}
+
+
+\begin{verlong}
+We have $k\in\left\{  0,1,\ldots,n\right\}  $, thus $k\in\mathbb{N}$ and
+$k\leq n$. From $k\leq n$, we obtain $n-k\geq0$ and thus $n-k\in\mathbb{N}$.
+\end{verlong}
+
+Now, recall that the matrix $A$ is invertible, and its inverse is $A^{-1}$. In
+view of the equalities (\ref{sol.exe.block2x2.jacobi.rewr.A=}) and
+(\ref{sol.exe.block2x2.jacobi.rewr.A-1=}), this rewrites as follows: The
+matrix \newline$\left(
+\begin{array}
+[c]{cc}%
+\operatorname*{sub}\nolimits_{1,2,\ldots,k}^{1,2,\ldots,k}A &
+\operatorname*{sub}\nolimits_{1,2,\ldots,k}^{k+1,k+2,\ldots,n}A\\
+\operatorname*{sub}\nolimits_{k+1,k+2,\ldots,n}^{1,2,\ldots,k}A &
+\operatorname*{sub}\nolimits_{k+1,k+2,\ldots,n}^{k+1,k+2,\ldots,n}A
+\end{array}
+\right)  $ is invertible, and its inverse is \newline$\left(
+\begin{array}
+[c]{cc}%
+\operatorname*{sub}\nolimits_{1,2,\ldots,k}^{1,2,\ldots,k}\left(
+A^{-1}\right)  & \operatorname*{sub}\nolimits_{1,2,\ldots,k}^{k+1,k+2,\ldots
+,n}\left(  A^{-1}\right) \\
+\operatorname*{sub}\nolimits_{k+1,k+2,\ldots,n}^{1,2,\ldots,k}\left(
+A^{-1}\right)  & \operatorname*{sub}\nolimits_{k+1,k+2,\ldots,n}%
+^{k+1,k+2,\ldots,n}\left(  A^{-1}\right)
+\end{array}
+\right)  $. Hence, Exercise \ref{exe.block2x2.jacobi} (applied to $k$, $n-k$,
+$\operatorname*{sub}\nolimits_{1,2,\ldots,k}^{1,2,\ldots,k}A$,
+$\operatorname*{sub}\nolimits_{1,2,\ldots,k}^{k+1,k+2,\ldots,n}A$,
+$\operatorname*{sub}\nolimits_{k+1,k+2,\ldots,n}^{1,2,\ldots,k}A$,
+$\operatorname*{sub}\nolimits_{k+1,k+2,\ldots,n}^{k+1,k+2,\ldots,n}A$,
+$\operatorname*{sub}\nolimits_{1,2,\ldots,k}^{1,2,\ldots,k}\left(
+A^{-1}\right)  $, $\operatorname*{sub}\nolimits_{1,2,\ldots,k}^{k+1,k+2,\ldots
+,n}\left(  A^{-1}\right)  $, $\operatorname*{sub}\nolimits_{k+1,k+2,\ldots
+,n}^{1,2,\ldots,k}\left(  A^{-1}\right)  $ and $\operatorname*{sub}%
+\nolimits_{k+1,k+2,\ldots,n}^{k+1,k+2,\ldots,n}\left(  A^{-1}\right)  $
+instead of $n$, $m$, $A$, $B$, $C$, $D$, $A^{\prime}$, $B^{\prime}$,
+$C^{\prime}$ and $D^{\prime}$) yields%
+\begin{align*}
+&  \det\left(  \operatorname*{sub}\nolimits_{1,2,\ldots,k}^{1,2,\ldots
+,k}A\right) \\
+&  =\det\underbrace{\left(
+\begin{array}
+[c]{cc}%
+\operatorname*{sub}\nolimits_{1,2,\ldots,k}^{1,2,\ldots,k}A &
+\operatorname*{sub}\nolimits_{1,2,\ldots,k}^{k+1,k+2,\ldots,n}A\\
+\operatorname*{sub}\nolimits_{k+1,k+2,\ldots,n}^{1,2,\ldots,k}A &
+\operatorname*{sub}\nolimits_{k+1,k+2,\ldots,n}^{k+1,k+2,\ldots,n}A
+\end{array}
+\right)  }_{\substack{=A\\\text{(by (\ref{sol.exe.block2x2.jacobi.rewr.A=}))}%
+}}\cdot\det\left(  \operatorname*{sub}\nolimits_{k+1,k+2,\ldots,n}%
+^{k+1,k+2,\ldots,n}\left(  A^{-1}\right)  \right) \\
+&  =\det A\cdot\det\left(  \operatorname*{sub}\nolimits_{k+1,k+2,\ldots
+,n}^{k+1,k+2,\ldots,n}\left(  A^{-1}\right)  \right)  .
+\end{align*}
+This solves Exercise \ref{exe.block2x2.jacobi.rewr}.
+\end{proof}
+
 \subsection{Solution to Exercise \ref{exe.unrows.basics}}
 
 \begin{vershort}
@@ -63511,6 +64926,11 @@ Andrews Festschrift), paper B42q, 67 pp.,
 \bibitem[LLPT95]{LLPT95}D. Laksov, A. Lascoux, P. Pragacz, and A. Thorup,
 \textit{The LLPT Notes}, edited by A. Thorup, 1995,\newline%
 \url{http://www.math.ku.dk/~thorup/notes/sympol.pdf} .
+
+\bibitem[Lalonde]{Lalonde}Pierre Lalonde, \textit{A non-commutative version of
+Jacobi's equality on the cofactors of a matrix}, Discrete Mathematics 158
+(1996), pp. 161--172.\newline%
+\url{http://www.sciencedirect.com/science/article/pii/0012365X95000404} .
 
 \bibitem[Lampe]{Lampe}Philipp Lampe, \textit{Cluster algebras},\newline%
 \url{http://www.math.uni-bielefeld.de/~lampe/teaching/cluster/cluster.pdf} .
