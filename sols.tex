@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Wednesday, August 03, 2016 17:47:41}
+%TCIDATA{LastRevised=Thursday, August 04, 2016 00:06:43}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -24070,7 +24070,11 @@ Q\right)  }A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(
 Theorem \ref{thm.det.laplace-multi} is actually a generalization of Theorem
 \ref{thm.laplace.gen}, known as \textquotedblleft Laplace expansion in
 multiple rows (resp. columns)\textquotedblright. It appears (for example) in
-\cite[Theorem 3.61]{Gill} and in \cite[Theorem 2.4.1]{Prasolov}. Theorem
+\cite[Theorem 3.61]{Gill} and in \cite[Theorem 2.4.1]{Prasolov}.\footnote{Of
+course, parts \textbf{(a)} and \textbf{(b)} of Theorem
+\ref{thm.det.laplace-multi} are easily seen to be equivalent; thus, many
+authors confine themselves to only stating one of them. For example, Theorem
+\ref{thm.det.laplace-multi} is \cite[Lemma A.1 (f)]{CaSoSp12}.} Theorem
 \ref{thm.laplace.gen} \textbf{(a)} can be recovered from Theorem
 \ref{thm.det.laplace-multi} \textbf{(a)} by setting $P=\left\{  p\right\}  $;
 similarly for the part \textbf{(b)}.
@@ -54274,7 +54278,7 @@ satisfy%
 0, & \text{if }i>n\text{ and }j\leq n;\\
 \delta_{i-n,j-n}, & \text{if }i>n\text{ and }j>n
 \end{cases}
-=\delta_{i,j}\label{pf.lem.sol.block2x2.jacobi.InIm.deldel}%
+=\delta_{i,j} \label{pf.lem.sol.block2x2.jacobi.InIm.deldel}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{pf.lem.sol.block2x2.jacobi.InIm.deldel}):}
 Let $\left(  i,j\right)  \in\left\{  1,2,\ldots,n+m\right\}  ^{2}$. We want to
@@ -54317,8 +54321,7 @@ so that $i\leq n<j$. Thus, $i\neq j$, so that $\delta_{i,j}=0$. But%
 0, & \text{if }i>n\text{ and }j\leq n;\\
 \delta_{i-n,j-n}, & \text{if }i>n\text{ and }j>n
 \end{cases}
-&  =0\ \ \ \ \ \ \ \ \ \ \left(  \text{since }i\leq n\text{ and }j>n\right)
-\\
+&  =0\ \ \ \ \ \ \ \ \ \ \left(  \text{since }i\leq n\text{ and }j>n\right) \\
 &  =\delta_{i,j}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\delta_{i,j}%
 =0\right)  .
 \end{align*}
@@ -54346,8 +54349,7 @@ But%
 0, & \text{if }i>n\text{ and }j\leq n;\\
 \delta_{i-n,j-n}, & \text{if }i>n\text{ and }j>n
 \end{cases}
-&  =0\ \ \ \ \ \ \ \ \ \ \left(  \text{since }i>n\text{ and }j\leq n\right)
-\\
+&  =0\ \ \ \ \ \ \ \ \ \ \left(  \text{since }i>n\text{ and }j\leq n\right) \\
 &  =\delta_{i,j}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\delta_{i,j}%
 =0\right)  .
 \end{align*}
@@ -54370,7 +54372,7 @@ $. Now,%
 \end{cases}
 \\
 &  =\delta_{i-n,j-n}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }i>n\text{ and
-}j>n\right)  \\
+}j>n\right) \\
 &  =%
 \begin{cases}
 1, & \text{if }i-n=j-n;\\
@@ -54389,7 +54391,7 @@ $. Now,%
 \text{since the statement }i-n=j-n\text{ is equivalent to }i=j\text{,}\\
 \text{and since the statement }i-n\neq j-n\text{ is equivalent to }i\neq j
 \end{array}
-\right)  \\
+\right) \\
 &  =\delta_{i,j}.
 \end{align*}
 Thus, (\ref{pf.lem.sol.block2x2.jacobi.InIm.deldel}) is proven in Subcase 2.2.
@@ -54412,7 +54414,7 @@ Now, (\ref{pf.lem.sol.block2x2.jacobi.InIm.LHS}) becomes%
 I_{n} & 0_{n\times m}\\
 0_{m\times n} & I_{m}%
 \end{array}
-\right)  \\
+\right) \\
 &  =\left(  \underbrace{%
 \begin{cases}
 \delta_{i,j}, & \text{if }i\leq n\text{ and }j\leq n;\\
@@ -54846,7 +54848,7 @@ d_{\left(  i+n\right)  -n,\left(  j+m\right)  -m}^{\prime}, & \text{if
 \text{to }\left(  i+n,j+m\right)  \text{ instead of }\left(  i,j\right)
 \text{)}%
 \end{array}
-\right)  \\
+\right) \\
 &  =d_{\left(  i+n\right)  -n,\left(  j+m\right)  -m}^{\prime}%
 \ \ \ \ \ \ \ \ \ \ \left(  \text{since }i+n>n\text{ and }j+m>m\right)  .
 \end{align*}
@@ -64814,6 +64816,12 @@ Graduate Texts in Mathematics \#231, Springer 2005.}
 \bibitem[Bresso99]{Bresso99}David M. Bressoud, \textit{Proofs and
 Confirmations: The Story of the Alternating Sign Matrix Conjecture}, Cambridge
 University Press 1999.
+
+\bibitem[CaSoSp12]{CaSoSp12}Sergio Caracciolo, Alan D. Sokal, Andrea
+Sportiello, \textit{Algebraic/combinatorial proofs of Cayley-type identities
+for derivatives of determinants and pfaffians}, Advances in Applied
+Mathematics 50, pp. 474--594 (2013). Also appears as arXiv preprint
+\texttt{\href{http://arxiv.org/abs/1105.6270v2}{arXiv:1105.6270v2}}.
 
 \bibitem[Conrad]{Conrad}Keith Conrad, \textit{Sign of permutations},
 \newline\url{http://www.math.uconn.edu/~kconrad/blurbs/grouptheory/sign.pdf} .
