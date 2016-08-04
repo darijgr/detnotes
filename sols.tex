@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, August 04, 2016 04:14:46}
+%TCIDATA{LastRevised=Thursday, August 04, 2016 04:43:48}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -20616,10 +20616,8 @@ matrix. Let $k\in\left\{  0,1,\ldots,n\right\}  $. Prove that%
 \end{exercise}
 
 Exercise \ref{exe.block2x2.jacobi.rewr} is a particular case of the so-called
-\textit{Jacobi complementary minor theorem}\footnote{See \cite[(1)]{Lalonde}
-for the general case (whence Exercise \ref{exe.block2x2.jacobi.rewr} is
-obtained by setting $S=\left\{  k+1,k+2,\ldots,n\right\}  $ and $T=\left\{
-k+1,k+2,\ldots,n\right\}  $).}.
+\textit{Jacobi complementary minor theorem} (Additional exercise
+\ref{addexe.jacobi-complement} further below).
 
 \subsection{\label{sect.noncommring}Noncommutative rings}
 
@@ -24679,6 +24677,62 @@ g & 0 & 0 & d & 0 & 0\\
 \]
 where $a,b,c,d,e,f,g,h,k,\ell,m,n$ are elements of $\mathbb{K}$.
 \end{addexercise}
+
+\begin{addexercise}
+\label{addexe.jacobi-complement}Let $n\in\mathbb{N}$. For any subset $I$ of
+$\left\{  1,2,\ldots,n\right\}  $, we let $\widetilde{I}$ denote the
+complement $\left\{  1,2,\ldots,n\right\}  \setminus I$ of $I$. (For instance,
+if $n=4$ and $I=\left\{  1,4\right\}  $, then $\widetilde{I}=\left\{
+2,3\right\}  $.) Let us use the notations introduced in Definition
+\ref{def.submatrix} and in Definition \ref{def.sect.laplace.notations}.
+
+Let $A\in\mathbb{K}^{n\times n}$ be an invertible matrix. Let $P$ and $Q$ be
+two subsets of $\left\{  1,2,\ldots,n\right\}  $ satisfying $\left\vert
+P\right\vert =\left\vert Q\right\vert $. Prove that%
+\begin{equation}
+\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+Q\right)  }A\right)  =\left(  -1\right)  ^{\sum P+\sum Q}\det A\cdot
+\det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{Q}\right)
+}^{w\left(  \widetilde{P}\right)  }\left(  A^{-1}\right)  \right)  .
+\label{eq.addexe.jacobi-complement.1}%
+\end{equation}
+
+
+[\textbf{Hint:} Apply Exercise \ref{exe.block2x2.jacobi.rewr} to a matrix
+obtained from $A$ by permuting the rows and permuting the columns.]
+\end{addexercise}
+
+\begin{remark}
+The claim of Additional exercise \ref{addexe.jacobi-complement} is the
+so-called \textit{Jacobi complementary minor theorem}. It appears, for
+example, in \cite[(1)]{Lalonde} and in \cite[Lemma A.1 (e)]{CaSoSp12}, and is
+used rather often when working with determinants (for example, it is used in
+\cite[Chapter SYM, proof of Proposition (7.5) (5)]{LLPT95} and many times in
+\cite{CaSoSp12}).
+
+The determinant of a submatrix of a matrix $A$ is called a \textit{minor} of
+$A$. Thus, in the equality (\ref{eq.addexe.jacobi-complement.1}), the
+determinant $\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)
+}^{w\left(  Q\right)  }A\right)  $ on the left hand side is a minor of $A$,
+whereas the determinant $\det\left(  \operatorname*{sub}\nolimits_{w\left(
+\widetilde{Q}\right)  }^{w\left(  \widetilde{P}\right)  }\left(
+A^{-1}\right)  \right)  $ on the right hand side is a minor of $A^{-1}$. The
+latter minor is called the \textit{complementary minor} to the former; this is
+where the name \textquotedblleft Jacobi complementary minor
+theorem\textquotedblright\ comes from. Thus, roughly speaking, the equality
+(\ref{eq.addexe.jacobi-complement.1}) says that any minor of $A$ equals its
+complementary minor (of $A^{-1}$) times $\det A$ times a certain sign.
+
+It is instructive to check the particular case of
+(\ref{eq.addexe.jacobi-complement.1}) obtained when both $P$ and $Q$ are sets
+of cardinality $n-1$ (so that $\widetilde{P}$ and $\widetilde{Q}$ are
+$1$-element sets). This particular case turns out to be the statement of
+Theorem \ref{thm.matrices.inverses.square} \textbf{(b)} in disguise.
+
+Exercise \ref{exe.block2x2.jacobi.rewr} is the particular case of Additional
+exercise \ref{addexe.jacobi-complement} obtained when $P=\left\{
+1,2,\ldots,k\right\}  $ and $Q=\left\{  1,2,\ldots,k\right\}  $.
+\end{remark}
 
 \begin{addexercise}
 \label{exeadd.det.pluecker.multi}Let $n$ and $k$ be positive integers such
@@ -60827,7 +60881,7 @@ $\sigma_{P,\operatorname*{id}\nolimits_{k},\operatorname*{id}\nolimits_{n-k}}$
 by $\gamma$. Thus, $\gamma=\sigma_{P,\operatorname*{id}\nolimits_{k}%
 ,\operatorname*{id}\nolimits_{n-k}}$, so that%
 \begin{align}
-\left(  -1\right)  ^{\gamma} &  =\left(  -1\right)  ^{\sigma
+\left(  -1\right)  ^{\gamma}  &  =\left(  -1\right)  ^{\sigma
 _{P,\operatorname*{id},\operatorname*{id}}}=\underbrace{\left(  -1\right)
 ^{\operatorname*{id}}}_{=1}\cdot\underbrace{\left(  -1\right)
 ^{\operatorname*{id}}}_{=1}\cdot\left(  -1\right)  ^{\sum P-\left(
@@ -60835,9 +60889,9 @@ _{P,\operatorname*{id},\operatorname*{id}}}=\underbrace{\left(  -1\right)
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
 (\ref{pf.lem.det.laplace-multi.Apq.sign-gen}) (applied to }\alpha
 =\operatorname*{id}\nolimits_{k}\text{ and }\beta=\operatorname*{id}%
-\nolimits_{n-k}\text{)}\right)  \nonumber\\
-&  =\left(  -1\right)  ^{\sum P-\left(  1+2+\cdots+k\right)  }%
-.\label{pf.lem.det.laplace-multi.Apq.short.sign-gamma}%
+\nolimits_{n-k}\text{)}\right) \nonumber\\
+&  =\left(  -1\right)  ^{\sum P-\left(  1+2+\cdots+k\right)  }.
+\label{pf.lem.det.laplace-multi.Apq.short.sign-gamma}%
 \end{align}
 
 \end{vershort}
@@ -60850,7 +60904,7 @@ this element $\sigma_{P,\operatorname*{id}\nolimits_{k},\operatorname*{id}%
 \nolimits_{n-k}}$ by $\gamma$. Thus, $\gamma=\sigma_{P,\operatorname*{id}%
 \nolimits_{k},\operatorname*{id}\nolimits_{n-k}}$, so that%
 \begin{align}
-\left(  -1\right)  ^{\gamma} &  =\left(  -1\right)  ^{\sigma
+\left(  -1\right)  ^{\gamma}  &  =\left(  -1\right)  ^{\sigma
 _{P,\operatorname*{id}\nolimits_{k},\operatorname*{id}\nolimits_{n-k}}%
 }=\underbrace{\left(  -1\right)  ^{\operatorname*{id}\nolimits_{k}}%
 }_{\substack{=1\\\text{(by (\ref{pf.lem.det.laplace-multi.Apq.sign-1}%
@@ -60862,9 +60916,9 @@ h=n-k\text{))}}}\cdot\left(  -1\right)  ^{\sum P-\left(  1+2+\cdots+k\right)
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
 (\ref{pf.lem.det.laplace-multi.Apq.sign-gen}) (applied to }\alpha
 =\operatorname*{id}\nolimits_{k}\text{ and }\beta=\operatorname*{id}%
-\nolimits_{n-k}\text{)}\right)  \nonumber\\
-&  =\left(  -1\right)  ^{\sum P-\left(  1+2+\cdots+k\right)  }%
-.\label{pf.lem.det.laplace-multi.Apq.sign-gamma}%
+\nolimits_{n-k}\text{)}\right) \nonumber\\
+&  =\left(  -1\right)  ^{\sum P-\left(  1+2+\cdots+k\right)  }.
+\label{pf.lem.det.laplace-multi.Apq.sign-gamma}%
 \end{align}
 
 \end{verlong}
@@ -63538,6 +63592,1164 @@ This proves (\ref{eq.cor.det(A+X).2}). The proof of Corollary
 [Solution to Exercise \ref{exe.det(A+B).diag}.]We have proven Lemma
 \ref{lem.diag.minors}, Corollary \ref{cor.det(A+D)} and Corollary
 \ref{cor.det(A+X)}. Exercise \ref{exe.det(A+B).diag} is thus solved.
+\end{proof}
+
+\subsection{\label{sect.sol.jacobi-complement}Solution to Additional exercise
+\ref{addexe.jacobi-complement}}
+
+We are going to prepare for solving Additional exercise
+\ref{addexe.jacobi-complement} by stating several simple lemmas.
+
+First, let us agree on some notations. We are going to use the notations
+introduced in Definition \ref{def.submatrix} and in Definition
+\ref{def.sect.laplace.notations} throughout Section
+\ref{sect.sol.jacobi-complement}. We are also going to use the following notation:
+
+\begin{definition}
+\label{def.sol.addexe.jacobi-complement.Agd}Let $n\in\mathbb{N}$ and
+$m\in\mathbb{N}$. Let $A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+m}\in\mathbb{K}^{n\times m}$. Let $\gamma\in S_{n}$ and $\delta\in S_{m}$.
+Then, $A_{\left[  \gamma,\delta\right]  }$ denotes the matrix $\left(
+a_{\gamma\left(  i\right)  ,\delta\left(  j\right)  }\right)  _{1\leq i\leq
+n,\ 1\leq j\leq m}\in\mathbb{K}^{n\times m}$.
+\end{definition}
+
+\begin{remark}
+Let $n$, $m$, $A$, $\gamma$ and $\delta$ be as in Definition
+\ref{def.sol.addexe.jacobi-complement.Agd}. Then, it is easy to see that
+$A_{\left[  \gamma,\delta\right]  }=\operatorname*{sub}\nolimits_{\gamma
+\left(  1\right)  ,\gamma\left(  2\right)  ,\ldots,\gamma\left(  n\right)
+}^{\delta\left(  1\right)  ,\delta\left(  2\right)  ,\ldots,\delta\left(
+m\right)  }A$. Visually speaking, $A_{\left[  \gamma,\delta\right]  }$ is the
+matrix obtained from $A$ by permuting the rows (using the permutation $\gamma
+$) and permuting the columns (using the permutation $\delta$).
+\end{remark}
+
+\begin{remark}
+Let $n\in\mathbb{N}$, and let $B\in\mathbb{K}^{n\times n}$. Let $\kappa\in
+S_{n}$. Then, Definition \ref{def.sol.addexe.jacobi-complement.Agd} gives rise
+to an $n\times n$-matrix $B_{\left[  \kappa,\operatorname*{id}\right]  }$
+(where $\operatorname*{id}$ denotes the identity permutation
+$\operatorname*{id}\nolimits_{\left\{  1,2,\ldots,n\right\}  }\in S_{n}$).
+This matrix $B_{\left[  \kappa,\operatorname*{id}\right]  }$ is precisely the
+matrix $B_{\kappa}$ from Lemma \ref{lem.det.sigma}.
+\end{remark}
+
+\begin{lemma}
+\label{lem.sol.addexe.jacobi-complement.Agd.det}Let $n\in\mathbb{N}$. Let
+$A\in\mathbb{K}^{n\times n}$. Let $\gamma\in S_{n}$ and $\delta\in S_{n}$.
+Then,%
+\[
+\det\left(  A_{\left[  \gamma,\delta\right]  }\right)  =\left(  -1\right)
+^{\gamma}\left(  -1\right)  ^{\delta}\det A.
+\]
+
+\end{lemma}
+
+Lemma \ref{lem.sol.addexe.jacobi-complement.Agd.det} simply says that if we
+permute the rows and permute the columns of a square matrix, then the
+determinant of this matrix gets multiplied by the product of the signs of the
+two permutations.
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.addexe.jacobi-complement.Agd.det}.]Let $\left[
+n\right]  $ denote the set $\left\{  1,2,\ldots,n\right\}  $.
+
+\begin{verlong}
+We have $\gamma\in S_{n}$. In other words, $\gamma$ is a permutation of
+$\left\{  1,2,\ldots,n\right\}  $ (since $S_{n}$ is the set of all
+permutations of $\left\{  1,2,\ldots,n\right\}  $). In other words, $\gamma$
+is a permutation of $\left[  n\right]  $ (since $\left[  n\right]  =\left\{
+1,2,\ldots,n\right\}  $). In other words, $\gamma$ is a bijective map $\left[
+n\right]  \rightarrow\left[  n\right]  $. The same argument (but applied to
+$\delta$ instead of $\gamma$) shows that $\delta$ is a bijective map $\left[
+n\right]  \rightarrow\left[  n\right]  $.
+\end{verlong}
+
+Write the $n\times n$-matrix $A$ in the form $A=\left(  a_{i,j}\right)
+_{1\leq i\leq n,\ 1\leq j\leq n}$. Then, \newline$A^{T}=\left(  a_{j,i}%
+\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ (by the definition of $A^{T}$).
+
+Define a new matrix $C$ by $C=\left(  a_{\delta\left(  j\right)  ,i}\right)
+_{1\leq i\leq n,\ 1\leq j\leq n}$. Then, Lemma \ref{lem.det.sigma}
+\textbf{(a)} (applied to $\delta$, $A^{T}$, $a_{j,i}$ and $C$ instead of
+$\kappa$, $B$, $b_{i,j}$ and $B_{\kappa}$) yields $\det C=\left(  -1\right)
+^{\delta}\cdot\det\left(  A^{T}\right)  $ (because $A^{T}=\left(
+a_{j,i}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ and $C=\left(
+a_{\delta\left(  j\right)  ,i}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$).
+Thus,%
+\[
+\det C=\left(  -1\right)  ^{\delta}\cdot\underbrace{\det\left(  A^{T}\right)
+}_{\substack{=\det A\\\text{(by Exercise \ref{exe.ps4.4})}}}=\left(
+-1\right)  ^{\delta}\cdot\det A.
+\]
+
+
+Clearly, $C$ is an $n\times n$-matrix. Hence, Exercise \ref{exe.ps4.4}
+(applied to $C$ instead of $A$) yields
+\[
+\det\left(  C^{T}\right)  =\det C=\left(  -1\right)  ^{\delta}\cdot\det A.
+\]
+
+
+But we have $C=\left(  a_{\delta\left(  j\right)  ,i}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}$. Hence, $C^{T}=\left(  a_{i,\delta\left(  j\right)
+}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ (by the definition of $C^{T}$). We
+have $C^{T}=\left(  a_{i,\delta\left(  j\right)  }\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}$ and $A_{\left[  \gamma,\delta\right]  }=\left(
+a_{\gamma\left(  i\right)  ,\delta\left(  j\right)  }\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}$ (by the definition of $A_{\left[  \gamma,\delta\right]  }%
+$). Thus, Lemma \ref{lem.det.sigma} \textbf{(a)} (applied to $\gamma$, $C^{T}%
+$, $a_{i,\delta\left(  j\right)  }$ and $A_{\left[  \gamma,\delta\right]  }$
+instead of $\kappa$, $B$, $b_{i,j}$ and $B_{\kappa}$) yields%
+\[
+\det\left(  A_{\left[  \gamma,\delta\right]  }\right)  =\left(  -1\right)
+^{\gamma}\cdot\underbrace{\det\left(  C^{T}\right)  }_{=\left(  -1\right)
+^{\delta}\cdot\det A}=\left(  -1\right)  ^{\gamma}\cdot\left(  -1\right)
+^{\delta}\cdot\det A=\left(  -1\right)  ^{\gamma}\left(  -1\right)  ^{\delta
+}\det A.
+\]
+This proves Lemma \ref{lem.sol.addexe.jacobi-complement.Agd.det}.
+\end{proof}
+
+\begin{lemma}
+\label{lem.sol.addexe.jacobi-complement.Agd.sub}Let $n\in\mathbb{N}$ and
+$m\in\mathbb{N}$. Let $A\in\mathbb{K}^{n\times m}$. Let $\gamma\in S_{n}$ and
+$\delta\in S_{m}$. Let $i_{1},i_{2},\ldots,i_{u}$ be some elements of
+$\left\{  1,2,\ldots,n\right\}  $; let $j_{1},j_{2},\ldots,j_{v}$ be some
+elements of $\left\{  1,2,\ldots,m\right\}  $. Then,%
+\[
+\operatorname*{sub}\nolimits_{i_{1},i_{2},\ldots,i_{u}}^{j_{1},j_{2}%
+,\ldots,j_{v}}\left(  A_{\left[  \gamma,\delta\right]  }\right)
+=\operatorname*{sub}\nolimits_{\gamma\left(  i_{1}\right)  ,\gamma\left(
+i_{2}\right)  ,\ldots,\gamma\left(  i_{u}\right)  }^{\delta\left(
+j_{1}\right)  ,\delta\left(  j_{2}\right)  ,\ldots,\delta\left(  j_{v}\right)
+}A.
+\]
+
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.addexe.jacobi-complement.Agd.sub}.]Write the
+$n\times m$-matrix $A$ in the form $A=\left(  a_{i,j}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq m}$. Then,
+\begin{equation}
+\operatorname*{sub}\nolimits_{\gamma\left(  i_{1}\right)  ,\gamma\left(
+i_{2}\right)  ,\ldots,\gamma\left(  i_{u}\right)  }^{\delta\left(
+j_{1}\right)  ,\delta\left(  j_{2}\right)  ,\ldots,\delta\left(  j_{v}\right)
+}A=\left(  a_{\gamma\left(  i_{x}\right)  ,\delta\left(  j_{y}\right)
+}\right)  _{1\leq x\leq u,\ 1\leq y\leq v}
+\label{pf.lem.sol.addexe.jacobi-complement.Agd.sub.1}%
+\end{equation}
+(by the definition of $\operatorname*{sub}\nolimits_{\gamma\left(
+i_{1}\right)  ,\gamma\left(  i_{2}\right)  ,\ldots,\gamma\left(  i_{u}\right)
+}^{\delta\left(  j_{1}\right)  ,\delta\left(  j_{2}\right)  ,\ldots
+,\delta\left(  j_{v}\right)  }A$, since $A=\left(  a_{i,j}\right)  _{1\leq
+i\leq n,\ 1\leq j\leq m}$). On the other hand, the definition of $A_{\left[
+\gamma,\delta\right]  }$ yields $A_{\left[  \gamma,\delta\right]  }=\left(
+a_{\gamma\left(  i\right)  ,\delta\left(  j\right)  }\right)  _{1\leq i\leq
+n,\ 1\leq j\leq m}$. Hence, the definition of $\operatorname*{sub}%
+\nolimits_{i_{1},i_{2},\ldots,i_{u}}^{j_{1},j_{2},\ldots,j_{v}}\left(
+A_{\left[  \gamma,\delta\right]  }\right)  $ yields%
+\[
+\operatorname*{sub}\nolimits_{i_{1},i_{2},\ldots,i_{u}}^{j_{1},j_{2}%
+,\ldots,j_{v}}\left(  A_{\left[  \gamma,\delta\right]  }\right)  =\left(
+a_{\gamma\left(  i_{x}\right)  ,\delta\left(  j_{y}\right)  }\right)  _{1\leq
+x\leq u,\ 1\leq y\leq v}.
+\]
+Comparing this with (\ref{pf.lem.sol.addexe.jacobi-complement.Agd.sub.1}), we
+obtain $\operatorname*{sub}\nolimits_{i_{1},i_{2},\ldots,i_{u}}^{j_{1}%
+,j_{2},\ldots,j_{v}}\left(  A_{\left[  \gamma,\delta\right]  }\right)
+=\operatorname*{sub}\nolimits_{\gamma\left(  i_{1}\right)  ,\gamma\left(
+i_{2}\right)  ,\ldots,\gamma\left(  i_{u}\right)  }^{\delta\left(
+j_{1}\right)  ,\delta\left(  j_{2}\right)  ,\ldots,\delta\left(  j_{v}\right)
+}A$. This proves Lemma \ref{lem.sol.addexe.jacobi-complement.Agd.sub}.
+\end{proof}
+
+\begin{lemma}
+\label{lem.sol.addexe.jacobi-complement.Agd.AB}Let $n\in\mathbb{N}$,
+$m\in\mathbb{N}$ and $p\in\mathbb{N}$. Let $\gamma\in S_{n}$, $\delta\in
+S_{m}$ and $\varepsilon\in S_{p}$. Let $A\in\mathbb{K}^{n\times m}$ and
+$B\in\mathbb{K}^{m\times p}$. Then,%
+\[
+\left(  AB\right)  _{\left[  \gamma,\varepsilon\right]  }=A_{\left[
+\gamma,\delta\right]  }B_{\left[  \delta,\varepsilon\right]  }.
+\]
+
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.addexe.jacobi-complement.Agd.AB}.]Write the
+$n\times m$-matrix $A$ in the form $A=\left(  a_{i,j}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq m}$. Then, $A_{\left[  \gamma,\delta\right]  }=\left(
+a_{\gamma\left(  i\right)  ,\delta\left(  j\right)  }\right)  _{1\leq i\leq
+n,\ 1\leq j\leq m}$ (by the definition of $A_{\left[  \gamma,\delta\right]  }$).
+
+Write the $m\times p$-matrix $B$ in the form $B=\left(  b_{i,j}\right)
+_{1\leq i\leq m,\ 1\leq j\leq p}$. Then, $B_{\left[  \delta,\varepsilon
+\right]  }=\left(  b_{\delta\left(  i\right)  ,\varepsilon\left(  j\right)
+}\right)  _{1\leq i\leq m,\ 1\leq j\leq p}$ (by the definition of $B_{\left[
+\delta,\varepsilon\right]  }$).
+
+\begin{verlong}
+We have $\delta\in S_{m}$. In other words, $\delta$ is a permutation of
+$\left\{  1,2,\ldots,m\right\}  $ (since $S_{m}$ is the set of all
+permutations of $\left\{  1,2,\ldots,m\right\}  $ (by the definition of
+$S_{m}$)). In other words, $\delta$ is a bijective map $\left\{
+1,2,\ldots,m\right\}  \rightarrow\left\{  1,2,\ldots,m\right\}  $. In other
+words, $\delta:\left\{  1,2,\ldots,m\right\}  \rightarrow\left\{
+1,2,\ldots,m\right\}  $ is a bijection.
+\end{verlong}
+
+\begin{vershort}
+Every $\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}  \times\left\{
+1,2,\ldots,p\right\}  $ satisfies%
+\[
+\sum_{k=1}^{m}a_{\gamma\left(  i\right)  ,\delta\left(  k\right)  }%
+b_{\delta\left(  k\right)  ,\varepsilon\left(  j\right)  }=\sum_{k=1}%
+^{m}a_{\gamma\left(  i\right)  ,k}b_{k,\varepsilon\left(  j\right)  }%
+\]
+(here, we have substituted $k$ for $\delta\left(  k\right)  $ in the sum,
+since the map $\delta:\left\{  1,2,\ldots,m\right\}  \rightarrow\left\{
+1,2,\ldots,m\right\}  $ is a bijection). In other words, we have%
+\begin{equation}
+\left(  \sum_{k=1}^{m}a_{\gamma\left(  i\right)  ,\delta\left(  k\right)
+}b_{\delta\left(  k\right)  ,\varepsilon\left(  j\right)  }\right)  _{1\leq
+i\leq n,\ 1\leq j\leq p}=\left(  \sum_{k=1}^{m}a_{\gamma\left(  i\right)
+,k}b_{k,\varepsilon\left(  j\right)  }\right)  _{1\leq i\leq n,\ 1\leq j\leq
+p}. \label{pf.lem.sol.addexe.jacobi-complement.Agd.AB.short.1}%
+\end{equation}
+
+
+The definition of the product of two matrices yields%
+\begin{align}
+A_{\left[  \gamma,\delta\right]  }B_{\left[  \delta,\varepsilon\right]  }  &
+=\left(  \sum_{k=1}^{m}a_{\gamma\left(  i\right)  ,\delta\left(  k\right)
+}b_{\delta\left(  k\right)  ,\varepsilon\left(  j\right)  }\right)  _{1\leq
+i\leq n,\ 1\leq j\leq p}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since }A_{\left[  \gamma,\delta\right]  }=\left(  a_{\gamma\left(
+i\right)  ,\delta\left(  j\right)  }\right)  _{1\leq i\leq n,\ 1\leq j\leq
+m}\\
+\text{and }B_{\left[  \delta,\varepsilon\right]  }=\left(  b_{\delta\left(
+i\right)  ,\varepsilon\left(  j\right)  }\right)  _{1\leq i\leq m,\ 1\leq
+j\leq p}%
+\end{array}
+\right) \nonumber\\
+&  =\left(  \sum_{k=1}^{m}a_{\gamma\left(  i\right)  ,k}b_{k,\varepsilon
+\left(  j\right)  }\right)  _{1\leq i\leq n,\ 1\leq j\leq p}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{pf.lem.sol.addexe.jacobi-complement.Agd.AB.short.1})}\right)  .
+\label{pf.lem.sol.addexe.jacobi-complement.Agd.AB.short.2}%
+\end{align}
+
+
+On the other hand, the definition of the product of two matrices yields
+$AB=\left(  \sum_{k=1}^{m}a_{i,k}b_{k,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+p}$ (since $A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq m}$ and
+$B=\left(  b_{i,j}\right)  _{1\leq i\leq m,\ 1\leq j\leq p}$). Hence, the
+definition of $\left(  AB\right)  _{\left[  \gamma,\varepsilon\right]  }$
+yields%
+\[
+\left(  AB\right)  _{\left[  \gamma,\varepsilon\right]  }=\left(  \sum
+_{k=1}^{m}a_{\gamma\left(  i\right)  ,k}b_{k,\varepsilon\left(  j\right)
+}\right)  _{1\leq i\leq n,\ 1\leq j\leq p}.
+\]
+Comparing this with (\ref{pf.lem.sol.addexe.jacobi-complement.Agd.AB.short.2}%
+), we obtain $\left(  AB\right)  _{\left[  \gamma,\varepsilon\right]
+}=A_{\left[  \gamma,\delta\right]  }B_{\left[  \delta,\varepsilon\right]  }$.
+Thus, Lemma \ref{lem.sol.addexe.jacobi-complement.Agd.AB} is proven.
+\end{vershort}
+
+\begin{verlong}
+Every $\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}  \times\left\{
+1,2,\ldots,p\right\}  $ satisfies%
+\begin{align*}
+&  \underbrace{\sum_{k=1}^{m}}_{=\sum_{k\in\left\{  1,2,\ldots,m\right\}  }%
+}a_{\gamma\left(  i\right)  ,\delta\left(  k\right)  }b_{\delta\left(
+k\right)  ,\varepsilon\left(  j\right)  }\\
+&  =\sum_{k\in\left\{  1,2,\ldots,m\right\}  }a_{\gamma\left(  i\right)
+,\delta\left(  k\right)  }b_{\delta\left(  k\right)  ,\varepsilon\left(
+j\right)  }=\underbrace{\sum_{k\in\left\{  1,2,\ldots,m\right\}  }}%
+_{=\sum_{k=1}^{m}}a_{\gamma\left(  i\right)  ,k}b_{k,\varepsilon\left(
+j\right)  }\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have substituted }k\text{ for }\delta\left(  k\right)  \text{
+in the sum, since}\\
+\text{the map }\delta:\left\{  1,2,\ldots,m\right\}  \rightarrow\left\{
+1,2,\ldots,m\right\}  \text{ is a bijection}%
+\end{array}
+\right) \\
+&  =\sum_{k=1}^{m}a_{\gamma\left(  i\right)  ,k}b_{k,\varepsilon\left(
+j\right)  }.
+\end{align*}
+In other words, we have%
+\begin{equation}
+\left(  \sum_{k=1}^{m}a_{\gamma\left(  i\right)  ,\delta\left(  k\right)
+}b_{\delta\left(  k\right)  ,\varepsilon\left(  j\right)  }\right)  _{1\leq
+i\leq n,\ 1\leq j\leq p}=\left(  \sum_{k=1}^{m}a_{\gamma\left(  i\right)
+,k}b_{k,\varepsilon\left(  j\right)  }\right)  _{1\leq i\leq n,\ 1\leq j\leq
+p}. \label{pf.lem.sol.addexe.jacobi-complement.Agd.AB.1}%
+\end{equation}
+
+
+The definition of the product of two matrices yields%
+\begin{align}
+A_{\left[  \gamma,\delta\right]  }B_{\left[  \delta,\varepsilon\right]  }  &
+=\left(  \sum_{k=1}^{m}a_{\gamma\left(  i\right)  ,\delta\left(  k\right)
+}b_{\delta\left(  k\right)  ,\varepsilon\left(  j\right)  }\right)  _{1\leq
+i\leq n,\ 1\leq j\leq p}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since }A_{\left[  \gamma,\delta\right]  }=\left(  a_{\gamma\left(
+i\right)  ,\delta\left(  j\right)  }\right)  _{1\leq i\leq n,\ 1\leq j\leq
+m}\\
+\text{and }B_{\left[  \delta,\varepsilon\right]  }=\left(  b_{\delta\left(
+i\right)  ,\varepsilon\left(  j\right)  }\right)  _{1\leq i\leq m,\ 1\leq
+j\leq p}%
+\end{array}
+\right) \nonumber\\
+&  =\left(  \sum_{k=1}^{m}a_{\gamma\left(  i\right)  ,k}b_{k,\varepsilon
+\left(  j\right)  }\right)  _{1\leq i\leq n,\ 1\leq j\leq p}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{pf.lem.sol.addexe.jacobi-complement.Agd.AB.1})}\right)  .
+\label{pf.lem.sol.addexe.jacobi-complement.Agd.AB.2}%
+\end{align}
+
+
+On the other hand, the definition of the product of two matrices yields
+$AB=\left(  \sum_{k=1}^{m}a_{i,k}b_{k,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+p}$ (since $A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq m}$ and
+$B=\left(  b_{i,j}\right)  _{1\leq i\leq m,\ 1\leq j\leq p}$). Hence, the
+definition of $\left(  AB\right)  _{\left[  \gamma,\varepsilon\right]  }$
+yields%
+\[
+\left(  AB\right)  _{\left[  \gamma,\varepsilon\right]  }=\left(  \sum
+_{k=1}^{m}a_{\gamma\left(  i\right)  ,k}b_{k,\varepsilon\left(  j\right)
+}\right)  _{1\leq i\leq n,\ 1\leq j\leq p}.
+\]
+Comparing this with (\ref{pf.lem.sol.addexe.jacobi-complement.Agd.AB.2}), we
+obtain $\left(  AB\right)  _{\left[  \gamma,\varepsilon\right]  }=A_{\left[
+\gamma,\delta\right]  }B_{\left[  \delta,\varepsilon\right]  }$. Thus, Lemma
+\ref{lem.sol.addexe.jacobi-complement.Agd.AB} is proven.
+\end{verlong}
+\end{proof}
+
+\begin{lemma}
+\label{lem.sol.addexe.jacobi-complement.Agd.I}Let $n\in\mathbb{N}$ and
+$\gamma\in S_{n}$. Then, $\left(  I_{n}\right)  _{\left[  \gamma
+,\gamma\right]  }=I_{n}$.
+\end{lemma}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.addexe.jacobi-complement.Agd.I}.]For every two
+objects $i$ and $j$, define an element $\delta_{i,j}\in\mathbb{K}$ by
+$\delta_{i,j}=%
+\begin{cases}
+1, & \text{if }i=j;\\
+0, & \text{if }i\neq j
+\end{cases}
+$. Then, $I_{n}=\left(  \delta_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$
+(by the definition of $I_{n}$). Hence, $\left(  I_{n}\right)  _{\left[
+\gamma,\gamma\right]  }=\left(  \delta_{\gamma\left(  i\right)  ,\gamma\left(
+j\right)  }\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ (by the definition of
+$\left(  I_{n}\right)  _{\left[  \gamma,\gamma\right]  }$).
+
+The map $\gamma$ is a permutation (since $\gamma\in S_{n}$), thus bijective,
+thus injective.
+
+For every $\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}$, we
+have $\delta_{\gamma\left(  i\right)  ,\gamma\left(  j\right)  }=\delta_{i,j}%
+$\ \ \ \ \footnote{\textit{Proof.} Let $\left(  i,j\right)  \in\left\{
+1,2,\ldots,n\right\}  ^{2}$. We must prove $\delta_{\gamma\left(  i\right)
+,\gamma\left(  j\right)  }=\delta_{i,j}$.
+\par
+If $i=j$, then both $\delta_{\gamma\left(  i\right)  ,\gamma\left(  j\right)
+}$ and $\delta_{i,j}$ equal $1$ (because $\gamma\left(  \underbrace{i}%
+_{=j}\right)  =\gamma\left(  j\right)  $ shows that $\delta_{\gamma\left(
+i\right)  ,\gamma\left(  j\right)  }=1$, whereas $i=j$ shows that
+$\delta_{i,j}=1$). Hence, if $i=j$, then $\delta_{\gamma\left(  i\right)
+,\gamma\left(  j\right)  }=\delta_{i,j}$ holds. Thus, for the rest of our
+proof of $\delta_{\gamma\left(  i\right)  ,\gamma\left(  j\right)  }%
+=\delta_{i,j}$, we WLOG assume that $i\neq j$. Hence, $\delta_{i,j}=0$.
+\par
+But the map $\gamma$ is injective. Thus, from $i\neq j$, we obtain
+$\gamma\left(  i\right)  \neq\gamma\left(  j\right)  $. Hence, $\delta
+_{\gamma\left(  i\right)  ,\gamma\left(  j\right)  }=0$. Comparing this with
+$\delta_{i,j}=0$, we obtain $\delta_{\gamma\left(  i\right)  ,\gamma\left(
+j\right)  }=\delta_{i,j}$, qed.}. In other words, $\left(  \delta
+_{\gamma\left(  i\right)  ,\gamma\left(  j\right)  }\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}=\left(  \delta_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}$. Hence,
+\[
+\left(  I_{n}\right)  _{\left[  \gamma,\gamma\right]  }=\left(  \delta
+_{\gamma\left(  i\right)  ,\gamma\left(  j\right)  }\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}=\left(  \delta_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}.
+\]
+Comparing this with $I_{n}=\left(  \delta_{i,j}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}$, we obtain $\left(  I_{n}\right)  _{\left[  \gamma
+,\gamma\right]  }=I_{n}$. This proves Lemma
+\ref{lem.sol.addexe.jacobi-complement.Agd.I}.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.addexe.jacobi-complement.Agd.I}.]For every two
+objects $i$ and $j$, define an element $\delta_{i,j}\in\mathbb{K}$ by
+$\delta_{i,j}=%
+\begin{cases}
+1, & \text{if }i=j;\\
+0, & \text{if }i\neq j
+\end{cases}
+$. Then, $I_{n}=\left(  \delta_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$
+(by the definition of $I_{n}$). Hence, $\left(  I_{n}\right)  _{\left[
+\gamma,\gamma\right]  }=\left(  \delta_{\gamma\left(  i\right)  ,\gamma\left(
+j\right)  }\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ (by the definition of
+$\left(  I_{n}\right)  _{\left[  \gamma,\gamma\right]  }$).
+
+We have $\gamma\in S_{n}$. In other words, $\gamma$ is a permutation of
+$\left\{  1,2,\ldots,n\right\}  $ (since $S_{n}$ is the set of all
+permutations of $\left\{  1,2,\ldots,n\right\}  $ (by the definition of
+$S_{n}$)). In other words, $\gamma$ is a bijective map $\left\{
+1,2,\ldots,n\right\}  \rightarrow\left\{  1,2,\ldots,n\right\}  $. The map
+$\gamma$ is bijective, and thus injective.
+
+For every $\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}$, we
+have%
+\begin{equation}
+\delta_{\gamma\left(  i\right)  ,\gamma\left(  j\right)  }=\delta_{i,j}
+\label{pf.lem.sol.addexe.jacobi-complement.Agd.I.1}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.sol.addexe.jacobi-complement.Agd.I.1}%
+):} Let $\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}$. We must
+prove (\ref{pf.lem.sol.addexe.jacobi-complement.Agd.I.1}).
+\par
+We have $\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}$. In other
+words, $i\in\left\{  1,2,\ldots,n\right\}  $ and $j\in\left\{  1,2,\ldots
+,n\right\}  $. We are in one of the following two cases:
+\par
+\textit{Case 1:} We have $i=j$.
+\par
+\textit{Case 2:} We have $i\neq j$.
+\par
+Let us first consider Case 1. In this case, we have $i=j$. Thus, $\delta
+_{i,j}=1$. But $\gamma\left(  \underbrace{i}_{=j}\right)  =\gamma\left(
+j\right)  $, and thus $\delta_{\gamma\left(  i\right)  ,\gamma\left(
+j\right)  }=1$. Comparing this with $\delta_{i,j}=1$, we obtain $\delta
+_{\gamma\left(  i\right)  ,\gamma\left(  j\right)  }=\delta_{i,j}$. Thus,
+(\ref{pf.lem.sol.addexe.jacobi-complement.Agd.I.1}) is proven in Case 1.
+\par
+Let us now consider Case 2. In this case, we have $i\neq j$. In other words,
+the elements $i$ and $j$ are distinct. But the map $\gamma$ is injective.
+Hence, if $u$ and $v$ are two distinct elements of $\left\{  1,2,\ldots
+,n\right\}  $, then $\gamma\left(  u\right)  \neq\gamma\left(  v\right)  $.
+Applying this to $u=i$ and $v=j$, we conclude that $\gamma\left(  i\right)
+\neq\gamma\left(  j\right)  $ (since $i$ and $j$ are distinct). Hence,
+$\delta_{\gamma\left(  i\right)  ,\gamma\left(  j\right)  }=0$. Comparing this
+with $\delta_{i,j}=0$ (since $i\neq j$), we obtain $\delta_{\gamma\left(
+i\right)  ,\gamma\left(  j\right)  }=\delta_{i,j}$. Thus,
+(\ref{pf.lem.sol.addexe.jacobi-complement.Agd.I.1}) is proven in Case 2.
+\par
+We have now proven (\ref{pf.lem.sol.addexe.jacobi-complement.Agd.I.1}) in each
+of the two Cases 1 and 2. Since these two Cases cover all possibilities, we
+can thus conclude that (\ref{pf.lem.sol.addexe.jacobi-complement.Agd.I.1})
+always holds. Thus, (\ref{pf.lem.sol.addexe.jacobi-complement.Agd.I.1}) is
+proven.}. In other words, $\left(  \delta_{\gamma\left(  i\right)
+,\gamma\left(  j\right)  }\right)  _{1\leq i\leq n,\ 1\leq j\leq n}=\left(
+\delta_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$. Hence,
+\[
+\left(  I_{n}\right)  _{\left[  \gamma,\gamma\right]  }=\left(  \delta
+_{\gamma\left(  i\right)  ,\gamma\left(  j\right)  }\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}=\left(  \delta_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}.
+\]
+Comparing this with $I_{n}=\left(  \delta_{i,j}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}$, we obtain $\left(  I_{n}\right)  _{\left[  \gamma
+,\gamma\right]  }=I_{n}$. This proves Lemma
+\ref{lem.sol.addexe.jacobi-complement.Agd.I}.
+\end{proof}
+\end{verlong}
+
+\begin{lemma}
+\label{lem.sol.addexe.jacobi-complement.Agd.inv}Let $n\in\mathbb{N}$. Let
+$A\in\mathbb{K}^{n\times n}$ be an invertible matrix. Let $\gamma\in S_{n}$
+and $\delta\in S_{n}$. Then, the matrix $A_{\left[  \gamma,\delta\right]  }%
+\in\mathbb{K}^{n\times n}$ is invertible, and its inverse is $\left(
+A_{\left[  \gamma,\delta\right]  }\right)  ^{-1}=\left(  A^{-1}\right)
+_{\left[  \delta,\gamma\right]  }$.
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.addexe.jacobi-complement.Agd.inv}.]Lemma
+\ref{lem.sol.addexe.jacobi-complement.Agd.AB} (applied to $n$, $n$, $\gamma$
+and $A^{-1}$ instead of $m$, $p$, $\varepsilon$ and $B$) yields $\left(
+AA^{-1}\right)  _{\left[  \gamma,\gamma\right]  }=A_{\left[  \gamma
+,\delta\right]  }\left(  A^{-1}\right)  _{\left[  \delta,\gamma\right]  }$.
+Thus,%
+\begin{equation}
+A_{\left[  \gamma,\delta\right]  }\left(  A^{-1}\right)  _{\left[
+\delta,\gamma\right]  }=\left(  \underbrace{AA^{-1}}_{=I_{n}}\right)
+_{\left[  \gamma,\gamma\right]  }=\left(  I_{n}\right)  _{\left[
+\gamma,\gamma\right]  }=I_{n}
+\label{pf.lem.sol.addexe.jacobi-complement.Agd.inv.1}%
+\end{equation}
+(by Lemma \ref{lem.sol.addexe.jacobi-complement.Agd.I}). Also, Lemma
+\ref{lem.sol.addexe.jacobi-complement.Agd.AB} (applied to $n$, $n$, $\delta$,
+$\gamma$, $\delta$, $A^{-1}$ and $A$ instead of $m$, $p$, $\gamma$, $\delta$,
+$\varepsilon$, $A$ and $B$) yields $\left(  A^{-1}A\right)  _{\left[
+\delta,\delta\right]  }=\left(  A^{-1}\right)  _{\left[  \delta,\gamma\right]
+}A_{\left[  \gamma,\delta\right]  }$. Thus,%
+\begin{equation}
+\left(  A^{-1}\right)  _{\left[  \delta,\gamma\right]  }A_{\left[
+\gamma,\delta\right]  }=\left(  \underbrace{A^{-1}A}_{=I_{n}}\right)
+_{\left[  \delta,\delta\right]  }=\left(  I_{n}\right)  _{\left[
+\delta,\delta\right]  }=I_{n}
+\label{pf.lem.sol.addexe.jacobi-complement.Agd.inv.2}%
+\end{equation}
+(by Lemma \ref{lem.sol.addexe.jacobi-complement.Agd.I} (applied to $\delta$
+instead of $\gamma$)).
+
+\begin{vershort}
+The two equalities (\ref{pf.lem.sol.addexe.jacobi-complement.Agd.inv.1}) and
+(\ref{pf.lem.sol.addexe.jacobi-complement.Agd.inv.2}) (combined) show that the
+matrix $\left(  A^{-1}\right)  _{\left[  \delta,\gamma\right]  }$ is an
+inverse of the matrix $A_{\left[  \gamma,\delta\right]  }$. Thus, the matrix
+$A_{\left[  \gamma,\delta\right]  }\in\mathbb{K}^{n\times n}$ is invertible,
+and its inverse is $\left(  A_{\left[  \gamma,\delta\right]  }\right)
+^{-1}=\left(  A^{-1}\right)  _{\left[  \delta,\gamma\right]  }$. Lemma
+\ref{lem.sol.addexe.jacobi-complement.Agd.inv} is proven.
+\end{vershort}
+
+\begin{verlong}
+So we have shown that the $n\times n$-matrix $\left(  A^{-1}\right)  _{\left[
+\delta,\gamma\right]  }$ satisfies $\left(  A^{-1}\right)  _{\left[
+\delta,\gamma\right]  }A_{\left[  \gamma,\delta\right]  }=I_{n}$ and
+$A_{\left[  \gamma,\delta\right]  }\left(  A^{-1}\right)  _{\left[
+\delta,\gamma\right]  }=I_{n}$. In other words, $\left(  A^{-1}\right)
+_{\left[  \delta,\gamma\right]  }$ is an $n\times n$-matrix $B$ such that
+$BA_{\left[  \gamma,\delta\right]  }=I_{n}$ and $A_{\left[  \gamma
+,\delta\right]  }B=I_{n}$. In other words, $\left(  A^{-1}\right)  _{\left[
+\delta,\gamma\right]  }$ is an inverse of $A_{\left[  \gamma,\delta\right]  }$
+(because an inverse of $A_{\left[  \gamma,\delta\right]  }$ means an $n\times
+n$-matrix $B$ such that $BA_{\left[  \gamma,\delta\right]  }=I_{n}$ and
+$A_{\left[  \gamma,\delta\right]  }B=I_{n}$ (by the definition of an
+\textquotedblleft inverse of $A_{\left[  \gamma,\delta\right]  }%
+$\textquotedblright)). Thus, the matrix $A_{\left[  \gamma,\delta\right]  }$
+has an inverse; in other words, the matrix $A_{\left[  \gamma,\delta\right]
+}$ is invertible. Also, clearly, the inverse of $A_{\left[  \gamma
+,\delta\right]  }$ is $\left(  A^{-1}\right)  _{\left[  \delta,\gamma\right]
+}$ (since we have proven that $\left(  A^{-1}\right)  _{\left[  \delta
+,\gamma\right]  }$ is an inverse of $A_{\left[  \gamma,\delta\right]  }$). In
+other words, $\left(  A_{\left[  \gamma,\delta\right]  }\right)  ^{-1}=\left(
+A^{-1}\right)  _{\left[  \delta,\gamma\right]  }$. Thus, the inverse of
+$A_{\left[  \gamma,\delta\right]  }$ is $\left(  A_{\left[  \gamma
+,\delta\right]  }\right)  ^{-1}=\left(  A^{-1}\right)  _{\left[  \delta
+,\gamma\right]  }$. This completes the proof of Lemma
+\ref{lem.sol.addexe.jacobi-complement.Agd.inv}.
+\end{verlong}
+\end{proof}
+
+Next, we show a lemma which is a distillate of some parts of Exercise
+\ref{exe.Ialbe}:
+
+\begin{lemma}
+\label{lem.sol.addexe.jacobi-complement.Ialbe}Let $n\in\mathbb{N}$. For any
+subset $I$ of $\left\{  1,2,\ldots,n\right\}  $, we let $\widetilde{I}$ denote
+the complement $\left\{  1,2,\ldots,n\right\}  \setminus I$ of $I$.
+
+Let $I$ be a subset of $\left\{  1,2,\ldots,n\right\}  $. Let $k=\left\vert
+I\right\vert $. Then, there exists a $\sigma\in S_{n}$ satisfying $\left(
+\sigma\left(  1\right)  ,\sigma\left(  2\right)  ,\ldots,\sigma\left(
+k\right)  \right)  =w\left(  I\right)  $, $\left(  \sigma\left(  k+1\right)
+,\sigma\left(  k+2\right)  ,\ldots,\sigma\left(  n\right)  \right)  =w\left(
+\widetilde{I}\right)  $ and $\left(  -1\right)  ^{\sigma}=\left(  -1\right)
+^{\sum I-\left(  1+2+\cdots+k\right)  }$.
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.addexe.jacobi-complement.Ialbe}.]The following
+proof is similar to a part of the proof of Lemma
+\ref{lem.det.laplace-multi.Apq} above. (Indeed, one can easily find an almost
+complete proof of Lemma \ref{lem.sol.addexe.jacobi-complement.Ialbe} hiding
+inside the proof of Lemma \ref{lem.det.laplace-multi.Apq}. Nevertheless, I am
+redoing the proof here, to avoid confusion, since the proof of Lemma
+\ref{lem.det.laplace-multi.Apq} used different notations.)
+
+\begin{verlong}
+For every $h\in\mathbb{N}$, we let $\operatorname*{id}\nolimits_{h}$ denote
+the identity permutation $\operatorname*{id}\nolimits_{\left\{  1,2,\ldots
+,h\right\}  }\in S_{h}$. For every $h\in\mathbb{N}$, we have%
+\begin{equation}
+\left(  -1\right)  ^{\operatorname*{id}\nolimits_{h}}=1.
+\label{pf.lem.sol.addexe.jacobi-complement.Ialbe.1}%
+\end{equation}
+(Indeed, this is just a restatement of the well-known fact that $\left(
+-1\right)  ^{\operatorname*{id}}=1$, where $\operatorname*{id}%
+=\operatorname*{id}\nolimits_{h}$ is the identity permutation in $S_{h}$.)
+\end{verlong}
+
+\begin{vershort}
+The definition of $\widetilde{I}$ yields $\widetilde{I}=\left\{
+1,2,\ldots,n\right\}  \setminus I$. Since $I$ is a subset of $\left\{
+1,2,\ldots,n\right\}  $, this leads to $\left\vert \widetilde{I}\right\vert
+=\underbrace{\left\vert \left\{  1,2,\ldots,n\right\}  \right\vert }%
+_{=n}-\underbrace{\left\vert I\right\vert }_{=k}=n-k$. Thus, $n-k=\left\vert
+\widetilde{I}\right\vert \geq0$, so that $n\geq k$ and thus $k\in\left\{
+0,1,\ldots,n\right\}  $.
+\end{vershort}
+
+\begin{verlong}
+The definition of $\widetilde{I}$ yields $\widetilde{I}=\left\{
+1,2,\ldots,n\right\}  \setminus I\subseteq\left\{  1,2,\ldots,n\right\}  $.
+Thus, $\widetilde{I}$ is a finite set (since $\left\{  1,2,\ldots,n\right\}  $
+is a finite set). Hence, $\left\vert \widetilde{I}\right\vert \in\mathbb{N}$.
+
+Also, $I\subseteq\left\{  1,2,\ldots,n\right\}  $. Thus, $I$ is a finite set
+(since $\left\{  1,2,\ldots,n\right\}  $ is a finite set). Hence, $\left\vert
+I\right\vert \in\mathbb{N}$. Thus, $k=\left\vert I\right\vert \in\mathbb{N}$.
+
+Also,%
+\begin{align*}
+\left\vert \underbrace{\widetilde{I}}_{=\left\{  1,2,\ldots,n\right\}
+\setminus I}\right\vert  &  =\left\vert \left\{  1,2,\ldots,n\right\}
+\setminus I\right\vert =\underbrace{\left\vert \left\{  1,2,\ldots,n\right\}
+\right\vert }_{=n}-\underbrace{\left\vert I\right\vert }_{=k}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }I\subseteq\left\{  1,2,\ldots
+,n\right\}  \right) \\
+&  =n-k.
+\end{align*}
+Hence, $n-k=\left\vert \widetilde{I}\right\vert \in\mathbb{N}$; thus,
+$n-k\geq0$. In other words, $k\leq n$. Combined with $k\geq0$ (since
+$k=\left\vert I\right\vert \in\mathbb{N}$), this yields $k\in\left\{
+0,1,\ldots,n\right\}  $.
+\end{verlong}
+
+We know that $w\left(  I\right)  $ is the list of all elements of $I$ in
+increasing order (with no repetitions) (by the definition of $w\left(
+I\right)  $). Thus, $w\left(  I\right)  $ is a list of $k$ elements (since
+$\left\vert I\right\vert =k$).
+
+Write $w\left(  I\right)  $ in the form $w\left(  I\right)  =\left(
+a_{1},a_{2},\ldots,a_{k}\right)  $. (This is possible, since $w\left(
+I\right)  $ is a list of $k$ elements.)
+
+We know that $w\left(  I\right)  $ is the list of all elements of $I$ in
+increasing order (with no repetitions). In other words, $\left(  a_{1}%
+,a_{2},\ldots,a_{k}\right)  $ is the list of all elements of $I$ in increasing
+order (with no repetitions) (since $w\left(  I\right)  =\left(  a_{1}%
+,a_{2},\ldots,a_{k}\right)  $).
+
+We know that $w\left(  \widetilde{I}\right)  $ is the list of all elements of
+$\widetilde{I}$ in increasing order (with no repetitions) (by the definition
+of $w\left(  \widetilde{I}\right)  $). Thus, $w\left(  \widetilde{I}\right)  $
+is a list of $n-k$ elements (since $\left\vert \widetilde{I}\right\vert =n-k$).
+
+Write $w\left(  \widetilde{I}\right)  $ in the form $w\left(  \widetilde{I}%
+\right)  =\left(  b_{1},b_{2},\ldots,b_{n-k}\right)  $. (This is possible,
+since $w\left(  \widetilde{I}\right)  $ is a list of $n-k$ elements.)
+
+We know that $w\left(  \widetilde{I}\right)  $ is the list of all elements of
+$\widetilde{I}$ in increasing order (with no repetitions). In other words,
+$\left(  b_{1},b_{2},\ldots,b_{n-k}\right)  $ is the list of all elements of
+$\widetilde{I}$ in increasing order (with no repetitions) (since $w\left(
+\widetilde{I}\right)  =\left(  b_{1},b_{2},\ldots,b_{n-k}\right)  $). In other
+words, $\left(  b_{1},b_{2},\ldots,b_{n-k}\right)  $ is the list of all
+elements of $\left\{  1,2,\ldots,n\right\}  \setminus I$ in increasing order
+(with no repetitions) (since $\widetilde{I}=\left\{  1,2,\ldots,n\right\}
+\setminus I$).
+
+Now we know that $\left(  a_{1},a_{2},\ldots,a_{k}\right)  $ is the list of
+all elements of $I$ in increasing order (with no repetitions), and that
+$\left(  b_{1},b_{2},\ldots,b_{n-k}\right)  $ is the list of all elements of
+$\left\{  1,2,\ldots,n\right\}  \setminus I$ in increasing order (with no
+repetitions). Hence, for every $\alpha\in S_{k}$ and $\beta\in S_{n-k}$, we
+can define an element $\sigma_{I,\alpha,\beta}\in S_{n}$ according to Exercise
+\ref{exe.Ialbe} \textbf{(a)}. Consider this $\sigma_{I,\alpha,\beta}$.
+Exercise \ref{exe.Ialbe} \textbf{(b)} shows that for every $\alpha\in S_{k}$
+and $\beta\in S_{n-k}$, we have%
+\[
+\ell\left(  \sigma_{I,\alpha,\beta}\right)  =\ell\left(  \alpha\right)
++\ell\left(  \beta\right)  +\sum I-\left(  1+2+\cdots+k\right)
+\]
+and%
+\begin{equation}
+\left(  -1\right)  ^{\sigma_{I,\alpha,\beta}}=\left(  -1\right)  ^{\alpha
+}\cdot\left(  -1\right)  ^{\beta}\cdot\left(  -1\right)  ^{\sum I-\left(
+1+2+\cdots+k\right)  }.
+\label{pf.lem.sol.addexe.jacobi-complement.Ialbe.sign-gen}%
+\end{equation}
+
+
+\begin{vershort}
+Now, consider the identity permutations $\operatorname*{id}\in S_{k}$ and
+$\operatorname*{id}\in S_{n-k}$. (These are (in general) two different
+permutations, although we denote them both by $\operatorname*{id}$.) They give
+rise to an element $\sigma_{I,\operatorname*{id}\nolimits_{k}%
+,\operatorname*{id}\nolimits_{n-k}}\in S_{n}$ (obtained by setting
+$\alpha=\operatorname*{id}\in S_{k}$ and $\beta=\operatorname*{id}\in S_{n-k}$
+in the definition of $\sigma_{I,\alpha,\beta}$). Denote this element
+$\sigma_{I,\operatorname*{id}\nolimits_{k},\operatorname*{id}\nolimits_{n-k}}$
+by $\gamma$. Thus, $\gamma=\sigma_{I,\operatorname*{id}\nolimits_{k}%
+,\operatorname*{id}\nolimits_{n-k}}$, so that%
+\begin{align}
+\left(  -1\right)  ^{\gamma}  &  =\left(  -1\right)  ^{\sigma
+_{I,\operatorname*{id},\operatorname*{id}}}=\underbrace{\left(  -1\right)
+^{\operatorname*{id}}}_{=1}\cdot\underbrace{\left(  -1\right)
+^{\operatorname*{id}}}_{=1}\cdot\left(  -1\right)  ^{\sum I-\left(
+1+2+\cdots+k\right)  }\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.sign-gen}) (applied to }%
+\alpha=\operatorname*{id}\nolimits_{k}\text{ and }\beta=\operatorname*{id}%
+\nolimits_{n-k}\text{)}\right) \nonumber\\
+&  =\left(  -1\right)  ^{\sum I-\left(  1+2+\cdots+k\right)  }.
+\label{pf.lem.sol.addexe.jacobi-complement.Ialbe.short.sign-gamma}%
+\end{align}
+
+\end{vershort}
+
+\begin{verlong}
+Now, $\operatorname*{id}\nolimits_{k}\in S_{k}$ and $\operatorname*{id}%
+\nolimits_{n-k}\in S_{n-k}$. Hence, an element $\sigma_{I,\operatorname*{id}%
+\nolimits_{k},\operatorname*{id}\nolimits_{n-k}}\in S_{n}$ is defined. Denote
+this element $\sigma_{I,\operatorname*{id}\nolimits_{k},\operatorname*{id}%
+\nolimits_{n-k}}$ by $\gamma$. Thus, $\gamma=\sigma_{I,\operatorname*{id}%
+\nolimits_{k},\operatorname*{id}\nolimits_{n-k}}$, so that%
+\begin{align}
+\left(  -1\right)  ^{\gamma}  &  =\left(  -1\right)  ^{\sigma
+_{I,\operatorname*{id}\nolimits_{k},\operatorname*{id}\nolimits_{n-k}}%
+}=\underbrace{\left(  -1\right)  ^{\operatorname*{id}\nolimits_{k}}%
+}_{\substack{=1\\\text{(by (\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.1}%
+)}\\\text{(applied to }h=k\text{))}}}\cdot\underbrace{\left(  -1\right)
+^{\operatorname*{id}\nolimits_{n-k}}}_{\substack{=1\\\text{(by
+(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.1})}\\\text{(applied to
+}h=n-k\text{))}}}\cdot\left(  -1\right)  ^{\sum I-\left(  1+2+\cdots+k\right)
+}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.sign-gen}) (applied to }%
+\alpha=\operatorname*{id}\nolimits_{k}\text{ and }\beta=\operatorname*{id}%
+\nolimits_{n-k}\text{)}\right) \nonumber\\
+&  =\left(  -1\right)  ^{\sum I-\left(  1+2+\cdots+k\right)  }.
+\label{pf.lem.sol.addexe.jacobi-complement.Ialbe.sign-gamma}%
+\end{align}
+
+\end{verlong}
+
+Now, we claim that%
+\begin{equation}
+\left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)  ,\ldots,\gamma\left(
+k\right)  \right)  =\left(  a_{1},a_{2},\ldots,a_{k}\right)
+\label{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple1}%
+\end{equation}
+and%
+\begin{equation}
+\left(  \gamma\left(  k+1\right)  ,\gamma\left(  k+2\right)  ,\ldots
+,\gamma\left(  n\right)  \right)  =\left(  b_{1},b_{2},\ldots,b_{n-k}\right)
+. \label{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple2}%
+\end{equation}
+
+
+\begin{vershort}
+\textit{Proof of (\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple1}%
+) and (\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple2}):} The
+permutation $\gamma$ is $\sigma_{I,\operatorname*{id},\operatorname*{id}}$. In
+other words, the permutation $\gamma$ is the unique $\sigma\in S_{n}$
+satisfying%
+\begin{equation}
+\left(  \sigma\left(  1\right)  ,\sigma\left(  2\right)  ,\ldots,\sigma\left(
+n\right)  \right)  =\left(  a_{\operatorname*{id}\left(  1\right)
+},a_{\operatorname*{id}\left(  2\right)  },\ldots,a_{\operatorname*{id}\left(
+k\right)  },b_{\operatorname*{id}\left(  1\right)  },b_{\operatorname*{id}%
+\left(  2\right)  },\ldots,b_{\operatorname*{id}\left(  n-k\right)  }\right)
+\label{pf.lem.sol.addexe.jacobi-complement.Ialbe.short.gamma-tuple.pf.1}%
+\end{equation}
+(because this is how $\sigma_{I,\operatorname*{id},\operatorname*{id}}$ was
+defined). Hence, $\gamma$ is a $\sigma\in S_{n}$ satisfying
+(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.short.gamma-tuple.pf.1})
+(since $\gamma=\sigma_{I,\operatorname*{id},\operatorname*{id}}$). In other
+words, $\gamma$ is an element of $S_{n}$ and satisfies%
+\[
+\left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)  ,\ldots,\gamma\left(
+n\right)  \right)  =\left(  a_{\operatorname*{id}\left(  1\right)
+},a_{\operatorname*{id}\left(  2\right)  },\ldots,a_{\operatorname*{id}\left(
+k\right)  },b_{\operatorname*{id}\left(  1\right)  },b_{\operatorname*{id}%
+\left(  2\right)  },\ldots,b_{\operatorname*{id}\left(  n-k\right)  }\right)
+.
+\]
+Thus,%
+\begin{align*}
+\left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)  ,\ldots,\gamma\left(
+n\right)  \right)   &  =\left(  a_{\operatorname*{id}\left(  1\right)
+},a_{\operatorname*{id}\left(  2\right)  },\ldots,a_{\operatorname*{id}\left(
+k\right)  },b_{\operatorname*{id}\left(  1\right)  },b_{\operatorname*{id}%
+\left(  2\right)  },\ldots,b_{\operatorname*{id}\left(  n-k\right)  }\right)
+\\
+&  =\left(  a_{1},a_{2},\ldots,a_{k},b_{1},b_{2},\ldots,b_{n-k}\right)  .
+\end{align*}
+Hence,%
+\begin{equation}
+\left(  \gamma\left(  i\right)  =a_{i}\ \ \ \ \ \ \ \ \ \ \text{for every
+}i\in\left\{  1,2,\ldots,k\right\}  \right)
+\label{pf.lem.sol.addexe.jacobi-complement.Ialbe.short.gamma-tuple.pf.gamma1}%
+\end{equation}
+and%
+\begin{equation}
+\left(  \gamma\left(  i\right)  =b_{i-k}\ \ \ \ \ \ \ \ \ \ \text{for every
+}i\in\left\{  k+1,k+2,\ldots,n\right\}  \right)  .
+\label{pf.lem.sol.addexe.jacobi-complement.Ialbe.short.gamma-tuple.pf.gamma2}%
+\end{equation}
+Now, (\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple1}) follows
+immediately from
+(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.short.gamma-tuple.pf.gamma1}).
+Furthermore, (\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple2})
+follows from
+(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.short.gamma-tuple.pf.gamma2})
+(applied to $k+i$ instead of $i$). Hence, both
+(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple1}) and
+(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple2}) are proven.
+\end{vershort}
+
+\begin{verlong}
+\textit{Proof of (\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple1}%
+) and (\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple2}):} The
+permutation $\sigma_{I,\operatorname*{id}\nolimits_{k},\operatorname*{id}%
+\nolimits_{n-k}}$ is the unique $\sigma\in S_{n}$ satisfying%
+\begin{equation}
+\left(  \sigma\left(  1\right)  ,\sigma\left(  2\right)  ,\ldots,\sigma\left(
+n\right)  \right)  =\left(  a_{\operatorname*{id}\nolimits_{k}\left(
+1\right)  },a_{\operatorname*{id}\nolimits_{k}\left(  2\right)  }%
+,\ldots,a_{\operatorname*{id}\nolimits_{k}\left(  k\right)  }%
+,b_{\operatorname*{id}\nolimits_{n-k}\left(  1\right)  },b_{\operatorname*{id}%
+\nolimits_{n-k}\left(  2\right)  },\ldots,b_{\operatorname*{id}\nolimits_{n-k}%
+\left(  n-k\right)  }\right)
+\label{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple.pf.1}%
+\end{equation}
+(because this is how $\sigma_{I,\operatorname*{id}\nolimits_{k}%
+,\operatorname*{id}\nolimits_{n-k}}$ is defined). Hence, $\sigma
+_{I,\operatorname*{id}\nolimits_{k},\operatorname*{id}\nolimits_{n-k}}$ is a
+$\sigma\in S_{n}$ satisfying
+(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple.pf.1}). In other
+words, $\gamma$ is a $\sigma\in S_{n}$ satisfying
+(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple.pf.1}) (since
+$\gamma=\sigma_{I,\operatorname*{id}\nolimits_{k},\operatorname*{id}%
+\nolimits_{n-k}}$). In other words, $\gamma$ is an element of $S_{n}$ and
+satisfies%
+\begin{align}
+&  \left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)  ,\ldots
+,\gamma\left(  n\right)  \right) \nonumber\\
+&  =\left(  a_{\operatorname*{id}\nolimits_{k}\left(  1\right)  }%
+,a_{\operatorname*{id}\nolimits_{k}\left(  2\right)  },\ldots
+,a_{\operatorname*{id}\nolimits_{k}\left(  k\right)  },b_{\operatorname*{id}%
+\nolimits_{n-k}\left(  1\right)  },b_{\operatorname*{id}\nolimits_{n-k}\left(
+2\right)  },\ldots,b_{\operatorname*{id}\nolimits_{n-k}\left(  n-k\right)
+}\right)  . \label{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple.pf.2}%
+\end{align}
+Now, $\left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)  ,\ldots
+,\gamma\left(  k\right)  \right)  =\left(  a_{\operatorname*{id}%
+\nolimits_{k}\left(  1\right)  },a_{\operatorname*{id}\nolimits_{k}\left(
+2\right)  },\ldots,a_{\operatorname*{id}\nolimits_{k}\left(  k\right)
+}\right)  $\ \ \ \ \footnote{\textit{Proof.} We have%
+\begin{align*}
+&  \left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)  ,\ldots
+,\gamma\left(  k\right)  \right) \\
+&  =\left(  \text{the list of the first }k\text{ entries of the list
+}\underbrace{\left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)
+,\ldots,\gamma\left(  n\right)  \right)  }_{\substack{=\left(
+a_{\operatorname*{id}\nolimits_{k}\left(  1\right)  },a_{\operatorname*{id}%
+\nolimits_{k}\left(  2\right)  },\ldots,a_{\operatorname*{id}\nolimits_{k}%
+\left(  k\right)  },b_{\operatorname*{id}\nolimits_{n-k}\left(  1\right)
+},b_{\operatorname*{id}\nolimits_{n-k}\left(  2\right)  },\ldots
+,b_{\operatorname*{id}\nolimits_{n-k}\left(  n-k\right)  }\right)  \\\text{(by
+(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple.pf.2}))}}}\right)
+\\
+&  =\left(  \text{the list of the first }k\text{ entries of the list }\left(
+a_{\operatorname*{id}\nolimits_{k}\left(  1\right)  },a_{\operatorname*{id}%
+\nolimits_{k}\left(  2\right)  },\ldots,a_{\operatorname*{id}\nolimits_{k}%
+\left(  k\right)  },b_{\operatorname*{id}\nolimits_{n-k}\left(  1\right)
+},b_{\operatorname*{id}\nolimits_{n-k}\left(  2\right)  },\ldots
+,b_{\operatorname*{id}\nolimits_{n-k}\left(  n-k\right)  }\right)  \right) \\
+&  =\left(  a_{\operatorname*{id}\nolimits_{k}\left(  1\right)  }%
+,a_{\operatorname*{id}\nolimits_{k}\left(  2\right)  },\ldots
+,a_{\operatorname*{id}\nolimits_{k}\left(  k\right)  }\right)  ,
+\end{align*}
+qed.}. In other words, $\gamma\left(  i\right)  =a_{\operatorname*{id}%
+\nolimits_{k}\left(  i\right)  }$ for every $i\in\left\{  1,2,\ldots
+,k\right\}  $. Hence, for every $i\in\left\{  1,2,\ldots,k\right\}  $, we have
+$\gamma\left(  i\right)  =a_{\operatorname*{id}\nolimits_{k}\left(  i\right)
+}=a_{i}$ (since $\underbrace{\operatorname*{id}\nolimits_{k}}%
+_{=\operatorname*{id}\nolimits_{\left\{  1,2,\ldots,k\right\}  }}\left(
+i\right)  =\operatorname*{id}\nolimits_{\left\{  1,2,\ldots,k\right\}
+}\left(  i\right)  =i$). In other words, $\left(  \gamma\left(  1\right)
+,\gamma\left(  2\right)  ,\ldots,\gamma\left(  k\right)  \right)  =\left(
+a_{1},a_{2},\ldots,a_{k}\right)  $. This proves
+(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple1}).
+
+Furthermore, $\left(  \gamma\left(  k+1\right)  ,\gamma\left(  k+2\right)
+,\ldots,\gamma\left(  n\right)  \right)  =\left(  b_{\operatorname*{id}%
+\nolimits_{n-k}\left(  1\right)  },b_{\operatorname*{id}\nolimits_{n-k}\left(
+2\right)  },\ldots,b_{\operatorname*{id}\nolimits_{n-k}\left(  n-k\right)
+}\right)  $\ \ \ \ \footnote{\textit{Proof.} We have%
+\begin{align*}
+&  \left(  \gamma\left(  k+1\right)  ,\gamma\left(  k+2\right)  ,\ldots
+,\gamma\left(  n\right)  \right) \\
+&  =\left(  \text{the list of the last }n-k\text{ entries of the list
+}\underbrace{\left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)
+,\ldots,\gamma\left(  n\right)  \right)  }_{\substack{=\left(
+a_{\operatorname*{id}\nolimits_{k}\left(  1\right)  },a_{\operatorname*{id}%
+\nolimits_{k}\left(  2\right)  },\ldots,a_{\operatorname*{id}\nolimits_{k}%
+\left(  k\right)  },b_{\operatorname*{id}\nolimits_{n-k}\left(  1\right)
+},b_{\operatorname*{id}\nolimits_{n-k}\left(  2\right)  },\ldots
+,b_{\operatorname*{id}\nolimits_{n-k}\left(  n-k\right)  }\right)  \\\text{(by
+(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple.pf.2}))}}}\right)
+\\
+&  =\left(  \text{the list of the last }n-k\text{ entries of the list }\left(
+a_{\operatorname*{id}\nolimits_{k}\left(  1\right)  },a_{\operatorname*{id}%
+\nolimits_{k}\left(  2\right)  },\ldots,a_{\operatorname*{id}\nolimits_{k}%
+\left(  k\right)  },b_{\operatorname*{id}\nolimits_{n-k}\left(  1\right)
+},b_{\operatorname*{id}\nolimits_{n-k}\left(  2\right)  },\ldots
+,b_{\operatorname*{id}\nolimits_{n-k}\left(  n-k\right)  }\right)  \right) \\
+&  =\left(  b_{\operatorname*{id}\nolimits_{n-k}\left(  1\right)
+},b_{\operatorname*{id}\nolimits_{n-k}\left(  2\right)  },\ldots
+,b_{\operatorname*{id}\nolimits_{n-k}\left(  n-k\right)  }\right)  ,
+\end{align*}
+qed.}. In other words, $\gamma\left(  k+i\right)  =b_{\operatorname*{id}%
+\nolimits_{n-k}\left(  i\right)  }$ for every $i\in\left\{  1,2,\ldots
+,n-k\right\}  $. Hence, for every $i\in\left\{  1,2,\ldots,n-k\right\}  $, we
+have $\gamma\left(  k+i\right)  =b_{\operatorname*{id}\nolimits_{n-k}\left(
+i\right)  }=b_{i}$ (since $\underbrace{\operatorname*{id}\nolimits_{n-k}%
+}_{=\operatorname*{id}\nolimits_{\left\{  1,2,\ldots,n-k\right\}  }}\left(
+i\right)  =\operatorname*{id}\nolimits_{\left\{  1,2,\ldots,n-k\right\}
+}\left(  i\right)  =i$). In other words, $\left(  \gamma\left(  k+1\right)
+,\gamma\left(  k+2\right)  ,\ldots,\gamma\left(  n\right)  \right)  =\left(
+b_{1},b_{2},\ldots,b_{n-k}\right)  $. This proves
+(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple2}). Hence, both
+(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple1}) and
+(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple2}) are proven.
+\end{verlong}
+
+Comparing (\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple1}) with
+$w\left(  I\right)  =\left(  a_{1},a_{2},\ldots,a_{k}\right)  $, we obtain
+\[
+\left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)  ,\ldots,\gamma\left(
+k\right)  \right)  =w\left(  I\right)  .
+\]
+Comparing (\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple2}) with
+$w\left(  \widetilde{I}\right)  =\left(  b_{1},b_{2},\ldots,b_{n-k}\right)  $,
+we obtain
+\[
+\left(  \gamma\left(  k+1\right)  ,\gamma\left(  k+2\right)  ,\ldots
+,\gamma\left(  n\right)  \right)  =w\left(  \widetilde{I}\right)  .
+\]
+Now, we have shown that the permutation $\gamma\in S_{n}$ satisfies $\left(
+\gamma\left(  1\right)  ,\gamma\left(  2\right)  ,\ldots,\gamma\left(
+k\right)  \right)  =w\left(  I\right)  $, $\left(  \gamma\left(  k+1\right)
+,\gamma\left(  k+2\right)  ,\ldots,\gamma\left(  n\right)  \right)  =w\left(
+\widetilde{I}\right)  $ and $\left(  -1\right)  ^{\gamma}=\left(  -1\right)
+^{\sum I-\left(  1+2+\cdots+k\right)  }$. Hence, there exists a $\sigma\in
+S_{n}$ satisfying $\left(  \sigma\left(  1\right)  ,\sigma\left(  2\right)
+,\ldots,\sigma\left(  k\right)  \right)  =w\left(  I\right)  $, \newline%
+$\left(  \sigma\left(  k+1\right)  ,\sigma\left(  k+2\right)  ,\ldots
+,\sigma\left(  n\right)  \right)  =w\left(  \widetilde{I}\right)  $ and
+$\left(  -1\right)  ^{\sigma}=\left(  -1\right)  ^{\sum I-\left(
+1+2+\cdots+k\right)  }$ (namely, $\sigma=\gamma$). This proves Lemma
+\ref{lem.sol.addexe.jacobi-complement.Ialbe}.
+\end{proof}
+
+We can finally step to the solution of Additional exercise
+\ref{addexe.jacobi-complement}:
+
+\begin{proof}
+[Solution to Additional exercise \ref{addexe.jacobi-complement}.]Let
+$k=\left\vert P\right\vert $. Thus, $k=\left\vert P\right\vert =\left\vert
+Q\right\vert $.
+
+\begin{vershort}
+Clearly, $k\in\left\{  0,1,\ldots,n\right\}  $ (since $k=\left\vert
+P\right\vert $ for a subset $P$ of $\left\{  1,2,\ldots,n\right\}  $).
+\end{vershort}
+
+\begin{verlong}
+We know that $P$ is a subset of $\left\{  1,2,\ldots,n\right\}  $. Thus, $P$
+is a finite set (since $\left\{  1,2,\ldots,n\right\}  $ is a finite set).
+Hence, $\left\vert P\right\vert \in\mathbb{N}$, so that $k=\left\vert
+P\right\vert \in\mathbb{N}$.
+
+The definition of $\widetilde{P}$ yields $\widetilde{P}=\left\{
+1,2,\ldots,n\right\}  \setminus P\subseteq\left\{  1,2,\ldots,n\right\}  $.
+Thus, $\widetilde{P}$ is a finite set (since $\left\{  1,2,\ldots,n\right\}  $
+is a finite set). Hence, $\left\vert \widetilde{P}\right\vert \in\mathbb{N}$.
+
+Also,%
+\begin{align*}
+\left\vert \underbrace{\widetilde{P}}_{=\left\{  1,2,\ldots,n\right\}
+\setminus P}\right\vert  &  =\left\vert \left\{  1,2,\ldots,n\right\}
+\setminus P\right\vert =\underbrace{\left\vert \left\{  1,2,\ldots,n\right\}
+\right\vert }_{=n}-\underbrace{\left\vert P\right\vert }_{=k}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }P\subseteq\left\{  1,2,\ldots
+,n\right\}  \right) \\
+&  =n-k.
+\end{align*}
+Hence, $n-k=\left\vert \widetilde{P}\right\vert \in\mathbb{N}$; thus,
+$n-k\geq0$. In other words, $k\leq n$. Combined with $k\geq0$ (since
+$k=\left\vert P\right\vert \in\mathbb{N}$), this yields $k\in\left\{
+0,1,\ldots,n\right\}  $.
+\end{verlong}
+
+Lemma \ref{lem.sol.addexe.jacobi-complement.Ialbe} (applied to $I=P$) yields
+that there exists a $\sigma\in S_{n}$ satisfying $\left(  \sigma\left(
+1\right)  ,\sigma\left(  2\right)  ,\ldots,\sigma\left(  k\right)  \right)
+=w\left(  P\right)  $, $\left(  \sigma\left(  k+1\right)  ,\sigma\left(
+k+2\right)  ,\ldots,\sigma\left(  n\right)  \right)  =w\left(  \widetilde{P}%
+\right)  $ and $\left(  -1\right)  ^{\sigma}=\left(  -1\right)  ^{\sum
+P-\left(  1+2+\cdots+k\right)  }$. Denote this $\sigma$ by $\gamma$. Thus,
+$\gamma$ is an element of $S_{n}$ satisfying $\left(  \gamma\left(  1\right)
+,\gamma\left(  2\right)  ,\ldots,\gamma\left(  k\right)  \right)  =w\left(
+P\right)  $, $\left(  \gamma\left(  k+1\right)  ,\gamma\left(  k+2\right)
+,\ldots,\gamma\left(  n\right)  \right)  =w\left(  \widetilde{P}\right)  $ and
+$\left(  -1\right)  ^{\gamma}=\left(  -1\right)  ^{\sum P-\left(
+1+2+\cdots+k\right)  }$.
+
+Lemma \ref{lem.sol.addexe.jacobi-complement.Ialbe} (applied to $I=Q$) yields
+that there exists a $\sigma\in S_{n}$ satisfying $\left(  \sigma\left(
+1\right)  ,\sigma\left(  2\right)  ,\ldots,\sigma\left(  k\right)  \right)
+=w\left(  Q\right)  $, $\left(  \sigma\left(  k+1\right)  ,\sigma\left(
+k+2\right)  ,\ldots,\sigma\left(  n\right)  \right)  =w\left(  \widetilde{Q}%
+\right)  $ and $\left(  -1\right)  ^{\sigma}=\left(  -1\right)  ^{\sum
+Q-\left(  1+2+\cdots+k\right)  }$. Denote this $\sigma$ by $\delta$. Thus,
+$\delta$ is an element of $S_{n}$ satisfying $\left(  \delta\left(  1\right)
+,\delta\left(  2\right)  ,\ldots,\delta\left(  k\right)  \right)  =w\left(
+Q\right)  $, $\left(  \delta\left(  k+1\right)  ,\delta\left(  k+2\right)
+,\ldots,\delta\left(  n\right)  \right)  =w\left(  \widetilde{Q}\right)  $ and
+$\left(  -1\right)  ^{\delta}=\left(  -1\right)  ^{\sum Q-\left(
+1+2+\cdots+k\right)  }$.
+
+Lemma \ref{lem.sol.addexe.jacobi-complement.Agd.inv} shows that the matrix
+$A_{\left[  \gamma,\delta\right]  }\in\mathbb{K}^{n\times n}$ is invertible,
+and its inverse is $\left(  A_{\left[  \gamma,\delta\right]  }\right)
+^{-1}=\left(  A^{-1}\right)  _{\left[  \delta,\gamma\right]  }$. Hence,
+Exercise \ref{exe.block2x2.jacobi.rewr} (applied to $A_{\left[  \gamma
+,\delta\right]  }$ instead of $A$) yields that%
+\begin{align}
+&  \det\left(  \operatorname*{sub}\nolimits_{1,2,\ldots,k}^{1,2,\ldots
+,k}\left(  A_{\left[  \gamma,\delta\right]  }\right)  \right) \nonumber\\
+&  =\det\left(  A_{\left[  \gamma,\delta\right]  }\right)  \cdot\det\left(
+\operatorname*{sub}\nolimits_{k+1,k+2,\ldots,n}^{k+1,k+2,\ldots,n}\left(
+\underbrace{\left(  A_{\left[  \gamma,\delta\right]  }\right)  ^{-1}%
+}_{=\left(  A^{-1}\right)  _{\left[  \delta,\gamma\right]  }}\right)  \right)
+\nonumber\\
+&  =\det\left(  A_{\left[  \gamma,\delta\right]  }\right)  \cdot\det\left(
+\operatorname*{sub}\nolimits_{k+1,k+2,\ldots,n}^{k+1,k+2,\ldots,n}\left(
+\left(  A^{-1}\right)  _{\left[  \delta,\gamma\right]  }\right)  \right)  .
+\label{sol.addexe.jacobi-complement.1}%
+\end{align}
+But Lemma \ref{lem.sol.addexe.jacobi-complement.Agd.sub} (applied to $n$, $k$,
+$k$, $\left(  1,2,\ldots,k\right)  $ and $\left(  1,2,\ldots,k\right)  $
+instead of $m$, $u$, $v$, $\left(  i_{1},i_{2},\ldots,i_{u}\right)  $ and
+$\left(  j_{1},j_{2},\ldots,j_{v}\right)  $) yields%
+\begin{align}
+\operatorname*{sub}\nolimits_{1,2,\ldots,k}^{1,2,\ldots,k}\left(  A_{\left[
+\gamma,\delta\right]  }\right)   &  =\operatorname*{sub}\nolimits_{\gamma
+\left(  1\right)  ,\gamma\left(  2\right)  ,\ldots,\gamma\left(  k\right)
+}^{\delta\left(  1\right)  ,\delta\left(  2\right)  ,\ldots,\delta\left(
+k\right)  }A=\operatorname*{sub}\nolimits_{\left(  \gamma\left(  1\right)
+,\gamma\left(  2\right)  ,\ldots,\gamma\left(  k\right)  \right)  }^{\left(
+\delta\left(  1\right)  ,\delta\left(  2\right)  ,\ldots,\delta\left(
+k\right)  \right)  }A\nonumber\\
+&  =\operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)  }A
+\label{sol.addexe.jacobi-complement.3a}%
+\end{align}
+(since $\left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)
+,\ldots,\gamma\left(  k\right)  \right)  =w\left(  P\right)  $ and $\left(
+\delta\left(  1\right)  ,\delta\left(  2\right)  ,\ldots,\delta\left(
+k\right)  \right)  =w\left(  Q\right)  $).
+
+Furthermore, we have $A^{-1}\in\mathbb{K}^{n\times n}$ (since $A\in
+\mathbb{K}^{n\times n}$). Hence, Lemma
+\ref{lem.sol.addexe.jacobi-complement.Agd.sub} (applied to $n$, $A^{-1}$,
+$\delta$, $\gamma$, $n-k$, $n-k$, $\left(  k+1,k+2,\ldots,n\right)  $ and
+$\left(  k+1,k+2,\ldots,n\right)  $ instead of $m$, $A$, $\gamma$, $\delta$,
+$u$, $v$, $\left(  i_{1},i_{2},\ldots,i_{u}\right)  $ and $\left(  j_{1}%
+,j_{2},\ldots,j_{v}\right)  $) yields%
+\begin{align}
+\operatorname*{sub}\nolimits_{k+1,k+2,\ldots,n}^{k+1,k+2,\ldots,n}\left(
+\left(  A^{-1}\right)  _{\left[  \delta,\gamma\right]  }\right)   &
+=\operatorname*{sub}\nolimits_{\delta\left(  k+1\right)  ,\delta\left(
+k+2\right)  ,\ldots,\delta\left(  n\right)  }^{\gamma\left(  k+1\right)
+,\gamma\left(  k+2\right)  ,\ldots,\gamma\left(  n\right)  }\left(
+A^{-1}\right) \nonumber\\
+&  =\operatorname*{sub}\nolimits_{\left(  \delta\left(  k+1\right)
+,\delta\left(  k+2\right)  ,\ldots,\delta\left(  n\right)  \right)  }^{\left(
+\gamma\left(  k+1\right)  ,\gamma\left(  k+2\right)  ,\ldots,\gamma\left(
+n\right)  \right)  }\left(  A^{-1}\right) \nonumber\\
+&  =\operatorname*{sub}\nolimits_{w\left(  \widetilde{Q}\right)  }^{w\left(
+\widetilde{P}\right)  }\left(  A^{-1}\right)
+\label{sol.addexe.jacobi-complement.3b}%
+\end{align}
+(since $\left(  \delta\left(  k+1\right)  ,\delta\left(  k+2\right)
+,\ldots,\delta\left(  n\right)  \right)  =w\left(  \widetilde{Q}\right)  $ and
+$\left(  \gamma\left(  k+1\right)  ,\gamma\left(  k+2\right)  ,\ldots
+,\gamma\left(  n\right)  \right)  =w\left(  \widetilde{P}\right)  $).
+
+On the other hand,%
+\begin{align}
+&  \underbrace{\left(  -1\right)  ^{\gamma}}_{=\left(  -1\right)  ^{\sum
+P-\left(  1+2+\cdots+k\right)  }}\underbrace{\left(  -1\right)  ^{\delta}%
+}_{=\left(  -1\right)  ^{\sum Q-\left(  1+2+\cdots+k\right)  }}\nonumber\\
+&  =\left(  -1\right)  ^{\sum P-\left(  1+2+\cdots+k\right)  }\left(
+-1\right)  ^{\sum Q-\left(  1+2+\cdots+k\right)  }=\left(  -1\right)
+^{\left(  \sum P-\left(  1+2+\cdots+k\right)  \right)  +\left(  \sum Q-\left(
+1+2+\cdots+k\right)  \right)  }\nonumber\\
+&  =\left(  -1\right)  ^{\sum P+\sum Q} \label{sol.addexe.jacobi-complement.2}%
+\end{align}
+(since
+\begin{align*}
+&  \left(  \sum P-\left(  1+2+\cdots+k\right)  \right)  +\left(  \sum
+Q-\left(  1+2+\cdots+k\right)  \right) \\
+&  =\left(  \sum P+\sum Q\right)  -2\left(  1+2+\cdots+k\right)  \equiv\sum
+P+\sum Q\operatorname{mod}2
+\end{align*}
+).
+
+Lemma \ref{lem.sol.addexe.jacobi-complement.Agd.det} yields%
+\begin{equation}
+\det\left(  A_{\left[  \gamma,\delta\right]  }\right)  =\underbrace{\left(
+-1\right)  ^{\gamma}\left(  -1\right)  ^{\delta}}_{\substack{=\left(
+-1\right)  ^{\sum P+\sum Q}\\\text{(by (\ref{sol.addexe.jacobi-complement.2}%
+))}}}\det A=\left(  -1\right)  ^{\sum P+\sum Q}\det A.
+\label{sol.addexe.jacobi-complement.3c}%
+\end{equation}
+
+
+Now,%
+\begin{align*}
+&  \det\left(  \underbrace{\operatorname*{sub}\nolimits_{w\left(  P\right)
+}^{w\left(  Q\right)  }A}_{\substack{=\operatorname*{sub}\nolimits_{1,2,\ldots
+,k}^{1,2,\ldots,k}\left(  A_{\left[  \gamma,\delta\right]  }\right)
+\\\text{(by (\ref{sol.addexe.jacobi-complement.3a}))}}}\right) \\
+&  =\det\left(  \operatorname*{sub}\nolimits_{1,2,\ldots,k}^{1,2,\ldots
+,k}\left(  A_{\left[  \gamma,\delta\right]  }\right)  \right) \\
+&  =\underbrace{\det\left(  A_{\left[  \gamma,\delta\right]  }\right)
+}_{\substack{=\left(  -1\right)  ^{\sum P+\sum Q}\det A\\\text{(by
+(\ref{sol.addexe.jacobi-complement.3c}))}}}\cdot\det\left(
+\underbrace{\operatorname*{sub}\nolimits_{k+1,k+2,\ldots,n}^{k+1,k+2,\ldots
+,n}\left(  \left(  A^{-1}\right)  _{\left[  \delta,\gamma\right]  }\right)
+}_{\substack{=\operatorname*{sub}\nolimits_{w\left(  \widetilde{Q}\right)
+}^{w\left(  \widetilde{P}\right)  }\left(  A^{-1}\right)  \\\text{(by
+(\ref{sol.addexe.jacobi-complement.3b}))}}}\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{sol.addexe.jacobi-complement.1}%
+)}\right) \\
+&  =\left(  -1\right)  ^{\sum P+\sum Q}\det A\cdot\det\left(
+\operatorname*{sub}\nolimits_{w\left(  \widetilde{Q}\right)  }^{w\left(
+\widetilde{P}\right)  }\left(  A^{-1}\right)  \right)  .
+\end{align*}
+This solves Additional exercise \ref{addexe.jacobi-complement}.
 \end{proof}
 
 \subsection{Solution to Additional exercise \ref{exeadd.det.rk1upd}}
