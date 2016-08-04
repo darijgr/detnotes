@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, August 04, 2016 00:17:01}
+%TCIDATA{LastRevised=Thursday, August 04, 2016 03:19:06}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -20097,6 +20097,14 @@ invertible. In fact, the trouble with such a notation would be its ambiguity:
 should it mean $BA^{-1}$ or $A^{-1}B$ ? (In general, $BA^{-1}$ and $A^{-1}B$
 are not the same.) Some authors do write $B/A$ for the matrices $BA^{-1}$ and
 $A^{-1}B$ when these matrices are equal; but we shall not have a reason to do so.
+
+\begin{remark}
+\label{rmk.matrices.inverses.AA-1}Let $n\in\mathbb{N}$ and $m\in\mathbb{N}$.
+Let $A$ be an invertible $n\times m$-matrix. Then, the inverse $A^{-1}$ of $A$
+is an $m\times n$-matrix and satisfies $AA^{-1}=I_{n}$ and $A^{-1}A=I_{m}$.
+This follows from the definition of the inverse of $A$; we are just stating it
+once again, because it will later be used without mention.
+\end{remark}
 
 Example \ref{exa.matrices.inverses} (and your experiences with a linear
 algebra class, if you have taken one) suggest the conjecture that only square
