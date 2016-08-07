@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, August 04, 2016 14:18:55}
+%TCIDATA{LastRevised=Sunday, August 07, 2016 23:52:17}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -60709,7 +60709,7 @@ This proves Lemma \ref{lem.sol.det.laplace-multi.1}.
 \end{proof}
 
 Before we move on to the proof of Lemma \ref{lem.det.laplace-multi.Apq}, let
-us show another simple lemma:
+us show two more lemmas. The first one is a really simple fact about symmetric groups:
 
 \begin{lemma}
 \label{lem.sol.det.laplace-multi.group-bij}Let $n\in\mathbb{N}$. Let
@@ -60772,9 +60772,26 @@ $S_{n}\rightarrow S_{n},\ \sigma\mapsto\sigma\circ\gamma$ is a bijection
 \end{proof}
 \end{verlong}
 
+Next, we show a lemma which is a distillate of some parts of Exercise
+\ref{exe.Ialbe}:
+
+\begin{lemma}
+\label{lem.sol.addexe.jacobi-complement.Ialbe}Let $n\in\mathbb{N}$. For any
+subset $I$ of $\left\{  1,2,\ldots,n\right\}  $, we let $\widetilde{I}$ denote
+the complement $\left\{  1,2,\ldots,n\right\}  \setminus I$ of $I$.
+
+Let $I$ be a subset of $\left\{  1,2,\ldots,n\right\}  $. Let $k=\left\vert
+I\right\vert $. Then, there exists a $\sigma\in S_{n}$ satisfying $\left(
+\sigma\left(  1\right)  ,\sigma\left(  2\right)  ,\ldots,\sigma\left(
+k\right)  \right)  =w\left(  I\right)  $, $\left(  \sigma\left(  k+1\right)
+,\sigma\left(  k+2\right)  ,\ldots,\sigma\left(  n\right)  \right)  =w\left(
+\widetilde{I}\right)  $ and $\left(  -1\right)  ^{\sigma}=\left(  -1\right)
+^{\sum I-\left(  1+2+\cdots+k\right)  }$.
+\end{lemma}
+
 \begin{proof}
-[Proof of Lemma \ref{lem.det.laplace-multi.Apq}.]Let us begin by introducing
-some notations.
+[Proof of Lemma \ref{lem.sol.addexe.jacobi-complement.Ialbe}.]We begin by
+introducing some notations:
 
 \begin{verlong}
 For every $h\in\mathbb{N}$, we let $\operatorname*{id}\nolimits_{h}$ denote
@@ -60782,12 +60799,382 @@ the identity permutation $\operatorname*{id}\nolimits_{\left\{  1,2,\ldots
 ,h\right\}  }\in S_{h}$. For every $h\in\mathbb{N}$, we have%
 \begin{equation}
 \left(  -1\right)  ^{\operatorname*{id}\nolimits_{h}}=1.
-\label{pf.lem.det.laplace-multi.Apq.sign-1}%
+\label{pf.lem.sol.addexe.jacobi-complement.Ialbe.1}%
 \end{equation}
 (Indeed, this is just a restatement of the well-known fact that $\left(
 -1\right)  ^{\operatorname*{id}}=1$, where $\operatorname*{id}%
 =\operatorname*{id}\nolimits_{h}$ is the identity permutation in $S_{h}$.)
 \end{verlong}
+
+\begin{vershort}
+The definition of $\widetilde{I}$ yields $\widetilde{I}=\left\{
+1,2,\ldots,n\right\}  \setminus I$. Since $I$ is a subset of $\left\{
+1,2,\ldots,n\right\}  $, this leads to $\left\vert \widetilde{I}\right\vert
+=\underbrace{\left\vert \left\{  1,2,\ldots,n\right\}  \right\vert }%
+_{=n}-\underbrace{\left\vert I\right\vert }_{=k}=n-k$. Thus, $n-k=\left\vert
+\widetilde{I}\right\vert \geq0$, so that $n\geq k$ and thus $k\in\left\{
+0,1,\ldots,n\right\}  $.
+\end{vershort}
+
+\begin{verlong}
+The definition of $\widetilde{I}$ yields $\widetilde{I}=\left\{
+1,2,\ldots,n\right\}  \setminus I\subseteq\left\{  1,2,\ldots,n\right\}  $.
+Thus, $\widetilde{I}$ is a finite set (since $\left\{  1,2,\ldots,n\right\}  $
+is a finite set). Hence, $\left\vert \widetilde{I}\right\vert \in\mathbb{N}$.
+
+Also, $I\subseteq\left\{  1,2,\ldots,n\right\}  $. Thus, $I$ is a finite set
+(since $\left\{  1,2,\ldots,n\right\}  $ is a finite set). Hence, $\left\vert
+I\right\vert \in\mathbb{N}$. Thus, $k=\left\vert I\right\vert \in\mathbb{N}$.
+
+Also,%
+\begin{align*}
+\left\vert \underbrace{\widetilde{I}}_{=\left\{  1,2,\ldots,n\right\}
+\setminus I}\right\vert  &  =\left\vert \left\{  1,2,\ldots,n\right\}
+\setminus I\right\vert =\underbrace{\left\vert \left\{  1,2,\ldots,n\right\}
+\right\vert }_{=n}-\underbrace{\left\vert I\right\vert }_{=k}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }I\subseteq\left\{  1,2,\ldots
+,n\right\}  \right) \\
+&  =n-k.
+\end{align*}
+Hence, $n-k=\left\vert \widetilde{I}\right\vert \in\mathbb{N}$; thus,
+$n-k\geq0$. In other words, $k\leq n$. Combined with $k\geq0$ (since
+$k=\left\vert I\right\vert \in\mathbb{N}$), this yields $k\in\left\{
+0,1,\ldots,n\right\}  $.
+\end{verlong}
+
+We know that $w\left(  I\right)  $ is the list of all elements of $I$ in
+increasing order (with no repetitions) (by the definition of $w\left(
+I\right)  $). Thus, $w\left(  I\right)  $ is a list of $k$ elements (since
+$\left\vert I\right\vert =k$).
+
+Write $w\left(  I\right)  $ in the form $w\left(  I\right)  =\left(
+a_{1},a_{2},\ldots,a_{k}\right)  $. (This is possible, since $w\left(
+I\right)  $ is a list of $k$ elements.)
+
+We know that $w\left(  I\right)  $ is the list of all elements of $I$ in
+increasing order (with no repetitions). In other words, $\left(  a_{1}%
+,a_{2},\ldots,a_{k}\right)  $ is the list of all elements of $I$ in increasing
+order (with no repetitions) (since $w\left(  I\right)  =\left(  a_{1}%
+,a_{2},\ldots,a_{k}\right)  $).
+
+We know that $w\left(  \widetilde{I}\right)  $ is the list of all elements of
+$\widetilde{I}$ in increasing order (with no repetitions) (by the definition
+of $w\left(  \widetilde{I}\right)  $). Thus, $w\left(  \widetilde{I}\right)  $
+is a list of $n-k$ elements (since $\left\vert \widetilde{I}\right\vert =n-k$).
+
+Write $w\left(  \widetilde{I}\right)  $ in the form $w\left(  \widetilde{I}%
+\right)  =\left(  b_{1},b_{2},\ldots,b_{n-k}\right)  $. (This is possible,
+since $w\left(  \widetilde{I}\right)  $ is a list of $n-k$ elements.)
+
+We know that $w\left(  \widetilde{I}\right)  $ is the list of all elements of
+$\widetilde{I}$ in increasing order (with no repetitions). In other words,
+$\left(  b_{1},b_{2},\ldots,b_{n-k}\right)  $ is the list of all elements of
+$\widetilde{I}$ in increasing order (with no repetitions) (since $w\left(
+\widetilde{I}\right)  =\left(  b_{1},b_{2},\ldots,b_{n-k}\right)  $). In other
+words, $\left(  b_{1},b_{2},\ldots,b_{n-k}\right)  $ is the list of all
+elements of $\left\{  1,2,\ldots,n\right\}  \setminus I$ in increasing order
+(with no repetitions) (since $\widetilde{I}=\left\{  1,2,\ldots,n\right\}
+\setminus I$).
+
+Now we know that $\left(  a_{1},a_{2},\ldots,a_{k}\right)  $ is the list of
+all elements of $I$ in increasing order (with no repetitions), and that
+$\left(  b_{1},b_{2},\ldots,b_{n-k}\right)  $ is the list of all elements of
+$\left\{  1,2,\ldots,n\right\}  \setminus I$ in increasing order (with no
+repetitions). Hence, for every $\alpha\in S_{k}$ and $\beta\in S_{n-k}$, we
+can define an element $\sigma_{I,\alpha,\beta}\in S_{n}$ according to Exercise
+\ref{exe.Ialbe} \textbf{(a)}. Consider this $\sigma_{I,\alpha,\beta}$.
+Exercise \ref{exe.Ialbe} \textbf{(b)} shows that for every $\alpha\in S_{k}$
+and $\beta\in S_{n-k}$, we have%
+\[
+\ell\left(  \sigma_{I,\alpha,\beta}\right)  =\ell\left(  \alpha\right)
++\ell\left(  \beta\right)  +\sum I-\left(  1+2+\cdots+k\right)
+\]
+and%
+\begin{equation}
+\left(  -1\right)  ^{\sigma_{I,\alpha,\beta}}=\left(  -1\right)  ^{\alpha
+}\cdot\left(  -1\right)  ^{\beta}\cdot\left(  -1\right)  ^{\sum I-\left(
+1+2+\cdots+k\right)  }.
+\label{pf.lem.sol.addexe.jacobi-complement.Ialbe.sign-gen}%
+\end{equation}
+
+
+\begin{vershort}
+Now, consider the identity permutations $\operatorname*{id}\in S_{k}$ and
+$\operatorname*{id}\in S_{n-k}$. (These are (in general) two different
+permutations, although we denote them both by $\operatorname*{id}$.) They give
+rise to an element $\sigma_{I,\operatorname*{id},\operatorname*{id}}\in S_{n}$
+(obtained by setting $\alpha=\operatorname*{id}\in S_{k}$ and $\beta
+=\operatorname*{id}\in S_{n-k}$ in the definition of $\sigma_{I,\alpha,\beta}%
+$). Denote this element $\sigma_{I,\operatorname*{id},\operatorname*{id}}$ by
+$\gamma$. Thus, $\gamma=\sigma_{I,\operatorname*{id},\operatorname*{id}}$, so
+that%
+\begin{align}
+\left(  -1\right)  ^{\gamma}  &  =\left(  -1\right)  ^{\sigma
+_{I,\operatorname*{id},\operatorname*{id}}}=\underbrace{\left(  -1\right)
+^{\operatorname*{id}}}_{=1}\cdot\underbrace{\left(  -1\right)
+^{\operatorname*{id}}}_{=1}\cdot\left(  -1\right)  ^{\sum I-\left(
+1+2+\cdots+k\right)  }\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.sign-gen}) (applied to }%
+\alpha=\operatorname*{id}\text{ and }\beta=\operatorname*{id}\text{)}\right)
+\nonumber\\
+&  =\left(  -1\right)  ^{\sum I-\left(  1+2+\cdots+k\right)  }.
+\label{pf.lem.sol.addexe.jacobi-complement.Ialbe.short.sign-gamma}%
+\end{align}
+
+\end{vershort}
+
+\begin{verlong}
+Now, $\operatorname*{id}\nolimits_{k}\in S_{k}$ and $\operatorname*{id}%
+\nolimits_{n-k}\in S_{n-k}$. Hence, an element $\sigma_{I,\operatorname*{id}%
+\nolimits_{k},\operatorname*{id}\nolimits_{n-k}}\in S_{n}$ is defined (because
+we can set $\alpha=\operatorname*{id}\nolimits_{k}$ and $\beta
+=\operatorname*{id}\nolimits_{n-k}$ in the definition of $\sigma
+_{I,\alpha,\beta}$). Denote this element $\sigma_{I,\operatorname*{id}%
+\nolimits_{k},\operatorname*{id}\nolimits_{n-k}}$ by $\gamma$. Thus,
+$\gamma=\sigma_{I,\operatorname*{id}\nolimits_{k},\operatorname*{id}%
+\nolimits_{n-k}}$, so that%
+\begin{align}
+\left(  -1\right)  ^{\gamma}  &  =\left(  -1\right)  ^{\sigma
+_{I,\operatorname*{id}\nolimits_{k},\operatorname*{id}\nolimits_{n-k}}%
+}=\underbrace{\left(  -1\right)  ^{\operatorname*{id}\nolimits_{k}}%
+}_{\substack{=1\\\text{(by (\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.1}%
+)}\\\text{(applied to }h=k\text{))}}}\cdot\underbrace{\left(  -1\right)
+^{\operatorname*{id}\nolimits_{n-k}}}_{\substack{=1\\\text{(by
+(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.1})}\\\text{(applied to
+}h=n-k\text{))}}}\cdot\left(  -1\right)  ^{\sum I-\left(  1+2+\cdots+k\right)
+}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.sign-gen}) (applied to }%
+\alpha=\operatorname*{id}\nolimits_{k}\text{ and }\beta=\operatorname*{id}%
+\nolimits_{n-k}\text{)}\right) \nonumber\\
+&  =\left(  -1\right)  ^{\sum I-\left(  1+2+\cdots+k\right)  }.
+\label{pf.lem.sol.addexe.jacobi-complement.Ialbe.sign-gamma}%
+\end{align}
+
+\end{verlong}
+
+Now, we claim that%
+\begin{equation}
+\left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)  ,\ldots,\gamma\left(
+k\right)  \right)  =\left(  a_{1},a_{2},\ldots,a_{k}\right)
+\label{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple1}%
+\end{equation}
+and%
+\begin{equation}
+\left(  \gamma\left(  k+1\right)  ,\gamma\left(  k+2\right)  ,\ldots
+,\gamma\left(  n\right)  \right)  =\left(  b_{1},b_{2},\ldots,b_{n-k}\right)
+. \label{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple2}%
+\end{equation}
+
+
+\begin{vershort}
+\textit{Proof of (\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple1}%
+) and (\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple2}):} The
+permutation $\gamma$ is $\sigma_{I,\operatorname*{id},\operatorname*{id}}$. In
+other words, the permutation $\gamma$ is the unique $\sigma\in S_{n}$
+satisfying%
+\begin{equation}
+\left(  \sigma\left(  1\right)  ,\sigma\left(  2\right)  ,\ldots,\sigma\left(
+n\right)  \right)  =\left(  a_{\operatorname*{id}\left(  1\right)
+},a_{\operatorname*{id}\left(  2\right)  },\ldots,a_{\operatorname*{id}\left(
+k\right)  },b_{\operatorname*{id}\left(  1\right)  },b_{\operatorname*{id}%
+\left(  2\right)  },\ldots,b_{\operatorname*{id}\left(  n-k\right)  }\right)
+\label{pf.lem.sol.addexe.jacobi-complement.Ialbe.short.gamma-tuple.pf.1}%
+\end{equation}
+(because this is how $\sigma_{I,\operatorname*{id},\operatorname*{id}}$ was
+defined). Hence, $\gamma$ is a $\sigma\in S_{n}$ satisfying
+(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.short.gamma-tuple.pf.1}). In
+other words, $\gamma$ is an element of $S_{n}$ and satisfies%
+\[
+\left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)  ,\ldots,\gamma\left(
+n\right)  \right)  =\left(  a_{\operatorname*{id}\left(  1\right)
+},a_{\operatorname*{id}\left(  2\right)  },\ldots,a_{\operatorname*{id}\left(
+k\right)  },b_{\operatorname*{id}\left(  1\right)  },b_{\operatorname*{id}%
+\left(  2\right)  },\ldots,b_{\operatorname*{id}\left(  n-k\right)  }\right)
+.
+\]
+Thus,%
+\begin{align*}
+\left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)  ,\ldots,\gamma\left(
+n\right)  \right)   &  =\left(  a_{\operatorname*{id}\left(  1\right)
+},a_{\operatorname*{id}\left(  2\right)  },\ldots,a_{\operatorname*{id}\left(
+k\right)  },b_{\operatorname*{id}\left(  1\right)  },b_{\operatorname*{id}%
+\left(  2\right)  },\ldots,b_{\operatorname*{id}\left(  n-k\right)  }\right)
+\\
+&  =\left(  a_{1},a_{2},\ldots,a_{k},b_{1},b_{2},\ldots,b_{n-k}\right)  .
+\end{align*}
+Hence,%
+\begin{equation}
+\left(  \gamma\left(  i\right)  =a_{i}\ \ \ \ \ \ \ \ \ \ \text{for every
+}i\in\left\{  1,2,\ldots,k\right\}  \right)
+\label{pf.lem.sol.addexe.jacobi-complement.Ialbe.short.gamma-tuple.pf.gamma1}%
+\end{equation}
+and%
+\begin{equation}
+\left(  \gamma\left(  i\right)  =b_{i-k}\ \ \ \ \ \ \ \ \ \ \text{for every
+}i\in\left\{  k+1,k+2,\ldots,n\right\}  \right)  .
+\label{pf.lem.sol.addexe.jacobi-complement.Ialbe.short.gamma-tuple.pf.gamma2}%
+\end{equation}
+Now, (\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple1}) follows
+immediately from
+(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.short.gamma-tuple.pf.gamma1}).
+Furthermore, (\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple2})
+follows immediately from
+(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.short.gamma-tuple.pf.gamma2}).
+Hence, both (\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple1}) and
+(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple2}) are proven.
+\end{vershort}
+
+\begin{verlong}
+\textit{Proof of (\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple1}%
+) and (\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple2}):} The
+permutation $\sigma_{I,\operatorname*{id}\nolimits_{k},\operatorname*{id}%
+\nolimits_{n-k}}$ is the unique $\sigma\in S_{n}$ satisfying%
+\begin{equation}
+\left(  \sigma\left(  1\right)  ,\sigma\left(  2\right)  ,\ldots,\sigma\left(
+n\right)  \right)  =\left(  a_{\operatorname*{id}\nolimits_{k}\left(
+1\right)  },a_{\operatorname*{id}\nolimits_{k}\left(  2\right)  }%
+,\ldots,a_{\operatorname*{id}\nolimits_{k}\left(  k\right)  }%
+,b_{\operatorname*{id}\nolimits_{n-k}\left(  1\right)  },b_{\operatorname*{id}%
+\nolimits_{n-k}\left(  2\right)  },\ldots,b_{\operatorname*{id}\nolimits_{n-k}%
+\left(  n-k\right)  }\right)
+\label{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple.pf.1}%
+\end{equation}
+(because this is how $\sigma_{I,\operatorname*{id}\nolimits_{k}%
+,\operatorname*{id}\nolimits_{n-k}}$ is defined). Hence, $\sigma
+_{I,\operatorname*{id}\nolimits_{k},\operatorname*{id}\nolimits_{n-k}}$ is a
+$\sigma\in S_{n}$ satisfying
+(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple.pf.1}). In other
+words, $\gamma$ is a $\sigma\in S_{n}$ satisfying
+(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple.pf.1}) (since
+$\gamma=\sigma_{I,\operatorname*{id}\nolimits_{k},\operatorname*{id}%
+\nolimits_{n-k}}$). In other words, $\gamma$ is an element of $S_{n}$ and
+satisfies%
+\begin{align}
+&  \left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)  ,\ldots
+,\gamma\left(  n\right)  \right) \nonumber\\
+&  =\left(  a_{\operatorname*{id}\nolimits_{k}\left(  1\right)  }%
+,a_{\operatorname*{id}\nolimits_{k}\left(  2\right)  },\ldots
+,a_{\operatorname*{id}\nolimits_{k}\left(  k\right)  },b_{\operatorname*{id}%
+\nolimits_{n-k}\left(  1\right)  },b_{\operatorname*{id}\nolimits_{n-k}\left(
+2\right)  },\ldots,b_{\operatorname*{id}\nolimits_{n-k}\left(  n-k\right)
+}\right)  . \label{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple.pf.2}%
+\end{align}
+Now, $\left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)  ,\ldots
+,\gamma\left(  k\right)  \right)  =\left(  a_{\operatorname*{id}%
+\nolimits_{k}\left(  1\right)  },a_{\operatorname*{id}\nolimits_{k}\left(
+2\right)  },\ldots,a_{\operatorname*{id}\nolimits_{k}\left(  k\right)
+}\right)  $\ \ \ \ \footnote{\textit{Proof.} We have%
+\begin{align*}
+&  \left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)  ,\ldots
+,\gamma\left(  k\right)  \right) \\
+&  =\left(  \text{the list of the first }k\text{ entries of the list
+}\underbrace{\left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)
+,\ldots,\gamma\left(  n\right)  \right)  }_{\substack{=\left(
+a_{\operatorname*{id}\nolimits_{k}\left(  1\right)  },a_{\operatorname*{id}%
+\nolimits_{k}\left(  2\right)  },\ldots,a_{\operatorname*{id}\nolimits_{k}%
+\left(  k\right)  },b_{\operatorname*{id}\nolimits_{n-k}\left(  1\right)
+},b_{\operatorname*{id}\nolimits_{n-k}\left(  2\right)  },\ldots
+,b_{\operatorname*{id}\nolimits_{n-k}\left(  n-k\right)  }\right)  \\\text{(by
+(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple.pf.2}))}}}\right)
+\\
+&  =\left(  \text{the list of the first }k\text{ entries of the list }\left(
+a_{\operatorname*{id}\nolimits_{k}\left(  1\right)  },a_{\operatorname*{id}%
+\nolimits_{k}\left(  2\right)  },\ldots,a_{\operatorname*{id}\nolimits_{k}%
+\left(  k\right)  },b_{\operatorname*{id}\nolimits_{n-k}\left(  1\right)
+},b_{\operatorname*{id}\nolimits_{n-k}\left(  2\right)  },\ldots
+,b_{\operatorname*{id}\nolimits_{n-k}\left(  n-k\right)  }\right)  \right) \\
+&  =\left(  a_{\operatorname*{id}\nolimits_{k}\left(  1\right)  }%
+,a_{\operatorname*{id}\nolimits_{k}\left(  2\right)  },\ldots
+,a_{\operatorname*{id}\nolimits_{k}\left(  k\right)  }\right)  ,
+\end{align*}
+qed.}. In other words, $\gamma\left(  i\right)  =a_{\operatorname*{id}%
+\nolimits_{k}\left(  i\right)  }$ for every $i\in\left\{  1,2,\ldots
+,k\right\}  $. Hence, for every $i\in\left\{  1,2,\ldots,k\right\}  $, we have
+$\gamma\left(  i\right)  =a_{\operatorname*{id}\nolimits_{k}\left(  i\right)
+}=a_{i}$ (since $\underbrace{\operatorname*{id}\nolimits_{k}}%
+_{=\operatorname*{id}\nolimits_{\left\{  1,2,\ldots,k\right\}  }}\left(
+i\right)  =\operatorname*{id}\nolimits_{\left\{  1,2,\ldots,k\right\}
+}\left(  i\right)  =i$). In other words, $\left(  \gamma\left(  1\right)
+,\gamma\left(  2\right)  ,\ldots,\gamma\left(  k\right)  \right)  =\left(
+a_{1},a_{2},\ldots,a_{k}\right)  $. This proves
+(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple1}).
+
+Furthermore, $\left(  \gamma\left(  k+1\right)  ,\gamma\left(  k+2\right)
+,\ldots,\gamma\left(  n\right)  \right)  =\left(  b_{\operatorname*{id}%
+\nolimits_{n-k}\left(  1\right)  },b_{\operatorname*{id}\nolimits_{n-k}\left(
+2\right)  },\ldots,b_{\operatorname*{id}\nolimits_{n-k}\left(  n-k\right)
+}\right)  $\ \ \ \ \footnote{\textit{Proof.} We have%
+\begin{align*}
+&  \left(  \gamma\left(  k+1\right)  ,\gamma\left(  k+2\right)  ,\ldots
+,\gamma\left(  n\right)  \right) \\
+&  =\left(  \text{the list of the last }n-k\text{ entries of the list
+}\underbrace{\left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)
+,\ldots,\gamma\left(  n\right)  \right)  }_{\substack{=\left(
+a_{\operatorname*{id}\nolimits_{k}\left(  1\right)  },a_{\operatorname*{id}%
+\nolimits_{k}\left(  2\right)  },\ldots,a_{\operatorname*{id}\nolimits_{k}%
+\left(  k\right)  },b_{\operatorname*{id}\nolimits_{n-k}\left(  1\right)
+},b_{\operatorname*{id}\nolimits_{n-k}\left(  2\right)  },\ldots
+,b_{\operatorname*{id}\nolimits_{n-k}\left(  n-k\right)  }\right)  \\\text{(by
+(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple.pf.2}))}}}\right)
+\\
+&  =\left(  \text{the list of the last }n-k\text{ entries of the list }\left(
+a_{\operatorname*{id}\nolimits_{k}\left(  1\right)  },a_{\operatorname*{id}%
+\nolimits_{k}\left(  2\right)  },\ldots,a_{\operatorname*{id}\nolimits_{k}%
+\left(  k\right)  },b_{\operatorname*{id}\nolimits_{n-k}\left(  1\right)
+},b_{\operatorname*{id}\nolimits_{n-k}\left(  2\right)  },\ldots
+,b_{\operatorname*{id}\nolimits_{n-k}\left(  n-k\right)  }\right)  \right) \\
+&  =\left(  b_{\operatorname*{id}\nolimits_{n-k}\left(  1\right)
+},b_{\operatorname*{id}\nolimits_{n-k}\left(  2\right)  },\ldots
+,b_{\operatorname*{id}\nolimits_{n-k}\left(  n-k\right)  }\right)  ,
+\end{align*}
+qed.}. In other words, $\gamma\left(  k+i\right)  =b_{\operatorname*{id}%
+\nolimits_{n-k}\left(  i\right)  }$ for every $i\in\left\{  1,2,\ldots
+,n-k\right\}  $. Hence, for every $i\in\left\{  1,2,\ldots,n-k\right\}  $, we
+have $\gamma\left(  k+i\right)  =b_{\operatorname*{id}\nolimits_{n-k}\left(
+i\right)  }=b_{i}$ (since $\underbrace{\operatorname*{id}\nolimits_{n-k}%
+}_{=\operatorname*{id}\nolimits_{\left\{  1,2,\ldots,n-k\right\}  }}\left(
+i\right)  =\operatorname*{id}\nolimits_{\left\{  1,2,\ldots,n-k\right\}
+}\left(  i\right)  =i$). In other words, $\left(  \gamma\left(  k+1\right)
+,\gamma\left(  k+2\right)  ,\ldots,\gamma\left(  n\right)  \right)  =\left(
+b_{1},b_{2},\ldots,b_{n-k}\right)  $. This proves
+(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple2}). Hence, both
+(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple1}) and
+(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple2}) are proven.
+\end{verlong}
+
+Comparing (\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple1}) with
+$w\left(  I\right)  =\left(  a_{1},a_{2},\ldots,a_{k}\right)  $, we obtain
+\[
+\left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)  ,\ldots,\gamma\left(
+k\right)  \right)  =w\left(  I\right)  .
+\]
+Comparing (\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple2}) with
+$w\left(  \widetilde{I}\right)  =\left(  b_{1},b_{2},\ldots,b_{n-k}\right)  $,
+we obtain
+\[
+\left(  \gamma\left(  k+1\right)  ,\gamma\left(  k+2\right)  ,\ldots
+,\gamma\left(  n\right)  \right)  =w\left(  \widetilde{I}\right)  .
+\]
+Now, we have shown that the permutation $\gamma\in S_{n}$ satisfies $\left(
+\gamma\left(  1\right)  ,\gamma\left(  2\right)  ,\ldots,\gamma\left(
+k\right)  \right)  =w\left(  I\right)  $, $\left(  \gamma\left(  k+1\right)
+,\gamma\left(  k+2\right)  ,\ldots,\gamma\left(  n\right)  \right)  =w\left(
+\widetilde{I}\right)  $ and $\left(  -1\right)  ^{\gamma}=\left(  -1\right)
+^{\sum I-\left(  1+2+\cdots+k\right)  }$. Hence, there exists a $\sigma\in
+S_{n}$ satisfying $\left(  \sigma\left(  1\right)  ,\sigma\left(  2\right)
+,\ldots,\sigma\left(  k\right)  \right)  =w\left(  I\right)  $, \newline%
+$\left(  \sigma\left(  k+1\right)  ,\sigma\left(  k+2\right)  ,\ldots
+,\sigma\left(  n\right)  \right)  =w\left(  \widetilde{I}\right)  $ and
+$\left(  -1\right)  ^{\sigma}=\left(  -1\right)  ^{\sum I-\left(
+1+2+\cdots+k\right)  }$ (namely, $\sigma=\gamma$). This proves Lemma
+\ref{lem.sol.addexe.jacobi-complement.Ialbe}.
+\end{proof}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.det.laplace-multi.Apq}.]Let us first study the sets
+$P$ and $\widetilde{P}$.
 
 \begin{vershort}
 Define $k\in\mathbb{N}$ by $k=\left\vert P\right\vert =\left\vert Q\right\vert
@@ -60826,9 +61213,9 @@ Also,%
 &  =n-k.
 \end{align*}
 Hence, $n-k=\left\vert \widetilde{P}\right\vert \in\mathbb{N}$; thus,
-$n-k\geq0$. In other words, $k\leq n$. Combined with $k\geq0$ (since
-$k=\left\vert P\right\vert \in\mathbb{N}$), this yields $k\in\left\{
-0,1,\ldots,n\right\}  $.
+$n-k\geq0$. In other words, $n\geq k$. In other words, $k\leq n$. Combined
+with $k\geq0$ (since $k=\left\vert P\right\vert \in\mathbb{N}$), this yields
+$k\in\left\{  0,1,\ldots,n\right\}  $.
 \end{verlong}
 
 Let $\left(  p_{1},p_{2},\ldots,p_{k}\right)  $ be the list of all elements of
@@ -60839,87 +61226,32 @@ Let $\left(  r_{1},r_{2},\ldots,r_{n-k}\right)  $ be the list of all elements
 of $\widetilde{P}$ in increasing order (with no repetitions). (This is
 well-defined, because $\left\vert \widetilde{P}\right\vert =n-k$.)
 
-We know that $\left(  r_{1},r_{2},\ldots,r_{n-k}\right)  $ is the list of all
-elements of $\widetilde{P}$ in increasing order (with no repetitions). In
-other words, $\left(  r_{1},r_{2},\ldots,r_{n-k}\right)  $ is the list of all
-elements of $\left\{  1,2,\ldots,n\right\}  \setminus P$ in increasing order
-(with no repetitions) (since $\widetilde{P}=\left\{  1,2,\ldots,n\right\}
-\setminus P$). Thus, for every $\alpha\in S_{k}$ and $\beta\in S_{n-k}$, we
-can define an element $\sigma_{P,\alpha,\beta}\in S_{n}$ according to Exercise
-\ref{exe.Ialbe} \textbf{(a)} (applied to $P$, $\left(  p_{1},p_{2}%
-,\ldots,p_{k}\right)  $ and $\left(  r_{1},r_{2},\ldots,r_{n-k}\right)  $
-instead of $I$, $\left(  a_{1},a_{2},\ldots,a_{k}\right)  $ and $\left(
-b_{1},b_{2},\ldots,b_{n-k}\right)  $). Consider this $\sigma_{P,\alpha,\beta}%
-$. Exercise \ref{exe.Ialbe} \textbf{(b)} (applied to $P$, $\left(  p_{1}%
-,p_{2},\ldots,p_{k}\right)  $ and $\left(  r_{1},r_{2},\ldots,r_{n-k}\right)
-$ instead of $I$, $\left(  a_{1},a_{2},\ldots,a_{k}\right)  $ and $\left(
-b_{1},b_{2},\ldots,b_{n-k}\right)  $) shows that for every $\alpha\in S_{k}$
-and $\beta\in S_{n-k}$, we have%
-\[
-\ell\left(  \sigma_{P,\alpha,\beta}\right)  =\ell\left(  \alpha\right)
-+\ell\left(  \beta\right)  +\sum P-\left(  1+2+\cdots+k\right)
-\]
-and%
-\begin{equation}
-\left(  -1\right)  ^{\sigma_{P,\alpha,\beta}}=\left(  -1\right)  ^{\alpha
-}\cdot\left(  -1\right)  ^{\beta}\cdot\left(  -1\right)  ^{\sum P-\left(
-1+2+\cdots+k\right)  }. \label{pf.lem.det.laplace-multi.Apq.sign-gen}%
-\end{equation}
+Lemma \ref{lem.sol.addexe.jacobi-complement.Ialbe} (applied to $I=P$) shows
+that there exists a $\sigma\in S_{n}$ satisfying $\left(  \sigma\left(
+1\right)  ,\sigma\left(  2\right)  ,\ldots,\sigma\left(  k\right)  \right)
+=w\left(  P\right)  $, $\left(  \sigma\left(  k+1\right)  ,\sigma\left(
+k+2\right)  ,\ldots,\sigma\left(  n\right)  \right)  =w\left(  \widetilde{P}%
+\right)  $ and $\left(  -1\right)  ^{\sigma}=\left(  -1\right)  ^{\sum
+P-\left(  1+2+\cdots+k\right)  }$. Denote this $\sigma$ by $\gamma$. Thus,
+$\gamma$ is an element of $S_{n}$ satisfying $\left(  \gamma\left(  1\right)
+,\gamma\left(  2\right)  ,\ldots,\gamma\left(  k\right)  \right)  =w\left(
+P\right)  $, $\left(  \gamma\left(  k+1\right)  ,\gamma\left(  k+2\right)
+,\ldots,\gamma\left(  n\right)  \right)  =w\left(  \widetilde{P}\right)  $ and
+$\left(  -1\right)  ^{\gamma}=\left(  -1\right)  ^{\sum P-\left(
+1+2+\cdots+k\right)  }$.
 
-
-\begin{vershort}
-Now, consider the identity permutations $\operatorname*{id}\in S_{k}$ and
-$\operatorname*{id}\in S_{n-k}$. (These are (in general) two different
-permutations, although we denote them both by $\operatorname*{id}$.) They give
-rise to an element $\sigma_{P,\operatorname*{id}\nolimits_{k}%
-,\operatorname*{id}\nolimits_{n-k}}\in S_{n}$ (obtained by setting
-$\alpha=\operatorname*{id}\in S_{k}$ and $\beta=\operatorname*{id}\in S_{n-k}$
-in the definition of $\sigma_{P,\alpha,\beta}$). Denote this element
-$\sigma_{P,\operatorname*{id}\nolimits_{k},\operatorname*{id}\nolimits_{n-k}}$
-by $\gamma$. Thus, $\gamma=\sigma_{P,\operatorname*{id}\nolimits_{k}%
-,\operatorname*{id}\nolimits_{n-k}}$, so that%
+Notice that%
 \begin{align}
-\left(  -1\right)  ^{\gamma}  &  =\left(  -1\right)  ^{\sigma
-_{P,\operatorname*{id},\operatorname*{id}}}=\underbrace{\left(  -1\right)
-^{\operatorname*{id}}}_{=1}\cdot\underbrace{\left(  -1\right)
-^{\operatorname*{id}}}_{=1}\cdot\left(  -1\right)  ^{\sum P-\left(
-1+2+\cdots+k\right)  }\nonumber\\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
-(\ref{pf.lem.det.laplace-multi.Apq.sign-gen}) (applied to }\alpha
-=\operatorname*{id}\nolimits_{k}\text{ and }\beta=\operatorname*{id}%
-\nolimits_{n-k}\text{)}\right) \nonumber\\
-&  =\left(  -1\right)  ^{\sum P-\left(  1+2+\cdots+k\right)  }.
-\label{pf.lem.det.laplace-multi.Apq.short.sign-gamma}%
+\left(  -1\right)  ^{\sum P-\left(  1+2+\cdots+k\right)  }\underbrace{\left(
+-1\right)  ^{\gamma}}_{=\left(  -1\right)  ^{\sum P-\left(  1+2+\cdots
++k\right)  }}  &  =\left(  -1\right)  ^{\sum P-\left(  1+2+\cdots+k\right)
+}\left(  -1\right)  ^{\sum P-\left(  1+2+\cdots+k\right)  }\nonumber\\
+&  =\left(  \left(  -1\right)  ^{\sum P-\left(  1+2+\cdots+k\right)  }\right)
+^{2}=\left(  -1\right)  ^{2\left(  \sum P-\left(  1+2+\cdots+k\right)
+\right)  }\nonumber\\
+&  =1 \label{pf.lem.det.laplace-multi.Apq.sign-gamma-multed}%
 \end{align}
-
-\end{vershort}
-
-\begin{verlong}
-Now, $\operatorname*{id}\nolimits_{k}\in S_{k}$ and $\operatorname*{id}%
-\nolimits_{n-k}\in S_{n-k}$. Hence, an element $\sigma_{P,\operatorname*{id}%
-\nolimits_{k},\operatorname*{id}\nolimits_{n-k}}\in S_{n}$ is defined. Denote
-this element $\sigma_{P,\operatorname*{id}\nolimits_{k},\operatorname*{id}%
-\nolimits_{n-k}}$ by $\gamma$. Thus, $\gamma=\sigma_{P,\operatorname*{id}%
-\nolimits_{k},\operatorname*{id}\nolimits_{n-k}}$, so that%
-\begin{align}
-\left(  -1\right)  ^{\gamma}  &  =\left(  -1\right)  ^{\sigma
-_{P,\operatorname*{id}\nolimits_{k},\operatorname*{id}\nolimits_{n-k}}%
-}=\underbrace{\left(  -1\right)  ^{\operatorname*{id}\nolimits_{k}}%
-}_{\substack{=1\\\text{(by (\ref{pf.lem.det.laplace-multi.Apq.sign-1}%
-)}\\\text{(applied to }h=k\text{))}}}\cdot\underbrace{\left(  -1\right)
-^{\operatorname*{id}\nolimits_{n-k}}}_{\substack{=1\\\text{(by
-(\ref{pf.lem.det.laplace-multi.Apq.sign-1})}\\\text{(applied to }%
-h=n-k\text{))}}}\cdot\left(  -1\right)  ^{\sum P-\left(  1+2+\cdots+k\right)
-}\nonumber\\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
-(\ref{pf.lem.det.laplace-multi.Apq.sign-gen}) (applied to }\alpha
-=\operatorname*{id}\nolimits_{k}\text{ and }\beta=\operatorname*{id}%
-\nolimits_{n-k}\text{)}\right) \nonumber\\
-&  =\left(  -1\right)  ^{\sum P-\left(  1+2+\cdots+k\right)  }.
-\label{pf.lem.det.laplace-multi.Apq.sign-gamma}%
-\end{align}
-
-\end{verlong}
+(since $2\left(  \sum P-\left(  1+2+\cdots+k\right)  \right)  $ is even).
 
 Now, we claim that%
 \begin{equation}
@@ -60937,168 +61269,76 @@ and%
 
 \begin{vershort}
 \textit{Proof of (\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple1}) and
-(\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple2}):} The permutation $\gamma$
-is $\sigma_{P,\operatorname*{id},\operatorname*{id}}$. In other words, the
-permutation $\gamma$ is the unique $\sigma\in S_{n}$ satisfying%
-\begin{equation}
-\left(  \sigma\left(  1\right)  ,\sigma\left(  2\right)  ,\ldots,\sigma\left(
-n\right)  \right)  =\left(  p_{\operatorname*{id}\left(  1\right)
-},p_{\operatorname*{id}\left(  2\right)  },\ldots,p_{\operatorname*{id}\left(
-k\right)  },r_{\operatorname*{id}\left(  1\right)  },r_{\operatorname*{id}%
-\left(  2\right)  },\ldots,r_{\operatorname*{id}\left(  n-k\right)  }\right)
-\label{pf.lem.det.laplace-multi.Apq.short.gamma-tuple.pf.1}%
-\end{equation}
-(because this is how $\sigma_{P,\operatorname*{id},\operatorname*{id}}$ was
-defined). Hence, $\gamma$ is a $\sigma\in S_{n}$ satisfying
-(\ref{pf.lem.det.laplace-multi.Apq.short.gamma-tuple.pf.1}) (since
-$\gamma=\sigma_{P,\operatorname*{id},\operatorname*{id}}$). In other words,
-$\gamma$ is an element of $S_{n}$ and satisfies%
+(\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple2}):} The lists $w\left(
+P\right)  $ and $\left(  p_{1},p_{2},\ldots,p_{k}\right)  $ must be identical
+(since they are both defined to be the list of all elements of $P$ in
+increasing order (with no repetitions)). In other words, we have $w\left(
+P\right)  =\left(  p_{1},p_{2},\ldots,p_{k}\right)  $. Now,
 \[
 \left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)  ,\ldots,\gamma\left(
-n\right)  \right)  =\left(  p_{\operatorname*{id}\left(  1\right)
-},p_{\operatorname*{id}\left(  2\right)  },\ldots,p_{\operatorname*{id}\left(
-k\right)  },r_{\operatorname*{id}\left(  1\right)  },r_{\operatorname*{id}%
-\left(  2\right)  },\ldots,r_{\operatorname*{id}\left(  n-k\right)  }\right)
-.
+k\right)  \right)  =w\left(  P\right)  =\left(  p_{1},p_{2},\ldots
+,p_{k}\right)  .
 \]
-Thus,%
-\begin{align*}
-\left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)  ,\ldots,\gamma\left(
-n\right)  \right)   &  =\left(  p_{\operatorname*{id}\left(  1\right)
-},p_{\operatorname*{id}\left(  2\right)  },\ldots,p_{\operatorname*{id}\left(
-k\right)  },r_{\operatorname*{id}\left(  1\right)  },r_{\operatorname*{id}%
-\left(  2\right)  },\ldots,r_{\operatorname*{id}\left(  n-k\right)  }\right)
-\\
-&  =\left(  p_{1},p_{2},\ldots,p_{k},r_{1},r_{2},\ldots,r_{n-k}\right)  .
-\end{align*}
-Hence,%
-\begin{equation}
-\left(  \gamma\left(  i\right)  =p_{i}\ \ \ \ \ \ \ \ \ \ \text{for every
-}i\in\left\{  1,2,\ldots,k\right\}  \right)
-\label{pf.lem.det.laplace-multi.Apq.short.gamma-tuple.pf.gamma1}%
-\end{equation}
-and%
-\begin{equation}
-\left(  \gamma\left(  i\right)  =r_{i-k}\ \ \ \ \ \ \ \ \ \ \text{for every
-}i\in\left\{  k+1,k+2,\ldots,n\right\}  \right)  .
-\label{pf.lem.det.laplace-multi.Apq.short.gamma-tuple.pf.gamma2}%
-\end{equation}
-Now, (\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple1}) follows immediately
-from (\ref{pf.lem.det.laplace-multi.Apq.short.gamma-tuple.pf.gamma1}).
-Furthermore, (\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple2}) follows from
-(\ref{pf.lem.det.laplace-multi.Apq.short.gamma-tuple.pf.gamma2}) (applied to
-$k+i$ instead of $i$). Hence, both
+In other words, $\gamma\left(  i\right)  =p_{i}$ for every $i\in\left\{
+1,2,\ldots,k\right\}  $. This proves
+(\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple1}).
+
+The lists $w\left(  \widetilde{P}\right)  $ and $\left(  r_{1},r_{2}%
+,\ldots,r_{n-k}\right)  $ must be identical (since they are both defined to be
+the list of all elements of $\widetilde{P}$ in increasing order (with no
+repetitions)). In other words, we have $w\left(  \widetilde{P}\right)
+=\left(  r_{1},r_{2},\ldots,r_{n-k}\right)  $. Now,%
+\[
+\left(  \gamma\left(  k+1\right)  ,\gamma\left(  k+2\right)  ,\ldots
+,\gamma\left(  n\right)  \right)  =w\left(  \widetilde{P}\right)  =\left(
+r_{1},r_{2},\ldots,r_{n-k}\right)  .
+\]
+In other words, $\gamma\left(  k+i\right)  =r_{i}$ for every $i\in\left\{
+1,2,\ldots,n-k\right\}  $. This proves
+(\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple2}). Thus, both
 (\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple1}) and
 (\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple2}) are proven.
 \end{vershort}
 
 \begin{verlong}
 \textit{Proof of (\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple1}) and
-(\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple2}):} The permutation
-$\sigma_{P,\operatorname*{id}\nolimits_{k},\operatorname*{id}\nolimits_{n-k}}$
-is the unique $\sigma\in S_{n}$ satisfying%
-\begin{equation}
-\left(  \sigma\left(  1\right)  ,\sigma\left(  2\right)  ,\ldots,\sigma\left(
-n\right)  \right)  =\left(  p_{\operatorname*{id}\nolimits_{k}\left(
-1\right)  },p_{\operatorname*{id}\nolimits_{k}\left(  2\right)  }%
-,\ldots,p_{\operatorname*{id}\nolimits_{k}\left(  k\right)  }%
-,r_{\operatorname*{id}\nolimits_{n-k}\left(  1\right)  },r_{\operatorname*{id}%
-\nolimits_{n-k}\left(  2\right)  },\ldots,r_{\operatorname*{id}\nolimits_{n-k}%
-\left(  n-k\right)  }\right)
-\label{pf.lem.det.laplace-multi.Apq.gamma-tuple.pf.1}%
-\end{equation}
-(because this is how $\sigma_{P,\operatorname*{id}\nolimits_{k}%
-,\operatorname*{id}\nolimits_{n-k}}$ is defined). Hence, $\sigma
-_{P,\operatorname*{id}\nolimits_{k},\operatorname*{id}\nolimits_{n-k}}$ is a
-$\sigma\in S_{n}$ satisfying
-(\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple.pf.1}). In other words,
-$\gamma$ is a $\sigma\in S_{n}$ satisfying
-(\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple.pf.1}) (since $\gamma
-=\sigma_{P,\operatorname*{id}\nolimits_{k},\operatorname*{id}\nolimits_{n-k}}%
-$). In other words, $\gamma$ is an element of $S_{n}$ and satisfies%
-\begin{align}
-&  \left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)  ,\ldots
-,\gamma\left(  n\right)  \right) \nonumber\\
-&  =\left(  p_{\operatorname*{id}\nolimits_{k}\left(  1\right)  }%
-,p_{\operatorname*{id}\nolimits_{k}\left(  2\right)  },\ldots
-,p_{\operatorname*{id}\nolimits_{k}\left(  k\right)  },r_{\operatorname*{id}%
-\nolimits_{n-k}\left(  1\right)  },r_{\operatorname*{id}\nolimits_{n-k}\left(
-2\right)  },\ldots,r_{\operatorname*{id}\nolimits_{n-k}\left(  n-k\right)
-}\right)  . \label{pf.lem.det.laplace-multi.Apq.gamma-tuple.pf.2}%
-\end{align}
-Now, $\left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)  ,\ldots
-,\gamma\left(  k\right)  \right)  =\left(  p_{\operatorname*{id}%
-\nolimits_{k}\left(  1\right)  },p_{\operatorname*{id}\nolimits_{k}\left(
-2\right)  },\ldots,p_{\operatorname*{id}\nolimits_{k}\left(  k\right)
-}\right)  $\ \ \ \ \footnote{\textit{Proof.} We have%
+(\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple2}):} Recall that $w\left(
+P\right)  $ is the list of all elements of $P$ in increasing order (with no
+repetitions) (by the definition of $w\left(  P\right)  $). Thus,%
 \begin{align*}
-&  \left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)  ,\ldots
-,\gamma\left(  k\right)  \right) \\
-&  =\left(  \text{the list of the first }k\text{ entries of the list
-}\underbrace{\left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)
-,\ldots,\gamma\left(  n\right)  \right)  }_{\substack{=\left(
-p_{\operatorname*{id}\nolimits_{k}\left(  1\right)  },p_{\operatorname*{id}%
-\nolimits_{k}\left(  2\right)  },\ldots,p_{\operatorname*{id}\nolimits_{k}%
-\left(  k\right)  },r_{\operatorname*{id}\nolimits_{n-k}\left(  1\right)
-},r_{\operatorname*{id}\nolimits_{n-k}\left(  2\right)  },\ldots
-,r_{\operatorname*{id}\nolimits_{n-k}\left(  n-k\right)  }\right)  \\\text{(by
-(\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple.pf.2}))}}}\right) \\
-&  =\left(  \text{the list of the first }k\text{ entries of the list }\left(
-p_{\operatorname*{id}\nolimits_{k}\left(  1\right)  },p_{\operatorname*{id}%
-\nolimits_{k}\left(  2\right)  },\ldots,p_{\operatorname*{id}\nolimits_{k}%
-\left(  k\right)  },r_{\operatorname*{id}\nolimits_{n-k}\left(  1\right)
-},r_{\operatorname*{id}\nolimits_{n-k}\left(  2\right)  },\ldots
-,r_{\operatorname*{id}\nolimits_{n-k}\left(  n-k\right)  }\right)  \right) \\
-&  =\left(  p_{\operatorname*{id}\nolimits_{k}\left(  1\right)  }%
-,p_{\operatorname*{id}\nolimits_{k}\left(  2\right)  },\ldots
-,p_{\operatorname*{id}\nolimits_{k}\left(  k\right)  }\right)  ,
+w\left(  P\right)   &  =\left(  \text{the list of all elements of }P\text{ in
+increasing order (with no repetitions)}\right) \\
+&  =\left(  p_{1},p_{2},\ldots,p_{k}\right)
 \end{align*}
-qed.}. In other words, $\gamma\left(  i\right)  =p_{\operatorname*{id}%
-\nolimits_{k}\left(  i\right)  }$ for every $i\in\left\{  1,2,\ldots
-,k\right\}  $. Hence, for every $i\in\left\{  1,2,\ldots,k\right\}  $, we have
-$\gamma\left(  i\right)  =p_{\operatorname*{id}\nolimits_{k}\left(  i\right)
-}=p_{i}$ (since $\underbrace{\operatorname*{id}\nolimits_{k}}%
-_{=\operatorname*{id}\nolimits_{\left\{  1,2,\ldots,k\right\}  }}\left(
-i\right)  =\operatorname*{id}\nolimits_{\left\{  1,2,\ldots,k\right\}
-}\left(  i\right)  =i$). This proves
+(since $\left(  p_{1},p_{2},\ldots,p_{k}\right)  $ is the list of all elements
+of $P$ in increasing order (with no repetitions)). Now,
+\[
+\left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)  ,\ldots,\gamma\left(
+k\right)  \right)  =w\left(  P\right)  =\left(  p_{1},p_{2},\ldots
+,p_{k}\right)  .
+\]
+In other words, $\gamma\left(  i\right)  =p_{i}$ for every $i\in\left\{
+1,2,\ldots,k\right\}  $. This proves
 (\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple1}).
 
-Furthermore, $\left(  \gamma\left(  k+1\right)  ,\gamma\left(  k+2\right)
-,\ldots,\gamma\left(  n\right)  \right)  =\left(  r_{\operatorname*{id}%
-\nolimits_{n-k}\left(  1\right)  },r_{\operatorname*{id}\nolimits_{n-k}\left(
-2\right)  },\ldots,r_{\operatorname*{id}\nolimits_{n-k}\left(  n-k\right)
-}\right)  $\ \ \ \ \footnote{\textit{Proof.} We have%
+Recall that $w\left(  \widetilde{P}\right)  $ is the list of all elements of
+$\widetilde{P}$ in increasing order (with no repetitions) (by the definition
+of $w\left(  \widetilde{P}\right)  $). Thus,%
 \begin{align*}
-&  \left(  \gamma\left(  k+1\right)  ,\gamma\left(  k+2\right)  ,\ldots
-,\gamma\left(  n\right)  \right) \\
-&  =\left(  \text{the list of the last }n-k\text{ entries of the list
-}\underbrace{\left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)
-,\ldots,\gamma\left(  n\right)  \right)  }_{\substack{=\left(
-p_{\operatorname*{id}\nolimits_{k}\left(  1\right)  },p_{\operatorname*{id}%
-\nolimits_{k}\left(  2\right)  },\ldots,p_{\operatorname*{id}\nolimits_{k}%
-\left(  k\right)  },r_{\operatorname*{id}\nolimits_{n-k}\left(  1\right)
-},r_{\operatorname*{id}\nolimits_{n-k}\left(  2\right)  },\ldots
-,r_{\operatorname*{id}\nolimits_{n-k}\left(  n-k\right)  }\right)  \\\text{(by
-(\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple.pf.2}))}}}\right) \\
-&  =\left(  \text{the list of the last }n-k\text{ entries of the list }\left(
-p_{\operatorname*{id}\nolimits_{k}\left(  1\right)  },p_{\operatorname*{id}%
-\nolimits_{k}\left(  2\right)  },\ldots,p_{\operatorname*{id}\nolimits_{k}%
-\left(  k\right)  },r_{\operatorname*{id}\nolimits_{n-k}\left(  1\right)
-},r_{\operatorname*{id}\nolimits_{n-k}\left(  2\right)  },\ldots
-,r_{\operatorname*{id}\nolimits_{n-k}\left(  n-k\right)  }\right)  \right) \\
-&  =\left(  r_{\operatorname*{id}\nolimits_{n-k}\left(  1\right)
-},r_{\operatorname*{id}\nolimits_{n-k}\left(  2\right)  },\ldots
-,r_{\operatorname*{id}\nolimits_{n-k}\left(  n-k\right)  }\right)  ,
+w\left(  \widetilde{P}\right)   &  =\left(  \text{the list of all elements of
+}\widetilde{P}\text{ in increasing order (with no repetitions)}\right) \\
+&  =\left(  r_{1},r_{2},\ldots,r_{n-k}\right)
 \end{align*}
-qed.}. In other words, $\gamma\left(  k+i\right)  =r_{\operatorname*{id}%
-\nolimits_{n-k}\left(  i\right)  }$ for every $i\in\left\{  1,2,\ldots
-,n-k\right\}  $. Hence, for every $i\in\left\{  1,2,\ldots,n-k\right\}  $, we
-have $\gamma\left(  k+i\right)  =r_{\operatorname*{id}\nolimits_{n-k}\left(
-i\right)  }=r_{i}$ (since $\underbrace{\operatorname*{id}\nolimits_{n-k}%
-}_{=\operatorname*{id}\nolimits_{\left\{  1,2,\ldots,n-k\right\}  }}\left(
-i\right)  =\operatorname*{id}\nolimits_{\left\{  1,2,\ldots,n-k\right\}
-}\left(  i\right)  =i$). This proves
-(\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple2}). Hence, both
+(since $\left(  r_{1},r_{2},\ldots,r_{n-k}\right)  $ is the list of all
+elements of $\widetilde{P}$ in increasing order (with no repetitions)). Now,%
+\[
+\left(  \gamma\left(  k+1\right)  ,\gamma\left(  k+2\right)  ,\ldots
+,\gamma\left(  n\right)  \right)  =w\left(  \widetilde{P}\right)  =\left(
+r_{1},r_{2},\ldots,r_{n-k}\right)  .
+\]
+In other words, $\gamma\left(  k+i\right)  =r_{i}$ for every $i\in\left\{
+1,2,\ldots,n-k\right\}  $. This proves
+(\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple2}). Thus, both
 (\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple1}) and
 (\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple2}) are proven.
 \end{verlong}
@@ -61111,127 +61351,6 @@ is a bijective map $\left\{  1,2,\ldots,n\right\}  \rightarrow\left\{
 1,2,\ldots,n\right\}  $.
 \end{verlong}
 
-\begin{vershort}
-Define an $n\times n$-matrix $A^{\prime}$ by $A^{\prime}=\left(
-a_{\gamma\left(  i\right)  ,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$.
-Define an $n\times n$-matrix $B^{\prime}$ by $B^{\prime}=\left(
-b_{\gamma\left(  i\right)  ,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$.
-Then,%
-\begin{equation}
-\operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)
-}A=\operatorname*{sub}\nolimits_{\left(  1,2,\ldots,k\right)  }^{w\left(
-Q\right)  }\left(  A^{\prime}\right)
-\label{pf.lem.det.laplace-multi.Apq.short.sub1}%
-\end{equation}
-\footnote{\textit{Proof of (\ref{pf.lem.det.laplace-multi.Apq.short.sub1}):}
-The lists $w\left(  P\right)  $ and $\left(  p_{1},p_{2},\ldots,p_{k}\right)
-$ must be identical (since they are both defined to be the list of all
-elements of $P$ in increasing order (with no repetitions)). In other words, we
-have $w\left(  P\right)  =\left(  p_{1},p_{2},\ldots,p_{k}\right)  $.
-\par
-Write the list $w\left(  Q\right)  $ in the form $w\left(  Q\right)  =\left(
-q_{1},q_{2},\ldots,q_{\ell}\right)  $ for some $\ell\in\mathbb{N}$. (Actually,
-$\ell=k$, but we will not use this.)
-\par
-From $w\left(  P\right)  =\left(  p_{1},p_{2},\ldots,p_{k}\right)  $ and
-$w\left(  Q\right)  =\left(  q_{1},q_{2},\ldots,q_{\ell}\right)  $, we obtain%
-\begin{align}
-\operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)  }A  &
-=\operatorname*{sub}\nolimits_{\left(  p_{1},p_{2},\ldots,p_{k}\right)
-}^{\left(  q_{1},q_{2},\ldots,q_{\ell}\right)  }A=\operatorname*{sub}%
-\nolimits_{p_{1},p_{2},\ldots,p_{k}}^{q_{1},q_{2},\ldots,q_{\ell}}A=\left(
-a_{p_{x},q_{y}}\right)  _{1\leq x\leq k,\ 1\leq y\leq\ell}%
-\label{pf.lem.det.laplace-multi.Apq.short.sub1.pf.1}\\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\operatorname*{sub}%
-\nolimits_{p_{1},p_{2},\ldots,p_{k}}^{q_{1},q_{2},\ldots,q_{\ell}}A\text{,
-since }A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)
-.\nonumber
-\end{align}
-\par
-On the other hand, from $w\left(  Q\right)  =\left(  q_{1},q_{2}%
-,\ldots,q_{\ell}\right)  $, we obtain%
-\begin{align*}
-\operatorname*{sub}\nolimits_{\left(  1,2,\ldots,k\right)  }^{w\left(
-Q\right)  }\left(  A^{\prime}\right)   &  =\operatorname*{sub}%
-\nolimits_{\left(  1,2,\ldots,k\right)  }^{\left(  q_{1},q_{2},\ldots,q_{\ell
-}\right)  }\left(  A^{\prime}\right)  =\operatorname*{sub}%
-\nolimits_{1,2,\ldots,k}^{q_{1},q_{2},\ldots,q_{\ell}}\left(  A^{\prime
-}\right)  =\left(  \underbrace{a_{\gamma\left(  x\right)  ,q_{y}}%
-}_{\substack{=a_{p_{x},q_{y}}\\\text{(since }\gamma\left(  x\right)
-=p_{x}\\\text{(by (\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple1}),
-applied}\\\text{to }i=x\text{))}}}\right)  _{1\leq x\leq k,\ 1\leq y\leq\ell
-}\\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\operatorname*{sub}%
-\nolimits_{1,2,\ldots,k}^{q_{1},q_{2},\ldots,q_{\ell}}\left(  A^{\prime
-}\right)  \text{, since }A^{\prime}=\left(  a_{\gamma\left(  i\right)
-,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right) \\
-&  =\left(  a_{p_{x},q_{y}}\right)  _{1\leq x\leq k,\ 1\leq y\leq\ell}.
-\end{align*}
-Comparing this with (\ref{pf.lem.det.laplace-multi.Apq.short.sub1.pf.1}), we
-obtain $\operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)
-}A=\operatorname*{sub}\nolimits_{\left(  1,2,\ldots,k\right)  }^{w\left(
-Q\right)  }\left(  A^{\prime}\right)  $. This proves
-(\ref{pf.lem.det.laplace-multi.Apq.short.sub1}).} and%
-\begin{equation}
-\operatorname*{sub}\nolimits_{w\left(  \widetilde{P}\right)  }^{w\left(
-\widetilde{Q}\right)  }B=\operatorname*{sub}\nolimits_{\left(  k+1,k+2,\ldots
-,n\right)  }^{w\left(  \widetilde{Q}\right)  }B
-\label{pf.lem.det.laplace-multi.Apq.short.sub2}%
-\end{equation}
-\footnote{\textit{Proof of (\ref{pf.lem.det.laplace-multi.Apq.short.sub2}):}
-The lists $w\left(  \widetilde{P}\right)  $ and $\left(  r_{1},r_{2}%
-,\ldots,r_{n-k}\right)  $ must be identical (since they are both defined to be
-the list of all elements of $\widetilde{P}$ in increasing order (with no
-repetitions)). In other words, we have $w\left(  \widetilde{P}\right)
-=\left(  r_{1},r_{2},\ldots,r_{n-k}\right)  $.
-\par
-Write the list $w\left(  \widetilde{Q}\right)  $ in the form $w\left(
-\widetilde{Q}\right)  =\left(  q_{1},q_{2},\ldots,q_{\ell}\right)  $ for some
-$\ell\in\mathbb{N}$. (Actually, $\ell=n-k$, but we will not use this.)
-\par
-From $w\left(  \widetilde{P}\right)  =\left(  r_{1},r_{2},\ldots
-,r_{n-k}\right)  $ and $w\left(  \widetilde{Q}\right)  =\left(  q_{1}%
-,q_{2},\ldots,q_{\ell}\right)  $, we obtain%
-\begin{align}
-\operatorname*{sub}\nolimits_{w\left(  \widetilde{P}\right)  }^{w\left(
-\widetilde{Q}\right)  }B  &  =\operatorname*{sub}\nolimits_{\left(
-r_{1},r_{2},\ldots,r_{n-k}\right)  }^{\left(  q_{1},q_{2},\ldots,q_{\ell
-}\right)  }B=\operatorname*{sub}\nolimits_{r_{1},r_{2},\ldots,r_{n-k}}%
-^{q_{1},q_{2},\ldots,q_{\ell}}B=\left(  b_{r_{x},q_{y}}\right)  _{1\leq x\leq
-n-k,\ 1\leq y\leq\ell}\label{pf.lem.det.laplace-multi.Apq.short.sub2.pf.1}\\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\operatorname*{sub}%
-\nolimits_{r_{1},r_{2},\ldots,r_{n-k}}^{q_{1},q_{2},\ldots,q_{\ell}}B\text{,
-since }B=\left(  b_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)
-.\nonumber
-\end{align}
-\par
-On the other hand, from $w\left(  \widetilde{Q}\right)  =\left(  q_{1}%
-,q_{2},\ldots,q_{\ell}\right)  $, we obtain%
-\begin{align*}
-\operatorname*{sub}\nolimits_{\left(  k+1,k+2,\ldots,n\right)  }^{w\left(
-\widetilde{Q}\right)  }\left(  B^{\prime}\right)   &  =\operatorname*{sub}%
-\nolimits_{\left(  k+1,k+2,\ldots,n\right)  }^{\left(  q_{1},q_{2}%
-,\ldots,q_{\ell}\right)  }\left(  B^{\prime}\right)  =\operatorname*{sub}%
-\nolimits_{k+1,k+2,\ldots,n}^{q_{1},q_{2},\ldots,q_{\ell}}\left(  B^{\prime
-}\right)  =\left(  \underbrace{b_{\gamma\left(  k+x\right)  ,q_{y}}%
-}_{\substack{=b_{r_{x},q_{y}}\\\text{(since }\gamma\left(  k+x\right)
-=r_{x}\\\text{(by (\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple2}),
-applied}\\\text{to }i=x\text{))}}}\right)  _{1\leq x\leq n-k,\ 1\leq y\leq
-\ell}\\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\operatorname*{sub}%
-\nolimits_{k+1,k+2,\ldots,n}^{q_{1},q_{2},\ldots,q_{\ell}}\left(  B^{\prime
-}\right)  \text{, since }B^{\prime}=\left(  b_{\gamma\left(  i\right)
-,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right) \\
-&  =\left(  b_{r_{x},q_{y}}\right)  _{1\leq x\leq n-k,\ 1\leq y\leq\ell}.
-\end{align*}
-Comparing this with (\ref{pf.lem.det.laplace-multi.Apq.short.sub2.pf.1}), we
-obtain $\operatorname*{sub}\nolimits_{w\left(  \widetilde{P}\right)
-}^{w\left(  \widetilde{Q}\right)  }B=\operatorname*{sub}\nolimits_{\left(
-k+1,k+2,\ldots,n\right)  }^{w\left(  \widetilde{Q}\right)  }B$. This proves
-(\ref{pf.lem.det.laplace-multi.Apq.short.sub2}).}.
-\end{vershort}
-
-\begin{verlong}
 Define an $n\times n$-matrix $A^{\prime}$ by $A^{\prime}=\left(
 a_{\gamma\left(  i\right)  ,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$.
 Define an $n\times n$-matrix $B^{\prime}$ by $B^{\prime}=\left(
@@ -61243,124 +61362,106 @@ Then,%
 Q\right)  }\left(  A^{\prime}\right)
 \label{pf.lem.det.laplace-multi.Apq.sub1}%
 \end{equation}
-\footnote{\textit{Proof of (\ref{pf.lem.det.laplace-multi.Apq.sub1}):} Recall
-that $w\left(  P\right)  $ is the list of all elements of $P$ in increasing
-order (with no repetitions) (by the definition of $w\left(  P\right)  $).
-Thus,%
-\begin{align*}
-w\left(  P\right)   &  =\left(  \text{the list of all elements of }P\text{ in
-increasing order (with no repetitions)}\right) \\
-&  =\left(  p_{1},p_{2},\ldots,p_{k}\right)
-\end{align*}
-(since $\left(  p_{1},p_{2},\ldots,p_{k}\right)  $ is the list of all elements
-of $P$ in increasing order (with no repetitions)).
-\par
-Write the list $w\left(  Q\right)  $ in the form $w\left(  Q\right)  =\left(
+\footnote{\textit{Proof of (\ref{pf.lem.det.laplace-multi.Apq.sub1}):} Write
+the list $w\left(  Q\right)  $ in the form $w\left(  Q\right)  =\left(
 q_{1},q_{2},\ldots,q_{\ell}\right)  $ for some $\ell\in\mathbb{N}$. (Actually,
 $\ell=k$, but we will not use this.)
 \par
-From $w\left(  P\right)  =\left(  p_{1},p_{2},\ldots,p_{k}\right)  $ and
-$w\left(  Q\right)  =\left(  q_{1},q_{2},\ldots,q_{\ell}\right)  $, we obtain%
+Recall that $\left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)
+,\ldots,\gamma\left(  k\right)  \right)  =w\left(  P\right)  $, so that
+$w\left(  P\right)  =\left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)
+,\ldots,\gamma\left(  k\right)  \right)  $.
+\par
+From $w\left(  P\right)  =\left(  \gamma\left(  1\right)  ,\gamma\left(
+2\right)  ,\ldots,\gamma\left(  k\right)  \right)  $ and $w\left(  Q\right)
+=\left(  q_{1},q_{2},\ldots,q_{\ell}\right)  $, we obtain%
 \begin{align}
 \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)  }A  &
-=\operatorname*{sub}\nolimits_{\left(  p_{1},p_{2},\ldots,p_{k}\right)
-}^{\left(  q_{1},q_{2},\ldots,q_{\ell}\right)  }A=\operatorname*{sub}%
-\nolimits_{p_{1},p_{2},\ldots,p_{k}}^{q_{1},q_{2},\ldots,q_{\ell}}A=\left(
-a_{p_{x},q_{y}}\right)  _{1\leq x\leq k,\ 1\leq y\leq\ell}%
+=\operatorname*{sub}\nolimits_{\left(  \gamma\left(  1\right)  ,\gamma\left(
+2\right)  ,\ldots,\gamma\left(  k\right)  \right)  }^{\left(  q_{1}%
+,q_{2},\ldots,q_{\ell}\right)  }A=\operatorname*{sub}\nolimits_{\gamma\left(
+1\right)  ,\gamma\left(  2\right)  ,\ldots,\gamma\left(  k\right)  }%
+^{q_{1},q_{2},\ldots,q_{\ell}}A=\left(  a_{\gamma\left(  x\right)  ,q_{y}%
+}\right)  _{1\leq x\leq k,\ 1\leq y\leq\ell}%
 \label{pf.lem.det.laplace-multi.Apq.sub1.pf.1}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\operatorname*{sub}%
-\nolimits_{p_{1},p_{2},\ldots,p_{k}}^{q_{1},q_{2},\ldots,q_{\ell}}A\text{,
-since }A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)
-.\nonumber
+\nolimits_{\gamma\left(  1\right)  ,\gamma\left(  2\right)  ,\ldots
+,\gamma\left(  k\right)  }^{q_{1},q_{2},\ldots,q_{\ell}}A\text{, since
+}A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  .\nonumber
 \end{align}
 \par
 On the other hand, from $w\left(  Q\right)  =\left(  q_{1},q_{2}%
 ,\ldots,q_{\ell}\right)  $, we obtain%
-\begin{align*}
+\[
 \operatorname*{sub}\nolimits_{\left(  1,2,\ldots,k\right)  }^{w\left(
-Q\right)  }\left(  A^{\prime}\right)   &  =\operatorname*{sub}%
-\nolimits_{\left(  1,2,\ldots,k\right)  }^{\left(  q_{1},q_{2},\ldots,q_{\ell
-}\right)  }\left(  A^{\prime}\right)  =\operatorname*{sub}%
-\nolimits_{1,2,\ldots,k}^{q_{1},q_{2},\ldots,q_{\ell}}\left(  A^{\prime
-}\right)  =\left(  \underbrace{a_{\gamma\left(  x\right)  ,q_{y}}%
-}_{\substack{=a_{p_{x},q_{y}}\\\text{(since }\gamma\left(  x\right)
-=p_{x}\\\text{(by (\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple1}),
-applied}\\\text{to }i=x\text{))}}}\right)  _{1\leq x\leq k,\ 1\leq y\leq\ell
-}\\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\operatorname*{sub}%
-\nolimits_{1,2,\ldots,k}^{q_{1},q_{2},\ldots,q_{\ell}}\left(  A^{\prime
-}\right)  \text{, since }A^{\prime}=\left(  a_{\gamma\left(  i\right)
-,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right) \\
-&  =\left(  a_{p_{x},q_{y}}\right)  _{1\leq x\leq k,\ 1\leq y\leq\ell}.
-\end{align*}
-Comparing this with (\ref{pf.lem.det.laplace-multi.Apq.sub1.pf.1}), we obtain
-$\operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)
+Q\right)  }\left(  A^{\prime}\right)  =\operatorname*{sub}\nolimits_{\left(
+1,2,\ldots,k\right)  }^{\left(  q_{1},q_{2},\ldots,q_{\ell}\right)  }\left(
+A^{\prime}\right)  =\operatorname*{sub}\nolimits_{1,2,\ldots,k}^{q_{1}%
+,q_{2},\ldots,q_{\ell}}\left(  A^{\prime}\right)  =\left(  a_{\gamma\left(
+x\right)  ,q_{y}}\right)  _{1\leq x\leq k,\ 1\leq y\leq\ell}%
+\]
+(by the definition of $\operatorname*{sub}\nolimits_{1,2,\ldots,k}%
+^{q_{1},q_{2},\ldots,q_{\ell}}\left(  A^{\prime}\right)  $, since $A^{\prime
+}=\left(  a_{\gamma\left(  i\right)  ,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}$). Comparing this with (\ref{pf.lem.det.laplace-multi.Apq.sub1.pf.1}), we
+obtain $\operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)
 }A=\operatorname*{sub}\nolimits_{\left(  1,2,\ldots,k\right)  }^{w\left(
 Q\right)  }\left(  A^{\prime}\right)  $. This proves
 (\ref{pf.lem.det.laplace-multi.Apq.sub1}).} and%
 \begin{equation}
 \operatorname*{sub}\nolimits_{w\left(  \widetilde{P}\right)  }^{w\left(
 \widetilde{Q}\right)  }B=\operatorname*{sub}\nolimits_{\left(  k+1,k+2,\ldots
-,n\right)  }^{w\left(  \widetilde{Q}\right)  }B
+,n\right)  }^{w\left(  \widetilde{Q}\right)  }\left(  B^{\prime}\right)
 \label{pf.lem.det.laplace-multi.Apq.sub2}%
 \end{equation}
-\footnote{\textit{Proof of (\ref{pf.lem.det.laplace-multi.Apq.sub2}):} Recall
-that $w\left(  \widetilde{P}\right)  $ is the list of all elements of
-$\widetilde{P}$ in increasing order (with no repetitions) (by the definition
-of $w\left(  \widetilde{P}\right)  $). Thus,%
-\begin{align*}
-w\left(  \widetilde{P}\right)   &  =\left(  \text{the list of all elements of
-}\widetilde{P}\text{ in increasing order (with no repetitions)}\right) \\
-&  =\left(  r_{1},r_{2},\ldots,r_{n-k}\right)
-\end{align*}
-(since $\left(  r_{1},r_{2},\ldots,r_{n-k}\right)  $ is the list of all
-elements of $\widetilde{P}$ in increasing order (with no repetitions)).
-\par
-Write the list $w\left(  \widetilde{Q}\right)  $ in the form $w\left(
+\footnote{\textit{Proof of (\ref{pf.lem.det.laplace-multi.Apq.sub2}):} Write
+the list $w\left(  \widetilde{Q}\right)  $ in the form $w\left(
 \widetilde{Q}\right)  =\left(  q_{1},q_{2},\ldots,q_{\ell}\right)  $ for some
 $\ell\in\mathbb{N}$. (Actually, $\ell=n-k$, but we will not use this.)
 \par
-From $w\left(  \widetilde{P}\right)  =\left(  r_{1},r_{2},\ldots
-,r_{n-k}\right)  $ and $w\left(  \widetilde{Q}\right)  =\left(  q_{1}%
-,q_{2},\ldots,q_{\ell}\right)  $, we obtain%
+Recall that $\left(  \gamma\left(  k+1\right)  ,\gamma\left(  k+2\right)
+,\ldots,\gamma\left(  n\right)  \right)  =w\left(  \widetilde{P}\right)  $.
+Thus, $w\left(  \widetilde{P}\right)  =\left(  \gamma\left(  k+1\right)
+,\gamma\left(  k+2\right)  ,\ldots,\gamma\left(  n\right)  \right)  $.
+\par
+From $w\left(  \widetilde{P}\right)  =\left(  \gamma\left(  k+1\right)
+,\gamma\left(  k+2\right)  ,\ldots,\gamma\left(  n\right)  \right)  $ and
+$w\left(  \widetilde{Q}\right)  =\left(  q_{1},q_{2},\ldots,q_{\ell}\right)
+$, we obtain%
 \begin{align}
 \operatorname*{sub}\nolimits_{w\left(  \widetilde{P}\right)  }^{w\left(
 \widetilde{Q}\right)  }B  &  =\operatorname*{sub}\nolimits_{\left(
-r_{1},r_{2},\ldots,r_{n-k}\right)  }^{\left(  q_{1},q_{2},\ldots,q_{\ell
-}\right)  }B=\operatorname*{sub}\nolimits_{r_{1},r_{2},\ldots,r_{n-k}}%
-^{q_{1},q_{2},\ldots,q_{\ell}}B=\left(  b_{r_{x},q_{y}}\right)  _{1\leq x\leq
+\gamma\left(  k+1\right)  ,\gamma\left(  k+2\right)  ,\ldots,\gamma\left(
+n\right)  \right)  }^{\left(  q_{1},q_{2},\ldots,q_{\ell}\right)
+}B=\operatorname*{sub}\nolimits_{\gamma\left(  k+1\right)  ,\gamma\left(
+k+2\right)  ,\ldots,\gamma\left(  n\right)  }^{q_{1},q_{2},\ldots,q_{\ell}%
+}B=\left(  b_{\gamma\left(  k+x\right)  ,q_{y}}\right)  _{1\leq x\leq
 n-k,\ 1\leq y\leq\ell}\label{pf.lem.det.laplace-multi.Apq.sub2.pf.1}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\operatorname*{sub}%
-\nolimits_{r_{1},r_{2},\ldots,r_{n-k}}^{q_{1},q_{2},\ldots,q_{\ell}}B\text{,
-since }B=\left(  b_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)
-.\nonumber
+\nolimits_{\gamma\left(  k+1\right)  ,\gamma\left(  k+2\right)  ,\ldots
+,\gamma\left(  n\right)  }^{q_{1},q_{2},\ldots,q_{\ell}}B\text{, since
+}B=\left(  b_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  .\nonumber
 \end{align}
 \par
 On the other hand, from $w\left(  \widetilde{Q}\right)  =\left(  q_{1}%
 ,q_{2},\ldots,q_{\ell}\right)  $, we obtain%
-\begin{align*}
+\[
 \operatorname*{sub}\nolimits_{\left(  k+1,k+2,\ldots,n\right)  }^{w\left(
-\widetilde{Q}\right)  }\left(  B^{\prime}\right)   &  =\operatorname*{sub}%
+\widetilde{Q}\right)  }\left(  B^{\prime}\right)  =\operatorname*{sub}%
 \nolimits_{\left(  k+1,k+2,\ldots,n\right)  }^{\left(  q_{1},q_{2}%
 ,\ldots,q_{\ell}\right)  }\left(  B^{\prime}\right)  =\operatorname*{sub}%
 \nolimits_{k+1,k+2,\ldots,n}^{q_{1},q_{2},\ldots,q_{\ell}}\left(  B^{\prime
-}\right)  =\left(  \underbrace{b_{\gamma\left(  k+x\right)  ,q_{y}}%
-}_{\substack{=b_{r_{x},q_{y}}\\\text{(since }\gamma\left(  k+x\right)
-=r_{x}\\\text{(by (\ref{pf.lem.det.laplace-multi.Apq.gamma-tuple2}),
-applied}\\\text{to }i=x\text{))}}}\right)  _{1\leq x\leq n-k,\ 1\leq y\leq
-\ell}\\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\operatorname*{sub}%
-\nolimits_{k+1,k+2,\ldots,n}^{q_{1},q_{2},\ldots,q_{\ell}}\left(  B^{\prime
-}\right)  \text{, since }B^{\prime}=\left(  b_{\gamma\left(  i\right)
-,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right) \\
-&  =\left(  b_{r_{x},q_{y}}\right)  _{1\leq x\leq n-k,\ 1\leq y\leq\ell}.
-\end{align*}
-Comparing this with (\ref{pf.lem.det.laplace-multi.Apq.sub2.pf.1}), we obtain
-$\operatorname*{sub}\nolimits_{w\left(  \widetilde{P}\right)  }^{w\left(
-\widetilde{Q}\right)  }B=\operatorname*{sub}\nolimits_{\left(  k+1,k+2,\ldots
-,n\right)  }^{w\left(  \widetilde{Q}\right)  }B$. This proves
-(\ref{pf.lem.det.laplace-multi.Apq.sub2}).}.
-\end{verlong}
+}\right)  =\left(  b_{\gamma\left(  k+x\right)  ,q_{y}}\right)  _{1\leq x\leq
+n-k,\ 1\leq y\leq\ell}%
+\]
+(by the definition of $\operatorname*{sub}\nolimits_{k+1,k+2,\ldots,n}%
+^{q_{1},q_{2},\ldots,q_{\ell}}\left(  B^{\prime}\right)  $, since $B^{\prime
+}=\left(  b_{\gamma\left(  i\right)  ,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}$). Comparing this with (\ref{pf.lem.det.laplace-multi.Apq.sub2.pf.1}), we
+obtain $\operatorname*{sub}\nolimits_{w\left(  \widetilde{P}\right)
+}^{w\left(  \widetilde{Q}\right)  }B=\operatorname*{sub}\nolimits_{\left(
+k+1,k+2,\ldots,n\right)  }^{w\left(  \widetilde{Q}\right)  }\left(  B^{\prime
+}\right)  $. This proves (\ref{pf.lem.det.laplace-multi.Apq.sub2}).}.
 
 Lemma \ref{lem.sol.det.laplace-multi.group-bij} shows that the map
 $S_{n}\rightarrow S_{n},\ \sigma\mapsto\sigma\circ\gamma$ is a bijection.
@@ -61644,12 +61745,12 @@ _{i\in\left\{  1,2,\ldots,k\right\}  }a_{\gamma\left(  i\right)
 \underbrace{\left(  \operatorname*{sub}\nolimits_{\left(  1,2,\ldots,k\right)
 }^{w\left(  Q\right)  }\left(  A^{\prime}\right)  \right)  }%
 _{\substack{=\operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
-Q\right)  }A\\\text{(by (\ref{pf.lem.det.laplace-multi.Apq.short.sub1}))}%
+Q\right)  }A\\\text{(by (\ref{pf.lem.det.laplace-multi.Apq.sub1}))}%
 }}\underbrace{\det\left(  \operatorname*{sub}\nolimits_{\left(  k+1,k+2,\ldots
 ,n\right)  }^{w\left(  \widetilde{Q}\right)  }\left(  B^{\prime}\right)
 \right)  }_{\substack{=\operatorname*{sub}\nolimits_{w\left(  \widetilde{P}%
 \right)  }^{w\left(  \widetilde{Q}\right)  }B\\\text{(by
-(\ref{pf.lem.det.laplace-multi.Apq.short.sub2}))}}}\\
+(\ref{pf.lem.det.laplace-multi.Apq.sub2}))}}}\\
 &  =\left(  -1\right)  ^{\left(  1+2+\cdots+k\right)  +\sum Q}\det\left(
 \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)
 }A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{P}%
@@ -61668,7 +61769,9 @@ _{i\in\left\{  1,2,\ldots,k\right\}  }a_{\gamma\left(  i\right)
 =Q}}\\\text{(since every }\sigma\in S_{n}\\\text{satisfies }\left(
 \sigma\circ\gamma\right)  \left(  \left\{  1,2,\ldots,k\right\}  \right)
 =\sigma\left(  P\right)  \\\text{(by (\ref{pf.lem.det.laplace-multi.Apq.3a}%
-)))}}}\left(  -1\right)  ^{\sigma\circ\gamma}\\
+)))}}}\underbrace{\left(  -1\right)  ^{\sigma\circ\gamma}}_{\substack{=\left(
+-1\right)  ^{\sigma}\cdot\left(  -1\right)  ^{\gamma}\\\text{(by
+(\ref{eq.sign.prod}), applied}\\\text{to }\tau=\gamma\text{)}}}\\
 &  \ \ \ \ \ \ \ \ \ \ \underbrace{\left(  \prod_{i\in\left\{  1,2,\ldots
 ,k\right\}  }a_{\gamma\left(  i\right)  ,\left(  \sigma\circ\gamma\right)
 \left(  i\right)  }\right)  }_{\substack{=\prod_{i\in P}a_{i,\sigma\left(
@@ -61686,12 +61789,6 @@ the sum, since}\\
 is a bijection}%
 \end{array}
 \right) \\
-&  =\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)  =Q}%
-}\underbrace{\left(  -1\right)  ^{\sigma\circ\gamma}}_{\substack{=\left(
--1\right)  ^{\sigma}\cdot\left(  -1\right)  ^{\gamma}\\\text{(by
-(\ref{eq.sign.prod}), applied}\\\text{to }\tau=\gamma\text{)}}}\left(
-\prod_{i\in P}a_{i,\sigma\left(  i\right)  }\right)  \left(  \prod
-_{i\in\widetilde{P}}b_{i,\sigma\left(  i\right)  }\right) \\
 &  =\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)  =Q}}\left(
 -1\right)  ^{\sigma}\cdot\left(  -1\right)  ^{\gamma}\left(  \prod_{i\in
 P}a_{i,\sigma\left(  i\right)  }\right)  \left(  \prod_{i\in\widetilde{P}%
@@ -61707,8 +61804,8 @@ we obtain%
 \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)
 }A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{P}%
 \right)  }^{w\left(  \widetilde{Q}\right)  }B\right) \\
-&  =\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)  =Q}}\left(
--1\right)  ^{\sigma}\cdot\left(  -1\right)  ^{\gamma}\left(  \prod_{i\in
+&  =\left(  -1\right)  ^{\gamma}\cdot\sum_{\substack{\sigma\in S_{n}%
+;\\\sigma\left(  P\right)  =Q}}\left(  -1\right)  ^{\sigma}\left(  \prod_{i\in
 P}a_{i,\sigma\left(  i\right)  }\right)  \left(  \prod_{i\in\widetilde{P}%
 }b_{i,\sigma\left(  i\right)  }\right)  .
 \end{align*}
@@ -61720,20 +61817,12 @@ P-\left(  1+2+\cdots+k\right)  }$, we obtain%
 \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)
 }A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{P}%
 \right)  }^{w\left(  \widetilde{Q}\right)  }B\right) \\
-&  =\left(  -1\right)  ^{\sum P-\left(  1+2+\cdots+k\right)  }%
-\underbrace{\left(  -1\right)  ^{\gamma}}_{\substack{=\left(  -1\right)
-^{\sum P-\left(  1+2+\cdots+k\right)  }\\\text{(by
-(\ref{pf.lem.det.laplace-multi.Apq.short.sign-gamma}))}}}\cdot\sum
+&  =\underbrace{\left(  -1\right)  ^{\sum P-\left(  1+2+\cdots+k\right)
+}\left(  -1\right)  ^{\gamma}}_{\substack{=1\\\text{(by
+(\ref{pf.lem.det.laplace-multi.Apq.sign-gamma-multed}))}}}\cdot\sum
 _{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)  =Q}}\left(  -1\right)
 ^{\sigma}\left(  \prod_{i\in P}a_{i,\sigma\left(  i\right)  }\right)  \left(
 \prod_{i\in\widetilde{P}}b_{i,\sigma\left(  i\right)  }\right) \\
-&  =\underbrace{\left(  -1\right)  ^{\sum P-\left(  1+2+\cdots+k\right)
-}\left(  -1\right)  ^{\sum P-\left(  1+2+\cdots+k\right)  }}_{=\left(  \left(
--1\right)  ^{\sum P-\left(  1+2+\cdots+k\right)  }\right)  ^{2}=1}\cdot
-\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)  =Q}}\left(
--1\right)  ^{\sigma}\left(  \prod_{i\in P}a_{i,\sigma\left(  i\right)
-}\right)  \left(  \prod_{i\in\widetilde{P}}b_{i,\sigma\left(  i\right)
-}\right) \\
 &  =\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)  =Q}}\left(
 -1\right)  ^{\sigma}\left(  \prod_{i\in P}a_{i,\sigma\left(  i\right)
 }\right)  \left(  \prod_{i\in\widetilde{P}}b_{i,\sigma\left(  i\right)
@@ -61772,7 +61861,7 @@ $a_{\gamma\left(  i\right)  ,j}$, $B^{\prime}$ and $b_{\gamma\left(  i\right)
 ,k\right\}  \right)  =Q}}\left(  -1\right)  ^{\sigma}\left(  \prod
 _{i\in\left\{  1,2,\ldots,k\right\}  }a_{\gamma\left(  i\right)
 ,\sigma\left(  i\right)  }\right)  \left(  \prod_{i\in\left\{  k+1,k+2,\ldots
-,n\right\}  }b_{\gamma\left(  i\right)  ,\sigma\left(  i\right)  }\right) \\
+,n\right\}  }b_{\gamma\left(  i\right)  ,\sigma\left(  i\right)  }\right)  \\
 &  =\left(  -1\right)  ^{\left(  1+2+\cdots+k\right)  +\sum Q}\det
 \underbrace{\left(  \operatorname*{sub}\nolimits_{\left(  1,2,\ldots,k\right)
 }^{w\left(  Q\right)  }\left(  A^{\prime}\right)  \right)  }%
@@ -61794,22 +61883,24 @@ Comparing this with%
 ,k\right\}  \right)  =Q}}\left(  -1\right)  ^{\sigma}\left(  \prod
 _{i\in\left\{  1,2,\ldots,k\right\}  }a_{\gamma\left(  i\right)
 ,\sigma\left(  i\right)  }\right)  \left(  \prod_{i\in\left\{  k+1,k+2,\ldots
-,n\right\}  }b_{\gamma\left(  i\right)  ,\sigma\left(  i\right)  }\right) \\
+,n\right\}  }b_{\gamma\left(  i\right)  ,\sigma\left(  i\right)  }\right)  \\
 &  =\underbrace{\sum_{\substack{\sigma\in S_{n};\\\left(  \sigma\circ
 \gamma\right)  \left(  \left\{  1,2,\ldots,k\right\}  \right)  =Q}%
 }}_{\substack{=\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)
 =Q}}\\\text{(since every }\sigma\in S_{n}\\\text{satisfies }\left(
 \sigma\circ\gamma\right)  \left(  \left\{  1,2,\ldots,k\right\}  \right)
 =\sigma\left(  P\right)  \\\text{(by (\ref{pf.lem.det.laplace-multi.Apq.3a}%
-)))}}}\left(  -1\right)  ^{\sigma\circ\gamma}\underbrace{\left(  \prod
-_{i\in\left\{  1,2,\ldots,k\right\}  }a_{\gamma\left(  i\right)  ,\left(
-\sigma\circ\gamma\right)  \left(  i\right)  }\right)  }_{\substack{=\prod
-_{i\in P}a_{i,\sigma\left(  i\right)  }\\\text{(by
-(\ref{pf.lem.det.laplace-multi.Apq.3b}))}}}\underbrace{\left(  \prod
-_{i\in\left\{  k+1,k+2,\ldots,n\right\}  }b_{\gamma\left(  i\right)  ,\left(
-\sigma\circ\gamma\right)  \left(  i\right)  }\right)  }_{\substack{=\prod
-_{i\in\widetilde{P}}b_{i,\sigma\left(  i\right)  }\\\text{(by
-(\ref{pf.lem.det.laplace-multi.Apq.3c}))}}}\\
+)))}}}\underbrace{\left(  -1\right)  ^{\sigma\circ\gamma}}_{\substack{=\left(
+-1\right)  ^{\sigma}\cdot\left(  -1\right)  ^{\gamma}\\\text{(by
+(\ref{eq.sign.prod}), applied}\\\text{to }\tau=\gamma\text{)}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \underbrace{\left(  \prod_{i\in\left\{  1,2,\ldots
+,k\right\}  }a_{\gamma\left(  i\right)  ,\left(  \sigma\circ\gamma\right)
+\left(  i\right)  }\right)  }_{\substack{=\prod_{i\in P}a_{i,\sigma\left(
+i\right)  }\\\text{(by (\ref{pf.lem.det.laplace-multi.Apq.3b}))}%
+}}\underbrace{\left(  \prod_{i\in\left\{  k+1,k+2,\ldots,n\right\}  }%
+b_{\gamma\left(  i\right)  ,\left(  \sigma\circ\gamma\right)  \left(
+i\right)  }\right)  }_{\substack{=\prod_{i\in\widetilde{P}}b_{i,\sigma\left(
+i\right)  }\\\text{(by (\ref{pf.lem.det.laplace-multi.Apq.3c}))}}}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
@@ -61818,17 +61909,11 @@ the sum, since}\\
 \text{the map }S_{n}\rightarrow S_{n},\ \sigma\mapsto\sigma\circ\gamma\text{
 is a bijection}%
 \end{array}
-\right) \\
-&  =\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)  =Q}%
-}\underbrace{\left(  -1\right)  ^{\sigma\circ\gamma}}_{\substack{=\left(
--1\right)  ^{\sigma}\cdot\left(  -1\right)  ^{\gamma}\\\text{(by
-(\ref{eq.sign.prod}), applied}\\\text{to }\tau=\gamma\text{)}}}\left(
-\prod_{i\in P}a_{i,\sigma\left(  i\right)  }\right)  \left(  \prod
-_{i\in\widetilde{P}}b_{i,\sigma\left(  i\right)  }\right) \\
+\right)  \\
 &  =\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)  =Q}}\left(
 -1\right)  ^{\sigma}\cdot\left(  -1\right)  ^{\gamma}\left(  \prod_{i\in
 P}a_{i,\sigma\left(  i\right)  }\right)  \left(  \prod_{i\in\widetilde{P}%
-}b_{i,\sigma\left(  i\right)  }\right) \\
+}b_{i,\sigma\left(  i\right)  }\right)  \\
 &  =\left(  -1\right)  ^{\gamma}\cdot\sum_{\substack{\sigma\in S_{n}%
 ;\\\sigma\left(  P\right)  =Q}}\left(  -1\right)  ^{\sigma}\left(  \prod_{i\in
 P}a_{i,\sigma\left(  i\right)  }\right)  \left(  \prod_{i\in\widetilde{P}%
@@ -61839,9 +61924,9 @@ we obtain%
 &  \left(  -1\right)  ^{\left(  1+2+\cdots+k\right)  +\sum Q}\det\left(
 \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)
 }A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{P}%
-\right)  }^{w\left(  \widetilde{Q}\right)  }B\right) \\
-&  =\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)  =Q}}\left(
--1\right)  ^{\sigma}\cdot\left(  -1\right)  ^{\gamma}\left(  \prod_{i\in
+\right)  }^{w\left(  \widetilde{Q}\right)  }B\right)  \\
+&  =\left(  -1\right)  ^{\gamma}\cdot\sum_{\substack{\sigma\in S_{n}%
+;\\\sigma\left(  P\right)  =Q}}\left(  -1\right)  ^{\sigma}\left(  \prod_{i\in
 P}a_{i,\sigma\left(  i\right)  }\right)  \left(  \prod_{i\in\widetilde{P}%
 }b_{i,\sigma\left(  i\right)  }\right)  .
 \end{align*}
@@ -61852,23 +61937,13 @@ P-\left(  1+2+\cdots+k\right)  }$, we obtain%
 -1\right)  ^{\left(  1+2+\cdots+k\right)  +\sum Q}\det\left(
 \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)
 }A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{P}%
-\right)  }^{w\left(  \widetilde{Q}\right)  }B\right) \\
-&  =\left(  -1\right)  ^{\sum P-\left(  1+2+\cdots+k\right)  }%
-\underbrace{\left(  -1\right)  ^{\gamma}}_{\substack{=\left(  -1\right)
-^{\sum P-\left(  1+2+\cdots+k\right)  }\\\text{(by
-(\ref{pf.lem.det.laplace-multi.Apq.sign-gamma}))}}}\cdot\sum_{\substack{\sigma
-\in S_{n};\\\sigma\left(  P\right)  =Q}}\left(  -1\right)  ^{\sigma}\left(
-\prod_{i\in P}a_{i,\sigma\left(  i\right)  }\right)  \left(  \prod
-_{i\in\widetilde{P}}b_{i,\sigma\left(  i\right)  }\right) \\
+\right)  }^{w\left(  \widetilde{Q}\right)  }B\right)  \\
 &  =\underbrace{\left(  -1\right)  ^{\sum P-\left(  1+2+\cdots+k\right)
-}\left(  -1\right)  ^{\sum P-\left(  1+2+\cdots+k\right)  }}%
-_{\substack{=\left(  \left(  -1\right)  ^{\sum P-\left(  1+2+\cdots+k\right)
-}\right)  ^{2}=\left(  -1\right)  ^{2\left(  \sum P-\left(  1+2+\cdots
-+k\right)  \right)  }=1\\\text{(since }2\left(  \sum P-\left(  1+2+\cdots
-+k\right)  \right)  \text{ is even)}}}\cdot\sum_{\substack{\sigma\in
-S_{n};\\\sigma\left(  P\right)  =Q}}\left(  -1\right)  ^{\sigma}\left(
-\prod_{i\in P}a_{i,\sigma\left(  i\right)  }\right)  \left(  \prod
-_{i\in\widetilde{P}}b_{i,\sigma\left(  i\right)  }\right) \\
+}\left(  -1\right)  ^{\gamma}}_{\substack{=1\\\text{(by
+(\ref{pf.lem.det.laplace-multi.Apq.sign-gamma-multed}))}}}\cdot\sum
+_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)  =Q}}\left(  -1\right)
+^{\sigma}\left(  \prod_{i\in P}a_{i,\sigma\left(  i\right)  }\right)  \left(
+\prod_{i\in\widetilde{P}}b_{i,\sigma\left(  i\right)  }\right)  \\
 &  =\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)  =Q}}\left(
 -1\right)  ^{\sigma}\left(  \prod_{i\in P}a_{i,\sigma\left(  i\right)
 }\right)  \left(  \prod_{i\in\widetilde{P}}b_{i,\sigma\left(  i\right)
@@ -61879,7 +61954,7 @@ Thus,%
 &  \sum_{\substack{\sigma\in S_{n};\\\sigma\left(  P\right)  =Q}}\left(
 -1\right)  ^{\sigma}\left(  \prod_{i\in P}a_{i,\sigma\left(  i\right)
 }\right)  \left(  \prod_{i\in\widetilde{P}}b_{i,\sigma\left(  i\right)
-}\right) \\
+}\right)  \\
 &  =\underbrace{\left(  -1\right)  ^{\sum P-\left(  1+2+\cdots+k\right)
 }\left(  -1\right)  ^{\left(  1+2+\cdots+k\right)  +\sum Q}}%
 _{\substack{=\left(  -1\right)  ^{\left(  \sum P-\left(  1+2+\cdots+k\right)
@@ -61889,7 +61964,7 @@ _{\substack{=\left(  -1\right)  ^{\left(  \sum P-\left(  1+2+\cdots+k\right)
 Q\right)  =\sum P+\sum Q\text{)}}}\det\left(  \operatorname*{sub}%
 \nolimits_{w\left(  P\right)  }^{w\left(  Q\right)  }A\right)  \det\left(
 \operatorname*{sub}\nolimits_{w\left(  \widetilde{P}\right)  }^{w\left(
-\widetilde{Q}\right)  }B\right) \\
+\widetilde{Q}\right)  }B\right)  \\
 &  =\left(  -1\right)  ^{\sum P+\sum Q}\det\left(  \operatorname*{sub}%
 \nolimits_{w\left(  P\right)  }^{w\left(  Q\right)  }A\right)  \det\left(
 \operatorname*{sub}\nolimits_{w\left(  \widetilde{P}\right)  }^{w\left(
@@ -64153,411 +64228,6 @@ $A_{\left[  \gamma,\delta\right]  }$ is $\left(  A_{\left[  \gamma
 ,\gamma\right]  }$. This completes the proof of Lemma
 \ref{lem.sol.addexe.jacobi-complement.Agd.inv}.
 \end{verlong}
-\end{proof}
-
-Next, we show a lemma which is a distillate of some parts of Exercise
-\ref{exe.Ialbe}:
-
-\begin{lemma}
-\label{lem.sol.addexe.jacobi-complement.Ialbe}Let $n\in\mathbb{N}$. For any
-subset $I$ of $\left\{  1,2,\ldots,n\right\}  $, we let $\widetilde{I}$ denote
-the complement $\left\{  1,2,\ldots,n\right\}  \setminus I$ of $I$.
-
-Let $I$ be a subset of $\left\{  1,2,\ldots,n\right\}  $. Let $k=\left\vert
-I\right\vert $. Then, there exists a $\sigma\in S_{n}$ satisfying $\left(
-\sigma\left(  1\right)  ,\sigma\left(  2\right)  ,\ldots,\sigma\left(
-k\right)  \right)  =w\left(  I\right)  $, $\left(  \sigma\left(  k+1\right)
-,\sigma\left(  k+2\right)  ,\ldots,\sigma\left(  n\right)  \right)  =w\left(
-\widetilde{I}\right)  $ and $\left(  -1\right)  ^{\sigma}=\left(  -1\right)
-^{\sum I-\left(  1+2+\cdots+k\right)  }$.
-\end{lemma}
-
-\begin{proof}
-[Proof of Lemma \ref{lem.sol.addexe.jacobi-complement.Ialbe}.]The following
-proof is similar to a part of the proof of Lemma
-\ref{lem.det.laplace-multi.Apq} above. (Indeed, one can easily find an almost
-complete proof of Lemma \ref{lem.sol.addexe.jacobi-complement.Ialbe} hiding
-inside the proof of Lemma \ref{lem.det.laplace-multi.Apq}. Nevertheless, I am
-redoing the proof here, to avoid confusion, since the proof of Lemma
-\ref{lem.det.laplace-multi.Apq} used different notations.)
-
-\begin{verlong}
-For every $h\in\mathbb{N}$, we let $\operatorname*{id}\nolimits_{h}$ denote
-the identity permutation $\operatorname*{id}\nolimits_{\left\{  1,2,\ldots
-,h\right\}  }\in S_{h}$. For every $h\in\mathbb{N}$, we have%
-\begin{equation}
-\left(  -1\right)  ^{\operatorname*{id}\nolimits_{h}}=1.
-\label{pf.lem.sol.addexe.jacobi-complement.Ialbe.1}%
-\end{equation}
-(Indeed, this is just a restatement of the well-known fact that $\left(
--1\right)  ^{\operatorname*{id}}=1$, where $\operatorname*{id}%
-=\operatorname*{id}\nolimits_{h}$ is the identity permutation in $S_{h}$.)
-\end{verlong}
-
-\begin{vershort}
-The definition of $\widetilde{I}$ yields $\widetilde{I}=\left\{
-1,2,\ldots,n\right\}  \setminus I$. Since $I$ is a subset of $\left\{
-1,2,\ldots,n\right\}  $, this leads to $\left\vert \widetilde{I}\right\vert
-=\underbrace{\left\vert \left\{  1,2,\ldots,n\right\}  \right\vert }%
-_{=n}-\underbrace{\left\vert I\right\vert }_{=k}=n-k$. Thus, $n-k=\left\vert
-\widetilde{I}\right\vert \geq0$, so that $n\geq k$ and thus $k\in\left\{
-0,1,\ldots,n\right\}  $.
-\end{vershort}
-
-\begin{verlong}
-The definition of $\widetilde{I}$ yields $\widetilde{I}=\left\{
-1,2,\ldots,n\right\}  \setminus I\subseteq\left\{  1,2,\ldots,n\right\}  $.
-Thus, $\widetilde{I}$ is a finite set (since $\left\{  1,2,\ldots,n\right\}  $
-is a finite set). Hence, $\left\vert \widetilde{I}\right\vert \in\mathbb{N}$.
-
-Also, $I\subseteq\left\{  1,2,\ldots,n\right\}  $. Thus, $I$ is a finite set
-(since $\left\{  1,2,\ldots,n\right\}  $ is a finite set). Hence, $\left\vert
-I\right\vert \in\mathbb{N}$. Thus, $k=\left\vert I\right\vert \in\mathbb{N}$.
-
-Also,%
-\begin{align*}
-\left\vert \underbrace{\widetilde{I}}_{=\left\{  1,2,\ldots,n\right\}
-\setminus I}\right\vert  &  =\left\vert \left\{  1,2,\ldots,n\right\}
-\setminus I\right\vert =\underbrace{\left\vert \left\{  1,2,\ldots,n\right\}
-\right\vert }_{=n}-\underbrace{\left\vert I\right\vert }_{=k}%
-\ \ \ \ \ \ \ \ \ \ \left(  \text{since }I\subseteq\left\{  1,2,\ldots
-,n\right\}  \right) \\
-&  =n-k.
-\end{align*}
-Hence, $n-k=\left\vert \widetilde{I}\right\vert \in\mathbb{N}$; thus,
-$n-k\geq0$. In other words, $k\leq n$. Combined with $k\geq0$ (since
-$k=\left\vert I\right\vert \in\mathbb{N}$), this yields $k\in\left\{
-0,1,\ldots,n\right\}  $.
-\end{verlong}
-
-We know that $w\left(  I\right)  $ is the list of all elements of $I$ in
-increasing order (with no repetitions) (by the definition of $w\left(
-I\right)  $). Thus, $w\left(  I\right)  $ is a list of $k$ elements (since
-$\left\vert I\right\vert =k$).
-
-Write $w\left(  I\right)  $ in the form $w\left(  I\right)  =\left(
-a_{1},a_{2},\ldots,a_{k}\right)  $. (This is possible, since $w\left(
-I\right)  $ is a list of $k$ elements.)
-
-We know that $w\left(  I\right)  $ is the list of all elements of $I$ in
-increasing order (with no repetitions). In other words, $\left(  a_{1}%
-,a_{2},\ldots,a_{k}\right)  $ is the list of all elements of $I$ in increasing
-order (with no repetitions) (since $w\left(  I\right)  =\left(  a_{1}%
-,a_{2},\ldots,a_{k}\right)  $).
-
-We know that $w\left(  \widetilde{I}\right)  $ is the list of all elements of
-$\widetilde{I}$ in increasing order (with no repetitions) (by the definition
-of $w\left(  \widetilde{I}\right)  $). Thus, $w\left(  \widetilde{I}\right)  $
-is a list of $n-k$ elements (since $\left\vert \widetilde{I}\right\vert =n-k$).
-
-Write $w\left(  \widetilde{I}\right)  $ in the form $w\left(  \widetilde{I}%
-\right)  =\left(  b_{1},b_{2},\ldots,b_{n-k}\right)  $. (This is possible,
-since $w\left(  \widetilde{I}\right)  $ is a list of $n-k$ elements.)
-
-We know that $w\left(  \widetilde{I}\right)  $ is the list of all elements of
-$\widetilde{I}$ in increasing order (with no repetitions). In other words,
-$\left(  b_{1},b_{2},\ldots,b_{n-k}\right)  $ is the list of all elements of
-$\widetilde{I}$ in increasing order (with no repetitions) (since $w\left(
-\widetilde{I}\right)  =\left(  b_{1},b_{2},\ldots,b_{n-k}\right)  $). In other
-words, $\left(  b_{1},b_{2},\ldots,b_{n-k}\right)  $ is the list of all
-elements of $\left\{  1,2,\ldots,n\right\}  \setminus I$ in increasing order
-(with no repetitions) (since $\widetilde{I}=\left\{  1,2,\ldots,n\right\}
-\setminus I$).
-
-Now we know that $\left(  a_{1},a_{2},\ldots,a_{k}\right)  $ is the list of
-all elements of $I$ in increasing order (with no repetitions), and that
-$\left(  b_{1},b_{2},\ldots,b_{n-k}\right)  $ is the list of all elements of
-$\left\{  1,2,\ldots,n\right\}  \setminus I$ in increasing order (with no
-repetitions). Hence, for every $\alpha\in S_{k}$ and $\beta\in S_{n-k}$, we
-can define an element $\sigma_{I,\alpha,\beta}\in S_{n}$ according to Exercise
-\ref{exe.Ialbe} \textbf{(a)}. Consider this $\sigma_{I,\alpha,\beta}$.
-Exercise \ref{exe.Ialbe} \textbf{(b)} shows that for every $\alpha\in S_{k}$
-and $\beta\in S_{n-k}$, we have%
-\[
-\ell\left(  \sigma_{I,\alpha,\beta}\right)  =\ell\left(  \alpha\right)
-+\ell\left(  \beta\right)  +\sum I-\left(  1+2+\cdots+k\right)
-\]
-and%
-\begin{equation}
-\left(  -1\right)  ^{\sigma_{I,\alpha,\beta}}=\left(  -1\right)  ^{\alpha
-}\cdot\left(  -1\right)  ^{\beta}\cdot\left(  -1\right)  ^{\sum I-\left(
-1+2+\cdots+k\right)  }.
-\label{pf.lem.sol.addexe.jacobi-complement.Ialbe.sign-gen}%
-\end{equation}
-
-
-\begin{vershort}
-Now, consider the identity permutations $\operatorname*{id}\in S_{k}$ and
-$\operatorname*{id}\in S_{n-k}$. (These are (in general) two different
-permutations, although we denote them both by $\operatorname*{id}$.) They give
-rise to an element $\sigma_{I,\operatorname*{id}\nolimits_{k}%
-,\operatorname*{id}\nolimits_{n-k}}\in S_{n}$ (obtained by setting
-$\alpha=\operatorname*{id}\in S_{k}$ and $\beta=\operatorname*{id}\in S_{n-k}$
-in the definition of $\sigma_{I,\alpha,\beta}$). Denote this element
-$\sigma_{I,\operatorname*{id}\nolimits_{k},\operatorname*{id}\nolimits_{n-k}}$
-by $\gamma$. Thus, $\gamma=\sigma_{I,\operatorname*{id}\nolimits_{k}%
-,\operatorname*{id}\nolimits_{n-k}}$, so that%
-\begin{align}
-\left(  -1\right)  ^{\gamma}  &  =\left(  -1\right)  ^{\sigma
-_{I,\operatorname*{id},\operatorname*{id}}}=\underbrace{\left(  -1\right)
-^{\operatorname*{id}}}_{=1}\cdot\underbrace{\left(  -1\right)
-^{\operatorname*{id}}}_{=1}\cdot\left(  -1\right)  ^{\sum I-\left(
-1+2+\cdots+k\right)  }\nonumber\\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
-(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.sign-gen}) (applied to }%
-\alpha=\operatorname*{id}\nolimits_{k}\text{ and }\beta=\operatorname*{id}%
-\nolimits_{n-k}\text{)}\right) \nonumber\\
-&  =\left(  -1\right)  ^{\sum I-\left(  1+2+\cdots+k\right)  }.
-\label{pf.lem.sol.addexe.jacobi-complement.Ialbe.short.sign-gamma}%
-\end{align}
-
-\end{vershort}
-
-\begin{verlong}
-Now, $\operatorname*{id}\nolimits_{k}\in S_{k}$ and $\operatorname*{id}%
-\nolimits_{n-k}\in S_{n-k}$. Hence, an element $\sigma_{I,\operatorname*{id}%
-\nolimits_{k},\operatorname*{id}\nolimits_{n-k}}\in S_{n}$ is defined. Denote
-this element $\sigma_{I,\operatorname*{id}\nolimits_{k},\operatorname*{id}%
-\nolimits_{n-k}}$ by $\gamma$. Thus, $\gamma=\sigma_{I,\operatorname*{id}%
-\nolimits_{k},\operatorname*{id}\nolimits_{n-k}}$, so that%
-\begin{align}
-\left(  -1\right)  ^{\gamma}  &  =\left(  -1\right)  ^{\sigma
-_{I,\operatorname*{id}\nolimits_{k},\operatorname*{id}\nolimits_{n-k}}%
-}=\underbrace{\left(  -1\right)  ^{\operatorname*{id}\nolimits_{k}}%
-}_{\substack{=1\\\text{(by (\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.1}%
-)}\\\text{(applied to }h=k\text{))}}}\cdot\underbrace{\left(  -1\right)
-^{\operatorname*{id}\nolimits_{n-k}}}_{\substack{=1\\\text{(by
-(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.1})}\\\text{(applied to
-}h=n-k\text{))}}}\cdot\left(  -1\right)  ^{\sum I-\left(  1+2+\cdots+k\right)
-}\nonumber\\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
-(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.sign-gen}) (applied to }%
-\alpha=\operatorname*{id}\nolimits_{k}\text{ and }\beta=\operatorname*{id}%
-\nolimits_{n-k}\text{)}\right) \nonumber\\
-&  =\left(  -1\right)  ^{\sum I-\left(  1+2+\cdots+k\right)  }.
-\label{pf.lem.sol.addexe.jacobi-complement.Ialbe.sign-gamma}%
-\end{align}
-
-\end{verlong}
-
-Now, we claim that%
-\begin{equation}
-\left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)  ,\ldots,\gamma\left(
-k\right)  \right)  =\left(  a_{1},a_{2},\ldots,a_{k}\right)
-\label{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple1}%
-\end{equation}
-and%
-\begin{equation}
-\left(  \gamma\left(  k+1\right)  ,\gamma\left(  k+2\right)  ,\ldots
-,\gamma\left(  n\right)  \right)  =\left(  b_{1},b_{2},\ldots,b_{n-k}\right)
-. \label{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple2}%
-\end{equation}
-
-
-\begin{vershort}
-\textit{Proof of (\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple1}%
-) and (\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple2}):} The
-permutation $\gamma$ is $\sigma_{I,\operatorname*{id},\operatorname*{id}}$. In
-other words, the permutation $\gamma$ is the unique $\sigma\in S_{n}$
-satisfying%
-\begin{equation}
-\left(  \sigma\left(  1\right)  ,\sigma\left(  2\right)  ,\ldots,\sigma\left(
-n\right)  \right)  =\left(  a_{\operatorname*{id}\left(  1\right)
-},a_{\operatorname*{id}\left(  2\right)  },\ldots,a_{\operatorname*{id}\left(
-k\right)  },b_{\operatorname*{id}\left(  1\right)  },b_{\operatorname*{id}%
-\left(  2\right)  },\ldots,b_{\operatorname*{id}\left(  n-k\right)  }\right)
-\label{pf.lem.sol.addexe.jacobi-complement.Ialbe.short.gamma-tuple.pf.1}%
-\end{equation}
-(because this is how $\sigma_{I,\operatorname*{id},\operatorname*{id}}$ was
-defined). Hence, $\gamma$ is a $\sigma\in S_{n}$ satisfying
-(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.short.gamma-tuple.pf.1})
-(since $\gamma=\sigma_{I,\operatorname*{id},\operatorname*{id}}$). In other
-words, $\gamma$ is an element of $S_{n}$ and satisfies%
-\[
-\left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)  ,\ldots,\gamma\left(
-n\right)  \right)  =\left(  a_{\operatorname*{id}\left(  1\right)
-},a_{\operatorname*{id}\left(  2\right)  },\ldots,a_{\operatorname*{id}\left(
-k\right)  },b_{\operatorname*{id}\left(  1\right)  },b_{\operatorname*{id}%
-\left(  2\right)  },\ldots,b_{\operatorname*{id}\left(  n-k\right)  }\right)
-.
-\]
-Thus,%
-\begin{align*}
-\left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)  ,\ldots,\gamma\left(
-n\right)  \right)   &  =\left(  a_{\operatorname*{id}\left(  1\right)
-},a_{\operatorname*{id}\left(  2\right)  },\ldots,a_{\operatorname*{id}\left(
-k\right)  },b_{\operatorname*{id}\left(  1\right)  },b_{\operatorname*{id}%
-\left(  2\right)  },\ldots,b_{\operatorname*{id}\left(  n-k\right)  }\right)
-\\
-&  =\left(  a_{1},a_{2},\ldots,a_{k},b_{1},b_{2},\ldots,b_{n-k}\right)  .
-\end{align*}
-Hence,%
-\begin{equation}
-\left(  \gamma\left(  i\right)  =a_{i}\ \ \ \ \ \ \ \ \ \ \text{for every
-}i\in\left\{  1,2,\ldots,k\right\}  \right)
-\label{pf.lem.sol.addexe.jacobi-complement.Ialbe.short.gamma-tuple.pf.gamma1}%
-\end{equation}
-and%
-\begin{equation}
-\left(  \gamma\left(  i\right)  =b_{i-k}\ \ \ \ \ \ \ \ \ \ \text{for every
-}i\in\left\{  k+1,k+2,\ldots,n\right\}  \right)  .
-\label{pf.lem.sol.addexe.jacobi-complement.Ialbe.short.gamma-tuple.pf.gamma2}%
-\end{equation}
-Now, (\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple1}) follows
-immediately from
-(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.short.gamma-tuple.pf.gamma1}).
-Furthermore, (\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple2})
-follows from
-(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.short.gamma-tuple.pf.gamma2})
-(applied to $k+i$ instead of $i$). Hence, both
-(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple1}) and
-(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple2}) are proven.
-\end{vershort}
-
-\begin{verlong}
-\textit{Proof of (\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple1}%
-) and (\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple2}):} The
-permutation $\sigma_{I,\operatorname*{id}\nolimits_{k},\operatorname*{id}%
-\nolimits_{n-k}}$ is the unique $\sigma\in S_{n}$ satisfying%
-\begin{equation}
-\left(  \sigma\left(  1\right)  ,\sigma\left(  2\right)  ,\ldots,\sigma\left(
-n\right)  \right)  =\left(  a_{\operatorname*{id}\nolimits_{k}\left(
-1\right)  },a_{\operatorname*{id}\nolimits_{k}\left(  2\right)  }%
-,\ldots,a_{\operatorname*{id}\nolimits_{k}\left(  k\right)  }%
-,b_{\operatorname*{id}\nolimits_{n-k}\left(  1\right)  },b_{\operatorname*{id}%
-\nolimits_{n-k}\left(  2\right)  },\ldots,b_{\operatorname*{id}\nolimits_{n-k}%
-\left(  n-k\right)  }\right)
-\label{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple.pf.1}%
-\end{equation}
-(because this is how $\sigma_{I,\operatorname*{id}\nolimits_{k}%
-,\operatorname*{id}\nolimits_{n-k}}$ is defined). Hence, $\sigma
-_{I,\operatorname*{id}\nolimits_{k},\operatorname*{id}\nolimits_{n-k}}$ is a
-$\sigma\in S_{n}$ satisfying
-(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple.pf.1}). In other
-words, $\gamma$ is a $\sigma\in S_{n}$ satisfying
-(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple.pf.1}) (since
-$\gamma=\sigma_{I,\operatorname*{id}\nolimits_{k},\operatorname*{id}%
-\nolimits_{n-k}}$). In other words, $\gamma$ is an element of $S_{n}$ and
-satisfies%
-\begin{align}
-&  \left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)  ,\ldots
-,\gamma\left(  n\right)  \right) \nonumber\\
-&  =\left(  a_{\operatorname*{id}\nolimits_{k}\left(  1\right)  }%
-,a_{\operatorname*{id}\nolimits_{k}\left(  2\right)  },\ldots
-,a_{\operatorname*{id}\nolimits_{k}\left(  k\right)  },b_{\operatorname*{id}%
-\nolimits_{n-k}\left(  1\right)  },b_{\operatorname*{id}\nolimits_{n-k}\left(
-2\right)  },\ldots,b_{\operatorname*{id}\nolimits_{n-k}\left(  n-k\right)
-}\right)  . \label{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple.pf.2}%
-\end{align}
-Now, $\left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)  ,\ldots
-,\gamma\left(  k\right)  \right)  =\left(  a_{\operatorname*{id}%
-\nolimits_{k}\left(  1\right)  },a_{\operatorname*{id}\nolimits_{k}\left(
-2\right)  },\ldots,a_{\operatorname*{id}\nolimits_{k}\left(  k\right)
-}\right)  $\ \ \ \ \footnote{\textit{Proof.} We have%
-\begin{align*}
-&  \left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)  ,\ldots
-,\gamma\left(  k\right)  \right) \\
-&  =\left(  \text{the list of the first }k\text{ entries of the list
-}\underbrace{\left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)
-,\ldots,\gamma\left(  n\right)  \right)  }_{\substack{=\left(
-a_{\operatorname*{id}\nolimits_{k}\left(  1\right)  },a_{\operatorname*{id}%
-\nolimits_{k}\left(  2\right)  },\ldots,a_{\operatorname*{id}\nolimits_{k}%
-\left(  k\right)  },b_{\operatorname*{id}\nolimits_{n-k}\left(  1\right)
-},b_{\operatorname*{id}\nolimits_{n-k}\left(  2\right)  },\ldots
-,b_{\operatorname*{id}\nolimits_{n-k}\left(  n-k\right)  }\right)  \\\text{(by
-(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple.pf.2}))}}}\right)
-\\
-&  =\left(  \text{the list of the first }k\text{ entries of the list }\left(
-a_{\operatorname*{id}\nolimits_{k}\left(  1\right)  },a_{\operatorname*{id}%
-\nolimits_{k}\left(  2\right)  },\ldots,a_{\operatorname*{id}\nolimits_{k}%
-\left(  k\right)  },b_{\operatorname*{id}\nolimits_{n-k}\left(  1\right)
-},b_{\operatorname*{id}\nolimits_{n-k}\left(  2\right)  },\ldots
-,b_{\operatorname*{id}\nolimits_{n-k}\left(  n-k\right)  }\right)  \right) \\
-&  =\left(  a_{\operatorname*{id}\nolimits_{k}\left(  1\right)  }%
-,a_{\operatorname*{id}\nolimits_{k}\left(  2\right)  },\ldots
-,a_{\operatorname*{id}\nolimits_{k}\left(  k\right)  }\right)  ,
-\end{align*}
-qed.}. In other words, $\gamma\left(  i\right)  =a_{\operatorname*{id}%
-\nolimits_{k}\left(  i\right)  }$ for every $i\in\left\{  1,2,\ldots
-,k\right\}  $. Hence, for every $i\in\left\{  1,2,\ldots,k\right\}  $, we have
-$\gamma\left(  i\right)  =a_{\operatorname*{id}\nolimits_{k}\left(  i\right)
-}=a_{i}$ (since $\underbrace{\operatorname*{id}\nolimits_{k}}%
-_{=\operatorname*{id}\nolimits_{\left\{  1,2,\ldots,k\right\}  }}\left(
-i\right)  =\operatorname*{id}\nolimits_{\left\{  1,2,\ldots,k\right\}
-}\left(  i\right)  =i$). In other words, $\left(  \gamma\left(  1\right)
-,\gamma\left(  2\right)  ,\ldots,\gamma\left(  k\right)  \right)  =\left(
-a_{1},a_{2},\ldots,a_{k}\right)  $. This proves
-(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple1}).
-
-Furthermore, $\left(  \gamma\left(  k+1\right)  ,\gamma\left(  k+2\right)
-,\ldots,\gamma\left(  n\right)  \right)  =\left(  b_{\operatorname*{id}%
-\nolimits_{n-k}\left(  1\right)  },b_{\operatorname*{id}\nolimits_{n-k}\left(
-2\right)  },\ldots,b_{\operatorname*{id}\nolimits_{n-k}\left(  n-k\right)
-}\right)  $\ \ \ \ \footnote{\textit{Proof.} We have%
-\begin{align*}
-&  \left(  \gamma\left(  k+1\right)  ,\gamma\left(  k+2\right)  ,\ldots
-,\gamma\left(  n\right)  \right) \\
-&  =\left(  \text{the list of the last }n-k\text{ entries of the list
-}\underbrace{\left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)
-,\ldots,\gamma\left(  n\right)  \right)  }_{\substack{=\left(
-a_{\operatorname*{id}\nolimits_{k}\left(  1\right)  },a_{\operatorname*{id}%
-\nolimits_{k}\left(  2\right)  },\ldots,a_{\operatorname*{id}\nolimits_{k}%
-\left(  k\right)  },b_{\operatorname*{id}\nolimits_{n-k}\left(  1\right)
-},b_{\operatorname*{id}\nolimits_{n-k}\left(  2\right)  },\ldots
-,b_{\operatorname*{id}\nolimits_{n-k}\left(  n-k\right)  }\right)  \\\text{(by
-(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple.pf.2}))}}}\right)
-\\
-&  =\left(  \text{the list of the last }n-k\text{ entries of the list }\left(
-a_{\operatorname*{id}\nolimits_{k}\left(  1\right)  },a_{\operatorname*{id}%
-\nolimits_{k}\left(  2\right)  },\ldots,a_{\operatorname*{id}\nolimits_{k}%
-\left(  k\right)  },b_{\operatorname*{id}\nolimits_{n-k}\left(  1\right)
-},b_{\operatorname*{id}\nolimits_{n-k}\left(  2\right)  },\ldots
-,b_{\operatorname*{id}\nolimits_{n-k}\left(  n-k\right)  }\right)  \right) \\
-&  =\left(  b_{\operatorname*{id}\nolimits_{n-k}\left(  1\right)
-},b_{\operatorname*{id}\nolimits_{n-k}\left(  2\right)  },\ldots
-,b_{\operatorname*{id}\nolimits_{n-k}\left(  n-k\right)  }\right)  ,
-\end{align*}
-qed.}. In other words, $\gamma\left(  k+i\right)  =b_{\operatorname*{id}%
-\nolimits_{n-k}\left(  i\right)  }$ for every $i\in\left\{  1,2,\ldots
-,n-k\right\}  $. Hence, for every $i\in\left\{  1,2,\ldots,n-k\right\}  $, we
-have $\gamma\left(  k+i\right)  =b_{\operatorname*{id}\nolimits_{n-k}\left(
-i\right)  }=b_{i}$ (since $\underbrace{\operatorname*{id}\nolimits_{n-k}%
-}_{=\operatorname*{id}\nolimits_{\left\{  1,2,\ldots,n-k\right\}  }}\left(
-i\right)  =\operatorname*{id}\nolimits_{\left\{  1,2,\ldots,n-k\right\}
-}\left(  i\right)  =i$). In other words, $\left(  \gamma\left(  k+1\right)
-,\gamma\left(  k+2\right)  ,\ldots,\gamma\left(  n\right)  \right)  =\left(
-b_{1},b_{2},\ldots,b_{n-k}\right)  $. This proves
-(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple2}). Hence, both
-(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple1}) and
-(\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple2}) are proven.
-\end{verlong}
-
-Comparing (\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple1}) with
-$w\left(  I\right)  =\left(  a_{1},a_{2},\ldots,a_{k}\right)  $, we obtain
-\[
-\left(  \gamma\left(  1\right)  ,\gamma\left(  2\right)  ,\ldots,\gamma\left(
-k\right)  \right)  =w\left(  I\right)  .
-\]
-Comparing (\ref{pf.lem.sol.addexe.jacobi-complement.Ialbe.gamma-tuple2}) with
-$w\left(  \widetilde{I}\right)  =\left(  b_{1},b_{2},\ldots,b_{n-k}\right)  $,
-we obtain
-\[
-\left(  \gamma\left(  k+1\right)  ,\gamma\left(  k+2\right)  ,\ldots
-,\gamma\left(  n\right)  \right)  =w\left(  \widetilde{I}\right)  .
-\]
-Now, we have shown that the permutation $\gamma\in S_{n}$ satisfies $\left(
-\gamma\left(  1\right)  ,\gamma\left(  2\right)  ,\ldots,\gamma\left(
-k\right)  \right)  =w\left(  I\right)  $, $\left(  \gamma\left(  k+1\right)
-,\gamma\left(  k+2\right)  ,\ldots,\gamma\left(  n\right)  \right)  =w\left(
-\widetilde{I}\right)  $ and $\left(  -1\right)  ^{\gamma}=\left(  -1\right)
-^{\sum I-\left(  1+2+\cdots+k\right)  }$. Hence, there exists a $\sigma\in
-S_{n}$ satisfying $\left(  \sigma\left(  1\right)  ,\sigma\left(  2\right)
-,\ldots,\sigma\left(  k\right)  \right)  =w\left(  I\right)  $, \newline%
-$\left(  \sigma\left(  k+1\right)  ,\sigma\left(  k+2\right)  ,\ldots
-,\sigma\left(  n\right)  \right)  =w\left(  \widetilde{I}\right)  $ and
-$\left(  -1\right)  ^{\sigma}=\left(  -1\right)  ^{\sum I-\left(
-1+2+\cdots+k\right)  }$ (namely, $\sigma=\gamma$). This proves Lemma
-\ref{lem.sol.addexe.jacobi-complement.Ialbe}.
 \end{proof}
 
 We can finally step to the solution of Additional exercise
