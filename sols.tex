@@ -24242,6 +24242,42 @@ of Lemma \ref{lem.det.laplace-multi.Apq} by permuting the rows of the
 matrices. Finally, prove Theorem \ref{thm.det.laplace-multi}.]
 \end{exercise}
 
+The following exercise generalizes Proposition \ref{prop.laplace.0} in the
+same way as Theorem \ref{thm.det.laplace-multi} generalizes Theorem
+\ref{thm.laplace.gen}:
+
+\begin{exercise}
+\label{exe.det.laplace-multi.0}Let $n\in\mathbb{N}$. Let $A\in\mathbb{K}%
+^{n\times n}$. For any subset $I$ of $\left\{  1,2,\ldots,n\right\}  $, we let
+$\widetilde{I}$ denote the complement $\left\{  1,2,\ldots,n\right\}
+\setminus I$ of $I$. Let $R$ be a subset of $\left\{  1,2,\ldots,n\right\}  $.
+Prove the following:
+
+\textbf{(a)} For every subset $P$ of $\left\{  1,2,\ldots,n\right\}  $
+satisfying $\left\vert P\right\vert =\left\vert R\right\vert $ and $P\neq R$,
+we have%
+\[
+0=\sum_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+Q\right\vert =\left\vert P\right\vert }}\left(  -1\right)  ^{\sum P+\sum
+Q}\det\left(  \operatorname*{sub}\nolimits_{w\left(  R\right)  }^{w\left(
+Q\right)  }A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(
+\widetilde{P}\right)  }^{w\left(  \widetilde{Q}\right)  }A\right)  .
+\]
+
+
+\textbf{(b)} For every subset $Q$ of $\left\{  1,2,\ldots,n\right\}  $
+satisfying $\left\vert Q\right\vert =\left\vert R\right\vert $ and $Q\neq R$,
+we have%
+\[
+0=\sum_{\substack{P\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+P\right\vert =\left\vert Q\right\vert }}\left(  -1\right)  ^{\sum P+\sum
+Q}\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+R\right)  }A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(
+\widetilde{P}\right)  }^{w\left(  \widetilde{Q}\right)  }A\right)  .
+\]
+
+\end{exercise}
+
 \subsection{$\det\left(  A+B\right)  $}
 
 As Theorem \ref{thm.det(AB)} shows, the determinant of the product $AB$ of two
@@ -62370,6 +62406,1129 @@ This proves Theorem \ref{thm.det.laplace-multi} \textbf{(b)}.
 [Solution to Exercise \ref{exe.det.laplace-multi}.]We have now proven both
 Lemma \ref{lem.det.laplace-multi.Apq} and Theorem \ref{thm.det.laplace-multi}.
 Thus, Exercise \ref{exe.det.laplace-multi} is solved.
+\end{proof}
+
+\subsection{Solution to Exercise \ref{exe.det.laplace-multi.0}}
+
+Before we start solving Exercise \ref{exe.det.laplace-multi.0}, let us show a
+trivial lemma:
+
+\begin{lemma}
+\label{lem.sol.det.laplace-multi.0.subAT}Let $n\in\mathbb{N}$ and
+$m\in\mathbb{N}$. Let $A$ be an $n\times m$-matrix. Let $\mathbf{i}$ be a
+finite list of elements of $\left\{  1,2,\ldots,n\right\}  $. Let $\mathbf{j}$
+be a finite list of elements of $\left\{  1,2,\ldots,m\right\}  $. Then,
+$\left(  \operatorname*{sub}\nolimits_{\mathbf{i}}^{\mathbf{j}}A\right)
+^{T}=\operatorname*{sub}\nolimits_{\mathbf{j}}^{\mathbf{i}}\left(
+A^{T}\right)  $.
+\end{lemma}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.det.laplace-multi.0.subAT}.]Write the list
+$\mathbf{i}$ as $\left(  i_{1},i_{2},\ldots,i_{u}\right)  $. Write the list
+$\mathbf{j}$ as $\left(  j_{1},j_{2},\ldots,j_{v}\right)  $. Then, Lemma
+\ref{lem.sol.det.laplace-multi.0.subAT} follows immediately from Proposition
+\ref{prop.submatrix.easy} \textbf{(e)}.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.det.laplace-multi.0.subAT}.]Write the list
+$\mathbf{i}$ in the form $\mathbf{i}=\left(  i_{1},i_{2},\ldots,i_{u}\right)
+$. Then, $\left(  i_{1},i_{2},\ldots,i_{u}\right)  =\mathbf{i}$ is a list of
+elements of $\left\{  1,2,\ldots,n\right\}  $. In other words, $i_{1}%
+,i_{2},\ldots,i_{u}$ are some elements of $\left\{  1,2,\ldots,n\right\}  $.
+
+Write the list $\mathbf{j}$ in the form $\mathbf{j}=\left(  j_{1},j_{2}%
+,\ldots,j_{v}\right)  $. Then, $\left(  j_{1},j_{2},\ldots,j_{v}\right)
+=\mathbf{j}$ is a list of elements of $\left\{  1,2,\ldots,m\right\}  $. In
+other words, $j_{1},j_{2},\ldots,j_{v}$ be some elements of $\left\{
+1,2,\ldots,m\right\}  $.
+
+From $\mathbf{i}=\left(  i_{1},i_{2},\ldots,i_{u}\right)  $ and $\mathbf{j}%
+=\left(  j_{1},j_{2},\ldots,j_{v}\right)  $, we obtain%
+\[
+\operatorname*{sub}\nolimits_{\mathbf{i}}^{\mathbf{j}}A=\operatorname*{sub}%
+\nolimits_{\left(  i_{1},i_{2},\ldots,i_{u}\right)  }^{\left(  j_{1}%
+,j_{2},\ldots,j_{v}\right)  }A=\operatorname*{sub}\nolimits_{i_{1}%
+,i_{2},\ldots,i_{u}}^{j_{1},j_{2},\ldots,j_{v}}A.
+\]
+Hence,%
+\begin{equation}
+\left(  \underbrace{\operatorname*{sub}\nolimits_{\mathbf{i}}^{\mathbf{j}}%
+A}_{=\operatorname*{sub}\nolimits_{i_{1},i_{2},\ldots,i_{u}}^{j_{1}%
+,j_{2},\ldots,j_{v}}A}\right)  ^{T}=\left(  \operatorname*{sub}%
+\nolimits_{i_{1},i_{2},\ldots,i_{u}}^{j_{1},j_{2},\ldots,j_{v}}A\right)
+^{T}=\operatorname*{sub}\nolimits_{j_{1},j_{2},\ldots,j_{v}}^{i_{1}%
+,i_{2},\ldots,i_{u}}\left(  A^{T}\right)
+\label{pf.lem.sol.det.laplace-multi.0.subAT.1}%
+\end{equation}
+(by Proposition \ref{prop.submatrix.easy} \textbf{(e)}). From $\mathbf{j}%
+=\left(  j_{1},j_{2},\ldots,j_{v}\right)  $ and $\mathbf{i}=\left(
+i_{1},i_{2},\ldots,i_{u}\right)  $, we obtain%
+\[
+\operatorname*{sub}\nolimits_{\mathbf{j}}^{\mathbf{i}}\left(  A^{T}\right)
+=\operatorname*{sub}\nolimits_{\left(  j_{1},j_{2},\ldots,j_{v}\right)
+}^{\left(  i_{1},i_{2},\ldots,i_{u}\right)  }\left(  A^{T}\right)
+=\operatorname*{sub}\nolimits_{j_{1},j_{2},\ldots,j_{v}}^{i_{1},i_{2}%
+,\ldots,i_{u}}\left(  A^{T}\right)  .
+\]
+Comparing this with (\ref{pf.lem.sol.det.laplace-multi.0.subAT.1}), we obtain
+$\left(  \operatorname*{sub}\nolimits_{\mathbf{i}}^{\mathbf{j}}A\right)
+^{T}=\operatorname*{sub}\nolimits_{\mathbf{j}}^{\mathbf{i}}\left(
+A^{T}\right)  $. This proves Lemma \ref{lem.sol.det.laplace-multi.0.subAT}.
+\end{proof}
+\end{verlong}
+
+\begin{corollary}
+\label{cor.sol.det.laplace-multi.0.detsubAT}Let $n\in\mathbb{N}$. For any
+subset $I$ of $\left\{  1,2,\ldots,n\right\}  $, we let $\widetilde{I}$ denote
+the complement $\left\{  1,2,\ldots,n\right\}  \setminus I$ of $I$.
+
+Let $A$ be an $n\times n$-matrix. Let $U$ and $V$ be two subsets of $\left\{
+1,2,\ldots,n\right\}  $ satisfying $\left\vert U\right\vert =\left\vert
+V\right\vert $. Then,%
+\begin{equation}
+\det\left(  \operatorname*{sub}\nolimits_{w\left(  U\right)  }^{w\left(
+V\right)  }\left(  A^{T}\right)  \right)  =\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  V\right)  }^{w\left(  U\right)  }A\right)
+\label{eq.cor.sol.det.laplace-multi.0.detsubAT.1}%
+\end{equation}
+and%
+\begin{equation}
+\det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{U}\right)
+}^{w\left(  \widetilde{V}\right)  }\left(  A^{T}\right)  \right)  =\det\left(
+\operatorname*{sub}\nolimits_{w\left(  \widetilde{V}\right)  }^{w\left(
+\widetilde{U}\right)  }A\right)  .
+\label{eq.cor.sol.det.laplace-multi.0.detsubAT.2}%
+\end{equation}
+
+\end{corollary}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Corollary \ref{cor.sol.det.laplace-multi.0.detsubAT}.]Let
+$k=\left\vert U\right\vert =\left\vert V\right\vert $. Then, each of the lists
+$w\left(  U\right)  $ and $w\left(  V\right)  $ is a list of $k$ elements.
+Hence, $\operatorname*{sub}\nolimits_{w\left(  V\right)  }^{w\left(  U\right)
+}A$ is a $k\times k$-matrix. Thus, Exercise \ref{exe.ps4.4} (applied to $k$
+and $\operatorname*{sub}\nolimits_{w\left(  V\right)  }^{w\left(  U\right)
+}A$ instead of $n$ and $A$) yields%
+\begin{equation}
+\det\left(  \left(  \operatorname*{sub}\nolimits_{w\left(  V\right)
+}^{w\left(  U\right)  }A\right)  ^{T}\right)  =\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  V\right)  }^{w\left(  U\right)  }A\right)  .
+\label{pf.cor.sol.det.laplace-multi.0.detsubAT.short.1}%
+\end{equation}
+But each of $w\left(  U\right)  $ and $w\left(  V\right)  $ is a list of
+elements of $\left\{  1,2,\ldots,n\right\}  $ (since $U$ and $V$ are subsets
+of $\left\{  1,2,\ldots,n\right\}  $). Hence, Proposition
+\ref{lem.sol.det.laplace-multi.0.subAT} (applied to $m=n$, $\mathbf{i}%
+=w\left(  V\right)  $ and $\mathbf{j}=w\left(  U\right)  $) yields $\left(
+\operatorname*{sub}\nolimits_{w\left(  V\right)  }^{w\left(  U\right)
+}A\right)  ^{T}=\operatorname*{sub}\nolimits_{w\left(  U\right)  }^{w\left(
+V\right)  }\left(  A^{T}\right)  $. Taking determinants on both sides of this
+equality, we obtain%
+\[
+\det\left(  \left(  \operatorname*{sub}\nolimits_{w\left(  V\right)
+}^{w\left(  U\right)  }A\right)  ^{T}\right)  =\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  U\right)  }^{w\left(  V\right)  }\left(  A^{T}\right)
+\right)  .
+\]
+Comparing this with (\ref{pf.cor.sol.det.laplace-multi.0.detsubAT.short.1}),
+we obtain $\det\left(  \operatorname*{sub}\nolimits_{w\left(  U\right)
+}^{w\left(  V\right)  }\left(  A^{T}\right)  \right)  =\det\left(
+\operatorname*{sub}\nolimits_{w\left(  V\right)  }^{w\left(  U\right)
+}A\right)  $. This proves (\ref{eq.cor.sol.det.laplace-multi.0.detsubAT.1}).
+
+The definition of $\widetilde{U}$ yields $\widetilde{U}=\left\{
+1,2,\ldots,n\right\}  \setminus U$. Since $U$ is a subset of $\left\{
+1,2,\ldots,n\right\}  $, this yields $\left\vert \widetilde{U}\right\vert
+=\underbrace{\left\vert \left\{  1,2,\ldots,n\right\}  \right\vert }%
+_{=n}-\underbrace{\left\vert U\right\vert }_{=k}=n-k$. Similarly, $\left\vert
+\widetilde{V}\right\vert =n-k$. Thus, $\left\vert \widetilde{U}\right\vert
+=n-k=\left\vert \widetilde{V}\right\vert $. Now,
+(\ref{eq.cor.sol.det.laplace-multi.0.detsubAT.1}) (applied to $\widetilde{U}$
+and $\widetilde{V}$ instead of $U$ and $V$) yields $\det\left(
+\operatorname*{sub}\nolimits_{w\left(  \widetilde{U}\right)  }^{w\left(
+\widetilde{V}\right)  }\left(  A^{T}\right)  \right)  =\det\left(
+\operatorname*{sub}\nolimits_{w\left(  \widetilde{V}\right)  }^{w\left(
+\widetilde{U}\right)  }A\right)  $. This proves
+(\ref{eq.cor.sol.det.laplace-multi.0.detsubAT.2}). Thus, the proof of
+Corollary \ref{cor.sol.det.laplace-multi.0.detsubAT} is complete.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Corollary \ref{cor.sol.det.laplace-multi.0.detsubAT}.]We have
+$U\subseteq\left\{  1,2,\ldots,n\right\}  $. Thus, the set $U$ is finite
+(since the set $\left\{  1,2,\ldots,n\right\}  $ is finite). Hence,
+$\left\vert U\right\vert \in\mathbb{N}$. Define $k\in\mathbb{N}$ by
+$k=\left\vert U\right\vert $. Thus, $k=\left\vert U\right\vert =\left\vert
+V\right\vert $.
+
+Recall that $w\left(  U\right)  $ is the list of all elements of $U$ in
+increasing order (with no repetitions) (by the definition of $w\left(
+U\right)  $). Thus, $w\left(  U\right)  $ is a list of size $\left\vert
+U\right\vert $. In other words, $w\left(  U\right)  $ is a list of size $k$
+(since $\left\vert U\right\vert =k$).
+
+Write the list $w\left(  U\right)  $ in the form $w\left(  U\right)  =\left(
+i_{1},i_{2},\ldots,i_{k}\right)  $. (This is possible, since $w\left(
+U\right)  $ is a list of size $k$.)
+
+Recall that $w\left(  V\right)  $ is the list of all elements of $V$ in
+increasing order (with no repetitions) (by the definition of $w\left(
+V\right)  $). Thus, $w\left(  V\right)  $ is a list of size $\left\vert
+V\right\vert $. In other words, $w\left(  V\right)  $ is a list of size $k$
+(since $\left\vert V\right\vert =k$).
+
+Write the list $w\left(  V\right)  $ in the form $w\left(  V\right)  =\left(
+j_{1},j_{2},\ldots,j_{k}\right)  $. (This is possible, since $w\left(
+V\right)  $ is a list of size $k$.)
+
+From $w\left(  U\right)  =\left(  i_{1},i_{2},\ldots,i_{k}\right)  $ and
+$w\left(  V\right)  =\left(  j_{1},j_{2},\ldots,j_{k}\right)  $, we obtain%
+\[
+\operatorname*{sub}\nolimits_{w\left(  V\right)  }^{w\left(  U\right)
+}A=\operatorname*{sub}\nolimits_{\left(  j_{1},j_{2},\ldots,j_{k}\right)
+}^{\left(  i_{1},i_{2},\ldots,i_{k}\right)  }A=\operatorname*{sub}%
+\nolimits_{j_{1},j_{2},\ldots,j_{k}}^{i_{1},i_{2},\ldots,i_{k}}A.
+\]
+Hence, $\operatorname*{sub}\nolimits_{w\left(  V\right)  }^{w\left(  U\right)
+}A$ is a $k\times k$-matrix (since $\operatorname*{sub}\nolimits_{j_{1}%
+,j_{2},\ldots,j_{k}}^{i_{1},i_{2},\ldots,i_{k}}A$ is a $k\times k$-matrix).
+Thus, Exercise \ref{exe.ps4.4} (applied to $k$ and $\operatorname*{sub}%
+\nolimits_{w\left(  V\right)  }^{w\left(  U\right)  }A$ instead of $n$ and
+$A$) yields%
+\begin{equation}
+\det\left(  \left(  \operatorname*{sub}\nolimits_{w\left(  V\right)
+}^{w\left(  U\right)  }A\right)  ^{T}\right)  =\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  V\right)  }^{w\left(  U\right)  }A\right)  .
+\label{pf.cor.sol.det.laplace-multi.0.detsubAT.det1}%
+\end{equation}
+
+
+We know that $w\left(  U\right)  $ is the list of all elements of $U$ in
+increasing order (with no repetitions). Thus, $w\left(  U\right)  $ is a list
+of elements of $U$. In other words, the entries of $w\left(  U\right)  $ are
+elements of $U$. In other words, the entries of $w\left(  U\right)  $ are
+elements of $\left\{  1,2,\ldots,n\right\}  $ (since every element of $U$ is
+an element of $\left\{  1,2,\ldots,n\right\}  $ (since $U\subseteq\left\{
+1,2,\ldots,n\right\}  $)). In other words, $w\left(  U\right)  $ is a list of
+elements of $\left\{  1,2,\ldots,n\right\}  $. The same argument (applied to
+$V$ instead of $U$) shows that $w\left(  V\right)  $ is a list of elements of
+$\left\{  1,2,\ldots,n\right\}  $. Hence, Proposition
+\ref{lem.sol.det.laplace-multi.0.subAT} (applied to $m=n$, $\mathbf{i}%
+=w\left(  V\right)  $ and $\mathbf{j}=w\left(  U\right)  $) yields $\left(
+\operatorname*{sub}\nolimits_{w\left(  V\right)  }^{w\left(  U\right)
+}A\right)  ^{T}=\operatorname*{sub}\nolimits_{w\left(  U\right)  }^{w\left(
+V\right)  }\left(  A^{T}\right)  $. Hence,%
+\[
+\det\left(  \underbrace{\left(  \operatorname*{sub}\nolimits_{w\left(
+V\right)  }^{w\left(  U\right)  }A\right)  ^{T}}_{=\operatorname*{sub}%
+\nolimits_{w\left(  U\right)  }^{w\left(  V\right)  }\left(  A^{T}\right)
+}\right)  =\det\left(  \operatorname*{sub}\nolimits_{w\left(  U\right)
+}^{w\left(  V\right)  }\left(  A^{T}\right)  \right)  .
+\]
+Comparing this with (\ref{pf.cor.sol.det.laplace-multi.0.detsubAT.det1}), we
+obtain $\det\left(  \operatorname*{sub}\nolimits_{w\left(  U\right)
+}^{w\left(  V\right)  }\left(  A^{T}\right)  \right)  =\det\left(
+\operatorname*{sub}\nolimits_{w\left(  V\right)  }^{w\left(  U\right)
+}A\right)  $. This proves (\ref{eq.cor.sol.det.laplace-multi.0.detsubAT.1}).
+
+Now, the definition of $\widetilde{U}$ yields $\widetilde{U}=\left\{
+1,2,\ldots,n\right\}  \setminus U\subseteq\left\{  1,2,\ldots,n\right\}  $.
+Hence, $\widetilde{U}$ is a subset of $\left\{  1,2,\ldots,n\right\}  $. The
+same argument (applied to $V$ instead of $U$) shows that $\widetilde{V}$ is a
+subset of $\left\{  1,2,\ldots,n\right\}  $.
+
+Moreover, we have $\widetilde{U}=\left\{  1,2,\ldots,n\right\}  \setminus U$
+and thus
+\begin{align*}
+\left\vert \widetilde{U}\right\vert  &  =\left\vert \left\{  1,2,\ldots
+,n\right\}  \setminus U\right\vert =\underbrace{\left\vert \left\{
+1,2,\ldots,n\right\}  \right\vert }_{=n}-\underbrace{\left\vert U\right\vert
+}_{=k}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }U\text{ is a subset of
+}\left\{  1,2,\ldots,n\right\}  \right) \\
+&  =n-k.
+\end{align*}
+The same argument (applied to $V$ instead of $U$) shows that $\left\vert
+\widetilde{V}\right\vert =n-k$. Hence, $\left\vert \widetilde{U}\right\vert
+=n-k=\left\vert \widetilde{V}\right\vert $. Now,
+(\ref{eq.cor.sol.det.laplace-multi.0.detsubAT.1}) (applied to $\widetilde{U}$
+and $\widetilde{V}$ instead of $U$ and $V$) yields $\det\left(
+\operatorname*{sub}\nolimits_{w\left(  \widetilde{U}\right)  }^{w\left(
+\widetilde{V}\right)  }\left(  A^{T}\right)  \right)  =\det\left(
+\operatorname*{sub}\nolimits_{w\left(  \widetilde{V}\right)  }^{w\left(
+\widetilde{U}\right)  }A\right)  $. This proves
+(\ref{eq.cor.sol.det.laplace-multi.0.detsubAT.2}). Thus, the proof of
+Corollary \ref{cor.sol.det.laplace-multi.0.detsubAT} is complete.
+\end{proof}
+\end{verlong}
+
+\begin{proof}
+[Solution to Exercise \ref{exe.det.laplace-multi.0}.]\textbf{(a)} Let $P$ be a
+subset of $\left\{  1,2,\ldots,n\right\}  $ satisfying $\left\vert
+P\right\vert =\left\vert R\right\vert $ and $P\neq R$.
+
+\begin{vershort}
+Let $k=\left\vert P\right\vert $. The definition of $\widetilde{P}$ yields
+$\widetilde{P}=\left\{  1,2,\ldots,n\right\}  \setminus P$. Since $P$ is a
+subset of $\left\{  1,2,\ldots,n\right\}  $, this leads to $\left\vert
+\widetilde{P}\right\vert =\underbrace{\left\vert \left\{  1,2,\ldots
+,n\right\}  \right\vert }_{=n}-\underbrace{\left\vert P\right\vert }_{=k}%
+=n-k$. Thus, $n-k=\left\vert \widetilde{P}\right\vert \geq0$, so that $n\geq
+k$ and thus $k\in\left\{  0,1,\ldots,n\right\}  $.
+\end{vershort}
+
+\begin{verlong}
+The definition of $\widetilde{P}$ yields $\widetilde{P}=\left\{
+1,2,\ldots,n\right\}  \setminus P\subseteq\left\{  1,2,\ldots,n\right\}  $.
+Thus, $\widetilde{P}$ is a finite set (since $\left\{  1,2,\ldots,n\right\}  $
+is a finite set). Hence, $\left\vert \widetilde{P}\right\vert \in\mathbb{N}$.
+
+Also, $P\subseteq\left\{  1,2,\ldots,n\right\}  $. Thus, $P$ is a finite set
+(since $\left\{  1,2,\ldots,n\right\}  $ is a finite set). Hence, $\left\vert
+P\right\vert \in\mathbb{N}$.
+
+Define $k\in\mathbb{N}$ by $k=\left\vert P\right\vert $. (This is
+well-defined, since $\left\vert P\right\vert \in\mathbb{N}$.)
+
+Also,%
+\begin{align*}
+\left\vert \underbrace{\widetilde{P}}_{=\left\{  1,2,\ldots,n\right\}
+\setminus P}\right\vert  &  =\left\vert \left\{  1,2,\ldots,n\right\}
+\setminus P\right\vert =\underbrace{\left\vert \left\{  1,2,\ldots,n\right\}
+\right\vert }_{=n}-\underbrace{\left\vert P\right\vert }_{=k}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }P\subseteq\left\{  1,2,\ldots
+,n\right\}  \right) \\
+&  =n-k.
+\end{align*}
+Hence, $n-k=\left\vert \widetilde{P}\right\vert \in\mathbb{N}$; thus,
+$n-k\geq0$. In other words, $k\leq n$. Combined with $k\geq0$ (since
+$k=\left\vert P\right\vert \in\mathbb{N}$), this yields $k\in\left\{
+0,1,\ldots,n\right\}  $.
+
+We have $k\in\mathbb{N}$, so that $k\geq0$. Thus, $\underbrace{k}_{\geq
+0}+1\geq1$.
+\end{verlong}
+
+Let $\left[  n\right]  $ denote the set $\left\{  1,2,\ldots,n\right\}  $.
+Thus, $\left[  n\right]  =\left\{  1,2,\ldots,n\right\}  $.
+
+We have $k=\left\vert P\right\vert =\left\vert R\right\vert $, so that
+$\left\vert R\right\vert =k$.
+
+From $P\neq R$, we can easily deduce that $\widetilde{P}\cap R\neq\varnothing
+$\ \ \ \ \footnote{\textit{Proof.} Assume the contrary (for the sake of
+contradiction). Thus, $\widetilde{P}\cap R=\varnothing$.
+\par
+Any three sets $X$, $Y$ and $Z$ satisfy $\left(  X\cap Y\right)  \setminus
+Z=X\cap\left(  Y\setminus Z\right)  $. Applying this to $X=R$, $Y=\left\{
+1,2,\ldots,n\right\}  $ and $Z=P$, we obtain%
+\[
+\left(  R\cap\left\{  1,2,\ldots,n\right\}  \right)  \setminus P=R\cap
+\underbrace{\left(  \left\{  1,2,\ldots,n\right\}  \setminus P\right)
+}_{=\widetilde{P}}=R\cap\widetilde{P}=\widetilde{P}\cap R=\varnothing.
+\]
+Comparing this with $\underbrace{\left(  R\cap\left\{  1,2,\ldots,n\right\}
+\right)  }_{\substack{=R\\\text{(since }R\subseteq\left\{  1,2,\ldots
+,n\right\}  \text{)}}}\setminus P=R\setminus P$, we obtain $R\setminus
+P=\varnothing$. In other words, $R\subseteq P$. Combining this with $R\neq P$
+(since $P\neq R$), we conclude that $R$ is a proper subset of $P$.
+\par
+But $P$ is a finite set. Hence, every proper subset of $P$ has a size strictly
+smaller than $\left\vert P\right\vert $. In other words, if $Y$ is a proper
+subset of $P$, then $\left\vert Y\right\vert <\left\vert P\right\vert $.
+Applying this to $Y=R$, we conclude that $\left\vert R\right\vert <\left\vert
+P\right\vert $. Hence, $\left\vert R\right\vert <\left\vert P\right\vert
+=\left\vert R\right\vert $. This is absurd. This contradiction proves that our
+assumption was wrong, qed.}.
+
+Let $\left(  r_{1},r_{2},\ldots,r_{k}\right)  $ be the list of all elements of
+$R$ in increasing order (with no repetitions). (This is well-defined, because
+$\left\vert R\right\vert =k$.)
+
+Let $\left(  t_{1},t_{2},\ldots,t_{n-k}\right)  $ be the list of all elements
+of $\widetilde{P}$ in increasing order (with no repetitions). (This is
+well-defined, because $\left\vert \widetilde{P}\right\vert =n-k$.)
+
+\begin{vershort}
+We know that $\left(  r_{1},r_{2},\ldots,r_{k}\right)  $ is a list of elements
+of $R$. Hence, the elements $r_{1},r_{2},\ldots,r_{k}$ belong to $R$, and thus
+to $\left[  n\right]  $ (since $R\subseteq\left\{  1,2,\ldots,n\right\}
+=\left[  n\right]  $).
+
+We know that $\left(  t_{1},t_{2},\ldots,t_{n-k}\right)  $ is a list of
+elements of $\widetilde{P}$. Hence, the elements $t_{1},t_{2},\ldots,t_{n-k}$
+belong to $\widetilde{P}$, and thus to $\left[  n\right]  $ (since
+$\widetilde{P}\subseteq\left\{  1,2,\ldots,n\right\}  =\left[  n\right]  $).
+\end{vershort}
+
+\begin{verlong}
+We know that $\left(  r_{1},r_{2},\ldots,r_{k}\right)  $ is a list of elements
+of $R$ (since $\left(  r_{1},r_{2},\ldots,r_{k}\right)  $ is the list of all
+elements of $R$ in increasing order (with no repetitions)). Hence, the $k$
+elements $r_{1},r_{2},\ldots,r_{k}$ belong to $R$, and thus belong to $\left[
+n\right]  $ as well (since $R\subseteq\left\{  1,2,\ldots,n\right\}  =\left[
+n\right]  $).
+
+We know that $\left(  t_{1},t_{2},\ldots,t_{n-k}\right)  $ is a list of
+elements of $\widetilde{P}$ (since $\left(  t_{1},t_{2},\ldots,t_{n-k}\right)
+$ is the list of all elements of $\widetilde{P}$ in increasing order (with no
+repetitions)). Hence, the $n-k$ elements $t_{1},t_{2},\ldots,t_{n-k}$ belong
+to $\widetilde{P}$, and thus belong to $\left[  n\right]  $ as well (since
+$\widetilde{P}\subseteq\left\{  1,2,\ldots,n\right\}  =\left[  n\right]  $).
+\end{verlong}
+
+\begin{vershort}
+The $n$ elements $r_{1},r_{2},\ldots,r_{k},t_{1},t_{2},\ldots,t_{n-k}$ belong
+to $\left[  n\right]  $ (since the $k$ elements $r_{1},r_{2},\ldots,r_{k}$
+belong to $\left[  n\right]  $, and since the $n-k$ elements $t_{1}%
+,t_{2},\ldots,t_{n-k}$ belong to $\left[  n\right]  $). Hence, we can define
+an $n$-tuple $\left(  \kappa_{1},\kappa_{2},\ldots,\kappa_{n}\right)
+\in\left[  n\right]  ^{n}$ by%
+\[
+\left(  \kappa_{1},\kappa_{2},\ldots,\kappa_{n}\right)  =\left(  r_{1}%
+,r_{2},\ldots,r_{k},t_{1},t_{2},\ldots,t_{n-k}\right)  .
+\]
+Consider this $n$-tuple. Due to its definition, we have%
+\begin{equation}
+\left(  \kappa_{i}=r_{i}\ \ \ \ \ \ \ \ \ \ \text{for every }i\in\left\{
+1,2,\ldots,k\right\}  \right)
+\label{sol.exe.det.laplace-multi.0.short.a.kappai1}%
+\end{equation}
+and%
+\begin{equation}
+\left(  \kappa_{i}=t_{i-k}\ \ \ \ \ \ \ \ \ \ \text{for every }i\in\left\{
+k+1,k+2,\ldots,n\right\}  \right)
+.\label{sol.exe.det.laplace-multi.0.short.a.kappai2}%
+\end{equation}
+
+
+Define a map $\kappa:\left[  n\right]  \rightarrow\left[  n\right]  $ by%
+\[
+\left(  \kappa\left(  i\right)  =\kappa_{i}\text{ for every }i\in\left[
+n\right]  \right)  .
+\]
+(This makes sense, since $\kappa_{i}\in\left[  n\right]  $ for every
+$i\in\left[  n\right]  $.) Then, every $i\in\left\{  1,2,\ldots,k\right\}  $
+satisfies%
+\begin{align}
+\kappa\left(  i\right)    & =\kappa_{i}\ \ \ \ \ \ \ \ \ \ \left(  \text{by
+the definition of }\kappa\right)  \nonumber\\
+& =r_{i}\ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{sol.exe.det.laplace-multi.0.short.a.kappai1})}\right)
+.\label{sol.exe.det.laplace-multi.0.short.a.kappa1}%
+\end{align}
+Also, every $j\in\left\{  1,2,\ldots,n-k\right\}  $ satisfies%
+\begin{align}
+\kappa\left(  k+j\right)    & =\kappa_{k+j}\ \ \ \ \ \ \ \ \ \ \left(
+\text{by the definition of }\kappa\right)  \nonumber\\
+& =t_{\left(  k+j\right)  -k}\ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{sol.exe.det.laplace-multi.0.short.a.kappai2}), applied to }i=k+j\right)
+\nonumber\\
+& =t_{j}.\label{sol.exe.det.laplace-multi.0.short.a.kappa2}%
+\end{align}
+
+\end{vershort}
+
+\begin{verlong}
+The $k+\left(  n-k\right)  $ elements $r_{1},r_{2},\ldots,r_{k},t_{1}%
+,t_{2},\ldots,t_{n-k}$ belong to $\left[  n\right]  $ (since the $k$ elements
+$r_{1},r_{2},\ldots,r_{k}$ belong to $\left[  n\right]  $, and since the $n-k$
+elements $t_{1},t_{2},\ldots,t_{n-k}$ belong to $\left[  n\right]  $). In
+other words, $\left(  r_{1},r_{2},\ldots,r_{k},t_{1},t_{2},\ldots
+,t_{n-k}\right)  \in\left[  n\right]  ^{k+\left(  n-k\right)  }$. Thus,%
+\[
+\left(  r_{1},r_{2},\ldots,r_{k},t_{1},t_{2},\ldots,t_{n-k}\right)  \in\left[
+n\right]  ^{k+\left(  n-k\right)  }=\left[  n\right]  ^{n}%
+\]
+(since $k+\left(  n-k\right)  =n$). In other words, $\left(  r_{1}%
+,r_{2},\ldots,r_{k},t_{1},t_{2},\ldots,t_{n-k}\right)  $ is an $n$-tuple of
+elements of $\left[  n\right]  $. Write this $n$-tuple $\left(  r_{1}%
+,r_{2},\ldots,r_{k},t_{1},t_{2},\ldots,t_{n-k}\right)  $ in the form $\left(
+\kappa_{1},\kappa_{2},\ldots,\kappa_{n}\right)  $. Thus, $\left(  \kappa
+_{1},\kappa_{2},\ldots,\kappa_{n}\right)  =\left(  r_{1},r_{2},\ldots
+,r_{k},t_{1},t_{2},\ldots,t_{n-k}\right)  $. In other words,%
+\begin{equation}
+\kappa_{i}=%
+\begin{cases}
+r_{i}, & \text{if }i\leq k;\\
+t_{i-k}, & \text{if }i>k
+\end{cases}
+\ \ \ \ \ \ \ \ \ \ \text{for every }i\in\left\{  1,2,\ldots,n\right\}
+.\label{sol.exe.det.laplace-multi.0.a.def-kappa}%
+\end{equation}
+Moreover, $\left(  \kappa_{1},\kappa_{2},\ldots,\kappa_{n}\right)  \in\left[
+n\right]  ^{n}$ (since $\left(  \kappa_{1},\kappa_{2},\ldots,\kappa
+_{n}\right)  $ is an $n$-tuple of elements of $\left[  n\right]  $). Hence,
+$\kappa_{i}\in\left[  n\right]  $ for each $i\in\left\{  1,2,\ldots,n\right\}
+$. In other words, $\kappa_{i}\in\left[  n\right]  $ for each $i\in\left[
+n\right]  $ (since $\left[  n\right]  =\left\{  1,2,\ldots,n\right\}  $).
+Thus, we can define a map $\kappa:\left[  n\right]  \rightarrow\left[
+n\right]  $ by%
+\[
+\left(  \kappa\left(  i\right)  =\kappa_{i}\text{ for every }i\in\left[
+n\right]  \right)  .
+\]
+Consider this $\kappa$.
+
+We have%
+\begin{equation}
+\kappa\left(  i\right)  =r_{i}\ \ \ \ \ \ \ \ \ \ \text{for every }%
+i\in\left\{  1,2,\ldots,k\right\}
+.\label{sol.exe.det.laplace-multi.0.a.kappa1}%
+\end{equation}
+
+
+\textit{Proof of (\ref{sol.exe.det.laplace-multi.0.a.kappa1}):} Let
+$i\in\left\{  1,2,\ldots,k\right\}  $. Then, $i\in\left\{  1,2,\ldots
+,k\right\}  \subseteq\left\{  1,2,\ldots,n\right\}  $ (since $k\leq n$), so
+that $i\in\left\{  1,2,\ldots,n\right\}  =\left[  n\right]  $. Hence,
+$\kappa\left(  i\right)  =\kappa_{i}$ (by the definition of $\kappa$). Thus,%
+\begin{align*}
+\kappa\left(  i\right)   &  =\kappa_{i}=%
+\begin{cases}
+r_{i}, & \text{if }i\leq k;\\
+t_{i-k}, & \text{if }i>k
+\end{cases}
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\kappa_{i}\right)  \\
+&  =r_{i}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }i\leq k\text{ (since }%
+i\in\left\{  1,2,\ldots,k\right\}  \text{)}\right)  .
+\end{align*}
+This proves (\ref{sol.exe.det.laplace-multi.0.a.kappa1}).
+
+Furthermore,%
+\begin{equation}
+\kappa\left(  k+i\right)  =t_{i}\ \ \ \ \ \ \ \ \ \ \text{for every }%
+i\in\left\{  1,2,\ldots,n-k\right\}
+.\label{sol.exe.det.laplace-multi.0.a.kappa2}%
+\end{equation}
+
+
+\textit{Proof of (\ref{sol.exe.det.laplace-multi.0.a.kappa2}):} Let
+$i\in\left\{  1,2,\ldots,n-k\right\}  $. Thus, $i\geq1>0$. But $i\in\left\{
+1,2,\ldots,n-k\right\}  $, and thus%
+\begin{align*}
+k+i &  \in\left\{  k+1,k+2,\ldots,k+\left(  n-k\right)  \right\}  =\left\{
+k+1,k+2,\ldots,n\right\}  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }k+\left(
+n-k\right)  =n\right)  \\
+&  \subseteq\left\{  1,2,\ldots,n\right\}  \ \ \ \ \ \ \ \ \ \ \left(
+\text{since }k+1\geq1\right)  \\
+&  =\left[  n\right]  .
+\end{align*}
+Hence, $\kappa\left(  k+i\right)  =\kappa_{k+i}$ (by the definition of
+$\kappa$). Hence,%
+\begin{align*}
+\kappa\left(  k+i\right)   &  =\kappa_{k+i}=%
+\begin{cases}
+r_{k+i}, & \text{if }k+i\leq k;\\
+t_{\left(  k+i\right)  -k}, & \text{if }k+i>k
+\end{cases}
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\kappa_{k+i}\right)
+\\
+&  =t_{\left(  k+i\right)  -k}\ \ \ \ \ \ \ \ \ \ \left(  \text{since
+}k+\underbrace{i}_{>0}>k\right)  \\
+&  =t_{i}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(  k+i\right)
+-k=i\right)  .
+\end{align*}
+This proves (\ref{sol.exe.det.laplace-multi.0.a.kappa2}).
+\end{verlong}
+
+\begin{vershort}
+We have%
+\begin{equation}
+w\left(  R\right)  =\left(  \kappa\left(  1\right)  ,\kappa\left(  2\right)
+,\ldots,\kappa\left(  k\right)  \right)
+\label{sol.exe.det.laplace-multi.0.short.a.wR=}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.exe.det.laplace-multi.0.short.a.wR=}):}
+The lists $w\left(  R\right)  $ and $\left(  r_{1},r_{2},\ldots,r_{k}\right)
+$ must be identical (since each of them is the list of all elements of $R$ in
+increasing order (with no repetitions)). In other words, $w\left(  R\right)
+=\left(  r_{1},r_{2},\ldots,r_{k}\right)  $. Now,
+(\ref{sol.exe.det.laplace-multi.0.short.a.kappa1}) shows that $\kappa\left(
+i\right)  =r_{i}$ for every $i\in\left\{  1,2,\ldots,k\right\}  $. In other
+words, $\left(  \kappa\left(  1\right)  ,\kappa\left(  2\right)
+,\ldots,\kappa\left(  k\right)  \right)  =\left(  r_{1},r_{2},\ldots
+,r_{k}\right)  $. Comparing this with $w\left(  R\right)  =\left(  r_{1}%
+,r_{2},\ldots,r_{k}\right)  $, we obtain $w\left(  R\right)  =\left(
+\kappa\left(  1\right)  ,\kappa\left(  2\right)  ,\ldots,\kappa\left(
+k\right)  \right)  $. This proves
+(\ref{sol.exe.det.laplace-multi.0.short.a.wR=}).} and%
+\begin{equation}
+w\left(  \widetilde{P}\right)  =\left(  \kappa\left(  k+1\right)
+,\kappa\left(  k+2\right)  ,\ldots,\kappa\left(  n\right)  \right)
+\label{sol.exe.det.laplace-multi.0.short.a.wPs=}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.exe.det.laplace-multi.0.short.a.wPs=}):}
+The lists $w\left(  \widetilde{P}\right)  $ and $\left(  t_{1},t_{2}%
+,\ldots,t_{n-k}\right)  $ must be identical (since each of them is the list of
+all elements of $\widetilde{P}$ in increasing order (with no repetitions)). In
+other words, $w\left(  \widetilde{P}\right)  =\left(  t_{1},t_{2}%
+,\ldots,t_{n-k}\right)  $. Now,
+(\ref{sol.exe.det.laplace-multi.0.short.a.kappa2}) shows that $\kappa\left(
+k+i\right)  =t_{i}$ for every $i\in\left\{  1,2,\ldots,n-k\right\}  $. In
+other words, $\left(  \kappa\left(  k+1\right)  ,\kappa\left(  k+2\right)
+,\ldots,\kappa\left(  n\right)  \right)  =\left(  t_{1},t_{2},\ldots
+,t_{n-k}\right)  $. Comparing this with $w\left(  \widetilde{P}\right)
+=\left(  t_{1},t_{2},\ldots,t_{n-k}\right)  $, we obtain $w\left(
+\widetilde{P}\right)  =\left(  \kappa\left(  k+1\right)  ,\kappa\left(
+k+2\right)  ,\ldots,\kappa\left(  n\right)  \right)  $. This proves
+(\ref{sol.exe.det.laplace-multi.0.short.a.wPs=}).}.
+\end{vershort}
+
+\begin{verlong}
+We have%
+\begin{equation}
+w\left(  R\right)  =\left(  \kappa\left(  1\right)  ,\kappa\left(  2\right)
+,\ldots,\kappa\left(  k\right)  \right)
+\label{sol.exe.det.laplace-multi.0.a.wR=}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.exe.det.laplace-multi.0.a.wR=}):} Recall
+that $w\left(  R\right)  $ is the list of all elements of $R$ in increasing
+order (with no repetitions) (by the definition of $w\left(  R\right)  $).
+Thus,%
+\begin{align}
+w\left(  R\right)   &  =\left(  \text{the list of all elements of }R\text{ in
+increasing order (with no repetitions)}\right)  \nonumber\\
+&  =\left(  r_{1},r_{2},\ldots,r_{k}\right)
+\label{sol.exe.det.laplace-multi.0.a.wR=.pf.1}%
+\end{align}
+(since $\left(  r_{1},r_{2},\ldots,r_{k}\right)  $ is the list of all elements
+of $R$ in increasing order (with no repetitions)). Now,
+(\ref{sol.exe.det.laplace-multi.0.a.kappa1}) shows that $\kappa\left(
+i\right)  =r_{i}$ for every $i\in\left\{  1,2,\ldots,k\right\}  $. In other
+words, $\left(  \kappa\left(  1\right)  ,\kappa\left(  2\right)
+,\ldots,\kappa\left(  k\right)  \right)  =\left(  r_{1},r_{2},\ldots
+,r_{k}\right)  $. Comparing this with
+(\ref{sol.exe.det.laplace-multi.0.a.wR=.pf.1}), we obtain $w\left(  R\right)
+=\left(  \kappa\left(  1\right)  ,\kappa\left(  2\right)  ,\ldots
+,\kappa\left(  k\right)  \right)  $. This proves
+(\ref{sol.exe.det.laplace-multi.0.a.wR=}).} and%
+\begin{equation}
+w\left(  \widetilde{P}\right)  =\left(  \kappa\left(  k+1\right)
+,\kappa\left(  k+2\right)  ,\ldots,\kappa\left(  n\right)  \right)
+\label{sol.exe.det.laplace-multi.0.a.wPs=}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.exe.det.laplace-multi.0.a.wPs=}):} Recall
+that $w\left(  \widetilde{P}\right)  $ is the list of all elements of
+$\widetilde{P}$ in increasing order (with no repetitions) (by the definition
+of $w\left(  \widetilde{P}\right)  $). Thus,%
+\begin{align}
+w\left(  \widetilde{P}\right)   &  =\left(  \text{the list of all elements of
+}\widetilde{P}\text{ in increasing order (with no repetitions)}\right)
+\nonumber\\
+&  =\left(  t_{1},t_{2},\ldots,t_{n-k}\right)
+\label{sol.exe.det.laplace-multi.0.a.wPs=.pf.1}%
+\end{align}
+(since $\left(  t_{1},t_{2},\ldots,t_{n-k}\right)  $ is the list of all
+elements of $\widetilde{P}$ in increasing order (with no repetitions)). Now,
+(\ref{sol.exe.det.laplace-multi.0.a.kappa2}) shows that $\kappa\left(
+k+i\right)  =t_{i}$ for every $i\in\left\{  1,2,\ldots,n-k\right\}  $. In
+other words, $\left(  \kappa\left(  k+1\right)  ,\kappa\left(  k+2\right)
+,\ldots,\kappa\left(  k+\left(  n-k\right)  \right)  \right)  =\left(
+t_{1},t_{2},\ldots,t_{n-k}\right)  $. Comparing this with
+(\ref{sol.exe.det.laplace-multi.0.a.wR=.pf.1}), we obtain
+\begin{align*}
+w\left(  \widetilde{P}\right)   &  =\left(  \kappa\left(  k+1\right)
+,\kappa\left(  k+2\right)  ,\ldots,\kappa\left(  k+\left(  n-k\right)
+\right)  \right)  \\
+&  =\left(  \kappa\left(  k+1\right)  ,\kappa\left(  k+2\right)
+,\ldots,\kappa\left(  n\right)  \right)  \ \ \ \ \ \ \ \ \ \ \left(
+\text{since }k+\left(  n-k\right)  =n\right)  .
+\end{align*}
+This proves (\ref{sol.exe.det.laplace-multi.0.a.wPs=}).}.
+\end{verlong}
+
+\begin{vershort}
+Using $\widetilde{P}\cap R\neq\varnothing$, we can easily see that
+$\kappa\notin S_{n}$\ \ \ \ \footnote{\textit{Proof.} Assume the contrary (for
+the sake of contradiction). Thus, $\kappa\in S_{n}$. Hence, the inverse
+permutation $\kappa^{-1}\in S_{n}$ is well-defined.
+\par
+Recall that $\widetilde{P}\cap R\neq\varnothing$. In other words, there exists
+a $\rho\in\widetilde{P}\cap R$. Consider this $\rho$.
+\par
+Recall that $\left(  r_{1},r_{2},\ldots,r_{k}\right)  $ is a list of all
+elements of $R$. Hence, $\left\{  r_{1},r_{2},\ldots,r_{k}\right\}  =R$. Now,
+$\rho\in\widetilde{P}\cap R\subseteq R=\left\{  r_{1},r_{2},\ldots
+,r_{k}\right\}  $. In other words, there exists some $i\in\left\{
+1,2,\ldots,k\right\}  $ such that $\rho=r_{i}$. Consider this $i$.
+\par
+Recall that $\left(  t_{1},t_{2},\ldots,t_{n-k}\right)  $ is a list of all
+elements of $\widetilde{P}$. Hence, $\left\{  t_{1},t_{2},\ldots
+,t_{n-k}\right\}  =\widetilde{P}$. Now, $\rho\in\widetilde{P}\cap
+R\subseteq\widetilde{P}=\left\{  t_{1},t_{2},\ldots,t_{n-k}\right\}  $. In
+other words, there exists some $j\in\left\{  1,2,\ldots,n-k\right\}  $ such
+that $\rho=t_{j}$. Consider this $j$.
+\par
+The equality (\ref{sol.exe.det.laplace-multi.0.short.a.kappa2}) (applied to
+$j$ instead of $i$) yields $\kappa\left(  k+j\right)  =t_{j}=\rho$ (since
+$\rho=t_{j}$). But from (\ref{sol.exe.det.laplace-multi.0.short.a.kappa1}), we
+obtan $\kappa\left(  i\right)  =r_{i}=\rho$ (since $\rho=r_{i}$). Comparing
+this with $\kappa\left(  k+j\right)  =\rho$, we obtain $\kappa\left(
+i\right)  =\kappa\left(  k+j\right)  $. Now, $i=\kappa^{-1}\left(
+\underbrace{\kappa\left(  i\right)  }_{=\kappa\left(  k+j\right)  }\right)
+=\kappa^{-1}\left(  \kappa\left(  k+j\right)  \right)  =k+\underbrace{j}%
+_{\substack{>0\\\text{(since }j\in\left\{  1,2,\ldots,n-k\right\}  \text{)}%
+}}>k$. But $i\in\left\{  1,2,\ldots,k\right\}  $ and thus $i\leq k$. This
+contradicts $i>k$. This contradiction proves that our assumption was wrong.
+Qed.}.
+\end{vershort}
+
+\begin{verlong}
+Furthermore, $\kappa\notin S_{n}$\ \ \ \ \footnote{\textit{Proof.} Assume the
+contrary (for the sake of contradiction). Thus, $\kappa\in S_{n}$.
+\par
+We have $\kappa\in S_{n}$. In other words, $\kappa$ is a permutation of
+$\left\{  1,2,\ldots,n\right\}  $ (since $S_{n}$ is the set of all
+permutations of $\left\{  1,2,\ldots,n\right\}  $). In other words, $\kappa$
+is a bijective map $\left\{  1,2,\ldots,n\right\}  \rightarrow\left\{
+1,2,\ldots,n\right\}  $. Thus, the map $\kappa$ is bijective, and therefore
+injective.
+\par
+Recall that $\widetilde{P}\cap R\neq\varnothing$. Thus, the set $\widetilde{P}%
+\cap R$ is nonempty. In other words, there exists a $\rho\in\widetilde{P}\cap
+R$. Consider this $\rho$.
+\par
+Recall that $\left(  r_{1},r_{2},\ldots,r_{k}\right)  $ is the list of all
+elements of $R$ in increasing order (with no repetitions). Thus, $\left(
+r_{1},r_{2},\ldots,r_{k}\right)  $ is a list of all elements of $R$. Hence,
+$\left\{  r_{1},r_{2},\ldots,r_{k}\right\}  =R$. Now, $\rho\in\widetilde{P}%
+\cap R\subseteq R=\left\{  r_{1},r_{2},\ldots,r_{k}\right\}  $. In other
+words, there exists some $i\in\left\{  1,2,\ldots,k\right\}  $ such that
+$\rho=r_{i}$. Consider this $i$.
+\par
+Recall that $\left(  t_{1},t_{2},\ldots,t_{n-k}\right)  $ is the list of all
+elements of $\widetilde{P}$ in increasing order (with no repetitions). Thus,
+$\left(  t_{1},t_{2},\ldots,t_{n-k}\right)  $ is a list of all elements of
+$\widetilde{P}$. Hence, $\left\{  t_{1},t_{2},\ldots,t_{n-k}\right\}
+=\widetilde{P}$. Now, $\rho\in\widetilde{P}\cap R\subseteq\widetilde{P}%
+=\left\{  t_{1},t_{2},\ldots,t_{n-k}\right\}  $. In other words, there exists
+some $j\in\left\{  1,2,\ldots,n-k\right\}  $ such that $\rho=t_{j}$. Consider
+this $j$.
+\par
+We have $j\in\left\{  1,2,\ldots,n-k\right\}  $, so that%
+\begin{align*}
+k+j &  \in\left\{  k+1,k+2,\ldots,k+\left(  n-k\right)  \right\}  =\left\{
+k+1,k+2,\ldots,n\right\}  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }k+\left(
+n-k\right)  =n\right)  \\
+&  \subseteq\left\{  1,2,\ldots,n\right\}  \ \ \ \ \ \ \ \ \ \ \left(
+\text{since }k+1\geq1\right)  \\
+&  =\left[  n\right]  .
+\end{align*}
+Hence, $\kappa\left(  k+j\right)  $ is well-defined. The equality
+(\ref{sol.exe.det.laplace-multi.0.a.kappa2}) (applied to $j$ instead of $i$)
+yields $\kappa\left(  k+j\right)  =t_{j}=\rho$ (since $\rho=t_{j}$).
+\par
+But%
+\begin{align*}
+i &  \in\left\{  1,2,\ldots,k\right\}  \subseteq\left\{  1,2,\ldots,n\right\}
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }k\leq n\right)  \\
+&  =\left[  n\right]  .
+\end{align*}
+Hence, $\kappa\left(  i\right)  $ is well-defined. From
+(\ref{sol.exe.det.laplace-multi.0.a.kappa1}), we obtan $\kappa\left(
+i\right)  =r_{i}=\rho$ (since $\rho=r_{i}$). Comparing this with
+$\kappa\left(  k+j\right)  =\rho$, we obtain $\kappa\left(  i\right)
+=\kappa\left(  k+j\right)  $.
+\par
+But the map $\kappa$ is injective. In other words, if $u$ and $v$ are two
+elements of $\left[  n\right]  $ satisfying $\kappa\left(  u\right)
+=\kappa\left(  v\right)  $, then $u=v$. Applying this to $u=i$ and $v=k+j$, we
+obtain $i=k+j$ (since $\kappa\left(  i\right)  =\kappa\left(  k+j\right)  $).
+But $j\in\left\{  1,2,\ldots,n-k\right\}  $, so that $j\geq1>0$ and thus
+$k+\underbrace{j}_{>0}>k$. Now, $i=k+j>k$. But $i\in\left\{  1,2,\ldots
+,k\right\}  $ and thus $i\leq k$. This contradicts $i>k$. This contradiction
+proves that our assumption was wrong. Qed.}.
+\end{verlong}
+
+Write the $n\times n$-matrix $A$ in the form $A=\left(  a_{i,j}\right)
+_{1\leq i\leq n,\ 1\leq j\leq n}$. Define an $n\times n$-matrix $A_{\kappa}$
+by $A_{\kappa}=\left(  a_{\kappa\left(  i\right)  ,j}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}$. Then, Lemma \ref{lem.det.sigma} \textbf{(b)} (applied to
+$A$, $a_{i,j}$ and $A_{\kappa}$ instead of $B$, $b_{i,j}$ and $B_{\kappa}$)
+yields
+\begin{equation}
+\det\left(  A_{\kappa}\right)  =0\label{sol.exe.det.laplace-multi.0.a.detAk}%
+\end{equation}
+(since $\kappa\notin S_{n}$).
+
+Now, every subset $Q$ of $\left\{  1,2,\ldots,n\right\}  $ satisfies%
+\begin{equation}
+\operatorname*{sub}\nolimits_{w\left(  R\right)  }^{w\left(  Q\right)
+}A=\operatorname*{sub}\nolimits_{\left(  1,2,\ldots,k\right)  }^{w\left(
+Q\right)  }\left(  A_{\kappa}\right)
+\label{sol.exe.det.laplace-multi.0.a.sub1}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.exe.det.laplace-multi.0.a.sub1}):} Let
+$Q$ be a subset of $\left\{  1,2,\ldots,n\right\}  $. Write the list $w\left(
+Q\right)  $ in the form $w\left(  Q\right)  =\left(  q_{1},q_{2}%
+,\ldots,q_{\ell}\right)  $ for some $\ell\in\mathbb{N}$.
+\par
+From $w\left(  R\right)  =\left(  \kappa\left(  1\right)  ,\kappa\left(
+2\right)  ,\ldots,\kappa\left(  k\right)  \right)  $ and $w\left(  Q\right)
+=\left(  q_{1},q_{2},\ldots,q_{\ell}\right)  $, we obtain%
+\begin{align}
+\operatorname*{sub}\nolimits_{w\left(  R\right)  }^{w\left(  Q\right)  }A &
+=\operatorname*{sub}\nolimits_{\left(  \kappa\left(  1\right)  ,\kappa\left(
+2\right)  ,\ldots,\kappa\left(  k\right)  \right)  }^{\left(  q_{1}%
+,q_{2},\ldots,q_{\ell}\right)  }A=\operatorname*{sub}\nolimits_{\kappa\left(
+1\right)  ,\kappa\left(  2\right)  ,\ldots,\kappa\left(  k\right)  }%
+^{q_{1},q_{2},\ldots,q_{\ell}}A=\left(  a_{\kappa\left(  x\right)  ,q_{y}%
+}\right)  _{1\leq x\leq k,\ 1\leq y\leq\ell}%
+\label{sol.exe.det.laplace-multi.0.a.sub1.pf.1}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\operatorname*{sub}%
+\nolimits_{\kappa\left(  1\right)  ,\kappa\left(  2\right)  ,\ldots
+,\kappa\left(  k\right)  }^{q_{1},q_{2},\ldots,q_{\ell}}A\text{, since
+}A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  .\nonumber
+\end{align}
+\par
+On the other hand, from $w\left(  Q\right)  =\left(  q_{1},q_{2}%
+,\ldots,q_{\ell}\right)  $, we obtain%
+\[
+\operatorname*{sub}\nolimits_{\left(  1,2,\ldots,k\right)  }^{w\left(
+Q\right)  }\left(  A_{\kappa}\right)  =\operatorname*{sub}\nolimits_{\left(
+1,2,\ldots,k\right)  }^{\left(  q_{1},q_{2},\ldots,q_{\ell}\right)  }\left(
+A_{\kappa}\right)  =\operatorname*{sub}\nolimits_{1,2,\ldots,k}^{q_{1}%
+,q_{2},\ldots,q_{\ell}}\left(  A_{\kappa}\right)  =\left(  a_{\kappa\left(
+x\right)  ,q_{y}}\right)  _{1\leq x\leq k,\ 1\leq y\leq\ell}%
+\]
+(by the definition of $\operatorname*{sub}\nolimits_{1,2,\ldots,k}%
+^{q_{1},q_{2},\ldots,q_{\ell}}\left(  A_{\kappa}\right)  $, since $A_{\kappa
+}=\left(  a_{\kappa\left(  i\right)  ,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}$). Comparing this with (\ref{sol.exe.det.laplace-multi.0.a.sub1.pf.1}), we
+obtain $\operatorname*{sub}\nolimits_{w\left(  R\right)  }^{w\left(  Q\right)
+}A=\operatorname*{sub}\nolimits_{\left(  1,2,\ldots,k\right)  }^{w\left(
+Q\right)  }\left(  A_{\kappa}\right)  $. This proves
+(\ref{sol.exe.det.laplace-multi.0.a.sub1}).} and%
+\begin{equation}
+\operatorname*{sub}\nolimits_{w\left(  \widetilde{P}\right)  }^{w\left(
+\widetilde{Q}\right)  }A=\operatorname*{sub}\nolimits_{\left(  k+1,k+2,\ldots
+,n\right)  }^{w\left(  \widetilde{Q}\right)  }\left(  A_{\kappa}\right)
+\label{sol.exe.det.laplace-multi.0.a.sub2}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.exe.det.laplace-multi.0.a.sub2}):} Let
+$Q$ be a subset of $\left\{  1,2,\ldots,n\right\}  $. Write the list $w\left(
+\widetilde{Q}\right)  $ in the form $w\left(  \widetilde{Q}\right)  =\left(
+q_{1},q_{2},\ldots,q_{\ell}\right)  $ for some $\ell\in\mathbb{N}$.
+\par
+From $w\left(  \widetilde{P}\right)  =\left(  \kappa\left(  k+1\right)
+,\kappa\left(  k+2\right)  ,\ldots,\kappa\left(  n\right)  \right)  $ and
+$w\left(  \widetilde{Q}\right)  =\left(  q_{1},q_{2},\ldots,q_{\ell}\right)
+$, we obtain%
+\begin{align}
+\operatorname*{sub}\nolimits_{w\left(  \widetilde{P}\right)  }^{w\left(
+\widetilde{Q}\right)  }A &  =\operatorname*{sub}\nolimits_{\left(
+\kappa\left(  k+1\right)  ,\kappa\left(  k+2\right)  ,\ldots,\kappa\left(
+n\right)  \right)  }^{\left(  q_{1},q_{2},\ldots,q_{\ell}\right)
+}A=\operatorname*{sub}\nolimits_{\kappa\left(  k+1\right)  ,\kappa\left(
+k+2\right)  ,\ldots,\kappa\left(  n\right)  }^{q_{1},q_{2},\ldots,q_{\ell}%
+}A=\left(  a_{\kappa\left(  k+x\right)  ,q_{y}}\right)  _{1\leq x\leq
+n-k,\ 1\leq y\leq\ell}\label{sol.exe.det.laplace-multi.0.a.sub2.pf.1}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\operatorname*{sub}%
+\nolimits_{\kappa\left(  k+1\right)  ,\kappa\left(  k+2\right)  ,\ldots
+,\kappa\left(  n\right)  }^{q_{1},q_{2},\ldots,q_{\ell}}A\text{, since
+}A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  .\nonumber
+\end{align}
+\par
+On the other hand, from $w\left(  \widetilde{Q}\right)  =\left(  q_{1}%
+,q_{2},\ldots,q_{\ell}\right)  $, we obtain%
+\[
+\operatorname*{sub}\nolimits_{\left(  k+1,k+2,\ldots,n\right)  }^{w\left(
+\widetilde{Q}\right)  }\left(  A_{\kappa}\right)  =\operatorname*{sub}%
+\nolimits_{\left(  k+1,k+2,\ldots,n\right)  }^{\left(  q_{1},q_{2}%
+,\ldots,q_{\ell}\right)  }\left(  A_{\kappa}\right)  =\operatorname*{sub}%
+\nolimits_{k+1,k+2,\ldots,n}^{q_{1},q_{2},\ldots,q_{\ell}}\left(  A_{\kappa
+}\right)  =\left(  a_{\kappa\left(  k+x\right)  ,q_{y}}\right)  _{1\leq x\leq
+n-k,\ 1\leq y\leq\ell}%
+\]
+(by the definition of $\operatorname*{sub}\nolimits_{k+1,k+2,\ldots,n}%
+^{q_{1},q_{2},\ldots,q_{\ell}}\left(  A_{\kappa}\right)  $, since $A_{\kappa
+}=\left(  a_{\kappa\left(  i\right)  ,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}$). Comparing this with (\ref{sol.exe.det.laplace-multi.0.a.sub2.pf.1}), we
+obtain $\operatorname*{sub}\nolimits_{w\left(  \widetilde{P}\right)
+}^{w\left(  \widetilde{Q}\right)  }A=\operatorname*{sub}\nolimits_{\left(
+k+1,k+2,\ldots,n\right)  }^{w\left(  \widetilde{Q}\right)  }\left(  A_{\kappa
+}\right)  $. This proves (\ref{sol.exe.det.laplace-multi.0.a.sub2}).}.
+
+\begin{vershort}
+Define a subset $P^{\prime}$ of $\left\{  1,2,\ldots,n\right\}  $ by
+$P^{\prime}=\left\{  1,2,\ldots,k\right\}  $. Then, $\left\vert P^{\prime
+}\right\vert =k=\left\vert P\right\vert $.
+\end{vershort}
+
+\begin{verlong}
+Now, we have $k\leq n$ and thus $\left\{  1,2,\ldots,k\right\}  \subseteq
+\left\{  1,2,\ldots,n\right\}  $. In other words, $\left\{  1,2,\ldots
+,k\right\}  $ is a subset of $\left\{  1,2,\ldots,n\right\}  $. Thus, we can
+define a subset $P^{\prime}$ of $\left\{  1,2,\ldots,n\right\}  $ by
+$P^{\prime}=\left\{  1,2,\ldots,k\right\}  $. Consider this $P^{\prime}$. From
+$P^{\prime}=\left\{  1,2,\ldots,k\right\}  $, we obtain $\left\vert P^{\prime
+}\right\vert =\left\vert \left\{  1,2,\ldots,k\right\}  \right\vert
+=k=\left\vert P\right\vert $.
+\end{verlong}
+
+\begin{vershort}
+We have $w\left(  P^{\prime}\right)  =\left(  1,2,\ldots,k\right)
+$\ \ \ \ \footnote{\textit{Proof.} The definition of $w\left(  P^{\prime
+}\right)  $ yields%
+\begin{align*}
+w\left(  P^{\prime}\right)   &  =\left(  \text{the list of all elements of
+}\underbrace{P^{\prime}}_{=\left\{  1,2,\ldots,k\right\}  }\text{ in
+increasing order (with no repetitions)}\right)  \\
+&  =\left(  \text{the list of all elements of }\left\{  1,2,\ldots,k\right\}
+\text{ in increasing order (with no repetitions)}\right)  \\
+&  =\left(  1,2,\ldots,k\right)  .
+\end{align*}
+Qed.} and $w\left(  \widetilde{P^{\prime}}\right)  =\left(  k+1,k+2,\ldots
+,n\right)  $\ \ \ \ \footnote{\textit{Proof.} We have $P^{\prime}=\left\{
+1,2,\ldots,k\right\}  $. Now,
+\begin{align*}
+\widetilde{P^{\prime}} &  =\left\{  1,2,\ldots,n\right\}  \setminus
+\underbrace{P^{\prime}}_{=\left\{  1,2,\ldots,k\right\}  }%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\widetilde{P^{\prime}%
+}\right)  \\
+&  =\left\{  1,2,\ldots,n\right\}  \setminus\left\{  1,2,\ldots,k\right\}
+=\left\{  k+1,k+2,\ldots,n\right\}  \ \ \ \ \ \ \ \ \ \ \left(  \text{since
+}k\in\left\{  0,1,\ldots,n\right\}  \right)  .
+\end{align*}
+\par
+Now, the definition of $w\left(  \widetilde{P^{\prime}}\right)  $ yields%
+\begin{align*}
+&  w\left(  \widetilde{P^{\prime}}\right)  \\
+&  =\left(  \text{the list of all elements of }%
+\underbrace{\widetilde{P^{\prime}}}_{=\left\{  k+1,k+2,\ldots,n\right\}
+}\text{ in increasing order (with no repetitions)}\right)  \\
+&  =\left(  \text{the list of all elements of }\left\{  k+1,k+2,\ldots
+,n\right\}  \text{ in increasing order (with no repetitions)}\right)  \\
+&  =\left(  k+1,k+2,\ldots,n\right)  .
+\end{align*}
+Qed.}.
+\end{vershort}
+
+\begin{verlong}
+We have $w\left(  P^{\prime}\right)  =\left(  1,2,\ldots,k\right)
+$\ \ \ \ \footnote{\textit{Proof.} Recall that $w\left(  P^{\prime}\right)  $
+is the list of all elements of $P^{\prime}$ in increasing order (with no
+repetitions) (by the definition of $w\left(  P^{\prime}\right)  $). Thus,%
+\begin{align*}
+w\left(  P^{\prime}\right)   &  =\left(  \text{the list of all elements of
+}\underbrace{P^{\prime}}_{=\left\{  1,2,\ldots,k\right\}  }\text{ in
+increasing order (with no repetitions)}\right)  \\
+&  =\left(  \text{the list of all elements of }\left\{  1,2,\ldots,k\right\}
+\text{ in increasing order (with no repetitions)}\right)  \\
+&  =\left(  1,2,\ldots,k\right)  .
+\end{align*}
+Qed.} and $w\left(  \widetilde{P^{\prime}}\right)  =\left(  k+1,k+2,\ldots
+,n\right)  $\ \ \ \ \footnote{\textit{Proof.} We have $P^{\prime}=\left\{
+1,2,\ldots,k\right\}  $. Now,
+\begin{align*}
+\widetilde{P^{\prime}} &  =\left\{  1,2,\ldots,n\right\}  \setminus
+\underbrace{P^{\prime}}_{=\left\{  1,2,\ldots,k\right\}  }%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\widetilde{P^{\prime}%
+}\right)  \\
+&  =\left\{  1,2,\ldots,n\right\}  \setminus\left\{  1,2,\ldots,k\right\}
+=\left\{  k+1,k+2,\ldots,n\right\}  \ \ \ \ \ \ \ \ \ \ \left(  \text{since
+}k\in\left\{  0,1,\ldots,n\right\}  \right)  .
+\end{align*}
+\par
+Recall that $w\left(  \widetilde{P^{\prime}}\right)  $ is the list of all
+elements of $\widetilde{P^{\prime}}$ in increasing order (with no repetitions)
+(by the definition of $w\left(  \widetilde{P^{\prime}}\right)  $). Thus,%
+\begin{align*}
+&  w\left(  \widetilde{P^{\prime}}\right)  \\
+&  =\left(  \text{the list of all elements of }%
+\underbrace{\widetilde{P^{\prime}}}_{=\left\{  k+1,k+2,\ldots,n\right\}
+}\text{ in increasing order (with no repetitions)}\right)  \\
+&  =\left(  \text{the list of all elements of }\left\{  k+1,k+2,\ldots
+,n\right\}  \text{ in increasing order (with no repetitions)}\right)  \\
+&  =\left(  k+1,k+2,\ldots,n\right)  .
+\end{align*}
+Qed.}.
+\end{verlong}
+
+Now, Theorem \ref{thm.det.laplace-multi} \textbf{(a)} (applied to $A_{\kappa}$
+and $P^{\prime}$ instead of $A$ and $P$) yields%
+\begin{align*}
+&  \det\left(  A_{\kappa}\right)  \\
+&  =\underbrace{\sum_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}
+;\\\left\vert Q\right\vert =\left\vert P^{\prime}\right\vert }}}%
+_{\substack{=\sum_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}
+;\\\left\vert Q\right\vert =\left\vert P\right\vert }}\\\text{(since
+}\left\vert P^{\prime}\right\vert =\left\vert P\right\vert \text{)}}}\left(
+-1\right)  ^{\sum P^{\prime}+\sum Q}\det\left(
+\underbrace{\operatorname*{sub}\nolimits_{w\left(  P^{\prime}\right)
+}^{w\left(  Q\right)  }\left(  A_{\kappa}\right)  }%
+_{\substack{=\operatorname*{sub}\nolimits_{\left(  1,2,\ldots,k\right)
+}^{w\left(  Q\right)  }\left(  A_{\kappa}\right)  \\\text{(since }w\left(
+P^{\prime}\right)  =\left(  1,2,\ldots,k\right)  \text{)}}}\right)
+\det\left(  \underbrace{\operatorname*{sub}\nolimits_{w\left(
+\widetilde{P^{\prime}}\right)  }^{w\left(  \widetilde{Q}\right)  }\left(
+A_{\kappa}\right)  }_{\substack{=\operatorname*{sub}\nolimits_{\left(
+k+1,k+2,\ldots,n\right)  }^{w\left(  \widetilde{Q}\right)  }\left(  A_{\kappa
+}\right)  \\\text{(since }w\left(  \widetilde{P^{\prime}}\right)  =\left(
+k+1,k+2,\ldots,n\right)  \text{)}}}\right)  \\
+&  =\sum_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+Q\right\vert =\left\vert P\right\vert }}\left(  -1\right)  ^{\sum P^{\prime
+}+\sum Q}\det\left(  \underbrace{\operatorname*{sub}\nolimits_{\left(
+1,2,\ldots,k\right)  }^{w\left(  Q\right)  }\left(  A_{\kappa}\right)
+}_{\substack{=\operatorname*{sub}\nolimits_{w\left(  R\right)  }^{w\left(
+Q\right)  }A\\\text{(by (\ref{sol.exe.det.laplace-multi.0.a.sub1}))}}}\right)
+\det\left(  \underbrace{\operatorname*{sub}\nolimits_{\left(  k+1,k+2,\ldots
+,n\right)  }^{w\left(  \widetilde{Q}\right)  }\left(  A_{\kappa}\right)
+}_{\substack{=\operatorname*{sub}\nolimits_{w\left(  \widetilde{P}\right)
+}^{w\left(  \widetilde{Q}\right)  }A\\\text{(by
+(\ref{sol.exe.det.laplace-multi.0.a.sub2}))}}}\right)  \\
+&  =\sum_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+Q\right\vert =\left\vert P\right\vert }}\left(  -1\right)  ^{\sum P^{\prime
+}+\sum Q}\det\left(  \operatorname*{sub}\nolimits_{w\left(  R\right)
+}^{w\left(  Q\right)  }A\right)  \det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  \widetilde{P}\right)  }^{w\left(  \widetilde{Q}\right)
+}A\right)  .
+\end{align*}
+Comparing this with (\ref{sol.exe.det.laplace-multi.0.a.detAk}), we obtain%
+\[
+0=\sum_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+Q\right\vert =\left\vert P\right\vert }}\left(  -1\right)  ^{\sum P^{\prime
+}+\sum Q}\det\left(  \operatorname*{sub}\nolimits_{w\left(  R\right)
+}^{w\left(  Q\right)  }A\right)  \det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  \widetilde{P}\right)  }^{w\left(  \widetilde{Q}\right)
+}A\right)  .
+\]
+Multiplying both sides of this equality by $\left(  -1\right)  ^{\sum P-\sum
+P^{\prime}}$, we obtain%
+\begin{align*}
+0 &  =\left(  -1\right)  ^{\sum P-\sum P^{\prime}}\cdot\sum
+_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+Q\right\vert =\left\vert P\right\vert }}\left(  -1\right)  ^{\sum P^{\prime
+}+\sum Q}\det\left(  \operatorname*{sub}\nolimits_{w\left(  R\right)
+}^{w\left(  Q\right)  }A\right)  \det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  \widetilde{P}\right)  }^{w\left(  \widetilde{Q}\right)
+}A\right)  \\
+&  =\sum_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+Q\right\vert =\left\vert P\right\vert }}\underbrace{\left(  -1\right)  ^{\sum
+P-\sum P^{\prime}}\left(  -1\right)  ^{\sum P^{\prime}+\sum Q}}%
+_{\substack{=\left(  -1\right)  ^{\left(  \sum P-\sum P^{\prime}\right)
++\left(  \sum P^{\prime}+\sum Q\right)  }\\=\left(  -1\right)  ^{\sum P+\sum
+Q}\\\text{(since }\left(  \sum P-\sum P^{\prime}\right)  +\left(  \sum
+P^{\prime}+\sum Q\right)  =\sum P+\sum Q\text{)}}}\det\left(
+\operatorname*{sub}\nolimits_{w\left(  R\right)  }^{w\left(  Q\right)
+}A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{P}%
+\right)  }^{w\left(  \widetilde{Q}\right)  }A\right)  \\
+&  =\sum_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+Q\right\vert =\left\vert P\right\vert }}\left(  -1\right)  ^{\sum P+\sum
+Q}\det\left(  \operatorname*{sub}\nolimits_{w\left(  R\right)  }^{w\left(
+Q\right)  }A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(
+\widetilde{P}\right)  }^{w\left(  \widetilde{Q}\right)  }A\right)  .
+\end{align*}
+This solves Exercise \ref{exe.det.laplace-multi.0} \textbf{(a)}.
+
+\textbf{(b)} Let $P$ be a subset of $\left\{  1,2,\ldots,n\right\}  $
+satisfying $\left\vert P\right\vert =\left\vert R\right\vert $ and $P\neq R$.
+Every subset $Q$ of $\left\{  1,2,\ldots,n\right\}  $ satisfying $\left\vert
+Q\right\vert =\left\vert P\right\vert $ satisfies%
+\begin{align}
+&  \det\left(  \operatorname*{sub}\nolimits_{w\left(  R\right)  }^{w\left(
+Q\right)  }\left(  A^{T}\right)  \right)  \det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  \widetilde{P}\right)  }^{w\left(  \widetilde{Q}\right)
+}\left(  A^{T}\right)  \right)  \nonumber\\
+&  =\det\left(  \operatorname*{sub}\nolimits_{w\left(  Q\right)  }^{w\left(
+R\right)  }A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(
+\widetilde{Q}\right)  }^{w\left(  \widetilde{P}\right)  }A\right)
+\label{sol.det.laplace-multi.0.b.1}%
+\end{align}
+\footnote{\textit{Proof of (\ref{sol.det.laplace-multi.0.b.1}):} Let $Q$ be a
+subset of $\left\{  1,2,\ldots,n\right\}  $ satisfying $\left\vert
+Q\right\vert =\left\vert P\right\vert $. Then, $\left\vert Q\right\vert
+=\left\vert P\right\vert =\left\vert R\right\vert $. Thus, $\left\vert
+R\right\vert =\left\vert Q\right\vert $. Also, $\left\vert P\right\vert
+=\left\vert Q\right\vert $ (since $\left\vert Q\right\vert =\left\vert
+P\right\vert $). Hence, (\ref{eq.cor.sol.det.laplace-multi.0.detsubAT.1})
+(applied to $U=R$ and $V=Q$) yields
+\begin{equation}
+\det\left(  \operatorname*{sub}\nolimits_{w\left(  R\right)  }^{w\left(
+Q\right)  }\left(  A^{T}\right)  \right)  =\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  Q\right)  }^{w\left(  R\right)  }A\right)
+.\label{sol.det.laplace-multi.0.b.1.pf.1}%
+\end{equation}
+Also, (\ref{eq.cor.sol.det.laplace-multi.0.detsubAT.2}) (applied to $U=P$ and
+$V=Q$) yields
+\begin{equation}
+\det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{P}\right)
+}^{w\left(  \widetilde{Q}\right)  }\left(  A^{T}\right)  \right)  =\det\left(
+\operatorname*{sub}\nolimits_{w\left(  \widetilde{Q}\right)  }^{w\left(
+\widetilde{P}\right)  }A\right)  .\label{sol.det.laplace-multi.0.b.1.pf.2}%
+\end{equation}
+Multiplying the equality (\ref{sol.det.laplace-multi.0.b.1.pf.1}) with the
+equality (\ref{sol.det.laplace-multi.0.b.1.pf.2}), we obtain%
+\[
+\det\left(  \operatorname*{sub}\nolimits_{w\left(  R\right)  }^{w\left(
+Q\right)  }\left(  A^{T}\right)  \right)  \det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  \widetilde{P}\right)  }^{w\left(  \widetilde{Q}\right)
+}\left(  A^{T}\right)  \right)  =\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  Q\right)  }^{w\left(  R\right)  }A\right)  \det\left(
+\operatorname*{sub}\nolimits_{w\left(  \widetilde{Q}\right)  }^{w\left(
+\widetilde{P}\right)  }A\right)  .
+\]
+Thus, (\ref{sol.det.laplace-multi.0.b.1}) is proven.}.
+
+Exercise \ref{exe.det.laplace-multi.0} \textbf{(a)} (applied to $A^{T}$
+instead of $A$) yields%
+\begin{align}
+0 &  =\sum_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+Q\right\vert =\left\vert P\right\vert }}\underbrace{\left(  -1\right)  ^{\sum
+P+\sum Q}}_{\substack{=\left(  -1\right)  ^{\sum Q+\sum P}\\\text{(since }\sum
+P+\sum Q=\sum Q+\sum P\text{)}}}\underbrace{\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  R\right)  }^{w\left(  Q\right)  }\left(  A^{T}\right)
+\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{P}%
+\right)  }^{w\left(  \widetilde{Q}\right)  }\left(  A^{T}\right)  \right)
+}_{\substack{=\det\left(  \operatorname*{sub}\nolimits_{w\left(  Q\right)
+}^{w\left(  R\right)  }A\right)  \det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  \widetilde{Q}\right)  }^{w\left(  \widetilde{P}\right)
+}A\right)  \\\text{(by (\ref{sol.det.laplace-multi.0.b.1}))}}}\nonumber\\
+&  =\sum_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+Q\right\vert =\left\vert P\right\vert }}\left(  -1\right)  ^{\sum Q+\sum
+P}\det\left(  \operatorname*{sub}\nolimits_{w\left(  Q\right)  }^{w\left(
+R\right)  }A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(
+\widetilde{Q}\right)  }^{w\left(  \widetilde{P}\right)  }A\right)  \nonumber\\
+&  =\sum_{\substack{G\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+G\right\vert =\left\vert P\right\vert }}\left(  -1\right)  ^{\sum G+\sum
+P}\det\left(  \operatorname*{sub}\nolimits_{w\left(  G\right)  }^{w\left(
+R\right)  }A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(
+\widetilde{G}\right)  }^{w\left(  \widetilde{P}\right)  }A\right)
+\label{sol.det.laplace-multi.0.b.5}%
+\end{align}
+(here, we have renamed the summation index $Q$ as $G$).
+
+Now, forget that we fixed $P$. We thus have proven that
+(\ref{sol.det.laplace-multi.0.b.5}) holds for every subset $P$ of $\left\{
+1,2,\ldots,n\right\}  $ satisfying $\left\vert P\right\vert =\left\vert
+R\right\vert $ and $P\neq R$.
+
+Now, let $Q$ be a subset $\left\{  1,2,\ldots,n\right\}  $ satisfying
+$\left\vert Q\right\vert =\left\vert R\right\vert $ and $Q\neq R$. Then, we
+can apply (\ref{sol.det.laplace-multi.0.b.5}) to $P=Q$. We thus obtain%
+\begin{align*}
+0 &  =\sum_{\substack{G\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+G\right\vert =\left\vert Q\right\vert }}\left(  -1\right)  ^{\sum G+\sum
+Q}\det\left(  \operatorname*{sub}\nolimits_{w\left(  G\right)  }^{w\left(
+R\right)  }A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(
+\widetilde{G}\right)  }^{w\left(  \widetilde{Q}\right)  }A\right)  \\
+&  =\sum_{\substack{P\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+P\right\vert =\left\vert Q\right\vert }}\left(  -1\right)  ^{\sum P+\sum
+Q}\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+Q\right)  }A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(
+\widetilde{P}\right)  }^{w\left(  \widetilde{Q}\right)  }A\right)
+\end{align*}
+(here, we have renamed the summation index $G$ as $P$). This solves Exercise
+\ref{exe.det.laplace-multi.0} \textbf{(b)}.
 \end{proof}
 
 \subsection{Solution to Exercise \ref{exe.det(A+B)}}
