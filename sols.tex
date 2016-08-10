@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Tuesday, August 09, 2016 02:00:31}
+%TCIDATA{LastRevised=Wednesday, August 10, 2016 19:14:47}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -60309,7 +60309,7 @@ is well-defined and a bijection.
 We have $w\left(  Q\right)  =\left(  q_{1},q_{2},\ldots,q_{k}\right)  $. Thus,%
 \begin{align*}
 \operatorname*{sub}\nolimits_{\left(  1,2,\ldots,k\right)  }^{w\left(
-Q\right)  }A  &  =\operatorname*{sub}\nolimits_{\left(  1,2,\ldots,k\right)
+Q\right)  }A &  =\operatorname*{sub}\nolimits_{\left(  1,2,\ldots,k\right)
 }^{\left(  q_{1},q_{2},\ldots,q_{k}\right)  }A=\operatorname*{sub}%
 \nolimits_{1,2,\ldots,k}^{q_{1},q_{2},\ldots,q_{k}}A=\left(  a_{x,q_{y}%
 }\right)  _{1\leq x\leq k,\ 1\leq y\leq k}\\
@@ -60320,7 +60320,7 @@ Q\right)  }A  &  =\operatorname*{sub}\nolimits_{\left(  1,2,\ldots,k\right)
 ^{q_{1},q_{2},\ldots,q_{k}}A\text{,}\\
 \text{since }A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}%
 \end{array}
-\right) \\
+\right)  \\
 &  =\left(  a_{i,q_{j}}\right)  _{1\leq i\leq k,\ 1\leq j\leq k}%
 \end{align*}
 (here, we have renamed the index $\left(  x,y\right)  $ as $\left(
@@ -60332,14 +60332,14 @@ i,j\right)  $). Thus,%
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
-\text{by (\ref{def.sect.laplace.notations}), applied to }k\text{,
-}\operatorname*{sub}\nolimits_{\left(  1,2,\ldots,k\right)  }^{w\left(
-Q\right)  }A\text{ and }a_{i,q_{j}}\\
+\text{by (\ref{eq.det.eq.2}), applied to }k\text{, }\operatorname*{sub}%
+\nolimits_{\left(  1,2,\ldots,k\right)  }^{w\left(  Q\right)  }A\text{ and
+}a_{i,q_{j}}\\
 \text{instead of }n\text{, }A\text{ and }a_{i,j}%
 \end{array}
-\right) \nonumber\\
+\right)  \nonumber\\
 &  =\sum_{\alpha\in S_{k}}\left(  -1\right)  ^{\alpha}\prod_{i=1}%
-^{k}a_{i,q_{\alpha\left(  i\right)  }}
+^{k}a_{i,q_{\alpha\left(  i\right)  }}%
 \label{pf.lem.sol.det.laplace-multi.1.det1}%
 \end{align}
 (here, we have renamed the summation index $\sigma$ as $\alpha$).
@@ -60348,10 +60348,10 @@ Also, $w\left(  \widetilde{Q}\right)  =\left(  r_{1},r_{2},\ldots
 ,r_{n-k}\right)  $. Thus,%
 \begin{align*}
 \operatorname*{sub}\nolimits_{\left(  k+1,k+2,\ldots,n\right)  }^{w\left(
-\widetilde{Q}\right)  }B  &  =\operatorname*{sub}\nolimits_{\left(
+\widetilde{Q}\right)  }B &  =\operatorname*{sub}\nolimits_{\left(
 k+1,k+2,\ldots,n\right)  }^{\left(  r_{1},r_{2},\ldots,r_{n-k}\right)
 }B=\operatorname*{sub}\nolimits_{k+1,k+2,\ldots,n}^{r_{1},r_{2},\ldots
-,r_{n-k}}B=\left(  b_{k+i,r_{y}}\right)  _{1\leq x\leq n-k,\ 1\leq y\leq
+,r_{n-k}}B=\left(  b_{k+x,r_{y}}\right)  _{1\leq x\leq n-k,\ 1\leq y\leq
 n-k}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
@@ -60360,7 +60360,7 @@ n-k}\\
 ,n}^{r_{1},r_{2},\ldots,r_{n-k}}B\text{,}\\
 \text{since }B=\left(  b_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}%
 \end{array}
-\right) \\
+\right)  \\
 &  =\left(  b_{k+i,r_{j}}\right)  _{1\leq i\leq n-k,\ 1\leq j\leq n-k}%
 \end{align*}
 (here, we have renamed the index $\left(  x,y\right)  $ as $\left(
@@ -60373,14 +60373,14 @@ i\right)  }}\nonumber\\
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
-\text{by (\ref{def.sect.laplace.notations}), applied to }n-k\text{,
-}\operatorname*{sub}\nolimits_{\left(  k+1,k+2,\ldots,n\right)  }^{w\left(
-\widetilde{Q}\right)  }B\text{ and }b_{k+i,r_{j}}\\
+\text{by (\ref{eq.det.eq.2}), applied to }n-k\text{, }\operatorname*{sub}%
+\nolimits_{\left(  k+1,k+2,\ldots,n\right)  }^{w\left(  \widetilde{Q}\right)
+}B\text{ and }b_{k+i,r_{j}}\\
 \text{instead of }n\text{, }A\text{ and }a_{i,j}%
 \end{array}
-\right) \nonumber\\
+\right)  \nonumber\\
 &  =\sum_{\beta\in S_{n-k}}\left(  -1\right)  ^{\beta}\prod_{i=1}%
-^{n-k}b_{k+i,r_{\beta\left(  i\right)  }}
+^{n-k}b_{k+i,r_{\beta\left(  i\right)  }}%
 \label{pf.lem.sol.det.laplace-multi.1.det2}%
 \end{align}
 (here, we have renamed the summation index $\sigma$ as $\beta$).
@@ -63553,7 +63553,7 @@ For every $\sigma\in S_{n}$ and every subset $P$ of $\left\{  1,2,\ldots
 \begin{equation}
 c_{\sigma,P}=\left(  -1\right)  ^{\sigma}\left(  \prod_{i\in P}a_{i,\sigma
 \left(  i\right)  }\right)  \left(  \prod_{i\in\widetilde{P}}b_{i,\sigma
-\left(  i\right)  }\right)  .\label{sol.det(A+B).short.c=}%
+\left(  i\right)  }\right)  . \label{sol.det(A+B).short.c=}%
 \end{equation}
 
 
@@ -63726,7 +63726,7 @@ For every $\sigma\in S_{n}$ and every subset $P$ of $\left\{  1,2,\ldots
 \begin{equation}
 c_{\sigma,P}=\left(  -1\right)  ^{\sigma}\left(  \prod_{i\in P}a_{i,\sigma
 \left(  i\right)  }\right)  \left(  \prod_{i\in\widetilde{P}}b_{i,\sigma
-\left(  i\right)  }\right)  .\label{sol.det(A+B).c=}%
+\left(  i\right)  }\right)  . \label{sol.det(A+B).c=}%
 \end{equation}
 
 
