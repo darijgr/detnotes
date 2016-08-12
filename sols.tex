@@ -35415,12 +35415,11 @@ and thus%
 \right\}   &  =\left\{  a_{1},a_{2},\ldots,a_{k},b_{1},b_{2},\ldots
 ,b_{n-k}\right\} \\
 &  =\underbrace{\left\{  a_{1},a_{2},\ldots,a_{k}\right\}  }%
-_{\substack{=I\\\text{(since }\left\{  a_{1},a_{2},\ldots,a_{k}\right\}
-\text{ is a list}\\\text{of all elements of }I\text{)}}}\cup
-\underbrace{\left\{  b_{1},b_{2},\ldots,b_{n-k}\right\}  }_{\substack{=\left[
-n\right]  \setminus I\\\text{(since }\left\{  b_{1},b_{2},\ldots
-,b_{n-k}\right\}  \text{ is a list}\\\text{of all elements of }\left[
-n\right]  \setminus I\text{)}}}\\
+_{\substack{=I\\\text{(since }\left(  a_{1},a_{2},\ldots,a_{k}\right)  \text{
+is a list}\\\text{of all elements of }I\text{)}}}\cup\underbrace{\left\{
+b_{1},b_{2},\ldots,b_{n-k}\right\}  }_{\substack{=\left[  n\right]  \setminus
+I\\\text{(since }\left(  b_{1},b_{2},\ldots,b_{n-k}\right)  \text{ is a
+list}\\\text{of all elements of }\left[  n\right]  \setminus I\text{)}}}\\
 &  =I\cup\left(  \left[  n\right]  \setminus I\right)  =\left[  n\right]  .
 \end{align*}
 Now,%
@@ -35498,7 +35497,7 @@ $). These two elements are distinct (since $g<h$).
 \par
 But $\left(  a_{1},a_{2},\ldots,a_{k}\right)  $ is a list of all elements of
 $I$ (with no repetitions). Thus, the list $\left(  a_{1},a_{2},\ldots
-,a_{k}\right)  $ contains no two repetitions. In other words, the elements
+,a_{k}\right)  $ contains no repetitions. In other words, the elements
 $a_{1},a_{2},\ldots,a_{k}$ are pairwise distinct. In other words, if $u$ and
 $v$ are two distinct elements of $\left\{  1,2,\ldots,k\right\}  $, then
 $a_{u}\neq a_{v}$. Applying this to $u=g$ and $v=h$, we obtain $a_{g}\neq
@@ -35536,17 +35535,17 @@ $\underbrace{g}_{<h}-k<h-k$).
 \par
 But $\left(  b_{1},b_{2},\ldots,b_{n-k}\right)  $ is a list of all elements of
 $\left[  n\right]  \setminus I$ (with no repetitions). Thus, the list $\left(
-b_{1},b_{2},\ldots,b_{n-k}\right)  $ contains no two repetitions. In other
-words, the elements $b_{1},b_{2},\ldots,b_{n-k}$ are pairwise distinct. In
-other words, if $u$ and $v$ are two distinct elements of $\left\{
-1,2,\ldots,n-k\right\}  $, then $b_{u}\neq b_{v}$. Applying this to $u=g-k$
-and $v=h-k$, we obtain $b_{g-k}\neq b_{h-k}$. This contradicts $b_{g-k}%
-=b_{h-k}$. Hence, we have obtained a contradiction in Case 2.
+b_{1},b_{2},\ldots,b_{n-k}\right)  $ contains no repetitions. In other words,
+the elements $b_{1},b_{2},\ldots,b_{n-k}$ are pairwise distinct. In other
+words, if $u$ and $v$ are two distinct elements of $\left\{  1,2,\ldots
+,n-k\right\}  $, then $b_{u}\neq b_{v}$. Applying this to $u=g-k$ and $v=h-k$,
+we obtain $b_{g-k}\neq b_{h-k}$. This contradicts $b_{g-k}=b_{h-k}$. Hence, we
+have obtained a contradiction in Case 2.
 \par
 Now, we have obtained a contradiction in each of the two Cases 1 and 2. Thus,
-we always have a contradiction. This contradiction proves that our assumption
-(that $g\neq h$) was wrong. Hence, we cannot have $g\neq h$. We thus have
-$g=h$.
+we always have a contradiction (since the two Cases 1 and 2 cover all
+possibilities). This contradiction proves that our assumption (that $g\neq h$)
+was wrong. Hence, we cannot have $g\neq h$. We thus have $g=h$.
 \par
 Now, forget that we fixed $g$ and $h$. We thus have proven that if $g$ and $h$
 are two elements of $\left[  n\right]  $ such that $f\left(  g\right)
@@ -60309,7 +60308,7 @@ is well-defined and a bijection.
 We have $w\left(  Q\right)  =\left(  q_{1},q_{2},\ldots,q_{k}\right)  $. Thus,%
 \begin{align*}
 \operatorname*{sub}\nolimits_{\left(  1,2,\ldots,k\right)  }^{w\left(
-Q\right)  }A &  =\operatorname*{sub}\nolimits_{\left(  1,2,\ldots,k\right)
+Q\right)  }A  &  =\operatorname*{sub}\nolimits_{\left(  1,2,\ldots,k\right)
 }^{\left(  q_{1},q_{2},\ldots,q_{k}\right)  }A=\operatorname*{sub}%
 \nolimits_{1,2,\ldots,k}^{q_{1},q_{2},\ldots,q_{k}}A=\left(  a_{x,q_{y}%
 }\right)  _{1\leq x\leq k,\ 1\leq y\leq k}\\
@@ -60320,7 +60319,7 @@ Q\right)  }A &  =\operatorname*{sub}\nolimits_{\left(  1,2,\ldots,k\right)
 ^{q_{1},q_{2},\ldots,q_{k}}A\text{,}\\
 \text{since }A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}%
 \end{array}
-\right)  \\
+\right) \\
 &  =\left(  a_{i,q_{j}}\right)  _{1\leq i\leq k,\ 1\leq j\leq k}%
 \end{align*}
 (here, we have renamed the index $\left(  x,y\right)  $ as $\left(
@@ -60337,9 +60336,9 @@ i,j\right)  $). Thus,%
 }a_{i,q_{j}}\\
 \text{instead of }n\text{, }A\text{ and }a_{i,j}%
 \end{array}
-\right)  \nonumber\\
+\right) \nonumber\\
 &  =\sum_{\alpha\in S_{k}}\left(  -1\right)  ^{\alpha}\prod_{i=1}%
-^{k}a_{i,q_{\alpha\left(  i\right)  }}%
+^{k}a_{i,q_{\alpha\left(  i\right)  }}
 \label{pf.lem.sol.det.laplace-multi.1.det1}%
 \end{align}
 (here, we have renamed the summation index $\sigma$ as $\alpha$).
@@ -60348,7 +60347,7 @@ Also, $w\left(  \widetilde{Q}\right)  =\left(  r_{1},r_{2},\ldots
 ,r_{n-k}\right)  $. Thus,%
 \begin{align*}
 \operatorname*{sub}\nolimits_{\left(  k+1,k+2,\ldots,n\right)  }^{w\left(
-\widetilde{Q}\right)  }B &  =\operatorname*{sub}\nolimits_{\left(
+\widetilde{Q}\right)  }B  &  =\operatorname*{sub}\nolimits_{\left(
 k+1,k+2,\ldots,n\right)  }^{\left(  r_{1},r_{2},\ldots,r_{n-k}\right)
 }B=\operatorname*{sub}\nolimits_{k+1,k+2,\ldots,n}^{r_{1},r_{2},\ldots
 ,r_{n-k}}B=\left(  b_{k+x,r_{y}}\right)  _{1\leq x\leq n-k,\ 1\leq y\leq
@@ -60360,7 +60359,7 @@ n-k}\\
 ,n}^{r_{1},r_{2},\ldots,r_{n-k}}B\text{,}\\
 \text{since }B=\left(  b_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}%
 \end{array}
-\right)  \\
+\right) \\
 &  =\left(  b_{k+i,r_{j}}\right)  _{1\leq i\leq n-k,\ 1\leq j\leq n-k}%
 \end{align*}
 (here, we have renamed the index $\left(  x,y\right)  $ as $\left(
@@ -60378,9 +60377,9 @@ i\right)  }}\nonumber\\
 }B\text{ and }b_{k+i,r_{j}}\\
 \text{instead of }n\text{, }A\text{ and }a_{i,j}%
 \end{array}
-\right)  \nonumber\\
+\right) \nonumber\\
 &  =\sum_{\beta\in S_{n-k}}\left(  -1\right)  ^{\beta}\prod_{i=1}%
-^{n-k}b_{k+i,r_{\beta\left(  i\right)  }}%
+^{n-k}b_{k+i,r_{\beta\left(  i\right)  }}
 \label{pf.lem.sol.det.laplace-multi.1.det2}%
 \end{align}
 (here, we have renamed the summation index $\sigma$ as $\beta$).
@@ -60880,8 +60879,9 @@ $k=\left\vert I\right\vert \in\mathbb{N}$), this yields $k\in\left\{
 
 We know that $w\left(  I\right)  $ is the list of all elements of $I$ in
 increasing order (with no repetitions) (by the definition of $w\left(
-I\right)  $). Thus, $w\left(  I\right)  $ is a list of $k$ elements (since
-$\left\vert I\right\vert =k$).
+I\right)  $). Thus, $w\left(  I\right)  $ is a list of $\left\vert
+I\right\vert $ elements. In other words, $w\left(  I\right)  $ is a list of
+$k$ elements (since $\left\vert I\right\vert =k$).
 
 Write $w\left(  I\right)  $ in the form $w\left(  I\right)  =\left(
 a_{1},a_{2},\ldots,a_{k}\right)  $. (This is possible, since $w\left(
@@ -60896,7 +60896,9 @@ order (with no repetitions) (since $w\left(  I\right)  =\left(  a_{1}%
 We know that $w\left(  \widetilde{I}\right)  $ is the list of all elements of
 $\widetilde{I}$ in increasing order (with no repetitions) (by the definition
 of $w\left(  \widetilde{I}\right)  $). Thus, $w\left(  \widetilde{I}\right)  $
-is a list of $n-k$ elements (since $\left\vert \widetilde{I}\right\vert =n-k$).
+is a list of $\left\vert \widetilde{I}\right\vert $ elements. In other words,
+$w\left(  \widetilde{I}\right)  $ is a list of $n-k$ elements (since
+$\left\vert \widetilde{I}\right\vert =n-k$).
 
 Write $w\left(  \widetilde{I}\right)  $ in the form $w\left(  \widetilde{I}%
 \right)  =\left(  b_{1},b_{2},\ldots,b_{n-k}\right)  $. (This is possible,
@@ -63943,8 +63945,9 @@ Q\right)  =\left(  q_{1},q_{2},\ldots,q_{k}\right)  $.
 \begin{verlong}
 We know that $w\left(  P\right)  $ is the list of all elements of $P$ in
 increasing order (with no repetitions) (by the definition of $w\left(
-P\right)  $). Thus, $w\left(  P\right)  $ is a list of $k$ elements (since
-$\left\vert P\right\vert =k$).
+P\right)  $). Thus, $w\left(  P\right)  $ is a list of $\left\vert
+P\right\vert $ elements. In other words, $w\left(  P\right)  $ is a list of
+$k$ elements (since $\left\vert P\right\vert =k$).
 
 Write $w\left(  P\right)  $ in the form $w\left(  P\right)  =\left(
 p_{1},p_{2},\ldots,p_{k}\right)  $. (This is possible, since $w\left(
@@ -63952,8 +63955,9 @@ P\right)  $ is a list of $k$ elements.)
 
 We know that $w\left(  Q\right)  $ is the list of all elements of $Q$ in
 increasing order (with no repetitions) (by the definition of $w\left(
-Q\right)  $). Thus, $w\left(  Q\right)  $ is a list of $k$ elements (since
-$\left\vert Q\right\vert =k$).
+Q\right)  $). Thus, $w\left(  P\right)  $ is a list of $\left\vert
+Q\right\vert $ elements. In other words, $w\left(  Q\right)  $ is a list of
+$k$ elements (since $\left\vert Q\right\vert =k$).
 
 Write $w\left(  Q\right)  $ in the form $w\left(  Q\right)  =\left(
 q_{1},q_{2},\ldots,q_{k}\right)  $. (This is possible, since $w\left(
@@ -64904,13 +64908,13 @@ Write the $n\times n$-matrix $A$ in the form $A=\left(  a_{i,j}\right)
 _{1\leq i\leq n,\ 1\leq j\leq n}$. Then, \newline$A^{T}=\left(  a_{j,i}%
 \right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ (by the definition of $A^{T}$).
 
-Define a new matrix $C$ by $C=\left(  a_{\delta\left(  j\right)  ,i}\right)
+Define a new matrix $C$ by $C=\left(  a_{j,\delta\left(  i\right)  }\right)
 _{1\leq i\leq n,\ 1\leq j\leq n}$. Then, Lemma \ref{lem.det.sigma}
 \textbf{(a)} (applied to $\delta$, $A^{T}$, $a_{j,i}$ and $C$ instead of
 $\kappa$, $B$, $b_{i,j}$ and $B_{\kappa}$) yields $\det C=\left(  -1\right)
 ^{\delta}\cdot\det\left(  A^{T}\right)  $ (because $A^{T}=\left(
 a_{j,i}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ and $C=\left(
-a_{\delta\left(  j\right)  ,i}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$).
+a_{j,\delta\left(  i\right)  }\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$).
 Thus,%
 \[
 \det C=\left(  -1\right)  ^{\delta}\cdot\underbrace{\det\left(  A^{T}\right)
@@ -64926,7 +64930,7 @@ Clearly, $C$ is an $n\times n$-matrix. Hence, Exercise \ref{exe.ps4.4}
 \]
 
 
-But we have $C=\left(  a_{\delta\left(  j\right)  ,i}\right)  _{1\leq i\leq
+But we have $C=\left(  a_{j,\delta\left(  i\right)  }\right)  _{1\leq i\leq
 n,\ 1\leq j\leq n}$. Hence, $C^{T}=\left(  a_{i,\delta\left(  j\right)
 }\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ (by the definition of $C^{T}$). We
 have $C^{T}=\left(  a_{i,\delta\left(  j\right)  }\right)  _{1\leq i\leq
