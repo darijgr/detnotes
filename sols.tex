@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Wednesday, August 10, 2016 19:14:47}
+%TCIDATA{LastRevised=Monday, August 15, 2016 21:37:31}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -4734,9 +4734,8 @@ Here, $\dbinom{a}{b}$ is defined to be $0$ when $b<0$.
 \end{addexercise}
 
 \begin{noncompile}
-See
-\url{http://web.mit.edu/~darij/www/QEDMO4P13.pdf} for a solution to
-the preceding exercise.
+See \url{http://web.mit.edu/~darij/www/QEDMO4P13.pdf} for a solution to the
+preceding exercise.
 \end{noncompile}
 
 \begin{addexercise}
@@ -4799,8 +4798,8 @@ Show that $Z_{m,n}=Z_{n,m}$ for any $n\in\mathbb{N}$ and $m\in\mathbb{N}$.
 
 \begin{noncompile}
 Two solutions to the preceding exercise are sketched in
-\url{http://www.artofproblemsolving.com/community/c6h333199p1782800} .
-More generally, $Y_{m,n}=Y_{n,m}$, where $Y_{m,n}$ is the polynomial%
+\url{http://www.artofproblemsolving.com/community/c6h333199p1782800} . More
+generally, $Y_{m,n}=Y_{n,m}$, where $Y_{m,n}$ is the polynomial%
 \[
 \sum_{k=0}^{n}Y^{k}\dbinom{n}{k}\left(  X^{n-k}+Y\right)  ^{m}.
 \]
@@ -4895,10 +4894,9 @@ _{13}=521.
 
 A lot of papers have been written about these two sequences, the relations
 between them, and the identities that hold for their terms.\footnote{See
-\url{https://oeis.org/A000045} and
-\url{https://oeis.org/A000032} for an overview of
-their properties.} One of their most striking properties is that they can be
-computed explicitly, albeit using irrational numbers. In fact, the
+\url{https://oeis.org/A000045} and \url{https://oeis.org/A000032} for an
+overview of their properties.} One of their most striking properties is that
+they can be computed explicitly, albeit using irrational numbers. In fact, the
 \textit{Binet formula} says that the $n$-th Fibonacci number $f_{n}$ can be
 computed by%
 \begin{equation}
@@ -8791,9 +8789,8 @@ its own additive inverse, but in this example it happens all the time!}
 The commutative ring $2^{S}$ has the property that $a^{2}=a$ for every
 $a\in2^{S}$. (This simply means that $A\cap A=A$ for every $A\subseteq S$.)
 Commutative rings that have this property are called
-\href{https://en.wikipedia.org/wiki/Boolean_ring}{\textit{Boolean
-rings}}. (Of course, $2^{S}$ is the eponymic example for a Boolean ring; but
-there are also others.)
+\href{https://en.wikipedia.org/wiki/Boolean_ring}{\textit{Boolean rings}}. (Of
+course, $2^{S}$ is the eponymic example for a Boolean ring; but there are also others.)
 
 \item For every positive integer $n$, the residue classes of integers modulo
 $n$ form a commutative ring, which is called $\mathbb{Z}/n\mathbb{Z}$ or
@@ -26448,9 +26445,9 @@ $Z_{m,n}=Z_{n,m}$. This solves Additional exercise \ref{exeadd.AoPS333199}.
 
 \begin{remark}
 Two solutions to Exercise \ref{exeadd.AoPS333199} are sketched in
-\url{http://www.artofproblemsolving.com/community/c6h333199p1782800}
-. One is essentially the solution given above (except in lesser generality);
-the other is combinatorial.
+\url{http://www.artofproblemsolving.com/community/c6h333199p1782800} . One is
+essentially the solution given above (except in lesser generality); the other
+is combinatorial.
 \end{remark}
 
 \subsection{Solution to Additional exercise \ref{exeadd.AoPS262752}}
@@ -64831,8 +64828,11 @@ This proves (\ref{eq.cor.det(A+X).2}). The proof of Corollary
 \subsection{\label{sect.sol.jacobi-complement}Solution to Additional exercise
 \ref{addexe.jacobi-complement}}
 
-We are going to prepare for solving Additional exercise
-\ref{addexe.jacobi-complement} by stating several simple lemmas.
+\subsubsection{First solution}
+
+Our first solution to Additional exercise \ref{addexe.jacobi-complement}
+(inspired by \cite[Lemma 9.2.10]{BruRys91}) shall follow the hint given. We
+are going to prepare for it by stating several simple lemmas.
 
 First, let us agree on some notations. We are going to use the notations
 introduced in Definition \ref{def.submatrix} and in Definition
@@ -65395,7 +65395,7 @@ We can finally step to the solution of Additional exercise
 \ref{addexe.jacobi-complement}:
 
 \begin{proof}
-[Solution to Additional exercise \ref{addexe.jacobi-complement}.]Let
+[First solution to Additional exercise \ref{addexe.jacobi-complement}.]Let
 $k=\left\vert P\right\vert $. Thus, $k=\left\vert P\right\vert =\left\vert
 Q\right\vert $.
 
@@ -65580,6 +65580,1783 @@ Now,%
 \end{align*}
 This solves Additional exercise \ref{addexe.jacobi-complement}.
 \end{proof}
+
+\subsubsection{Second solution}
+
+Now, let us give a second solution to Additional exercise
+\ref{addexe.jacobi-complement}, following an idea from \cite[Chapter SCHUR,
+proof of (1.9)]{LLPT95}.
+
+Let us first prove a simple combinatorial fact:
+
+\begin{lemma}
+\label{lem.sol.addexe.jacobi-complement.increase-bij}Let $S$ be a set of
+integers. Let $u\in\mathbb{N}$. Let $\mathcal{P}_{u}\left(  S\right)  $ denote
+the set of all $u$-element subsets of $S$. Let $\mathbf{I}$ denote the set
+\[
+\left\{  \left(  g_{1},g_{2},\ldots,g_{u}\right)  \in S^{u}\ \mid\ g_{1}%
+<g_{2}<\cdots<g_{u}\right\}  .
+\]
+Then, the map%
+\begin{align*}
+\mathcal{P}_{u}\left(  S\right)   &  \rightarrow\mathbf{I},\\
+R  &  \mapsto w\left(  R\right)
+\end{align*}
+is well-defined and a bijection.
+\end{lemma}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.addexe.jacobi-complement.increase-bij}.]Recall
+that $\mathcal{P}_{u}\left(  S\right)  $ is the set of all $u$-element subsets
+of $S$, whereas $\mathbf{I}$ is the set of all strictly increasing
+lists\footnote{A list $\left(  g_{1},g_{2},\ldots,g_{u}\right)  $ is said to
+be \textit{strictly increasing} if it satisfies $g_{1}<g_{2}<\cdots<g_{u}$.}
+of $u$ elements of $S$.
+
+For every $R\in\mathcal{P}_{u}\left(  S\right)  $, the list $w\left(
+R\right)  $ is the list of all elements of $R$ in increasing order (with no
+repetitions). Thus, this list $w\left(  R\right)  $ is a strictly increasing
+list with $\left\vert R\right\vert =u$ entries (which all belong to $R$ and
+therefore to $S$); hence, this list $w\left(  R\right)  $ belongs to
+$\mathbf{I}$. Thus, the map
+\begin{align*}
+\mathcal{P}_{u}\left(  S\right)   &  \rightarrow\mathbf{I},\\
+R &  \mapsto w\left(  R\right)
+\end{align*}
+is well-defined. Also, the map%
+\begin{align*}
+\mathbf{I} &  \rightarrow\mathcal{P}_{u}\left(  S\right)  ,\\
+\left(  g_{1},g_{2},\ldots,g_{u}\right)   &  \mapsto\left\{  g_{1}%
+,g_{2},\ldots,g_{u}\right\}
+\end{align*}
+is well-defined (because if $\left(  g_{1},g_{2},\ldots,g_{u}\right)
+\in\mathbf{I}$, then we have $g_{1}<g_{2}<\cdots<g_{u}$, and thus the $u$
+elements $g_{1},g_{2},\ldots,g_{u}$ are pairwise distinct; therefore,
+$\left\{  g_{1},g_{2},\ldots,g_{u}\right\}  $ is a $u$-element set). These two
+maps are mutually inverse\footnote{\textit{Proof.} The former map takes a
+$u$-element subset $R$ of $S$ and lists its elements in increasing order; the
+latter map takes a strictly increasing list (of $u$ elements of $S$) and
+outputs the set of its entries. These two operations clearly revert one
+another. Thus, the two maps are mutually inverse.}. Hence, the map%
+\begin{align*}
+\mathcal{P}_{u}\left(  S\right)   &  \rightarrow\mathbf{I},\\
+R &  \mapsto w\left(  R\right)
+\end{align*}
+is invertible, i.e., is a bijection.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+The proof of this lemma relies on the following yet simpler facts:
+
+\begin{lemma}
+\label{lem.sol.addexe.jacobi-complement.strinc}Let $u\in\mathbb{N}$. Let
+$\varphi:\left\{  1,2,\ldots,u\right\}  \rightarrow\left\{  1,2,\ldots
+,u\right\}  $ be a map such that $\varphi\left(  1\right)  <\varphi\left(
+2\right)  <\cdots<\varphi\left(  u\right)  $. Then, $\varphi
+=\operatorname*{id}$.
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.addexe.jacobi-complement.strinc}.]We have
+$\varphi\left(  1\right)  <\varphi\left(  2\right)  <\cdots<\varphi\left(
+u\right)  $. In other words, if $g$ and $h$ are two elements of $\left\{
+1,2,\ldots,u\right\}  $ such that $g<h$, then%
+\begin{equation}
+\varphi\left(  g\right)  <\varphi\left(  h\right)  .
+\label{pf.lem.sol.addexe.jacobi-complement.strinc.1}%
+\end{equation}
+
+
+Now, if $g$ and $h$ are two elements of $\left\{  1,2,\ldots,u\right\}  $
+satisfying $\varphi\left(  g\right)  =\varphi\left(  h\right)  $, then
+$g=h$\ \ \ \ \footnote{\textit{Proof.} Let $g$ and $h$ be two elements of
+$\left\{  1,2,\ldots,u\right\}  $ satisfying $\varphi\left(  g\right)
+=\varphi\left(  h\right)  $. We must prove that $g=h$.
+\par
+Indeed, assume the contrary (for the sake of contradiction). Thus, $g\neq h$.
+Assume WLOG that $g\leq h$ (otherwise, we can simply switch $g$ with $h$).
+Then, $g<h$ (since $g\leq h$ and $g\neq h$). Thus, $\varphi\left(  g\right)
+<\varphi\left(  h\right)  $ (by
+(\ref{pf.lem.sol.addexe.jacobi-complement.strinc.1})). This contradicts
+$\varphi\left(  g\right)  =\varphi\left(  h\right)  $. This contradiction
+proves that our assumption was wrong. Hence, $g=h$ is proven. Qed.}. In other
+words, the map $\varphi$ is injective.
+
+But it is well-known that any injective map from a finite set to itself is
+bijective. In other words, if $S$ is a finite set, and if $f:S\rightarrow S$
+is an injective map, then $f$ is bijective. Applying this to $S=\left\{
+1,2,\ldots,u\right\}  $ and $f=\varphi$, we conclude that $\varphi$ is
+bijective (since $\left\{  1,2,\ldots,u\right\}  $ is a finite set, and since
+$\varphi:\left\{  1,2,\ldots,u\right\}  \rightarrow\left\{  1,2,\ldots
+,u\right\}  $ is an injective map). Thus, $\varphi$ is a bijective map
+$\left\{  1,2,\ldots,u\right\}  \rightarrow\left\{  1,2,\ldots,u\right\}  $.
+In other words, $\varphi$ is a permutation of $\left\{  1,2,\ldots,u\right\}
+$. In other words, $\varphi\in S_{u}$ (because $S_{u}$ is the set of all
+permutations of $\left\{  1,2,\ldots,u\right\}  $ (by the definition of
+$S_{u}$)).
+
+Now, recall that $\varphi\left(  1\right)  <\varphi\left(  2\right)
+<\cdots<\varphi\left(  u\right)  $. In other words, $\varphi\left(  k\right)
+<\varphi\left(  k+1\right)  $ for each $k\in\left\{  1,2,\ldots,u\right\}  $.
+Hence, $\varphi\left(  k\right)  \leq\varphi\left(  k+1\right)  $ for each
+$k\in\left\{  1,2,\ldots,u\right\}  $. In other words, $\varphi\left(
+1\right)  \leq\varphi\left(  2\right)  \leq\cdots\leq\varphi\left(  u\right)
+$. Hence, Proposition \ref{prop.sol.exe.ps2.2.5.d} (applied to $n=u$ and
+$\sigma=\varphi$) yields that $\varphi=\operatorname*{id}$. This proves Lemma
+\ref{lem.sol.addexe.jacobi-complement.strinc}.
+\end{proof}
+
+\begin{lemma}
+\label{lem.sol.addexe.jacobi-complement.sets-eq}Let $u\in\mathbb{N}$. Let
+$\left(  p_{1},p_{2},\ldots,p_{u}\right)  $ be a list of integers such that
+$p_{1}<p_{2}<\cdots<p_{u}$. Let $\left(  q_{1},q_{2},\ldots,q_{u}\right)  $ be
+a list of integers such that $q_{1}<q_{2}<\cdots<q_{u}$. Assume that $\left\{
+p_{1},p_{2},\ldots,p_{u}\right\}  =\left\{  q_{1},q_{2},\ldots,q_{u}\right\}
+$. Then, $\left(  p_{1},p_{2},\ldots,p_{u}\right)  =\left(  q_{1},q_{2}%
+,\ldots,q_{u}\right)  $.
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.addexe.jacobi-complement.sets-eq}.]We have
+$p_{1}<p_{2}<\cdots<p_{u}$. In other words,%
+\begin{equation}
+p_{k}<p_{k+1}\ \ \ \ \ \ \ \ \ \ \text{for every }k\in\left\{  1,2,\ldots
+,u-1\right\}  . \label{pf.lem.sol.addexe.jacobi-complement.sets-eq.p}%
+\end{equation}
+
+
+We have $q_{1}<q_{2}<\cdots<q_{u}$. Hence, if $g$ and $h$ are two elements of
+$\left\{  1,2,\ldots,u\right\}  $ satisfying $g\leq h$, then%
+\begin{equation}
+q_{g}\leq q_{h}.\label{pf.lem.sol.addexe.jacobi-complement.sets-eq.q}%
+\end{equation}
+
+
+Define a map $\varphi:\left\{  1,2,\ldots,u\right\}  \rightarrow\left\{
+1,2,\ldots,u\right\}  $ as follows:
+
+Let $k\in\left\{  1,2,\ldots,u\right\}  $. Then, $p_{k}\in\left\{  p_{1}%
+,p_{2},\ldots,p_{u}\right\}  =\left\{  q_{1},q_{2},\ldots,q_{u}\right\}  $.
+Hence, there exists an $\ell\in\left\{  1,2,\ldots,u\right\}  $ such that
+$p_{k}=q_{\ell}$. Consider this $\ell$. Define $\varphi\left(  k\right)  $ by
+$\varphi\left(  k\right)  =\ell$. Note that
+\begin{equation}
+p_{k}=q_{\ell}=q_{\varphi\left(  k\right)  }
+\label{pf.lem.sol.addexe.jacobi-complement.sets-eq.1}%
+\end{equation}
+(since $\ell=\varphi\left(  k\right)  $).
+
+Now, forget that we fixed $k$. Thus, for each $k\in\left\{  1,2,\ldots
+,u\right\}  $, we have defined an element $\varphi\left(  k\right)
+\in\left\{  1,2,\ldots,u\right\}  $. In other words, we have defined a map
+$\varphi:\left\{  1,2,\ldots,u\right\}  \rightarrow\left\{  1,2,\ldots
+,u\right\}  $. This map furthermore satisfies
+(\ref{pf.lem.sol.addexe.jacobi-complement.sets-eq.1}) for each $k\in\left\{
+1,2,\ldots,u\right\}  $.
+
+Now, every $k\in\left\{  1,2,\ldots,u-1\right\}  $ satisfies $\varphi\left(
+k\right)  <\varphi\left(  k+1\right)  $\ \ \ \ \footnote{\textit{Proof.} Let
+$k\in\left\{  1,2,\ldots,u-1\right\}  $. Then, $k\in\left\{  1,2,\ldots
+,u-1\right\}  \subseteq\left\{  1,2,\ldots,u\right\}  $; thus, $\varphi\left(
+k\right)  $ is well-defined.
+\par
+Also, from $k\in\left\{  1,2,\ldots,u-1\right\}  $, we obtain $k+1\in\left\{
+2,3,\ldots,u\right\}  \subseteq\left\{  1,2,\ldots,u\right\}  $; thus,
+$\varphi\left(  k+1\right)  $ is well-defined.
+\par
+From (\ref{pf.lem.sol.addexe.jacobi-complement.sets-eq.p}), we obtain
+$p_{k}<p_{k+1}$. But (\ref{pf.lem.sol.addexe.jacobi-complement.sets-eq.1})
+yields $p_{k}=q_{\varphi\left(  k\right)  }$ (since $k\in\left\{
+1,2,\ldots,u\right\}  $). Thus, $q_{\varphi\left(  k\right)  }=p_{k}$. Also,
+(\ref{pf.lem.sol.addexe.jacobi-complement.sets-eq.1}) (applied to $k+1$
+instead of $k$) yields $p_{k+1}=q_{\varphi\left(  k+1\right)  }$ (since
+$k+1\in\left\{  1,2,\ldots,u\right\}  $). Hence, $q_{\varphi\left(  k\right)
+}=p_{k}<p_{k+1}=q_{\varphi\left(  k+1\right)  }$.
+\par
+Now, assume (for the sake of contradiction) that $\varphi\left(  k\right)
+\geq\varphi\left(  k+1\right)  $. Thus, $\varphi\left(  k+1\right)
+\leq\varphi\left(  k\right)  $. Hence,
+(\ref{pf.lem.sol.addexe.jacobi-complement.sets-eq.q}) (applied to
+$g=\varphi\left(  k+1\right)  $ and $h=\varphi\left(  k\right)  $) yields
+$q_{\varphi\left(  k+1\right)  }\leq q_{\varphi\left(  k\right)  }%
+<q_{\varphi\left(  k+1\right)  }$. This is absurd. Thus, we have found a
+contradiction. Hence, our assumption (that $\varphi\left(  k\right)
+\geq\varphi\left(  k+1\right)  $) must have been false. Therefore, we cannot
+have $\varphi\left(  k\right)  \geq\varphi\left(  k+1\right)  $. Hence, we
+must have $\varphi\left(  k\right)  <\varphi\left(  k+1\right)  $. Qed.}. In
+other words, we have $\varphi\left(  1\right)  <\varphi\left(  2\right)
+<\cdots<\varphi\left(  u\right)  $. Hence, Lemma
+\ref{lem.sol.addexe.jacobi-complement.strinc} shows that $\varphi
+=\operatorname*{id}$. Now, every $k\in\left\{  1,2,\ldots,u\right\}  $
+satisfies%
+\begin{align*}
+p_{k} &  =q_{\varphi\left(  k\right)  }\ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{pf.lem.sol.addexe.jacobi-complement.sets-eq.1})}\right)  \\
+&  =q_{k}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\underbrace{\varphi
+}_{=\operatorname*{id}}\left(  k\right)  =\operatorname*{id}\left(  k\right)
+=k\right)  .
+\end{align*}
+In other words, $\left(  p_{1},p_{2},\ldots,p_{u}\right)  =\left(  q_{1}%
+,q_{2},\ldots,q_{u}\right)  $. This proves Lemma
+\ref{lem.sol.addexe.jacobi-complement.sets-eq}.
+\end{proof}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.addexe.jacobi-complement.increase-bij}.]We have
+$S\subseteq\mathbb{Z}$ (since $S$ is a set of integers).
+
+The definition of $\mathbf{I}$ yields%
+\[
+\mathbf{I}=\left\{  \left(  g_{1},g_{2},\ldots,g_{u}\right)  \in S^{u}%
+\ \mid\ g_{1}<g_{2}<\cdots<g_{u}\right\}  .
+\]
+Hence, every element of $\mathbf{I}$ has the form $\left(  g_{1},g_{2}%
+,\ldots,g_{u}\right)  $ for some $\left(  g_{1},g_{2},\ldots,g_{u}\right)  \in
+S^{u}$.
+
+For every $R\in\mathcal{P}_{u}\left(  S\right)  $, the list $w\left(
+R\right)  $ is well-defined\footnote{\textit{Proof.} Let $R\in\mathcal{P}%
+_{u}\left(  S\right)  $. We must show that the list $w\left(  R\right)  $ is
+well-defined.
+\par
+We have $R\in\mathcal{P}_{u}\left(  S\right)  $. In other words, $R$ is a
+$u$-element subset of $S$ (since $\mathcal{P}_{u}\left(  S\right)  $ is the
+set of all $u$-element subsets of $S$). Now, $R$ is a subset of $S$; in other
+words, $R\subseteq S$. Hence, $R\subseteq S\subseteq\mathbb{Z}$ (since $S$ is
+a set of integers). In other words, $R$ is a set of integers. Also, $R$ is
+finite (since $R$ is a $u$-element set). Hence, $R$ is a finite set of
+integers.
+\par
+But the list $w\left(  I\right)  $ is well-defined whenever $I$ is a finite
+set of integers. Applying this to $I=R$, we conclude that the list $w\left(
+R\right)  $ is well-defined. Qed.} and belongs to $\mathbf{I}$%
+\ \ \ \ \footnote{\textit{Proof.} Let $R\in\mathcal{P}_{u}\left(  S\right)  $.
+We must show that the list $w\left(  R\right)  $ belongs to $\mathbf{I}$.
+\par
+We have $R\in\mathcal{P}_{u}\left(  S\right)  $. In other words, $R$ is a
+$u$-element subset of $S$ (since $\mathcal{P}_{u}\left(  S\right)  $ is the
+set of all $u$-element subsets of $S$). Now, $R$ is a subset of $S$; in other
+words, $R\subseteq S$. Hence, $R\subseteq S\subseteq\mathbb{Z}$ (since $S$ is
+a set of integers). In other words, $R$ is a set of integers. Also, $R$ is
+finite (since $R$ is a $u$-element set). Hence, $R$ is a finite set of
+integers. Also, $\left\vert R\right\vert =u$ (since $R$ is a $u$-element set).
+\par
+The definition of $w\left(  R\right)  $ shows that $w\left(  R\right)  $ is
+the list of all elements of $R$ in increasing order (with no repetitions).
+Hence, this list $w\left(  R\right)  $ has $\left\vert R\right\vert $ entries.
+In other words, the list $w\left(  R\right)  $ has $u$ entries (since
+$\left\vert R\right\vert =u$).
+\par
+Write the list $w\left(  R\right)  $ in the form $w\left(  R\right)  =\left(
+r_{1},r_{2},\ldots,r_{u}\right)  $. (This is possible, since the list
+$w\left(  R\right)  $ has $u$ entries.)
+\par
+The list $w\left(  R\right)  $ is the list of all elements of $R$ in
+increasing order (with no repetitions). Hence, $w\left(  R\right)  $ is a list
+of all entries of $R$. In other words, $\left(  r_{1},r_{2},\ldots
+,r_{u}\right)  $ is a list of all entries of $R$ (since $w\left(  R\right)
+=\left(  r_{1},r_{2},\ldots,r_{u}\right)  $). Hence, $\left\{  r_{1}%
+,r_{2},\ldots,r_{u}\right\}  =R$. Now, each $i\in\left\{  1,2,\ldots
+,u\right\}  $ satisfies $r_{i}\in\left\{  r_{1},r_{2},\ldots,r_{u}\right\}
+=R\subseteq S$. Thus, $\left(  r_{1},r_{2},\ldots,r_{u}\right)  \in S^{u}$.
+\par
+Moreover, the list $w\left(  R\right)  $ is the list of all elements of $R$ in
+increasing order (with no repetitions). Hence, the list $w\left(  R\right)  $
+is strictly increasing. In other words, the list $\left(  r_{1},r_{2}%
+,\ldots,r_{u}\right)  $ is strictly increasing (since $w\left(  R\right)
+=\left(  r_{1},r_{2},\ldots,r_{u}\right)  $). In other words, $r_{1}%
+<r_{2}<\cdots<r_{u}$.
+\par
+Now, we know that the list $\left(  r_{1},r_{2},\ldots,r_{u}\right)  \in
+S^{u}$ satisfies $r_{1}<r_{2}<\cdots<r_{u}$ and $w\left(  R\right)  =\left(
+r_{1},r_{2},\ldots,r_{u}\right)  $. Hence, there exists some $\left(
+g_{1},g_{2},\ldots,g_{u}\right)  \in S^{u}$ satisfying $g_{1}<g_{2}%
+<\cdots<g_{u}$ and $w\left(  R\right)  =\left(  g_{1},g_{2},\ldots
+,g_{u}\right)  $ (namely, $\left(  g_{1},g_{2},\ldots,g_{u}\right)  =\left(
+r_{1},r_{2},\ldots,r_{u}\right)  $). In other words,%
+\[
+w\left(  R\right)  \in\left\{  \left(  g_{1},g_{2},\ldots,g_{u}\right)  \in
+S^{u}\ \mid\ g_{1}<g_{2}<\cdots<g_{u}\right\}  .
+\]
+This rewrites as $w\left(  R\right)  \in\mathbf{I}$ (since $\mathbf{I}%
+=\left\{  \left(  g_{1},g_{2},\ldots,g_{u}\right)  \in S^{u}\ \mid
+\ g_{1}<g_{2}<\cdots<g_{u}\right\}  $). In other words, $w\left(  R\right)  $
+belongs to $\mathbf{I}$. Qed.}. Hence, the map%
+\begin{align*}
+\mathcal{P}_{u}\left(  S\right)   &  \rightarrow\mathbf{I},\\
+R  &  \mapsto w\left(  R\right)
+\end{align*}
+is well-defined. Denote this map by $\alpha$.
+
+Now, every $\left(  r_{1},r_{2},\ldots,r_{u}\right)  \in\mathbf{I}$ satisfies
+$\left\{  r_{1},r_{2},\ldots,r_{u}\right\}  \in\mathcal{P}_{u}\left(
+S\right)  $\ \ \ \ \footnote{\textit{Proof.} Let $\left(  r_{1},r_{2}%
+,\ldots,r_{u}\right)  \in\mathbf{I}$. Then,%
+\[
+\left(  r_{1},r_{2},\ldots,r_{u}\right)  \in\mathbf{I}=\left\{  \left(
+g_{1},g_{2},\ldots,g_{u}\right)  \in S^{u}\ \mid\ g_{1}<g_{2}<\cdots
+<g_{u}\right\}  .
+\]
+In other words, $\left(  r_{1},r_{2},\ldots,r_{u}\right)  $ is an element
+$\left(  g_{1},g_{2},\ldots,g_{u}\right)  \in S^{u}$ satisfying $g_{1}%
+<g_{2}<\cdots<g_{u}$. In other words, $\left(  r_{1},r_{2},\ldots
+,r_{u}\right)  $ is an element of $S^{u}$ and satisfies $r_{1}<r_{2}%
+<\cdots<r_{u}$.
+\par
+We have $\left(  r_{1},r_{2},\ldots,r_{u}\right)  \in S^{u}$. In other words,
+$r_{i}\in S$ for each $i\in\left\{  1,2,\ldots,u\right\}  $. Hence, $\left\{
+r_{1},r_{2},\ldots,r_{u}\right\}  \subseteq S$. In other words, $\left\{
+r_{1},r_{2},\ldots,r_{u}\right\}  $ is a subset of $S$.
+\par
+The $u$ elements $r_{1},r_{2},\ldots,r_{u}$ are pairwise distinct (since
+$r_{1}<r_{2}<\cdots<r_{u}$). Hence, $\left\vert \left\{  r_{1},r_{2}%
+,\ldots,r_{u}\right\}  \right\vert =u$. Thus, $\left\{  r_{1},r_{2}%
+,\ldots,r_{u}\right\}  $ is a $u$-element set. Now, we know that $\left\{
+r_{1},r_{2},\ldots,r_{u}\right\}  $ is a $u$-element subset of $S$ (since
+$\left\{  r_{1},r_{2},\ldots,r_{u}\right\}  $ is a $u$-element set and a
+subset of $S$). In other words, $\left\{  r_{1},r_{2},\ldots,r_{u}\right\}
+\in\mathcal{P}_{u}\left(  S\right)  $ (since $\mathcal{P}_{u}\left(  S\right)
+$ is the set of all $u$-element subsets of $S$). Qed.}.
+
+Recall that every element of $\mathbf{I}$ has the form $\left(  g_{1}%
+,g_{2},\ldots,g_{u}\right)  $ for some $\left(  g_{1},g_{2},\ldots
+,g_{u}\right)  \in S^{u}$. In other words, every element of $\mathbf{I}$ has
+the form $\left(  r_{1},r_{2},\ldots,r_{u}\right)  $ for some $\left(
+r_{1},r_{2},\ldots,r_{u}\right)  \in S^{u}$ (here, we have renamed the index
+$\left(  g_{1},g_{2},\ldots,g_{u}\right)  $ as $\left(  r_{1},r_{2}%
+,\ldots,r_{u}\right)  $). Hence, we can define a map $\beta:\mathbf{I}%
+\rightarrow\mathcal{P}_{u}\left(  S\right)  $ by%
+\[
+\left(  \beta\left(  r_{1},r_{2},\ldots,r_{u}\right)  =\left\{  r_{1}%
+,r_{2},\ldots,r_{u}\right\}  \ \ \ \ \ \ \ \ \ \ \text{for every }\left(
+r_{1},r_{2},\ldots,r_{u}\right)  \in\mathbf{I}\right)
+\]
+(since every $\left(  r_{1},r_{2},\ldots,r_{u}\right)  \in\mathbf{I}$
+satisfies $\left\{  r_{1},r_{2},\ldots,r_{u}\right\}  \in\mathcal{P}%
+_{u}\left(  S\right)  $). Consider this $\beta$.
+
+We have $\alpha\circ\beta=\operatorname*{id}$\ \ \ \ \footnote{\textit{Proof.}
+Let $\mathbf{i}\in\mathbf{I}$. Then,%
+\[
+\mathbf{i}\in\mathbf{I}=\left\{  \left(  g_{1},g_{2},\ldots,g_{u}\right)  \in
+S^{u}\ \mid\ g_{1}<g_{2}<\cdots<g_{u}\right\}  .
+\]
+In other words, $\mathbf{i}$ has the form $\mathbf{i}=\left(  g_{1}%
+,g_{2},\ldots,g_{u}\right)  $ for some $\left(  g_{1},g_{2},\ldots
+,g_{u}\right)  \in S^{u}$ satisfying $g_{1}<g_{2}<\cdots<g_{u}$. Consider this
+$\left(  g_{1},g_{2},\ldots,g_{u}\right)  $.
+\par
+Set $I=\beta\left(  \mathbf{i}\right)  $. Notice that $\beta\left(
+\mathbf{i}\right)  \in\mathcal{P}_{u}\left(  S\right)  $ (because $\beta$ is a
+map $\mathbf{I}\rightarrow\mathcal{P}_{u}\left(  S\right)  $). In other words,
+$I\in\mathcal{P}_{u}\left(  S\right)  $ (since $I=\beta\left(  \mathbf{i}%
+\right)  $). In other words, $I$ is a $u$-element subset of $S$ (since
+$\mathcal{P}_{u}\left(  S\right)  $ is the set of all $u$-element subsets of
+$S$). Thus, $I$ is a $u$-element set. In other words, $\left\vert I\right\vert
+=u$.
+\par
+Applying the map $\beta$ to the equality $\mathbf{i}=\left(  g_{1}%
+,g_{2},\ldots,g_{u}\right)  $, we obtain%
+\[
+\beta\left(  \mathbf{i}\right)  =\beta\left(  g_{1},g_{2},\ldots,g_{u}\right)
+=\left\{  g_{1},g_{2},\ldots,g_{u}\right\}
+\]
+(by the definition of $\beta$). Thus, $I=\beta\left(  \mathbf{i}\right)
+=\left\{  g_{1},g_{2},\ldots,g_{u}\right\}  $.
+\par
+Now, $\alpha\left(  \underbrace{\beta\left(  \mathbf{i}\right)  }_{=I}\right)
+=\alpha\left(  I\right)  =w\left(  I\right)  $ (by the definition of the map
+$\alpha$). But $w\left(  I\right)  $ is the list of all elements of $I$ in
+increasing order (with no repetitions) (by the definition of $w\left(
+I\right)  $). Hence, $w\left(  I\right)  $ is a list of size $\left\vert
+I\right\vert =u$.
+\par
+Write the list $w\left(  I\right)  $ in the form $w\left(  I\right)  =\left(
+p_{1},p_{2},\ldots,p_{u}\right)  $. (This is possible, since $w\left(
+I\right)  $ is a list of size $u$.)
+\par
+Recall that $w\left(  I\right)  $ is the list of all elements of $I$ in
+increasing order (with no repetitions). In other words, $\left(  p_{1}%
+,p_{2},\ldots,p_{u}\right)  $ is the list of all elements of $I$ in increasing
+order (with no repetitions) (since $w\left(  I\right)  =\left(  p_{1}%
+,p_{2},\ldots,p_{u}\right)  $). Thus, $\left(  p_{1},p_{2},\ldots
+,p_{u}\right)  $ is a strictly increasing list. In other words, $p_{1}%
+<p_{2}<\cdots<p_{u}$.
+\par
+But $\left(  p_{1},p_{2},\ldots,p_{u}\right)  $ is the list of all elements of
+$I$ in increasing order (with no repetitions). Thus, $\left(  p_{1}%
+,p_{2},\ldots,p_{u}\right)  $ is a list of all elements of $I$. Hence,
+$\left\{  p_{1},p_{2},\ldots,p_{u}\right\}  =I$. Thus, $\left\{  p_{1}%
+,p_{2},\ldots,p_{u}\right\}  =I=\left\{  g_{1},g_{2},\ldots,g_{u}\right\}  $.
+\par
+Note that $I$ is a subset of $S$. Thus, $I\subseteq S\subseteq\mathbb{Z}$.
+Each $k\in\left\{  1,2,\ldots,u\right\}  $ satisfies $p_{k}\in\left\{
+p_{1},p_{2},\ldots,p_{u}\right\}  =I\subseteq\mathbb{Z}$. In other words, for
+each $k\in\left\{  1,2,\ldots,u\right\}  $, the element $p_{k}$ is an integer.
+Hence, $\left(  p_{1},p_{2},\ldots,p_{u}\right)  $ is a list of integers.
+Also, each $k\in\left\{  1,2,\ldots,u\right\}  $ satisfies $g_{k}\in\left\{
+g_{1},g_{2},\ldots,g_{u}\right\}  =I\subseteq\mathbb{Z}$. In other words, for
+each $k\in\left\{  1,2,\ldots,u\right\}  $, the element $g_{k}$ is an integer.
+Hence, $\left(  g_{1},g_{2},\ldots,g_{u}\right)  $ is a list of integers.
+\par
+Now, Lemma \ref{lem.sol.addexe.jacobi-complement.sets-eq} (applied to $\left(
+g_{1},g_{2},\ldots,g_{u}\right)  $ instead of $\left(  q_{1},q_{2}%
+,\ldots,q_{u}\right)  $) yields that $\left(  p_{1},p_{2},\ldots,p_{u}\right)
+=\left(  g_{1},g_{2},\ldots,g_{u}\right)  $.
+\par
+But%
+\begin{align*}
+\left(  \alpha\circ\beta\right)  \left(  \mathbf{i}\right)   &  =\alpha\left(
+\beta\left(  \mathbf{i}\right)  \right)  =w\left(  I\right)  =\left(
+p_{1},p_{2},\ldots,p_{u}\right)  =\left(  g_{1},g_{2},\ldots,g_{u}\right) \\
+&  =\mathbf{i}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\mathbf{i}=\left(
+g_{1},g_{2},\ldots,g_{u}\right)  \right) \\
+&  =\operatorname*{id}\left(  \mathbf{i}\right)  .
+\end{align*}
+\par
+Now, forget that we fixed $\mathbf{i}$. We thus have shown that $\left(
+\alpha\circ\beta\right)  \left(  \mathbf{i}\right)  =\operatorname*{id}\left(
+\mathbf{i}\right)  $ for each $\mathbf{i}\in\mathbf{I}$. In other words,
+$\alpha\circ\beta=\operatorname*{id}$. Qed.} and $\beta\circ\alpha
+=\operatorname*{id}$\ \ \ \ \footnote{\textit{Proof.} Let $I\in\mathcal{P}%
+_{u}\left(  S\right)  $. Then, $\alpha\left(  I\right)  =w\left(  I\right)  $
+(by the definition of $\alpha$). Clearly, $\alpha\left(  I\right)
+\in\mathbf{I}$ (since $\alpha$ is a map $\mathcal{P}_{u}\left(  S\right)
+\rightarrow\mathbf{I}$).
+\par
+We have $I\in\mathcal{P}_{u}\left(  S\right)  $. In other words, $I$ is a
+$u$-element subset of $S$ (since $\mathcal{P}_{u}\left(  S\right)  $ is the
+set of all $u$-element subsets of $S$). Thus, $I$ is a $u$-element set. In
+other words, $\left\vert I\right\vert =u$.
+\par
+But $w\left(  I\right)  $ is the list of all elements of $I$ in increasing
+order (with no repetitions) (by the definition of $w\left(  I\right)  $).
+Hence, $w\left(  I\right)  $ is a list of size $\left\vert I\right\vert =u$.
+In other words, $\alpha\left(  I\right)  $ is a list of size $u$ (since
+$\alpha\left(  I\right)  =w\left(  I\right)  $).
+\par
+Write the list $\alpha\left(  I\right)  $ in the form $\alpha\left(  I\right)
+=\left(  p_{1},p_{2},\ldots,p_{u}\right)  $. (This is possible, since
+$\alpha\left(  I\right)  $ is a list of size $u$.) Hence, $w\left(  I\right)
+=\alpha\left(  I\right)  =\left(  p_{1},p_{2},\ldots,p_{u}\right)  $.
+\par
+Recall that $w\left(  I\right)  $ is the list of all elements of $I$ in
+increasing order (with no repetitions). Thus, $w\left(  I\right)  $ is a list
+of all elements of $I$. In other words, $\left(  p_{1},p_{2},\ldots
+,p_{u}\right)  $ is a list of all elements of $I$ (since $w\left(  I\right)
+=\left(  p_{1},p_{2},\ldots,p_{u}\right)  $). Thus, $\left\{  p_{1}%
+,p_{2},\ldots,p_{u}\right\}  =I$.
+\par
+But%
+\begin{align*}
+\left(  \beta\circ\alpha\right)  \left(  I\right)   &  =\beta\left(
+\underbrace{\alpha\left(  I\right)  }_{=\left(  p_{1},p_{2},\ldots
+,p_{u}\right)  }\right)  =\beta\left(  p_{1},p_{2},\ldots,p_{u}\right) \\
+&  =\left\{  p_{1},p_{2},\ldots,p_{u}\right\}  \ \ \ \ \ \ \ \ \ \ \left(
+\text{by the definition of }\beta\right) \\
+&  =I=\operatorname*{id}\left(  I\right)  .
+\end{align*}
+\par
+Let us now forget that we fixed $I$. We thus have shown that $\left(
+\beta\circ\alpha\right)  \left(  I\right)  =\operatorname*{id}\left(
+I\right)  $ for each $I\in\mathcal{P}_{u}\left(  S\right)  $. In other words,
+$\beta\circ\alpha=\operatorname*{id}$. Qed.}. Combining these two equalities,
+we conclude that the maps $\alpha$ and $\beta$ are mutually inverse. Hence,
+the map $\alpha$ is invertible. In other words, the map $\alpha$ is a
+bijection. In other words, the map%
+\begin{align*}
+\mathcal{P}_{u}\left(  S\right)   &  \rightarrow\mathbf{I},\\
+R  &  \mapsto w\left(  R\right)
+\end{align*}
+is a bijection (since the map $\alpha$ is the map%
+\begin{align*}
+\mathcal{P}_{u}\left(  S\right)   &  \rightarrow\mathbf{I},\\
+R  &  \mapsto w\left(  R\right)
+\end{align*}
+(by the definition of $\alpha$)). This completes the proof of Lemma
+\ref{lem.sol.addexe.jacobi-complement.increase-bij}.
+\end{proof}
+\end{verlong}
+
+We can use Lemma \ref{lem.sol.addexe.jacobi-complement.increase-bij} to obtain
+the following (slightly weaker) form of Corollary
+\ref{cor.adj(AB).cauchy-binet-general}:
+
+\begin{corollary}
+\label{cor.sol.addexe.jacobi-complement.CB}Let $n\in\mathbb{N}$,
+$m\in\mathbb{N}$ and $p\in\mathbb{N}$. Let $A$ be an $n\times p$-matrix. Let
+$B$ be a $p\times m$-matrix. Let $k\in\mathbb{N}$. Let $P$ be a subset of
+$\left\{  1,2,\ldots,n\right\}  $ such that $\left\vert P\right\vert =k$. Let
+$Q$ be a subset of $\left\{  1,2,\ldots,m\right\}  $ such that $\left\vert
+Q\right\vert =k$. Then,%
+\[
+\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+Q\right)  }\left(  AB\right)  \right)  =\sum_{\substack{R\subseteq\left\{
+1,2,\ldots,p\right\}  ;\\\left\vert R\right\vert =k}}\det\left(
+\operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(  R\right)
+}A\right)  \cdot\det\left(  \operatorname*{sub}\nolimits_{w\left(  R\right)
+}^{w\left(  Q\right)  }B\right)  .
+\]
+
+\end{corollary}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Corollary \ref{cor.sol.addexe.jacobi-complement.CB}.]For every set
+$S$, we let $\mathcal{P}_{k}\left(  S\right)  $ denote the set of all
+$k$-element subsets of $S$.
+
+Recall that $w\left(  P\right)  $ was defined as the list of all elements of
+$P$ in increasing order (with no repetitions). Thus, $w\left(  P\right)  $ is
+a list of $\left\vert P\right\vert $ elements. In other words, $w\left(
+P\right)  $ is a list of $k$ elements (since $\left\vert P\right\vert =k$).
+Similarly, $w\left(  Q\right)  $ is a list of $k$ elements.
+
+Write the list $w\left(  P\right)  $ in the form $w\left(  P\right)  =\left(
+i_{1},i_{2},\ldots,i_{k}\right)  $. (This is possible, since $w\left(
+P\right)  $ is a list of $k$ elements.)
+
+Write the list $w\left(  Q\right)  $ in the form $w\left(  Q\right)  =\left(
+j_{1},j_{2},\ldots,j_{k}\right)  $. (This is possible, since $w\left(
+Q\right)  $ is a list of $k$ elements.)
+
+We have $\left(  i_{1},i_{2},\ldots,i_{k}\right)  =w\left(  P\right)  $. Thus,
+the elements $i_{1},i_{2},\ldots,i_{k}$ are elements of $P$, and hence also
+elements of $\left\{  1,2,\ldots,n\right\}  $ (since $P\subseteq\left\{
+1,2,\ldots,n\right\}  $). The same argument (but applied to $m$, $Q$ and
+$\left(  j_{1},j_{2},\ldots,j_{k}\right)  $ instead of $n$, $P$ and $\left(
+i_{1},i_{2},\ldots,i_{k}\right)  $) yields that $j_{1},j_{2},\ldots,j_{k}$ are
+elements of $\left\{  1,2,\ldots,m\right\}  $. Hence, Corollary
+\ref{cor.adj(AB).cauchy-binet-general} (applied to $u=k$) yields%
+\begin{align}
+&  \det\left(  \operatorname*{sub}\nolimits_{i_{1},i_{2},\ldots,i_{k}}%
+^{j_{1},j_{2},\ldots,j_{k}}\left(  AB\right)  \right) \nonumber\\
+&  =\sum_{1\leq g_{1}<g_{2}<\cdots<g_{k}\leq p}\det\left(  \operatorname*{sub}%
+\nolimits_{i_{1},i_{2},\ldots,i_{k}}^{g_{1},g_{2},\ldots,g_{k}}A\right)
+\cdot\det\left(  \operatorname*{sub}\nolimits_{g_{1},g_{2},\ldots,g_{k}%
+}^{j_{1},j_{2},\ldots,j_{k}}B\right)  .
+\label{pf.cor.sol.addexe.jacobi-complement.CB.short.1}%
+\end{align}
+(Here, the summation sign \textquotedblleft$\sum_{1\leq g_{1}<g_{2}%
+<\cdots<g_{k}\leq p}$\textquotedblright\ has to be interpreted as
+\textquotedblleft$\sum_{\substack{\left(  g_{1},g_{2},\ldots,g_{k}\right)
+\in\left\{  1,2,\ldots,p\right\}  ^{k};\\g_{1}<g_{2}<\cdots<g_{k}}%
+}$\textquotedblright, in analogy to Remark \ref{rmk.cauchy-binet.sumsign}.)
+
+Now, let $S$ denote the set $\left\{  1,2,\ldots,p\right\}  $. Recall that
+$\mathcal{P}_{k}\left(  S\right)  $ denotes the set of all $k$-element subsets
+of $S$. In other words,
+\[
+\mathcal{P}_{k}\left(  S\right)  =\left\{  T\subseteq S\ \mid\ \left\vert
+T\right\vert =k\right\}  .
+\]
+
+
+Let $\mathbf{I}$ denote the set
+\[
+\left\{  \left(  g_{1},g_{2},\ldots,g_{k}\right)  \in S^{k}\ \mid\ g_{1}%
+<g_{2}<\cdots<g_{k}\right\}  .
+\]
+Lemma \ref{lem.sol.addexe.jacobi-complement.increase-bij} (applied to $u=k$)
+shows that the map%
+\begin{align*}
+\mathcal{P}_{k}\left(  S\right)   &  \rightarrow\mathbf{I},\\
+R  &  \mapsto w\left(  R\right)
+\end{align*}
+is well-defined and a bijection.
+
+The definition of $\mathbf{I}$ yields $\mathbf{I}=\left\{  \left(  g_{1}%
+,g_{2},\ldots,g_{k}\right)  \in S^{k}\ \mid\ g_{1}<g_{2}<\cdots<g_{k}\right\}
+$. Hence, we have the following equality of summation signs:%
+\[
+\sum_{\left(  g_{1},g_{2},\ldots,g_{k}\right)  \in\mathbf{I}}=\sum
+_{\substack{\left(  g_{1},g_{2},\ldots,g_{k}\right)  \in S^{k};\\g_{1}%
+<g_{2}<\cdots<g_{k}}}=\sum_{\substack{\left(  g_{1},g_{2},\ldots,g_{k}\right)
+\in\left\{  1,2,\ldots,p\right\}  ^{k};\\g_{1}<g_{2}<\cdots<g_{k}}}
+\]
+(since $S=\left\{  1,2,\ldots,p\right\}  $). Comparing this with%
+\[
+\sum_{1\leq g_{1}<g_{2}<\cdots<g_{k}\leq p}=\sum_{\substack{\left(
+g_{1},g_{2},\ldots,g_{k}\right)  \in\left\{  1,2,\ldots,p\right\}
+^{k};\\g_{1}<g_{2}<\cdots<g_{k}}},
+\]
+we obtain%
+\[
+\sum_{1\leq g_{1}<g_{2}<\cdots<g_{k}\leq p}=\sum_{\left(  g_{1},g_{2}%
+,\ldots,g_{k}\right)  \in\mathbf{I}}.
+\]
+Now, (\ref{pf.cor.sol.addexe.jacobi-complement.CB.short.1}) becomes%
+\begin{align*}
+&  \det\left(  \operatorname*{sub}\nolimits_{i_{1},i_{2},\ldots,i_{k}}%
+^{j_{1},j_{2},\ldots,j_{k}}\left(  AB\right)  \right) \\
+&  =\underbrace{\sum_{1\leq g_{1}<g_{2}<\cdots<g_{k}\leq p}}_{=\sum_{\left(
+g_{1},g_{2},\ldots,g_{k}\right)  \in\mathbf{I}}}\det\left(
+\underbrace{\operatorname*{sub}\nolimits_{i_{1},i_{2},\ldots,i_{k}}%
+^{g_{1},g_{2},\ldots,g_{k}}A}_{=\operatorname*{sub}\nolimits_{\left(
+i_{1},i_{2},\ldots,i_{k}\right)  }^{\left(  g_{1},g_{2},\ldots,g_{k}\right)
+}A}\right)  \cdot\det\left(  \underbrace{\operatorname*{sub}\nolimits_{g_{1}%
+,g_{2},\ldots,g_{k}}^{j_{1},j_{2},\ldots,j_{k}}B}_{=\operatorname*{sub}%
+\nolimits_{\left(  g_{1},g_{2},\ldots,g_{k}\right)  }^{\left(  j_{1}%
+,j_{2},\ldots,j_{k}\right)  }B}\right) \\
+&  =\sum_{\left(  g_{1},g_{2},\ldots,g_{k}\right)  \in\mathbf{I}}\det\left(
+\operatorname*{sub}\nolimits_{\left(  i_{1},i_{2},\ldots,i_{k}\right)
+}^{\left(  g_{1},g_{2},\ldots,g_{k}\right)  }A\right)  \cdot\det\left(
+\operatorname*{sub}\nolimits_{\left(  g_{1},g_{2},\ldots,g_{k}\right)
+}^{\left(  j_{1},j_{2},\ldots,j_{k}\right)  }B\right) \\
+&  =\underbrace{\sum_{R\in\mathcal{P}_{k}\left(  S\right)  }}_{\substack{=\sum
+_{\substack{R\subseteq S;\\\left\vert R\right\vert =k}}\\\text{(since
+}\mathcal{P}_{k}\left(  S\right)  =\left\{  T\subseteq S\ \mid\ \left\vert
+T\right\vert =k\right\}  \text{)}}}\det\left(  \underbrace{\operatorname*{sub}%
+\nolimits_{\left(  i_{1},i_{2},\ldots,i_{k}\right)  }^{w\left(  R\right)  }%
+A}_{\substack{=\operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+R\right)  }A\\\text{(since }\left(  i_{1},i_{2},\ldots,i_{k}\right)  =w\left(
+P\right)  \text{)}}}\right)  \cdot\det\left(  \underbrace{\operatorname*{sub}%
+\nolimits_{w\left(  R\right)  }^{\left(  j_{1},j_{2},\ldots,j_{k}\right)  }%
+B}_{\substack{=\operatorname*{sub}\nolimits_{w\left(  R\right)  }^{w\left(
+Q\right)  }B\\\text{(since }\left(  j_{1},j_{2},\ldots,j_{k}\right)  =w\left(
+Q\right)  \text{)}}}\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have substituted }w\left(  R\right)  \text{ for }\left(
+g_{1},g_{2},\ldots,g_{k}\right)  \text{, since}\\
+\text{the map }\mathcal{P}_{k}\left(  S\right)  \rightarrow\mathbf{I}%
+,\ R\mapsto w\left(  R\right)  \text{ is a bijection}%
+\end{array}
+\right) \\
+&  =\underbrace{\sum_{\substack{R\subseteq S;\\\left\vert R\right\vert =k}%
+}}_{\substack{=\sum_{\substack{R\subseteq\left\{  1,2,\ldots,p\right\}
+;\\\left\vert R\right\vert =k}}\\\text{(since }S=\left\{  1,2,\ldots
+,p\right\}  \text{)}}}\det\left(  \operatorname*{sub}\nolimits_{w\left(
+P\right)  }^{w\left(  R\right)  }A\right)  \cdot\det\left(
+\operatorname*{sub}\nolimits_{w\left(  R\right)  }^{w\left(  Q\right)
+}B\right) \\
+&  =\sum_{\substack{R\subseteq\left\{  1,2,\ldots,p\right\}  ;\\\left\vert
+R\right\vert =k}}\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)
+}^{w\left(  R\right)  }A\right)  \cdot\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  R\right)  }^{w\left(  Q\right)  }B\right)  .
+\end{align*}
+Comparing this with%
+\begin{align*}
+\det\left(  \underbrace{\operatorname*{sub}\nolimits_{i_{1},i_{2},\ldots
+,i_{k}}^{j_{1},j_{2},\ldots,j_{k}}\left(  AB\right)  }_{=\operatorname*{sub}%
+\nolimits_{\left(  i_{1},i_{2},\ldots,i_{k}\right)  }^{\left(  j_{1}%
+,j_{2},\ldots,j_{k}\right)  }\left(  AB\right)  }\right)   &  =\det\left(
+\operatorname*{sub}\nolimits_{\left(  i_{1},i_{2},\ldots,i_{k}\right)
+}^{\left(  j_{1},j_{2},\ldots,j_{k}\right)  }\left(  AB\right)  \right)
+=\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+Q\right)  }\left(  AB\right)  \right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since }\left(  i_{1},i_{2},\ldots,i_{k}\right)  =w\left(  P\right) \\
+\text{and }\left(  j_{1},j_{2},\ldots,j_{k}\right)  =w\left(  Q\right)
+\end{array}
+\right)  ,
+\end{align*}
+we obtain%
+\[
+\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+Q\right)  }\left(  AB\right)  \right)  =\sum_{\substack{R\subseteq\left\{
+1,2,\ldots,p\right\}  ;\\\left\vert R\right\vert =k}}\det\left(
+\operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(  R\right)
+}A\right)  \cdot\det\left(  \operatorname*{sub}\nolimits_{w\left(  R\right)
+}^{w\left(  Q\right)  }B\right)  .
+\]
+This proves Corollary \ref{cor.adj(AB).cauchy-binet-general}.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Corollary \ref{cor.sol.addexe.jacobi-complement.CB}.]For every set
+$S$, we let $\mathcal{P}_{k}\left(  S\right)  $ denote the set of all
+$k$-element subsets of $S$.
+
+We know that $w\left(  P\right)  $ is the list of all elements of $P$ in
+increasing order (with no repetitions) (by the definition of $w\left(
+P\right)  $). Thus, $w\left(  P\right)  $ is a list of $\left\vert
+P\right\vert $ elements. In other words, $w\left(  P\right)  $ is a list of
+$k$ elements (since $\left\vert P\right\vert =k$).
+
+Write the list $w\left(  P\right)  $ in the form $w\left(  P\right)  =\left(
+i_{1},i_{2},\ldots,i_{k}\right)  $. (This is possible, since $w\left(
+P\right)  $ is a list of $k$ elements.)
+
+We know that $w\left(  Q\right)  $ is the list of all elements of $Q$ in
+increasing order (with no repetitions) (by the definition of $w\left(
+Q\right)  $). Thus, $w\left(  Q\right)  $ is a list of $\left\vert
+Q\right\vert $ elements. In other words, $w\left(  Q\right)  $ is a list of
+$k$ elements (since $\left\vert Q\right\vert =k$).
+
+Write the list $w\left(  Q\right)  $ in the form $w\left(  Q\right)  =\left(
+j_{1},j_{2},\ldots,j_{k}\right)  $. (This is possible, since $w\left(
+Q\right)  $ is a list of $k$ elements.)
+
+We know that $w\left(  P\right)  $ is the list of all elements of $P$ in
+increasing order (with no repetitions). Hence, $w\left(  P\right)  $ is a list
+of all elements of $P$. In other words, $\left(  i_{1},i_{2},\ldots
+,i_{k}\right)  $ is a list of all elements of $P$ (since $w\left(  P\right)
+=\left(  i_{1},i_{2},\ldots,i_{k}\right)  $). Thus, $\left\{  i_{1}%
+,i_{2},\ldots,i_{k}\right\}  =P$. Now, every $\ell\in\left\{  1,2,\ldots
+,k\right\}  $ satisfies $i_{\ell}\in\left\{  i_{1},i_{2},\ldots,i_{k}\right\}
+=P\subseteq\left\{  1,2,\ldots,n\right\}  $ (since $P$ is a subset of
+$\left\{  1,2,\ldots,n\right\}  $). In other words, $i_{1},i_{2},\ldots,i_{k}$
+are elements of $\left\{  1,2,\ldots,n\right\}  $. The same argument (but
+applied to $m$, $Q$ and $\left(  j_{1},j_{2},\ldots,j_{k}\right)  $ instead of
+$n$, $P$ and $\left(  i_{1},i_{2},\ldots,i_{k}\right)  $) yields that
+$j_{1},j_{2},\ldots,j_{k}$ are elements of $\left\{  1,2,\ldots,m\right\}  $.
+Hence, Corollary \ref{cor.adj(AB).cauchy-binet-general} (applied to $u=k$)
+yields%
+\begin{align}
+&  \det\left(  \operatorname*{sub}\nolimits_{i_{1},i_{2},\ldots,i_{k}}%
+^{j_{1},j_{2},\ldots,j_{k}}\left(  AB\right)  \right) \nonumber\\
+&  =\sum_{1\leq g_{1}<g_{2}<\cdots<g_{k}\leq p}\det\left(  \operatorname*{sub}%
+\nolimits_{i_{1},i_{2},\ldots,i_{k}}^{g_{1},g_{2},\ldots,g_{k}}A\right)
+\cdot\det\left(  \operatorname*{sub}\nolimits_{g_{1},g_{2},\ldots,g_{k}%
+}^{j_{1},j_{2},\ldots,j_{k}}B\right)  .
+\label{pf.cor.sol.addexe.jacobi-complement.CB.1}%
+\end{align}
+(Here, the summation sign \textquotedblleft$\sum_{1\leq g_{1}<g_{2}%
+<\cdots<g_{k}\leq p}$\textquotedblright\ has to be interpreted as
+\textquotedblleft$\sum_{\substack{\left(  g_{1},g_{2},\ldots,g_{k}\right)
+\in\left\{  1,2,\ldots,p\right\}  ^{k};\\g_{1}<g_{2}<\cdots<g_{k}}%
+}$\textquotedblright, in analogy to Remark \ref{rmk.cauchy-binet.sumsign}.)
+
+Now, let $S$ denote the set $\left\{  1,2,\ldots,p\right\}  $. Clearly, $S$ is
+a set of integers. Recall that $\mathcal{P}_{k}\left(  S\right)  $ denotes the
+set of all $k$-element subsets of $S$. In other words,
+\[
+\mathcal{P}_{k}\left(  S\right)  =\left\{  T\subseteq S\ \mid\ \left\vert
+T\right\vert =k\right\}  .
+\]
+
+
+Let $\mathbf{I}$ denote the set
+\[
+\left\{  \left(  g_{1},g_{2},\ldots,g_{k}\right)  \in S^{k}\ \mid\ g_{1}%
+<g_{2}<\cdots<g_{k}\right\}  .
+\]
+Thus, every element of $\mathbf{I}$ has the form $\left(  g_{1},g_{2}%
+,\ldots,g_{k}\right)  $ for some $\left(  g_{1},g_{2},\ldots,g_{k}\right)  \in
+S^{k}$.
+
+Lemma \ref{lem.sol.addexe.jacobi-complement.increase-bij} (applied to $u=k$)
+shows that the map%
+\begin{align*}
+\mathcal{P}_{k}\left(  S\right)   &  \rightarrow\mathbf{I},\\
+R  &  \mapsto w\left(  R\right)
+\end{align*}
+is well-defined and a bijection.
+
+The definition of $\mathbf{I}$ yields
+\[
+\mathbf{I}=\left\{  \left(  g_{1},g_{2},\ldots,g_{k}\right)  \in S^{k}%
+\ \mid\ g_{1}<g_{2}<\cdots<g_{k}\right\}  .
+\]
+Hence, we have the following equality of summation signs:%
+\[
+\sum_{\left(  g_{1},g_{2},\ldots,g_{k}\right)  \in\mathbf{I}}=\sum
+_{\substack{\left(  g_{1},g_{2},\ldots,g_{k}\right)  \in S^{k};\\g_{1}%
+<g_{2}<\cdots<g_{k}}}=\sum_{\substack{\left(  g_{1},g_{2},\ldots,g_{k}\right)
+\in\left\{  1,2,\ldots,p\right\}  ^{k};\\g_{1}<g_{2}<\cdots<g_{k}}}
+\]
+(since $S=\left\{  1,2,\ldots,p\right\}  $). Comparing this with%
+\[
+\sum_{1\leq g_{1}<g_{2}<\cdots<g_{k}\leq p}=\sum_{\substack{\left(
+g_{1},g_{2},\ldots,g_{k}\right)  \in\left\{  1,2,\ldots,p\right\}
+^{k};\\g_{1}<g_{2}<\cdots<g_{k}}},
+\]
+we obtain%
+\[
+\sum_{1\leq g_{1}<g_{2}<\cdots<g_{k}\leq p}=\sum_{\left(  g_{1},g_{2}%
+,\ldots,g_{k}\right)  \in\mathbf{I}}.
+\]
+Now, (\ref{pf.cor.sol.addexe.jacobi-complement.CB.1}) becomes%
+\begin{align*}
+&  \det\left(  \operatorname*{sub}\nolimits_{i_{1},i_{2},\ldots,i_{k}}%
+^{j_{1},j_{2},\ldots,j_{k}}\left(  AB\right)  \right) \\
+&  =\underbrace{\sum_{1\leq g_{1}<g_{2}<\cdots<g_{k}\leq p}}_{=\sum_{\left(
+g_{1},g_{2},\ldots,g_{k}\right)  \in\mathbf{I}}}\det\left(
+\underbrace{\operatorname*{sub}\nolimits_{i_{1},i_{2},\ldots,i_{k}}%
+^{g_{1},g_{2},\ldots,g_{k}}A}_{=\operatorname*{sub}\nolimits_{\left(
+i_{1},i_{2},\ldots,i_{k}\right)  }^{\left(  g_{1},g_{2},\ldots,g_{k}\right)
+}A}\right)  \cdot\det\left(  \underbrace{\operatorname*{sub}\nolimits_{g_{1}%
+,g_{2},\ldots,g_{k}}^{j_{1},j_{2},\ldots,j_{k}}B}_{=\operatorname*{sub}%
+\nolimits_{\left(  g_{1},g_{2},\ldots,g_{k}\right)  }^{\left(  j_{1}%
+,j_{2},\ldots,j_{k}\right)  }B}\right) \\
+&  =\sum_{\left(  g_{1},g_{2},\ldots,g_{k}\right)  \in\mathbf{I}}\det\left(
+\operatorname*{sub}\nolimits_{\left(  i_{1},i_{2},\ldots,i_{k}\right)
+}^{\left(  g_{1},g_{2},\ldots,g_{k}\right)  }A\right)  \cdot\det\left(
+\operatorname*{sub}\nolimits_{\left(  g_{1},g_{2},\ldots,g_{k}\right)
+}^{\left(  j_{1},j_{2},\ldots,j_{k}\right)  }B\right) \\
+&  =\underbrace{\sum_{R\in\mathcal{P}_{k}\left(  S\right)  }}_{\substack{=\sum
+_{R\in\left\{  T\subseteq S\ \mid\ \left\vert T\right\vert =k\right\}
+}\\\text{(since }\mathcal{P}_{k}\left(  S\right)  =\left\{  T\subseteq
+S\ \mid\ \left\vert T\right\vert =k\right\}  \text{)}}}\det\left(
+\underbrace{\operatorname*{sub}\nolimits_{\left(  i_{1},i_{2},\ldots
+,i_{k}\right)  }^{w\left(  R\right)  }A}_{\substack{=\operatorname*{sub}%
+\nolimits_{w\left(  P\right)  }^{w\left(  R\right)  }A\\\text{(since }\left(
+i_{1},i_{2},\ldots,i_{k}\right)  =w\left(  P\right)  \text{)}}}\right)
+\cdot\det\left(  \underbrace{\operatorname*{sub}\nolimits_{w\left(  R\right)
+}^{\left(  j_{1},j_{2},\ldots,j_{k}\right)  }B}%
+_{\substack{=\operatorname*{sub}\nolimits_{w\left(  R\right)  }^{w\left(
+Q\right)  }B\\\text{(since }\left(  j_{1},j_{2},\ldots,j_{k}\right)  =w\left(
+Q\right)  \text{)}}}\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have substituted }w\left(  R\right)  \text{ for }\left(
+g_{1},g_{2},\ldots,g_{k}\right)  \text{, since}\\
+\text{the map }\mathcal{P}_{k}\left(  S\right)  \rightarrow\mathbf{I}%
+,\ R\mapsto w\left(  R\right)  \text{ is a bijection}%
+\end{array}
+\right) \\
+&  =\underbrace{\sum_{R\in\left\{  T\subseteq S\ \mid\ \left\vert T\right\vert
+=k\right\}  }}_{\substack{=\sum_{\substack{R\subseteq S;\\\left\vert
+R\right\vert =k}}=\sum_{\substack{R\subseteq\left\{  1,2,\ldots,p\right\}
+;\\\left\vert R\right\vert =k}}\\\text{(since }S=\left\{  1,2,\ldots
+,p\right\}  \text{)}}}\det\left(  \operatorname*{sub}\nolimits_{w\left(
+P\right)  }^{w\left(  R\right)  }A\right)  \cdot\det\left(
+\operatorname*{sub}\nolimits_{w\left(  R\right)  }^{w\left(  Q\right)
+}B\right) \\
+&  =\sum_{\substack{R\subseteq\left\{  1,2,\ldots,p\right\}  ;\\\left\vert
+R\right\vert =k}}\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)
+}^{w\left(  R\right)  }A\right)  \cdot\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  R\right)  }^{w\left(  Q\right)  }B\right)  .
+\end{align*}
+Comparing this with%
+\begin{align*}
+\det\left(  \underbrace{\operatorname*{sub}\nolimits_{i_{1},i_{2},\ldots
+,i_{k}}^{j_{1},j_{2},\ldots,j_{k}}\left(  AB\right)  }_{=\operatorname*{sub}%
+\nolimits_{\left(  i_{1},i_{2},\ldots,i_{k}\right)  }^{\left(  j_{1}%
+,j_{2},\ldots,j_{k}\right)  }\left(  AB\right)  }\right)   &  =\det\left(
+\operatorname*{sub}\nolimits_{\left(  i_{1},i_{2},\ldots,i_{k}\right)
+}^{\left(  j_{1},j_{2},\ldots,j_{k}\right)  }\left(  AB\right)  \right)
+=\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+Q\right)  }\left(  AB\right)  \right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since }\left(  i_{1},i_{2},\ldots,i_{k}\right)  =w\left(  P\right) \\
+\text{and }\left(  j_{1},j_{2},\ldots,j_{k}\right)  =w\left(  Q\right)
+\end{array}
+\right)  ,
+\end{align*}
+we obtain%
+\[
+\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+Q\right)  }\left(  AB\right)  \right)  =\sum_{\substack{R\subseteq\left\{
+1,2,\ldots,p\right\}  ;\\\left\vert R\right\vert =k}}\det\left(
+\operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(  R\right)
+}A\right)  \cdot\det\left(  \operatorname*{sub}\nolimits_{w\left(  R\right)
+}^{w\left(  Q\right)  }B\right)  .
+\]
+This proves Corollary \ref{cor.adj(AB).cauchy-binet-general}.
+\end{proof}
+\end{verlong}
+
+Our next step towards solving Additional exercise
+\ref{addexe.jacobi-complement} again is the following fact:
+
+\begin{proposition}
+\label{prop.sol.addexe.jacobi-complement.genform}Let $n\in\mathbb{N}$ and
+$m\in\mathbb{N}$. For any subset $I$ of $\left\{  1,2,\ldots,n\right\}  $, we
+let $\widetilde{I}$ denote the complement $\left\{  1,2,\ldots,n\right\}
+\setminus I$ of $I$.
+
+Let $A$ be an $n\times n$-matrix. Let $B$ be an $n\times m$-matrix. Let $P$ be
+a subset of $\left\{  1,2,\ldots,n\right\}  $. Let $Q$ be a subset of
+$\left\{  1,2,\ldots,m\right\}  $ such that $\left\vert P\right\vert
+=\left\vert Q\right\vert $. Then,%
+\begin{align*}
+&  \det A\cdot\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)
+}^{w\left(  Q\right)  }B\right) \\
+&  =\sum_{\substack{K\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+K\right\vert =\left\vert P\right\vert }}\left(  -1\right)  ^{\sum P+\sum
+K}\det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{K}\right)
+}^{w\left(  \widetilde{P}\right)  }A\right)  \det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  K\right)  }^{w\left(  Q\right)  }\left(  AB\right)
+\right)  .
+\end{align*}
+
+\end{proposition}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Proposition \ref{prop.sol.addexe.jacobi-complement.genform}.]Set
+$k=\left\vert P\right\vert $. Clearly, $k=\left\vert P\right\vert =\left\vert
+Q\right\vert $.
+
+If $K$ is a subset of $\left\{  1,2,\ldots,n\right\}  $ satisfying $\left\vert
+K\right\vert =\left\vert P\right\vert $, then%
+\begin{align}
+&  \det\left(  \operatorname*{sub}\nolimits_{w\left(  K\right)  }^{w\left(
+Q\right)  }\left(  AB\right)  \right) \nonumber\\
+&  =\sum_{\substack{R\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+R\right\vert =k}}\det\left(  \operatorname*{sub}\nolimits_{w\left(  K\right)
+}^{w\left(  R\right)  }A\right)  \cdot\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  R\right)  }^{w\left(  Q\right)  }B\right)
+\label{pf.prop.sol.addexe.jacobi-complement.genform.short.1}%
+\end{align}
+\footnote{\textit{Proof of
+(\ref{pf.prop.sol.addexe.jacobi-complement.genform.short.1}):} Let $K$ be a
+subset of $\left\{  1,2,\ldots,n\right\}  $ satisfying $\left\vert
+K\right\vert =\left\vert P\right\vert $. Then, $\left\vert K\right\vert
+=\left\vert P\right\vert =k$ (since $k=\left\vert P\right\vert $). Also,
+$\left\vert Q\right\vert =k$ (since $k=\left\vert Q\right\vert $). Hence,
+Corollary \ref{cor.sol.addexe.jacobi-complement.CB} (applied to $n$ and $K$
+instead of $p$ and $P$) yields
+\[
+\det\left(  \operatorname*{sub}\nolimits_{w\left(  K\right)  }^{w\left(
+Q\right)  }\left(  AB\right)  \right)  =\sum_{\substack{R\subseteq\left\{
+1,2,\ldots,p\right\}  ;\\\left\vert R\right\vert =k}}\det\left(
+\operatorname*{sub}\nolimits_{w\left(  K\right)  }^{w\left(  R\right)
+}A\right)  \cdot\det\left(  \operatorname*{sub}\nolimits_{w\left(  R\right)
+}^{w\left(  Q\right)  }B\right)  .
+\]
+This proves (\ref{pf.prop.sol.addexe.jacobi-complement.genform.short.1}).}.
+
+Now,%
+\begin{align}
+&  \sum_{\substack{K\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+K\right\vert =\left\vert P\right\vert }}\left(  -1\right)  ^{\sum P+\sum
+K}\det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{K}\right)
+}^{w\left(  \widetilde{P}\right)  }A\right)  \underbrace{\det\left(
+\operatorname*{sub}\nolimits_{w\left(  K\right)  }^{w\left(  Q\right)
+}\left(  AB\right)  \right)  }_{\substack{=\sum_{\substack{R\subseteq\left\{
+1,2,\ldots,n\right\}  ;\\\left\vert R\right\vert =k}}\det\left(
+\operatorname*{sub}\nolimits_{w\left(  K\right)  }^{w\left(  R\right)
+}A\right)  \cdot\det\left(  \operatorname*{sub}\nolimits_{w\left(  R\right)
+}^{w\left(  Q\right)  }B\right)  \\\text{(by
+(\ref{pf.prop.sol.addexe.jacobi-complement.genform.short.1}))}}}\nonumber\\
+&  =\sum_{\substack{K\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+K\right\vert =\left\vert P\right\vert }}\left(  -1\right)  ^{\sum P+\sum
+K}\det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{K}\right)
+}^{w\left(  \widetilde{P}\right)  }A\right) \nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \sum_{\substack{R\subseteq\left\{
+1,2,\ldots,n\right\}  ;\\\left\vert R\right\vert =k}}\det\left(
+\operatorname*{sub}\nolimits_{w\left(  K\right)  }^{w\left(  R\right)
+}A\right)  \cdot\det\left(  \operatorname*{sub}\nolimits_{w\left(  R\right)
+}^{w\left(  Q\right)  }B\right)  \right) \nonumber\\
+&  =\underbrace{\sum_{\substack{K\subseteq\left\{  1,2,\ldots,n\right\}
+;\\\left\vert K\right\vert =\left\vert P\right\vert }}\sum
+_{\substack{R\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+R\right\vert =k}}}_{=\sum_{\substack{R\subseteq\left\{  1,2,\ldots,n\right\}
+;\\\left\vert R\right\vert =k}}\sum_{\substack{K\subseteq\left\{
+1,2,\ldots,n\right\}  ;\\\left\vert K\right\vert =\left\vert P\right\vert }%
+}}\underbrace{\left(  -1\right)  ^{\sum P+\sum K}}_{\substack{=\left(
+-1\right)  ^{\sum K+\sum P}\\\text{(since }\sum P+\sum K=\sum K+\sum
+P\text{)}}}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \underbrace{\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  \widetilde{K}\right)  }^{w\left(  \widetilde{P}\right)
+}A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(  K\right)
+}^{w\left(  R\right)  }A\right)  }_{=\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  K\right)  }^{w\left(  R\right)  }A\right)  \det\left(
+\operatorname*{sub}\nolimits_{w\left(  \widetilde{K}\right)  }^{w\left(
+\widetilde{P}\right)  }A\right)  }\cdot\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  R\right)  }^{w\left(  Q\right)  }B\right) \nonumber\\
+&  =\sum_{\substack{R\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+R\right\vert =k}}\sum_{\substack{K\subseteq\left\{  1,2,\ldots,n\right\}
+;\\\left\vert K\right\vert =\left\vert P\right\vert }}\left(  -1\right)
+^{\sum K+\sum P}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \det\left(  \operatorname*{sub}\nolimits_{w\left(
+K\right)  }^{w\left(  R\right)  }A\right)  \det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  \widetilde{K}\right)  }^{w\left(  \widetilde{P}\right)
+}A\right)  \cdot\det\left(  \operatorname*{sub}\nolimits_{w\left(  R\right)
+}^{w\left(  Q\right)  }B\right) \nonumber\\
+&  =\sum_{\substack{R\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+R\right\vert =k}}\left(  \sum_{\substack{K\subseteq\left\{  1,2,\ldots
+,n\right\}  ;\\\left\vert K\right\vert =\left\vert P\right\vert }}\left(
+-1\right)  ^{\sum K+\sum P}\det\left(  \operatorname*{sub}\nolimits_{w\left(
+K\right)  }^{w\left(  R\right)  }A\right)  \det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  \widetilde{K}\right)  }^{w\left(  \widetilde{P}\right)
+}A\right)  \right) \nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \cdot\det\left(  \operatorname*{sub}\nolimits_{w\left(
+R\right)  }^{w\left(  Q\right)  }B\right)  .
+\label{pf.prop.sol.addexe.jacobi-complement.genform.short.3}%
+\end{align}
+
+
+On the other hand, for every subset $G$ of $\left\{  1,2,\ldots,n\right\}  $,
+we have%
+\begin{equation}
+\det A=\sum_{\substack{K\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+K\right\vert =\left\vert G\right\vert }}\left(  -1\right)  ^{\sum K+\sum
+G}\det\left(  \operatorname*{sub}\nolimits_{w\left(  K\right)  }^{w\left(
+G\right)  }A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(
+\widetilde{K}\right)  }^{w\left(  \widetilde{G}\right)  }A\right)  .
+\label{pf.prop.sol.addexe.jacobi-complement.genform.short.6}%
+\end{equation}
+(Indeed, this is precisely the claim of Theorem \ref{thm.det.laplace-multi}
+\textbf{(b)}, with the variables $P$ and $Q$ renamed as $K$ and $G$.) Applying
+(\ref{pf.prop.sol.addexe.jacobi-complement.genform.short.6}) to $G=P$, we
+obtain%
+\begin{equation}
+\det A=\sum_{\substack{K\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+K\right\vert =\left\vert P\right\vert }}\left(  -1\right)  ^{\sum K+\sum
+P}\det\left(  \operatorname*{sub}\nolimits_{w\left(  K\right)  }^{w\left(
+P\right)  }A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(
+\widetilde{K}\right)  }^{w\left(  \widetilde{P}\right)  }A\right)  .
+\label{pf.prop.sol.addexe.jacobi-complement.genform.short.6b}%
+\end{equation}
+
+
+For any two objects $i$ and $j$, we define $\delta_{i,j}$ to be the element $%
+\begin{cases}
+1, & \text{if }i=j;\\
+0, & \text{if }i\neq j
+\end{cases}
+$ of $\mathbb{K}$.
+
+If $R$ is a subset of $\left\{  1,2,\ldots,n\right\}  $ satisfying $\left\vert
+R\right\vert =k$, then%
+\begin{align}
+&  \sum_{\substack{K\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+K\right\vert =\left\vert P\right\vert }}\left(  -1\right)  ^{\sum K+\sum
+P}\det\left(  \operatorname*{sub}\nolimits_{w\left(  K\right)  }^{w\left(
+R\right)  }A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(
+\widetilde{K}\right)  }^{w\left(  \widetilde{P}\right)  }A\right) \nonumber\\
+&  =\delta_{R,P}\det A
+\label{pf.prop.sol.addexe.jacobi-complement.genform.short.5}%
+\end{align}
+\footnote{\textit{Proof of
+(\ref{pf.prop.sol.addexe.jacobi-complement.genform.short.5}):} Let $R$ be a
+subset of $\left\{  1,2,\ldots,n\right\}  $ satisfying $\left\vert
+R\right\vert =k$. We must prove
+(\ref{pf.prop.sol.addexe.jacobi-complement.genform.short.5}).
+\par
+We have
+\[
+\underbrace{\delta_{P,P}}_{\substack{=1\\\text{(since }P=P\text{)}}}\det
+A=\det A=\sum_{\substack{K\subseteq\left\{  1,2,\ldots,n\right\}
+;\\\left\vert K\right\vert =\left\vert P\right\vert }}\left(  -1\right)
+^{\sum K+\sum P}\det\left(  \operatorname*{sub}\nolimits_{w\left(  K\right)
+}^{w\left(  P\right)  }A\right)  \det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  \widetilde{K}\right)  }^{w\left(  \widetilde{P}\right)
+}A\right)
+\]
+(by (\ref{pf.prop.sol.addexe.jacobi-complement.genform.short.6})). In other
+words, (\ref{pf.prop.sol.addexe.jacobi-complement.genform.short.5}) holds if
+$R=P$. Hence, for the rest of our proof of
+(\ref{pf.prop.sol.addexe.jacobi-complement.genform.short.5}), we WLOG assume
+that $R\neq P$. Thus, $\delta_{R,P}=0$.
+\par
+We have $R\neq P$ and thus $P\neq R$. Also, $\left\vert P\right\vert
+=k=\left\vert R\right\vert $.
+\par
+For every subset $G$ of $\left\{  1,2,\ldots,n\right\}  $ satisfying
+$\left\vert G\right\vert =\left\vert R\right\vert $ and $G\neq R$, we have%
+\begin{equation}
+0=\sum_{\substack{K\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+K\right\vert =\left\vert G\right\vert }}\left(  -1\right)  ^{\sum K+\sum
+G}\det\left(  \operatorname*{sub}\nolimits_{w\left(  K\right)  }^{w\left(
+R\right)  }A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(
+\widetilde{K}\right)  }^{w\left(  \widetilde{G}\right)  }A\right)  .
+\label{pf.prop.sol.addexe.jacobi-complement.genform.short.7}%
+\end{equation}
+(Indeed, this is precisely the claim of Exercise \ref{exe.det.laplace-multi.0}
+\textbf{(b)}, with the variables $Q$ and $P$ renamed as $G$ and $K$.) Applying
+(\ref{pf.prop.sol.addexe.jacobi-complement.genform.short.7}) to $G=P$, we
+obtain%
+\[
+0=\sum_{\substack{K\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+K\right\vert =\left\vert P\right\vert }}\left(  -1\right)  ^{\sum K+\sum
+P}\det\left(  \operatorname*{sub}\nolimits_{w\left(  K\right)  }^{w\left(
+R\right)  }A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(
+\widetilde{K}\right)  }^{w\left(  \widetilde{P}\right)  }A\right)
+\]
+(since $\left\vert P\right\vert =\left\vert R\right\vert $ and $P\neq R$).
+Hence,%
+\begin{align*}
+&  \sum_{\substack{K\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+K\right\vert =\left\vert P\right\vert }}\left(  -1\right)  ^{\sum K+\sum
+P}\det\left(  \operatorname*{sub}\nolimits_{w\left(  K\right)  }^{w\left(
+R\right)  }A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(
+\widetilde{K}\right)  }^{w\left(  \widetilde{P}\right)  }A\right) \\
+&  =0=\underbrace{0}_{=\delta_{R,P}}\det A=\delta_{R,P}\det A.
+\end{align*}
+This proves (\ref{pf.prop.sol.addexe.jacobi-complement.genform.short.5}).}.
+
+Now, (\ref{pf.prop.sol.addexe.jacobi-complement.genform.short.3}) becomes%
+\begin{align}
+&  \sum_{\substack{K\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+K\right\vert =\left\vert P\right\vert }}\left(  -1\right)  ^{\sum P+\sum
+K}\det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{K}\right)
+}^{w\left(  \widetilde{P}\right)  }A\right)  \det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  K\right)  }^{w\left(  Q\right)  }\left(  AB\right)
+\right) \nonumber\\
+&  =\sum_{\substack{R\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+R\right\vert =k}}\underbrace{\left(  \sum_{\substack{K\subseteq\left\{
+1,2,\ldots,n\right\}  ;\\\left\vert K\right\vert =\left\vert P\right\vert
+}}\left(  -1\right)  ^{\sum K+\sum P}\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  K\right)  }^{w\left(  R\right)  }A\right)  \det\left(
+\operatorname*{sub}\nolimits_{w\left(  \widetilde{K}\right)  }^{w\left(
+\widetilde{P}\right)  }A\right)  \right)  }_{\substack{=\delta_{R,P}\det
+A\\\text{(by (\ref{pf.prop.sol.addexe.jacobi-complement.genform.short.5}))}%
+}}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \cdot\det\left(  \operatorname*{sub}\nolimits_{w\left(
+R\right)  }^{w\left(  Q\right)  }B\right) \nonumber\\
+&  =\sum_{\substack{R\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+R\right\vert =k}}\delta_{R,P}\det A\cdot\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  R\right)  }^{w\left(  Q\right)  }B\right)  .
+\label{pf.prop.sol.addexe.jacobi-complement.genform.short.11}%
+\end{align}
+
+
+But $P$ is a subset of $\left\{  1,2,\ldots,n\right\}  $ and satisfies
+$\left\vert P\right\vert =k$. In other words, $P$ is a subset $R$ of $\left\{
+1,2,\ldots,n\right\}  $ satisfying $\left\vert R\right\vert =k$. Thus, the sum
+$\sum_{\substack{R\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+R\right\vert =k}}\delta_{R,P}\det A\cdot\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  R\right)  }^{w\left(  Q\right)  }B\right)  $ has an addend
+for $R=P$. If we split off this addend from this sum, then we obtain%
+\begin{align*}
+&  \sum_{\substack{R\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+R\right\vert =k}}\delta_{R,P}\det A\cdot\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  R\right)  }^{w\left(  Q\right)  }B\right) \\
+&  =\underbrace{\delta_{P,P}}_{\substack{=1\\\text{(since }P=P\text{)}}}\det
+A\cdot\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+Q\right)  }B\right)  +\sum_{\substack{R\subseteq\left\{  1,2,\ldots,n\right\}
+;\\\left\vert R\right\vert =k;\\R\neq P}}\underbrace{\delta_{R,P}%
+}_{\substack{=0\\\text{(since }R\neq P\text{)}}}\det A\cdot\det\left(
+\operatorname*{sub}\nolimits_{w\left(  R\right)  }^{w\left(  Q\right)
+}B\right) \\
+&  =\det A\cdot\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)
+}^{w\left(  Q\right)  }B\right)  +\underbrace{\sum_{\substack{R\subseteq
+\left\{  1,2,\ldots,n\right\}  ;\\\left\vert R\right\vert =k;\\R\neq P}}0\det
+A\cdot\det\left(  \operatorname*{sub}\nolimits_{w\left(  R\right)  }^{w\left(
+Q\right)  }B\right)  }_{=0}\\
+&  =\det A\cdot\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)
+}^{w\left(  Q\right)  }B\right)  .
+\end{align*}
+Hence, (\ref{pf.prop.sol.addexe.jacobi-complement.genform.short.11}) becomes%
+\begin{align*}
+&  \sum_{\substack{K\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+K\right\vert =\left\vert P\right\vert }}\left(  -1\right)  ^{\sum P+\sum
+K}\det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{K}\right)
+}^{w\left(  \widetilde{P}\right)  }A\right)  \det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  K\right)  }^{w\left(  Q\right)  }\left(  AB\right)
+\right) \\
+&  =\sum_{\substack{R\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+R\right\vert =k}}\delta_{R,P}\det A\cdot\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  R\right)  }^{w\left(  Q\right)  }B\right)  =\det
+A\cdot\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+Q\right)  }B\right)  .
+\end{align*}
+This proves Proposition \ref{prop.sol.addexe.jacobi-complement.genform}.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Proposition \ref{prop.sol.addexe.jacobi-complement.genform}.]The set
+$P$ is a subset of $\left\{  1,2,\ldots,n\right\}  $, and thus is finite
+(since $\left\{  1,2,\ldots,n\right\}  $ is finite). Thus, $\left\vert
+P\right\vert \in\mathbb{N}$. Hence, we can define $k\in\mathbb{N}$ by
+$k=\left\vert P\right\vert $. Consider this $k$. Clearly, $k=\left\vert
+P\right\vert =\left\vert Q\right\vert $.
+
+If $K$ is a subset of $\left\{  1,2,\ldots,n\right\}  $ satisfying $\left\vert
+K\right\vert =\left\vert P\right\vert $, then%
+\begin{align}
+&  \det\left(  \operatorname*{sub}\nolimits_{w\left(  K\right)  }^{w\left(
+Q\right)  }\left(  AB\right)  \right) \nonumber\\
+&  =\sum_{\substack{R\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+R\right\vert =k}}\det\left(  \operatorname*{sub}\nolimits_{w\left(  K\right)
+}^{w\left(  R\right)  }A\right)  \cdot\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  R\right)  }^{w\left(  Q\right)  }B\right)
+\label{pf.prop.sol.addexe.jacobi-complement.genform.1}%
+\end{align}
+\footnote{\textit{Proof of
+(\ref{pf.prop.sol.addexe.jacobi-complement.genform.1}):} Let $K$ be a subset
+of $\left\{  1,2,\ldots,n\right\}  $ satisfying $\left\vert K\right\vert
+=\left\vert P\right\vert $. Then, $\left\vert K\right\vert =\left\vert
+P\right\vert =k$ (since $k=\left\vert P\right\vert $). Also, $\left\vert
+Q\right\vert =k$ (since $k=\left\vert Q\right\vert $). Hence, Corollary
+\ref{cor.sol.addexe.jacobi-complement.CB} (applied to $n$ and $K$ instead of
+$p$ and $P$) yields
+\[
+\det\left(  \operatorname*{sub}\nolimits_{w\left(  K\right)  }^{w\left(
+Q\right)  }\left(  AB\right)  \right)  =\sum_{\substack{R\subseteq\left\{
+1,2,\ldots,p\right\}  ;\\\left\vert R\right\vert =k}}\det\left(
+\operatorname*{sub}\nolimits_{w\left(  K\right)  }^{w\left(  R\right)
+}A\right)  \cdot\det\left(  \operatorname*{sub}\nolimits_{w\left(  R\right)
+}^{w\left(  Q\right)  }B\right)  .
+\]
+This proves (\ref{pf.prop.sol.addexe.jacobi-complement.genform.1}).}.
+
+Now,%
+\begin{align}
+&  \sum_{\substack{K\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+K\right\vert =\left\vert P\right\vert }}\left(  -1\right)  ^{\sum P+\sum
+K}\det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{K}\right)
+}^{w\left(  \widetilde{P}\right)  }A\right)  \underbrace{\det\left(
+\operatorname*{sub}\nolimits_{w\left(  K\right)  }^{w\left(  Q\right)
+}\left(  AB\right)  \right)  }_{\substack{=\sum_{\substack{R\subseteq\left\{
+1,2,\ldots,n\right\}  ;\\\left\vert R\right\vert =k}}\det\left(
+\operatorname*{sub}\nolimits_{w\left(  K\right)  }^{w\left(  R\right)
+}A\right)  \cdot\det\left(  \operatorname*{sub}\nolimits_{w\left(  R\right)
+}^{w\left(  Q\right)  }B\right)  \\\text{(by
+(\ref{pf.prop.sol.addexe.jacobi-complement.genform.1}))}}}\nonumber\\
+&  =\sum_{\substack{K\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+K\right\vert =\left\vert P\right\vert }}\left(  -1\right)  ^{\sum P+\sum
+K}\det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{K}\right)
+}^{w\left(  \widetilde{P}\right)  }A\right) \nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \sum_{\substack{R\subseteq\left\{
+1,2,\ldots,n\right\}  ;\\\left\vert R\right\vert =k}}\det\left(
+\operatorname*{sub}\nolimits_{w\left(  K\right)  }^{w\left(  R\right)
+}A\right)  \cdot\det\left(  \operatorname*{sub}\nolimits_{w\left(  R\right)
+}^{w\left(  Q\right)  }B\right)  \right) \nonumber\\
+&  =\underbrace{\sum_{\substack{K\subseteq\left\{  1,2,\ldots,n\right\}
+;\\\left\vert K\right\vert =\left\vert P\right\vert }}\sum
+_{\substack{R\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+R\right\vert =k}}}_{=\sum_{\substack{R\subseteq\left\{  1,2,\ldots,n\right\}
+;\\\left\vert R\right\vert =k}}\sum_{\substack{K\subseteq\left\{
+1,2,\ldots,n\right\}  ;\\\left\vert K\right\vert =\left\vert P\right\vert }%
+}}\underbrace{\left(  -1\right)  ^{\sum P+\sum K}}_{\substack{=\left(
+-1\right)  ^{\sum K+\sum P}\\\text{(since }\sum P+\sum K=\sum K+\sum
+P\text{)}}}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \underbrace{\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  \widetilde{K}\right)  }^{w\left(  \widetilde{P}\right)
+}A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(  K\right)
+}^{w\left(  R\right)  }A\right)  }_{=\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  K\right)  }^{w\left(  R\right)  }A\right)  \det\left(
+\operatorname*{sub}\nolimits_{w\left(  \widetilde{K}\right)  }^{w\left(
+\widetilde{P}\right)  }A\right)  }\cdot\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  R\right)  }^{w\left(  Q\right)  }B\right) \nonumber\\
+&  =\sum_{\substack{R\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+R\right\vert =k}}\sum_{\substack{K\subseteq\left\{  1,2,\ldots,n\right\}
+;\\\left\vert K\right\vert =\left\vert P\right\vert }}\left(  -1\right)
+^{\sum K+\sum P}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \det\left(  \operatorname*{sub}\nolimits_{w\left(
+K\right)  }^{w\left(  R\right)  }A\right)  \det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  \widetilde{K}\right)  }^{w\left(  \widetilde{P}\right)
+}A\right)  \cdot\det\left(  \operatorname*{sub}\nolimits_{w\left(  R\right)
+}^{w\left(  Q\right)  }B\right) \nonumber\\
+&  =\sum_{\substack{R\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+R\right\vert =k}}\left(  \sum_{\substack{K\subseteq\left\{  1,2,\ldots
+,n\right\}  ;\\\left\vert K\right\vert =\left\vert P\right\vert }}\left(
+-1\right)  ^{\sum K+\sum P}\det\left(  \operatorname*{sub}\nolimits_{w\left(
+K\right)  }^{w\left(  R\right)  }A\right)  \det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  \widetilde{K}\right)  }^{w\left(  \widetilde{P}\right)
+}A\right)  \right) \nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \cdot\det\left(  \operatorname*{sub}\nolimits_{w\left(
+R\right)  }^{w\left(  Q\right)  }B\right)  .
+\label{pf.prop.sol.addexe.jacobi-complement.genform.3}%
+\end{align}
+
+
+On the other hand, for every subset $G$ of $\left\{  1,2,\ldots,n\right\}  $,
+we have%
+\begin{equation}
+\det A=\sum_{\substack{K\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+K\right\vert =\left\vert G\right\vert }}\left(  -1\right)  ^{\sum K+\sum
+G}\det\left(  \operatorname*{sub}\nolimits_{w\left(  K\right)  }^{w\left(
+G\right)  }A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(
+\widetilde{K}\right)  }^{w\left(  \widetilde{G}\right)  }A\right)  .
+\label{pf.prop.sol.addexe.jacobi-complement.genform.6}%
+\end{equation}
+(Indeed, this is precisely the claim of Theorem \ref{thm.det.laplace-multi}
+\textbf{(b)}, with the variables $P$ and $Q$ renamed as $K$ and $G$.) Applying
+(\ref{pf.prop.sol.addexe.jacobi-complement.genform.6}) to $G=P$, we obtain%
+\begin{equation}
+\det A=\sum_{\substack{K\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+K\right\vert =\left\vert P\right\vert }}\left(  -1\right)  ^{\sum K+\sum
+P}\det\left(  \operatorname*{sub}\nolimits_{w\left(  K\right)  }^{w\left(
+P\right)  }A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(
+\widetilde{K}\right)  }^{w\left(  \widetilde{P}\right)  }A\right)  .
+\label{pf.prop.sol.addexe.jacobi-complement.genform.6b}%
+\end{equation}
+
+
+For any two objects $i$ and $j$, we define $\delta_{i,j}$ to be the element $%
+\begin{cases}
+1, & \text{if }i=j;\\
+0, & \text{if }i\neq j
+\end{cases}
+$ of $\mathbb{K}$.
+
+If $R$ is a subset of $\left\{  1,2,\ldots,n\right\}  $ satisfying $\left\vert
+R\right\vert =k$, then%
+\begin{align}
+&  \sum_{\substack{K\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+K\right\vert =\left\vert P\right\vert }}\left(  -1\right)  ^{\sum K+\sum
+P}\det\left(  \operatorname*{sub}\nolimits_{w\left(  K\right)  }^{w\left(
+R\right)  }A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(
+\widetilde{K}\right)  }^{w\left(  \widetilde{P}\right)  }A\right) \nonumber\\
+&  =\delta_{R,P}\det A \label{pf.prop.sol.addexe.jacobi-complement.genform.5}%
+\end{align}
+\footnote{\textit{Proof of
+(\ref{pf.prop.sol.addexe.jacobi-complement.genform.5}):} Let $R$ be a subset
+of $\left\{  1,2,\ldots,n\right\}  $ satisfying $\left\vert R\right\vert =k$.
+We must prove (\ref{pf.prop.sol.addexe.jacobi-complement.genform.5}).
+\par
+We have
+\begin{align*}
+\underbrace{\delta_{P,P}}_{\substack{=1\\\text{(since }P=P\text{)}}}\det A  &
+=\det A\\
+&  =\sum_{\substack{K\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+K\right\vert =\left\vert P\right\vert }}\left(  -1\right)  ^{\sum K+\sum
+P}\det\left(  \operatorname*{sub}\nolimits_{w\left(  K\right)  }^{w\left(
+P\right)  }A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(
+\widetilde{K}\right)  }^{w\left(  \widetilde{P}\right)  }A\right)
+\end{align*}
+(by (\ref{pf.prop.sol.addexe.jacobi-complement.genform.6})). In other words,
+(\ref{pf.prop.sol.addexe.jacobi-complement.genform.5}) holds if $R=P$. Hence,
+for the rest of our proof of
+(\ref{pf.prop.sol.addexe.jacobi-complement.genform.5}), we can WLOG assume
+that we don't have $R=P$. Assume this.
+\par
+We have $R\neq P$ (since we don't have $R=P$). Thus, $\delta_{R,P}=0$.
+\par
+We have $R\neq P$ and thus $P\neq R$. Also, $\left\vert P\right\vert
+=k=\left\vert R\right\vert $.
+\par
+For every subset $G$ of $\left\{  1,2,\ldots,n\right\}  $ satisfying
+$\left\vert G\right\vert =\left\vert R\right\vert $ and $G\neq R$, we have%
+\begin{equation}
+0=\sum_{\substack{K\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+K\right\vert =\left\vert G\right\vert }}\left(  -1\right)  ^{\sum K+\sum
+G}\det\left(  \operatorname*{sub}\nolimits_{w\left(  K\right)  }^{w\left(
+R\right)  }A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(
+\widetilde{K}\right)  }^{w\left(  \widetilde{G}\right)  }A\right)  .
+\label{pf.prop.sol.addexe.jacobi-complement.genform.7}%
+\end{equation}
+(Indeed, this is precisely the claim of Exercise \ref{exe.det.laplace-multi.0}
+\textbf{(b)}, with the variables $Q$ and $P$ renamed as $G$ and $K$.) Applying
+(\ref{pf.prop.sol.addexe.jacobi-complement.genform.7}) to $G=P$, we obtain%
+\[
+0=\sum_{\substack{K\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+K\right\vert =\left\vert P\right\vert }}\left(  -1\right)  ^{\sum K+\sum
+P}\det\left(  \operatorname*{sub}\nolimits_{w\left(  K\right)  }^{w\left(
+R\right)  }A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(
+\widetilde{K}\right)  }^{w\left(  \widetilde{P}\right)  }A\right)
+\]
+(since $\left\vert P\right\vert =\left\vert R\right\vert $ and $P\neq R$).
+Hence,%
+\begin{align*}
+&  \sum_{\substack{K\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+K\right\vert =\left\vert P\right\vert }}\left(  -1\right)  ^{\sum K+\sum
+P}\det\left(  \operatorname*{sub}\nolimits_{w\left(  K\right)  }^{w\left(
+R\right)  }A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(
+\widetilde{K}\right)  }^{w\left(  \widetilde{P}\right)  }A\right) \\
+&  =0=\underbrace{0}_{=\delta_{R,P}}\det A=\delta_{R,P}\det A.
+\end{align*}
+This proves (\ref{pf.prop.sol.addexe.jacobi-complement.genform.5}).}.
+
+Now, (\ref{pf.prop.sol.addexe.jacobi-complement.genform.3}) becomes%
+\begin{align}
+&  \sum_{\substack{K\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+K\right\vert =\left\vert P\right\vert }}\left(  -1\right)  ^{\sum P+\sum
+K}\det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{K}\right)
+}^{w\left(  \widetilde{P}\right)  }A\right)  \det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  K\right)  }^{w\left(  Q\right)  }\left(  AB\right)
+\right) \nonumber\\
+&  =\sum_{\substack{R\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+R\right\vert =k}}\underbrace{\left(  \sum_{\substack{K\subseteq\left\{
+1,2,\ldots,n\right\}  ;\\\left\vert K\right\vert =\left\vert P\right\vert
+}}\left(  -1\right)  ^{\sum K+\sum P}\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  K\right)  }^{w\left(  R\right)  }A\right)  \det\left(
+\operatorname*{sub}\nolimits_{w\left(  \widetilde{K}\right)  }^{w\left(
+\widetilde{P}\right)  }A\right)  \right)  }_{\substack{=\delta_{R,P}\det
+A\\\text{(by (\ref{pf.prop.sol.addexe.jacobi-complement.genform.5}))}%
+}}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \cdot\det\left(  \operatorname*{sub}\nolimits_{w\left(
+R\right)  }^{w\left(  Q\right)  }B\right) \nonumber\\
+&  =\sum_{\substack{R\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+R\right\vert =k}}\delta_{R,P}\det A\cdot\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  R\right)  }^{w\left(  Q\right)  }B\right)  .
+\label{pf.prop.sol.addexe.jacobi-complement.genform.11}%
+\end{align}
+
+
+But $P$ is a subset of $\left\{  1,2,\ldots,n\right\}  $ and satisfies
+$\left\vert P\right\vert =k$. In other words, $P$ is a subset $R$ of $\left\{
+1,2,\ldots,n\right\}  $ satisfying $\left\vert R\right\vert =k$. Thus, the sum
+$\sum_{\substack{R\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+R\right\vert =k}}\delta_{R,P}\det A\cdot\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  R\right)  }^{w\left(  Q\right)  }B\right)  $ has an addend
+for $R=P$. If we split off this addend from this sum, then we obtain%
+\begin{align*}
+&  \sum_{\substack{R\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+R\right\vert =k}}\delta_{R,P}\det A\cdot\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  R\right)  }^{w\left(  Q\right)  }B\right) \\
+&  =\underbrace{\delta_{P,P}}_{\substack{=1\\\text{(since }P=P\text{)}}}\det
+A\cdot\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+Q\right)  }B\right)  +\sum_{\substack{R\subseteq\left\{  1,2,\ldots,n\right\}
+;\\\left\vert R\right\vert =k;\\R\neq P}}\underbrace{\delta_{R,P}%
+}_{\substack{=0\\\text{(since }R\neq P\text{)}}}\det A\cdot\det\left(
+\operatorname*{sub}\nolimits_{w\left(  R\right)  }^{w\left(  Q\right)
+}B\right) \\
+&  =\det A\cdot\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)
+}^{w\left(  Q\right)  }B\right)  +\underbrace{\sum_{\substack{R\subseteq
+\left\{  1,2,\ldots,n\right\}  ;\\\left\vert R\right\vert =k;\\R\neq P}}0\det
+A\cdot\det\left(  \operatorname*{sub}\nolimits_{w\left(  R\right)  }^{w\left(
+Q\right)  }B\right)  }_{=0}\\
+&  =\det A\cdot\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)
+}^{w\left(  Q\right)  }B\right)  .
+\end{align*}
+Hence, (\ref{pf.prop.sol.addexe.jacobi-complement.genform.11}) becomes%
+\begin{align*}
+&  \sum_{\substack{K\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+K\right\vert =\left\vert P\right\vert }}\left(  -1\right)  ^{\sum P+\sum
+K}\det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{K}\right)
+}^{w\left(  \widetilde{P}\right)  }A\right)  \det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  K\right)  }^{w\left(  Q\right)  }\left(  AB\right)
+\right) \\
+&  =\sum_{\substack{R\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+R\right\vert =k}}\delta_{R,P}\det A\cdot\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  R\right)  }^{w\left(  Q\right)  }B\right)  =\det
+A\cdot\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+Q\right)  }B\right)  .
+\end{align*}
+This proves Proposition \ref{prop.sol.addexe.jacobi-complement.genform}.
+\end{proof}
+\end{verlong}
+
+Proposition \ref{prop.sol.addexe.jacobi-complement.genform} becomes
+particularly simple when the matrix $AB$ is diagonal (i.e., has all entries
+outside of its diagonal equal to $0$):
+
+\begin{corollary}
+\label{cor.sol.addexe.jacobi-complement.diagform}Let $n\in\mathbb{N}$. For
+every two objects $i$ and $j$, define $\delta_{i,j}\in\mathbb{K}$ by
+$\delta_{i,j}=%
+\begin{cases}
+1, & \text{if }i=j;\\
+0, & \text{if }i\neq j
+\end{cases}
+$.
+
+For any subset $I$ of $\left\{  1,2,\ldots,n\right\}  $, we let $\widetilde{I}%
+$ denote the complement $\left\{  1,2,\ldots,n\right\}  \setminus I$ of $I$.
+
+Let $d_{1},d_{2},\ldots,d_{n}$ be $n$ elements of $\mathbb{K}$. Let $A$ and
+$B$ be two $n\times n$-matrices such that $AB=\left(  d_{i}\delta
+_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$.
+
+Let $P$ be a subset of $\left\{  1,2,\ldots,n\right\}  $. Let $Q$ be a subset
+of $\left\{  1,2,\ldots,n\right\}  $ such that $\left\vert P\right\vert
+=\left\vert Q\right\vert $. Then,%
+\[
+\det A\cdot\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)
+}^{w\left(  Q\right)  }B\right)  =\left(  -1\right)  ^{\sum P+\sum Q}%
+\det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{Q}\right)
+}^{w\left(  \widetilde{P}\right)  }A\right)  \prod_{i\in Q}d_{i}.
+\]
+
+\end{corollary}
+
+\begin{proof}
+[Proof of Corollary \ref{cor.sol.addexe.jacobi-complement.diagform}.]If $K$ is
+a subset of $\left\{  1,2,\ldots,n\right\}  $ satisfying $\left\vert
+K\right\vert =\left\vert P\right\vert $, then%
+\begin{equation}
+\det\left(  \operatorname*{sub}\nolimits_{w\left(  K\right)  }^{w\left(
+Q\right)  }\left(  AB\right)  \right)  =\delta_{K,Q}\prod_{i\in K}d_{i}
+\label{pf.cor.sol.addexe.jacobi-complement.diagform.2}%
+\end{equation}
+\footnote{\textit{Proof of
+(\ref{pf.cor.sol.addexe.jacobi-complement.diagform.2}):} Let $K$ be a subset
+of $\left\{  1,2,\ldots,n\right\}  $ satisfying $\left\vert K\right\vert
+=\left\vert P\right\vert $. Then, $\left\vert K\right\vert =\left\vert
+P\right\vert =\left\vert Q\right\vert $. Also, $AB$ is the $n\times n$-matrix
+$\left(  d_{i}\delta_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ (since
+$AB=\left(  d_{i}\delta_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$).
+Hence, Lemma \ref{lem.diag.minors} (applied to $AB$ and $K$ instead of $D$ and
+$P$) yields%
+\[
+\det\left(  \operatorname*{sub}\nolimits_{w\left(  K\right)  }^{w\left(
+Q\right)  }\left(  AB\right)  \right)  =\delta_{K,Q}\prod_{i\in K}d_{i}.
+\]
+This proves (\ref{pf.cor.sol.addexe.jacobi-complement.diagform.2}).}.
+
+Proposition \ref{prop.sol.addexe.jacobi-complement.genform} (applied to $m=n$)
+yields%
+\begin{align}
+&  \det A\cdot\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)
+}^{w\left(  Q\right)  }B\right) \nonumber\\
+&  =\sum_{\substack{K\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+K\right\vert =\left\vert P\right\vert }}\left(  -1\right)  ^{\sum P+\sum
+K}\det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{K}\right)
+}^{w\left(  \widetilde{P}\right)  }A\right)  \underbrace{\det\left(
+\operatorname*{sub}\nolimits_{w\left(  K\right)  }^{w\left(  Q\right)
+}\left(  AB\right)  \right)  }_{\substack{=\delta_{K,Q}\prod_{i\in K}%
+d_{i}\\\text{(by (\ref{pf.cor.sol.addexe.jacobi-complement.diagform.2}))}%
+}}\nonumber\\
+&  =\sum_{\substack{K\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+K\right\vert =\left\vert P\right\vert }}\left(  -1\right)  ^{\sum P+\sum
+K}\det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{K}\right)
+}^{w\left(  \widetilde{P}\right)  }A\right)  \delta_{K,Q}\prod_{i\in K}d_{i}.
+\label{pf.cor.sol.addexe.jacobi-complement.diagform.1}%
+\end{align}
+
+
+But $Q$ is a subset of $\left\{  1,2,\ldots,n\right\}  $ and satisfies
+$\left\vert Q\right\vert =\left\vert P\right\vert $ (since $\left\vert
+P\right\vert =\left\vert Q\right\vert $). In other words, $Q$ is a subset $K$
+of $\left\{  1,2,\ldots,n\right\}  $ satisfying $\left\vert K\right\vert
+=\left\vert P\right\vert $. Thus, the sum
+\[
+\sum_{\substack{K\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+K\right\vert =\left\vert P\right\vert }}\left(  -1\right)  ^{\sum P+\sum
+K}\det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{K}\right)
+}^{w\left(  \widetilde{P}\right)  }A\right)  \det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  K\right)  }^{w\left(  Q\right)  }\left(  AB\right)
+\right)
+\]
+has an addend for $K=Q$. If we split off this addend from this sum, then we
+obtain%
+\begin{align*}
+&  \sum_{\substack{K\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+K\right\vert =\left\vert P\right\vert }}\left(  -1\right)  ^{\sum P+\sum
+K}\det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{K}\right)
+}^{w\left(  \widetilde{P}\right)  }A\right)  \delta_{K,Q}\prod_{i\in K}d_{i}\\
+&  =\left(  -1\right)  ^{\sum P+\sum Q}\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  \widetilde{Q}\right)  }^{w\left(  \widetilde{P}\right)
+}A\right)  \underbrace{\delta_{Q,Q}}_{\substack{=1\\\text{(since }Q=Q\text{)}%
+}}\prod_{i\in Q}d_{i}\\
+&  \ \ \ \ \ \ \ \ \ \ +\sum_{\substack{K\subseteq\left\{  1,2,\ldots
+,n\right\}  ;\\\left\vert K\right\vert =\left\vert P\right\vert ;\\K\neq
+Q}}\left(  -1\right)  ^{\sum P+\sum K}\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  \widetilde{K}\right)  }^{w\left(  \widetilde{P}\right)
+}A\right)  \underbrace{\delta_{K,Q}}_{\substack{=0\\\text{(since }K\neq
+Q\text{)}}}\prod_{i\in K}d_{i}\\
+&  =\left(  -1\right)  ^{\sum P+\sum Q}\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  \widetilde{Q}\right)  }^{w\left(  \widetilde{P}\right)
+}A\right)  \prod_{i\in Q}d_{i}\\
+&  \ \ \ \ \ \ \ \ \ \ +\underbrace{\sum_{\substack{K\subseteq\left\{
+1,2,\ldots,n\right\}  ;\\\left\vert K\right\vert =\left\vert P\right\vert
+;\\K\neq Q}}\left(  -1\right)  ^{\sum P+\sum K}\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  \widetilde{K}\right)  }^{w\left(  \widetilde{P}\right)
+}A\right)  0\prod_{i\in K}d_{i}}_{=0}\\
+&  =\left(  -1\right)  ^{\sum P+\sum Q}\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  \widetilde{Q}\right)  }^{w\left(  \widetilde{P}\right)
+}A\right)  \prod_{i\in Q}d_{i}.
+\end{align*}
+This proves Corollary \ref{cor.sol.addexe.jacobi-complement.diagform}.
+\end{proof}
+
+Specializing Corollary \ref{cor.sol.addexe.jacobi-complement.diagform} a bit
+further, we obtain the following:
+
+\begin{corollary}
+\label{cor.sol.addexe.jacobi-complement.lidform}Let $n\in\mathbb{N}$. Let
+$\lambda\in\mathbb{K}$.
+
+For any subset $I$ of $\left\{  1,2,\ldots,n\right\}  $, we let $\widetilde{I}%
+$ denote the complement $\left\{  1,2,\ldots,n\right\}  \setminus I$ of $I$.
+
+Let $A$ and $B$ be two $n\times n$-matrices such that $AB=\lambda I_{n}$.
+
+Let $P$ be a subset of $\left\{  1,2,\ldots,n\right\}  $. Let $Q$ be a subset
+of $\left\{  1,2,\ldots,n\right\}  $ such that $\left\vert P\right\vert
+=\left\vert Q\right\vert $. Then,%
+\[
+\det A\cdot\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)
+}^{w\left(  Q\right)  }B\right)  =\left(  -1\right)  ^{\sum P+\sum Q}%
+\lambda^{\left\vert Q\right\vert }\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  \widetilde{Q}\right)  }^{w\left(  \widetilde{P}\right)
+}A\right)  .
+\]
+
+\end{corollary}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Corollary \ref{cor.sol.addexe.jacobi-complement.lidform}.]For every
+two objects $i$ and $j$, define $\delta_{i,j}\in\mathbb{K}$ as in Corollary
+\ref{cor.sol.addexe.jacobi-complement.diagform}. We have $I_{n}=\left(
+\delta_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ (by the definition of
+$I_{n}$). Now,%
+\[
+AB=\lambda\underbrace{I_{n}}_{\substack{=\left(  \delta_{i,j}\right)  _{1\leq
+i\leq n,\ 1\leq j\leq n}}}=\lambda\left(  \delta_{i,j}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}=\left(  \lambda\delta_{i,j}\right)  _{1\leq i\leq n,\ 1\leq
+j\leq n}.
+\]
+Hence, Corollary \ref{cor.sol.addexe.jacobi-complement.diagform} (applied to
+$d_{k}=\lambda$) yields%
+\begin{align*}
+\det A\cdot\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)
+}^{w\left(  Q\right)  }B\right)   &  =\left(  -1\right)  ^{\sum P+\sum Q}%
+\det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{Q}\right)
+}^{w\left(  \widetilde{P}\right)  }A\right)  \underbrace{\prod_{i\in Q}%
+\lambda}_{=\lambda^{\left\vert Q\right\vert }}\\
+&  =\left(  -1\right)  ^{\sum P+\sum Q}\lambda^{\left\vert Q\right\vert }%
+\det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{Q}\right)
+}^{w\left(  \widetilde{P}\right)  }A\right)  .
+\end{align*}
+This proves Corollary \ref{cor.sol.addexe.jacobi-complement.lidform}.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Corollary \ref{cor.sol.addexe.jacobi-complement.lidform}.]For every
+two objects $i$ and $j$, define $\delta_{i,j}\in\mathbb{K}$ by $\delta_{i,j}=%
+\begin{cases}
+1, & \text{if }i=j;\\
+0, & \text{if }i\neq j
+\end{cases}
+$. We have%
+\[
+AB=\lambda\underbrace{I_{n}}_{\substack{=\left(  \delta_{i,j}\right)  _{1\leq
+i\leq n,\ 1\leq j\leq n}\\\text{(by the definition}\\\text{of }I_{n}\text{)}%
+}}=\lambda\left(  \delta_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}=\left(  \lambda\delta_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}.
+\]
+Hence, Corollary \ref{cor.sol.addexe.jacobi-complement.diagform} (applied to
+$d_{k}=\lambda$) yields%
+\begin{align*}
+\det A\cdot\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)
+}^{w\left(  Q\right)  }B\right)   &  =\left(  -1\right)  ^{\sum P+\sum Q}%
+\det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{Q}\right)
+}^{w\left(  \widetilde{P}\right)  }A\right)  \underbrace{\prod_{i\in Q}%
+\lambda}_{=\lambda^{\left\vert Q\right\vert }}\\
+&  =\left(  -1\right)  ^{\sum P+\sum Q}\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  \widetilde{Q}\right)  }^{w\left(  \widetilde{P}\right)
+}A\right)  \lambda^{\left\vert Q\right\vert }\\
+&  =\left(  -1\right)  ^{\sum P+\sum Q}\lambda^{\left\vert Q\right\vert }%
+\det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{Q}\right)
+}^{w\left(  \widetilde{P}\right)  }A\right)  .
+\end{align*}
+This proves Corollary \ref{cor.sol.addexe.jacobi-complement.lidform}.
+\end{proof}
+\end{verlong}
+
+Finally, we obtain Additional exercise \ref{addexe.jacobi-complement} easily
+by setting $\lambda=1$ in Corollary
+\ref{cor.sol.addexe.jacobi-complement.lidform}:
+
+\begin{proof}
+[Second solution to Additional exercise \ref{addexe.jacobi-complement}.]The
+matrix $A\in\mathbb{K}^{n\times n}$ is invertible. Hence, the matrix
+$A^{-1}\in\mathbb{K}^{n\times n}$ is well-defined. Theorem \ref{thm.det(AB)}
+(applied to $B=A^{-1}$) yields $\det\left(  AA^{-1}\right)  =\det A\cdot
+\det\left(  A^{-1}\right)  $. Thus, $\det A\cdot\det\left(  A^{-1}\right)
+=\det\left(  \underbrace{AA^{-1}}_{=I_{n}}\right)  =\det\left(  I_{n}\right)
+=1$.
+
+We have $A^{-1}A=I_{n}=1\cdot I_{n}$. Hence, Corollary
+\ref{cor.sol.addexe.jacobi-complement.lidform} (applied to $A^{-1}$, $A$ and
+$1$ instead of $A$, $B$ and $\lambda$) yields%
+\begin{align*}
+\det\left(  A^{-1}\right)  \cdot\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)  }A\right)   &  =\left(
+-1\right)  ^{\sum P+\sum Q}\underbrace{1^{\left\vert Q\right\vert }}_{=1}%
+\det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{Q}\right)
+}^{w\left(  \widetilde{P}\right)  }\left(  A^{-1}\right)  \right) \\
+&  =\left(  -1\right)  ^{\sum P+\sum Q}\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  \widetilde{Q}\right)  }^{w\left(  \widetilde{P}\right)
+}\left(  A^{-1}\right)  \right)  .
+\end{align*}
+Multiplying both sides of this equality by $\det A$, we obtain%
+\[
+\det A\cdot\det\left(  A^{-1}\right)  \cdot\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)  }A\right)  =\det
+A\cdot\left(  -1\right)  ^{\sum P+\sum Q}\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  \widetilde{Q}\right)  }^{w\left(  \widetilde{P}\right)
+}\left(  A^{-1}\right)  \right)  .
+\]
+Comparing this with%
+\[
+\underbrace{\det A\cdot\det\left(  A^{-1}\right)  }_{=1}\cdot\det\left(
+\operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(  Q\right)
+}A\right)  =\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)
+}^{w\left(  Q\right)  }A\right)  ,
+\]
+we obtain%
+\begin{align*}
+\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+Q\right)  }A\right)   &  =\det A\cdot\left(  -1\right)  ^{\sum P+\sum Q}%
+\det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{Q}\right)
+}^{w\left(  \widetilde{P}\right)  }\left(  A^{-1}\right)  \right) \\
+&  =\left(  -1\right)  ^{\sum P+\sum Q}\det A\cdot\det\left(
+\operatorname*{sub}\nolimits_{w\left(  \widetilde{Q}\right)  }^{w\left(
+\widetilde{P}\right)  }\left(  A^{-1}\right)  \right)  .
+\end{align*}
+Thus, Additional exercise \ref{addexe.jacobi-complement} is solved again.
+\end{proof}
+
+\subsubsection{Addendum}
+
+As an easy consequence of our Second solution to Additional exercise
+\ref{addexe.jacobi-complement}, we can obtain the following fact:
+
+\begin{corollary}
+\label{cor.sol.addexe.jacobi-complement.adjform}Let $n\in\mathbb{N}$. For any
+subset $I$ of $\left\{  1,2,\ldots,n\right\}  $, we let $\widetilde{I}$ denote
+the complement $\left\{  1,2,\ldots,n\right\}  \setminus I$ of $I$.
+
+Let $A$ be an $n\times n$-matrix.
+
+Let $P$ and $Q$ be two subsets of $\left\{  1,2,\ldots,n\right\}  $ such that
+$\left\vert P\right\vert =\left\vert Q\right\vert $. Then,%
+\[
+\det A\cdot\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)
+}^{w\left(  Q\right)  }\left(  \operatorname*{adj}A\right)  \right)  =\left(
+-1\right)  ^{\sum P+\sum Q}\left(  \det A\right)  ^{\left\vert Q\right\vert
+}\det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{Q}\right)
+}^{w\left(  \widetilde{P}\right)  }A\right)  .
+\]
+
+\end{corollary}
+
+\begin{proof}
+[Proof of Corollary \ref{cor.sol.addexe.jacobi-complement.adjform}.]Theorem
+\ref{thm.adj.inverse} yields $A\cdot\operatorname*{adj}A=\operatorname*{adj}%
+A\cdot A=\det A\cdot I_{n}$. Hence, Corollary
+\ref{cor.sol.addexe.jacobi-complement.lidform} (applied to
+$B=\operatorname*{adj}A$ and $\lambda=\det A$) yields%
+\[
+\det A\cdot\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)
+}^{w\left(  Q\right)  }\left(  \operatorname*{adj}A\right)  \right)  =\left(
+-1\right)  ^{\sum P+\sum Q}\left(  \det A\right)  ^{\left\vert Q\right\vert
+}\det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{Q}\right)
+}^{w\left(  \widetilde{P}\right)  }A\right)  .
+\]
+This proves Corollary \ref{cor.sol.addexe.jacobi-complement.adjform}.
+\end{proof}
+
+Note that we could have also deduced Corollary
+\ref{cor.sol.addexe.jacobi-complement.adjform} from the First solution to
+Additional exercise \ref{addexe.jacobi-complement} (but this would have been
+more difficult, since we would have to slightly generalize our argument).
+
+It is possible to strengthen Corollary
+\ref{cor.sol.addexe.jacobi-complement.adjform} in the case when $\left\vert
+P\right\vert =\left\vert Q\right\vert \geq1$ as follows:
+
+\begin{corollary}
+\label{cor.sol.addexe.jacobi-complement.adjform.stronger}Let $n\in\mathbb{N}$.
+For any subset $I$ of $\left\{  1,2,\ldots,n\right\}  $, we let $\widetilde{I}%
+$ denote the complement $\left\{  1,2,\ldots,n\right\}  \setminus I$ of $I$.
+
+Let $A$ be an $n\times n$-matrix.
+
+Let $P$ and $Q$ be two subsets of $\left\{  1,2,\ldots,n\right\}  $ such that
+$\left\vert P\right\vert =\left\vert Q\right\vert \geq1$. Then,%
+\[
+\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
+Q\right)  }\left(  \operatorname*{adj}A\right)  \right)  =\left(  -1\right)
+^{\sum P+\sum Q}\left(  \det A\right)  ^{\left\vert Q\right\vert -1}%
+\det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{Q}\right)
+}^{w\left(  \widetilde{P}\right)  }A\right)  .
+\]
+
+\end{corollary}
+
+Loosely speaking, the claim of Corollary
+\ref{cor.sol.addexe.jacobi-complement.adjform.stronger} is obtained from that
+of Corollary \ref{cor.sol.addexe.jacobi-complement.adjform} by cancelling
+$\det A$. However, it is not immediately clear that this cancellation is
+allowed (for instance, $\det A$ could be $0$, or could be a nonzero
+non-cancellable element). There are ways to justify this cancellation in full
+generality; however, these are not in the scope of these notes.
 
 \subsection{Solution to Additional exercise \ref{exeadd.det.rk1upd}}
 
@@ -66869,6 +68646,9 @@ Graduate Texts in Mathematics \#231, Springer 2005.}
 \bibitem[Bresso99]{Bresso99}David M. Bressoud, \textit{Proofs and
 Confirmations: The Story of the Alternating Sign Matrix Conjecture}, Cambridge
 University Press 1999.
+
+\bibitem[BruRys91]{BruRys91}Richard A. Brualdi, Herbert J. Ryser,
+\textit{Combinatorial Matrix Theory}, Cambridge University Press 1991.
 
 \bibitem[CaSoSp12]{CaSoSp12}Sergio Caracciolo, Alan D. Sokal, Andrea
 Sportiello, \textit{Algebraic/combinatorial proofs of Cayley-type identities
