@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Monday, August 15, 2016 21:37:31}
+%TCIDATA{LastRevised=Monday, August 29, 2016 18:09:48}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -38531,9 +38531,10 @@ all inversions of }\sigma\text{)}}}\right\vert \\
 This proves Lemma \ref{lem.sol.exeadd.perm.Inv.sub.l}.
 \end{proof}
 
-Before we step to the solution to Exercise \ref{exeadd.perm.Inv.sub}, let us
-make a short digression and use Lemma \ref{lem.sol.exeadd.perm.Inv.sub.subset}
-to give a new solution of Exercise \ref{exe.ps2.2.5} \textbf{(c)}:
+Before we step to the solution to Additional exercise
+\ref{exeadd.perm.Inv.sub}, let us make a short digression and use Lemma
+\ref{lem.sol.exeadd.perm.Inv.sub.subset} to give a new solution of Exercise
+\ref{exe.ps2.2.5} \textbf{(c)}:
 
 \begin{proof}
 [Second solution to Exercise \ref{exe.ps2.2.5} \textbf{(c)}.]Let $\sigma\in
@@ -38581,11 +38582,11 @@ In other words, $\ell\left(  \sigma\circ\tau\right)  \leq\ell\left(
 \textbf{(c)} is solved again.
 \end{proof}
 
-Now, let us finally solve Exercise \ref{exeadd.perm.Inv.sub}:
+Now, let us finally solve Additional exercise \ref{exeadd.perm.Inv.sub}:
 
 \begin{proof}
-[Solution to Exercise \ref{exeadd.perm.Inv.sub}.]\textbf{(a)} We first observe
-that%
+[Solution to Additional exercise  \ref{exeadd.perm.Inv.sub}.]\textbf{(a)} We
+first observe that%
 \begin{equation}
 \underbrace{\ell\left(  \sigma\circ\tau\right)  }_{\substack{=\left\vert
 \operatorname*{Inv}\left(  \sigma\circ\tau\right)  \right\vert \\\text{(by
@@ -38594,8 +38595,8 @@ Lemma \ref{lem.sol.exeadd.perm.Inv.sub.l}}\\\text{(applied to }\sigma\circ
 }_{\substack{=\left\vert \operatorname*{Inv}\tau\right\vert \\\text{(by Lemma
 \ref{lem.sol.exeadd.perm.Inv.sub.l}}\\\text{(applied to }\tau\text{ instead of
 }\sigma\text{))}}}=\left\vert \operatorname*{Inv}\left(  \sigma\circ
-\tau\right)  \right\vert -\left\vert \operatorname*{Inv}\tau\right\vert .
-\label{sol.exeadd.perm.Inv.sub.a.triv}%
+\tau\right)  \right\vert -\left\vert \operatorname*{Inv}\tau\right\vert
+.\label{sol.exeadd.perm.Inv.sub.a.triv}%
 \end{equation}
 
 
@@ -39419,7 +39420,7 @@ and%
 
 \end{statement}
 
-\textit{Proof of Fact 2:} Let $I$ be a subset of $\left[  k-1\right]  $. Then,%
+\textit{Proof of Fact 2:} We have%
 \[
 \left(  \left[  k\right]  \setminus I\right)  \setminus\left\{  k\right\}
 =\left[  k\right]  \setminus\underbrace{\left(  I\cup\left\{  k\right\}
@@ -39540,12 +39541,12 @@ Now, every subset $I$ of $\left[  k\right]  $ satisfies either $I\in
 \left(  \left[  k-1\right]  \right)  $ (but not both). Hence,%
 \begin{align*}
 &  \sum_{I\subseteq\left[  k\right]  }\left(  \prod_{i\in I}a_{i}\right)
-\left(  \prod_{i\in\left[  k\right]  \setminus I}b_{i}\right) \\
+\left(  \prod_{i\in\left[  k\right]  \setminus I}b_{i}\right)  \\
 &  =\underbrace{\sum_{\substack{I\subseteq\left[  k\right]  ;\\I\in
 \mathcal{P}\left(  \left[  k-1\right]  \right)  }}\left(  \prod_{i\in I}%
 a_{i}\right)  \left(  \prod_{i\in\left[  k\right]  \setminus I}b_{i}\right)
 }_{\substack{=b_{k}\prod_{i=1}^{k-1}\left(  a_{i}+b_{i}\right)  \\\text{(by
-(\ref{sol.prod(ai+bi).short.a.add2}))}}}+\underbrace{\sum
+(\ref{sol.prod(ai+bi).short.a.add1}))}}}+\underbrace{\sum
 _{\substack{I\subseteq\left[  k\right]  ;\\I\notin\mathcal{P}\left(  \left[
 k-1\right]  \right)  }}\left(  \prod_{i\in I}a_{i}\right)  \left(  \prod
 _{i\in\left[  k-1\right]  \setminus I}b_{i}\right)  }_{\substack{=a_{k}%
@@ -39553,7 +39554,7 @@ _{i\in\left[  k-1\right]  \setminus I}b_{i}\right)  }_{\substack{=a_{k}%
 (\ref{sol.prod(ai+bi).short.a.add2}))}}}\\
 &  =b_{k}\prod_{i=1}^{k-1}\left(  a_{i}+b_{i}\right)  +a_{k}\prod_{i=1}%
 ^{k-1}\left(  a_{i}+b_{i}\right)  =\left(  b_{k}+a_{k}\right)  \prod
-_{i=1}^{k-1}\left(  a_{i}+b_{i}\right) \\
+_{i=1}^{k-1}\left(  a_{i}+b_{i}\right)  \\
 &  =\left(  a_{k}+b_{k}\right)  \prod_{i=1}^{k-1}\left(  a_{i}+b_{i}\right)
 =\prod_{i=1}^{k}\left(  a_{i}+b_{i}\right)  .
 \end{align*}
@@ -39561,7 +39562,7 @@ In other words,%
 \begin{equation}
 \prod_{i=1}^{k}\left(  a_{i}+b_{i}\right)  =\sum_{I\subseteq\left[  k\right]
 }\left(  \prod_{i\in I}a_{i}\right)  \left(  \prod_{i\in\left[  k\right]
-\setminus I}b_{i}\right)  . \label{sol.prod(ai+bi).short.a.almostthere}%
+\setminus I}b_{i}\right)  .\label{sol.prod(ai+bi).short.a.almostthere}%
 \end{equation}
 
 
@@ -65622,11 +65623,11 @@ therefore to $S$); hence, this list $w\left(  R\right)  $ belongs to
 $\mathbf{I}$. Thus, the map
 \begin{align*}
 \mathcal{P}_{u}\left(  S\right)   &  \rightarrow\mathbf{I},\\
-R &  \mapsto w\left(  R\right)
+R  &  \mapsto w\left(  R\right)
 \end{align*}
 is well-defined. Also, the map%
 \begin{align*}
-\mathbf{I} &  \rightarrow\mathcal{P}_{u}\left(  S\right)  ,\\
+\mathbf{I}  &  \rightarrow\mathcal{P}_{u}\left(  S\right)  ,\\
 \left(  g_{1},g_{2},\ldots,g_{u}\right)   &  \mapsto\left\{  g_{1}%
 ,g_{2},\ldots,g_{u}\right\}
 \end{align*}
@@ -65641,7 +65642,7 @@ outputs the set of its entries. These two operations clearly revert one
 another. Thus, the two maps are mutually inverse.}. Hence, the map%
 \begin{align*}
 \mathcal{P}_{u}\left(  S\right)   &  \rightarrow\mathbf{I},\\
-R &  \mapsto w\left(  R\right)
+R  &  \mapsto w\left(  R\right)
 \end{align*}
 is invertible, i.e., is a bijection.
 \end{proof}
@@ -65730,7 +65731,7 @@ p_{k}<p_{k+1}\ \ \ \ \ \ \ \ \ \ \text{for every }k\in\left\{  1,2,\ldots
 We have $q_{1}<q_{2}<\cdots<q_{u}$. Hence, if $g$ and $h$ are two elements of
 $\left\{  1,2,\ldots,u\right\}  $ satisfying $g\leq h$, then%
 \begin{equation}
-q_{g}\leq q_{h}.\label{pf.lem.sol.addexe.jacobi-complement.sets-eq.q}%
+q_{g}\leq q_{h}. \label{pf.lem.sol.addexe.jacobi-complement.sets-eq.q}%
 \end{equation}
 
 
@@ -65792,8 +65793,8 @@ other words, we have $\varphi\left(  1\right)  <\varphi\left(  2\right)
 =\operatorname*{id}$. Now, every $k\in\left\{  1,2,\ldots,u\right\}  $
 satisfies%
 \begin{align*}
-p_{k} &  =q_{\varphi\left(  k\right)  }\ \ \ \ \ \ \ \ \ \ \left(  \text{by
-(\ref{pf.lem.sol.addexe.jacobi-complement.sets-eq.1})}\right)  \\
+p_{k}  &  =q_{\varphi\left(  k\right)  }\ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{pf.lem.sol.addexe.jacobi-complement.sets-eq.1})}\right) \\
 &  =q_{k}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\underbrace{\varphi
 }_{=\operatorname*{id}}\left(  k\right)  =\operatorname*{id}\left(  k\right)
 =k\right)  .
