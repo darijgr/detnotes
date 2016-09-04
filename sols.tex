@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Monday, August 29, 2016 18:09:48}
+%TCIDATA{LastRevised=Sunday, September 04, 2016 17:29:15}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -38585,7 +38585,7 @@ In other words, $\ell\left(  \sigma\circ\tau\right)  \leq\ell\left(
 Now, let us finally solve Additional exercise \ref{exeadd.perm.Inv.sub}:
 
 \begin{proof}
-[Solution to Additional exercise  \ref{exeadd.perm.Inv.sub}.]\textbf{(a)} We
+[Solution to Additional exercise \ref{exeadd.perm.Inv.sub}.]\textbf{(a)} We
 first observe that%
 \begin{equation}
 \underbrace{\ell\left(  \sigma\circ\tau\right)  }_{\substack{=\left\vert
@@ -38595,8 +38595,8 @@ Lemma \ref{lem.sol.exeadd.perm.Inv.sub.l}}\\\text{(applied to }\sigma\circ
 }_{\substack{=\left\vert \operatorname*{Inv}\tau\right\vert \\\text{(by Lemma
 \ref{lem.sol.exeadd.perm.Inv.sub.l}}\\\text{(applied to }\tau\text{ instead of
 }\sigma\text{))}}}=\left\vert \operatorname*{Inv}\left(  \sigma\circ
-\tau\right)  \right\vert -\left\vert \operatorname*{Inv}\tau\right\vert
-.\label{sol.exeadd.perm.Inv.sub.a.triv}%
+\tau\right)  \right\vert -\left\vert \operatorname*{Inv}\tau\right\vert .
+\label{sol.exeadd.perm.Inv.sub.a.triv}%
 \end{equation}
 
 
@@ -39541,7 +39541,7 @@ Now, every subset $I$ of $\left[  k\right]  $ satisfies either $I\in
 \left(  \left[  k-1\right]  \right)  $ (but not both). Hence,%
 \begin{align*}
 &  \sum_{I\subseteq\left[  k\right]  }\left(  \prod_{i\in I}a_{i}\right)
-\left(  \prod_{i\in\left[  k\right]  \setminus I}b_{i}\right)  \\
+\left(  \prod_{i\in\left[  k\right]  \setminus I}b_{i}\right) \\
 &  =\underbrace{\sum_{\substack{I\subseteq\left[  k\right]  ;\\I\in
 \mathcal{P}\left(  \left[  k-1\right]  \right)  }}\left(  \prod_{i\in I}%
 a_{i}\right)  \left(  \prod_{i\in\left[  k\right]  \setminus I}b_{i}\right)
@@ -39554,7 +39554,7 @@ _{i\in\left[  k-1\right]  \setminus I}b_{i}\right)  }_{\substack{=a_{k}%
 (\ref{sol.prod(ai+bi).short.a.add2}))}}}\\
 &  =b_{k}\prod_{i=1}^{k-1}\left(  a_{i}+b_{i}\right)  +a_{k}\prod_{i=1}%
 ^{k-1}\left(  a_{i}+b_{i}\right)  =\left(  b_{k}+a_{k}\right)  \prod
-_{i=1}^{k-1}\left(  a_{i}+b_{i}\right)  \\
+_{i=1}^{k-1}\left(  a_{i}+b_{i}\right) \\
 &  =\left(  a_{k}+b_{k}\right)  \prod_{i=1}^{k-1}\left(  a_{i}+b_{i}\right)
 =\prod_{i=1}^{k}\left(  a_{i}+b_{i}\right)  .
 \end{align*}
@@ -39562,7 +39562,7 @@ In other words,%
 \begin{equation}
 \prod_{i=1}^{k}\left(  a_{i}+b_{i}\right)  =\sum_{I\subseteq\left[  k\right]
 }\left(  \prod_{i\in I}a_{i}\right)  \left(  \prod_{i\in\left[  k\right]
-\setminus I}b_{i}\right)  .\label{sol.prod(ai+bi).short.a.almostthere}%
+\setminus I}b_{i}\right)  . \label{sol.prod(ai+bi).short.a.almostthere}%
 \end{equation}
 
 
@@ -67105,9 +67105,7 @@ of $\left\{  1,2,\ldots,n\right\}  $ satisfying $\left\vert K\right\vert
 \sum_{\substack{K\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
 K\right\vert =\left\vert P\right\vert }}\left(  -1\right)  ^{\sum P+\sum
 K}\det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{K}\right)
-}^{w\left(  \widetilde{P}\right)  }A\right)  \det\left(  \operatorname*{sub}%
-\nolimits_{w\left(  K\right)  }^{w\left(  Q\right)  }\left(  AB\right)
-\right)
+}^{w\left(  \widetilde{P}\right)  }A\right)  \delta_{K,Q}\prod_{i\in K}d_{i}%
 \]
 has an addend for $K=Q$. If we split off this addend from this sum, then we
 obtain%
@@ -67138,6 +67136,20 @@ Q\text{)}}}\prod_{i\in K}d_{i}\\
 \nolimits_{w\left(  \widetilde{Q}\right)  }^{w\left(  \widetilde{P}\right)
 }A\right)  \prod_{i\in Q}d_{i}.
 \end{align*}
+Hence, (\ref{pf.cor.sol.addexe.jacobi-complement.diagform.1}) becomes%
+\begin{align*}
+&  \det A\cdot\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)
+}^{w\left(  Q\right)  }B\right)  \\
+&  =\sum_{\substack{K\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
+K\right\vert =\left\vert P\right\vert }}\left(  -1\right)  ^{\sum P+\sum
+K}\det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{K}\right)
+}^{w\left(  \widetilde{P}\right)  }A\right)  \delta_{K,Q}\prod_{i\in K}d_{i}\\
+&  =\left(  -1\right)  ^{\sum P+\sum Q}\det\left(  \operatorname*{sub}%
+\nolimits_{w\left(  \widetilde{Q}\right)  }^{w\left(  \widetilde{P}\right)
+}A\right)  \prod_{i\in Q}d_{i}.
+\end{align*}
+
+
 This proves Corollary \ref{cor.sol.addexe.jacobi-complement.diagform}.
 \end{proof}
 
