@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Sunday, September 04, 2016 17:29:15}
+%TCIDATA{LastRevised=Sunday, September 04, 2016 20:18:26}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -15678,9 +15678,11 @@ It can also be obtained as a particular case of \cite[(4)]{BerBru08}\footnotemar
 \footnotetext{In more detail: If we apply \cite[(4)]{BerBru08} to $k=n-1$,
 then the right hand side is precisely $\det\left(  \left(  a_{i,j}%
 a_{n,n}-a_{i,n}a_{n,j}\right)  _{1\leq i\leq n-1,\ 1\leq j\leq n-1}\right)  $,
-and so the formula becomes (\ref{eq.exe.cauchy-det-lem}).}The next exercises
-are just diversions; they have nothing to do with invertibility or with the
-Cauchy determinant.
+and so the formula becomes (\ref{eq.exe.cauchy-det-lem}).}
+
+\subsection{Further determinant equalities}
+
+Next, let us provide an assortment of other exercises on determinants.
 
 \begin{exercise}
 \label{exe.det.schur-lem}Let $n\in\mathbb{N}$. Let $\left(  a_{i,j}\right)
@@ -15813,6 +15815,117 @@ can replace \textquotedblleft$i\equiv j+1\operatorname{mod}n$%
 \textquotedblright\ by \textquotedblleft$i\equiv j+d\operatorname{mod}%
 n$\textquotedblright\ in Exercise \ref{exe.det.2diags} and still get a formula
 of the form $\det A=a_{1}a_{2}\cdots a_{n}\pm b_{1}b_{2}\cdots b_{n}$ ?
+\end{remark}
+
+\subsection{Alternating matrices}
+
+Our next two exercises will concern two special classes of matrices: the
+\textit{antisymmetric} and the \textit{alternating matrices}. Let us first
+define these classes:
+
+\begin{definition}
+\label{def.altern}Let $n\in\mathbb{N}$. Let $A=\left(  a_{i,j}\right)  _{1\leq
+i\leq n,\ 1\leq j\leq n}$ be an $n\times n$-matrix.
+
+\textbf{(a)} The matrix $A$ is said to be \textit{antisymmetric} if and only
+if $A^{T}=-A$. (Recall that $A^{T}$ is defined as in Definition
+\ref{def.transpose}.)
+
+\textbf{(b)} The matrix $A$ is said to be \textit{alternating} if and only if
+it satisfies $A^{T}=-A$ and $\left(  a_{i,i}=0\text{ for all }i\in\left\{
+1,2,\ldots,n\right\}  \right)  $.
+\end{definition}
+
+\begin{example}
+\label{exam.altern}A $1\times1$-matrix is alternating if and only if it is the
+zero matrix $0_{1\times1}=\left(
+\begin{array}
+[c]{c}%
+0
+\end{array}
+\right)  $.
+
+A $2\times2$-matrix is alternating if and only if it has the form $\left(
+\begin{array}
+[c]{cc}%
+0 & a\\
+-a & 0
+\end{array}
+\right)  $ for some $a\in\mathbb{K}$.
+
+A $3\times3$-matrix is alternating if and only if it has the form $\left(
+\begin{array}
+[c]{ccc}%
+0 & a & b\\
+-a & 0 & c\\
+-b & -c & 0
+\end{array}
+\right)  $ for some $a,b,c\in\mathbb{K}$.
+
+Visually speaking, an $n\times n$-matrix is alternating if and only if its
+diagonal entries are $0$ and its entries below the diagonal are the negatives
+of their \textquotedblleft mirror-image\textquotedblright\ entries above the diagonal.
+\end{example}
+
+\begin{remark}
+Clearly, any alternating matrix is antisymmetric. It is easy to see that an
+$n\times n$-matrix $A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}$ is antisymmetric if and only if every $\left(  i,j\right)  \in\left\{
+1,2,\ldots,n\right\}  ^{2}$ satisfies $a_{i,j}=-a_{j,i}$. Thus, if $A=\left(
+a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ is antisymmetric, then every
+$i\in\left\{  1,2,\ldots,n\right\}  $ satisfies $a_{i,i}=-a_{i,i}$ and thus
+$2a_{i,i}=0$. If $\mathbb{K}$ is one of the rings $\mathbb{Z}$, $\mathbb{Q}$,
+$\mathbb{R}$ and $\mathbb{C}$, then we can cancel $2$ from this last equality,
+and conclude that every antisymmetric $n\times n$-matrix $A$ is alternating.
+However, there are commutative rings $\mathbb{K}$ for which this does not hold
+(for example, the ring $\mathbb{Z}/2\mathbb{Z}$ of integers modulo $2$).
+
+Antisymmetric matrices are also known as \textit{skew-symmetric} matrices.
+\end{remark}
+
+\begin{exercise}
+\label{exe.altern.STAS}Let $n\in\mathbb{N}$ and $m\in\mathbb{N}$. Let $A$ be
+an alternating $n\times n$-matrix. Let $S$ be an $n\times m$-matrix. Prove
+that the $m\times m$-matrix $S^{T}AS$ is alternating.
+\end{exercise}
+
+\begin{exercise}
+\label{exe.altern.det}Let $n\in\mathbb{N}$ be odd. Let $A$ be an $n\times
+n$-matrix. Prove the following:
+
+\textbf{(a)} If $A$ is antisymmetric, then $2\det A=0$.
+
+\textbf{(b)} If $A$ is alternating, then $\det A=0$.
+\end{exercise}
+
+\begin{remark}
+If $\mathbb{K}$ is one of the rings $\mathbb{Z}$, $\mathbb{Q}$, $\mathbb{R}$
+and $\mathbb{C}$, then Exercise \ref{exe.altern.det} \textbf{(b)} follows from
+Exercise \ref{exe.altern.det} \textbf{(a)} (because any alternating matrix is
+antisymmetric, and because we can cancel $2$ from the equality $2\det A=0$).
+However, this quick way of solving Exercise \ref{exe.altern.det} \textbf{(b)}
+does not work for general $\mathbb{K}$.
+\end{remark}
+
+\begin{remark}
+Exercise \ref{exe.altern.det} \textbf{(b)} provides a really simple formula
+for $\det A$ when $A$ is an alternating $n\times n$-matrix for \textbf{odd}
+$n$. One might wonder what can be said about $\det A$ when $A$ is an
+alternating $n\times n$-matrix for \textbf{even} $n$. The answer is far less
+simple, but more interesting: It turns that $\det A$ is the square of a
+certain element of $\mathbb{K}$, called the \textit{Pfaffian} of $A$. See
+\cite[(5.5)]{Conrad-Pf} for a short introduction into the Pfaffian (although
+at a less elementary level than these notes). For example, the Pfaffian of an
+alternating $4\times4$-matrix $A=\left(
+\begin{array}
+[c]{cccc}%
+0 & a & b & c\\
+-a & 0 & d & e\\
+-b & -d & 0 & f\\
+-c & -e & -f & 0
+\end{array}
+\right)  $ is $af-be+cd$, and it is indeed easy to check that this matrix
+satisfies $\det A=\left(  af-be+cd\right)  ^{2}$.
 \end{remark}
 
 \subsection{Laplace expansion}
@@ -49062,6 +49175,1023 @@ This solves Exercise \ref{exe.det.2diags}.
 \end{proof}
 \end{verlong}
 
+\subsection{Solution to Exercise \ref{exe.altern.STAS}}
+
+Before we come to the solution of Exercise \ref{exe.altern.STAS}, let us first
+state some simple lemmas:
+
+\begin{lemma}
+\label{lem.sol.altern.STAS.1}Let $n\in\mathbb{N}$, $m\in\mathbb{N}$,
+$p\in\mathbb{N}$ and $q\in\mathbb{N}$. Let $A=\left(  a_{i,j}\right)  _{1\leq
+i\leq n,\ 1\leq j\leq m}\in\mathbb{K}^{n\times m}$, $B=\left(  b_{i,j}\right)
+_{1\leq i\leq m,\ 1\leq j\leq p}\in\mathbb{K}^{m\times p}$ and $C=\left(
+c_{i,j}\right)  _{1\leq i\leq p,\ 1\leq j\leq q}\in\mathbb{K}^{p\times q}$.
+Then,%
+\[
+ABC=\left(  \sum_{k=1}^{m}\sum_{\ell=1}^{p}a_{i,k}b_{k,\ell}c_{\ell,j}\right)
+_{1\leq i\leq n,\ 1\leq j\leq q}.
+\]
+
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.altern.STAS.1}.]We have $B=\left(  b_{i,j}%
+\right)  _{1\leq i\leq m,\ 1\leq j\leq p}$ and $C=\left(  c_{i,j}\right)
+_{1\leq i\leq p,\ 1\leq j\leq q}$. Thus, the definition of the product $BC$
+yields%
+\[
+BC=\left(  \underbrace{\sum_{k=1}^{p}b_{i,k}c_{k,j}}_{\substack{=\sum_{\ell
+=1}^{p}b_{i,\ell}c_{\ell,j}\\\text{(here, we renamed the}\\\text{summation
+index }k\text{ as }\ell\text{)}}}\right)  _{1\leq i\leq m,\ 1\leq j\leq
+q}=\left(  \sum_{\ell=1}^{p}b_{i,\ell}c_{\ell,j}\right)  _{1\leq i\leq
+m,\ 1\leq j\leq q}.
+\]
+
+
+Now, we have $A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq m}$ and
+$BC=\left(  \sum_{\ell=1}^{p}b_{i,\ell}c_{\ell,j}\right)  _{1\leq i\leq
+m,\ 1\leq j\leq q}$. Hence, the definition of the product $A\left(  BC\right)
+$ yields%
+\[
+A\left(  BC\right)  =\left(  \sum_{k=1}^{m}\underbrace{a_{i,k}\left(
+\sum_{\ell=1}^{p}b_{k,\ell}c_{\ell,j}\right)  }_{=\sum_{\ell=1}^{p}%
+a_{i,k}b_{k,\ell}c_{\ell,j}}\right)  _{1\leq i\leq n,\ 1\leq j\leq q}=\left(
+\sum_{k=1}^{m}\sum_{\ell=1}^{p}a_{i,k}b_{k,\ell}c_{\ell,j}\right)  _{1\leq
+i\leq n,\ 1\leq j\leq q}.
+\]
+Thus,%
+\[
+ABC=A\left(  BC\right)  =\left(  \sum_{k=1}^{m}\sum_{\ell=1}^{p}%
+a_{i,k}b_{k,\ell}c_{\ell,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq q}.
+\]
+This proves Lemma \ref{lem.sol.altern.STAS.1}.
+\end{proof}
+
+\begin{lemma}
+\label{lem.sol.altern.STAS.2}Let $n\in\mathbb{N}$. Let $A=\left(
+a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ be an $n\times n$-matrix.
+Let $S=\left(  s_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq m}$ be an
+$n\times m$-matrix. Then,%
+\[
+S^{T}AS=\left(  \sum_{\left(  k,\ell\right)  \in\left\{  1,2,\ldots,n\right\}
+^{2}}s_{k,i}s_{\ell,j}a_{k,\ell}\right)  _{1\leq i\leq m,\ 1\leq j\leq m}.
+\]
+
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.altern.STAS.2}.]We have $S=\left(  s_{i,j}%
+\right)  _{1\leq i\leq n,\ 1\leq j\leq m}$. Thus, $S^{T}=\left(
+s_{j,i}\right)  _{1\leq i\leq m,\ 1\leq j\leq n}$ (by the definition of
+$S^{T}$). Recall also that $A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq
+j\leq n}$ and $S=\left(  s_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq m}$.
+Hence, Lemma \ref{lem.sol.altern.STAS.1} (applied to $m$, $n$, $n$, $n$,
+$S^{T}$, $A$, $S$, $s_{j,i}$, $a_{i,j}$ and $s_{i,j}$ instead of $n$, $m$,
+$p$, $q$, $A$, $B$, $C$, $a_{i,j}$, $b_{i,j}$ and $c_{i,j}$) yields%
+\begin{align*}
+S^{T}AS  &  =\left(  \underbrace{\sum_{k=1}^{n}}_{=\sum_{k\in\left\{
+1,2,\ldots,n\right\}  }}\underbrace{\sum_{\ell=1}^{n}}_{=\sum_{\ell\in\left\{
+1,2,\ldots,n\right\}  }}s_{k,i}\underbrace{a_{k,\ell}s_{\ell,j}}_{=s_{\ell
+,j}a_{k,\ell}}\right)  _{1\leq i\leq m,\ 1\leq j\leq m}\\
+&  =\left(  \underbrace{\sum_{k\in\left\{  1,2,\ldots,n\right\}  }\sum
+_{\ell\in\left\{  1,2,\ldots,n\right\}  }}_{=\sum_{\left(  k,\ell\right)
+\in\left\{  1,2,\ldots,n\right\}  ^{2}}}s_{k,i}s_{\ell,j}a_{k,\ell}\right)
+_{1\leq i\leq m,\ 1\leq j\leq m}\\
+&  =\left(  \sum_{\left(  k,\ell\right)  \in\left\{  1,2,\ldots,n\right\}
+^{2}}s_{k,i}s_{\ell,j}a_{k,\ell}\right)  _{1\leq i\leq m,\ 1\leq j\leq m}.
+\end{align*}
+This proves Lemma \ref{lem.sol.altern.STAS.2}.
+\end{proof}
+
+\begin{lemma}
+\label{lem.sol.altern.STAS.3}Let $n\in\mathbb{N}$. Let $A=\left(
+a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ be an alternating $n\times
+n$-matrix.
+
+\textbf{(a)} Every $i\in\left\{  1,2,\ldots,n\right\}  $ satisfies $a_{i,i}=0$.
+
+\textbf{(b)} Every $\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}
+^{2}$ satisfy $a_{i,j}=-a_{j,i}$.
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.altern.STAS.3}.]Recall that the matrix $A$ is
+alternating if and only if it satisfies $A^{T}=-A$ and $\left(  a_{i,i}%
+=0\text{ for all }i\in\left\{  1,2,\ldots,n\right\}  \right)  $ (by the
+definition of \textquotedblleft alternating\textquotedblright). Hence, the
+matrix $A$ satisfies $A^{T}=-A$ and $\left(  a_{i,i}=0\text{ for all }%
+i\in\left\{  1,2,\ldots,n\right\}  \right)  $ (since $A$ is alternating).
+
+We have $\left(  a_{i,i}=0\text{ for all }i\in\left\{  1,2,\ldots,n\right\}
+\right)  $. In other words, every $i\in\left\{  1,2,\ldots,n\right\}  $
+satisfies $a_{i,i}=0$. This proves Lemma \ref{lem.sol.altern.STAS.3}
+\textbf{(a)}.
+
+\textbf{(b)} We have $A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}$, and thus $A^{T}=\left(  a_{j,i}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$
+(by the definition of $A^{T}$). Hence,%
+\[
+\left(  a_{j,i}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}=A^{T}=-\underbrace{A}%
+_{=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}}=-\left(
+a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}=\left(  -a_{i,j}\right)
+_{1\leq i\leq n,\ 1\leq j\leq n}.
+\]
+In other words,%
+\begin{equation}
+a_{j,i}=-a_{i,j}\ \ \ \ \ \ \ \ \ \ \text{for every }\left(  i,j\right)
+\in\left\{  1,2,\ldots,n\right\}  ^{2}. \label{pf.lem.sol.altern.STAS.3.1}%
+\end{equation}
+
+
+Now, let $\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}$. Hence,
+(\ref{pf.lem.sol.altern.STAS.3.1}) yields $a_{j,i}=-a_{i,j}$. In other words,
+$a_{i,j}=-a_{j,i}$. This proves Lemma \ref{lem.sol.altern.STAS.3} \textbf{(b)}.
+\end{proof}
+
+\begin{proof}
+[Solution to Exercise \ref{exe.altern.STAS}.]Let $B$ be the $m\times m$-matrix
+$S^{T}AS$. Thus, $B=S^{T}AS$. Write the $m\times m$-matrix $B$ in the form
+$B=\left(  b_{i,j}\right)  _{1\leq i\leq m,\ 1\leq j\leq m}$.
+
+Write the $n\times n$-matrix $A$ in the form $A=\left(  a_{i,j}\right)
+_{1\leq i\leq n,\ 1\leq j\leq n}$. Write the $n\times m$-matrix $S$ in the
+form $S=\left(  s_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq m}$. Then,%
+\begin{equation}
+B=S^{T}AS=\left(  \sum_{\left(  k,\ell\right)  \in\left\{  1,2,\ldots
+,n\right\}  ^{2}}s_{k,i}s_{\ell,j}a_{k,\ell}\right)  _{1\leq i\leq m,\ 1\leq
+j\leq m} \label{sol.altern.STAS.1}%
+\end{equation}
+(by Lemma \ref{lem.sol.altern.STAS.2}).
+
+But $B=\left(  b_{i,j}\right)  _{1\leq i\leq m,\ 1\leq j\leq m}$, so that%
+\[
+\left(  b_{i,j}\right)  _{1\leq i\leq m,\ 1\leq j\leq m}=B=\left(
+\sum_{\left(  k,\ell\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}}%
+s_{k,i}s_{\ell,j}a_{k,\ell}\right)  _{1\leq i\leq m,\ 1\leq j\leq m}%
+\]
+(by (\ref{sol.altern.STAS.1})). In other words,%
+\begin{equation}
+b_{i,j}=\sum_{\left(  k,\ell\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}%
+}s_{k,i}s_{\ell,j}a_{k,\ell}\ \ \ \ \ \ \ \ \ \ \text{for every }\left(
+i,j\right)  \in\left\{  1,2,\ldots,m\right\}  ^{2}. \label{sol.altern.STAS.4}%
+\end{equation}
+
+
+\begin{vershort}
+But
+\[
+\left(  b_{j,i}\right)  _{1\leq i\leq m,\ 1\leq j\leq m}=\left(
+-b_{i,j}\right)  _{1\leq i\leq m,\ 1\leq j\leq m}%
+\]
+\footnote{\textit{Proof:} Every $\left(  i,j\right)  \in\left\{
+1,2,\ldots,m\right\}  ^{2}$ satisfies
+\begin{align*}
+b_{j,i}  &  =\sum_{\left(  k,\ell\right)  \in\left\{  1,2,\ldots,n\right\}
+^{2}}s_{k,j}s_{\ell,i}a_{\ell,k}\ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{sol.altern.STAS.4}) (applied to }\left(  j,i\right)  \text{ instead of
+}\left(  i,j\right)  \text{)}\right) \\
+&  =\underbrace{\sum_{\left(  \ell,k\right)  \in\left\{  1,2,\ldots,n\right\}
+^{2}}}_{\substack{=\sum_{\left(  k,\ell\right)  \in\left\{  1,2,\ldots
+,n\right\}  ^{2}}}}\underbrace{s_{\ell,j}s_{k,i}}_{=s_{k,i}s_{\ell,j}%
+}\underbrace{a_{\ell,k}}_{\substack{=-a_{k,\ell}\\\text{(by Lemma
+\ref{lem.sol.altern.STAS.3} \textbf{(b)}}\\\text{(applied to }\left(
+i,j\right)  =\left(  \ell,k\right)  \text{))}}}\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have renamed the}\\
+\text{summation index }\left(  k,\ell\right)  \text{ as }\left(
+\ell,k\right)
+\end{array}
+\right) \\
+&  =\sum_{\left(  k,\ell\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}%
+}s_{k,i}s_{\ell,j}\left(  -a_{k,\ell}\right)  =-\underbrace{\sum_{\left(
+k,\ell\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}}s_{k,i}s_{\ell
+,j}a_{k,\ell}}_{\substack{=b_{i,j}\\\text{(by (\ref{sol.altern.STAS.4}))}%
+}}=-b_{i,j}.
+\end{align*}
+In other words, $\left(  b_{j,i}\right)  _{1\leq i\leq m,\ 1\leq j\leq
+m}=\left(  -b_{i,j}\right)  _{1\leq i\leq m,\ 1\leq j\leq m}$.}. But
+$B=\left(  b_{i,j}\right)  _{1\leq i\leq m,\ 1\leq j\leq m}$, and thus
+$B^{T}=\left(  b_{j,i}\right)  _{1\leq i\leq m,\ 1\leq j\leq m}$ (by the
+definition of $B^{T}$). Hence,%
+\[
+B^{T}=\left(  b_{j,i}\right)  _{1\leq i\leq m,\ 1\leq j\leq m}=\left(
+-b_{i,j}\right)  _{1\leq i\leq m,\ 1\leq j\leq m}.
+\]
+
+\end{vershort}
+
+\begin{verlong}
+But every $\left(  i,j\right)  \in\left\{  1,2,\ldots,m\right\}  ^{2}$
+satisfies%
+\begin{equation}
+b_{j,i}=-b_{i,j} \label{sol.altern.STAS.5}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.altern.STAS.5}):} Let $\left(
+i,j\right)  \in\left\{  1,2,\ldots,m\right\}  ^{2}$. Thus, $i\in\left\{
+1,2,\ldots,m\right\}  $ and $j\in\left\{  1,2,\ldots,m\right\}  $. Hence,
+$j\in\left\{  1,2,\ldots,m\right\}  $ and $i\in\left\{  1,2,\ldots,m\right\}
+$. In other words, $\left(  j,i\right)  \in\left\{  1,2,\ldots,m\right\}
+^{2}$. Now, (\ref{sol.altern.STAS.4}) (applied to $\left(  j,i\right)  $
+instead of $\left(  i,j\right)  $) yields%
+\begin{align*}
+b_{j,i}  &  =\sum_{\left(  k,\ell\right)  \in\left\{  1,2,\ldots,n\right\}
+^{2}}s_{k,j}s_{\ell,i}a_{\ell,k}\\
+&  =\underbrace{\sum_{\left(  \ell,k\right)  \in\left\{  1,2,\ldots,n\right\}
+^{2}}}_{\substack{=\sum_{\ell\in\left\{  1,2,\ldots,n\right\}  }\sum
+_{k\in\left\{  1,2,\ldots,n\right\}  }\\=\sum_{k\in\left\{  1,2,\ldots
+,n\right\}  }\sum_{\ell\in\left\{  1,2,\ldots,n\right\}  }\\=\sum_{\left(
+k,\ell\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}}}}\underbrace{s_{\ell
+,j}s_{k,i}}_{=s_{k,i}s_{\ell,j}}\underbrace{a_{\ell,k}}_{\substack{=-a_{k,\ell
+}\\\text{(by Lemma \ref{lem.sol.altern.STAS.3} \textbf{(b)}}\\\text{(applied
+to }\left(  i,j\right)  =\left(  \ell,k\right)  \text{))}}%
+}\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have renamed the}\\
+\text{summation index }\left(  k,\ell\right)  \text{ as }\left(
+\ell,k\right)
+\end{array}
+\right) \\
+&  =\sum_{\left(  k,\ell\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}%
+}s_{k,i}s_{\ell,j}\left(  -a_{k,\ell}\right)  =-\underbrace{\sum_{\left(
+k,\ell\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}}s_{k,i}s_{\ell
+,j}a_{k,\ell}}_{\substack{=b_{i,j}\\\text{(by (\ref{sol.altern.STAS.4}))}%
+}}=-b_{i,j}.
+\end{align*}
+This proves (\ref{sol.altern.STAS.5}).}. But $B=\left(  b_{i,j}\right)
+_{1\leq i\leq m,\ 1\leq j\leq m}$, and thus $B^{T}=\left(  b_{j,i}\right)
+_{1\leq i\leq m,\ 1\leq j\leq m}$ (by the definition of $B^{T}$). Hence,%
+\[
+B^{T}=\left(  \underbrace{b_{j,i}}_{=-b_{i,j}}\right)  _{1\leq i\leq m,\ 1\leq
+j\leq m}=\left(  -b_{i,j}\right)  _{1\leq i\leq m,\ 1\leq j\leq m}.
+\]
+
+\end{verlong}
+
+Comparing this with%
+\[
+-\underbrace{B}_{=\left(  b_{i,j}\right)  _{1\leq i\leq m,\ 1\leq j\leq m}%
+}=-\left(  b_{i,j}\right)  _{1\leq i\leq m,\ 1\leq j\leq m}=\left(
+-b_{i,j}\right)  _{1\leq i\leq m,\ 1\leq j\leq m},
+\]
+we obtain $B^{T}=-B$.
+
+\begin{vershort}
+Let $i\in\left\{  1,2,\ldots,m\right\}  $. Then, (\ref{sol.altern.STAS.4})
+(applied to $\left(  i,i\right)  $ instead of $\left(  i,j\right)  $) yields%
+\begin{align*}
+b_{i,i}  &  =\sum_{\left(  k,\ell\right)  \in\left\{  1,2,\ldots,n\right\}
+^{2}}s_{k,i}s_{\ell,i}a_{k,\ell}\\
+&  =\sum_{\substack{\left(  k,\ell\right)  \in\left\{  1,2,\ldots,n\right\}
+^{2};\\k<\ell}}s_{k,i}s_{\ell,i}a_{k,\ell}+\sum_{\substack{\left(
+k,\ell\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2};\\k=\ell}}s_{k,i}%
+s_{\ell,i}\underbrace{a_{k,\ell}}_{\substack{=a_{\ell,\ell}\\\text{(since
+}k=\ell\text{)}}}\\
+&  \ \ \ \ \ \ \ \ \ \ +\sum_{\substack{\left(  k,\ell\right)  \in\left\{
+1,2,\ldots,n\right\}  ^{2};\\k>\ell}}\underbrace{s_{k,i}s_{\ell,i}}%
+_{=s_{\ell,i}s_{k,i}}\underbrace{a_{k,\ell}}_{\substack{=-a_{\ell
+,k}\\\text{(by Lemma \ref{lem.sol.altern.STAS.3} \textbf{(b)}}\\\text{(applied
+to }\left(  i,j\right)  =\left(  k,\ell\right)  \text{))}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since each }\left(  k,\ell\right)  \in\left\{  1,2,\ldots,n\right\}
+^{2}\text{ satisfies exactly one of}\\
+\text{the three assertions }\left(  k<\ell\right)  \text{, }\left(
+k=\ell\right)  \text{ and }\left(  k>\ell\right)
+\end{array}
+\right) \\
+&  =\underbrace{\sum_{\substack{\left(  k,\ell\right)  \in\left\{
+1,2,\ldots,n\right\}  ^{2};\\k<\ell}}s_{k,i}s_{\ell,i}a_{k,\ell}%
+}_{\substack{=\sum_{\substack{\left(  \ell,k\right)  \in\left\{
+1,2,\ldots,n\right\}  ^{2};\\\ell<k}}s_{\ell,i}s_{k,i}a_{\ell,k}\\\text{(here,
+we have renamed the}\\\text{summation index }\left(  k,\ell\right)  \text{ as
+}\left(  \ell,k\right)  \text{)}}}+\sum_{\substack{\left(  k,\ell\right)
+\in\left\{  1,2,\ldots,n\right\}  ^{2};\\k=\ell}}s_{k,i}s_{\ell,i}%
+\underbrace{a_{\ell,\ell}}_{\substack{=0\\\text{(by Lemma
+\ref{lem.sol.altern.STAS.3} \textbf{(a)}}\\\text{(applied to }i=\ell\text{))}%
+}}\\
+&  \ \ \ \ \ \ \ \ \ \ +\underbrace{\sum_{\substack{\left(  k,\ell\right)
+\in\left\{  1,2,\ldots,n\right\}  ^{2};\\k>\ell}}s_{\ell,i}s_{k,i}\left(
+-a_{\ell,k}\right)  }_{=-\sum_{\substack{\left(  k,\ell\right)  \in\left\{
+1,2,\ldots,n\right\}  ^{2};\\k>\ell}}s_{\ell,i}s_{k,i}a_{\ell,k}}\\
+&  =\sum_{\substack{\left(  \ell,k\right)  \in\left\{  1,2,\ldots,n\right\}
+^{2};\\\ell<k}}s_{\ell,i}s_{k,i}a_{\ell,k}+\underbrace{\sum_{\substack{\left(
+k,\ell\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2};\\k=\ell}}s_{k,i}%
+s_{\ell,i}0}_{=0}+\left(  -\sum_{\substack{\left(  k,\ell\right)  \in\left\{
+1,2,\ldots,n\right\}  ^{2};\\k>\ell}}s_{\ell,i}s_{k,i}a_{\ell,k}\right)
+\end{align*}%
+\begin{align*}
+&  =\sum_{\substack{\left(  \ell,k\right)  \in\left\{  1,2,\ldots,n\right\}
+^{2};\\\ell<k}}s_{\ell,i}s_{k,i}a_{\ell,k}-\underbrace{\sum_{\substack{\left(
+k,\ell\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2};\\k>\ell}}}%
+_{\substack{=\sum_{\substack{\left(  \ell,k\right)  \in\left\{  1,2,\ldots
+,n\right\}  ^{2};\\k>\ell}}=\sum_{\substack{\left(  \ell,k\right)  \in\left\{
+1,2,\ldots,n\right\}  ^{2};\\\ell<k}}\\\text{(because for every }\left(
+\ell,k\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}\text{,}\\\text{the
+statement }\left(  k>\ell\right)  \text{ is equivalent to }\left(
+\ell<k\right)  \text{)}}}s_{\ell,i}s_{k,i}a_{\ell,k}\\
+&  =\sum_{\substack{\left(  \ell,k\right)  \in\left\{  1,2,\ldots,n\right\}
+^{2};\\\ell<k}}s_{\ell,i}s_{k,i}a_{\ell,k}-\sum_{\substack{\left(
+\ell,k\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2};\\\ell<k}}s_{\ell
+,i}s_{k,i}a_{\ell,k}=0.
+\end{align*}
+
+\end{vershort}
+
+\begin{verlong}
+Let $i\in\left\{  1,2,\ldots,m\right\}  $. Thus, $\left(  i,i\right)
+\in\left\{  1,2,\ldots,m\right\}  ^{2}$. Hence, (\ref{sol.altern.STAS.4})
+(applied to $\left(  i,i\right)  $ instead of $\left(  i,j\right)  $) yields%
+\begin{align*}
+b_{i,i}  &  =\sum_{\left(  k,\ell\right)  \in\left\{  1,2,\ldots,n\right\}
+^{2}}s_{k,i}s_{\ell,i}a_{k,\ell}\\
+&  =\sum_{\substack{\left(  k,\ell\right)  \in\left\{  1,2,\ldots,n\right\}
+^{2};\\k<\ell}}s_{k,i}s_{\ell,i}a_{k,\ell}+\sum_{\substack{\left(
+k,\ell\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2};\\k=\ell}}s_{k,i}%
+s_{\ell,i}\underbrace{a_{k,\ell}}_{\substack{=a_{\ell,\ell}\\\text{(since
+}k=\ell\text{)}}}\\
+&  \ \ \ \ \ \ \ \ \ \ +\sum_{\substack{\left(  k,\ell\right)  \in\left\{
+1,2,\ldots,n\right\}  ^{2};\\k>\ell}}\underbrace{s_{k,i}s_{\ell,i}}%
+_{=s_{\ell,i}s_{k,i}}\underbrace{a_{k,\ell}}_{\substack{=-a_{\ell
+,k}\\\text{(by Lemma \ref{lem.sol.altern.STAS.3} \textbf{(b)}}\\\text{(applied
+to }\left(  i,j\right)  =\left(  k,\ell\right)  \text{))}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since each }\left(  k,\ell\right)  \in\left\{  1,2,\ldots,n\right\}
+^{2}\text{ satisfies exactly one of}\\
+\text{the three assertions }\left(  k<\ell\right)  \text{, }\left(
+k=\ell\right)  \text{ and }\left(  k>\ell\right)
+\end{array}
+\right) \\
+&  =\underbrace{\sum_{\substack{\left(  k,\ell\right)  \in\left\{
+1,2,\ldots,n\right\}  ^{2};\\k<\ell}}s_{k,i}s_{\ell,i}a_{k,\ell}%
+}_{\substack{=\sum_{\substack{\left(  \ell,k\right)  \in\left\{
+1,2,\ldots,n\right\}  ^{2};\\\ell<k}}s_{\ell,i}s_{k,i}a_{\ell,k}\\\text{(here,
+we have renamed the}\\\text{summation index }\left(  k,\ell\right)  \text{ as
+}\left(  \ell,k\right)  \text{)}}}+\sum_{\substack{\left(  k,\ell\right)
+\in\left\{  1,2,\ldots,n\right\}  ^{2};\\k=\ell}}s_{k,i}s_{\ell,i}%
+\underbrace{a_{\ell,\ell}}_{\substack{=0\\\text{(by Lemma
+\ref{lem.sol.altern.STAS.3} \textbf{(a)}}\\\text{(applied to }i=\ell\text{))}%
+}}\\
+&  \ \ \ \ \ \ \ \ \ \ +\underbrace{\sum_{\substack{\left(  k,\ell\right)
+\in\left\{  1,2,\ldots,n\right\}  ^{2};\\k>\ell}}s_{\ell,i}s_{k,i}\left(
+-a_{\ell,k}\right)  }_{=-\sum_{\substack{\left(  k,\ell\right)  \in\left\{
+1,2,\ldots,n\right\}  ^{2};\\k>\ell}}s_{\ell,i}s_{k,i}a_{\ell,k}}\\
+&  =\sum_{\substack{\left(  \ell,k\right)  \in\left\{  1,2,\ldots,n\right\}
+^{2};\\\ell<k}}s_{\ell,i}s_{k,i}a_{\ell,k}+\underbrace{\sum_{\substack{\left(
+k,\ell\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2};\\k=\ell}}s_{k,i}%
+s_{\ell,i}0}_{=0}+\left(  -\sum_{\substack{\left(  k,\ell\right)  \in\left\{
+1,2,\ldots,n\right\}  ^{2};\\k>\ell}}s_{\ell,i}s_{k,i}a_{\ell,k}\right) \\
+&  =\sum_{\substack{\left(  \ell,k\right)  \in\left\{  1,2,\ldots,n\right\}
+^{2};\\\ell<k}}s_{\ell,i}s_{k,i}a_{\ell,k}+\left(  -\sum_{\substack{\left(
+k,\ell\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2};\\k>\ell}}s_{\ell
+,i}s_{k,i}a_{\ell,k}\right)
+\end{align*}%
+\begin{align*}
+&  =\sum_{\substack{\left(  \ell,k\right)  \in\left\{  1,2,\ldots,n\right\}
+^{2};\\\ell<k}}s_{\ell,i}s_{k,i}a_{\ell,k}-\underbrace{\sum_{\substack{\left(
+k,\ell\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2};\\k>\ell}}}%
+_{\substack{=\sum_{k\in\left\{  1,2,\ldots,n\right\}  }\sum_{\substack{\ell
+\in\left\{  1,2,\ldots,n\right\}  ;\\k>\ell}}\\=\sum_{\ell\in\left\{
+1,2,\ldots,n\right\}  }\sum_{\substack{k\in\left\{  1,2,\ldots,n\right\}
+;\\k>\ell}}\\=\sum_{\substack{\left(  \ell,k\right)  \in\left\{
+1,2,\ldots,n\right\}  ^{2};\\k>\ell}}=\sum_{\substack{\left(  \ell,k\right)
+\in\left\{  1,2,\ldots,n\right\}  ^{2};\\\ell<k}}\\\text{(because for every
+}\left(  \ell,k\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}\text{,}%
+\\\text{the statement }\left(  k>\ell\right)  \text{ is equivalent to }\left(
+\ell<k\right)  \text{)}}}s_{\ell,i}s_{k,i}a_{\ell,k}\\
+&  =\sum_{\substack{\left(  \ell,k\right)  \in\left\{  1,2,\ldots,n\right\}
+^{2};\\\ell<k}}s_{\ell,i}s_{k,i}a_{\ell,k}-\sum_{\substack{\left(
+\ell,k\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2};\\\ell<k}}s_{\ell
+,i}s_{k,i}a_{\ell,k}=0.
+\end{align*}
+
+\end{verlong}
+
+Now, forget that we fixed $i$. We thus have shown that $\left(  b_{i,i}%
+=0\text{ for all }i\in\left\{  1,2,\ldots,m\right\}  \right)  $.
+
+Now, recall that $B=\left(  b_{i,j}\right)  _{1\leq i\leq m,\ 1\leq j\leq m}$.
+Hence, the $m\times m$-matrix $B$ is alternating if and only if it satisfies
+$B^{T}=-B$ and $\left(  b_{i,i}=0\text{ for all }i\in\left\{  1,2,\ldots
+,m\right\}  \right)  $ (by the definition of \textquotedblleft
+alternating\textquotedblright). Thus, the $m\times m$-matrix $B$ is
+alternating (since it satisfies $B^{T}=-B$ and $\left(  b_{i,i}=0\text{ for
+all }i\in\left\{  1,2,\ldots,m\right\}  \right)  $). Since $B=S^{T}AS$, this
+rewrites as follows: Te $m\times m$-matrix $S^{T}AS$ is alternating. This
+solves Exercise \ref{exe.altern.STAS}.
+\end{proof}
+
+\subsection{Solution to Exercise \ref{exe.altern.det}}
+
+Before we solve Exercise \ref{exe.altern.det}, let us show a combinatorial lemma:
+
+\begin{lemma}
+\label{lem.sol.altern.det.mod2}Let $n\in\mathbb{N}$. Let $\sigma\in S_{n}$ be
+such that $\sigma^{-1}=\sigma$. Let $X=\left\{  i\in\left\{  1,2,\ldots
+,n\right\}  \ \mid\ \sigma\left(  i\right)  =i\right\}  $. Then,%
+\[
+\left\vert X\right\vert \equiv n\operatorname{mod}2.
+\]
+
+\end{lemma}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.altern.det.mod2}.]Define two further sets $Y$ and
+$Z$ by
+\[
+Y=\left\{  i\in\left\{  1,2,\ldots,n\right\}  \ \mid\ \sigma\left(  i\right)
+<i\right\}
+\]
+and%
+\[
+Z=\left\{  i\in\left\{  1,2,\ldots,n\right\}  \ \mid\ \sigma\left(  i\right)
+>i\right\}  .
+\]
+
+
+Every $j\in Y$ satisfies $\sigma\left(  j\right)  \in Z$%
+\ \ \ \ \footnote{\textit{Proof.} Let $j\in Y$. Then,%
+\[
+j\in Y=\left\{  i\in\left\{  1,2,\ldots,n\right\}  \ \mid\ \sigma\left(
+i\right)  <i\right\}  .
+\]
+In other words, $j$ is an element $i$ of $\left\{  1,2,\ldots,n\right\}  $
+satisfying $\sigma\left(  i\right)  <i$. In other words, $j$ is an element of
+$\left\{  1,2,\ldots,n\right\}  $ and satisfies $\sigma\left(  j\right)  <j$.
+\par
+Clearly, $\sigma\left(  j\right)  $ is an element of $\left\{  1,2,\ldots
+,n\right\}  $ and satisfies $\sigma\left(  \sigma\left(  j\right)  \right)
+>\sigma\left(  j\right)  $ (since $\sigma\left(  j\right)
+<j=\underbrace{\sigma^{-1}}_{=\sigma}\left(  \sigma\left(  j\right)  \right)
+=\sigma\left(  \sigma\left(  j\right)  \right)  $). In other words,
+$\sigma\left(  j\right)  $ is an element $i$ of $\left\{  1,2,\ldots
+,n\right\}  $ satisfying $\sigma\left(  i\right)  >i$. In other words,
+$\sigma\left(  j\right)  \in\left\{  i\in\left\{  1,2,\ldots,n\right\}
+\ \mid\ \sigma\left(  i\right)  >i\right\}  $. This rewrites as $\sigma\left(
+j\right)  \in Z$ (since $Z=\left\{  i\in\left\{  1,2,\ldots,n\right\}
+\ \mid\ \sigma\left(  i\right)  >i\right\}  $). Qed.}. Thus, we can define a
+map $\alpha:Y\rightarrow Z$ by
+\[
+\left(  \alpha\left(  j\right)  =\sigma\left(  j\right)
+\ \ \ \ \ \ \ \ \ \ \text{for every }j\in Y\right)  .
+\]
+Consider this map $\alpha$. Similarly, define a map $\beta:Z\rightarrow Y$ by
+\[
+\left(  \beta\left(  j\right)  =\sigma\left(  j\right)
+\ \ \ \ \ \ \ \ \ \ \text{for every }j\in Z\right)  .
+\]
+
+
+We have $\alpha\circ\beta=\operatorname*{id}$\ \ \ \ \footnote{\textit{Proof.}
+Let $j\in Z$. The definition of $\beta$ yields $\beta\left(  j\right)
+=\sigma\left(  j\right)  $. Comparing this with $\underbrace{\sigma^{-1}%
+}_{=\sigma}\left(  j\right)  =\sigma\left(  j\right)  $, we obtain
+$\beta\left(  j\right)  =\sigma^{-1}\left(  j\right)  $. Now,%
+\begin{align*}
+\left(  \alpha\circ\beta\right)  \left(  j\right)   &  =\alpha\left(
+\beta\left(  j\right)  \right)  =\sigma\left(  \underbrace{\beta\left(
+j\right)  }_{=\sigma^{-1}\left(  j\right)  }\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\alpha\right) \\
+&  =\sigma\left(  \sigma^{-1}\left(  j\right)  \right)  =j=\operatorname*{id}%
+\left(  j\right)  .
+\end{align*}
+\par
+Now, forget that we fixed $j$. We thus have shown that $\left(  \alpha
+\circ\beta\right)  \left(  j\right)  =\operatorname*{id}\left(  j\right)  $
+for each $j\in Z$. In other words, $\alpha\circ\beta=\operatorname*{id}$.
+Qed.} and $\beta\circ\alpha=\operatorname*{id}$\ \ \ \ \footnote{for similar
+reasons}. Thus, the two maps $\alpha$ and $\beta$ are mutually inverse. Hence,
+the map $\alpha$ is invertible, i.e., is a bijection. Thus, there exists a
+bijection $Y\rightarrow Z$ (namely, the map $\alpha$). Hence, $\left\vert
+Y\right\vert =\left\vert Z\right\vert $.
+
+Now,%
+\[
+\sum_{i\in\left\{  1,2,\ldots,n\right\}  }1=\underbrace{\left\vert \left\{
+1,2,\ldots,n\right\}  \right\vert }_{=n}\cdot1=n\cdot1=n.
+\]
+Hence,%
+\begin{align*}
+n  &  =\sum_{i\in\left\{  1,2,\ldots,n\right\}  }1\\
+&  =\underbrace{\sum_{\substack{i\in\left\{  1,2,\ldots,n\right\}
+;\\\sigma\left(  i\right)  <i}}}_{\substack{=\sum_{i\in Y}\\\text{(since
+}\left\{  i\in\left\{  1,2,\ldots,n\right\}  \ \mid\ \sigma\left(  i\right)
+<i\right\}  =Y\text{)}}}1+\underbrace{\sum_{\substack{i\in\left\{
+1,2,\ldots,n\right\}  ;\\\sigma\left(  i\right)  =i}}}_{\substack{=\sum_{i\in
+X}\\\text{(since }\left\{  i\in\left\{  1,2,\ldots,n\right\}  \ \mid
+\ \sigma\left(  i\right)  =i\right\}  =X\text{)}}}1\\
+&  \ \ \ \ \ \ \ \ \ \ +\underbrace{\sum_{\substack{i\in\left\{
+1,2,\ldots,n\right\}  ;\\\sigma\left(  i\right)  >i}}}_{\substack{=\sum_{i\in
+Z}\\\text{(since }\left\{  i\in\left\{  1,2,\ldots,n\right\}  \ \mid
+\ \sigma\left(  i\right)  >i\right\}  =Z\text{)}}}1\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since each }i\in\left\{  1,2,\ldots,n\right\}  \text{ satisfies exactly
+one of the three}\\
+\text{statements }\left(  \sigma\left(  i\right)  <i\right)  \text{, }\left(
+\sigma\left(  i\right)  =i\right)  \text{ and }\left(  \sigma\left(  i\right)
+>i\right)
+\end{array}
+\right) \\
+&  =\underbrace{\sum_{i\in Y}1}_{=\left\vert Y\right\vert \cdot1=\left\vert
+Y\right\vert }+\underbrace{\sum_{i\in X}1}_{=\left\vert X\right\vert
+\cdot1=\left\vert X\right\vert }+\underbrace{\sum_{i\in Z}1}_{=\left\vert
+Z\right\vert \cdot1=\left\vert Z\right\vert }=\underbrace{\left\vert
+Y\right\vert }_{=\left\vert Z\right\vert }+\left\vert X\right\vert +\left\vert
+Z\right\vert \\
+&  =\left\vert Z\right\vert +\left\vert X\right\vert +\left\vert Z\right\vert
+=\left\vert X\right\vert +2\cdot\left\vert Z\right\vert \equiv\left\vert
+X\right\vert \operatorname{mod}2.
+\end{align*}
+This proves Lemma \ref{lem.sol.altern.det.mod2}.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.altern.det.mod2}.]We have $X=\left\{
+i\in\left\{  1,2,\ldots,n\right\}  \ \mid\ \sigma\left(  i\right)  =i\right\}
+$. Thus,%
+\begin{equation}
+\sum_{i\in X}=\sum_{\substack{i\in\left\{  1,2,\ldots,n\right\}
+;\\\sigma\left(  i\right)  =i}} \label{pf.lem.sol.altern.det.mod2.X}%
+\end{equation}
+(an equality between summation signs).
+
+Define a further set $Y$ by $Y=\left\{  i\in\left\{  1,2,\ldots,n\right\}
+\ \mid\ \sigma\left(  i\right)  <i\right\}  $. Thus,%
+\begin{equation}
+\sum_{i\in Y}=\sum_{\substack{i\in\left\{  1,2,\ldots,n\right\}
+;\\\sigma\left(  i\right)  <i}} \label{pf.lem.sol.altern.det.mod2.Y}%
+\end{equation}
+(an equality between summation signs).
+
+Define a further set $Z$ by $Z=\left\{  i\in\left\{  1,2,\ldots,n\right\}
+\ \mid\ \sigma\left(  i\right)  >i\right\}  $. Thus,%
+\begin{equation}
+\sum_{i\in Z}=\sum_{\substack{i\in\left\{  1,2,\ldots,n\right\}
+;\\\sigma\left(  i\right)  >i}} \label{pf.lem.sol.altern.det.mod2.Z}%
+\end{equation}
+(an equality between summation signs).
+
+Every $j\in Y$ satisfies $\sigma\left(  j\right)  \in Z$%
+\ \ \ \ \footnote{\textit{Proof.} Let $j\in Y$. Then,%
+\[
+j\in Y=\left\{  i\in\left\{  1,2,\ldots,n\right\}  \ \mid\ \sigma\left(
+i\right)  <i\right\}  .
+\]
+In other words, $j$ is an element $i$ of $\left\{  1,2,\ldots,n\right\}  $
+satisfying $\sigma\left(  i\right)  <i$. In other words, $j$ is an element of
+$\left\{  1,2,\ldots,n\right\}  $ and satisfies $\sigma\left(  j\right)  <j$.
+\par
+Clearly, $\sigma\left(  j\right)  $ is an element of $\left\{  1,2,\ldots
+,n\right\}  $ and satisfies $\sigma\left(  \sigma\left(  j\right)  \right)
+>\sigma\left(  j\right)  $ (since $\sigma\left(  j\right)
+<j=\underbrace{\sigma^{-1}}_{=\sigma}\left(  \sigma\left(  j\right)  \right)
+=\sigma\left(  \sigma\left(  j\right)  \right)  $). In other words,
+$\sigma\left(  j\right)  $ is an element $i$ of $\left\{  1,2,\ldots
+,n\right\}  $ satisfying $\sigma\left(  i\right)  >i$. In other words,
+$\sigma\left(  j\right)  \in\left\{  i\in\left\{  1,2,\ldots,n\right\}
+\ \mid\ \sigma\left(  i\right)  >i\right\}  $. This rewrites as $\sigma\left(
+j\right)  \in Z$ (since $Z=\left\{  i\in\left\{  1,2,\ldots,n\right\}
+\ \mid\ \sigma\left(  i\right)  >i\right\}  $). Qed.}. Thus, we can define a
+map $\alpha:Y\rightarrow Z$ by
+\[
+\left(  \alpha\left(  j\right)  =\sigma\left(  j\right)
+\ \ \ \ \ \ \ \ \ \ \text{for every }j\in Y\right)  .
+\]
+Consider this map $\alpha$.
+
+Every $j\in Z$ satisfies $\sigma\left(  j\right)  \in Y$%
+\ \ \ \ \footnote{\textit{Proof.} Let $j\in Z$. Then,%
+\[
+j\in Z=\left\{  i\in\left\{  1,2,\ldots,n\right\}  \ \mid\ \sigma\left(
+i\right)  >i\right\}  .
+\]
+In other words, $j$ is an element $i$ of $\left\{  1,2,\ldots,n\right\}  $
+satisfying $\sigma\left(  i\right)  >i$. In other words, $j$ is an element of
+$\left\{  1,2,\ldots,n\right\}  $ and satisfies $\sigma\left(  j\right)  >j$.
+\par
+Clearly, $\sigma\left(  j\right)  $ is an element of $\left\{  1,2,\ldots
+,n\right\}  $ and satisfies $\sigma\left(  \sigma\left(  j\right)  \right)
+<\sigma\left(  j\right)  $ (since $\sigma\left(  j\right)
+>j=\underbrace{\sigma^{-1}}_{=\sigma}\left(  \sigma\left(  j\right)  \right)
+=\sigma\left(  \sigma\left(  j\right)  \right)  $). In other words,
+$\sigma\left(  j\right)  $ is an element $i$ of $\left\{  1,2,\ldots
+,n\right\}  $ satisfying $\sigma\left(  i\right)  <i$. In other words,
+$\sigma\left(  j\right)  \in\left\{  i\in\left\{  1,2,\ldots,n\right\}
+\ \mid\ \sigma\left(  i\right)  <i\right\}  $. This rewrites as $\sigma\left(
+j\right)  \in Y$ (since $Y=\left\{  i\in\left\{  1,2,\ldots,n\right\}
+\ \mid\ \sigma\left(  i\right)  <i\right\}  $). Qed.}. Thus, we can define a
+map $\beta:Z\rightarrow Y$ by
+\[
+\left(  \beta\left(  j\right)  =\sigma\left(  j\right)
+\ \ \ \ \ \ \ \ \ \ \text{for every }j\in Z\right)  .
+\]
+Consider this map $\beta$.
+
+We have $\alpha\circ\beta=\operatorname*{id}$\ \ \ \ \footnote{\textit{Proof.}
+Let $j\in Z$. The definition of $\beta$ yields $\beta\left(  j\right)
+=\sigma\left(  j\right)  $. Comparing this with $\underbrace{\sigma^{-1}%
+}_{=\sigma}\left(  j\right)  =\sigma\left(  j\right)  $, we obtain
+$\beta\left(  j\right)  =\sigma^{-1}\left(  j\right)  $. Now,%
+\begin{align*}
+\left(  \alpha\circ\beta\right)  \left(  j\right)   &  =\alpha\left(
+\beta\left(  j\right)  \right)  =\sigma\left(  \underbrace{\beta\left(
+j\right)  }_{=\sigma^{-1}\left(  j\right)  }\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\alpha\right) \\
+&  =\sigma\left(  \sigma^{-1}\left(  j\right)  \right)  =j=\operatorname*{id}%
+\left(  j\right)  .
+\end{align*}
+\par
+Now, forget that we fixed $j$. We thus have shown that $\left(  \alpha
+\circ\beta\right)  \left(  j\right)  =\operatorname*{id}\left(  j\right)  $
+for each $j\in Z$. In other words, $\alpha\circ\beta=\operatorname*{id}$.
+Qed.} and $\beta\circ\alpha=\operatorname*{id}$%
+\ \ \ \ \footnote{\textit{Proof.} Let $j\in Y$. The definition of $\alpha$
+yields $\alpha\left(  j\right)  =\sigma\left(  j\right)  $. Comparing this
+with $\underbrace{\sigma^{-1}}_{=\sigma}\left(  j\right)  =\sigma\left(
+j\right)  $, we obtain $\alpha\left(  j\right)  =\sigma^{-1}\left(  j\right)
+$. Now,%
+\begin{align*}
+\left(  \beta\circ\alpha\right)  \left(  j\right)   &  =\beta\left(
+\alpha\left(  j\right)  \right)  =\sigma\left(  \underbrace{\alpha\left(
+j\right)  }_{=\sigma^{-1}\left(  j\right)  }\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\beta\right) \\
+&  =\sigma\left(  \sigma^{-1}\left(  j\right)  \right)  =j=\operatorname*{id}%
+\left(  j\right)  .
+\end{align*}
+\par
+Now, forget that we fixed $j$. We thus have shown that $\left(  \beta
+\circ\alpha\right)  \left(  j\right)  =\operatorname*{id}\left(  j\right)  $
+for each $j\in Y$. In other words, $\beta\circ\alpha=\operatorname*{id}$.
+Qed.}. Thus, the two maps $\alpha$ and $\beta$ are mutually inverse. Hence,
+the map $\alpha$ is invertible, i.e., is a bijection. Thus, there exists a
+bijection $Y\rightarrow Z$ (namely, the map $\alpha$). Hence, $\left\vert
+Y\right\vert =\left\vert Z\right\vert $.
+
+Now,%
+\[
+\sum_{i\in\left\{  1,2,\ldots,n\right\}  }1=\underbrace{\left\vert \left\{
+1,2,\ldots,n\right\}  \right\vert }_{=n}\cdot1=n\cdot1=n.
+\]
+Hence,%
+\begin{align*}
+n  &  =\sum_{i\in\left\{  1,2,\ldots,n\right\}  }1=\underbrace{\sum
+_{\substack{i\in\left\{  1,2,\ldots,n\right\}  ;\\\sigma\left(  i\right)
+<i}}}_{\substack{=\sum_{i\in Y}\\\text{(by (\ref{pf.lem.sol.altern.det.mod2.Y}%
+))}}}1+\underbrace{\sum_{\substack{i\in\left\{  1,2,\ldots,n\right\}
+;\\\sigma\left(  i\right)  =i}}}_{\substack{=\sum_{i\in X}\\\text{(by
+(\ref{pf.lem.sol.altern.det.mod2.X}))}}}1+\underbrace{\sum_{\substack{i\in
+\left\{  1,2,\ldots,n\right\}  ;\\\sigma\left(  i\right)  >i}}}%
+_{\substack{=\sum_{i\in Z}\\\text{(by (\ref{pf.lem.sol.altern.det.mod2.Z}))}%
+}}1\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since each }i\in\left\{  1,2,\ldots,n\right\}  \text{ satisfies exactly
+one of the three}\\
+\text{statements }\left(  \sigma\left(  i\right)  <i\right)  \text{, }\left(
+\sigma\left(  i\right)  =i\right)  \text{ and }\left(  \sigma\left(  i\right)
+>i\right)
+\end{array}
+\right) \\
+&  =\underbrace{\sum_{i\in Y}1}_{=\left\vert Y\right\vert \cdot1=\left\vert
+Y\right\vert }+\underbrace{\sum_{i\in X}1}_{=\left\vert X\right\vert
+\cdot1=\left\vert X\right\vert }+\underbrace{\sum_{i\in Z}1}_{=\left\vert
+Z\right\vert \cdot1=\left\vert Z\right\vert }=\underbrace{\left\vert
+Y\right\vert }_{=\left\vert Z\right\vert }+\left\vert X\right\vert +\left\vert
+Z\right\vert \\
+&  =\left\vert Z\right\vert +\left\vert X\right\vert +\left\vert Z\right\vert
+=\left\vert X\right\vert +2\cdot\left\vert Z\right\vert \equiv\left\vert
+X\right\vert \operatorname{mod}2.
+\end{align*}
+This proves Lemma \ref{lem.sol.altern.det.mod2}.
+\end{proof}
+\end{verlong}
+
+\begin{corollary}
+\label{cor.sol.altern.det.sigma0}Let $n\in\mathbb{N}$ be odd. Let $\sigma\in
+S_{n}$ be such that $\sigma^{-1}=\sigma$. Let $A=\left(  a_{i,j}\right)
+_{1\leq i\leq n,\ 1\leq j\leq n}$ be an alternating $n\times n$-matrix. Then,%
+\[
+\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }=0.
+\]
+
+\end{corollary}
+
+\begin{proof}
+[Proof of Corollary \ref{cor.sol.altern.det.sigma0}.]Let $X=\left\{
+i\in\left\{  1,2,\ldots,n\right\}  \ \mid\ \sigma\left(  i\right)  =i\right\}
+$. Then, Lemma \ref{lem.sol.altern.det.mod2} yields $\left\vert X\right\vert
+\equiv n\equiv1\operatorname{mod}2$ (since $n$ is odd). If we had
+$X=\varnothing$, then we would have $\left\vert \underbrace{X}_{=\varnothing
+}\right\vert =\left\vert \varnothing\right\vert =0\not \equiv
+1\operatorname{mod}2$; this would contradict $\left\vert X\right\vert
+\equiv1\operatorname{mod}2$. Hence, we cannot have $X=\varnothing$. Thus, we
+have $X\neq\varnothing$. In other words, the set $X$ is nonempty. Hence, there
+exists some $x\in X$. Consider this $x$.
+
+We have $x\in X=\left\{  i\in\left\{  1,2,\ldots,n\right\}  \ \mid
+\ \sigma\left(  i\right)  =i\right\}  $. In other words, $x$ is an element $i$
+of $\left\{  1,2,\ldots,n\right\}  $ satisfying $\sigma\left(  i\right)  =i$.
+In other words, $x$ is an element of $\left\{  1,2,\ldots,n\right\}  $ and
+satisfies $\sigma\left(  x\right)  =x$. Now, Lemma \ref{lem.sol.altern.STAS.3}
+\textbf{(a)} (applied to $i=x$) yields $a_{x,x}=0$. Since $\sigma\left(
+x\right)  =x$, we have $a_{x,\sigma\left(  x\right)  }=a_{x,x}=0$.
+
+But $x\in\left\{  1,2,\ldots,n\right\}  $. Hence, $a_{x,\sigma\left(
+x\right)  }$ is a factor of the product $\prod_{i=1}^{n}a_{i,\sigma\left(
+i\right)  }$ (namely, the factor for $i=x$). This factor is $0$ (since
+$a_{x,\sigma\left(  x\right)  }=0$). Hence, one factor of the product
+$\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }$ is $0$. Thus, the whole
+product $\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }$ must be $0$ (because
+if one factor of a product is $0$, then the whole product must be $0$). In
+other words, $\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }=0$. This proves
+Corollary \ref{cor.sol.altern.det.sigma0}.
+\end{proof}
+
+\begin{lemma}
+\label{lem.sol.altern.det.sigma-1}Let $n\in\mathbb{N}$ be odd. Let $\sigma\in
+S_{n}$. Let $A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ be an
+alternating $n\times n$-matrix. Then,%
+\[
+\prod_{i=1}^{n}a_{i,\sigma^{-1}\left(  i\right)  }=-\prod_{i=1}^{n}%
+a_{i,\sigma\left(  i\right)  }.
+\]
+
+\end{lemma}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.altern.det.sigma-1}.]We have $\sigma\in S_{n}$.
+In other words, $\sigma$ is a permutation of the set $\left\{  1,2,\ldots
+,n\right\}  $ (since $S_{n}$ is the set of all permutations of the set
+$\left\{  1,2,\ldots,n\right\}  $). In other words, $\sigma$ is a bijection
+$\left\{  1,2,\ldots,n\right\}  \rightarrow\left\{  1,2,\ldots,n\right\}  $.
+
+Now,
+\begin{align*}
+\prod_{i=1}^{n}a_{i,\sigma^{-1}\left(  i\right)  }  &  =\prod_{i=1}%
+^{n}\underbrace{a_{\sigma\left(  i\right)  ,\sigma^{-1}\left(  \sigma\left(
+i\right)  \right)  }}_{\substack{=a_{\sigma\left(  i\right)  ,i}\\\text{(since
+}\sigma^{-1}\left(  \sigma\left(  i\right)  \right)  =i\text{)}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have substituted }\sigma\left(  i\right)  \text{ for }i\text{
+in the product,}\\
+\text{since }\sigma:\left\{  1,2,\ldots,n\right\}  \rightarrow\left\{
+1,2,\ldots,n\right\}  \text{ is a bijection}%
+\end{array}
+\right) \\
+&  =\prod_{i=1}^{n}\underbrace{a_{\sigma\left(  i\right)  ,i}}%
+_{\substack{=-a_{i,\sigma\left(  i\right)  }\\\text{(by Lemma
+\ref{lem.sol.altern.STAS.3} \textbf{(b)}}\\\text{(applied to }\left(
+\sigma\left(  i\right)  ,i\right)  \text{ instead of }\left(  i,j\right)
+\text{))}}}=\prod_{i=1}^{n}\left(  -a_{i,\sigma\left(  i\right)  }\right)
+=\underbrace{\left(  -1\right)  ^{n}}_{\substack{=-1\\\text{(since }n\text{ is
+odd)}}}\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }\\
+&  =-\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }.
+\end{align*}
+This proves Lemma \ref{lem.sol.altern.det.sigma-1}.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.altern.det.sigma-1}.]We have $\sigma\in S_{n}$.
+In other words, $\sigma$ is a permutation of the set $\left\{  1,2,\ldots
+,n\right\}  $ (since $S_{n}$ is the set of all permutations of the set
+$\left\{  1,2,\ldots,n\right\}  $). In other words, $\sigma$ is a bijection
+$\left\{  1,2,\ldots,n\right\}  \rightarrow\left\{  1,2,\ldots,n\right\}  $.
+
+We have%
+\begin{equation}
+a_{\sigma\left(  i\right)  ,i}=-a_{i,\sigma\left(  i\right)  }%
+\ \ \ \ \ \ \ \ \ \ \text{for every }i\in\left\{  1,2,\ldots,n\right\}
+\label{pf.lem.sol.altern.det.sigma-1.1}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.sol.altern.det.sigma-1.1}):} Let
+$i\in\left\{  1,2,\ldots,n\right\}  $. Then, $\sigma\left(  i\right)
+\in\left\{  1,2,\ldots,n\right\}  $. Hence, $\left(  \sigma\left(  i\right)
+,i\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}$ (since $\sigma\left(
+i\right)  \in\left\{  1,2,\ldots,n\right\}  $ and $i\in\left\{  1,2,\ldots
+,n\right\}  $). Thus, Lemma \ref{lem.sol.altern.STAS.3} \textbf{(b)} (applied
+to $\left(  \sigma\left(  i\right)  ,i\right)  $ instead of $\left(
+i,j\right)  $) yields $a_{\sigma\left(  i\right)  ,i}=-a_{i,\sigma\left(
+i\right)  }$. This proves (\ref{pf.lem.sol.altern.det.sigma-1.1}).}.
+
+Now,%
+\begin{align*}
+\underbrace{\prod_{i=1}^{n}}_{=\prod_{i\in\left\{  1,2,\ldots,n\right\}  }%
+}a_{i,\sigma^{-1}\left(  i\right)  }  &  =\prod_{i\in\left\{  1,2,\ldots
+,n\right\}  }a_{i,\sigma^{-1}\left(  i\right)  }=\prod_{i\in\left\{
+1,2,\ldots,n\right\}  }\underbrace{a_{\sigma\left(  i\right)  ,\sigma
+^{-1}\left(  \sigma\left(  i\right)  \right)  }}_{\substack{=a_{\sigma\left(
+i\right)  ,i}\\\text{(since }\sigma^{-1}\left(  \sigma\left(  i\right)
+\right)  =i\text{)}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have substituted }\sigma\left(  i\right)  \text{ for }i\text{
+in the product,}\\
+\text{since }\sigma:\left\{  1,2,\ldots,n\right\}  \rightarrow\left\{
+1,2,\ldots,n\right\}  \text{ is a bijection}%
+\end{array}
+\right) \\
+&  =\prod_{i\in\left\{  1,2,\ldots,n\right\}  }\underbrace{a_{\sigma\left(
+i\right)  ,i}}_{\substack{=-a_{i,\sigma\left(  i\right)  }\\\text{(by
+(\ref{pf.lem.sol.altern.det.sigma-1.1}))}}}=\underbrace{\prod_{i\in\left\{
+1,2,\ldots,n\right\}  }}_{=\prod_{i=1}^{n}}\underbrace{\left(  -a_{i,\sigma
+\left(  i\right)  }\right)  }_{=\left(  -1\right)  a_{i,\sigma\left(
+i\right)  }}\\
+&  =\prod_{i=1}^{n}\left(  \left(  -1\right)  a_{i,\sigma\left(  i\right)
+}\right)  =\underbrace{\left(  -1\right)  ^{n}}_{\substack{=-1\\\text{(since
+}n\text{ is odd)}}}\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }=\left(
+-1\right)  \prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }\\
+&  =-\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }.
+\end{align*}
+This proves Lemma \ref{lem.sol.altern.det.sigma-1}.
+\end{proof}
+\end{verlong}
+
+\begin{proof}
+[Solution to Exercise \ref{exe.altern.det}.]\textbf{(a)} Assume that $A$ is antisymmetric.
+
+Recall that the matrix $A$ is antisymmetric if and only if $A^{T}=-A$ (by the
+definition of \textquotedblleft antisymmetric\textquotedblright). Hence,
+$A^{T}=-A$ (since the matrix $A$ is antisymmetric).
+
+Exercise \ref{exe.ps4.4} yields $\det\left(  A^{T}\right)  =\det A$. Hence,%
+\begin{align*}
+\det A  &  =\det\left(  \underbrace{A^{T}}_{=-A=\left(  -1\right)  A}\right)
+=\det\left(  \left(  -1\right)  A\right)  =\underbrace{\left(  -1\right)
+^{n}}_{\substack{=-1\\\text{(since }n\text{ is odd)}}}\det A\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Proposition \ref{prop.det.scale}
+(applied to }\lambda=-1\text{)}\right) \\
+&  =\left(  -1\right)  \det A=-\det A.
+\end{align*}
+Adding $\det A$ to both sides of this equality, we obtain $\det A+\det A=0$.
+Thus, $0=\det A+\det A=2\det A$. This solves Exercise \ref{exe.altern.det}
+\textbf{(a)}.
+
+\textbf{(b)} Assume that $A$ is alternating.
+
+Write the $n\times n$-matrix $A$ in the form $A=\left(  a_{i,j}\right)
+_{1\leq i\leq n,\ 1\leq j\leq n}$.
+
+The set $S_{n}$ is finite. Hence, there exists a bijection $\beta
+:S_{n}\rightarrow\left\{  1,2,\ldots,\left\vert S_{n}\right\vert \right\}  $.
+Consider this bijection $\beta$. (Of course, $\left\vert S_{n}\right\vert
+=n!$; but we will not use this.)
+
+Recall that%
+\begin{equation}
+\left(  -1\right)  ^{\sigma^{-1}}=\left(  -1\right)  ^{\sigma}%
+\ \ \ \ \ \ \ \ \ \ \text{for every }\sigma\in S_{n}.
+\label{sol.altern.det.b.(-1)sigma}%
+\end{equation}
+
+
+\begin{vershort}
+The map $S_{n}\rightarrow S_{n},\ \sigma\mapsto\sigma^{-1}$ is a bijection
+(indeed, it is its own inverse).
+\end{vershort}
+
+\begin{verlong}
+Define a map $\mathbf{j}:S_{n}\rightarrow S_{n}$ by $\left(  \mathbf{j}\left(
+\sigma\right)  =\sigma^{-1}\text{ for every }\sigma\in S_{n}\right)  $. Then,
+$\mathbf{j}$ is the map $S_{n}\rightarrow S_{n},\ \sigma\mapsto\sigma^{-1}$.
+
+We have $\mathbf{j}\circ\mathbf{j}=\operatorname*{id}$%
+\ \ \ \ \footnote{\textit{Proof.} Every $\sigma\in S_{n}$ satisfies%
+\begin{align*}
+\left(  \mathbf{j}\circ\mathbf{j}\right)  \left(  \sigma\right)   &
+=\mathbf{j}\left(  \underbrace{\mathbf{j}\left(  \sigma\right)  }%
+_{\substack{=\sigma^{-1}\\\text{(by the definition of }\mathbf{j}\text{)}%
+}}\right)  =\mathbf{j}\left(  \sigma^{-1}\right)  =\left(  \sigma^{-1}\right)
+^{-1}\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\mathbf{j}\right)
+\\
+&  =\sigma=\operatorname*{id}\left(  \sigma\right)  .
+\end{align*}
+In other words, $\mathbf{j}\circ\mathbf{j}=\operatorname*{id}$. Qed.}. The two
+maps $\mathbf{j}$ and $\mathbf{j}$ are mutually inverse (since $\mathbf{j}%
+\circ\mathbf{j}=\operatorname*{id}$ and $\mathbf{j}\circ\mathbf{j}%
+=\operatorname*{id}$). Hence, the map $\mathbf{j}$ is invertible. In other
+words, the map $\mathbf{j}$ is a bijection. In other words, the map
+$S_{n}\rightarrow S_{n},\ \sigma\mapsto\sigma^{-1}$ is a bijection (since the
+map $\mathbf{j}$ is the map $S_{n}\rightarrow S_{n},\ \sigma\mapsto\sigma
+^{-1}$).
+\end{verlong}
+
+Now,%
+\begin{align}
+&  \sum_{\substack{\sigma\in S_{n};\\\beta\left(  \sigma\right)  <\beta\left(
+\sigma^{-1}\right)  }}\left(  -1\right)  ^{\sigma}\prod_{i=1}^{n}%
+a_{i,\sigma\left(  i\right)  }\nonumber\\
+&  =\underbrace{\sum_{\substack{\sigma\in S_{n};\\\beta\left(  \sigma
+^{-1}\right)  <\beta\left(  \left(  \sigma^{-1}\right)  ^{-1}\right)  }%
+}}_{\substack{=\sum_{\substack{\sigma\in S_{n};\\\beta\left(  \sigma
+^{-1}\right)  <\beta\left(  \sigma\right)  }}\\\text{(since }\left(
+\sigma^{-1}\right)  ^{-1}=\sigma\text{)}}}\underbrace{\left(  -1\right)
+^{\sigma^{-1}}}_{\substack{=\left(  -1\right)  ^{\sigma}\\\text{(by
+(\ref{sol.altern.det.b.(-1)sigma}))}}}\underbrace{\prod_{i=1}^{n}%
+a_{i,\sigma^{-1}\left(  i\right)  }}_{\substack{=-\prod_{i=1}^{n}%
+a_{i,\sigma\left(  i\right)  }\\\text{(by Lemma
+\ref{lem.sol.altern.det.sigma-1})}}}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have substituted }\sigma^{-1}\text{ for }\sigma\text{ in the
+sum,}\\
+\text{since the map }S_{n}\rightarrow S_{n},\ \sigma\mapsto\sigma^{-1}\text{
+is a bijection}%
+\end{array}
+\right) \nonumber\\
+&  =\underbrace{\sum_{\substack{\sigma\in S_{n};\\\beta\left(  \sigma
+^{-1}\right)  <\beta\left(  \sigma\right)  }}}_{\substack{=\sum
+_{\substack{\sigma\in S_{n};\\\beta\left(  \sigma\right)  >\beta\left(
+\sigma^{-1}\right)  }}\\\text{(since for every }\sigma\in S_{n}\text{,
+the}\\\text{statement }\left(  \beta\left(  \sigma^{-1}\right)  <\beta\left(
+\sigma\right)  \right)  \text{ is}\\\text{equivalent to }\left(  \beta\left(
+\sigma\right)  >\beta\left(  \sigma^{-1}\right)  \right)  \text{)}}}\left(
+-1\right)  ^{\sigma}\left(  -\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)
+}\right)  =\sum_{\substack{\sigma\in S_{n};\\\beta\left(  \sigma\right)
+>\beta\left(  \sigma^{-1}\right)  }}\left(  -1\right)  ^{\sigma}\left(
+-\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }\right) \nonumber\\
+&  =-\sum_{\substack{\sigma\in S_{n};\\\beta\left(  \sigma\right)
+>\beta\left(  \sigma^{-1}\right)  }}\left(  -1\right)  ^{\sigma}\prod
+_{i=1}^{n}a_{i,\sigma\left(  i\right)  }. \label{sol.altern.det.b.1}%
+\end{align}
+
+
+Also, every $\sigma\in S_{n}$ satisfying $\beta\left(  \sigma\right)
+=\beta\left(  \sigma^{-1}\right)  $ must satisfy
+\begin{equation}
+\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }=0 \label{sol.altern.det.b.2}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.altern.det.b.2}):} Let $\sigma\in S_{n}$
+be such that $\beta\left(  \sigma\right)  =\beta\left(  \sigma^{-1}\right)  $.
+\par
+Recall that $\beta$ is a bijection. Hence, a map $\beta^{-1}$ is well-defined.
+Now, $\beta^{-1}\left(  \underbrace{\beta\left(  \sigma\right)  }%
+_{=\beta\left(  \sigma^{-1}\right)  }\right)  =\beta^{-1}\left(  \beta\left(
+\sigma^{-1}\right)  \right)  =\sigma^{-1}$, so that $\sigma^{-1}=\beta
+^{-1}\left(  \beta\left(  \sigma\right)  \right)  =\sigma$. Thus, Corollary
+\ref{cor.sol.altern.det.sigma0} yields $\prod_{i=1}^{n}a_{i,\sigma\left(
+i\right)  }=0$. This proves (\ref{sol.altern.det.b.2}).}.
+
+Now, recall that $A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$.
+Hence, the definition of $\det A$ yields%
+\begin{align*}
+&  \det A\\
+&  =\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\prod_{i=1}%
+^{n}a_{i,\sigma\left(  i\right)  }\\
+&  =\underbrace{\sum_{\substack{\sigma\in S_{n};\\\beta\left(  \sigma\right)
+<\beta\left(  \sigma^{-1}\right)  }}\left(  -1\right)  ^{\sigma}\prod
+_{i=1}^{n}a_{i,\sigma\left(  i\right)  }}_{\substack{=-\sum_{\substack{\sigma
+\in S_{n};\\\beta\left(  \sigma\right)  >\beta\left(  \sigma^{-1}\right)
+}}\left(  -1\right)  ^{\sigma}\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)
+}\\\text{(by (\ref{sol.altern.det.b.1}))}}}+\sum_{\substack{\sigma\in
+S_{n};\\\beta\left(  \sigma\right)  =\beta\left(  \sigma^{-1}\right)
+}}\left(  -1\right)  ^{\sigma}\underbrace{\prod_{i=1}^{n}a_{i,\sigma\left(
+i\right)  }}_{\substack{=0\\\text{(by (\ref{sol.altern.det.b.2}))}}%
+}+\sum_{\substack{\sigma\in S_{n};\\\beta\left(  \sigma\right)  >\beta\left(
+\sigma^{-1}\right)  }}\left(  -1\right)  ^{\sigma}\prod_{i=1}^{n}%
+a_{i,\sigma\left(  i\right)  }\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since each }\sigma\in S_{n}\text{ satisfies exactly one of the three}\\
+\text{statements }\left(  \beta\left(  \sigma\right)  <\beta\left(
+\sigma^{-1}\right)  \right)  \text{, }\left(  \beta\left(  \sigma\right)
+=\beta\left(  \sigma^{-1}\right)  \right)  \text{ and }\left(  \beta\left(
+\sigma\right)  >\beta\left(  \sigma^{-1}\right)  \right)
+\end{array}
+\right) \\
+&  =-\sum_{\substack{\sigma\in S_{n};\\\beta\left(  \sigma\right)
+>\beta\left(  \sigma^{-1}\right)  }}\left(  -1\right)  ^{\sigma}\prod
+_{i=1}^{n}a_{i,\sigma\left(  i\right)  }+\underbrace{\sum_{\substack{\sigma\in
+S_{n};\\\beta\left(  \sigma\right)  =\beta\left(  \sigma^{-1}\right)
+}}\left(  -1\right)  ^{\sigma}0}_{=0}+\sum_{\substack{\sigma\in S_{n}%
+;\\\beta\left(  \sigma\right)  >\beta\left(  \sigma^{-1}\right)  }}\left(
+-1\right)  ^{\sigma}\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }\\
+&  =-\sum_{\substack{\sigma\in S_{n};\\\beta\left(  \sigma\right)
+>\beta\left(  \sigma^{-1}\right)  }}\left(  -1\right)  ^{\sigma}\prod
+_{i=1}^{n}a_{i,\sigma\left(  i\right)  }+\sum_{\substack{\sigma\in
+S_{n};\\\beta\left(  \sigma\right)  >\beta\left(  \sigma^{-1}\right)
+}}\left(  -1\right)  ^{\sigma}\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }=0.
+\end{align*}
+This solves Exercise \ref{exe.altern.det} \textbf{(b)}.
+\end{proof}
+
 \subsection{Solution to Exercise \ref{exe.tridiag.isl}}
 
 \begin{proof}
@@ -67139,7 +68269,7 @@ Q\text{)}}}\prod_{i\in K}d_{i}\\
 Hence, (\ref{pf.cor.sol.addexe.jacobi-complement.diagform.1}) becomes%
 \begin{align*}
 &  \det A\cdot\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)
-}^{w\left(  Q\right)  }B\right)  \\
+}^{w\left(  Q\right)  }B\right) \\
 &  =\sum_{\substack{K\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
 K\right\vert =\left\vert P\right\vert }}\left(  -1\right)  ^{\sum P+\sum
 K}\det\left(  \operatorname*{sub}\nolimits_{w\left(  \widetilde{K}\right)
@@ -68671,6 +69801,8 @@ Mathematics 50, pp. 474--594 (2013). Also appears as arXiv preprint
 
 \bibitem[Conrad]{Conrad}Keith Conrad, \textit{Sign of permutations},
 \newline\url{http://www.math.uconn.edu/~kconrad/blurbs/grouptheory/sign.pdf} .
+
+\bibitem[Conrad2]{Conrad-Pf}Keith Conrad, \textit{Bilinear forms},\newline\url{http://www.math.uconn.edu/~kconrad/blurbs/linmultialg/bilinearform.pdf}
 
 \bibitem[EdeStra04]{EdelStrang}%
 \href{https://www.maa.org/sites/default/files/pdf/upload_library/22/Ford/Edelman189-197.pdf}{Alan
