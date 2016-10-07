@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Sunday, September 04, 2016 21:14:32}
+%TCIDATA{LastRevised=Thursday, October 06, 2016 23:09:12}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -46625,7 +46625,7 @@ This solves Exercise \ref{exe.vander-det.xi+yj} \textbf{(b)}.
 
 \subsection{Solution to Exercise \ref{exe.cauchy-det}}
 
-Exercise \ref{exe.cauchy-det} is obtained from \cite[Exercise 2.66(a)]{Reiner}
+Exercise \ref{exe.cauchy-det} is obtained from \cite[Exercise 2.67(a)]{Reiner}
 by setting $a_{i}=x_{i}$ and $b_{j}=-y_{j}$. (See the ancillary PDF file of
 the arXiv version of \cite{Reiner} for the solutions to the exercises.)
 
@@ -46653,7 +46653,7 @@ be a field; however, this is easily seen to be unnecessary for the proof.
 
 \subsection{Solution to Exercise \ref{exe.cauchy-det-lem}}
 
-Exercise \ref{exe.cauchy-det-lem} is the equality (11.218) in \cite[ancillary
+Exercise \ref{exe.cauchy-det-lem} is the equality (12.218) in \cite[ancillary
 PDF file]{Reiner}.
 
 \subsection{Solution to Exercise \ref{exe.det.schur-lem}}
@@ -61474,16 +61474,16 @@ i,\sim\ell}\right)  \cdot\det\left(  S_{\sim j,\sim k}\right)  }\nonumber\\
 }_{\substack{=\left(  -1\right)  ^{\left(  k+i\right)  +\left(  \ell+j\right)
 }=\left(  -1\right)  ^{k+\ell+i+j}\\\text{(since }\left(  k+i\right)  +\left(
 \ell+j\right)  =k+\ell+i+j\text{)}}}\det\left(  S_{\sim i,\sim k}\right)
-\cdot\det\left(  S_{\sim j,\sim\ell}\right)  \nonumber\\
+\cdot\det\left(  S_{\sim j,\sim\ell}\right) \nonumber\\
 &  \ \ \ \ \ \ \ \ \ \ -\underbrace{\left(  -1\right)  ^{\ell+i}\left(
 -1\right)  ^{k+j}}_{\substack{=\left(  -1\right)  ^{\left(  \ell+i\right)
 +\left(  k+j\right)  }=\left(  -1\right)  ^{k+\ell+i+j}\\\text{(since }\left(
 \ell+i\right)  +\left(  k+j\right)  =k+\ell+i+j\text{)}}}\det\left(  S_{\sim
-i,\sim\ell}\right)  \cdot\det\left(  S_{\sim j,\sim k}\right)  \nonumber\\
+i,\sim\ell}\right)  \cdot\det\left(  S_{\sim j,\sim k}\right) \nonumber\\
 &  =\left(  -1\right)  ^{k+\ell+i+j}\det\left(  S_{\sim i,\sim k}\right)
 \cdot\det\left(  S_{\sim j,\sim\ell}\right)  -\left(  -1\right)  ^{k+\ell
 +i+j}\det\left(  S_{\sim i,\sim\ell}\right)  \cdot\det\left(  S_{\sim j,\sim
-k}\right)  \nonumber\\
+k}\right) \nonumber\\
 &  =\left(  -1\right)  ^{k+\ell+i+j}\underbrace{\left(  \det\left(  S_{\sim
 i,\sim k}\right)  \cdot\det\left(  S_{\sim j,\sim\ell}\right)  -\det\left(
 S_{\sim i,\sim\ell}\right)  \cdot\det\left(  S_{\sim j,\sim k}\right)
@@ -61493,8 +61493,8 @@ S_{\sim i,\sim\ell}\right)  \cdot\det\left(  S_{\sim j,\sim k}\right)
 (\ref{sol.desnanot.skew.des}))}}}\nonumber\\
 &  =\left(  -1\right)  ^{k+\ell+i+j}\det S\cdot\det\left(  \operatorname*{sub}%
 \nolimits_{1,2,\ldots,\widehat{i},\ldots,\widehat{j},\ldots,n}^{1,2,\ldots
-,\widehat{k},\ldots,\widehat{\ell},\ldots,n}S\right)
-.\label{sol.desnanot.skew.5}%
+,\widehat{k},\ldots,\widehat{\ell},\ldots,n}S\right)  .
+\label{sol.desnanot.skew.5}%
 \end{align}
 Hence, for every $\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}$
 satisfying $i<j$, the element \newline$\sum_{\substack{\left(  k,\ell\right)
@@ -68065,7 +68065,7 @@ instead of $p$ and $P$) yields
 \[
 \det\left(  \operatorname*{sub}\nolimits_{w\left(  K\right)  }^{w\left(
 Q\right)  }\left(  AB\right)  \right)  =\sum_{\substack{R\subseteq\left\{
-1,2,\ldots,p\right\}  ;\\\left\vert R\right\vert =k}}\det\left(
+1,2,\ldots,n\right\}  ;\\\left\vert R\right\vert =k}}\det\left(
 \operatorname*{sub}\nolimits_{w\left(  K\right)  }^{w\left(  R\right)
 }A\right)  \cdot\det\left(  \operatorname*{sub}\nolimits_{w\left(  R\right)
 }^{w\left(  Q\right)  }B\right)  .
@@ -68316,7 +68316,7 @@ If $K$ is a subset of $\left\{  1,2,\ldots,n\right\}  $ satisfying $\left\vert
 K\right\vert =\left\vert P\right\vert $, then%
 \begin{align}
 &  \det\left(  \operatorname*{sub}\nolimits_{w\left(  K\right)  }^{w\left(
-Q\right)  }\left(  AB\right)  \right) \nonumber\\
+Q\right)  }\left(  AB\right)  \right)  \nonumber\\
 &  =\sum_{\substack{R\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
 R\right\vert =k}}\det\left(  \operatorname*{sub}\nolimits_{w\left(  K\right)
 }^{w\left(  R\right)  }A\right)  \cdot\det\left(  \operatorname*{sub}%
@@ -68334,7 +68334,7 @@ $p$ and $P$) yields
 \[
 \det\left(  \operatorname*{sub}\nolimits_{w\left(  K\right)  }^{w\left(
 Q\right)  }\left(  AB\right)  \right)  =\sum_{\substack{R\subseteq\left\{
-1,2,\ldots,p\right\}  ;\\\left\vert R\right\vert =k}}\det\left(
+1,2,\ldots,n\right\}  ;\\\left\vert R\right\vert =k}}\det\left(
 \operatorname*{sub}\nolimits_{w\left(  K\right)  }^{w\left(  R\right)
 }A\right)  \cdot\det\left(  \operatorname*{sub}\nolimits_{w\left(  R\right)
 }^{w\left(  Q\right)  }B\right)  .
@@ -70273,8 +70273,8 @@ Grinberg, \textit{Solution to Problem 19.9 from \textquotedblleft Problems
 from the Book\textquotedblright}}.\newline\url{http://web.mit.edu/~darij/www/solutions.html}
 
 \bibitem[GriRei15]{Reiner}Darij Grinberg, Victor Reiner, \textit{Hopf algebras
-in Combinatorics}, August 25, 2015. arXiv preprint
-\href{http://www.arxiv.org/abs/1409.8356v3}{\texttt{arXiv:1409.8356v3}}.
+in Combinatorics}, August 22, 2016. arXiv preprint
+\href{http://www.arxiv.org/abs/1409.8356v4}{\texttt{arXiv:1409.8356v4}}.
 \newline A version which is more often updated can be found at
 \url{http://www.math.umn.edu/~reiner/Classes/HopfComb.pdf} .
 
@@ -70372,8 +70372,8 @@ Journal of Combinatorics Vol 11(2) A5 (2006), also available as
 \href{http://arxiv.org/abs/math.CO/0602357}{arXiv:math.CO/0602357}.
 
 \bibitem[LeLeMe16]{LeLeMe16}Eric Lehman, F. Thomson Leighton, Albert R. Meyer,
-\textit{Mathematics for Computer Science}, revised Thursday 16th June, 2016,
-\newline\url{https://courses.csail.mit.edu/6.042/spring16/mcs.pdf} .
+\textit{Mathematics for Computer Science}, revised Thursday 28th September,
+2016, \newline\url{https://courses.csail.mit.edu/6.042/spring16/mcs.pdf} .
 
 \bibitem[Loehr11]{Loehr-BC}%
 \href{http://www.math.vt.edu/people/nloehr/bijbook.html}{Nicholas A. Loehr,
@@ -70412,9 +70412,9 @@ Computational Discrete Mathematics, Lecture Notes in Computer Science, Volume
 Part 1}, Graduate Studies in Mathematics \#165, 3rd edition, AMS 2015.
 
 \bibitem[Silvest]{Silvest}%
-\href{http://www.mth.kcl.ac.uk/~jrs/gazette/blocks.pdf}{John R. Silvester,
-\textit{Determinants of Block Matrices}, The Mathematical Gazette, Vol. 84,
-No. 501 (Nov., 2000), pp. 460--467.}
+\href{https://web.archive.org/web/20140505161153/http://www.mth.kcl.ac.uk/~jrs/gazette/blocks.pdf}{John
+R. Silvester, \textit{Determinants of Block Matrices}, The Mathematical
+Gazette, Vol. 84, No. 501 (Nov., 2000), pp. 460--467.}
 
 \bibitem[Stan11]{Stanley-EC1}Richard Stanley, \textit{Enumerative
 Combinatorics, volume 1}, Second edition, version of 15 July 2011. Available
