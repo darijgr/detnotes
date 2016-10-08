@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, October 06, 2016 23:09:12}
+%TCIDATA{LastRevised=Saturday, October 08, 2016 01:34:20}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -24786,8 +24786,8 @@ $\operatorname*{Tr}A$.
 
 \subsection{Additional exercises}
 
-Here are a few more additional exercises, with no solutions given and no
-importance to the rest of the text.\Needspace{8cm}
+Here are a few more additional exercises, with no importance to the rest of
+the text (and mostly no solutions given).\Needspace{8cm}
 
 \begin{addexercise}
 \label{exeadd.det.anotherpattern}\textbf{(a)} Compute the determinant of the
@@ -25319,11 +25319,11 @@ $n$-element subset. Let $Q$ be such a subset. Thus, $Q\subseteq S$ and
 $\left\vert Q\right\vert =n$. Since $Q\subseteq S=\varnothing$, we have
 $Q=\varnothing$ and thus $\left\vert Q\right\vert =0$. This contradicts
 $\left\vert Q\right\vert =n\neq0$. This contradiction shows that our
-assumption was wrong, qed.}. In other words, the number of all $n$-elements of
-$S$ is $0$. Since $\dbinom{m}{n}$ is also $0$, this shows that $\dbinom{m}{n}$
-is the number of all $n$-elements of $S$. Hence, Proposition
-\ref{prop.binom.subsets} holds for our $m$, $n$ and $S$. This proves Lemma
-\ref{lem.sol.prop.binom.subsets.m=0}.
+assumption was wrong, qed.}. In other words, the number of all $n$-element
+subsets of $S$ is $0$. Since $\dbinom{m}{n}$ is also $0$, this shows that
+$\dbinom{m}{n}$ is the number of all $n$-element subsets of $S$. Hence,
+Proposition \ref{prop.binom.subsets} holds for our $m$, $n$ and $S$. This
+proves Lemma \ref{lem.sol.prop.binom.subsets.m=0}.
 \end{proof}
 
 \begin{proof}
@@ -25530,8 +25530,9 @@ $m$-element subsets of $S$ as well;
 \item the $m$-element subsets of $S$ which are \textbf{not} $m$-element
 subsets of $S\setminus\left\{  s\right\}  $ are in bijection with the $\left(
 m-1\right)  $-element subsets of $S\setminus\left\{  s\right\}  $; this
-bijection sends an $\left(  m-1\right)  $-element $U$ of $S\setminus\left\{
-s\right\}  $ to the $m$-element subset $U\cup\left\{  s\right\}  $ of $S$.
+bijection sends an $\left(  m-1\right)  $-element subset $U$ of $S\setminus
+\left\{  s\right\}  $ to the $m$-element subset $U\cup\left\{  s\right\}  $ of
+$S$.
 \end{itemize}
 
 This restatement should make Proposition
@@ -28632,8 +28633,7 @@ that (\ref{sol.ps2.2.3.goal}) is proven for every $n<N$. We need to prove
 \end{equation}
 
 
-Recall that $N$ is a positive integer. Hence, we are in one of the following
-three cases:
+Recall that $N$ is a positive integer. Hence, we are in one of the following three cases:
 
 \textit{Case 1:} We have $N=1$.
 
@@ -33328,8 +33328,8 @@ Now, every $\left(  i,j\right)  \in G$ satisfies%
 \begin{equation}
 \left(  -1\right)  ^{\left[  \left(  i,j\right)  \in\operatorname*{Inv}\left(
 \sigma\right)  \right]  }a_{\sigma^{\left[  2\right]  }\left(  i,j\right)
-}=a_{\left(  \sigma\left(  i\right)  ,\sigma\left(  j\right)  \right)  }
-\label{sol.perm.sign.pseudoexplicit.b.a-inv}%
+}=a_{\left(  \sigma\left(  i\right)  ,\sigma\left(  j\right)  \right)
+}\label{sol.perm.sign.pseudoexplicit.b.a-inv}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{sol.perm.sign.pseudoexplicit.b.a-inv}):} Let
 $\left(  i,j\right)  \in G$. Thus, $\left(  i,j\right)  \in G=\left\{  \left(
@@ -33420,11 +33420,11 @@ of $\sigma$). Hence, $\left[  \left(  i,j\right)  \in\operatorname*{Inv}%
 \left(  i,j\right)  \in\operatorname*{Inv}\left(  \sigma\right)  \right]
 }=\left(  -1\right)  ^{1}=-1$ and therefore $\underbrace{\left(  -1\right)
 ^{\left[  \left(  i,j\right)  \in\operatorname*{Inv}\left(  \sigma\right)
-\right]  }}_{=-1}\underbrace{a_{\left(  \sigma\left(  i\right)  ,\sigma\left(
-j\right)  \right)  }}_{=-a_{\left(  \sigma\left(  i\right)  ,\sigma\left(
-j\right)  \right)  }}=\left(  -1\right)  \left(  -a_{\left(  \sigma\left(
-i\right)  ,\sigma\left(  j\right)  \right)  }\right)  =a_{\left(
-\sigma\left(  i\right)  ,\sigma\left(  j\right)  \right)  }$. Thus,
+\right]  }}_{=-1}\underbrace{a_{\sigma^{\left[  2\right]  }\left(  i,j\right)
+}}_{=-a_{\left(  \sigma\left(  i\right)  ,\sigma\left(  j\right)  \right)  }%
+}=\left(  -1\right)  \left(  -a_{\left(  \sigma\left(  i\right)
+,\sigma\left(  j\right)  \right)  }\right)  =a_{\left(  \sigma\left(
+i\right)  ,\sigma\left(  j\right)  \right)  }$. Thus,
 (\ref{sol.perm.sign.pseudoexplicit.b.a-inv}) is proven in Case 2.
 \par
 We have now proven (\ref{sol.perm.sign.pseudoexplicit.b.a-inv}) in each of the
@@ -68316,7 +68316,7 @@ If $K$ is a subset of $\left\{  1,2,\ldots,n\right\}  $ satisfying $\left\vert
 K\right\vert =\left\vert P\right\vert $, then%
 \begin{align}
 &  \det\left(  \operatorname*{sub}\nolimits_{w\left(  K\right)  }^{w\left(
-Q\right)  }\left(  AB\right)  \right)  \nonumber\\
+Q\right)  }\left(  AB\right)  \right) \nonumber\\
 &  =\sum_{\substack{R\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
 R\right\vert =k}}\det\left(  \operatorname*{sub}\nolimits_{w\left(  K\right)
 }^{w\left(  R\right)  }A\right)  \cdot\det\left(  \operatorname*{sub}%
