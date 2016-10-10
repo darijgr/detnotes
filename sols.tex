@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Sunday, October 09, 2016 20:33:14}
+%TCIDATA{LastRevised=Monday, October 10, 2016 17:53:39}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -49254,7 +49254,7 @@ S^{T}AS=\left(  \sum_{\left(  k,\ell\right)  \in\left\{  1,2,\ldots,n\right\}
 s_{j,i}\right)  _{1\leq i\leq m,\ 1\leq j\leq n}$ (by the definition of
 $S^{T}$). Recall also that $A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq
 j\leq n}$ and $S=\left(  s_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq m}$.
-Hence, Lemma \ref{lem.sol.altern.STAS.1} (applied to $m$, $n$, $n$, $n$,
+Hence, Lemma \ref{lem.sol.altern.STAS.1} (applied to $m$, $n$, $n$, $m$,
 $S^{T}$, $A$, $S$, $s_{j,i}$, $a_{i,j}$ and $s_{i,j}$ instead of $n$, $m$,
 $p$, $q$, $A$, $B$, $C$, $a_{i,j}$, $b_{i,j}$ and $c_{i,j}$) yields%
 \begin{align*}
@@ -49355,10 +49355,10 @@ But
 \footnote{\textit{Proof:} Every $\left(  i,j\right)  \in\left\{
 1,2,\ldots,m\right\}  ^{2}$ satisfies
 \begin{align*}
-b_{j,i} &  =\sum_{\left(  k,\ell\right)  \in\left\{  1,2,\ldots,n\right\}
+b_{j,i}  &  =\sum_{\left(  k,\ell\right)  \in\left\{  1,2,\ldots,n\right\}
 ^{2}}s_{k,j}s_{\ell,i}a_{k,\ell}\ \ \ \ \ \ \ \ \ \ \left(  \text{by
 (\ref{sol.altern.STAS.4}) (applied to }\left(  j,i\right)  \text{ instead of
-}\left(  i,j\right)  \text{)}\right)  \\
+}\left(  i,j\right)  \text{)}\right) \\
 &  =\underbrace{\sum_{\left(  \ell,k\right)  \in\left\{  1,2,\ldots,n\right\}
 ^{2}}}_{\substack{=\sum_{\left(  k,\ell\right)  \in\left\{  1,2,\ldots
 ,n\right\}  ^{2}}}}\underbrace{s_{\ell,j}s_{k,i}}_{=s_{k,i}s_{\ell,j}%
@@ -49371,7 +49371,7 @@ i,j\right)  =\left(  \ell,k\right)  \text{))}}}\ \ \ \ \ \ \ \ \ \ \left(
 \text{summation index }\left(  k,\ell\right)  \text{ as }\left(
 \ell,k\right)
 \end{array}
-\right)  \\
+\right) \\
 &  =\sum_{\left(  k,\ell\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}%
 }s_{k,i}s_{\ell,j}\left(  -a_{k,\ell}\right)  =-\underbrace{\sum_{\left(
 k,\ell\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}}s_{k,i}s_{\ell
@@ -49394,7 +49394,7 @@ B^{T}=\left(  b_{j,i}\right)  _{1\leq i\leq m,\ 1\leq j\leq m}=\left(
 But every $\left(  i,j\right)  \in\left\{  1,2,\ldots,m\right\}  ^{2}$
 satisfies%
 \begin{equation}
-b_{j,i}=-b_{i,j}\label{sol.altern.STAS.5}%
+b_{j,i}=-b_{i,j} \label{sol.altern.STAS.5}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{sol.altern.STAS.5}):} Let $\left(
 i,j\right)  \in\left\{  1,2,\ldots,m\right\}  ^{2}$. Thus, $i\in\left\{
@@ -49404,7 +49404,7 @@ $. In other words, $\left(  j,i\right)  \in\left\{  1,2,\ldots,m\right\}
 ^{2}$. Now, (\ref{sol.altern.STAS.4}) (applied to $\left(  j,i\right)  $
 instead of $\left(  i,j\right)  $) yields%
 \begin{align*}
-b_{j,i} &  =\sum_{\left(  k,\ell\right)  \in\left\{  1,2,\ldots,n\right\}
+b_{j,i}  &  =\sum_{\left(  k,\ell\right)  \in\left\{  1,2,\ldots,n\right\}
 ^{2}}s_{k,j}s_{\ell,i}a_{k,\ell}\\
 &  =\underbrace{\sum_{\left(  \ell,k\right)  \in\left\{  1,2,\ldots,n\right\}
 ^{2}}}_{\substack{=\sum_{\ell\in\left\{  1,2,\ldots,n\right\}  }\sum
@@ -49421,7 +49421,7 @@ to }\left(  i,j\right)  =\left(  \ell,k\right)  \text{))}}%
 \text{summation index }\left(  k,\ell\right)  \text{ as }\left(
 \ell,k\right)
 \end{array}
-\right)  \\
+\right) \\
 &  =\sum_{\left(  k,\ell\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}%
 }s_{k,i}s_{\ell,j}\left(  -a_{k,\ell}\right)  =-\underbrace{\sum_{\left(
 k,\ell\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}}s_{k,i}s_{\ell
@@ -49590,7 +49590,7 @@ $B^{T}=-B$ and $\left(  b_{i,i}=0\text{ for all }i\in\left\{  1,2,\ldots
 alternating\textquotedblright). Thus, the $m\times m$-matrix $B$ is
 alternating (since it satisfies $B^{T}=-B$ and $\left(  b_{i,i}=0\text{ for
 all }i\in\left\{  1,2,\ldots,m\right\}  \right)  $). Since $B=S^{T}AS$, this
-rewrites as follows: Te $m\times m$-matrix $S^{T}AS$ is alternating. This
+rewrites as follows: The $m\times m$-matrix $S^{T}AS$ is alternating. This
 solves Exercise \ref{exe.altern.STAS}.
 \end{proof}
 
@@ -55393,7 +55393,7 @@ $\det\left(  I_{m}\right)  =1$.
 The matrix $A$ is invertible; thus, it has an inverse $A^{-1}\in
 \mathbb{K}^{n\times n}$. The matrices $I_{m}\in\mathbb{K}^{m\times m}$ and
 $-CA^{-1}\in\mathbb{K}^{m\times n}$ satisfy $-\left(  CA^{-1}\right)
-A=-I_{m}C$ (since $-\left(  CA^{-1}A\right)  =-C\underbrace{A^{-1}A}_{=I_{n}%
+A=-I_{m}C$ (since $-\left(  CA^{-1}\right)  A=-C\underbrace{A^{-1}A}_{=I_{n}%
 }=-CI_{n}=-\underbrace{C}_{=I_{m}C}=-I_{m}C$). Hence, Exercise
 \ref{exe.block2x2.VB+WD} (applied to $W=I_{m}$ and $V=-CA^{-1}$) yields%
 \begin{align*}
@@ -56252,9 +56252,9 @@ if we cut the matrix $A$ horizontally (between its $k$-th and $\left(
 k+1\right)  $-st rows) and vertically (between its $\ell$-th and $\left(
 \ell+1\right)  $-st columns), then we obtain four little matrices (namely,
 $\operatorname*{sub}\nolimits_{1,2,\ldots,k}^{1,2,\ldots,\ell}A$,
-$\operatorname*{sub}\nolimits_{1,2,\ldots,k}^{\ell+1,\ell+2,\ldots,n}A$,
+$\operatorname*{sub}\nolimits_{1,2,\ldots,k}^{\ell+1,\ell+2,\ldots,m}A$,
 $\operatorname*{sub}\nolimits_{k+1,k+2,\ldots,n}^{1,2,\ldots,\ell}A$ and
-$\operatorname*{sub}\nolimits_{k+1,k+2,\ldots,n}^{\ell+1,\ell+2,\ldots,n}A$)
+$\operatorname*{sub}\nolimits_{k+1,k+2,\ldots,n}^{\ell+1,\ell+2,\ldots,m}A$)
 which can be assembled back to form $A$ (using the block-matrix construction).
 Turning this into a formal is straightforward.
 \end{proof}
