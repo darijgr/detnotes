@@ -61160,9 +61160,10 @@ i,j\right)  \in\left\{  1,2,\ldots,m\right\}  ^{2}$. Then,%
 k,\ell\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2};\\k=\ell}}s_{k,i}%
 s_{\ell,j}\underbrace{a_{\ell,\ell}}_{\substack{=0\\\text{(by Lemma
 \ref{lem.sol.altern.STAS.3} \textbf{(a)}}\\\text{(applied to }i=\ell\text{))}%
-}}\label{pf.lem.sol.desnanot.skew.STAS=.1.pf.short.1}\\
+}}\nonumber\\
 &  =\sum_{\substack{\left(  k,\ell\right)  \in\left\{  1,2,\ldots,n\right\}
 ^{2};\\k=\ell}}s_{k,i}s_{\ell,j}0=0.
+\label{pf.lem.sol.desnanot.skew.STAS=.1.pf.short.1}%
 \end{align}
 Also,%
 \begin{align}
@@ -61707,6 +61708,9 @@ This proves Proposition \ref{prop.desnanot.AC} again.
 Thus, Exercise \ref{exe.pluecker.rederive-AC} is solved.
 
 \subsection{Solution to Exercise \ref{exe.det.laplace-multi}}
+
+Throughout this section, we shall use the notations introduced in Definition
+\ref{def.submatrix} and in Definition \ref{def.sect.laplace.notations}.
 
 Let us prepare for the proof of Lemma \ref{lem.det.laplace-multi.Apq} by
 showing a particular case:
@@ -63959,6 +63963,9 @@ Thus, Exercise \ref{exe.det.laplace-multi} is solved.
 \end{proof}
 
 \subsection{Solution to Exercise \ref{exe.det.laplace-multi.0}}
+
+Throughout this section, we shall use the notations introduced in Definition
+\ref{def.submatrix} and in Definition \ref{def.sect.laplace.notations}.
 
 Before we start solving Exercise \ref{exe.det.laplace-multi.0}, let us show a
 trivial lemma:
@@ -67142,6 +67149,9 @@ Now, let us give a second solution to Additional exercise
 \ref{addexe.jacobi-complement}, following an idea from \cite[Chapter SCHUR,
 proof of (1.9)]{LLPT95}.
 
+Throughout this section, we shall use the notations introduced in Definition
+\ref{def.submatrix} and in Definition \ref{def.sect.laplace.notations}.
+
 Let us first prove a simple combinatorial fact:
 
 \begin{lemma}
@@ -67254,9 +67264,9 @@ $S_{u}$)).
 
 Now, recall that $\varphi\left(  1\right)  <\varphi\left(  2\right)
 <\cdots<\varphi\left(  u\right)  $. In other words, $\varphi\left(  k\right)
-<\varphi\left(  k+1\right)  $ for each $k\in\left\{  1,2,\ldots,u\right\}  $.
-Hence, $\varphi\left(  k\right)  \leq\varphi\left(  k+1\right)  $ for each
-$k\in\left\{  1,2,\ldots,u\right\}  $. In other words, $\varphi\left(
+<\varphi\left(  k+1\right)  $ for each $k\in\left\{  1,2,\ldots,u-1\right\}
+$. Hence, $\varphi\left(  k\right)  \leq\varphi\left(  k+1\right)  $ for each
+$k\in\left\{  1,2,\ldots,u-1\right\}  $. In other words, $\varphi\left(
 1\right)  \leq\varphi\left(  2\right)  \leq\cdots\leq\varphi\left(  u\right)
 $. Hence, Proposition \ref{prop.sol.exe.ps2.2.5.d} (applied to $n=u$ and
 $\sigma=\varphi$) yields that $\varphi=\operatorname*{id}$. This proves Lemma
@@ -67410,8 +67420,8 @@ $w\left(  R\right)  $ has $u$ entries.)
 \par
 The list $w\left(  R\right)  $ is the list of all elements of $R$ in
 increasing order (with no repetitions). Hence, $w\left(  R\right)  $ is a list
-of all entries of $R$. In other words, $\left(  r_{1},r_{2},\ldots
-,r_{u}\right)  $ is a list of all entries of $R$ (since $w\left(  R\right)
+of all elements of $R$. In other words, $\left(  r_{1},r_{2},\ldots
+,r_{u}\right)  $ is a list of all elements of $R$ (since $w\left(  R\right)
 =\left(  r_{1},r_{2},\ldots,r_{u}\right)  $). Hence, $\left\{  r_{1}%
 ,r_{2},\ldots,r_{u}\right\}  =R$. Now, each $i\in\left\{  1,2,\ldots
 ,u\right\}  $ satisfies $r_{i}\in\left\{  r_{1},r_{2},\ldots,r_{u}\right\}
