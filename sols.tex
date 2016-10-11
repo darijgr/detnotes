@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Monday, October 10, 2016 17:53:39}
+%TCIDATA{LastRevised=Tuesday, October 11, 2016 17:55:26}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -23585,7 +23585,6 @@ rows are replaced by columns (and $n$ is renamed as $n+1$):
 B_{\bullet,r}=0_{n\times1}.
 \]
 
-
 \textbf{(b)} Write the matrix $B$ in the form $B=\left(  b_{i,j}\right)
 _{1\leq i\leq n,\ 1\leq j\leq n+1}$. Then,
 \[
@@ -28634,8 +28633,7 @@ that (\ref{sol.ps2.2.3.goal}) is proven for every $n<N$. We need to prove
 \end{equation}
 
 
-Recall that $N$ is a positive integer. Hence, we are in one of the following
-three cases:
+Recall that $N$ is a positive integer. Hence, we are in one of the following three cases:
 
 \textit{Case 1:} We have $N=1$.
 
@@ -53436,19 +53434,19 @@ $B^{T}=\left(  b_{j,i}\right)  _{1\leq i\leq m^{\prime},\ 1\leq j\leq n}$ (by
 the definition of $B^{T}$).
 
 Write the $n^{\prime}\times m$-matrix $C$ in the form $C=\left(
-a_{i,j}\right)  _{1\leq i\leq n^{\prime},\ 1\leq j\leq m}$. Thus,
+c_{i,j}\right)  _{1\leq i\leq n^{\prime},\ 1\leq j\leq m}$. Thus,
 $C^{T}=\left(  c_{j,i}\right)  _{1\leq i\leq m,\ 1\leq j\leq n^{\prime}}$ (by
 the definition of $C^{T}$).
 
 Write the $n^{\prime}\times m^{\prime}$-matrix $D$ in the form $D=\left(
-b_{i,j}\right)  _{1\leq i\leq n^{\prime},\ 1\leq j\leq m^{\prime}}$. Thus,
+d_{i,j}\right)  _{1\leq i\leq n^{\prime},\ 1\leq j\leq m^{\prime}}$. Thus,
 $D^{T}=\left(  d_{j,i}\right)  _{1\leq i\leq m^{\prime},\ 1\leq j\leq
 n^{\prime}}$ (by the definition of $D^{T}$).
 
 We have $A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq m}$,
 $B=\left(  b_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq m^{\prime}}$,
-$C=\left(  a_{i,j}\right)  _{1\leq i\leq n^{\prime},\ 1\leq j\leq m}$ and
-$D=\left(  b_{i,j}\right)  _{1\leq i\leq n^{\prime},\ 1\leq j\leq m^{\prime}}%
+$C=\left(  c_{i,j}\right)  _{1\leq i\leq n^{\prime},\ 1\leq j\leq m}$ and
+$D=\left(  d_{i,j}\right)  _{1\leq i\leq n^{\prime},\ 1\leq j\leq m^{\prime}}%
 $. Hence, (\ref{eq.def.block2x2.formal}) yields%
 \[
 \left(
@@ -53488,8 +53486,8 @@ b_{j,i-m}, & \text{if }j\leq n\text{ and }i>m;\\
 c_{j-n,i}, & \text{if }j>n\text{ and }i\leq m;\\
 d_{j-n,i-m}, & \text{if }j>n\text{ and }i>m
 \end{cases}
-\right)  _{1\leq i\leq m+m^{\prime},\ 1\leq j\leq n+n^{\prime}}.
-\label{pf.lem.block2x2.transpose.1}%
+\right)  _{1\leq i\leq m+m^{\prime},\ 1\leq j\leq n+n^{\prime}}%
+.\label{pf.lem.block2x2.transpose.1}%
 \end{align}
 
 
@@ -56328,7 +56326,7 @@ Hence, the definition of $\left(
 a_{i,j}, & \text{if }i\leq k\text{ and }j\leq\ell;\\
 a_{i,\ell+\left(  j-\ell\right)  }, & \text{if }i\leq k\text{ and }j>\ell;\\
 a_{k+\left(  i-k\right)  ,j}, & \text{if }i>k\text{ and }j\leq\ell;\\
-a_{k+\left(  i-k\right)  ,\ell+\left(  j-\ell\right)  } & \text{if }i>k\text{
+a_{k+\left(  i-k\right)  ,\ell+\left(  j-\ell\right)  }, & \text{if }i>k\text{
 and }j>\ell
 \end{cases}
 \right)  _{1\leq i\leq k+\left(  n-k\right)  ,\ 1\leq j\leq\ell+\left(
@@ -56338,7 +56336,7 @@ m-\ell\right)  }\nonumber\\
 a_{i,j}, & \text{if }i\leq k\text{ and }j\leq\ell;\\
 a_{i,\ell+\left(  j-\ell\right)  }, & \text{if }i\leq k\text{ and }j>\ell;\\
 a_{k+\left(  i-k\right)  ,j}, & \text{if }i>k\text{ and }j\leq\ell;\\
-a_{k+\left(  i-k\right)  ,\ell+\left(  j-\ell\right)  } & \text{if }i>k\text{
+a_{k+\left(  i-k\right)  ,\ell+\left(  j-\ell\right)  }, & \text{if }i>k\text{
 and }j>\ell
 \end{cases}
 \right)  _{1\leq i\leq n,\ 1\leq j\leq m}
@@ -56354,7 +56352,7 @@ But every $\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}
 a_{i,j}, & \text{if }i\leq k\text{ and }j\leq\ell;\\
 a_{i,\ell+\left(  j-\ell\right)  }, & \text{if }i\leq k\text{ and }j>\ell;\\
 a_{k+\left(  i-k\right)  ,j}, & \text{if }i>k\text{ and }j\leq\ell;\\
-a_{k+\left(  i-k\right)  ,\ell+\left(  j-\ell\right)  } & \text{if }i>k\text{
+a_{k+\left(  i-k\right)  ,\ell+\left(  j-\ell\right)  }, & \text{if }i>k\text{
 and }j>\ell
 \end{cases}
 \nonumber\\
@@ -56363,7 +56361,7 @@ and }j>\ell
 a_{i,j}, & \text{if }i\leq k\text{ and }j\leq\ell;\\
 a_{i,j}, & \text{if }i\leq k\text{ and }j>\ell;\\
 a_{k+\left(  i-k\right)  ,j}, & \text{if }i>k\text{ and }j\leq\ell;\\
-a_{k+\left(  i-k\right)  ,j} & \text{if }i>k\text{ and }j>\ell
+a_{k+\left(  i-k\right)  ,j}, & \text{if }i>k\text{ and }j>\ell
 \end{cases}
 \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\ell+\left(  j-\ell\right)  =j\right)
 \nonumber\\
@@ -56372,7 +56370,7 @@ a_{k+\left(  i-k\right)  ,j} & \text{if }i>k\text{ and }j>\ell
 a_{i,j}, & \text{if }i\leq k\text{ and }j\leq\ell;\\
 a_{i,j}, & \text{if }i\leq k\text{ and }j>\ell;\\
 a_{i,j}, & \text{if }i>k\text{ and }j\leq\ell;\\
-a_{i,j} & \text{if }i>k\text{ and }j>\ell
+a_{i,j}, & \text{if }i>k\text{ and }j>\ell
 \end{cases}
 \ \ \ \ \ \ \ \ \ \ \left(  \text{since }k+\left(  i-k\right)  =i\right)
 \nonumber\\
@@ -56394,7 +56392,7 @@ Now, (\ref{pf.lem.sol.block2x2.jacobi.rewr.1.1}) becomes%
 a_{i,j}, & \text{if }i\leq k\text{ and }j\leq\ell;\\
 a_{i,\ell+\left(  j-\ell\right)  }, & \text{if }i\leq k\text{ and }j>\ell;\\
 a_{k+\left(  i-k\right)  ,j}, & \text{if }i>k\text{ and }j\leq\ell;\\
-a_{k+\left(  i-k\right)  ,\ell+\left(  j-\ell\right)  } & \text{if }i>k\text{
+a_{k+\left(  i-k\right)  ,\ell+\left(  j-\ell\right)  }, & \text{if }i>k\text{
 and }j>\ell
 \end{cases}
 }_{\substack{=a_{i,j}\\\text{(by (\ref{pf.lem.sol.block2x2.jacobi.rewr.1.2}%
@@ -61369,7 +61367,7 @@ of $c$. In other words, $b_{j,i}=dc$ for some $d\in\mathbb{K}$. Consider this
 $d$. But Lemma \ref{lem.sol.altern.STAS.3} \textbf{(b)} (applied to $B$ and
 $b_{i,j}$ instead of $A$ and $a_{i,j}$) yields $b_{i,j}=-\underbrace{b_{j,i}%
 }_{=dc}=-dc=\left(  -d\right)  c$. Hence, the element $b_{i,j}$ of
-$\mathbb{K}$ is a multiple of $c$. Thus, Fact 3 is proven in Case 2.
+$\mathbb{K}$ is a multiple of $c$. Thus, Fact 2 is proven in Case 3.
 
 We have now proven Fact 2 in each of the three Cases 1, 2 and 3. Since these
 three Cases cover all possibilities, we thus conclude that Fact 2 always holds.]
