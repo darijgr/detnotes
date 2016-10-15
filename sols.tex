@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, October 15, 2016 00:23:53}
+%TCIDATA{LastRevised=Saturday, October 15, 2016 01:34:48}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -21123,7 +21123,8 @@ invertible elements of $\mathbb{K}^{n\times n}$ are exactly the invertible
 $n\times n$-matrices (by Example \ref{exa.rings.invertible-matrices}), we thus
 have shown that the set of all invertible $n\times n$-matrices is a group.
 This group is commonly denoted by $\operatorname*{GL}\nolimits_{n}\left(
-\mathbb{K}\right)  $.
+\mathbb{K}\right)  $; it is called the \textit{general linear group of degree
+}$n$ over $\mathbb{K}$.
 \end{remark}
 
 \subsection{Cramer's rule}
@@ -23614,6 +23615,7 @@ rows are replaced by columns (and $n$ is renamed as $n+1$):
 \sum_{r=1}^{n+1}\left(  -1\right)  ^{r}\det\left(  B_{\bullet,\sim r}\right)
 B_{\bullet,r}=0_{n\times1}.
 \]
+
 
 \textbf{(b)} Write the matrix $B$ in the form $B=\left(  b_{i,j}\right)
 _{1\leq i\leq n,\ 1\leq j\leq n+1}$. Then,
@@ -26437,7 +26439,44 @@ Hence, (\ref{eq.exe.1.2.claim}) is proven, and Exercise \ref{exe.ps1.1.2} solved
 \begin{remark}
 I learnt the above solution to Exercise \ref{exe.ps1.1.2}
 \href{http://www.artofproblemsolving.com/community/c6h299793p1623722}{from
-Gjergji Zaimi on AoPS}.
+Gjergji Zaimi on AoPS}. The numbers $c_{i,j}$ constructed in the solution do
+not appear to be easily computable by a simple closed formula. Nevertheless,
+they have some nice properties that can be easily obtained from their
+combinatorial definition:
+
+\begin{itemize}
+\item We have $c_{i,j}=c_{j,i}$ for all $i\in\mathbb{N}$ and $j\in\mathbb{N}$.
+
+\item We have $c_{0,0}=%
+\begin{cases}
+1, & \text{if }n=0;\\
+0, & \text{if }n>0
+\end{cases}
+$, but every positive integer $j$ satisfies $c_{0,j}=0$.
+
+\item We have $c_{1,j}=%
+\begin{cases}
+1, & \text{if }n=j;\\
+0, & \text{if }n\neq j
+\end{cases}
+$ for all positive integers $j$.
+
+\item We have $c_{2,2}=%
+\begin{cases}
+0, & \text{if }n\leq1;\\
+2, & \text{if }n=2;\\
+4, & \text{if }n=3;\\
+1, & \text{if }n=4;\\
+0, & \text{if }n>4
+\end{cases}
+$.
+
+\item We have $c_{i,j}=0$ if $n>ij$.
+
+\item For every $j\in\mathbb{N}$, the number $c_{n,j}$ is the number of all
+surjective maps $\left\{  1,2,\ldots,n\right\}  \rightarrow\left\{
+1,2,\ldots,j\right\}  $.
+\end{itemize}
 \end{remark}
 
 \subsection{Solution to Exercise \ref{exe.ps1.1.3}}
@@ -55598,8 +55637,8 @@ Hence, Lemma \ref{lem.sol.vander-hook.lap0} is proven in Case 1.
 Let us now consider Case 2. In this case, we have $q\neq r$. Hence,
 $\delta_{q,r}=0$, so that
 \begin{align*}
-\underbrace{\delta_{q,r}}_{=0}\det A  & =0\det A=0\\
-& =\sum_{p=1}^{n}\left(  -1\right)  ^{p+q}a_{p,r}\det\left(  A_{\sim p,\sim
+\underbrace{\delta_{q,r}}_{=0}\det A  &  =0\det A=0\\
+&  =\sum_{p=1}^{n}\left(  -1\right)  ^{p+q}a_{p,r}\det\left(  A_{\sim p,\sim
 q}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Proposition
 \ref{prop.laplace.0} \textbf{(b)}}\right)  .
 \end{align*}
@@ -55676,7 +55715,7 @@ Hence, Lemma \ref{lem.sol.vander-hook.AvsB} (applied to $n$, $x_{i}^{n-j}$ and
 $y_{i}^{n-j}$ instead of $m$, $a_{i,j}$ and $b_{i,j}$) yields that%
 \begin{equation}
 B_{\sim k,\sim q}=A_{\sim k,\sim q}\ \ \ \ \ \ \ \ \ \ \text{for every }%
-q\in\left\{  1,2,\ldots,n\right\}  .\label{pf.lem.sol.vander-hook.lap1.B.1}%
+q\in\left\{  1,2,\ldots,n\right\}  . \label{pf.lem.sol.vander-hook.lap1.B.1}%
 \end{equation}
 Moreover, the definition of $y_{k}$ satisfies $y_{k}=x_{k}+\underbrace{\delta
 _{k,k}}_{\substack{=1\\\text{(since }k=k\text{)}}}t=x_{k}+\underbrace{1t}%
@@ -55770,7 +55809,7 @@ _{q=1}^{n}\left(  -1\right)  ^{k+q}x_{k}^{n-q}\det\left(  A_{\sim k,\sim
 q}\right)  \\\text{(by Lemma \ref{lem.sol.vander-hook.lap1} \textbf{(a)})}}}\\
 &  =\sum_{q=1}^{n}\left(  -1\right)  ^{k+q}\left(  x_{k}+t\right)  ^{n-q}%
 \det\left(  A_{\sim k,\sim q}\right)  -\sum_{q=1}^{n}\left(  -1\right)
-^{k+q}x_{k}^{n-q}\det\left(  A_{\sim k,\sim q}\right)  \\
+^{k+q}x_{k}^{n-q}\det\left(  A_{\sim k,\sim q}\right) \\
 &  =\sum_{q=1}^{n}\left(  -1\right)  ^{k+q}\underbrace{\left(  \left(
 x_{k}+t\right)  ^{n-q}\det\left(  A_{\sim k,\sim q}\right)  -x_{k}^{n-q}%
 \det\left(  A_{\sim k,\sim q}\right)  \right)  }_{=\left(  \left(
@@ -55780,13 +55819,13 @@ q}\right)  }\\
 x_{k}+t\right)  ^{n-q}-x_{k}^{n-q}\right)  }_{\substack{=\sum_{\ell=1}%
 ^{n-q}\dbinom{n-q}{\ell}t^{\ell}x_{k}^{n-q-\ell}\\\text{(by
 (\ref{pf.lem.sol.vander-hook.lap1.c.binom-used}))}}}\det\left(  A_{\sim k,\sim
-q}\right)  \\
+q}\right) \\
 &  =\sum_{q=1}^{n}\left(  -1\right)  ^{k+q}\left(  \sum_{\ell=1}^{n-q}%
 \dbinom{n-q}{\ell}t^{\ell}x_{k}^{n-q-\ell}\right)  \det\left(  A_{\sim k,\sim
-q}\right)  \\
+q}\right) \\
 &  =\sum_{q=1}^{n}\sum_{\ell=1}^{n-q}\underbrace{\left(  -1\right)
 ^{k+q}\dbinom{n-q}{\ell}t^{\ell}}_{=\dbinom{n-q}{\ell}t^{\ell}\left(
--1\right)  ^{k+q}}x_{k}^{n-q-\ell}\det\left(  A_{\sim k,\sim q}\right)  \\
+-1\right)  ^{k+q}}x_{k}^{n-q-\ell}\det\left(  A_{\sim k,\sim q}\right) \\
 &  =\sum_{q=1}^{n}\sum_{\ell=1}^{n-q}\dbinom{n-q}{\ell}t^{\ell}\left(
 -1\right)  ^{k+q}x_{k}^{n-q-\ell}\det\left(  A_{\sim k,\sim q}\right)  .
 \end{align*}
@@ -56394,7 +56433,7 @@ I_{n} & 0_{n\times m}\\
 0, & \text{if }i>n\text{ and }j\leq n;\\
 \delta_{i-n,j-n}, & \text{if }i>n\text{ and }j>n
 \end{cases}
-\right)  _{1\leq i\leq n+m,\ 1\leq j\leq n+m}
+\right)  _{1\leq i\leq n+m,\ 1\leq j\leq n+m}.
 \label{pf.lem.sol.block2x2.jacobi.InIm.LHS}%
 \end{align}
 
@@ -56469,7 +56508,7 @@ following two subcases:
 \par
 \textit{Subcase 2.2:} We have $j>n$.
 \par
-Let us first consider Subcase 1.1. In this case, we have $j\leq n$. Hence,
+Let us first consider Subcase 2.1. In this case, we have $j\leq n$. Hence,
 $n\geq j$, and thus $i>n\geq j$. Hence, $i\neq j$, and thus $\delta_{i,j}=0$.
 But%
 \begin{align*}%
@@ -56485,7 +56524,7 @@ But%
 \end{align*}
 Thus, (\ref{pf.lem.sol.block2x2.jacobi.InIm.deldel}) is proven in Subcase 2.1.
 \par
-Let us next consider Subcase 1.2. In this case, we have $j>n$. But the
+Let us next consider Subcase 2.2. In this case, we have $j>n$. But the
 definition of $\delta_{i,j}$ yields $\delta_{i,j}=%
 \begin{cases}
 1, & \text{if }i=j;\\
@@ -56538,14 +56577,13 @@ holds. Qed.}.
 
 Now, (\ref{pf.lem.sol.block2x2.jacobi.InIm.LHS}) becomes%
 \begin{align*}
-&  \left(
+\left(
 \begin{array}
 [c]{cc}%
 I_{n} & 0_{n\times m}\\
 0_{m\times n} & I_{m}%
 \end{array}
-\right) \\
-&  =\left(  \underbrace{%
+\right)   &  =\left(  \underbrace{%
 \begin{cases}
 \delta_{i,j}, & \text{if }i\leq n\text{ and }j\leq n;\\
 0, & \text{if }i\leq n\text{ and }j>n;\\
@@ -56745,7 +56783,8 @@ d_{i-n,j-m}^{\prime}, & \text{if }i>n\text{ and }j>m
 \end{cases}
 \label{pf.lem.sol.block2x2.jacobi.equal.3}%
 \end{align}
-for every $\left(  i,j\right)  \in\left\{  1,2,\ldots,n+m\right\}  ^{2}$.
+for every $\left(  i,j\right)  \in\left\{  1,2,\ldots,n+n^{\prime}\right\}
+\times\left\{  1,2,\ldots,m+m^{\prime}\right\}  $.
 
 Every $\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}  \times\left\{
 1,2,\ldots,m\right\}  $ satisfies $a_{i,j}=a_{i,j}^{\prime}$%
@@ -59223,10 +59262,16 @@ Thus,%
 1\right)  ,\mathbf{d}_{w,v}\left(  2\right)  ,\ldots,\mathbf{d}_{w,v}\left(
 m-2\right)  }A=\left(  a_{i,\mathbf{d}_{w,v}\left(  y\right)  }\right)
 _{1\leq i\leq n,\ 1\leq y\leq m-2}\\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }%
-\operatorname*{cols}\nolimits_{\mathbf{d}_{w,v}\left(  1\right)
-,\mathbf{d}_{w,v}\left(  2\right)  ,\ldots,\mathbf{d}_{w,v}\left(  m-2\right)
-}A\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{by the definition of }\operatorname*{cols}\nolimits_{\mathbf{d}%
+_{w,v}\left(  1\right)  ,\mathbf{d}_{w,v}\left(  2\right)  ,\ldots
+,\mathbf{d}_{w,v}\left(  m-2\right)  }A\\
+\text{(since }A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+m}\text{)}%
+\end{array}
+\right) \\
 &  =\left(  a_{i,\mathbf{d}_{w,v}\left(  j\right)  }\right)  _{1\leq i\leq
 n,\ 1\leq j\leq m-2}%
 \end{align*}
@@ -59297,12 +59342,19 @@ Thus,%
 \operatorname*{cols}\nolimits_{1,2,\ldots,\widehat{v},\ldots,\widehat{w+1}%
 ,\ldots,m}A  &  =\operatorname*{cols}\nolimits_{\mathbf{d}_{v,w+1}\left(
 1\right)  ,\mathbf{d}_{v,w+1}\left(  2\right)  ,\ldots,\mathbf{d}%
-_{v,w+1}\left(  m-2\right)  }A=\left(  a_{i,\mathbf{d}_{v,w+1}\left(
-y\right)  }\right)  _{1\leq i\leq n,\ 1\leq y\leq m-2}\\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }%
-\operatorname*{cols}\nolimits_{\mathbf{d}_{v,w+1}\left(  1\right)
-,\mathbf{d}_{v,w+1}\left(  2\right)  ,\ldots,\mathbf{d}_{v,w+1}\left(
-m-2\right)  }A\right) \\
+_{v,w+1}\left(  m-2\right)  }A\\
+&  =\left(  a_{i,\mathbf{d}_{v,w+1}\left(  y\right)  }\right)  _{1\leq i\leq
+n,\ 1\leq y\leq m-2}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{by the definition of }\operatorname*{cols}\nolimits_{\mathbf{d}%
+_{v,w+1}\left(  1\right)  ,\mathbf{d}_{v,w+1}\left(  2\right)  ,\ldots
+,\mathbf{d}_{v,w+1}\left(  m-2\right)  }A\\
+\text{(since }A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+m}\text{)}%
+\end{array}
+\right) \\
 &  =\left(  a_{i,\mathbf{d}_{v,w+1}\left(  j\right)  }\right)  _{1\leq i\leq
 n,\ 1\leq j\leq m-2}%
 \end{align*}
@@ -71324,6 +71376,12 @@ Computational Discrete Mathematics, Lecture Notes in Computer Science, Volume
 
 \bibitem[Rotman15]{Rotman15}Joseph J. Rotman, \textit{Advanced Modern Algebra:
 Part 1}, Graduate Studies in Mathematics \#165, 3rd edition, AMS 2015.
+
+\bibitem[Scott13]{m.se440222}%
+\href{http://math.stackexchange.com/q/440222}{Brian M. Scott,
+\textit{math.stackexchange post \#440222 (\textquotedblleft Number of
+}$\left(  0,1\right)  $ $m\times n$\textit{ matrices with no empty rows or
+columns\textquotedblright)}.}
 
 \bibitem[Silvest]{Silvest}%
 \href{https://web.archive.org/web/20140505161153/http://www.mth.kcl.ac.uk/~jrs/gazette/blocks.pdf}{John
