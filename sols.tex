@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, October 15, 2016 01:34:48}
+%TCIDATA{LastRevised=Saturday, October 15, 2016 02:30:52}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -55312,6 +55312,8 @@ Throughout this section, we shall use the notation $V\left(  y_{1}%
 ,y_{2},\ldots,y_{n}\right)  $ defined in Exercise \ref{exe.vander-hook}. Let
 us now make some preparations for solving Exercise \ref{exe.vander-hook}.
 
+\subsubsection{Lemmas}
+
 \begin{definition}
 If $i$ and $j$ are two objects, then $\delta_{i,j}$ is defined to be the
 element $%
@@ -55903,8 +55905,11 @@ Thus,%
 A_{\sim p,\sim q}\right)  =\sum_{k=1}^{n}\left(  -1\right)  ^{k+q}%
 x_{k}^{n-q-\ell+1}\det\left(  A_{\sim k,\sim q}\right)
 \end{align*}
-(here, we have renamed the summation index $p$ as $k$).
+(here, we have renamed the summation index $p$ as $k$). This proves Lemma
+\ref{lem.sol.vander-hook.lap2}.
 \end{proof}
+
+\subsubsection{The solution}
 
 \begin{vershort}
 \begin{proof}
@@ -56179,6 +56184,133 @@ This solves Exercise \ref{exe.vander-hook}.
 \end{proof}
 \end{verlong}
 
+\subsubsection{Addendum: a simpler variant}
+
+Exercise \ref{exe.vander-hook} is now solved, but let me discuss one further
+fact, which is a variation on it. Namely, the following holds:
+
+\begin{proposition}
+\label{prop.sol.vander-hook.variant}Let $n\in\mathbb{N}$. Let $x_{1}%
+,x_{2},\ldots,x_{n}$ be $n$ elements of $\mathbb{K}$. Let $t\in\mathbb{K}$.
+Then,%
+\begin{align*}
+&  \sum_{k=1}^{n}V\left(  x_{1},x_{2},\ldots,x_{k-1},x_{k}+t,x_{k+1}%
+,x_{k+2},\ldots,x_{n}\right)  \\
+&  =\left(  \sum_{k=1}^{n}x_{k}\right)  V\left(  x_{1},x_{2},\ldots
+,x_{n}\right)  .
+\end{align*}
+
+\end{proposition}
+
+We can prove this similarly to how we solved Exercise \ref{exe.vander-hook}.
+Instead of Lemma \ref{lem.sol.vander-hook.lap2}, we use the following variant
+of this lemma:
+
+\begin{lemma}
+\label{lem.sol.vander-hook.lap2.variant}Let $n\in\mathbb{N}$. Let $x_{1}%
+,x_{2},\ldots,x_{n}$ be $n$ elements of $\mathbb{K}$. Let $A$ be the $n\times
+n$-matrix $\left(  x_{i}^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$. Let
+$q\in\left\{  1,2,\ldots,n\right\}  $. Let $\ell\in\left\{  1,2,\ldots
+,n-q\right\}  $. Then,%
+\[
+\sum_{k=1}^{n}\left(  -1\right)  ^{k+q}x_{k}^{n-q-\ell}\det\left(  A_{\sim
+k,\sim q}\right)  =0.
+\]
+
+\end{lemma}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.vander-hook.lap2.variant}.]Left to the reader.
+(Very similar to the above proof of Lemma \ref{lem.sol.vander-hook.lap2}.)
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.vander-hook.lap2.variant}.]From $\ell\in\left\{
+1,2,\ldots,n-q\right\}  $, we obtain $\ell\geq1$ and $\ell\leq n-q$. Now,
+$q+\underbrace{\ell}_{\leq n-q}\leq q+\left(  n-q\right)  =n$. Also,
+$q\in\left\{  1,2,\ldots,n\right\}  $, so that $q\geq1$. Hence,
+$\underbrace{q}_{\geq1}+\underbrace{\ell}_{\geq1}\geq1+1\geq1$. Combining this
+with $q+\ell\leq n$, we obtain $q+\ell\in\left\{  1,2,\ldots,n\right\}  $.
+
+From $q+\underbrace{\ell}_{\geq1>0}>q$, we obtain $q+\ell\neq q$. Hence,
+$q\neq q+\ell$ and thus $\delta_{q,q+\ell}=0$.
+
+We have $A=\left(  x_{i}^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ (by
+the definition of $A$) and $q+\ell\in\left\{  1,2,\ldots,n\right\}  $. Hence,
+Lemma \ref{lem.sol.vander-hook.lap0} (applied to $x_{i}^{n-j}$ and $q+\ell$
+instead of $a_{i,j}$ and $r$) yields%
+\[
+\sum_{p=1}^{n}\left(  -1\right)  ^{p+q}x_{p}^{n-\left(  q+\ell\right)  }%
+\det\left(  A_{\sim p,\sim q}\right)  =\underbrace{\delta_{q,q+\ell}}_{=0}\det
+A=0\det A=0.
+\]
+Thus,%
+\begin{align*}
+0  &  =\sum_{p=1}^{n}\left(  -1\right)  ^{p+q}\underbrace{x_{p}^{n-\left(
+q+\ell\right)  }}_{\substack{=x_{p}^{n-q-\ell}\\\text{(since }n-\left(
+q+\ell\right)  =n-q-\ell\text{)}}}\det\left(  A_{\sim p,\sim q}\right) \\
+&  =\sum_{p=1}^{n}\left(  -1\right)  ^{p+q}x_{p}^{n-q-\ell}\det\left(  A_{\sim
+p,\sim q}\right)  =\sum_{k=1}^{n}\left(  -1\right)  ^{k+q}x_{k}^{n-q-\ell}%
+\det\left(  A_{\sim k,\sim q}\right)
+\end{align*}
+(here, we have renamed the summation index $p$ as $k$). Lemma
+\ref{lem.sol.vander-hook.lap2.variant} is therefore proven.
+\end{proof}
+\end{verlong}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Proposition \ref{prop.sol.vander-hook.variant}.]This proof is
+similar to our solution of Exercise \ref{exe.vander-hook}, but a lot simpler.
+Again, the reader can fill in the details.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+\item[Proof of Proposition \ref{prop.sol.vander-hook.variant}.] Let $A$ be the
+$n\times n$-matrix $\left(  x_{i}^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}$. We have%
+\begin{align}
+&  \sum_{k=1}^{n}V\left(  x_{1},x_{2},\ldots,x_{k-1},x_{k}+t,x_{k+1}%
+,x_{k+2},\ldots,x_{n}\right) \nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ -\sum_{k=1}^{n}V\left(  x_{1},x_{2},\ldots,x_{n}\right)
+\nonumber\\
+&  =\sum_{k=1}^{n}\underbrace{\left(  V\left(  x_{1},x_{2},\ldots
+,x_{k-1},x_{k}+t,x_{k+1},x_{k+2},\ldots,x_{n}\right)  -V\left(  x_{1}%
+,x_{2},\ldots,x_{n}\right)  \right)  }_{\substack{=\sum_{q=1}^{n}\sum_{\ell
+=1}^{n-q}\dbinom{n-q}{\ell}t^{\ell}\left(  -1\right)  ^{k+q}x_{k}^{n-q-\ell
+}\det\left(  A_{\sim k,\sim q}\right)  \\\text{(by Lemma
+\ref{lem.sol.vander-hook.lap1} \textbf{(c)})}}}\nonumber\\
+&  =\underbrace{\sum_{k=1}^{n}\sum_{q=1}^{n}\sum_{\ell=1}^{n-q}}_{=\sum
+_{q=1}^{n}\sum_{\ell=1}^{n-q}\sum_{k=1}^{n}}\dbinom{n-q}{\ell}t^{\ell}\left(
+-1\right)  ^{k+q}x_{k}^{n-q-\ell}\det\left(  A_{\sim k,\sim q}\right)
+\nonumber\\
+&  =\sum_{q=1}^{n}\sum_{\ell=1}^{n-q}\underbrace{\sum_{k=1}^{n}\dbinom
+{n-q}{\ell}t^{\ell}\left(  -1\right)  ^{k+q}x_{k}^{n-q-\ell}\det\left(
+A_{\sim k,\sim q}\right)  }_{=\dbinom{n-q}{\ell}t^{\ell}\sum_{k=1}^{n}\left(
+-1\right)  ^{k+q}x_{k}^{n-q-\ell}\det\left(  A_{\sim k,\sim q}\right)
+}\nonumber\\
+&  =\sum_{q=1}^{n}\sum_{\ell=1}^{n-q}\dbinom{n-q}{\ell}t^{\ell}%
+\underbrace{\sum_{k=1}^{n}\left(  -1\right)  ^{k+q}x_{k}^{n-q-\ell}\det\left(
+A_{\sim k,\sim q}\right)  }_{\substack{=0\\\text{(by Lemma
+\ref{lem.sol.vander-hook.lap2.variant})}}}\nonumber\\
+&  =\sum_{q=1}^{n}\sum_{\ell=1}^{n-q}\dbinom{n-q}{\ell}t^{\ell}0=0.\nonumber
+\end{align}
+In other words,%
+\begin{align*}
+&  \sum_{k=1}^{n}V\left(  x_{1},x_{2},\ldots,x_{k-1},x_{k}+t,x_{k+1}%
+,x_{k+2},\ldots,x_{n}\right) \\
+&  =\left(  \sum_{k=1}^{n}x_{k}\right)  V\left(  x_{1},x_{2},\ldots
+,x_{n}\right)  .
+\end{align*}
+This proves Proposition \ref{prop.sol.vander-hook.variant}.
+\end{proof}
+\end{verlong}
+
 \subsection{Solution to Exercise \ref{exe.block2x2.VB+WD}}
 
 \begin{proof}
@@ -56390,12 +56522,16 @@ I_{n} & 0_{n\times m}\\
 \end{lemma}
 
 \begin{vershort}
+
+
 \begin{proof}
 [Proof of Lemma \ref{lem.sol.block2x2.jacobi.InIm}.]Easy, and left to the reader.
 \end{proof}
 \end{vershort}
 
 \begin{verlong}
+
+
 \begin{proof}
 [Proof of Lemma \ref{lem.sol.block2x2.jacobi.InIm}.]For any two objects $i$
 and $j$, define an element $\delta_{i,j}\in\mathbb{K}$ by $\delta_{i,j}=%
@@ -56636,12 +56772,16 @@ $D=D^{\prime}$.
 \end{lemma}
 
 \begin{vershort}
+
+
 \begin{proof}
 [Proof of Lemma \ref{lem.sol.block2x2.jacobi.equal}.]Easy, and left to the reader.
 \end{proof}
 \end{vershort}
 
 \begin{verlong}
+
+
 \begin{proof}
 [Proof of Lemma \ref{lem.sol.block2x2.jacobi.equal}.]Write the matrix
 $A\in\mathbb{K}^{n\times m}$ in the form $A=\left(  a_{i,j}\right)  _{1\leq
@@ -57186,6 +57326,8 @@ A=\left(
 \end{lemma}
 
 \begin{vershort}
+
+
 \begin{proof}
 [Proof of Lemma \ref{lem.sol.block2x2.jacobi.rewr.1}.]In visual language,
 Lemma \ref{lem.sol.block2x2.jacobi.rewr.1} states a triviality: It says that
@@ -57202,6 +57344,8 @@ Turning this into a formal is straightforward.
 \end{vershort}
 
 \begin{verlong}
+
+
 \begin{proof}
 [Proof of Lemma \ref{lem.sol.block2x2.jacobi.rewr.1}.]Write the matrix
 $A\in\mathbb{K}^{n\times m}$ in the form $A=\left(  a_{i,j}\right)  _{1\leq
@@ -57439,6 +57583,8 @@ This solves Exercise \ref{exe.block2x2.jacobi.rewr}.
 \subsection{Solution to Exercise \ref{exe.unrows.basics}}
 
 \begin{vershort}
+
+
 \begin{proof}
 [Solution to Exercise \ref{exe.unrows.basics}.]\textbf{(a)} All claims of
 Proposition \ref{prop.unrows.basics} and Proposition
