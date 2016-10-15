@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Tuesday, October 11, 2016 17:55:26}
+%TCIDATA{LastRevised=Saturday, October 15, 2016 00:23:53}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -19970,6 +19970,36 @@ n$-matrices. Prove that%
 
 \end{exercise}
 
+Let me end this section with another application of Proposition
+\ref{prop.laplace.0}:
+
+\begin{exercise}
+\label{exe.vander-hook}Let $n\in\mathbb{N}$. For every $n$ elements
+$y_{1},y_{2},\ldots,y_{n}$ of $\mathbb{K}$, we define an element $V\left(
+y_{1},y_{2},\ldots,y_{n}\right)  $ of $\mathbb{K}$ by
+\[
+V\left(  y_{1},y_{2},\ldots,y_{n}\right)  =\prod_{1\leq i<j\leq n}\left(
+y_{i}-y_{j}\right)  .
+\]
+
+
+Let $x_{1},x_{2},\ldots,x_{n}$ be $n$ elements of $\mathbb{K}$. Let
+$t\in\mathbb{K}$. Prove that%
+\begin{align*}
+&  \sum_{k=1}^{n}x_{k}V\left(  x_{1},x_{2},\ldots,x_{k-1},x_{k}+t,x_{k+1}%
+,x_{k+2},\ldots,x_{n}\right) \\
+&  =\left(  \dbinom{n}{2}t+\sum_{k=1}^{n}x_{k}\right)  V\left(  x_{1}%
+,x_{2},\ldots,x_{n}\right)  .
+\end{align*}
+
+
+[\textbf{Hint:} Use Theorem \ref{thm.vander-det}, Laplace expansion,
+Proposition \ref{prop.laplace.0} and the binomial formula.]
+\end{exercise}
+
+Exercise \ref{exe.vander-hook} is part of \cite[\S 4.3, Exercise
+10]{Fulton-Young}.
+
 \subsection{Inverting matrices}
 
 We now will study inverses of matrices. We begin with a definition:
@@ -28633,7 +28663,8 @@ that (\ref{sol.ps2.2.3.goal}) is proven for every $n<N$. We need to prove
 \end{equation}
 
 
-Recall that $N$ is a positive integer. Hence, we are in one of the following three cases:
+Recall that $N$ is a positive integer. Hence, we are in one of the following
+three cases:
 
 \textit{Case 1:} We have $N=1$.
 
@@ -53486,8 +53517,8 @@ b_{j,i-m}, & \text{if }j\leq n\text{ and }i>m;\\
 c_{j-n,i}, & \text{if }j>n\text{ and }i\leq m;\\
 d_{j-n,i-m}, & \text{if }j>n\text{ and }i>m
 \end{cases}
-\right)  _{1\leq i\leq m+m^{\prime},\ 1\leq j\leq n+n^{\prime}}%
-.\label{pf.lem.block2x2.transpose.1}%
+\right)  _{1\leq i\leq m+m^{\prime},\ 1\leq j\leq n+n^{\prime}}.
+\label{pf.lem.block2x2.transpose.1}%
 \end{align}
 
 
@@ -55233,6 +55264,879 @@ j\leq n}.
 Compared with (\ref{sol.adj(AB).L2}), this yields $\operatorname*{adj}\left(
 AB\right)  =\operatorname*{adj}B\cdot\operatorname*{adj}A$. This solves
 Exercise \ref{exe.adj(AB)}.
+\end{proof}
+\end{verlong}
+
+\subsection{Solution to Exercise \ref{exe.vander-hook}}
+
+Throughout this section, we shall use the notation $V\left(  y_{1}%
+,y_{2},\ldots,y_{n}\right)  $ defined in Exercise \ref{exe.vander-hook}. Let
+us now make some preparations for solving Exercise \ref{exe.vander-hook}.
+
+\begin{definition}
+If $i$ and $j$ are two objects, then $\delta_{i,j}$ is defined to be the
+element $%
+\begin{cases}
+1, & \text{if }i=j;\\
+0, & \text{if }i\neq j
+\end{cases}
+$ of $\mathbb{K}$.
+\end{definition}
+
+Let us now prove three mostly trivial lemmas:
+
+\begin{lemma}
+\label{lem.sol.vander-hook.deltas}Let $n\in\mathbb{N}$. Let $x_{1}%
+,x_{2},\ldots,x_{n}$ be $n$ elements of $\mathbb{K}$. Let $t\in\mathbb{K}$.
+Let $k\in\left\{  1,2,\ldots,n\right\}  $. For each $j\in\left\{
+1,2,\ldots,n\right\}  $, set $y_{j}=x_{j}+\delta_{j,k}t$. Then,%
+\[
+\left(  x_{1},x_{2},\ldots,x_{k-1},x_{k}+t,x_{k+1},x_{k+2},\ldots
+,x_{n}\right)  =\left(  y_{1},y_{2},\ldots,y_{n}\right)  .
+\]
+
+\end{lemma}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.vander-hook.deltas}.]For each $j\in\left\{
+1,2,\ldots,n\right\}  $, we have%
+\begin{align*}
+&  \left(  \text{the }j\text{-th entry of the list }\left(  y_{1},y_{2}%
+,\ldots,y_{n}\right)  \right) \\
+&  =y_{j}=x_{j}+\underbrace{\delta_{j,k}}_{=%
+\begin{cases}
+1, & \text{if }j=k;\\
+0, & \text{if }j\neq k
+\end{cases}
+}t=x_{j}+%
+\begin{cases}
+1, & \text{if }j=k;\\
+0, & \text{if }j\neq k
+\end{cases}
+t\\
+&  =%
+\begin{cases}
+x_{j}+1t, & \text{if }j=k;\\
+x_{j}+0t, & \text{if }j\neq k
+\end{cases}
+=%
+\begin{cases}
+x_{j}+t, & \text{if }j=k;\\
+x_{j}, & \text{if }j\neq k
+\end{cases}
+\\
+&  =%
+\begin{cases}
+x_{k}+t, & \text{if }j=k;\\
+x_{j}, & \text{if }j\neq k
+\end{cases}
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }x_{j}=x_{k}\text{ in the case when
+}j=k\right) \\
+&  =\left(  \text{the }j\text{-th entry of the list }\left(  x_{1}%
+,x_{2},\ldots,x_{k-1},x_{k}+t,x_{k+1},x_{k+2},\ldots,x_{n}\right)  \right)  .
+\end{align*}
+Hence, $\left(  y_{1},y_{2},\ldots,y_{n}\right)  =\left(  x_{1},x_{2}%
+,\ldots,x_{k-1},x_{k}+t,x_{k+1},x_{k+2},\ldots,x_{n}\right)  $. This proves
+Lemma \ref{lem.sol.vander-hook.deltas}.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.vander-hook.deltas}.]If $\alpha$ and $\beta$ are
+two finite lists of elements of $\mathbb{K}$, then we define a new finite list
+$\alpha\ast\beta$ of elements of $\mathbb{K}$ by setting%
+\[
+\alpha\ast\beta=\left(  \alpha_{1},\alpha_{2},\ldots,\alpha_{a},\beta
+_{1},\beta_{2},\ldots,\beta_{b}\right)  ,
+\]
+where $\alpha$ is written in the form $\left(  \alpha_{1},\alpha_{2}%
+,\ldots,\alpha_{a}\right)  $, and where $\beta$ is written in the form
+$\left(  \beta_{1},\beta_{2},\ldots,\beta_{b}\right)  $. This new list
+$\alpha\ast\beta$ is called the \textit{concatenation} of the lists $\alpha$
+and $\beta$. If $\alpha$, $\beta$ and $\gamma$ are three finite lists of
+elements of $\mathbb{K}$, then the two lists $\left(  \alpha\ast\beta\right)
+\ast\gamma$ and $\alpha\ast\left(  \beta\ast\gamma\right)  $ are identical. In
+other words, concatenation of finite lists is an associative operation. Thus,
+we are able to write $\alpha\ast\beta\ast\gamma$ for any of the two identical
+lists $\left(  \alpha\ast\beta\right)  \ast\gamma$ and $\alpha\ast\left(
+\beta\ast\gamma\right)  $ whenever $\alpha$, $\beta$ and $\gamma$ are three
+finite lists of elements of $\mathbb{K}$.
+
+Now, $x_{j}=y_{j}$ for each $j\in\left\{  1,2,\ldots,k-1\right\}
+$\ \ \ \ \footnote{\textit{Proof.} Let $j\in\left\{  1,2,\ldots,k-1\right\}
+$. Then, $j\leq k-1<k$, hence $j\neq k$. Now, the definition of $y_{j}$ yields
+$y_{j}=x_{j}+\underbrace{\delta_{j,k}}_{\substack{=0\\\text{(since }j\neq
+k\text{)}}}t=x_{j}+\underbrace{0t}_{=0}=x_{j}$. In other words, $x_{j}=y_{j}$.
+Qed.}. In other words, $\left(  x_{1},x_{2},\ldots,x_{k-1}\right)  =\left(
+y_{1},y_{2},\ldots,y_{k-1}\right)  $.
+
+The definition of $y_{k}$ yields $y_{k}=x_{k}+\underbrace{\delta_{k,k}%
+}_{\substack{=1\\\text{(since }k=k\text{)}}}t=x_{k}+\underbrace{1t}_{=t}%
+=x_{k}+t$. In other words, $x_{k}+t=y_{k}$.
+
+Also, $x_{j}=y_{j}$ for each $j\in\left\{  k+1,k+2,\ldots,n\right\}
+$\ \ \ \ \footnote{\textit{Proof.} Let $j\in\left\{  k+1,k+2,\ldots,n\right\}
+$. Then, $j\geq k+1>k$, hence $j\neq k$. Now, the definition of $y_{j}$ yields
+$y_{j}=x_{j}+\underbrace{\delta_{j,k}}_{\substack{=0\\\text{(since }j\neq
+k\text{)}}}t=x_{j}+\underbrace{0t}_{=0}=x_{j}$. In other words, $x_{j}=y_{j}$.
+Qed.}. In other words, $\left(  x_{k+1},x_{k+2},\ldots,x_{n}\right)  =\left(
+y_{k+1},y_{k+2},\ldots,y_{n}\right)  $.
+
+Now,%
+\begin{align*}
+&  \left(  x_{1},x_{2},\ldots,x_{k-1},x_{k}+t,x_{k+1},x_{k+2},\ldots
+,x_{n}\right) \\
+&  =\underbrace{\left(  x_{1},x_{2},\ldots,x_{k-1},x_{k}+t\right)  }_{=\left(
+x_{1},x_{2},\ldots,x_{k-1}\right)  \ast\left(  x_{k}+t\right)  }\ast\left(
+x_{k+1},x_{k+2},\ldots,x_{n}\right) \\
+&  =\underbrace{\left(  x_{1},x_{2},\ldots,x_{k-1}\right)  }_{=\left(
+y_{1},y_{2},\ldots,y_{k-1}\right)  }\ast\left(  \underbrace{x_{k}+t}_{=y_{k}%
+}\right)  \ast\underbrace{\left(  x_{k+1},x_{k+2},\ldots,x_{n}\right)
+}_{=\left(  y_{k+1},y_{k+2},\ldots,y_{n}\right)  }\\
+&  =\underbrace{\left(  y_{1},y_{2},\ldots,y_{k-1}\right)  \ast\left(
+y_{k}\right)  }_{=\left(  y_{1},y_{2},\ldots,y_{k-1},y_{k}\right)  =\left(
+y_{1},y_{2},\ldots,y_{k}\right)  }\ast\left(  y_{k+1},y_{k+2},\ldots
+,y_{n}\right) \\
+&  =\left(  y_{1},y_{2},\ldots,y_{k}\right)  \ast\left(  y_{k+1}%
+,y_{k+2},\ldots,y_{n}\right)  =\left(  y_{1},y_{2},\ldots,y_{k},y_{k+1}%
+,y_{k+2},\ldots,y_{n}\right) \\
+&  =\left(  y_{1},y_{2},\ldots,y_{n}\right)  .
+\end{align*}
+This proves Lemma \ref{lem.sol.vander-hook.deltas}.
+\end{proof}
+\end{verlong}
+
+\begin{lemma}
+\label{lem.sol.vander-hook.V=}Let $n\in\mathbb{N}$. Let $y_{1},y_{2}%
+,\ldots,y_{n}$ be $n$ elements of $\mathbb{K}$. Then,%
+\[
+V\left(  y_{1},y_{2},\ldots,y_{n}\right)  =\det\left(  \left(  y_{i}%
+^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  .
+\]
+
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.vander-hook.V=}.]Theorem \ref{thm.vander-det}
+\textbf{(a)} (applied to $x_{i}=y_{i}$) yields%
+\[
+\det\left(  \left(  y_{i}^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}\right)  =\prod_{1\leq i<j\leq n}\left(  y_{i}-y_{j}\right)  .
+\]
+Comparing this with%
+\[
+V\left(  y_{1},y_{2},\ldots,y_{n}\right)  =\prod_{1\leq i<j\leq n}\left(
+y_{i}-y_{j}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of
+}V\left(  y_{1},y_{2},\ldots,y_{n}\right)  \right)  ,
+\]
+we obtain $V\left(  y_{1},y_{2},\ldots,y_{n}\right)  =\det\left(  \left(
+y_{i}^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  $. Thus, Lemma
+\ref{lem.sol.vander-hook.V=} is proven.
+\end{proof}
+
+\begin{lemma}
+\label{lem.sol.vander-hook.AvsB}Let $n\in\mathbb{N}$ and $m\in\mathbb{N}$. Let
+$k\in\left\{  1,2,\ldots,n\right\}  $. Let $A=\left(  a_{i,j}\right)  _{1\leq
+i\leq n,\ 1\leq j\leq m}$ and $B=\left(  b_{i,j}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq m}$ be two $n\times m$-matrices. Assume that every
+$i\in\left\{  1,2,\ldots,n\right\}  $ and $j\in\left\{  1,2,\ldots,m\right\}
+$ satisfying $i\neq k$ satisfy%
+\begin{equation}
+a_{i,j}=b_{i,j}. \label{eq.lem.sol.vander-hook.AvsB.ass}%
+\end{equation}
+Then, $B_{\sim k,\sim q}=A_{\sim k,\sim q}$ for every $q\in\left\{
+1,2,\ldots,m\right\}  $.
+\end{lemma}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.vander-hook.AvsB}.]Let $q\in\left\{
+1,2,\ldots,m\right\}  $. The condition (\ref{eq.lem.sol.vander-hook.AvsB.ass})
+shows that the matrices $A$ and $B$ agree in all their entries except for
+those in the respective $k$-th rows of the matrices. Therefore, the matrices
+$A_{\sim k,\sim q}$ and $B_{\sim k,\sim q}$ must agree completely (since they
+are obtained from the matrices $A$ and $B$ by removing the $k$-th rows and the
+$q$-th columns). In other words, $A_{\sim k,\sim q}=B_{\sim k,\sim q}$. This
+proves Lemma \ref{lem.sol.vander-hook.AvsB}.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.vander-hook.AvsB}.]Let $q\in\left\{
+1,2,\ldots,m\right\}  $.
+
+Denote the list $\left(  1,2,\ldots,\widehat{k},\ldots,n\right)  $ by $\left(
+u_{1},u_{2},\ldots,u_{n-1}\right)  $. (This is possible, since the list
+$\left(  1,2,\ldots,\widehat{k},\ldots,n\right)  $ has size $n-1$.) Then,
+$\left(  u_{1},u_{2},\ldots,u_{n-1}\right)  =\left(  1,2,\ldots,\widehat{k}%
+,\ldots,n\right)  $. Now, every $x\in\left\{  1,2,\ldots,n-1\right\}  $
+satisfies%
+\begin{align}
+u_{x}  &  \in\left\{  u_{1},u_{2},\ldots,u_{n-1}\right\}  =\left\{
+1,2,\ldots,\widehat{k},\ldots,n\right\} \nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(  u_{1},u_{2},\ldots
+,u_{n-1}\right)  =\left(  1,2,\ldots,\widehat{k},\ldots,n\right)  \right)
+\nonumber\\
+&  =\left\{  1,2,\ldots,n\right\}  \setminus\left\{  k\right\}  .
+\label{pf.lem.sol.vander-hook.AvsB.uxin}%
+\end{align}
+
+
+Denote the list $\left(  1,2,\ldots,\widehat{q},\ldots,m\right)  $ by $\left(
+v_{1},v_{2},\ldots,v_{m-1}\right)  $. (This is possible, since the list
+$\left(  1,2,\ldots,\widehat{q},\ldots,m\right)  $ has size $m-1$.) Then,
+$\left(  v_{1},v_{2},\ldots,v_{m-1}\right)  =\left(  1,2,\ldots,\widehat{q}%
+,\ldots,m\right)  $. Now, every $y\in\left\{  1,2,\ldots,m-1\right\}  $
+satisfies%
+\begin{align}
+v_{y}  &  \in\left\{  v_{1},v_{2},\ldots,v_{m-1}\right\}  =\left\{
+1,2,\ldots,\widehat{q},\ldots,m\right\} \nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(  v_{1},v_{2},\ldots
+,v_{m-1}\right)  =\left(  1,2,\ldots,\widehat{q},\ldots,m\right)  \right)
+\nonumber\\
+&  =\left\{  1,2,\ldots,m\right\}  \setminus\left\{  q\right\}  .
+\label{pf.lem.sol.vander-hook.AvsB.vyin}%
+\end{align}
+
+
+Every $\left(  x,y\right)  \in\left\{  1,2,\ldots,n-1\right\}  \times\left\{
+1,2,\ldots,m-1\right\}  $ satisfies%
+\begin{equation}
+a_{u_{x},v_{y}}=b_{u_{x},v_{y}} \label{pf.lem.sol.vander-hook.AvsB.a=b}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.sol.vander-hook.AvsB.a=b}):} Let
+$\left(  x,y\right)  \in\left\{  1,2,\ldots,n-1\right\}  \times\left\{
+1,2,\ldots,m-1\right\}  $. Thus, $x\in\left\{  1,2,\ldots,n-1\right\}  $ and
+$y\in\left\{  1,2,\ldots,m-1\right\}  $.
+\par
+Now, (\ref{pf.lem.sol.vander-hook.AvsB.uxin}) shows that $u_{x}\in\left\{
+1,2,\ldots,n\right\}  \setminus\left\{  k\right\}  $. In other words,
+$u_{x}\in\left\{  1,2,\ldots,n\right\}  $ and $u_{x}\neq k$. Also,
+(\ref{pf.lem.sol.vander-hook.AvsB.vyin}) yields $v_{y}\in\left\{
+1,2,\ldots,m\right\}  \setminus\left\{  q\right\}  \subseteq\left\{
+1,2,\ldots,m\right\}  $. Hence, (\ref{eq.lem.sol.vander-hook.AvsB.ass})
+(applied to $i=u_{x}$ and $j=v_{y}$) yields $a_{u_{x},v_{y}}=b_{u_{x},v_{y}}$.
+This proves (\ref{pf.lem.sol.vander-hook.AvsB.a=b}).}
+
+The definition of $A_{\sim k,\sim q}$ yields
+\begin{align}
+A_{\sim k,\sim q}  &  =\operatorname*{sub}\nolimits_{1,2,\ldots,\widehat{k}%
+,\ldots,n}^{1,2,\ldots,\widehat{q},\ldots,m}A=\operatorname*{sub}%
+\nolimits_{u_{1},u_{2},\ldots,u_{n-1}}^{1,2,\ldots,\widehat{q},\ldots
+,m}A\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(  1,2,\ldots,\widehat{k}%
+,\ldots,n\right)  =\left(  u_{1},u_{2},\ldots,u_{n-1}\right)  \right)
+\nonumber\\
+&  =\operatorname*{sub}\nolimits_{u_{1},u_{2},\ldots,u_{n-1}}^{v_{1}%
+,v_{2},\ldots,v_{m-1}}A\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(  1,2,\ldots,\widehat{q}%
+,\ldots,m\right)  =\left(  v_{1},v_{2},\ldots,v_{m-1}\right)  \right)
+\nonumber\\
+&  =\left(  a_{u_{x},v_{y}}\right)  _{1\leq x\leq n-1,\ 1\leq y\leq m-1}
+\label{pf.lem.sol.vander-hook.AvsB.1A}%
+\end{align}
+(by the definition of $\operatorname*{sub}\nolimits_{u_{1},u_{2}%
+,\ldots,u_{n-1}}^{v_{1},v_{2},\ldots,v_{m-1}}A$, since $A=\left(
+a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq m}$). The same argument (but
+applied to $B$ and $b_{i,j}$ instead of $A$ and $a_{i,j}$) yields%
+\begin{equation}
+B_{\sim k,\sim q}=\left(  b_{u_{x},v_{y}}\right)  _{1\leq x\leq n-1,\ 1\leq
+y\leq m-1}. \label{pf.lem.sol.vander-hook.AvsB.1B}%
+\end{equation}
+Comparing this with%
+\begin{align*}
+A_{\sim k,\sim q}  &  =\left(  \underbrace{a_{u_{x},v_{y}}}%
+_{\substack{=b_{u_{x},v_{y}}\\\text{(by (\ref{pf.lem.sol.vander-hook.AvsB.a=b}%
+))}}}\right)  _{1\leq x\leq n-1,\ 1\leq y\leq m-1}\ \ \ \ \ \ \ \ \ \ \left(
+\text{by (\ref{pf.lem.sol.vander-hook.AvsB.1A})}\right) \\
+&  =\left(  b_{u_{x},v_{y}}\right)  _{1\leq x\leq n-1,\ 1\leq y\leq m-1},
+\end{align*}
+we obtain $B_{\sim k,\sim q}=A_{\sim k,\sim q}$. This proves Lemma
+\ref{lem.sol.vander-hook.AvsB}.
+\end{proof}
+\end{verlong}
+
+Next, let us combine Theorem \ref{thm.laplace.gen} \textbf{(b)} and
+Proposition \ref{prop.laplace.0} \textbf{(b)} into a convenient package:
+
+\begin{lemma}
+\label{lem.sol.vander-hook.lap0}Let $n\in\mathbb{N}$. Let $A=\left(
+a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ be an $n\times n$-matrix.
+Let $q\in\left\{  1,2,\ldots,n\right\}  $ and $r\in\left\{  1,2,\ldots
+,n\right\}  $. Then,%
+\[
+\sum_{p=1}^{n}\left(  -1\right)  ^{p+q}a_{p,r}\det\left(  A_{\sim p,\sim
+q}\right)  =\delta_{q,r}\det A.
+\]
+
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.vander-hook.lap0}.]We are in one of the following
+two cases:
+
+\textit{Case 1:} We have $q=r$.
+
+\textit{Case 2:} We have $q\neq r$.
+
+Let us first consider Case 1. In this case, we have $q=r$. Hence,
+$\delta_{q,r}=1$, so that
+\begin{align*}
+\underbrace{\delta_{q,r}}_{=1}\det A  &  =\det A=\sum_{p=1}^{n}\left(
+-1\right)  ^{p+q}\underbrace{a_{p,q}}_{\substack{=a_{p,r}\\\text{(since
+}q=r\text{)}}}\det\left(  A_{\sim p,\sim q}\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem \ref{thm.laplace.gen}
+\textbf{(b)}}\right) \\
+&  =\sum_{p=1}^{n}\left(  -1\right)  ^{p+q}a_{p,r}\det\left(  A_{\sim p,\sim
+q}\right)  .
+\end{align*}
+Hence, Lemma \ref{lem.sol.vander-hook.lap0} is proven in Case 1.
+
+Let us now consider Case 2. In this case, we have $q\neq r$. Hence,
+$\delta_{q,r}=0$, so that
+\begin{align*}
+\underbrace{\delta_{q,r}}_{=0}\det A  & =0\det A=0\\
+& =\sum_{p=1}^{n}\left(  -1\right)  ^{p+q}a_{p,r}\det\left(  A_{\sim p,\sim
+q}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Proposition
+\ref{prop.laplace.0} \textbf{(b)}}\right)  .
+\end{align*}
+Hence, Lemma \ref{lem.sol.vander-hook.lap0} is proven in Case 2.
+
+We have now proven Lemma \ref{lem.sol.vander-hook.lap0} in each of the two
+Cases 1 and 2. Since these two Cases cover all possibilities, this shows that
+Lemma \ref{lem.sol.vander-hook.lap0} always holds.
+\end{proof}
+
+Next, we show two crucial lemmas:
+
+\begin{lemma}
+\label{lem.sol.vander-hook.lap1}Let $n\in\mathbb{N}$. Let $x_{1},x_{2}%
+,\ldots,x_{n}$ be $n$ elements of $\mathbb{K}$. Let $t\in\mathbb{K}$. Let $A$
+be the $n\times n$-matrix $\left(  x_{i}^{n-j}\right)  _{1\leq i\leq n,\ 1\leq
+j\leq n}$. Let $k\in\left\{  1,2,\ldots,n\right\}  $.
+
+\textbf{(a)} We have%
+\[
+V\left(  x_{1},x_{2},\ldots,x_{n}\right)  =\sum_{q=1}^{n}\left(  -1\right)
+^{k+q}x_{k}^{n-q}\det\left(  A_{\sim k,\sim q}\right)  .
+\]
+
+
+\textbf{(b)} We have%
+\begin{align*}
+&  V\left(  x_{1},x_{2},\ldots,x_{k-1},x_{k}+t,x_{k+1},x_{k+2},\ldots
+,x_{n}\right) \\
+&  =\sum_{q=1}^{n}\left(  -1\right)  ^{k+q}\left(  x_{k}+t\right)  ^{n-q}%
+\det\left(  A_{\sim k,\sim q}\right)  .
+\end{align*}
+
+
+\textbf{(c)} We have%
+\begin{align*}
+&  V\left(  x_{1},x_{2},\ldots,x_{k-1},x_{k}+t,x_{k+1},x_{k+2},\ldots
+,x_{n}\right)  -V\left(  x_{1},x_{2},\ldots,x_{n}\right) \\
+&  =\sum_{q=1}^{n}\sum_{\ell=1}^{n-q}\dbinom{n-q}{\ell}t^{\ell}\left(
+-1\right)  ^{k+q}x_{k}^{n-q-\ell}\det\left(  A_{\sim k,\sim q}\right)  .
+\end{align*}
+
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.vander-hook.lap1}.]The definition of $A$ yields
+$A=\left(  x_{i}^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$.
+
+\textbf{(a)} Lemma \ref{lem.sol.vander-hook.V=} (applied to $y_{j}=x_{j}$)
+yields%
+\begin{align*}
+V\left(  x_{1},x_{2},\ldots,x_{n}\right)   &  =\det\left(  \underbrace{\left(
+x_{i}^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}}_{=A}\right)  =\det A\\
+&  =\sum_{q=1}^{n}\left(  -1\right)  ^{k+q}x_{k}^{n-q}\det\left(  A_{\sim
+k,\sim q}\right)
+\end{align*}
+(by Theorem \ref{thm.laplace.gen} \textbf{(a)}, applied to $x_{i}^{n-j}$ and
+$k$ instead of $a_{i,j}$ and $p$). This proves Lemma
+\ref{lem.sol.vander-hook.lap1} \textbf{(a)}.
+
+\textbf{(b)} For each $j\in\left\{  1,2,\ldots,n\right\}  $, define an element
+$y_{j}\in\mathbb{K}$ by $y_{j}=x_{j}+\delta_{j,k}t$. Define an $n\times
+n$-matrix $B$ by $B=\left(  y_{i}^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}$.
+
+Every $i\in\left\{  1,2,\ldots,n\right\}  $ and $j\in\left\{  1,2,\ldots
+,n\right\}  $ satisfying $i\neq k$ satisfy $x_{i}^{n-j}=y_{i}^{n-j}%
+$\ \ \ \ \footnote{\textit{Proof.} Let $i\in\left\{  1,2,\ldots,n\right\}  $
+and $j\in\left\{  1,2,\ldots,n\right\}  $ be such that $i\neq k$. Then, the
+definition of $y_{i}$ yields $y_{i}=x_{i}+\underbrace{\delta_{i,k}%
+}_{\substack{=0\\\text{(since }i\neq k\text{)}}}t=x_{i}+\underbrace{0t}%
+_{=0}=x_{i}$. Hence, $x_{i}=y_{i}$, and thus $x_{i}^{n-j}=y_{i}^{n-j}$. Qed.}.
+Hence, Lemma \ref{lem.sol.vander-hook.AvsB} (applied to $n$, $x_{i}^{n-j}$ and
+$y_{i}^{n-j}$ instead of $m$, $a_{i,j}$ and $b_{i,j}$) yields that%
+\begin{equation}
+B_{\sim k,\sim q}=A_{\sim k,\sim q}\ \ \ \ \ \ \ \ \ \ \text{for every }%
+q\in\left\{  1,2,\ldots,n\right\}  .\label{pf.lem.sol.vander-hook.lap1.B.1}%
+\end{equation}
+Moreover, the definition of $y_{k}$ satisfies $y_{k}=x_{k}+\underbrace{\delta
+_{k,k}}_{\substack{=1\\\text{(since }k=k\text{)}}}t=x_{k}+\underbrace{1t}%
+_{=t}=x_{k}+t$.
+
+Lemma \ref{lem.sol.vander-hook.deltas} yields%
+\[
+\left(  x_{1},x_{2},\ldots,x_{k-1},x_{k}+t,x_{k+1},x_{k+2},\ldots
+,x_{n}\right)  =\left(  y_{1},y_{2},\ldots,y_{n}\right)  .
+\]
+Hence,%
+\begin{align*}
+&  V\underbrace{\left(  x_{1},x_{2},\ldots,x_{k-1},x_{k}+t,x_{k+1}%
+,x_{k+2},\ldots,x_{n}\right)  }_{=\left(  y_{1},y_{2},\ldots,y_{n}\right)  }\\
+&  =V\left(  y_{1},y_{2},\ldots,y_{n}\right)  =\det\left(  \underbrace{\left(
+y_{i}^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}}_{=B}\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by Lemma \ref{lem.sol.vander-hook.V=}%
+}\right) \\
+&  =\det B=\sum_{q=1}^{n}\left(  -1\right)  ^{k+q}\underbrace{y_{k}^{n-q}%
+}_{\substack{=\left(  x_{k}+t\right)  ^{n-q}\\\text{(since }y_{k}%
+=x_{k}+t\text{)}}}\det\left(  \underbrace{B_{\sim k,\sim q}}%
+_{\substack{=A_{\sim k,\sim q}\\\text{(by
+(\ref{pf.lem.sol.vander-hook.lap1.B.1}))}}}\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{by Theorem \ref{thm.laplace.gen} \textbf{(a)} (applied to }B\text{,
+}y_{i}^{n-j}\text{ and }k\\
+\text{instead of }A\text{, }a_{i,j}\text{ and }p\text{)}%
+\end{array}
+\right) \\
+&  =\sum_{q=1}^{n}\left(  -1\right)  ^{k+q}\left(  x_{k}+t\right)  ^{n-q}%
+\det\left(  A_{\sim k,\sim q}\right)  .
+\end{align*}
+This proves Lemma \ref{lem.sol.vander-hook.lap1} \textbf{(b)}.
+
+\textbf{(c)} For every $m\in\mathbb{N}$, we have%
+\begin{equation}
+\left(  X+Y\right)  ^{m}=\sum_{\ell=0}^{m}\dbinom{m}{\ell}X^{\ell}Y^{m-\ell}
+\label{pf.lem.sol.vander-hook.lap1.c.binom}%
+\end{equation}
+(an equality between two polynomials in $X$ and $Y$). (Indeed, this is
+precisely the statement of Proposition \ref{prop.binom.binomial}, with the
+variables $n$ and $k$ renamed as $m$ and $\ell$.) Now, every $q\in\left\{
+1,2,\ldots,n\right\}  $ satisfies%
+\begin{equation}
+\left(  x_{k}+t\right)  ^{n-q}-x_{k}^{n-q}=\sum_{\ell=1}^{n-q}\dbinom
+{n-q}{\ell}t^{\ell}x_{k}^{n-q-\ell}
+\label{pf.lem.sol.vander-hook.lap1.c.binom-used}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.sol.vander-hook.lap1.c.binom-used}):}
+Let $q\in\left\{  1,2,\ldots,n\right\}  $. Thus, $q\leq n$.
+\par
+Set $m=n-q$. Then, $m=n-q\in\mathbb{N}$ (since $q\leq n$). Substituting $t$
+and $x_{k}$ for $X$ and $Y$ in the equality
+(\ref{pf.lem.sol.vander-hook.lap1.c.binom}), we obtain%
+\begin{align*}
+\left(  t+x_{k}\right)  ^{m}  &  =\sum_{\ell=0}^{m}\dbinom{m}{\ell}t^{\ell
+}x_{k}^{m-\ell}=\underbrace{\dbinom{m}{0}}_{=1}\underbrace{t^{0}}%
+_{=1}\underbrace{x_{k}^{m-0}}_{=x_{k}^{m}}+\sum_{\ell=1}^{m}\dbinom{m}{\ell
+}t^{\ell}x_{k}^{m-\ell}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have split off the addend for
+}\ell=0\text{ from the sum}\right) \\
+&  =x_{k}^{m}+\sum_{\ell=1}^{m}\dbinom{m}{\ell}t^{\ell}x_{k}^{m-\ell}.
+\end{align*}
+Subtracting $x_{k}^{m}$ from both sides of this equality, we obtain%
+\[
+\left(  t+x_{k}\right)  ^{m}-x_{k}^{m}=\sum_{\ell=1}^{m}\dbinom{m}{\ell
+}t^{\ell}x_{k}^{m-\ell}.
+\]
+Since $t+x_{k}=x_{k}+t$, this rewrites as
+\[
+\left(  x_{k}+t\right)  ^{m}-x_{k}^{m}=\sum_{\ell=1}^{m}\dbinom{m}{\ell
+}t^{\ell}x_{k}^{m-\ell}.
+\]
+Since $m=n-q$, this rewrites as
+\[
+\left(  x_{k}+t\right)  ^{n-q}-x_{k}^{n-q}=\sum_{\ell=1}^{n-q}\dbinom
+{n-q}{\ell}t^{\ell}x_{k}^{n-q-\ell}.
+\]
+This proves (\ref{pf.lem.sol.vander-hook.lap1.c.binom-used}).}.
+
+But%
+\begin{align*}
+&  \underbrace{V\left(  x_{1},x_{2},\ldots,x_{k-1},x_{k}+t,x_{k+1}%
+,x_{k+2},\ldots,x_{n}\right)  }_{\substack{=\sum_{q=1}^{n}\left(  -1\right)
+^{k+q}\left(  x_{k}+t\right)  ^{n-q}\det\left(  A_{\sim k,\sim q}\right)
+\\\text{(by Lemma \ref{lem.sol.vander-hook.lap1} \textbf{(b)})}}%
+}-\underbrace{V\left(  x_{1},x_{2},\ldots,x_{n}\right)  }_{\substack{=\sum
+_{q=1}^{n}\left(  -1\right)  ^{k+q}x_{k}^{n-q}\det\left(  A_{\sim k,\sim
+q}\right)  \\\text{(by Lemma \ref{lem.sol.vander-hook.lap1} \textbf{(a)})}}}\\
+&  =\sum_{q=1}^{n}\left(  -1\right)  ^{k+q}\left(  x_{k}+t\right)  ^{n-q}%
+\det\left(  A_{\sim k,\sim q}\right)  -\sum_{q=1}^{n}\left(  -1\right)
+^{k+q}x_{k}^{n-q}\det\left(  A_{\sim k,\sim q}\right)  \\
+&  =\sum_{q=1}^{n}\left(  -1\right)  ^{k+q}\underbrace{\left(  \left(
+x_{k}+t\right)  ^{n-q}\det\left(  A_{\sim k,\sim q}\right)  -x_{k}^{n-q}%
+\det\left(  A_{\sim k,\sim q}\right)  \right)  }_{=\left(  \left(
+x_{k}+t\right)  ^{n-q}-x_{k}^{n-q}\right)  \det\left(  A_{\sim k,\sim
+q}\right)  }\\
+&  =\sum_{q=1}^{n}\left(  -1\right)  ^{k+q}\underbrace{\left(  \left(
+x_{k}+t\right)  ^{n-q}-x_{k}^{n-q}\right)  }_{\substack{=\sum_{\ell=1}%
+^{n-q}\dbinom{n-q}{\ell}t^{\ell}x_{k}^{n-q-\ell}\\\text{(by
+(\ref{pf.lem.sol.vander-hook.lap1.c.binom-used}))}}}\det\left(  A_{\sim k,\sim
+q}\right)  \\
+&  =\sum_{q=1}^{n}\left(  -1\right)  ^{k+q}\left(  \sum_{\ell=1}^{n-q}%
+\dbinom{n-q}{\ell}t^{\ell}x_{k}^{n-q-\ell}\right)  \det\left(  A_{\sim k,\sim
+q}\right)  \\
+&  =\sum_{q=1}^{n}\sum_{\ell=1}^{n-q}\underbrace{\left(  -1\right)
+^{k+q}\dbinom{n-q}{\ell}t^{\ell}}_{=\dbinom{n-q}{\ell}t^{\ell}\left(
+-1\right)  ^{k+q}}x_{k}^{n-q-\ell}\det\left(  A_{\sim k,\sim q}\right)  \\
+&  =\sum_{q=1}^{n}\sum_{\ell=1}^{n-q}\dbinom{n-q}{\ell}t^{\ell}\left(
+-1\right)  ^{k+q}x_{k}^{n-q-\ell}\det\left(  A_{\sim k,\sim q}\right)  .
+\end{align*}
+This proves Lemma \ref{lem.sol.vander-hook.lap1} \textbf{(c)}.
+\end{proof}
+
+\begin{lemma}
+\label{lem.sol.vander-hook.lap2}Let $n\in\mathbb{N}$. Let $x_{1},x_{2}%
+,\ldots,x_{n}$ be $n$ elements of $\mathbb{K}$. Let $A$ be the $n\times
+n$-matrix $\left(  x_{i}^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$. Let
+$q\in\left\{  1,2,\ldots,n\right\}  $. Let $\ell\in\left\{  1,2,\ldots
+,n-q\right\}  $. Then,%
+\[
+\sum_{k=1}^{n}\left(  -1\right)  ^{k+q}x_{k}^{n-q-\ell+1}\det\left(  A_{\sim
+k,\sim q}\right)  =\delta_{\ell,1}\det A.
+\]
+
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.vander-hook.lap2}.]From $\ell\in\left\{
+1,2,\ldots,n-q\right\}  $, we obtain $\ell\geq1$ and $\ell\leq n-q$. Now,
+$q+\underbrace{\ell}_{\leq n-q}-1\leq q+\left(  n-q\right)  -1=n-1\leq n$.
+Also, $q\in\left\{  1,2,\ldots,n\right\}  $, so that $q\geq1$. Hence,
+$\underbrace{q}_{\geq1}+\underbrace{\ell}_{\geq1}-1\geq1+1-1=1$. Combining
+this with $q+\ell-1\leq n$, we obtain $q+\ell-1\in\left\{  1,2,\ldots
+,n\right\}  $.
+
+\begin{vershort}
+It is straightforward to see that $\delta_{q,q+\ell-1}=\delta_{\ell,1}$.
+\end{vershort}
+
+\begin{verlong}
+We have $\delta_{q,q+\ell-1}=\delta_{\ell,1}$\ \ \ \ \footnote{\textit{Proof.}
+We are in one of the following two cases:
+\par
+\textit{Case 1:} We have $\ell=1$.
+\par
+\textit{Case 2:} We have $\ell\neq1$.
+\par
+Let us first consider Case 1. In this case, we have $\ell=1$. Thus,
+$\delta_{\ell,1}=1$. But $q+\underbrace{\ell}_{=1}-1=q+1-1=q$, so that
+$q=q+\ell-1$. Hence, $\delta_{q,q+\ell-1}=1$. Comparing this with
+$\delta_{\ell,1}=1$, we obtain $\delta_{q,q+\ell-1}=\delta_{\ell,1}$. Hence,
+$\delta_{q,q+\ell-1}=\delta_{\ell,1}$ is proven in Case 1.
+\par
+Let us first consider Case 2. In this case, we have $\ell\neq1$. Thus,
+$\delta_{\ell,1}=0$. But $q+\ell-1\neq q$ (since $\left(  q+\ell-1\right)
+-q=\ell-1\neq0$ (since $\ell\neq1$)). In other words, $q\neq q+\ell-1$. Hence,
+$\delta_{q,q+\ell-1}=0$. Comparing this with $\delta_{\ell,1}=0$, we obtain
+$\delta_{q,q+\ell-1}=\delta_{\ell,1}$. Hence, $\delta_{q,q+\ell-1}%
+=\delta_{\ell,1}$ is proven in Case 2.
+\par
+We have now proven $\delta_{q,q+\ell-1}=\delta_{\ell,1}$ in each of the two
+Cases 1 and 2. Since these two Cases cover all possibilities, this shows that
+$\delta_{q,q+\ell-1}=\delta_{\ell,1}$ always holds. Qed.}.
+\end{verlong}
+
+We have $A=\left(  x_{i}^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ (by
+the definition of $A$) and $q+\ell-1\in\left\{  1,2,\ldots,n\right\}  $.
+Hence, Lemma \ref{lem.sol.vander-hook.lap0} (applied to $x_{i}^{n-j}$ and
+$q+\ell-1$ instead of $a_{i,j}$ and $r$) yields%
+\[
+\sum_{p=1}^{n}\left(  -1\right)  ^{p+q}x_{p}^{n-\left(  q+\ell-1\right)  }%
+\det\left(  A_{\sim p,\sim q}\right)  =\underbrace{\delta_{q,q+\ell-1}%
+}_{=\delta_{\ell,1}}\det A=\delta_{\ell,1}\det A.
+\]
+Thus,%
+\begin{align*}
+\delta_{\ell,1}\det A  &  =\sum_{p=1}^{n}\left(  -1\right)  ^{p+q}%
+\underbrace{x_{p}^{n-\left(  q+\ell-1\right)  }}_{\substack{=x_{p}%
+^{n-q-\ell+1}\\\text{(since }n-\left(  q+\ell-1\right)  =n-q-\ell+1\text{)}%
+}}\det\left(  A_{\sim p,\sim q}\right) \\
+&  =\sum_{p=1}^{n}\left(  -1\right)  ^{p+q}x_{p}^{n-q-\ell+1}\det\left(
+A_{\sim p,\sim q}\right)  =\sum_{k=1}^{n}\left(  -1\right)  ^{k+q}%
+x_{k}^{n-q-\ell+1}\det\left(  A_{\sim k,\sim q}\right)
+\end{align*}
+(here, we have renamed the summation index $p$ as $k$).
+\end{proof}
+
+\begin{vershort}
+\begin{proof}
+[Solution to Exercise \ref{exe.vander-hook}.]Let $A$ be the $n\times n$-matrix
+$\left(  x_{i}^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$. Lemma
+\ref{lem.sol.vander-hook.V=} (applied to $y_{j}=x_{j}$) yields%
+\begin{equation}
+V\left(  x_{1},x_{2},\ldots,x_{n}\right)  =\det\left(  \underbrace{\left(
+x_{i}^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}}_{=A}\right)  =\det A.
+\label{sol.vander-hook.short.detA}%
+\end{equation}
+
+
+We have%
+\begin{align}
+&  \sum_{k=1}^{n}x_{k}V\left(  x_{1},x_{2},\ldots,x_{k-1},x_{k}+t,x_{k+1}%
+,x_{k+2},\ldots,x_{n}\right) \nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ -\sum_{k=1}^{n}x_{k}V\left(  x_{1},x_{2},\ldots
+,x_{n}\right) \nonumber\\
+&  =\sum_{k=1}^{n}x_{k}\underbrace{\left(  V\left(  x_{1},x_{2},\ldots
+,x_{k-1},x_{k}+t,x_{k+1},x_{k+2},\ldots,x_{n}\right)  -V\left(  x_{1}%
+,x_{2},\ldots,x_{n}\right)  \right)  }_{\substack{=\sum_{q=1}^{n}\sum_{\ell
+=1}^{n-q}\dbinom{n-q}{\ell}t^{\ell}\left(  -1\right)  ^{k+q}x_{k}^{n-q-\ell
+}\det\left(  A_{\sim k,\sim q}\right)  \\\text{(by Lemma
+\ref{lem.sol.vander-hook.lap1} \textbf{(c)})}}}\nonumber\\
+&  =\sum_{k=1}^{n}x_{k}\sum_{q=1}^{n}\sum_{\ell=1}^{n-q}\dbinom{n-q}{\ell
+}t^{\ell}\left(  -1\right)  ^{k+q}x_{k}^{n-q-\ell}\det\left(  A_{\sim k,\sim
+q}\right) \nonumber\\
+&  =\sum_{q=1}^{n}\sum_{\ell=1}^{n-q}\dbinom{n-q}{\ell}t^{\ell}\sum_{k=1}%
+^{n}\underbrace{x_{k}\left(  -1\right)  ^{k+q}x_{k}^{n-q-\ell}}_{=\left(
+-1\right)  ^{k+q}x_{k}^{n-q-\ell+1}}\det\left(  A_{\sim k,\sim q}\right)
+\nonumber\\
+&  =\sum_{q=1}^{n}\sum_{\ell=1}^{n-q}\dbinom{n-q}{\ell}t^{\ell}%
+\underbrace{\sum_{k=1}^{n}\left(  -1\right)  ^{k+q}x_{k}^{n-q-\ell+1}%
+\det\left(  A_{\sim k,\sim q}\right)  }_{\substack{=\delta_{\ell,1}\det
+A\\\text{(by Lemma \ref{lem.sol.vander-hook.lap2})}}}\nonumber\\
+&  =\sum_{q=1}^{n}\sum_{\ell=1}^{n-q}\dbinom{n-q}{\ell}t^{\ell}\delta_{\ell
+,1}\det A=\sum_{q=1}^{n}\left(  \sum_{\ell=1}^{n-q}\dbinom{n-q}{\ell}t^{\ell
+}\delta_{\ell,1}\right)  \det A\nonumber\\
+&  =\sum_{r=0}^{n-1}\left(  \sum_{\ell=1}^{r}\dbinom{r}{\ell}t^{\ell}%
+\delta_{\ell,1}\right)  \det A \label{sol.vander-hook.short.3}%
+\end{align}
+(here, we have substituted $r$ for $n-q$ in the outer sum).
+
+But every $r\in\left\{  0,1,\ldots,n-1\right\}  $ satisfies%
+\begin{equation}
+\sum_{\ell=1}^{r}\dbinom{r}{\ell}t^{\ell}\delta_{\ell,1}=rt
+\label{sol.vander-hook.short.suml}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.vander-hook.short.suml}):} Let
+$r\in\left\{  0,1,\ldots,n-1\right\}  $. We must prove
+(\ref{sol.vander-hook.short.suml}).
+\par
+We are in one of the following two cases:
+\par
+\textit{Case 1:} We have $r\neq0$.
+\par
+\textit{Case 2:} We have $r=0$.
+\par
+Let us consider Case 1 first. In this case, we have $r\neq0$. Hence, $r>0$.
+Thus, $1\in\left\{  1,2,\ldots,r\right\}  $. Thus, we can split off the addend
+for $\ell=1$ from the sum $\sum_{\ell=1}^{r}\dbinom{r}{\ell}t^{\ell}%
+\delta_{\ell,1}$. As a result, we obtain
+\[
+\sum_{\ell=1}^{r}\dbinom{r}{\ell}t^{\ell}\delta_{\ell,1}=\underbrace{\dbinom
+{r}{1}}_{=r}\underbrace{t^{1}}_{=t}\underbrace{\delta_{1,1}}_{=1}+\sum
+_{\ell=2}^{r}\dbinom{r}{\ell}t^{\ell}\underbrace{\delta_{\ell,1}%
+}_{\substack{=0\\\text{(since }\ell\neq1\text{)}}}=rt+\underbrace{\sum
+_{\ell=2}^{r}\dbinom{r}{\ell}t^{\ell}0}_{=0}=rt.
+\]
+Thus, (\ref{sol.vander-hook.short.suml}) is proven in Case 1.
+\par
+Proving (\ref{sol.vander-hook.short.suml}) in Case 2 is straightforward and
+left to the reader.
+\par
+We now have proven (\ref{sol.vander-hook.short.suml}) in each of the two Cases
+1 and 2. Thus, (\ref{sol.vander-hook.short.suml}) always holds.}. Furthermore,
+we have%
+\begin{equation}
+\sum_{r=0}^{n-1}r=\dbinom{n}{2} \label{sol.vander-hook.short.gauss}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.vander-hook.short.gauss}):} If $n=0$,
+then (\ref{sol.vander-hook.short.gauss}) holds for obvious reasons. Thus, we
+WLOG assume that $n\neq0$. Hence, $n\geq1$, so that $n-1\in\mathbb{N}$. Now,%
+\begin{align*}
+\sum_{r=0}^{n-1}r  &  =\sum_{i=0}^{n-1}i\ \ \ \ \ \ \ \ \ \ \left(
+\text{here, we have renamed the summation index }r\text{ as }i\right) \\
+&  =\dfrac{\left(  n-1\right)  \left(  \left(  n-1\right)  +1\right)  }%
+{2}\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{eq.sum.littlegauss1}) (applied
+to }n-1\text{ instead of }n\text{)}\right) \\
+&  =\dfrac{n\left(  n-1\right)  }{2}=\dbinom{n}{2}.
+\end{align*}
+This proves (\ref{sol.vander-hook.short.gauss}).}.
+
+Now, (\ref{sol.vander-hook.short.3}) becomes%
+\begin{align*}
+&  \sum_{k=1}^{n}x_{k}V\left(  x_{1},x_{2},\ldots,x_{k-1},x_{k}+t,x_{k+1}%
+,x_{k+2},\ldots,x_{n}\right) \\
+&  \ \ \ \ \ \ \ \ \ \ -\sum_{k=1}^{n}x_{k}V\left(  x_{1},x_{2},\ldots
+,x_{n}\right) \\
+&  =\sum_{r=0}^{n-1}\underbrace{\left(  \sum_{\ell=1}^{r}\dbinom{r}{\ell
+}t^{\ell}\delta_{\ell,1}\right)  }_{\substack{=rt\\\text{(by
+(\ref{sol.vander-hook.short.suml}))}}}\det A=\sum_{r=0}^{n-1}rt\det A\\
+&  =\underbrace{\left(  \sum_{r=0}^{n-1}r\right)  }_{\substack{=\dbinom{n}%
+{2}\\\text{(by (\ref{sol.vander-hook.short.gauss}))}}}t\underbrace{\det
+A}_{\substack{=V\left(  x_{1},x_{2},\ldots,x_{n}\right)  \\\text{(by
+(\ref{sol.vander-hook.short.detA}))}}}\\
+&  =\dbinom{n}{2}tV\left(  x_{1},x_{2},\ldots,x_{n}\right)  .
+\end{align*}
+If we add $\sum_{k=1}^{n}x_{k}V\left(  x_{1},x_{2},\ldots,x_{n}\right)  $ to
+both sides of this equality, then we obtain%
+\begin{align*}
+&  \sum_{k=1}^{n}x_{k}V\left(  x_{1},x_{2},\ldots,x_{k-1},x_{k}+t,x_{k+1}%
+,x_{k+2},\ldots,x_{n}\right) \\
+&  =\dbinom{n}{2}tV\left(  x_{1},x_{2},\ldots,x_{n}\right)  +\sum_{k=1}%
+^{n}x_{k}V\left(  x_{1},x_{2},\ldots,x_{n}\right) \\
+&  =\left(  \dbinom{n}{2}t+\sum_{k=1}^{n}x_{k}\right)  V\left(  x_{1}%
+,x_{2},\ldots,x_{n}\right)  .
+\end{align*}
+This solves Exercise \ref{exe.vander-hook}.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Solution to Exercise \ref{exe.vander-hook}.]Let $A$ be the $n\times n$-matrix
+$\left(  x_{i}^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$. Lemma
+\ref{lem.sol.vander-hook.V=} (applied to $y_{j}=x_{j}$) yields%
+\begin{equation}
+V\left(  x_{1},x_{2},\ldots,x_{n}\right)  =\det\left(  \underbrace{\left(
+x_{i}^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}}_{=A}\right)  =\det A.
+\label{sol.vander-hook.detA}%
+\end{equation}
+
+
+We have%
+\begin{align}
+&  \sum_{k=1}^{n}x_{k}V\left(  x_{1},x_{2},\ldots,x_{k-1},x_{k}+t,x_{k+1}%
+,x_{k+2},\ldots,x_{n}\right) \nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ -\sum_{k=1}^{n}x_{k}V\left(  x_{1},x_{2},\ldots
+,x_{n}\right) \nonumber\\
+&  =\sum_{k=1}^{n}x_{k}\underbrace{\left(  V\left(  x_{1},x_{2},\ldots
+,x_{k-1},x_{k}+t,x_{k+1},x_{k+2},\ldots,x_{n}\right)  -V\left(  x_{1}%
+,x_{2},\ldots,x_{n}\right)  \right)  }_{\substack{=\sum_{q=1}^{n}\sum_{\ell
+=1}^{n-q}\dbinom{n-q}{\ell}t^{\ell}\left(  -1\right)  ^{k+q}x_{k}^{n-q-\ell
+}\det\left(  A_{\sim k,\sim q}\right)  \\\text{(by Lemma
+\ref{lem.sol.vander-hook.lap1} \textbf{(c)})}}}\nonumber\\
+&  =\sum_{k=1}^{n}\underbrace{x_{k}\sum_{q=1}^{n}\sum_{\ell=1}^{n-q}%
+\dbinom{n-q}{\ell}t^{\ell}\left(  -1\right)  ^{k+q}x_{k}^{n-q-\ell}\det\left(
+A_{\sim k,\sim q}\right)  }_{=\sum_{q=1}^{n}\sum_{\ell=1}^{n-q}x_{k}%
+\dbinom{n-q}{\ell}t^{\ell}\left(  -1\right)  ^{k+q}x_{k}^{n-q-\ell}\det\left(
+A_{\sim k,\sim q}\right)  }\nonumber\\
+&  =\underbrace{\sum_{k=1}^{n}\sum_{q=1}^{n}\sum_{\ell=1}^{n-q}}_{=\sum
+_{q=1}^{n}\sum_{\ell=1}^{n-q}\sum_{k=1}^{n}}\underbrace{x_{k}\dbinom{n-q}%
+{\ell}t^{\ell}\left(  -1\right)  ^{k+q}}_{=\dbinom{n-q}{\ell}t^{\ell}\left(
+-1\right)  ^{k+q}x_{k}}x_{k}^{n-q-\ell}\det\left(  A_{\sim k,\sim q}\right)
+\nonumber\\
+&  =\sum_{q=1}^{n}\sum_{\ell=1}^{n-q}\sum_{k=1}^{n}\dbinom{n-q}{\ell}t^{\ell
+}\left(  -1\right)  ^{k+q}\underbrace{x_{k}x_{k}^{n-q-\ell}}_{=x_{k}%
+^{n-q-\ell+1}}\det\left(  A_{\sim k,\sim q}\right) \nonumber\\
+&  =\sum_{q=1}^{n}\sum_{\ell=1}^{n-q}\underbrace{\sum_{k=1}^{n}\dbinom
+{n-q}{\ell}t^{\ell}\left(  -1\right)  ^{k+q}x_{k}^{n-q-\ell+1}\det\left(
+A_{\sim k,\sim q}\right)  }_{=\dbinom{n-q}{\ell}t^{\ell}\sum_{k=1}^{n}\left(
+-1\right)  ^{k+q}x_{k}^{n-q-\ell+1}\det\left(  A_{\sim k,\sim q}\right)
+}\nonumber\\
+&  =\sum_{q=1}^{n}\sum_{\ell=1}^{n-q}\dbinom{n-q}{\ell}t^{\ell}%
+\underbrace{\sum_{k=1}^{n}\left(  -1\right)  ^{k+q}x_{k}^{n-q-\ell+1}%
+\det\left(  A_{\sim k,\sim q}\right)  }_{\substack{=\delta_{\ell,1}\det
+A\\\text{(by Lemma \ref{lem.sol.vander-hook.lap2})}}}\nonumber\\
+&  =\sum_{q=1}^{n}\sum_{\ell=1}^{n-q}\dbinom{n-q}{\ell}t^{\ell}\delta_{\ell
+,1}\det A=\sum_{q=1}^{n}\left(  \sum_{\ell=1}^{n-q}\dbinom{n-q}{\ell}t^{\ell
+}\delta_{\ell,1}\right)  \det A\nonumber\\
+&  =\sum_{r=0}^{n-1}\left(  \sum_{\ell=1}^{r}\dbinom{r}{\ell}t^{\ell}%
+\delta_{\ell,1}\right)  \det A \label{sol.vander-hook.3}%
+\end{align}
+(here, we have substituted $r$ for $n-q$ in the outer sum).
+
+But every $r\in\left\{  0,1,\ldots,n-1\right\}  $ satisfies%
+\begin{equation}
+\sum_{\ell=1}^{r}\dbinom{r}{\ell}t^{\ell}\delta_{\ell,1}=rt
+\label{sol.vander-hook.suml}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.vander-hook.suml}):} Let $r\in\left\{
+0,1,\ldots,n-1\right\}  $. We must prove (\ref{sol.vander-hook.suml}).
+\par
+We are in one of the following two cases:
+\par
+\textit{Case 1:} We have $r\neq0$.
+\par
+\textit{Case 2:} We have $r=0$.
+\par
+Let us consider Case 1 first. In this case, we have $r\neq0$. But $r\geq0$
+(since $r\in\left\{  0,1,\ldots,n-1\right\}  $). Hence, $r>0$ (since $r\neq
+0$). Thus, $1\in\left\{  1,2,\ldots,r\right\}  $. Thus, we can split off the
+addend for $\ell=1$ from the sum $\sum_{\ell=1}^{r}\dbinom{r}{\ell}t^{\ell
+}\delta_{\ell,1}$. As a result, we obtain
+\[
+\sum_{\ell=1}^{r}\dbinom{r}{\ell}t^{\ell}\delta_{\ell,1}=\underbrace{\dbinom
+{r}{1}}_{=r}\underbrace{t^{1}}_{=t}\underbrace{\delta_{1,1}}%
+_{\substack{=1\\\text{(since }1=1\text{)}}}+\sum_{\ell=2}^{r}\dbinom{r}{\ell
+}t^{\ell}\underbrace{\delta_{\ell,1}}_{\substack{=0\\\text{(since }\ell
+\neq1\\\text{(since }\ell\geq2>1\text{))}}}=rt+\underbrace{\sum_{\ell=2}%
+^{r}\dbinom{r}{\ell}t^{\ell}0}_{=0}=rt.
+\]
+Thus, (\ref{sol.vander-hook.suml}) is proven in Case 1.
+\par
+Let us now consider Case 2. In this case, we have $r=0$. Hence,%
+\[
+\sum_{\ell=1}^{r}\dbinom{r}{\ell}t^{\ell}\delta_{\ell,1}=\sum_{\ell=1}%
+^{0}\dbinom{0}{\ell}t^{\ell}\delta_{\ell,1}=\left(  \text{empty sum}\right)
+=0=rt
+\]
+(since $\underbrace{r}_{=0}t=0t=0$). Thus, (\ref{sol.vander-hook.suml}) is
+proven in Case 2.
+\par
+We now have proven (\ref{sol.vander-hook.suml}) in each of the two Cases 1 and
+2. Since these two Cases cover all possibilities, this shows that
+(\ref{sol.vander-hook.suml}) always holds. Qed.}. Furthermore, we have%
+\begin{equation}
+\sum_{r=0}^{n-1}r=\dbinom{n}{2} \label{sol.vander-hook.gauss}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.vander-hook.gauss}):} If $n=0$, then%
+\begin{align*}
+\sum_{r=0}^{n-1}r  &  =\sum_{r=0}^{0-1}r=\left(  \text{empty sum}\right)
+=0=\dbinom{0}{2}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\dbinom{0}{2}%
+=\dfrac{0\left(  0-1\right)  }{2}=0\right) \\
+&  =\dbinom{n}{2}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }0=n\right)  .
+\end{align*}
+Hence, if $n=0$, then (\ref{sol.vander-hook.gauss}) holds. Thus, for the rest
+of the proof of (\ref{sol.vander-hook.gauss}), we can WLOG assume that we
+don't have $n=0$. Assume this.
+\par
+We have $n\neq0$ (since we don't have $n=0$). Thus, $n\geq1$ (since
+$n\in\mathbb{N}$). Therefore, $n-1\in\mathbb{N}$. Now,%
+\begin{align*}
+\sum_{r=0}^{n-1}r  &  =\sum_{i=0}^{n-1}i\ \ \ \ \ \ \ \ \ \ \left(
+\text{here, we have renamed the summation index }r\text{ as }i\right) \\
+&  =\dfrac{\left(  n-1\right)  \left(  \left(  n-1\right)  +1\right)  }%
+{2}\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{eq.sum.littlegauss1}) (applied
+to }n-1\text{ instead of }n\text{)}\right) \\
+&  =\dfrac{\left(  n-1\right)  n}{2}=\dfrac{n\left(  n-1\right)  }{2}%
+=\dbinom{n}{2}.
+\end{align*}
+This proves (\ref{sol.vander-hook.gauss}).}.
+
+Now, (\ref{sol.vander-hook.3}) becomes%
+\begin{align*}
+&  \sum_{k=1}^{n}x_{k}V\left(  x_{1},x_{2},\ldots,x_{k-1},x_{k}+t,x_{k+1}%
+,x_{k+2},\ldots,x_{n}\right) \\
+&  \ \ \ \ \ \ \ \ \ \ -\sum_{k=1}^{n}x_{k}V\left(  x_{1},x_{2},\ldots
+,x_{n}\right) \\
+&  =\sum_{r=0}^{n-1}\underbrace{\left(  \sum_{\ell=1}^{r}\dbinom{r}{\ell
+}t^{\ell}\delta_{\ell,1}\right)  }_{\substack{=rt\\\text{(by
+(\ref{sol.vander-hook.suml}))}}}\det A=\sum_{r=0}^{n-1}rt\det A\\
+&  =\underbrace{\left(  \sum_{r=0}^{n-1}r\right)  }_{\substack{=\dbinom{n}%
+{2}\\\text{(by (\ref{sol.vander-hook.gauss}))}}}t\underbrace{\det
+A}_{\substack{=V\left(  x_{1},x_{2},\ldots,x_{n}\right)  \\\text{(by
+(\ref{sol.vander-hook.detA}))}}}\\
+&  =\dbinom{n}{2}tV\left(  x_{1},x_{2},\ldots,x_{n}\right)  .
+\end{align*}
+If we add $\sum_{k=1}^{n}x_{k}V\left(  x_{1},x_{2},\ldots,x_{n}\right)  $ to
+both sides of this equality, then we obtain%
+\begin{align*}
+&  \sum_{k=1}^{n}x_{k}V\left(  x_{1},x_{2},\ldots,x_{k-1},x_{k}+t,x_{k+1}%
+,x_{k+2},\ldots,x_{n}\right) \\
+&  =\dbinom{n}{2}tV\left(  x_{1},x_{2},\ldots,x_{n}\right)  +\sum_{k=1}%
+^{n}x_{k}V\left(  x_{1},x_{2},\ldots,x_{n}\right) \\
+&  =\left(  \dbinom{n}{2}t+\sum_{k=1}^{n}x_{k}\right)  V\left(  x_{1}%
+,x_{2},\ldots,x_{n}\right)  .
+\end{align*}
+This solves Exercise \ref{exe.vander-hook}.
 \end{proof}
 \end{verlong}
 
