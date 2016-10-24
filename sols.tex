@@ -35696,8 +35696,8 @@ Let us now consider Case 2. In this case, we have $g>k$. Hence, $g\geq k+1$
 a_{g}, & \text{if }g\leq k;\\
 b_{g-k}, & \text{if }g>k
 \end{cases}
-=b_{g-k}$ (since $g>k$). On the other hand, $g\leq h$, so that $h\geq g>k$.
-Thus, (\ref{pf.lem.sol.exe.Ialbe.InotI.a.ch=}) yields $c_{h}=%
+=b_{g-k}$ (since $g>k$). On the other hand, $g\leq h$, so that $h\geq g\geq
+k+1>k$. Thus, (\ref{pf.lem.sol.exe.Ialbe.InotI.a.ch=}) yields $c_{h}=%
 \begin{cases}
 a_{h}, & \text{if }h\leq k;\\
 b_{h-k}, & \text{if }h>k
@@ -40161,7 +40161,7 @@ $k=K-1$. In other words, we have%
 \begin{equation}
 \prod_{i=1}^{K-1}\left(  a_{i}+b_{i}\right)  =\sum_{I\in\mathcal{P}\left(
 \left[  K-1\right]  \right)  }\left(  \prod_{i\in I}a_{i}\right)  \left(
-\prod_{i\in\left[  K-1\right]  \setminus I}b_{i}\right)
+\prod_{i\in\left[  K-1\right]  \setminus I}b_{i}\right)  .
 \label{sol.prod(ai+bi).a.goal.pf.iass}%
 \end{equation}
 
@@ -40340,7 +40340,7 @@ K\right]  \setminus\left(  U\cup\left\{  K\right\}  \right)  }b_{i}\right)
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
-\text{here, we have substituted }U\cup\left\{  K\right\}  \text{ for }U\text{
+\text{here, we have substituted }U\cup\left\{  K\right\}  \text{ for }I\text{
 in the sum, since}\\
 \text{the map }\mathcal{P}\left(  \left[  K-1\right]  \right)  \rightarrow
 \mathcal{P}\left(  \left[  K\right]  \right)  \setminus\mathcal{P}\left(
@@ -46232,7 +46232,7 @@ We have%
 P\left(  X\right)   &  =\underbrace{\sum_{k=0}^{n-1}}_{=\sum_{k\in\left\{
 0,1,\ldots,n-1\right\}  }}\underbrace{p_{k}}_{\substack{=\delta_{k,m}}%
 }X^{k}=\sum_{k\in\left\{  0,1,\ldots,n-1\right\}  }\delta_{k,m}X^{k}\\
-&  =\underbrace{\delta_{m,m}}_{\substack{=1\\\text{(since }k=m\text{)}}%
+&  =\underbrace{\delta_{m,m}}_{\substack{=1\\\text{(since }m=m\text{)}}%
 }X^{m}+\sum_{\substack{k\in\left\{  0,1,\ldots,n-1\right\}  ;\\k\neq
 m}}\underbrace{\delta_{k,m}}_{\substack{=0\\\text{(since }k\neq m\text{)}%
 }}X^{k}\\
@@ -46242,7 +46242,7 @@ m}}\underbrace{\delta_{k,m}}_{\substack{=0\\\text{(since }k\neq m\text{)}%
 \text{here, we have split off the addend for }k=m\text{ from the sum}\\
 \text{(since }m\in\left\{  0,1,\ldots,n-1\right\}  \text{)}%
 \end{array}
-\right) \\
+\right)  \\
 &  =X^{m}+\underbrace{\sum_{\substack{k\in\left\{  0,1,\ldots,n-1\right\}
 ;\\k\neq m}}0X^{k}}_{=0}=X^{m}.
 \end{align*}
@@ -46598,7 +46598,7 @@ P\left(  X\right)   &  =\underbrace{\sum_{k=0}^{n-1}}_{=\sum_{k\in\left\{
 0,1,\ldots,n-1\right\}  }}\underbrace{p_{k}}_{\substack{=\delta_{k,m}%
 \\\text{(by the definition}\\\text{of }p_{k}\text{)}}}X^{k}=\sum_{k\in\left\{
 0,1,\ldots,n-1\right\}  }\delta_{k,m}X^{k}\\
-&  =\underbrace{\delta_{m,m}}_{\substack{=1\\\text{(since }k=m\text{)}}%
+&  =\underbrace{\delta_{m,m}}_{\substack{=1\\\text{(since }m=m\text{)}}%
 }X^{m}+\sum_{\substack{k\in\left\{  0,1,\ldots,n-1\right\}  ;\\k\neq
 m}}\underbrace{\delta_{k,m}}_{\substack{=0\\\text{(since }k\neq m\text{)}%
 }}X^{k}\\
