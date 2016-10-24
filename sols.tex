@@ -277,33 +277,43 @@ $\mathbb{N}$ for $\left\{  1,2,3,\ldots\right\}  $ instead.)
 $\mathbb{R}$ be the set of all real numbers; we let $\mathbb{C}$ be the set of
 all complex numbers.
 
-\item If $X$ and $Y$ are two sets, then we shall use the notation ``$X \to
-Y,\ x \mapsto E$'' (where $x$ is some symbol which has no specific meaning in
-the current context, and where $E$ is some expression which usually involves
-$x$) for ``the map from $X$ to $Y$ which sends every $x \in X$ to $E$''. For
-example, ``$\mathbb{N} \to\mathbb{N},\ x \mapsto x^{2}+x+6$'' means the map
-from $\mathbb{N}$ to $\mathbb{N}$ which sends every $x \in\mathbb{N}$ to
-$x^{2}+x+6$. For another example, ``$\mathbb{N} \to\mathbb{Q},\ x
-\mapsto\dfrac{x}{1+x}$'' denotes the map from $\mathbb{N}$ to $\mathbb{Q}$
-which sends every $x \in\mathbb{N}$ to $\dfrac{x}{1+x}$.\ \ \ \ \footnote{A
-word of warning: Of course, the notation ``$X \to Y,\ x \mapsto E$'' does not
-always make sense; indeed, the map that it stands for might sometimes not
-exist. For instance, the notation ``$\mathbb{N} \to\mathbb{Q}, \ x
-\mapsto\dfrac{x}{1-x}$'' does not actually define a map, because the map that
-it is supposed to define (i.e., the map from $\mathbb{N}$ to $\mathbb{Q}$
-which sends every $x \in\mathbb{N}$ to $\dfrac{x}{1-x}$) does not exist (since
-$\dfrac{x}{1-x}$ is not defined for $x = 1$). For another example, the
-notation ``$\mathbb{N} \to\mathbb{Z}, \ x \mapsto\dfrac{x}{1+x}$'' does not
-define a map, because the map that it is supposed to define (i.e., the map
-from $\mathbb{N}$ to $\mathbb{Z}$ which sends every $x \in\mathbb{N}$ to
-$\dfrac{x}{1+x}$) does not exist (for $x = 2$, we have $\dfrac{x}{1+x} =
-\dfrac{2}{1+2} \notin\mathbb{Z}$, which shows that a map from $\mathbb{N}$ to
-$\mathbb{Z}$ cannot send this $x$ to this $\dfrac{x}{1+x}$). Thus, when
-defining a map from $X$ to $Y$ (using whatever notation), do not forget to
-check that it is well-defined (i.e., that your definition specifies precisely
-one image for each $x \in X$, and that these images all lie in $Y$). In many
-cases, this is obvious or very easy to check (I will usually not even mention
-this check), but in some cases, this is a difficult task.}
+\item If $X$ and $Y$ are two sets, then we shall use the notation
+\textquotedblleft$X\rightarrow Y,\ x\mapsto E$\textquotedblright\ (where $x$
+is some symbol which has no specific meaning in the current context, and where
+$E$ is some expression which usually involves $x$) for \textquotedblleft the
+map from $X$ to $Y$ which sends every $x\in X$ to $E$\textquotedblright. For
+example, \textquotedblleft$\mathbb{N}\rightarrow\mathbb{N},\ x\mapsto
+x^{2}+x+6$\textquotedblright\ means the map from $\mathbb{N}$ to $\mathbb{N}$
+which sends every $x\in\mathbb{N}$ to $x^{2}+x+6$. For another example,
+\textquotedblleft$\mathbb{N}\rightarrow\mathbb{Q},\ x\mapsto\dfrac{x}{1+x}%
+$\textquotedblright\ denotes the map from $\mathbb{N}$ to $\mathbb{Q}$ which
+sends every $x\in\mathbb{N}$ to $\dfrac{x}{1+x}$.\ \ \ \ \footnote{A word of
+warning: Of course, the notation \textquotedblleft$X\rightarrow Y,\ x\mapsto
+E$\textquotedblright\ does not always make sense; indeed, the map that it
+stands for might sometimes not exist. For instance, the notation
+\textquotedblleft$\mathbb{N}\rightarrow\mathbb{Q},\ x\mapsto\dfrac{x}{1-x}%
+$\textquotedblright\ does not actually define a map, because the map that it
+is supposed to define (i.e., the map from $\mathbb{N}$ to $\mathbb{Q}$ which
+sends every $x\in\mathbb{N}$ to $\dfrac{x}{1-x}$) does not exist (since
+$\dfrac{x}{1-x}$ is not defined for $x=1$). For another example, the notation
+\textquotedblleft$\mathbb{N}\rightarrow\mathbb{Z},\ x\mapsto\dfrac{x}{1+x}%
+$\textquotedblright\ does not define a map, because the map that it is
+supposed to define (i.e., the map from $\mathbb{N}$ to $\mathbb{Z}$ which
+sends every $x\in\mathbb{N}$ to $\dfrac{x}{1+x}$) does not exist (for $x=2$,
+we have $\dfrac{x}{1+x}=\dfrac{2}{1+2}\notin\mathbb{Z}$, which shows that a
+map from $\mathbb{N}$ to $\mathbb{Z}$ cannot send this $x$ to this $\dfrac
+{x}{1+x}$). Thus, when defining a map from $X$ to $Y$ (using whatever
+notation), do not forget to check that it is well-defined (i.e., that your
+definition specifies precisely one image for each $x\in X$, and that these
+images all lie in $Y$). In many cases, this is obvious or very easy to check
+(I will usually not even mention this check), but in some cases, this is a
+difficult task.}
+
+\item If $S$ is a set, then the \textit{powerset} of $S$ means the set of all
+subsets of $S$. This powerset will be denoted by $\mathcal{P}\left(  S\right)
+$. For example, the powerset of $\left\{  1,2\right\}  $ is $\mathcal{P}%
+\left(  \left\{  1,2\right\}  \right)  =\left\{  \varnothing,\left\{
+1\right\}  ,\left\{  2\right\}  ,\left\{  1,2\right\}  \right\}  $.
 \end{itemize}
 
 Further notations will be defined whenever they arise for the first time.
@@ -8749,48 +8759,52 @@ the zero ring\textquotedblright.}
 is defined to be the set $\left(  A\cup B\right)  \setminus\left(  A\cap
 B\right)  =\left(  A\setminus B\right)  \cup\left(  B\setminus A\right)  $.
 This symmetric difference is denoted by $A\bigtriangleup B$. Now, let $S$ be
-any set. Let $2^{S}$ denote the powerset of $S$ (that is, the set of all
-subsets of $S$). It is easy to check that the following ten properties hold:%
+any set. Let $\mathcal{P}\left(  S\right)  $ denote the powerset of $S$ (that
+is, the set of all subsets of $S$). It is easy to check that the following ten
+properties hold:%
 \begin{align*}
-A\bigtriangleup B  &  =B\bigtriangleup A\ \ \ \ \ \ \ \ \ \ \text{for any sets
+A\bigtriangleup B &  =B\bigtriangleup A\ \ \ \ \ \ \ \ \ \ \text{for any sets
 }A\text{ and }B\text{;}\\
-A\cap B  &  =B\cap A\ \ \ \ \ \ \ \ \ \ \text{for any sets }A\text{ and
+A\cap B &  =B\cap A\ \ \ \ \ \ \ \ \ \ \text{for any sets }A\text{ and
 }B\text{;}\\
-\left(  A\bigtriangleup B\right)  \bigtriangleup C  &  =A\bigtriangleup\left(
+\left(  A\bigtriangleup B\right)  \bigtriangleup C &  =A\bigtriangleup\left(
 B\bigtriangleup C\right)  \ \ \ \ \ \ \ \ \ \ \text{for any sets }A\text{,
 }B\text{ and }C\text{;}\\
-\left(  A\cap B\right)  \cap C  &  =A\cap\left(  B\cap C\right)
+\left(  A\cap B\right)  \cap C &  =A\cap\left(  B\cap C\right)
 \ \ \ \ \ \ \ \ \ \ \text{for any sets }A\text{, }B\text{ and }C\text{;}\\
 A\bigtriangleup\varnothing &  =\varnothing\bigtriangleup
 A=A\ \ \ \ \ \ \ \ \ \ \text{for any set }A\text{;}\\
-A\bigtriangleup A  &  =\varnothing\ \ \ \ \ \ \ \ \ \ \text{for any set
+A\bigtriangleup A &  =\varnothing\ \ \ \ \ \ \ \ \ \ \text{for any set
 }A\text{;}\\
-A\cap S  &  =S\cap A=A\ \ \ \ \ \ \ \ \ \ \text{for any subset }A\text{ of
+A\cap S &  =S\cap A=A\ \ \ \ \ \ \ \ \ \ \text{for any subset }A\text{ of
 }S\text{;}\\
-\varnothing\cap A  &  =A\cap\varnothing=\varnothing
+\varnothing\cap A &  =A\cap\varnothing=\varnothing
 \ \ \ \ \ \ \ \ \ \ \text{for any set }A\text{;}\\
 A\cap\left(  B\bigtriangleup C\right)   &  =\left(  A\cap B\right)
 \bigtriangleup\left(  A\cap C\right)  \ \ \ \ \ \ \ \ \ \ \text{for any sets
 }A\text{, }B\text{ and }C\text{;}\\
-\left(  A\bigtriangleup B\right)  \cap C  &  =\left(  A\cap C\right)
+\left(  A\bigtriangleup B\right)  \cap C &  =\left(  A\cap C\right)
 \bigtriangleup\left(  B\cap C\right)  \ \ \ \ \ \ \ \ \ \ \text{for any sets
 }A\text{, }B\text{ and }C\text{.}%
 \end{align*}
-Therefore, $2^{S}$ becomes a commutative ring, where the addition is defined
-to be the operation $\bigtriangleup$, the multiplication is defined to be the
-operation $\cap$, the zero is defined to be the set $\varnothing$, and the
-unity is defined to be the set $S$.\ \ \ \ \footnote{The ten properties listed
-above show that the axioms of a commutative ring are satisfied for $\left(
-2^{S},\bigtriangleup,\cap,\varnothing,S\right)  $. In particular, the sixth
+Therefore, $\mathcal{P}\left(  S\right)  $ becomes a commutative ring, where
+the addition is defined to be the operation $\bigtriangleup$, the
+multiplication is defined to be the operation $\cap$, the zero is defined to
+be the set $\varnothing$, and the unity is defined to be the set
+$S$.\ \ \ \ \footnote{The ten properties listed above show that the axioms of
+a commutative ring are satisfied for $\left(  \mathcal{P}\left(  S\right)
+,\bigtriangleup,\cap,\varnothing,S\right)  $. In particular, the sixth
 property shows that every subset $A$ of $S$ has an additive inverse -- namely,
 itself. Of course, it is unusual for an element of a commutative ring to be
 its own additive inverse, but in this example it happens all the time!}
 
-The commutative ring $2^{S}$ has the property that $a^{2}=a$ for every
-$a\in2^{S}$. (This simply means that $A\cap A=A$ for every $A\subseteq S$.)
-Commutative rings that have this property are called
+The commutative ring $\mathcal{P}\left(  S\right)  $ has the property that
+$a^{2}=a$ for every $a\in\mathcal{P}\left(  S\right)  $. (This simply means
+that $A\cap A=A$ for every $A\subseteq S$.) Commutative rings that have this
+property are called
 \href{https://en.wikipedia.org/wiki/Boolean_ring}{\textit{Boolean rings}}. (Of
-course, $2^{S}$ is the eponymic example for a Boolean ring; but there are also others.)
+course, $\mathcal{P}\left(  S\right)  $ is the eponymic example for a Boolean
+ring; but there are also others.)
 
 \item For every positive integer $n$, the residue classes of integers modulo
 $n$ form a commutative ring, which is called $\mathbb{Z}/n\mathbb{Z}$ or
