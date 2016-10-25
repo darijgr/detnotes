@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, October 15, 2016 02:30:52}
+%TCIDATA{LastRevised=Monday, October 24, 2016 22:03:22}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -56329,6 +56329,1933 @@ x_{1},x_{2},\ldots,x_{n}\right)  .
 This proves Proposition \ref{prop.sol.vander-hook.variant}.
 \end{proof}
 \end{verlong}
+
+\subsubsection{Addendum: another sum of Vandermonde determinants}
+
+Here is one more result similar to Exercise \ref{exe.vander-hook} and
+Proposition \ref{prop.sol.vander-hook.variant}:
+
+\begin{proposition}
+\label{prop.sol.vander-hook.N}Let $n\in\mathbb{N}$. Let $x_{1},x_{2}%
+,\ldots,x_{n}$ be $n$ elements of $\mathbb{K}$. Let $m\in\left\{
+0,1,\ldots,n-1\right\}  $. Let $t\in\mathbb{K}$. Then,%
+\[
+\sum_{k=1}^{n}x_{k}^{m}V\left(  x_{1},x_{2},\ldots,x_{k-1},t,x_{k+1}%
+,x_{k+2},\ldots,x_{n}\right)  =t^{m}V\left(  x_{1},x_{2},\ldots,x_{n}\right)
+.
+\]
+
+\end{proposition}
+
+We have already built all the tools necessary for the proof of this
+proposition. We just need to repurpose a few of them:
+
+\begin{lemma}
+\label{lem.sol.vander-hook.N.lap1b}Let $n\in\mathbb{N}$. Let $x_{1}%
+,x_{2},\ldots,x_{n}$ be $n$ elements of $\mathbb{K}$. Let $t\in\mathbb{K}$.
+Let $A$ be the $n\times n$-matrix $\left(  x_{i}^{n-j}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}$. Let $k\in\left\{  1,2,\ldots,n\right\}  $. Then,%
+\[
+V\left(  x_{1},x_{2},\ldots,x_{k-1},t,x_{k+1},x_{k+2},\ldots,x_{n}\right)
+=\sum_{q=1}^{n}\left(  -1\right)  ^{k+q}t^{n-q}\det\left(  A_{\sim k,\sim
+q}\right)  .
+\]
+
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.vander-hook.N.lap1b}.]Lemma
+\ref{lem.sol.vander-hook.lap1} \textbf{(b)} (applied to $t-x_{k}$ instead of
+$t$) yields%
+\begin{align*}
+&  V\left(  x_{1},x_{2},\ldots,x_{k-1},x_{k}+\left(  t-x_{k}\right)
+,x_{k+1},x_{k+2},\ldots,x_{n}\right) \\
+&  =\sum_{q=1}^{n}\left(  -1\right)  ^{k+q}\left(  x_{k}+\left(
+t-x_{k}\right)  \right)  ^{n-q}\det\left(  A_{\sim k,\sim q}\right)  .
+\end{align*}
+Since $x_{k}+\left(  t-x_{k}\right)  =t$, this rewrites as
+\[
+V\left(  x_{1},x_{2},\ldots,x_{k-1},t,x_{k+1},x_{k+2},\ldots,x_{n}\right)
+=\sum_{q=1}^{n}\left(  -1\right)  ^{k+q}t^{n-q}\det\left(  A_{\sim k,\sim
+q}\right)  .
+\]
+This proves Lemma \ref{lem.sol.vander-hook.N.lap1b}.
+\end{proof}
+
+\begin{lemma}
+\label{lem.sol.vander-hook.N.lap2}Let $n\in\mathbb{N}$. Let $x_{1}%
+,x_{2},\ldots,x_{n}$ be $n$ elements of $\mathbb{K}$. Let $A$ be the $n\times
+n$-matrix $\left(  x_{i}^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$. Let
+$q\in\left\{  1,2,\ldots,n\right\}  $ and $m\in\left\{  0,1,\ldots
+,n-1\right\}  $. Then,%
+\[
+\sum_{k=1}^{n}x_{k}^{m}\left(  -1\right)  ^{k+q}\det\left(  A_{\sim k,\sim
+q}\right)  =\delta_{q,n-m}\det A.
+\]
+
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.vander-hook.N.lap2}.]From $q\in\left\{
+1,2,\ldots,n\right\}  $, we obtain $1\leq q\leq n$. Hence, $1\leq n$, so that
+$n\geq1$ and therefore $n\in\left\{  1,2,\ldots,n\right\}  $.
+
+We have $A=\left(  x_{i}^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ (by
+the definition of $A$) and $n-m\in\left\{  1,2,\ldots,n\right\}  $ (since
+$m\in\left\{  0,1,\ldots,n-1\right\}  $). Hence, Lemma
+\ref{lem.sol.vander-hook.lap0} (applied to $x_{i}^{n-j}$ and $n-m$ instead of
+$a_{i,j}$ and $r$) yields%
+\[
+\sum_{p=1}^{n}\left(  -1\right)  ^{p+q}x_{p}^{n-\left(  n-m\right)  }%
+\det\left(  A_{\sim p,\sim q}\right)  =\delta_{q,n-m}\det A.
+\]
+Thus,%
+\begin{align*}
+\delta_{q,n-m}\det A  &  =\sum_{p=1}^{n}\left(  -1\right)  ^{p+q}%
+\underbrace{x_{p}^{n-\left(  n-m\right)  }}_{\substack{=x_{p}^{m}%
+\\\text{(since }n-\left(  n-m\right)  =m\text{)}}}\det\left(  A_{\sim p,\sim
+q}\right) \\
+&  =\sum_{p=1}^{n}\underbrace{\left(  -1\right)  ^{p+q}x_{p}^{m}}_{=x_{p}%
+^{m}\left(  -1\right)  ^{p+q}}\det\left(  A_{\sim p,\sim q}\right) \\
+&  =\sum_{p=1}^{n}x_{p}^{m}\left(  -1\right)  ^{p+q}\det\left(  A_{\sim p,\sim
+q}\right)  =\sum_{k=1}^{n}x_{k}^{m}\left(  -1\right)  ^{k+q}\det\left(
+A_{\sim k,\sim q}\right)
+\end{align*}
+(here, we have renamed the summation index $p$ as $k$). This proves Lemma
+\ref{lem.sol.vander-hook.N.lap2}.
+\end{proof}
+
+\begin{proof}
+[Proof of Proposition \ref{prop.sol.vander-hook.N}.]Let $A$ be the $n\times
+n$-matrix $\left(  x_{i}^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$.
+
+From $m\in\left\{  0,1,\ldots,n-1\right\}  $, we obtain $n-m\in\left\{
+1,2,\ldots,n\right\}  $. But%
+\begin{align*}
+&  \sum_{k=1}^{n}x_{k}^{m}\underbrace{V\left(  x_{1},x_{2},\ldots
+,x_{k-1},t,x_{k+1},x_{k+2},\ldots,x_{n}\right)  }_{\substack{=\sum_{q=1}%
+^{n}\left(  -1\right)  ^{k+q}t^{n-q}\det\left(  A_{\sim k,\sim q}\right)
+\\\text{(by Lemma \ref{lem.sol.vander-hook.N.lap1b})}}}\\
+&  =\sum_{k=1}^{n}\underbrace{x_{k}^{m}\sum_{q=1}^{n}\left(  -1\right)
+^{k+q}t^{n-q}\det\left(  A_{\sim k,\sim q}\right)  }_{=\sum_{q=1}^{n}x_{k}%
+^{m}\left(  -1\right)  ^{k+q}t^{n-q}\det\left(  A_{\sim k,\sim q}\right)  }\\
+&  =\underbrace{\sum_{k=1}^{n}\sum_{q=1}^{n}}_{=\sum_{q=1}^{n}\sum_{k=1}^{n}%
+}x_{k}^{m}\left(  -1\right)  ^{k+q}t^{n-q}\det\left(  A_{\sim k,\sim q}\right)
+\\
+&  =\sum_{q=1}^{n}\underbrace{\sum_{k=1}^{n}x_{k}^{m}\left(  -1\right)
+^{k+q}t^{n-q}\det\left(  A_{\sim k,\sim q}\right)  }_{=t^{n-q}\sum_{k=1}%
+^{n}x_{k}^{m}\left(  -1\right)  ^{k+q}\det\left(  A_{\sim k,\sim q}\right)
+}\\
+&  =\underbrace{\sum_{q=1}^{n}}_{=\sum_{q\in\left\{  1,2,\ldots,n\right\}  }%
+}t^{n-q}\underbrace{\sum_{k=1}^{n}x_{k}^{m}\left(  -1\right)  ^{k+q}%
+\det\left(  A_{\sim k,\sim q}\right)  }_{\substack{=\delta_{q,n-m}\det
+A\\\text{(by Lemma \ref{lem.sol.vander-hook.N.lap2})}}}=\sum_{q\in\left\{
+1,2,\ldots,n\right\}  }t^{n-q}\delta_{q,n-m}\det A\\
+&  =\sum_{\substack{q\in\left\{  1,2,\ldots,n\right\}  ;\\q\neq n-m}%
+}t^{n-q}\underbrace{\delta_{q,n-m}}_{\substack{=0\\\text{(since }q\neq
+n-m\text{)}}}\det A+\underbrace{t^{n-\left(  n-m\right)  }}_{\substack{=t^{m}%
+\\\text{(since }n-\left(  n-m\right)  =m\text{)}}}\underbrace{\delta
+_{n-m,n-m}}_{\substack{=1\\\text{(since }n-m=n-m\text{)}}}\det A\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have split off the addend for }q=n-m\text{ from the sum}\\
+\text{(since }n-m\in\left\{  1,2,\ldots,n\right\}  \text{)}%
+\end{array}
+\right) \\
+&  =\underbrace{\sum_{\substack{q\in\left\{  1,2,\ldots,n\right\}  ;\\q\neq
+n-m}}t^{n-q}0\det A}_{=0}+t^{m}\det A=t^{m}\underbrace{\det A}%
+_{\substack{=V\left(  x_{1},x_{2},\ldots,x_{n}\right)  \\\text{(by
+(\ref{eq.lem.sol.vander-hook.V=x.eq}))}}}\\
+&  =t^{m}V\left(  x_{1},x_{2},\ldots,x_{n}\right)  .
+\end{align*}
+This proves Proposition \ref{prop.sol.vander-hook.N}.
+\end{proof}
+
+\subsubsection{Addendum: analogues involving products of all but one $x_{j}$}
+
+Let us finally prove a much more complicated analogue of Exercise
+\ref{exe.vander-hook} and Proposition \ref{prop.sol.vander-hook.variant}. We
+shall use the following notations:
+
+\begin{definition}
+\label{def.sol.vander-hook.elsyms}Let $n\in\mathbb{N}$. Let $\left[  n\right]
+$ denote the set $\left\{  1,2,\ldots,n\right\}  $. As usual, let
+$\mathcal{P}\left(  \left[  n\right]  \right)  $ denote the powerset of
+$\left[  n\right]  $. Let $x_{1},x_{2},\ldots,x_{n}$ be $n$ elements of
+$\mathbb{K}$.
+
+\textbf{(a)} For every $j\in\mathbb{N}$, define an element $e_{j}\left(
+x_{1},x_{2},\ldots,x_{n}\right)  \in\mathbb{K}$ by
+\[
+e_{j}\left(  x_{1},x_{2},\ldots,x_{n}\right)  =\sum_{\substack{I\subseteq
+\left[  n\right]  ;\\\left\vert I\right\vert =j}}\prod_{i\in I}x_{i}.
+\]
+
+
+(Here, as usual, the summation sign $\sum_{\substack{I\subseteq\left[
+n\right]  ;\\\left\vert I\right\vert =j}}$ means $\sum_{\substack{I\in
+\mathcal{P}\left(  \left[  n\right]  \right)  ;\\\left\vert I\right\vert =j}}$.)
+
+\textbf{(b)} For every $t\in\mathbb{K}$, define an element $z_{t}\left(
+x_{1},x_{2},\ldots,x_{n}\right)  \in\mathbb{K}$ by%
+\[
+z_{t}\left(  x_{1},x_{2},\ldots,x_{n}\right)  =\sum_{j=0}^{n-1}e_{n-1-j}%
+\left(  x_{1},x_{2},\ldots,x_{n}\right)  t^{j}.
+\]
+
+\end{definition}
+
+\begin{proposition}
+\label{prop.sol.vander-hook.variant-1}Let $n\in\mathbb{N}$. Let $x_{1}%
+,x_{2},\ldots,x_{n}$ be $n$ elements of $\mathbb{K}$. Let $t\in\mathbb{K}$.
+For each $i\in\left\{  1,2,\ldots,n\right\}  $, set $y_{i}=\prod
+_{\substack{j\in\left\{  1,2,\ldots,n\right\}  ;\\j\neq i}}x_{j}$. Then,%
+\begin{align*}
+&  \sum_{k=1}^{n}y_{k}V\left(  x_{1},x_{2},\ldots,x_{k-1},x_{k}+t,x_{k+1}%
+,x_{k+2},\ldots,x_{n}\right) \\
+&  =z_{-t}\left(  x_{1},x_{2},\ldots,x_{n}\right)  \cdot V\left(  x_{1}%
+,x_{2},\ldots,x_{n}\right)  .
+\end{align*}
+
+\end{proposition}
+
+Before we start proving Proposition \ref{prop.sol.vander-hook.variant-1}, let
+us explore a few properties of the elements defined in Definition
+\ref{def.sol.vander-hook.elsyms}:
+
+\begin{proposition}
+\label{prop.sol.vander-hook.viete}Let $n\in\mathbb{N}$. Let $x_{1}%
+,x_{2},\ldots,x_{n}$ be $n$ elements of $\mathbb{K}$. Let $t\in\mathbb{K}$.
+
+\textbf{(a)} We have%
+\[
+\prod_{i=1}^{n}\left(  x_{i}+t\right)  =\sum_{j=0}^{n}e_{n-j}\left(
+x_{1},x_{2},\ldots,x_{n}\right)  t^{j}.
+\]
+
+
+\textbf{(b)} We have%
+\[
+e_{n}\left(  x_{1},x_{2},\ldots,x_{n}\right)  =\prod_{i=1}^{n}x_{i}.
+\]
+
+
+\textbf{(c)} We have%
+\[
+t\cdot z_{t}\left(  x_{1},x_{2},\ldots,x_{n}\right)  =\prod_{i=1}^{n}\left(
+x_{i}+t\right)  -\prod_{i=1}^{n}x_{i}.
+\]
+
+
+\textbf{(d)} Assume that the element $t$ of $\mathbb{K}$ is invertible. Then,%
+\[
+z_{t}\left(  x_{1},x_{2},\ldots,x_{n}\right)  =\dfrac{\prod_{i=1}^{n}\left(
+x_{i}+t\right)  -\prod_{i=1}^{n}x_{i}}{t}.
+\]
+
+\end{proposition}
+
+Proposition \ref{prop.sol.vander-hook.viete} \textbf{(a)} is one of several
+interconnected results known as \textit{Vieta's formulas}. Proposition
+\ref{prop.sol.vander-hook.viete} \textbf{(d)} gives an alternative description
+of $z_{t}\left(  x_{1},x_{2},\ldots,x_{n}\right)  $ in the case when $t$ is invertible.
+
+\begin{proof}
+[Proof of Proposition \ref{prop.sol.vander-hook.viete}.]We shall use the
+notations $\left[  n\right]  $, $\mathcal{P}\left(  \left[  n\right]  \right)
+$ and $\sum_{\substack{I\subseteq\left[  n\right]  ;\\\left\vert I\right\vert
+=j}}$ as in Definition \ref{def.sol.vander-hook.elsyms}.
+
+\begin{vershort}
+We have $\left\vert \left[  n\right]  \right\vert =n$. Hence, every subset $I$
+of $\left[  n\right]  $ satisfies $\left\vert I\right\vert \in\left\{
+0,1,\ldots,n\right\}  $.
+\end{vershort}
+
+\begin{verlong}
+Every subset $I$ of $\left[  n\right]  $ satisfies $\left\vert I\right\vert
+\in\left\{  0,1,\ldots,n\right\}  $\ \ \ \ \footnote{\textit{Proof.} Let $I$
+be a subset of $\left[  n\right]  $. Then, $I\subseteq\left[  n\right]  $, so
+that $\left\vert I\right\vert \leq\left\vert \left[  n\right]  \right\vert
+=n$. In particular, $\left\vert I\right\vert \in\mathbb{N}$. Thus, $\left\vert
+I\right\vert \in\left\{  0,1,\ldots,n\right\}  $ (since $\left\vert
+I\right\vert \in\mathbb{N}$ and $\left\vert I\right\vert \leq n$). Qed.}.
+\end{verlong}
+
+\begin{vershort}
+\textbf{(a)} Exercise \ref{exe.prod(ai+bi)} \textbf{(a)} (applied to
+$a_{i}=x_{i}$ and $b_{i}=t$) yields%
+\begin{align*}
+\prod_{i=1}^{n}\left(  x_{i}+t\right)   &  =\underbrace{\sum_{I\subseteq
+\left[  n\right]  }}_{\substack{=\sum_{j\in\left\{  0,1,\ldots,n\right\}
+}\sum_{\substack{I\subseteq\left[  n\right]  ;\\\left\vert I\right\vert
+=j}}\\\text{(since every subset }I\text{ of }\left[  n\right]
+\\\text{satisfies }\left\vert I\right\vert \in\left\{  0,1,\ldots,n\right\}
+\text{)}}}\left(  \prod_{i\in I}x_{i}\right)  \underbrace{\left(  \prod
+_{i\in\left[  n\right]  \setminus I}t\right)  }_{\substack{=t^{\left\vert
+\left[  n\right]  \setminus I\right\vert }=t^{\left\vert \left[  n\right]
+\right\vert -\left\vert I\right\vert }\\\text{(since }\left\vert \left[
+n\right]  \setminus I\right\vert =\left\vert \left[  n\right]  \right\vert
+-\left\vert I\right\vert \\\text{(because }I\subseteq\left[  n\right]
+\text{))}}}\\
+&  =\underbrace{\sum_{j\in\left\{  0,1,\ldots,n\right\}  }}_{=\sum_{j=0}^{n}%
+}\sum_{\substack{I\subseteq\left[  n\right]  ;\\\left\vert I\right\vert
+=j}}\left(  \prod_{i\in I}x_{i}\right)  \underbrace{t^{\left\vert \left[
+n\right]  \right\vert -\left\vert I\right\vert }}_{\substack{=t^{n-j}%
+\\\text{(since }\left\vert \left[  n\right]  \right\vert =n\text{ and
+}\left\vert I\right\vert =j\text{)}}}\\
+&  =\sum_{j=0}^{n}\sum_{\substack{I\subseteq\left[  n\right]  ;\\\left\vert
+I\right\vert =j}}\left(  \prod_{i\in I}x_{i}\right)  t^{n-j}.
+\end{align*}
+Comparing this with%
+\begin{align*}
+&  \sum_{j=0}^{n}e_{n-j}\left(  x_{1},x_{2},\ldots,x_{n}\right)  t^{j}\\
+&  =\sum_{j=0}^{n}\underbrace{e_{n-\left(  n-j\right)  }\left(  x_{1}%
+,x_{2},\ldots,x_{n}\right)  }_{\substack{=e_{j}\left(  x_{1},x_{2}%
+,\ldots,x_{n}\right)  \\=\sum_{\substack{I\subseteq\left[  n\right]
+;\\\left\vert I\right\vert =j}}\prod_{i\in I}x_{i}}}t^{n-j}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }n-j\text{ for
+}j\text{ in the sum}\right) \\
+&  =\sum_{j=0}^{n}\sum_{\substack{I\subseteq\left[  n\right]  ;\\\left\vert
+I\right\vert =j}}\left(  \prod_{i\in I}x_{i}\right)  t^{n-j},
+\end{align*}
+we obtain%
+\[
+\prod_{i=1}^{n}\left(  x_{i}+t\right)  =\sum_{j=0}^{n}e_{n-j}\left(
+x_{1},x_{2},\ldots,x_{n}\right)  t^{j}.
+\]
+This proves Proposition \ref{prop.sol.vander-hook.viete} \textbf{(a)}.
+\end{vershort}
+
+\begin{verlong}
+\textbf{(a)} Exercise \ref{exe.prod(ai+bi)} \textbf{(a)} (applied to
+$a_{i}=x_{i}$ and $b_{i}=t$) yields%
+\begin{align*}
+\prod_{i=1}^{n}\left(  x_{i}+t\right)   &  =\underbrace{\sum_{I\subseteq
+\left[  n\right]  }}_{\substack{=\sum_{j\in\left\{  0,1,\ldots,n\right\}
+}\sum_{\substack{I\subseteq\left[  n\right]  ;\\\left\vert I\right\vert
+=j}}\\\text{(since every subset }I\text{ of }\left[  n\right]
+\\\text{satisfies }\left\vert I\right\vert \in\left\{  0,1,\ldots,n\right\}
+\text{)}}}\left(  \prod_{i\in I}x_{i}\right)  \underbrace{\left(  \prod
+_{i\in\left[  n\right]  \setminus I}t\right)  }_{\substack{=t^{\left\vert
+\left[  n\right]  \setminus I\right\vert }=t^{\left\vert \left[  n\right]
+\right\vert -\left\vert I\right\vert }\\\text{(since }\left\vert \left[
+n\right]  \setminus I\right\vert =\left\vert \left[  n\right]  \right\vert
+-\left\vert I\right\vert \\\text{(because }I\subseteq\left[  n\right]
+\text{))}}}\\
+&  =\underbrace{\sum_{j\in\left\{  0,1,\ldots,n\right\}  }}_{=\sum_{j=0}^{n}%
+}\sum_{\substack{I\subseteq\left[  n\right]  ;\\\left\vert I\right\vert
+=j}}\left(  \prod_{i\in I}x_{i}\right)  \underbrace{t^{\left\vert \left[
+n\right]  \right\vert -\left\vert I\right\vert }}_{\substack{=t^{n-j}%
+\\\text{(since }\left\vert \left[  n\right]  \right\vert =n\text{ and
+}\left\vert I\right\vert =j\text{)}}}\\
+&  =\sum_{j=0}^{n}\sum_{\substack{I\subseteq\left[  n\right]  ;\\\left\vert
+I\right\vert =j}}\left(  \prod_{i\in I}x_{i}\right)  t^{n-j}.
+\end{align*}
+Comparing this with%
+\begin{align*}
+&  \sum_{j=0}^{n}e_{n-j}\left(  x_{1},x_{2},\ldots,x_{n}\right)  t^{j}\\
+&  =\sum_{j=0}^{n}\underbrace{e_{n-\left(  n-j\right)  }\left(  x_{1}%
+,x_{2},\ldots,x_{n}\right)  }_{\substack{=e_{j}\left(  x_{1},x_{2}%
+,\ldots,x_{n}\right)  \\\text{(since }n-\left(  n-j\right)  =j\text{)}%
+}}t^{n-j}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }n-j\text{ for
+}j\text{ in the sum}\right) \\
+&  =\sum_{j=0}^{n}\underbrace{e_{j}\left(  x_{1},x_{2},\ldots,x_{n}\right)
+}_{\substack{=\sum_{\substack{I\subseteq\left[  n\right]  ;\\\left\vert
+I\right\vert =j}}\prod_{i\in I}x_{i}\\\text{(by the definition of }%
+e_{j}\left(  x_{1},x_{2},\ldots,x_{n}\right)  \text{)}}}t^{n-j}\\
+&  =\sum_{j=0}^{n}\sum_{\substack{I\subseteq\left[  n\right]  ;\\\left\vert
+I\right\vert =j}}\left(  \prod_{i\in I}x_{i}\right)  t^{n-j},
+\end{align*}
+we obtain%
+\[
+\prod_{i=1}^{n}\left(  x_{i}+t\right)  =\sum_{j=0}^{n}e_{n-j}\left(
+x_{1},x_{2},\ldots,x_{n}\right)  t^{j}.
+\]
+This proves Proposition \ref{prop.sol.vander-hook.viete} \textbf{(a)}.
+\end{verlong}
+
+\textbf{(b)} If $I$ is a subset of $\left[  n\right]  $, then we have the
+following logical equivalence:%
+\begin{equation}
+\left(  \left\vert I\right\vert =n\right)  \ \Longleftrightarrow\ \left(
+I=\left[  n\right]  \right)  . \label{pf.prop.sol.vander-hook.viete.b.equiv}%
+\end{equation}
+
+
+\begin{vershort}
+(The proof of (\ref{pf.prop.sol.vander-hook.viete.b.equiv}) is obvious, since
+$\left\vert \left[  n\right]  \right\vert =n$.)
+\end{vershort}
+
+\begin{verlong}
+[\textit{Proof of (\ref{pf.prop.sol.vander-hook.viete.b.equiv}):} Let $I$ be a
+subset of $\left[  n\right]  $.
+
+Assume first that $\left\vert I\right\vert =n$. From $I\subseteq\left[
+n\right]  $, we obtain $\left\vert \left[  n\right]  \right\vert =\left\vert
+I\right\vert +\left\vert \left[  n\right]  \setminus I\right\vert $ (since the
+set $\left[  n\right]  $ is finite). Comparing this with $\left\vert \left[
+n\right]  \right\vert =n$, we find $\left\vert I\right\vert +\left\vert
+\left[  n\right]  \setminus I\right\vert =n$. Since $\left\vert I\right\vert
+=n$, this rewrites as $n+\left\vert \left[  n\right]  \setminus I\right\vert
+=n$. Subtracting $n$ from both sides of this equality, we obtain $\left\vert
+\left[  n\right]  \setminus I\right\vert =0$. Thus, $\left[  n\right]
+\setminus I=\varnothing$. In other words, $\left[  n\right]  \subseteq I$.
+Combined with $I\subseteq\left[  n\right]  $, this yields $I=\left[  n\right]
+$.
+
+Now, let us forget our assumption that $\left\vert I\right\vert =n$. We thus
+have shown that $I=\left[  n\right]  $ under the assumption that $\left\vert
+I\right\vert =n$. In other words, we have proven the implication%
+\begin{equation}
+\left(  \left\vert I\right\vert =n\right)  \ \Longrightarrow\ \left(
+I=\left[  n\right]  \right)  .
+\label{pf.prop.sol.vander-hook.viete.b.equiv.pf.1}%
+\end{equation}
+
+
+On the other hand, if $I=\left[  n\right]  $, then $\left\vert I\right\vert
+=n$ (because if $I=\left[  n\right]  $, then $\left\vert \underbrace{I}%
+_{=\left[  n\right]  }\right\vert =\left\vert \left[  n\right]  \right\vert
+=n$). In other words, the implication%
+\[
+\left(  I=\left[  n\right]  \right)  \ \Longrightarrow\ \left(  \left\vert
+I\right\vert =n\right)
+\]
+holds. Combining this implication with
+(\ref{pf.prop.sol.vander-hook.viete.b.equiv.pf.1}), we obtain the equivalence
+$\left(  \left\vert I\right\vert =n\right)  \ \Longleftrightarrow\ \left(
+I=\left[  n\right]  \right)  $. Thus,
+(\ref{pf.prop.sol.vander-hook.viete.b.equiv}) is proven.]
+\end{verlong}
+
+\begin{vershort}
+Now, the definition of $e_{n}\left(  x_{1},x_{2},\ldots,x_{n}\right)  $ yields%
+\begin{align*}
+e_{n}\left(  x_{1},x_{2},\ldots,x_{n}\right)   &  =\underbrace{\sum
+_{\substack{I\subseteq\left[  n\right]  ;\\\left\vert I\right\vert =n}%
+}}_{\substack{=\sum_{\substack{I\subseteq\left[  n\right]  ;\\I=\left[
+n\right]  }}\\\text{(by the equivalence
+(\ref{pf.prop.sol.vander-hook.viete.b.equiv}))}}}\prod_{i\in I}x_{i}%
+=\sum_{\substack{I\subseteq\left[  n\right]  ;\\I=\left[  n\right]  }%
+}\prod_{i\in I}x_{i}\\
+&  =\underbrace{\prod_{i\in\left[  n\right]  }}_{=\prod_{i=1}^{n}}%
+x_{i}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left[  n\right]  \text{ is a
+subset of }\left[  n\right]  \right) \\
+&  =\prod_{i=1}^{n}x_{i}.
+\end{align*}
+This proves Proposition \ref{prop.sol.vander-hook.viete} \textbf{(b)}.
+\end{vershort}
+
+\begin{verlong}
+Now, the definition of $e_{n}\left(  x_{1},x_{2},\ldots,x_{n}\right)  $ yields%
+\[
+e_{n}\left(  x_{1},x_{2},\ldots,x_{n}\right)  =\underbrace{\sum
+_{\substack{I\subseteq\left[  n\right]  ;\\\left\vert I\right\vert =n}%
+}}_{\substack{=\sum_{\substack{I\subseteq\left[  n\right]  ;\\I=\left[
+n\right]  }}\\\text{(because for every subset }I\text{ of }\left[  n\right]
+\text{,}\\\text{the condition }\left(  \left\vert I\right\vert =n\right)
+\text{ is equivalent}\\\text{to the condition }\left(  I=\left[  n\right]
+\right)  \\\text{(by (\ref{pf.prop.sol.vander-hook.viete.b.equiv})))}}%
+}\prod_{i\in I}x_{i}=\sum_{\substack{I\subseteq\left[  n\right]  ;\\I=\left[
+n\right]  }}\prod_{i\in I}x_{i}.
+\]
+But $\left[  n\right]  $ is a subset of $\left[  n\right]  $. Hence, the sum
+$\sum_{\substack{I\subseteq\left[  n\right]  ;\\I=\left[  n\right]  }%
+}\prod_{i\in I}x_{i}$ has exactly one addend: namely, the addend for
+$I=\left[  n\right]  $. Therefore, this sum simplifies as follows:%
+\[
+\sum_{\substack{I\subseteq\left[  n\right]  ;\\I=\left[  n\right]  }%
+}\prod_{i\in I}x_{i}=\underbrace{\prod_{i\in\left[  n\right]  }}%
+_{\substack{=\prod_{i\in\left\{  1,2,\ldots,n\right\}  }\\\text{(since
+}\left[  n\right]  =\left\{  1,2,\ldots,n\right\}  \text{)}}}x_{i}%
+=\underbrace{\prod_{i\in\left\{  1,2,\ldots,n\right\}  }}_{=\prod_{i=1}^{n}%
+}x_{i}=\prod_{i=1}^{n}x_{i}.
+\]
+Thus,%
+\[
+e_{n}\left(  x_{1},x_{2},\ldots,x_{n}\right)  =\sum_{\substack{I\subseteq
+\left[  n\right]  ;\\I=\left[  n\right]  }}\prod_{i\in I}x_{i}=\prod_{i=1}%
+^{n}x_{i}.
+\]
+This proves Proposition \ref{prop.sol.vander-hook.viete} \textbf{(b)}.
+\end{verlong}
+
+\textbf{(c)} We have $0\in\left\{  0,1,\ldots,n\right\}  $ (since
+$n\in\mathbb{N}$). Proposition \ref{prop.sol.vander-hook.viete} \textbf{(a)}
+shows that%
+\begin{align*}
+\prod_{i=1}^{n}\left(  x_{i}+t\right)   &  =\sum_{j=0}^{n}e_{n-j}\left(
+x_{1},x_{2},\ldots,x_{n}\right)  t^{j}\\
+&  =\underbrace{e_{n-0}\left(  x_{1},x_{2},\ldots,x_{n}\right)  }%
+_{\substack{=e_{n}\left(  x_{1},x_{2},\ldots,x_{n}\right)  \\=\prod_{i=1}%
+^{n}x_{i}\\\text{(by Proposition \ref{prop.sol.vander-hook.viete}
+\textbf{(b)})}}}\underbrace{t^{0}}_{=1}+\underbrace{\sum_{j=1}^{n}%
+e_{n-j}\left(  x_{1},x_{2},\ldots,x_{n}\right)  t^{j}}_{\substack{=\sum
+_{j=0}^{n-1}e_{n-\left(  j+1\right)  }\left(  x_{1},x_{2},\ldots,x_{n}\right)
+t^{j+1}\\\text{(here, we have substituted }j+1\\\text{for }j\text{ in the
+sum)}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have split off the addend for }j=0\text{ from the sum}\\
+\text{(since }0\in\left\{  0,1,\ldots,n\right\}  \text{)}%
+\end{array}
+\right) \\
+&  =\prod_{i=1}^{n}x_{i}+\sum_{j=0}^{n-1}\underbrace{e_{n-\left(  j+1\right)
+}\left(  x_{1},x_{2},\ldots,x_{n}\right)  }_{\substack{=e_{n-1-j}\left(
+x_{1},x_{2},\ldots,x_{n}\right)  \\\text{(since }n-\left(  j+1\right)
+=n-1-j\text{)}}}\underbrace{t^{j+1}}_{=tt^{j}}\\
+&  =\prod_{i=1}^{n}x_{i}+\sum_{j=0}^{n-1}e_{n-1-j}\left(  x_{1},x_{2}%
+,\ldots,x_{n}\right)  tt^{j}.
+\end{align*}
+Solving this equality for $\sum_{j=0}^{n-1}e_{n-1-j}\left(  x_{1},x_{2}%
+,\ldots,x_{n}\right)  tt^{j}$, we obtain%
+\begin{equation}
+\sum_{j=0}^{n-1}e_{n-1-j}\left(  x_{1},x_{2},\ldots,x_{n}\right)  tt^{j}%
+=\prod_{i=1}^{n}\left(  x_{i}+t\right)  -\prod_{i=1}^{n}x_{i}.
+\label{pf.prop.sol.vander-hook.viete.c.1}%
+\end{equation}
+
+
+But
+\begin{align*}
+&  t\cdot\underbrace{z_{t}\left(  x_{1},x_{2},\ldots,x_{n}\right)
+}_{\substack{=\sum_{j=0}^{n-1}e_{n-1-j}\left(  x_{1},x_{2},\ldots
+,x_{n}\right)  t^{j}\\\text{(by the definition of }z_{t}\left(  x_{1}%
+,x_{2},\ldots,x_{n}\right)  \text{)}}}\\
+&  =t\cdot\sum_{j=0}^{n-1}e_{n-1-j}\left(  x_{1},x_{2},\ldots,x_{n}\right)
+t^{j}=\sum_{j=0}^{n-1}e_{n-1-j}\left(  x_{1},x_{2},\ldots,x_{n}\right)
+tt^{j}\\
+&  =\prod_{i=1}^{n}\left(  x_{i}+t\right)  -\prod_{i=1}^{n}x_{i}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{pf.prop.sol.vander-hook.viete.c.1}%
+)}\right)  .
+\end{align*}
+This proves Proposition \ref{prop.sol.vander-hook.viete} \textbf{(c)}.
+
+\textbf{(d)} Proposition \ref{prop.sol.vander-hook.viete} \textbf{(c)} yields%
+\[
+t\cdot z_{t}\left(  x_{1},x_{2},\ldots,x_{n}\right)  =\prod_{i=1}^{n}\left(
+x_{i}+t\right)  -\prod_{i=1}^{n}x_{i}.
+\]
+We can divide both sides of this equality by $t$ (since $t$ is invertible). As
+a result, we obtain%
+\[
+z_{t}\left(  x_{1},x_{2},\ldots,x_{n}\right)  =\dfrac{\prod_{i=1}^{n}\left(
+x_{i}+t\right)  -\prod_{i=1}^{n}x_{i}}{t}.
+\]
+This proves Proposition \ref{prop.sol.vander-hook.viete} \textbf{(d)}.
+\end{proof}
+
+Our next proposition is crucial in getting a grip on the elements $y_{k}$ in
+Proposition \ref{prop.sol.vander-hook.variant-1}:
+
+\begin{proposition}
+\label{prop.sol.vander-hook.viete-y}Let $n\in\mathbb{N}$. Let $x_{1}%
+,x_{2},\ldots,x_{n}$ be $n$ elements of $\mathbb{K}$. For each $i\in\left\{
+1,2,\ldots,n\right\}  $, set $y_{i}=\prod_{\substack{j\in\left\{
+1,2,\ldots,n\right\}  ;\\j\neq i}}x_{j}$.
+
+Let $k\in\left\{  1,2,\ldots,n\right\}  $. Then,%
+\[
+y_{k}=\sum_{j=0}^{n-1}\left(  -1\right)  ^{n-1-j}e_{j}\left(  x_{1}%
+,x_{2},\ldots,x_{n}\right)  x_{k}^{n-1-j}.
+\]
+
+\end{proposition}
+
+\begin{vershort}
+Our proof of Proposition \ref{prop.sol.vander-hook.viete-y} will rely on a
+basic fact about sets:
+
+\begin{proposition}
+\label{prop.sol.vander-hook.viete-y.short.Pm.lem}For every set $T$ and every
+$j\in\mathbb{N}$, we let $\mathcal{P}_{j}\left(  T\right)  $ denote the set of
+all $j$-element subsets of $T$.
+
+Let $S$ be a set. Let $s\in S$. Let $m$ be a positive integer. Then:
+
+\begin{itemize}
+\item We have $\mathcal{P}_{m}\left(  S\setminus\left\{  s\right\}  \right)
+\subseteq\mathcal{P}_{m}\left(  S\right)  $.
+
+\item The map%
+\begin{align*}
+\mathcal{P}_{m-1}\left(  S\setminus\left\{  s\right\}  \right)   &
+\rightarrow\mathcal{P}_{m}\left(  S\right)  \setminus\mathcal{P}_{m}\left(
+S\setminus\left\{  s\right\}  \right)  ,\\
+U  &  \mapsto U\cup\left\{  s\right\}
+\end{align*}
+is well-defined and a bijection.
+\end{itemize}
+\end{proposition}
+
+Roughly speaking, Proposition \ref{prop.sol.vander-hook.viete-y.short.Pm.lem}
+claims that if $s$ is an element of a set $S$, and if $m$ is a positive
+integer, then:
+
+\begin{itemize}
+\item all $m$-element subsets of $S\setminus\left\{  s\right\}  $ are
+$m$-element subsets of $S$ as well;
+
+\item the $m$-element subsets of $S$ which are \textbf{not} $m$-element
+subsets of $S\setminus\left\{  s\right\}  $ are in bijection with the $\left(
+m-1\right)  $-element subsets of $S\setminus\left\{  s\right\}  $; this
+bijection sends an $\left(  m-1\right)  $-element subset $U$ of $S\setminus
+\left\{  s\right\}  $ to the $m$-element subset $U\cup\left\{  s\right\}  $ of
+$S$.
+\end{itemize}
+
+Restated this way, Proposition \ref{prop.sol.vander-hook.viete-y.short.Pm.lem}
+should be intuitively clear. A rigorous proof is not hard to
+give\footnote{Here is an outline: First, show that the two maps%
+\begin{align*}
+\mathcal{P}_{m-1}\left(  S\setminus\left\{  s\right\}  \right)   &
+\rightarrow\mathcal{P}_{m}\left(  S\right)  \setminus\mathcal{P}_{m}\left(
+S\setminus\left\{  s\right\}  \right)  ,\\
+U  &  \mapsto U\cup\left\{  s\right\}
+\end{align*}
+and%
+\begin{align*}
+\mathcal{P}_{m}\left(  S\right)  \setminus\mathcal{P}_{m}\left(
+S\setminus\left\{  s\right\}  \right)   &  \rightarrow\mathcal{P}_{m-1}\left(
+S\setminus\left\{  s\right\}  \right)  ,\\
+U  &  \mapsto U\setminus\left\{  s\right\}
+\end{align*}
+are well-defined. Then, show that these maps are mutually inverse. Conclude
+that the first of these two maps is invertible, i.e., is a bijection.}.
+
+\begin{proof}
+[Proof of Proposition \ref{prop.sol.vander-hook.viete-y}.]We shall use the
+notations $\left[  n\right]  $, $\mathcal{P}\left(  \left[  n\right]  \right)
+$ and $\sum_{\substack{I\subseteq\left[  n\right]  ;\\\left\vert I\right\vert
+=j}}$ as in Definition \ref{def.sol.vander-hook.elsyms}. We shall furthermore
+use the notation $\mathcal{P}_{j}\left(  T\right)  $ from Proposition
+\ref{prop.sol.vander-hook.viete-y.short.Pm.lem}.
+
+Let $K=\left[  n\right]  \setminus\left\{  k\right\}  $. Note that
+$k\in\left\{  1,2,\ldots,n\right\}  =\left[  n\right]  $, so that $\left\vert
+\left[  n\right]  \setminus\left\{  k\right\}  \right\vert
+=\underbrace{\left\vert \left[  n\right]  \right\vert }_{=n}-1=n-1$. From
+$K=\left[  n\right]  \setminus\left\{  k\right\}  $, we obtain $\left\vert
+K\right\vert =\left\vert \left[  n\right]  \setminus\left\{  k\right\}
+\right\vert =n-1$.
+
+For every $j\in\mathbb{N}$, define an element $f_{j}\in\mathbb{K}$ by%
+\[
+f_{j}=\sum_{\substack{I\subseteq K;\\\left\vert I\right\vert =j}}\prod_{i\in
+I}x_{i}.
+\]
+Then,%
+\begin{equation}
+f_{0}=1 \label{pf.prop.sol.vander-hook.viete-y.short.f0=}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.prop.sol.vander-hook.viete-y.short.f0=}):}
+There exists exactly one subset $I$ of $K$ satisfying $\left\vert I\right\vert
+=0$: namely, the subset $\varnothing$. Hence, the sum $\sum
+_{\substack{I\subseteq K;\\\left\vert I\right\vert =0}}\prod_{i\in I}x_{i}$
+has only one addend: namely, the addend for $I=\varnothing$. Thus, this sum
+simplifies to $\sum_{\substack{I\subseteq K;\\\left\vert I\right\vert
+=0}}\prod_{i\in I}x_{i}=\prod_{i\in\varnothing}x_{i}=\left(  \text{empty
+product}\right)  =1$.
+\par
+Now, the definition of $f_{0}$ yields $f_{0}=\sum_{\substack{I\subseteq
+K;\\\left\vert I\right\vert =0}}\prod_{i\in I}x_{i}=1$. This proves
+(\ref{pf.prop.sol.vander-hook.viete-y.short.f0=}).}.
+
+Next, we shall show that%
+\begin{equation}
+f_{n-1}=y_{k}. \label{pf.prop.sol.vander-hook.viete-y.short.fn-1=}%
+\end{equation}
+
+
+[\textit{Proof of (\ref{pf.prop.sol.vander-hook.viete-y.short.fn-1=}):} We
+have $\left\vert K\right\vert =n-1$. Hence, there exists only one $\left(
+n-1\right)  $-element subset $I$ of $K$: namely, the set $K$ itself. In other
+words, there exists only one subset $I$ of $K$ satisfying $\left\vert
+I\right\vert =n-1$: namely, the set $K$ itself. Hence, the sum $\sum
+_{\substack{I\subseteq K;\\\left\vert I\right\vert =n-1}}\prod_{i\in I}x_{i}$
+has only one addend: namely, the addend for $I=K$. Thus, this sum simplifies
+to%
+\begin{align*}
+\sum_{\substack{I\subseteq K;\\\left\vert I\right\vert =n-1}}\prod_{i\in
+I}x_{i}  &  =\prod_{i\in K}x_{i}=\prod_{j\in K}x_{j}=\underbrace{\prod
+_{j\in\left\{  1,2,\ldots,n\right\}  \setminus\left\{  k\right\}  }}%
+_{=\prod_{\substack{j\in\left\{  1,2,\ldots,n\right\}  ;\\j\neq k}}}x_{j}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }K=\underbrace{\left[  n\right]
+}_{=\left\{  1,2,\ldots,n\right\}  }\setminus\left\{  k\right\}  =\left\{
+1,2,\ldots,n\right\}  \setminus\left\{  k\right\}  \right) \\
+&  =\prod_{\substack{j\in\left\{  1,2,\ldots,n\right\}  ;\\j\neq k}}x_{k}.
+\end{align*}
+Now, the definition of $f_{n-1}$ yields%
+\[
+f_{n-1}=\sum_{\substack{I\subseteq K;\\\left\vert I\right\vert =n-1}%
+}\prod_{i\in I}x_{i}=\prod_{\substack{j\in\left\{  1,2,\ldots,n\right\}
+;\\j\neq k}}x_{j}.
+\]
+Comparing this with%
+\[
+y_{k}=\prod_{\substack{j\in\left\{  1,2,\ldots,n\right\}  ;\\j\neq k}%
+}x_{j}\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }y_{k}\right)  ,
+\]
+we find $f_{n-1}=y_{k}$. Thus,
+(\ref{pf.prop.sol.vander-hook.viete-y.short.fn-1=}) is proven.]
+
+But%
+\begin{equation}
+e_{0}\left(  x_{1},x_{2},\ldots,x_{n}\right)  =1
+\label{pf.prop.sol.vander-hook.viete-y.short.e0=}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.prop.sol.vander-hook.viete-y.short.e0=}):}
+There exists exactly one subset $I$ of $\left[  n\right]  $ satisfying
+$\left\vert I\right\vert =0$: namely, the subset $\varnothing$. Hence, the sum
+$\sum_{\substack{I\subseteq\left[  n\right]  ;\\\left\vert I\right\vert
+=0}}\prod_{i\in I}x_{i}$ has only one addend: namely, the addend for
+$I=\varnothing$. Thus, this sum simplifies to $\sum_{\substack{I\subseteq
+\left[  n\right]  ;\\\left\vert I\right\vert =0}}\prod_{i\in I}x_{i}%
+=\prod_{i\in\varnothing}x_{i}=\left(  \text{empty product}\right)  =1$.
+\par
+Now, the definition of $e_{0}\left(  x_{1},x_{2},\ldots,x_{n}\right)  $ yields
+$e_{0}\left(  x_{1},x_{2},\ldots,x_{n}\right)  =\sum_{\substack{I\subseteq
+\left[  n\right]  ;\\\left\vert I\right\vert =0}}\prod_{i\in I}x_{i}=1$. This
+proves (\ref{pf.prop.sol.vander-hook.viete-y.short.e0=}).}.
+
+We shall now show that%
+\begin{equation}
+e_{m}\left(  x_{1},x_{2},\ldots,x_{n}\right)  =f_{m}+x_{k}f_{m-1}
+\label{pf.prop.sol.vander-hook.viete-y.short.main}%
+\end{equation}
+for every positive integer $m$.
+
+[\textit{Proof of (\ref{pf.prop.sol.vander-hook.viete-y.short.main}):} Let $m$
+be a positive integer. The definition of $f_{m}$ yields%
+\begin{equation}
+f_{m}=\underbrace{\sum_{\substack{I\subseteq K;\\\left\vert I\right\vert =m}%
+}}_{\substack{=\sum_{\substack{I\text{ is an }m\text{-element}\\\text{subset
+of }K}}=\sum_{I\in\mathcal{P}_{m}\left(  K\right)  }\\\text{(since the set of
+all }m\text{-element}\\\text{subsets of }K\text{ is }\mathcal{P}_{m}\left(
+K\right)  \text{)}}}\prod_{i\in I}x_{i}=\sum_{I\in\mathcal{P}_{m}\left(
+K\right)  }\prod_{i\in I}x_{i}.
+\label{pf.prop.sol.vander-hook.viete-y.short.main.pf.fm=}%
+\end{equation}
+The same argument (but applied to $m-1$ instead of $m$) yields%
+\begin{equation}
+f_{m-1}=\sum_{I\in\mathcal{P}_{m-1}\left(  K\right)  }\prod_{i\in I}x_{i}.
+\label{pf.prop.sol.vander-hook.viete-y.short.main.pf.fm-1=}%
+\end{equation}
+
+
+Recall that $k\in\left[  n\right]  $. Hence, we can apply Proposition
+\ref{prop.sol.vander-hook.viete-y.short.Pm.lem} to $\left[  n\right]  $ and
+$k$ instead of $S$ and $s$. As a result, we obtain the following two results:
+
+\begin{itemize}
+\item We have $\mathcal{P}_{m}\left(  \left[  n\right]  \setminus\left\{
+k\right\}  \right)  \subseteq\mathcal{P}_{m}\left(  \left[  n\right]  \right)
+$.
+
+\item The map%
+\begin{align*}
+\mathcal{P}_{m-1}\left(  \left[  n\right]  \setminus\left\{  k\right\}
+\right)   &  \rightarrow\mathcal{P}_{m}\left(  \left[  n\right]  \right)
+\setminus\mathcal{P}_{m}\left(  \left[  n\right]  \setminus\left\{  k\right\}
+\right)  ,\\
+U  &  \mapsto U\cup\left\{  k\right\}
+\end{align*}
+is well-defined and a bijection.
+\end{itemize}
+
+Since $\left[  n\right]  \setminus\left\{  k\right\}  =K$, these two results
+can be rewritten as follows:
+
+\begin{itemize}
+\item We have $\mathcal{P}_{m}\left(  K\right)  \subseteq\mathcal{P}%
+_{m}\left(  \left[  n\right]  \right)  $.
+
+\item The map%
+\begin{align*}
+\mathcal{P}_{m-1}\left(  K\right)   &  \rightarrow\mathcal{P}_{m}\left(
+\left[  n\right]  \right)  \setminus\mathcal{P}_{m}\left(  K\right)  ,\\
+U  &  \mapsto U\cup\left\{  k\right\}
+\end{align*}
+is well-defined and a bijection.
+\end{itemize}
+
+Furthermore, every $I\in\mathcal{P}_{m-1}\left(  K\right)  $ satisfies%
+\begin{equation}
+\prod_{i\in I\cup\left\{  k\right\}  }x_{i}=x_{k}\prod_{i\in I}x_{i}
+\label{pf.prop.sol.vander-hook.viete-y.short.main.pf.2}%
+\end{equation}
+\footnote{\textit{Proof of
+(\ref{pf.prop.sol.vander-hook.viete-y.short.main.pf.2}):} Let $I\in
+\mathcal{P}_{m-1}\left(  K\right)  $. Thus, $I$ is an $\left(  m-1\right)
+$-element subset of $K$ (since $\mathcal{P}_{m-1}\left(  K\right)  $ is
+defined as the set of all $\left(  m-1\right)  $-element subsets of $K$). In
+particular, $I$ is a subset of $K$. Thus, $I\subseteq K=\left[  n\right]
+\setminus\left\{  k\right\}  $. Thus, $k\notin I$. Hence, the sets $I$ and
+$\left\{  k\right\}  $ are disjoint. Thus,%
+\[
+\prod_{i\in I\cup\left\{  k\right\}  }x_{i}=\left(  \prod_{i\in I}%
+x_{i}\right)  \underbrace{\left(  \prod_{i\in\left\{  k\right\}  }%
+x_{i}\right)  }_{=x_{k}}=\left(  \prod_{i\in I}x_{i}\right)  x_{k}=x_{k}%
+\prod_{i\in I}x_{i}.
+\]
+This proves (\ref{pf.prop.sol.vander-hook.viete-y.short.main.pf.2}).}. Now,%
+\begin{align}
+&  \sum_{I\in\mathcal{P}_{m}\left(  \left[  n\right]  \right)  \setminus
+\mathcal{P}_{m}\left(  K\right)  }\prod_{i\in I}x_{i}\nonumber\\
+&  =\sum_{U\in\mathcal{P}_{m-1}\left(  K\right)  }\prod_{i\in U\cup\left\{
+k\right\}  }x_{i}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have substituted }U\cup\left\{  k\right\}  \text{ for }I\text{
+in the sum, since}\\
+\text{the map }\mathcal{P}_{m-1}\left(  K\right)  \rightarrow\mathcal{P}%
+_{m}\left(  \left[  n\right]  \right)  \setminus\mathcal{P}_{m}\left(
+K\right)  ,\ U\mapsto U\cup\left\{  k\right\} \\
+\text{is a bijection}%
+\end{array}
+\right) \nonumber\\
+&  =\sum_{I\in\mathcal{P}_{m-1}\left(  K\right)  }\underbrace{\prod_{i\in
+I\cup\left\{  k\right\}  }x_{i}}_{\substack{=x_{k}\prod_{i\in I}%
+x_{i}\\\text{(by (\ref{pf.prop.sol.vander-hook.viete-y.short.main.pf.2}))}%
+}}\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have renamed the}\\
+\text{summation index }U\text{ as }I
+\end{array}
+\right) \nonumber\\
+&  =\sum_{I\in\mathcal{P}_{m-1}\left(  K\right)  }x_{k}\prod_{i\in I}%
+x_{i}=x_{k}\sum_{I\in\mathcal{P}_{m-1}\left(  K\right)  }\prod_{i\in I}x_{i}.
+\label{pf.prop.sol.vander-hook.viete-y.short.main.pf.2b}%
+\end{align}
+
+
+But the definition of $e_{m}\left(  x_{1},x_{2},\ldots,x_{n}\right)  $ yields
+\begin{align*}
+e_{m}\left(  x_{1},x_{2},\ldots,x_{n}\right)   &  =\underbrace{\sum
+_{\substack{I\subseteq\left[  n\right]  ;\\\left\vert I\right\vert =m}%
+}}_{\substack{=\sum_{\substack{I\text{ is an }m\text{-element}\\\text{subset
+of }\left[  n\right]  }}=\sum_{I\in\mathcal{P}_{m}\left(  \left[  n\right]
+\right)  }\\\text{(since the set of all }m\text{-element}\\\text{subsets of
+}\left[  n\right]  \text{ is }\mathcal{P}_{m}\left(  \left[  n\right]
+\right)  \text{)}}}\prod_{i\in I}x_{i}=\sum_{I\in\mathcal{P}_{m}\left(
+\left[  n\right]  \right)  }\prod_{i\in I}x_{i}\\
+&  =\underbrace{\sum_{\substack{I\in\mathcal{P}_{m}\left(  \left[  n\right]
+\right)  ;\\I\in\mathcal{P}_{m}\left(  K\right)  }}}_{\substack{=\sum
+_{I\in\mathcal{P}_{m}\left(  K\right)  }\\\text{(since }\mathcal{P}_{m}\left(
+K\right)  \subseteq\mathcal{P}_{m}\left(  \left[  n\right]  \right)  \text{)}%
+}}\prod_{i\in I}x_{i}+\underbrace{\sum_{\substack{I\in\mathcal{P}_{m}\left(
+\left[  n\right]  \right)  ;\\I\notin\mathcal{P}_{m}\left(  K\right)  }%
+}}_{=\sum_{I\in\mathcal{P}_{m}\left(  \left[  n\right]  \right)
+\setminus\mathcal{P}_{m}\left(  K\right)  }}\prod_{i\in I}x_{i}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since each }I\in\mathcal{P}_{m}\left(  \left[  n\right]  \right)  \text{
+satisfies either }I\in\mathcal{P}_{m}\left(  K\right) \\
+\text{or }I\notin\mathcal{P}_{m}\left(  K\right)  \text{ (but not both)}%
+\end{array}
+\right) \\
+&  =\sum_{I\in\mathcal{P}_{m}\left(  K\right)  }\prod_{i\in I}x_{i}%
++\underbrace{\sum_{I\in\mathcal{P}_{m}\left(  \left[  n\right]  \right)
+\setminus\mathcal{P}_{m}\left(  K\right)  }\prod_{i\in I}x_{i}}%
+_{\substack{=x_{k}\sum_{I\in\mathcal{P}_{m-1}\left(  K\right)  }\prod_{i\in
+I}x_{i}\\\text{(by (\ref{pf.prop.sol.vander-hook.viete-y.short.main.pf.2b}))}%
+}}\\
+&  =\underbrace{\sum_{I\in\mathcal{P}_{m}\left(  K\right)  }\prod_{i\in
+I}x_{i}}_{\substack{=f_{m}\\\text{(by
+(\ref{pf.prop.sol.vander-hook.viete-y.short.main.pf.fm=}))}}}+x_{k}%
+\underbrace{\sum_{I\in\mathcal{P}_{m-1}\left(  K\right)  }\prod_{i\in I}x_{i}%
+}_{\substack{=f_{m-1}\\\text{(by
+(\ref{pf.prop.sol.vander-hook.viete-y.short.main.pf.fm-1=}))}}}\\
+&  =f_{m}+x_{k}f_{m-1}.
+\end{align*}
+This proves (\ref{pf.prop.sol.vander-hook.viete-y.short.main}).]
+
+Recall that $k\in\left\{  1,2,\ldots,n\right\}  $. Hence, $1\leq k\leq n$, so
+that $n\geq1$, so that $n-1\in\mathbb{N}$. Hence, $0\in\left\{  0,1,\ldots
+,n-1\right\}  $ and $n-1\in\left\{  0,1,\ldots,n-1\right\}  $.
+
+Now,%
+\begin{align}
+&  \sum_{j=0}^{n-1}\left(  -1\right)  ^{n-1-j}e_{j}\left(  x_{1},x_{2}%
+,\ldots,x_{n}\right)  x_{k}^{n-1-j}\nonumber\\
+&  =\underbrace{\left(  -1\right)  ^{n-1-0}}_{=\left(  -1\right)  ^{n-1}%
+}\underbrace{e_{0}\left(  x_{1},x_{2},\ldots,x_{n}\right)  }%
+_{\substack{=1\\\text{(by (\ref{pf.prop.sol.vander-hook.viete-y.short.e0=}))}%
+}}\underbrace{x_{k}^{n-1-0}}_{=x_{k}^{n-1}}+\sum_{j=1}^{n-1}\left(  -1\right)
+^{n-1-j}\underbrace{e_{j}\left(  x_{1},x_{2},\ldots,x_{n}\right)
+}_{\substack{=f_{j}+x_{k}f_{j-1}\\\text{(by
+(\ref{pf.prop.sol.vander-hook.viete-y.short.main}) (applied to }m=j\text{))}%
+}}x_{k}^{n-1-j}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have split off the addend for }j=0\text{ from the sum,}\\
+\text{since }0\in\left\{  0,1,\ldots,n-1\right\}
+\end{array}
+\right) \nonumber\\
+&  =\left(  -1\right)  ^{n-1}x_{k}^{n-1}+\underbrace{\sum_{j=1}^{n-1}\left(
+-1\right)  ^{n-1-j}\left(  f_{j}+x_{k}f_{j-1}\right)  x_{k}^{n-1-j}}%
+_{=\sum_{j=1}^{n-1}\left(  -1\right)  ^{n-1-j}f_{j}x_{k}^{n-1-j}+\sum
+_{j=1}^{n-1}\left(  -1\right)  ^{n-1-j}x_{k}f_{j-1}x_{k}^{n-1-j}}\nonumber\\
+&  =\left(  -1\right)  ^{n-1}x_{k}^{n-1}+\sum_{j=1}^{n-1}\left(  -1\right)
+^{n-1-j}f_{j}x_{k}^{n-1-j}+\sum_{j=1}^{n-1}\left(  -1\right)  ^{n-1-j}%
+x_{k}f_{j-1}x_{k}^{n-1-j}. \label{pf.prop.sol.vander-hook.viete-y.short.5}%
+\end{align}
+
+
+But
+\begin{align}
+&  \sum_{j=1}^{n-1}\left(  -1\right)  ^{n-1-j}\underbrace{x_{k}f_{j-1}%
+}_{=f_{j-1}x_{k}}x_{k}^{n-1-j}\nonumber\\
+&  =\sum_{j=1}^{n-1}\left(  -1\right)  ^{n-1-j}f_{j-1}\underbrace{x_{k}%
+x_{k}^{n-1-j}}_{=x_{k}^{\left(  n-1-j\right)  +1}=x_{k}^{n-j}}=\sum
+_{j=1}^{n-1}\left(  -1\right)  ^{n-1-j}f_{j-1}x_{k}^{n-j}\nonumber\\
+&  =\sum_{j=0}^{\left(  n-1\right)  -1}\underbrace{\left(  -1\right)
+^{n-1-\left(  j+1\right)  }}_{\substack{=\left(  -1\right)  ^{n-j}%
+\\\text{(since }n-1-\left(  j+1\right)  =n-j-2\equiv n-j\operatorname{mod}%
+2\text{)}}}\underbrace{f_{\left(  j+1\right)  -1}}_{=f_{j}}\underbrace{x_{k}%
+^{n-\left(  j+1\right)  }}_{\substack{=x_{k}^{n-1-j}\\\text{(since }n-\left(
+j+1\right)  =n-1-j\text{)}}}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }j+1\text{ for
+}j\text{ in the sum}\right) \nonumber\\
+&  =\sum_{j=0}^{\left(  n-1\right)  -1}\underbrace{\left(  -1\right)  ^{n-j}%
+}_{\substack{=-\left(  -1\right)  ^{n-j-1}=-\left(  -1\right)  ^{n-1-j}%
+\\\text{(since }n-j-1=n-1-j\text{)}}}f_{j}x_{k}^{n-1-j}=\sum_{j=0}^{\left(
+n-1\right)  -1}\left(  -\left(  -1\right)  ^{n-1-j}\right)  f_{j}x_{k}%
+^{n-1-j}\nonumber\\
+&  =-\sum_{j=0}^{\left(  n-1\right)  -1}\left(  -1\right)  ^{n-1-j}f_{j}%
+x_{k}^{n-1-j}. \label{pf.prop.sol.vander-hook.viete-y.short.6a}%
+\end{align}
+Also,%
+\begin{align*}
+&  \sum_{j=0}^{n-1}\left(  -1\right)  ^{n-1-j}f_{j}x_{k}^{n-1-j}\\
+&  =\underbrace{\left(  -1\right)  ^{n-1-0}}_{=\left(  -1\right)  ^{n-1}%
+}\underbrace{f_{0}}_{\substack{=1\\\text{(by
+(\ref{pf.prop.sol.vander-hook.viete-y.short.f0=}))}}}\underbrace{x_{k}%
+^{n-1-0}}_{=x_{k}^{n-1}}+\sum_{j=1}^{n-1}\left(  -1\right)  ^{n-1-j}f_{j}%
+x_{k}^{n-1-j}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have split off the addend for }j=0\text{ from the sum,}\\
+\text{since }0\in\left\{  0,1,\ldots,n-1\right\}
+\end{array}
+\right) \\
+&  =\left(  -1\right)  ^{n-1}x_{k}^{n-1}+\sum_{j=1}^{n-1}\left(  -1\right)
+^{n-1-j}f_{j}x_{k}^{n-1-j},
+\end{align*}
+so that%
+\begin{align}
+&  \left(  -1\right)  ^{n-1}x_{k}^{n-1}+\sum_{j=1}^{n-1}\left(  -1\right)
+^{n-1-j}f_{j}x_{k}^{n-1-j}\nonumber\\
+&  =\sum_{j=0}^{n-1}\left(  -1\right)  ^{n-1-j}f_{j}x_{k}^{n-1-j}\nonumber\\
+&  =\sum_{j=0}^{\left(  n-1\right)  -1}\left(  -1\right)  ^{n-1-j}f_{j}%
+x_{k}^{n-1-j}+\underbrace{\left(  -1\right)  ^{n-1-\left(  n-1\right)  }%
+}_{=\left(  -1\right)  ^{0}=1}\underbrace{f_{n-1}}_{\substack{=y_{k}%
+\\\text{(by (\ref{pf.prop.sol.vander-hook.viete-y.short.fn-1=}))}%
+}}\underbrace{x_{k}^{n-1-\left(  n-1\right)  }}_{=x_{k}^{0}=1}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have split off the addend for }j=n-1\text{ from the sum,}\\
+\text{since }n-1\in\left\{  0,1,\ldots,n-1\right\}
+\end{array}
+\right) \nonumber\\
+&  =\sum_{j=0}^{\left(  n-1\right)  -1}\left(  -1\right)  ^{n-1-j}f_{j}%
+x_{k}^{n-1-j}+y_{k}. \label{pf.prop.sol.vander-hook.viete-y.short.6b}%
+\end{align}
+
+
+Now, (\ref{pf.prop.sol.vander-hook.viete-y.short.5}) becomes%
+\begin{align*}
+&  \sum_{j=0}^{n-1}\left(  -1\right)  ^{n-1-j}e_{j}\left(  x_{1},x_{2}%
+,\ldots,x_{n}\right)  x_{k}^{n-1-j}\\
+&  =\underbrace{\left(  -1\right)  ^{n-1}x_{k}^{n-1}+\sum_{j=1}^{n-1}\left(
+-1\right)  ^{n-1-j}f_{j}x_{k}^{n-1-j}}_{\substack{=\sum_{j=0}^{\left(
+n-1\right)  -1}\left(  -1\right)  ^{n-1-j}f_{j}x_{k}^{n-1-j}+y_{k}\\\text{(by
+(\ref{pf.prop.sol.vander-hook.viete-y.short.6b}))}}}+\underbrace{\sum
+_{j=1}^{n-1}\left(  -1\right)  ^{n-1-j}x_{k}f_{j-1}x_{k}^{n-1-j}%
+}_{\substack{=-\sum_{j=0}^{\left(  n-1\right)  -1}\left(  -1\right)
+^{n-1-j}f_{j}x_{k}^{n-1-j}\\\text{(by
+(\ref{pf.prop.sol.vander-hook.viete-y.short.6a}))}}}\\
+&  =\sum_{j=0}^{\left(  n-1\right)  -1}\left(  -1\right)  ^{n-1-j}f_{j}%
+x_{k}^{n-1-j}+y_{k}+\left(  -\sum_{j=0}^{\left(  n-1\right)  -1}\left(
+-1\right)  ^{n-1-j}f_{j}x_{k}^{n-1-j}\right) \\
+&  =y_{k}.
+\end{align*}
+This proves Proposition \ref{prop.sol.vander-hook.viete-y}.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Proposition \ref{prop.sol.vander-hook.viete-y}.]We shall use the
+notations $\left[  n\right]  $, $\mathcal{P}\left(  \left[  n\right]  \right)
+$ and $\sum_{\substack{I\subseteq\left[  n\right]  ;\\\left\vert I\right\vert
+=j}}$ as in Definition \ref{def.sol.vander-hook.elsyms}. Let $K=\left[
+n\right]  \setminus\left\{  k\right\}  $. Note that $k\in\left\{
+1,2,\ldots,n\right\}  =\left[  n\right]  $, so that $\left\vert \left[
+n\right]  \setminus\left\{  k\right\}  \right\vert =\underbrace{\left\vert
+\left[  n\right]  \right\vert }_{=n}-1=n-1$. From $K=\left[  n\right]
+\setminus\left\{  k\right\}  $, we obtain $\left\vert K\right\vert =\left\vert
+\left[  n\right]  \setminus\left\{  k\right\}  \right\vert =n-1$. Thus, $K$ is
+a finite set.
+
+We shall use the notation introduced in Definition
+\ref{def.sol.prop.binom.subsets.Pm}.
+
+For every $j\in\mathbb{N}$, define an element $f_{j}\in\mathbb{K}$ by%
+\[
+f_{j}=\sum_{I\in\mathcal{P}_{j}\left(  K\right)  }\prod_{i\in I}x_{i}.
+\]
+Then,%
+\begin{equation}
+f_{0}=1 \label{pf.prop.sol.vander-hook.viete-y.f0=}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.prop.sol.vander-hook.viete-y.f0=}):}
+Proposition \ref{prop.sol.prop.binom.subsets.Pm.lem} \textbf{(a)} (applied to
+$S=K$) yields $\mathcal{P}_{0}\left(  K\right)  =\left\{  \varnothing\right\}
+$. Now, the definition of $f_{0}$ yields%
+\begin{align*}
+f_{0}  &  =\sum_{I\in\mathcal{P}_{0}\left(  K\right)  }\prod_{i\in I}%
+x_{i}=\sum_{I\in\left\{  \varnothing\right\}  }\prod_{i\in I}x_{i}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\mathcal{P}_{0}\left(  K\right)
+=\left\{  \varnothing\right\}  \right) \\
+&  =\prod_{i\in\varnothing}x_{i}=\left(  \text{empty product}\right)  =1.
+\end{align*}
+This proves (\ref{pf.prop.sol.vander-hook.viete-y.f0=}).}.
+
+Next, we shall show that%
+\begin{equation}
+f_{n-1}=y_{k}. \label{pf.prop.sol.vander-hook.viete-y.fn-1=}%
+\end{equation}
+
+
+[\textit{Proof of (\ref{pf.prop.sol.vander-hook.viete-y.fn-1=}):} We have
+$\left\{  K\right\}  \subseteq\mathcal{P}_{n-1}\left(  K\right)
+$\ \ \ \ \footnote{\textit{Proof.} We know that $\mathcal{P}_{n-1}\left(
+K\right)  $ is the set of all $\left(  n-1\right)  $-element subsets of $K$
+(by the definition of $\mathcal{P}_{n-1}\left(  K\right)  $).
+\par
+But $K$ is an $\left(  n-1\right)  $-element set (since $\left\vert
+K\right\vert =n-1$) and a subset of $K$ (obviously). Hence, $K$ is an $\left(
+n-1\right)  $-element subset of $K$. In other words, $K\in\mathcal{P}%
+_{n-1}\left(  K\right)  $ (since $\mathcal{P}_{n-1}\left(  K\right)  $ is the
+set of all $\left(  n-1\right)  $-element subsets of $K$). Thus, $\left\{
+K\right\}  \subseteq\mathcal{P}_{n-1}\left(  K\right)  $. Qed.} and
+$\mathcal{P}_{n-1}\left(  K\right)  \subseteq\left\{  K\right\}
+$\ \ \ \ \footnote{\textit{Proof.} We know that $\mathcal{P}_{n-1}\left(
+K\right)  $ is the set of all $\left(  n-1\right)  $-element subsets of $K$
+(by the definition of $\mathcal{P}_{n-1}\left(  K\right)  $).
+\par
+Let $I\in\mathcal{P}_{n-1}\left(  K\right)  $. Thus, $I$ is an $\left(
+n-1\right)  $-element subset of $K$ (since $\mathcal{P}_{n-1}\left(  K\right)
+$ is the set of all $\left(  n-1\right)  $-element subsets of $K$). In other
+words, $I$ is a subset of $K$ and satisfies $\left\vert I\right\vert =n-1$.
+\par
+We have $I\subseteq K$ (since $I$ is a subset of $K$) and thus $\left\vert
+K\right\vert =\left\vert I\right\vert +\left\vert K\setminus I\right\vert $
+(since $K$ is a finite set). Compared with $\left\vert K\right\vert =n-1$,
+this yields $n-1=\underbrace{\left\vert I\right\vert }_{=n-1}+\left\vert
+K\setminus I\right\vert =n-1+\left\vert K\setminus I\right\vert $. Subtracting
+$n-1$ from both sides of this equality, we find $0=\left\vert K\setminus
+I\right\vert $. Thus, $\left\vert K\setminus I\right\vert =0$, so that
+$K\setminus I=\varnothing$. In other words, $K\subseteq I$. Combined with
+$I\subseteq K$, this yields $I=K$. Thus, $I\in\left\{  K\right\}  $.
+\par
+Now, forget that we fixed $I$. We thus have shown that every $I\in
+\mathcal{P}_{n-1}\left(  K\right)  $ satisfies $I\in\left\{  K\right\}  $. In
+other words, $\mathcal{P}_{n-1}\left(  K\right)  \subseteq\left\{  K\right\}
+$. Qed.}. Combining these two relations, we obtain $\mathcal{P}_{n-1}\left(
+K\right)  =\left\{  K\right\}  $. Now, the definition of $f_{n-1}$ yields%
+\begin{align*}
+f_{n-1}  &  =\sum_{I\in\mathcal{P}_{n-1}\left(  K\right)  }\prod_{i\in I}%
+x_{i}=\sum_{I\in\left\{  K\right\}  }\prod_{i\in I}x_{i}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\mathcal{P}_{n-1}\left(  K\right)
+=\left\{  K\right\}  \right) \\
+&  =\underbrace{\prod_{i\in K}}_{\substack{=\prod_{i\in\left[  n\right]
+\setminus\left\{  k\right\}  }\\\text{(since }K=\left[  n\right]
+\setminus\left\{  k\right\}  \text{)}}}x_{i}=\underbrace{\prod_{i\in\left[
+n\right]  \setminus\left\{  k\right\}  }}_{=\prod_{\substack{i\in\left[
+n\right]  ;\\i\neq k}}}x_{i}=\prod_{\substack{i\in\left[  n\right]  ;\\i\neq
+k}}x_{i}\\
+&  =\prod_{\substack{j\in\left[  n\right]  ;\\j\neq k}}x_{j}%
+\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have renamed the index }i\text{ as }j\\
+\text{in the product}%
+\end{array}
+\right) \\
+&  =\prod_{\substack{j\in\left\{  1,2,\ldots,n\right\}  ;\\j\neq k}%
+}x_{j}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left[  n\right]  =\left\{
+1,2,\ldots,n\right\}  \right)  .
+\end{align*}
+Comparing this with%
+\[
+y_{k}=\prod_{\substack{j\in\left\{  1,2,\ldots,n\right\}  ;\\j\neq k}%
+}x_{j}\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }y_{k}\right)  ,
+\]
+we find $f_{n-1}=y_{k}$. Thus, (\ref{pf.prop.sol.vander-hook.viete-y.fn-1=})
+is proven.]
+
+For every $j\in\mathbb{N}$, we have%
+\begin{equation}
+e_{j}\left(  x_{1},x_{2},\ldots,x_{n}\right)  =\sum_{I\in\mathcal{P}%
+_{j}\left(  \left[  n\right]  \right)  }\prod_{i\in I}x_{i}
+\label{pf.prop.sol.vander-hook.viete-y.ej=}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.prop.sol.vander-hook.viete-y.ej=}):} Let
+$j\in\mathbb{N}$. Recall that $\mathcal{P}_{j}\left(  \left[  n\right]
+\right)  $ is the set of all $j$-element subsets of $\left[  n\right]  $ (by
+the definition of $\mathcal{P}_{j}\left(  \left[  n\right]  \right)  $). In
+other words, $\mathcal{P}_{j}\left(  \left[  n\right]  \right)  $ is the set
+of all subsets $I$ of $\left[  n\right]  $ satisfying $\left\vert I\right\vert
+=j$. Hence, $\sum_{I\in\mathcal{P}_{j}\left(  \left[  n\right]  \right)
+}=\sum_{\substack{I\subseteq\left[  n\right]  ;\\\left\vert I\right\vert =j}}$
+(an equality of summation signs). Thus,%
+\[
+\underbrace{\sum_{I\in\mathcal{P}_{j}\left(  \left[  n\right]  \right)  }%
+}_{=\sum_{\substack{I\subseteq\left[  n\right]  ;\\\left\vert I\right\vert
+=j}}}\prod_{i\in I}x_{i}=\sum_{\substack{I\subseteq\left[  n\right]
+;\\\left\vert I\right\vert =j}}\prod_{i\in I}x_{i}.
+\]
+Comparing this with
+\[
+e_{j}\left(  x_{1},x_{2},\ldots,x_{n}\right)  =\sum_{\substack{I\subseteq
+\left[  n\right]  ;\\\left\vert I\right\vert =j}}\prod_{i\in I}x_{i}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }e_{j}\left(
+x_{1},x_{2},\ldots,x_{n}\right)  \right)  ,
+\]
+we obtain $e_{j}\left(  x_{1},x_{2},\ldots,x_{n}\right)  =\sum_{I\in
+\mathcal{P}_{j}\left(  \left[  n\right]  \right)  }\prod_{i\in I}x_{i}$. This
+proves (\ref{pf.prop.sol.vander-hook.viete-y.ej=}).}. Also,%
+\begin{equation}
+e_{0}\left(  x_{1},x_{2},\ldots,x_{n}\right)  =1
+\label{pf.prop.sol.vander-hook.viete-y.e0=}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.prop.sol.vander-hook.viete-y.e0=}):}
+Proposition \ref{prop.sol.prop.binom.subsets.Pm.lem} \textbf{(a)} (applied to
+$S=\left[  n\right]  $) yields $\mathcal{P}_{0}\left(  \left[  n\right]
+\right)  =\left\{  \varnothing\right\}  $. Now,
+(\ref{pf.prop.sol.vander-hook.viete-y.ej=}) (applied to $j=0$) yields%
+\begin{align*}
+e_{0}\left(  x_{1},x_{2},\ldots,x_{n}\right)   &  =\sum_{I\in\mathcal{P}%
+_{0}\left(  \left[  n\right]  \right)  }\prod_{i\in I}x_{i}=\sum_{I\in\left\{
+\varnothing\right\}  }\prod_{i\in I}x_{i}\ \ \ \ \ \ \ \ \ \ \left(
+\text{since }\mathcal{P}_{0}\left(  \left[  n\right]  \right)  =\left\{
+\varnothing\right\}  \right) \\
+&  =\prod_{i\in\varnothing}x_{i}=\left(  \text{empty product}\right)  =1.
+\end{align*}
+This proves (\ref{pf.prop.sol.vander-hook.viete-y.e0=}).}.
+
+We shall now show that%
+\begin{equation}
+e_{m}\left(  x_{1},x_{2},\ldots,x_{n}\right)  =f_{m}+x_{k}f_{m-1}
+\label{pf.prop.sol.vander-hook.viete-y.main}%
+\end{equation}
+for every positive integer $m$.
+
+[\textit{Proof of (\ref{pf.prop.sol.vander-hook.viete-y.main}):} Let $m$ be a
+positive integer. Thus, $m\in\mathbb{N}$ and $m-1\in\mathbb{N}$. The
+definition of $f_{m}$ yields%
+\begin{equation}
+f_{m}=\sum_{I\in\mathcal{P}_{m}\left(  K\right)  }\prod_{i\in I}x_{i}.
+\label{pf.prop.sol.vander-hook.viete-y.main.pf.fm=}%
+\end{equation}
+The definition of $f_{m-1}$ yields%
+\begin{equation}
+f_{m-1}=\sum_{I\in\mathcal{P}_{m-1}\left(  K\right)  }\prod_{i\in I}x_{i}.
+\label{pf.prop.sol.vander-hook.viete-y.main.pf.fm-1=}%
+\end{equation}
+
+
+Recall that $k\in\left[  n\right]  $. Hence, we can apply Proposition
+\ref{prop.sol.prop.binom.subsets.Pm.lem} \textbf{(c)} to $\left[  n\right]  $
+and $k$ instead of $S$ and $s$. As a result, we obtain the following two results:
+
+\begin{itemize}
+\item We have $\mathcal{P}_{m}\left(  \left[  n\right]  \setminus\left\{
+k\right\}  \right)  \subseteq\mathcal{P}_{m}\left(  \left[  n\right]  \right)
+$.
+
+\item The map%
+\begin{align*}
+\mathcal{P}_{m-1}\left(  \left[  n\right]  \setminus\left\{  k\right\}
+\right)   &  \rightarrow\mathcal{P}_{m}\left(  \left[  n\right]  \right)
+\setminus\mathcal{P}_{m}\left(  \left[  n\right]  \setminus\left\{  k\right\}
+\right)  ,\\
+U  &  \mapsto U\cup\left\{  k\right\}
+\end{align*}
+is well-defined and a bijection.
+\end{itemize}
+
+Since $\left[  n\right]  \setminus\left\{  k\right\}  =K$, these two results
+can be rewritten as follows:
+
+\begin{itemize}
+\item We have $\mathcal{P}_{m}\left(  K\right)  \subseteq\mathcal{P}%
+_{m}\left(  \left[  n\right]  \right)  $.
+
+\item The map%
+\begin{align*}
+\mathcal{P}_{m-1}\left(  K\right)   &  \rightarrow\mathcal{P}_{m}\left(
+\left[  n\right]  \right)  \setminus\mathcal{P}_{m}\left(  K\right)  ,\\
+U  &  \mapsto U\cup\left\{  k\right\}
+\end{align*}
+is well-defined and a bijection.
+\end{itemize}
+
+Furthermore, every $I\in\mathcal{P}_{m-1}\left(  K\right)  $ satisfies%
+\begin{equation}
+\prod_{i\in I\cup\left\{  k\right\}  }x_{i}=x_{k}\prod_{i\in I}x_{i}
+\label{pf.prop.sol.vander-hook.viete-y.main.pf.2}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.prop.sol.vander-hook.viete-y.main.pf.2}):}
+Let $I\in\mathcal{P}_{m-1}\left(  K\right)  $. Thus, $I$ is an $\left(
+m-1\right)  $-element subset of $K$ (since $\mathcal{P}_{m-1}\left(  K\right)
+$ is the set of all $\left(  m-1\right)  $-element subsets of $K$ (by the
+definition of $\mathcal{P}_{m-1}\left(  K\right)  $)). In particular, $I$ is a
+subset of $K$. Thus, $I\subseteq K=\left[  n\right]  \setminus\left\{
+k\right\}  $.
+\par
+We have $k\in\left\{  k\right\}  $ and thus $k\notin\left[  n\right]
+\setminus\left\{  k\right\}  $. If we had $k\in I$, then we would have $k\in
+I\subseteq\left[  n\right]  \setminus\left\{  k\right\}  $, which would
+contradict $k\notin\left[  n\right]  \setminus\left\{  k\right\}  $. Hence, we
+cannot have $k\in I$. Thus, we have $k\notin I$. Hence, the sets $I$ and
+$\left\{  k\right\}  $ are disjoint. Thus,%
+\[
+\prod_{i\in I\cup\left\{  k\right\}  }x_{i}=\left(  \prod_{i\in I}%
+x_{i}\right)  \underbrace{\left(  \prod_{i\in\left\{  k\right\}  }%
+x_{i}\right)  }_{=x_{k}}=\left(  \prod_{i\in I}x_{i}\right)  x_{k}=x_{k}%
+\prod_{i\in I}x_{i}.
+\]
+This proves (\ref{pf.prop.sol.vander-hook.viete-y.main.pf.2}).}. Now,%
+\begin{align}
+&  \sum_{I\in\mathcal{P}_{m}\left(  \left[  n\right]  \right)  \setminus
+\mathcal{P}_{m}\left(  K\right)  }\prod_{i\in I}x_{i}\nonumber\\
+&  =\sum_{U\in\mathcal{P}_{m-1}\left(  K\right)  }\prod_{i\in U\cup\left\{
+k\right\}  }x_{i}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have substituted }U\cup\left\{  k\right\}  \text{ for }I\text{
+in the sum, since}\\
+\text{the map }\mathcal{P}_{m-1}\left(  K\right)  \rightarrow\mathcal{P}%
+_{m}\left(  \left[  n\right]  \right)  \setminus\mathcal{P}_{m}\left(
+K\right)  ,\ U\mapsto U\cup\left\{  k\right\} \\
+\text{is a bijection}%
+\end{array}
+\right) \nonumber\\
+&  =\sum_{I\in\mathcal{P}_{m-1}\left(  K\right)  }\underbrace{\prod_{i\in
+I\cup\left\{  k\right\}  }x_{i}}_{\substack{=x_{k}\prod_{i\in I}%
+x_{i}\\\text{(by (\ref{pf.prop.sol.vander-hook.viete-y.main.pf.2}))}%
+}}\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have renamed the}\\
+\text{summation index }U\text{ as }I
+\end{array}
+\right) \nonumber\\
+&  =\sum_{I\in\mathcal{P}_{m-1}\left(  K\right)  }x_{k}\prod_{i\in I}%
+x_{i}=x_{k}\sum_{I\in\mathcal{P}_{m-1}\left(  K\right)  }\prod_{i\in I}x_{i}.
+\label{pf.prop.sol.vander-hook.viete-y.main.pf.2b}%
+\end{align}
+
+
+From (\ref{pf.prop.sol.vander-hook.viete-y.ej=}) (applied to $j=m$), we obtain%
+\begin{align*}
+e_{m}\left(  x_{1},x_{2},\ldots,x_{n}\right)   &  =\sum_{I\in\mathcal{P}%
+_{m}\left(  \left[  n\right]  \right)  }\prod_{i\in I}x_{i}=\underbrace{\sum
+_{\substack{I\in\mathcal{P}_{m}\left(  \left[  n\right]  \right)
+;\\I\in\mathcal{P}_{m}\left(  K\right)  }}}_{\substack{=\sum_{I\in
+\mathcal{P}_{m}\left(  K\right)  }\\\text{(since }\mathcal{P}_{m}\left(
+K\right)  \subseteq\mathcal{P}_{m}\left(  \left[  n\right]  \right)  \text{)}%
+}}\prod_{i\in I}x_{i}+\underbrace{\sum_{\substack{I\in\mathcal{P}_{m}\left(
+\left[  n\right]  \right)  ;\\I\notin\mathcal{P}_{m}\left(  K\right)  }%
+}}_{=\sum_{I\in\mathcal{P}_{m}\left(  \left[  n\right]  \right)
+\setminus\mathcal{P}_{m}\left(  K\right)  }}\prod_{i\in I}x_{i}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since each }I\in\mathcal{P}_{m}\left(  \left[  n\right]  \right)  \text{
+satisfies either }I\in\mathcal{P}_{m}\left(  K\right) \\
+\text{or }I\notin\mathcal{P}_{m}\left(  K\right)  \text{ (but not both)}%
+\end{array}
+\right) \\
+&  =\sum_{I\in\mathcal{P}_{m}\left(  K\right)  }\prod_{i\in I}x_{i}%
++\underbrace{\sum_{I\in\mathcal{P}_{m}\left(  \left[  n\right]  \right)
+\setminus\mathcal{P}_{m}\left(  K\right)  }\prod_{i\in I}x_{i}}%
+_{\substack{=x_{k}\sum_{I\in\mathcal{P}_{m-1}\left(  K\right)  }\prod_{i\in
+I}x_{i}\\\text{(by (\ref{pf.prop.sol.vander-hook.viete-y.main.pf.2b}))}}}\\
+&  =\underbrace{\sum_{I\in\mathcal{P}_{m}\left(  K\right)  }\prod_{i\in
+I}x_{i}}_{\substack{=f_{m}\\\text{(by
+(\ref{pf.prop.sol.vander-hook.viete-y.main.pf.fm=}))}}}+x_{k}\underbrace{\sum
+_{I\in\mathcal{P}_{m-1}\left(  K\right)  }\prod_{i\in I}x_{i}}%
+_{\substack{=f_{m-1}\\\text{(by
+(\ref{pf.prop.sol.vander-hook.viete-y.main.pf.fm-1=}))}}}\\
+&  =f_{m}+x_{k}f_{m-1}.
+\end{align*}
+This proves (\ref{pf.prop.sol.vander-hook.viete-y.main}).]
+
+Recall that $k\in\left\{  1,2,\ldots,n\right\}  $. Hence, $1\leq k\leq n$, so
+that $1\leq n$. Thus, $n\geq1$, so that $n-1\in\mathbb{N}$. Hence,
+$0\in\left\{  0,1,\ldots,n-1\right\}  $ and $n-1\in\left\{  0,1,\ldots
+,n-1\right\}  $.
+
+Now,%
+\begin{align}
+&  \sum_{j=0}^{n-1}\left(  -1\right)  ^{n-1-j}e_{j}\left(  x_{1},x_{2}%
+,\ldots,x_{n}\right)  x_{k}^{n-1-j}\nonumber\\
+&  =\underbrace{\left(  -1\right)  ^{n-1-0}}_{=\left(  -1\right)  ^{n-1}%
+}\underbrace{e_{0}\left(  x_{1},x_{2},\ldots,x_{n}\right)  }%
+_{\substack{=1\\\text{(by (\ref{pf.prop.sol.vander-hook.viete-y.e0=}))}%
+}}\underbrace{x_{k}^{n-1-0}}_{=x_{k}^{n-1}}+\sum_{j=1}^{n-1}\left(  -1\right)
+^{n-1-j}\underbrace{e_{j}\left(  x_{1},x_{2},\ldots,x_{n}\right)
+}_{\substack{=f_{j}+x_{k}f_{j-1}\\\text{(by
+(\ref{pf.prop.sol.vander-hook.viete-y.main}) (applied to }m=j\text{))}}%
+}x_{k}^{n-1-j}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have split off the addend for }j=0\text{ from the sum,}\\
+\text{since }0\in\left\{  0,1,\ldots,n-1\right\}
+\end{array}
+\right) \nonumber\\
+&  =\left(  -1\right)  ^{n-1}x_{k}^{n-1}+\sum_{j=1}^{n-1}\underbrace{\left(
+-1\right)  ^{n-1-j}\left(  f_{j}+x_{k}f_{j-1}\right)  x_{k}^{n-1-j}}_{=\left(
+-1\right)  ^{n-1-j}f_{j}x_{k}^{n-1-j}+\left(  -1\right)  ^{n-1-j}x_{k}%
+f_{j-1}x_{k}^{n-1-j}}\nonumber\\
+&  =\left(  -1\right)  ^{n-1}x_{k}^{n-1}+\underbrace{\sum_{j=1}^{n-1}\left(
+\left(  -1\right)  ^{n-1-j}f_{j}x_{k}^{n-1-j}+\left(  -1\right)  ^{n-1-j}%
+x_{k}f_{j-1}x_{k}^{n-1-j}\right)  }_{=\sum_{j=1}^{n-1}\left(  -1\right)
+^{n-1-j}f_{j}x_{k}^{n-1-j}+\sum_{j=1}^{n-1}\left(  -1\right)  ^{n-1-j}%
+x_{k}f_{j-1}x_{k}^{n-1-j}}\nonumber\\
+&  =\left(  -1\right)  ^{n-1}x_{k}^{n-1}+\sum_{j=1}^{n-1}\left(  -1\right)
+^{n-1-j}f_{j}x_{k}^{n-1-j}+\sum_{j=1}^{n-1}\left(  -1\right)  ^{n-1-j}%
+x_{k}f_{j-1}x_{k}^{n-1-j}. \label{pf.prop.sol.vander-hook.viete-y.5}%
+\end{align}
+
+
+But
+\begin{align}
+&  \sum_{j=1}^{n-1}\left(  -1\right)  ^{n-1-j}\underbrace{x_{k}f_{j-1}%
+}_{=f_{j-1}x_{k}}x_{k}^{n-1-j}\nonumber\\
+&  =\sum_{j=1}^{n-1}\left(  -1\right)  ^{n-1-j}f_{j-1}\underbrace{x_{k}%
+x_{k}^{n-1-j}}_{\substack{=x_{k}^{\left(  n-1-j\right)  +1}=x_{k}%
+^{n-j}\\\text{(since }\left(  n-1-j\right)  +1=n-j\text{)}}}=\sum_{j=1}%
+^{n-1}\left(  -1\right)  ^{n-1-j}f_{j-1}x_{k}^{n-j}\nonumber\\
+&  =\sum_{j=0}^{\left(  n-1\right)  -1}\underbrace{\left(  -1\right)
+^{n-1-\left(  j+1\right)  }}_{\substack{=\left(  -1\right)  ^{n-j}%
+\\\text{(since }n-1-\left(  j+1\right)  =n-j-2\equiv n-j\operatorname{mod}%
+2\text{)}}}\underbrace{f_{\left(  j+1\right)  -1}}_{\substack{=f_{j}%
+\\\text{(since }\left(  j+1\right)  -1=j\text{)}}}\underbrace{x_{k}^{n-\left(
+j+1\right)  }}_{\substack{=x_{k}^{n-1-j}\\\text{(since }n-\left(  j+1\right)
+=n-1-j\text{)}}}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }j+1\text{ for
+}j\text{ in the sum}\right) \nonumber\\
+&  =\sum_{j=0}^{\left(  n-1\right)  -1}\underbrace{\left(  -1\right)  ^{n-j}%
+}_{\substack{=\left(  -1\right)  \left(  -1\right)  ^{n-j-1}\\=-\left(
+-1\right)  ^{n-j-1}=-\left(  -1\right)  ^{n-1-j}\\\text{(since }%
+n-j-1=n-1-j\text{)}}}f_{j}x_{k}^{n-1-j}=\sum_{j=0}^{\left(  n-1\right)
+-1}\left(  -\left(  -1\right)  ^{n-1-j}\right)  f_{j}x_{k}^{n-1-j}\nonumber\\
+&  =-\sum_{j=0}^{\left(  n-1\right)  -1}\left(  -1\right)  ^{n-1-j}f_{j}%
+x_{k}^{n-1-j}. \label{pf.prop.sol.vander-hook.viete-y.6a}%
+\end{align}
+Also,%
+\begin{align*}
+&  \sum_{j=0}^{n-1}\left(  -1\right)  ^{n-1-j}f_{j}x_{k}^{n-1-j}\\
+&  =\underbrace{\left(  -1\right)  ^{n-1-0}}_{=\left(  -1\right)  ^{n-1}%
+}\underbrace{f_{0}}_{\substack{=1\\\text{(by
+(\ref{pf.prop.sol.vander-hook.viete-y.f0=}))}}}\underbrace{x_{k}^{n-1-0}%
+}_{=x_{k}^{n-1}}+\sum_{j=1}^{n-1}\left(  -1\right)  ^{n-1-j}f_{j}x_{k}%
+^{n-1-j}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have split off the addend for }j=0\text{ from the sum,}\\
+\text{since }0\in\left\{  0,1,\ldots,n-1\right\}
+\end{array}
+\right) \\
+&  =\left(  -1\right)  ^{n-1}x_{k}^{n-1}+\sum_{j=1}^{n-1}\left(  -1\right)
+^{n-1-j}f_{j}x_{k}^{n-1-j},
+\end{align*}
+so that%
+\begin{align}
+&  \left(  -1\right)  ^{n-1}x_{k}^{n-1}+\sum_{j=1}^{n-1}\left(  -1\right)
+^{n-1-j}f_{j}x_{k}^{n-1-j}\nonumber\\
+&  =\sum_{j=0}^{n-1}\left(  -1\right)  ^{n-1-j}f_{j}x_{k}^{n-1-j}\nonumber\\
+&  =\sum_{j=0}^{\left(  n-1\right)  -1}\left(  -1\right)  ^{n-1-j}f_{j}%
+x_{k}^{n-1-j}+\underbrace{\left(  -1\right)  ^{n-1-\left(  n-1\right)  }%
+}_{\substack{=\left(  -1\right)  ^{0}\\\text{(since }n-1-\left(  n-1\right)
+=0\text{)}}}\underbrace{f_{n-1}}_{\substack{=y_{k}\\\text{(by
+(\ref{pf.prop.sol.vander-hook.viete-y.fn-1=}))}}}\underbrace{x_{k}%
+^{n-1-\left(  n-1\right)  }}_{\substack{=x_{k}^{0}\\\text{(since }n-1-\left(
+n-1\right)  =0\text{)}}}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have split off the addend for }j=n-1\text{ from the sum,}\\
+\text{since }n-1\in\left\{  0,1,\ldots,n-1\right\}
+\end{array}
+\right) \nonumber\\
+&  =\sum_{j=0}^{\left(  n-1\right)  -1}\left(  -1\right)  ^{n-1-j}f_{j}%
+x_{k}^{n-1-j}+\underbrace{\left(  -1\right)  ^{0}}_{=1}y_{k}\underbrace{x_{k}%
+^{0}}_{=1}\nonumber\\
+&  =\sum_{j=0}^{\left(  n-1\right)  -1}\left(  -1\right)  ^{n-1-j}f_{j}%
+x_{k}^{n-1-j}+y_{k}. \label{pf.prop.sol.vander-hook.viete-y.6b}%
+\end{align}
+
+
+Now, (\ref{pf.prop.sol.vander-hook.viete-y.5}) becomes%
+\begin{align*}
+&  \sum_{j=0}^{n-1}\left(  -1\right)  ^{n-1-j}e_{j}\left(  x_{1},x_{2}%
+,\ldots,x_{n}\right)  x_{k}^{n-1-j}\\
+&  =\underbrace{\left(  -1\right)  ^{n-1}x_{k}^{n-1}+\sum_{j=1}^{n-1}\left(
+-1\right)  ^{n-1-j}f_{j}x_{k}^{n-1-j}}_{\substack{=\sum_{j=0}^{\left(
+n-1\right)  -1}\left(  -1\right)  ^{n-1-j}f_{j}x_{k}^{n-1-j}+y_{k}\\\text{(by
+(\ref{pf.prop.sol.vander-hook.viete-y.6b}))}}}+\underbrace{\sum_{j=1}%
+^{n-1}\left(  -1\right)  ^{n-1-j}x_{k}f_{j-1}x_{k}^{n-1-j}}_{\substack{=-\sum
+_{j=0}^{\left(  n-1\right)  -1}\left(  -1\right)  ^{n-1-j}f_{j}x_{k}%
+^{n-1-j}\\\text{(by (\ref{pf.prop.sol.vander-hook.viete-y.6a}))}}}\\
+&  =\sum_{j=0}^{\left(  n-1\right)  -1}\left(  -1\right)  ^{n-1-j}f_{j}%
+x_{k}^{n-1-j}+y_{k}+\left(  -\sum_{j=0}^{\left(  n-1\right)  -1}\left(
+-1\right)  ^{n-1-j}f_{j}x_{k}^{n-1-j}\right) \\
+&  =y_{k}.
+\end{align*}
+This proves Proposition \ref{prop.sol.vander-hook.viete-y}.
+\end{proof}
+\end{verlong}
+
+\begin{lemma}
+\label{lem.sol.vander-hook.y-sum.1}Let $n\in\mathbb{N}$. Let $x_{1}%
+,x_{2},\ldots,x_{n}$ be $n$ elements of $\mathbb{K}$. For each $i\in\left\{
+1,2,\ldots,n\right\}  $, set $y_{i}=\prod_{\substack{j\in\left\{
+1,2,\ldots,n\right\}  ;\\j\neq i}}x_{j}$.
+
+Let $A$ be the $n\times n$-matrix $\left(  x_{i}^{n-j}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}$. Let $q\in\left\{  1,2,\ldots,n\right\}  $. For every
+$j\in\mathbb{N}$, define an element $\mathfrak{e}_{j}\in\mathbb{K}$ by
+$\mathfrak{e}_{j}=e_{j}\left(  x_{1},x_{2},\ldots,x_{n}\right)  $. Then,%
+\[
+\sum_{k=1}^{n}\left(  -1\right)  ^{k+q}y_{k}\det\left(  A_{\sim k,\sim
+q}\right)  =\left(  -1\right)  ^{n-q}\mathfrak{e}_{q-1}\det A.
+\]
+
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.vander-hook.y-sum.1}.]Let $j\in\left\{
+0,1,\ldots,n-1\right\}  $. We have $A=\left(  x_{i}^{n-j}\right)  _{1\leq
+i\leq n,\ 1\leq j\leq n}$ (by the definition of $A$) and $j+1\in\left\{
+1,2,\ldots,n\right\}  $ (since $j\in\left\{  0,1,\ldots,n-1\right\}  $).
+Hence, Lemma \ref{lem.sol.vander-hook.lap0} (applied to $x_{i}^{n-j}$ and
+$j+1$ instead of $a_{i,j}$ and $r$) yields%
+\[
+\sum_{p=1}^{n}\left(  -1\right)  ^{p+q}x_{p}^{n-\left(  j+1\right)  }%
+\det\left(  A_{\sim p,\sim q}\right)  =\delta_{q,j+1}\det A.
+\]
+Hence,%
+\begin{align}
+\delta_{q,j+1}\det A  &  =\sum_{p=1}^{n}\left(  -1\right)  ^{p+q}%
+\underbrace{x_{p}^{n-\left(  j+1\right)  }}_{\substack{=x_{p}^{n-1-j}%
+\\\text{(since }n-\left(  j+1\right)  =n-1-j\text{)}}}\det\left(  A_{\sim
+p,\sim q}\right) \nonumber\\
+&  =\sum_{p=1}^{n}\left(  -1\right)  ^{p+q}x_{p}^{n-1-j}\det\left(  A_{\sim
+p,\sim q}\right) \nonumber\\
+&  =\sum_{k=1}^{n}\left(  -1\right)  ^{k+q}x_{k}^{n-1-j}\det\left(  A_{\sim
+k,\sim q}\right)  \label{pf.lem.sol.vander-hook.y-sum.1.1}%
+\end{align}
+(here, we have renamed the summation index $p$ as $k$).
+
+Now, forget that we fixed $j$. We thus have proven
+(\ref{pf.lem.sol.vander-hook.y-sum.1.1}) for every $j\in\left\{
+0,1,\ldots,n-1\right\}  $.
+
+Every $k\in\mathbb{N}$ satisfies%
+\begin{align*}
+y_{k}  &  =\sum_{j=0}^{n-1}\left(  -1\right)  ^{n-1-j}\underbrace{e_{j}\left(
+x_{1},x_{2},\ldots,x_{n}\right)  }_{\substack{=\mathfrak{e}_{j}\\\text{(since
+}\mathfrak{e}_{j}=e_{j}\left(  x_{1},x_{2},\ldots,x_{n}\right)  \\\text{(by
+the definition of }\mathfrak{e}_{j}\text{))}}}x_{k}^{n-1-j}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by Proposition
+\ref{prop.sol.vander-hook.viete-y}}\right) \\
+&  =\sum_{j=0}^{n-1}\left(  -1\right)  ^{n-1-j}\mathfrak{e}_{j}x_{k}^{n-1-j}.
+\end{align*}
+Thus,%
+\begin{align*}
+&  \sum_{k=1}^{n}\left(  -1\right)  ^{k+q}\underbrace{y_{k}}_{=\sum
+_{j=0}^{n-1}\left(  -1\right)  ^{n-1-j}\mathfrak{e}_{j}x_{k}^{n-1-j}}%
+\det\left(  A_{\sim k,\sim q}\right) \\
+&  =\sum_{k=1}^{n}\left(  -1\right)  ^{k+q}\left(  \sum_{j=0}^{n-1}\left(
+-1\right)  ^{n-1-j}\mathfrak{e}_{j}x_{k}^{n-1-j}\right)  \det\left(  A_{\sim
+k,\sim q}\right) \\
+&  =\underbrace{\sum_{k=1}^{n}\sum_{j=0}^{n-1}}_{=\sum_{j=0}^{n-1}\sum
+_{k=1}^{n}}\left(  -1\right)  ^{k+q}\left(  -1\right)  ^{n-1-j}\mathfrak{e}%
+_{j}x_{k}^{n-1-j}\det\left(  A_{\sim k,\sim q}\right) \\
+&  =\sum_{j=0}^{n-1}\underbrace{\sum_{k=1}^{n}\left(  -1\right)  ^{k+q}\left(
+-1\right)  ^{n-1-j}\mathfrak{e}_{j}x_{k}^{n-1-j}\det\left(  A_{\sim k,\sim
+q}\right)  }_{=\left(  -1\right)  ^{n-1-j}\mathfrak{e}_{j}\sum_{k=1}%
+^{n}\left(  -1\right)  ^{k+q}x_{k}^{n-1-j}\det\left(  A_{\sim k,\sim
+q}\right)  }\\
+&  =\sum_{j=0}^{n-1}\left(  -1\right)  ^{n-1-j}\mathfrak{e}_{j}%
+\underbrace{\sum_{k=1}^{n}\left(  -1\right)  ^{k+q}x_{k}^{n-1-j}\det\left(
+A_{\sim k,\sim q}\right)  }_{\substack{=\delta_{q,j+1}\det A\\\text{(by
+(\ref{pf.lem.sol.vander-hook.y-sum.1.1}))}}}\\
+&  =\sum_{j=0}^{n-1}\left(  -1\right)  ^{n-1-j}\mathfrak{e}_{j}\delta
+_{q,j+1}\det A=\underbrace{\sum_{j=1}^{n}}_{=\sum_{j\in\left\{  1,2,\ldots
+,n\right\}  }}\underbrace{\left(  -1\right)  ^{n-1-\left(  j-1\right)  }%
+}_{\substack{=\left(  -1\right)  ^{n-j}\\\text{(since }n-1-\left(  j-1\right)
+=n-j\text{)}}}\mathfrak{e}_{j-1}\underbrace{\delta_{q,\left(  j-1\right)  +1}%
+}_{\substack{=\delta_{q,j}\\\text{(since }\left(  j-1\right)  +1=j\text{)}%
+}}\det A\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }j-1\text{ for
+}j\text{ in the sum}\right) \\
+&  =\sum_{j\in\left\{  1,2,\ldots,n\right\}  }\left(  -1\right)
+^{n-j}\mathfrak{e}_{j-1}\delta_{q,j}\det A
+\end{align*}%
+\begin{align*}
+&  =\left(  -1\right)  ^{n-q}\mathfrak{e}_{q-1}\underbrace{\delta_{q,q}%
+}_{\substack{=1\\\text{(since }q=q\text{)}}}\det A+\sum_{\substack{j\in
+\left\{  1,2,\ldots,n\right\}  ;\\j\neq q}}\left(  -1\right)  ^{n-j}%
+\mathfrak{e}_{j-1}\underbrace{\delta_{q,j}}_{\substack{=0\\\text{(since }q\neq
+j\\\text{(since }j\neq q\text{))}}}\det A\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have split off the addend for }j=q\text{ from the sum}\\
+\text{(since }q\in\left\{  1,2,\ldots,n\right\}  \text{)}%
+\end{array}
+\right) \\
+&  =\left(  -1\right)  ^{n-q}\mathfrak{e}_{q-1}\det A+\underbrace{\sum
+_{\substack{j\in\left\{  1,2,\ldots,n\right\}  ;\\j\neq q}}\left(  -1\right)
+^{n-j}\mathfrak{e}_{j-1}0\det A}_{=0}=\left(  -1\right)  ^{n-q}\mathfrak{e}%
+_{q-1}\det A.
+\end{align*}
+This proves Lemma \ref{lem.sol.vander-hook.y-sum.1}.
+\end{proof}
+
+\begin{lemma}
+\label{lem.sol.vander-hook.y-sum.2}Let $n\in\mathbb{N}$. Let $x_{1}%
+,x_{2},\ldots,x_{n}$ be $n$ elements of $\mathbb{K}$. For each $i\in\left\{
+1,2,\ldots,n\right\}  $, set $y_{i}=\prod_{\substack{j\in\left\{
+1,2,\ldots,n\right\}  ;\\j\neq i}}x_{j}$.
+
+Let $A$ be the $n\times n$-matrix $\left(  x_{i}^{n-j}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}$. Let $q\in\left\{  1,2,\ldots,n\right\}  $ and $\ell
+\in\left\{  0,1,\ldots,n-q\right\}  $. For every $j\in\mathbb{N}$, define an
+element $\mathfrak{e}_{j}\in\mathbb{K}$ by $\mathfrak{e}_{j}=e_{j}\left(
+x_{1},x_{2},\ldots,x_{n}\right)  $. Then,%
+\[
+\sum_{k=1}^{n}\left(  -1\right)  ^{k+q}y_{k}x_{k}^{n-q-\ell}\det\left(
+A_{\sim k,\sim q}\right)  =\delta_{\ell,n-q}\left(  -1\right)  ^{n-q}%
+\mathfrak{e}_{q-1}\det A.
+\]
+
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.vander-hook.y-sum.2}.]We are in one of the
+following two cases:
+
+\textit{Case 1:} We have $\ell=n-q$.
+
+\textit{Case 2:} We have $\ell\neq n-q$.
+
+Let us first consider Case 1. In this case, we have $\ell=n-q$. Thus,
+$n-q-\underbrace{\ell}_{=n-q}=n-q-\left(  n-q\right)  =0$. Now,%
+\begin{align*}
+&  \sum_{k=1}^{n}\left(  -1\right)  ^{k+q}y_{k}\underbrace{x_{k}^{n-q-\ell}%
+}_{\substack{=x_{k}^{0}\\\text{(since }n-q-\ell=0\text{)}}}\det\left(  A_{\sim
+k,\sim q}\right) \\
+&  =\sum_{k=1}^{n}\left(  -1\right)  ^{k+q}y_{k}\underbrace{x_{k}^{0}}%
+_{=1}\det\left(  A_{\sim k,\sim q}\right) \\
+&  =\sum_{k=1}^{n}\left(  -1\right)  ^{k+q}y_{k}\det\left(  A_{\sim k,\sim
+q}\right)  =\left(  -1\right)  ^{n-q}\mathfrak{e}_{q-1}\det A
+\end{align*}
+(by Lemma \ref{lem.sol.vander-hook.y-sum.1}). Comparing this with%
+\[
+\underbrace{\delta_{\ell,n-q}}_{\substack{=1\\\text{(since }\ell=n-q\text{)}%
+}}\left(  -1\right)  ^{n-q}\mathfrak{e}_{q-1}\det A=\left(  -1\right)
+^{n-q}\mathfrak{e}_{q-1}\det A,
+\]
+we obtain%
+\[
+\sum_{k=1}^{n}\left(  -1\right)  ^{k+q}y_{k}x_{k}^{n-q-\ell}\det\left(
+A_{\sim k,\sim q}\right)  =\delta_{\ell,n-q}\left(  -1\right)  ^{n-q}%
+\mathfrak{e}_{q-1}\det A.
+\]
+Hence, Lemma \ref{lem.sol.vander-hook.y-sum.2} is proven in Case 1.
+
+Let us now consider Case 2. In this case, we have $\ell\neq n-q$. Combining
+this with $\ell\leq n-q$ (since $\ell\in\left\{  0,1,\ldots,n-q\right\}  $),
+we obtain $\ell<n-q$. Hence, $\ell\leq\left(  n-q\right)  -1$ (since $\ell$
+and $n-q$ are integers). In other words, $\ell+1\leq n-q$. But $\ell\geq0$
+(since $\ell\in\left\{  0,1,\ldots,n-q\right\}  $), so that $\ell+1\geq1$.
+Combining this with $\ell+1\leq n-q$, we obtain $\ell+1\in\left\{
+1,2,\ldots,n-q\right\}  $. Thus, Lemma \ref{lem.sol.vander-hook.lap2.variant}
+(applied to $\ell+1$ instead of $\ell$) yields%
+\begin{equation}
+\sum_{k=1}^{n}\left(  -1\right)  ^{k+q}x_{k}^{n-q-\left(  \ell+1\right)  }%
+\det\left(  A_{\sim k,\sim q}\right)  =0.
+\label{pf.lem.sol.vander-hook.y-sum.2.c2.1}%
+\end{equation}
+
+
+But every $k\in\left\{  1,2,\ldots,n\right\}  $ satisfies%
+\begin{equation}
+y_{k}x_{k}^{n-q-\ell}=\mathfrak{e}_{n}x_{k}^{n-q-\left(  \ell+1\right)
+}\label{pf.lem.sol.vander-hook.y-sum.2.c2.3}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.sol.vander-hook.y-sum.2.c2.3}):} Let
+$k\in\left\{  1,2,\ldots,n\right\}  $. We have $n-q-\underbrace{\ell}%
+_{\leq\left(  n-q\right)  -1}\geq n-q-\left(  \left(  n-q\right)  -1\right)
+=1$. Thus, $x_{k}^{n-q-\ell}=x_{k}x_{k}^{\left(  n-q-\ell\right)  -1}%
+=x_{k}x_{k}^{n-q-\left(  \ell+1\right)  }$ (since $\left(  n-q-\ell\right)
+-1=n-q-\left(  \ell+1\right)  $).
+\par
+The definition of $y_{k}$ yields $y_{k}=\prod_{\substack{j\in\left\{
+1,2,\ldots,n\right\}  ;\\j\neq k}}x_{j}$. But the definition of $\mathfrak{e}%
+_{n}$ yields $\mathfrak{e}_{n}=e_{n}\left(  x_{1},x_{2},\ldots,x_{n}\right)
+=\prod_{i=1}^{n}x_{i}$ (by Proposition \ref{prop.sol.vander-hook.viete}
+\textbf{(b)} (applied to $t=0$)). Hence,%
+\begin{align}
+\mathfrak{e}_{n} &  =\prod_{i=1}^{n}x_{i}=\underbrace{\prod_{j=1}^{n}}%
+_{=\prod_{j\in\left\{  1,2,\ldots,n\right\}  }}x_{j}%
+\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have renamed the index }i\text{ as }j\\
+\text{in the product}%
+\end{array}
+\right)  \nonumber\\
+&  =\prod_{j\in\left\{  1,2,\ldots,n\right\}  }x_{j}=x_{k}\underbrace{\prod
+_{\substack{j\in\left\{  1,2,\ldots,n\right\}  ;\\j\neq k}}x_{j}}_{=y_{k}%
+}\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have split off the factor}\\
+\text{for }j=k\text{ from the product}%
+\end{array}
+\right)  \nonumber\\
+&  =x_{k}y_{k}=y_{k}x_{k}.\label{pf.lem.sol.vander-hook.y-sum.2.c2.3.pf.2}%
+\end{align}
+Now,%
+\[
+y_{k}\underbrace{x_{k}^{n-q-\ell}}_{=x_{k}x_{k}^{n-q-\left(  \ell+1\right)  }%
+}=\underbrace{y_{k}x_{k}}_{\substack{=\mathfrak{e}_{n}\\\text{(by
+(\ref{pf.lem.sol.vander-hook.y-sum.2.c2.3.pf.2}))}}}x_{k}^{n-q-\left(
+\ell+1\right)  }=\mathfrak{e}_{n}x_{k}^{n-q-\left(  \ell+1\right)  }.
+\]
+This proves (\ref{pf.lem.sol.vander-hook.y-sum.2.c2.3}).}. Now,%
+\begin{align*}
+&  \sum_{k=1}^{n}\left(  -1\right)  ^{k+q}\underbrace{y_{k}x_{k}^{n-q-\ell}%
+}_{\substack{=\mathfrak{e}_{n}x_{k}^{n-q-\left(  \ell+1\right)  }\\\text{(by
+(\ref{pf.lem.sol.vander-hook.y-sum.2.c2.3}))}}}\det\left(  A_{\sim k,\sim
+q}\right)  \\
+&  =\sum_{k=1}^{n}\left(  -1\right)  ^{k+q}\mathfrak{e}_{n}x_{k}^{n-q-\left(
+\ell+1\right)  }\det\left(  A_{\sim k,\sim q}\right)  \\
+&  =\mathfrak{e}_{n}\underbrace{\sum_{k=1}^{n}\left(  -1\right)  ^{k+q}%
+x_{k}^{n-q-\left(  \ell+1\right)  }\det\left(  A_{\sim k,\sim q}\right)
+}_{\substack{=0\\\text{(by (\ref{pf.lem.sol.vander-hook.y-sum.2.c2.1}))}%
+}}=\mathfrak{e}_{n}0=0.
+\end{align*}
+Comparing this with%
+\[
+\underbrace{\delta_{\ell,n-q}}_{\substack{=0\\\text{(since }\ell\neq
+n-q\text{)}}}\left(  -1\right)  ^{n-q}\mathfrak{e}_{q-1}\det A=0\left(
+-1\right)  ^{n-q}\mathfrak{e}_{q-1}\det A=0,
+\]
+we obtain%
+\[
+\sum_{k=1}^{n}\left(  -1\right)  ^{k+q}y_{k}x_{k}^{n-q-\ell}\det\left(
+A_{\sim k,\sim q}\right)  =\delta_{\ell,n-q}\left(  -1\right)  ^{n-q}%
+\mathfrak{e}_{q-1}\det A.
+\]
+Hence, Lemma \ref{lem.sol.vander-hook.y-sum.2} is proven in Case 2.
+
+We have now proven Lemma \ref{lem.sol.vander-hook.y-sum.2} in each of the two
+Cases 1 and 2. Since these two Cases cover all possibilities, this shows that
+Lemma \ref{lem.sol.vander-hook.y-sum.2} always holds.
+\end{proof}
+
+\begin{lemma}
+\label{lem.sol.vander-hook.lap1-y}Let $n\in\mathbb{N}$. Let $x_{1}%
+,x_{2},\ldots,x_{n}$ be $n$ elements of $\mathbb{K}$. Let $t\in\mathbb{K}$.
+Let $A$ be the $n\times n$-matrix $\left(  x_{i}^{n-j}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}$. Let $k\in\left\{  1,2,\ldots,n\right\}  $. Then,%
+\begin{align*}
+&  V\left(  x_{1},x_{2},\ldots,x_{k-1},x_{k}+t,x_{k+1},x_{k+2},\ldots
+,x_{n}\right) \\
+&  =\sum_{q=1}^{n}\sum_{\ell=0}^{n-q}\dbinom{n-q}{\ell}t^{\ell}\left(
+-1\right)  ^{k+q}x_{k}^{n-q-\ell}\det\left(  A_{\sim k,\sim q}\right)  .
+\end{align*}
+
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.vander-hook.lap1-y}.]The definition of $A$ yields
+$A=\left(  x_{i}^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$.
+
+For every $m\in\mathbb{N}$, we have%
+\begin{equation}
+\left(  X+Y\right)  ^{m}=\sum_{\ell=0}^{m}\dbinom{m}{\ell}X^{\ell}Y^{m-\ell
+}\label{pf.lem.sol.vander-hook.lap1-y.binom}%
+\end{equation}
+(an equality between two polynomials in $X$ and $Y$). (Indeed, this is
+precisely the statement of Proposition \ref{prop.binom.binomial}, with the
+variables $n$ and $k$ renamed as $m$ and $\ell$.) Now, every $q\in\left\{
+1,2,\ldots,n\right\}  $ satisfies%
+\begin{equation}
+\left(  x_{k}+t\right)  ^{n-q}=\sum_{\ell=0}^{n-q}\dbinom{n-q}{\ell}t^{\ell
+}x_{k}^{n-q-\ell}\label{pf.lem.sol.vander-hook.lap1-y.binom-used}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.sol.vander-hook.lap1-y.binom-used}):}
+Let $q\in\left\{  1,2,\ldots,n\right\}  $. Thus, $q\leq n$.
+\par
+Set $m=n-q$. Then, $m=n-q\in\mathbb{N}$ (since $q\leq n$). Substituting $t$
+and $x_{k}$ for $X$ and $Y$ in the equality
+(\ref{pf.lem.sol.vander-hook.lap1-y.binom}), we obtain%
+\[
+\left(  t+x_{k}\right)  ^{m}=\sum_{\ell=0}^{m}\dbinom{m}{\ell}t^{\ell}%
+x_{k}^{m-\ell}.
+\]
+Since $t+x_{k}=x_{k}+t$, this rewrites as
+\[
+\left(  x_{k}+t\right)  ^{m}=\sum_{\ell=0}^{m}\dbinom{m}{\ell}t^{\ell}%
+x_{k}^{m-\ell}.
+\]
+Since $m=n-q$, this rewrites as
+\[
+\left(  x_{k}+t\right)  ^{n-q}=\sum_{\ell=0}^{n-q}\dbinom{n-q}{\ell}t^{\ell
+}x_{k}^{n-q-\ell}.
+\]
+This proves (\ref{pf.lem.sol.vander-hook.lap1-y.binom-used}).}.
+
+But%
+\begin{align*}
+&  V\left(  x_{1},x_{2},\ldots,x_{k-1},x_{k}+t,x_{k+1},x_{k+2},\ldots
+,x_{n}\right) \\
+&  =\sum_{q=1}^{n}\left(  -1\right)  ^{k+q}\underbrace{\left(  x_{k}+t\right)
+^{n-q}}_{\substack{=\sum_{\ell=0}^{n-q}\dbinom{n-q}{\ell}t^{\ell}%
+x_{k}^{n-q-\ell}\\\text{(by (\ref{pf.lem.sol.vander-hook.lap1-y.binom-used}%
+))}}}\det\left(  A_{\sim k,\sim q}\right)  \ \ \ \ \ \ \ \ \ \ \left(
+\text{by Lemma \ref{lem.sol.vander-hook.lap1} \textbf{(b)}}\right) \\
+&  =\sum_{q=1}^{n}\left(  -1\right)  ^{k+q}\left(  \sum_{\ell=0}^{n-q}%
+\dbinom{n-q}{\ell}t^{\ell}x_{k}^{n-q-\ell}\right)  \det\left(  A_{\sim k,\sim
+q}\right) \\
+&  =\sum_{q=1}^{n}\sum_{\ell=0}^{n-q}\underbrace{\left(  -1\right)
+^{k+q}\dbinom{n-q}{\ell}t^{\ell}}_{=\dbinom{n-q}{\ell}t^{\ell}\left(
+-1\right)  ^{k+q}}x_{k}^{n-q-\ell}\det\left(  A_{\sim k,\sim q}\right) \\
+&  =\sum_{q=1}^{n}\sum_{\ell=0}^{n-q}\dbinom{n-q}{\ell}t^{\ell}\left(
+-1\right)  ^{k+q}x_{k}^{n-q-\ell}\det\left(  A_{\sim k,\sim q}\right)  .
+\end{align*}
+This proves Lemma \ref{lem.sol.vander-hook.lap1-y}.
+\end{proof}
+
+\begin{proof}
+[Proof of Proposition \ref{prop.sol.vander-hook.variant-1}.]For every
+$j\in\mathbb{N}$, define an element $\mathfrak{e}_{j}\in\mathbb{K}$ by
+\newline$\mathfrak{e}_{j}=e_{j}\left(  x_{1},x_{2},\ldots,x_{n}\right)  $.
+
+Let $A$ be the $n\times n$-matrix $\left(  x_{i}^{n-j}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}$. We have%
+\begin{align}
+&  \sum_{k=1}^{n}y_{k}\underbrace{V\left(  x_{1},x_{2},\ldots,x_{k-1}%
+,x_{k}+t,x_{k+1},x_{k+2},\ldots,x_{n}\right)  }_{\substack{=\sum_{q=1}^{n}%
+\sum_{\ell=0}^{n-q}\dbinom{n-q}{\ell}t^{\ell}\left(  -1\right)  ^{k+q}%
+x_{k}^{n-q-\ell}\det\left(  A_{\sim k,\sim q}\right)  \\\text{(by Lemma
+\ref{lem.sol.vander-hook.lap1-y})}}}\nonumber\\
+&  =\sum_{k=1}^{n}\underbrace{y_{k}\sum_{q=1}^{n}\sum_{\ell=0}^{n-q}%
+\dbinom{n-q}{\ell}t^{\ell}\left(  -1\right)  ^{k+q}x_{k}^{n-q-\ell}\det\left(
+A_{\sim k,\sim q}\right)  }_{=\sum_{q=1}^{n}\sum_{\ell=0}^{n-q}y_{k}%
+\dbinom{n-q}{\ell}t^{\ell}\left(  -1\right)  ^{k+q}x_{k}^{n-q-\ell}\det\left(
+A_{\sim k,\sim q}\right)  }\nonumber\\
+&  =\underbrace{\sum_{k=1}^{n}\sum_{q=1}^{n}\sum_{\ell=0}^{n-q}}_{=\sum
+_{q=1}^{n}\sum_{\ell=0}^{n-q}\sum_{k=1}^{n}}\underbrace{y_{k}\dbinom{n-q}%
+{\ell}t^{\ell}\left(  -1\right)  ^{k+q}}_{=\dbinom{n-q}{\ell}t^{\ell}\left(
+-1\right)  ^{k+q}y_{k}}x_{k}^{n-q-\ell}\det\left(  A_{\sim k,\sim q}\right)
+\nonumber\\
+&  =\sum_{q=1}^{n}\sum_{\ell=0}^{n-q}\sum_{k=1}^{n}\dbinom{n-q}{\ell}t^{\ell
+}\left(  -1\right)  ^{k+q}y_{k}x_{k}^{n-q-\ell}\det\left(  A_{\sim k,\sim
+q}\right)  . \label{pf.prop.sol.vander-hook.variant-1.3}%
+\end{align}
+
+
+Now, let $q\in\left\{  1,2,\ldots,n\right\}  $. Thus, $n-q\in\left\{
+0,1,\ldots,n-1\right\}  \subseteq\mathbb{N}$. Hence, $n-q\in\left\{
+0,1,\ldots,n-q\right\}  $. Furthermore, (\ref{eq.binom.mm}) (applied to
+$m=n-q$) yields $\dbinom{n-q}{n-q}=1$. Now,
+\begin{align}
+&  \sum_{\ell=0}^{n-q}\underbrace{\sum_{k=1}^{n}\dbinom{n-q}{\ell}t^{\ell
+}\left(  -1\right)  ^{k+q}y_{k}x_{k}^{n-q-\ell}\det\left(  A_{\sim k,\sim
+q}\right)  }_{=\dbinom{n-q}{\ell}t^{\ell}\sum_{k=1}^{n}\left(  -1\right)
+^{k+q}y_{k}x_{k}^{n-q-\ell}\det\left(  A_{\sim k,\sim q}\right)  }\nonumber\\
+&  =\sum_{\ell=0}^{n-q}\dbinom{n-q}{\ell}t^{\ell}\underbrace{\sum_{k=1}%
+^{n}\left(  -1\right)  ^{k+q}y_{k}x_{k}^{n-q-\ell}\det\left(  A_{\sim k,\sim
+q}\right)  }_{\substack{=\delta_{\ell,n-q}\left(  -1\right)  ^{n-q}%
+\mathfrak{e}_{q-1}\det A\\\text{(by Lemma \ref{lem.sol.vander-hook.y-sum.2})}%
+}}\nonumber\\
+&  =\sum_{\ell=0}^{n-q}\dbinom{n-q}{\ell}t^{\ell}\delta_{\ell,n-q}\left(
+-1\right)  ^{n-q}\mathfrak{e}_{q-1}\det A\nonumber\\
+&  =\sum_{\ell=0}^{\left(  n-q\right)  -1}\dbinom{n-q}{\ell}t^{\ell
+}\underbrace{\delta_{\ell,n-q}}_{\substack{=0\\\text{(because }\ell\neq
+n-q\\\text{(since }\ell\leq\left(  n-q\right)  -1<n-q\text{))}}}\left(
+-1\right)  ^{n-q}\mathfrak{e}_{q-1}\det A\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ +\underbrace{\dbinom{n-q}{n-q}}_{=1}t^{n-q}%
+\underbrace{\delta_{n-q,n-q}}_{\substack{=1\\\text{(since }n-q=n-q\text{)}%
+}}\left(  -1\right)  ^{n-q}\mathfrak{e}_{q-1}\det A\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have split off the addend for }\ell=n-q\text{ from the sum}\\
+\text{(since }n-q\in\left\{  0,1,\ldots,n-q\right\}  \text{)}%
+\end{array}
+\right) \nonumber\\
+&  =\underbrace{\sum_{\ell=0}^{\left(  n-q\right)  -1}\dbinom{n-q}{\ell
+}t^{\ell}0\left(  -1\right)  ^{n-q}\mathfrak{e}_{q-1}\det A}_{=0}%
++t^{n-q}\left(  -1\right)  ^{n-q}\mathfrak{e}_{q-1}\det A\nonumber\\
+&  =t^{n-q}\left(  -1\right)  ^{n-q}\mathfrak{e}_{q-1}\det A.
+\label{pf.prop.sol.vander-hook.variant-1.7}%
+\end{align}
+
+
+Now, forget that we fixed $q$. We thus have proven
+(\ref{pf.prop.sol.vander-hook.variant-1.7}) for every $q\in\left\{
+1,2,\ldots,n\right\}  $.
+
+Now, (\ref{pf.prop.sol.vander-hook.variant-1.3}) becomes%
+\begin{align}
+&  \sum_{k=1}^{n}y_{k}V\left(  x_{1},x_{2},\ldots,x_{k-1},x_{k}+t,x_{k+1}%
+,x_{k+2},\ldots,x_{n}\right) \nonumber\\
+&  =\sum_{q=1}^{n}\underbrace{\sum_{\ell=0}^{n-q}\sum_{k=1}^{n}\dbinom
+{n-q}{\ell}t^{\ell}\left(  -1\right)  ^{k+q}y_{k}x_{k}^{n-q-\ell}\det\left(
+A_{\sim k,\sim q}\right)  }_{\substack{=t^{n-q}\left(  -1\right)
+^{n-q}\mathfrak{e}_{q-1}\det A\\\text{(by
+(\ref{pf.prop.sol.vander-hook.variant-1.7}))}}}\nonumber\\
+&  =\sum_{q=1}^{n}t^{n-q}\left(  -1\right)  ^{n-q}\mathfrak{e}_{q-1}\det A.
+\label{pf.prop.sol.vander-hook.variant-1.8}%
+\end{align}
+But%
+\begin{align}
+&  \sum_{q=1}^{n}\underbrace{t^{n-q}\left(  -1\right)  ^{n-q}}_{=\left(
+t\cdot\left(  -1\right)  \right)  ^{n-q}}\mathfrak{e}_{q-1}\det A\nonumber\\
+&  =\sum_{q=1}^{n}\left(  \underbrace{t\cdot\left(  -1\right)  }_{=-t}\right)
+^{n-q}\mathfrak{e}_{q-1}\det A=\sum_{q=1}^{n}\left(  -t\right)  ^{n-q}%
+\mathfrak{e}_{q-1}\det A\nonumber\\
+&  =\sum_{j=0}^{n-1}\underbrace{\left(  -t\right)  ^{n-\left(  n-j\right)  }%
+}_{\substack{=\left(  -t\right)  ^{j}\\\text{(since }n-\left(  n-j\right)
+=j\text{)}}}\underbrace{\mathfrak{e}_{\left(  n-j\right)  -1}}%
+_{\substack{=\mathfrak{e}_{n-1-j}\\\text{(since }\left(  n-j\right)
+-1=n-1-j\text{)}}}\det A\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }n-j\text{ for
+}q\text{ in the sum}\right) \nonumber\\
+&  =\sum_{j=0}^{n-1}\left(  -t\right)  ^{j}\underbrace{\mathfrak{e}_{n-1-j}%
+}_{\substack{=e_{n-1-j}\left(  x_{1},x_{2},\ldots,x_{n}\right)  \\\text{(by
+the definition of }\mathfrak{e}_{n-1-j}\text{)}}}\det A=\sum_{j=0}%
+^{n-1}\left(  -t\right)  ^{j}e_{n-1-j}\left(  x_{1},x_{2},\ldots,x_{n}\right)
+\det A\nonumber\\
+&  =\left(  \sum_{j=0}^{n-1}\left(  -t\right)  ^{j}e_{n-1-j}\left(
+x_{1},x_{2},\ldots,x_{n}\right)  \right)  \det A.
+\label{pf.prop.sol.vander-hook.variant-1.9a}%
+\end{align}
+
+
+But the definition of $z_{-t}\left(  x_{1},x_{2},\ldots,x_{n}\right)  $ yields%
+\begin{align}
+z_{-t}\left(  x_{1},x_{2},\ldots,x_{n}\right)   &  =\sum_{j=0}^{n-1}%
+e_{n-1-j}\left(  x_{1},x_{2},\ldots,x_{n}\right)  \left(  -t\right)
+^{j}\nonumber\\
+&  =\sum_{j=0}^{n-1}\left(  -t\right)  ^{j}e_{n-1-j}\left(  x_{1},x_{2}%
+,\ldots,x_{n}\right)  . \label{pf.prop.sol.vander-hook.variant-1.11}%
+\end{align}
+Thus, (\ref{pf.prop.sol.vander-hook.variant-1.9a}) becomes%
+\begin{align}
+&  \sum_{q=1}^{n}t^{n-q}\left(  -1\right)  ^{n-q}\mathfrak{e}_{q-1}\det
+A\nonumber\\
+&  =\underbrace{\left(  \sum_{j=0}^{n-1}\left(  -t\right)  ^{j}e_{n-1-j}%
+\left(  x_{1},x_{2},\ldots,x_{n}\right)  \right)  }_{\substack{=z_{-t}\left(
+x_{1},x_{2},\ldots,x_{n}\right)  \\\text{(by
+(\ref{pf.prop.sol.vander-hook.variant-1.11}))}}}\underbrace{\det
+A}_{\substack{=V\left(  x_{1},x_{2},\ldots,x_{n}\right)  \\\text{(by
+(\ref{eq.lem.sol.vander-hook.V=x.eq}))}}}\nonumber\\
+&  =z_{-t}\left(  x_{1},x_{2},\ldots,x_{n}\right)  \cdot V\left(  x_{1}%
+,x_{2},\ldots,x_{n}\right)  . \label{pf.prop.sol.vander-hook.variant-1.13}%
+\end{align}
+Hence, (\ref{pf.prop.sol.vander-hook.variant-1.8}) becomes%
+\begin{align*}
+&  \sum_{k=1}^{n}y_{k}V\left(  x_{1},x_{2},\ldots,x_{k-1},x_{k}+t,x_{k+1}%
+,x_{k+2},\ldots,x_{n}\right) \\
+&  =\sum_{q=1}^{n}t^{n-q}\left(  -1\right)  ^{n-q}\mathfrak{e}_{q-1}\det
+A=z_{-t}\left(  x_{1},x_{2},\ldots,x_{n}\right)  \cdot V\left(  x_{1}%
+,x_{2},\ldots,x_{n}\right)
+\end{align*}
+(by (\ref{pf.prop.sol.vander-hook.variant-1.13})). Thus, Proposition
+\ref{prop.sol.vander-hook.variant-1} is finally proven.
+\end{proof}
+
+Let us finish with one further identity, which is reminiscent of both
+Proposition \ref{prop.sol.vander-hook.variant-1} and Proposition
+\ref{prop.sol.vander-hook.N}:
+
+\begin{proposition}
+\label{prop.sol.vander-hook.variant-2}Let $n\in\mathbb{N}$. Let $x_{1}%
+,x_{2},\ldots,x_{n}$ be $n$ elements of $\mathbb{K}$. Let $t\in\mathbb{K}$.
+For each $i\in\left\{  1,2,\ldots,n\right\}  $, set $y_{i}=\prod
+_{\substack{j\in\left\{  1,2,\ldots,n\right\}  ;\\j\neq i}}x_{j}$. Then,%
+\begin{align*}
+&  \sum_{k=1}^{n}y_{k}V\left(  x_{1},x_{2},\ldots,x_{k-1},t,x_{k+1}%
+,x_{k+2},\ldots,x_{n}\right) \\
+&  =z_{-t}\left(  x_{1},x_{2},\ldots,x_{n}\right)  \cdot V\left(  x_{1}%
+,x_{2},\ldots,x_{n}\right)  .
+\end{align*}
+
+\end{proposition}
+
+The proof proceeds similarly as our proof of Proposition
+\ref{prop.sol.vander-hook.N}:
+
+\begin{proof}
+[Proof of Proposition \ref{prop.sol.vander-hook.variant-2}.]For every
+$j\in\mathbb{N}$, define an element $\mathfrak{e}_{j}\in\mathbb{K}$ by
+\newline$\mathfrak{e}_{j}=e_{j}\left(  x_{1},x_{2},\ldots,x_{n}\right)  $.
+
+Let $A$ be the $n\times n$-matrix $\left(  x_{i}^{n-j}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}$. Now,%
+\begin{align*}
+&  \sum_{k=1}^{n}y_{k}\underbrace{V\left(  x_{1},x_{2},\ldots,x_{k-1}%
+,t,x_{k+1},x_{k+2},\ldots,x_{n}\right)  }_{\substack{=\sum_{q=1}^{n}\left(
+-1\right)  ^{k+q}t^{n-q}\det\left(  A_{\sim k,\sim q}\right)  \\\text{(by
+Lemma \ref{lem.sol.vander-hook.N.lap1b})}}}\\
+&  =\sum_{k=1}^{n}\underbrace{y_{k}\sum_{q=1}^{n}\left(  -1\right)
+^{k+q}t^{n-q}\det\left(  A_{\sim k,\sim q}\right)  }_{=\sum_{q=1}^{n}%
+y_{k}\left(  -1\right)  ^{k+q}t^{n-q}\det\left(  A_{\sim k,\sim q}\right)  }\\
+&  =\underbrace{\sum_{k=1}^{n}\sum_{q=1}^{n}}_{=\sum_{q=1}^{n}\sum_{k=1}^{n}%
+}\underbrace{y_{k}\left(  -1\right)  ^{k+q}}_{=\left(  -1\right)  ^{k+q}y_{k}%
+}t^{n-q}\det\left(  A_{\sim k,\sim q}\right) \\
+&  =\sum_{q=1}^{n}\underbrace{\sum_{k=1}^{n}\left(  -1\right)  ^{k+q}%
+y_{k}t^{n-q}\det\left(  A_{\sim k,\sim q}\right)  }_{=t^{n-q}\sum_{k=1}%
+^{n}\left(  -1\right)  ^{k+q}y_{k}\det\left(  A_{\sim k,\sim q}\right)  }\\
+&  =\sum_{q=1}^{n}t^{n-q}\underbrace{\sum_{k=1}^{n}\left(  -1\right)
+^{k+q}y_{k}\det\left(  A_{\sim k,\sim q}\right)  }_{\substack{=\left(
+-1\right)  ^{n-q}\mathfrak{e}_{q-1}\det A\\\text{(by Lemma
+\ref{lem.sol.vander-hook.y-sum.1})}}}\\
+&  =\sum_{q=1}^{n}t^{n-q}\left(  -1\right)  ^{n-q}\mathfrak{e}_{q-1}\det
+A=z_{-t}\left(  x_{1},x_{2},\ldots,x_{n}\right)  \cdot V\left(  x_{1}%
+,x_{2},\ldots,x_{n}\right)
+\end{align*}
+(by (\ref{pf.prop.sol.vander-hook.variant-1.13})). This proves Proposition
+\ref{prop.sol.vander-hook.variant-2}.
+\end{proof}
 
 \subsection{Solution to Exercise \ref{exe.block2x2.VB+WD}}
 
