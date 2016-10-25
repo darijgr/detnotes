@@ -55667,7 +55667,30 @@ Cases 1 and 2. Since these two Cases cover all possibilities, this shows that
 Lemma \ref{lem.sol.vander-hook.lap0} always holds.
 \end{proof}
 
-Next, we show two crucial lemmas:
+Next, we show three crucial lemmas:
+
+\begin{lemma}
+\label{lem.sol.vander-hook.V=x}Let $n\in\mathbb{N}$. Let $x_{1},x_{2}%
+,\ldots,x_{n}$ be $n$ elements of $\mathbb{K}$. Let $A$ be the $n\times
+n$-matrix $\left(  x_{i}^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$.
+Then,%
+\begin{equation}
+V\left(  x_{1},x_{2},\ldots,x_{n}\right)  =\det A.
+\label{eq.lem.sol.vander-hook.V=x.eq}%
+\end{equation}
+
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.vander-hook.V=x}.]The definition of $A$ yields
+$A=\left(  x_{i}^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$. Lemma
+\ref{lem.sol.vander-hook.V=} (applied to $y_{j}=x_{j}$) yields%
+\[
+V\left(  x_{1},x_{2},\ldots,x_{n}\right)  =\det\left(  \underbrace{\left(
+x_{i}^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}}_{=A}\right)  =\det A.
+\]
+This proves Lemma \ref{lem.sol.vander-hook.V=x}.
+\end{proof}
 
 \begin{lemma}
 \label{lem.sol.vander-hook.lap1}Let $n\in\mathbb{N}$. Let $x_{1},x_{2}%
@@ -55705,14 +55728,11 @@ V\left(  x_{1},x_{2},\ldots,x_{n}\right)  =\sum_{q=1}^{n}\left(  -1\right)
 [Proof of Lemma \ref{lem.sol.vander-hook.lap1}.]The definition of $A$ yields
 $A=\left(  x_{i}^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$.
 
-\textbf{(a)} Lemma \ref{lem.sol.vander-hook.V=} (applied to $y_{j}=x_{j}$)
-yields%
-\begin{align*}
-V\left(  x_{1},x_{2},\ldots,x_{n}\right)   &  =\det\left(  \underbrace{\left(
-x_{i}^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}}_{=A}\right)  =\det A\\
-&  =\sum_{q=1}^{n}\left(  -1\right)  ^{k+q}x_{k}^{n-q}\det\left(  A_{\sim
-k,\sim q}\right)
-\end{align*}
+\textbf{(a)} Lemma \ref{lem.sol.vander-hook.V=x} yields%
+\[
+V\left(  x_{1},x_{2},\ldots,x_{n}\right)  =\det A=\sum_{q=1}^{n}\left(
+-1\right)  ^{k+q}x_{k}^{n-q}\det\left(  A_{\sim k,\sim q}\right)
+\]
 (by Theorem \ref{thm.laplace.gen} \textbf{(a)}, applied to $x_{i}^{n-j}$ and
 $k$ instead of $a_{i,j}$ and $p$). This proves Lemma
 \ref{lem.sol.vander-hook.lap1} \textbf{(a)}.
@@ -55930,14 +55950,7 @@ x_{k}^{n-q-\ell+1}\det\left(  A_{\sim k,\sim q}\right)
 \begin{vershort}
 \begin{proof}
 [Solution to Exercise \ref{exe.vander-hook}.]Let $A$ be the $n\times n$-matrix
-$\left(  x_{i}^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$. Lemma
-\ref{lem.sol.vander-hook.V=} (applied to $y_{j}=x_{j}$) yields%
-\begin{equation}
-V\left(  x_{1},x_{2},\ldots,x_{n}\right)  =\det\left(  \underbrace{\left(
-x_{i}^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}}_{=A}\right)  =\det A.
-\label{sol.vander-hook.short.detA}%
-\end{equation}
-
+$\left(  x_{i}^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$.
 
 We have%
 \begin{align}
@@ -56032,7 +56045,7 @@ Now, (\ref{sol.vander-hook.short.3}) becomes%
 &  =\underbrace{\left(  \sum_{r=0}^{n-1}r\right)  }_{\substack{=\dbinom{n}%
 {2}\\\text{(by (\ref{sol.vander-hook.short.gauss}))}}}t\underbrace{\det
 A}_{\substack{=V\left(  x_{1},x_{2},\ldots,x_{n}\right)  \\\text{(by
-(\ref{sol.vander-hook.short.detA}))}}}\\
+(\ref{eq.lem.sol.vander-hook.V=x.eq}))}}}\\
 &  =\dbinom{n}{2}tV\left(  x_{1},x_{2},\ldots,x_{n}\right)  .
 \end{align*}
 If we add $\sum_{k=1}^{n}x_{k}V\left(  x_{1},x_{2},\ldots,x_{n}\right)  $ to
@@ -56052,14 +56065,7 @@ This solves Exercise \ref{exe.vander-hook}.
 \begin{verlong}
 \begin{proof}
 [Solution to Exercise \ref{exe.vander-hook}.]Let $A$ be the $n\times n$-matrix
-$\left(  x_{i}^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$. Lemma
-\ref{lem.sol.vander-hook.V=} (applied to $y_{j}=x_{j}$) yields%
-\begin{equation}
-V\left(  x_{1},x_{2},\ldots,x_{n}\right)  =\det\left(  \underbrace{\left(
-x_{i}^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}}_{=A}\right)  =\det A.
-\label{sol.vander-hook.detA}%
-\end{equation}
-
+$\left(  x_{i}^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$.
 
 We have%
 \begin{align}
@@ -56183,7 +56189,7 @@ Now, (\ref{sol.vander-hook.3}) becomes%
 &  =\underbrace{\left(  \sum_{r=0}^{n-1}r\right)  }_{\substack{=\dbinom{n}%
 {2}\\\text{(by (\ref{sol.vander-hook.gauss}))}}}t\underbrace{\det
 A}_{\substack{=V\left(  x_{1},x_{2},\ldots,x_{n}\right)  \\\text{(by
-(\ref{sol.vander-hook.detA}))}}}\\
+(\ref{eq.lem.sol.vander-hook.V=x.eq}))}}}\\
 &  =\dbinom{n}{2}tV\left(  x_{1},x_{2},\ldots,x_{n}\right)  .
 \end{align*}
 If we add $\sum_{k=1}^{n}x_{k}V\left(  x_{1},x_{2},\ldots,x_{n}\right)  $ to
@@ -56209,12 +56215,10 @@ fact, which is a variation on it. Namely, the following holds:
 \label{prop.sol.vander-hook.variant}Let $n\in\mathbb{N}$. Let $x_{1}%
 ,x_{2},\ldots,x_{n}$ be $n$ elements of $\mathbb{K}$. Let $t\in\mathbb{K}$.
 Then,%
-\begin{align*}
-&  \sum_{k=1}^{n}V\left(  x_{1},x_{2},\ldots,x_{k-1},x_{k}+t,x_{k+1}%
-,x_{k+2},\ldots,x_{n}\right)  \\
-&  =\left(  \sum_{k=1}^{n}x_{k}\right)  V\left(  x_{1},x_{2},\ldots
-,x_{n}\right)  .
-\end{align*}
+\[
+\sum_{k=1}^{n}V\left(  x_{1},x_{2},\ldots,x_{k-1},x_{k}+t,x_{k+1}%
+,x_{k+2},\ldots,x_{n}\right)  =nV\left(  x_{1},x_{2},\ldots,x_{n}\right)  .
+\]
 
 \end{proposition}
 
@@ -56287,14 +56291,13 @@ Again, the reader can fill in the details.
 
 \begin{verlong}
 \begin{proof}
-\item[Proof of Proposition \ref{prop.sol.vander-hook.variant}.] Let $A$ be the
+[Proof of Proposition \ref{prop.sol.vander-hook.variant}.]Let $A$ be the
 $n\times n$-matrix $\left(  x_{i}^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq
 n}$. We have%
 \begin{align}
 &  \sum_{k=1}^{n}V\left(  x_{1},x_{2},\ldots,x_{k-1},x_{k}+t,x_{k+1}%
-,x_{k+2},\ldots,x_{n}\right) \nonumber\\
-&  \ \ \ \ \ \ \ \ \ \ -\sum_{k=1}^{n}V\left(  x_{1},x_{2},\ldots,x_{n}\right)
-\nonumber\\
+,x_{k+2},\ldots,x_{n}\right)  -\sum_{k=1}^{n}V\left(  x_{1},x_{2},\ldots
+,x_{n}\right) \nonumber\\
 &  =\sum_{k=1}^{n}\underbrace{\left(  V\left(  x_{1},x_{2},\ldots
 ,x_{k-1},x_{k}+t,x_{k+1},x_{k+2},\ldots,x_{n}\right)  -V\left(  x_{1}%
 ,x_{2},\ldots,x_{n}\right)  \right)  }_{\substack{=\sum_{q=1}^{n}\sum_{\ell
@@ -56320,8 +56323,8 @@ In other words,%
 \begin{align*}
 &  \sum_{k=1}^{n}V\left(  x_{1},x_{2},\ldots,x_{k-1},x_{k}+t,x_{k+1}%
 ,x_{k+2},\ldots,x_{n}\right) \\
-&  =\left(  \sum_{k=1}^{n}x_{k}\right)  V\left(  x_{1},x_{2},\ldots
-,x_{n}\right)  .
+&  =\sum_{k=1}^{n}V\left(  x_{1},x_{2},\ldots,x_{n}\right)  =nV\left(
+x_{1},x_{2},\ldots,x_{n}\right)  .
 \end{align*}
 This proves Proposition \ref{prop.sol.vander-hook.variant}.
 \end{proof}
