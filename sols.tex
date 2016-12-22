@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Tuesday, December 20, 2016 21:32:24}
+%TCIDATA{LastRevised=Thursday, December 22, 2016 02:05:13}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -13969,6 +13969,8 @@ This proves Corollary \ref{cor.laplace.pre.col}.
 
 \subsection{The Vandermonde determinant}
 
+\subsubsection{The statement}
+
 An example for an application of Theorem \ref{thm.laplace.pre} is the famous
 \textit{Vandermonde determinant}:
 
@@ -14071,8 +14073,12 @@ prove Theorem \ref{thm.vander-det} \textbf{(b)}. But as we will see, the four
 parts of Theorem \ref{thm.vander-det} are easily seen to be equivalent to each
 other.)}. My favorite proof (of Theorem \ref{thm.vander-det} \textbf{(c)}
 only, but as I said the other parts are easily seen to be equivalent) is given
-in \cite[Theorem 1]{GriHyp}. In these notes, I will show another proof, which
-has the advantage of demonstrating how to use Theorem \ref{thm.laplace.pre}.
+in \cite[Theorem 1]{GriHyp}. In these notes, I will show two others.
+
+\subsubsection{A proof by induction}
+
+The first proof I shall present has the advantage of demonstrating how Theorem
+\ref{thm.laplace.pre} can be used (together with induction) in computing determinants.
 
 \begin{example}
 \label{exa.vander-det.3}Let $x,y,z\in\mathbb{K}$. Let $A=\left(
@@ -14191,9 +14197,9 @@ This proves Lemma \ref{lem.vander-det.lem-rearr}.
 \end{proof}
 
 \begin{proof}
-[Proof of Theorem \ref{thm.vander-det}.]\textbf{(a)} For every $u\in\left\{
-0,1,\ldots,n\right\}  $, let $A_{u}$ be the $u\times u$-matrix $\left(
-x_{i}^{u-j}\right)  _{1\leq i\leq u,\ 1\leq j\leq u}$.
+[First proof of Theorem \ref{thm.vander-det}.]\textbf{(a)} For every
+$u\in\left\{  0,1,\ldots,n\right\}  $, let $A_{u}$ be the $u\times u$-matrix
+$\left(  x_{i}^{u-j}\right)  _{1\leq i\leq u,\ 1\leq j\leq u}$.
 
 Now, let us show that%
 \begin{equation}
@@ -14990,29 +14996,31 @@ j<i\leq n}\left(  x_{i}-x_{j}\right)  $. This proves Theorem
 Let $G=\left\{  \left(  i,j\right)  \in\mathbb{Z}^{2}\ \mid\ 1\leq i<j\leq
 n\right\}  $. Then, $\left\vert G\right\vert =n\left(  n-1\right)  /2$. (This
 was proven in the solution to Exercise \ref{exe.ps4.1c}.) Now,%
-\begin{align*}
+\begin{align}
 \prod_{1\leq j<i\leq n}\left(  x_{i}-x_{j}\right)   &  =\underbrace{\prod
 _{1\leq i<j\leq n}}_{\substack{=\prod_{\substack{\left(  i,j\right)
 \in\mathbb{Z}^{2};\\1\leq i<j\leq n}}=\prod_{\left(  i,j\right)  \in
 G}\\\text{(since }G=\left\{  \left(  i,j\right)  \in\mathbb{Z}^{2}%
 \ \mid\ 1\leq i<j\leq n\right\}  \text{)}}}\underbrace{\left(  x_{j}%
--x_{i}\right)  }_{=\left(  -1\right)  \left(  x_{i}-x_{j}\right)  }\\
+-x_{i}\right)  }_{=\left(  -1\right)  \left(  x_{i}-x_{j}\right)  }\nonumber\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we renamed the index }\left(
-j,i\right)  \text{ as }\left(  i,j\right)  \text{ in the product}\right) \\
+j,i\right)  \text{ as }\left(  i,j\right)  \text{ in the product}\right)
+\nonumber\\
 &  =\prod_{\left(  i,j\right)  \in G}\left(  \left(  -1\right)  \left(
-x_{i}-x_{j}\right)  \right) \\
+x_{i}-x_{j}\right)  \right) \nonumber\\
 &  =\underbrace{\left(  -1\right)  ^{\left\vert G\right\vert }}%
 _{\substack{=\left(  -1\right)  ^{n\left(  n-1\right)  /2}\\\text{(since
 }\left\vert G\right\vert =n\left(  n-1\right)  /2\text{)}}}\underbrace{\prod
 _{\left(  i,j\right)  \in G}}_{\substack{=\prod_{\substack{\left(  i,j\right)
 \in\mathbb{Z}^{2};\\1\leq i<j\leq n}}\\\text{(since }G=\left\{  \left(
 i,j\right)  \in\mathbb{Z}^{2}\ \mid\ 1\leq i<j\leq n\right\}  \text{)}%
-}}\left(  x_{i}-x_{j}\right) \\
+}}\left(  x_{i}-x_{j}\right) \nonumber\\
 &  =\left(  -1\right)  ^{n\left(  n-1\right)  /2}\underbrace{\prod
 _{\substack{\left(  i,j\right)  \in\mathbb{Z}^{2};\\1\leq i<j\leq n}}}%
-_{=\prod_{1\leq i<j\leq n}}\left(  x_{i}-x_{j}\right)  =\left(  -1\right)
-^{n\left(  n-1\right)  /2}\prod_{1\leq i<j\leq n}\left(  x_{i}-x_{j}\right)  .
-\end{align*}
+_{=\prod_{1\leq i<j\leq n}}\left(  x_{i}-x_{j}\right) \nonumber\\
+&  =\left(  -1\right)  ^{n\left(  n-1\right)  /2}\prod_{1\leq i<j\leq
+n}\left(  x_{i}-x_{j}\right)  . \label{pf.thm.vander-det.d.2}%
+\end{align}
 Compared with (\ref{pf.thm.vander-det.d.0}), this yields $\det\left(  \left(
 x_{j}^{i-1}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  =\prod_{1\leq
 j<i\leq n}\left(  x_{i}-x_{j}\right)  $. This proves Theorem
@@ -15051,6 +15059,383 @@ n}\right)  =\prod_{1\leq j<i\leq n}\left(  x_{i}-x_{j}\right)  .
 This proves Theorem \ref{thm.vander-det} \textbf{(c)}.
 \end{verlong}
 \end{proof}
+
+\subsubsection{\label{subsect.vandermonde.factoring}A proof by factoring the
+matrix}
+
+Next, I shall outline another proof of Theorem \ref{thm.vander-det}, which
+proceeds by writing the matrix $\left(  x_{j}^{i-1}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}$ as a product of a lower-triangular matrix with an
+upper-triangular matrix. The idea of this proof appears in \cite[Theorem
+2.1]{OruPhi}, \cite[Theorem 2]{GohKol} and \cite[proof of Lemma 4.12]{OlvSha}
+(although the first two of these three sources use slightly different
+arguments, and the third gives no proof).
+
+We will need several lemmas for the proof. The proofs of these lemmas are
+relegated to the solution of Exercise \ref{exe.subsect.vandermonde.factoring}.
+
+We begin with a definition that will be used throughout Subsection
+\ref{subsect.vandermonde.factoring}:
+
+\begin{definition}
+\label{def.vandermonde.factoring.h}Let $k\in\mathbb{Z}$ and $n\in\mathbb{N}$.
+Let $x_{1},x_{2},\ldots,x_{n}$ be $n$ elements of $\mathbb{K}$. Then, we
+define an element $h_{k}\left(  x_{1},x_{2},\ldots,x_{n}\right)  $ by%
+\[
+h_{k}\left(  x_{1},x_{2},\ldots,x_{n}\right)  =\sum_{\substack{\left(
+a_{1},a_{2},\ldots,a_{n}\right)  \in\mathbb{N}^{n};\\a_{1}+a_{2}+\cdots
++a_{n}=k}}x_{1}^{a_{1}}x_{2}^{a_{2}}\cdots x_{n}^{a_{n}}.
+\]
+(Note that the sum on the right hand side of this equality is finite, because
+only finitely many $\left(  a_{1},a_{2},\ldots,a_{n}\right)  \in\mathbb{N}%
+^{n}$ satisfy $a_{1}+a_{2}+\cdots+a_{n}=k$.)
+\end{definition}
+
+The element $h_{k}\left(  x_{1},x_{2},\ldots,x_{n}\right)  $ defined in
+Definition \ref{def.vandermonde.factoring.h} is often called the
+$k$\textit{-th complete homogeneous function of the }$n$ \textit{elements
+}$x_{1},x_{2},\ldots,x_{n}$ (although, more often, this notion is reserved for
+a different, more abstract object of whom $h_{k}\left(  x_{1},x_{2}%
+,\ldots,x_{n}\right)  $ is just an evaluation). Let us see some examples:
+
+\begin{example}
+\label{exam.vandermonde.factoring.h.12}\textbf{(a)} If $n\in\mathbb{N}$, and
+if $x_{1},x_{2},\ldots,x_{n}$ are $n$ elements of $\mathbb{K}$, then%
+\[
+h_{1}\left(  x_{1},x_{2},\ldots,x_{n}\right)  =x_{1}+x_{2}+\cdots+x_{n}%
+\]
+and%
+\[
+h_{2}\left(  x_{1},x_{2},\ldots,x_{n}\right)  =\left(  x_{1}^{2}+x_{2}%
+^{2}+\cdots+x_{n}^{2}\right)  +\sum_{1\leq i<j\leq n}x_{i}x_{j}.
+\]
+For example, for $n=3$, we obtain $h_{2}\left(  x_{1},x_{2},x_{3}\right)
+=\left(  x_{1}^{2}+x_{2}^{2}+x_{3}^{2}\right)  +\left(  x_{1}x_{2}+x_{1}%
+x_{3}+x_{2}x_{3}\right)  $.
+
+\textbf{(b)} If $x$ and $y$ are two elements of $\mathbb{K}$, then%
+\[
+h_{k}\left(  x,y\right)  =\sum_{\substack{\left(  a_{1},a_{2}\right)
+\in\mathbb{N}^{2};\\a_{1}+a_{2}=k}}x^{a_{1}}y^{a_{2}}=x^{k}y^{0}+x^{k-1}%
+y^{1}+\cdots+x^{0}y^{k}%
+\]
+for every $k\in\mathbb{N}$.
+
+\textbf{(c)} If $x\in\mathbb{K}$, then $h_{k}\left(  x\right)  =x^{k}$ for
+every $k\in\mathbb{N}$.
+\end{example}
+
+\begin{lemma}
+\label{lem.vandermonde.factoring.h.0}Let $n\in\mathbb{N}$. Let $x_{1}%
+,x_{2},\ldots,x_{n}$ be $n$ elements of $\mathbb{K}$.
+
+\textbf{(a)} We have $h_{k}\left(  x_{1},x_{2},\ldots,x_{n}\right)  =0$ for
+every negative integer $k$.
+
+\textbf{(b)} We have $h_{0}\left(  x_{1},x_{2},\ldots,x_{n}\right)  =1$.
+\end{lemma}
+
+As we have said, all lemmas in Subsection \ref{subsect.vandermonde.factoring}
+will be proven in the solution to Exercise
+\ref{exe.subsect.vandermonde.factoring}.
+
+Three further lemmas on the $h_{k}\left(  x_{1},x_{2},\ldots,x_{n}\right)  $
+will be of use:
+
+\begin{lemma}
+\label{lem.vandermonde.factoring.h.hq1}Let $k$ be a positive integer. Let
+$x_{1},x_{2},\ldots,x_{k}$ be $k$ elements of $\mathbb{K}$. Let $q\in
+\mathbb{Z}$. Then,%
+\[
+h_{q}\left(  x_{1},x_{2},\ldots,x_{k}\right)  =\sum_{r=0}^{q}x_{k}^{r}%
+h_{q-r}\left(  x_{1},x_{2},\ldots,x_{k-1}\right)  .
+\]
+
+\end{lemma}
+
+\begin{lemma}
+\label{lem.vandermonde.factoring.h.hq2}Let $k$ be a positive integer. Let
+$x_{1},x_{2},\ldots,x_{k}$ be $k$ elements of $\mathbb{K}$. Let $q\in
+\mathbb{Z}$. Then,%
+\[
+h_{q}\left(  x_{1},x_{2},\ldots,x_{k}\right)  =h_{q}\left(  x_{1},x_{2}%
+,\ldots,x_{k-1}\right)  +x_{k}h_{q-1}\left(  x_{1},x_{2},\ldots,x_{k}\right)
+.
+\]
+
+\end{lemma}
+
+\begin{lemma}
+\label{lem.vandermonde.factoring.h.sum-u}Let $i$ be a positive integer. Let
+$x_{1},x_{2},\ldots,x_{i}$ be $i$ elements of $\mathbb{K}$. Let $u\in
+\mathbb{K}$. Then,%
+\[
+\sum_{k=1}^{i}h_{i-k}\left(  x_{1},x_{2},\ldots,x_{k}\right)  \prod
+_{p=1}^{k-1}\left(  u-x_{p}\right)  =u^{i-1}.
+\]
+
+\end{lemma}
+
+Next, let us introduce two matrices:
+
+\begin{lemma}
+\label{lem.vandermonde.factoring.U}Let $n\in\mathbb{N}$. Let $x_{1}%
+,x_{2},\ldots,x_{n}$ be $n$ elements of $\mathbb{K}$. Define an $n\times
+n$-matrix $U\in\mathbb{K}^{n\times n}$ by%
+\[
+U=\left(  \prod_{p=1}^{i-1}\left(  x_{j}-x_{p}\right)  \right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}.
+\]
+Then, $\det U=\prod_{1\leq j<i\leq n}\left(  x_{i}-x_{j}\right)  $.
+\end{lemma}
+
+\begin{example}
+If $n=4$, then the matrix $U$ defined in Lemma
+\ref{lem.vandermonde.factoring.U} looks as follows:%
+\begin{align*}
+U  &  =\left(  \prod_{p=1}^{i-1}\left(  x_{j}-x_{p}\right)  \right)  _{1\leq
+i\leq4,\ 1\leq j\leq4}\\
+&  =\left(
+\begin{array}
+[c]{cccc}%
+\prod_{p=1}^{0}\left(  x_{1}-x_{p}\right)  & \prod_{p=1}^{0}\left(
+x_{2}-x_{p}\right)  & \prod_{p=1}^{0}\left(  x_{3}-x_{p}\right)  & \prod
+_{p=1}^{0}\left(  x_{4}-x_{p}\right) \\
+\prod_{p=1}^{1}\left(  x_{1}-x_{p}\right)  & \prod_{p=1}^{1}\left(
+x_{2}-x_{p}\right)  & \prod_{p=1}^{1}\left(  x_{3}-x_{p}\right)  & \prod
+_{p=1}^{1}\left(  x_{4}-x_{p}\right) \\
+\prod_{p=1}^{2}\left(  x_{1}-x_{p}\right)  & \prod_{p=1}^{2}\left(
+x_{2}-x_{p}\right)  & \prod_{p=1}^{2}\left(  x_{3}-x_{p}\right)  & \prod
+_{p=1}^{2}\left(  x_{4}-x_{p}\right) \\
+\prod_{p=1}^{3}\left(  x_{1}-x_{p}\right)  & \prod_{p=1}^{3}\left(
+x_{2}-x_{p}\right)  & \prod_{p=1}^{3}\left(  x_{3}-x_{p}\right)  & \prod
+_{p=1}^{3}\left(  x_{4}-x_{p}\right)
+\end{array}
+\right) \\
+&  =\left(
+\begin{array}
+[c]{cccc}%
+1 & 1 & 1 & 1\\
+0 & x_{2}-x_{1} & x_{3}-x_{1} & x_{4}-x_{1}\\
+0 & 0 & \left(  x_{3}-x_{1}\right)  \left(  x_{3}-x_{2}\right)  & \left(
+x_{4}-x_{1}\right)  \left(  x_{4}-x_{2}\right) \\
+0 & 0 & 0 & \left(  x_{4}-x_{1}\right)  \left(  x_{4}-x_{2}\right)  \left(
+x_{4}-x_{3}\right)
+\end{array}
+\right)  .
+\end{align*}
+(Here, we have used the fact that if $i>j$, then the product $\prod
+_{p=1}^{i-1}\left(  x_{j}-x_{p}\right)  $ contains the factor $x_{j}-x_{j}=0$
+and thus equals $0$.)
+\end{example}
+
+\begin{lemma}
+\label{lem.vandermonde.factoring.L}Let $n\in\mathbb{N}$. Let $x_{1}%
+,x_{2},\ldots,x_{n}$ be $n$ elements of $\mathbb{K}$. Define an $n\times
+n$-matrix $L\in\mathbb{K}^{n\times n}$ by%
+\[
+L=\left(  h_{i-j}\left(  x_{1},x_{2},\ldots,x_{j}\right)  \right)  _{1\leq
+i\leq n,\ 1\leq j\leq n}.
+\]
+Then, $\det L=1$.
+\end{lemma}
+
+\begin{example}
+If $n=4$, then the matrix $L$ defined in Lemma
+\ref{lem.vandermonde.factoring.L} looks as follows:%
+\begin{align*}
+L &  =\left(  h_{i-j}\left(  x_{1},x_{2},\ldots,x_{j}\right)  \right)  _{1\leq
+i\leq n,\ 1\leq j\leq n}\\
+&  =\left(
+\begin{array}
+[c]{cccc}%
+h_{0}\left(  x_{1}\right)   & h_{-1}\left(  x_{1},x_{2}\right)   &
+h_{-2}\left(  x_{1},x_{2},x_{3}\right)   & h_{-3}\left(  x_{1},x_{2}%
+,x_{3},x_{4}\right)  \\
+h_{1}\left(  x_{1}\right)   & h_{0}\left(  x_{1},x_{2}\right)   &
+h_{-1}\left(  x_{1},x_{2},x_{3}\right)   & h_{-2}\left(  x_{1},x_{2}%
+,x_{3},x_{4}\right)  \\
+h_{2}\left(  x_{2}\right)   & h_{1}\left(  x_{1},x_{2}\right)   & h_{0}\left(
+x_{1},x_{2},x_{3}\right)   & h_{-1}\left(  x_{1},x_{2},x_{3},x_{4}\right)  \\
+h_{3}\left(  x_{3}\right)   & h_{2}\left(  x_{1},x_{2}\right)   & h_{1}\left(
+x_{1},x_{2},x_{3}\right)   & h_{0}\left(  x_{1},x_{2},x_{3},x_{4}\right)
+\end{array}
+\right)  \\
+&  =\left(
+\begin{array}
+[c]{cccc}%
+1 & 0 & 0 & 0\\
+x_{1} & 1 & 0 & 0\\
+x_{1}^{2} & x_{1}+x_{2} & 1 & 0\\
+x_{1}^{3} & x_{1}^{2}+x_{1}x_{2}+x_{2}^{2} & x_{1}+x_{2}+x_{3} & 1
+\end{array}
+\right)  .
+\end{align*}
+(The fact that the diagonal entries are $1$ is a consequence of Lemma
+\ref{lem.vandermonde.factoring.h.0} \textbf{(b)}, and the fact that the
+entries above the diagonal are $0$ is a consequence of Lemma
+\ref{lem.vandermonde.factoring.h.0} \textbf{(a)}.)
+\end{example}
+
+\begin{lemma}
+\label{lem.vandermonde.factoring.A=LU}Let $n\in\mathbb{N}$. Let $x_{1}%
+,x_{2},\ldots,x_{n}$ be $n$ elements of $\mathbb{K}$. Let $L$ be the $n\times
+n$-matrix defined in Lemma \ref{lem.vandermonde.factoring.L}. Let $U$ be the
+$n\times n$-matrix defined in Lemma \ref{lem.vandermonde.factoring.U}. Then,%
+\[
+\left(  x_{j}^{i-1}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}=LU.
+\]
+
+\end{lemma}
+
+\begin{exercise}
+\label{exe.subsect.vandermonde.factoring}Prove Lemma
+\ref{lem.vandermonde.factoring.h.0}, Lemma
+\ref{lem.vandermonde.factoring.h.hq1}, Lemma
+\ref{lem.vandermonde.factoring.h.hq2}, Lemma
+\ref{lem.vandermonde.factoring.h.sum-u}, Lemma
+\ref{lem.vandermonde.factoring.U}, Lemma \ref{lem.vandermonde.factoring.L} and
+Lemma \ref{lem.vandermonde.factoring.A=LU}.
+\end{exercise}
+
+Now, we can prove Theorem \ref{thm.vander-det} again:
+
+\begin{proof}
+[Second proof of Theorem \ref{thm.vander-det}.]\textbf{(d)} Let $L$ be the
+$n\times n$-matrix defined in Lemma \ref{lem.vandermonde.factoring.L}. Let $U$
+be the $n\times n$-matrix defined in Lemma \ref{lem.vandermonde.factoring.U}.
+Then, Lemma \ref{lem.vandermonde.factoring.A=LU} yields $\left(  x_{j}%
+^{i-1}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}=LU$. Hence,%
+\begin{align*}
+\det\left(  \underbrace{\left(  x_{j}^{i-1}\right)  _{1\leq i\leq n,\ 1\leq
+j\leq n}}_{=LU}\right)   &  =\det\left(  LU\right)  =\underbrace{\det
+L}_{\substack{=1\\\text{(by Lemma \ref{lem.vandermonde.factoring.L})}}%
+}\cdot\underbrace{\det U}_{\substack{=\prod_{1\leq j<i\leq n}\left(
+x_{i}-x_{j}\right)  \\\text{(by Lemma \ref{lem.vandermonde.factoring.U})}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{by Theorem \ref{thm.det(AB)}, applied to }L\text{ and }U\\
+\text{instead of }A\text{ and }B
+\end{array}
+\right) \\
+&  =1\cdot\prod_{1\leq j<i\leq n}\left(  x_{i}-x_{j}\right)  =\prod_{1\leq
+j<i\leq n}\left(  x_{i}-x_{j}\right)  .
+\end{align*}
+This proves Theorem \ref{thm.vander-det} \textbf{(d)}.
+
+\begin{vershort}
+Now, it remains to prove parts \textbf{(a)}, \textbf{(b)} and \textbf{(c)} of
+Theorem \ref{thm.vander-det}. This is fairly easy: Back in our First proof of
+Theorem \ref{thm.vander-det}, we have derived parts \textbf{(b)}, \textbf{(d)}
+and \textbf{(c)} from part \textbf{(a)}. By essentially the same arguments
+(sometimes done in reverse), we can derive parts \textbf{(a)}, \textbf{(b)}
+and \textbf{(c)} from part \textbf{(d)}. (We need to use the fact that
+$\left(  \left(  -1\right)  ^{n\left(  n-1\right)  /2}\right)  ^{2}=1$.)
+\end{vershort}
+
+\begin{verlong}
+\textbf{(b)} Applying Lemma \ref{lem.vander-det.lem-rearr} to $a_{i,j}%
+=x_{j}^{i-1}$, we obtain%
+\begin{align*}
+\det\left(  \left(  x_{j}^{\left(  n+1-i\right)  -1}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}\right)   &  =\left(  -1\right)  ^{n\left(  n-1\right)
+/2}\underbrace{\det\left(  \left(  x_{j}^{i-1}\right)  _{1\leq i\leq n,\ 1\leq
+j\leq n}\right)  }_{\substack{=\prod_{1\leq j<i\leq n}\left(  x_{i}%
+-x_{j}\right)  \\\text{(by Theorem \ref{thm.vander-det} \textbf{(d)})}}}\\
+&  =\left(  -1\right)  ^{n\left(  n-1\right)  /2}\prod_{1\leq j<i\leq
+n}\left(  x_{i}-x_{j}\right)  .
+\end{align*}
+This rewrites as%
+\begin{equation}
+\det\left(  \left(  x_{j}^{n-i}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}\right)  =\left(  -1\right)  ^{n\left(  n-1\right)  /2}\prod_{1\leq j<i\leq
+n}\left(  x_{i}-x_{j}\right)  \label{pf.thm.vander-det.pf2.b.0}%
+\end{equation}
+(since every $\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}$
+satisfies $x_{j}^{\left(  n+1-i\right)  -1}=x_{j}^{n-i}$).
+
+But we have%
+\begin{equation}
+\prod_{1\leq j<i\leq n}\left(  x_{i}-x_{j}\right)  =\left(  -1\right)
+^{n\left(  n-1\right)  /2}\prod_{1\leq i<j\leq n}\left(  x_{i}-x_{j}\right)  .
+\label{pf.thm.vander-det.pf2.b.1}%
+\end{equation}
+(Indeed, this is the equality (\ref{pf.thm.vander-det.d.2}) from the First
+proof of Theorem \ref{thm.vander-det} above.) Also, the number $n\left(
+n-1\right)  /2$ is an integer. Hence, $n\left(  n-1\right)  $ is even. Thus,
+$\left(  -1\right)  ^{n\left(  n-1\right)  }=1$. Now,%
+\begin{align*}
+\left(  \left(  -1\right)  ^{n\left(  n-1\right)  /2}\right)  ^{2}  &
+=\left(  -1\right)  ^{\left(  n\left(  n-1\right)  /2\right)  \cdot2}=\left(
+-1\right)  ^{n\left(  n-1\right)  }\ \ \ \ \ \ \ \ \ \ \left(  \text{since
+}\left(  n\left(  n-1\right)  /2\right)  \cdot2=n\left(  n-1\right)  \right)
+\\
+&  =1.
+\end{align*}
+Now, (\ref{pf.thm.vander-det.pf2.b.0}) becomes%
+\begin{align*}
+\det\left(  \left(  x_{j}^{n-i}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}\right)   &  =\left(  -1\right)  ^{n\left(  n-1\right)  /2}\underbrace{\prod
+_{1\leq j<i\leq n}\left(  x_{i}-x_{j}\right)  }_{\substack{=\left(  -1\right)
+^{n\left(  n-1\right)  /2}\prod_{1\leq i<j\leq n}\left(  x_{i}-x_{j}\right)
+\\\text{(by (\ref{pf.thm.vander-det.pf2.b.1}))}}}\\
+&  =\underbrace{\left(  -1\right)  ^{n\left(  n-1\right)  /2}\left(
+-1\right)  ^{n\left(  n-1\right)  /2}}_{=\left(  \left(  -1\right)  ^{n\left(
+n-1\right)  /2}\right)  ^{2}=1}\prod_{1\leq i<j\leq n}\left(  x_{i}%
+-x_{j}\right) \\
+&  =\prod_{1\leq i<j\leq n}\left(  x_{i}-x_{j}\right)  .
+\end{align*}
+This proves Theorem \ref{thm.vander-det} \textbf{(b)}.
+
+\textbf{(a)} The definition of the transpose of a matrix yields $\left(
+\left(  x_{j}^{n-i}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)
+^{T}=\left(  x_{i}^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$. Hence,%
+\[
+\det\left(  \underbrace{\left(  \left(  x_{j}^{n-i}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}\right)  ^{T}}_{=\left(  x_{i}^{n-j}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}}\right)  =\det\left(  \left(  x_{i}^{n-j}\right)  _{1\leq
+i\leq n,\ 1\leq j\leq n}\right)  .
+\]
+Hence,%
+\begin{align*}
+\det\left(  \left(  x_{i}^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}\right)   &  =\det\left(  \left(  \left(  x_{j}^{n-i}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}\right)  ^{T}\right)  =\det\left(  \left(  x_{j}%
+^{n-i}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Exercise \ref{exe.ps4.4}, applied to
+}A=\left(  x_{j}^{n-i}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right) \\
+&  =\prod_{1\leq i<j\leq n}\left(  x_{i}-x_{j}\right)  .
+\end{align*}
+This proves Theorem \ref{thm.vander-det} \textbf{(a)}.
+
+\textbf{(c)} The definition of the transpose of a matrix yields $\left(
+\left(  x_{i}^{j-1}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)
+^{T}=\left(  x_{j}^{i-1}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$. Hence,%
+\[
+\det\left(  \underbrace{\left(  \left(  x_{i}^{j-1}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}\right)  ^{T}}_{=\left(  x_{j}^{i-1}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}}\right)  =\det\left(  \left(  x_{j}^{i-1}\right)  _{1\leq
+i\leq n,\ 1\leq j\leq n}\right)  =\prod_{1\leq j<i\leq n}\left(  x_{i}%
+-x_{j}\right)
+\]
+(by Theorem \ref{thm.vander-det} \textbf{(d)}). Compared with%
+\[
+\det\left(  \left(  \left(  x_{i}^{j-1}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}\right)  ^{T}\right)  =\det\left(  \left(  x_{i}^{j-1}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}\right)
+\]
+(by Exercise \ref{exe.ps4.4}, applied to $A=\left(  x_{i}^{j-1}\right)
+_{1\leq i\leq n,\ 1\leq j\leq n}$), this yields%
+\[
+\det\left(  \left(  x_{i}^{j-1}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}\right)  =\prod_{1\leq j<i\leq n}\left(  x_{i}-x_{j}\right)  .
+\]
+This proves Theorem \ref{thm.vander-det} \textbf{(c)}.
+\end{verlong}
+\end{proof}
+
+\subsubsection{Remarks and variations}
 
 \begin{remark}
 \label{rmk.vander-det.sign}One consequence of Theorem \ref{thm.vander-det} is
@@ -45317,6 +45702,1097 @@ u\right)  }\leq b_{\tau\left(  i\right)  }$. Qed.}. Hence, Lemma
 b_{\tau\left(  i\right)  }$. This solves Exercise \ref{exe.sorting.nmu} again.
 \end{proof}
 
+\subsection{Solution to Exercise \ref{exe.subsect.vandermonde.factoring}}
+
+Definition \ref{def.vandermonde.factoring.h} shall be used throughout this section.
+
+\begin{proof}
+[Proof of Lemma \ref{lem.vandermonde.factoring.h.0}.]\textbf{(a)} Let $k$ be a
+negative integer. Then,%
+\begin{equation}
+h_{k}\left(  x_{1},x_{2},\ldots,x_{n}\right)  =\sum_{\substack{\left(
+a_{1},a_{2},\ldots,a_{n}\right)  \in\mathbb{N}^{n};\\a_{1}+a_{2}+\cdots
++a_{n}=k}}x_{1}^{a_{1}}x_{2}^{a_{2}}\cdots x_{n}^{a_{n}}
+\label{pf.lem.vandermonde.factoring.h.0.a.1}%
+\end{equation}
+(by the definition of $h_{k}\left(  x_{1},x_{2},\ldots,x_{n}\right)  $).
+
+\begin{vershort}
+But $k<0$. Hence, there exists no $\left(  a_{1},a_{2},\ldots,a_{n}\right)
+\in\mathbb{N}^{n}$ satisfying $a_{1}+a_{2}+\cdots+a_{n}=k$ (because every
+$\left(  a_{1},a_{2},\ldots,a_{n}\right)  \in\mathbb{N}^{n}$ satisfies
+$a_{1}+a_{2}+\cdots+a_{n}\geq0$, whereas $k<0$). Therefore, the sum on the
+right hand side of (\ref{pf.lem.vandermonde.factoring.h.0.a.1}) is an empty
+sum and therefore equals $0$. Therefore,
+(\ref{pf.lem.vandermonde.factoring.h.0.a.1}) simplifies to $h_{k}\left(
+x_{1},x_{2},\ldots,x_{n}\right)  =0$. This proves Lemma
+\ref{lem.vandermonde.factoring.h.0} \textbf{(a)}.
+\end{vershort}
+
+\begin{verlong}
+But there exists no $\left(  a_{1},a_{2},\ldots,a_{n}\right)  \in
+\mathbb{N}^{n}$ satisfying $a_{1}+a_{2}+\cdots+a_{n}=k$%
+\ \ \ \ \footnote{\textit{Proof.} Let $\left(  a_{1},a_{2},\ldots
+,a_{n}\right)  \in\mathbb{N}^{n}$ be such that $a_{1}+a_{2}+\cdots+a_{n}=k$.
+We shall derive a contradiction.
+\par
+We have $\left(  a_{1},a_{2},\ldots,a_{n}\right)  \in\mathbb{N}^{n}$. In other
+words, $a_{1},a_{2},\ldots,a_{n}$ are $n$ elements of $\mathbb{N}$. In other
+words, $a_{1},a_{2},\ldots,a_{n}$ are $n$ nonnegative integers. Hence, their
+sum $a_{1}+a_{2}+\cdots+a_{n}$ also is a nonnegative integer. Thus,
+$a_{1}+a_{2}+\cdots+a_{n}\geq0$. But $a_{1}+a_{2}+\cdots+a_{n}=k<0$ (since $k$
+is negative). This contradicts $a_{1}+a_{2}+\cdots+a_{n}\geq0$.
+\par
+Now, forget that we fixed $\left(  a_{1},a_{2},\ldots,a_{n}\right)  $. We thus
+have derived a contradiction for each $\left(  a_{1},a_{2},\ldots
+,a_{n}\right)  \in\mathbb{N}^{n}$ satisfying $a_{1}+a_{2}+\cdots+a_{n}=k$.
+Hence, there exists no $\left(  a_{1},a_{2},\ldots,a_{n}\right)  \in
+\mathbb{N}^{n}$ satisfying $a_{1}+a_{2}+\cdots+a_{n}=k$. Qed.}. Hence, the sum
+$\sum_{\substack{\left(  a_{1},a_{2},\ldots,a_{n}\right)  \in\mathbb{N}%
+^{n};\\a_{1}+a_{2}+\cdots+a_{n}=k}}x_{1}^{a_{1}}x_{2}^{a_{2}}\cdots
+x_{n}^{a_{n}}$ is an empty sum. Thus,
+\[
+\sum_{\substack{\left(  a_{1},a_{2},\ldots,a_{n}\right)  \in\mathbb{N}%
+^{n};\\a_{1}+a_{2}+\cdots+a_{n}=k}}x_{1}^{a_{1}}x_{2}^{a_{2}}\cdots
+x_{n}^{a_{n}}=\left(  \text{empty sum}\right)  =0.
+\]
+Hence, (\ref{pf.lem.vandermonde.factoring.h.0.a.1}) becomes%
+\[
+h_{k}\left(  x_{1},x_{2},\ldots,x_{n}\right)  =\sum_{\substack{\left(
+a_{1},a_{2},\ldots,a_{n}\right)  \in\mathbb{N}^{n};\\a_{1}+a_{2}+\cdots
++a_{n}=k}}x_{1}^{a_{1}}x_{2}^{a_{2}}\cdots x_{n}^{a_{n}}=0.
+\]
+This proves Lemma \ref{lem.vandermonde.factoring.h.0} \textbf{(a)}.
+\end{verlong}
+
+\textbf{(b)} The definition of $h_{0}\left(  x_{1},x_{2},\ldots,x_{n}\right)
+$ yields
+\begin{equation}
+h_{0}\left(  x_{1},x_{2},\ldots,x_{n}\right)  =\sum_{\substack{\left(
+a_{1},a_{2},\ldots,a_{n}\right)  \in\mathbb{N}^{n};\\a_{1}+a_{2}+\cdots
++a_{n}=0}}x_{1}^{a_{1}}x_{2}^{a_{2}}\cdots x_{n}^{a_{n}}.
+\label{pf.lem.vandermonde.factoring.h.0.b.1}%
+\end{equation}
+
+
+\begin{vershort}
+But the only $\left(  a_{1},a_{2},\ldots,a_{n}\right)  \in\mathbb{N}^{n}$
+satisfying $a_{1}+a_{2}+\cdots+a_{n}=0$ is $\left(  \underbrace{0,0,\ldots
+,0}_{n\text{ zeroes}}\right)  $ (since a sum of nonnegative integers can only
+be $0$ if all addends are $0$). Therefore, the sum on the right hand side of
+(\ref{pf.lem.vandermonde.factoring.h.0.b.1}) has exactly one addend -- namely,
+the addend for $\left(  a_{1},a_{2},\ldots,a_{n}\right)  =\left(
+\underbrace{0,0,\ldots,0}_{n\text{ zeroes}}\right)  $. Thus,
+(\ref{pf.lem.vandermonde.factoring.h.0.a.1}) simplifies to $h_{0}\left(
+x_{1},x_{2},\ldots,x_{n}\right)  =\underbrace{x_{1}^{0}}_{=1}\underbrace{x_{2}%
+^{0}}_{=1}\cdots\underbrace{x_{n}^{0}}_{=1}=1$. This proves Lemma
+\ref{lem.vandermonde.factoring.h.0} \textbf{(b)}.
+\end{vershort}
+
+\begin{verlong}
+Define a subset $A$ of $\mathbb{N}^{n}$ by%
+\begin{equation}
+A=\left\{  \left(  a_{1},a_{2},\ldots,a_{n}\right)  \in\mathbb{N}^{n}%
+\ \mid\ a_{1}+a_{2}+\cdots+a_{n}=0\right\}
+.\label{pf.lem.vandermonde.factoring.h.0.b.defA}%
+\end{equation}
+Thus,%
+\begin{equation}
+\sum_{\left(  a_{1},a_{2},\ldots,a_{n}\right)  \in A}=\sum_{\substack{\left(
+a_{1},a_{2},\ldots,a_{n}\right)  \in\mathbb{N}^{n};\\a_{1}+a_{2}+\cdots
++a_{n}=0}}\label{pf.lem.vandermonde.factoring.h.0.b.sums1}%
+\end{equation}
+(an equality between summation signs). But $A=\left\{  \left(
+\underbrace{0,0,\ldots,0}_{n\text{ zeroes}}\right)  \right\}  $%
+\ \ \ \ \footnote{\textit{Proof.} The $n$-tuple $\left(
+\underbrace{0,0,\ldots,0}_{n\text{ zeroes}}\right)  $ belongs to
+$\mathbb{N}^{n}$ and satisfies $\underbrace{0+0+\cdots+0}_{n\text{ zeroes}}%
+=0$. In other words, $\left(  \underbrace{0,0,\ldots,0}_{n\text{ zeroes}%
+}\right)  $ is an element $\left(  a_{1},a_{2},\ldots,a_{n}\right)
+\in\mathbb{N}^{n}$ satisfying $a_{1}+a_{2}+\cdots+a_{n}=0$. In other words,%
+\[
+\left(  \underbrace{0,0,\ldots,0}_{n\text{ zeroes}}\right)  \in\left\{
+\left(  a_{1},a_{2},\ldots,a_{n}\right)  \in\mathbb{N}^{n}\ \mid\ a_{1}%
++a_{2}+\cdots+a_{n}=0\right\}  .
+\]
+In light of (\ref{pf.lem.vandermonde.factoring.h.0.b.defA}), this rewrites as
+$\left(  \underbrace{0,0,\ldots,0}_{n\text{ zeroes}}\right)  \in A$. Thus,
+$\left\{  \left(  \underbrace{0,0,\ldots,0}_{n\text{ zeroes}}\right)
+\right\}  \subseteq A$.
+\par
+Now, let $\mathbf{a}\in A$. We shall show that $\mathbf{a}=\left(
+\underbrace{0,0,\ldots,0}_{n\text{ zeroes}}\right)  $.
+\par
+Indeed, $\mathbf{a}\in A=\left\{  \left(  a_{1},a_{2},\ldots,a_{n}\right)
+\in\mathbb{N}^{n}\ \mid\ a_{1}+a_{2}+\cdots+a_{n}=0\right\}  $. In other
+words, $\mathbf{a}$ is an element $\left(  a_{1},a_{2},\ldots,a_{n}\right)
+\in\mathbb{N}^{n}$ satisfying $a_{1}+a_{2}+\cdots+a_{n}=0$. In other words,
+$\mathbf{a}=\left(  a_{1},a_{2},\ldots,a_{n}\right)  $ for some $\left(
+a_{1},a_{2},\ldots,a_{n}\right)  \in\mathbb{N}^{n}$ satisfying $a_{1}%
++a_{2}+\cdots+a_{n}=0$. Consider this $\left(  a_{1},a_{2},\ldots
+,a_{n}\right)  $.
+\par
+We have $\left(  a_{1},a_{2},\ldots,a_{n}\right)  \in\mathbb{N}^{n}$. In other
+words, $a_{1},a_{2},\ldots,a_{n}$ are $n$ elements of $\mathbb{N}$.
+\par
+Fix $i\in\left\{  1,2,\ldots,n\right\}  $. We shall show that $a_{i}=0$.
+\par
+Splitting off the addend for $k=i$ from the sum $\sum_{k\in\left\{
+1,2,\ldots,n\right\}  }a_{k}$, we obtain%
+\[
+\sum_{k\in\left\{  1,2,\ldots,n\right\}  }a_{k}=a_{i}+\sum_{\substack{k\in
+\left\{  1,2,\ldots,n\right\}  ;\\k\neq i}}\underbrace{a_{k}}_{\substack{\geq
+0\\\text{(since }a_{k}\in\mathbb{N}\\\text{(since }a_{1},a_{2},\ldots
+,a_{n}\\\text{are }n\text{ elements of }\mathbb{N}\text{))}}}\geq
+a_{i}+\underbrace{\sum_{\substack{k\in\left\{  1,2,\ldots,n\right\}  ;\\k\neq
+i}}0}_{=0}=a_{i}.
+\]
+Thus, $a_{i}\leq\sum_{k\in\left\{  1,2,\ldots,n\right\}  }a_{k}=a_{1}%
++a_{2}+\cdots+a_{n}=0$. But $a_{i}\in\mathbb{N}$ (since $a_{1},a_{2}%
+,\ldots,a_{n}$ are $n$ elements of $\mathbb{N}$), so that $a_{i}\geq0$.
+Combining this with $a_{i}\leq0$, we obtain $a_{i}=0$.
+\par
+Now, forget that we fixed $i$. We thus have shown that $a_{i}=0$ for each
+$i\in\left\{  1,2,\ldots,n\right\}  $. In other words, $\left(  a_{1}%
+,a_{2},\ldots,a_{n}\right)  =\left(  \underbrace{0,0,\ldots,0}_{n\text{
+zeroes}}\right)  $. Thus,
+\[
+\mathbf{a}=\left(  a_{1},a_{2},\ldots,a_{n}\right)  =\left(
+\underbrace{0,0,\ldots,0}_{n\text{ zeroes}}\right)  \in\left\{  \left(
+\underbrace{0,0,\ldots,0}_{n\text{ zeroes}}\right)  \right\}  .
+\]
+\par
+Now, forget that we fixed $\mathbf{a}$. We thus have proven that
+$\mathbf{a}\in\left\{  \left(  \underbrace{0,0,\ldots,0}_{n\text{ zeroes}%
+}\right)  \right\}  $ for each $\mathbf{a}\in A$. In other words,
+$A\subseteq\left\{  \left(  \underbrace{0,0,\ldots,0}_{n\text{ zeroes}%
+}\right)  \right\}  $. Combining this with $\left\{  \left(
+\underbrace{0,0,\ldots,0}_{n\text{ zeroes}}\right)  \right\}  \subseteq A$, we
+obtain $A=\left\{  \left(  \underbrace{0,0,\ldots,0}_{n\text{ zeroes}}\right)
+\right\}  $. Qed.}.
+
+From $A=\left\{  \left(  \underbrace{0,0,\ldots,0}_{n\text{ zeroes}}\right)
+\right\}  $, we obtain
+\[
+\sum_{\left(  a_{1},a_{2},\ldots,a_{n}\right)  \in A}=\sum_{\left(
+a_{1},a_{2},\ldots,a_{n}\right)  \in\left\{  \left(  \underbrace{0,0,\ldots
+,0}_{n\text{ zeroes}}\right)  \right\}  }%
+\]
+(an equality between summation signs). Comparing this with
+(\ref{pf.lem.vandermonde.factoring.h.0.b.sums1}), we obtain%
+\[
+\sum_{\substack{\left(  a_{1},a_{2},\ldots,a_{n}\right)  \in\mathbb{N}%
+^{n};\\a_{1}+a_{2}+\cdots+a_{n}=0}}=\sum_{\left(  a_{1},a_{2},\ldots
+,a_{n}\right)  \in\left\{  \left(  \underbrace{0,0,\ldots,0}_{n\text{ zeroes}%
+}\right)  \right\}  }%
+\]
+(an equality between summation signs). Now,
+(\ref{pf.lem.vandermonde.factoring.h.0.b.1}) becomes%
+\begin{align*}
+h_{0}\left(  x_{1},x_{2},\ldots,x_{n}\right)   &  =\underbrace{\sum
+_{\substack{\left(  a_{1},a_{2},\ldots,a_{n}\right)  \in\mathbb{N}^{n}%
+;\\a_{1}+a_{2}+\cdots+a_{n}=0}}}_{=\sum_{\left(  a_{1},a_{2},\ldots
+,a_{n}\right)  \in\left\{  \left(  \underbrace{0,0,\ldots,0}_{n\text{ zeroes}%
+}\right)  \right\}  }}x_{1}^{a_{1}}x_{2}^{a_{2}}\cdots x_{n}^{a_{n}}\\
+&  =\sum_{\left(  a_{1},a_{2},\ldots,a_{n}\right)  \in\left\{  \left(
+\underbrace{0,0,\ldots,0}_{n\text{ zeroes}}\right)  \right\}  }x_{1}^{a_{1}%
+}x_{2}^{a_{2}}\cdots x_{n}^{a_{n}}=x_{1}^{0}x_{2}^{0}\cdots x_{n}^{0}%
+=\prod_{i=1}^{n}\underbrace{x_{i}^{0}}_{=1}\\
+&  =\prod_{i=1}^{n}1=1.
+\end{align*}
+This proves Lemma \ref{lem.vandermonde.factoring.h.0} \textbf{(b)}.
+\end{verlong}
+\end{proof}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.vandermonde.factoring.h.hq1}.]The definition of
+$h_{q}\left(  x_{1},x_{2},\ldots,x_{k}\right)  $ yields%
+\begin{align}
+h_{q}\left(  x_{1},x_{2},\ldots,x_{k}\right)   &  =\sum_{\substack{\left(
+a_{1},a_{2},\ldots,a_{k}\right)  \in\mathbb{N}^{k};\\a_{1}+a_{2}+\cdots
++a_{k}=q}}x_{1}^{a_{1}}x_{2}^{a_{2}}\cdots x_{k}^{a_{k}}\nonumber\\
+&  =\sum_{\substack{\left(  s_{1},s_{2},\ldots,s_{k}\right)  \in\mathbb{N}%
+^{k};\\s_{1}+s_{2}+\cdots+s_{k}=q}}x_{1}^{s_{1}}x_{2}^{s_{2}}\cdots
+x_{k}^{s_{k}} \label{pf.lem.vandermonde.factoring.h.hq1.hq=}%
+\end{align}
+(here, we have renamed the summation index $\left(  a_{1},a_{2},\ldots
+,a_{k}\right)  $ as $\left(  s_{1},s_{2},\ldots,s_{k}\right)  $).
+
+Every $r\in\mathbb{Z}$ satisfies%
+\begin{align}
+h_{q-r}\left(  x_{1},x_{2},\ldots,x_{k-1}\right)   &  =\sum_{\substack{\left(
+a_{1},a_{2},\ldots,a_{k-1}\right)  \in\mathbb{N}^{k-1};\\a_{1}+a_{2}%
++\cdots+a_{k-1}=q-r}}x_{1}^{a_{1}}x_{2}^{a_{2}}\cdots x_{k-1}^{a_{k-1}%
+}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }h_{q-r}\left(
+x_{1},x_{2},\ldots,x_{k-1}\right)  \right) \nonumber\\
+&  =\sum_{\substack{\left(  s_{1},s_{2},\ldots,s_{k-1}\right)  \in
+\mathbb{N}^{k-1};\\s_{1}+s_{2}+\cdots+s_{k-1}=q-r}}x_{1}^{s_{1}}x_{2}^{s_{2}%
+}\cdots x_{k-1}^{s_{k-1}} \label{pf.lem.vandermonde.factoring.h.hq1.hq-r=}%
+\end{align}
+(here, we have renamed the summation index $\left(  a_{1},a_{2},\ldots
+,a_{k-1}\right)  $ as $\left(  s_{1},s_{2},\ldots,s_{k-1}\right)  $).
+Moreover, every $r\in\mathbb{Z}$ satisfying $r>q$ satisfies%
+\begin{equation}
+h_{q-r}\left(  x_{1},x_{2},\ldots,x_{k-1}\right)  =0
+\label{pf.lem.vandermonde.factoring.h.hq1.hq-r=0}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.vandermonde.factoring.h.hq1.hq-r=0}):}
+Let $r\in\mathbb{Z}$ be such that $r>q$. The integer $q-r$ is negative (since
+$r>q$). Hence, Lemma \ref{lem.vandermonde.factoring.h.0} \textbf{(a)} (applied
+to $k-1$ and $q-r$ instead of $n$ and $k$) yields $h_{q-r}\left(  x_{1}%
+,x_{2},\ldots,x_{k-1}\right)  =0$. This proves
+(\ref{pf.lem.vandermonde.factoring.h.hq1.hq-r=0}).}.
+
+But Lemma \ref{lem.prodrule.prod-assM} (applied to $M=k$ and $S_{i}%
+=\mathbb{N}$) shows that the map%
+\begin{align*}
+\underbrace{\mathbb{N}\times\mathbb{N}\times\cdots\times\mathbb{N}}_{k\text{
+factors}}  &  \rightarrow\left(  \underbrace{\mathbb{N}\times\mathbb{N}%
+\times\cdots\times\mathbb{N}}_{k-1\text{ factors}}\right)  \times\mathbb{N},\\
+\left(  s_{1},s_{2},\ldots,s_{k}\right)   &  \mapsto\left(  \left(
+s_{1},s_{2},\ldots,s_{k-1}\right)  ,s_{k}\right)
+\end{align*}
+is a bijection. Since $\underbrace{\mathbb{N}\times\mathbb{N}\times
+\cdots\times\mathbb{N}}_{k\text{ factors}}=\mathbb{N}^{k}$ and
+$\underbrace{\mathbb{N}\times\mathbb{N}\times\cdots\times\mathbb{N}%
+}_{k-1\text{ factors}}=\mathbb{N}^{k-1}$, this can be rewritten as follows:
+The map%
+\begin{align*}
+\mathbb{N}^{k}  &  \rightarrow\mathbb{N}^{k-1}\times\mathbb{N},\\
+\left(  s_{1},s_{2},\ldots,s_{k}\right)   &  \mapsto\left(  \left(
+s_{1},s_{2},\ldots,s_{k-1}\right)  ,s_{k}\right)
+\end{align*}
+is a bijection.
+
+\begin{vershort}
+Now, (\ref{pf.lem.vandermonde.factoring.h.hq1.hq=}) becomes%
+\begin{align*}
+h_{q}\left(  x_{1},x_{2},\ldots,x_{k}\right)   &  =\underbrace{\sum
+_{\substack{\left(  s_{1},s_{2},\ldots,s_{k}\right)  \in\mathbb{N}^{k}%
+;\\s_{1}+s_{2}+\cdots+s_{k}=q}}}_{\substack{=\sum_{\substack{\left(
+s_{1},s_{2},\ldots,s_{k}\right)  \in\mathbb{N}^{k};\\s_{1}+s_{2}%
++\cdots+s_{k-1}=q-s_{k}}}\\\text{(because for any }\left(  s_{1},s_{2}%
+,\ldots,s_{k}\right)  \in\mathbb{N}^{k}\text{,}\\\text{the condition }%
+s_{1}+s_{2}+\cdots+s_{k}=q\\\text{is equivalent to }s_{1}+s_{2}+\cdots
++s_{k-1}=q-s_{k}\text{)}}}\underbrace{x_{1}^{s_{1}}x_{2}^{s_{2}}\cdots
+x_{k}^{s_{k}}}_{=\left(  x_{1}^{s_{1}}x_{2}^{s_{2}}\cdots x_{k-1}^{s_{k-1}%
+}\right)  x_{k}^{s_{k}}}\\
+&  =\sum_{\substack{\left(  s_{1},s_{2},\ldots,s_{k}\right)  \in\mathbb{N}%
+^{k};\\s_{1}+s_{2}+\cdots+s_{k-1}=q-s_{k}}}\left(  x_{1}^{s_{1}}x_{2}^{s_{2}%
+}\cdots x_{k-1}^{s_{k-1}}\right)  x_{k}^{s_{k}}\\
+&  =\underbrace{\sum_{\substack{\left(  \left(  s_{1},s_{2},\ldots
+,s_{k-1}\right)  ,r\right)  \in\mathbb{N}^{k-1}\times\mathbb{N};\\s_{1}%
++s_{2}+\cdots+s_{k-1}=q-r}}}_{=\sum_{r\in\mathbb{N}}\sum_{\substack{\left(
+s_{1},s_{2},\ldots,s_{k-1}\right)  \in\mathbb{N}^{k-1};\\s_{1}+s_{2}%
++\cdots+s_{k-1}=q-r}}}\left(  x_{1}^{s_{1}}x_{2}^{s_{2}}\cdots x_{k-1}%
+^{s_{k-1}}\right)  x_{k}^{r}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have substituted }\left(  \left(  s_{1},s_{2},\ldots
+,s_{k-1}\right)  ,r\right)  \text{ for}\\
+\left(  \left(  s_{1},s_{2},\ldots,s_{k-1}\right)  ,s_{k}\right)  \text{,
+since the map}\\
+\mathbb{N}^{k}\rightarrow\mathbb{N}^{k-1}\times\mathbb{N},\ \left(
+s_{1},s_{2},\ldots,s_{k}\right)  \mapsto\left(  \left(  s_{1},s_{2}%
+,\ldots,s_{k-1}\right)  ,s_{k}\right) \\
+\text{is a bijection}%
+\end{array}
+\right)
+\end{align*}%
+\begin{align*}
+&  =\sum_{r\in\mathbb{N}}\sum_{\substack{\left(  s_{1},s_{2},\ldots
+,s_{k-1}\right)  \in\mathbb{N}^{k-1};\\s_{1}+s_{2}+\cdots+s_{k-1}=q-r}}\left(
+x_{1}^{s_{1}}x_{2}^{s_{2}}\cdots x_{k-1}^{s_{k-1}}\right)  x_{k}^{r}\\
+&  =\sum_{r\in\mathbb{N}}x_{k}^{r}\underbrace{\sum_{\substack{\left(
+s_{1},s_{2},\ldots,s_{k-1}\right)  \in\mathbb{N}^{k-1};\\s_{1}+s_{2}%
++\cdots+s_{k-1}=q-r}}x_{1}^{s_{1}}x_{2}^{s_{2}}\cdots x_{k-1}^{s_{k-1}}%
+}_{\substack{=h_{q-r}\left(  x_{1},x_{2},\ldots,x_{k-1}\right)  \\\text{(by
+(\ref{pf.lem.vandermonde.factoring.h.hq1.hq-r=}))}}}\\
+&  =\sum_{r\in\mathbb{N}}x_{k}^{r}h_{q-r}\left(  x_{1},x_{2},\ldots
+,x_{k-1}\right) \\
+&  =\underbrace{\sum_{\substack{r\in\mathbb{N};\\r\leq q}}}_{=\sum_{r=0}^{q}%
+}x_{k}^{r}h_{q-r}\left(  x_{1},x_{2},\ldots,x_{k-1}\right)  +\sum
+_{\substack{r\in\mathbb{N};\\r>q}}x_{k}^{r}\underbrace{h_{q-r}\left(
+x_{1},x_{2},\ldots,x_{k-1}\right)  }_{\substack{=0\\\text{(by
+(\ref{pf.lem.vandermonde.factoring.h.hq1.hq-r=0}))}}}\\
+&  =\sum_{r=0}^{q}x_{k}^{r}h_{q-r}\left(  x_{1},x_{2},\ldots,x_{k-1}\right)
++\underbrace{\sum_{\substack{r\in\mathbb{N};\\r>q}}x_{k}^{r}0}_{=0}=\sum
+_{r=0}^{q}x_{k}^{r}h_{q-r}\left(  x_{1},x_{2},\ldots,x_{k-1}\right)  .
+\end{align*}
+This proves Lemma \ref{lem.vandermonde.factoring.h.hq1}.
+\end{vershort}
+
+\begin{verlong}
+Now, (\ref{pf.lem.vandermonde.factoring.h.hq1.hq=}) becomes%
+\begin{align*}
+h_{q}\left(  x_{1},x_{2},\ldots,x_{k}\right)   &  =\underbrace{\sum
+_{\substack{\left(  s_{1},s_{2},\ldots,s_{k}\right)  \in\mathbb{N}^{k}%
+;\\s_{1}+s_{2}+\cdots+s_{k}=q}}}_{\substack{=\sum_{\substack{\left(
+s_{1},s_{2},\ldots,s_{k}\right)  \in\mathbb{N}^{k};\\\left(  s_{1}%
++s_{2}+\cdots+s_{k-1}\right)  +s_{k}=q}}\\\text{(since }s_{1}+s_{2}%
++\cdots+s_{k}=\left(  s_{1}+s_{2}+\cdots+s_{k-1}\right)  +s_{k}\\\text{for
+every }\left(  s_{1},s_{2},\ldots,s_{k}\right)  \in\mathbb{N}^{k}\text{)}%
+}}\underbrace{x_{1}^{s_{1}}x_{2}^{s_{2}}\cdots x_{k}^{s_{k}}}_{=\left(
+x_{1}^{s_{1}}x_{2}^{s_{2}}\cdots x_{k-1}^{s_{k-1}}\right)  x_{k}^{s_{k}}}\\
+&  =\sum_{\substack{\left(  s_{1},s_{2},\ldots,s_{k}\right)  \in\mathbb{N}%
+^{k};\\\left(  s_{1}+s_{2}+\cdots+s_{k-1}\right)  +s_{k}=q}}\left(
+x_{1}^{s_{1}}x_{2}^{s_{2}}\cdots x_{k-1}^{s_{k-1}}\right)  x_{k}^{s_{k}}\\
+&  =\underbrace{\sum_{\substack{\left(  \left(  s_{1},s_{2},\ldots
+,s_{k-1}\right)  ,r\right)  \in\mathbb{N}^{k-1}\times\mathbb{N};\\\left(
+s_{1}+s_{2}+\cdots+s_{k-1}\right)  +r=q}}}_{\substack{=\sum_{\left(
+s_{1},s_{2},\ldots,s_{k-1}\right)  \in\mathbb{N}^{k-1}}\sum_{\substack{r\in
+\mathbb{N};\\\left(  s_{1}+s_{2}+\cdots+s_{k-1}\right)  +r=q}}\\=\sum
+_{r\in\mathbb{N}}\sum_{\substack{\left(  s_{1},s_{2},\ldots,s_{k-1}\right)
+\in\mathbb{N}^{k-1};\\\left(  s_{1}+s_{2}+\cdots+s_{k-1}\right)  +r=q}%
+}}}\left(  x_{1}^{s_{1}}x_{2}^{s_{2}}\cdots x_{k-1}^{s_{k-1}}\right)
+x_{k}^{r}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have substituted }\left(  \left(  s_{1},s_{2},\ldots
+,s_{k-1}\right)  ,r\right)  \text{ for}\\
+\left(  \left(  s_{1},s_{2},\ldots,s_{k-1}\right)  ,s_{k}\right)  \text{,
+since the map}\\
+\mathbb{N}^{k}\rightarrow\mathbb{N}^{k-1}\times\mathbb{N},\ \left(
+s_{1},s_{2},\ldots,s_{k}\right)  \mapsto\left(  \left(  s_{1},s_{2}%
+,\ldots,s_{k-1}\right)  ,s_{k}\right) \\
+\text{is a bijection}%
+\end{array}
+\right) \\
+&  =\sum_{r\in\mathbb{N}}\underbrace{\sum_{\substack{\left(  s_{1}%
+,s_{2},\ldots,s_{k-1}\right)  \in\mathbb{N}^{k-1};\\\left(  s_{1}+s_{2}%
++\cdots+s_{k-1}\right)  +r=q}}}_{\substack{=\sum_{\substack{\left(
+s_{1},s_{2},\ldots,s_{k-1}\right)  \in\mathbb{N}^{k-1};\\s_{1}+s_{2}%
++\cdots+s_{k-1}=q-r}}\\\text{(because for each }\left(  s_{1},s_{2}%
+,\ldots,s_{k-1}\right)  \in\mathbb{N}^{k-1}\text{,}\\\text{the condition
+}\left(  s_{1}+s_{2}+\cdots+s_{k-1}\right)  +r=q\\\text{is equivalent to
+}s_{1}+s_{2}+\cdots+s_{k-1}=q-r\text{)}}}\left(  x_{1}^{s_{1}}x_{2}^{s_{2}%
+}\cdots x_{k-1}^{s_{k-1}}\right)  x_{k}^{r}%
+\end{align*}%
+\begin{align*}
+&  =\sum_{r\in\mathbb{N}}\sum_{\substack{\left(  s_{1},s_{2},\ldots
+,s_{k-1}\right)  \in\mathbb{N}^{k-1};\\s_{1}+s_{2}+\cdots+s_{k-1}=q-r}}\left(
+x_{1}^{s_{1}}x_{2}^{s_{2}}\cdots x_{k-1}^{s_{k-1}}\right)  x_{k}^{r}\\
+&  =\sum_{r\in\mathbb{N}}x_{k}^{r}\underbrace{\sum_{\substack{\left(
+s_{1},s_{2},\ldots,s_{k-1}\right)  \in\mathbb{N}^{k-1};\\s_{1}+s_{2}%
++\cdots+s_{k-1}=q-r}}x_{1}^{s_{1}}x_{2}^{s_{2}}\cdots x_{k-1}^{s_{k-1}}%
+}_{\substack{=h_{q-r}\left(  x_{1},x_{2},\ldots,x_{k-1}\right)  \\\text{(by
+(\ref{pf.lem.vandermonde.factoring.h.hq1.hq-r=}))}}}\\
+&  =\sum_{r\in\mathbb{N}}x_{k}^{r}h_{q-r}\left(  x_{1},x_{2},\ldots
+,x_{k-1}\right) \\
+&  =\underbrace{\sum_{\substack{r\in\mathbb{N};\\r\leq q}}}_{=\sum_{r=0}^{q}%
+}x_{k}^{r}h_{q-r}\left(  x_{1},x_{2},\ldots,x_{k-1}\right)  +\sum
+_{\substack{r\in\mathbb{N};\\r>q}}x_{k}^{r}\underbrace{h_{q-r}\left(
+x_{1},x_{2},\ldots,x_{k-1}\right)  }_{\substack{=0\\\text{(by
+(\ref{pf.lem.vandermonde.factoring.h.hq1.hq-r=0}))}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since each }r\in\mathbb{N}\text{ satisfies either }r\leq q\text{ or
+}r>q\\
+\text{(but not both)}%
+\end{array}
+\right) \\
+&  =\sum_{r=0}^{q}x_{k}^{r}h_{q-r}\left(  x_{1},x_{2},\ldots,x_{k-1}\right)
++\underbrace{\sum_{\substack{r\in\mathbb{N};\\r>q}}x_{k}^{r}0}_{=0}=\sum
+_{r=0}^{q}x_{k}^{r}h_{q-r}\left(  x_{1},x_{2},\ldots,x_{k-1}\right)  .
+\end{align*}
+This proves Lemma \ref{lem.vandermonde.factoring.h.hq1}.
+\end{verlong}
+\end{proof}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Lemma \ref{lem.vandermonde.factoring.h.hq2}.]If $q<0$, then Lemma
+\ref{lem.vandermonde.factoring.h.hq2} holds\footnote{\textit{Proof.} Assume
+that $q<0$. Thus, both $q-1$ and $q$ are negative integers. Hence, Lemma
+\ref{lem.vandermonde.factoring.h.0} \textbf{(a)} (applied to $q-1$ and $k$
+instead of $k$ and $n$) yields $h_{q-1}\left(  x_{1},x_{2},\ldots
+,x_{k}\right)  =0$. Also, Lemma \ref{lem.vandermonde.factoring.h.0}
+\textbf{(a)} (applied to $q$ and $k-1$ instead of $k$ and $n$) yields
+$h_{q}\left(  x_{1},x_{2},\ldots,x_{k-1}\right)  =0$.
+\par
+Now, Lemma \ref{lem.vandermonde.factoring.h.0} \textbf{(a)} (applied to $q$
+and $k$ instead of $k$ and $n$) yields $h_{q}\left(  x_{1},x_{2},\ldots
+,x_{k}\right)  =0$. Comparing this with%
+\[
+\underbrace{h_{q}\left(  x_{1},x_{2},\ldots,x_{k-1}\right)  }_{=0}%
++x_{k}\underbrace{h_{q-1}\left(  x_{1},x_{2},\ldots,x_{k}\right)  }%
+_{=0}=0+x_{k}0=0,
+\]
+we obtain
+\[
+h_{q}\left(  x_{1},x_{2},\ldots,x_{k}\right)  =h_{q}\left(  x_{1},x_{2}%
+,\ldots,x_{k-1}\right)  +x_{k}h_{q-1}\left(  x_{1},x_{2},\ldots,x_{k}\right)
+.
+\]
+Thus, Lemma \ref{lem.vandermonde.factoring.h.hq2} holds. Qed.}. Hence, for the
+rest of this proof, we WLOG assume that we don't have $q<0$. Thus, $q\geq0$.
+
+Lemma \ref{lem.vandermonde.factoring.h.hq1} (applied to $q-1$ instead of $q$)
+yields%
+\begin{align}
+h_{q-1}\left(  x_{1},x_{2},\ldots,x_{k}\right)   &  =\sum_{r=0}^{q-1}x_{k}%
+^{r}h_{\left(  q-1\right)  -r}\left(  x_{1},x_{2},\ldots,x_{k-1}\right)
+\nonumber\\
+&  =\sum_{r=1}^{q}x_{k}^{r-1}\underbrace{h_{\left(  q-1\right)  -\left(
+r-1\right)  }\left(  x_{1},x_{2},\ldots,x_{k-1}\right)  }_{\substack{=h_{q-r}%
+\left(  x_{1},x_{2},\ldots,x_{k-1}\right)  \\\text{(since }\left(  q-1\right)
+-\left(  r-1\right)  =q-r\text{)}}}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }r-1\text{ for
+}r\text{ in the sum}\right) \nonumber\\
+&  =\sum_{r=1}^{q}x_{k}^{r-1}h_{q-r}\left(  x_{1},x_{2},\ldots,x_{k-1}\right)
+. \label{pf.lem.vandermonde.factoring.h.hq2.short.1}%
+\end{align}
+But Lemma \ref{lem.vandermonde.factoring.h.hq1} yields%
+\begin{align*}
+h_{q}\left(  x_{1},x_{2},\ldots,x_{k}\right)   &  =\sum_{r=0}^{q}x_{k}%
+^{r}h_{q-r}\left(  x_{1},x_{2},\ldots,x_{k-1}\right) \\
+&  =\underbrace{x_{k}^{0}}_{=1}\underbrace{h_{q-0}\left(  x_{1},x_{2}%
+,\ldots,x_{k-1}\right)  }_{=h_{q}\left(  x_{1},x_{2},\ldots,x_{k-1}\right)
+}+\sum_{r=1}^{q}\underbrace{x_{k}^{r}}_{=x_{k}x_{k}^{r-1}}h_{q-r}\left(
+x_{1},x_{2},\ldots,x_{k-1}\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have split off the addend for }r=0\text{ from}\\
+\text{the sum (since }q\geq0\text{)}%
+\end{array}
+\right) \\
+&  =h_{q}\left(  x_{1},x_{2},\ldots,x_{k-1}\right)  +\underbrace{\sum
+_{r=1}^{q}x_{k}x_{k}^{r-1}h_{q-r}\left(  x_{1},x_{2},\ldots,x_{k-1}\right)
+}_{=x_{k}\sum_{r=1}^{q}x_{k}^{r-1}h_{q-r}\left(  x_{1},x_{2},\ldots
+,x_{k-1}\right)  }\\
+&  =h_{q}\left(  x_{1},x_{2},\ldots,x_{k-1}\right)  +x_{k}\underbrace{\sum
+_{r=1}^{q}x_{k}^{r-1}h_{q-r}\left(  x_{1},x_{2},\ldots,x_{k-1}\right)
+}_{\substack{=h_{q-1}\left(  x_{1},x_{2},\ldots,x_{k}\right)  \\\text{(by
+(\ref{pf.lem.vandermonde.factoring.h.hq2.short.1}))}}}\\
+&  =h_{q}\left(  x_{1},x_{2},\ldots,x_{k-1}\right)  +x_{k}h_{q-1}\left(
+x_{1},x_{2},\ldots,x_{k}\right)  .
+\end{align*}
+This proves Lemma \ref{lem.vandermonde.factoring.h.hq2}.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Lemma \ref{lem.vandermonde.factoring.h.hq2}.]If $q<0$, then Lemma
+\ref{lem.vandermonde.factoring.h.hq2} holds\footnote{\textit{Proof.} Assume
+that $q<0$. Thus, $q-1<q<0$ as well. In other words, $q-1$ is a negative
+integer. Hence, Lemma \ref{lem.vandermonde.factoring.h.0} \textbf{(a)}
+(applied to $q-1$ and $k$ instead of $k$ and $n$) yields $h_{q-1}\left(
+x_{1},x_{2},\ldots,x_{k}\right)  =0$. Also, $q$ is a negative integer (since
+$q<0$). Furthermore, $k-1\in\mathbb{N}$ (since $k$ is a positive integer).
+Hence, Lemma \ref{lem.vandermonde.factoring.h.0} \textbf{(a)} (applied to $q$
+and $k-1$ instead of $k$ and $n$) yields $h_{q}\left(  x_{1},x_{2}%
+,\ldots,x_{k-1}\right)  =0$.
+\par
+Now, Lemma \ref{lem.vandermonde.factoring.h.0} \textbf{(a)} (applied to $q$
+and $k$ instead of $k$ and $n$) yields $h_{q}\left(  x_{1},x_{2},\ldots
+,x_{k}\right)  =0$. Comparing this with%
+\[
+\underbrace{h_{q}\left(  x_{1},x_{2},\ldots,x_{k-1}\right)  }_{=0}%
++x_{k}\underbrace{h_{q-1}\left(  x_{1},x_{2},\ldots,x_{k}\right)  }%
+_{=0}=0+x_{k}0=0,
+\]
+we obtain
+\[
+h_{q}\left(  x_{1},x_{2},\ldots,x_{k}\right)  =h_{q}\left(  x_{1},x_{2}%
+,\ldots,x_{k-1}\right)  +x_{k}h_{q-1}\left(  x_{1},x_{2},\ldots,x_{k}\right)
+.
+\]
+Thus, Lemma \ref{lem.vandermonde.factoring.h.hq2} holds. Qed.}. Hence, for the
+rest of this proof, we can WLOG assume that we don't have $q<0$. Assume this.
+
+We have $q\geq0$ (since we don't have $q<0$). Thus, $q\in\mathbb{N}$.
+
+Lemma \ref{lem.vandermonde.factoring.h.hq1} (applied to $q-1$ instead of $q$)
+yields%
+\begin{align}
+h_{q-1}\left(  x_{1},x_{2},\ldots,x_{k}\right)   &  =\sum_{r=0}^{q-1}x_{k}%
+^{r}h_{\left(  q-1\right)  -r}\left(  x_{1},x_{2},\ldots,x_{k-1}\right)
+\nonumber\\
+&  =\sum_{r=1}^{q}x_{k}^{r-1}\underbrace{h_{\left(  q-1\right)  -\left(
+r-1\right)  }\left(  x_{1},x_{2},\ldots,x_{k-1}\right)  }_{\substack{=h_{q-r}%
+\left(  x_{1},x_{2},\ldots,x_{k-1}\right)  \\\text{(since }\left(  q-1\right)
+-\left(  r-1\right)  =q-r\text{)}}}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }r-1\text{ for
+}r\text{ in the sum}\right) \nonumber\\
+&  =\sum_{r=1}^{q}x_{k}^{r-1}h_{q-r}\left(  x_{1},x_{2},\ldots,x_{k-1}\right)
+. \label{pf.lem.vandermonde.factoring.h.hq2.1}%
+\end{align}
+But Lemma \ref{lem.vandermonde.factoring.h.hq1} yields%
+\begin{align*}
+h_{q}\left(  x_{1},x_{2},\ldots,x_{k}\right)   &  =\sum_{r=0}^{q}x_{k}%
+^{r}h_{q-r}\left(  x_{1},x_{2},\ldots,x_{k-1}\right) \\
+&  =\underbrace{x_{k}^{0}}_{=1}\underbrace{h_{q-0}\left(  x_{1},x_{2}%
+,\ldots,x_{k-1}\right)  }_{\substack{=h_{q}\left(  x_{1},x_{2},\ldots
+,x_{k-1}\right)  \\\text{(since }q-0=q\text{)}}}+\sum_{r=1}^{q}%
+\underbrace{x_{k}^{r}}_{=x_{k}x_{k}^{r-1}}h_{q-r}\left(  x_{1},x_{2}%
+,\ldots,x_{k-1}\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have split off the addend for }r=0\text{ from the sum}\\
+\text{(since }q\geq0\text{)}%
+\end{array}
+\right) \\
+&  =h_{q}\left(  x_{1},x_{2},\ldots,x_{k-1}\right)  +\underbrace{\sum
+_{r=1}^{q}x_{k}x_{k}^{r-1}h_{q-r}\left(  x_{1},x_{2},\ldots,x_{k-1}\right)
+}_{=x_{k}\sum_{r=1}^{q}x_{k}^{r-1}h_{q-r}\left(  x_{1},x_{2},\ldots
+,x_{k-1}\right)  }\\
+&  =h_{q}\left(  x_{1},x_{2},\ldots,x_{k-1}\right)  +x_{k}\underbrace{\sum
+_{r=1}^{q}x_{k}^{r-1}h_{q-r}\left(  x_{1},x_{2},\ldots,x_{k-1}\right)
+}_{\substack{=h_{q-1}\left(  x_{1},x_{2},\ldots,x_{k}\right)  \\\text{(by
+(\ref{pf.lem.vandermonde.factoring.h.hq2.1}))}}}\\
+&  =h_{q}\left(  x_{1},x_{2},\ldots,x_{k-1}\right)  +x_{k}h_{q-1}\left(
+x_{1},x_{2},\ldots,x_{k}\right)  .
+\end{align*}
+This proves Lemma \ref{lem.vandermonde.factoring.h.hq2}.
+\end{proof}
+\end{verlong}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.vandermonde.factoring.h.sum-u}.]We first notice that
+every positive integer $q$ satisfies%
+\begin{equation}
+h_{q}\left(  x_{1},x_{2},\ldots,x_{0}\right)  =0.
+\label{pf.lem.vandermonde.factoring.h.sum-u.0}%
+\end{equation}
+(Here, as usual, $\left(  x_{1},x_{2},\ldots,x_{0}\right)  $ stands for the
+$0$-tuple $\left(  {}\right)  $.)
+
+\begin{vershort}
+[\textit{Proof of (\ref{pf.lem.vandermonde.factoring.h.sum-u.0}):} Let $q$ be
+a positive integer. The definition of $h_{q}\left(  x_{1},x_{2},\ldots
+,x_{0}\right)  $ yields%
+\begin{equation}
+h_{q}\left(  x_{1},x_{2},\ldots,x_{0}\right)  =\sum_{\substack{\left(
+a_{1},a_{2},\ldots,a_{0}\right)  \in\mathbb{N}^{0};\\a_{1}+a_{2}+\cdots
++a_{0}=q}}x_{1}^{a_{1}}x_{2}^{a_{2}}\cdots x_{0}^{a_{0}}.
+\label{pf.lem.vandermonde.factoring.h.sum-u.0.pf.short.0}%
+\end{equation}
+But there is only one $0$-tuple $\left(  a_{1},a_{2},\ldots,a_{0}\right)
+\in\mathbb{N}^{0}$, and this $0$-tuple satisfies $a_{1}+a_{2}+\cdots
++a_{0}=\left(  \text{empty sum}\right)  =0\neq q$ (since $q$ is positive).
+Hence, there exists no $\left(  a_{1},a_{2},\ldots,a_{0}\right)  \in
+\mathbb{N}^{0}$ satisfying $a_{1}+a_{2}+\cdots+a_{0}=q$. Thus, the sum on the
+right hand side of (\ref{pf.lem.vandermonde.factoring.h.sum-u.0.pf.short.0})
+is empty and equals $0$. Therefore,
+(\ref{pf.lem.vandermonde.factoring.h.sum-u.0.pf.short.0}) simplifies to
+$h_{q}\left(  x_{1},x_{2},\ldots,x_{0}\right)  =0$. This proves
+(\ref{pf.lem.vandermonde.factoring.h.sum-u.0}).]
+\end{vershort}
+
+\begin{verlong}
+[\textit{Proof of (\ref{pf.lem.vandermonde.factoring.h.sum-u.0}):} Let $q$ be
+a positive integer. The definition of $h_{q}\left(  x_{1},x_{2},\ldots
+,x_{0}\right)  $ yields%
+\begin{equation}
+h_{q}\left(  x_{1},x_{2},\ldots,x_{0}\right)  =\sum_{\substack{\left(
+a_{1},a_{2},\ldots,a_{0}\right)  \in\mathbb{N}^{0};\\a_{1}+a_{2}+\cdots
++a_{0}=q}}x_{1}^{a_{1}}x_{2}^{a_{2}}\cdots x_{0}^{a_{0}}.
+\label{pf.lem.vandermonde.factoring.h.sum-u.0.pf.0}%
+\end{equation}
+But there exists no $\left(  a_{1},a_{2},\ldots,a_{0}\right)  \in
+\mathbb{N}^{0}$ satisfying $a_{1}+a_{2}+\cdots+a_{0}=q$%
+\ \ \ \ \footnote{\textit{Proof.} We have $q\neq0$ (since $q$ is positive).
+Every $\left(  a_{1},a_{2},\ldots,a_{0}\right)  \in\mathbb{N}^{0}$ satisfies
+$a_{1}+a_{2}+\cdots+a_{0}=\left(  \text{empty sum}\right)  =0\neq q$. Hence,
+no $\left(  a_{1},a_{2},\ldots,a_{0}\right)  \in\mathbb{N}^{0}$ satisfies
+$a_{1}+a_{2}+\cdots+a_{0}=q$. In other words, there exists no $\left(
+a_{1},a_{2},\ldots,a_{0}\right)  \in\mathbb{N}^{0}$ satisfying $a_{1}%
++a_{2}+\cdots+a_{0}=q$. Qed.}. Hence, the sum $\sum_{\substack{\left(
+a_{1},a_{2},\ldots,a_{0}\right)  \in\mathbb{N}^{0};\\a_{1}+a_{2}+\cdots
++a_{0}=q}}x_{1}^{a_{1}}x_{2}^{a_{2}}\cdots x_{0}^{a_{0}}$ is empty. Thus,%
+\[
+\sum_{\substack{\left(  a_{1},a_{2},\ldots,a_{0}\right)  \in\mathbb{N}%
+^{0};\\a_{1}+a_{2}+\cdots+a_{0}=q}}x_{1}^{a_{1}}x_{2}^{a_{2}}\cdots
+x_{0}^{a_{0}}=\left(  \text{empty sum}\right)  =0.
+\]
+Thus, (\ref{pf.lem.vandermonde.factoring.h.sum-u.0.pf.0}) becomes%
+\[
+h_{q}\left(  x_{1},x_{2},\ldots,x_{0}\right)  =\sum_{\substack{\left(
+a_{1},a_{2},\ldots,a_{0}\right)  \in\mathbb{N}^{0};\\a_{1}+a_{2}+\cdots
++a_{0}=q}}x_{1}^{a_{1}}x_{2}^{a_{2}}\cdots x_{0}^{a_{0}}=0.
+\]
+This proves (\ref{pf.lem.vandermonde.factoring.h.sum-u.0.pf.0}).]
+\end{verlong}
+
+We shall now show that%
+\begin{equation}
+\sum_{k=1}^{j}h_{j-k}\left(  x_{1},x_{2},\ldots,x_{k}\right)  \prod
+_{p=1}^{k-1}\left(  u-x_{p}\right)  =u^{j-1}
+\label{pf.lem.vandermonde.factoring.h.sum-u.main}%
+\end{equation}
+for each $j\in\left\{  1,2,\ldots,i\right\}  $.
+
+\textit{Proof of (\ref{pf.lem.vandermonde.factoring.h.sum-u.main}):} We shall
+prove (\ref{pf.lem.vandermonde.factoring.h.sum-u.main}) by induction over $j$:
+
+\begin{vershort}
+\textit{Induction base:} We have%
+\begin{align*}
+\sum_{k=1}^{1}h_{1-k}\left(  x_{1},x_{2},\ldots,x_{k}\right)  \prod
+_{p=1}^{k-1}\left(  u-x_{p}\right)   &  =\underbrace{h_{1-1}\left(
+x_{1},x_{2},\ldots,x_{1}\right)  }_{\substack{=h_{0}\left(  x_{1},x_{2}%
+,\ldots,x_{1}\right)  =1\\\text{(by Lemma \ref{lem.vandermonde.factoring.h.0}
+\textbf{(b)}}\\\text{(applied to }1\text{ instead of }n\text{))}%
+}}\underbrace{\prod_{p=1}^{1-1}\left(  u-x_{p}\right)  }_{=\left(  \text{empty
+product}\right)  =1}\\
+&  =1\cdot1=1=u^{1-1}%
+\end{align*}
+(since $u^{1-1}=u^{0}=1$). In other words,
+(\ref{pf.lem.vandermonde.factoring.h.sum-u.main}) holds for $j=1$. This
+completes the induction base.
+\end{vershort}
+
+\begin{verlong}
+\textit{Induction base:} We have%
+\begin{align*}
+\sum_{k=1}^{1}h_{1-k}\left(  x_{1},x_{2},\ldots,x_{k}\right)  \prod
+_{p=1}^{k-1}\left(  u-x_{p}\right)   &  =\underbrace{h_{1-1}\left(
+x_{1},x_{2},\ldots,x_{1}\right)  }_{\substack{=h_{0}\left(  x_{1},x_{2}%
+,\ldots,x_{1}\right)  \\\text{(since }1-1=0\text{)}}}\underbrace{\prod
+_{p=1}^{1-1}\left(  u-x_{p}\right)  }_{\substack{=\left(  \text{empty
+product}\right)  \\\text{(since }1-1<1\text{)}}}\\
+&  =\underbrace{h_{0}\left(  x_{1},x_{2},\ldots,x_{1}\right)  }%
+_{\substack{=1\\\text{(by Lemma \ref{lem.vandermonde.factoring.h.0}
+\textbf{(b)}}\\\text{(applied to }1\text{ instead of }n\text{))}}%
+}\cdot\underbrace{\left(  \text{empty product}\right)  }_{=1}\\
+&  =1\cdot1=1.
+\end{align*}
+Comparing this with $u^{1-1}=u^{0}=1$, we obtain%
+\[
+\sum_{k=1}^{1}h_{1-k}\left(  x_{1},x_{2},\ldots,x_{k}\right)  \prod
+_{p=1}^{k-1}\left(  u-x_{p}\right)  =u^{1-1}.
+\]
+In other words, (\ref{pf.lem.vandermonde.factoring.h.sum-u.main}) holds for
+$j=1$. This completes the induction base.
+\end{verlong}
+
+\textit{Induction step:} Let $m\in\left\{  1,2,\ldots,i\right\}  $ be such
+that $m>1$. Assume that (\ref{pf.lem.vandermonde.factoring.h.sum-u.main})
+holds for $j=m-1$. We must prove that
+(\ref{pf.lem.vandermonde.factoring.h.sum-u.main}) holds for $j=m$.
+
+We have assumed that (\ref{pf.lem.vandermonde.factoring.h.sum-u.main}) holds
+for $j=m-1$. In other words, we have%
+\begin{equation}
+\sum_{k=1}^{m-1}h_{\left(  m-1\right)  -k}\left(  x_{1},x_{2},\ldots
+,x_{k}\right)  \prod_{p=1}^{k-1}\left(  u-x_{p}\right)  =u^{\left(
+m-1\right)  -1}. \label{pf.lem.vandermonde.factoring.h.sum-u.main.pf.indhyp}%
+\end{equation}
+
+
+\begin{vershort}
+Now, $m>1\geq0$. Moreover,
+\begin{align}
+&  \sum_{k=1}^{m}\underbrace{h_{m-k}\left(  x_{1},x_{2},\ldots,x_{k}\right)
+}_{\substack{=h_{m-k}\left(  x_{1},x_{2},\ldots,x_{k-1}\right)  +x_{k}%
+h_{m-k-1}\left(  x_{1},x_{2},\ldots,x_{k}\right)  \\\text{(by Lemma
+\ref{lem.vandermonde.factoring.h.hq2} (applied to }q=m-k\text{))}}}\prod
+_{p=1}^{k-1}\left(  u-x_{p}\right) \nonumber\\
+&  =\sum_{k=1}^{m}\left(  h_{m-k}\left(  x_{1},x_{2},\ldots,x_{k-1}\right)
++x_{k}h_{m-k-1}\left(  x_{1},x_{2},\ldots,x_{k}\right)  \right)  \prod
+_{p=1}^{k-1}\left(  u-x_{p}\right) \nonumber\\
+&  =\sum_{k=1}^{m}h_{m-k}\left(  x_{1},x_{2},\ldots,x_{k-1}\right)
+\prod_{p=1}^{k-1}\left(  u-x_{p}\right) \nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ +\sum_{k=1}^{m}x_{k}h_{m-k-1}\left(  x_{1},x_{2}%
+,\ldots,x_{k}\right)  \prod_{p=1}^{k-1}\left(  u-x_{p}\right)  .
+\label{pf.lem.vandermonde.factoring.h.sum-u.main.pf.short.1}%
+\end{align}
+
+\end{vershort}
+
+\begin{verlong}
+Now, $m>1\geq0$. Moreover,
+\begin{align}
+&  \sum_{k=1}^{m}\underbrace{h_{m-k}\left(  x_{1},x_{2},\ldots,x_{k}\right)
+}_{\substack{=h_{m-k}\left(  x_{1},x_{2},\ldots,x_{k-1}\right)  +x_{k}%
+h_{m-k-1}\left(  x_{1},x_{2},\ldots,x_{k}\right)  \\\text{(by Lemma
+\ref{lem.vandermonde.factoring.h.hq2} (applied to }q=m-k\text{))}}}\prod
+_{p=1}^{k-1}\left(  u-x_{p}\right) \nonumber\\
+&  =\sum_{k=1}^{m}\underbrace{\left(  h_{m-k}\left(  x_{1},x_{2}%
+,\ldots,x_{k-1}\right)  +x_{k}h_{m-k-1}\left(  x_{1},x_{2},\ldots
+,x_{k}\right)  \right)  \prod_{p=1}^{k-1}\left(  u-x_{p}\right)  }%
+_{=h_{m-k}\left(  x_{1},x_{2},\ldots,x_{k-1}\right)  \prod_{p=1}^{k-1}\left(
+u-x_{p}\right)  +x_{k}h_{m-k-1}\left(  x_{1},x_{2},\ldots,x_{k}\right)
+\prod_{p=1}^{k-1}\left(  u-x_{p}\right)  }\nonumber\\
+&  =\sum_{k=1}^{m}\left(  h_{m-k}\left(  x_{1},x_{2},\ldots,x_{k-1}\right)
+\prod_{p=1}^{k-1}\left(  u-x_{p}\right)  +x_{k}h_{m-k-1}\left(  x_{1}%
+,x_{2},\ldots,x_{k}\right)  \prod_{p=1}^{k-1}\left(  u-x_{p}\right)  \right)
+\nonumber\\
+&  =\sum_{k=1}^{m}h_{m-k}\left(  x_{1},x_{2},\ldots,x_{k-1}\right)
+\prod_{p=1}^{k-1}\left(  u-x_{p}\right) \nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ +\sum_{k=1}^{m}x_{k}h_{m-k-1}\left(  x_{1},x_{2}%
+,\ldots,x_{k}\right)  \prod_{p=1}^{k-1}\left(  u-x_{p}\right)  .
+\label{pf.lem.vandermonde.factoring.h.sum-u.main.pf.1}%
+\end{align}
+
+\end{verlong}
+
+We have $h_{m-1}\left(  x_{1},x_{2},\ldots,x_{1-1}\right)  =0$%
+\ \ \ \ \footnote{\textit{Proof.} We have $m>1$, and thus $m-1>0$. Hence,
+$m-1$ is a positive integer. Thus,
+(\ref{pf.lem.vandermonde.factoring.h.sum-u.0}) (applied to $q=m-1$) yields
+$h_{m-1}\left(  x_{1},x_{2},\ldots,x_{0}\right)  =0$. Now, $1-1=0$ and thus
+$h_{m-1}\left(  x_{1},x_{2},\ldots,x_{1-1}\right)  =h_{m-1}\left(  x_{1}%
+,x_{2},\ldots,x_{0}\right)  =0$. Qed.}. But $m>1$. Hence, we can split off the
+addend for $k=1$ from the sum $\sum_{k=1}^{m}h_{m-k}\left(  x_{1},x_{2}%
+,\ldots,x_{k-1}\right)  \prod_{p=1}^{k-1}\left(  u-x_{p}\right)  $. We thus
+obtain
+\begin{align}
+&  \sum_{k=1}^{m}h_{m-k}\left(  x_{1},x_{2},\ldots,x_{k-1}\right)  \prod
+_{p=1}^{k-1}\left(  u-x_{p}\right) \nonumber\\
+&  =\underbrace{h_{m-1}\left(  x_{1},x_{2},\ldots,x_{1-1}\right)  }_{=0}%
+\prod_{p=1}^{1-1}\left(  u-x_{p}\right)  +\sum_{k=2}^{m}h_{m-k}\left(
+x_{1},x_{2},\ldots,x_{k-1}\right)  \prod_{p=1}^{k-1}\left(  u-x_{p}\right)
+\nonumber\\
+&  =\underbrace{0\prod_{p=1}^{1-1}\left(  u-x_{p}\right)  }_{=0}+\sum
+_{k=2}^{m}h_{m-k}\left(  x_{1},x_{2},\ldots,x_{k-1}\right)  \prod_{p=1}%
+^{k-1}\left(  u-x_{p}\right) \nonumber\\
+&  =\sum_{k=2}^{m}h_{m-k}\left(  x_{1},x_{2},\ldots,x_{k-1}\right)
+\prod_{p=1}^{k-1}\left(  u-x_{p}\right) \nonumber\\
+&  =\sum_{k=1}^{m-1}\underbrace{h_{m-\left(  k+1\right)  }\left(  x_{1}%
+,x_{2},\ldots,x_{\left(  k+1\right)  -1}\right)  }_{\substack{=h_{m-k-1}%
+\left(  x_{1},x_{2},\ldots,x_{k}\right)  \\\text{(since }m-\left(  k+1\right)
+=m-k-1\\\text{and }\left(  k+1\right)  -1=k\text{)}}}\underbrace{\prod
+_{p=1}^{\left(  k+1\right)  -1}}_{\substack{=\prod_{p=1}^{k}\\\text{(since
+}\left(  k+1\right)  -1=k\text{)}}}\left(  u-x_{p}\right) \nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }k+1\text{ for
+}k\text{ in the sum}\right) \nonumber\\
+&  =\sum_{k=1}^{m-1}h_{m-k-1}\left(  x_{1},x_{2},\ldots,x_{k}\right)
+\underbrace{\prod_{p=1}^{k}\left(  u-x_{p}\right)  }_{\substack{=\left(
+u-x_{k}\right)  \prod_{p=1}^{k-1}\left(  u-x_{p}\right)  \\\text{(here, we
+have split off the factor for }p=k\text{ from}\\\text{the product (since }%
+k\in\left\{  1,2,\ldots,k\right\}  \text{))}}}\nonumber\\
+&  =\sum_{k=1}^{m-1}\underbrace{h_{m-k-1}\left(  x_{1},x_{2},\ldots
+,x_{k}\right)  \cdot\left(  u-x_{k}\right)  }_{=\left(  u-x_{k}\right)
+h_{m-k-1}\left(  x_{1},x_{2},\ldots,x_{k}\right)  }\prod_{p=1}^{k-1}\left(
+u-x_{p}\right) \nonumber\\
+&  =\sum_{k=1}^{m-1}\left(  u-x_{k}\right)  h_{m-k-1}\left(  x_{1}%
+,x_{2},\ldots,x_{k}\right)  \prod_{p=1}^{k-1}\left(  u-x_{p}\right)  .
+\label{pf.lem.vandermonde.factoring.h.sum-u.main.pf.2}%
+\end{align}
+On the other hand, $h_{m-m-1}\left(  x_{1},x_{2},\ldots,x_{m}\right)
+=0$\ \ \ \ \footnote{\textit{Proof.} Clearly, $m-m-1=-1$ is a negative
+integer. Hence, Lemma \ref{lem.vandermonde.factoring.h.0} \textbf{(a)}
+(applied to $n=m$ and $k=m-m-1$) yields $h_{m-m-1}\left(  x_{1},x_{2}%
+,\ldots,x_{m}\right)  =0$. Qed.}. But $m>1$. Hence, we can split off the
+addend for $k=m$ from the sum $\sum_{k=1}^{m}x_{k}h_{m-k-1}\left(  x_{1}%
+,x_{2},\ldots,x_{k}\right)  \prod_{p=1}^{k-1}\left(  u-x_{p}\right)  $. We
+thus obtain%
+\begin{align}
+&  \sum_{k=1}^{m}x_{k}h_{m-k-1}\left(  x_{1},x_{2},\ldots,x_{k}\right)
+\prod_{p=1}^{k-1}\left(  u-x_{p}\right) \nonumber\\
+&  =x_{m}\underbrace{h_{m-m-1}\left(  x_{1},x_{2},\ldots,x_{m}\right)  }%
+_{=0}\prod_{p=1}^{m-1}\left(  u-x_{p}\right)  +\sum_{k=1}^{m-1}x_{k}%
+h_{m-k-1}\left(  x_{1},x_{2},\ldots,x_{k}\right)  \prod_{p=1}^{k-1}\left(
+u-x_{p}\right) \nonumber\\
+&  =\underbrace{x_{m}0\prod_{p=1}^{m-1}\left(  u-x_{p}\right)  }_{=0}%
++\sum_{k=1}^{m-1}x_{k}h_{m-k-1}\left(  x_{1},x_{2},\ldots,x_{k}\right)
+\prod_{p=1}^{k-1}\left(  u-x_{p}\right) \nonumber\\
+&  =\sum_{k=1}^{m-1}x_{k}h_{m-k-1}\left(  x_{1},x_{2},\ldots,x_{k}\right)
+\prod_{p=1}^{k-1}\left(  u-x_{p}\right)  .
+\label{pf.lem.vandermonde.factoring.h.sum-u.main.pf.3}%
+\end{align}
+
+
+\begin{vershort}
+Now, (\ref{pf.lem.vandermonde.factoring.h.sum-u.main.pf.short.1}) becomes%
+\begin{align*}
+&  \sum_{k=1}^{m}h_{m-k}\left(  x_{1},x_{2},\ldots,x_{k}\right)  \prod
+_{p=1}^{k-1}\left(  u-x_{p}\right) \\
+&  =\underbrace{\sum_{k=1}^{m}h_{m-k}\left(  x_{1},x_{2},\ldots,x_{k-1}%
+\right)  \prod_{p=1}^{k-1}\left(  u-x_{p}\right)  }_{\substack{=\sum
+_{k=1}^{m-1}\left(  u-x_{k}\right)  h_{m-k-1}\left(  x_{1},x_{2},\ldots
+,x_{k}\right)  \prod_{p=1}^{k-1}\left(  u-x_{p}\right)  \\\text{(by
+(\ref{pf.lem.vandermonde.factoring.h.sum-u.main.pf.2}))}}}\\
+&  \ \ \ \ \ \ \ \ \ \ +\underbrace{\sum_{k=1}^{m}x_{k}h_{m-k-1}\left(
+x_{1},x_{2},\ldots,x_{k}\right)  \prod_{p=1}^{k-1}\left(  u-x_{p}\right)
+}_{\substack{=\sum_{k=1}^{m-1}x_{k}h_{m-k-1}\left(  x_{1},x_{2},\ldots
+,x_{k}\right)  \prod_{p=1}^{k-1}\left(  u-x_{p}\right)  \\\text{(by
+(\ref{pf.lem.vandermonde.factoring.h.sum-u.main.pf.3}))}}}\\
+&  =\sum_{k=1}^{m-1}\left(  u-x_{k}\right)  h_{m-k-1}\left(  x_{1}%
+,x_{2},\ldots,x_{k}\right)  \prod_{p=1}^{k-1}\left(  u-x_{p}\right) \\
+&  \ \ \ \ \ \ \ \ \ \ +\sum_{k=1}^{m-1}x_{k}h_{m-k-1}\left(  x_{1}%
+,x_{2},\ldots,x_{k}\right)  \prod_{p=1}^{k-1}\left(  u-x_{p}\right) \\
+&  =\sum_{k=1}^{m-1}\underbrace{\left(  \left(  u-x_{k}\right)  +x_{k}\right)
+}_{=u}\underbrace{h_{m-k-1}\left(  x_{1},x_{2},\ldots,x_{k}\right)
+}_{\substack{=h_{\left(  m-1\right)  -k}\left(  x_{1},x_{2},\ldots
+,x_{k}\right)  \\\text{(since }m-k-1=\left(  m-1\right)  -k\text{)}}%
+}\prod_{p=1}^{k-1}\left(  u-x_{p}\right) \\
+&  =\sum_{k=1}^{m-1}uh_{\left(  m-1\right)  -k}\left(  x_{1},x_{2}%
+,\ldots,x_{k}\right)  \prod_{p=1}^{k-1}\left(  u-x_{p}\right) \\
+&  =u\underbrace{\sum_{k=1}^{m-1}h_{\left(  m-1\right)  -k}\left(  x_{1}%
+,x_{2},\ldots,x_{k}\right)  \prod_{p=1}^{k-1}\left(  u-x_{p}\right)
+}_{\substack{=u^{\left(  m-1\right)  -1}\\\text{(by
+(\ref{pf.lem.vandermonde.factoring.h.sum-u.main.pf.indhyp}))}}}=uu^{\left(
+m-1\right)  -1}=u^{m-1}.
+\end{align*}
+In other words, (\ref{pf.lem.vandermonde.factoring.h.sum-u.main}) holds for
+$j=m$. This completes the induction step.
+\end{vershort}
+
+\begin{verlong}
+Now, (\ref{pf.lem.vandermonde.factoring.h.sum-u.main.pf.1}) becomes%
+\begin{align*}
+&  \sum_{k=1}^{m}h_{m-k}\left(  x_{1},x_{2},\ldots,x_{k}\right)  \prod
+_{p=1}^{k-1}\left(  u-x_{p}\right) \\
+&  =\underbrace{\sum_{k=1}^{m}h_{m-k}\left(  x_{1},x_{2},\ldots,x_{k-1}%
+\right)  \prod_{p=1}^{k-1}\left(  u-x_{p}\right)  }_{\substack{=\sum
+_{k=1}^{m-1}\left(  u-x_{k}\right)  h_{m-k-1}\left(  x_{1},x_{2},\ldots
+,x_{k}\right)  \prod_{p=1}^{k-1}\left(  u-x_{p}\right)  \\\text{(by
+(\ref{pf.lem.vandermonde.factoring.h.sum-u.main.pf.2}))}}}\\
+&  \ \ \ \ \ \ \ \ \ \ +\underbrace{\sum_{k=1}^{m}x_{k}h_{m-k-1}\left(
+x_{1},x_{2},\ldots,x_{k}\right)  \prod_{p=1}^{k-1}\left(  u-x_{p}\right)
+}_{\substack{=\sum_{k=1}^{m-1}x_{k}h_{m-k-1}\left(  x_{1},x_{2},\ldots
+,x_{k}\right)  \prod_{p=1}^{k-1}\left(  u-x_{p}\right)  \\\text{(by
+(\ref{pf.lem.vandermonde.factoring.h.sum-u.main.pf.3}))}}}\\
+&  =\sum_{k=1}^{m-1}\left(  u-x_{k}\right)  h_{m-k-1}\left(  x_{1}%
+,x_{2},\ldots,x_{k}\right)  \prod_{p=1}^{k-1}\left(  u-x_{p}\right) \\
+&  \ \ \ \ \ \ \ \ \ \ +\sum_{k=1}^{m-1}x_{k}h_{m-k-1}\left(  x_{1}%
+,x_{2},\ldots,x_{k}\right)  \prod_{p=1}^{k-1}\left(  u-x_{p}\right) \\
+&  =\sum_{k=1}^{m-1}\underbrace{\left(  \left(  u-x_{k}\right)  h_{m-k-1}%
+\left(  x_{1},x_{2},\ldots,x_{k}\right)  \prod_{p=1}^{k-1}\left(
+u-x_{p}\right)  +x_{k}h_{m-k-1}\left(  x_{1},x_{2},\ldots,x_{k}\right)
+\prod_{p=1}^{k-1}\left(  u-x_{p}\right)  \right)  }_{=\left(  \left(
+u-x_{k}\right)  +x_{k}\right)  h_{m-k-1}\left(  x_{1},x_{2},\ldots
+,x_{k}\right)  \prod_{p=1}^{k-1}\left(  u-x_{p}\right)  }\\
+&  =\sum_{k=1}^{m-1}\underbrace{\left(  \left(  u-x_{k}\right)  +x_{k}\right)
+}_{=u}\underbrace{h_{m-k-1}\left(  x_{1},x_{2},\ldots,x_{k}\right)
+}_{\substack{=h_{\left(  m-1\right)  -k}\left(  x_{1},x_{2},\ldots
+,x_{k}\right)  \\\text{(since }m-k-1=\left(  m-1\right)  -k\text{)}}%
+}\prod_{p=1}^{k-1}\left(  u-x_{p}\right) \\
+&  =\sum_{k=1}^{m-1}uh_{\left(  m-1\right)  -k}\left(  x_{1},x_{2}%
+,\ldots,x_{k}\right)  \prod_{p=1}^{k-1}\left(  u-x_{p}\right) \\
+&  =u\underbrace{\sum_{k=1}^{m-1}h_{\left(  m-1\right)  -k}\left(  x_{1}%
+,x_{2},\ldots,x_{k}\right)  \prod_{p=1}^{k-1}\left(  u-x_{p}\right)
+}_{\substack{=u^{\left(  m-1\right)  -1}\\\text{(by
+(\ref{pf.lem.vandermonde.factoring.h.sum-u.main.pf.indhyp}))}}}=uu^{\left(
+m-1\right)  -1}=u^{m-1}.
+\end{align*}
+In other words, (\ref{pf.lem.vandermonde.factoring.h.sum-u.main}) holds for
+$j=m$. This completes the induction step.
+\end{verlong}
+
+Thus, we have proven (\ref{pf.lem.vandermonde.factoring.h.sum-u.main}) by induction.
+
+\begin{vershort}
+Lemma \ref{lem.vandermonde.factoring.h.sum-u} now follows from
+(\ref{pf.lem.vandermonde.factoring.h.sum-u.main}) (applied to $j=i$).
+\end{vershort}
+
+\begin{verlong}
+Now, (\ref{pf.lem.vandermonde.factoring.h.sum-u.main}) (applied to $j=i$)
+yields%
+\[
+\sum_{k=1}^{i}h_{i-k}\left(  x_{1},x_{2},\ldots,x_{k}\right)  \prod
+_{p=1}^{k-1}\left(  u-x_{p}\right)  =u^{i-1}.
+\]
+This proves Lemma \ref{lem.vandermonde.factoring.h.sum-u}.
+\end{verlong}
+\end{proof}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.vandermonde.factoring.U}.]For every $\left(
+i,j\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}$, set
+\begin{equation}
+a_{i,j}=\prod_{p=1}^{j-1}\left(  x_{i}-x_{p}\right)  .
+\label{pf.lem.vandermonde.factoring.U.1}%
+\end{equation}
+Recall that $U=\left(  \prod_{p=1}^{i-1}\left(  x_{j}-x_{p}\right)  \right)
+_{1\leq i\leq n,\ 1\leq j\leq n}$. Hence, the definition of $U^{T}$ yields%
+\[
+U^{T}=\left(  \underbrace{\prod_{p=1}^{j-1}\left(  x_{i}-x_{p}\right)
+}_{\substack{=a_{i,j}\\\text{(by (\ref{pf.lem.vandermonde.factoring.U.1}))}%
+}}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}=\left(  a_{i,j}\right)  _{1\leq
+i\leq n,\ 1\leq j\leq n}.
+\]
+
+
+\begin{vershort}
+We have $a_{i,j}=0$ for every $\left(  i,j\right)  \in\left\{  1,2,\ldots
+,n\right\}  ^{2}$ satisfying $i<j$\ \ \ \ \footnote{\textit{Proof.} Let
+$\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}$ be such that
+$i<j$. We want to show that $a_{i,j}=0$.
+\par
+We have $i<j$, and thus $i\leq j-1$ (since $i$ and $j$ are integers). Thus,
+$i\in\left\{  1,2,\ldots,j-1\right\}  $. Thus, the product $\prod_{p=1}%
+^{j-1}\left(  x_{i}-x_{p}\right)  $ has a factor for $p=i$. This factor is
+$x_{i}-x_{i}=0$. Hence, at least one factor of the product $\prod_{p=1}%
+^{j-1}\left(  x_{i}-x_{p}\right)  $ equals $0$ (namely, the factor for $p=i$).
+Thus, the whole product $\prod_{p=1}^{j-1}\left(  x_{i}-x_{p}\right)  $ equals
+$0$ (because if at least one factor of a product equals $0$, then the whole
+product must equal $0$). In other words, $\prod_{p=1}^{j-1}\left(  x_{i}%
+-x_{p}\right)  =0$.
+\par
+But the definition of $a_{i,j}$ yields $a_{i,j}=\prod_{p=1}^{j-1}\left(
+x_{i}-x_{p}\right)  =0$. Qed.}. Hence, Exercise \ref{exe.ps4.3} (applied to
+$U^{T}$ instead of $A$) yields
+\begin{align*}
+\det\left(  U^{T}\right)   &  =a_{1,1}a_{2,2}\cdots a_{n,n}=\prod_{i=1}%
+^{n}\underbrace{a_{i,i}}_{\substack{=\prod_{p=1}^{i-1}\left(  x_{i}%
+-x_{p}\right)  \\\text{(by the definition of }a_{i,i}\text{)}}%
+}=\underbrace{\prod_{i=1}^{n}\prod_{p=1}^{i-1}}_{=\prod_{1\leq p<i\leq n}%
+}\left(  x_{i}-x_{p}\right) \\
+&  =\prod_{1\leq p<i\leq n}\left(  x_{i}-x_{p}\right)  =\prod_{1\leq j<i\leq
+n}\left(  x_{i}-x_{j}\right)
+\end{align*}
+(here, we have renamed the index $\left(  p,i\right)  $ as $\left(
+j,i\right)  $ in the product).
+\end{vershort}
+
+\begin{verlong}
+We have $a_{i,j}=0$ for every $\left(  i,j\right)  \in\left\{  1,2,\ldots
+,n\right\}  ^{2}$ satisfying $i<j$\ \ \ \ \footnote{\textit{Proof.} Let
+$\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}$ be such that
+$i<j$. We want to show that $a_{i,j}=0$.
+\par
+We have $\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}$. In other
+words, $i\in\left\{  1,2,\ldots,n\right\}  $ and $j\in\left\{  1,2,\ldots
+,n\right\}  $. From $i\in\left\{  1,2,\ldots,n\right\}  $, we obtain $i\geq1$.
+\par
+We have $i<j$, and thus $i\leq j-1$ (since $i$ and $j$ are integers). Thus,
+$i\in\left\{  1,2,\ldots,j-1\right\}  $ (since $i\geq1$ and $i\leq j-1$).
+Thus, the product $\prod_{p=1}^{j-1}\left(  x_{i}-x_{p}\right)  $ has a factor
+for $p=i$. This factor is $x_{i}-x_{i}=0$. Hence, at least one factor of the
+product $\prod_{p=1}^{j-1}\left(  x_{i}-x_{p}\right)  $ equals $0$ (namely,
+the factor for $p=i$). Thus, the whole product $\prod_{p=1}^{j-1}\left(
+x_{i}-x_{p}\right)  $ equals $0$ (because if at least one factor of a product
+equals $0$, then the whole product must equal $0$). In other words,
+$\prod_{p=1}^{j-1}\left(  x_{i}-x_{p}\right)  =0$.
+\par
+But the definition of $a_{i,j}$ yields $a_{i,j}=\prod_{p=1}^{j-1}\left(
+x_{i}-x_{p}\right)  =0$. Qed.}. Hence, Exercise \ref{exe.ps4.3} (applied to
+$U^{T}$ instead of $A$) yields
+\begin{align*}
+\det\left(  U^{T}\right)   &  =a_{1,1}a_{2,2}\cdots a_{n,n}=\prod_{i=1}%
+^{n}\underbrace{a_{i,i}}_{\substack{=\prod_{p=1}^{i-1}\left(  x_{i}%
+-x_{p}\right)  \\\text{(by the definition of }a_{i,i}\text{)}}%
+}=\underbrace{\prod_{i=1}^{n}\prod_{p=1}^{i-1}}_{=\prod_{1\leq p<i\leq n}%
+}\left(  x_{i}-x_{p}\right) \\
+&  =\prod_{1\leq p<i\leq n}\left(  x_{i}-x_{p}\right)  =\prod_{1\leq j<i\leq
+n}\left(  x_{i}-x_{j}\right)
+\end{align*}
+(here, we have renamed the index $\left(  p,i\right)  $ as $\left(
+j,i\right)  $ in the product).
+\end{verlong}
+
+But Exercise \ref{exe.ps4.4} (applied to $A=U$) yields $\det\left(
+U^{T}\right)  =\det U$. Hence,%
+\[
+\det U=\det\left(  U^{T}\right)  =\prod_{1\leq j<i\leq n}\left(  x_{i}%
+-x_{j}\right)  .
+\]
+This proves Lemma \ref{lem.vandermonde.factoring.U}.
+\end{proof}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.vandermonde.factoring.L}.]For every $\left(
+i,j\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}$, set
+\begin{equation}
+a_{i,j}=h_{i-j}\left(  x_{1},x_{2},\ldots,x_{j}\right)  .
+\label{pf.lem.vandermonde.factoring.L.1}%
+\end{equation}
+Then,%
+\[
+L=\left(  \underbrace{h_{i-j}\left(  x_{1},x_{2},\ldots,x_{j}\right)
+}_{\substack{=a_{i,j}\\\text{(by (\ref{pf.lem.vandermonde.factoring.L.1}))}%
+}}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}=\left(  a_{i,j}\right)  _{1\leq
+i\leq n,\ 1\leq j\leq n}.
+\]
+
+
+We have $a_{i,j}=0$ for every $\left(  i,j\right)  \in\left\{  1,2,\ldots
+,n\right\}  ^{2}$ satisfying $i<j$\ \ \ \ \footnote{\textit{Proof.} Let
+$\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}$ be such that
+$i<j$. We want to show that $a_{i,j}=0$.
+\par
+We have $i-j<0$ (since $i<j$). Thus, $i-j$ is a negative integer. Hence, Lemma
+\ref{lem.vandermonde.factoring.h.0} \textbf{(a)} (applied to $j$ and $i-j$
+instead of $n$ and $k$) yields $h_{i-j}\left(  x_{1},x_{2},\ldots
+,x_{j}\right)  =0$. But the definition of $a_{i,j}$ yields $a_{i,j}%
+=h_{i-j}\left(  x_{1},x_{2},\ldots,x_{j}\right)  =0$. Qed.}. Hence, Exercise
+\ref{exe.ps4.3} (applied to $L$ instead of $A$) yields
+\begin{align*}
+\det\left(  U^{T}\right)   &  =a_{1,1}a_{2,2}\cdots a_{n,n}=\prod_{i=1}%
+^{n}\underbrace{a_{i,i}}_{\substack{=h_{i-i}\left(  x_{1},x_{2},\ldots
+,x_{i}\right)  \\\text{(by the definition of }a_{i,i}\text{)}}}=\prod
+_{i=1}^{n}\underbrace{h_{i-i}\left(  x_{1},x_{2},\ldots,x_{i}\right)
+}_{\substack{=h_{0}\left(  x_{1},x_{2},\ldots,x_{i}\right)  \\\text{(since
+}i-i=0\text{)}}}\\
+&  =\prod_{i=1}^{n}\underbrace{h_{0}\left(  x_{1},x_{2},\ldots,x_{i}\right)
+}_{\substack{=1\\\text{(by Lemma \ref{lem.vandermonde.factoring.h.0}
+\textbf{(b)}}\\\text{(applied to }i\text{ instead of }n\text{))}}}=\prod
+_{i=1}^{n}1=1.
+\end{align*}
+This proves Lemma \ref{lem.vandermonde.factoring.L}.
+\end{proof}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.vandermonde.factoring.A=LU}.]If $i\in\mathbb{Z}$ and
+$k\in\left\{  1,2,\ldots,n\right\}  $ are such that $k>i$, then%
+\begin{equation}
+h_{i-k}\left(  x_{1},x_{2},\ldots,x_{k}\right)  =0
+\label{pf.lem.vandermonde.factoring.A=LU.0}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.vandermonde.factoring.A=LU.0}):} Let
+$i\in\mathbb{Z}$ and $k\in\left\{  1,2,\ldots,n\right\}  $ be such that $k>i$.
+Then, $i-k<0$ (since $k>i$). Thus, $i-k$ is a negative integer. Hence, Lemma
+\ref{lem.vandermonde.factoring.h.0} \textbf{(a)} (applied to $k$ and $i-k$
+instead of $n$ and $k$) yields $h_{i-k}\left(  x_{1},x_{2},\ldots
+,x_{k}\right)  =0$. This proves (\ref{pf.lem.vandermonde.factoring.A=LU.0}).}.
+
+Now, for every $i\in\left\{  1,2,\ldots,n\right\}  $ and $u\in\mathbb{K}$, we
+have%
+\begin{align}
+&  \sum_{k=1}^{n}h_{i-k}\left(  x_{1},x_{2},\ldots,x_{k}\right)  \prod
+_{p=1}^{k-1}\left(  u-x_{p}\right) \nonumber\\
+&  =\underbrace{\sum_{k=1}^{i}h_{i-k}\left(  x_{1},x_{2},\ldots,x_{k}\right)
+\prod_{p=1}^{k-1}\left(  u-x_{p}\right)  }_{\substack{=u^{i-1}\\\text{(by
+Lemma \ref{lem.vandermonde.factoring.h.sum-u})}}}+\sum_{k=i+1}^{n}%
+\underbrace{h_{i-k}\left(  x_{1},x_{2},\ldots,x_{k}\right)  }%
+_{\substack{=0\\\text{(by (\ref{pf.lem.vandermonde.factoring.A=LU.0}%
+)}\\\text{(since }k\geq i+1>i\text{))}}}\prod_{p=1}^{k-1}\left(
+u-x_{p}\right) \nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }1\leq i\leq n\text{ (since }%
+i\in\left\{  1,2,\ldots,n\right\}  \text{)}\right) \nonumber\\
+&  =u^{i-1}+\underbrace{\sum_{k=i+1}^{n}0\prod_{p=1}^{k-1}\left(
+u-x_{p}\right)  }_{=0}=u^{i-1}. \label{pf.lem.vandermonde.factoring.A=LU.2}%
+\end{align}
+
+
+But recall that $L=\left(  h_{i-j}\left(  x_{1},x_{2},\ldots,x_{j}\right)
+\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ and \newline$U=\left(  \prod
+_{p=1}^{i-1}\left(  x_{j}-x_{p}\right)  \right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}$. Hence, the definition of the product $LU$ yields%
+\[
+LU=\left(  \underbrace{\sum_{k=1}^{n}h_{i-k}\left(  x_{1},x_{2},\ldots
+,x_{k}\right)  \prod_{p=1}^{k-1}\left(  x_{j}-x_{p}\right)  }%
+_{\substack{=x_{j}^{i-1}\\\text{(by (\ref{pf.lem.vandermonde.factoring.A=LU.2}%
+) (applied to }u=x_{j}\text{))}}}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}=\left(  x_{j}^{i-1}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}.
+\]
+This proves Lemma \ref{lem.vandermonde.factoring.A=LU}.
+\end{proof}
+
+
+
+\begin{proof}
+[Solution to Exercise \ref{exe.subsect.vandermonde.factoring}.] We have proven
+Lemma \ref{lem.vandermonde.factoring.h.0}, Lemma
+\ref{lem.vandermonde.factoring.h.hq1}, Lemma
+\ref{lem.vandermonde.factoring.h.hq2}, Lemma
+\ref{lem.vandermonde.factoring.h.sum-u}, Lemma
+\ref{lem.vandermonde.factoring.U}, Lemma \ref{lem.vandermonde.factoring.L} and
+Lemma \ref{lem.vandermonde.factoring.A=LU}. Thus, Exercise
+\ref{exe.subsect.vandermonde.factoring} is solved.
+\end{proof}
+
 \subsection{Solution to Exercise \ref{exe.vander-det.s1}}
 
 \begin{proof}
@@ -65411,7 +66887,7 @@ In other words, $\mathbf{B}\circ\mathbf{A}=\operatorname*{id}\nolimits_{S_{n}%
 $\mathbf{B}$ are mutually inverse. Hence, the map $\mathbf{A}$ is invertible.
 In other words, the map $\mathbf{A}$ is a bijection. In other words, the map
 $S_{n}\rightarrow S_{n},\ \sigma\mapsto\sigma\circ\gamma$ is a bijection
-(since th map $\mathbf{A}$ is the map $S_{n}\rightarrow S_{n},\ \sigma
+(since the map $\mathbf{A}$ is the map $S_{n}\rightarrow S_{n},\ \sigma
 \mapsto\sigma\circ\gamma$). This proves Lemma
 \ref{lem.sol.det.laplace-multi.group-bij}.
 \end{proof}
@@ -73320,6 +74796,10 @@ techniques}, 15 July 2015.}
 Williamson, \textit{The common-submatrix Laplace expansion},
 arXiv:1505.05486v1}.
 
+\bibitem[GohKol]{GohKol}Israel Gohberg, Israel Koltracht, \textit{Triangular
+factors of Cauchy and Vandermonde matrices}, Integr. Equat. Oper. Th. Vol. 26
+(1996), pp. 46--59.
+
 \bibitem[Goodman]{Goodman}Frederick M. Goodman, \textit{Algebra: Abstract and
 Concrete}, edition 2.6, 1 May 2015.\newline%
 \url{http://homepage.math.uiowa.edu/~goodman/algebrabook.dir/book.2.6.pdf} .
@@ -73456,6 +74936,16 @@ theory of determinants in the historical order of development}, 5 volumes
 \href{http://arxiv.org/abs/math-ph/0203030v2}{Masatoshi Noumi, Yasuhiko
 Yamada, \textit{Tropical Robinson-Schensted-Knuth correspondence and
 birational Weyl group actions}, arXiv:math-ph/0203030v2.}
+
+\bibitem[OlvSha]{OlvSha}Peter J. Olver, Chehrzad Shakiban, \textit{Applied
+Linear Algebra}, Prentice Hall, 2006.\newline See also
+\url{http://www.math.umn.edu/~olver/ala.html} for corrections.
+
+\bibitem[OruPhi]{OruPhi}%
+\href{http://www.sciencedirect.com/science/article/pii/S0024379500001245}{Halil
+Oru\c{c}, George M. Phillips, \textit{Explicit factorization of the
+Vandermonde matrix}, Linear Algebra and its Applications 315 (2000), pp.
+113--123.}
 
 \bibitem[Prasolov]{Prasolov}Viktor V. Prasolov,
 \textit{\href{http://www2.math.su.se/~mleites/books/prasolov-1994-problems.pdf}{\textit{Problems
