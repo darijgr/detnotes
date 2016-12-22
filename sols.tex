@@ -42901,7 +42901,7 @@ Next, we state a basic lemma about sets:
 \label{lem.prodrule.prod-assM}Let $M$ be a positive integer. For every
 $i\in\left\{  1,2,\ldots,M\right\}  $, let $S_{i}$ be a set. Then, the map
 \begin{align*}
-S_{1}\times S_{2}\times\cdots\times S_{M} &  \rightarrow\left(  S_{1}\times
+S_{1}\times S_{2}\times\cdots\times S_{M}  &  \rightarrow\left(  S_{1}\times
 S_{2}\times\cdots\times S_{M-1}\right)  \times S_{M},\\
 \left(  s_{1},s_{2},\ldots,s_{M}\right)   &  \mapsto\left(  \left(
 s_{1},s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right)
@@ -42911,19 +42911,19 @@ is a bijection.
 
 \begin{vershort}
 \begin{proof}
-[Proof of Lemma \ref{lem.prodrule.prod-assM}.] This map is simply the
-canonical bijection $S_{1}\times S_{2}\times\cdots\times S_{M}\rightarrow
-\left(  S_{1}\times S_{2}\times\cdots\times S_{M-1}\right)  \times S_{M}$. Its
-inverse map sends each $\left(  \left(  s_{1},s_{2},\ldots,s_{M-1}\right)
-,t\right)  \in\left(  S_{1}\times S_{2}\times\cdots\times S_{M-1}\right)
-\times S_{M}$ to $\left(  s_{1},s_{2},\ldots,s_{M-1},t\right)  \in S_{1}\times
-S_{2}\times\cdots\times S_{M}$.
+[Proof of Lemma \ref{lem.prodrule.prod-assM}.]This map is simply the canonical
+bijection $S_{1}\times S_{2}\times\cdots\times S_{M}\rightarrow\left(
+S_{1}\times S_{2}\times\cdots\times S_{M-1}\right)  \times S_{M}$. Its inverse
+map sends each $\left(  \left(  s_{1},s_{2},\ldots,s_{M-1}\right)  ,t\right)
+\in\left(  S_{1}\times S_{2}\times\cdots\times S_{M-1}\right)  \times S_{M}$
+to $\left(  s_{1},s_{2},\ldots,s_{M-1},t\right)  \in S_{1}\times S_{2}%
+\times\cdots\times S_{M}$.
 \end{proof}
 \end{vershort}
 
 \begin{verlong}
 \begin{proof}
-[Proof of Lemma \ref{lem.prodrule.prod-assM}.] We define a map%
+[Proof of Lemma \ref{lem.prodrule.prod-assM}.]We define a map%
 \[
 \Phi:\left(  S_{1}\times S_{2}\times\cdots\times S_{M-1}\right)  \times
 S_{M}\rightarrow S_{1}\times S_{2}\times\cdots\times S_{M}%
@@ -42934,12 +42934,12 @@ by%
 \begin{array}
 [c]{l}%
 \Phi\left(  \left(  s_{1},s_{2},\ldots,s_{M-1}\right)  ,t\right)  =\left(
-s_{1},s_{2},\ldots,s_{M-1},t\right)  \\
+s_{1},s_{2},\ldots,s_{M-1},t\right) \\
 \ \ \ \ \ \ \ \ \ \ \text{for every }\left(  \left(  s_{1},s_{2}%
 ,\ldots,s_{M-1}\right)  ,t\right)  \in\left(  S_{1}\times S_{2}\times
 \cdots\times S_{M-1}\right)  \times S_{M}%
 \end{array}
-\right)  .\label{pf.lem.prodrule.S.Phidef}%
+\right)  . \label{pf.lem.prodrule.S.Phidef}%
 \end{equation}
 
 
@@ -42954,11 +42954,11 @@ by%
 \begin{array}
 [c]{l}%
 \Psi\left(  s_{1},s_{2},\ldots,s_{M}\right)  =\left(  \left(  s_{1}%
-,s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right)  \\
+,s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right) \\
 \ \ \ \ \ \ \ \ \ \ \text{for every }\left(  s_{1},s_{2},\ldots,s_{M}\right)
 \in S_{1}\times S_{2}\times\cdots\times S_{M}%
 \end{array}
-\right)  .\label{pf.lem.prodrule.S.Psidef}%
+\right)  . \label{pf.lem.prodrule.S.Psidef}%
 \end{equation}
 
 
@@ -42976,7 +42976,7 @@ and $t\in S_{M}$. We have $\left(  s_{1},s_{2},\ldots,s_{M-1}\right)  \in
 S_{1}\times S_{2}\times\cdots\times S_{M-1}$; in other words,
 \begin{equation}
 s_{i}\in S_{i}\ \ \ \ \ \ \ \ \ \ \text{for every }i\in\left\{  1,2,\ldots
-,M-1\right\}  .\label{pf.lem.prodrule.S.Psi.pf.1}%
+,M-1\right\}  . \label{pf.lem.prodrule.S.Psi.pf.1}%
 \end{equation}
 
 
@@ -42992,8 +42992,8 @@ $i\in\left\{  1,2,\ldots,M\right\}  $. We must prove that
 s_{i}, & \text{if }i<M;\\
 t, & \text{if }i=M
 \end{cases}
-\text{ is a well-defined element of }S_{i}%
-.\label{pf.lem.prodrule.S.Psi.pf.fn1.1}%
+\text{ is a well-defined element of }S_{i}.
+\label{pf.lem.prodrule.S.Psi.pf.fn1.1}%
 \end{equation}
 \par
 We are in one of the following two cases:
@@ -43110,10 +43110,10 @@ s_{1},s_{2},\ldots,s_{M}\right)  }\right)   &  =\left(  \Phi\circ\Psi\right)
 \left(  s_{1},s_{2},\ldots,s_{M}\right)  =\Phi\left(  \underbrace{\Psi\left(
 s_{1},s_{2},\ldots,s_{M}\right)  }_{\substack{=\left(  \left(  s_{1}%
 ,s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right)  \\\text{(by the definition of
-}\Psi\text{)}}}\right)  \\
+}\Psi\text{)}}}\right) \\
 &  =\Phi\left(  \left(  s_{1},s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right)
-=\left(  s_{1},s_{2},\ldots,s_{M-1},s_{M}\right)  \\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\Phi\right)  \\
+=\left(  s_{1},s_{2},\ldots,s_{M-1},s_{M}\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\Phi\right) \\
 &  =\left(  s_{1},s_{2},\ldots,s_{M}\right)  =\alpha=\operatorname*{id}\left(
 \alpha\right)  .
 \end{align*}
@@ -43144,10 +43144,10 @@ of this equality, we obtain%
 \Phi\right)  \left(  \left(  s_{1},s_{2},\ldots,s_{M-1}\right)  ,t\right)
 =\Psi\left(  \underbrace{\Phi\left(  \left(  s_{1},s_{2},\ldots,s_{M-1}%
 \right)  ,t\right)  }_{\substack{=\left(  s_{1},s_{2},\ldots,s_{M-1},t\right)
-\\\text{(by the definition of }\Phi\text{)}}}\right)  \\
+\\\text{(by the definition of }\Phi\text{)}}}\right) \\
 &  =\Psi\left(  s_{1},s_{2},\ldots,s_{M-1},t\right)  =\left(  \left(
 s_{1},s_{2},\ldots,s_{M-1}\right)  ,t\right)  \ \ \ \ \ \ \ \ \ \ \left(
-\text{by (\ref{pf.lem.prodrule.S.Psi})}\right)  \\
+\text{by (\ref{pf.lem.prodrule.S.Psi})}\right) \\
 &  =\beta=\operatorname*{id}\left(  \beta\right)  .
 \end{align*}
 \par
@@ -43161,7 +43161,7 @@ words, the map $\Psi$ is a bijection.
 
 Now, $\Psi$ is the map
 \begin{align*}
-S_{1}\times S_{2}\times\cdots\times S_{M} &  \rightarrow\left(  S_{1}\times
+S_{1}\times S_{2}\times\cdots\times S_{M}  &  \rightarrow\left(  S_{1}\times
 S_{2}\times\cdots\times S_{M-1}\right)  \times S_{M},\\
 \left(  s_{1},s_{2},\ldots,s_{M}\right)   &  \mapsto\left(  \left(
 s_{1},s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right)
@@ -43170,7 +43170,7 @@ s_{1},s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right)
 \rightarrow\left(  S_{1}\times S_{2}\times\cdots\times S_{M-1}\right)  \times
 S_{M}$ satisfying (\ref{pf.lem.prodrule.S.Psidef})). Thus, the map
 \begin{align*}
-S_{1}\times S_{2}\times\cdots\times S_{M} &  \rightarrow\left(  S_{1}\times
+S_{1}\times S_{2}\times\cdots\times S_{M}  &  \rightarrow\left(  S_{1}\times
 S_{2}\times\cdots\times S_{M-1}\right)  \times S_{M},\\
 \left(  s_{1},s_{2},\ldots,s_{M}\right)   &  \mapsto\left(  \left(
 s_{1},s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right)
@@ -43185,7 +43185,7 @@ is a bijection (since $\Psi$ is a bijection). This proves Lemma
 \begin{equation}
 \prod_{i=1}^{m}\sum_{k\in S_{i}}p_{i,k}=\sum_{\left(  k_{1},k_{2},\ldots
 ,k_{m}\right)  \in S_{1}\times S_{2}\times\cdots\times S_{m}}\prod_{i=1}%
-^{m}p_{i,k_{i}}.\label{pf.lem.prodrule.S.claim}%
+^{m}p_{i,k_{i}}. \label{pf.lem.prodrule.S.claim}%
 \end{equation}
 for every $m\in\left\{  0,1,\ldots,n\right\}  $.
 
@@ -43201,7 +43201,7 @@ with%
 \begin{align*}
 \sum_{\left(  k_{1},k_{2},\ldots,k_{0}\right)  \in S_{1}\times S_{2}%
 \times\cdots\times S_{0}}\underbrace{\prod_{i=1}^{0}p_{i,k_{i}}}_{=\left(
-\text{empty product}\right)  =1} &  =\sum_{\left(  k_{1},k_{2},\ldots
+\text{empty product}\right)  =1}  &  =\sum_{\left(  k_{1},k_{2},\ldots
 ,k_{0}\right)  \in S_{1}\times S_{2}\times\cdots\times S_{0}}1\\
 &  =\underbrace{\left\vert S_{1}\times S_{2}\times\cdots\times S_{0}%
 \right\vert }_{\substack{=1\\\text{(since }S_{1}\times S_{2}\times\cdots\times
@@ -43221,13 +43221,13 @@ other words, we have%
 \begin{equation}
 \prod_{i=1}^{M-1}\sum_{k\in S_{i}}p_{i,k}=\sum_{\left(  k_{1},k_{2}%
 ,\ldots,k_{M-1}\right)  \in S_{1}\times S_{2}\times\cdots\times S_{M-1}}%
-\prod_{i=1}^{M-1}p_{i,k_{i}}.\label{pf.lem.prodrule.S.indhyp}%
+\prod_{i=1}^{M-1}p_{i,k_{i}}. \label{pf.lem.prodrule.S.indhyp}%
 \end{equation}
 
 
 Lemma \ref{lem.prodrule.prod-assM} shows that the map
 \begin{align*}
-S_{1}\times S_{2}\times\cdots\times S_{M} &  \rightarrow\left(  S_{1}\times
+S_{1}\times S_{2}\times\cdots\times S_{M}  &  \rightarrow\left(  S_{1}\times
 S_{2}\times\cdots\times S_{M-1}\right)  \times S_{M},\\
 \left(  s_{1},s_{2},\ldots,s_{M}\right)   &  \mapsto\left(  \left(
 s_{1},s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right)
@@ -43238,22 +43238,22 @@ For every $\left(  k_{1},k_{2},\ldots,k_{M-1}\right)  \in S_{1}\times
 S_{2}\times\cdots\times S_{M-1}$, we define an element \newline$g_{\left(
 k_{1},k_{2},\ldots,k_{M-1}\right)  }\in\mathbb{K}$ by
 \begin{equation}
-g_{\left(  k_{1},k_{2},\ldots,k_{M-1}\right)  }=\prod_{i=1}^{M-1}p_{i,k_{i}%
-}.\label{pf.lem.prodrule.S.g=}%
+g_{\left(  k_{1},k_{2},\ldots,k_{M-1}\right)  }=\prod_{i=1}^{M-1}p_{i,k_{i}}.
+\label{pf.lem.prodrule.S.g=}%
 \end{equation}
 
 
 Now, (\ref{pf.lem.prodrule.S.indhyp}) becomes%
 \begin{align}
-\prod_{i=1}^{M-1}\sum_{k\in S_{i}}p_{i,k} &  =\sum_{\left(  k_{1},k_{2}%
-,\ldots,k_{M-1}\right)  \in S_{1}\times S_{2}\times\cdots\times S_{M-1}%
+\prod_{i=1}^{M-1}\sum_{k\in S_{i}}p_{i,k}  &  =\sum_{\left(  k_{1}%
+,k_{2},\ldots,k_{M-1}\right)  \in S_{1}\times S_{2}\times\cdots\times S_{M-1}%
 }\underbrace{\prod_{i=1}^{M-1}p_{i,k_{i}}}_{\substack{=g_{\left(  k_{1}%
 ,k_{2},\ldots,k_{M-1}\right)  }\\\text{(by (\ref{pf.lem.prodrule.S.g=}))}%
 }}\nonumber\\
 &  =\sum_{\left(  k_{1},k_{2},\ldots,k_{M-1}\right)  \in S_{1}\times
 S_{2}\times\cdots\times S_{M-1}}g_{\left(  k_{1},k_{2},\ldots,k_{M-1}\right)
 }\nonumber\\
-&  =\sum_{x\in S_{1}\times S_{2}\times\cdots\times S_{M-1}}g_{x}%
+&  =\sum_{x\in S_{1}\times S_{2}\times\cdots\times S_{M-1}}g_{x}
 \label{pf.lem.prodrule.S.L1}%
 \end{align}
 (here, we have renamed the summation index $\left(  k_{1},k_{2},\ldots
@@ -43265,7 +43265,7 @@ $\left(  s_{1},s_{2},\ldots,s_{M}\right)  \in S_{1}\times S_{2}\times
 \cdots\times S_{M}$ satisfies%
 \begin{equation}
 \prod_{i=1}^{M}p_{i,s_{i}}=\left(  \prod_{i=1}^{M-1}p_{i,s_{i}}\right)
-p_{M,s_{M}}\label{pf.lem.prodrule.S.splioff}%
+p_{M,s_{M}} \label{pf.lem.prodrule.S.splioff}%
 \end{equation}
 (indeed, this follows by splitting off the factor for $i=M$ from the product
 $\prod_{i=1}^{M}p_{i,s_{i}}$).
@@ -43273,7 +43273,7 @@ $\prod_{i=1}^{M}p_{i,s_{i}}$).
 Now, if we split off the factor for $i=M$ from the product $\prod_{i=1}%
 ^{M}\sum_{k\in S_{i}}p_{i,k}$, we obtain
 \begin{align*}
-\prod_{i=1}^{M}\sum_{k\in S_{i}}p_{i,k} &  =\underbrace{\left(  \prod
+\prod_{i=1}^{M}\sum_{k\in S_{i}}p_{i,k}  &  =\underbrace{\left(  \prod
 _{i=1}^{M-1}\sum_{k\in S_{i}}p_{i,k}\right)  }_{\substack{=\sum_{x\in
 S_{1}\times S_{2}\times\cdots\times S_{M-1}}g_{x}\\\text{(by
 (\ref{pf.lem.prodrule.S.L1}))}}}\underbrace{\left(  \sum_{k\in S_{M}}%
@@ -43300,15 +43300,15 @@ definition of }g_{\left(  s_{1},s_{2},\ldots,s_{M-1}\right)  }\text{)}%
 \begin{array}
 [c]{c}%
 \text{here, we have substituted }\left(  \left(  s_{1},s_{2},\ldots
-,s_{M-1}\right)  ,s_{M}\right)  \text{ for }\left(  x,y\right)  \\
+,s_{M-1}\right)  ,s_{M}\right)  \text{ for }\left(  x,y\right) \\
 \text{in the sum, since the map}\\
 S_{1}\times S_{2}\times\cdots\times S_{M}\rightarrow\left(  S_{1}\times
 S_{2}\times\cdots\times S_{M-1}\right)  \times S_{M},\\
 \left(  s_{1},s_{2},\ldots,s_{M}\right)  \mapsto\left(  \left(  s_{1}%
-,s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right)  \\
+,s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right) \\
 \text{is a bijection}%
 \end{array}
-\right)  \\
+\right) \\
 &  =\sum_{\left(  s_{1},s_{2},\ldots,s_{M}\right)  \in S_{1}\times S_{2}%
 \times\cdots\times S_{M}}\underbrace{\left(  \prod_{i=1}^{M-1}p_{i,s_{i}%
 }\right)  p_{M,s_{M}}}_{\substack{=\prod_{i=1}^{M}p_{i,s_{i}}\\\text{(by
@@ -45793,14 +45793,14 @@ x_{1},x_{2},\ldots,x_{n}\right)  =\underbrace{x_{1}^{0}}_{=1}\underbrace{x_{2}%
 Define a subset $A$ of $\mathbb{N}^{n}$ by%
 \begin{equation}
 A=\left\{  \left(  a_{1},a_{2},\ldots,a_{n}\right)  \in\mathbb{N}^{n}%
-\ \mid\ a_{1}+a_{2}+\cdots+a_{n}=0\right\}
-.\label{pf.lem.vandermonde.factoring.h.0.b.defA}%
+\ \mid\ a_{1}+a_{2}+\cdots+a_{n}=0\right\}  .
+\label{pf.lem.vandermonde.factoring.h.0.b.defA}%
 \end{equation}
 Thus,%
 \begin{equation}
 \sum_{\left(  a_{1},a_{2},\ldots,a_{n}\right)  \in A}=\sum_{\substack{\left(
 a_{1},a_{2},\ldots,a_{n}\right)  \in\mathbb{N}^{n};\\a_{1}+a_{2}+\cdots
-+a_{n}=0}}\label{pf.lem.vandermonde.factoring.h.0.b.sums1}%
++a_{n}=0}} \label{pf.lem.vandermonde.factoring.h.0.b.sums1}%
 \end{equation}
 (an equality between summation signs). But $A=\left\{  \left(
 \underbrace{0,0,\ldots,0}_{n\text{ zeroes}}\right)  \right\}  $%
@@ -58484,12 +58484,12 @@ has only one addend: namely, the addend for $I=K$. Thus, this sum simplifies
 to%
 \begin{align*}
 \sum_{\substack{I\subseteq K;\\\left\vert I\right\vert =n-1}}\prod_{i\in
-I}x_{i} &  =\prod_{i\in K}x_{i}=\prod_{j\in K}x_{j}=\underbrace{\prod
+I}x_{i}  &  =\prod_{i\in K}x_{i}=\prod_{j\in K}x_{j}=\underbrace{\prod
 _{j\in\left\{  1,2,\ldots,n\right\}  \setminus\left\{  k\right\}  }}%
 _{=\prod_{\substack{j\in\left\{  1,2,\ldots,n\right\}  ;\\j\neq k}}}x_{j}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }K=\underbrace{\left[  n\right]
 }_{=\left\{  1,2,\ldots,n\right\}  }\setminus\left\{  k\right\}  =\left\{
-1,2,\ldots,n\right\}  \setminus\left\{  k\right\}  \right)  \\
+1,2,\ldots,n\right\}  \setminus\left\{  k\right\}  \right) \\
 &  =\prod_{\substack{j\in\left\{  1,2,\ldots,n\right\}  ;\\j\neq k}}x_{j}.
 \end{align*}
 Now, the definition of $f_{n-1}$ yields%
@@ -70771,7 +70771,7 @@ Now, (\ref{pf.cor.det(A+D).4}) becomes%
 P\right\vert =\left\vert Q\right\vert }}\left(  -1\right)  ^{\sum P+\sum
 Q}\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
 Q\right)  }A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(
-\widetilde{P}\right)  }^{w\left(  \widetilde{Q}\right)  }D\right)  \nonumber\\
+\widetilde{P}\right)  }^{w\left(  \widetilde{Q}\right)  }D\right) \nonumber\\
 &  =\sum_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
 P\right\vert =\left\vert Q\right\vert ;\\Q=P}}\left(  -1\right)  ^{\sum P+\sum
 Q}\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
