@@ -67229,12 +67229,12 @@ $A$) yields%
 We know that $w\left(  U\right)  $ is the list of all elements of $U$ in
 increasing order (with no repetitions). Thus, $w\left(  U\right)  $ is a list
 of elements of $U$. In other words, the entries of $w\left(  U\right)  $ are
-elements of $U$. In other words, the entries of $w\left(  U\right)  $ are
-elements of $\left\{  1,2,\ldots,n\right\}  $ (since every element of $U$ is
-an element of $\left\{  1,2,\ldots,n\right\}  $ (since $U\subseteq\left\{
-1,2,\ldots,n\right\}  $)). In other words, $w\left(  U\right)  $ is a list of
-elements of $\left\{  1,2,\ldots,n\right\}  $. The same argument (applied to
-$V$ instead of $U$) shows that $w\left(  V\right)  $ is a list of elements of
+elements of $U$. Hence, the entries of $w\left(  U\right)  $ are elements of
+$\left\{  1,2,\ldots,n\right\}  $ (since every element of $U$ is an element of
+$\left\{  1,2,\ldots,n\right\}  $ (since $U\subseteq\left\{  1,2,\ldots
+,n\right\}  $)). In other words, $w\left(  U\right)  $ is a list of elements
+of $\left\{  1,2,\ldots,n\right\}  $. The same argument (applied to $V$
+instead of $U$) shows that $w\left(  V\right)  $ is a list of elements of
 $\left\{  1,2,\ldots,n\right\}  $. Hence, Proposition
 \ref{lem.sol.det.laplace-multi.0.subAT} (applied to $m=n$, $\mathbf{i}%
 =w\left(  V\right)  $ and $\mathbf{j}=w\left(  U\right)  $) yields $\left(
@@ -69293,10 +69293,8 @@ Now, (\ref{pf.cor.det(A+D).4}) becomes%
 &  \sum_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
 P\right\vert =\left\vert Q\right\vert }}\left(  -1\right)  ^{\sum P+\sum
 Q}\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
-Q\right)  }A\right)  \underbrace{\det\left(  \operatorname*{sub}%
-\nolimits_{w\left(  \widetilde{P}\right)  }^{w\left(  \widetilde{Q}\right)
-}D\right)  }_{\substack{=\delta_{P,Q}\prod_{i\in\left\{  1,2,\ldots,n\right\}
-\setminus P}d_{i}\\\text{(by (\ref{pf.cor.det(A+D).1}))}}}\nonumber\\
+Q\right)  }A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(
+\widetilde{P}\right)  }^{w\left(  \widetilde{Q}\right)  }D\right)  \nonumber\\
 &  =\sum_{\substack{Q\subseteq\left\{  1,2,\ldots,n\right\}  ;\\\left\vert
 P\right\vert =\left\vert Q\right\vert ;\\Q=P}}\left(  -1\right)  ^{\sum P+\sum
 Q}\det\left(  \operatorname*{sub}\nolimits_{w\left(  P\right)  }^{w\left(
