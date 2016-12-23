@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, December 22, 2016 02:05:13}
+%TCIDATA{LastRevised=Thursday, December 22, 2016 20:19:59}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -4744,8 +4744,8 @@ Here, $\dbinom{a}{b}$ is defined to be $0$ when $b<0$.
 \end{addexercise}
 
 \begin{noncompile}
-See \url{http://www.cip.ifi.lmu.de/~grinberg/QEDMO4P13.pdf} for a solution to the
-preceding exercise.
+See \url{http://www.cip.ifi.lmu.de/~grinberg/QEDMO4P13.pdf} for a solution to
+the preceding exercise.
 \end{noncompile}
 
 \begin{addexercise}
@@ -15244,23 +15244,21 @@ Then, $\det L=1$.
 If $n=4$, then the matrix $L$ defined in Lemma
 \ref{lem.vandermonde.factoring.L} looks as follows:%
 \begin{align*}
-L &  =\left(  h_{i-j}\left(  x_{1},x_{2},\ldots,x_{j}\right)  \right)  _{1\leq
-i\leq n,\ 1\leq j\leq n}\\
+L  &  =\left(  h_{i-j}\left(  x_{1},x_{2},\ldots,x_{j}\right)  \right)
+_{1\leq i\leq n,\ 1\leq j\leq n}\\
 &  =\left(
 \begin{array}
 [c]{cccc}%
-h_{0}\left(  x_{1}\right)   & h_{-1}\left(  x_{1},x_{2}\right)   &
-h_{-2}\left(  x_{1},x_{2},x_{3}\right)   & h_{-3}\left(  x_{1},x_{2}%
-,x_{3},x_{4}\right)  \\
-h_{1}\left(  x_{1}\right)   & h_{0}\left(  x_{1},x_{2}\right)   &
-h_{-1}\left(  x_{1},x_{2},x_{3}\right)   & h_{-2}\left(  x_{1},x_{2}%
-,x_{3},x_{4}\right)  \\
-h_{2}\left(  x_{2}\right)   & h_{1}\left(  x_{1},x_{2}\right)   & h_{0}\left(
-x_{1},x_{2},x_{3}\right)   & h_{-1}\left(  x_{1},x_{2},x_{3},x_{4}\right)  \\
-h_{3}\left(  x_{3}\right)   & h_{2}\left(  x_{1},x_{2}\right)   & h_{1}\left(
-x_{1},x_{2},x_{3}\right)   & h_{0}\left(  x_{1},x_{2},x_{3},x_{4}\right)
+h_{0}\left(  x_{1}\right)  & h_{-1}\left(  x_{1},x_{2}\right)  & h_{-2}\left(
+x_{1},x_{2},x_{3}\right)  & h_{-3}\left(  x_{1},x_{2},x_{3},x_{4}\right) \\
+h_{1}\left(  x_{1}\right)  & h_{0}\left(  x_{1},x_{2}\right)  & h_{-1}\left(
+x_{1},x_{2},x_{3}\right)  & h_{-2}\left(  x_{1},x_{2},x_{3},x_{4}\right) \\
+h_{2}\left(  x_{2}\right)  & h_{1}\left(  x_{1},x_{2}\right)  & h_{0}\left(
+x_{1},x_{2},x_{3}\right)  & h_{-1}\left(  x_{1},x_{2},x_{3},x_{4}\right) \\
+h_{3}\left(  x_{3}\right)  & h_{2}\left(  x_{1},x_{2}\right)  & h_{1}\left(
+x_{1},x_{2},x_{3}\right)  & h_{0}\left(  x_{1},x_{2},x_{3},x_{4}\right)
 \end{array}
-\right)  \\
+\right) \\
 &  =\left(
 \begin{array}
 [c]{cccc}%
@@ -45783,7 +45781,7 @@ be $0$ if all addends are $0$). Therefore, the sum on the right hand side of
 (\ref{pf.lem.vandermonde.factoring.h.0.b.1}) has exactly one addend -- namely,
 the addend for $\left(  a_{1},a_{2},\ldots,a_{n}\right)  =\left(
 \underbrace{0,0,\ldots,0}_{n\text{ zeroes}}\right)  $. Thus,
-(\ref{pf.lem.vandermonde.factoring.h.0.a.1}) simplifies to $h_{0}\left(
+(\ref{pf.lem.vandermonde.factoring.h.0.b.1}) simplifies to $h_{0}\left(
 x_{1},x_{2},\ldots,x_{n}\right)  =\underbrace{x_{1}^{0}}_{=1}\underbrace{x_{2}%
 ^{0}}_{=1}\cdots\underbrace{x_{n}^{0}}_{=1}=1$. This proves Lemma
 \ref{lem.vandermonde.factoring.h.0} \textbf{(b)}.
@@ -46780,10 +46778,8 @@ n}=\left(  x_{j}^{i-1}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}.
 This proves Lemma \ref{lem.vandermonde.factoring.A=LU}.
 \end{proof}
 
-
-
 \begin{proof}
-[Solution to Exercise \ref{exe.subsect.vandermonde.factoring}.] We have proven
+[Solution to Exercise \ref{exe.subsect.vandermonde.factoring}.]We have proven
 Lemma \ref{lem.vandermonde.factoring.h.0}, Lemma
 \ref{lem.vandermonde.factoring.h.hq1}, Lemma
 \ref{lem.vandermonde.factoring.h.hq2}, Lemma
@@ -74816,9 +74812,10 @@ version of 27 July 2015.\newline\url{http://www.cip.ifi.lmu.de/~grinberg/}
 generalized}, arXiv preprint
 \texttt{\href{http://arxiv.org/abs/1103.4507v1}{arXiv:1103.4507v1}}.
 
-\bibitem[Gri09]{Gri-19.9}\href{http://www.cip.ifi.lmu.de/~grinberg/19-9ML.pdf}{Darij
-Grinberg, \textit{Solution to Problem 19.9 from \textquotedblleft Problems
-from the Book\textquotedblright}}.\newline\url{http://www.cip.ifi.lmu.de/~grinberg/solutions.html}
+\bibitem[Gri09]{Gri-19.9}%
+\href{http://www.cip.ifi.lmu.de/~grinberg/19-9ML.pdf}{Darij Grinberg,
+\textit{Solution to Problem 19.9 from \textquotedblleft Problems from the
+Book\textquotedblright}}.\newline\url{http://www.cip.ifi.lmu.de/~grinberg/solutions.html}
 
 \bibitem[GriRei15]{Reiner}Darij Grinberg, Victor Reiner, \textit{Hopf algebras
 in Combinatorics}, August 22, 2016. arXiv preprint
@@ -74853,9 +74850,9 @@ An Introduction}, 3rd edition, Brooks/Cole 2014.
 Division Algebras Over Fields}, corrected 2nd printing, Springer 2010.
 
 \bibitem[KarZha16]{KarZha16}%
-\href{http://www.cip.ifi.lmu.de/~grinberg/primes2015/kazh-exp.pdf}{Karthik Karnik,
-Anya Zhang, \textit{Combinatorial proof of Chio Pivotal Condensation}, 25 May
-2016.}
+\href{http://www.cip.ifi.lmu.de/~grinberg/primes2015/kazh-exp.pdf}{Karthik
+Karnik, Anya Zhang, \textit{Combinatorial proof of Chio Pivotal Condensation},
+25 May 2016.}
 
 \bibitem[KenWil14]{KenWil14}\href{http://arxiv.org/abs/1411.7425v1}{Richard W.
 Kenyon, David B. Wilson, \textit{The space of circular planar electrical
