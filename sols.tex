@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, December 22, 2016 20:19:59}
+%TCIDATA{LastRevised=Thursday, December 22, 2016 21:47:28}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -25524,8 +25524,7 @@ common root \textbf{if and only if} their resultant is $0$.
 \begin{remark}
 Chapter \ref{chp.quivers} does not have much to do with the rest of these
 notes; it is merely an unrelated exercise. It is also somewhat rough and might
-be rewritten at some point (as well as moved to a more appropriate place
-somewhere near the end of the notes).
+be rewritten at some point.
 \end{remark}
 
 In this chapter, we will use the following notations (which come from
@@ -41613,9 +41612,9 @@ transposes of the rows of $A^{T}$.}). Hence, Exercise \ref{exe.ps4.6}
 \textbf{(c)} (applied to $A^{T}$ instead of $A$) yields $\det\left(
 A^{T}\right)  =0$.
 
-But Exercise \ref{exe.ps4.4} yields $\det\left(  A^{T}\right)  =\det A$. This
-rewrites as $\det A=0$ (since $\det\left(  A^{T}\right)  =\det A$). This
-solves Exercise \ref{exe.ps4.6} \textbf{(d)}.
+But Exercise \ref{exe.ps4.4} yields $\det\left(  A^{T}\right)  =\det A$.
+Hence, $\det A=\det\left(  A^{T}\right)  =0$. This solves Exercise
+\ref{exe.ps4.6} \textbf{(d)}.
 
 \textbf{(e)} Assume that $A$ has two equal rows. In other words, some two
 distinct rows of $A$ are equal (where \textquotedblleft
@@ -46793,7 +46792,7 @@ Lemma \ref{lem.vandermonde.factoring.A=LU}. Thus, Exercise
 
 \begin{proof}
 [First solution to Exercise \ref{exe.vander-det.s1}.]Our solution will imitate
-the above proof of Theorem \ref{thm.vander-det} \textbf{(a)} (but it will
+our First proof of Theorem \ref{thm.vander-det} \textbf{(a)} (but it will
 involve some additional complications).
 
 For every $u\in\left\{  0,1,\ldots,n\right\}  $ and $\left(  i,j\right)
@@ -47151,9 +47150,9 @@ Now, we claim that%
 x_{i}-x_{U}\right)  . \label{sol.vander-det.s1.detB'=}%
 \end{equation}
 This can be proven similarly to how we proved (\ref{pf.thm.vander-det.detB'=})
-back in our proof of Theorem \ref{thm.vander-det}. (Of course, this time, $G$
-plays the role of $A_{U-1}$.) Now, (\ref{sol.vander-det.s1.detAU=detB'})
-becomes%
+back in our First proof of Theorem \ref{thm.vander-det}. (Of course, this
+time, $G$ plays the role of $A_{U-1}$.) Now,
+(\ref{sol.vander-det.s1.detAU=detB'}) becomes%
 \begin{equation}
 \det\left(  A_{U}\right)  =\det\left(  B^{\prime}\right)  =\det G\cdot
 \prod_{i=1}^{U-1}\left(  x_{i}-x_{U}\right)  .
@@ -47162,8 +47161,8 @@ becomes%
 
 
 Now, we want to compute $\det G$. (This part is harder than the analogous part
-of our proof of Theorem \ref{thm.vander-det}, because back then the role of
-$G$ was played by $A_{U-1}$, and we knew $\det\left(  A_{U-1}\right)  $
+of our First proof of Theorem \ref{thm.vander-det}, because back then the role
+of $G$ was played by $A_{U-1}$, and we knew $\det\left(  A_{U-1}\right)  $
 directly from our induction hypothesis.)
 
 For every $\left(  i,j\right)  \in\left\{  1,2,\ldots,U-1\right\}  ^{2}$, we
