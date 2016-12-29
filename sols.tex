@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, December 29, 2016 12:08:13}
+%TCIDATA{LastRevised=Thursday, December 29, 2016 12:18:43}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -8695,7 +8695,8 @@ $\ast$ on $\mathbb{S}$ by setting%
 \[
 \left(  a+b\sqrt{5}\right)  \ast\left(  c+d\sqrt{5}\right)  =ac+bd\sqrt
 {5}\ \ \ \ \ \ \ \ \ \ \text{for all }\left(  a,b\right)  \in\mathbb{Q}%
-\times\mathbb{Q}\text{ and }\left(  c,d\right)  \in\mathbb{Q}\times\mathbb{Q}.
+\times\mathbb{Q}\text{ and }\left(  c,d\right)  \in\mathbb{Q}\times
+\mathbb{Q}.
 \]
 \footnote{This is well-defined, because every element of $\mathbb{S}$ can be
 written in the form $a+b\sqrt{5}$ for a \textbf{unique} pair $\left(
@@ -8777,27 +8778,27 @@ any set. Let $\mathcal{P}\left(  S\right)  $ denote the powerset of $S$ (that
 is, the set of all subsets of $S$). It is easy to check that the following ten
 properties hold:%
 \begin{align*}
-A\bigtriangleup B &  =B\bigtriangleup A\ \ \ \ \ \ \ \ \ \ \text{for any sets
+A\bigtriangleup B  &  =B\bigtriangleup A\ \ \ \ \ \ \ \ \ \ \text{for any sets
 }A\text{ and }B\text{;}\\
-A\cap B &  =B\cap A\ \ \ \ \ \ \ \ \ \ \text{for any sets }A\text{ and
+A\cap B  &  =B\cap A\ \ \ \ \ \ \ \ \ \ \text{for any sets }A\text{ and
 }B\text{;}\\
-\left(  A\bigtriangleup B\right)  \bigtriangleup C &  =A\bigtriangleup\left(
+\left(  A\bigtriangleup B\right)  \bigtriangleup C  &  =A\bigtriangleup\left(
 B\bigtriangleup C\right)  \ \ \ \ \ \ \ \ \ \ \text{for any sets }A\text{,
 }B\text{ and }C\text{;}\\
-\left(  A\cap B\right)  \cap C &  =A\cap\left(  B\cap C\right)
+\left(  A\cap B\right)  \cap C  &  =A\cap\left(  B\cap C\right)
 \ \ \ \ \ \ \ \ \ \ \text{for any sets }A\text{, }B\text{ and }C\text{;}\\
 A\bigtriangleup\varnothing &  =\varnothing\bigtriangleup
 A=A\ \ \ \ \ \ \ \ \ \ \text{for any set }A\text{;}\\
-A\bigtriangleup A &  =\varnothing\ \ \ \ \ \ \ \ \ \ \text{for any set
+A\bigtriangleup A  &  =\varnothing\ \ \ \ \ \ \ \ \ \ \text{for any set
 }A\text{;}\\
-A\cap S &  =S\cap A=A\ \ \ \ \ \ \ \ \ \ \text{for any subset }A\text{ of
+A\cap S  &  =S\cap A=A\ \ \ \ \ \ \ \ \ \ \text{for any subset }A\text{ of
 }S\text{;}\\
-\varnothing\cap A &  =A\cap\varnothing=\varnothing
+\varnothing\cap A  &  =A\cap\varnothing=\varnothing
 \ \ \ \ \ \ \ \ \ \ \text{for any set }A\text{;}\\
 A\cap\left(  B\bigtriangleup C\right)   &  =\left(  A\cap B\right)
 \bigtriangleup\left(  A\cap C\right)  \ \ \ \ \ \ \ \ \ \ \text{for any sets
 }A\text{, }B\text{ and }C\text{;}\\
-\left(  A\bigtriangleup B\right)  \cap C &  =\left(  A\cap C\right)
+\left(  A\bigtriangleup B\right)  \cap C  &  =\left(  A\cap C\right)
 \bigtriangleup\left(  B\cap C\right)  \ \ \ \ \ \ \ \ \ \ \text{for any sets
 }A\text{, }B\text{ and }C\text{.}%
 \end{align*}
@@ -8866,7 +8867,7 @@ ring. In contrast to this, adding a \textquotedblleft number\textquotedblright%
 numbers $\mathbb{C}$ are still a commutative ring.
 
 \item Here is an \textquotedblleft almost-ring\textquotedblright\ beloved to
-many combinatorialists: The \textit{max-plus semiring} $\mathbb{T}$ (also
+many combinatorialists: the \textit{max-plus semiring} $\mathbb{T}$ (also
 called the \textit{tropical semiring}\footnote{Caution: Both of these names
 mean many other things as well.}). We create a new symbol $-\infty$, and we
 set $\mathbb{T}=\mathbb{Z}\cup\left\{  -\infty\right\}  $ as sets, but we do
@@ -8879,15 +8880,15 @@ addition\textquotedblright\ and \textquotedblleft
 multiplication\textquotedblright\ operations $+_{\mathbb{T}}$ and
 $\cdot_{\mathbb{T}}$ on $\mathbb{T}$ as follows:%
 \begin{align*}
-a+_{\mathbb{T}}b  &  =\max\left\{  a,b\right\}  ;\\
-a\cdot_{\mathbb{T}}b  &  =a+_{\mathbb{Z}}b.
+a+_{\mathbb{T}}b &  =\max\left\{  a,b\right\}  ;\\
+a\cdot_{\mathbb{T}}b &  =a+_{\mathbb{Z}}b.
 \end{align*}
 (Here, we set $\max\left\{  -\infty,n\right\}  =\max\left\{  n,-\infty
 \right\}  =n$ and $\left(  -\infty\right)  +_{\mathbb{Z}}n=n+_{\mathbb{Z}%
 }\left(  -\infty\right)  =-\infty$ for every $n\in\mathbb{T}$.)
 
 It turns out that the set $\mathbb{T}$ endowed with the two operations
-$+_{\mathbb{Z}}$ and $\cdot_{\mathbb{Z}}$, the zero $0_{\mathbb{T}}=-\infty$
+$+_{\mathbb{T}}$ and $\cdot_{\mathbb{T}}$, the zero $0_{\mathbb{T}}=-\infty$
 and the unity $1_{\mathbb{T}}=0$ comes rather close to being a commutative
 ring. It satisfies all axioms of a commutative ring except for the existence
 of additive inverses. Such a structure is called a \textit{semiring}. Other
