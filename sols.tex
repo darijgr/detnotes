@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, December 22, 2016 22:03:57}
+%TCIDATA{LastRevised=Thursday, December 29, 2016 12:08:13}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -8567,7 +8567,21 @@ they form a commutative ring.}
 \item The sets $\mathbb{Z}$, $\mathbb{Q}$, $\mathbb{R}$ and $\mathbb{C}$
 (endowed with the usual addition, the usual multiplication, the usual $0$ and
 the usual $1$) are commutative rings. (Notice that existence of
-\textbf{multiplicative} inverses is not required!)
+\textbf{multiplicative} inverses is not required\footnote{A
+\textit{multiplicative inverse} of an element $a\in\mathbb{K}$ means an
+element $a^{\prime}\in\mathbb{K}$ such that $aa^{\prime}=a^{\prime
+}a=1_{\mathbb{K}}$. (This is analogous to an additive inverse, except that
+addition is replaced by multiplication, and $0_{\mathbb{K}}$ is replaced by
+$1_{\mathbb{K}}$.) In a commutative ring, every element is required to have an
+additive inverse (by the definition of a commutative ring), but not every
+element is guaranteed to have a multiplicative inverse. (For instance, $2$ has
+no multiplicative inverse in $\mathbb{Z}$, and $0$ has no multiplicative
+inverse in any of the rings $\mathbb{Z}$, $\mathbb{Q}$, $\mathbb{R}$ and
+$\mathbb{C}$.)
+\par
+We shall study multiplicative inverses more thoroughly in Section
+\ref{sect.invertible} (where we will just call them \textquotedblleft
+inverses\textquotedblright).}!)
 
 \item The set $\mathbb{N}$ of nonnegative integers (again endowed with the
 usual addition, the usual multiplication, the usual $0$ and the usual $1$) is
@@ -8681,7 +8695,7 @@ $\ast$ on $\mathbb{S}$ by setting%
 \[
 \left(  a+b\sqrt{5}\right)  \ast\left(  c+d\sqrt{5}\right)  =ac+bd\sqrt
 {5}\ \ \ \ \ \ \ \ \ \ \text{for all }\left(  a,b\right)  \in\mathbb{Q}%
-\times\mathbb{Q}.
+\times\mathbb{Q}\text{ and }\left(  c,d\right)  \in\mathbb{Q}\times\mathbb{Q}.
 \]
 \footnote{This is well-defined, because every element of $\mathbb{S}$ can be
 written in the form $a+b\sqrt{5}$ for a \textbf{unique} pair $\left(
@@ -8763,27 +8777,27 @@ any set. Let $\mathcal{P}\left(  S\right)  $ denote the powerset of $S$ (that
 is, the set of all subsets of $S$). It is easy to check that the following ten
 properties hold:%
 \begin{align*}
-A\bigtriangleup B  &  =B\bigtriangleup A\ \ \ \ \ \ \ \ \ \ \text{for any sets
+A\bigtriangleup B &  =B\bigtriangleup A\ \ \ \ \ \ \ \ \ \ \text{for any sets
 }A\text{ and }B\text{;}\\
-A\cap B  &  =B\cap A\ \ \ \ \ \ \ \ \ \ \text{for any sets }A\text{ and
+A\cap B &  =B\cap A\ \ \ \ \ \ \ \ \ \ \text{for any sets }A\text{ and
 }B\text{;}\\
-\left(  A\bigtriangleup B\right)  \bigtriangleup C  &  =A\bigtriangleup\left(
+\left(  A\bigtriangleup B\right)  \bigtriangleup C &  =A\bigtriangleup\left(
 B\bigtriangleup C\right)  \ \ \ \ \ \ \ \ \ \ \text{for any sets }A\text{,
 }B\text{ and }C\text{;}\\
-\left(  A\cap B\right)  \cap C  &  =A\cap\left(  B\cap C\right)
+\left(  A\cap B\right)  \cap C &  =A\cap\left(  B\cap C\right)
 \ \ \ \ \ \ \ \ \ \ \text{for any sets }A\text{, }B\text{ and }C\text{;}\\
 A\bigtriangleup\varnothing &  =\varnothing\bigtriangleup
 A=A\ \ \ \ \ \ \ \ \ \ \text{for any set }A\text{;}\\
-A\bigtriangleup A  &  =\varnothing\ \ \ \ \ \ \ \ \ \ \text{for any set
+A\bigtriangleup A &  =\varnothing\ \ \ \ \ \ \ \ \ \ \text{for any set
 }A\text{;}\\
-A\cap S  &  =S\cap A=A\ \ \ \ \ \ \ \ \ \ \text{for any subset }A\text{ of
+A\cap S &  =S\cap A=A\ \ \ \ \ \ \ \ \ \ \text{for any subset }A\text{ of
 }S\text{;}\\
-\varnothing\cap A  &  =A\cap\varnothing=\varnothing
+\varnothing\cap A &  =A\cap\varnothing=\varnothing
 \ \ \ \ \ \ \ \ \ \ \text{for any set }A\text{;}\\
 A\cap\left(  B\bigtriangleup C\right)   &  =\left(  A\cap B\right)
 \bigtriangleup\left(  A\cap C\right)  \ \ \ \ \ \ \ \ \ \ \text{for any sets
 }A\text{, }B\text{ and }C\text{;}\\
-\left(  A\bigtriangleup B\right)  \cap C  &  =\left(  A\cap C\right)
+\left(  A\bigtriangleup B\right)  \cap C &  =\left(  A\cap C\right)
 \bigtriangleup\left(  B\cap C\right)  \ \ \ \ \ \ \ \ \ \ \text{for any sets
 }A\text{, }B\text{ and }C\text{.}%
 \end{align*}
@@ -15678,7 +15692,8 @@ n,\ 1\leq j\leq n}\right) \\
 Notice how Exercise \ref{exe.vander-det.xi+yj} \textbf{(a)} generalizes
 Example \ref{exam.xi+yj} (for $n\geq3$).
 
-\subsection{Invertible elements in commutative rings, and fields}
+\subsection{\label{sect.invertible}Invertible elements in commutative rings,
+and fields}
 
 We shall now interrupt our study of determinants for a moment. Let us define
 the notion of inverses in $\mathbb{K}$. (Recall that $\mathbb{K}$ is a
@@ -41329,7 +41344,7 @@ respective rows of $A^{T}$.
 \end{lemma}
 
 \begin{proof}
-[Proof of Lemma \ref{lem.colsA=rowsATT}.] Fix $k\in\left\{  1,2,\ldots
+[Proof of Lemma \ref{lem.colsA=rowsATT}.]Fix $k\in\left\{  1,2,\ldots
 ,m\right\}  $.
 
 Write the $n\times m$-matrix $A$ in the form $A=\left(  a_{i,j}\right)
@@ -41341,22 +41356,22 @@ _{1\leq i\leq1,\ 1\leq j\leq n}.
 \]
 Thus,%
 \begin{align}
-& \left(  \text{the transpose of }\underbrace{\text{the }k\text{-th row of
+&  \left(  \text{the transpose of }\underbrace{\text{the }k\text{-th row of
 }A^{T}}_{=\left(  a_{j,k}\right)  _{1\leq i\leq1,\ 1\leq j\leq n}}\right)
 \nonumber\\
-& =\left(  \text{the transpose of }\left(  a_{j,k}\right)  _{1\leq
+&  =\left(  \text{the transpose of }\left(  a_{j,k}\right)  _{1\leq
 i\leq1,\ 1\leq j\leq n}\right)  =\left(  \left(  a_{j,k}\right)  _{1\leq
 i\leq1,\ 1\leq j\leq n}\right)  ^{T}\nonumber\\
-& =\left(  a_{i,k}\right)  _{1\leq i\leq n,\ 1\leq j\leq1}%
+&  =\left(  a_{i,k}\right)  _{1\leq i\leq n,\ 1\leq j\leq1}
 \label{pf.lem.colsA=rowsATT.1}%
 \end{align}
 (by the definition of $\left(  \left(  a_{j,k}\right)  _{1\leq i\leq1,\ 1\leq
 j\leq n}\right)  ^{T}$). On the other hand, we have $A=\left(  a_{i,j}\right)
 _{1\leq i\leq n,\ 1\leq j\leq m}$, and thus%
 \begin{align}
-\left(  \text{the }k\text{-th column of }A\right)    & =\left(  a_{i,k}%
+\left(  \text{the }k\text{-th column of }A\right)   &  =\left(  a_{i,k}%
 \right)  _{1\leq i\leq n,\ 1\leq j\leq1}\nonumber\\
-& =\left(  \text{the transpose of the }k\text{-th row of }A^{T}\right)
+&  =\left(  \text{the transpose of the }k\text{-th row of }A^{T}\right)
 \label{pf.lem.colsA=rowsATT.claim}%
 \end{align}
 (by (\ref{pf.lem.colsA=rowsATT.1})).
@@ -41411,7 +41426,7 @@ $A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$. Thus, every
 $\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}$ satisfies%
 \begin{equation}
 \left(  \text{the }\left(  i,j\right)  \text{-th entry of the matrix
-}A\right)  =a_{i,j}.\label{sol.ps4.6.aij}%
+}A\right)  =a_{i,j}. \label{sol.ps4.6.aij}%
 \end{equation}
 
 
@@ -41452,19 +41467,19 @@ n,\ 1\leq j\leq n}$. Thus, every $\left(  i,j\right)  \in\left\{
 1,2,\ldots,n\right\}  ^{2}$ satisfies%
 \begin{equation}
 \left(  \text{the }\left(  i,j\right)  \text{-th entry of the matrix
-}B\right)  =b_{i,j}.\label{sol.ps4.6.a.short.bij.pf.1}%
+}B\right)  =b_{i,j}. \label{sol.ps4.6.a.short.bij.pf.1}%
 \end{equation}
 Now, let $\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}$. Then,
 \begin{align*}
-b_{i,j} &  =\left(  \text{the }\left(  i,j\right)  \text{-th entry of the
+b_{i,j}  &  =\left(  \text{the }\left(  i,j\right)  \text{-th entry of the
 matrix }B\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
-(\ref{sol.ps4.6.a.short.bij.pf.1})}\right)  \\
+(\ref{sol.ps4.6.a.short.bij.pf.1})}\right) \\
 &  =\left(  \text{the }j\text{-th entry of }\underbrace{\text{the }i\text{-th
 row of }B}_{\substack{=\left(  \text{the }t_{u,v}\left(  i\right)  \text{-th
 row of }A\right)  \\\text{(by (\ref{sol.ps4.6.a.short.krow2}), applied to
-}k=i\text{)}}}\right)  \\
+}k=i\text{)}}}\right) \\
 &  =\left(  \text{the }j\text{-th entry of the }t_{u,v}\left(  i\right)
-\text{-th row of }A\right)  \\
+\text{-th row of }A\right) \\
 &  =a_{t_{u,v}\left(  i\right)  ,j}\ \ \ \ \ \ \ \ \ \ \left(  \text{by
 (\ref{sol.ps4.6.aij}), applied to }t_{u,v}\left(  i\right)  \text{ instead of
 }i\right)  ,
@@ -41490,7 +41505,7 @@ $u$-th row with the $v$-th row. In other words,%
 and%
 \begin{align}
 &  \left(  \left(  \text{the }k\text{-th row of }B\right)  =\left(  \text{the
-}k\text{-th row of }A\right)  \right.  \label{sol.ps4.6.a.krow}\\
+}k\text{-th row of }A\right)  \right. \label{sol.ps4.6.a.krow}\\
 &  \ \ \ \ \ \ \ \ \ \ \left.  \text{for all }k\in\left\{  1,2,\ldots
 ,n\right\}  \text{ satisfying }k\notin\left\{  u,v\right\}  \right)
 .\nonumber
@@ -41510,7 +41525,7 @@ $t_{u,v}\left(  u\right)  =v$, $t_{u,v}\left(  v\right)  =u$ and%
 \begin{equation}
 \left(  t_{u,v}\left(  k\right)  =k\ \ \ \ \ \ \ \ \ \ \text{for all }%
 k\in\left\{  1,2,\ldots,n\right\}  \text{ satisfying }k\notin\left\{
-u,v\right\}  \right)  .\label{sol.ps4.6.a.tuv}%
+u,v\right\}  \right)  . \label{sol.ps4.6.a.tuv}%
 \end{equation}
 
 
@@ -41536,7 +41551,7 @@ that $\left(  \text{the }t_{u,v}\left(  k\right)  \text{-th row of }A\right)
 \begin{align*}
 \left(  \text{the }\underbrace{k}_{=u}\text{-th row of }B\right)   &  =\left(
 \text{the }u\text{-th row of }B\right)  =\left(  \text{the }v\text{-th row of
-}A\right)  \\
+}A\right) \\
 &  =\left(  \text{the }t_{u,v}\left(  k\right)  \text{-th row of }A\right)  .
 \end{align*}
 Thus, (\ref{sol.ps4.6.a.krow2}) is proven in Case 1.
@@ -41548,7 +41563,7 @@ Let us now consider Case 2. In this case, we have $k=v$. Thus, $t_{u,v}\left(
 \begin{align*}
 \left(  \text{the }\underbrace{k}_{=v}\text{-th row of }B\right)   &  =\left(
 \text{the }v\text{-th row of }B\right)  =\left(  \text{the }u\text{-th row of
-}A\right)  \\
+}A\right) \\
 &  =\left(  \text{the }t_{u,v}\left(  k\right)  \text{-th row of }A\right)  .
 \end{align*}
 Thus, (\ref{sol.ps4.6.a.krow2}) is proven in Case 2.
@@ -41561,7 +41576,7 @@ hand,%
 \begin{align*}
 \left(  \text{the }k\text{-th row of }B\right)   &  =\left(  \text{the
 }k\text{-th row of }A\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
-(\ref{sol.ps4.6.a.krow})}\right)  \\
+(\ref{sol.ps4.6.a.krow})}\right) \\
 &  =\left(  \text{the }t_{u,v}\left(  k\right)  \text{-th row of }A\right)  .
 \end{align*}
 Thus, (\ref{sol.ps4.6.a.krow2}) is proven in Case 3.
@@ -41570,26 +41585,26 @@ We have now proven (\ref{sol.ps4.6.a.krow2}) in each of the three Cases 1, 2
 and 3. Hence, (\ref{sol.ps4.6.a.krow2}) always holds, qed.}. Therefore, every
 $\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}$ satisfies%
 \begin{equation}
-b_{i,j}=a_{t_{u,v}\left(  i\right)  ,j}\label{sol.ps4.6.a.bij}%
+b_{i,j}=a_{t_{u,v}\left(  i\right)  ,j} \label{sol.ps4.6.a.bij}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{sol.ps4.6.a.bij}):} We have $B=\left(
 b_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$. Thus, every $\left(
 i,j\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}$ satisfies%
 \begin{equation}
 \left(  \text{the }\left(  i,j\right)  \text{-th entry of the matrix
-}B\right)  =b_{i,j}.\label{sol.ps4.6.a.bij.pf.1}%
+}B\right)  =b_{i,j}. \label{sol.ps4.6.a.bij.pf.1}%
 \end{equation}
 Now, let $\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}$. Then,
 \begin{align*}
-b_{i,j} &  =\left(  \text{the }\left(  i,j\right)  \text{-th entry of the
+b_{i,j}  &  =\left(  \text{the }\left(  i,j\right)  \text{-th entry of the
 matrix }B\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
-(\ref{sol.ps4.6.a.bij.pf.1})}\right)  \\
+(\ref{sol.ps4.6.a.bij.pf.1})}\right) \\
 &  =\left(  \text{the }j\text{-th entry of }\underbrace{\text{the }i\text{-th
 row of }B}_{\substack{=\left(  \text{the }t_{u,v}\left(  i\right)  \text{-th
 row of }A\right)  \\\text{(by (\ref{sol.ps4.6.a.krow2}), applied to
-}k=i\text{)}}}\right)  \\
+}k=i\text{)}}}\right) \\
 &  =\left(  \text{the }j\text{-th entry of the }t_{u,v}\left(  i\right)
-\text{-th row of }A\right)  \\
+\text{-th row of }A\right) \\
 &  =a_{t_{u,v}\left(  i\right)  ,j}\ \ \ \ \ \ \ \ \ \ \left(  \text{by
 (\ref{sol.ps4.6.aij}), applied to }t_{u,v}\left(  i\right)  \text{ instead of
 }i\right)  ,
@@ -41627,7 +41642,7 @@ of zeroes. Consider this $u$.
 The $u$-th row of the matrix $A$ consists of zeroes. In other words,
 \begin{equation}
 a_{u,j}=0\ \ \ \ \ \ \ \ \ \ \text{for every }j\in\left\{  1,2,\ldots
-,n\right\}  .\label{sol.ps4.6.c.short.1}%
+,n\right\}  . \label{sol.ps4.6.c.short.1}%
 \end{equation}
 Now, every $\sigma\in S_{n}$ satisfies $\prod_{i=1}^{n}a_{i,\sigma\left(
 i\right)  }=0$\ \ \ \ \footnote{\textit{Proof.} Let $\sigma\in S_{n}$. Then,
@@ -41660,11 +41675,11 @@ a_{u,j}=0\ \ \ \ \ \ \ \ \ \ \text{for every }j\in\left\{  1,2,\ldots
 \]
 Hence,%
 \begin{align*}
-a_{u,j} &  =\left(  \text{the }\left(  u,j\right)  \text{-th entry of the
-matrix }A\right)  \\
+a_{u,j}  &  =\left(  \text{the }\left(  u,j\right)  \text{-th entry of the
+matrix }A\right) \\
 &  =\left(  \text{the }j\text{-th entry of }\underbrace{\text{the }u\text{-th
 row of }A}_{=\underbrace{\left(  0,0,\ldots,0\right)  }_{n\text{ zeroes}}%
-}\right)  \\
+}\right) \\
 &  =\left(  \text{the }j\text{-th entry of }\underbrace{\left(  0,0,\ldots
 ,0\right)  }_{n\text{ zeroes}}\right)  =0.
 \end{align*}
@@ -41707,7 +41722,7 @@ not that they are distinct as row vectors). In other words, there exist two
 distinct elements $u$ and $v$ of $\left\{  1,2,\ldots,n\right\}  $ such that%
 \begin{equation}
 \left(  \text{the }u\text{-th row of }A\right)  =\left(  \text{the }v\text{-th
-row of }A\right)  .\label{sol.ps4.6.e.1}%
+row of }A\right)  . \label{sol.ps4.6.e.1}%
 \end{equation}
 Consider these $u$ and $v$.
 
@@ -41728,7 +41743,8 @@ Define a map $\kappa:\left[  n\right]  \rightarrow\left[  n\right]  $ by
 i,\ \ \ \ \ \ \ \ \ \ \text{if }i\neq u;\\
 v,\ \ \ \ \ \ \ \ \ \ \text{if }i=u
 \end{array}
-\right.  \ \ \ \ \ \ \ \ \ \ \text{for every }i\in\left[  n\right]  \right)  .
+\right.  \ \ \ \ \ \ \ \ \ \ \text{for every }i\in\left[  n\right]  \right)
+.
 \]
 The definition of $\kappa$ shows that $\kappa\left(  v\right)  =v$ (since
 $v\neq u$) but also $\kappa\left(  u\right)  =v$. Thus, $\kappa\left(
@@ -41737,7 +41753,7 @@ map $\kappa$ is not injective, and thus not bijective; in particular, $\kappa$
 is not a permutation. Thus, $\kappa\notin S_{n}$. But every $i\in\left\{
 1,2,\ldots,n\right\}  $ and $j\in\left\{  1,2,\ldots,n\right\}  $ satisfy%
 \begin{equation}
-a_{\kappa\left(  i\right)  ,j}=a_{i,j}\label{sol.ps4.6.e.short.3}%
+a_{\kappa\left(  i\right)  ,j}=a_{i,j} \label{sol.ps4.6.e.short.3}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{sol.ps4.6.e.short.3}):} Let $i\in\left\{
 1,2,\ldots,n\right\}  $ and $j\in\left\{  1,2,\ldots,n\right\}  $. We must
@@ -41761,8 +41777,8 @@ v,\ \ \ \ \ \ \ \ \ \ \text{if }i=u
 Let us now consider Case 2. In this case, we have $i=u$. Thus, $\kappa\left(
 i\right)  =\kappa\left(  u\right)  =v$ (since $i=u$). Hence,%
 \begin{align*}
-a_{\kappa\left(  i\right)  ,j} &  =a_{v,j}=a_{u,j}\ \ \ \ \ \ \ \ \ \ \left(
-\text{by (\ref{sol.ps4.6.e.short.1a})}\right)  \\
+a_{\kappa\left(  i\right)  ,j}  &  =a_{v,j}=a_{u,j}\ \ \ \ \ \ \ \ \ \ \left(
+\text{by (\ref{sol.ps4.6.e.short.1a})}\right) \\
 &  =a_{i,j}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }u=i\right)  .
 \end{align*}
 Thus, (\ref{sol.ps4.6.e.short.3}) is proven in Case 2.
@@ -41785,7 +41801,8 @@ Define a map $\kappa:\left[  n\right]  \rightarrow\left[  n\right]  $ by
 i,\ \ \ \ \ \ \ \ \ \ \text{if }i\neq u;\\
 v,\ \ \ \ \ \ \ \ \ \ \text{if }i=u
 \end{array}
-\right.  \ \ \ \ \ \ \ \ \ \ \text{for every }i\in\left[  n\right]  \right)  .
+\right.  \ \ \ \ \ \ \ \ \ \ \text{for every }i\in\left[  n\right]  \right)
+.
 \]
 Then, $\kappa\notin S_{n}$\ \ \ \ \footnote{\textit{Proof.} Assume the
 contrary. Then, $\kappa\in S_{n}$. Thus, $\kappa$ is a permutation. Hence, the
@@ -41810,7 +41827,7 @@ v\right)  \neq\kappa\left(  u\right)  $. This contradiction proves that our
 assumption was wrong, qed.}. But every $i\in\left\{  1,2,\ldots,n\right\}  $
 and $j\in\left\{  1,2,\ldots,n\right\}  $ satisfy%
 \begin{equation}
-a_{\kappa\left(  i\right)  ,j}=a_{i,j}\label{sol.ps4.6.e.3}%
+a_{\kappa\left(  i\right)  ,j}=a_{i,j} \label{sol.ps4.6.e.3}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{sol.ps4.6.e.3}):} Let $i\in\left\{
 1,2,\ldots,n\right\}  $ and $j\in\left\{  1,2,\ldots,n\right\}  $. We must
@@ -41839,8 +41856,8 @@ v,\ \ \ \ \ \ \ \ \ \ \text{if }i=u
 \end{array}
 \right.  =v$ (since $i=u$). Hence,%
 \begin{align*}
-a_{\kappa\left(  i\right)  ,j} &  =a_{v,j}=\left(  \text{the }\left(
-v,j\right)  \text{-th entry of the matrix }A\right)  \\
+a_{\kappa\left(  i\right)  ,j}  &  =a_{v,j}=\left(  \text{the }\left(
+v,j\right)  \text{-th entry of the matrix }A\right) \\
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
@@ -41848,14 +41865,14 @@ v,j\right)  \text{-th entry of the matrix }A\right)  \\
 matrix }A\right)  =a_{v,j}\\
 \text{(by (\ref{sol.ps4.6.aij}), applied to }v\text{ instead of }i\text{)}%
 \end{array}
-\right)  \\
+\right) \\
 &  =\left(  \text{the }j\text{-th entry of }\underbrace{\text{the }v\text{-th
 row of }A}_{\substack{=\left(  \text{the }u\text{-th row of }A\right)
 \\\text{(by (\ref{sol.ps4.6.e.1}))}}}\right)  =\left(  \text{the }j\text{-th
-entry of the }u\text{-th row of }A\right)  \\
+entry of the }u\text{-th row of }A\right) \\
 &  =\left(  \text{the }\left(  u,j\right)  \text{-th entry of the matrix
 }A\right)  =a_{u,j}\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{sol.ps4.6.aij}),
-applied to }u\text{ instead of }i\right)  \\
+applied to }u\text{ instead of }i\right) \\
 &  =a_{i,j}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }u=i\right)  .
 \end{align*}
 Thus, (\ref{sol.ps4.6.e.3}) is proven in Case 2.
@@ -41884,12 +41901,12 @@ Hence, $\det A=\det\left(  A^{T}\right)  =0$. This solves Exercise
 multiplying the $k$-th row by $\lambda$. Thus,
 \begin{equation}
 \left(  \text{the }k\text{-th row of }B\right)  =\lambda\left(  \text{the
-}k\text{-th row of }A\right)  ,\label{sol.ps4.6.g.krow}%
+}k\text{-th row of }A\right)  , \label{sol.ps4.6.g.krow}%
 \end{equation}
 whereas%
 \begin{align}
 &  \left(  \left(  \text{the }u\text{-th row of }B\right)  =\left(  \text{the
-}u\text{-th row of }A\right)  \right.  \label{sol.ps4.6.g.urow}\\
+}u\text{-th row of }A\right)  \right. \label{sol.ps4.6.g.urow}\\
 &  \ \ \ \ \ \ \ \ \ \ \left.  \text{for all }u\in\left\{  1,2,\ldots
 ,n\right\}  \text{ satisfying }u\neq k\right)  .\nonumber
 \end{align}
@@ -41900,7 +41917,7 @@ n,\ 1\leq j\leq n}$. Thus, every $\left(  i,j\right)  \in\left\{
 1,2,\ldots,n\right\}  ^{2}$ satisfies%
 \begin{equation}
 \left(  \text{the }\left(  i,j\right)  \text{-th entry of the matrix
-}B\right)  =b_{i,j}.\label{sol.ps4.6.g.bij}%
+}B\right)  =b_{i,j}. \label{sol.ps4.6.g.bij}%
 \end{equation}
 
 
@@ -41908,7 +41925,7 @@ n,\ 1\leq j\leq n}$. Thus, every $\left(  i,j\right)  \in\left\{
 For every $u\in\left\{  1,2,\ldots,n\right\}  $ and $v\in\left\{
 1,2,\ldots,n\right\}  $ satisfying $u\neq k$, we have%
 \begin{equation}
-b_{u,v}=a_{u,v}\label{sol.ps4.6.g.short.buv}%
+b_{u,v}=a_{u,v} \label{sol.ps4.6.g.short.buv}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{sol.ps4.6.g.short.buv}):} Let $u\in\left\{
 1,2,\ldots,n\right\}  $ and $v\in\left\{  1,2,\ldots,n\right\}  $ be such that
@@ -41918,7 +41935,7 @@ former entry is $b_{u,v}$, while the latter entry equals $a_{u,v}$, this
 rewrites as $b_{u,v}=a_{u,v}$. This proves (\ref{sol.ps4.6.g.short.buv}).}.
 For every $v\in\left\{  1,2,\ldots,n\right\}  $, we have
 \begin{equation}
-b_{k,v}=\lambda a_{k,v}\label{sol.ps4.6.g.short.bkv}%
+b_{k,v}=\lambda a_{k,v} \label{sol.ps4.6.g.short.bkv}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{sol.ps4.6.g.short.bkv}):} Let $v\in\left\{
 1,2,\ldots,n\right\}  $. Then, (\ref{sol.ps4.6.g.krow}) shows that the $v$-th
@@ -41929,7 +41946,7 @@ equals $a_{k,v}$, this rewrites as $b_{k,v}=\lambda a_{k,v}$. This proves
 S_{n}$ satisfies%
 \begin{equation}
 \prod_{i=1}^{n}b_{i,\sigma\left(  i\right)  }=\lambda\prod_{i=1}%
-^{n}a_{i,\sigma\left(  i\right)  }\label{sol.ps4.6.g.short.sigma}%
+^{n}a_{i,\sigma\left(  i\right)  } \label{sol.ps4.6.g.short.sigma}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{sol.ps4.6.g.short.sigma}):} Let $\sigma\in
 S_{n}$. Taking the $k$-th factor out of the product $\prod_{i=1}%
@@ -41947,7 +41964,7 @@ Multiplying both sides of this equality by $\lambda$, we obtain%
 \]
 Compared with%
 \begin{align*}
-\prod_{i=1}^{n}b_{i,\sigma\left(  i\right)  } &  =\underbrace{b_{k,\sigma
+\prod_{i=1}^{n}b_{i,\sigma\left(  i\right)  }  &  =\underbrace{b_{k,\sigma
 \left(  k\right)  }}_{\substack{=\lambda a_{k,\sigma\left(  k\right)
 }\\\text{(by (\ref{sol.ps4.6.g.short.bkv}), applied to}\\v=\sigma\left(
 k\right)  \text{)}}}\cdot\prod_{\substack{i\in\left\{  1,2,\ldots,n\right\}
@@ -41955,7 +41972,7 @@ k\right)  \text{)}}}\cdot\prod_{\substack{i\in\left\{  1,2,\ldots,n\right\}
 _{\substack{=a_{i,\sigma\left(  i\right)  }\\\text{(by
 (\ref{sol.ps4.6.g.short.buv}), applied to}\\u=i\text{ and }v=\sigma\left(
 i\right)  \text{)}}}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }k\in\left\{
-1,2,\ldots,n\right\}  \right)  \\
+1,2,\ldots,n\right\}  \right) \\
 &  =\lambda a_{k,\sigma\left(  k\right)  }\cdot\prod_{\substack{i\in\left\{
 1,2,\ldots,n\right\}  ;\\i\neq k}}a_{i,\sigma\left(  i\right)  },
 \end{align*}
@@ -41965,11 +41982,11 @@ _{i=1}^{n}a_{i,\sigma\left(  i\right)  }$. This proves
 _{1\leq i\leq n,\ 1\leq j\leq n}$. Hence, (\ref{eq.det.eq.2}) (applied to $B$
 and $b_{i,j}$ instead of $A$ and $a_{i,j}$) yields%
 \begin{align*}
-\det B &  =\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\underbrace{\prod
-_{i=1}^{n}b_{i,\sigma\left(  i\right)  }}_{\substack{=\lambda\prod_{i=1}%
-^{n}a_{i,\sigma\left(  i\right)  }\\\text{(by (\ref{sol.ps4.6.g.short.sigma}%
-))}}}=\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\lambda\prod_{i=1}%
-^{n}a_{i,\sigma\left(  i\right)  }\\
+\det B  &  =\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}%
+\underbrace{\prod_{i=1}^{n}b_{i,\sigma\left(  i\right)  }}_{\substack{=\lambda
+\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }\\\text{(by
+(\ref{sol.ps4.6.g.short.sigma}))}}}=\sum_{\sigma\in S_{n}}\left(  -1\right)
+^{\sigma}\lambda\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }\\
 &  =\lambda\underbrace{\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}%
 \prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }}_{\substack{=\det A\\\text{(by
 (\ref{eq.det.eq.2}))}}}=\lambda\det A.
@@ -41981,7 +41998,7 @@ Thus, Exercise \ref{exe.ps4.6} \textbf{(g)} is solved.
 For every $u\in\left\{  1,2,\ldots,n\right\}  $ and $v\in\left\{
 1,2,\ldots,n\right\}  $ satisfying $u\neq k$, we have%
 \begin{equation}
-b_{u,v}=a_{u,v}\label{sol.ps4.6.g.buv}%
+b_{u,v}=a_{u,v} \label{sol.ps4.6.g.buv}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{sol.ps4.6.g.buv}):} Let $u\in\left\{
 1,2,\ldots,n\right\}  $ and $v\in\left\{  1,2,\ldots,n\right\}  $ be such that
@@ -41992,20 +42009,19 @@ $u\neq k$. Then, (\ref{sol.ps4.6.g.bij}) (applied to $i=u$ and $j=v$) yields%
 \]
 so that%
 \begin{align*}
-b_{u,v} &  =\left(  \text{the }\left(  u,v\right)  \text{-th entry of the
-matrix }B\right)  \\
+b_{u,v}  &  =\left(  \text{the }\left(  u,v\right)  \text{-th entry of the
+matrix }B\right) \\
 &  =\left(  \text{the }v\text{-th entry of }\underbrace{\text{the }u\text{-th
 row of }B}_{\substack{=\left(  \text{the }u\text{-th row of }A\right)
-\\\text{(by (\ref{sol.ps4.6.g.urow}))}}}\right)  \\
-&  =\left(  \text{the }v\text{-th entry of the }u\text{-th row of }A\right)
-\\
+\\\text{(by (\ref{sol.ps4.6.g.urow}))}}}\right) \\
+&  =\left(  \text{the }v\text{-th entry of the }u\text{-th row of }A\right) \\
 &  =\left(  \text{the }\left(  u,v\right)  \text{-th entry of the matrix
 }A\right)  =a_{u,v}%
 \end{align*}
 (by (\ref{sol.ps4.6.aij}), applied to $i=u$ and $j=v$), qed.}. For every
 $v\in\left\{  1,2,\ldots,n\right\}  $, we have
 \begin{equation}
-b_{k,v}=\lambda a_{k,v}\label{sol.ps4.6.g.bkv}%
+b_{k,v}=\lambda a_{k,v} \label{sol.ps4.6.g.bkv}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{sol.ps4.6.g.bkv}):} Let $v\in\left\{
 1,2,\ldots,n\right\}  $. Then, (\ref{sol.ps4.6.g.bij}) (applied to $i=k$ and
@@ -42016,13 +42032,13 @@ $j=v$) yields%
 \]
 so that%
 \begin{align*}
-b_{k,v} &  =\left(  \text{the }\left(  k,v\right)  \text{-th entry of the
-matrix }B\right)  \\
+b_{k,v}  &  =\left(  \text{the }\left(  k,v\right)  \text{-th entry of the
+matrix }B\right) \\
 &  =\left(  \text{the }v\text{-th entry of }\underbrace{\text{the }k\text{-th
 row of }B}_{=\lambda\left(  \text{the }k\text{-th row of }A\right)  }\right)
 \\
 &  =\left(  \text{the }v\text{-th entry of }\lambda\left(  \text{the
-}k\text{-th row of }A\right)  \right)  \\
+}k\text{-th row of }A\right)  \right) \\
 &  =\lambda\underbrace{\left(  \text{the }v\text{-th entry of the }k\text{-th
 row of }A\right)  }_{=\left(  \text{the }\left(  k,v\right)  \text{-th entry
 of the matrix }A\right)  }\\
@@ -42033,7 +42049,7 @@ of the matrix }A\right)  }_{\substack{=a_{k,v}\\\text{(by (\ref{sol.ps4.6.aij}%
 qed.}. Now, it is easy to see that every $\sigma\in S_{n}$ satisfies%
 \begin{equation}
 \prod_{i=1}^{n}b_{i,\sigma\left(  i\right)  }=\lambda\prod_{i=1}%
-^{n}a_{i,\sigma\left(  i\right)  }\label{sol.ps4.6.g.sigma}%
+^{n}a_{i,\sigma\left(  i\right)  } \label{sol.ps4.6.g.sigma}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{sol.ps4.6.g.sigma}):} Let $\sigma\in S_{n}$.
 We have%
@@ -42054,7 +42070,7 @@ equality by $\lambda$, we obtain%
 Compared with%
 \begin{align*}
 \underbrace{\prod_{i=1}^{n}}_{=\prod_{i\in\left\{  1,2,\ldots,n\right\}  }%
-}b_{i,\sigma\left(  i\right)  } &  =\prod_{i\in\left\{  1,2,\ldots,n\right\}
+}b_{i,\sigma\left(  i\right)  }  &  =\prod_{i\in\left\{  1,2,\ldots,n\right\}
 }b_{i,\sigma\left(  i\right)  }\\
 &  =\underbrace{b_{k,\sigma\left(  k\right)  }}_{\substack{=\lambda
 a_{k,\sigma\left(  k\right)  }\\\text{(by (\ref{sol.ps4.6.g.bkv}), applied
@@ -42063,7 +42079,7 @@ to}\\v=\sigma\left(  k\right)  \text{)}}}\cdot\prod_{\substack{i\in\left\{
 }_{\substack{=a_{i,\sigma\left(  i\right)  }\\\text{(by (\ref{sol.ps4.6.g.buv}%
 ), applied to}\\u=i\text{ and }v=\sigma\left(  i\right)  \text{)}%
 }}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }k\in\left\{  1,2,\ldots,n\right\}
-\right)  \\
+\right) \\
 &  =\lambda a_{k,\sigma\left(  k\right)  }\cdot\prod_{\substack{i\in\left\{
 1,2,\ldots,n\right\}  ;\\i\neq k}}a_{i,\sigma\left(  i\right)  },
 \end{align*}
@@ -42073,11 +42089,11 @@ _{i=1}^{n}a_{i,\sigma\left(  i\right)  }$. This proves
 _{1\leq i\leq n,\ 1\leq j\leq n}$. Hence, (\ref{eq.det.eq.2}) (applied to $B$
 and $b_{i,j}$ instead of $A$ and $a_{i,j}$) yields%
 \begin{align*}
-\det B &  =\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\underbrace{\prod
-_{i=1}^{n}b_{i,\sigma\left(  i\right)  }}_{\substack{=\lambda\prod_{i=1}%
-^{n}a_{i,\sigma\left(  i\right)  }\\\text{(by (\ref{sol.ps4.6.g.sigma}))}%
-}}=\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\lambda\prod_{i=1}%
-^{n}a_{i,\sigma\left(  i\right)  }\\
+\det B  &  =\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}%
+\underbrace{\prod_{i=1}^{n}b_{i,\sigma\left(  i\right)  }}_{\substack{=\lambda
+\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }\\\text{(by
+(\ref{sol.ps4.6.g.sigma}))}}}=\sum_{\sigma\in S_{n}}\left(  -1\right)
+^{\sigma}\lambda\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }\\
 &  =\lambda\underbrace{\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}%
 \prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }}_{\substack{=\det A\\\text{(by
 (\ref{eq.det.eq.2}))}}}=\lambda\det A.
@@ -42106,7 +42122,7 @@ B^{T}\right)  =\det B$. But recall that $\det\left(  B^{T}\right)
 corresponding rows of $A$ except (perhaps) the $k$-th row. In other words,%
 \begin{align}
 &  \left(  \left(  \text{the }u\text{-th row of }A^{\prime}\right)  =\left(
-\text{the }u\text{-th row of }A\right)  \right.  \label{sol.ps4.6.i.urowA'}\\
+\text{the }u\text{-th row of }A\right)  \right. \label{sol.ps4.6.i.urowA'}\\
 &  \ \ \ \ \ \ \ \ \ \ \left.  \text{for all }u\in\left\{  1,2,\ldots
 ,n\right\}  \text{ satisfying }u\neq k\right)  .\nonumber
 \end{align}
@@ -42122,7 +42138,7 @@ row of }A\right)  +\left(  \text{the }k\text{-th row of }A^{\prime}\right)
 and%
 \begin{align}
 &  \left(  \left(  \text{the }u\text{-th row of }B\right)  =\left(  \text{the
-}u\text{-th row of }A\right)  \right.  \label{sol.ps4.6.i.urowB}\\
+}u\text{-th row of }A\right)  \right. \label{sol.ps4.6.i.urowB}\\
 &  \ \ \ \ \ \ \ \ \ \ \left.  \text{for all }u\in\left\{  1,2,\ldots
 ,n\right\}  \text{ satisfying }u\neq k\right)  .\nonumber
 \end{align}
@@ -42135,23 +42151,23 @@ $A^{\prime}=\left(  a_{i,j}^{\prime}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}%
 $. Then, for every $u\in\left\{  1,2,\ldots,n\right\}  $ and $v\in\left\{
 1,2,\ldots,n\right\}  $ satisfying $u\neq k$, we have%
 \begin{equation}
-a_{u,v}^{\prime}=a_{u,v}\label{sol.ps4.6.i.short.a'auv}%
+a_{u,v}^{\prime}=a_{u,v} \label{sol.ps4.6.i.short.a'auv}%
 \end{equation}
 \footnote{This follows from (\ref{sol.ps4.6.i.urowA'}) in a similar way as
 (\ref{sol.ps4.6.g.short.buv}) follows from (\ref{sol.ps4.6.g.urow}).} and%
 \begin{equation}
-b_{u,v}=a_{u,v}\label{sol.ps4.6.i.short.bauv}%
+b_{u,v}=a_{u,v} \label{sol.ps4.6.i.short.bauv}%
 \end{equation}
 \footnote{This follows from (\ref{sol.ps4.6.i.urowB}) in a similar way as
 (\ref{sol.ps4.6.g.short.buv}) follows from (\ref{sol.ps4.6.g.urow}).}. Also,
 for every $v\in\left\{  1,2,\ldots,n\right\}  $, we have
 \begin{equation}
-b_{k,v}=a_{k,v}+a_{k,v}^{\prime}\label{sol.ps4.6.i.short.bkv}%
+b_{k,v}=a_{k,v}+a_{k,v}^{\prime} \label{sol.ps4.6.i.short.bkv}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{sol.ps4.6.i.short.bkv}):} Let $v\in\left\{
 1,2,\ldots,n\right\}  $. Then, (\ref{sol.ps4.6.i.krowB}) shows that
 \begin{align*}
-&  \left(  \text{the }v\text{-th entry of the }k\text{-th row of }B\right)  \\
+&  \left(  \text{the }v\text{-th entry of the }k\text{-th row of }B\right) \\
 &  =\left(  \text{the }v\text{-th entry of the }k\text{-th row of }A\right)
 +\left(  \text{the }v\text{-th entry of the }k\text{-th row of }A^{\prime
 }\right)  .
@@ -42162,8 +42178,8 @@ $b_{k,v}=a_{k,v}+a_{k,v}^{\prime}$. This proves (\ref{sol.ps4.6.i.short.bkv}%
 ).}. Now, it is easy to see that every $\sigma\in S_{n}$ satisfies%
 \begin{equation}
 \prod_{i=1}^{n}b_{i,\sigma\left(  i\right)  }=\prod_{i=1}^{n}a_{i,\sigma
-\left(  i\right)  }+\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }^{\prime
-}\label{sol.ps4.6.i.short.sigma}%
+\left(  i\right)  }+\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }^{\prime}
+\label{sol.ps4.6.i.short.sigma}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{sol.ps4.6.i.short.sigma}):} Let $\sigma\in
 S_{n}$. Pulling the $k$-th factor out of the product $\prod_{i=1}%
@@ -42171,7 +42187,7 @@ S_{n}$. Pulling the $k$-th factor out of the product $\prod_{i=1}%
 \begin{equation}
 \prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }=a_{k,\sigma\left(  k\right)
 }\cdot\prod_{\substack{i\in\left\{  1,2,\ldots,n\right\}  ;\\i\neq
-k}}a_{i,\sigma\left(  i\right)  }\label{sol.ps4.6.i.short.sigma.pf.1}%
+k}}a_{i,\sigma\left(  i\right)  } \label{sol.ps4.6.i.short.sigma.pf.1}%
 \end{equation}
 (since $k\in\left\{  1,2,\ldots,n\right\}  $). Similarly,%
 \begin{equation}
@@ -42182,11 +42198,11 @@ _{\substack{=a_{i,\sigma\left(  i\right)  }\\\text{(by
 (\ref{sol.ps4.6.i.short.a'auv}), applied to}\\u=i\text{ and }v=\sigma\left(
 i\right)  \text{)}}}=a_{k,\sigma\left(  k\right)  }^{\prime}\cdot
 \prod_{\substack{i\in\left\{  1,2,\ldots,n\right\}  ;\\i\neq k}}a_{i,\sigma
-\left(  i\right)  }\label{sol.ps4.6.i.short.sigma.pf.2}%
+\left(  i\right)  } \label{sol.ps4.6.i.short.sigma.pf.2}%
 \end{equation}
 and%
 \begin{align*}
-\prod_{i=1}^{n}b_{i,\sigma\left(  i\right)  } &  =\underbrace{b_{k,\sigma
+\prod_{i=1}^{n}b_{i,\sigma\left(  i\right)  }  &  =\underbrace{b_{k,\sigma
 \left(  k\right)  }}_{\substack{=a_{k,\sigma\left(  k\right)  }+a_{k,\sigma
 \left(  k\right)  }^{\prime}\\\text{(by (\ref{sol.ps4.6.i.short.bkv}), applied
 to}\\v=\sigma\left(  k\right)  \text{)}}}\cdot\prod_{\substack{i\in\left\{
@@ -42217,21 +42233,21 @@ n,\ 1\leq j\leq n}$. Thus, every $\left(  i,j\right)  \in\left\{
 1,2,\ldots,n\right\}  ^{2}$ satisfies%
 \begin{equation}
 \left(  \text{the }\left(  i,j\right)  \text{-th entry of the matrix
-}B\right)  =b_{i,j}.\label{sol.ps4.6.i.bij}%
+}B\right)  =b_{i,j}. \label{sol.ps4.6.i.bij}%
 \end{equation}
 We write the matrix $A^{\prime}$ in the form $A^{\prime}=\left(
 a_{i,j}^{\prime}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$. Thus, every
 $\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}$ satisfies%
 \begin{equation}
 \left(  \text{the }\left(  i,j\right)  \text{-th entry of the matrix
-}A^{\prime}\right)  =a_{i,j}^{\prime}.\label{sol.ps4.6.i.a'ij}%
+}A^{\prime}\right)  =a_{i,j}^{\prime}. \label{sol.ps4.6.i.a'ij}%
 \end{equation}
 
 
 For every $u\in\left\{  1,2,\ldots,n\right\}  $ and $v\in\left\{
 1,2,\ldots,n\right\}  $ satisfying $u\neq k$, we have%
 \begin{equation}
-b_{u,v}=a_{u,v}\label{sol.ps4.6.i.buv}%
+b_{u,v}=a_{u,v} \label{sol.ps4.6.i.buv}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{sol.ps4.6.i.buv}):} Let $u\in\left\{
 1,2,\ldots,n\right\}  $ and $v\in\left\{  1,2,\ldots,n\right\}  $ be such that
@@ -42242,19 +42258,18 @@ $u\neq k$. Then, (\ref{sol.ps4.6.i.bij}) (applied to $i=u$ and $j=v$) yields%
 \]
 so that%
 \begin{align*}
-b_{u,v} &  =\left(  \text{the }\left(  u,v\right)  \text{-th entry of the
-matrix }B\right)  \\
+b_{u,v}  &  =\left(  \text{the }\left(  u,v\right)  \text{-th entry of the
+matrix }B\right) \\
 &  =\left(  \text{the }v\text{-th entry of }\underbrace{\text{the }u\text{-th
 row of }B}_{\substack{=\left(  \text{the }u\text{-th row of }A\right)
-\\\text{(by (\ref{sol.ps4.6.i.urowB}))}}}\right)  \\
-&  =\left(  \text{the }v\text{-th entry of the }u\text{-th row of }A\right)
-\\
+\\\text{(by (\ref{sol.ps4.6.i.urowB}))}}}\right) \\
+&  =\left(  \text{the }v\text{-th entry of the }u\text{-th row of }A\right) \\
 &  =\left(  \text{the }\left(  u,v\right)  \text{-th entry of the matrix
 }A\right)  =a_{u,v}%
 \end{align*}
 (by (\ref{sol.ps4.6.aij}), applied to $i=u$ and $j=v$), qed.} and%
 \begin{equation}
-b_{u,v}=a_{u,v}^{\prime}\label{sol.ps4.6.i.a'uv}%
+b_{u,v}=a_{u,v}^{\prime} \label{sol.ps4.6.i.a'uv}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{sol.ps4.6.i.a'uv}):} Let $u\in\left\{
 1,2,\ldots,n\right\}  $ and $v\in\left\{  1,2,\ldots,n\right\}  $ be such that
@@ -42265,13 +42280,12 @@ $u\neq k$. Then, (\ref{sol.ps4.6.i.a'ij}) (applied to $i=u$ and $j=v$) yields%
 \]
 so that%
 \begin{align*}
-a_{u,v}^{\prime} &  =\left(  \text{the }\left(  u,v\right)  \text{-th entry of
-the matrix }A^{\prime}\right)  \\
+a_{u,v}^{\prime}  &  =\left(  \text{the }\left(  u,v\right)  \text{-th entry
+of the matrix }A^{\prime}\right) \\
 &  =\left(  \text{the }v\text{-th entry of }\underbrace{\text{the }u\text{-th
 row of }A^{\prime}}_{\substack{=\left(  \text{the }u\text{-th row of
-}A\right)  \\\text{(by (\ref{sol.ps4.6.i.urowA'}))}}}\right)  \\
-&  =\left(  \text{the }v\text{-th entry of the }u\text{-th row of }A\right)
-\\
+}A\right)  \\\text{(by (\ref{sol.ps4.6.i.urowA'}))}}}\right) \\
+&  =\left(  \text{the }v\text{-th entry of the }u\text{-th row of }A\right) \\
 &  =\left(  \text{the }\left(  u,v\right)  \text{-th entry of the matrix
 }A\right)  =a_{u,v}%
 \end{align*}
@@ -42279,7 +42293,7 @@ row of }A^{\prime}}_{\substack{=\left(  \text{the }u\text{-th row of
 (\ref{sol.ps4.6.i.buv}), this yields $b_{u,v}=a_{u,v}^{\prime}$, qed.}. For
 every $v\in\left\{  1,2,\ldots,n\right\}  $, we have
 \begin{equation}
-b_{k,v}=a_{k,v}+a_{k,v}^{\prime}\label{sol.ps4.6.i.bkv}%
+b_{k,v}=a_{k,v}+a_{k,v}^{\prime} \label{sol.ps4.6.i.bkv}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{sol.ps4.6.i.bkv}):} Let $v\in\left\{
 1,2,\ldots,n\right\}  $. Then, (\ref{sol.ps4.6.i.bij}) (applied to $i=k$ and
@@ -42290,14 +42304,14 @@ $j=v$) yields%
 \]
 so that%
 \begin{align*}
-b_{k,v} &  =\left(  \text{the }\left(  k,v\right)  \text{-th entry of the
-matrix }B\right)  \\
+b_{k,v}  &  =\left(  \text{the }\left(  k,v\right)  \text{-th entry of the
+matrix }B\right) \\
 &  =\left(  \text{the }v\text{-th entry of }\underbrace{\text{the }k\text{-th
 row of }B}_{=\left(  \text{the }k\text{-th row of }A\right)  +\left(
-\text{the }k\text{-th row of }A^{\prime}\right)  }\right)  \\
+\text{the }k\text{-th row of }A^{\prime}\right)  }\right) \\
 &  =\left(  \text{the }v\text{-th entry of }\left(  \text{the }k\text{-th row
 of }A\right)  +\left(  \text{the }k\text{-th row of }A^{\prime}\right)
-\right)  \\
+\right) \\
 &  =\underbrace{\left(  \text{the }v\text{-th entry of the }k\text{-th row of
 }A\right)  }_{=\left(  \text{the }\left(  k,v\right)  \text{-th entry of the
 matrix }A\right)  }\\
@@ -42315,8 +42329,8 @@ applied to }i=k\text{ and }j=v\text{)}}}+\underbrace{\left(  \text{the
 qed.}. Now, it is easy to see that every $\sigma\in S_{n}$ satisfies%
 \begin{equation}
 \prod_{i=1}^{n}b_{i,\sigma\left(  i\right)  }=\prod_{i=1}^{n}a_{i,\sigma
-\left(  i\right)  }+\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }^{\prime
-}\label{sol.ps4.6.i.sigma}%
+\left(  i\right)  }+\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }^{\prime}
+\label{sol.ps4.6.i.sigma}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{sol.ps4.6.i.sigma}):} Let $\sigma\in S_{n}$.
 We have%
@@ -42325,7 +42339,7 @@ We have%
 }a_{i,\sigma\left(  i\right)  }=\prod_{i\in\left\{  1,2,\ldots,n\right\}
 }a_{i,\sigma\left(  i\right)  }=a_{k,\sigma\left(  k\right)  }\cdot
 \prod_{\substack{i\in\left\{  1,2,\ldots,n\right\}  ;\\i\neq k}}a_{i,\sigma
-\left(  i\right)  }\label{sol.ps4.6.i.sigma.pf.1}%
+\left(  i\right)  } \label{sol.ps4.6.i.sigma.pf.1}%
 \end{equation}
 (since $k\in\left\{  1,2,\ldots,n\right\}  $) and%
 \begin{equation}
@@ -42333,20 +42347,20 @@ We have%
 }a_{i,\sigma\left(  i\right)  }^{\prime}=\prod_{i\in\left\{  1,2,\ldots
 ,n\right\}  }a_{i,\sigma\left(  i\right)  }^{\prime}=a_{k,\sigma\left(
 k\right)  }^{\prime}\cdot\prod_{\substack{i\in\left\{  1,2,\ldots,n\right\}
-;\\i\neq k}}a_{i,\sigma\left(  i\right)  }^{\prime}%
+;\\i\neq k}}a_{i,\sigma\left(  i\right)  }^{\prime}
 \label{sol.ps4.6.i.sigma.pf.2}%
 \end{equation}
 (since $k\in\left\{  1,2,\ldots,n\right\}  $). Furthermore,%
 \begin{align*}
 \underbrace{\prod_{i=1}^{n}}_{=\prod_{i\in\left\{  1,2,\ldots,n\right\}  }%
-}b_{i,\sigma\left(  i\right)  } &  =\prod_{i\in\left\{  1,2,\ldots,n\right\}
+}b_{i,\sigma\left(  i\right)  }  &  =\prod_{i\in\left\{  1,2,\ldots,n\right\}
 }b_{i,\sigma\left(  i\right)  }=\underbrace{b_{k,\sigma\left(  k\right)  }%
 }_{\substack{=a_{k,\sigma\left(  k\right)  }+a_{k,\sigma\left(  k\right)
 }^{\prime}\\\text{(by (\ref{sol.ps4.6.i.bkv}), applied to}\\v=\sigma\left(
 k\right)  \text{)}}}\cdot\prod_{\substack{i\in\left\{  1,2,\ldots,n\right\}
 ;\\i\neq k}}b_{i,\sigma\left(  i\right)  }\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }k\in\left\{  1,2,\ldots,n\right\}
-\right)  \\
+\right) \\
 &  =\left(  a_{k,\sigma\left(  k\right)  }+a_{k,\sigma\left(  k\right)
 }^{\prime}\right)  \cdot\prod_{\substack{i\in\left\{  1,2,\ldots,n\right\}
 ;\\i\neq k}}b_{i,\sigma\left(  i\right)  }\\
@@ -42378,7 +42392,7 @@ therefore, (\ref{eq.det.eq.2}) (applied to $A^{\prime}$ and $a_{i,j}^{\prime}$
 instead of $A$ and $a_{i,j}$) yields%
 \begin{equation}
 \det A^{\prime}=\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\prod
-_{i=1}^{n}a_{i,\sigma\left(  i\right)  }^{\prime}.\label{sol.ps4.6.i.detA'}%
+_{i=1}^{n}a_{i,\sigma\left(  i\right)  }^{\prime}. \label{sol.ps4.6.i.detA'}%
 \end{equation}
 
 
@@ -42387,12 +42401,13 @@ Now, recall that $B=\left(  b_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$.
 Hence, (\ref{eq.det.eq.2}) (applied to $B$ and $b_{i,j}$ instead of $A$ and
 $a_{i,j}$) yields%
 \begin{align*}
-\det B &  =\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\underbrace{\prod
-_{i=1}^{n}b_{i,\sigma\left(  i\right)  }}_{\substack{=\prod_{i=1}%
+\det B  &  =\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}%
+\underbrace{\prod_{i=1}^{n}b_{i,\sigma\left(  i\right)  }}_{\substack{=\prod
+_{i=1}^{n}a_{i,\sigma\left(  i\right)  }+\prod_{i=1}^{n}a_{i,\sigma\left(
+i\right)  }^{\prime}\\\text{(by (\ref{sol.ps4.6.i.short.sigma}))}}%
+}=\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\left(  \prod_{i=1}%
 ^{n}a_{i,\sigma\left(  i\right)  }+\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)
-}^{\prime}\\\text{(by (\ref{sol.ps4.6.i.short.sigma}))}}}=\sum_{\sigma\in
-S_{n}}\left(  -1\right)  ^{\sigma}\left(  \prod_{i=1}^{n}a_{i,\sigma\left(
-i\right)  }+\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }^{\prime}\right)  \\
+}^{\prime}\right) \\
 &  =\underbrace{\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\prod
 _{i=1}^{n}a_{i,\sigma\left(  i\right)  }}_{\substack{=\det A\\\text{(by
 (\ref{eq.det.eq.2}))}}}+\underbrace{\sum_{\sigma\in S_{n}}\left(  -1\right)
@@ -42408,12 +42423,12 @@ Now, recall that $B=\left(  b_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$.
 Hence, (\ref{eq.det.eq.2}) (applied to $B$ and $b_{i,j}$ instead of $A$ and
 $a_{i,j}$) yields%
 \begin{align*}
-\det B &  =\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\underbrace{\prod
-_{i=1}^{n}b_{i,\sigma\left(  i\right)  }}_{\substack{=\prod_{i=1}%
-^{n}a_{i,\sigma\left(  i\right)  }+\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)
-}^{\prime}\\\text{(by (\ref{sol.ps4.6.i.sigma}))}}}=\sum_{\sigma\in S_{n}%
-}\left(  -1\right)  ^{\sigma}\left(  \prod_{i=1}^{n}a_{i,\sigma\left(
-i\right)  }+\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }^{\prime}\right)  \\
+\det B  &  =\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}%
+\underbrace{\prod_{i=1}^{n}b_{i,\sigma\left(  i\right)  }}_{\substack{=\prod
+_{i=1}^{n}a_{i,\sigma\left(  i\right)  }+\prod_{i=1}^{n}a_{i,\sigma\left(
+i\right)  }^{\prime}\\\text{(by (\ref{sol.ps4.6.i.sigma}))}}}=\sum_{\sigma\in
+S_{n}}\left(  -1\right)  ^{\sigma}\left(  \prod_{i=1}^{n}a_{i,\sigma\left(
+i\right)  }+\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }^{\prime}\right) \\
 &  =\underbrace{\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\prod
 _{i=1}^{n}a_{i,\sigma\left(  i\right)  }}_{\substack{=\det A\\\text{(by
 (\ref{eq.det.eq.2}))}}}+\underbrace{\sum_{\sigma\in S_{n}}\left(  -1\right)
@@ -63127,7 +63142,6 @@ result, we obtain the following fact:%
 _{w}\left(  i\right)  \right)  \ \ \ \ \ \ \ \ \ \ \text{for every }%
 i\in\mathbb{Z}. \label{pf.prop.unrows.basics.k.1}%
 \end{equation}
-
 
 Now, $A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq m}$. Hence,
 Proposition \ref{prop.sol.unirows.d} \textbf{(a)} yields
