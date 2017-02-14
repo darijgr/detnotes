@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, December 29, 2016 12:18:43}
+%TCIDATA{LastRevised=Monday, February 13, 2017 18:46:15}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -8880,8 +8880,8 @@ addition\textquotedblright\ and \textquotedblleft
 multiplication\textquotedblright\ operations $+_{\mathbb{T}}$ and
 $\cdot_{\mathbb{T}}$ on $\mathbb{T}$ as follows:%
 \begin{align*}
-a+_{\mathbb{T}}b &  =\max\left\{  a,b\right\}  ;\\
-a\cdot_{\mathbb{T}}b &  =a+_{\mathbb{Z}}b.
+a+_{\mathbb{T}}b  &  =\max\left\{  a,b\right\}  ;\\
+a\cdot_{\mathbb{T}}b  &  =a+_{\mathbb{Z}}b.
 \end{align*}
 (Here, we set $\max\left\{  -\infty,n\right\}  =\max\left\{  n,-\infty
 \right\}  =n$ and $\left(  -\infty\right)  +_{\mathbb{Z}}n=n+_{\mathbb{Z}%
@@ -30682,7 +30682,9 @@ $k\in\left\{  1,2,\ldots,n-1\right\}  $ satisfies $\sigma\left(  k\right)
 $\ell\left(  \sigma\right)  =\ell\left(  \operatorname*{id}\right)  =0$, so
 that $0=\ell\left(  \sigma\right)  =L$. This contradicts the fact that $L$ is
 a positive integer. This contradiction shows that our assumption was wrong,
-qed.}. Let $j$ be such a $j$. From (\ref{eq.exe.2.5.a.1}) (applied to $k=j$),
+qed.}. Fix such a $k$, and denote it by $j$. Thus, $j$ is an element of
+$\left\{  1,2,\ldots,n-1\right\}  $ and satisfies $\sigma\left(  j\right)
+>\sigma\left(  j+1\right)  $. From (\ref{eq.exe.2.5.a.1}) (applied to $k=j$),
 we obtain%
 \begin{align*}
 \ell\left(  \sigma\circ s_{j}\right)   &  =\left\{
@@ -30693,9 +30695,9 @@ j\right)  <\sigma\left(  j+1\right)  ;\\
 \ell\left(  \sigma\right)  -1,\ \ \ \ \ \ \ \ \ \ \text{if }\sigma\left(
 j\right)  >\sigma\left(  j+1\right)
 \end{array}
-\right. \\
+\right.  \\
 &  =\underbrace{\ell\left(  \sigma\right)  }_{=L}-1\ \ \ \ \ \ \ \ \ \ \left(
-\text{since }\sigma\left(  j\right)  >\sigma\left(  j+1\right)  \right) \\
+\text{since }\sigma\left(  j\right)  >\sigma\left(  j+1\right)  \right)  \\
 &  =L-1.
 \end{align*}
 Hence, we can apply Exercise \ref{exe.ps2.2.5} \textbf{(e)} to $\sigma\circ
@@ -46820,12 +46822,11 @@ instead of $n$ and $k$) yields $h_{i-j}\left(  x_{1},x_{2},\ldots
 =h_{i-j}\left(  x_{1},x_{2},\ldots,x_{j}\right)  =0$. Qed.}. Hence, Exercise
 \ref{exe.ps4.3} (applied to $L$ instead of $A$) yields
 \begin{align*}
-\det\left(  U^{T}\right)   &  =a_{1,1}a_{2,2}\cdots a_{n,n}=\prod_{i=1}%
-^{n}\underbrace{a_{i,i}}_{\substack{=h_{i-i}\left(  x_{1},x_{2},\ldots
-,x_{i}\right)  \\\text{(by the definition of }a_{i,i}\text{)}}}=\prod
-_{i=1}^{n}\underbrace{h_{i-i}\left(  x_{1},x_{2},\ldots,x_{i}\right)
-}_{\substack{=h_{0}\left(  x_{1},x_{2},\ldots,x_{i}\right)  \\\text{(since
-}i-i=0\text{)}}}\\
+\det L  &  =a_{1,1}a_{2,2}\cdots a_{n,n}=\prod_{i=1}^{n}\underbrace{a_{i,i}%
+}_{\substack{=h_{i-i}\left(  x_{1},x_{2},\ldots,x_{i}\right)  \\\text{(by the
+definition of }a_{i,i}\text{)}}}=\prod_{i=1}^{n}\underbrace{h_{i-i}\left(
+x_{1},x_{2},\ldots,x_{i}\right)  }_{\substack{=h_{0}\left(  x_{1},x_{2}%
+,\ldots,x_{i}\right)  \\\text{(since }i-i=0\text{)}}}\\
 &  =\prod_{i=1}^{n}\underbrace{h_{0}\left(  x_{1},x_{2},\ldots,x_{i}\right)
 }_{\substack{=1\\\text{(by Lemma \ref{lem.vandermonde.factoring.h.0}
 \textbf{(b)}}\\\text{(applied to }i\text{ instead of }n\text{))}}}=\prod
@@ -51648,10 +51649,10 @@ in the product,}\\
 _{\substack{=-a_{i,\sigma\left(  i\right)  }\\\text{(by Lemma
 \ref{lem.sol.altern.STAS.3} \textbf{(b)}}\\\text{(applied to }\left(
 \sigma\left(  i\right)  ,i\right)  \text{ instead of }\left(  i,j\right)
-\text{))}}}=\prod_{i=1}^{n}\left(  -a_{i,\sigma\left(  i\right)  }\right)
-=\underbrace{\left(  -1\right)  ^{n}}_{\substack{=-1\\\text{(since }n\text{ is
-odd)}}}\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }\\
-&  =-\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }.
+\text{))}}}=\prod_{i=1}^{n}\left(  -a_{i,\sigma\left(  i\right)  }\right) \\
+&  =\underbrace{\left(  -1\right)  ^{n}}_{\substack{=-1\\\text{(since }n\text{
+is odd)}}}\prod_{i=1}^{n}a_{i,\sigma\left(  i\right)  }=-\prod_{i=1}%
+^{n}a_{i,\sigma\left(  i\right)  }.
 \end{align*}
 This proves Lemma \ref{lem.sol.altern.det.sigma-1}.
 \end{proof}
@@ -63143,6 +63144,7 @@ result, we obtain the following fact:%
 _{w}\left(  i\right)  \right)  \ \ \ \ \ \ \ \ \ \ \text{for every }%
 i\in\mathbb{Z}. \label{pf.prop.unrows.basics.k.1}%
 \end{equation}
+
 
 Now, $A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq m}$. Hence,
 Proposition \ref{prop.sol.unirows.d} \textbf{(a)} yields
@@ -75019,8 +75021,8 @@ Journal of Combinatorics Vol 11(2) A5 (2006), also available as
 \href{http://arxiv.org/abs/math.CO/0602357}{arXiv:math.CO/0602357}.
 
 \bibitem[LeLeMe16]{LeLeMe16}Eric Lehman, F. Thomson Leighton, Albert R. Meyer,
-\textit{Mathematics for Computer Science}, revised Friday 3rd February
-2017, \newline\url{https://courses.csail.mit.edu/6.042/spring17/mcs.pdf} .
+\textit{Mathematics for Computer Science}, revised Friday 3rd February 2017,
+\newline\url{https://courses.csail.mit.edu/6.042/spring17/mcs.pdf} .
 
 \bibitem[Loehr11]{Loehr-BC}%
 \href{http://www.math.vt.edu/people/nloehr/bijbook.html}{Nicholas A. Loehr,
