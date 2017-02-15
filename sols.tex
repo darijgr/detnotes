@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Tuesday, February 14, 2017 23:36:49}
+%TCIDATA{LastRevised=Wednesday, February 15, 2017 01:03:35}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -25240,6 +25240,60 @@ $\operatorname*{Tr}A$.
 
 Here are a few more additional exercises, with no importance to the rest of
 the text (and mostly no solutions given).\Needspace{8cm}
+
+\begin{addexercise}
+\label{exeadd.noncomm.polarization}For every $n\in\mathbb{N}$, let $\left[
+n\right]  $ denote the set $\left\{  1,2,\ldots,n\right\}  $.
+
+Let $\mathbb{L}$ be a noncommutative ring. (Keep in mind that our definition
+of a \textquotedblleft noncommutative ring\textquotedblright\ includes all
+commutative rings.)
+
+Let $n\in\mathbb{N}$. The summation sign $\sum_{I\subseteq\left[  n\right]  }$
+shall mean $\sum_{I\in\mathcal{P}\left(  \left[  n\right]  \right)  }$, where
+$\mathcal{P}\left(  \left[  n\right]  \right)  $ denotes the powerset of
+$\left[  n\right]  $.
+
+Let $v_{1},v_{2},\ldots,v_{n}$ be $n$ elements of $\mathbb{L}$.
+
+\textbf{(a)} Prove that%
+\[
+\sum_{I\subseteq\left[  n\right]  }\left(  -1\right)  ^{n-\left\vert
+I\right\vert }\left(  \sum_{i\in I}v_{i}\right)  ^{m}=\sum
+_{\substack{f:\left[  m\right]  \rightarrow\left[  n\right]  ;\\f\text{ is
+surjective}}}v_{f\left(  1\right)  }v_{f\left(  2\right)  }\cdots v_{f\left(
+m\right)  }%
+\]
+for each $m\in\mathbb{N}$.
+
+\textbf{(b)} Prove that%
+\[
+\sum_{I\subseteq\left[  n\right]  }\left(  -1\right)  ^{n-\left\vert
+I\right\vert }\left(  \sum_{i\in I}v_{i}\right)  ^{m}=0
+\]
+for each $m\in\left\{  0,1,\ldots,n-1\right\}  $.
+
+\textbf{(c)} Prove that%
+\[
+\sum_{I\subseteq\left[  n\right]  }\left(  -1\right)  ^{n-\left\vert
+I\right\vert }\left(  \sum_{i\in I}v_{i}\right)  ^{n}=\sum_{\sigma\in S_{n}%
+}v_{\sigma\left(  1\right)  }v_{\sigma\left(  2\right)  }\cdots v_{\sigma
+\left(  n\right)  }.
+\]
+
+
+\textbf{(d)} Now, assume that $\mathbb{L}$ is a \textbf{commutative} ring.
+Prove that%
+\[
+\sum_{I\subseteq\left[  n\right]  }\left(  -1\right)  ^{n-\left\vert
+I\right\vert }\left(  \sum_{i\in I}v_{i}\right)  ^{n}=n!\cdot v_{1}v_{2}\cdots
+v_{n}.
+\]
+
+
+[\textbf{Hint:} First, generalize Lemma \ref{lem.prodrule2} to the case of a
+noncommutative ring $\mathbb{K}$.]
+\end{addexercise}
 
 \begin{addexercise}
 \label{exeadd.det.anotherpattern}\textbf{(a)} Compute the determinant of the
@@ -71034,6 +71088,1365 @@ This proves (\ref{eq.cor.det(A+X).2}). The proof of Corollary
 [Solution to Exercise \ref{exe.det(A+B).diag}.]We have proven Lemma
 \ref{lem.diag.minors}, Corollary \ref{cor.det(A+D)} and Corollary
 \ref{cor.det(A+X)}. Exercise \ref{exe.det(A+B).diag} is thus solved.
+\end{proof}
+
+\subsection{\label{sect.sol.exeadd.noncomm.polarization}Solution to Additional
+exercise \ref{exeadd.noncomm.polarization}}
+
+Let us first prepare some auxiliary results and notations. Throughout Section
+\ref{sect.sol.exeadd.noncomm.polarization}, we shall be using the following conventions:
+
+\begin{itemize}
+\item For every $n\in\mathbb{N}$, let $\left[  n\right]  $ denote the set
+$\left\{  1,2,\ldots,n\right\}  $.
+
+\item For every $n\in\mathbb{N}$, the sign $\sum_{I\subseteq\left[  n\right]
+}$ shall mean $\sum_{I\in\mathcal{P}\left(  \left[  n\right]  \right)  }$,
+where $\mathcal{P}\left(  \left[  n\right]  \right)  $ denotes the powerset of
+$\left[  n\right]  $.
+
+\item If $\mathcal{A}$ is any logical statement, then $\left[  \mathcal{A}%
+\right]  $ will mean the integer $%
+\begin{cases}
+1, & \text{if }\mathcal{A}\text{ is true};\\
+0, & \text{if }\mathcal{A}\text{ is false}%
+\end{cases}
+$. For example, $\left[  1+1=2\right]  =1$ (since $1+1=2$ is true), whereas
+$\left[  1+1=1\right]  =0$ (since $1+1=1$ is false). (This notation is known
+as \href{https://en.wikipedia.org/wiki/Iverson_bracket}{the \textit{Iverson
+bracket}}.)
+
+\item If $a_{p},a_{p+1},\ldots,a_{q}$ are some elements of a noncommutative
+ring $\mathbb{L}$ (with $p$ and $q$ being integers satisfying $p\leq q+1$),
+then $\prod_{i=p}^{q}a_{i}$ is defined to be the product $a_{p}a_{p+1}\cdots
+a_{q}\in\mathbb{L}$\ \ \ \ \footnote{Of course, in order for this definition
+to be fully rigorous, we need to specify how the product $a_{p}a_{p+1}\cdots
+a_{q}$ is defined. There are two possible definitions for this product; both
+of them proceed by recursion on $q-p$ (with the recursion base being the case
+when $q-p=-1$).
+\par
+\begin{itemize}
+\item The first definition sets $a_{p}a_{p+1}\cdots a_{q}$ to be $1$ (the
+unity of $\mathbb{L}$) when $q-p=-1$ (this is the case of an empty product),
+and sets $a_{p}a_{p+1}\cdots a_{q}$ to be $\left(  a_{p}a_{p+1}\cdots
+a_{q-1}\right)  a_{q}$ when $q-p\geq0$.
+\par
+\item The second definition sets $a_{p}a_{p+1}\cdots a_{q}$ to be $1$ (the
+unity of $\mathbb{L}$) when $q-p=-1$ (this is the case of an empty product),
+and sets $a_{p}a_{p+1}\cdots a_{q}$ to be $a_{p}\left(  a_{p+1}a_{p+2}\cdots
+a_{q}\right)  $ when $q-p\geq0$.
+\end{itemize}
+\par
+Fortunately, the two definitions define exactly the same notion of product;
+this is not hard to prove (it follows from a fact called \textquotedblleft
+general associativity\textquotedblright), but it is not entirely obvious.}.
+This definition of $\prod_{i=p}^{q}a_{i}$ extends the classical definition of
+$\prod_{i=p}^{q}a_{i}$ in the case when $a_{p},a_{p+1},\ldots,a_{q}$ are
+elements of a commutative ring.
+
+(Notice that we have thus defined products of the form $\prod_{i=p}^{q}a_{i}$
+only. In contrast, products of the form $\prod_{i\in I}a_{i}$ for an arbitrary
+finite set $I$ are \textbf{not} defined in a noncommutative ring, because it
+is not clear in what order their factors are to be multiplied.)
+\end{itemize}
+
+A few elementary remarks about noncommutative rings will be useful:
+
+\begin{itemize}
+\item If $p$ and $q$ are integers satisfying $p\leq q$, and if $a_{p}%
+,a_{p+1},\ldots,a_{q}$ are some elements of a noncommutative ring $\mathbb{L}%
+$, then%
+\[
+\prod_{i=p}^{q}a_{i}=\left(  \prod_{i=p}^{q-1}a_{i}\right)  a_{q}.
+\]
+In other words, we can always split off the factor for $i=q$ from a product of
+the form $\prod_{i=p}^{q}a_{i}$ as long as we have $p\leq q$.
+
+\item When $\mathbb{L}$ is a noncommutative ring, the following two properties
+of the $\sum$ sign hold\footnote{These are analogues of the \textquotedblleft
+Factoring out\textquotedblright\ property that we have seen in Section
+\ref{sect.sums-repetitorium}.}:
+
+\begin{itemize}
+\item \underline{\textbf{Factoring out on the left:}} Let $S$ be a finite set.
+For every $s\in S$, let $a_{s}$ be an element of $\mathbb{L}$. Also, let
+$\lambda$ be an element of $\mathbb{L}$. Then,%
+\begin{equation}
+\sum_{s\in S}\lambda a_{s}=\lambda\sum_{s\in S}a_{s}.
+\label{eq.noncomm.sum.linear2}%
+\end{equation}
+
+
+\item \underline{\textbf{Factoring out on the right:}} Let $S$ be a finite
+set. For every $s\in S$, let $a_{s}$ be an element of $\mathbb{L}$. Also, let
+$\lambda$ be an element of $\mathbb{L}$. Then,%
+\begin{equation}
+\sum_{s\in S}a_{s}\lambda=\left(  \sum_{s\in S}a_{s}\right)  \lambda.
+\label{eq.noncomm.sum.linear2r}%
+\end{equation}
+
+\end{itemize}
+\end{itemize}
+
+Next, we state a generalization of Lemma \ref{lem.prodrule2} to the case of a
+noncommutative ring $\mathbb{K}$:
+
+\begin{lemma}
+\label{lem.noncomm.prodrule2}Let $\mathbb{K}$ be a noncommutative ring.
+
+Let $n\in\mathbb{N}$ and $m\in\mathbb{N}$. For every $i\in\left[  n\right]  $,
+let $p_{i,1},p_{i,2},\ldots,p_{i,m}$ be $m$ elements of $\mathbb{K}$. Then,%
+\[
+\prod_{i=1}^{n}\sum_{k=1}^{m}p_{i,k}=\sum_{\kappa:\left[  n\right]
+\rightarrow\left[  m\right]  }\prod_{i=1}^{n}p_{i,\kappa\left(  i\right)  }.
+\]
+
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.noncomm.prodrule2}.]The proof of Lemma
+\ref{lem.prodrule2} given above (which includes the proof of Lemma
+\ref{lem.prodrule} in the solution to Exercise \ref{exe.prodrule}) can be
+reused as a proof of Lemma \ref{lem.noncomm.prodrule2}, provided that we
+replace our proof of Lemma \ref{lem.prodrule.S.n=2} (which made use of the
+commutativity of $\mathbb{K}$) by the following alternative proof (which does
+not require $\mathbb{K}$ to be commutative):
+
+\begin{proof}
+[Second proof of Lemma \ref{lem.prodrule.S.n=2}.]The equality
+(\ref{eq.sum.fubini}) remains valid if $\mathbb{A}$ is replaced by
+$\mathbb{K}$ throughout it. It is in this variant that it will be used in the
+following proof.
+
+For every $\lambda\in\mathbb{K}$, we have%
+\begin{align}
+\sum_{y\in Y}\lambda r_{y}  &  =\sum_{s\in Y}\lambda r_{s}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{here, we renamed the summation index
+}y\text{ as }s\right) \nonumber\\
+&  =\lambda\sum_{s\in Y}r_{s}\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{by (\ref{eq.noncomm.sum.linear2}) (applied to }Y\text{, }r_{s}\text{ and
+}\mathbb{K}\\
+\text{instead of }S\text{, }a_{s}\text{ and }\mathbb{L}\text{)}%
+\end{array}
+\right) \nonumber\\
+&  =\lambda\sum_{y\in Y}r_{y}\ \ \ \ \ \ \ \ \ \ \left(  \text{here, we
+renamed the summation index }s\text{ as }y\right)  .
+\label{pf.lem.noncomm.prodrule.S.n=2.1}%
+\end{align}
+For every $\lambda\in\mathbb{K}$, we have%
+\begin{align}
+\sum_{x\in X}q_{x}\lambda &  =\sum_{s\in X}q_{s}\lambda
+\ \ \ \ \ \ \ \ \ \ \left(  \text{here, we renamed the summation index
+}x\text{ as }s\right) \nonumber\\
+&  =\left(  \sum_{s\in X}q_{s}\right)  \lambda\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{by (\ref{eq.noncomm.sum.linear2r}) (applied to }X\text{, }q_{s}\text{
+and }\mathbb{K}\\
+\text{instead of }S\text{, }a_{s}\text{ and }\mathbb{L}\text{)}%
+\end{array}
+\right) \nonumber\\
+&  =\left(  \sum_{x\in X}q_{x}\right)  \lambda\ \ \ \ \ \ \ \ \ \ \left(
+\text{here, we renamed the summation index }s\text{ as }x\right)  .
+\label{pf.lem.noncomm.prodrule.S.n=2.2}%
+\end{align}
+
+
+From (\ref{eq.sum.fubini}) (applied to $\mathbb{K}$ and $q_{x}r_{y}$ instead
+of $\mathbb{A}$ and $a_{\left(  x,y\right)  }$), we obtain%
+\[
+\sum_{x\in X}\sum_{y\in Y}q_{x}r_{y}=\sum_{\left(  x,y\right)  \in X\times
+Y}q_{x}r_{y}=\sum_{y\in Y}\sum_{x\in X}q_{x}r_{y}.
+\]
+Hence,%
+\begin{align*}
+\sum_{\left(  x,y\right)  \in X\times Y}q_{x}r_{y}  &  =\sum_{x\in
+X}\underbrace{\sum_{y\in Y}q_{x}r_{y}}_{\substack{=q_{x}\sum_{y\in Y}%
+r_{y}\\\text{(by (\ref{pf.lem.noncomm.prodrule.S.n=2.1}) (applied to }%
+\lambda=q_{x}\text{))}}}=\sum_{x\in X}q_{x}\sum_{y\in Y}r_{y}\\
+&  =\left(  \sum_{x\in X}q_{x}\right)  \left(  \sum_{y\in Y}r_{y}\right)
+\end{align*}
+(by (\ref{pf.lem.noncomm.prodrule.S.n=2.2}) (applied to $\lambda=\sum_{y\in
+Y}r_{y}$)). This proves Lemma \ref{lem.prodrule.S.n=2}.
+\end{proof}
+
+Thus, Lemma \ref{lem.noncomm.prodrule2} is proven.
+\end{proof}
+
+Now, let us prove three further lemmas:
+
+\begin{lemma}
+\label{lem.sol.exeadd.noncomm.polarization.1}Let $\mathbb{L}$ be a
+noncommutative ring. Let $n\in\mathbb{N}$. Let $v_{1},v_{2},\ldots,v_{n}$ be
+$n$ elements of $\mathbb{L}$. Let $I$ be a subset of $\left[  n\right]  $.
+Then,%
+\[
+\left(  \sum_{i\in I}v_{i}\right)  ^{m}=\sum_{\substack{f:\left[  m\right]
+\rightarrow\left[  n\right]  ;\\f\left(  \left[  m\right]  \right)  \subseteq
+I}}v_{f\left(  1\right)  }v_{f\left(  2\right)  }\cdots v_{f\left(  m\right)
+}.
+\]
+
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exeadd.noncomm.polarization.1}.]First, observe
+that%
+\begin{align}
+&  \sum_{k=1}^{n}\left[  k\in I\right]  v_{k}\nonumber\\
+&  =\underbrace{\sum_{i=1}^{n}}_{\substack{=\sum_{i\in\left\{  1,2,\ldots
+,n\right\}  }=\sum_{i\in\left[  n\right]  }\\\text{(since }\left\{
+1,2,\ldots,n\right\}  =\left[  n\right]  \text{)}}}\left[  i\in I\right]
+v_{i}\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have renamed the}\\
+\text{summation index }i\text{ as }k
+\end{array}
+\right) \nonumber\\
+&  =\sum_{i\in\left[  n\right]  }\left[  i\in I\right]  v_{i}\nonumber\\
+&  =\underbrace{\sum_{\substack{i\in\left[  n\right]  ;\\i\in I}%
+}}_{\substack{=\sum_{i\in I}\\\text{(since }I\subseteq\left[  n\right]
+\text{)}}}\underbrace{\left[  i\in I\right]  }_{\substack{=1\\\text{(since
+}i\in I\text{ is true)}}}v_{i}+\sum_{\substack{i\in\left[  n\right]
+;\\i\notin I}}\underbrace{\left[  i\in I\right]  }_{\substack{=0\\\text{(since
+}i\in I\text{ is false}\\\text{(because }i\notin I\text{))}}}v_{i}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since each }i\in\left[  n\right]  \text{
+satisfies either }i\in I\text{ or }i\notin I\text{ (but not both)}\right)
+\nonumber\\
+&  =\sum_{i\in I}1v_{i}+\underbrace{\sum_{\substack{i\in\left[  n\right]
+;\\i\notin I}}0v_{i}}_{=0}=\sum_{i\in I}1v_{i}=\sum_{i\in I}v_{i}.
+\label{pf.lem.sol.exeadd.noncomm.polarization.1.2}%
+\end{align}
+
+
+But $p^{m}=\prod_{i=1}^{m}p$ for each $p\in\mathbb{L}$. Applying this to
+$p=\sum_{i\in I}v_{i}$, we find%
+\begin{align*}
+\left(  \sum_{i\in I}v_{i}\right)  ^{m}  &  =\prod_{i=1}^{m}\underbrace{\sum
+_{i\in I}v_{i}}_{\substack{=\sum_{k=1}^{n}\left[  k\in I\right]
+v_{k}\\\text{(by (\ref{pf.lem.sol.exeadd.noncomm.polarization.1.2}))}}%
+}=\prod_{i=1}^{m}\sum_{k=1}^{n}\left[  k\in I\right]  v_{k}\\
+&  =\sum_{\kappa:\left[  m\right]  \rightarrow\left[  n\right]  }\prod
+_{i=1}^{m}\left(  \left[  \kappa\left(  i\right)  \in I\right]  v_{\kappa
+\left(  i\right)  }\right)
+\end{align*}
+(by Lemma \ref{lem.noncomm.prodrule2} (applied to $\mathbb{L}$, $m$, $n$ and
+$\left[  k\in I\right]  v_{k}$ instead of $\mathbb{K}$, $n$, $m$ and $p_{i,k}%
+$)). Hence,%
+\begin{align}
+\left(  \sum_{i\in I}v_{i}\right)  ^{m}  &  =\sum_{\kappa:\left[  m\right]
+\rightarrow\left[  n\right]  }\prod_{i=1}^{m}\left(  \left[  \kappa\left(
+i\right)  \in I\right]  v_{\kappa\left(  i\right)  }\right) \nonumber\\
+&  =\sum_{f:\left[  m\right]  \rightarrow\left[  n\right]  }\prod_{i=1}%
+^{m}\left(  \left[  f\left(  i\right)  \in I\right]  v_{f\left(  i\right)
+}\right)  \label{pf.lem.sol.exeadd.noncomm.polarization.1.4}%
+\end{align}
+(here, we have renamed the summation index $\kappa$ as $f$).
+
+Now, fix any map $f:\left[  m\right]  \rightarrow\left[  n\right]  $. Then,%
+\begin{align}
+&  \prod_{i=1}^{m}\left(  \left[  f\left(  i\right)  \in I\right]  v_{f\left(
+i\right)  }\right) \nonumber\\
+&  =\left(  \left[  f\left(  1\right)  \in I\right]  v_{f\left(  1\right)
+}\right)  \left(  \left[  f\left(  2\right)  \in I\right]  v_{f\left(
+2\right)  }\right)  \cdots\left(  \left[  f\left(  m\right)  \in I\right]
+v_{f\left(  m\right)  }\right)  .
+\label{pf.lem.sol.exeadd.noncomm.polarization.1.6}%
+\end{align}
+The factors $\left[  f\left(  1\right)  \in I\right]  ,\left[  f\left(
+2\right)  \in I\right]  ,\ldots,\left[  f\left(  m\right)  \in I\right]  $ on
+the right hand side of this equality are integers, and therefore can be freely
+moved within the product (even though $\mathbb{L}$ is not necessarily
+commutative). In particular, we can move them to the front of the product.
+Thus, we find%
+\begin{align*}
+&  \left(  \left[  f\left(  1\right)  \in I\right]  v_{f\left(  1\right)
+}\right)  \left(  \left[  f\left(  2\right)  \in I\right]  v_{f\left(
+2\right)  }\right)  \cdots\left(  \left[  f\left(  m\right)  \in I\right]
+v_{f\left(  m\right)  }\right) \\
+&  =\underbrace{\left(  \left[  f\left(  1\right)  \in I\right]  \left[
+f\left(  2\right)  \in I\right]  \cdots\left[  f\left(  m\right)  \in
+I\right]  \right)  }_{=\prod_{i=1}^{m}\left[  f\left(  i\right)  \in I\right]
+}\left(  v_{f\left(  1\right)  }v_{f\left(  2\right)  }\cdots v_{f\left(
+m\right)  }\right) \\
+&  =\left(  \prod_{i=1}^{m}\left[  f\left(  i\right)  \in I\right]  \right)
+\left(  v_{f\left(  1\right)  }v_{f\left(  2\right)  }\cdots v_{f\left(
+m\right)  }\right)  .
+\end{align*}
+Hence, (\ref{pf.lem.sol.exeadd.noncomm.polarization.1.6}) rewrites as%
+\begin{equation}
+\prod_{i=1}^{m}\left(  \left[  f\left(  i\right)  \in I\right]  v_{f\left(
+i\right)  }\right)  =\left(  \prod_{i=1}^{m}\left[  f\left(  i\right)  \in
+I\right]  \right)  \left(  v_{f\left(  1\right)  }v_{f\left(  2\right)
+}\cdots v_{f\left(  m\right)  }\right)  .
+\label{pf.lem.sol.exeadd.noncomm.polarization.1.6b}%
+\end{equation}
+
+
+\begin{vershort}
+But
+\begin{equation}
+\prod_{i=1}^{m}\left[  f\left(  i\right)  \in I\right]  =\left[  f\left(
+\left[  m\right]  \right)  \subseteq I\right]
+\label{pf.lem.sol.exeadd.noncomm.polarization.1.short.7}%
+\end{equation}
+\footnote{\textit{Proof of
+(\ref{pf.lem.sol.exeadd.noncomm.polarization.1.short.7}):} We are in one of
+the following two cases:
+\par
+\textit{Case 1:} We have $f\left(  \left[  m\right]  \right)  \subseteq I$.
+\par
+\textit{Case 2:} We don't have $f\left(  \left[  m\right]  \right)  \subseteq
+I$.
+\par
+Let us first consider Case 1. In this case, we have $f\left(  \left[
+m\right]  \right)  \subseteq I$. Thus, $\left[  f\left(  \left[  m\right]
+\right)  \subseteq I\right]  =1$. But each $i\in\left\{  1,2,\ldots,m\right\}
+$ satisfies $\left[  f\left(  i\right)  \in I\right]  =1$ (since $f\left(
+\underbrace{i}_{\in\left[  m\right]  }\right)  \in f\left(  \left[  m\right]
+\right)  \subseteq I$). Hence, $\prod_{i=1}^{m}\underbrace{\left[  f\left(
+i\right)  \in I\right]  }_{=1}=\prod_{i=1}^{m}1=1$. Comparing this with
+$\left[  f\left(  \left[  m\right]  \right)  \subseteq I\right]  =1$, we
+obtain $\prod_{i=1}^{m}\left[  f\left(  i\right)  \in I\right]  =\left[
+f\left(  \left[  m\right]  \right)  \subseteq I\right]  $. Hence,
+(\ref{pf.lem.sol.exeadd.noncomm.polarization.1.short.7}) is proven in Case 1.
+\par
+Let us now consider Case 2. In this case, we don't have $f\left(  \left[
+m\right]  \right)  \subseteq I$. In other words, not every $p\in\left[
+m\right]  $ satisfies $f\left(  p\right)  \in I$. Thus, there exists some
+$p\in\left[  m\right]  $ such that $f\left(  p\right)  \notin I$. Consider
+this $p$. We have $\left[  f\left(  p\right)  \in I\right]  =0$ (since
+$f\left(  p\right)  \notin I$). Thus, at least one factor of the product
+$\prod_{i=1}^{m}\left[  f\left(  i\right)  \in I\right]  $ equals $0$ (namely,
+the factor for $i=p$ is $\left[  f\left(  p\right)  \in I\right]  =0$).
+Consequently, the whole product $\prod_{i=1}^{m}\left[  f\left(  i\right)  \in
+I\right]  $ equals $0$ (because if at least one factor of a product equals
+$0$, then the whole product equals $0$). In other words, $\prod_{i=1}%
+^{m}\left[  f\left(  i\right)  \in I\right]  =0$. Comparing this with $\left[
+f\left(  \left[  m\right]  \right)  \subseteq I\right]  =0$ (which holds
+because we don't have $f\left(  \left[  m\right]  \right)  \subseteq I$), we
+obtain $\prod_{i=1}^{m}\left[  f\left(  i\right)  \in I\right]  =\left[
+f\left(  \left[  m\right]  \right)  \subseteq I\right]  $. Hence,
+(\ref{pf.lem.sol.exeadd.noncomm.polarization.1.short.7}) is proven in Case 2.
+\par
+We have now proven (\ref{pf.lem.sol.exeadd.noncomm.polarization.1.short.7}) in
+both Cases 1 and 2. This completes the proof of
+(\ref{pf.lem.sol.exeadd.noncomm.polarization.1.short.7}).}. Thus,
+(\ref{pf.lem.sol.exeadd.noncomm.polarization.1.6b}) becomes%
+\begin{align}
+\prod_{i=1}^{m}\left(  \left[  f\left(  i\right)  \in I\right]  v_{f\left(
+i\right)  }\right)   &  =\underbrace{\left(  \prod_{i=1}^{m}\left[  f\left(
+i\right)  \in I\right]  \right)  }_{\substack{=\left[  f\left(  \left[
+m\right]  \right)  \subseteq I\right]  \\\text{(by
+(\ref{pf.lem.sol.exeadd.noncomm.polarization.1.short.7}))}}}\left(
+v_{f\left(  1\right)  }v_{f\left(  2\right)  }\cdots v_{f\left(  m\right)
+}\right) \nonumber\\
+&  =\left[  f\left(  \left[  m\right]  \right)  \subseteq I\right]  \left(
+v_{f\left(  1\right)  }v_{f\left(  2\right)  }\cdots v_{f\left(  m\right)
+}\right)  . \label{pf.lem.sol.exeadd.noncomm.polarization.1.short.8}%
+\end{align}
+
+\end{vershort}
+
+\begin{verlong}
+But
+\begin{equation}
+\prod_{i=1}^{m}\left[  f\left(  i\right)  \in I\right]  =\left[  f\left(
+\left[  m\right]  \right)  \subseteq I\right]
+\label{pf.lem.sol.exeadd.noncomm.polarization.1.7}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.sol.exeadd.noncomm.polarization.1.7}%
+):} We are in one of the following two cases:
+\par
+\textit{Case 1:} We have $f\left(  \left[  m\right]  \right)  \subseteq I$.
+\par
+\textit{Case 2:} We don't have $f\left(  \left[  m\right]  \right)  \subseteq
+I$.
+\par
+Let us first consider Case 1. In this case, we have $f\left(  \left[
+m\right]  \right)  \subseteq I$. Thus, $\left[  f\left(  \left[  m\right]
+\right)  \subseteq I\right]  =1$. But each $i\in\left\{  1,2,\ldots,m\right\}
+$ satisfies $\left[  f\left(  i\right)  \in I\right]  =1$ (since $f\left(
+\underbrace{i}_{\in\left\{  1,2,\ldots,m\right\}  =\left[  m\right]  }\right)
+\in f\left(  \left[  m\right]  \right)  \subseteq I$). Hence, $\prod_{i=1}%
+^{m}\underbrace{\left[  f\left(  i\right)  \in I\right]  }_{=1}=\prod
+_{i=1}^{m}1=1$. Comparing this with $\left[  f\left(  \left[  m\right]
+\right)  \subseteq I\right]  =1$, we obtain $\prod_{i=1}^{m}\left[  f\left(
+i\right)  \in I\right]  =\left[  f\left(  \left[  m\right]  \right)  \subseteq
+I\right]  $. Hence, (\ref{pf.lem.sol.exeadd.noncomm.polarization.1.7}) is
+proven in Case 1.
+\par
+Let us now consider Case 2. In this case, we don't have $f\left(  \left[
+m\right]  \right)  \subseteq I$. Thus, $\left[  f\left(  \left[  m\right]
+\right)  \subseteq I\right]  =0$. But we have $f\left(  \left[  m\right]
+\right)  \not \subseteq I$ (since we don't have $f\left(  \left[  m\right]
+\right)  \subseteq I$). Hence, there exists some $q\in f\left(  \left[
+m\right]  \right)  $ such that $q\notin I$. Consider this $q$. We have $q\in
+f\left(  \left[  m\right]  \right)  $. Thus, there exists some $p\in\left[
+m\right]  $ such that $q=f\left(  p\right)  $. Consider this $p$. We have
+$f\left(  p\right)  =q\notin I$. In other words, we don't have $f\left(
+p\right)  \in I$. Hence, $\left[  f\left(  p\right)  \in I\right]  =0$. But we
+have $p\in\left[  m\right]  =\left\{  1,2,\ldots,m\right\}  $. Hence, $\left[
+f\left(  p\right)  \in I\right]  $ is a factor of the product $\prod_{i=1}%
+^{m}\left[  f\left(  i\right)  \in I\right]  $ (namely, the factor for $i=p$).
+Moreover, this factor equals $0$ (since $\left[  f\left(  p\right)  \in
+I\right]  =0$). Hence, at least one factor of the product $\prod_{i=1}%
+^{m}\left[  f\left(  i\right)  \in I\right]  $ equals $0$ (namely, the factor
+$\left[  f\left(  p\right)  \in I\right]  $). Consequently, the whole product
+$\prod_{i=1}^{m}\left[  f\left(  i\right)  \in I\right]  $ equals $0$ (because
+if at least one factor of a product equals $0$, then the whole product equals
+$0$). In other words, $\prod_{i=1}^{m}\left[  f\left(  i\right)  \in I\right]
+=0$. Comparing this with $\left[  f\left(  \left[  m\right]  \right)
+\subseteq I\right]  =0$, we obtain $\prod_{i=1}^{m}\left[  f\left(  i\right)
+\in I\right]  =\left[  f\left(  \left[  m\right]  \right)  \subseteq I\right]
+$. Hence, (\ref{pf.lem.sol.exeadd.noncomm.polarization.1.7}) is proven in Case
+2.
+\par
+We have now proven (\ref{pf.lem.sol.exeadd.noncomm.polarization.1.7}) in both
+Cases 1 and 2. Since these are the only possible cases, we thus have always
+proven (\ref{pf.lem.sol.exeadd.noncomm.polarization.1.7}).}. Thus,
+(\ref{pf.lem.sol.exeadd.noncomm.polarization.1.6b}) becomes%
+\begin{align}
+\prod_{i=1}^{m}\left(  \left[  f\left(  i\right)  \in I\right]  v_{f\left(
+i\right)  }\right)   &  =\underbrace{\left(  \prod_{i=1}^{m}\left[  f\left(
+i\right)  \in I\right]  \right)  }_{\substack{=\left[  f\left(  \left[
+m\right]  \right)  \subseteq I\right]  \\\text{(by
+(\ref{pf.lem.sol.exeadd.noncomm.polarization.1.7}))}}}\left(  v_{f\left(
+1\right)  }v_{f\left(  2\right)  }\cdots v_{f\left(  m\right)  }\right)
+\nonumber\\
+&  =\left[  f\left(  \left[  m\right]  \right)  \subseteq I\right]  \left(
+v_{f\left(  1\right)  }v_{f\left(  2\right)  }\cdots v_{f\left(  m\right)
+}\right)  . \label{pf.lem.sol.exeadd.noncomm.polarization.1.8}%
+\end{align}
+
+\end{verlong}
+
+\begin{vershort}
+Now, forget that we fixed $f$. We thus have proven
+(\ref{pf.lem.sol.exeadd.noncomm.polarization.1.short.8}) for each map
+$f:\left[  m\right]  \rightarrow\left[  n\right]  $.
+\end{vershort}
+
+\begin{verlong}
+Now, forget that we fixed $f$. We thus have proven
+(\ref{pf.lem.sol.exeadd.noncomm.polarization.1.8}) for each map $f:\left[
+m\right]  \rightarrow\left[  n\right]  $.
+\end{verlong}
+
+\begin{vershort}
+Now, (\ref{pf.lem.sol.exeadd.noncomm.polarization.1.4}) becomes%
+\begin{align*}
+\left(  \sum_{i\in I}v_{i}\right)  ^{m}  &  =\sum_{f:\left[  m\right]
+\rightarrow\left[  n\right]  }\underbrace{\prod_{i=1}^{m}\left(  \left[
+f\left(  i\right)  \in I\right]  v_{f\left(  i\right)  }\right)
+}_{\substack{=\left[  f\left(  \left[  m\right]  \right)  \subseteq I\right]
+\left(  v_{f\left(  1\right)  }v_{f\left(  2\right)  }\cdots v_{f\left(
+m\right)  }\right)  \\\text{(by
+(\ref{pf.lem.sol.exeadd.noncomm.polarization.1.short.8}))}}}\\
+&  =\sum_{f:\left[  m\right]  \rightarrow\left[  n\right]  }\left[  f\left(
+\left[  m\right]  \right)  \subseteq I\right]  \left(  v_{f\left(  1\right)
+}v_{f\left(  2\right)  }\cdots v_{f\left(  m\right)  }\right) \\
+&  =\sum_{\substack{f:\left[  m\right]  \rightarrow\left[  n\right]
+;\\f\left(  \left[  m\right]  \right)  \subseteq I}}\underbrace{\left[
+f\left(  \left[  m\right]  \right)  \subseteq I\right]  }%
+_{\substack{=1\\\text{(since }f\left(  \left[  m\right]  \right)  \subseteq
+I\text{)}}}\left(  v_{f\left(  1\right)  }v_{f\left(  2\right)  }\cdots
+v_{f\left(  m\right)  }\right) \\
+&  \ \ \ \ \ \ \ \ \ \ +\sum_{\substack{f:\left[  m\right]  \rightarrow\left[
+n\right]  ;\\\text{not }f\left(  \left[  m\right]  \right)  \subseteq
+I}}\underbrace{\left[  f\left(  \left[  m\right]  \right)  \subseteq I\right]
+}_{\substack{=0\\\text{(since we don't have }f\left(  \left[  m\right]
+\right)  \subseteq I\text{)}}}\left(  v_{f\left(  1\right)  }v_{f\left(
+2\right)  }\cdots v_{f\left(  m\right)  }\right) \\
+&  =\sum_{\substack{f:\left[  m\right]  \rightarrow\left[  n\right]
+;\\f\left(  \left[  m\right]  \right)  \subseteq I}}v_{f\left(  1\right)
+}v_{f\left(  2\right)  }\cdots v_{f\left(  m\right)  }+\underbrace{\sum
+_{\substack{f:\left[  m\right]  \rightarrow\left[  n\right]  ;\\\text{not
+}f\left(  \left[  m\right]  \right)  \subseteq I}}0\left(  v_{f\left(
+1\right)  }v_{f\left(  2\right)  }\cdots v_{f\left(  m\right)  }\right)
+}_{=0}\\
+&  =\sum_{\substack{f:\left[  m\right]  \rightarrow\left[  n\right]
+;\\f\left(  \left[  m\right]  \right)  \subseteq I}}v_{f\left(  1\right)
+}v_{f\left(  2\right)  }\cdots v_{f\left(  m\right)  }.
+\end{align*}
+This proves Lemma \ref{lem.sol.exeadd.noncomm.polarization.1}.
+\end{vershort}
+
+\begin{verlong}
+Now, (\ref{pf.lem.sol.exeadd.noncomm.polarization.1.4}) becomes%
+\begin{align*}
+\left(  \sum_{i\in I}v_{i}\right)  ^{m}  &  =\sum_{f:\left[  m\right]
+\rightarrow\left[  n\right]  }\underbrace{\prod_{i=1}^{m}\left(  \left[
+f\left(  i\right)  \in I\right]  v_{f\left(  i\right)  }\right)
+}_{\substack{=\left[  f\left(  \left[  m\right]  \right)  \subseteq I\right]
+\left(  v_{f\left(  1\right)  }v_{f\left(  2\right)  }\cdots v_{f\left(
+m\right)  }\right)  \\\text{(by
+(\ref{pf.lem.sol.exeadd.noncomm.polarization.1.8}))}}}\\
+&  =\sum_{f:\left[  m\right]  \rightarrow\left[  n\right]  }\left[  f\left(
+\left[  m\right]  \right)  \subseteq I\right]  \left(  v_{f\left(  1\right)
+}v_{f\left(  2\right)  }\cdots v_{f\left(  m\right)  }\right) \\
+&  =\sum_{\substack{f:\left[  m\right]  \rightarrow\left[  n\right]
+;\\f\left(  \left[  m\right]  \right)  \subseteq I}}\underbrace{\left[
+f\left(  \left[  m\right]  \right)  \subseteq I\right]  }%
+_{\substack{=1\\\text{(since }f\left(  \left[  m\right]  \right)  \subseteq
+I\text{)}}}\left(  v_{f\left(  1\right)  }v_{f\left(  2\right)  }\cdots
+v_{f\left(  m\right)  }\right) \\
+&  \ \ \ \ \ \ \ \ \ \ +\sum_{\substack{f:\left[  m\right]  \rightarrow\left[
+n\right]  ;\\\text{not }f\left(  \left[  m\right]  \right)  \subseteq
+I}}\underbrace{\left[  f\left(  \left[  m\right]  \right)  \subseteq I\right]
+}_{\substack{=0\\\text{(since we don't have }f\left(  \left[  m\right]
+\right)  \subseteq I\text{)}}}\left(  v_{f\left(  1\right)  }v_{f\left(
+2\right)  }\cdots v_{f\left(  m\right)  }\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since each map }f:\left[  m\right]  \rightarrow\left[  n\right]  \text{
+satisfies either }f\left(  \left[  m\right]  \right)  \subseteq I\\
+\text{or }\left(  \text{not }f\left(  \left[  m\right]  \right)  \subseteq
+I\right)  \text{ (but not both)}%
+\end{array}
+\right) \\
+&  =\sum_{\substack{f:\left[  m\right]  \rightarrow\left[  n\right]
+;\\f\left(  \left[  m\right]  \right)  \subseteq I}}v_{f\left(  1\right)
+}v_{f\left(  2\right)  }\cdots v_{f\left(  m\right)  }+\underbrace{\sum
+_{\substack{f:\left[  m\right]  \rightarrow\left[  n\right]  ;\\\text{not
+}f\left(  \left[  m\right]  \right)  \subseteq I}}0\left(  v_{f\left(
+1\right)  }v_{f\left(  2\right)  }\cdots v_{f\left(  m\right)  }\right)
+}_{=0}\\
+&  =\sum_{\substack{f:\left[  m\right]  \rightarrow\left[  n\right]
+;\\f\left(  \left[  m\right]  \right)  \subseteq I}}v_{f\left(  1\right)
+}v_{f\left(  2\right)  }\cdots v_{f\left(  m\right)  }.
+\end{align*}
+This proves Lemma \ref{lem.sol.exeadd.noncomm.polarization.1}.
+\end{verlong}
+\end{proof}
+
+\begin{lemma}
+\label{lem.sol.exeadd.noncomm.polarization.2}Let $n\in\mathbb{N}$. Let $J$ be
+a subset of $\left[  n\right]  $. Then,%
+\[
+\sum_{\substack{I\subseteq\left[  n\right]  ;\\J\subseteq I}}\left(
+-1\right)  ^{n-\left\vert I\right\vert }=\left[  J=\left[  n\right]  \right]
+.
+\]
+
+\end{lemma}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exeadd.noncomm.polarization.2}.]Here is a proof
+that makes use of Exercise \ref{exe.prod(ai+bi)}. It is not the simplest
+possible proof, but it might be the shortest.\footnote{We are working in the
+commutative ring $\mathbb{Z}$ in this proof. Hence, product signs such as
+$\prod_{i\in I}$ and $\prod_{i\in\left[  n\right]  \setminus I}$ make sense.}
+
+We first make the following observations:
+
+\begin{itemize}
+\item If $I$ is a subset of $\left[  n\right]  $ satisfying $J\subseteq I$,
+then%
+\begin{equation}
+\prod_{i\in\left[  n\right]  \setminus I}\left[  i\notin J\right]  =1
+\label{pf.lem.sol.exeadd.noncomm.polarization.2.short.1}%
+\end{equation}
+\footnote{\textit{Proof of
+(\ref{pf.lem.sol.exeadd.noncomm.polarization.2.short.1}):} Let $I$ be a subset
+of $\left[  n\right]  $ satisfying $J\subseteq I$.
+\par
+From $J\subseteq I$, we obtain $\left[  n\right]  \setminus I\subseteq\left[
+n\right]  \setminus J$. Thus, each $i\in\left[  n\right]  \setminus I$
+satisfies $i\in\left[  n\right]  \setminus I\subseteq\left[  n\right]
+\setminus J$ and therefore $i\notin J$. Hence, each $i\in\left[  n\right]
+\setminus I$ satisfies $\left[  i\notin J\right]  =1$. Therefore, $\prod
+_{i\in\left[  n\right]  \setminus I}\underbrace{\left[  i\notin J\right]
+}_{=1}=\prod_{i\in\left[  n\right]  \setminus I}1=1$. This proves
+(\ref{pf.lem.sol.exeadd.noncomm.polarization.2.short.1}).}.
+
+\item If $I$ is a subset of $\left[  n\right]  $ that does \textbf{not}
+satisfy $J\subseteq I$, then
+\begin{equation}
+\prod_{i\in\left[  n\right]  \setminus I}\left[  i\notin J\right]  =0
+\label{pf.lem.sol.exeadd.noncomm.polarization.2.short.2}%
+\end{equation}
+\footnote{\textit{Proof of
+(\ref{pf.lem.sol.exeadd.noncomm.polarization.2.short.2}):} Let $I$ be a subset
+of $\left[  n\right]  $ that does \textbf{not} satisfy $J\subseteq I$.
+\par
+We have $J\not \subseteq I$ (since we do not have $J\subseteq I$). Hence,
+there exists some $j\in J$ such that $j\notin I$. Consider this $j$. We have
+$\left[  j\notin J\right]  =0$ (since $j\in J$). Combining $j\in
+J\subseteq\left[  n\right]  $ with $j\notin I$, we obtain $j\in\left[
+n\right]  \setminus I$. Hence, at least one factor of the product $\prod
+_{i\in\left[  n\right]  \setminus I}\left[  i\notin J\right]  $ is $0$
+(namely, the factor for $i=j$ is $\left[  j\notin J\right]  =0$). Thus, the
+whole product $\prod_{i\in\left[  n\right]  \setminus I}\left[  i\notin
+J\right]  $ must be $0$ (because if a factor of a product is $0$, then the
+whole product must be $0$). This proves
+(\ref{pf.lem.sol.exeadd.noncomm.polarization.2.short.2}).}.
+\end{itemize}
+
+But Exercise \ref{exe.prod(ai+bi)} \textbf{(a)} (applied to $\mathbb{Z}$, $1$
+and $-\left[  i\notin J\right]  $ instead of $\mathbb{K}$, $a_{i}$ and $b_{i}%
+$) yields%
+\begin{align}
+&  \prod_{i=1}^{n}\left(  1+\left(  -\left[  i\notin J\right]  \right)
+\right) \nonumber\\
+&  =\sum_{I\subseteq\left[  n\right]  }\underbrace{\left(  \prod_{i\in
+I}1\right)  }_{=1}\underbrace{\left(  \prod_{i\in\left[  n\right]  \setminus
+I}\left(  -\left[  i\notin J\right]  \right)  \right)  }_{=\left(  -1\right)
+^{\left\vert \left[  n\right]  \setminus I\right\vert }\prod_{i\in\left[
+n\right]  \setminus I}\left[  i\notin J\right]  }\nonumber\\
+&  =\sum_{I\subseteq\left[  n\right]  }\left(  -1\right)  ^{\left\vert \left[
+n\right]  \setminus I\right\vert }\prod_{i\in\left[  n\right]  \setminus
+I}\left[  i\notin J\right] \nonumber\\
+&  =\sum_{\substack{I\subseteq\left[  n\right]  ;\\J\subseteq I}%
+}\underbrace{\left(  -1\right)  ^{\left\vert \left[  n\right]  \setminus
+I\right\vert }}_{\substack{=\left(  -1\right)  ^{n-\left\vert I\right\vert
+}\\\text{(since }\left\vert \left[  n\right]  \setminus I\right\vert
+=n-\left\vert I\right\vert \\\text{(since }I\subseteq\left[  n\right]
+\text{))}}}\underbrace{\prod_{i\in\left[  n\right]  \setminus I}\left[
+i\notin J\right]  }_{\substack{=1\\\text{(by
+(\ref{pf.lem.sol.exeadd.noncomm.polarization.2.short.1}))}}}+\sum
+_{\substack{I\subseteq\left[  n\right]  ;\\\text{not }J\subseteq I}}\left(
+-1\right)  ^{\left\vert \left[  n\right]  \setminus I\right\vert
+}\underbrace{\prod_{i\in\left[  n\right]  \setminus I}\left[  i\notin
+J\right]  }_{\substack{=0\\\text{(by
+(\ref{pf.lem.sol.exeadd.noncomm.polarization.2.short.2}))}}}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since each subset }I\text{ of }\left[  n\right]  \text{ satisfies either
+}J\subseteq I\text{ or }\left(  \text{not }J\subseteq I\right)  \text{,}\\
+\text{but not both}%
+\end{array}
+\right) \nonumber\\
+&  =\sum_{\substack{I\subseteq\left[  n\right]  ;\\J\subseteq I}}\left(
+-1\right)  ^{n-\left\vert I\right\vert }+\underbrace{\sum
+_{\substack{I\subseteq\left[  n\right]  ;\\\text{not }J\subseteq I}}\left(
+-1\right)  ^{\left\vert \left[  n\right]  \setminus I\right\vert }0}_{=0}%
+=\sum_{\substack{I\subseteq\left[  n\right]  ;\\J\subseteq I}}\left(
+-1\right)  ^{n-\left\vert I\right\vert }.
+\label{pf.lem.sol.exeadd.noncomm.polarization.2.short.8}%
+\end{align}
+
+
+On the other hand, it is easy to see that%
+\begin{equation}
+\prod_{i=1}^{n}\left(  1+\left(  -\left[  i\notin J\right]  \right)  \right)
+=\left[  J=\left[  n\right]  \right]
+\label{pf.lem.sol.exeadd.noncomm.polarization.2.short.9}%
+\end{equation}
+\footnote{\textit{Proof of
+(\ref{pf.lem.sol.exeadd.noncomm.polarization.2.short.9}):} We are in one of
+the following two cases:
+\par
+\textit{Case 1:} We have $J=\left[  n\right]  $.
+\par
+\textit{Case 2:} We don't have $J=\left[  n\right]  $.
+\par
+Let us first consider Case 1. In this case, we have $J=\left[  n\right]  $.
+Thus, $\left[  J=\left[  n\right]  \right]  =1$. But each $i\in\left\{
+1,2,\ldots,n\right\}  $ satisfies $i\in\left\{  1,2,\ldots,n\right\}  =\left[
+n\right]  =J$ and therefore $\left[  i\notin J\right]  =0$. Hence,%
+\[
+\prod_{i=1}^{n}\left(  1+\left(  -\underbrace{\left[  i\notin J\right]  }%
+_{=0}\right)  \right)  =\prod_{i=1}^{n}\underbrace{\left(  1+\left(
+-0\right)  \right)  }_{=1}=\prod_{i=1}^{n}1=1.
+\]
+Comparing this with $\left[  J=\left[  n\right]  \right]  =1$, we obtain
+$\prod_{i=1}^{n}\left(  1+\left(  -\left[  i\notin J\right]  \right)  \right)
+=\left[  J=\left[  n\right]  \right]  $. Hence,
+(\ref{pf.lem.sol.exeadd.noncomm.polarization.2.short.9}) is proven in Case 1.
+\par
+Let us now consider Case 2. In this case, we don't have $J=\left[  n\right]
+$. Hence, $J\neq\left[  n\right]  $. Thus, $J$ is a \textbf{proper} subset of
+$\left[  n\right]  $ (since $J\subseteq\left[  n\right]  $). Therefore, there
+exists some $j\in\left[  n\right]  $ such that $j\notin J$. Consider this $j$.
+We have $\left[  j\notin J\right]  =1$ (since $j\notin J$). But $j\in\left[
+n\right]  =\left\{  1,2,\ldots,n\right\}  $. Thus, at least one factor of the
+product $\prod_{i=1}^{n}\left(  1+\left(  -\left[  i\notin J\right]  \right)
+\right)  $ equals $0$ (namely, the factor for $i=j$ is $1+\left(
+-\underbrace{\left[  j\notin J\right]  }_{=1}\right)  =1+\left(  -1\right)
+=0$). Consequently, the whole product $\prod_{i=1}^{n}\left(  1+\left(
+-\left[  i\notin J\right]  \right)  \right)  $ equals $0$ (because if at least
+one factor of a product equals $0$, then the whole product equals $0$). In
+other words, $\prod_{i=1}^{n}\left(  1+\left(  -\left[  i\notin J\right]
+\right)  \right)  =0$. Comparing this with $\left[  J=\left[  n\right]
+\right]  =0$ (which holds because we don't have $J=\left[  n\right]  $), we
+obtain $\prod_{i=1}^{n}\left(  1+\left(  -\left[  i\notin J\right]  \right)
+\right)  =\left[  J=\left[  n\right]  \right]  $. Hence,
+(\ref{pf.lem.sol.exeadd.noncomm.polarization.2.short.9}) is proven in Case 2.
+\par
+We have now proven (\ref{pf.lem.sol.exeadd.noncomm.polarization.2.short.9}) in
+both Cases 1 and 2. Thus,
+(\ref{pf.lem.sol.exeadd.noncomm.polarization.2.short.9}) is proven.}.
+Comparing this with (\ref{pf.lem.sol.exeadd.noncomm.polarization.2.short.8}),
+we obtain%
+\[
+\sum_{\substack{I\subseteq\left[  n\right]  ;\\J\subseteq I}}\left(
+-1\right)  ^{n-\left\vert I\right\vert }=\left[  J=\left[  n\right]  \right]
+.
+\]
+This proves Lemma \ref{lem.sol.exeadd.noncomm.polarization.2}.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exeadd.noncomm.polarization.2}.]There are several
+ways to prove Lemma \ref{lem.sol.exeadd.noncomm.polarization.2} (in
+particular, there exist some very simple combinatorial proofs). Let us give
+one proof (which might not be the easiest one):\footnote{We are working in the
+commutative ring $\mathbb{Z}$ in this proof. Hence, product signs such as
+$\prod_{i\in I}$ and $\prod_{i\in\left[  n\right]  \setminus I}$ make sense.}
+
+We first make the following observations:
+
+\begin{itemize}
+\item If $I$ is a subset of $\left[  n\right]  $ satisfying $J\subseteq I$,
+then%
+\begin{equation}
+\prod_{i\in\left[  n\right]  \setminus I}\left[  i\notin J\right]  =1
+\label{pf.lem.sol.exeadd.noncomm.polarization.2.1}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.sol.exeadd.noncomm.polarization.2.1}%
+):} Let $I$ be a subset of $\left[  n\right]  $ satisfying $J\subseteq I$.
+\par
+From $J\subseteq I$, we obtain $\left[  n\right]  \setminus J\supseteq\left[
+n\right]  \setminus I$. In other words, $\left[  n\right]  \setminus
+I\subseteq\left[  n\right]  \setminus J$. Thus, each $i\in\left[  n\right]
+\setminus I$ satisfies $i\in\left[  n\right]  \setminus I\subseteq\left[
+n\right]  \setminus J$ and therefore $i\notin J$. Hence, each $i\in\left[
+n\right]  \setminus I$ satisfies $\left[  i\notin J\right]  =1$ (since
+$i\notin J$). Therefore, $\prod_{i\in\left[  n\right]  \setminus
+I}\underbrace{\left[  i\notin J\right]  }_{=1}=\prod_{i\in\left[  n\right]
+\setminus I}1=1$. This proves
+(\ref{pf.lem.sol.exeadd.noncomm.polarization.2.1}).}.
+
+\item If $I$ is a subset of $\left[  n\right]  $ that does \textbf{not}
+satisfy $J\subseteq I$, then
+\begin{equation}
+\prod_{i\in\left[  n\right]  \setminus I}\left[  i\notin J\right]  =0
+\label{pf.lem.sol.exeadd.noncomm.polarization.2.2}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.sol.exeadd.noncomm.polarization.2.2}%
+):} Let $I$ be a subset of $\left[  n\right]  $ that does \textbf{not} satisfy
+$J\subseteq I$.
+\par
+We have $J\not \subseteq I$ (since we do not have $J\subseteq I$). Hence,
+there exists some $j\in J$ such that $j\notin I$. Consider this $j$. We have
+$\left[  j\notin J\right]  =0$ (since $j\notin J$ is false (since $j\in J$)).
+Combining $j\in J\subseteq\left[  n\right]  $ with $j\notin I$, we obtain
+$j\in\left[  n\right]  \setminus I$. Hence, $\left[  j\notin J\right]  $ is a
+factor of the product $\prod_{i\in\left[  n\right]  \setminus I}\left[
+i\notin J\right]  $ (namely, the factor for $i=j$). This factor is $0$ (since
+$\left[  j\notin J\right]  =0$). Therefore, at least one factor of the product
+$\prod_{i\in\left[  n\right]  \setminus I}\left[  i\notin J\right]  $ is $0$
+(namely, the factor $\left[  j\notin J\right]  $). Thus, the whole product
+$\prod_{i\in\left[  n\right]  \setminus I}\left[  i\notin J\right]  $ must be
+$0$ (because if a factor of a product is $0$, then the whole product must be
+$0$). In other words, $\prod_{i\in\left[  n\right]  \setminus I}\left[
+i\notin J\right]  =0$. This proves
+(\ref{pf.lem.sol.exeadd.noncomm.polarization.2.2}).}.
+
+\item If $I$ is a subset of $\left[  n\right]  $, then%
+\begin{align*}
+\left\vert \left[  n\right]  \setminus I\right\vert  &
+=\underbrace{\left\vert \left[  n\right]  \right\vert }_{=n}-\left\vert
+I\right\vert \ \ \ \ \ \ \ \ \ \ \left(  \text{since }I\subseteq\left[
+n\right]  \right) \\
+&  =n-\left\vert I\right\vert
+\end{align*}
+and%
+\begin{align}
+\prod_{i\in\left[  n\right]  \setminus I}\left(  -\left[  i\notin J\right]
+\right)   &  =\underbrace{\left(  -1\right)  ^{\left\vert \left[  n\right]
+\setminus I\right\vert }}_{\substack{=\left(  -1\right)  ^{n-\left\vert
+I\right\vert }\\\text{(since }\left\vert \left[  n\right]  \setminus
+I\right\vert =n-\left\vert I\right\vert \text{)}}}\prod_{i\in\left[  n\right]
+\setminus I}\left[  i\notin J\right] \nonumber\\
+&  =\left(  -1\right)  ^{n-\left\vert I\right\vert }\prod_{i\in\left[
+n\right]  \setminus I}\left[  i\notin J\right]  .
+\label{pf.lem.sol.exeadd.noncomm.polarization.2.3}%
+\end{align}
+
+\end{itemize}
+
+But Exercise \ref{exe.prod(ai+bi)} \textbf{(a)} (applied to $\mathbb{Z}$, $1$
+and $-\left[  i\notin J\right]  $ instead of $\mathbb{K}$, $a_{i}$ and $b_{i}%
+$) yields%
+\begin{align}
+&  \prod_{i=1}^{n}\left(  1+\left(  -\left[  i\notin J\right]  \right)
+\right) \nonumber\\
+&  =\sum_{I\subseteq\left[  n\right]  }\underbrace{\left(  \prod_{i\in
+I}1\right)  }_{=1}\underbrace{\left(  \prod_{i\in\left[  n\right]  \setminus
+I}\left(  -\left[  i\notin J\right]  \right)  \right)  }_{\substack{=\left(
+-1\right)  ^{n-\left\vert I\right\vert }\prod_{i\in\left[  n\right]  \setminus
+I}\left[  i\notin J\right]  \\\text{(by
+(\ref{pf.lem.sol.exeadd.noncomm.polarization.2.3}))}}}\nonumber\\
+&  =\sum_{I\subseteq\left[  n\right]  }\left(  -1\right)  ^{n-\left\vert
+I\right\vert }\prod_{i\in\left[  n\right]  \setminus I}\left[  i\notin
+J\right] \nonumber\\
+&  =\sum_{\substack{I\subseteq\left[  n\right]  ;\\J\subseteq I}}\left(
+-1\right)  ^{n-\left\vert I\right\vert }\underbrace{\prod_{i\in\left[
+n\right]  \setminus I}\left[  i\notin J\right]  }_{\substack{=1\\\text{(by
+(\ref{pf.lem.sol.exeadd.noncomm.polarization.2.1}))}}}+\sum
+_{\substack{I\subseteq\left[  n\right]  ;\\\text{not }J\subseteq I}}\left(
+-1\right)  ^{n-\left\vert I\right\vert }\underbrace{\prod_{i\in\left[
+n\right]  \setminus I}\left[  i\notin J\right]  }_{\substack{=0\\\text{(by
+(\ref{pf.lem.sol.exeadd.noncomm.polarization.2.2}))}}}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since each subset }I\text{ of }\left[  n\right]  \text{ satisfies either
+}J\subseteq I\text{ or }\left(  \text{not }J\subseteq I\right)  \text{,}\\
+\text{but not both}%
+\end{array}
+\right) \nonumber\\
+&  =\sum_{\substack{I\subseteq\left[  n\right]  ;\\J\subseteq I}}\left(
+-1\right)  ^{n-\left\vert I\right\vert }1+\underbrace{\sum
+_{\substack{I\subseteq\left[  n\right]  ;\\\text{not }J\subseteq I}}\left(
+-1\right)  ^{n-\left\vert I\right\vert }0}_{=0}=\sum_{\substack{I\subseteq
+\left[  n\right]  ;\\J\subseteq I}}\left(  -1\right)  ^{n-\left\vert
+I\right\vert }1\nonumber\\
+&  =\sum_{\substack{I\subseteq\left[  n\right]  ;\\J\subseteq I}}\left(
+-1\right)  ^{n-\left\vert I\right\vert }.
+\label{pf.lem.sol.exeadd.noncomm.polarization.2.8}%
+\end{align}
+
+
+On the other hand, it is easy to see that%
+\begin{equation}
+\prod_{i=1}^{n}\left(  1+\left(  -\left[  i\notin J\right]  \right)  \right)
+=\left[  J=\left[  n\right]  \right]
+\label{pf.lem.sol.exeadd.noncomm.polarization.2.9}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.sol.exeadd.noncomm.polarization.2.9}%
+):} We are in one of the following two cases:
+\par
+\textit{Case 1:} We have $J=\left[  n\right]  $.
+\par
+\textit{Case 2:} We don't have $J=\left[  n\right]  $.
+\par
+Let us first consider Case 1. In this case, we have $J=\left[  n\right]  $.
+Thus, $\left[  J=\left[  n\right]  \right]  =1$. But each $i\in\left\{
+1,2,\ldots,n\right\}  $ satisfies $i\in\left\{  1,2,\ldots,n\right\}  =\left[
+n\right]  =J$ and therefore $\left[  i\notin J\right]  =0$ (since $i\notin J$
+is false (since we have $i\in J$)). Hence,%
+\[
+\prod_{i=1}^{n}\left(  1+\left(  -\underbrace{\left[  i\notin J\right]  }%
+_{=0}\right)  \right)  =\prod_{i=1}^{n}\underbrace{\left(  1+\left(
+-0\right)  \right)  }_{=1}=\prod_{i=1}^{n}1=1.
+\]
+Comparing this with $\left[  J=\left[  n\right]  \right]  =1$, we obtain
+$\prod_{i=1}^{n}\left(  1+\left(  -\left[  i\notin J\right]  \right)  \right)
+=\left[  J=\left[  n\right]  \right]  $. Hence,
+(\ref{pf.lem.sol.exeadd.noncomm.polarization.2.9}) is proven in Case 1.
+\par
+Let us now consider Case 2. In this case, we don't have $J=\left[  n\right]
+$. Hence, $J\neq\left[  n\right]  $. Thus, $J$ is a \textbf{proper} subset of
+$\left[  n\right]  $ (since $J\subseteq\left[  n\right]  $). Therefore, there
+exists some $j\in\left[  n\right]  $ such that $j\notin J$. Consider this $j$.
+We have $\left[  j\notin J\right]  =1$ (since $j\notin J$). But $j\in\left[
+n\right]  =\left\{  1,2,\ldots,n\right\}  $. Thus, $1+\left(  -\left[  j\notin
+J\right]  \right)  $ is a factor of the product $\prod_{i=1}^{n}\left(
+1+\left(  -\left[  i\notin J\right]  \right)  \right)  $ (namely, the factor
+for $i=j$). Moreover, this factor equals $0$ (since $1+\left(
+-\underbrace{\left[  j\notin J\right]  }_{=1}\right)  =1+\left(  -1\right)
+=0$). Hence, at least one factor of the product $\prod_{i=1}^{n}\left(
+1+\left(  -\left[  i\notin J\right]  \right)  \right)  $ equals $0$ (namely,
+the factor $1+\left(  -\left[  j\notin J\right]  \right)  $). Consequently,
+the whole product $\prod_{i=1}^{n}\left(  1+\left(  -\left[  i\notin J\right]
+\right)  \right)  $ equals $0$ (because if at least one factor of a product
+equals $0$, then the whole product equals $0$). In other words, $\prod
+_{i=1}^{n}\left(  1+\left(  -\left[  i\notin J\right]  \right)  \right)  =0$.
+Comparing this with $\left[  J=\left[  n\right]  \right]  =0$ (which holds
+because we don't have $J=\left[  n\right]  $), we obtain $\prod_{i=1}%
+^{n}\left(  1+\left(  -\left[  i\notin J\right]  \right)  \right)  =\left[
+J=\left[  n\right]  \right]  $. Hence,
+(\ref{pf.lem.sol.exeadd.noncomm.polarization.2.9}) is proven in Case 2.
+\par
+We have now proven (\ref{pf.lem.sol.exeadd.noncomm.polarization.2.9}) in both
+Cases 1 and 2. Since these are the only possible cases, we thus have always
+proven (\ref{pf.lem.sol.exeadd.noncomm.polarization.2.9}).}. Comparing this
+with (\ref{pf.lem.sol.exeadd.noncomm.polarization.2.8}), we obtain%
+\[
+\sum_{\substack{I\subseteq\left[  n\right]  ;\\J\subseteq I}}\left(
+-1\right)  ^{n-\left\vert I\right\vert }=\left[  J=\left[  n\right]  \right]
+.
+\]
+This proves Lemma \ref{lem.sol.exeadd.noncomm.polarization.2}.
+\end{proof}
+\end{verlong}
+
+\begin{lemma}
+\label{lem.sol.exeadd.noncomm.polarization.pigeon}Let $U$ and $V$ be two
+finite sets such that $\left\vert U\right\vert =\left\vert V\right\vert $. Let
+$f:U\rightarrow V$ be a map. Then, we have the following logical equivalence:%
+\[
+\left(  f\text{ is surjective}\right)  \ \Longleftrightarrow\ \left(  f\text{
+is bijective}\right)  .
+\]
+
+\end{lemma}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exeadd.noncomm.polarization.pigeon}.]Lemma
+\ref{lem.sol.exeadd.noncomm.polarization.pigeon} is well-known; let us
+nevertheless give its proof.
+
+Assume that $f$ is surjective.
+
+Let $u$ and $v$ be two elements of $U$ satisfying $f\left(  u\right)
+=f\left(  v\right)  $. We shall prove that $u=v$.
+
+Indeed, assume the contrary. Thus, $u\neq v$. Hence, $u\in U\setminus\left\{
+v\right\}  $. But $v\in U$ and therefore $\left\vert U\setminus\left\{
+v\right\}  \right\vert =\left\vert U\right\vert -1$.
+
+Furthermore, we have $\left\vert f\left(  S\right)  \right\vert \leq\left\vert
+S\right\vert $ for each subset $S$ of $U$. Applying this to $S=U\setminus
+\left\{  v\right\}  $, we obtain $\left\vert f\left(  U\setminus\left\{
+v\right\}  \right)  \right\vert \leq\left\vert U\setminus\left\{  v\right\}
+\right\vert =\left\vert U\right\vert -1$.
+
+Next, I claim that $q\in f\left(  U\setminus\left\{  v\right\}  \right)  $ for
+each $q\in V$.
+
+Indeed, let $q\in V$ be arbitrary. We want to show that $q\in f\left(
+U\setminus\left\{  v\right\}  \right)  $.
+
+We know that $f$ is surjective. Hence, there exists some $p\in U$ satisfying
+$q=f\left(  p\right)  $. Consider this $p$. If $p=v$, then%
+\[
+q=f\left(  \underbrace{p}_{=v}\right)  =f\left(  v\right)  =f\left(
+\underbrace{u}_{\in U\setminus\left\{  v\right\}  }\right)  \in f\left(
+U\setminus\left\{  v\right\}  \right)  .
+\]
+Hence, if $p=v$, then $q\in f\left(  U\setminus\left\{  v\right\}  \right)  $
+is proven. Thus, for the rest of the proof of $q\in f\left(  U\setminus
+\left\{  v\right\}  \right)  $, we WLOG assume that $p\neq v$.
+
+Hence, $p\in U\setminus\left\{  v\right\}  $. Now, $q=f\left(  \underbrace{p}%
+_{\in U\setminus\left\{  v\right\}  }\right)  \in f\left(  U\setminus\left\{
+v\right\}  \right)  $. This completes the proof of $q\in f\left(
+U\setminus\left\{  v\right\}  \right)  $.
+
+Now, forget that we fixed $q$. We thus have shown that $q\in f\left(
+U\setminus\left\{  v\right\}  \right)  $ for each $q\in V$. In other words,
+$V\subseteq f\left(  U\setminus\left\{  v\right\}  \right)  $. Hence,
+$\left\vert V\right\vert \leq\left\vert f\left(  U\setminus\left\{  v\right\}
+\right)  \right\vert \leq\left\vert U\right\vert -1<\left\vert U\right\vert
+=\left\vert V\right\vert $. This is absurd. This contradiction shows that our
+assumption was false. Thus, $u=v$ is proven.
+
+Now, forget that we fixed $u$ and $v$. We thus have shown that if $u$ and $v$
+are two elements of $U$ satisfying $f\left(  u\right)  =f\left(  v\right)  $,
+then $u=v$. In other words, the map $f$ is injective. Since $f$ is both
+surjective and injective, we see that $f$ is bijective.
+
+Now, forget that we have assumed that $f$ is surjective. We thus have shown
+that if $f$ is surjective, then $f$ is bijective. Of course, the converse also
+holds: If $f$ is bijective, then $f$ is surjective. Hence, $f$ is surjective
+if and only if $f$ is bijective. This proves Lemma
+\ref{lem.sol.exeadd.noncomm.polarization.pigeon}.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exeadd.noncomm.polarization.pigeon}.]Assume that
+$f$ is surjective.
+
+Let $u$ and $v$ be two elements of $U$ satisfying $f\left(  u\right)
+=f\left(  v\right)  $. We shall prove that $u=v$.
+
+Indeed, assume the contrary. Thus, $u\neq v$. Hence, $u\in U\setminus\left\{
+v\right\}  $ (since $u\in U$ and $u\neq v$). But $v\in U$ and therefore
+$\left\vert U\setminus\left\{  v\right\}  \right\vert =\left\vert U\right\vert
+-1$.
+
+Furthermore, we have $\left\vert f\left(  S\right)  \right\vert \leq\left\vert
+S\right\vert $ for each subset $S$ of $U$. Applying this to $S=U\setminus
+\left\{  v\right\}  $, we obtain $\left\vert f\left(  U\setminus\left\{
+v\right\}  \right)  \right\vert \leq\left\vert U\setminus\left\{  v\right\}
+\right\vert =\left\vert U\right\vert -1$.
+
+Next, I claim that $q\in f\left(  U\setminus\left\{  v\right\}  \right)  $ for
+each $q\in V$.
+
+Indeed, let $q\in V$ be arbitrary. We want to show that $q\in f\left(
+U\setminus\left\{  v\right\}  \right)  $.
+
+We know that $f$ is surjective. Hence, $f\left(  U\right)  =V$. Now, $q\in
+V=f\left(  U\right)  $. Therefore, there exists some $p\in U$ satisfying
+$q=f\left(  p\right)  $. Consider this $p$. If $p=v$, then%
+\[
+q=f\left(  \underbrace{p}_{=v}\right)  =f\left(  v\right)  =f\left(
+\underbrace{u}_{\in U\setminus\left\{  v\right\}  }\right)  \in f\left(
+U\setminus\left\{  v\right\}  \right)  .
+\]
+Hence, if $p=v$, then $q\in f\left(  U\setminus\left\{  v\right\}  \right)  $
+is proven. Thus, for the rest of the proof of $q\in f\left(  U\setminus
+\left\{  v\right\}  \right)  $, we can WLOG assume that we don't have $p=v$.
+Assume this.
+
+We have $p\neq v$ (since we don't have $p=v$). Combining this with $p\in U$,
+we obtain $p\in U\setminus\left\{  v\right\}  $. Now, $q=f\left(
+\underbrace{p}_{\in U\setminus\left\{  v\right\}  }\right)  \in f\left(
+U\setminus\left\{  v\right\}  \right)  $. This completes the proof of $q\in
+f\left(  U\setminus\left\{  v\right\}  \right)  $.
+
+Now, forget that we fixed $q$. We thus have shown that $q\in f\left(
+U\setminus\left\{  v\right\}  \right)  $ for each $q\in V$. In other words,
+$V\subseteq f\left(  U\setminus\left\{  v\right\}  \right)  $. Hence,
+$\left\vert V\right\vert \leq\left\vert f\left(  U\setminus\left\{  v\right\}
+\right)  \right\vert \leq\left\vert U\right\vert -1<\left\vert U\right\vert
+=\left\vert V\right\vert $. This is absurd. Hence, we have found a
+contradiction. This contradiction shows that our assumption was false. Thus,
+$u=v$ is proven.
+
+Now, forget that we fixed $u$ and $v$. We thus have shown that if $u$ and $v$
+are two elements of $U$ satisfying $f\left(  u\right)  =f\left(  v\right)  $,
+then $u=v$. In other words, the map $f$ is injective. Since $f$ is both
+surjective and injective, we see that $f$ is bijective.
+
+Now, forget that we have assumed that $f$ is surjective. We thus have shown
+that if $f$ is surjective, then $f$ is bijective. In other words, we have
+proven the following implication:%
+\begin{equation}
+\left(  f\text{ is surjective}\right)  \ \Longrightarrow\ \left(  f\text{ is
+bijective}\right)  . \label{sol.exeadd.noncomm.polarization.c.fact1.1}%
+\end{equation}
+On the other hand, each bijective map is surjective. Hence, we have the
+following implication:%
+\[
+\left(  f\text{ is bijective}\right)  \ \Longrightarrow\ \left(  f\text{ is
+surjective}\right)  .
+\]
+Combining this implication with
+(\ref{sol.exeadd.noncomm.polarization.c.fact1.1}), we obtain the logical
+equivalence%
+\[
+\left(  f\text{ is surjective}\right)  \ \Longleftrightarrow\ \left(  f\text{
+is bijective}\right)  .
+\]
+This proves Lemma \ref{lem.sol.exeadd.noncomm.polarization.pigeon}.
+\end{proof}
+\end{verlong}
+
+\begin{proof}
+[Solution to Additional exercise \ref{exeadd.noncomm.polarization}%
+.]\textbf{(a)} Let $m\in\mathbb{N}$.
+
+\begin{vershort}
+We have%
+\begin{align*}
+&  \sum_{I\subseteq\left[  n\right]  }\left(  -1\right)  ^{n-\left\vert
+I\right\vert }\underbrace{\left(  \sum_{i\in I}v_{i}\right)  ^{m}%
+}_{\substack{=\sum_{\substack{f:\left[  m\right]  \rightarrow\left[  n\right]
+;\\f\left(  \left[  m\right]  \right)  \subseteq I}}v_{f\left(  1\right)
+}v_{f\left(  2\right)  }\cdots v_{f\left(  m\right)  }\\\text{(by Lemma
+\ref{lem.sol.exeadd.noncomm.polarization.1})}}}\\
+&  =\sum_{I\subseteq\left[  n\right]  }\left(  -1\right)  ^{n-\left\vert
+I\right\vert }\sum_{\substack{f:\left[  m\right]  \rightarrow\left[  n\right]
+;\\f\left(  \left[  m\right]  \right)  \subseteq I}}v_{f\left(  1\right)
+}v_{f\left(  2\right)  }\cdots v_{f\left(  m\right)  }\\
+&  =\underbrace{\sum_{I\subseteq\left[  n\right]  }\sum_{\substack{f:\left[
+m\right]  \rightarrow\left[  n\right]  ;\\f\left(  \left[  m\right]  \right)
+\subseteq I}}}_{=\sum_{f:\left[  m\right]  \rightarrow\left[  n\right]  }%
+\sum_{\substack{I\subseteq\left[  n\right]  ;\\f\left(  \left[  m\right]
+\right)  \subseteq I}}}\left(  -1\right)  ^{n-\left\vert I\right\vert
+}v_{f\left(  1\right)  }v_{f\left(  2\right)  }\cdots v_{f\left(  m\right)
+}\\
+&  =\sum_{f:\left[  m\right]  \rightarrow\left[  n\right]  }\sum
+_{\substack{I\subseteq\left[  n\right]  ;\\f\left(  \left[  m\right]  \right)
+\subseteq I}}\left(  -1\right)  ^{n-\left\vert I\right\vert }v_{f\left(
+1\right)  }v_{f\left(  2\right)  }\cdots v_{f\left(  m\right)  }\\
+&  =\sum_{f:\left[  m\right]  \rightarrow\left[  n\right]  }%
+\underbrace{\left(  \sum_{\substack{I\subseteq\left[  n\right]  ;\\f\left(
+\left[  m\right]  \right)  \subseteq I}}\left(  -1\right)  ^{n-\left\vert
+I\right\vert }\right)  }_{\substack{=\left[  f\left(  \left[  m\right]
+\right)  =\left[  n\right]  \right]  \\\text{(by Lemma
+\ref{lem.sol.exeadd.noncomm.polarization.2}}\\\text{(applied to }J=f\left(
+\left[  m\right]  \right)  \text{))}}}v_{f\left(  1\right)  }v_{f\left(
+2\right)  }\cdots v_{f\left(  m\right)  }%
+\end{align*}%
+\begin{align*}
+&  =\sum_{f:\left[  m\right]  \rightarrow\left[  n\right]  }\left[
+\underbrace{f\left(  \left[  m\right]  \right)  =\left[  n\right]
+}_{\Longleftrightarrow\ \left(  f\text{ is surjective}\right)  }\right]
+v_{f\left(  1\right)  }v_{f\left(  2\right)  }\cdots v_{f\left(  m\right)  }\\
+&  =\sum_{f:\left[  m\right]  \rightarrow\left[  n\right]  }\left[  f\text{ is
+surjective}\right]  v_{f\left(  1\right)  }v_{f\left(  2\right)  }\cdots
+v_{f\left(  m\right)  }\\
+&  =\sum_{\substack{f:\left[  m\right]  \rightarrow\left[  n\right]
+;\\f\text{ is surjective}}}\underbrace{\left[  f\text{ is surjective}\right]
+}_{\substack{=1\\\text{(since }f\text{ is surjective)}}}v_{f\left(  1\right)
+}v_{f\left(  2\right)  }\cdots v_{f\left(  m\right)  }\\
+&  \ \ \ \ \ \ \ \ \ \ +\sum_{\substack{f:\left[  m\right]  \rightarrow\left[
+n\right]  ;\\f\text{ is not surjective}}}\underbrace{\left[  f\text{ is
+surjective}\right]  }_{\substack{=0\\\text{(since }f\text{ is not
+surjective)}}}v_{f\left(  1\right)  }v_{f\left(  2\right)  }\cdots v_{f\left(
+m\right)  }\\
+&  =\sum_{\substack{f:\left[  m\right]  \rightarrow\left[  n\right]
+;\\f\text{ is surjective}}}v_{f\left(  1\right)  }v_{f\left(  2\right)
+}\cdots v_{f\left(  m\right)  }+\underbrace{\sum_{\substack{f:\left[
+m\right]  \rightarrow\left[  n\right]  ;\\f\text{ is not surjective}%
+}}0v_{f\left(  1\right)  }v_{f\left(  2\right)  }\cdots v_{f\left(  m\right)
+}}_{=0}\\
+&  =\sum_{\substack{f:\left[  m\right]  \rightarrow\left[  n\right]
+;\\f\text{ is surjective}}}v_{f\left(  1\right)  }v_{f\left(  2\right)
+}\cdots v_{f\left(  m\right)  }.
+\end{align*}
+This solves Additional exercise \ref{exeadd.noncomm.polarization} \textbf{(a)}.
+\end{vershort}
+
+\begin{verlong}
+We have%
+\begin{align*}
+&  \sum_{I\subseteq\left[  n\right]  }\left(  -1\right)  ^{n-\left\vert
+I\right\vert }\underbrace{\left(  \sum_{i\in I}v_{i}\right)  ^{m}%
+}_{\substack{=\sum_{\substack{f:\left[  m\right]  \rightarrow\left[  n\right]
+;\\f\left(  \left[  m\right]  \right)  \subseteq I}}v_{f\left(  1\right)
+}v_{f\left(  2\right)  }\cdots v_{f\left(  m\right)  }\\\text{(by Lemma
+\ref{lem.sol.exeadd.noncomm.polarization.1})}}}\\
+&  =\sum_{I\subseteq\left[  n\right]  }\left(  -1\right)  ^{n-\left\vert
+I\right\vert }\sum_{\substack{f:\left[  m\right]  \rightarrow\left[  n\right]
+;\\f\left(  \left[  m\right]  \right)  \subseteq I}}v_{f\left(  1\right)
+}v_{f\left(  2\right)  }\cdots v_{f\left(  m\right)  }\\
+&  =\underbrace{\sum_{I\subseteq\left[  n\right]  }\sum_{\substack{f:\left[
+m\right]  \rightarrow\left[  n\right]  ;\\f\left(  \left[  m\right]  \right)
+\subseteq I}}}_{=\sum_{f:\left[  m\right]  \rightarrow\left[  n\right]  }%
+\sum_{\substack{I\subseteq\left[  n\right]  ;\\f\left(  \left[  m\right]
+\right)  \subseteq I}}}\left(  -1\right)  ^{n-\left\vert I\right\vert
+}v_{f\left(  1\right)  }v_{f\left(  2\right)  }\cdots v_{f\left(  m\right)
+}\\
+&  =\sum_{f:\left[  m\right]  \rightarrow\left[  n\right]  }\sum
+_{\substack{I\subseteq\left[  n\right]  ;\\f\left(  \left[  m\right]  \right)
+\subseteq I}}\left(  -1\right)  ^{n-\left\vert I\right\vert }v_{f\left(
+1\right)  }v_{f\left(  2\right)  }\cdots v_{f\left(  m\right)  }\\
+&  =\sum_{f:\left[  m\right]  \rightarrow\left[  n\right]  }%
+\underbrace{\left(  \sum_{\substack{I\subseteq\left[  n\right]  ;\\f\left(
+\left[  m\right]  \right)  \subseteq I}}\left(  -1\right)  ^{n-\left\vert
+I\right\vert }\right)  }_{\substack{=\left[  f\left(  \left[  m\right]
+\right)  =\left[  n\right]  \right]  \\\text{(by Lemma
+\ref{lem.sol.exeadd.noncomm.polarization.2}}\\\text{(applied to }J=f\left(
+\left[  m\right]  \right)  \text{))}}}v_{f\left(  1\right)  }v_{f\left(
+2\right)  }\cdots v_{f\left(  m\right)  }%
+\end{align*}%
+\begin{align*}
+&  =\sum_{f:\left[  m\right]  \rightarrow\left[  n\right]  }\left[
+\underbrace{f\left(  \left[  m\right]  \right)  =\left[  n\right]
+}_{\substack{\Longleftrightarrow\ \left(  f\text{ is surjective}\right)
+\\\text{(because }f\text{ is surjective if and only if }f\left(  \left[
+m\right]  \right)  =\left[  n\right]  \text{)}}}\right]  v_{f\left(  1\right)
+}v_{f\left(  2\right)  }\cdots v_{f\left(  m\right)  }\\
+&  =\sum_{f:\left[  m\right]  \rightarrow\left[  n\right]  }\left[  f\text{ is
+surjective}\right]  v_{f\left(  1\right)  }v_{f\left(  2\right)  }\cdots
+v_{f\left(  m\right)  }\\
+&  =\sum_{\substack{f:\left[  m\right]  \rightarrow\left[  n\right]
+;\\f\text{ is surjective}}}\underbrace{\left[  f\text{ is surjective}\right]
+}_{\substack{=1\\\text{(since }f\text{ is surjective)}}}v_{f\left(  1\right)
+}v_{f\left(  2\right)  }\cdots v_{f\left(  m\right)  }\\
+&  \ \ \ \ \ \ \ \ \ \ +\sum_{\substack{f:\left[  m\right]  \rightarrow\left[
+n\right]  ;\\f\text{ is not surjective}}}\underbrace{\left[  f\text{ is
+surjective}\right]  }_{\substack{=0\\\text{(since }f\text{ is not
+surjective)}}}v_{f\left(  1\right)  }v_{f\left(  2\right)  }\cdots v_{f\left(
+m\right)  }\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{because for each }f:\left[  m\right]  \rightarrow\left[  n\right]
+\text{, either }\left(  f\text{ is surjective}\right) \\
+\text{or }\left(  f\text{ is not surjective}\right)  \text{ (but not both)}%
+\end{array}
+\right) \\
+&  =\sum_{\substack{f:\left[  m\right]  \rightarrow\left[  n\right]
+;\\f\text{ is surjective}}}v_{f\left(  1\right)  }v_{f\left(  2\right)
+}\cdots v_{f\left(  m\right)  }+\underbrace{\sum_{\substack{f:\left[
+m\right]  \rightarrow\left[  n\right]  ;\\f\text{ is not surjective}%
+}}0v_{f\left(  1\right)  }v_{f\left(  2\right)  }\cdots v_{f\left(  m\right)
+}}_{=0}\\
+&  =\sum_{\substack{f:\left[  m\right]  \rightarrow\left[  n\right]
+;\\f\text{ is surjective}}}v_{f\left(  1\right)  }v_{f\left(  2\right)
+}\cdots v_{f\left(  m\right)  }.
+\end{align*}
+This solves Additional exercise \ref{exeadd.noncomm.polarization} \textbf{(a)}.
+\end{verlong}
+
+\textbf{(b)} Let $m\in\left\{  0,1,\ldots,n-1\right\}  $. Then, there exists
+no map $f:\left[  m\right]  \rightarrow\left[  n\right]  $ such that $f$ is
+surjective\footnote{\textit{Proof.} Let $f:\left[  m\right]  \rightarrow
+\left[  n\right]  $ be a map such that $f$ is surjective. Thus, $f\left(
+\left[  m\right]  \right)  =\left[  n\right]  $ (since $f$ is surjective). But
+clearly, $\left\vert f\left(  \left[  m\right]  \right)  \right\vert
+\leq\left\vert \left[  m\right]  \right\vert =m$. Since $f\left(  \left[
+m\right]  \right)  =\left[  n\right]  $, this rewrites as $\left\vert \left[
+n\right]  \right\vert \leq m$. Since $\left\vert \left[  n\right]  \right\vert
+=n$, this rewrites as $n\leq m$. But $m\leq n-1$ (since $m\in\left\{
+0,1,\ldots,n-1\right\}  $). Thus, $n\leq m\leq n-1<n$. This is absurd.
+\par
+Now, forget that we fixed $f$. We thus have found a contradiction for each map
+$f:\left[  m\right]  \rightarrow\left[  n\right]  $ such that $f$ is
+surjective. Hence, there exists no map $f:\left[  m\right]  \rightarrow\left[
+n\right]  $ such that $f$ is surjective. Qed.}. Hence, the sum $\sum
+_{\substack{f:\left[  m\right]  \rightarrow\left[  n\right]  ;\\f\text{ is
+surjective}}}v_{f\left(  1\right)  }v_{f\left(  2\right)  }\cdots v_{f\left(
+m\right)  }$ is an empty sum. Therefore, this sum equals $0$. In other words,
+$\sum_{\substack{f:\left[  m\right]  \rightarrow\left[  n\right]  ;\\f\text{
+is surjective}}}v_{f\left(  1\right)  }v_{f\left(  2\right)  }\cdots
+v_{f\left(  m\right)  }=0$.
+
+Now, Additional exercise \ref{exeadd.noncomm.polarization} \textbf{(a)} yields%
+\[
+\sum_{I\subseteq\left[  n\right]  }\left(  -1\right)  ^{n-\left\vert
+I\right\vert }\left(  \sum_{i\in I}v_{i}\right)  ^{m}=\sum
+_{\substack{f:\left[  m\right]  \rightarrow\left[  n\right]  ;\\f\text{ is
+surjective}}}v_{f\left(  1\right)  }v_{f\left(  2\right)  }\cdots v_{f\left(
+m\right)  }=0.
+\]
+This solves Additional exercise \ref{exeadd.noncomm.polarization} \textbf{(b)}.
+
+\textbf{(c)} Clearly, $\left[  n\right]  $ and $\left[  n\right]  $ are two
+finite sets such that $\left\vert \left[  n\right]  \right\vert =\left\vert
+\left[  n\right]  \right\vert $. Hence, Lemma
+\ref{lem.sol.exeadd.noncomm.polarization.pigeon} (applied to $U=\left\vert
+\left[  n\right]  \right\vert $ and $V=\left\vert \left[  n\right]
+\right\vert $) shows that if $f:\left[  n\right]  \rightarrow\left[  n\right]
+$ is a map, then we have the following logical equivalence:%
+\begin{equation}
+\left(  f\text{ is surjective}\right)  \ \Longleftrightarrow\ \left(  f\text{
+is bijective}\right)  . \label{sol.exeadd.noncomm.polarization.c.3}%
+\end{equation}
+
+
+\begin{vershort}
+Hence, we have the following equality of summation signs:%
+\[
+\sum_{\substack{f:\left[  n\right]  \rightarrow\left[  n\right]  ;\\f\text{ is
+surjective}}}=\sum_{\substack{f:\left[  n\right]  \rightarrow\left[  n\right]
+;\\f\text{ is bijective}}}=\sum_{f\text{ is a permutation of }\left[
+n\right]  }=\sum_{f\in S_{n}}%
+\]
+(since $S_{n}$ is the set of all permutations of $\left[  n\right]  $). Now,
+Additional exercise \ref{exeadd.noncomm.polarization} \textbf{(a)} (applied to
+$m=n$) yields%
+\begin{align*}
+\sum_{I\subseteq\left[  n\right]  }\left(  -1\right)  ^{n-\left\vert
+I\right\vert }\left(  \sum_{i\in I}v_{i}\right)  ^{n}  &  =\underbrace{\sum
+_{\substack{f:\left[  n\right]  \rightarrow\left[  n\right]  ;\\f\text{ is
+surjective}}}}_{\substack{=\sum_{f\in S_{n}}\\\text{(by
+(\ref{sol.exeadd.noncomm.polarization.c.3}))}}}v_{f\left(  1\right)
+}v_{f\left(  2\right)  }\cdots v_{f\left(  n\right)  }\\
+&  =\sum_{f\in S_{n}}v_{f\left(  1\right)  }v_{f\left(  2\right)  }\cdots
+v_{f\left(  n\right)  }=\sum_{\sigma\in S_{n}}v_{\sigma\left(  1\right)
+}v_{\sigma\left(  2\right)  }\cdots v_{\sigma\left(  n\right)  }%
+\end{align*}
+(here, we have renamed the summation index $f$ as $\sigma$). This solves
+Additional exercise \ref{exeadd.noncomm.polarization} \textbf{(c)}.
+\end{vershort}
+
+\begin{verlong}
+Now, Additional exercise \ref{exeadd.noncomm.polarization} \textbf{(a)}
+(applied to $m=n$) yields%
+\begin{align}
+\sum_{I\subseteq\left[  n\right]  }\left(  -1\right)  ^{n-\left\vert
+I\right\vert }\left(  \sum_{i\in I}v_{i}\right)  ^{n}  &  =\underbrace{\sum
+_{\substack{f:\left[  n\right]  \rightarrow\left[  n\right]  ;\\f\text{ is
+surjective}}}}_{\substack{=\sum_{\substack{f:\left[  n\right]  \rightarrow
+\left[  n\right]  ;\\f\text{ is bijective}}}\\\text{(because for a map
+}f:\left[  n\right]  \rightarrow\left[  n\right]  \text{,}\\\text{the
+condition }\left(  f\text{ is surjective}\right)  \text{ is equivalent}%
+\\\text{to the condition }\left(  f\text{ is bijective}\right)
+\\\text{(because of (\ref{sol.exeadd.noncomm.polarization.c.3})))}%
+}}v_{f\left(  1\right)  }v_{f\left(  2\right)  }\cdots v_{f\left(  n\right)
+}\nonumber\\
+&  =\sum_{\substack{f:\left[  n\right]  \rightarrow\left[  n\right]
+;\\f\text{ is bijective}}}v_{f\left(  1\right)  }v_{f\left(  2\right)  }\cdots
+v_{f\left(  n\right)  }. \label{sol.exeadd.noncomm.polarization.c.5}%
+\end{align}
+
+
+But $S_{n}$ is the set of all permutations of the set $\left\{  1,2,\ldots
+,n\right\}  $. In other words, $S_{n}$ is the set of all permutations of the
+set $\left[  n\right]  $ (since $\left\{  1,2,\ldots,n\right\}  =\left[
+n\right]  $). In other words, $S_{n}$ is the set of all bijective maps
+$\left[  n\right]  \rightarrow\left[  n\right]  $ (since the permutations of
+the set $\left[  n\right]  $ are exactly the bijective maps $\left[  n\right]
+\rightarrow\left[  n\right]  $). Hence,%
+\begin{equation}
+\sum_{f\in S_{n}}=\sum_{f\text{ is a bijective map }\left[  n\right]
+\rightarrow\left[  n\right]  }=\sum_{\substack{f:\left[  n\right]
+\rightarrow\left[  n\right]  ;\\f\text{ is bijective}}}
+\label{sol.exeadd.noncomm.polarization.c.7}%
+\end{equation}
+(an equality of summation signs). Now,
+(\ref{sol.exeadd.noncomm.polarization.c.5}) becomes%
+\begin{align*}
+&  \sum_{I\subseteq\left[  n\right]  }\left(  -1\right)  ^{n-\left\vert
+I\right\vert }\left(  \sum_{i\in I}v_{i}\right)  ^{n}\\
+&  =\underbrace{\sum_{\substack{f:\left[  n\right]  \rightarrow\left[
+n\right]  ;\\f\text{ is bijective}}}}_{\substack{=\sum_{f\in S_{n}}\\\text{(by
+(\ref{sol.exeadd.noncomm.polarization.c.7}))}}}v_{f\left(  1\right)
+}v_{f\left(  2\right)  }\cdots v_{f\left(  n\right)  }=\sum_{f\in S_{n}%
+}v_{f\left(  1\right)  }v_{f\left(  2\right)  }\cdots v_{f\left(  n\right)
+}\\
+&  =\sum_{\sigma\in S_{n}}v_{\sigma\left(  1\right)  }v_{\sigma\left(
+2\right)  }\cdots v_{\sigma\left(  n\right)  }%
+\end{align*}
+(here, we have renamed the summation index $f$ as $\sigma$). This solves
+Additional exercise \ref{exeadd.noncomm.polarization} \textbf{(c)}.
+\end{verlong}
+
+\textbf{(d)} We have%
+\begin{equation}
+v_{\sigma\left(  1\right)  }v_{\sigma\left(  2\right)  }\cdots v_{\sigma
+\left(  n\right)  }=v_{1}v_{2}\cdots v_{n}
+\label{sol.exeadd.noncomm.polarization.d.1}%
+\end{equation}
+for each $\sigma\in S_{n}$\ \ \ \ \footnote{\textit{Proof of
+(\ref{sol.exeadd.noncomm.polarization.d.1}):} Let $\sigma\in S_{n}$. Thus,
+$\sigma$ is a permutation of the set $\left\{  1,2,\ldots,n\right\}  $ (since
+$S_{n}$ is the set of all permutations of the set $\left\{  1,2,\ldots
+,n\right\}  $). In other words, $\sigma$ is a bijection $\left\{
+1,2,\ldots,n\right\}  \rightarrow\left\{  1,2,\ldots,n\right\}  $.
+\par
+But%
+\begin{align*}
+v_{\sigma\left(  1\right)  }v_{\sigma\left(  2\right)  }\cdots v_{\sigma
+\left(  n\right)  }  &  =\underbrace{\prod_{i=1}^{n}}_{=\prod_{i\in\left\{
+1,2,\ldots,n\right\}  }}v_{\sigma\left(  i\right)  }=\prod_{i\in\left\{
+1,2,\ldots,n\right\}  }v_{\sigma\left(  i\right)  }=\underbrace{\prod
+_{i\in\left\{  1,2,\ldots,n\right\}  }}_{=\prod_{i=1}^{n}}v_{i}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have substituted }i\text{ for }\sigma\left(  i\right)  \text{
+in the product,}\\
+\text{since }\sigma\text{ is a bijection }\left\{  1,2,\ldots,n\right\}
+\rightarrow\left\{  1,2,\ldots,n\right\}
+\end{array}
+\right) \\
+&  =\prod_{i=1}^{n}v_{i}=v_{1}v_{2}\cdots v_{n}.
+\end{align*}
+This proves (\ref{sol.exeadd.noncomm.polarization.d.1}).}. Now, Additional
+exercise \ref{exeadd.noncomm.polarization} \textbf{(c)} yields%
+\begin{align*}
+\sum_{I\subseteq\left[  n\right]  }\left(  -1\right)  ^{n-\left\vert
+I\right\vert }\left(  \sum_{i\in I}v_{i}\right)  ^{n}  &  =\sum_{\sigma\in
+S_{n}}\underbrace{v_{\sigma\left(  1\right)  }v_{\sigma\left(  2\right)
+}\cdots v_{\sigma\left(  n\right)  }}_{\substack{=v_{1}v_{2}\cdots
+v_{n}\\\text{(by (\ref{sol.exeadd.noncomm.polarization.d.1}))}}}=\sum
+_{\sigma\in S_{n}}v_{1}v_{2}\cdots v_{n}\\
+&  =\underbrace{\left\vert S_{n}\right\vert }_{=n!}v_{1}v_{2}\cdots
+v_{n}=n!\cdot v_{1}v_{2}\cdots v_{n}.
+\end{align*}
+This solves Additional exercise \ref{exeadd.noncomm.polarization} \textbf{(d)}.
 \end{proof}
 
 \subsection{\label{sect.sol.jacobi-complement}Solution to Additional exercise
