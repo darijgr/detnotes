@@ -11,9 +11,9 @@ without.
 
 Up-to-date PDF files can be downloaded from my website:
 
-- [Full version (with solutions)](http://web.mit.edu/~darij/www/primes2015/sols.pdf).
+- [Full version (with solutions)](http://www.cip.ifi.lmu.de/~grinberg/primes2015/sols.pdf).
 
-- [Version without solutions](http://web.mit.edu/~darij/www/primes2015/probs.pdf).
+- [Version without solutions](http://www.cip.ifi.lmu.de/~grinberg/primes2015/probs.pdf).
 (Use this if you want to solve the problems on your own and prefer not to see
 spoilers.)
 
