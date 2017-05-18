@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, May 18, 2017 16:35:10}
+%TCIDATA{LastRevised=Thursday, May 18, 2017 16:52:49}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -71310,7 +71310,7 @@ v_{i}\ \ \ \ \ \ \ \ \ \ \left(
 \text{here, we have renamed the}\\
 \text{summation index }i\text{ as }k
 \end{array}
-\right) \nonumber\\
+\right)  \nonumber\\
 &  =\sum_{i\in\left[  n\right]  }\left[  i\in I\right]  v_{i}\nonumber\\
 &  =\underbrace{\sum_{\substack{i\in\left[  n\right]  ;\\i\in I}%
 }}_{\substack{=\sum_{i\in I}\\\text{(since }I\subseteq\left[  n\right]
@@ -71322,29 +71322,30 @@ v_{i}\ \ \ \ \ \ \ \ \ \ \left(
 satisfies either }i\in I\text{ or }i\notin I\text{ (but not both)}\right)
 \nonumber\\
 &  =\sum_{i\in I}1v_{i}+\underbrace{\sum_{\substack{i\in\left[  n\right]
-;\\i\notin I}}0v_{i}}_{=0}=\sum_{i\in I}1v_{i}=\sum_{i\in I}v_{i}.
-\label{pf.lem.sol.exeadd.noncomm.polarization.1.2}%
+;\\i\notin I}}0v_{i}}_{=0}=\sum_{i\in I}1v_{i}=\sum_{i\in I}v_{i}%
+.\label{pf.lem.sol.exeadd.noncomm.polarization.1.2}%
 \end{align}
 
 
 But $p^{m}=\prod_{i=1}^{m}p$ for each $p\in\mathbb{L}$. Applying this to
-$p=\sum_{i\in I}v_{i}$, we find%
-\begin{align*}
-\left(  \sum_{i\in I}v_{i}\right)  ^{m}  &  =\prod_{i=1}^{m}\underbrace{\sum
-_{i\in I}v_{i}}_{\substack{=\sum_{k=1}^{n}\left[  k\in I\right]
-v_{k}\\\text{(by (\ref{pf.lem.sol.exeadd.noncomm.polarization.1.2}))}}%
-}=\prod_{i=1}^{m}\sum_{k=1}^{n}\left[  k\in I\right]  v_{k}\\
-&  =\sum_{\kappa:\left[  m\right]  \rightarrow\left[  n\right]  }\prod
-_{i=1}^{m}\left(  \left[  \kappa\left(  i\right)  \in I\right]  v_{\kappa
-\left(  i\right)  }\right)
-\end{align*}
+$p=\sum_{k=1}^{n}\left[  k\in I\right]  v_{k}$, we find%
+\[
+\left(  \sum_{k=1}^{n}\left[  k\in I\right]  v_{k}\right)  ^{m}=\prod
+_{i=1}^{m}\sum_{k=1}^{n}\left[  k\in I\right]  v_{k}=\sum_{\kappa:\left[
+m\right]  \rightarrow\left[  n\right]  }\prod_{i=1}^{m}\left(  \left[
+\kappa\left(  i\right)  \in I\right]  v_{\kappa\left(  i\right)  }\right)
+\]
 (by Lemma \ref{lem.noncomm.prodrule2} (applied to $\mathbb{L}$, $m$, $n$ and
 $\left[  k\in I\right]  v_{k}$ instead of $\mathbb{K}$, $n$, $m$ and $p_{i,k}%
-$)). Hence,%
+$)). Now,%
 \begin{align}
-\left(  \sum_{i\in I}v_{i}\right)  ^{m}  &  =\sum_{\kappa:\left[  m\right]
-\rightarrow\left[  n\right]  }\prod_{i=1}^{m}\left(  \left[  \kappa\left(
-i\right)  \in I\right]  v_{\kappa\left(  i\right)  }\right) \nonumber\\
+\left(  \underbrace{\sum_{i\in I}v_{i}}_{\substack{=\sum_{k=1}^{n}\left[  k\in
+I\right]  v_{k}\\\text{(by (\ref{pf.lem.sol.exeadd.noncomm.polarization.1.2}%
+))}}}\right)  ^{m} &  =\left(  \sum_{k=1}^{n}\left[  k\in I\right]
+v_{k}\right)  ^{m}\nonumber\\
+&  =\sum_{\kappa:\left[  m\right]  \rightarrow\left[  n\right]  }\prod
+_{i=1}^{m}\left(  \left[  \kappa\left(  i\right)  \in I\right]  v_{\kappa
+\left(  i\right)  }\right)  \nonumber\\
 &  =\sum_{f:\left[  m\right]  \rightarrow\left[  n\right]  }\prod_{i=1}%
 ^{m}\left(  \left[  f\left(  i\right)  \in I\right]  v_{f\left(  i\right)
 }\right)  \label{pf.lem.sol.exeadd.noncomm.polarization.1.4}%
