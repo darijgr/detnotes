@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, May 18, 2017 23:24:10}
+%TCIDATA{LastRevised=Friday, May 19, 2017 01:13:34}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -25405,6 +25405,28 @@ where $a,b,c,d,e,f,g,h,k,\ell,m,n$ are elements of $\mathbb{K}$.
 \end{addexercise}
 
 \begin{addexercise}
+\label{exeadd.powerdet.gen}Let $n\in\mathbb{N}$. Let $A=\left(  a_{i,j}%
+\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ be an $n\times n$-matrix.
+
+\textbf{(a)} Prove that%
+\[
+\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\left(  \sum_{i=1}%
+^{n}a_{i,\sigma\left(  i\right)  }\right)  ^{k}=0
+\]
+for each $k\in\left\{  0,1,\ldots,n-2\right\}  $.
+
+\textbf{(b)} Assume that $n\geq1$. Prove that%
+\[
+\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\left(  \sum_{i=1}%
+^{n}a_{i,\sigma\left(  i\right)  }\right)  ^{n-1}=\left(  n-1\right)
+!\cdot\sum_{p=1}^{n}\sum_{q=1}^{n}\left(  -1\right)  ^{p+q}\det\left(  A_{\sim
+p,\sim q}\right)  .
+\]
+(Here, we are using the notation introduced in Definition
+\ref{def.submatrix.minor}.)
+\end{addexercise}
+
+\begin{addexercise}
 \label{addexe.jacobi-complement}Let $n\in\mathbb{N}$. For any subset $I$ of
 $\left\{  1,2,\ldots,n\right\}  $, we let $\widetilde{I}$ denote the
 complement $\left\{  1,2,\ldots,n\right\}  \setminus I$ of $I$. (For instance,
@@ -32647,7 +32669,7 @@ i+1,i+2,\ldots,n\right\}  \right\vert }_{\substack{=n-i\\\text{(since }i\leq
 n\text{)}}}\\
 &  =\sum_{i=1}^{n}\left(  n-i\right)  =\sum_{i=0}^{n-1}%
 i\ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }i\text{ for
-}n-i\text{ in the sum}\right)  \\
+}n-i\text{ in the sum}\right) \\
 &  =0+\sum_{i=1}^{n-1}i=\sum_{i=1}^{n-1}i=n\left(  n-1\right)  /2,
 \end{align*}
 qed.}.
@@ -54674,10 +54696,11 @@ i\leq n,\ 1\leq j\leq M-1}$, $0_{\left(  M-1\right)  \times n}=\left(
 $0_{\left(  M-1\right)  \times n}$) and $D_{\sim M,\sim q}=\left(
 d_{i,\mathbf{d}_{q}\left(  j\right)  }\right)  _{1\leq i\leq M-1,\ 1\leq j\leq
 M-1}$. Thus, (\ref{eq.def.block2x2.formal}) (applied to $n$, $M-1$, $n$,
-$M-1$, $A$, $B_{q}^{\prime}$, $0_{\left(M-1\right)\times n}$, $D_{\sim M,\sim q}$, $a_{i,j}$,
-$b_{i,\mathbf{d}_{q}\left(  j\right)  }$, $0$ and $d_{i,\mathbf{d}_{q}\left(
-j\right)  }$ instead of $n$, $n^{\prime}$, $m$, $m^{\prime}$, $A$, $B$, $C$,
-$D$, $a_{i,j}$, $b_{i,j}$, $c_{i,j}$ and $d_{i,j}$) shows that
+$M-1$, $A$, $B_{q}^{\prime}$, $0_{\left(  M-1\right)  \times n}$, $D_{\sim
+M,\sim q}$, $a_{i,j}$, $b_{i,\mathbf{d}_{q}\left(  j\right)  }$, $0$ and
+$d_{i,\mathbf{d}_{q}\left(  j\right)  }$ instead of $n$, $n^{\prime}$, $m$,
+$m^{\prime}$, $A$, $B$, $C$, $D$, $a_{i,j}$, $b_{i,j}$, $c_{i,j}$ and
+$d_{i,j}$) shows that
 \begin{equation}
 \left(
 \begin{array}
@@ -54711,9 +54734,10 @@ d_{i-n,\mathbf{d}_{q}\left(  j-n\right)  }, & \text{if }i>n\text{ and }j>n
 \end{equation}
 for every $\left(  i,j\right)  \in\left\{  1,2,\ldots,n+M-1\right\}  ^{2}$.
 \par
-[\textit{Proof of (\ref{sol.block2x2.tridet.indstep.minor.pf.8}):} Let $\left(
-i,j\right)  \in\left\{  1,2,\ldots,n+M-1\right\}  ^{2}$. Thus, $i\in\left\{
-1,2,\ldots,n+M-1\right\}  $ and $j\in\left\{  1,2,\ldots,n+M-1\right\}  $.
+[\textit{Proof of (\ref{sol.block2x2.tridet.indstep.minor.pf.8}):} Let
+$\left(  i,j\right)  \in\left\{  1,2,\ldots,n+M-1\right\}  ^{2}$. Thus,
+$i\in\left\{  1,2,\ldots,n+M-1\right\}  $ and $j\in\left\{  1,2,\ldots
+,n+M-1\right\}  $.
 \par
 The definition of $\mathbf{d}_{n+q}\left(  j\right)  $ yields $\mathbf{d}%
 _{n+q}\left(  j\right)  =%
@@ -72744,6 +72768,1513 @@ _{\sigma\in S_{n}}v_{1}v_{2}\cdots v_{n}\\
 v_{n}=n!\cdot v_{1}v_{2}\cdots v_{n}.
 \end{align*}
 This solves Additional exercise \ref{exeadd.noncomm.polarization} \textbf{(d)}.
+\end{proof}
+
+\subsection{Solution to Additional exercise \ref{exeadd.powerdet.gen}}
+
+We shall next prove some identities in preparation for the solution to
+Additional exercise \ref{exeadd.powerdet.gen}.
+
+First, we introduce a notation: For every $n\in\mathbb{N}$, let $\left[
+n\right]  $ denote the set $\left\{  1,2,\ldots,n\right\}  $. We shall also
+use the notation introduced in Definition \ref{def.submatrix.minor} throughout
+this section.
+
+Let us now state a simple corollary of Lemma \ref{lem.prodrule2}:
+
+\begin{corollary}
+\label{cor.sol.exeadd.powerdet.gen.prodrule}Let $n\in\mathbb{N}$. Let
+$A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ be an $n\times
+n$-matrix. Let $\sigma\in S_{n}$. Then,%
+\[
+\left(  \sum_{i=1}^{n}a_{i,\sigma\left(  i\right)  }\right)  ^{k}=\sum
+_{\kappa:\left[  k\right]  \rightarrow\left[  n\right]  }\prod_{i=1}%
+^{k}a_{\kappa\left(  i\right)  ,\sigma\left(  \kappa\left(  i\right)  \right)
+}%
+\]
+for every $k\in\mathbb{N}$.
+\end{corollary}
+
+\begin{proof}
+[Proof of Corollary \ref{cor.sol.exeadd.powerdet.gen.prodrule}.]Let
+$g\in\mathbb{N}$. Then, Lemma \ref{lem.prodrule2} (applied to $g$, $n$ and
+$a_{k,\sigma\left(  k\right)  }$ instead of $n$, $m$ and $p_{i,k}$) yields%
+\[
+\prod_{i=1}^{g}\sum_{k=1}^{n}a_{k,\sigma\left(  k\right)  }=\sum
+_{\kappa:\left[  g\right]  \rightarrow\left[  n\right]  }\prod_{i=1}%
+^{g}a_{\kappa\left(  i\right)  ,\sigma\left(  \kappa\left(  i\right)  \right)
+}.
+\]
+Thus,%
+\begin{align}
+\sum_{\kappa:\left[  g\right]  \rightarrow\left[  n\right]  }\prod_{i=1}%
+^{g}a_{\kappa\left(  i\right)  ,\sigma\left(  \kappa\left(  i\right)  \right)
+}  &  =\prod_{i=1}^{g}\sum_{k=1}^{n}a_{k,\sigma\left(  k\right)  }=\left(
+\sum_{k=1}^{n}a_{k,\sigma\left(  k\right)  }\right)  ^{g}\nonumber\\
+&  =\left(  \sum_{i=1}^{n}a_{i,\sigma\left(  i\right)  }\right)  ^{g}
+\label{pf.cor.sol.exeadd.powerdet.gen.prodrule.1}%
+\end{align}
+(here, we have renamed the summation index $k$ as $i$ in the sum).
+
+Now, forget that we fixed $g$. We thus have proven the identity
+(\ref{pf.cor.sol.exeadd.powerdet.gen.prodrule.1}) for each $g\in\mathbb{N}$.
+
+Now, fix $k\in\mathbb{N}$. Then,
+(\ref{pf.cor.sol.exeadd.powerdet.gen.prodrule.1}) (applied to $g=k$) yields
+$\sum_{\kappa:\left[  k\right]  \rightarrow\left[  n\right]  }\prod_{i=1}%
+^{k}a_{\kappa\left(  i\right)  ,\sigma\left(  \kappa\left(  i\right)  \right)
+}=\left(  \sum_{i=1}^{n}a_{i,\sigma\left(  i\right)  }\right)  ^{k}$. This
+proves Corollary \ref{cor.sol.exeadd.powerdet.gen.prodrule}.
+\end{proof}
+
+Next, we state a simple lemma:
+
+\begin{lemma}
+\label{lem.sol.exeadd.powerdet.gen.toofew}Let $n\in\mathbb{N}$ and
+$k\in\mathbb{N}$. Let $\kappa:\left[  k\right]  \rightarrow\left[  n\right]  $
+be a map such that $\left\vert \kappa\left(  \left[  k\right]  \right)
+\right\vert <n-1$. Then,%
+\[
+\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\prod_{i=1}^{k}%
+a_{\kappa\left(  i\right)  ,\sigma\left(  \kappa\left(  i\right)  \right)
+}=0.
+\]
+
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exeadd.powerdet.gen.toofew}.]We have $\left\vert
+\left[  n\right]  \setminus\kappa\left(  \left[  k\right]  \right)
+\right\vert \geq2$\ \ \ \ \footnote{\textit{Proof.} We have $\left\vert
+\kappa\left(  \left[  k\right]  \right)  \right\vert <n-1$. Thus, $\left\vert
+\kappa\left(  \left[  k\right]  \right)  \right\vert \leq\left(  n-1\right)
+-1$ (since both $\left\vert \kappa\left(  \left[  k\right]  \right)
+\right\vert $ and $n-1$ are integers). Hence, $\left\vert \kappa\left(
+\left[  k\right]  \right)  \right\vert \leq\left(  n-1\right)  -1=n-2$.
+\par
+But $\kappa\left(  \left[  k\right]  \right)  \subseteq\left[  n\right]  $.
+Hence, $\left\vert \left[  n\right]  \setminus\kappa\left(  \left[  k\right]
+\right)  \right\vert =\underbrace{\left\vert \left[  n\right]  \right\vert
+}_{=n}-\underbrace{\left\vert \kappa\left(  \left[  k\right]  \right)
+\right\vert }_{\leq n-2}\geq n-\left(  n-2\right)  =2$. Qed.}. Hence, the set
+$\left[  n\right]  \setminus\kappa\left(  \left[  k\right]  \right)  $ has at
+least $2$ elements. In other words, the set $\left[  n\right]  \setminus
+\kappa\left(  \left[  k\right]  \right)  $ contains two distinct elements.
+Choose two such elements, and denote them by $a$ and $b$. Thus, $a$ and $b$
+are two distinct elements of the set $\left[  n\right]  \setminus\kappa\left(
+\left[  k\right]  \right)  $.
+
+The elements $a$ and $b$ both belong to $\left[  n\right]  $ (since
+$a\in\left[  n\right]  \setminus\kappa\left(  \left[  k\right]  \right)
+\subseteq\left[  n\right]  $ and $b\in\left[  n\right]  \setminus\kappa\left(
+\left[  k\right]  \right)  \subseteq\left[  n\right]  $).
+
+\begin{vershort}
+Thus, $a$ and $b$ are two distinct elements of $\left[  n\right]  =\left\{
+1,2,\ldots,n\right\}  $. Hence, a transposition $t_{a,b}\in S_{n}$ is defined
+(according to Definition \ref{def.transpos}). This transposition satisfies
+$t_{a,b}\circ\kappa=\kappa$\ \ \ \ \footnote{\textit{Proof.} We are going to
+show that every $i\in\left[  k\right]  $ satisfies $\left(  t_{a,b}\circ
+\kappa\right)  \left(  i\right)  =\kappa\left(  i\right)  $.
+\par
+So let $i\in\left[  k\right]  $. We shall show that $\left(  t_{a,b}%
+\circ\kappa\right)  \left(  i\right)  =\kappa\left(  i\right)  $.
+\par
+We have $t_{a,b}\left(  j\right)  =j$ for every $j\in\left[  n\right]
+\setminus\left\{  a,b\right\}  $ (by the definition of $t_{a,b}$).
+\par
+But $a$ and $b$ are two elements of the set $\left[  n\right]  \setminus
+\kappa\left(  \left[  k\right]  \right)  $. Hence, $\left\{  a,b\right\}
+\subseteq\left[  n\right]  \setminus\kappa\left(  \left[  k\right]  \right)
+$. If we had $\kappa\left(  i\right)  \in\left\{  a,b\right\}  $, then we
+would thus have $\kappa\left(  i\right)  \in\left\{  a,b\right\}
+\subseteq\left[  n\right]  \setminus\kappa\left(  \left[  k\right]  \right)
+$, which would contradict $\kappa\left(  i\right)  \notin\kappa\left(  \left[
+k\right]  \right)  $. Hence, we cannot have $\kappa\left(  i\right)
+\in\left\{  a,b\right\}  $. Thus, we have $\kappa\left(  i\right)
+\notin\left\{  a,b\right\}  $.
+\par
+Combining $\kappa\left(  i\right)  \in\left[  n\right]  $ with $\kappa\left(
+i\right)  \in\left\{  a,b\right\}  $, we obtain $\kappa\left(  i\right)
+\in\left[  n\right]  \setminus\left\{  a,b\right\}  $. But recall that
+$t_{a,b}\left(  j\right)  =j$ for every $j\in\left[  n\right]  \setminus
+\left\{  a,b\right\}  $. Applying this to $j=\kappa\left(  i\right)  $, we
+obtain $t_{a,b}\left(  \kappa\left(  i\right)  \right)  =\kappa\left(
+i\right)  $ (since $\kappa\left(  i\right)  \in\left[  n\right]
+\setminus\left\{  a,b\right\}  $). Hence, $\left(  t_{a,b}\circ\kappa\right)
+\left(  i\right)  =t_{a,b}\left(  \kappa\left(  i\right)  \right)
+=\kappa\left(  i\right)  $.
+\par
+Now, let us forget that we fixed $i$. We thus have shown that $\left(
+t_{a,b}\circ\kappa\right)  \left(  i\right)  =\kappa\left(  i\right)  $ for
+every $i\in\left[  k\right]  $. In other words, $t_{a,b}\circ\kappa=\kappa$,
+qed.}.
+\end{vershort}
+
+\begin{verlong}
+Thus, $a$ and $b$ are two distinct elements of $\left[  n\right]  =\left\{
+1,2,\ldots,n\right\}  $. Hence, a transposition $t_{a,b}\in S_{n}$ is defined
+(according to Definition \ref{def.transpos}). This transposition satisfies
+$t_{a,b}\circ\kappa=\kappa$\ \ \ \ \footnote{\textit{Proof.} We are going to
+show that every $i\in\left[  k\right]  $ satisfies $\left(  t_{a,b}\circ
+\kappa\right)  \left(  i\right)  =\kappa\left(  i\right)  $.
+\par
+So let $i\in\left[  k\right]  $. We shall show that $\left(  t_{a,b}%
+\circ\kappa\right)  \left(  i\right)  =\kappa\left(  i\right)  $.
+\par
+The definition of $t_{a,b}$ shows that $t_{a,b}$ is the permutation in $S_{n}$
+which switches $a$ with $b$ while leaving all other elements of $\left\{
+1,2,\ldots,n\right\}  $ unchanged. In other words, we have $t_{a,b}\left(
+a\right)  =b$, and $t_{a,b}\left(  b\right)  =a$, and $t_{a,b}\left(
+j\right)  =j$ for every $j\in\left[  n\right]  \setminus\left\{  a,b\right\}
+$.
+\par
+Let us first assume (for the sake of contradiction) that $\kappa\left(
+i\right)  \in\left\{  a,b\right\}  $.
+\par
+But $a$ and $b$ are two elements of the set $\left[  n\right]  \setminus
+\kappa\left(  \left[  k\right]  \right)  $. Hence, $\left\{  a,b\right\}
+\subseteq\left[  n\right]  \setminus\kappa\left(  \left[  k\right]  \right)
+$. Thus, $\kappa\left(  i\right)  \in\left\{  a,b\right\}  \subseteq\left[
+n\right]  \setminus\kappa\left(  \left[  k\right]  \right)  $. In other words,
+$\kappa\left(  i\right)  \in\left[  n\right]  $ and $\kappa\left(  i\right)
+\notin\kappa\left(  \left[  k\right]  \right)  $. But $\kappa\left(  i\right)
+\notin\kappa\left(  \left[  k\right]  \right)  $ clearly contradicts
+$\kappa\left(  \underbrace{i}_{\in\left[  k\right]  }\right)  \in\kappa\left(
+\left[  k\right]  \right)  $. Thus, we have obtained a contradiction. Hence,
+our assumption (that $\kappa\left(  i\right)  \in\left\{  a,b\right\}  $) was
+false. Thus, we have $\kappa\left(  i\right)  \notin\left\{  a,b\right\}  $.
+\par
+Combining $\kappa\left(  i\right)  \in\left[  n\right]  $ with $\kappa\left(
+i\right)  \in\left\{  a,b\right\}  $, we obtain $\kappa\left(  i\right)
+\in\left[  n\right]  \setminus\left\{  a,b\right\}  $. But recall that
+$t_{a,b}\left(  j\right)  =j$ for every $j\in\left[  n\right]  \setminus
+\left\{  a,b\right\}  $. Applying this to $j=\kappa\left(  i\right)  $, we
+obtain $t_{a,b}\left(  \kappa\left(  i\right)  \right)  =\kappa\left(
+i\right)  $ (since $\kappa\left(  i\right)  \in\left[  n\right]
+\setminus\left\{  a,b\right\}  $). Hence, $\left(  t_{a,b}\circ\kappa\right)
+\left(  i\right)  =t_{a,b}\left(  \kappa\left(  i\right)  \right)
+=\kappa\left(  i\right)  $.
+\par
+Now, let us forget that we fixed $i$. We thus have shown that $\left(
+t_{a,b}\circ\kappa\right)  \left(  i\right)  =\kappa\left(  i\right)  $ for
+every $i\in\left[  k\right]  $. In other words, $t_{a,b}\circ\kappa=\kappa$,
+qed.}.
+\end{verlong}
+
+Let $A_{n}$ be the set of all even permutations in $S_{n}$. Let $C_{n}$ be the
+set of all odd permutations in $S_{n}$.
+
+We have $\sigma\circ t_{a,b}\in C_{n}$ for every $\sigma\in A_{n}%
+$\ \ \ \ \footnote{We have already proven this during our proof of Lemma
+\ref{lem.det.sigma} \textbf{(b)}.}. Hence, we can define a map $\Phi
+:A_{n}\rightarrow C_{n}$ by%
+\[
+\Phi\left(  \sigma\right)  =\sigma\circ t_{a,b}\ \ \ \ \ \ \ \ \ \ \text{for
+every }\sigma\in A_{n}.
+\]
+Consider this map $\Phi$. Furthermore, we have $\sigma\circ\left(
+t_{a,b}\right)  ^{-1}\in A_{n}$ for every $\sigma\in C_{n}$%
+\ \ \ \ \footnote{We have already proven this during our proof of Lemma
+\ref{lem.det.sigma} \textbf{(b)}.}. Thus, we can define a map $\Psi
+:C_{n}\rightarrow A_{n}$ by%
+\[
+\Psi\left(  \sigma\right)  =\sigma\circ\left(  t_{a,b}\right)  ^{-1}%
+\ \ \ \ \ \ \ \ \ \ \text{for every }\sigma\in C_{n}.
+\]
+Consider this map $\Psi$.
+
+The maps $\Phi$ and $\Psi$ are mutually inverse\footnote{We have already
+proven this during our proof of Lemma \ref{lem.det.sigma} \textbf{(b)}.}.
+Hence, the map $\Phi$ is a bijection. Moreover, every $\sigma\in A_{n}$ and
+$i\in\left\{  1,2,\ldots,k\right\}  $ satisfy%
+\begin{equation}
+a_{\kappa\left(  i\right)  ,\left(  \Phi\left(  \sigma\right)  \right)
+\left(  \kappa\left(  i\right)  \right)  }=a_{\kappa\left(  i\right)
+,\sigma\left(  \kappa\left(  i\right)  \right)  }
+\label{pf.lem.sol.exeadd.powerdet.gen.toofew.1}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.sol.exeadd.powerdet.gen.toofew.1}):}
+Let $\sigma\in A_{n}$ and $i\in\left\{  1,2,\ldots,k\right\}  $. Thus,
+$i\in\left\{  1,2,\ldots,k\right\}  =\left[  k\right]  $. Now,%
+\[
+\left(  \underbrace{\Phi\left(  \sigma\right)  }_{=\sigma\circ t_{a,b}%
+}\right)  \left(  \kappa\left(  i\right)  \right)  =\left(  \sigma\circ
+t_{a,b}\right)  \left(  \kappa\left(  i\right)  \right)  =\sigma\left(
+t_{a,b}\left(  \kappa\left(  i\right)  \right)  \right)  =\sigma\left(
+\underbrace{\left(  t_{a,b}\circ\kappa\right)  }_{=\kappa}\left(  i\right)
+\right)  =\sigma\left(  \kappa\left(  i\right)  \right)  .
+\]
+Hence, $a_{\kappa\left(  i\right)  ,\left(  \Phi\left(  \sigma\right)
+\right)  \left(  \kappa\left(  i\right)  \right)  }=a_{\kappa\left(  i\right)
+,\sigma\left(  \kappa\left(  i\right)  \right)  }$. This proves
+(\ref{pf.lem.sol.exeadd.powerdet.gen.toofew.1}).}.
+
+Now,%
+\begin{align*}
+&  \sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\prod_{i=1}^{k}%
+a_{\kappa\left(  i\right)  ,\sigma\left(  \kappa\left(  i\right)  \right)  }\\
+&  =\underbrace{\sum_{\substack{\sigma\in S_{n};\\\sigma\text{ is even}}%
+}}_{\substack{=\sum_{\sigma\in A_{n}}\\\text{(since }A_{n}\text{ is
+the}\\\text{set of all even}\\\text{permutations}\\\text{in }S_{n}\text{)}%
+}}\underbrace{\left(  -1\right)  ^{\sigma}}_{\substack{=1\\\text{(since
+}\sigma\text{ is even)}}}\prod_{i=1}^{k}a_{\kappa\left(  i\right)
+,\sigma\left(  \kappa\left(  i\right)  \right)  }+\underbrace{\sum
+_{\substack{\sigma\in S_{n};\\\sigma\text{ is odd}}}}_{\substack{=\sum
+_{\sigma\in C_{n}}\\\text{(since }C_{n}\text{ is the}\\\text{set of all
+odd}\\\text{permutations}\\\text{in }S_{n}\text{)}}}\underbrace{\left(
+-1\right)  ^{\sigma}}_{\substack{=-1\\\text{(since }\sigma\text{ is odd)}%
+}}\prod_{i=1}^{k}a_{\kappa\left(  i\right)  ,\sigma\left(  \kappa\left(
+i\right)  \right)  }\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since every permutation }\sigma\in
+S_{n}\text{ is either even or odd, but not both}\right) \\
+&  =\sum_{\sigma\in A_{n}}\prod_{i=1}^{k}a_{\kappa\left(  i\right)
+,\sigma\left(  \kappa\left(  i\right)  \right)  }+\sum_{\sigma\in C_{n}%
+}\left(  -1\right)  \prod_{i=1}^{k}a_{\kappa\left(  i\right)  ,\sigma\left(
+\kappa\left(  i\right)  \right)  }\\
+&  =\sum_{\sigma\in A_{n}}\prod_{i=1}^{k}a_{\kappa\left(  i\right)
+,\sigma\left(  \kappa\left(  i\right)  \right)  }-\sum_{\sigma\in C_{n}}%
+\prod_{i=1}^{k}a_{\kappa\left(  i\right)  ,\sigma\left(  \kappa\left(
+i\right)  \right)  }=0,
+\end{align*}
+since%
+\begin{align*}
+&  \sum_{\sigma\in C_{n}}\prod_{i=1}^{k}a_{\kappa\left(  i\right)
+,\sigma\left(  \kappa\left(  i\right)  \right)  }\\
+&  =\sum_{\sigma\in A_{n}}\prod_{i=1}^{k}\underbrace{a_{\kappa\left(
+i\right)  ,\left(  \Phi\left(  \sigma\right)  \right)  \left(  \kappa\left(
+i\right)  \right)  }}_{\substack{=a_{\kappa\left(  i\right)  ,\sigma\left(
+\kappa\left(  i\right)  \right)  }\\\text{(by
+(\ref{pf.lem.sol.exeadd.powerdet.gen.toofew.1}))}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }\Phi\left(
+\sigma\right)  \text{ for }\sigma\text{, since the map }\Phi\text{ is a
+bijection}\right) \\
+&  =\sum_{\sigma\in A_{n}}\prod_{i=1}^{k}a_{\kappa\left(  i\right)
+,\sigma\left(  \kappa\left(  i\right)  \right)  }.
+\end{align*}
+This proves Lemma \ref{lem.sol.exeadd.powerdet.gen.toofew}.
+\end{proof}
+
+We can now solve part \textbf{(a)} of Additional exercise
+\ref{exeadd.powerdet.gen}:
+
+\begin{proposition}
+\label{prop.sol.exeadd.powerdet.gen.a}Let $n\in\mathbb{N}$. Let $A=\left(
+a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ be an $n\times n$-matrix.
+Then,%
+\[
+\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\left(  \sum_{i=1}%
+^{n}a_{i,\sigma\left(  i\right)  }\right)  ^{k}=0
+\]
+for each $k\in\left\{  0,1,\ldots,n-2\right\}  $.
+\end{proposition}
+
+\begin{proof}
+[Proof of Proposition \ref{prop.sol.exeadd.powerdet.gen.a}.]Let $k\in\left\{
+0,1,\ldots,n-2\right\}  $. Then, each each map $\kappa:\left[  k\right]
+\rightarrow\left[  n\right]  $ satisfies%
+\begin{equation}
+\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\prod_{i=1}^{k}%
+a_{\kappa\left(  i\right)  ,\sigma\left(  \kappa\left(  i\right)  \right)  }=0
+\label{pf.prop.sol.exeadd.powerdet.gen.a.1}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.prop.sol.exeadd.powerdet.gen.a.1}):} Let
+$\kappa:\left[  k\right]  \rightarrow\left[  n\right]  $ be a map. Then, Lemma
+\ref{lem.sol.exeadd.noncomm.polarization.pigeon-inj} \textbf{(a)} (applied to
+$U=\left[  k\right]  $, $V=\left[  n\right]  $, $f=\kappa$ and $S=\left[
+k\right]  $) yields $\left\vert \kappa\left(  \left[  k\right]  \right)
+\right\vert \leq\left\vert \left[  k\right]  \right\vert =k\leq n-2$ (since
+$k\in\left\{  0,1,\ldots,n-2\right\}  $), so that $\left\vert \kappa\left(
+\left[  k\right]  \right)  \right\vert \leq n-2<n-1$. Hence, Lemma
+\ref{lem.sol.exeadd.powerdet.gen.toofew} yields $\sum_{\sigma\in S_{n}}\left(
+-1\right)  ^{\sigma}\prod_{i=1}^{k}a_{\kappa\left(  i\right)  ,\sigma\left(
+\kappa\left(  i\right)  \right)  }=0$. This proves
+(\ref{pf.prop.sol.exeadd.powerdet.gen.a.1}).}.
+
+Now,%
+\begin{align*}
+&  \sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\underbrace{\left(
+\sum_{i=1}^{n}a_{i,\sigma\left(  i\right)  }\right)  ^{k}}_{\substack{=\sum
+_{\kappa:\left[  k\right]  \rightarrow\left[  n\right]  }\prod_{i=1}%
+^{k}a_{\kappa\left(  i\right)  ,\sigma\left(  \kappa\left(  i\right)  \right)
+}\\\text{(by Corollary \ref{cor.sol.exeadd.powerdet.gen.prodrule})}}}\\
+&  =\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\sum_{\kappa:\left[
+k\right]  \rightarrow\left[  n\right]  }\prod_{i=1}^{k}a_{\kappa\left(
+i\right)  ,\sigma\left(  \kappa\left(  i\right)  \right)  }=\underbrace{\sum
+_{\sigma\in S_{n}}\sum_{\kappa:\left[  k\right]  \rightarrow\left[  n\right]
+}}_{=\sum_{\kappa:\left[  k\right]  \rightarrow\left[  n\right]  }\sum
+_{\sigma\in S_{n}}}\left(  -1\right)  ^{\sigma}\prod_{i=1}^{k}a_{\kappa\left(
+i\right)  ,\sigma\left(  \kappa\left(  i\right)  \right)  }\\
+&  =\sum_{\kappa:\left[  k\right]  \rightarrow\left[  n\right]  }%
+\underbrace{\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\prod_{i=1}%
+^{k}a_{\kappa\left(  i\right)  ,\sigma\left(  \kappa\left(  i\right)  \right)
+}}_{\substack{=0\\\text{(by (\ref{pf.prop.sol.exeadd.powerdet.gen.a.1}))}%
+}}=\sum_{\kappa:\left[  k\right]  \rightarrow\left[  n\right]  }0=0.
+\end{align*}
+This proves Proposition \ref{prop.sol.exeadd.powerdet.gen.a}.
+\end{proof}
+
+\begin{remark}
+Corollary \ref{cor.sol.exeadd.powerdet.gen.prodrule}, Lemma
+\ref{lem.sol.exeadd.powerdet.gen.toofew} and Proposition
+\ref{prop.sol.exeadd.powerdet.gen.a} all remain valid if the commutative ring
+$\mathbb{K}$ is replaced by a noncommutative ring $\mathbb{L}$, as long as we
+use the conventions made in Section \ref{sect.sol.exeadd.noncomm.polarization}%
+. In fact, the proofs given above still work when $\mathbb{K}$ is replaced by
+$\mathbb{L}$, provided that we replace the reference to Lemma
+\ref{lem.prodrule2} by a reference to Lemma \ref{lem.noncomm.prodrule2}.
+\end{remark}
+
+Part \textbf{(b)} of Additional exercise \ref{exeadd.powerdet.gen} is
+noticeably harder. We prepare to it by studying permutations in $S_{n}$:
+
+\begin{lemma}
+\label{lem.sol.exeadd.powerdet.gen.allbut1}Let $n\in\mathbb{N}$ and
+$p\in\left[  n\right]  $. Let $\alpha\in S_{n}$ and $\beta\in S_{n}$. Assume
+that%
+\begin{equation}
+\alpha\left(  i\right)  =\beta\left(  i\right)  \ \ \ \ \ \ \ \ \ \ \text{for
+each }i\in\left[  n\right]  \setminus\left\{  p\right\}  .
+\label{eq.lem.sol.exeadd.powerdet.gen.allbut1.ass}%
+\end{equation}
+Then, $\alpha=\beta$.
+\end{lemma}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exeadd.powerdet.gen.allbut1}.]We have $\alpha\in
+S_{n}$. In other words, $\alpha$ is a permutation of $\left[  n\right]  $
+(since $S_{n}$ is the set of all permutations of $\left\{  1,2,\ldots
+,n\right\}  =\left[  n\right]  $). In other words, $\alpha$ is a bijective map
+$\left[  n\right]  \rightarrow\left[  n\right]  $. The map $\alpha$ is
+bijective and thus injective. Hence, Lemma
+\ref{lem.sol.exeadd.noncomm.polarization.pigeon-inj} \textbf{(c)} (applied to
+$U=\left[  n\right]  $, $V=\left[  n\right]  $, $f=\alpha$ and $S=\left[
+n\right]  \setminus\left\{  p\right\}  $) shows that
+\[
+\left\vert \alpha\left(  \left[  n\right]  \setminus\left\{  p\right\}
+\right)  \right\vert =\left\vert \left[  n\right]  \setminus\left\{
+p\right\}  \right\vert =\left\vert \left[  n\right]  \right\vert
+-1\ \ \ \ \ \ \ \ \ \ \left(  \text{since }p\in\left[  n\right]  \right)  .
+\]
+
+
+Let $G$ denote the subset $\alpha\left(  \left[  n\right]  \setminus\left\{
+p\right\}  \right)  $ of $\left[  n\right]  $. Then, $G=\alpha\left(  \left[
+n\right]  \setminus\left\{  p\right\}  \right)  $, and thus $\left\vert
+G\right\vert =\left\vert \alpha\left(  \left[  n\right]  \setminus\left\{
+p\right\}  \right)  \right\vert =\left\vert \left[  n\right]  \right\vert -1$.
+
+But $G$ is a subset of $\left[  n\right]  $; hence,%
+\[
+\left\vert \left[  n\right]  \setminus G\right\vert =\left\vert \left[
+n\right]  \right\vert -\underbrace{\left\vert G\right\vert }_{=\left\vert
+\left[  n\right]  \right\vert -1}=\left\vert \left[  n\right]  \right\vert
+-\left(  \left\vert \left[  n\right]  \right\vert -1\right)  =1.
+\]
+In other words, $\left[  n\right]  \setminus G$ is a $1$-element set. Hence,
+$\left[  n\right]  \setminus G=\left\{  q\right\}  $ for some element $q$.
+Consider this $q$.
+
+We have $q\in\left\{  q\right\}  =\left[  n\right]  \setminus G\subseteq
+\left[  n\right]  $.
+
+Now, $\alpha\left(  p\right)  \notin G$\ \ \ \ \footnote{\textit{Proof.}
+Assume the contrary. Thus, $\alpha\left(  p\right)  \in G$. Hence,
+$\alpha\left(  p\right)  \in G=\alpha\left(  \left[  n\right]  \setminus
+\left\{  p\right\}  \right)  $. In other words, there exists an $i\in\left[
+n\right]  \setminus\left\{  p\right\}  $ satisfying $\alpha\left(  p\right)
+=\alpha\left(  i\right)  $. Consider this $i$.
+\par
+From $\alpha\left(  p\right)  =\alpha\left(  i\right)  $, we obtain $p=i$
+(since $\alpha$ is injective). But $i\in\left[  n\right]  \setminus\left\{
+p\right\}  $ shows that $i\notin\left\{  p\right\}  $, so that $i\neq p=i$.
+This is clearly a contradiction. This contradiction proves that our assumption
+was wrong. Qed.}. Combining this with $\alpha\left(  p\right)  \in\left[
+n\right]  $, we obtain $\alpha\left(  p\right)  \in\left[  n\right]  \setminus
+G=\left\{  q\right\}  $. Thus, $\alpha\left(  p\right)  =q$.
+
+Also, $\beta\left(  p\right)  \notin G$\ \ \ \ \footnote{\textit{Proof.}
+Assume the contrary. Thus, $\beta\left(  p\right)  \in G$. Hence,
+$\beta\left(  p\right)  \in G=\alpha\left(  \left[  n\right]  \setminus
+\left\{  p\right\}  \right)  $. In other words, there exists an $i\in\left[
+n\right]  \setminus\left\{  p\right\}  $ satisfying $\beta\left(  p\right)
+=\alpha\left(  i\right)  $. Consider this $i$.
+\par
+From (\ref{eq.lem.sol.exeadd.powerdet.gen.allbut1.ass}), we obtain
+$\alpha\left(  i\right)  =\beta\left(  i\right)  $. Thus, $\beta\left(
+p\right)  =\alpha\left(  i\right)  =\beta\left(  i\right)  $.
+\par
+But recall that the map $\alpha$ is injective. Similarly, the map $\beta$ is
+injective. Thus, from $\beta\left(  p\right)  =\beta\left(  i\right)  $, we
+obtain $p=i$. But $i\in\left[  n\right]  \setminus\left\{  p\right\}  $ shows
+that $i\notin\left\{  p\right\}  $, so that $i\neq p=i$. This is a
+contradiction. This contradiction proves that our assumption was wrong. Qed.}.
+Combining this with $\beta\left(  p\right)  \in\left[  n\right]  $, we obtain
+$\beta\left(  p\right)  \in\left[  n\right]  \setminus G=\left\{  q\right\}
+$. Thus, $\beta\left(  p\right)  =q$. Comparing this with $\alpha\left(
+p\right)  =q$, we obtain $\alpha\left(  p\right)  =\beta\left(  p\right)  $.
+
+Now, each $i\in\left[  n\right]  $ satisfies $\alpha\left(  i\right)
+=\beta\left(  i\right)  $\ \ \ \ \footnote{\textit{Proof.} Let $i\in\left[
+n\right]  $. We must show that $\alpha\left(  i\right)  =\beta\left(
+i\right)  $.
+\par
+If $i=p$, then this is clearly true (because $\alpha\left(  p\right)
+=\beta\left(  p\right)  $). Hence, for the rest of this proof, we WLOG assume
+that $i\neq p$. Hence, $i\in\left[  n\right]  \setminus\left\{  p\right\}  $.
+Thus, (\ref{eq.lem.sol.exeadd.powerdet.gen.allbut1.ass}) yields $\alpha\left(
+i\right)  =\beta\left(  i\right)  $. Qed.}. In other words, $\alpha=\beta$.
+This proves Lemma \ref{lem.sol.exeadd.powerdet.gen.allbut1}.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exeadd.powerdet.gen.allbut1}.]We have $\alpha\in
+S_{n}$. In other words, $\alpha$ is a permutation of $\left\{  1,2,\ldots
+,n\right\}  $ (since $S_{n}$ is the set of all permutations of $\left\{
+1,2,\ldots,n\right\}  $). In other words, $\alpha$ is a permutation of
+$\left[  n\right]  $ (since $\left\{  1,2,\ldots,n\right\}  =\left[  n\right]
+$). In other words, $\alpha$ is a bijective map $\left[  n\right]
+\rightarrow\left[  n\right]  $. The map $\alpha$ is bijective and thus
+injective. Hence, Lemma \ref{lem.sol.exeadd.noncomm.polarization.pigeon-inj}
+\textbf{(c)} (applied to $U=\left[  n\right]  $, $V=\left[  n\right]  $,
+$f=\alpha$ and $S=\left[  n\right]  \setminus\left\{  p\right\}  $) shows
+that
+\[
+\left\vert \alpha\left(  \left[  n\right]  \setminus\left\{  p\right\}
+\right)  \right\vert =\left\vert \left[  n\right]  \setminus\left\{
+p\right\}  \right\vert =\left\vert \left[  n\right]  \right\vert
+-1\ \ \ \ \ \ \ \ \ \ \left(  \text{since }p\in\left[  n\right]  \right)  .
+\]
+
+
+Let $G$ denote the subset $\alpha\left(  \left[  n\right]  \setminus\left\{
+p\right\}  \right)  $ of $\left[  n\right]  $. Then, $G=\alpha\left(  \left[
+n\right]  \setminus\left\{  p\right\}  \right)  $, and thus $\left\vert
+G\right\vert =\left\vert \alpha\left(  \left[  n\right]  \setminus\left\{
+p\right\}  \right)  \right\vert =\left\vert \left[  n\right]  \right\vert -1$.
+
+But $G$ is a subset of $\left[  n\right]  $; hence,%
+\[
+\left\vert \left[  n\right]  \setminus G\right\vert =\left\vert \left[
+n\right]  \right\vert -\underbrace{\left\vert G\right\vert }_{=\left\vert
+\left[  n\right]  \right\vert -1}=\left\vert \left[  n\right]  \right\vert
+-\left(  \left\vert \left[  n\right]  \right\vert -1\right)  =1.
+\]
+In other words, $\left[  n\right]  \setminus G$ is a $1$-element set. Hence,
+$\left[  n\right]  \setminus G$ has the form $\left[  n\right]  \setminus
+G=\left\{  q\right\}  $ for some element $q$. Consider this $q$.
+
+We have $q\in\left\{  q\right\}  =\left[  n\right]  \setminus G\subseteq
+\left[  n\right]  $.
+
+Now, $\alpha\left(  p\right)  \notin G$\ \ \ \ \footnote{\textit{Proof.}
+Assume the contrary. Thus, $\alpha\left(  p\right)  \in G$. Hence,
+$\alpha\left(  p\right)  \in G=\alpha\left(  \left[  n\right]  \setminus
+\left\{  p\right\}  \right)  $. In other words, there exists an $i\in\left[
+n\right]  \setminus\left\{  p\right\}  $ satisfying $\alpha\left(  p\right)
+=\alpha\left(  i\right)  $. Consider this $i$.
+\par
+From $i\in\left[  n\right]  \setminus\left\{  p\right\}  $, we obtain
+$i\in\left[  n\right]  $ and $i\notin\left\{  p\right\}  $. From
+$i\notin\left\{  p\right\}  $, we obtain $i\neq p$ and thus $p\neq i$.
+\par
+We have $p\in\left[  n\right]  $ and $i\in\left[  n\right]  \setminus\left\{
+p\right\}  \subseteq\left[  n\right]  $. But the map $\alpha$ is injective. In
+other words, if $u\in\left[  n\right]  $ and $v\in\left[  n\right]  $ satisfy
+$\alpha\left(  u\right)  =\alpha\left(  v\right)  $, then $u=v$. Applying this
+to $u=p$ and $v=i$, we obtain $p=i$ (since $\alpha\left(  p\right)
+=\alpha\left(  i\right)  $). This contradicts $p\neq i$. This contradiction
+proves that our assumption was wrong. Qed.}. Combining this with
+$\alpha\left(  p\right)  \in\left[  n\right]  $, we obtain $\alpha\left(
+p\right)  \in\left[  n\right]  \setminus G=\left\{  q\right\}  $. Thus,
+$\alpha\left(  p\right)  =q$.
+
+Also, $\beta\left(  p\right)  \notin G$\ \ \ \ \footnote{\textit{Proof.}
+Assume the contrary. Thus, $\beta\left(  p\right)  \in G$. Hence,
+$\beta\left(  p\right)  \in G=\alpha\left(  \left[  n\right]  \setminus
+\left\{  p\right\}  \right)  $. In other words, there exists an $i\in\left[
+n\right]  \setminus\left\{  p\right\}  $ satisfying $\beta\left(  p\right)
+=\alpha\left(  i\right)  $. Consider this $i$.
+\par
+From $i\in\left[  n\right]  \setminus\left\{  p\right\}  $, we obtain
+$i\in\left[  n\right]  $ and $i\notin\left\{  p\right\}  $. From
+$i\notin\left\{  p\right\}  $, we obtain $i\neq p$ and thus $p\neq i$.
+\par
+From (\ref{eq.lem.sol.exeadd.powerdet.gen.allbut1.ass}), we obtain
+$\alpha\left(  i\right)  =\beta\left(  i\right)  $. Thus, $\beta\left(
+p\right)  =\alpha\left(  i\right)  =\beta\left(  i\right)  $.
+\par
+But recall that $\alpha$ is an injective map $\left[  n\right]  \rightarrow
+\left[  n\right]  $. The same argument (applied to $\beta$ instead of $\alpha
+$) shows that $\beta$ is an injective map $\left[  n\right]  \rightarrow
+\left[  n\right]  $. In particular, $\beta$ is injective. In other words, if
+$u\in\left[  n\right]  $ and $v\in\left[  n\right]  $ satisfy $\beta\left(
+u\right)  =\beta\left(  v\right)  $, then $u=v$. Applying this to $u=p$ and
+$v=i$, we obtain $p=i$ (since $\beta\left(  p\right)  =\beta\left(  i\right)
+$). This contradicts $p\neq i$. This contradiction proves that our assumption
+was wrong. Qed.}. Combining this with $\beta\left(  p\right)  \in\left[
+n\right]  $, we obtain $\beta\left(  p\right)  \in\left[  n\right]  \setminus
+G=\left\{  q\right\}  $. Thus, $\beta\left(  p\right)  =q$. Comparing this
+with $\alpha\left(  p\right)  =q$, we obtain $\alpha\left(  p\right)
+=\beta\left(  p\right)  $.
+
+Now, each $i\in\left[  n\right]  $ satisfies $\alpha\left(  i\right)
+=\beta\left(  i\right)  $\ \ \ \ \footnote{\textit{Proof.} Let $i\in\left[
+n\right]  $. We must show that $\alpha\left(  i\right)  =\beta\left(
+i\right)  $.
+\par
+If $i=p$, then this is clearly true (because $\alpha\left(  p\right)
+=\beta\left(  p\right)  $). Hence, for the rest of this proof, we can WLOG
+assume that we don't have $i=p$. Assume this.
+\par
+We have $i\neq p$ (since we don't have $i=p$). Combining this with
+$i\in\left[  n\right]  $, we obtain $i\in\left[  n\right]  \setminus\left\{
+p\right\}  $. Thus, (\ref{eq.lem.sol.exeadd.powerdet.gen.allbut1.ass}) yields
+$\alpha\left(  i\right)  =\beta\left(  i\right)  $. Qed.}. In other words,
+$\alpha=\beta$. This proves Lemma \ref{lem.sol.exeadd.powerdet.gen.allbut1}.
+\end{proof}
+\end{verlong}
+
+\begin{lemma}
+\label{lem.sol.exeadd.powerdet.gen.kappas}Let $n\geq1$ be an integer. Then,
+the map%
+\begin{align*}
+S_{n}  &  \rightarrow\left\{  f:\left[  n-1\right]  \rightarrow\left[
+n\right]  \ \mid\ \left\vert f\left(  \left[  n-1\right]  \right)  \right\vert
+\geq n-1\right\}  ,\\
+\tau &  \mapsto\tau\mid_{\left[  n-1\right]  }%
+\end{align*}
+is well-defined and bijective.
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exeadd.powerdet.gen.kappas}.]We have
+$n-1\in\mathbb{N}$ (since $n\geq1$) and thus $\left\vert \left[  n-1\right]
+\right\vert =n-1$.
+
+\begin{vershort}
+Also, $n\in\left[  n\right]  $ (since $n\geq1$) and $\left[  n-1\right]
+=\left[  n\right]  \setminus\left\{  n\right\}  \subseteq\left[  n\right]  $.
+\end{vershort}
+
+\begin{verlong}
+Also, $n\in\left[  n\right]  $ (since $n\geq1$) and%
+\[
+\underbrace{\left[  n\right]  }_{=\left\{  1,2,\ldots,n\right\}  }%
+\setminus\left\{  n\right\}  =\left\{  1,2,\ldots,n\right\}  \setminus\left\{
+n\right\}  =\left\{  1,2,\ldots,n-1\right\}  .
+\]
+Thus, $\left[  n-1\right]  =\left\{  1,2,\ldots,n-1\right\}  =\left[
+n\right]  \setminus\left\{  n\right\}  \subseteq\left[  n\right]  $. In other
+words, $\left[  n-1\right]  $ is a subset of $\left[  n\right]  $.
+\end{verlong}
+
+Define a set $Y$ by%
+\begin{equation}
+Y=\left\{  f:\left[  n-1\right]  \rightarrow\left[  n\right]  \ \mid
+\ \left\vert f\left(  \left[  n-1\right]  \right)  \right\vert \geq
+n-1\right\}  . \label{pf.lem.sol.exeadd.powerdet.gen.kappas.Y=}%
+\end{equation}
+
+
+\begin{vershort}
+Each $\tau\in S_{n}$ satisfies $\tau\mid_{\left[  n-1\right]  }\in
+Y$\ \ \ \ \footnote{\textit{Proof.} Let $\tau\in S_{n}$.
+\par
+We have $\tau\in S_{n}$. In other words, $\tau$ is a permutation of $\left[
+n\right]  $ (since $S_{n}$ is the set of all permutations of $\left\{
+1,2,\ldots,n\right\}  =\left[  n\right]  $). In other words, $\tau$ is a
+bijective map $\left[  n\right]  \rightarrow\left[  n\right]  $. The map
+$\tau$ is bijective and thus injective. Hence, Lemma
+\ref{lem.sol.exeadd.noncomm.polarization.pigeon-inj} \textbf{(c)} (applied to
+$U=\left[  n\right]  $, $V=\left[  n\right]  $, $f=\tau$ and $S=\left[
+n-1\right]  $) shows that $\left\vert \tau\left(  \left[  n-1\right]  \right)
+\right\vert =\left\vert \left[  n-1\right]  \right\vert =n-1$.
+\par
+Now, $\tau\mid_{\left[  n-1\right]  }$ is a map $\left[  n-1\right]
+\rightarrow\left[  n\right]  $ and satisfies $\left\vert \underbrace{\left(
+\tau\mid_{\left[  n-1\right]  }\right)  \left(  \left[  n-1\right]  \right)
+}_{=\tau\left(  \left[  n-1\right]  \right)  }\right\vert =\left\vert
+\tau\left(  \left[  n-1\right]  \right)  \right\vert =n-1\geq n-1$. Hence,
+$\tau\mid_{\left[  n-1\right]  }$ is a map $f:\left[  n-1\right]
+\rightarrow\left[  n\right]  $ satisfying $\left\vert f\left(  \left[
+n-1\right]  \right)  \right\vert \geq n-1$. In other words,%
+\[
+\tau\mid_{\left[  n-1\right]  }\in\left\{  f:\left[  n-1\right]
+\rightarrow\left[  n\right]  \ \mid\ \left\vert f\left(  \left[  n-1\right]
+\right)  \right\vert \geq n-1\right\}  .
+\]
+In light of (\ref{pf.lem.sol.exeadd.powerdet.gen.kappas.Y=}), this rewrites as
+$\tau\mid_{\left[  n-1\right]  }\in Y$. Qed.}. Hence, we can define a map
+$T:S_{n}\rightarrow Y$ by%
+\[
+\left(  T\left(  \tau\right)  =\tau\mid_{\left[  n-1\right]  }%
+\ \ \ \ \ \ \ \ \ \ \text{for all }\tau\in S_{n}\right)  .
+\]
+Consider this map $T$.
+\end{vershort}
+
+\begin{verlong}
+Each $\tau\in S_{n}$ satisfies $\tau\mid_{\left[  n-1\right]  }\in
+Y$\ \ \ \ \footnote{\textit{Proof.} Let $\tau\in S_{n}$.
+\par
+We have $\tau\in S_{n}$. In other words, $\tau$ is a permutation of $\left\{
+1,2,\ldots,n\right\}  $ (since $S_{n}$ is the set of all permutations of
+$\left\{  1,2,\ldots,n\right\}  $). In other words, $\tau$ is a permutation of
+$\left[  n\right]  $ (since $\left\{  1,2,\ldots,n\right\}  =\left[  n\right]
+$). In other words, $\tau$ is a bijective map $\left[  n\right]
+\rightarrow\left[  n\right]  $. The map $\tau$ is bijective and thus
+injective. Hence, Lemma \ref{lem.sol.exeadd.noncomm.polarization.pigeon-inj}
+\textbf{(c)} (applied to $U=\left[  n\right]  $, $V=\left[  n\right]  $,
+$f=\tau$ and $S=\left[  n-1\right]  $) shows that $\left\vert \tau\left(
+\left[  n-1\right]  \right)  \right\vert =\left\vert \left[  n-1\right]
+\right\vert =n-1$.
+\par
+Now, $\tau\mid_{\left[  n-1\right]  }$ is a map $\left[  n-1\right]
+\rightarrow\left[  n\right]  $ and satisfies $\left\vert \underbrace{\left(
+\tau\mid_{\left[  n-1\right]  }\right)  \left(  \left[  n-1\right]  \right)
+}_{=\tau\left(  \left[  n-1\right]  \right)  }\right\vert =\left\vert
+\tau\left(  \left[  n-1\right]  \right)  \right\vert =n-1\geq n-1$. Hence,
+$\tau\mid_{\left[  n-1\right]  }$ is a map $f:\left[  n-1\right]
+\rightarrow\left[  n\right]  $ satisfying $\left\vert f\left(  \left[
+n-1\right]  \right)  \right\vert \geq n-1$. In other words,%
+\[
+\tau\mid_{\left[  n-1\right]  }\in\left\{  f:\left[  n-1\right]
+\rightarrow\left[  n\right]  \ \mid\ \left\vert f\left(  \left[  n-1\right]
+\right)  \right\vert \geq n-1\right\}  .
+\]
+In light of (\ref{pf.lem.sol.exeadd.powerdet.gen.kappas.Y=}), this rewrites as
+$\tau\mid_{\left[  n-1\right]  }\in Y$. Qed.}. Hence, we can define a map
+$T:S_{n}\rightarrow Y$ by%
+\[
+\left(  T\left(  \tau\right)  =\tau\mid_{\left[  n-1\right]  }%
+\ \ \ \ \ \ \ \ \ \ \text{for all }\tau\in S_{n}\right)  .
+\]
+Consider this map $T$.
+\end{verlong}
+
+\begin{vershort}
+Each $g\in Y$ satisfies $g\in T\left(  S_{n}\right)  $%
+\ \ \ \ \footnote{\textit{Proof.} Let $g\in Y$. Thus, $g\in Y=\left\{
+f:\left[  n-1\right]  \rightarrow\left[  n\right]  \ \mid\ \left\vert f\left(
+\left[  n-1\right]  \right)  \right\vert \geq n-1\right\}  $. In other words,
+$g$ is a map $\left[  n-1\right]  \rightarrow\left[  n\right]  $ and satisfies
+$\left\vert g\left(  \left[  n-1\right]  \right)  \right\vert \geq n-1$.
+\par
+Thus, $\left\vert g\left(  \left[  n-1\right]  \right)  \right\vert \geq
+n-1=\left\vert \left[  n-1\right]  \right\vert $. Hence, Lemma
+\ref{lem.sol.exeadd.noncomm.polarization.pigeon-inj} \textbf{(b)} (applied to
+$U=\left[  n-1\right]  $, $V=\left[  n\right]  $ and $f=g$) shows that the map
+$g$ is injective. Hence, Lemma
+\ref{lem.sol.exeadd.noncomm.polarization.pigeon-inj} \textbf{(c)} (applied to
+$U=\left[  n-1\right]  $, $V=\left[  n\right]  $, $f=g$ and $S=\left[
+n-1\right]  $) shows that $\left\vert g\left(  \left[  n-1\right]  \right)
+\right\vert =\left\vert \left[  n-1\right]  \right\vert =n-1$. Since $g\left(
+\left[  n-1\right]  \right)  $ is a subset of $\left[  n\right]  $, we have%
+\[
+\left\vert \left[  n\right]  \setminus g\left(  \left[  n-1\right]  \right)
+\right\vert =\underbrace{\left\vert \left[  n\right]  \right\vert }%
+_{=n}-\underbrace{\left\vert g\left(  \left[  n-1\right]  \right)  \right\vert
+}_{=n-1}=n-\left(  n-1\right)  =1.
+\]
+In other words, $\left[  n\right]  \setminus g\left(  \left[  n-1\right]
+\right)  $ is a $1$-element set. In other words, $\left[  n\right]  \setminus
+g\left(  \left[  n-1\right]  \right)  =\left\{  p\right\}  $ for some element
+$p$. Consider this $p$.
+\par
+We have $p\in\left\{  p\right\}  =\left[  n\right]  \setminus g\left(  \left[
+n-1\right]  \right)  \subseteq\left[  n\right]  $.
+\par
+Now, define a map $\sigma:\left[  n\right]  \rightarrow\left[  n\right]  $ by%
+\[
+\left(  \sigma\left(  i\right)  =%
+\begin{cases}
+g\left(  i\right)  , & \text{if }i\in\left[  n-1\right]  ;\\
+p, & \text{if }i\notin\left[  n-1\right]
+\end{cases}
+\ \ \ \ \ \ \ \ \ \ \text{for each }i\in\left[  n\right]  \right)  .
+\]
+(This is well-defined, because each $i\in\left[  n\right]  $ satisfies $%
+\begin{cases}
+g\left(  i\right)  , & \text{if }i\in\left[  n-1\right]  ;\\
+p, & \text{if }i\notin\left[  n-1\right]
+\end{cases}
+\in\left[  n\right]  $.)
+\par
+We shall now show that the map $\sigma$ is surjective.
+\par
+Indeed, $n\notin\left\{  1,2,\ldots,n-1\right\}  =\left[  n-1\right]  $ but
+$n\in\left[  n\right]  $. Hence, the definition of $\sigma$ yields%
+\[
+\sigma\left(  n\right)  =%
+\begin{cases}
+g\left(  n\right)  , & \text{if }n\in\left[  n-1\right]  ;\\
+p, & \text{if }n\notin\left[  n-1\right]
+\end{cases}
+=p\ \ \ \ \ \ \ \ \ \ \left(  \text{since }n\notin\left[  n-1\right]  \right)
+.
+\]
+But $\sigma\left(  \underbrace{n}_{\in\left[  n\right]  }\right)  \in
+\sigma\left(  \left[  n\right]  \right)  $, so that $p=\sigma\left(  n\right)
+\in\sigma\left(  \left[  n\right]  \right)  $.
+\par
+Also, each $i\in\left[  n-1\right]  $ satisfies%
+\begin{equation}
+\sigma\left(  i\right)  =%
+\begin{cases}
+g\left(  i\right)  , & \text{if }i\in\left[  n-1\right]  ;\\
+p, & \text{if }i\notin\left[  n-1\right]
+\end{cases}
+=g\left(  i\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }i\in\left[
+n-1\right]  \right)  .
+\label{pf.lem.sol.exeadd.powerdet.gen.kappas.short.sur.24}%
+\end{equation}
+\par
+Now,%
+\[
+g\left(  \left[  n-1\right]  \right)  =\left\{  \underbrace{g\left(  i\right)
+}_{\substack{=\sigma\left(  i\right)  \\\text{(by
+(\ref{pf.lem.sol.exeadd.powerdet.gen.kappas.short.sur.24}))}}}\ \mid
+\ i\in\left[  n-1\right]  \right\}  =\left\{  \sigma\left(  i\right)
+\ \mid\ i\in\left[  n-1\right]  \right\}  =\sigma\left(  \underbrace{\left[
+n-1\right]  }_{\subseteq\left[  n\right]  }\right)  \subseteq\sigma\left(
+\left[  n\right]  \right)  .
+\]
+\par
+If $X$ is a set, and if $Y$ is a subset of $X$, then $X=Y\cup\left(
+X\setminus Y\right)  $. Applying this to $X=\left[  n\right]  $ and
+$Y=g\left(  \left[  n-1\right]  \right)  $, we obtain%
+\[
+\left[  n\right]  =\underbrace{g\left(  \left[  n-1\right]  \right)
+}_{\subseteq\sigma\left(  \left[  n\right]  \right)  }\cup\underbrace{\left(
+\left[  n\right]  \setminus g\left(  \left[  n-1\right]  \right)  \right)
+}_{\substack{=\left\{  p\right\}  \subseteq\sigma\left(  \left[  n\right]
+\right)  \\\text{(since }p\in\sigma\left(  \left[  n\right]  \right)
+\text{)}}}\subseteq\sigma\left(  \left[  n\right]  \right)  \cup\sigma\left(
+\left[  n\right]  \right)  =\sigma\left(  \left[  n\right]  \right)  .
+\]
+Combining this with the obvious relation $\sigma\left(  \left[  n\right]
+\right)  \subseteq\left[  n\right]  $, we obtain $\left[  n\right]
+=\sigma\left(  \left[  n\right]  \right)  $. In other words, the map $\sigma$
+is surjective.
+\par
+Lemma \ref{lem.sol.exeadd.noncomm.polarization.pigeon} (applied to $U=\left[
+n\right]  $, $V=\left[  n\right]  $ and $f=\sigma$) shows that we have the
+following logical equivalence:%
+\[
+\left(  \sigma\text{ is surjective}\right)  \ \Longleftrightarrow\ \left(
+\sigma\text{ is bijective}\right)
+\]
+(since $\left\vert \left[  n\right]  \right\vert =\left\vert \left[  n\right]
+\right\vert $). Thus, $\sigma$ is bijective (since $\sigma$ is surjective).
+Hence, $\sigma$ is a bijective map $\left[  n\right]  \rightarrow\left[
+n\right]  $. In other words, $\sigma$ is a permutation of $\left[  n\right]
+$. In other words, $\sigma\in S_{n}$ (since $S_{n}$ is the set of all
+permutations of $\left\{  1,2,\ldots,n\right\}  =\left[  n\right]  $). Hence,
+$T\left(  \sigma\right)  $ is well-defined.
+\par
+The definition of $T$ yields $T\left(  \sigma\right)  =\sigma\mid_{\left[
+n-1\right]  }$. Thus, each $i\in\left[  n-1\right]  $ satisfies%
+\[
+\left(  T\left(  \sigma\right)  \right)  \left(  i\right)  =\left(  \sigma
+\mid_{\left[  n-1\right]  }\right)  \left(  i\right)  =\sigma\left(  i\right)
+=g\left(  i\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{pf.lem.sol.exeadd.powerdet.gen.kappas.short.sur.24})}\right)  .
+\]
+In other words, $T\left(  \sigma\right)  =g$. Thus, $g=T\left(
+\underbrace{\sigma}_{\in S_{n}}\right)  \in T\left(  S_{n}\right)  $. Qed.}.
+In other words, $Y\subseteq T\left(  S_{n}\right)  $. Combining this with
+$T\left(  S_{n}\right)  \subseteq Y$ (which is obvious), we obtain $Y=T\left(
+S_{n}\right)  $. In other words, the map $T$ is surjective.
+\end{vershort}
+
+\begin{verlong}
+Each $g\in Y$ satisfies $g\in T\left(  S_{n}\right)  $%
+\ \ \ \ \footnote{\textit{Proof.} Let $g\in Y$. Thus, $g\in Y=\left\{
+f:\left[  n-1\right]  \rightarrow\left[  n\right]  \ \mid\ \left\vert f\left(
+\left[  n-1\right]  \right)  \right\vert \geq n-1\right\}  $. In other words,
+$g$ is a map $f:\left[  n-1\right]  \rightarrow\left[  n\right]  $ satisfying
+$\left\vert f\left(  \left[  n-1\right]  \right)  \right\vert \geq n-1$. In
+other words, $g$ is a map $\left[  n-1\right]  \rightarrow\left[  n\right]  $
+and satisfies $\left\vert g\left(  \left[  n-1\right]  \right)  \right\vert
+\geq n-1$.
+\par
+Thus, $\left\vert g\left(  \left[  n-1\right]  \right)  \right\vert \geq
+n-1=\left\vert \left[  n-1\right]  \right\vert $. Hence, Lemma
+\ref{lem.sol.exeadd.noncomm.polarization.pigeon-inj} \textbf{(b)} (applied to
+$U=\left[  n-1\right]  $, $V=\left[  n\right]  $ and $f=g$) shows that the map
+$g$ is injective. Hence, Lemma
+\ref{lem.sol.exeadd.noncomm.polarization.pigeon-inj} \textbf{(c)} (applied to
+$U=\left[  n-1\right]  $, $V=\left[  n\right]  $, $f=g$ and $S=\left[
+n-1\right]  $) shows that $\left\vert g\left(  \left[  n-1\right]  \right)
+\right\vert =\left\vert \left[  n-1\right]  \right\vert =n-1$. Since $g\left(
+\left[  n-1\right]  \right)  $ is a subset of $\left[  n\right]  $, we have%
+\[
+\left\vert \left[  n\right]  \setminus g\left(  \left[  n-1\right]  \right)
+\right\vert =\underbrace{\left\vert \left[  n\right]  \right\vert }%
+_{=n}-\underbrace{\left\vert g\left(  \left[  n-1\right]  \right)  \right\vert
+}_{=n-1}=n-\left(  n-1\right)  =1.
+\]
+In other words, $\left[  n\right]  \setminus g\left(  \left[  n-1\right]
+\right)  $ is a $1$-element set. In other words, $\left[  n\right]  \setminus
+g\left(  \left[  n-1\right]  \right)  =\left\{  p\right\}  $ for some element
+$p$. Consider this $p$.
+\par
+We have $p\in\left\{  p\right\}  =\left[  n\right]  \setminus g\left(  \left[
+n-1\right]  \right)  \subseteq\left[  n\right]  $.
+\par
+Now, each $i\in\left[  n\right]  $ satisfies $%
+\begin{cases}
+g\left(  i\right)  , & \text{if }i\in\left[  n-1\right]  ;\\
+p, & \text{if }i\notin\left[  n-1\right]
+\end{cases}
+\in\left[  n\right]  $ (because we have $g\left(  i\right)  \in\left[
+n\right]  $ whenever $i\in\left[  n-1\right]  $ (since $g$ is a map $\left[
+n-1\right]  \rightarrow\left[  n\right]  $), and because we have $p\in\left[
+n\right]  $ whenever $i\notin\left[  n-1\right]  $ (since $p\in\left[
+n\right]  $)).
+\par
+Now, define a map $\sigma:\left[  n\right]  \rightarrow\left[  n\right]  $ by%
+\[
+\left(  \sigma\left(  i\right)  =%
+\begin{cases}
+g\left(  i\right)  , & \text{if }i\in\left[  n-1\right]  ;\\
+p, & \text{if }i\notin\left[  n-1\right]
+\end{cases}
+\ \ \ \ \ \ \ \ \ \ \text{for each }i\in\left[  n\right]  \right)  .
+\]
+(This is well-defined, because each $i\in\left[  n\right]  $ satisfies $%
+\begin{cases}
+g\left(  i\right)  , & \text{if }i\in\left[  n-1\right]  ;\\
+p, & \text{if }i\notin\left[  n-1\right]
+\end{cases}
+\in\left[  n\right]  $.)
+\par
+We shall now show that the map $\sigma$ is surjective.
+\par
+Indeed, $n\notin\left\{  1,2,\ldots,n-1\right\}  =\left[  n-1\right]  $ but
+$n\in\left[  n\right]  $. Hence, the definition of $\sigma$ yields%
+\[
+\sigma\left(  n\right)  =%
+\begin{cases}
+g\left(  n\right)  , & \text{if }n\in\left[  n-1\right]  ;\\
+p, & \text{if }n\notin\left[  n-1\right]
+\end{cases}
+=p\ \ \ \ \ \ \ \ \ \ \left(  \text{since }n\notin\left[  n-1\right]  \right)
+.
+\]
+But $\sigma\left(  \underbrace{n}_{\in\left[  n\right]  }\right)  \in
+\sigma\left(  \left[  n\right]  \right)  $, so that $p=\sigma\left(  n\right)
+\in\sigma\left(  \left[  n\right]  \right)  $.
+\par
+Also, each $i\in\left[  n-1\right]  $ satisfies $i\in\left[  n-1\right]
+\subseteq\left[  n\right]  $. Therefore, for each $i\in\left[  n-1\right]  $,
+the value $\sigma\left(  i\right)  $ is well-defined. Furthermore, each
+$i\in\left[  n-1\right]  $ satisfies%
+\begin{equation}
+\sigma\left(  i\right)  =%
+\begin{cases}
+g\left(  i\right)  , & \text{if }i\in\left[  n-1\right]  ;\\
+p, & \text{if }i\notin\left[  n-1\right]
+\end{cases}
+=g\left(  i\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }i\in\left[
+n-1\right]  \right)  . \label{pf.lem.sol.exeadd.powerdet.gen.kappas.sur.24}%
+\end{equation}
+\par
+Now,%
+\[
+g\left(  \left[  n-1\right]  \right)  =\left\{  \underbrace{g\left(  i\right)
+}_{\substack{=\sigma\left(  i\right)  \\\text{(by
+(\ref{pf.lem.sol.exeadd.powerdet.gen.kappas.sur.24}))}}}\ \mid\ i\in\left[
+n-1\right]  \right\}  =\left\{  \sigma\left(  i\right)  \ \mid\ i\in\left[
+n-1\right]  \right\}  =\sigma\left(  \underbrace{\left[  n-1\right]
+}_{\subseteq\left[  n\right]  }\right)  \subseteq\sigma\left(  \left[
+n\right]  \right)  .
+\]
+\par
+If $X$ is a set, and if $Y$ is a subset of $X$, then $X=Y\cup\left(
+X\setminus Y\right)  $. Applying this to $X=\left[  n\right]  $ and
+$Y=g\left(  \left[  n-1\right]  \right)  $, we obtain%
+\[
+\left[  n\right]  =\underbrace{g\left(  \left[  n-1\right]  \right)
+}_{\subseteq\sigma\left(  \left[  n\right]  \right)  }\cup\underbrace{\left(
+\left[  n\right]  \setminus g\left(  \left[  n-1\right]  \right)  \right)
+}_{\substack{=\left\{  p\right\}  \subseteq\sigma\left(  \left[  n\right]
+\right)  \\\text{(since }p\in\sigma\left(  \left[  n\right]  \right)
+\text{)}}}\subseteq\sigma\left(  \left[  n\right]  \right)  \cup\sigma\left(
+\left[  n\right]  \right)  =\sigma\left(  \left[  n\right]  \right)  .
+\]
+Combining this with the obvious relation $\sigma\left(  \left[  n\right]
+\right)  \subseteq\left[  n\right]  $, we obtain $\left[  n\right]
+=\sigma\left(  \left[  n\right]  \right)  $. In other words, the map $\sigma$
+is surjective.
+\par
+Lemma \ref{lem.sol.exeadd.noncomm.polarization.pigeon} (applied to $U=\left[
+n\right]  $, $V=\left[  n\right]  $ and $f=\sigma$) shows that we have the
+following logical equivalence:%
+\[
+\left(  \sigma\text{ is surjective}\right)  \ \Longleftrightarrow\ \left(
+\sigma\text{ is bijective}\right)
+\]
+(since $\left\vert \left[  n\right]  \right\vert =\left\vert \left[  n\right]
+\right\vert $). Thus, $\sigma$ is bijective (since $\sigma$ is surjective).
+Hence, $\sigma$ is a bijective map $\left[  n\right]  \rightarrow\left[
+n\right]  $. In other words, $\sigma$ is a permutation of $\left[  n\right]
+$. In other words, $\sigma$ is a permutation of $\left\{  1,2,\ldots
+,n\right\}  $ (since $\left[  n\right]  =\left\{  1,2,\ldots,n\right\}  $). In
+other words, $\sigma\in S_{n}$ (since $S_{n}$ is the set of all permutations
+of $\left\{  1,2,\ldots,n\right\}  $). Hence, $T\left(  \sigma\right)  $ is
+well-defined.
+\par
+The definition of $T$ yields $T\left(  \sigma\right)  =\sigma\mid_{\left[
+n-1\right]  }$. Thus, each $i\in\left[  n-1\right]  $ satisfies%
+\[
+\underbrace{\left(  T\left(  \sigma\right)  \right)  }_{=\sigma\mid_{\left[
+n-1\right]  }}\left(  i\right)  =\left(  \sigma\mid_{\left[  n-1\right]
+}\right)  \left(  i\right)  =\sigma\left(  i\right)  =g\left(  i\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{pf.lem.sol.exeadd.powerdet.gen.kappas.sur.24})}\right)  .
+\]
+In other words, $T\left(  \sigma\right)  =g$. Thus, $g=T\left(
+\underbrace{\sigma}_{\in S_{n}}\right)  \in T\left(  S_{n}\right)  $. Qed.}.
+In other words, $Y\subseteq T\left(  S_{n}\right)  $. Combining this with
+$T\left(  S_{n}\right)  \subseteq Y$ (which is obvious), we obtain $Y=T\left(
+S_{n}\right)  $. In other words, the map $T$ is surjective.
+\end{verlong}
+
+If $\alpha\in S_{n}$ and $\beta\in S_{n}$ satisfy $T\left(  \alpha\right)
+=T\left(  \beta\right)  $, then $\alpha=\beta$%
+\ \ \ \ \footnote{\textit{Proof.} Let $\alpha\in S_{n}$ and $\beta\in S_{n}$
+be such that $T\left(  \alpha\right)  =T\left(  \beta\right)  $. We must show
+that $\alpha=\beta$.
+\par
+The definition of $T$ yields $T\left(  \alpha\right)  =\alpha\mid_{\left[
+n-1\right]  }$ and $T\left(  \beta\right)  =\beta\mid_{\left[  n-1\right]  }$.
+Hence, $\alpha\mid_{\left[  n-1\right]  }=T\left(  \alpha\right)  =T\left(
+\beta\right)  =\beta\mid_{\left[  n-1\right]  }$.
+\par
+Now, each $i\in\left[  n-1\right]  $ satisfies $\alpha\left(  i\right)
+=\underbrace{\left(  \alpha\mid_{\left[  n-1\right]  }\right)  }_{=\beta
+\mid_{\left[  n-1\right]  }}\left(  i\right)  =\left(  \beta\mid_{\left[
+n-1\right]  }\right)  \left(  i\right)  =\beta\left(  i\right)  $. Thus,
+$\alpha\left(  i\right)  =\beta\left(  i\right)  $ for each $i\in\left[
+n-1\right]  $. In other words, $\alpha\left(  i\right)  =\beta\left(
+i\right)  $ for each $i\in\left[  n\right]  \setminus\left\{  n\right\}  $
+(since $\left[  n-1\right]  =\left[  n\right]  \setminus\left\{  n\right\}
+$). Thus, Lemma \ref{lem.sol.exeadd.powerdet.gen.allbut1} (applied to $p=n$)
+yields $\alpha=\beta$. Qed.}. In other words, the map $T$ is injective.
+
+The map $T$ is surjective and injective. In other words, the map $T$ is bijective.
+
+Recall that $T$ is a map from $S_{n}$ to $Y$. In other words, $T$ is a map
+from $S_{n}$ to $\left\{  f:\left[  n-1\right]  \rightarrow\left[  n\right]
+\ \mid\ \left\vert f\left(  \left[  n-1\right]  \right)  \right\vert \geq
+n-1\right\}  $ (since \newline$Y=\left\{  f:\left[  n-1\right]  \rightarrow
+\left[  n\right]  \ \mid\ \left\vert f\left(  \left[  n-1\right]  \right)
+\right\vert \geq n-1\right\}  $). Hence, the map
+\begin{align*}
+S_{n} &  \rightarrow\left\{  f:\left[  n-1\right]  \rightarrow\left[
+n\right]  \ \mid\ \left\vert f\left(  \left[  n-1\right]  \right)  \right\vert
+\geq n-1\right\}  ,\\
+\tau &  \mapsto\tau\mid_{\left[  n-1\right]  }%
+\end{align*}
+is precisely the map $T$ (since $T\left(  \tau\right)  =\tau\mid_{\left[
+n-1\right]  }$ for all $\tau\in S_{n}$). Hence, this map is well-defined and
+bijective (since $T$ is bijective). This proves Lemma
+\ref{lem.sol.exeadd.powerdet.gen.kappas}.
+\end{proof}
+
+\begin{lemma}
+\label{lem.sol.exeadd.powerdet.gen.taures}Let $n\geq1$ be an integer. Let
+$\tau\in S_{n}$. Then,%
+\[
+\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\prod_{i=1}^{n-1}a_{\left(
+\tau\mid_{\left[  n-1\right]  }\right)  \left(  i\right)  ,\sigma\left(
+\left(  \tau\mid_{\left[  n-1\right]  }\right)  \left(  i\right)  \right)
+}=\sum_{q=1}^{n}\left(  -1\right)  ^{\tau\left(  n\right)  +q}\det\left(
+A_{\sim\left(  \tau\left(  n\right)  \right)  ,\sim q}\right)  .
+\]
+
+\end{lemma}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exeadd.powerdet.gen.taures}.]We have $\tau\in
+S_{n}$. In other words, $\tau$ is a permutation of $\left[  n\right]  $ (since
+$S_{n}$ is the set of all permutations of $\left\{  1,2,\ldots,n\right\}
+=\left[  n\right]  $). In other words, $\tau$ is a bijective map $\left[
+n\right]  \rightarrow\left[  n\right]  $. Thus, $\tau:\left[  n\right]
+\rightarrow\left[  n\right]  $ is a bijection.
+
+Also, $n\in\left[  n\right]  $ (since $n\geq1$) and $\left[  n-1\right]
+=\left[  n\right]  \setminus\left\{  n\right\}  \subseteq\left[  n\right]  $.
+
+Let $p=\tau\left(  n\right)  $. Then, $p=\tau\left(  n\right)  \in\left[
+n\right]  =\left\{  1,2,\ldots,n\right\}  $. From $p=\tau\left(  n\right)  $,
+we obtain $n=\tau^{-1}\left(  p\right)  $.
+
+If $b_{1},b_{2},\ldots,b_{n}$ are $n$ elements of $\mathbb{K}$, then%
+\begin{equation}
+\prod_{i=1}^{n-1}b_{\left(  \tau\mid_{\left[  n-1\right]  }\right)  \left(
+i\right)  }=\prod_{\substack{i\in\left\{  1,2,\ldots,n\right\}  ;\\i\neq
+p}}b_{i} \label{pf.lem.sol.exeadd.powerdet.gen.taures.short.bprod}%
+\end{equation}
+\footnote{\textit{Proof of
+(\ref{pf.lem.sol.exeadd.powerdet.gen.taures.short.bprod}):} Let $b_{1}%
+,b_{2},\ldots,b_{n}$ be $n$ elements of $\mathbb{K}$.
+\par
+For each $i\in\left[  n\right]  $, we have the following chain of logical
+equivalences:%
+\[
+\left(  i\neq\underbrace{n}_{=\tau^{-1}\left(  p\right)  }\right)
+\ \Longleftrightarrow\ \left(  i\neq\tau^{-1}\left(  p\right)  \right)
+\ \Longleftrightarrow\ \left(  \tau\left(  i\right)  \neq p\right)
+\]
+(since $\tau$ is a bijection). In other words, for each $i\in\left[  n\right]
+$, the condition $\left(  i\neq n\right)  $ holds if and only if the condition
+$\left(  \tau\left(  i\right)  \neq p\right)  $ holds. Thus, we have the
+following equality of product signs:%
+\[
+\prod_{\substack{i\in\left[  n\right]  ;\\i\neq n}}=\prod_{\substack{i\in
+\left[  n\right]  ;\\\tau\left(  i\right)  \neq p}}.
+\]
+Hence,%
+\begin{align}
+\prod_{\substack{i\in\left[  n\right]  ;\\\tau\left(  i\right)  \neq p}}  &
+=\prod_{\substack{i\in\left[  n\right]  ;\\i\neq n}}=\prod_{i\in\left[
+n\right]  \setminus\left\{  n\right\}  }=\prod_{i\in\left[  n-1\right]
+}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left[  n\right]  \setminus\left\{
+n\right\}  =\left[  n-1\right]  \right) \nonumber\\
+&  =\prod_{i=1}^{n-1}.
+\label{pf.lem.sol.exeadd.powerdet.gen.taures.short.bprod.preq}%
+\end{align}
+\par
+Now, the map $\tau:\left[  n\right]  \rightarrow\left[  n\right]  $ is a
+bijection. Thus, we can substitute $\tau\left(  i\right)  $ for $i$ in the
+product $\prod_{\substack{i\in\left[  n\right]  ;\\i\neq p}}b_{i}$. We thus
+obtain%
+\begin{equation}
+\prod_{\substack{i\in\left[  n\right]  ;\\i\neq p}}b_{i}=\underbrace{\prod
+_{\substack{i\in\left[  n\right]  ;\\\tau\left(  i\right)  \neq p}%
+}}_{\substack{=\prod_{i=1}^{n-1}\\\text{(by
+(\ref{pf.lem.sol.exeadd.powerdet.gen.taures.short.bprod.preq}))}}%
+}b_{\tau\left(  i\right)  }=\prod_{i=1}^{n-1}b_{\tau\left(  i\right)  }.
+\label{pf.lem.sol.exeadd.powerdet.gen.taures.short.bprod.3}%
+\end{equation}
+Now,%
+\begin{align*}
+\prod_{i=1}^{n-1}\underbrace{b_{\left(  \tau\mid_{\left[  n-1\right]
+}\right)  \left(  i\right)  }}_{\substack{=b_{\tau\left(  i\right)
+}\\\text{(since }\left(  \tau\mid_{\left[  n-1\right]  }\right)  \left(
+i\right)  =\tau\left(  i\right)  \text{)}}}  &  =\prod_{i=1}^{n-1}%
+b_{\tau\left(  i\right)  }=\prod_{\substack{i\in\left[  n\right]  ;\\i\neq
+p}}b_{i}\ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{pf.lem.sol.exeadd.powerdet.gen.taures.short.bprod.3})}\right) \\
+&  =\prod_{\substack{i\in\left\{  1,2,\ldots,n\right\}  ;\\i\neq p}%
+}b_{i}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left[  n\right]  =\left\{
+1,2,\ldots,n\right\}  \right)  .
+\end{align*}
+This proves (\ref{pf.lem.sol.exeadd.powerdet.gen.taures.short.bprod}).}.
+
+We have%
+\begin{align*}
+&  \underbrace{\sum_{\sigma\in S_{n}}}_{\substack{=\sum_{q\in\left[  n\right]
+}\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  p\right)  =q}%
+}\\\text{(because for each }\sigma\in S_{n}\text{, there}\\\text{exists a
+unique }q\in\left[  n\right]  \\\text{such that }\sigma\left(  p\right)
+=q\text{)}}}\left(  -1\right)  ^{\sigma}\underbrace{\prod_{i=1}^{n-1}%
+a_{\left(  \tau\mid_{\left[  n-1\right]  }\right)  \left(  i\right)
+,\sigma\left(  \left(  \tau\mid_{\left[  n-1\right]  }\right)  \left(
+i\right)  \right)  }}_{\substack{=\prod_{\substack{i\in\left\{  1,2,\ldots
+,n\right\}  ;\\i\neq p}}a_{i,\sigma\left(  i\right)  }\\\text{(by
+(\ref{pf.lem.sol.exeadd.powerdet.gen.taures.short.bprod}), applied to }%
+b_{k}=a_{k,\sigma\left(  k\right)  }\text{)}}}\\
+&  =\underbrace{\sum_{q\in\left[  n\right]  }}_{=\sum_{q=1}^{n}}%
+\underbrace{\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  p\right)
+=q}}\left(  -1\right)  ^{\sigma}\prod_{\substack{i\in\left\{  1,2,\ldots
+,n\right\}  ;\\i\neq p}}a_{i,\sigma\left(  i\right)  }}_{\substack{=\left(
+-1\right)  ^{p+q}\det\left(  A_{\sim p,\sim q}\right)  \\\text{(by Lemma
+\ref{lem.laplace.Apq})}}}\\
+&  =\sum_{q=1}^{n}\left(  -1\right)  ^{p+q}\det\left(  A_{\sim p,\sim
+q}\right)  =\sum_{q=1}^{n}\left(  -1\right)  ^{\tau\left(  n\right)  +q}%
+\det\left(  A_{\sim\left(  \tau\left(  n\right)  \right)  ,\sim q}\right)
+\end{align*}
+(since $p=\tau\left(  n\right)  $). This proves Lemma
+\ref{lem.sol.exeadd.powerdet.gen.taures}.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exeadd.powerdet.gen.taures}.]We have $\tau\in
+S_{n}$. In other words, $\tau$ is a permutation of $\left\{  1,2,\ldots
+,n\right\}  $ (since $S_{n}$ is the set of all permutations of $\left\{
+1,2,\ldots,n\right\}  $). In other words, $\tau$ is a permutation of $\left[
+n\right]  $ (since $\left\{  1,2,\ldots,n\right\}  =\left[  n\right]  $). In
+other words, $\tau$ is a bijective map $\left[  n\right]  \rightarrow\left[
+n\right]  $.
+
+Also, $n\in\left[  n\right]  $ (since $n\geq1$) and%
+\[
+\underbrace{\left[  n\right]  }_{=\left\{  1,2,\ldots,n\right\}  }%
+\setminus\left\{  n\right\}  =\left\{  1,2,\ldots,n\right\}  \setminus\left\{
+n\right\}  =\left\{  1,2,\ldots,n-1\right\}  .
+\]
+Thus, $\left[  n-1\right]  =\left\{  1,2,\ldots,n-1\right\}  =\left[
+n\right]  \setminus\left\{  n\right\}  \subseteq\left[  n\right]  $.
+
+The value $\tau\left(  n\right)  $ is well-defined (since $n\in\left[
+n\right]  $). Let $p=\tau\left(  n\right)  $. Then, $p=\tau\left(  n\right)
+\in\left[  n\right]  =\left\{  1,2,\ldots,n\right\}  $. Also, $\tau$ is a
+bijection (since $\tau$ is a bijective map). Therefore, from $p=\tau\left(
+n\right)  $, we obtain $n=\tau^{-1}\left(  p\right)  $.
+
+If $b_{1},b_{2},\ldots,b_{n}$ are $n$ elements of $\mathbb{K}$, then%
+\begin{equation}
+\prod_{i=1}^{n-1}b_{\left(  \tau\mid_{\left[  n-1\right]  }\right)  \left(
+i\right)  }=\prod_{\substack{i\in\left\{  1,2,\ldots,n\right\}  ;\\i\neq
+p}}b_{i} \label{pf.lem.sol.exeadd.powerdet.gen.taures.bprod}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.sol.exeadd.powerdet.gen.taures.bprod}%
+):} Let $b_{1},b_{2},\ldots,b_{n}$ be $n$ elements of $\mathbb{K}$.
+\par
+For each $i\in\left[  n\right]  $, we have the following chain of logical
+equivalences:%
+\begin{equation}
+\left(  i=\underbrace{n}_{=\tau^{-1}\left(  p\right)  }\right)
+\ \Longleftrightarrow\ \left(  i=\tau^{-1}\left(  p\right)  \right)
+\ \Longleftrightarrow\ \left(  \tau\left(  i\right)  =p\right)  .
+\label{pf.lem.sol.exeadd.powerdet.gen.taures.bprod.eq1}%
+\end{equation}
+Thus, for each $i\in\left[  n\right]  $, we have the following chain of
+logical equivalences:%
+\[
+\left(  i\neq n\right)  \ \Longleftrightarrow\ \left(  \text{not
+}\underbrace{i=n}_{\substack{\Longleftrightarrow\ \left(  \tau\left(
+i\right)  =p\right)  \\\text{(by
+(\ref{pf.lem.sol.exeadd.powerdet.gen.taures.bprod.eq1}))}}}\right)
+\ \Longleftrightarrow\ \left(  \text{not }\tau\left(  i\right)  =p\right)
+\ \Longleftrightarrow\ \left(  \tau\left(  i\right)  \neq p\right)  .
+\]
+In other words, for each $i\in\left[  n\right]  $, the condition $\left(
+i\neq n\right)  $ holds if and only if the condition $\left(  \tau\left(
+i\right)  \neq p\right)  $ holds. Thus, we have the following equality of
+product signs:%
+\[
+\prod_{\substack{i\in\left[  n\right]  ;\\i\neq n}}=\prod_{\substack{i\in
+\left[  n\right]  ;\\\tau\left(  i\right)  \neq p}}.
+\]
+Hence,%
+\begin{align}
+\prod_{\substack{i\in\left[  n\right]  ;\\\tau\left(  i\right)  \neq p}}  &
+=\prod_{\substack{i\in\left[  n\right]  ;\\i\neq n}}=\prod_{i\in\left[
+n\right]  \setminus\left\{  n\right\}  }=\prod_{i\in\left\{  1,2,\ldots
+,n-1\right\}  }\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left[  n\right]
+\setminus\left\{  n\right\}  =\left\{  1,2,\ldots,n-1\right\}  \right)
+\nonumber\\
+&  =\prod_{i=1}^{n-1}.
+\label{pf.lem.sol.exeadd.powerdet.gen.taures.bprod.preq}%
+\end{align}
+\par
+Now, the map $\tau:\left[  n\right]  \rightarrow\left[  n\right]  $ is a
+bijection (since $\tau$ is a bijective map $\left[  n\right]  \rightarrow
+\left[  n\right]  $). Thus, we can substitute $\tau\left(  i\right)  $ for $i$
+in the product $\prod_{\substack{i\in\left[  n\right]  ;\\i\neq p}}b_{i}$. We
+thus obtain%
+\begin{equation}
+\prod_{\substack{i\in\left[  n\right]  ;\\i\neq p}}b_{i}=\underbrace{\prod
+_{\substack{i\in\left[  n\right]  ;\\\tau\left(  i\right)  \neq p}%
+}}_{\substack{=\prod_{i=1}^{n-1}\\\text{(by
+(\ref{pf.lem.sol.exeadd.powerdet.gen.taures.bprod.preq}))}}}b_{\tau\left(
+i\right)  }=\prod_{i=1}^{n-1}b_{\tau\left(  i\right)  }.
+\label{pf.lem.sol.exeadd.powerdet.gen.taures.bprod.3}%
+\end{equation}
+Now,%
+\begin{align*}
+\prod_{i=1}^{n-1}\underbrace{b_{\left(  \tau\mid_{\left[  n-1\right]
+}\right)  \left(  i\right)  }}_{\substack{=b_{\tau\left(  i\right)
+}\\\text{(since }\left(  \tau\mid_{\left[  n-1\right]  }\right)  \left(
+i\right)  =\tau\left(  i\right)  \text{)}}}  &  =\prod_{i=1}^{n-1}%
+b_{\tau\left(  i\right)  }=\prod_{\substack{i\in\left[  n\right]  ;\\i\neq
+p}}b_{i}\ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{pf.lem.sol.exeadd.powerdet.gen.taures.bprod.3})}\right) \\
+&  =\prod_{\substack{i\in\left\{  1,2,\ldots,n\right\}  ;\\i\neq p}%
+}b_{i}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left[  n\right]  =\left\{
+1,2,\ldots,n\right\}  \right)  .
+\end{align*}
+This proves (\ref{pf.lem.sol.exeadd.powerdet.gen.taures.bprod}).}.
+
+We have%
+\begin{align*}
+&  \underbrace{\sum_{\sigma\in S_{n}}}_{\substack{=\sum_{q\in\left[  n\right]
+}\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  p\right)  =q}%
+}\\\text{(because for each }\sigma\in S_{n}\text{, there}\\\text{exists a
+unique }q\in\left[  n\right]  \\\text{such that }\sigma\left(  p\right)
+=q\text{)}}}\left(  -1\right)  ^{\sigma}\underbrace{\prod_{i=1}^{n-1}%
+a_{\left(  \tau\mid_{\left[  n-1\right]  }\right)  \left(  i\right)
+,\sigma\left(  \left(  \tau\mid_{\left[  n-1\right]  }\right)  \left(
+i\right)  \right)  }}_{\substack{=\prod_{\substack{i\in\left\{  1,2,\ldots
+,n\right\}  ;\\i\neq p}}a_{i,\sigma\left(  i\right)  }\\\text{(by
+(\ref{pf.lem.sol.exeadd.powerdet.gen.taures.bprod}), applied to }%
+b_{k}=a_{k,\sigma\left(  k\right)  }\text{)}}}\\
+&  =\underbrace{\sum_{q\in\left[  n\right]  }}_{\substack{=\sum_{q\in\left\{
+1,2,\ldots,n\right\}  }\\\text{(since }\left[  n\right]  =\left\{
+1,2,\ldots,n\right\}  \text{)}}}\sum_{\substack{\sigma\in S_{n};\\\sigma
+\left(  p\right)  =q}}\left(  -1\right)  ^{\sigma}\prod_{\substack{i\in
+\left\{  1,2,\ldots,n\right\}  ;\\i\neq p}}a_{i,\sigma\left(  i\right)  }\\
+&  =\underbrace{\sum_{q\in\left\{  1,2,\ldots,n\right\}  }}_{=\sum_{q=1}^{n}%
+}\underbrace{\sum_{\substack{\sigma\in S_{n};\\\sigma\left(  p\right)
+=q}}\left(  -1\right)  ^{\sigma}\prod_{\substack{i\in\left\{  1,2,\ldots
+,n\right\}  ;\\i\neq p}}a_{i,\sigma\left(  i\right)  }}_{\substack{=\left(
+-1\right)  ^{p+q}\det\left(  A_{\sim p,\sim q}\right)  \\\text{(by Lemma
+\ref{lem.laplace.Apq})}}}\\
+&  =\sum_{q=1}^{n}\left(  -1\right)  ^{p+q}\det\left(  A_{\sim p,\sim
+q}\right)  =\sum_{q=1}^{n}\left(  -1\right)  ^{\tau\left(  n\right)  +q}%
+\det\left(  A_{\sim\left(  \tau\left(  n\right)  \right)  ,\sim q}\right)
+\end{align*}
+(since $p=\tau\left(  n\right)  $). This proves Lemma
+\ref{lem.sol.exeadd.powerdet.gen.taures}.
+\end{proof}
+\end{verlong}
+
+\begin{lemma}
+\label{lem.sol.exeadd.powerdet.gen.n-1}Let $n\geq1$ be an integer.
+
+\textbf{(a)} We have $\left\vert \left\{  \tau\in S_{n}\ \mid\ \tau\left(
+n\right)  =n\right\}  \right\vert =\left(  n-1\right)  !$.
+
+\textbf{(b)} Let $p\in\left[  n\right]  $ and $q\in\left[  n\right]  $. Then,%
+\[
+\left\vert \left\{  \tau\in S_{n}\ \mid\ \tau\left(  p\right)  =q\right\}
+\right\vert =\left(  n-1\right)  !.
+\]
+
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exeadd.powerdet.gen.n-1}.]We have $n\geq1$. Thus,
+$n-1\in\mathbb{N}$.
+
+Recall that $\left\vert S_{n}\right\vert =n!$. The same argument (applied to
+$n-1$ instead of $n$) yields $\left\vert S_{n-1}\right\vert =\left(
+n-1\right)  !$ (since $n-1\in\mathbb{N}$).
+
+\textbf{(a)} Clearly, $n$ is a positive integer (since $n$ is an integer
+satisfying $n\geq1$).
+
+Define a subset $T$ of $S_{n}$ by $T=\left\{  \tau\in S_{n}\ \mid\ \tau\left(
+n\right)  =n\right\}  $. Define a map $\Phi:S_{n-1}\rightarrow T$ as in the
+proof of Lemma \ref{lem.laplace.lem}. Then, the map $\Phi$ is a
+bijection\footnote{This was shown in the proof of Lemma \ref{lem.laplace.lem}%
+.}. Hence, there exists a bijection $S_{n-1}\rightarrow T$ (namely, $\Phi$).
+Thus, $\left\vert T\right\vert =\left\vert S_{n-1}\right\vert =\left(
+n-1\right)  !$. Since $T=\left\{  \tau\in S_{n}\ \mid\ \tau\left(  n\right)
+=n\right\}  $, this rewrites as $\left\vert \left\{  \tau\in S_{n}\ \mid
+\ \tau\left(  n\right)  =n\right\}  \right\vert =\left(  n-1\right)  !$. This
+proves Lemma \ref{lem.sol.exeadd.powerdet.gen.n-1} \textbf{(a)}.
+
+\begin{vershort}
+\textbf{(b)} Define a map $T:\left\{  \tau\in S_{n}\ \mid\ \tau\left(
+n\right)  =n\right\}  \rightarrow\left\{  \tau\in S_{n}\ \mid\ \tau\left(
+p\right)  =q\right\}  $ as in Lemma \ref{lem.laplace.gpshort} \textbf{(d)}.
+Then, Lemma \ref{lem.laplace.gpshort} \textbf{(d)} shows that this map $T$ is
+well-defined and bijective. Thus, there exists a bijection from $\left\{
+\tau\in S_{n}\ \mid\ \tau\left(  n\right)  =n\right\}  $ to $\left\{  \tau\in
+S_{n}\ \mid\ \tau\left(  p\right)  =q\right\}  $ (namely, $T$). Hence,%
+\[
+\left\vert \left\{  \tau\in S_{n}\ \mid\ \tau\left(  p\right)  =q\right\}
+\right\vert =\left\vert \left\{  \tau\in S_{n}\ \mid\ \tau\left(  n\right)
+=n\right\}  \right\vert =\left(  n-1\right)  !
+\]
+(by Lemma \ref{lem.sol.exeadd.powerdet.gen.n-1} \textbf{(a)}). This proves
+Lemma \ref{lem.sol.exeadd.powerdet.gen.n-1} \textbf{(b)}.
+\end{vershort}
+
+\begin{verlong}
+\textbf{(b)} Define a map $T:\left\{  \tau\in S_{n}\ \mid\ \tau\left(
+n\right)  =n\right\}  \rightarrow\left\{  \tau\in S_{n}\ \mid\ \tau\left(
+p\right)  =q\right\}  $ as in Lemma \ref{lem.laplace.gp} \textbf{(g)}. Then,
+Lemma \ref{lem.laplace.gp} \textbf{(g)} shows that this map $T$ is
+well-defined and bijective. Thus, $T$ is a bijection from $\left\{  \tau\in
+S_{n}\ \mid\ \tau\left(  n\right)  =n\right\}  $ to $\left\{  \tau\in
+S_{n}\ \mid\ \tau\left(  p\right)  =q\right\}  $ (namely, $T$). Hence, there
+exists a bijection from $\left\{  \tau\in S_{n}\ \mid\ \tau\left(  n\right)
+=n\right\}  $ to $\left\{  \tau\in S_{n}\ \mid\ \tau\left(  p\right)
+=q\right\}  $. Hence,%
+\[
+\left\vert \left\{  \tau\in S_{n}\ \mid\ \tau\left(  p\right)  =q\right\}
+\right\vert =\left\vert \left\{  \tau\in S_{n}\ \mid\ \tau\left(  n\right)
+=n\right\}  \right\vert =\left(  n-1\right)  !
+\]
+(by Lemma \ref{lem.sol.exeadd.powerdet.gen.n-1} \textbf{(a)}). This proves
+Lemma \ref{lem.sol.exeadd.powerdet.gen.n-1} \textbf{(b)}.
+\end{verlong}
+\end{proof}
+
+Finally, we are approaching part \textbf{(b)} of Additional exercise
+\ref{exeadd.powerdet.gen}:
+
+\begin{proposition}
+\label{prop.sol.exeadd.powerdet.gen.b}Let $n\geq1$ be an integer. Let
+$A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ be an $n\times
+n$-matrix. Then,%
+\[
+\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\left(  \sum_{i=1}%
+^{n}a_{i,\sigma\left(  i\right)  }\right)  ^{n-1}=\left(  n-1\right)
+!\cdot\sum_{p=1}^{n}\sum_{q=1}^{n}\left(  -1\right)  ^{p+q}\det\left(  A_{\sim
+p,\sim q}\right)  .
+\]
+
+\end{proposition}
+
+\begin{proof}
+[Proof of Proposition \ref{prop.sol.exeadd.powerdet.gen.b}.]From $n\geq1$, we
+obtain $n-1\in\mathbb{N}$. Hence, for every $\sigma\in S_{n}$, we have%
+\begin{equation}
+\left(  \sum_{i=1}^{n}a_{i,\sigma\left(  i\right)  }\right)  ^{n-1}%
+=\sum_{\kappa:\left[  n-1\right]  \rightarrow\left[  n\right]  }\prod
+_{i=1}^{n-1}a_{\kappa\left(  i\right)  ,\sigma\left(  \kappa\left(  i\right)
+\right)  } \label{pf.prop.sol.exeadd.powerdet.gen.b.prodrule}%
+\end{equation}
+(by Corollary \ref{cor.sol.exeadd.powerdet.gen.prodrule}, applied to $k=n-1$).
+
+Lemma \ref{lem.sol.exeadd.powerdet.gen.kappas} shows that the map%
+\begin{align*}
+S_{n}  &  \rightarrow\left\{  f:\left[  n-1\right]  \rightarrow\left[
+n\right]  \ \mid\ \left\vert f\left(  \left[  n-1\right]  \right)  \right\vert
+\geq n-1\right\}  ,\\
+\tau &  \mapsto\tau\mid_{\left[  n-1\right]  }%
+\end{align*}
+is well-defined and bijective. Thus, this map is a bijection.
+
+\begin{verlong}
+Notice that $n\in\left[  n\right]  $ (since $n\geq1$).
+\end{verlong}
+
+We have $\left[  n\right]  =\left\{  1,2,\ldots,n\right\}  $. Hence, we have
+the following equality of summation signs:%
+\begin{equation}
+\sum_{p\in\left[  n\right]  }=\sum_{p\in\left\{  1,2,\ldots,n\right\}  }%
+=\sum_{p=1}^{n}. \label{pf.prop.sol.exeadd.powerdet.gen.b.sumeqp}%
+\end{equation}
+
+
+Now,%
+\begin{align*}
+&  \sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\underbrace{\left(
+\sum_{i=1}^{n}a_{i,\sigma\left(  i\right)  }\right)  ^{n-1}}_{\substack{=\sum
+_{\kappa:\left[  n-1\right]  \rightarrow\left[  n\right]  }\prod_{i=1}%
+^{n-1}a_{\kappa\left(  i\right)  ,\sigma\left(  \kappa\left(  i\right)
+\right)  }\\\text{(by (\ref{pf.prop.sol.exeadd.powerdet.gen.b.prodrule}))}}}\\
+&  =\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\sum_{\kappa:\left[
+n-1\right]  \rightarrow\left[  n\right]  }\prod_{i=1}^{n-1}a_{\kappa\left(
+i\right)  ,\sigma\left(  \kappa\left(  i\right)  \right)  }=\underbrace{\sum
+_{\sigma\in S_{n}}\sum_{\kappa:\left[  n-1\right]  \rightarrow\left[
+n\right]  }}_{=\sum_{\kappa:\left[  n-1\right]  \rightarrow\left[  n\right]
+}\sum_{\sigma\in S_{n}}}\left(  -1\right)  ^{\sigma}\prod_{i=1}^{n-1}%
+a_{\kappa\left(  i\right)  ,\sigma\left(  \kappa\left(  i\right)  \right)  }\\
+&  =\sum_{\kappa:\left[  n-1\right]  \rightarrow\left[  n\right]  }%
+\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\prod_{i=1}^{n-1}%
+a_{\kappa\left(  i\right)  ,\sigma\left(  \kappa\left(  i\right)  \right)  }\\
+&  =\sum_{\substack{\kappa:\left[  n-1\right]  \rightarrow\left[  n\right]
+;\\\left\vert \kappa\left(  \left[  n-1\right]  \right)  \right\vert
+<n-1}}\underbrace{\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}%
+\prod_{i=1}^{n-1}a_{\kappa\left(  i\right)  ,\sigma\left(  \kappa\left(
+i\right)  \right)  }}_{\substack{=0\\\text{(by Lemma
+\ref{lem.sol.exeadd.powerdet.gen.toofew} (applied to }k=n-1\text{))}}}\\
+&  \ \ \ \ \ \ \ \ \ \ +\underbrace{\sum_{\substack{\kappa:\left[  n-1\right]
+\rightarrow\left[  n\right]  ;\\\left\vert \kappa\left(  \left[  n-1\right]
+\right)  \right\vert \geq n-1}}}_{=\sum_{\kappa\in\left\{  f:\left[
+n-1\right]  \rightarrow\left[  n\right]  \ \mid\ \left\vert f\left(  \left[
+n-1\right]  \right)  \right\vert \geq n-1\right\}  }}\sum_{\sigma\in S_{n}%
+}\left(  -1\right)  ^{\sigma}\prod_{i=1}^{n-1}a_{\kappa\left(  i\right)
+,\sigma\left(  \kappa\left(  i\right)  \right)  }\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since each map }\kappa:\left[  n-1\right]  \rightarrow\left[  n\right]
+\text{ satisfies either }\left\vert \kappa\left(  \left[  n-1\right]  \right)
+\right\vert <n-1\\
+\text{or }\left\vert \kappa\left(  \left[  n-1\right]  \right)  \right\vert
+\geq n-1\text{ (but not both)}%
+\end{array}
+\right) \\
+&  =\underbrace{\sum_{\substack{\kappa:\left[  n-1\right]  \rightarrow\left[
+n\right]  ;\\\left\vert \kappa\left(  \left[  n-1\right]  \right)  \right\vert
+<n-1}}0}_{=0}+\sum_{\kappa\in\left\{  f:\left[  n-1\right]  \rightarrow\left[
+n\right]  \ \mid\ \left\vert f\left(  \left[  n-1\right]  \right)  \right\vert
+\geq n-1\right\}  }\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}%
+\prod_{i=1}^{n-1}a_{\kappa\left(  i\right)  ,\sigma\left(  \kappa\left(
+i\right)  \right)  }\\
+&  =\sum_{\kappa\in\left\{  f:\left[  n-1\right]  \rightarrow\left[  n\right]
+\ \mid\ \left\vert f\left(  \left[  n-1\right]  \right)  \right\vert \geq
+n-1\right\}  }\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\prod
+_{i=1}^{n-1}a_{\kappa\left(  i\right)  ,\sigma\left(  \kappa\left(  i\right)
+\right)  }%
+\end{align*}%
+\begin{align*}
+&  =\sum_{\tau\in S_{n}}\underbrace{\sum_{\sigma\in S_{n}}\left(  -1\right)
+^{\sigma}\prod_{i=1}^{n-1}a_{\left(  \tau\mid_{\left[  n-1\right]  }\right)
+\left(  i\right)  ,\sigma\left(  \left(  \tau\mid_{\left[  n-1\right]
+}\right)  \left(  i\right)  \right)  }}_{\substack{=\sum_{q=1}^{n}\left(
+-1\right)  ^{\tau\left(  n\right)  +q}\det\left(  A_{\sim\left(  \tau\left(
+n\right)  \right)  ,\sim q}\right)  \\\text{(by Lemma
+\ref{lem.sol.exeadd.powerdet.gen.taures})}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have substituted }\tau\mid_{\left[  n-1\right]  }\text{ for
+}\kappa\text{ in the outer sum,}\\
+\text{since the}\\
+\text{map }S_{n}\rightarrow\left\{  f:\left[  n-1\right]  \rightarrow\left[
+n\right]  \ \mid\ \left\vert f\left(  \left[  n-1\right]  \right)  \right\vert
+\geq n-1\right\}  ,\ \tau\mapsto\tau\mid_{\left[  n-1\right]  }\\
+\text{is a bijection}%
+\end{array}
+\right) \\
+&  =\underbrace{\sum_{\tau\in S_{n}}}_{\substack{=\sum_{p\in\left[  n\right]
+}\sum_{\substack{\tau\in S_{n};\\\tau\left(  n\right)  =p}}\\\text{(because
+for each }\tau\in S_{n}\text{, there}\\\text{exists a unique }p\in\left[
+n\right]  \\\text{such that }\tau\left(  n\right)  =p\text{)}}}\sum_{q=1}%
+^{n}\left(  -1\right)  ^{\tau\left(  n\right)  +q}\det\left(  A_{\sim\left(
+\tau\left(  n\right)  \right)  ,\sim q}\right) \\
+&  =\sum_{p\in\left[  n\right]  }\underbrace{\sum_{\substack{\tau\in
+S_{n};\\\tau\left(  n\right)  =p}}\sum_{q=1}^{n}}_{=\sum_{q=1}^{n}%
+\sum_{\substack{\tau\in S_{n};\\\tau\left(  n\right)  =p}}}\underbrace{\left(
+-1\right)  ^{\tau\left(  n\right)  +q}\det\left(  A_{\sim\left(  \tau\left(
+n\right)  \right)  ,\sim q}\right)  }_{\substack{=\left(  -1\right)
+^{p+q}\det\left(  A_{\sim p,\sim q}\right)  \\\text{(since }\tau\left(
+n\right)  =p\text{)}}}\\
+&  =\sum_{p\in\left[  n\right]  }\sum_{q=1}^{n}\underbrace{\sum
+_{\substack{\tau\in S_{n};\\\tau\left(  n\right)  =p}}\left(  -1\right)
+^{p+q}\det\left(  A_{\sim p,\sim q}\right)  }_{=\left\vert \left\{  \tau\in
+S_{n}\ \mid\ \tau\left(  n\right)  =p\right\}  \right\vert \left(  -1\right)
+^{p+q}\det\left(  A_{\sim p,\sim q}\right)  }\\
+&  =\underbrace{\sum_{p\in\left[  n\right]  }}_{\substack{=\sum_{p=1}%
+^{n}\\\text{(by (\ref{pf.prop.sol.exeadd.powerdet.gen.b.sumeqp}))}}}\sum
+_{q=1}^{n}\underbrace{\left\vert \left\{  \tau\in S_{n}\ \mid\ \tau\left(
+n\right)  =p\right\}  \right\vert }_{\substack{=\left(  n-1\right)
+!\\\text{(by Lemma \ref{lem.sol.exeadd.powerdet.gen.n-1} \textbf{(b)}%
+}\\\text{(applied to }n\text{ and }p\text{ instead of }p\text{ and }%
+q\text{))}}}\left(  -1\right)  ^{p+q}\det\left(  A_{\sim p,\sim q}\right) \\
+&  =\sum_{p=1}^{n}\sum_{q=1}^{n}\left(  n-1\right)  !\left(  -1\right)
+^{p+q}\det\left(  A_{\sim p,\sim q}\right)  =\left(  n-1\right)  !\cdot
+\sum_{p=1}^{n}\sum_{q=1}^{n}\left(  -1\right)  ^{p+q}\det\left(  A_{\sim
+p,\sim q}\right)  .
+\end{align*}
+This proves Proposition \ref{prop.sol.exeadd.powerdet.gen.b}.
+\end{proof}
+
+\begin{proof}
+[Solution to Additional exercise \ref{exeadd.powerdet.gen}.]Additional
+exercise \ref{exeadd.powerdet.gen} \textbf{(a)} follows from Proposition
+\ref{prop.sol.exeadd.powerdet.gen.a}.
+
+Additional exercise \ref{exeadd.powerdet.gen} \textbf{(b)} follows from
+Proposition \ref{prop.sol.exeadd.powerdet.gen.b}.
 \end{proof}
 
 \subsection{\label{sect.sol.jacobi-complement}Solution to Additional exercise
