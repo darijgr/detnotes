@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, May 18, 2017 18:56:03}
+%TCIDATA{LastRevised=Thursday, May 18, 2017 20:26:15}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -29600,8 +29600,9 @@ completeness, let me show how to prove (\ref{sol.ps2.2.4.c.aik}) formally.
 
 We shall prove (\ref{sol.ps2.2.4.c.aik}) by induction on $i$:
 
-\textit{Induction base:} We have $a_{1}=s_{0}\circ s_{1}\circ\cdots\circ
-s_{1}=\operatorname*{id}$. Thus, every $k\in\left\{  1,2,\ldots,n\right\}  $
+\textit{Induction base:} We have $a_{1}=s_{0}\circ s_{-1}\circ\cdots\circ
+s_{1}=\left(  \text{a composition of }0\text{ permutations}\right)
+=\operatorname*{id}$. Thus, every $k\in\left\{  1,2,\ldots,n\right\}  $
 satisfies%
 \begin{align*}
 \underbrace{a_{1}}_{=\operatorname*{id}}\left(  k\right)   &
@@ -29617,8 +29618,8 @@ k,\ \ \ \ \ \ \ \ \ \ \text{if }k>1
 1,\ \ \ \ \ \ \ \ \ \ \text{if }k=1;\\
 k,\ \ \ \ \ \ \ \ \ \ \text{if }k>1
 \end{array}
-\right. \\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }k=1\text{ when }k=1\right) \\
+\right.  \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }k=1\text{ when }k=1\right)  \\
 &  =\left\{
 \begin{array}
 [c]{c}%
@@ -29626,7 +29627,7 @@ k,\ \ \ \ \ \ \ \ \ \ \text{if }k>1
 k-1,\ \ \ \ \ \ \ \ \ \ \text{if }1<k\leq1;\\
 k,\ \ \ \ \ \ \ \ \ \ \text{if }k>1
 \end{array}
-\right. \\
+\right.  \\
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
@@ -29858,22 +29859,34 @@ to show that (\ref{sol.ps2.2.4.c.bik}) holds for $m=M$.
 
 We have assumed that (\ref{sol.ps2.2.4.c.bik}) holds for $m=M-1$. In other
 words,
-\begin{equation}
+\[
 b_{M-1}\left(  k\right)  =\left\{
 \begin{array}
 [c]{c}%
 \left(  M-1\right)  +1-k,\ \ \ \ \ \ \ \ \ \ \text{if }k\leq M-1;\\
 k,\ \ \ \ \ \ \ \ \ \ \text{if }k>M-1
 \end{array}
-\right.  =\left\{
+\right.
+\]
+for every $k\in\left\{  1,2,\ldots,n\right\}  $. Thus, for every $k\in\left\{
+1,2,\ldots,n\right\}  $, we have%
+\begin{align}
+b_{M-1}\left(  k\right)   &  =\left\{
+\begin{array}
+[c]{c}%
+\left(  M-1\right)  +1-k,\ \ \ \ \ \ \ \ \ \ \text{if }k\leq M-1;\\
+k,\ \ \ \ \ \ \ \ \ \ \text{if }k>M-1
+\end{array}
+\right. \nonumber\\
+&  =\left\{
 \begin{array}
 [c]{c}%
 M-k,\ \ \ \ \ \ \ \ \ \ \text{if }k\leq M-1;\\
 k,\ \ \ \ \ \ \ \ \ \ \text{if }k>M-1
 \end{array}
 \right.  \label{sol.ps2.2.4.c.bik.pf.hyp}%
-\end{equation}
-for every $k\in\left\{  1,2,\ldots,n\right\}  $.
+\end{align}
+(since $\left(  M-1\right)  +1-k=M-k$).
 
 The definition of $b_{M-1}$ yields $b_{M-1}=a_{1}\circ a_{2}\circ\cdots\circ
 a_{M-1}$. The definition of $b_{M}$ yields $b_{M}=a_{1}\circ a_{2}\circ
@@ -29920,7 +29933,7 @@ M-M,\ \ \ \ \ \ \ \ \ \ \text{if }M\leq M-1;\\
 M,\ \ \ \ \ \ \ \ \ \ \text{if }M>M-1
 \end{array}
 \right.  \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{sol.ps2.2.4.c.bik.pf.hyp}%
-), applied to }k=M\right) \\
+), applied to }M\text{ instead of }k\right) \\
 &  =M\ \ \ \ \ \ \ \ \ \ \left(  \text{since }M>M-1\right) \\
 &  =M+1-\underbrace{1}_{=k}=M+1-k=\left\{
 \begin{array}
@@ -34414,7 +34427,7 @@ i,j\right)  \in\left[  m\right]  \times\left[  m\right]  =\left[  m\right]
 $\sigma\left(  j\right)  <\sigma\left(  i\right)  $. Hence, $p_{\sigma\left(
 j\right)  }<p_{\sigma\left(  i\right)  }$ (by
 (\ref{pf.lem.sol.exe.Ialbe.Inv=Inv.pupv}), applied to $u=\sigma\left(
-j\right)  $ and $v=\sigma\left(  u\right)  $). In other words, $p_{\sigma
+j\right)  $ and $v=\sigma\left(  i\right)  $). In other words, $p_{\sigma
 \left(  i\right)  }>p_{\sigma\left(  j\right)  }$. Hence, $\left(  i,j\right)
 $ is an element of $\left[  m\right]  ^{2}$ and satisfies $i<j$ and
 $p_{\sigma\left(  i\right)  }>p_{\sigma\left(  j\right)  }$. In other words,
@@ -34506,8 +34519,8 @@ $d\in\operatorname*{Inv}\left(  \sigma\right)  $. In other words,%
 2\right)  },\ldots,p_{\sigma\left(  m\right)  }\right)  \subseteq
 \operatorname*{Inv}\left(  \sigma\right)  .
 \]
-Combining this with (\ref{pf.lem.sol.exe.Ialbe.Inv=Inv.a.dir1}), we
-obtain$\operatorname*{Inv}\left(  \sigma\right)  =\operatorname*{Inv}\left(
+Combining this with (\ref{pf.lem.sol.exe.Ialbe.Inv=Inv.a.dir1}), we obtain
+$\operatorname*{Inv}\left(  \sigma\right)  =\operatorname*{Inv}\left(
 p_{\sigma\left(  1\right)  },p_{\sigma\left(  2\right)  },\ldots
 ,p_{\sigma\left(  m\right)  }\right)  $. This proves Lemma
 \ref{lem.sol.exe.Ialbe.Inv=Inv} \textbf{(a)}.
@@ -34628,7 +34641,7 @@ and }a_{u}>a_{v}\right\}  }1\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\operatorname*{Inv}\left(
 \mathbf{a}\right)  =\left\{  \left(  u,v\right)  \in\left[  n\right]
 ^{2}\ \mid\ u<v\text{ and }a_{u}>a_{v}\right\}  \text{ (by
-(\ref{sol.exe.Ialbe.Inv.2})}\right) \\
+(\ref{sol.exe.Ialbe.Inv.2}))}\right) \\
 &  =\underbrace{\sum_{\left(  i,j\right)  \in\left\{  \left(  u,v\right)
 \in\left[  n\right]  ^{2}\ \mid\ u<v\text{ and }a_{u}>a_{v}\right\}  }}%
 _{=\sum_{\substack{\left(  i,j\right)  \in\left[  n\right]  ^{2};\\i<j\text{
@@ -35606,7 +35619,7 @@ _{v\in\left[  k\right]  }\left[  x>i_{v}\right]  }\nonumber\\
 i_{h}>i_{v}\right]  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
-\text{here, we have substituted }i_{h}\text{ for }x\text{ in the sum,}\\
+\text{here, we have substituted }i_{h}\text{ for }x\text{ in the outer sum,}\\
 \text{since the map }\left[  k\right]  \rightarrow I,\ h\mapsto i_{h}\text{ is
 a bijection}%
 \end{array}
@@ -72045,18 +72058,18 @@ f\left(  s_{1}\right)  ,f\left(  s_{2}\right)  ,\ldots,f\left(  s_{k}\right)
 \]
 Hence,%
 \begin{align*}
-\left\vert f\left(  S\right)  \right\vert  & =\left\vert \left\{  f\left(
+\left\vert f\left(  S\right)  \right\vert  &  =\left\vert \left\{  f\left(
 s_{1}\right)  ,f\left(  s_{2}\right)  ,\ldots,f\left(  s_{k}\right)  \right\}
 \right\vert \\
-& \leq k\ \ \ \ \ \ \ \ \ \ \left(
+&  \leq k\ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
 \text{since there are at most }k\text{ distinct elements}\\
 \text{among }f\left(  s_{1}\right)  ,f\left(  s_{2}\right)  ,\ldots,f\left(
 s_{k}\right)
 \end{array}
-\right)  \\
-& =\left\vert S\right\vert .
+\right) \\
+&  =\left\vert S\right\vert .
 \end{align*}
 
 
@@ -72174,7 +72187,7 @@ $k=\left\vert S\right\vert $. Now,%
 f\left(  \underbrace{S}_{=\left\{  s_{1},s_{2},\ldots,s_{k}\right\}  }\right)
 =f\left(  \left\{  s_{1},s_{2},\ldots,s_{k}\right\}  \right)  =\left\{
 f\left(  s_{1}\right)  ,f\left(  s_{2}\right)  ,\ldots,f\left(  s_{k}\right)
-\right\}  .\label{pf.lem.sol.exeadd.noncomm.polarization.pigeon-inj.a.1}%
+\right\}  . \label{pf.lem.sol.exeadd.noncomm.polarization.pigeon-inj.a.1}%
 \end{equation}
 
 
@@ -72257,8 +72270,8 @@ $k=\left\vert S\right\vert $. Furthermore, the elements $s_{1},s_{2}%
 ,s_{k}\right)  $ is a list with no repetitions). In other words,%
 \begin{equation}
 s_{i}\neq s_{j}\ \ \ \ \ \ \ \ \ \ \text{for any two distinct elements
-}i\text{ and }j\text{ of }\left\{  1,2,\ldots,k\right\}
-.\label{pf.lem.sol.exeadd.noncomm.polarization.pigeon-inj.c.1}%
+}i\text{ and }j\text{ of }\left\{  1,2,\ldots,k\right\}  .
+\label{pf.lem.sol.exeadd.noncomm.polarization.pigeon-inj.c.1}%
 \end{equation}
 
 
