@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, May 18, 2017 16:52:49}
+%TCIDATA{LastRevised=Thursday, May 18, 2017 18:12:37}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -991,10 +991,11 @@ $ \textquotedblleft shrink\textquotedblright\ to the simple difference
 $a_{v}-a_{u-1}$ like a telescope does when it is collapsed.
 
 \item \underline{\textbf{Splitting a sum by a value of a function:}} Let $S$
-be a finite set. Let $W$ be a set. Let $f:S\rightarrow W$ be a map. Then,%
+be a finite set. Let $W$ be a set. Let $f:S\rightarrow W$ be a map.  Let
+$a_{s}$ be an element of $\mathbb{A}$ for each $s\in S$. Then,%
 \begin{equation}
 \sum_{s\in S}a_{s}=\sum_{w\in W}\sum_{\substack{s\in S;\\f\left(  s\right)
-=w}}a_{s}. \label{eq.sum.sheph}%
+=w}}a_{s}.\label{eq.sum.sheph}%
 \end{equation}
 The idea behind this formula is the following: The left hand side is the sum
 of all $a_{s}$ for $s\in S$. The right hand side is the same sum, but split in
@@ -1010,7 +1011,7 @@ S$ satisfying $f\left(  s\right)  =w$, and then we take the sum of all these
 \sum_{s\in\left\{  -n,-\left(  n-1\right)  ,\ldots,n\right\}  }s^{3}%
 =\sum_{w\in\left\{  0,1,\ldots,n\right\}  }\sum_{\substack{s\in\left\{
 -n,-\left(  n-1\right)  ,\ldots,n\right\}  ;\\\left\vert s\right\vert
-=w}}s^{3}. \label{eq.sum.sheph.exam1}%
+=w}}s^{3}.\label{eq.sum.sheph.exam1}%
 \end{equation}
 (This follows from (\ref{eq.sum.sheph}), applied to $S=\left\{  -n,-\left(
 n-1\right)  ,\ldots,n\right\}  $, $W=\left\{  0,1,\ldots,n\right\}  $ and
@@ -1046,7 +1047,7 @@ Since $\sum_{s\in S}1=\left\vert S\right\vert \cdot1=\left\vert S\right\vert
 $, this rewrites as follows:%
 \begin{equation}
 \left\vert S\right\vert =\sum_{w\in W}\left\vert \left\{  s\in S\ \mid
-\ f\left(  s\right)  =w\right\}  \right\vert . \label{eq.sum.sheph.exam2}%
+\ f\left(  s\right)  =w\right\}  \right\vert .\label{eq.sum.sheph.exam2}%
 \end{equation}
 This equality is often called the \textit{shepherd's principle}, because it is
 connected to the joke that \textquotedblleft in order to count a flock of
@@ -1074,7 +1075,7 @@ this notation, we can rewrite (\ref{eq.sum.sheph}) as follows:%
 \begin{equation}
 \sum_{s\in S}a_{s}=\sum_{w\in W}\underbrace{\sum_{\substack{s\in S;\\f\left(
 s\right)  =w}}}_{=\sum_{s\in f^{-1}\left(  w\right)  }}a_{s}=\sum_{w\in W}%
-\sum_{s\in f^{-1}\left(  w\right)  }a_{s}. \label{eq.sum.sheph.preimg}%
+\sum_{s\in f^{-1}\left(  w\right)  }a_{s}.\label{eq.sum.sheph.preimg}%
 \end{equation}
 
 
@@ -1094,8 +1095,7 @@ of $\left\{  1,2,\ldots,n\right\}  $) and their union is $S$. (Thus, every
 element of $S$ lies in precisely one of the subsets $S_{1},S_{2},\ldots,S_{n}%
 $.) Let $a_{s}$ be an element of $\mathbb{A}$ for each $s\in S$. Then,%
 \begin{equation}
-\sum_{s\in S}a_{s}=\sum_{w=1}^{n}\sum_{s\in S_{w}}a_{s}.
-\label{eq.sum.split-n}%
+\sum_{s\in S}a_{s}=\sum_{w=1}^{n}\sum_{s\in S_{w}}a_{s}.\label{eq.sum.split-n}%
 \end{equation}
 This is a generalization of (\ref{eq.sum.split}) (indeed, (\ref{eq.sum.split})
 is obtained from (\ref{eq.sum.split-n}) by setting $n=2$, $S_{1}=X$ and
@@ -1474,7 +1474,7 @@ x,y\right)  }. \label{eq.sum.fubini.predicate}%
 \item For any $n\in\mathbb{N}$ and $m\in\mathbb{N}$, we have%
 \begin{align*}
 \sum_{x\in\left\{  1,2,\ldots,n\right\}  }\sum_{\substack{y\in\left\{
-1,2,\ldots,m\right\}  ;\\x+y\text{ is even}}}xy  &  =\sum_{\substack{\left(
+1,2,\ldots,m\right\}  ;\\x+y\text{ is even}}}xy &  =\sum_{\substack{\left(
 x,y\right)  \in\left\{  1,2,\ldots,n\right\}  \times\left\{  1,2,\ldots
 ,m\right\}  ;\\x+y\text{ is even}}}xy\\
 &  =\sum_{y\in\left\{  1,2,\ldots,m\right\}  }\sum_{\substack{x\in\left\{
@@ -1484,6 +1484,27 @@ x,y\right)  \in\left\{  1,2,\ldots,n\right\}  \times\left\{  1,2,\ldots
 1,2,\ldots,n\right\}  $, $Y=\left\{  1,2,\ldots,m\right\}  $ and
 $\mathcal{A}\left(  x,y\right)  =\left(  \text{\textquotedblleft}x+y\text{ is
 even\textquotedblright}\right)  $.)
+\end{itemize}
+
+\textbf{Remarks:}
+
+\begin{itemize}
+\item We have assumed that the sets $X$ and $Y$ are finite. But
+(\ref{eq.sum.fubini.predicate}) is still valid if we replace this assumption
+by the weaker assumption that only finitely many $\left(  x,y\right)  \in
+X\times Y$ satisfy $\mathcal{A}\left(  x,y\right)  $.
+
+\item It is not hard to prove (\ref{eq.sum.fubini.predicate}) by suitably
+adapting our proof of (\ref{eq.sum.fubini}).
+
+\item The equality (\ref{eq.sum.fubini.triangle}) can be derived from
+(\ref{eq.sum.fubini.predicate}) by setting $X=\left\{  1,2,\ldots,n\right\}
+$, $Y=\left\{  1,2,\ldots,n\right\}  $ and $\mathcal{A}\left(  x,y\right)
+=\left(  \text{\textquotedblleft}x+y\leq n\text{\textquotedblright}\right)  $.
+Similarly, the equality (\ref{eq.sum.fubini.triangle}) can be derived from
+(\ref{eq.sum.fubini.predicate}) by setting $X=\left\{  1,2,\ldots,n\right\}
+$, $Y=\left\{  1,2,\ldots,n\right\}  $ and $\mathcal{A}\left(  x,y\right)
+=\left(  \text{\textquotedblleft}x\leq y\text{\textquotedblright}\right)  $.
 \end{itemize}
 
 \item \underline{\textbf{Interchange of predicates:}} Let $S$ be a finite set.
@@ -1816,7 +1837,8 @@ each $s\in\left\{  u-1,u,\ldots,v\right\}  $. Then,%
 \end{itemize}
 
 \item \underline{\textbf{Splitting a product by a value of a function:}} Let
-$S$ be a finite set. Let $W$ be a set. Let $f:S\rightarrow W$ be a map. Then,%
+$S$ be a finite set. Let $W$ be a set. Let $f:S\rightarrow W$ be a map. Let
+$a_{s}$ be an element of $\mathbb{A}$ for each $s\in S$. Then,%
 \[
 \prod_{s\in S}a_{s}=\prod_{w\in W}\prod_{\substack{s\in S;\\f\left(  s\right)
 =w}}a_{s}.
@@ -10705,7 +10727,7 @@ $\Psi:C_{n}\rightarrow A_{n}$ by%
 \Psi\left(  \sigma\right)  =\sigma\circ\left(  t_{a,b}\right)  ^{-1}%
 \ \ \ \ \ \ \ \ \ \ \text{for every }\sigma\in C_{n}.
 \]
-
+Consider this map $\Psi$.
 
 (We could have simplified our life a bit by noticing that $\left(
 t_{a,b}\right)  ^{-1}=t_{a,b}$, so that the maps $\Phi$ and $\Psi$ are given
@@ -63221,7 +63243,6 @@ _{w}\left(  i\right)  \right)  \ \ \ \ \ \ \ \ \ \ \text{for every }%
 i\in\mathbb{Z}. \label{pf.prop.unrows.basics.k.1}%
 \end{equation}
 
-
 Now, $A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq m}$. Hence,
 Proposition \ref{prop.sol.unirows.d} \textbf{(a)} yields
 \[
@@ -71310,7 +71331,7 @@ v_{i}\ \ \ \ \ \ \ \ \ \ \left(
 \text{here, we have renamed the}\\
 \text{summation index }i\text{ as }k
 \end{array}
-\right)  \nonumber\\
+\right) \nonumber\\
 &  =\sum_{i\in\left[  n\right]  }\left[  i\in I\right]  v_{i}\nonumber\\
 &  =\underbrace{\sum_{\substack{i\in\left[  n\right]  ;\\i\in I}%
 }}_{\substack{=\sum_{i\in I}\\\text{(since }I\subseteq\left[  n\right]
@@ -71322,8 +71343,8 @@ v_{i}\ \ \ \ \ \ \ \ \ \ \left(
 satisfies either }i\in I\text{ or }i\notin I\text{ (but not both)}\right)
 \nonumber\\
 &  =\sum_{i\in I}1v_{i}+\underbrace{\sum_{\substack{i\in\left[  n\right]
-;\\i\notin I}}0v_{i}}_{=0}=\sum_{i\in I}1v_{i}=\sum_{i\in I}v_{i}%
-.\label{pf.lem.sol.exeadd.noncomm.polarization.1.2}%
+;\\i\notin I}}0v_{i}}_{=0}=\sum_{i\in I}1v_{i}=\sum_{i\in I}v_{i}.
+\label{pf.lem.sol.exeadd.noncomm.polarization.1.2}%
 \end{align}
 
 
@@ -71341,11 +71362,11 @@ $)). Now,%
 \begin{align}
 \left(  \underbrace{\sum_{i\in I}v_{i}}_{\substack{=\sum_{k=1}^{n}\left[  k\in
 I\right]  v_{k}\\\text{(by (\ref{pf.lem.sol.exeadd.noncomm.polarization.1.2}%
-))}}}\right)  ^{m} &  =\left(  \sum_{k=1}^{n}\left[  k\in I\right]
+))}}}\right)  ^{m}  &  =\left(  \sum_{k=1}^{n}\left[  k\in I\right]
 v_{k}\right)  ^{m}\nonumber\\
 &  =\sum_{\kappa:\left[  m\right]  \rightarrow\left[  n\right]  }\prod
 _{i=1}^{m}\left(  \left[  \kappa\left(  i\right)  \in I\right]  v_{\kappa
-\left(  i\right)  }\right)  \nonumber\\
+\left(  i\right)  }\right) \nonumber\\
 &  =\sum_{f:\left[  m\right]  \rightarrow\left[  n\right]  }\prod_{i=1}%
 ^{m}\left(  \left[  f\left(  i\right)  \in I\right]  v_{f\left(  i\right)
 }\right)  \label{pf.lem.sol.exeadd.noncomm.polarization.1.4}%
