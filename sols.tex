@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, May 18, 2017 20:43:04}
+%TCIDATA{LastRevised=Thursday, May 18, 2017 21:21:41}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -1523,6 +1523,38 @@ this as a tautology. If not, it is still completely obvious, since the
 equivalence of $\mathcal{A}\left(  s\right)  $ with $\mathcal{B}\left(
 s\right)  $ shows that $\left\{  t\in S\ \mid\ \mathcal{A}\left(  t\right)
 \right\}  =\left\{  t\in S\ \mid\ \mathcal{B}\left(  t\right)  \right\}  $.)
+
+\item \underline{\textbf{Substituting the index I with a predicate:}} Let $S$
+and $T$ be two finite sets. Let $f:S\rightarrow T$ be a \textbf{bijective}
+map. Let $a_{t}$ be an element of $\mathbb{A}$ for each $t\in T$. For every
+$t\in T$, let $\mathcal{A}\left(  t\right)  $ be a logical statement. Then,%
+\begin{equation}
+\sum_{\substack{t\in T;\\\mathcal{A}\left(  t\right)  }}a_{t}=\sum
+_{\substack{s\in S;\\\mathcal{A}\left(  f\left(  s\right)  \right)
+}}a_{f\left(  s\right)  }. \label{eq.sum.subs1-pred}%
+\end{equation}
+
+
+\textbf{Remarks:}
+
+\begin{itemize}
+\item The equality (\ref{eq.sum.subs1-pred}) is a generalization of
+(\ref{eq.sum.subs1}). There is a similar generalization of (\ref{eq.sum.subs2}).
+
+\item The equality (\ref{eq.sum.subs1-pred}) can be easily derived from
+(\ref{eq.sum.subs1}). Indeed, let $S^{\prime}$ be the subset $\left\{  s\in
+S\ \mid\ \mathcal{A}\left(  f\left(  s\right)  \right)  \right\}  $ of $S$,
+and let $T^{\prime}$ be the subset $\left\{  t\in T\ \mid\ \mathcal{A}\left(
+t\right)  \right\}  $ of $T$. Then, the map $S^{\prime}\rightarrow T^{\prime
+},\ s\mapsto f\left(  s\right)  $ is well-defined and a
+bijection\footnote{This is easy to see.}, and thus (\ref{eq.sum.subs1})
+(applied to $S^{\prime}$, $T^{\prime}$ and this map instead of $S$, $T$ and
+$f$) yields $\sum_{t\in T^{\prime}}a_{t}=\sum_{s\in S^{\prime}}a_{f\left(
+s\right)  }$. But this is precisely the equality (\ref{eq.sum.subs1-pred}),
+because clearly we have $\sum_{t\in T^{\prime}}=\sum_{\substack{t\in
+T;\\\mathcal{A}\left(  t\right)  }}$ and $\sum_{s\in S^{\prime}}%
+=\sum_{\substack{s\in S;\\\mathcal{A}\left(  f\left(  s\right)  \right)  }}$.
+\end{itemize}
 \end{itemize}
 
 \subsubsection{Definition of $\prod$}
@@ -1930,6 +1962,17 @@ element of $\mathbb{A}$ for each $s\in S$. Then,%
 \[
 \prod_{\substack{s\in S;\\\mathcal{A}\left(  s\right)  }}a_{s}=\prod
 _{\substack{s\in S;\\\mathcal{B}\left(  s\right)  }}a_{s}.
+\]
+
+
+\item \underline{\textbf{Substituting the index I with a predicate:}} Let $S$
+and $T$ be two finite sets. Let $f:S\rightarrow T$ be a \textbf{bijective}
+map. Let $a_{t}$ be an element of $\mathbb{A}$ for each $t\in T$. For every
+$t\in T$, let $\mathcal{A}\left(  t\right)  $ be a logical statement. Then,%
+\[
+\prod_{\substack{t\in T;\\\mathcal{A}\left(  t\right)  }}a_{t}=\prod
+_{\substack{s\in S;\\\mathcal{A}\left(  f\left(  s\right)  \right)
+}}a_{f\left(  s\right)  }.
 \]
 
 \end{itemize}
@@ -58324,13 +58367,13 @@ I\right\vert =j}}\left(  \prod_{i\in I}x_{i}\right)  t^{n-j}.
 \end{align*}
 Comparing this with%
 \begin{align*}
-&  \sum_{j=0}^{n}e_{n-j}\left(  x_{1},x_{2},\ldots,x_{n}\right)  t^{j}\\
-&  =\sum_{j=0}^{n}\underbrace{e_{n-\left(  n-j\right)  }\left(  x_{1}%
+\sum_{j=0}^{n}e_{n-j}\left(  x_{1},x_{2},\ldots,x_{n}\right)  t^{j} &
+=\sum_{j=0}^{n}\underbrace{e_{n-\left(  n-j\right)  }\left(  x_{1}%
 ,x_{2},\ldots,x_{n}\right)  }_{\substack{=e_{j}\left(  x_{1},x_{2}%
 ,\ldots,x_{n}\right)  \\=\sum_{\substack{I\subseteq\left[  n\right]
 ;\\\left\vert I\right\vert =j}}\prod_{i\in I}x_{i}}}t^{n-j}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }n-j\text{ for
-}j\text{ in the sum}\right) \\
+}j\text{ in the sum}\right)  \\
 &  =\sum_{j=0}^{n}\sum_{\substack{I\subseteq\left[  n\right]  ;\\\left\vert
 I\right\vert =j}}\left(  \prod_{i\in I}x_{i}\right)  t^{n-j},
 \end{align*}
@@ -72591,12 +72634,12 @@ Additional exercise \ref{exeadd.noncomm.polarization} \textbf{(a)} (applied to
 $m=n$) yields%
 \begin{align*}
 \sum_{I\subseteq\left[  n\right]  }\left(  -1\right)  ^{n-\left\vert
-I\right\vert }\left(  \sum_{i\in I}v_{i}\right)  ^{n}  & =\underbrace{\sum
+I\right\vert }\left(  \sum_{i\in I}v_{i}\right)  ^{n}  &  =\underbrace{\sum
 _{\substack{f:\left[  n\right]  \rightarrow\left[  n\right]  ;\\f\text{ is
 surjective}}}}_{\substack{=\sum_{f\in S_{n}}\\\text{(by
 (\ref{sol.exeadd.noncomm.polarization.c.3}))}}}v_{f\left(  1\right)
 }v_{f\left(  2\right)  }\cdots v_{f\left(  n\right)  }\\
-& =\sum_{f\in S_{n}}v_{f\left(  1\right)  }v_{f\left(  2\right)  }\cdots
+&  =\sum_{f\in S_{n}}v_{f\left(  1\right)  }v_{f\left(  2\right)  }\cdots
 v_{f\left(  n\right)  }=\sum_{\sigma\in S_{n}}v_{\sigma\left(  1\right)
 }v_{\sigma\left(  2\right)  }\cdots v_{\sigma\left(  n\right)  }%
 \end{align*}
@@ -72635,14 +72678,14 @@ the set $\left[  n\right]  $ are exactly the bijective maps $\left[  n\right]
 \begin{equation}
 \sum_{f\in S_{n}}=\sum_{f\text{ is a bijective map }\left[  n\right]
 \rightarrow\left[  n\right]  }=\sum_{\substack{f:\left[  n\right]
-\rightarrow\left[  n\right]  ;\\f\text{ is bijective}}%
-}\label{sol.exeadd.noncomm.polarization.c.7}%
+\rightarrow\left[  n\right]  ;\\f\text{ is bijective}}}
+\label{sol.exeadd.noncomm.polarization.c.7}%
 \end{equation}
 (an equality of summation signs). Now,
 (\ref{sol.exeadd.noncomm.polarization.c.5}) becomes%
 \begin{align*}
 \sum_{I\subseteq\left[  n\right]  }\left(  -1\right)  ^{n-\left\vert
-I\right\vert }\left(  \sum_{i\in I}v_{i}\right)  ^{n} &  =\underbrace{\sum
+I\right\vert }\left(  \sum_{i\in I}v_{i}\right)  ^{n}  &  =\underbrace{\sum
 _{\substack{f:\left[  n\right]  \rightarrow\left[  n\right]  ;\\f\text{ is
 bijective}}}}_{\substack{=\sum_{f\in S_{n}}\\\text{(by
 (\ref{sol.exeadd.noncomm.polarization.c.7}))}}}v_{f\left(  1\right)
