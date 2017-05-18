@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, May 18, 2017 18:12:37}
+%TCIDATA{LastRevised=Thursday, May 18, 2017 18:56:03}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -991,11 +991,11 @@ $ \textquotedblleft shrink\textquotedblright\ to the simple difference
 $a_{v}-a_{u-1}$ like a telescope does when it is collapsed.
 
 \item \underline{\textbf{Splitting a sum by a value of a function:}} Let $S$
-be a finite set. Let $W$ be a set. Let $f:S\rightarrow W$ be a map.  Let
+be a finite set. Let $W$ be a set. Let $f:S\rightarrow W$ be a map. Let
 $a_{s}$ be an element of $\mathbb{A}$ for each $s\in S$. Then,%
 \begin{equation}
 \sum_{s\in S}a_{s}=\sum_{w\in W}\sum_{\substack{s\in S;\\f\left(  s\right)
-=w}}a_{s}.\label{eq.sum.sheph}%
+=w}}a_{s}. \label{eq.sum.sheph}%
 \end{equation}
 The idea behind this formula is the following: The left hand side is the sum
 of all $a_{s}$ for $s\in S$. The right hand side is the same sum, but split in
@@ -1011,7 +1011,7 @@ S$ satisfying $f\left(  s\right)  =w$, and then we take the sum of all these
 \sum_{s\in\left\{  -n,-\left(  n-1\right)  ,\ldots,n\right\}  }s^{3}%
 =\sum_{w\in\left\{  0,1,\ldots,n\right\}  }\sum_{\substack{s\in\left\{
 -n,-\left(  n-1\right)  ,\ldots,n\right\}  ;\\\left\vert s\right\vert
-=w}}s^{3}.\label{eq.sum.sheph.exam1}%
+=w}}s^{3}. \label{eq.sum.sheph.exam1}%
 \end{equation}
 (This follows from (\ref{eq.sum.sheph}), applied to $S=\left\{  -n,-\left(
 n-1\right)  ,\ldots,n\right\}  $, $W=\left\{  0,1,\ldots,n\right\}  $ and
@@ -1047,7 +1047,7 @@ Since $\sum_{s\in S}1=\left\vert S\right\vert \cdot1=\left\vert S\right\vert
 $, this rewrites as follows:%
 \begin{equation}
 \left\vert S\right\vert =\sum_{w\in W}\left\vert \left\{  s\in S\ \mid
-\ f\left(  s\right)  =w\right\}  \right\vert .\label{eq.sum.sheph.exam2}%
+\ f\left(  s\right)  =w\right\}  \right\vert . \label{eq.sum.sheph.exam2}%
 \end{equation}
 This equality is often called the \textit{shepherd's principle}, because it is
 connected to the joke that \textquotedblleft in order to count a flock of
@@ -1075,7 +1075,7 @@ this notation, we can rewrite (\ref{eq.sum.sheph}) as follows:%
 \begin{equation}
 \sum_{s\in S}a_{s}=\sum_{w\in W}\underbrace{\sum_{\substack{s\in S;\\f\left(
 s\right)  =w}}}_{=\sum_{s\in f^{-1}\left(  w\right)  }}a_{s}=\sum_{w\in W}%
-\sum_{s\in f^{-1}\left(  w\right)  }a_{s}.\label{eq.sum.sheph.preimg}%
+\sum_{s\in f^{-1}\left(  w\right)  }a_{s}. \label{eq.sum.sheph.preimg}%
 \end{equation}
 
 
@@ -1095,7 +1095,8 @@ of $\left\{  1,2,\ldots,n\right\}  $) and their union is $S$. (Thus, every
 element of $S$ lies in precisely one of the subsets $S_{1},S_{2},\ldots,S_{n}%
 $.) Let $a_{s}$ be an element of $\mathbb{A}$ for each $s\in S$. Then,%
 \begin{equation}
-\sum_{s\in S}a_{s}=\sum_{w=1}^{n}\sum_{s\in S_{w}}a_{s}.\label{eq.sum.split-n}%
+\sum_{s\in S}a_{s}=\sum_{w=1}^{n}\sum_{s\in S_{w}}a_{s}.
+\label{eq.sum.split-n}%
 \end{equation}
 This is a generalization of (\ref{eq.sum.split}) (indeed, (\ref{eq.sum.split})
 is obtained from (\ref{eq.sum.split-n}) by setting $n=2$, $S_{1}=X$ and
@@ -1474,7 +1475,7 @@ x,y\right)  }. \label{eq.sum.fubini.predicate}%
 \item For any $n\in\mathbb{N}$ and $m\in\mathbb{N}$, we have%
 \begin{align*}
 \sum_{x\in\left\{  1,2,\ldots,n\right\}  }\sum_{\substack{y\in\left\{
-1,2,\ldots,m\right\}  ;\\x+y\text{ is even}}}xy &  =\sum_{\substack{\left(
+1,2,\ldots,m\right\}  ;\\x+y\text{ is even}}}xy  &  =\sum_{\substack{\left(
 x,y\right)  \in\left\{  1,2,\ldots,n\right\}  \times\left\{  1,2,\ldots
 ,m\right\}  ;\\x+y\text{ is even}}}xy\\
 &  =\sum_{y\in\left\{  1,2,\ldots,m\right\}  }\sum_{\substack{x\in\left\{
@@ -63243,6 +63244,7 @@ _{w}\left(  i\right)  \right)  \ \ \ \ \ \ \ \ \ \ \text{for every }%
 i\in\mathbb{Z}. \label{pf.prop.unrows.basics.k.1}%
 \end{equation}
 
+
 Now, $A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq m}$. Hence,
 Proposition \ref{prop.sol.unirows.d} \textbf{(a)} yields
 \[
@@ -72009,46 +72011,78 @@ This proves Lemma \ref{lem.sol.exeadd.noncomm.polarization.2}.
 \end{proof}
 \end{verlong}
 
-\begin{lemma}
-\label{lem.sol.exeadd.noncomm.polarization.pigeon}Let $U$ and $V$ be two
-finite sets such that $\left\vert U\right\vert =\left\vert V\right\vert $. Let
-$f:U\rightarrow V$ be a map. Then, we have the following logical equivalence:%
-\[
-\left(  f\text{ is surjective}\right)  \ \Longleftrightarrow\ \left(  f\text{
-is bijective}\right)  .
-\]
+The following lemma is a well-known and basic property of finite sets:
 
+\begin{lemma}
+\label{lem.sol.exeadd.noncomm.polarization.pigeon-inj}Let $U$ and $V$ be two
+finite sets. Let $f:U\rightarrow V$ be a map.
+
+\textbf{(a)} We have $\left\vert f\left(  S\right)  \right\vert \leq\left\vert
+S\right\vert $ for each subset $S$ of $U$.
+
+\textbf{(b)} Assume that $\left\vert f\left(  U\right)  \right\vert
+\geq\left\vert U\right\vert $. Then, the map $f$ is injective.
+
+\textbf{(c)} If $f$ is injective, then $\left\vert f\left(  S\right)
+\right\vert =\left\vert S\right\vert $ for each subset $S$ of $U$.
 \end{lemma}
 
 \begin{vershort}
 \begin{proof}
-[Proof of Lemma \ref{lem.sol.exeadd.noncomm.polarization.pigeon}.]Lemma
-\ref{lem.sol.exeadd.noncomm.polarization.pigeon} is well-known; let us
-nevertheless give its proof.
+[Proof of Lemma \ref{lem.sol.exeadd.noncomm.polarization.pigeon-inj}%
+.]\textbf{(a)} Let $S$ be a subset of $U$. We must prove that $\left\vert
+f\left(  S\right)  \right\vert \leq\left\vert S\right\vert $.
 
-Assume that $f$ is surjective.
+Let $\left(  s_{1},s_{2},\ldots,s_{k}\right)  $ be a list of all elements of
+$S$ (with no repetitions).\footnote{Such a list exists, since the set $S$ is
+finite.} Thus, $\left\{  s_{1},s_{2},\ldots,s_{k}\right\}  =S$ and
+$k=\left\vert S\right\vert $. Now,%
+\[
+f\left(  \underbrace{S}_{=\left\{  s_{1},s_{2},\ldots,s_{k}\right\}  }\right)
+=f\left(  \left\{  s_{1},s_{2},\ldots,s_{k}\right\}  \right)  =\left\{
+f\left(  s_{1}\right)  ,f\left(  s_{2}\right)  ,\ldots,f\left(  s_{k}\right)
+\right\}  .
+\]
+Hence,%
+\begin{align*}
+\left\vert f\left(  S\right)  \right\vert  & =\left\vert \left\{  f\left(
+s_{1}\right)  ,f\left(  s_{2}\right)  ,\ldots,f\left(  s_{k}\right)  \right\}
+\right\vert \\
+& \leq k\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since there are at most }k\text{ distinct elements}\\
+\text{among }f\left(  s_{1}\right)  ,f\left(  s_{2}\right)  ,\ldots,f\left(
+s_{k}\right)
+\end{array}
+\right)  \\
+& =\left\vert S\right\vert .
+\end{align*}
 
-Let $u$ and $v$ be two elements of $U$ satisfying $f\left(  u\right)
-=f\left(  v\right)  $. We shall prove that $u=v$.
+
+This proves Lemma \ref{lem.sol.exeadd.noncomm.polarization.pigeon-inj}
+\textbf{(a)}.
+
+\textbf{(b)} Let $u$ and $v$ be two elements of $U$ satisfying $f\left(
+u\right)  =f\left(  v\right)  $. We shall prove that $u=v$.
 
 Indeed, assume the contrary. Thus, $u\neq v$. Hence, $u\in U\setminus\left\{
 v\right\}  $. But $v\in U$ and therefore $\left\vert U\setminus\left\{
 v\right\}  \right\vert =\left\vert U\right\vert -1$.
 
-Furthermore, we have $\left\vert f\left(  S\right)  \right\vert \leq\left\vert
-S\right\vert $ for each subset $S$ of $U$. Applying this to $S=U\setminus
-\left\{  v\right\}  $, we obtain $\left\vert f\left(  U\setminus\left\{
-v\right\}  \right)  \right\vert \leq\left\vert U\setminus\left\{  v\right\}
-\right\vert =\left\vert U\right\vert -1$.
+Lemma \ref{lem.sol.exeadd.noncomm.polarization.pigeon-inj} \textbf{(a)}
+(applied to $S=U\setminus\left\{  v\right\}  $) shows that $\left\vert
+f\left(  U\setminus\left\{  v\right\}  \right)  \right\vert \leq\left\vert
+U\setminus\left\{  v\right\}  \right\vert =\left\vert U\right\vert -1$.
 
 Next, I claim that $q\in f\left(  U\setminus\left\{  v\right\}  \right)  $ for
-each $q\in V$.
+each $q\in f\left(  U\right)  $.
 
-Indeed, let $q\in V$ be arbitrary. We want to show that $q\in f\left(
-U\setminus\left\{  v\right\}  \right)  $.
+Indeed, let $q\in f\left(  U\right)  $ be arbitrary. We want to show that
+$q\in f\left(  U\setminus\left\{  v\right\}  \right)  $.
 
-We know that $f$ is surjective. Hence, there exists some $p\in U$ satisfying
-$q=f\left(  p\right)  $. Consider this $p$. If $p=v$, then%
+We know that $q\in f\left(  U\right)  $. Hence, there exists some $p\in U$
+satisfying $q=f\left(  p\right)  $. Consider this $p$. If $p=v$, then%
 \[
 q=f\left(  \underbrace{p}_{=v}\right)  =f\left(  v\right)  =f\left(
 \underbrace{u}_{\in U\setminus\left\{  v\right\}  }\right)  \in f\left(
@@ -72064,54 +72098,121 @@ v\right\}  \right)  $. This completes the proof of $q\in f\left(
 U\setminus\left\{  v\right\}  \right)  $.
 
 Now, forget that we fixed $q$. We thus have shown that $q\in f\left(
-U\setminus\left\{  v\right\}  \right)  $ for each $q\in V$. In other words,
-$V\subseteq f\left(  U\setminus\left\{  v\right\}  \right)  $. Hence,
-$\left\vert V\right\vert \leq\left\vert f\left(  U\setminus\left\{  v\right\}
-\right)  \right\vert \leq\left\vert U\right\vert -1<\left\vert U\right\vert
-=\left\vert V\right\vert $. This is absurd. This contradiction shows that our
-assumption was false. Thus, $u=v$ is proven.
+U\setminus\left\{  v\right\}  \right)  $ for each $q\in f\left(  U\right)  $.
+In other words, $f\left(  U\right)  \subseteq f\left(  U\setminus\left\{
+v\right\}  \right)  $. Hence, $\left\vert f\left(  U\right)  \right\vert
+\leq\left\vert f\left(  U\setminus\left\{  v\right\}  \right)  \right\vert
+\leq\left\vert U\right\vert -1<\left\vert U\right\vert $. Thus, $\left\vert
+U\right\vert >\left\vert f\left(  U\right)  \right\vert \geq\left\vert
+U\right\vert $. This is absurd. This contradiction shows that our assumption
+was false. Thus, $u=v$ is proven.
 
 Now, forget that we fixed $u$ and $v$. We thus have shown that if $u$ and $v$
 are two elements of $U$ satisfying $f\left(  u\right)  =f\left(  v\right)  $,
-then $u=v$. In other words, the map $f$ is injective. Since $f$ is both
-surjective and injective, we see that $f$ is bijective.
+then $u=v$. In other words, the map $f$ is injective. This proves Lemma
+\ref{lem.sol.exeadd.noncomm.polarization.pigeon-inj} \textbf{(b)}.
 
-Now, forget that we have assumed that $f$ is surjective. We thus have shown
-that if $f$ is surjective, then $f$ is bijective. Of course, the converse also
-holds: If $f$ is bijective, then $f$ is surjective. Hence, $f$ is surjective
-if and only if $f$ is bijective. This proves Lemma
-\ref{lem.sol.exeadd.noncomm.polarization.pigeon}.
+\textbf{(c)} Assume that $f$ is injective. Let $S$ be a subset of $U$. We must
+prove that $\left\vert f\left(  S\right)  \right\vert =\left\vert S\right\vert
+$.
+
+Let $\left(  s_{1},s_{2},\ldots,s_{k}\right)  $ be a list of all elements of
+$S$ (with no repetitions).\footnote{Such a list exists, since the set $S$ is
+finite.} Thus, $\left\{  s_{1},s_{2},\ldots,s_{k}\right\}  =S$ and
+$k=\left\vert S\right\vert $. Furthermore, the elements $s_{1},s_{2}%
+,\ldots,s_{k}$ are pairwise distinct (since $\left(  s_{1},s_{2},\ldots
+,s_{k}\right)  $ is a list with no repetitions). In other words,%
+\[
+s_{i}\neq s_{j}\ \ \ \ \ \ \ \ \ \ \text{for any two distinct elements
+}i\text{ and }j\text{ of }\left\{  1,2,\ldots,k\right\}  .
+\]
+Thus,%
+\[
+f\left(  s_{i}\right)  \neq f\left(  s_{j}\right)
+\ \ \ \ \ \ \ \ \ \ \text{for any two distinct elements }i\text{ and }j\text{
+of }\left\{  1,2,\ldots,k\right\}
+\]
+(since the map $f$ is injective, and thus $f\left(  s_{i}\right)  \neq
+f\left(  s_{j}\right)  $ follows from $s_{i}\neq s_{j}$). In other words, the
+$k$ elements $f\left(  s_{1}\right)  ,f\left(  s_{2}\right)  ,\ldots,f\left(
+s_{k}\right)  $ are pairwise distinct. Hence, $\left\vert \left\{  f\left(
+s_{1}\right)  ,f\left(  s_{2}\right)  ,\ldots,f\left(  s_{k}\right)  \right\}
+\right\vert =k$.
+
+Now,%
+\[
+f\left(  \underbrace{S}_{=\left\{  s_{1},s_{2},\ldots,s_{k}\right\}  }\right)
+=f\left(  \left\{  s_{1},s_{2},\ldots,s_{k}\right\}  \right)  =\left\{
+f\left(  s_{1}\right)  ,f\left(  s_{2}\right)  ,\ldots,f\left(  s_{k}\right)
+\right\}  .
+\]
+Hence,%
+\[
+\left\vert \underbrace{f\left(  S\right)  }_{=\left\{  f\left(  s_{1}\right)
+,f\left(  s_{2}\right)  ,\ldots,f\left(  s_{k}\right)  \right\}  }\right\vert
+=\left\vert \left\{  f\left(  s_{1}\right)  ,f\left(  s_{2}\right)
+,\ldots,f\left(  s_{k}\right)  \right\}  \right\vert =k=\left\vert
+S\right\vert .
+\]
+This proves Lemma \ref{lem.sol.exeadd.noncomm.polarization.pigeon-inj}
+\textbf{(c)}.
 \end{proof}
 \end{vershort}
 
 \begin{verlong}
 \begin{proof}
-[Proof of Lemma \ref{lem.sol.exeadd.noncomm.polarization.pigeon}.]Assume that
-$f$ is surjective.
+[Proof of Lemma \ref{lem.sol.exeadd.noncomm.polarization.pigeon-inj}%
+.]\textbf{(a)} Let $S$ be a subset of $U$. We must prove that $\left\vert
+f\left(  S\right)  \right\vert \leq\left\vert S\right\vert $.
 
-Let $u$ and $v$ be two elements of $U$ satisfying $f\left(  u\right)
-=f\left(  v\right)  $. We shall prove that $u=v$.
+The set $S$ is finite (since it is a subset of the finite set $U$). Let
+$\left(  s_{1},s_{2},\ldots,s_{k}\right)  $ be a list of all elements of $S$
+(with no repetitions).\footnote{Such a list exists, since the set $S$ is
+finite.} Thus, $\left\{  s_{1},s_{2},\ldots,s_{k}\right\}  =S$ and
+$k=\left\vert S\right\vert $. Now,%
+\begin{equation}
+f\left(  \underbrace{S}_{=\left\{  s_{1},s_{2},\ldots,s_{k}\right\}  }\right)
+=f\left(  \left\{  s_{1},s_{2},\ldots,s_{k}\right\}  \right)  =\left\{
+f\left(  s_{1}\right)  ,f\left(  s_{2}\right)  ,\ldots,f\left(  s_{k}\right)
+\right\}  .\label{pf.lem.sol.exeadd.noncomm.polarization.pigeon-inj.a.1}%
+\end{equation}
+
+
+But the elements of the set $\left\{  f\left(  s_{1}\right)  ,f\left(
+s_{2}\right)  ,\ldots,f\left(  s_{k}\right)  \right\}  $ are the $k$ elements
+\newline$f\left(  s_{1}\right)  ,f\left(  s_{2}\right)  ,\ldots,f\left(
+s_{k}\right)  $, which may and may not be distinct; in either case, there are
+at most $k$ distinct elements among them. Hence, the set $\left\{  f\left(
+s_{1}\right)  ,f\left(  s_{2}\right)  ,\ldots,f\left(  s_{k}\right)  \right\}
+$ has at most $k$ elements. In other words, $\left\vert \left\{  f\left(
+s_{1}\right)  ,f\left(  s_{2}\right)  ,\ldots,f\left(  s_{k}\right)  \right\}
+\right\vert \leq k$. In light of
+(\ref{pf.lem.sol.exeadd.noncomm.polarization.pigeon-inj.a.1}), this rewrites
+as $\left\vert f\left(  S\right)  \right\vert \leq k$. Thus, $\left\vert
+f\left(  S\right)  \right\vert \leq k=\left\vert S\right\vert $. This proves
+Lemma \ref{lem.sol.exeadd.noncomm.polarization.pigeon-inj} \textbf{(a)}.
+
+\textbf{(b)} Let $u$ and $v$ be two elements of $U$ satisfying $f\left(
+u\right)  =f\left(  v\right)  $. We shall prove that $u=v$.
 
 Indeed, assume the contrary. Thus, $u\neq v$. Hence, $u\in U\setminus\left\{
 v\right\}  $ (since $u\in U$ and $u\neq v$). But $v\in U$ and therefore
 $\left\vert U\setminus\left\{  v\right\}  \right\vert =\left\vert U\right\vert
 -1$.
 
-Furthermore, we have $\left\vert f\left(  S\right)  \right\vert \leq\left\vert
-S\right\vert $ for each subset $S$ of $U$. Applying this to $S=U\setminus
-\left\{  v\right\}  $, we obtain $\left\vert f\left(  U\setminus\left\{
-v\right\}  \right)  \right\vert \leq\left\vert U\setminus\left\{  v\right\}
-\right\vert =\left\vert U\right\vert -1$.
+Lemma \ref{lem.sol.exeadd.noncomm.polarization.pigeon-inj} \textbf{(a)}
+(applied to $S=U\setminus\left\{  v\right\}  $) shows that $\left\vert
+f\left(  U\setminus\left\{  v\right\}  \right)  \right\vert \leq\left\vert
+U\setminus\left\{  v\right\}  \right\vert =\left\vert U\right\vert -1$.
 
 Next, I claim that $q\in f\left(  U\setminus\left\{  v\right\}  \right)  $ for
-each $q\in V$.
+each $q\in f\left(  U\right)  $.
 
-Indeed, let $q\in V$ be arbitrary. We want to show that $q\in f\left(
-U\setminus\left\{  v\right\}  \right)  $.
+Indeed, let $q\in f\left(  U\right)  $ be arbitrary. We want to show that
+$q\in f\left(  U\setminus\left\{  v\right\}  \right)  $.
 
-We know that $f$ is surjective. Hence, $f\left(  U\right)  =V$. Now, $q\in
-V=f\left(  U\right)  $. Therefore, there exists some $p\in U$ satisfying
-$q=f\left(  p\right)  $. Consider this $p$. If $p=v$, then%
+We know that $q\in f\left(  U\right)  $. Hence, there exists some $p\in U$
+satisfying $q=f\left(  p\right)  $. Consider this $p$. If $p=v$, then%
 \[
 q=f\left(  \underbrace{p}_{=v}\right)  =f\left(  v\right)  =f\left(
 \underbrace{u}_{\in U\setminus\left\{  v\right\}  }\right)  \in f\left(
@@ -72129,18 +72230,130 @@ U\setminus\left\{  v\right\}  \right)  $. This completes the proof of $q\in
 f\left(  U\setminus\left\{  v\right\}  \right)  $.
 
 Now, forget that we fixed $q$. We thus have shown that $q\in f\left(
-U\setminus\left\{  v\right\}  \right)  $ for each $q\in V$. In other words,
-$V\subseteq f\left(  U\setminus\left\{  v\right\}  \right)  $. Hence,
-$\left\vert V\right\vert \leq\left\vert f\left(  U\setminus\left\{  v\right\}
-\right)  \right\vert \leq\left\vert U\right\vert -1<\left\vert U\right\vert
-=\left\vert V\right\vert $. This is absurd. Hence, we have found a
-contradiction. This contradiction shows that our assumption was false. Thus,
-$u=v$ is proven.
+U\setminus\left\{  v\right\}  \right)  $ for each $q\in f\left(  U\right)  $.
+In other words, $f\left(  U\right)  \subseteq f\left(  U\setminus\left\{
+v\right\}  \right)  $. Hence, $\left\vert f\left(  U\right)  \right\vert
+\leq\left\vert f\left(  U\setminus\left\{  v\right\}  \right)  \right\vert
+\leq\left\vert U\right\vert -1<\left\vert U\right\vert $. Thus, $\left\vert
+U\right\vert >\left\vert f\left(  U\right)  \right\vert \geq\left\vert
+U\right\vert $. This is absurd. Hence, we have found a contradiction. This
+contradiction shows that our assumption was false. Thus, $u=v$ is proven.
 
 Now, forget that we fixed $u$ and $v$. We thus have shown that if $u$ and $v$
 are two elements of $U$ satisfying $f\left(  u\right)  =f\left(  v\right)  $,
-then $u=v$. In other words, the map $f$ is injective. Since $f$ is both
-surjective and injective, we see that $f$ is bijective.
+then $u=v$. In other words, the map $f$ is injective. This proves Lemma
+\ref{lem.sol.exeadd.noncomm.polarization.pigeon-inj} \textbf{(b)}.
+
+\textbf{(c)} Assume that $f$ is injective. Let $S$ be a subset of $U$. We must
+prove that $\left\vert f\left(  S\right)  \right\vert =\left\vert S\right\vert
+$.
+
+The set $S$ is finite (since it is a subset of the finite set $U$). Let
+$\left(  s_{1},s_{2},\ldots,s_{k}\right)  $ be a list of all elements of $S$
+(with no repetitions).\footnote{Such a list exists, since the set $S$ is
+finite.} Thus, $\left\{  s_{1},s_{2},\ldots,s_{k}\right\}  =S$ and
+$k=\left\vert S\right\vert $. Furthermore, the elements $s_{1},s_{2}%
+,\ldots,s_{k}$ are pairwise distinct (since $\left(  s_{1},s_{2},\ldots
+,s_{k}\right)  $ is a list with no repetitions). In other words,%
+\begin{equation}
+s_{i}\neq s_{j}\ \ \ \ \ \ \ \ \ \ \text{for any two distinct elements
+}i\text{ and }j\text{ of }\left\{  1,2,\ldots,k\right\}
+.\label{pf.lem.sol.exeadd.noncomm.polarization.pigeon-inj.c.1}%
+\end{equation}
+
+
+Now, we have%
+\[
+f\left(  s_{i}\right)  \neq f\left(  s_{j}\right)
+\ \ \ \ \ \ \ \ \ \ \text{for any two distinct elements }i\text{ and }j\text{
+of }\left\{  1,2,\ldots,k\right\}
+\]
+\footnote{\textit{Proof.} Let $i$ and $j$ be two distinct elements of
+$\left\{  1,2,\ldots,k\right\}  $. Then, $s_{i}\neq s_{j}$ (by
+(\ref{pf.lem.sol.exeadd.noncomm.polarization.pigeon-inj.c.1})). Assume (for
+the sake of contradiction) that $f\left(  s_{i}\right)  =f\left(
+s_{j}\right)  $.
+\par
+Recall that the map $f$ is injective. In other words, any two elements $u$ and
+$v$ of $U$ satisfying $f\left(  u\right)  =f\left(  v\right)  $ must satisfy
+$u=v$. Applying this to $u=s_{i}$ and $v=s_{j}$, we obtain $s_{i}=s_{j}$
+(since $f\left(  s_{i}\right)  =f\left(  s_{j}\right)  $). This contradicts
+$s_{i}\neq s_{j}$.
+\par
+This contradiction shows that our assumption (that $f\left(  s_{i}\right)
+=f\left(  s_{j}\right)  $) was wrong. Hence, we cannot have $f\left(
+s_{i}\right)  =f\left(  s_{j}\right)  $. In other words, we have $f\left(
+s_{i}\right)  \neq f\left(  s_{j}\right)  $. Qed.}. In other words, the $k$
+elements $f\left(  s_{1}\right)  ,f\left(  s_{2}\right)  ,\ldots,f\left(
+s_{k}\right)  $ are pairwise distinct. Hence, $\left\vert \left\{  f\left(
+s_{1}\right)  ,f\left(  s_{2}\right)  ,\ldots,f\left(  s_{k}\right)  \right\}
+\right\vert =k$.
+
+Now,%
+\[
+f\left(  \underbrace{S}_{=\left\{  s_{1},s_{2},\ldots,s_{k}\right\}  }\right)
+=f\left(  \left\{  s_{1},s_{2},\ldots,s_{k}\right\}  \right)  =\left\{
+f\left(  s_{1}\right)  ,f\left(  s_{2}\right)  ,\ldots,f\left(  s_{k}\right)
+\right\}  .
+\]
+Hence,%
+\[
+\left\vert \underbrace{f\left(  S\right)  }_{=\left\{  f\left(  s_{1}\right)
+,f\left(  s_{2}\right)  ,\ldots,f\left(  s_{k}\right)  \right\}  }\right\vert
+=\left\vert \left\{  f\left(  s_{1}\right)  ,f\left(  s_{2}\right)
+,\ldots,f\left(  s_{k}\right)  \right\}  \right\vert =k=\left\vert
+S\right\vert .
+\]
+This proves Lemma \ref{lem.sol.exeadd.noncomm.polarization.pigeon-inj}
+\textbf{(c)}.
+\end{proof}
+\end{verlong}
+
+\begin{lemma}
+\label{lem.sol.exeadd.noncomm.polarization.pigeon}Let $U$ and $V$ be two
+finite sets such that $\left\vert U\right\vert =\left\vert V\right\vert $. Let
+$f:U\rightarrow V$ be a map. Then, we have the following logical equivalence:%
+\[
+\left(  f\text{ is surjective}\right)  \ \Longleftrightarrow\ \left(  f\text{
+is bijective}\right)  .
+\]
+
+\end{lemma}
+
+Lemma \ref{lem.sol.exeadd.noncomm.polarization.pigeon} is well-known; let us
+nevertheless give its proof.
+
+\begin{vershort}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exeadd.noncomm.polarization.pigeon}.]Assume that
+$f$ is surjective. Thus, $f\left(  U\right)  =V$. Hence, $\left\vert f\left(
+U\right)  \right\vert =\left\vert V\right\vert =\left\vert U\right\vert $
+(since $\left\vert U\right\vert =\left\vert V\right\vert $), so that
+$\left\vert f\left(  U\right)  \right\vert =\left\vert U\right\vert
+\geq\left\vert U\right\vert $. Hence, Lemma
+\ref{lem.sol.exeadd.noncomm.polarization.pigeon-inj} \textbf{(b)} shows that
+the map $f$ is injective. Since $f$ is both surjective and injective, we see
+that $f$ is bijective.
+
+Now, forget that we have assumed that $f$ is surjective. We thus have shown
+that if $f$ is surjective, then $f$ is bijective. Of course, the converse also
+holds: If $f$ is bijective, then $f$ is surjective. Hence, $f$ is surjective
+if and only if $f$ is bijective. This proves Lemma
+\ref{lem.sol.exeadd.noncomm.polarization.pigeon}.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exeadd.noncomm.polarization.pigeon}.]Assume that
+$f$ is surjective. Thus, $f\left(  U\right)  =V$. Hence, $\left\vert f\left(
+U\right)  \right\vert =\left\vert V\right\vert =\left\vert U\right\vert $
+(since $\left\vert U\right\vert =\left\vert V\right\vert $), so that
+$\left\vert f\left(  U\right)  \right\vert =\left\vert U\right\vert
+\geq\left\vert U\right\vert $. Hence, Lemma
+\ref{lem.sol.exeadd.noncomm.polarization.pigeon-inj} \textbf{(b)} shows that
+the map $f$ is injective. Since $f$ is both surjective and injective, we see
+that $f$ is bijective.
 
 Now, forget that we have assumed that $f$ is surjective. We thus have shown
 that if $f$ is surjective, then $f$ is bijective. In other words, we have
