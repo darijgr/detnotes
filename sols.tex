@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, May 18, 2017 21:21:41}
+%TCIDATA{LastRevised=Thursday, May 18, 2017 23:24:10}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -32634,19 +32634,20 @@ condition }1\leq i<j\leq n\\\text{is equivalent to }\left(  1\leq i\leq
 n\text{ and }i<j\leq n\right)  \text{)}}}1=\underbrace{\sum_{\substack{\left(
 i,j\right)  \in\mathbb{Z}^{2};\\1\leq i\leq n;\ i<j\leq n}}}_{=\sum
 _{\substack{i\in\mathbb{Z};\\1\leq i\leq n}}\sum_{\substack{j\in
-\mathbb{Z};\\i<j\leq n}}}1\\
-&  =\sum_{\substack{i\in\mathbb{Z};\\1\leq i\leq n}}\underbrace{\sum
-_{\substack{j\in\mathbb{Z};\\i<j\leq n}}1}_{=\left\vert \left\{
-j\in\mathbb{Z}\ \mid\ i<j\leq n\right\}  \right\vert }=\sum_{\substack{i\in
-\mathbb{Z};\\1\leq i\leq n}}\left\vert \underbrace{\left\{  j\in
-\mathbb{Z}\ \mid\ i<j\leq n\right\}  }_{=\left\{  i+1,i+2,\ldots,n\right\}
-}\right\vert \\
-&  =\underbrace{\sum_{\substack{i\in\mathbb{Z};\\1\leq i\leq n}}}_{=\sum
-_{i=1}^{n}}\underbrace{\left\vert \left\{  i+1,i+2,\ldots,n\right\}
-\right\vert }_{\substack{=n-i\\\text{(since }i\leq n\text{)}}}=\sum_{i=1}%
-^{n}\left(  n-i\right)  =\sum_{i=0}^{n-1}i\\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }i\text{ for
-}n-i\text{ in the sum}\right) \\
+\mathbb{Z};\\i<j\leq n}}}1=\sum_{\substack{i\in\mathbb{Z};\\1\leq i\leq
+n}}\underbrace{\sum_{\substack{j\in\mathbb{Z};\\i<j\leq n}}1}%
+_{\substack{=\left\vert \left\{  j\in\mathbb{Z}\ \mid\ i<j\leq n\right\}
+\right\vert \cdot1\\=\left\vert \left\{  j\in\mathbb{Z}\ \mid\ i<j\leq
+n\right\}  \right\vert }}\\
+&  =\sum_{\substack{i\in\mathbb{Z};\\1\leq i\leq n}}\left\vert
+\underbrace{\left\{  j\in\mathbb{Z}\ \mid\ i<j\leq n\right\}  }_{=\left\{
+i+1,i+2,\ldots,n\right\}  }\right\vert =\underbrace{\sum_{\substack{i\in
+\mathbb{Z};\\1\leq i\leq n}}}_{=\sum_{i=1}^{n}}\underbrace{\left\vert \left\{
+i+1,i+2,\ldots,n\right\}  \right\vert }_{\substack{=n-i\\\text{(since }i\leq
+n\text{)}}}\\
+&  =\sum_{i=1}^{n}\left(  n-i\right)  =\sum_{i=0}^{n-1}%
+i\ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }i\text{ for
+}n-i\text{ in the sum}\right)  \\
 &  =0+\sum_{i=1}^{n-1}i=\sum_{i=1}^{n-1}i=n\left(  n-1\right)  /2,
 \end{align*}
 qed.}.
@@ -54647,7 +54648,7 @@ M}$. Hence, Lemma \ref{lem.block2x2.tridet.last-row-minor} \textbf{(b)}
 $) yields%
 \begin{equation}
 D_{\sim M,\sim q}=\left(  d_{i,\mathbf{d}_{q}\left(  j\right)  }\right)
-_{1\leq i\leq M-1,\ 1\leq j\leq M-1}
+_{1\leq i\leq M-1,\ 1\leq j\leq M-1} .
 \label{sol.block2x2.tridet.indstep.minor.pf.3}%
 \end{equation}
 \par
@@ -54673,7 +54674,7 @@ i\leq n,\ 1\leq j\leq M-1}$, $0_{\left(  M-1\right)  \times n}=\left(
 $0_{\left(  M-1\right)  \times n}$) and $D_{\sim M,\sim q}=\left(
 d_{i,\mathbf{d}_{q}\left(  j\right)  }\right)  _{1\leq i\leq M-1,\ 1\leq j\leq
 M-1}$. Thus, (\ref{eq.def.block2x2.formal}) (applied to $n$, $M-1$, $n$,
-$M-1$, $A$, $B_{q}^{\prime}$, $0_{M\times n}$, $D_{\sim M,\sim q}$, $a_{i,j}$,
+$M-1$, $A$, $B_{q}^{\prime}$, $0_{\left(M-1\right)\times n}$, $D_{\sim M,\sim q}$, $a_{i,j}$,
 $b_{i,\mathbf{d}_{q}\left(  j\right)  }$, $0$ and $d_{i,\mathbf{d}_{q}\left(
 j\right)  }$ instead of $n$, $n^{\prime}$, $m$, $m^{\prime}$, $A$, $B$, $C$,
 $D$, $a_{i,j}$, $b_{i,j}$, $c_{i,j}$ and $d_{i,j}$) shows that
@@ -54710,7 +54711,7 @@ d_{i-n,\mathbf{d}_{q}\left(  j-n\right)  }, & \text{if }i>n\text{ and }j>n
 \end{equation}
 for every $\left(  i,j\right)  \in\left\{  1,2,\ldots,n+M-1\right\}  ^{2}$.
 \par
-\textit{Proof of (\ref{sol.block2x2.tridet.indstep.minor.pf.8}):} Let $\left(
+[\textit{Proof of (\ref{sol.block2x2.tridet.indstep.minor.pf.8}):} Let $\left(
 i,j\right)  \in\left\{  1,2,\ldots,n+M-1\right\}  ^{2}$. Thus, $i\in\left\{
 1,2,\ldots,n+M-1\right\}  $ and $j\in\left\{  1,2,\ldots,n+M-1\right\}  $.
 \par
@@ -55019,7 +55020,7 @@ this shows that (\ref{sol.block2x2.tridet.indstep.minor.pf.8}) holds in Case
 Thus, we have shown that (\ref{sol.block2x2.tridet.indstep.minor.pf.8}) holds
 in each of the two Cases 1 and 2. Hence,
 (\ref{sol.block2x2.tridet.indstep.minor.pf.8}) always holds. This completes
-the proof of (\ref{sol.block2x2.tridet.indstep.minor.pf.8}).
+the proof of (\ref{sol.block2x2.tridet.indstep.minor.pf.8}).]
 \par
 Now, (\ref{sol.block2x2.tridet.indstep.minor.pf.2}) becomes%
 \begin{align*}
@@ -58367,13 +58368,13 @@ I\right\vert =j}}\left(  \prod_{i\in I}x_{i}\right)  t^{n-j}.
 \end{align*}
 Comparing this with%
 \begin{align*}
-\sum_{j=0}^{n}e_{n-j}\left(  x_{1},x_{2},\ldots,x_{n}\right)  t^{j} &
+\sum_{j=0}^{n}e_{n-j}\left(  x_{1},x_{2},\ldots,x_{n}\right)  t^{j}  &
 =\sum_{j=0}^{n}\underbrace{e_{n-\left(  n-j\right)  }\left(  x_{1}%
 ,x_{2},\ldots,x_{n}\right)  }_{\substack{=e_{j}\left(  x_{1},x_{2}%
 ,\ldots,x_{n}\right)  \\=\sum_{\substack{I\subseteq\left[  n\right]
 ;\\\left\vert I\right\vert =j}}\prod_{i\in I}x_{i}}}t^{n-j}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }n-j\text{ for
-}j\text{ in the sum}\right)  \\
+}j\text{ in the sum}\right) \\
 &  =\sum_{j=0}^{n}\sum_{\substack{I\subseteq\left[  n\right]  ;\\\left\vert
 I\right\vert =j}}\left(  \prod_{i\in I}x_{i}\right)  t^{n-j},
 \end{align*}
