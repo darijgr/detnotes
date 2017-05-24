@@ -2729,6 +2729,28 @@ for every $m\in\mathbb{N}$.
 Proposition \ref{prop.binom.mm}.
 \end{proof}
 
+\begin{exercise}
+\label{exe.multinom1}Let $m\in\mathbb{N}$ and $\left(  k_{1},k_{2}%
+,\ldots,k_{m}\right)  \in\mathbb{N}^{m}$. Prove that $\dfrac{\left(
+k_{1}+k_{2}+\cdots+k_{m}\right)  !}{k_{1}!k_{2}!\cdots k_{m}!}$ is a positive integer.
+\end{exercise}
+
+\begin{remark}
+\label{rmk.multinom1}Let $m\in\mathbb{N}$ and $\left(  k_{1},k_{2}%
+,\ldots,k_{m}\right)  \in\mathbb{N}^{m}$. Exercise \ref{exe.multinom1} shows
+that $\dfrac{\left(  k_{1}+k_{2}+\cdots+k_{m}\right)  !}{k_{1}!k_{2}!\cdots
+k_{m}!}$ is a positive integer. This positive integer is called a
+\textit{multinomial coefficient}, and is often denoted by $\dbinom{n}%
+{k_{1},k_{2},\ldots,k_{m}}$, where $n=k_{1}+k_{2}+\cdots+k_{m}$. (We shall
+avoid this particular notation, since it makes the meaning of $\dbinom{n}{k}$
+slightly ambiguous: It could mean both the binomial coefficient $\dbinom{n}%
+{k}$ and the multinomial coefficient $\dbinom{n}{k_{1},k_{2},\ldots,k_{m}}$
+for $\left(  k_{1},k_{2},\ldots,k_{m}\right)  =\left(  k\right)  $.
+Fortunately, the ambiguity is not really an issue, because the only situation
+in which both meanings make sense is when $k=n\in\mathbb{N}$, but in this case
+both interpretations give the same value $1$.)
+\end{remark}
+
 \subsubsection{The recurrence relation of the binomial coefficients}
 
 \begin{proposition}
@@ -9145,6 +9167,26 @@ $\left[  n\right]  $.)
 
 \textbf{(b)} Use Exercise \ref{exe.prod(ai+bi)} to give a new proof of
 (\ref{eq.rings.(a+b)**n}).
+\end{exercise}
+
+\begin{exercise}
+\label{exe.multinom2}For each $m\in\mathbb{N}$ and $\left(  k_{1},k_{2}%
+,\ldots,k_{m}\right)  \in\mathbb{N}^{m}$, let us define a positive integer
+$\mathbf{m}\left(  k_{1},k_{2},\ldots,k_{m}\right)  $ by $\mathbf{m}\left(
+k_{1},k_{2},\ldots,k_{m}\right)  =\dfrac{\left(  k_{1}+k_{2}+\cdots
++k_{m}\right)  !}{k_{1}!k_{2}!\cdots k_{m}!}$. (This is indeed a positive
+integer, because Exercise \ref{exe.multinom1} says so.)
+
+Let $\mathbb{K}$ be a commutative ring. Let $m\in\mathbb{N}$. Let $a_{1}%
+,a_{2},\ldots,a_{m}$ be $m$ elements of $\mathbb{K}$. Let $n\in\mathbb{N}$.
+Prove that%
+\[
+\left(  a_{1}+a_{2}+\cdots+a_{m}\right)  ^{n}=\sum_{\substack{\left(
+k_{1},k_{2},\ldots,k_{m}\right)  \in\mathbb{N}^{m};\\k_{1}+k_{2}+\cdots
++k_{m}=n}}\mathbf{m}\left(  k_{1},k_{2},\ldots,k_{m}\right)  \prod_{i=1}%
+^{m}a_{i}^{k_{i}}.
+\]
+(This is called the \textit{multinomial formula}.)
 \end{exercise}
 
 \subsection{Matrices}
@@ -25863,6 +25905,246 @@ This section contains solutions (or, sometimes, solution sketches) to some of
 the exercises in the text, as well as occasional remarks. I do not recommend
 reading them before trying to solve the problem on your own.
 
+\subsection{Solution to Exercise \ref{exe.multinom1}}
+
+\begin{vershort}
+\begin{proof}
+[Solution to Exercise \ref{exe.multinom1}.]For each $i\in\left\{
+0,1,\ldots,m\right\}  $, define an integer $s_{i}\in\mathbb{N}$ by
+$s_{i}=k_{1}+k_{2}+\cdots+k_{i}$. We shall prove that%
+\begin{equation}
+\dfrac{\left(  k_{1}+k_{2}+\cdots+k_{m}\right)  !}{k_{1}!k_{2}!\cdots k_{m}%
+!}=\prod_{i=1}^{m}\dbinom{s_{i}}{k_{i}}. \label{sol.exe.multinom1.short.goal}%
+\end{equation}
+
+
+[\textit{Proof of (\ref{sol.exe.multinom1.short.goal}):} If $m=0$, then
+(\ref{sol.exe.multinom1.short.goal}) holds\footnote{\textit{Proof.} This is
+just an exercise in understanding empty sums and empty products: Empty sums
+such as $k_{1}+k_{2}+\cdots+k_{0}$ are defined to be $0$, and empty products
+such as $k_{1}!k_{2}!\cdots k_{0}!$ or $\prod_{i=1}^{0}\dbinom{s_{i}}{k_{i}}$
+are defined to be $1$. With this in mind (and remembering that $0!=1$), it
+becomes completely straightforward to verify
+(\ref{sol.exe.multinom1.short.goal}) when $m=0$.}. Hence, for the rest of the
+proof of (\ref{sol.exe.multinom1.short.goal}), we WLOG assume that we don't
+have $m=0$.
+
+We have $m\geq1$ (since $m\in\mathbb{N}$ but we don't have $m=0$), so that
+$m-1\geq0$.
+
+The definition of $s_{0}$ yields $s_{0}=k_{1}+k_{2}+\cdots+k_{0}=\left(
+\text{empty sum}\right)  =0$. Hence, $s_{0}!=0!=1$. Now,%
+\begin{align}
+\prod_{i=1}^{m}\dfrac{1}{s_{i-1}!}  &  =\prod_{i=0}^{m-1}\dfrac{1}{s_{i}%
+!}\ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }i\text{ for
+}i-1\text{ in the product}\right) \nonumber\\
+&  =\underbrace{\dfrac{1}{s_{0}!}}_{\substack{=1\\\text{(since }%
+s_{0}!=1\text{)}}}\prod_{i=1}^{m-1}\dfrac{1}{s_{i}!}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }m-1\geq0\right) \nonumber\\
+&  =\prod_{i=1}^{m-1}\dfrac{1}{s_{i}!}=\dfrac{1}{\prod_{i=1}^{m-1}s_{i}!}.
+\label{sol.exe.multinom1.short.goal.pf.2}%
+\end{align}
+
+
+The definition of $s_{m}$ yields $s_{m}=k_{1}+k_{2}+\cdots+k_{m}$.
+
+Each $i\in\left\{  1,2,\ldots,m\right\}  $ satisfies%
+\[
+\dbinom{s_{i}}{k_{i}}=s_{i}!\cdot\dfrac{1}{k_{i}!}\cdot\dfrac{1}{s_{i-1}!}%
+\]
+\footnote{\textit{Proof:} Let $i\in\left\{  1,2,\ldots,m\right\}  $. Then,
+both $i-1$ and $i$ belong to the set $\left\{  0,1,\ldots,m\right\}  $. Hence,
+the definition of $s_{i-1}$ yields $s_{i-1}=k_{1}+k_{2}+\cdots+k_{i-1}%
+\in\mathbb{N}$ (since $k_{1},k_{2},\ldots,k_{i-1}$ are elements of
+$\mathbb{N}$). Thus, $s_{i-1}\geq0$. Meanwhile, the definition of $s_{i}$
+yields
+\[
+s_{i}=k_{1}+k_{2}+\cdots+k_{i}=\underbrace{\left(  k_{1}+k_{2}+\cdots
++k_{i-1}\right)  }_{=s_{i-1}}+k_{i}=\underbrace{s_{i-1}}_{\geq0}+k_{i}\geq
+k_{i}.
+\]
+Also, $s_{i}=k_{1}+k_{2}+\cdots+k_{i}\in\mathbb{N}$ (since $k_{1},k_{2}%
+,\ldots,k_{i}$ are elements of $\mathbb{N}$). From $s_{i}=s_{i-1}+k_{i}$, we
+obtain $s_{i}-k_{i}=s_{i-1}$.
+\par
+Now, (\ref{eq.binom.formula}) (applied to $s_{i}$ and $k_{i}$ instead of $m$
+and $n$) yields
+\begin{align*}
+\dbinom{s_{i}}{k_{i}}  &  =\dfrac{s_{i}!}{k_{i}!\left(  s_{i}-k_{i}\right)
+!}=\dfrac{s_{i}!}{k_{i}!s_{i-1}!}\ \ \ \ \ \ \ \ \ \ \left(  \text{since
+}s_{i}-k_{i}=s_{i-1}\right) \\
+&  =s_{i}!\cdot\dfrac{1}{k_{i}!}\cdot\dfrac{1}{s_{i-1}!}.
+\end{align*}
+}. Hence,%
+\begin{align*}
+&  \prod_{i=1}^{m}\underbrace{\dbinom{s_{i}}{k_{i}}}_{=s_{i}!\cdot\dfrac
+{1}{k_{i}!}\cdot\dfrac{1}{s_{i-1}!}}\\
+&  =\prod_{i=1}^{m}\left(  s_{i}!\cdot\dfrac{1}{k_{i}!}\cdot\dfrac{1}%
+{s_{i-1}!}\right)  =\underbrace{\left(  \prod_{i=1}^{m}s_{i}!\right)
+}_{\substack{=\left(  \prod_{i=1}^{m-1}s_{i}!\right)  s_{m}!\\\text{(since
+}m\geq1\text{)}}}\cdot\left(  \prod_{i=1}^{m}\dfrac{1}{k_{i}!}\right)
+\cdot\underbrace{\left(  \prod_{i=1}^{m}\dfrac{1}{s_{i-1}!}\right)
+}_{\substack{=\dfrac{1}{\prod_{i=1}^{m-1}s_{i}!}\\\text{(by
+(\ref{sol.exe.multinom1.short.goal.pf.2}))}}}\\
+&  =\left(  \prod_{i=1}^{m-1}s_{i}!\right)  s_{m}!\cdot\left(  \prod_{i=1}%
+^{m}\dfrac{1}{k_{i}!}\right)  \cdot\dfrac{1}{\prod_{i=1}^{m-1}s_{i}!}\\
+&  =\underbrace{s_{m}}_{=k_{1}+k_{2}+\cdots+k_{m}}!\cdot\underbrace{\left(
+\prod_{i=1}^{m}\dfrac{1}{k_{i}!}\right)  }_{=\dfrac{1}{\prod_{i=1}^{m}k_{i}%
+!}=\dfrac{1}{k_{1}!k_{2}!\cdots k_{m}!}}\\
+&  =\left(  k_{1}+k_{2}+\cdots+k_{m}\right)  !\cdot\dfrac{1}{k_{1}%
+!k_{2}!\cdots k_{m}!}=\dfrac{\left(  k_{1}+k_{2}+\cdots+k_{m}\right)  !}%
+{k_{1}!k_{2}!\cdots k_{m}!}.
+\end{align*}
+This proves (\ref{sol.exe.multinom1.short.goal}).]
+
+On the other hand, each $i\in\left\{  1,2,\ldots,m\right\}  $ satisfies
+$\dbinom{s_{i}}{k_{i}}\in\mathbb{Z}$ (by Proposition \ref{prop.binom.int}
+(applied to $s_{i}$ and $k_{i}$ instead of $m$ and $n$)). In other words, for
+each $i\in\left\{  1,2,\ldots,m\right\}  $, the number $\dbinom{s_{i}}{k_{i}}$
+is an integer. Hence, $\prod_{i=1}^{m}\dbinom{s_{i}}{k_{i}}$ is an integer
+(since a product of integers always is an integer). In other words,
+$\dfrac{\left(  k_{1}+k_{2}+\cdots+k_{m}\right)  !}{k_{1}!k_{2}!\cdots k_{m}%
+!}$ is an integer (since $\dfrac{\left(  k_{1}+k_{2}+\cdots+k_{m}\right)
+!}{k_{1}!k_{2}!\cdots k_{m}!}=\prod_{i=1}^{m}\dbinom{s_{i}}{k_{i}}$). Since
+$\dfrac{\left(  k_{1}+k_{2}+\cdots+k_{m}\right)  !}{k_{1}!k_{2}!\cdots k_{m}%
+!}$ is clearly positive (because the numbers $\left(  k_{1}+k_{2}+\cdots
++k_{m}\right)  !$, $k_{1}!$, $k_{2}!$, $\ldots$, $k_{m}!$ are all positive),
+we can thus conclude that $\dfrac{\left(  k_{1}+k_{2}+\cdots+k_{m}\right)
+!}{k_{1}!k_{2}!\cdots k_{m}!}$ is a positive integer. This solves Exercise
+\ref{exe.multinom1}.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Solution to Exercise \ref{exe.multinom1}.]For each $i\in\left\{
+0,1,\ldots,m\right\}  $, define an integer $s_{i}\in\mathbb{N}$ by
+$s_{i}=k_{1}+k_{2}+\cdots+k_{i}$. We shall prove that%
+\begin{equation}
+\dfrac{\left(  k_{1}+k_{2}+\cdots+k_{m}\right)  !}{k_{1}!k_{2}!\cdots k_{m}%
+!}=\prod_{i=1}^{m}\dbinom{s_{i}}{k_{i}}. \label{sol.exe.multinom1.goal}%
+\end{equation}
+
+
+[\textit{Proof of (\ref{sol.exe.multinom1.goal}):} If $m=0$, then
+(\ref{sol.exe.multinom1.goal}) holds\footnote{\textit{Proof.} Assume that
+$m=0$. We must prove that (\ref{sol.exe.multinom1.goal}) holds.
+\par
+Dividing the equality $\left(  \underbrace{k_{1}+k_{2}+\cdots+k_{0}}_{=\left(
+\text{empty sum}\right)  =0}\right)  !=0!=1$ by the equality $k_{1}%
+!k_{2}!\cdots k_{0}!=\left(  \text{empty product}\right)  =1$, we obtain
+\[
+\dfrac{\left(  k_{1}+k_{2}+\cdots+k_{0}\right)  !}{k_{1}!k_{2}!\cdots k_{0}%
+!}=\dfrac{1}{1}=1.
+\]
+Comparing this with $\prod_{i=1}^{0}\dbinom{s_{i}}{k_{i}}=\left(  \text{empty
+product}\right)  =1$, we find%
+\[
+\dfrac{\left(  k_{1}+k_{2}+\cdots+k_{0}\right)  !}{k_{1}!k_{2}!\cdots k_{0}%
+!}=\prod_{i=1}^{0}\dbinom{s_{i}}{k_{i}}.
+\]
+This rewrites as $\dfrac{\left(  k_{1}+k_{2}+\cdots+k_{m}\right)  !}%
+{k_{1}!k_{2}!\cdots k_{m}!}=\prod_{i=1}^{m}\dbinom{s_{i}}{k_{i}}$ (since
+$m=0$). Thus, (\ref{sol.exe.multinom1.goal}) holds. Qed.}. Hence, for the rest
+of the proof of (\ref{sol.exe.multinom1.goal}), we can WLOG assume that we
+don't have $m=0$. Assume this.
+
+We have $m\neq0$ (since we don't have $m=0$). Thus, $m\geq1$ (since
+$m\in\mathbb{N}$), so that $m-1\geq0$.
+
+We have $0\in\left\{  0,1,\ldots,m\right\}  $ (since $m\in\mathbb{N}$). The
+definition of $s_{0}$ thus yields $s_{0}=k_{1}+k_{2}+\cdots+k_{0}=\left(
+\text{empty sum}\right)  =0$. Hence, $s_{0}!=0!=1$. Now,%
+\begin{align}
+\prod_{i=1}^{m}\dfrac{1}{s_{i-1}!}  &  =\prod_{i=0}^{m-1}\dfrac{1}{s_{i}%
+!}\ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }i\text{ for
+}i-1\text{ in the product}\right) \nonumber\\
+&  =\underbrace{\dfrac{1}{s_{0}!}}_{\substack{=1\\\text{(since }%
+s_{0}!=1\text{)}}}\prod_{i=1}^{m-1}\dfrac{1}{s_{i}!}%
+\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have split off the factor for }i=0\\
+\text{from the product (since }m-1\geq0\text{)}%
+\end{array}
+\right) \nonumber\\
+&  =\prod_{i=1}^{m-1}\dfrac{1}{s_{i}!}=\dfrac{1}{\prod_{i=1}^{m-1}s_{i}!}.
+\label{sol.exe.multinom1.goal.pf.2}%
+\end{align}
+
+
+We have $m\in\left\{  0,1,\ldots,m\right\}  $ (since $m\in\mathbb{N}$). The
+definition of $s_{m}$ thus yields $s_{m}=k_{1}+k_{2}+\cdots+k_{m}$.
+
+Each $i\in\left\{  1,2,\ldots,m\right\}  $ satisfies%
+\[
+\dbinom{s_{i}}{k_{i}}=s_{i}!\cdot\dfrac{1}{k_{i}!}\cdot\dfrac{1}{s_{i-1}!}%
+\]
+\footnote{\textit{Proof:} Let $i\in\left\{  1,2,\ldots,m\right\}  $. Then,
+$i-1\in\left\{  0,1,\ldots,m-1\right\}  \subseteq\left\{  0,1,\ldots
+,m\right\}  $. Hence, the definition of $s_{i-1}$ yields $s_{i-1}=k_{1}%
++k_{2}+\cdots+k_{i-1}\in\mathbb{N}$ (since $k_{1},k_{2},\ldots,k_{i-1}$ are
+elements of $\mathbb{N}$). Thus, $s_{i-1}\geq0$. But $i\in\left\{
+1,2,\ldots,m\right\}  \subseteq\left\{  0,1,\ldots,m\right\}  $. Hence, the
+definition of $s_{i}$ yields
+\[
+s_{i}=k_{1}+k_{2}+\cdots+k_{i}=\underbrace{\left(  k_{1}+k_{2}+\cdots
++k_{i-1}\right)  }_{=s_{i-1}}+k_{i}=\underbrace{s_{i-1}}_{\geq0}+k_{i}\geq
+k_{i}.
+\]
+Also, $s_{i}=k_{1}+k_{2}+\cdots+k_{i}\in\mathbb{N}$ (since $k_{1},k_{2}%
+,\ldots,k_{i}$ are elements of $\mathbb{N}$). From $s_{i}=s_{i-1}+k_{i}$, we
+obtain $s_{i}-k_{i}=s_{i-1}$.
+\par
+Now, (\ref{eq.binom.formula}) (applied to $s_{i}$ and $k_{i}$ instead of $m$
+and $n$) yields
+\begin{align*}
+\dbinom{s_{i}}{k_{i}}  &  =\dfrac{s_{i}!}{k_{i}!\left(  s_{i}-k_{i}\right)
+!}=\dfrac{s_{i}!}{k_{i}!s_{i-1}!}\ \ \ \ \ \ \ \ \ \ \left(  \text{since
+}s_{i}-k_{i}=s_{i-1}\right) \\
+&  =s_{i}!\cdot\dfrac{1}{k_{i}!}\cdot\dfrac{1}{s_{i-1}!}.
+\end{align*}
+Qed.}. Hence,%
+\begin{align*}
+&  \prod_{i=1}^{m}\underbrace{\dbinom{s_{i}}{k_{i}}}_{=s_{i}!\cdot\dfrac
+{1}{k_{i}!}\cdot\dfrac{1}{s_{i-1}!}}\\
+&  =\prod_{i=1}^{m}\left(  s_{i}!\cdot\dfrac{1}{k_{i}!}\cdot\dfrac{1}%
+{s_{i-1}!}\right)  =\underbrace{\left(  \prod_{i=1}^{m}s_{i}!\right)
+}_{\substack{=\left(  \prod_{i=1}^{m-1}s_{i}!\right)  s_{m}!\\\text{(here, we
+have split off the}\\\text{factor for }i=m\text{ from the}\\\text{product
+(since }m\geq1\text{))}}}\cdot\left(  \prod_{i=1}^{m}\dfrac{1}{k_{i}!}\right)
+\cdot\underbrace{\left(  \prod_{i=1}^{m}\dfrac{1}{s_{i-1}!}\right)
+}_{\substack{=\dfrac{1}{\prod_{i=1}^{m-1}s_{i}!}\\\text{(by
+(\ref{sol.exe.multinom1.goal.pf.2}))}}}\\
+&  =\left(  \prod_{i=1}^{m-1}s_{i}!\right)  s_{m}!\cdot\left(  \prod_{i=1}%
+^{m}\dfrac{1}{k_{i}!}\right)  \cdot\dfrac{1}{\prod_{i=1}^{m-1}s_{i}!}\\
+&  =\underbrace{s_{m}}_{=k_{1}+k_{2}+\cdots+k_{m}}!\cdot\underbrace{\left(
+\prod_{i=1}^{m}\dfrac{1}{k_{i}!}\right)  }_{=\dfrac{1}{\prod_{i=1}^{m}k_{i}%
+!}=\dfrac{1}{k_{1}!k_{2}!\cdots k_{m}!}}\\
+&  =\left(  k_{1}+k_{2}+\cdots+k_{m}\right)  !\cdot\dfrac{1}{k_{1}%
+!k_{2}!\cdots k_{m}!}=\dfrac{\left(  k_{1}+k_{2}+\cdots+k_{m}\right)  !}%
+{k_{1}!k_{2}!\cdots k_{m}!}.
+\end{align*}
+This proves (\ref{sol.exe.multinom1.goal}).]
+
+On the other hand, each $i\in\left\{  1,2,\ldots,m\right\}  $ satisfies
+$\dbinom{s_{i}}{k_{i}}\in\mathbb{Z}$ (by Proposition \ref{prop.binom.int}
+(applied to $s_{i}$ and $k_{i}$ instead of $m$ and $n$)). In other words, for
+each $i\in\left\{  1,2,\ldots,m\right\}  $, the number $\dbinom{s_{i}}{k_{i}}$
+is an integer. Hence, $\prod_{i=1}^{m}\dbinom{s_{i}}{k_{i}}$ is a product of
+integers. Thus, $\prod_{i=1}^{m}\dbinom{s_{i}}{k_{i}}$ is an integer (since a
+product of integers always is an integer). In other words, $\dfrac{\left(
+k_{1}+k_{2}+\cdots+k_{m}\right)  !}{k_{1}!k_{2}!\cdots k_{m}!}$ is an integer
+(since $\dfrac{\left(  k_{1}+k_{2}+\cdots+k_{m}\right)  !}{k_{1}!k_{2}!\cdots
+k_{m}!}=\prod_{i=1}^{m}\dbinom{s_{i}}{k_{i}}$). Since $\dfrac{\left(
+k_{1}+k_{2}+\cdots+k_{m}\right)  !}{k_{1}!k_{2}!\cdots k_{m}!}$ is clearly
+positive (because the numbers $\left(  k_{1}+k_{2}+\cdots+k_{m}\right)  !$,
+$k_{1}!$, $k_{2}!$, $\ldots$, $k_{m}!$ are all positive), we can thus conclude
+that $\dfrac{\left(  k_{1}+k_{2}+\cdots+k_{m}\right)  !}{k_{1}!k_{2}!\cdots
+k_{m}!}$ is a positive integer. This solves Exercise \ref{exe.multinom1}.
+\end{proof}
+\end{verlong}
+
 \subsection{Solution to Exercise \ref{exe.prop.binom.subsets}}
 
 \begin{vershort}
@@ -41116,6 +41398,1010 @@ Thus, (\ref{eq.rings.(a+b)**n}) is proven. This solves Exercise
 \end{proof}
 \end{verlong}
 
+\subsection{Solution to Exercise \ref{exe.multinom2}}
+
+Let us first state a basic lemma about sets:
+
+\begin{lemma}
+\label{lem.prodrule.prod-assM}Let $M$ be a positive integer. For every
+$i\in\left\{  1,2,\ldots,M\right\}  $, let $Z_{i}$ be a set. Then, the map
+\begin{align*}
+Z_{1}\times Z_{2}\times\cdots\times Z_{M} &  \rightarrow\left(  Z_{1}\times
+Z_{2}\times\cdots\times Z_{M-1}\right)  \times Z_{M},\\
+\left(  s_{1},s_{2},\ldots,s_{M}\right)   &  \mapsto\left(  \left(
+s_{1},s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right)
+\end{align*}
+is a bijection.
+\end{lemma}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Lemma \ref{lem.prodrule.prod-assM}.]This map is simply the canonical
+bijection $Z_{1}\times Z_{2}\times\cdots\times Z_{M}\rightarrow\left(
+Z_{1}\times Z_{2}\times\cdots\times Z_{M-1}\right)  \times Z_{M}$. Its inverse
+map sends each $\left(  \left(  s_{1},s_{2},\ldots,s_{M-1}\right)  ,t\right)
+\in\left(  Z_{1}\times Z_{2}\times\cdots\times Z_{M-1}\right)  \times Z_{M}$
+to $\left(  s_{1},s_{2},\ldots,s_{M-1},t\right)  \in Z_{1}\times Z_{2}%
+\times\cdots\times Z_{M}$.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Lemma \ref{lem.prodrule.prod-assM}.]We define a map%
+\[
+\Phi:\left(  Z_{1}\times Z_{2}\times\cdots\times Z_{M-1}\right)  \times
+Z_{M}\rightarrow Z_{1}\times Z_{2}\times\cdots\times Z_{M}%
+\]
+by%
+\begin{equation}
+\left(
+\begin{array}
+[c]{l}%
+\Phi\left(  \left(  s_{1},s_{2},\ldots,s_{M-1}\right)  ,t\right)  =\left(
+s_{1},s_{2},\ldots,s_{M-1},t\right)  \\
+\ \ \ \ \ \ \ \ \ \ \text{for every }\left(  \left(  s_{1},s_{2}%
+,\ldots,s_{M-1}\right)  ,t\right)  \in\left(  Z_{1}\times Z_{2}\times
+\cdots\times Z_{M-1}\right)  \times Z_{M}%
+\end{array}
+\right)  .\label{pf.lem.prodrule.S.Phidef}%
+\end{equation}
+
+
+We also define a map%
+\[
+\Psi:Z_{1}\times Z_{2}\times\cdots\times Z_{M}\rightarrow\left(  Z_{1}\times
+Z_{2}\times\cdots\times Z_{M-1}\right)  \times Z_{M}%
+\]
+by%
+\begin{equation}
+\left(
+\begin{array}
+[c]{l}%
+\Psi\left(  s_{1},s_{2},\ldots,s_{M}\right)  =\left(  \left(  s_{1}%
+,s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right)  \\
+\ \ \ \ \ \ \ \ \ \ \text{for every }\left(  s_{1},s_{2},\ldots,s_{M}\right)
+\in Z_{1}\times Z_{2}\times\cdots\times Z_{M}%
+\end{array}
+\right)  .\label{pf.lem.prodrule.S.Psidef}%
+\end{equation}
+
+
+We now claim that
+\begin{equation}
+\Psi\left(  s_{1},s_{2},\ldots,s_{M-1},t\right)  =\left(  \left(  s_{1}%
+,s_{2},\ldots,s_{M-1}\right)  ,t\right)  \label{pf.lem.prodrule.S.Psi}%
+\end{equation}
+for every $\left(  s_{1},s_{2},\ldots,s_{M-1}\right)  \in Z_{1}\times
+Z_{2}\times\cdots\times Z_{M-1}$ and $t\in Z_{M}$.
+
+[\textit{Proof of (\ref{pf.lem.prodrule.S.Psi}):} Let $\left(  s_{1}%
+,s_{2},\ldots,s_{M-1}\right)  \in Z_{1}\times Z_{2}\times\cdots\times Z_{M-1}$
+and $t\in Z_{M}$. We have $\left(  s_{1},s_{2},\ldots,s_{M-1}\right)  \in
+Z_{1}\times Z_{2}\times\cdots\times Z_{M-1}$; in other words,
+\begin{equation}
+s_{i}\in Z_{i}\ \ \ \ \ \ \ \ \ \ \text{for every }i\in\left\{  1,2,\ldots
+,M-1\right\}  .\label{pf.lem.prodrule.S.Psi.pf.1}%
+\end{equation}
+
+
+For every $i\in\left\{  1,2,\ldots,M\right\}  $, the element $%
+\begin{cases}
+s_{i}, & \text{if }i<M;\\
+t, & \text{if }i=M
+\end{cases}
+$ is a well-defined element of $Z_{i}$\ \ \ \ \footnote{\textit{Proof.} Let
+$i\in\left\{  1,2,\ldots,M\right\}  $. We must prove that
+\begin{equation}%
+\begin{cases}
+s_{i}, & \text{if }i<M;\\
+t, & \text{if }i=M
+\end{cases}
+\text{ is a well-defined element of }Z_{i}%
+.\label{pf.lem.prodrule.S.Psi.pf.fn1.1}%
+\end{equation}
+\par
+We are in one of the following two cases:
+\par
+\textit{Case 1:} We have $i\neq M$.
+\par
+\textit{Case 2:} We have $i=M$.
+\par
+Let us first consider Case 1. In this case, we have $i\neq M$. Combining this
+with $i\in\left\{  1,2,\ldots,M\right\}  $, we obtain $i\in\left\{
+1,2,\ldots,M\right\}  \setminus\left\{  M\right\}  =\left\{  1,2,\ldots
+,M-1\right\}  $. Hence, $s_{i}\in Z_{i}$ (by (\ref{pf.lem.prodrule.S.Psi.pf.1}%
+)). Thus, $s_{i}$ is a well-defined element of $Z_{i}$. In other words, $%
+\begin{cases}
+s_{i}, & \text{if }i<M;\\
+t, & \text{if }i=M
+\end{cases}
+$ is a well-defined element of $Z_{i}$ (since $%
+\begin{cases}
+s_{i}, & \text{if }i<M;\\
+t, & \text{if }i=M
+\end{cases}
+=s_{i}$ (since $i<M$ (since $i\in\left\{  1,2,\ldots,M-1\right\}  $))). Thus,
+(\ref{pf.lem.prodrule.S.Psi.pf.fn1.1}) is proven in Case 1.
+\par
+Let us now consider Case 2. In this case, we have $i=M$. But $t$ is a
+well-defined element of $Z_{M}$. In other words, $%
+\begin{cases}
+s_{i}, & \text{if }i<M;\\
+t, & \text{if }i=M
+\end{cases}
+$ is a well-defined element of $Z_{i}$ (since $%
+\begin{cases}
+s_{i}, & \text{if }i<M;\\
+t, & \text{if }i=M
+\end{cases}
+=t$ (since $i=M$) and $i=M$). Thus, (\ref{pf.lem.prodrule.S.Psi.pf.fn1.1}) is
+proven in Case 2.
+\par
+We have now proven (\ref{pf.lem.prodrule.S.Psi.pf.fn1.1}) in each of the two
+Cases 1 and 2. Thus, (\ref{pf.lem.prodrule.S.Psi.pf.fn1.1}) always holds
+(since Cases 1 and 2 cover all possibilities). In other words, $%
+\begin{cases}
+s_{i}, & \text{if }i<M;\\
+t, & \text{if }i=M
+\end{cases}
+$ is a well-defined element of $Z_{i}$. Qed.}. Hence, we can define an
+$M$-tuple $\left(  q_{1},q_{2},\ldots,q_{M}\right)  \in Z_{1}\times
+Z_{2}\times\cdots\times Z_{M}$ by%
+\[
+\left(  q_{i}=%
+\begin{cases}
+s_{i}, & \text{if }i<M;\\
+t, & \text{if }i=M
+\end{cases}
+\ \ \ \ \ \ \ \ \ \ \text{for every }i\in\left\{  1,2,\ldots,M\right\}
+\right)  .
+\]
+Consider this $M$-tuple $\left(  q_{1},q_{2},\ldots,q_{M}\right)  $. The
+definition of this $M$-tuple shows that%
+\[
+\left(  q_{1},q_{2},\ldots,q_{M}\right)  =\left(  s_{1},s_{2},\ldots
+,s_{M-1},t\right)  .
+\]
+
+
+For every $i\in\left\{  1,2,\ldots,M-1\right\}  $, we have%
+\[
+q_{i}=%
+\begin{cases}
+s_{i}, & \text{if }i<M;\\
+t, & \text{if }i=M
+\end{cases}
+=s_{i}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }i<M\text{ (since }i\in\left\{
+1,2,\ldots,M-1\right\}  \text{)}\right)  .
+\]
+In other words, $\left(  q_{1},q_{2},\ldots,q_{M-1}\right)  =\left(
+s_{1},s_{2},\ldots,s_{M-1}\right)  $. Also, the definition of $q_{M}$ shows
+that $q_{M}=%
+\begin{cases}
+s_{M}, & \text{if }M<M;\\
+t, & \text{if }M=M
+\end{cases}
+=t$ (since $M=M$).
+
+But the definition of $\Psi$ yields
+\[
+\Psi\left(  q_{1},q_{2},\ldots,q_{M}\right)  =\left(  \underbrace{\left(
+q_{1},q_{2},\ldots,q_{M-1}\right)  }_{=\left(  s_{1},s_{2},\ldots
+,s_{M-1}\right)  },\underbrace{q_{M}}_{=t}\right)  =\left(  \left(
+s_{1},s_{2},\ldots,s_{M-1}\right)  ,t\right)  .
+\]
+Comparing this with $\Psi\underbrace{\left(  q_{1},q_{2},\ldots,q_{M}\right)
+}_{=\left(  s_{1},s_{2},\ldots,s_{M-1},t\right)  }=\Psi\left(  s_{1}%
+,s_{2},\ldots,s_{M-1},t\right)  $, we obtain
+\[
+\Psi\left(  s_{1},s_{2},\ldots,s_{M-1},t\right)  =\left(  \left(  s_{1}%
+,s_{2},\ldots,s_{M-1}\right)  ,t\right)  .
+\]
+This proves (\ref{pf.lem.prodrule.S.Psi}).]
+
+Now, we have $\Phi\circ\Psi=\operatorname*{id}$%
+\ \ \ \ \footnote{\textit{Proof.} Let $\alpha\in Z_{1}\times Z_{2}\times
+\cdots\times Z_{M}$. Thus, we can write $\alpha$ in the form $\left(
+s_{1},s_{2},\ldots,s_{M}\right)  $ for some $\left(  s_{1},s_{2},\ldots
+,s_{M}\right)  \in Z_{1}\times Z_{2}\times\cdots\times Z_{M}$. Consider this
+$\left(  s_{1},s_{2},\ldots,s_{M}\right)  $. Hence, $\alpha=\left(
+s_{1},s_{2},\ldots,s_{M}\right)  $.
+\par
+Now,%
+\begin{align*}
+\left(  \Phi\circ\Psi\right)  \left(  \underbrace{\alpha}_{=\left(
+s_{1},s_{2},\ldots,s_{M}\right)  }\right)   &  =\left(  \Phi\circ\Psi\right)
+\left(  s_{1},s_{2},\ldots,s_{M}\right)  =\Phi\left(  \underbrace{\Psi\left(
+s_{1},s_{2},\ldots,s_{M}\right)  }_{\substack{=\left(  \left(  s_{1}%
+,s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right)  \\\text{(by the definition of
+}\Psi\text{)}}}\right)  \\
+&  =\Phi\left(  \left(  s_{1},s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right)
+=\left(  s_{1},s_{2},\ldots,s_{M-1},s_{M}\right)  \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\Phi\right)  \\
+&  =\left(  s_{1},s_{2},\ldots,s_{M}\right)  =\alpha=\operatorname*{id}\left(
+\alpha\right)  .
+\end{align*}
+\par
+Let us now forget that we fixed $\alpha$. We thus have shown that $\left(
+\Phi\circ\Psi\right)  \left(  \alpha\right)  =\operatorname*{id}\left(
+\alpha\right)  $ for every $\alpha\in Z_{1}\times Z_{2}\times\cdots\times
+Z_{M}$. In other words, $\Phi\circ\Psi=\operatorname*{id}$, qed.} and
+$\Psi\circ\Phi=\operatorname*{id}$\ \ \ \ \footnote{\textit{Proof.} Let
+$\beta\in\left(  Z_{1}\times Z_{2}\times\cdots\times Z_{M-1}\right)  \times
+Z_{M}$. Thus, we can write $\beta$ in the form $\left(  \gamma,t\right)  $ for
+some $\gamma\in Z_{1}\times Z_{2}\times\cdots\times Z_{M-1}$ and $t\in Z_{M}$.
+Consider these $\gamma$ and $t$. Thus, $\beta=\left(  \gamma,t\right)  $.
+\par
+We have $\gamma\in Z_{1}\times Z_{2}\times\cdots\times Z_{M-1}$. Thus, we can
+write $\gamma$ in the form $\left(  s_{1},s_{2},\ldots,s_{M-1}\right)  $ for
+some $\left(  s_{1},s_{2},\ldots,s_{M-1}\right)  \in Z_{1}\times Z_{2}%
+\times\cdots\times Z_{M-1}$. Consider this $\left(  s_{1},s_{2},\ldots
+,s_{M-1}\right)  $. Hence, $\gamma=\left(  s_{1},s_{2},\ldots,s_{M-1}\right)
+$.
+\par
+Now, $\beta=\left(  \underbrace{\gamma}_{=\left(  s_{1},s_{2},\ldots
+,s_{M-1}\right)  },t\right)  =\left(  \left(  s_{1},s_{2},\ldots
+,s_{M-1}\right)  ,t\right)  $. Applying the map $\Psi\circ\Phi$ to both sides
+of this equality, we obtain%
+\begin{align*}
+\left(  \Psi\circ\Phi\right)  \left(  \beta\right)   &  =\left(  \Psi\circ
+\Phi\right)  \left(  \left(  s_{1},s_{2},\ldots,s_{M-1}\right)  ,t\right)
+=\Psi\left(  \underbrace{\Phi\left(  \left(  s_{1},s_{2},\ldots,s_{M-1}%
+\right)  ,t\right)  }_{\substack{=\left(  s_{1},s_{2},\ldots,s_{M-1},t\right)
+\\\text{(by the definition of }\Phi\text{)}}}\right)  \\
+&  =\Psi\left(  s_{1},s_{2},\ldots,s_{M-1},t\right)  =\left(  \left(
+s_{1},s_{2},\ldots,s_{M-1}\right)  ,t\right)  \ \ \ \ \ \ \ \ \ \ \left(
+\text{by (\ref{pf.lem.prodrule.S.Psi})}\right)  \\
+&  =\beta=\operatorname*{id}\left(  \beta\right)  .
+\end{align*}
+\par
+Let us now forget that we fixed $\beta$. We thus have shown that $\left(
+\Psi\circ\Phi\right)  \left(  \beta\right)  =\operatorname*{id}\left(
+\beta\right)  $ for every $\beta\in\left(  Z_{1}\times Z_{2}\times\cdots\times
+Z_{M-1}\right)  \times Z_{M}$. In other words, $\Psi\circ\Phi
+=\operatorname*{id}$, qed.}. These two equalities show that the maps $\Phi$
+and $\Psi$ are mutually inverse. Thus, the map $\Psi$ is invertible. In other
+words, the map $\Psi$ is a bijection.
+
+Now, $\Psi$ is the map
+\begin{align*}
+Z_{1}\times Z_{2}\times\cdots\times Z_{M} &  \rightarrow\left(  Z_{1}\times
+Z_{2}\times\cdots\times Z_{M-1}\right)  \times Z_{M},\\
+\left(  s_{1},s_{2},\ldots,s_{M}\right)   &  \mapsto\left(  \left(
+s_{1},s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right)
+\end{align*}
+(because $\Psi$ is the map $Z_{1}\times Z_{2}\times\cdots\times Z_{M}%
+\rightarrow\left(  Z_{1}\times Z_{2}\times\cdots\times Z_{M-1}\right)  \times
+Z_{M}$ satisfying (\ref{pf.lem.prodrule.S.Psidef})). Thus, the map
+\begin{align*}
+Z_{1}\times Z_{2}\times\cdots\times Z_{M} &  \rightarrow\left(  Z_{1}\times
+Z_{2}\times\cdots\times Z_{M-1}\right)  \times Z_{M},\\
+\left(  s_{1},s_{2},\ldots,s_{M}\right)   &  \mapsto\left(  \left(
+s_{1},s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right)
+\end{align*}
+is a bijection (since $\Psi$ is a bijection). This proves Lemma
+\ref{lem.prodrule.prod-assM}.
+\end{proof}
+\end{verlong}
+
+In the remainder of this section,
+we shall use the notation $\mathbf{m}\left(  k_{1}%
+,k_{2},\ldots,k_{m}\right)  $ as defined in Exercise \ref{exe.multinom2}.
+
+Before we solve Exercise \ref{exe.multinom2}, let us record some really
+trivial facts:
+
+\begin{lemma}
+\label{lem.sol.multinom2.0-tup-m}Each $0$-tuple $\left(  k_{1},k_{2}%
+,\ldots,k_{0}\right)  \in\mathbb{N}^{0}$ satisfies $\mathbf{m}\left(
+k_{1},k_{2},\ldots,k_{0}\right)  =1$.
+\end{lemma}
+
+(Note that there exists only one $0$-tuple $\left(  k_{1},k_{2},\ldots
+,k_{0}\right)  \in\mathbb{N}^{0}$, namely the empty list $\left(  {}\right)
+$. Thus, the word \textquotedblleft each\textquotedblright\ in Lemma
+\ref{lem.sol.multinom2.0-tup-m} is somewhat misleading.)
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.multinom2.0-tup-m}.]Let $\left(  k_{1}%
+,k_{2},\ldots,k_{0}\right)  \in\mathbb{N}^{0}$ be a $0$-tuple. Then, the
+definition of $\mathbf{m}\left(  k_{1},k_{2},\ldots,k_{0}\right)  $ yields%
+\begin{align*}
+\mathbf{m}\left(  k_{1},k_{2},\ldots,k_{0}\right)   &  =\dfrac{\left(
+k_{1}+k_{2}+\cdots+k_{0}\right)  !}{k_{1}!k_{2}!\cdots k_{0}!}\\
+&  =\left(  \underbrace{k_{1}+k_{2}+\cdots+k_{0}}_{=\left(  \text{empty
+sum}\right)  =0}\right)  !/\left(  \underbrace{k_{1}!k_{2}!\cdots k_{0}%
+!}_{=\left(  \text{empty product}\right)  =1}\right) \\
+&  =0!/1=0!=1.
+\end{align*}
+This proves Lemma \ref{lem.sol.multinom2.0-tup-m}.
+\end{proof}
+
+\begin{lemma}
+\label{lem.sol.multinom2.prod}Let $M$ be a positive integer. Let $\left(
+s_{1},s_{2},\ldots,s_{M}\right)  \in\mathbb{N}^{M}$ and $n\in\mathbb{N}$ be
+such that $s_{1}+s_{2}+\cdots+s_{M}=n$. Then,%
+\[
+\dbinom{n}{s_{M}}\mathbf{m}\left(  s_{1},s_{2},\ldots,s_{M-1}\right)
+=\mathbf{m}\left(  s_{1},s_{2},\ldots,s_{M}\right)  .
+\]
+
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.multinom2.prod}.]We have%
+\[
+\left(  s_{1}+s_{2}+\cdots+s_{M-1}\right)  +s_{M}=s_{1}+s_{2}+\cdots+s_{M}=n.
+\]
+Subtracting $s_{M}$ from both sides of this equality, we obtain $s_{1}%
++s_{2}+\cdots+s_{M-1}=n-s_{M}$.
+
+The definition of $\mathbf{m}\left(  s_{1},s_{2},\ldots,s_{M-1}\right)  $
+yields%
+\begin{equation}
+\mathbf{m}\left(  s_{1},s_{2},\ldots,s_{M-1}\right)  =\dfrac{\left(
+s_{1}+s_{2}+\cdots+s_{M-1}\right)  !}{s_{1}!s_{2}!\cdots s_{M-1}!}%
+=\dfrac{\left(  n-s_{M}\right)  !}{s_{1}!s_{2}!\cdots s_{M-1}!}
+\label{pf.lem.sol.multinom2.prod.1}%
+\end{equation}
+(since $s_{1}+s_{2}+\cdots+s_{M-1}=n-s_{M}$).
+
+The definition of $\mathbf{m}\left(  s_{1},s_{2},\ldots,s_{M}\right)  $ yields%
+\begin{equation}
+\mathbf{m}\left(  s_{1},s_{2},\ldots,s_{M}\right)  =\dfrac{\left(  s_{1}%
++s_{2}+\cdots+s_{M}\right)  !}{s_{1}!s_{2}!\cdots s_{M}!}=\dfrac{n!}%
+{s_{1}!s_{2}!\cdots s_{M}!} \label{pf.lem.sol.multinom2.prod.2}%
+\end{equation}
+(since $s_{1}+s_{2}+\cdots+s_{M}=n$).
+
+\begin{verlong}
+On the other hand, $n=\underbrace{\left(  s_{1}+s_{2}+\cdots+s_{M-1}\right)
+}_{\geq0}+s_{M}\geq s_{M}$. Hence, Proposition \ref{prop.binom.formula}
+(applied to $n$ and $s_{M}$ instead of $m$ and $n$) yields $\dbinom{n}{s_{M}%
+}=\dfrac{n!}{s_{M}!\left(  n-s_{M}\right)  !}$. Multiplying this equality with
+(\ref{pf.lem.sol.multinom2.prod.1}), we obtain%
+\begin{align*}
+&  \dbinom{n}{s_{M}}\mathbf{m}\left(  s_{1},s_{2},\ldots,s_{M-1}\right) \\
+&  =\dfrac{n!}{s_{M}!\left(  n-s_{M}\right)  !}\cdot\dfrac{\left(
+n-s_{M}\right)  !}{s_{1}!s_{2}!\cdots s_{M-1}!}=\dfrac{n!}{\left(  s_{1}%
+!s_{2}!\cdots s_{M-1}!\right)  s_{M}!}=\dfrac{n!}{s_{1}!s_{2}!\cdots s_{M}!}\\
+&  =\mathbf{m}\left(  s_{1},s_{2},\ldots,s_{M}\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{pf.lem.sol.multinom2.prod.2}%
+)}\right)  .
+\end{align*}
+This proves Lemma \ref{lem.sol.multinom2.prod}.
+\end{verlong}
+
+\begin{verlong}
+On the other hand, $s_{1},s_{2},\ldots,s_{M}$ are elements of $\mathbb{N}$
+(since $\left(  s_{1},s_{2},\ldots,s_{M}\right)  \in\mathbb{N}^{M}$). Hence,
+$s_{1}+s_{2}+\cdots+s_{M-1}\in\mathbb{N}$ and $s_{M}\in\mathbb{N}$.
+
+We have
+\[
+n=s_{1}+s_{2}+\cdots+s_{M}=\underbrace{\left(  s_{1}+s_{2}+\cdots
++s_{M-1}\right)  }_{\substack{\geq0\\\text{(since }s_{1}+s_{2}+\cdots
++s_{M-1}\in\mathbb{N}\text{)}}}+s_{M}\geq s_{M}.
+\]
+Hence, Proposition \ref{prop.binom.formula} (applied to $n$ and $s_{M}$
+instead of $m$ and $n$) yields $\dbinom{n}{s_{M}}=\dfrac{n!}{s_{M}!\left(
+n-s_{M}\right)  !}$. Multiplying this equality with
+(\ref{pf.lem.sol.multinom2.prod.1}), we obtain%
+\begin{align*}
+&  \dbinom{n}{s_{M}}\mathbf{m}\left(  s_{1},s_{2},\ldots,s_{M-1}\right) \\
+&  =\dfrac{n!}{s_{M}!\left(  n-s_{M}\right)  !}\cdot\dfrac{\left(
+n-s_{M}\right)  !}{s_{1}!s_{2}!\cdots s_{M-1}!}=\dfrac{n!}{s_{M}!}\cdot
+\dfrac{1}{s_{1}!s_{2}!\cdots s_{M-1}!}\\
+&  =\dfrac{n!}{\left(  s_{1}!s_{2}!\cdots s_{M-1}!\right)  s_{M}!}\\
+&  =\dfrac{n!}{s_{1}!s_{2}!\cdots s_{M}!}\ \ \ \ \ \ \ \ \ \ \left(
+\text{since }\left(  s_{1}!s_{2}!\cdots s_{M-1}!\right)  s_{M}!=s_{1}%
+!s_{2}!\cdots s_{M}!\right) \\
+&  =\mathbf{m}\left(  s_{1},s_{2},\ldots,s_{M}\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{pf.lem.sol.multinom2.prod.2}%
+)}\right)  .
+\end{align*}
+This proves Lemma \ref{lem.sol.multinom2.prod}.
+\end{verlong}
+\end{proof}
+
+\begin{proof}
+[Solution to Exercise \ref{exe.multinom2}.]We shall solve Exercise
+\ref{exe.multinom2} by induction over $m$:
+
+\begin{vershort}
+\textit{Induction base:} Exercise \ref{exe.multinom2} holds for $m=0$%
+\ \ \ \ \footnote{\textit{Proof.} Assume that $m=0$. We must then show that
+Exercise \ref{exe.multinom2} holds.
+\par
+From $m=0$, we obtain $a_{1}+a_{2}+\cdots+a_{m}=a_{1}+a_{2}+\cdots
++a_{0}=\left(  \text{empty sum}\right)  =0$.
+\par
+We are in one of the following two cases:
+\par
+\textit{Case 1:} We have $n=0$.
+\par
+\textit{Case 2:} We have $n\neq0$.
+\par
+Let us first consider Case 1. In this case, we have $n=0$. Hence, $0^{n}%
+=0^{0}=1$. There exists exactly one $0$-tuple $\left(  k_{1},k_{2}%
+,\ldots,k_{0}\right)  \in\mathbb{N}^{0}$ (namely, the empty list $\left(
+{}\right)  $), and this $0$-tuple $\left(  k_{1},k_{2},\ldots,k_{0}\right)  $
+satisfies $k_{1}+k_{2}+\cdots+k_{0}=\left(  \text{empty sum}\right)  =0=n$.
+Hence, there exists exactly one $0$-tuple $\left(  k_{1},k_{2},\ldots
+,k_{0}\right)  \in\mathbb{N}^{0}$ satisfying $k_{1}+k_{2}+\cdots+k_{0}=n$. The
+sum $\sum_{\substack{\left(  k_{1},k_{2},\ldots,k_{0}\right)  \in
+\mathbb{N}^{0};\\k_{1}+k_{2}+\cdots+k_{0}=n}}1$ therefore has exactly $1$
+addend; thus, this sum rewrites as $\sum_{\substack{\left(  k_{1},k_{2}%
+,\ldots,k_{0}\right)  \in\mathbb{N}^{0};\\k_{1}+k_{2}+\cdots+k_{0}=n}}1=1$.
+\par
+But recall that $m=0$. Hence,%
+\begin{align*}
+&  \sum_{\substack{\left(  k_{1},k_{2},\ldots,k_{m}\right)  \in\mathbb{N}%
+^{m};\\k_{1}+k_{2}+\cdots+k_{m}=n}}\mathbf{m}\left(  k_{1},k_{2},\ldots
+,k_{m}\right)  \prod_{i=1}^{m}a_{i}^{k_{i}}\\
+&  =\sum_{\substack{\left(  k_{1},k_{2},\ldots,k_{0}\right)  \in\mathbb{N}%
+^{0};\\k_{1}+k_{2}+\cdots+k_{0}=n}}\underbrace{\mathbf{m}\left(  k_{1}%
+,k_{2},\ldots,k_{0}\right)  }_{\substack{=1\\\text{(by Lemma
+\ref{lem.sol.multinom2.0-tup-m})}}}\underbrace{\prod_{i=1}^{0}a_{i}^{k_{i}}%
+}_{=\left(  \text{empty product}\right)  =1}=\sum_{\substack{\left(
+k_{1},k_{2},\ldots,k_{0}\right)  \in\mathbb{N}^{0};\\k_{1}+k_{2}+\cdots
++k_{0}=n}}1=1.
+\end{align*}
+Comparing this with%
+\[
+\left(  \underbrace{a_{1}+a_{2}+\cdots+a_{m}}_{=\left(  \text{empty
+sum}\right)  =0}\right)  ^{n}=0^{n}=1,
+\]
+we obtain%
+\[
+\left(  a_{1}+a_{2}+\cdots+a_{m}\right)  ^{n}=\sum_{\substack{\left(
+k_{1},k_{2},\ldots,k_{m}\right)  \in\mathbb{N}^{m};\\k_{1}+k_{2}+\cdots
++k_{m}=n}}\mathbf{m}\left(  k_{1},k_{2},\ldots,k_{m}\right)  \prod_{i=1}%
+^{m}a_{i}^{k_{i}}.
+\]
+Hence, Exercise \ref{exe.multinom2} holds. We thus have solved Exercise
+\ref{exe.multinom2} in Case 1.
+\par
+Let us now consider Case 2. In this case, we have $n\neq0$. Hence, $n>0$
+(since $n\in\mathbb{N}$). Thus, $0^{n}=0$.
+\par
+Each $0$-tuple $\left(  k_{1},k_{2},\ldots,k_{0}\right)  \in\mathbb{N}^{0}$
+satisfies $k_{1}+k_{2}+\cdots+k_{0}=\left(  \text{empty sum}\right)  =0\neq
+n$. In other words, no $\left(  k_{1},k_{2},\ldots,k_{0}\right)  \in
+\mathbb{N}^{0}$ satisfies $k_{1}+k_{2}+\cdots+k_{0}=n$. Hence, the sum
+$\sum_{\substack{\left(  k_{1},k_{2},\ldots,k_{0}\right)  \in\mathbb{N}%
+^{0};\\k_{1}+k_{2}+\cdots+k_{0}=n}}\mathbf{m}\left(  k_{1},k_{2},\ldots
+,k_{0}\right)  \prod_{i=1}^{0}a_{i}^{k_{i}}$ is an empty sum. Therefore, this
+sum rewrites as follows:%
+\[
+\sum_{\substack{\left(  k_{1},k_{2},\ldots,k_{0}\right)  \in\mathbb{N}%
+^{0};\\k_{1}+k_{2}+\cdots+k_{0}=n}}\mathbf{m}\left(  k_{1},k_{2},\ldots
+,k_{0}\right)  \prod_{i=1}^{0}a_{i}^{k_{i}}=\left(  \text{empty sum}\right)
+=0.
+\]
+\par
+Now, recall that $m=0$. Hence,%
+\[
+\sum_{\substack{\left(  k_{1},k_{2},\ldots,k_{m}\right)  \in\mathbb{N}%
+^{m};\\k_{1}+k_{2}+\cdots+k_{m}=n}}\mathbf{m}\left(  k_{1},k_{2},\ldots
+,k_{m}\right)  \prod_{i=1}^{m}a_{i}^{k_{i}}=\sum_{\substack{\left(
+k_{1},k_{2},\ldots,k_{0}\right)  \in\mathbb{N}^{0};\\k_{1}+k_{2}+\cdots
++k_{0}=n}}\mathbf{m}\left(  k_{1},k_{2},\ldots,k_{0}\right)  \prod_{i=1}%
+^{0}a_{i}^{k_{i}}=0.
+\]
+Comparing this with%
+\[
+\left(  \underbrace{a_{1}+a_{2}+\cdots+a_{m}}_{=\left(  \text{empty
+sum}\right)  =0}\right)  ^{n}=0^{n}=0,
+\]
+we obtain%
+\[
+\left(  a_{1}+a_{2}+\cdots+a_{m}\right)  ^{n}=\sum_{\substack{\left(
+k_{1},k_{2},\ldots,k_{m}\right)  \in\mathbb{N}^{m};\\k_{1}+k_{2}+\cdots
++k_{m}=n}}\mathbf{m}\left(  k_{1},k_{2},\ldots,k_{m}\right)  \prod_{i=1}%
+^{m}a_{i}^{k_{i}}.
+\]
+Hence, Exercise \ref{exe.multinom2} holds. We thus have solved Exercise
+\ref{exe.multinom2} in Case 2.
+\par
+We thus have solved Exercise \ref{exe.multinom2} in each of the two Cases 1
+and 2. Thus, Exercise \ref{exe.multinom2} always holds (under the assumption
+that $m=0$). Qed.}. This completes the induction base.
+\end{vershort}
+
+\begin{verlong}
+\textit{Induction base:} Exercise \ref{exe.multinom2} holds for $m=0$%
+\ \ \ \ \footnote{\textit{Proof.} Assume that $m=0$. We must then show that
+Exercise \ref{exe.multinom2} holds.
+\par
+From $m=0$, we obtain $a_{1}+a_{2}+\cdots+a_{m}=a_{1}+a_{2}+\cdots
++a_{0}=\left(  \text{empty sum}\right)  =0$.
+\par
+We are in one of the following two cases:
+\par
+\textit{Case 1:} We have $n=0$.
+\par
+\textit{Case 2:} We have $n\neq0$.
+\par
+Let us first consider Case 1. In this case, we have $n=0$. There exists
+exactly one $0$-tuple $\left(  k_{1},k_{2},\ldots,k_{0}\right)  \in
+\mathbb{N}^{0}$ (namely, the empty list $\left(  {}\right)  $). Hence, the sum
+$\sum_{\left(  k_{1},k_{2},\ldots,k_{0}\right)  \in\mathbb{N}^{0}}1$ has
+exactly one addend (namely, the addend corresponding to $\left(  k_{1}%
+,k_{2},\ldots,k_{0}\right)  =\left(  {}\right)  $). Hence, this sum rewrites
+as follows:%
+\[
+\sum_{\left(  k_{1},k_{2},\ldots,k_{0}\right)  \in\mathbb{N}^{0}}1=1.
+\]
+But recall that $m=0$. Hence,%
+\begin{align*}
+&  \sum_{\substack{\left(  k_{1},k_{2},\ldots,k_{m}\right)  \in\mathbb{N}%
+^{m};\\k_{1}+k_{2}+\cdots+k_{m}=n}}\mathbf{m}\left(  k_{1},k_{2},\ldots
+,k_{m}\right)  \prod_{i=1}^{m}a_{i}^{k_{i}}\\
+&  =\underbrace{\sum_{\substack{\left(  k_{1},k_{2},\ldots,k_{0}\right)
+\in\mathbb{N}^{0};\\k_{1}+k_{2}+\cdots+k_{0}=n}}}_{\substack{=\sum_{\left(
+k_{1},k_{2},\ldots,k_{0}\right)  \in\mathbb{N}^{0}}\\\text{(since each
+}\left(  k_{1},k_{2},\ldots,k_{0}\right)  \in\mathbb{N}^{0}\text{
+automatically}\\\text{satisfies }k_{1}+k_{2}+\cdots+k_{0}=n\\\text{(because
+for each }\left(  k_{1},k_{2},\ldots,k_{0}\right)  \in\mathbb{N}^{0}%
+\text{,}\\\text{we have }k_{1}+k_{2}+\cdots+k_{0}=\left(  \text{empty
+sum}\right)  =0=n\text{))}}}\underbrace{\mathbf{m}\left(  k_{1},k_{2}%
+,\ldots,k_{0}\right)  }_{\substack{=1\\\text{(by Lemma
+\ref{lem.sol.multinom2.0-tup-m})}}}\underbrace{\prod_{i=1}^{0}a_{i}^{k_{i}}%
+}_{=\left(  \text{empty product}\right)  =1}\\
+&  =\sum_{\left(  k_{1},k_{2},\ldots,k_{0}\right)  \in\mathbb{N}^{0}}1=1.
+\end{align*}
+Comparing this with%
+\begin{align*}
+\left(  \underbrace{a_{1}+a_{2}+\cdots+a_{m}}_{=\left(  \text{empty
+sum}\right)  =0}\right)  ^{n}  &  =0^{n}=0^{0}\ \ \ \ \ \ \ \ \ \ \left(
+\text{since }n=0\right) \\
+&  =1,
+\end{align*}
+we obtain%
+\[
+\left(  a_{1}+a_{2}+\cdots+a_{m}\right)  ^{n}=\sum_{\substack{\left(
+k_{1},k_{2},\ldots,k_{m}\right)  \in\mathbb{N}^{m};\\k_{1}+k_{2}+\cdots
++k_{m}=n}}\mathbf{m}\left(  k_{1},k_{2},\ldots,k_{m}\right)  \prod_{i=1}%
+^{m}a_{i}^{k_{i}}.
+\]
+Hence, Exercise \ref{exe.multinom2} holds. We thus have solved Exercise
+\ref{exe.multinom2} in Case 1.
+\par
+Let us now consider Case 2. In this case, we have $n\neq0$. Hence, $n>0$
+(since $n\in\mathbb{N}$).
+\par
+Each $0$-tuple $\left(  k_{1},k_{2},\ldots,k_{0}\right)  \in\mathbb{N}^{0}$
+satisfies $k_{1}+k_{2}+\cdots+k_{0}=\left(  \text{empty sum}\right)  =0\neq
+n$. In other words, no $\left(  k_{1},k_{2},\ldots,k_{0}\right)  \in
+\mathbb{N}^{0}$ satisfies $k_{1}+k_{2}+\cdots+k_{0}=n$. Hence, the sum
+$\sum_{\substack{\left(  k_{1},k_{2},\ldots,k_{0}\right)  \in\mathbb{N}%
+^{0};\\k_{1}+k_{2}+\cdots+k_{0}=n}}\mathbf{m}\left(  k_{1},k_{2},\ldots
+,k_{0}\right)  \prod_{i=1}^{0}a_{i}^{k_{i}}$ is an empty sum. Therefore, this
+sum rewrites as follows:%
+\[
+\sum_{\substack{\left(  k_{1},k_{2},\ldots,k_{0}\right)  \in\mathbb{N}%
+^{0};\\k_{1}+k_{2}+\cdots+k_{0}=n}}\mathbf{m}\left(  k_{1},k_{2},\ldots
+,k_{0}\right)  \prod_{i=1}^{0}a_{i}^{k_{i}}=\left(  \text{empty sum}\right)
+=0.
+\]
+\par
+Now, recall that $m=0$. Hence,%
+\begin{align*}
+&  \sum_{\substack{\left(  k_{1},k_{2},\ldots,k_{m}\right)  \in\mathbb{N}%
+^{m};\\k_{1}+k_{2}+\cdots+k_{m}=n}}\mathbf{m}\left(  k_{1},k_{2},\ldots
+,k_{m}\right)  \prod_{i=1}^{m}a_{i}^{k_{i}}\\
+&  =\sum_{\substack{\left(  k_{1},k_{2},\ldots,k_{0}\right)  \in\mathbb{N}%
+^{0};\\k_{1}+k_{2}+\cdots+k_{0}=n}}\mathbf{m}\left(  k_{1},k_{2},\ldots
+,k_{0}\right)  \prod_{i=1}^{0}a_{i}^{k_{i}}=0.
+\end{align*}
+Comparing this with%
+\[
+\left(  \underbrace{a_{1}+a_{2}+\cdots+a_{m}}_{=\left(  \text{empty
+sum}\right)  =0}\right)  ^{n}=0^{n}=0\ \ \ \ \ \ \ \ \ \ \left(  \text{since
+}n>0\right)  ,
+\]
+we obtain%
+\[
+\left(  a_{1}+a_{2}+\cdots+a_{m}\right)  ^{n}=\sum_{\substack{\left(
+k_{1},k_{2},\ldots,k_{m}\right)  \in\mathbb{N}^{m};\\k_{1}+k_{2}+\cdots
++k_{m}=n}}\mathbf{m}\left(  k_{1},k_{2},\ldots,k_{m}\right)  \prod_{i=1}%
+^{m}a_{i}^{k_{i}}.
+\]
+Hence, Exercise \ref{exe.multinom2} holds. We thus have solved Exercise
+\ref{exe.multinom2} in Case 2.
+\par
+We thus have solved Exercise \ref{exe.multinom2} in each of the two Cases 1
+and 2. Thus, Exercise \ref{exe.multinom2} always holds (under the assumption
+that $m=0$). Qed.}. This completes the induction base.
+\end{verlong}
+
+\textit{Induction step:} Fix a positive integer $M\in\left\{  0,1,\ldots
+,m\right\}  $. Assume that Exercise \ref{exe.multinom2} holds for $m=M-1$. We
+now must show that Exercise \ref{exe.multinom2} holds for $m=M$.
+
+We have assumed that Exercise \ref{exe.multinom2} holds for $m=M-1$. In other
+words, the following fact holds:
+
+\begin{statement}
+\textit{Fact 1:} Let $\mathbb{K}$ be a commutative ring. Let $a_{1}%
+,a_{2},\ldots,a_{M-1}$ be $M-1$ elements of $\mathbb{K}$. Let $n\in\mathbb{N}%
+$. Then,%
+\[
+\left(  a_{1}+a_{2}+\cdots+a_{M-1}\right)  ^{n}=\sum_{\substack{\left(
+k_{1},k_{2},\ldots,k_{M-1}\right)  \in\mathbb{N}^{M-1};\\k_{1}+k_{2}%
++\cdots+k_{M-1}=n}}\mathbf{m}\left(  k_{1},k_{2},\ldots,k_{M-1}\right)
+\prod_{i=1}^{M-1}a_{i}^{k_{i}}.
+\]
+
+\end{statement}
+
+We must show that Exercise \ref{exe.multinom2} holds for $m=M$. In other
+words, we must prove the following fact:
+
+\begin{statement}
+\textit{Fact 2:} Let $\mathbb{K}$ be a commutative ring. Let $a_{1}%
+,a_{2},\ldots,a_{M}$ be $M$ elements of $\mathbb{K}$. Let $n\in\mathbb{N}$.
+Then,%
+\[
+\left(  a_{1}+a_{2}+\cdots+a_{M}\right)  ^{n}=\sum_{\substack{\left(
+k_{1},k_{2},\ldots,k_{M}\right)  \in\mathbb{N}^{M};\\k_{1}+k_{2}+\cdots
++k_{M}=n}}\mathbf{m}\left(  k_{1},k_{2},\ldots,k_{M}\right)  \prod_{i=1}%
+^{M}a_{i}^{k_{i}}.
+\]
+
+\end{statement}
+
+\begin{vershort}
+[\textit{Proof of Fact 2:} We have
+\[
+a_{1}+a_{2}+\cdots+a_{M}=\left(  a_{1}+a_{2}+\cdots+a_{M-1}\right)
++a_{M}=a_{M}+\left(  a_{1}+a_{2}+\cdots+a_{M-1}\right)  .
+\]
+Taking both sides of this equality to the $n$-th power, we obtain%
+\begin{align}
+&  \left(  a_{1}+a_{2}+\cdots+a_{M}\right)  ^{n}\nonumber\\
+&  =\left(  a_{M}+\left(  a_{1}+a_{2}+\cdots+a_{M-1}\right)  \right)
+^{n}\nonumber\\
+&  =\sum_{k=0}^{n}\dbinom{n}{k}a_{M}^{k}\left(  a_{1}+a_{2}+\cdots
++a_{M-1}\right)  ^{n-k}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{eq.rings.(a+b)**n}) (applied to
+}a=a_{M}\text{ and }b=a_{1}+a_{2}+\cdots+a_{M-1}\text{)}\right)  \nonumber\\
+&  =\sum_{k=0}^{n}\dbinom{n}{k}\left(  a_{1}+a_{2}+\cdots+a_{M-1}\right)
+^{n-k}a_{M}^{k}\nonumber\\
+&  =\underbrace{\sum_{r=0}^{n}}_{=\sum_{\substack{r\in\mathbb{N};\\r\leq n}%
+}}\dbinom{n}{r}\underbrace{\left(  a_{1}+a_{2}+\cdots+a_{M-1}\right)  ^{n-r}%
+}_{\substack{=\sum_{\substack{\left(  k_{1},k_{2},\ldots,k_{M-1}\right)
+\in\mathbb{N}^{M-1};\\k_{1}+k_{2}+\cdots+k_{M-1}=n-r}}\mathbf{m}\left(
+k_{1},k_{2},\ldots,k_{M-1}\right)  \prod_{i=1}^{M-1}a_{i}^{k_{i}}\\\text{(by
+Fact 1, applied to }n-r\text{ instead of }r\text{)}}}a_{M}^{r}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have renamed the summation index
+}k\text{ as }r\right)  \nonumber\\
+&  =\sum_{\substack{r\in\mathbb{N};\\r\leq n}}\dbinom{n}{r}\left(
+\sum_{\substack{\left(  k_{1},k_{2},\ldots,k_{M-1}\right)  \in\mathbb{N}%
+^{M-1};\\k_{1}+k_{2}+\cdots+k_{M-1}=n-r}}\mathbf{m}\left(  k_{1},k_{2}%
+,\ldots,k_{M-1}\right)  \prod_{i=1}^{M-1}a_{i}^{k_{i}}\right)  a_{M}%
+^{r}\nonumber\\
+&  =\sum_{\substack{r\in\mathbb{N};\\r\leq n}}\sum_{\substack{\left(
+k_{1},k_{2},\ldots,k_{M-1}\right)  \in\mathbb{N}^{M-1};\\k_{1}+k_{2}%
++\cdots+k_{M-1}=n-r}}\dbinom{n}{r}\mathbf{m}\left(  k_{1},k_{2},\ldots
+,k_{M-1}\right)  \left(  \prod_{i=1}^{M-1}a_{i}^{k_{i}}\right)  a_{M}%
+^{r}.\label{sol.multinom2.short.3}%
+\end{align}
+
+
+On the other hand, each $\left(  \left(  k_{1},k_{2},\ldots,k_{M-1}\right)
+,r\right)  \in\mathbb{N}^{M-1}\times\mathbb{N}$ satisfying $k_{1}+k_{2}%
++\cdots+k_{M-1}=n-r$ must automatically satisfy $r\leq n$%
+\ \ \ \ \footnote{\textit{Proof.} Let $\left(  \left(  k_{1},k_{2}%
+,\ldots,k_{M-1}\right)  ,r\right)  \in\mathbb{N}^{M-1}\times\mathbb{N}$ be
+such that $k_{1}+k_{2}+\cdots+k_{M-1}=n-r$. Then, $n-r=k_{1}+k_{2}%
++\cdots+k_{M-1}\geq0$, so that $r\leq n$.}. Hence, we have the following
+equality of summation signs:%
+\[
+\sum_{\substack{\left(  \left(  k_{1},k_{2},\ldots,k_{M-1}\right)  ,r\right)
+\in\mathbb{N}^{M-1}\times\mathbb{N};\\k_{1}+k_{2}+\cdots+k_{M-1}=n-r;\\r\leq
+n}}=\sum_{\substack{\left(  \left(  k_{1},k_{2},\ldots,k_{M-1}\right)
+,r\right)  \in\mathbb{N}^{M-1}\times\mathbb{N};\\k_{1}+k_{2}+\cdots
++k_{M-1}=n-r}}.
+\]
+Now, we have the following equality of summation signs:%
+\begin{align*}
+\sum_{\substack{r\in\mathbb{N};\\r\leq n}}\sum_{\substack{\left(  k_{1}%
+,k_{2},\ldots,k_{M-1}\right)  \in\mathbb{N}^{M-1};\\k_{1}+k_{2}+\cdots
++k_{M-1}=n-r}} &  =\sum_{\left(  k_{1},k_{2},\ldots,k_{M-1}\right)
+\in\mathbb{N}^{M-1}}\sum_{\substack{r\in\mathbb{N};\\k_{1}+k_{2}%
++\cdots+k_{M-1}=n-r;\\r\leq n}}\\
+&  =\sum_{\substack{\left(  \left(  k_{1},k_{2},\ldots,k_{M-1}\right)
+,r\right)  \in\mathbb{N}^{M-1}\times\mathbb{N};\\k_{1}+k_{2}+\cdots
++k_{M-1}=n-r;\\r\leq n}}=\sum_{\substack{\left(  \left(  k_{1},k_{2}%
+,\ldots,k_{M-1}\right)  ,r\right)  \in\mathbb{N}^{M-1}\times\mathbb{N}%
+;\\k_{1}+k_{2}+\cdots+k_{M-1}=n-r}}.
+\end{align*}
+Hence, (\ref{sol.multinom2.short.3}) becomes%
+\begin{align}
+&  \left(  a_{1}+a_{2}+\cdots+a_{M}\right)  ^{n}\nonumber\\
+&  =\underbrace{\sum_{\substack{r\in\mathbb{N};\\r\leq n}}\sum
+_{\substack{\left(  k_{1},k_{2},\ldots,k_{M-1}\right)  \in\mathbb{N}%
+^{M-1};\\k_{1}+k_{2}+\cdots+k_{M-1}=n-r}}}_{=\sum_{\substack{\left(  \left(
+k_{1},k_{2},\ldots,k_{M-1}\right)  ,r\right)  \in\mathbb{N}^{M-1}%
+\times\mathbb{N};\\k_{1}+k_{2}+\cdots+k_{M-1}=n-r}}}\dbinom{n}{r}%
+\mathbf{m}\left(  k_{1},k_{2},\ldots,k_{M-1}\right)  \left(  \prod_{i=1}%
+^{M-1}a_{i}^{k_{i}}\right)  a_{M}^{r}\nonumber\\
+&  =\sum_{\substack{\left(  \left(  k_{1},k_{2},\ldots,k_{M-1}\right)
+,r\right)  \in\mathbb{N}^{M-1}\times\mathbb{N};\\k_{1}+k_{2}+\cdots
++k_{M-1}=n-r}}\dbinom{n}{r}\mathbf{m}\left(  k_{1},k_{2},\ldots,k_{M-1}%
+\right)  \left(  \prod_{i=1}^{M-1}a_{i}^{k_{i}}\right)  a_{M}^{r}%
+.\label{sol.multinom2.short.4}%
+\end{align}
+
+
+But Lemma \ref{lem.prodrule.prod-assM} (applied to $Z_{i}=\mathbb{N}$) shows
+that the map%
+\begin{align*}
+\underbrace{\mathbb{N}\times\mathbb{N}\times\cdots\times\mathbb{N}}_{M\text{
+factors}} &  \rightarrow\left(  \underbrace{\mathbb{N}\times\mathbb{N}%
+\times\cdots\times\mathbb{N}}_{M-1\text{ factors}}\right)  \times\mathbb{N},\\
+\left(  s_{1},s_{2},\ldots,s_{M}\right)   &  \mapsto\left(  \left(
+s_{1},s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right)
+\end{align*}
+is a bijection. Since $\underbrace{\mathbb{N}\times\mathbb{N}\times
+\cdots\times\mathbb{N}}_{M\text{ factors}}=\mathbb{N}^{M}$ and
+$\underbrace{\mathbb{N}\times\mathbb{N}\times\cdots\times\mathbb{N}%
+}_{M-1\text{ factors}}=\mathbb{N}^{M-1}$, this can be rewritten as follows:
+The map%
+\begin{align*}
+\mathbb{N}^{M} &  \rightarrow\mathbb{N}^{M-1}\times\mathbb{N},\\
+\left(  s_{1},s_{2},\ldots,s_{M}\right)   &  \mapsto\left(  \left(
+s_{1},s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right)
+\end{align*}
+is a bijection. Hence, we can substitute $\left(  \left(  s_{1},s_{2}%
+,\ldots,s_{M-1}\right)  ,s_{M}\right)  $ for $\left(  \left(  k_{1}%
+,k_{2},\ldots,k_{M-1}\right)  ,r\right)  $ in the sum on the right hand side
+of (\ref{sol.multinom2.short.4}). Thus, we obtain%
+\begin{align*}
+&  \sum_{\substack{\left(  \left(  k_{1},k_{2},\ldots,k_{M-1}\right)
+,r\right)  \in\mathbb{N}^{M-1}\times\mathbb{N};\\k_{1}+k_{2}+\cdots
++k_{M-1}=n-r}}\dbinom{n}{r}\mathbf{m}\left(  k_{1},k_{2},\ldots,k_{M-1}%
+\right)  \left(  \prod_{i=1}^{M-1}a_{i}^{k_{i}}\right)  a_{M}^{r}\\
+&  =\underbrace{\sum_{\substack{\left(  s_{1},s_{2},\ldots,s_{M}\right)
+\in\mathbb{N}^{M};\\s_{1}+s_{2}+\cdots+s_{M-1}=n-s_{M}}}}_{\substack{=\sum
+_{\substack{\left(  s_{1},s_{2},\ldots,s_{M}\right)  \in\mathbb{N}^{M}%
+;\\s_{1}+s_{2}+\cdots+s_{M}=n}}\\\text{(because for any }\left(  s_{1}%
+,s_{2},\ldots,s_{M}\right)  \in\mathbb{N}^{M}\text{,}\\\text{the condition
+}\left(  s_{1}+s_{2}+\cdots+s_{M-1}=n-s_{M}\right)  \\\text{is equivalent
+to}\\\text{the condition }\left(  s_{1}+s_{2}+\cdots+s_{M}=n\right)  \text{)}%
+}}\dbinom{n}{s_{M}}\mathbf{m}\left(  s_{1},s_{2},\ldots,s_{M-1}\right)
+\underbrace{\left(  \prod_{i=1}^{M-1}a_{i}^{s_{i}}\right)  a_{M}^{s_{M}}%
+}_{\substack{=\prod_{i=1}^{M}a_{i}^{s_{i}}}}\\
+&  =\sum_{\substack{\left(  s_{1},s_{2},\ldots,s_{M}\right)  \in\mathbb{N}%
+^{M};\\s_{1}+s_{2}+\cdots+s_{M}=n}}\underbrace{\dbinom{n}{s_{M}}%
+\mathbf{m}\left(  s_{1},s_{2},\ldots,s_{M-1}\right)  }_{\substack{=\mathbf{m}%
+\left(  s_{1},s_{2},\ldots,s_{M}\right)  \\\text{(by Lemma
+\ref{lem.sol.multinom2.prod})}}}\prod_{i=1}^{M}a_{i}^{s_{i}}\\
+&  =\sum_{\substack{\left(  s_{1},s_{2},\ldots,s_{M}\right)  \in\mathbb{N}%
+^{M};\\s_{1}+s_{2}+\cdots+s_{M}=n}}\mathbf{m}\left(  s_{1},s_{2},\ldots
+,s_{M}\right)  \prod_{i=1}^{M}a_{i}^{s_{i}}=\sum_{\substack{\left(
+k_{1},k_{2},\ldots,k_{M}\right)  \in\mathbb{N}^{M};\\k_{1}+k_{2}+\cdots
++k_{M}=n}}\mathbf{m}\left(  k_{1},k_{2},\ldots,k_{M}\right)  \prod_{i=1}%
+^{M}a_{i}^{k_{i}}%
+\end{align*}
+(here, we have renamed the summation index $\left(  s_{1},s_{2},\ldots
+,s_{M}\right)  $ as $\left(  k_{1},k_{2},\ldots,k_{M}\right)  $). Hence,
+(\ref{sol.multinom2.short.4}) becomes%
+\begin{align*}
+&  \left(  a_{1}+a_{2}+\cdots+a_{M}\right)  ^{n}\\
+&  =\sum_{\substack{\left(  \left(  k_{1},k_{2},\ldots,k_{M-1}\right)
+,r\right)  \in\mathbb{N}^{M-1}\times\mathbb{N};\\k_{1}+k_{2}+\cdots
++k_{M-1}=n-r}}\dbinom{n}{r}\mathbf{m}\left(  k_{1},k_{2},\ldots,k_{M-1}%
+\right)  \left(  \prod_{i=1}^{M-1}a_{i}^{k_{i}}\right)  a_{M}^{r}\\
+&  =\sum_{\substack{\left(  k_{1},k_{2},\ldots,k_{M}\right)  \in\mathbb{N}%
+^{M};\\k_{1}+k_{2}+\cdots+k_{M}=n}}\mathbf{m}\left(  k_{1},k_{2},\ldots
+,k_{M}\right)  \prod_{i=1}^{M}a_{i}^{k_{i}}.
+\end{align*}
+This proves Fact 2.]
+\end{vershort}
+
+\begin{verlong}
+[\textit{Proof of Fact 2:} We have
+\[
+a_{1}+a_{2}+\cdots+a_{M}=\left(  a_{1}+a_{2}+\cdots+a_{M-1}\right)
++a_{M}=a_{M}+\left(  a_{1}+a_{2}+\cdots+a_{M-1}\right)  .
+\]
+Taking both sides of this equality to the $n$-th power, we obtain%
+\begin{align*}
+\left(  a_{1}+a_{2}+\cdots+a_{M}\right)  ^{n} &  =\left(  a_{M}+\left(
+a_{1}+a_{2}+\cdots+a_{M-1}\right)  \right)  ^{n}\\
+&  =\sum_{k=0}^{n}\dbinom{n}{k}a_{M}^{k}\left(  a_{1}+a_{2}+\cdots
++a_{M-1}\right)  ^{n-k}%
+\end{align*}
+(by (\ref{eq.rings.(a+b)**n}) (applied to $a=a_{M}$ and $b=a_{1}+a_{2}%
++\cdots+a_{M-1}$)). Thus,%
+\begin{align}
+\left(  a_{1}+a_{2}+\cdots+a_{M}\right)  ^{n} &  =\sum_{k=0}^{n}\dbinom{n}%
+{k}a_{M}^{k}\left(  a_{1}+a_{2}+\cdots+a_{M-1}\right)  ^{n-k}\nonumber\\
+&  =\sum_{k=0}^{n}\dbinom{n}{k}\left(  a_{1}+a_{2}+\cdots+a_{M-1}\right)
+^{n-k}a_{M}^{k}\nonumber\\
+&  =\sum_{r=0}^{n}\dbinom{n}{r}\left(  a_{1}+a_{2}+\cdots+a_{M-1}\right)
+^{n-r}a_{M}^{r}\label{sol.multinom2.1}%
+\end{align}
+(here, we have renamed the summation index $k$ as $r$).
+
+But each $r\in\left\{  0,1,\ldots,n\right\}  $ satisfies%
+\begin{align}
+&  \left(  a_{1}+a_{2}+\cdots+a_{M-1}\right)  ^{n-r}\nonumber\\
+&  =\sum_{\substack{\left(  k_{1},k_{2},\ldots,k_{M-1}\right)  \in
+\mathbb{N}^{M-1};\\k_{1}+k_{2}+\cdots+k_{M-1}=n-r}}\mathbf{m}\left(
+k_{1},k_{2},\ldots,k_{M-1}\right)  \prod_{i=1}^{M-1}a_{i}^{k_{i}}
+\label{sol.multinom2.2}%
+\end{align}
+\footnote{\textit{Proof of (\ref{sol.multinom2.2}):} Let $r\in\left\{
+0,1,\ldots,n\right\}  $. Then, $r\leq n$, so that $n-r\in\mathbb{N}$. Hence,
+Fact 1 (applied to $n-r$ instead of $n$) yields%
+\[
+\left(  a_{1}+a_{2}+\cdots+a_{M-1}\right)  ^{n-r}=\sum_{\substack{\left(
+k_{1},k_{2},\ldots,k_{M-1}\right)  \in\mathbb{N}^{M-1};\\k_{1}+k_{2}%
++\cdots+k_{M-1}=n-r}}\mathbf{m}\left(  k_{1},k_{2},\ldots,k_{M-1}\right)
+\prod_{i=1}^{M-1}a_{i}^{k_{i}}.
+\]
+Qed.}. Hence, (\ref{sol.multinom2.1}) becomes%
+\begin{align}
+&  \left(  a_{1}+a_{2}+\cdots+a_{M}\right)  ^{n}\nonumber\\
+&  =\underbrace{\sum_{r=0}^{n}}_{=\sum_{\substack{r\in\mathbb{N};\\r\leq n}%
+}}\dbinom{n}{r}\underbrace{\left(  a_{1}+a_{2}+\cdots+a_{M-1}\right)  ^{n-r}%
+}_{\substack{=\sum_{\substack{\left(  k_{1},k_{2},\ldots,k_{M-1}\right)
+\in\mathbb{N}^{M-1};\\k_{1}+k_{2}+\cdots+k_{M-1}=n-r}}\mathbf{m}\left(
+k_{1},k_{2},\ldots,k_{M-1}\right)  \prod_{i=1}^{M-1}a_{i}^{k_{i}}\\\text{(by
+(\ref{sol.multinom2.2}))}}}a_{M}^{r}\nonumber\\
+&  =\sum_{\substack{r\in\mathbb{N};\\r\leq n}}\dbinom{n}{r}\left(
+\sum_{\substack{\left(  k_{1},k_{2},\ldots,k_{M-1}\right)  \in\mathbb{N}%
+^{M-1};\\k_{1}+k_{2}+\cdots+k_{M-1}=n-r}}\mathbf{m}\left(  k_{1},k_{2}%
+,\ldots,k_{M-1}\right)  \prod_{i=1}^{M-1}a_{i}^{k_{i}}\right)  a_{M}%
+^{r}\nonumber\\
+&  =\sum_{\substack{r\in\mathbb{N};\\r\leq n}}\sum_{\substack{\left(
+k_{1},k_{2},\ldots,k_{M-1}\right)  \in\mathbb{N}^{M-1};\\k_{1}+k_{2}%
++\cdots+k_{M-1}=n-r}}\dbinom{n}{r}\mathbf{m}\left(  k_{1},k_{2},\ldots
+,k_{M-1}\right)  \left(  \prod_{i=1}^{M-1}a_{i}^{k_{i}}\right)  a_{M}^{r}.
+\label{sol.multinom2.3}%
+\end{align}
+
+
+On the other hand, each $\left(  \left(  k_{1},k_{2},\ldots,k_{M-1}\right)
+,r\right)  \in\mathbb{N}^{M-1}\times\mathbb{N}$ satisfying $k_{1}+k_{2}%
++\cdots+k_{M-1}=n-r$ must automatically satisfy $r\leq n$%
+\ \ \ \ \footnote{\textit{Proof.} Let $\left(  \left(  k_{1},k_{2}%
+,\ldots,k_{M-1}\right)  ,r\right)  \in\mathbb{N}^{M-1}\times\mathbb{N}$ be
+such that $k_{1}+k_{2}+\cdots+k_{M-1}=n-r$. Then, $\left(  k_{1},k_{2}%
+,\ldots,k_{M-1}\right)  \in\mathbb{N}^{M-1}$ (since $\left(  \left(
+k_{1},k_{2},\ldots,k_{M-1}\right)  ,r\right)  \in\mathbb{N}^{M-1}%
+\times\mathbb{N}$), so that $k_{1},k_{2},\ldots,k_{M-1}$ are elements of
+$\mathbb{N}$. Thus, $k_{1}+k_{2}+\cdots+k_{M-1}\in\mathbb{N}$, so that
+$k_{1}+k_{2}+\cdots+k_{M-1}\geq0$. Now, $n-r=k_{1}+k_{2}+\cdots+k_{M-1}\geq0$,
+so that $r\leq n$. Qed.}. Hence, we have the following equality of summation
+signs:%
+\[
+\sum_{\substack{\left(  \left(  k_{1},k_{2},\ldots,k_{M-1}\right)  ,r\right)
+\in\mathbb{N}^{M-1}\times\mathbb{N};\\k_{1}+k_{2}+\cdots+k_{M-1}=n-r;\\r\leq
+n}}=\sum_{\substack{\left(  \left(  k_{1},k_{2},\ldots,k_{M-1}\right)
+,r\right)  \in\mathbb{N}^{M-1}\times\mathbb{N};\\k_{1}+k_{2}+\cdots
++k_{M-1}=n-r}}.
+\]
+Now, we have the following equality of summation signs:%
+\begin{align*}
+\sum_{\substack{r\in\mathbb{N};\\r\leq n}}\sum_{\substack{\left(  k_{1}%
+,k_{2},\ldots,k_{M-1}\right)  \in\mathbb{N}^{M-1};\\k_{1}+k_{2}+\cdots
++k_{M-1}=n-r}}  &  =\sum_{\left(  k_{1},k_{2},\ldots,k_{M-1}\right)
+\in\mathbb{N}^{M-1}}\sum_{\substack{r\in\mathbb{N};\\k_{1}+k_{2}%
++\cdots+k_{M-1}=n-r;\\r\leq n}}\\
+&  =\sum_{\substack{\left(  \left(  k_{1},k_{2},\ldots,k_{M-1}\right)
+,r\right)  \in\mathbb{N}^{M-1}\times\mathbb{N};\\k_{1}+k_{2}+\cdots
++k_{M-1}=n-r;\\r\leq n}}=\sum_{\substack{\left(  \left(  k_{1},k_{2}%
+,\ldots,k_{M-1}\right)  ,r\right)  \in\mathbb{N}^{M-1}\times\mathbb{N}%
+;\\k_{1}+k_{2}+\cdots+k_{M-1}=n-r}}.
+\end{align*}
+Hence, (\ref{sol.multinom2.3}) becomes%
+\begin{align}
+&  \left(  a_{1}+a_{2}+\cdots+a_{M}\right)  ^{n}\nonumber\\
+&  =\underbrace{\sum_{\substack{r\in\mathbb{N};\\r\leq n}}\sum
+_{\substack{\left(  k_{1},k_{2},\ldots,k_{M-1}\right)  \in\mathbb{N}%
+^{M-1};\\k_{1}+k_{2}+\cdots+k_{M-1}=n-r}}}_{=\sum_{\substack{\left(  \left(
+k_{1},k_{2},\ldots,k_{M-1}\right)  ,r\right)  \in\mathbb{N}^{M-1}%
+\times\mathbb{N};\\k_{1}+k_{2}+\cdots+k_{M-1}=n-r}}}\dbinom{n}{r}%
+\mathbf{m}\left(  k_{1},k_{2},\ldots,k_{M-1}\right)  \left(  \prod_{i=1}%
+^{M-1}a_{i}^{k_{i}}\right)  a_{M}^{r}\nonumber\\
+&  =\sum_{\substack{\left(  \left(  k_{1},k_{2},\ldots,k_{M-1}\right)
+,r\right)  \in\mathbb{N}^{M-1}\times\mathbb{N};\\k_{1}+k_{2}+\cdots
++k_{M-1}=n-r}}\dbinom{n}{r}\mathbf{m}\left(  k_{1},k_{2},\ldots,k_{M-1}%
+\right)  \left(  \prod_{i=1}^{M-1}a_{i}^{k_{i}}\right)  a_{M}^{r}.
+\label{sol.multinom2.4}%
+\end{align}
+
+
+But Lemma \ref{lem.prodrule.prod-assM} (applied to $Z_{i}=\mathbb{N}$) shows
+that the map%
+\begin{align*}
+\underbrace{\mathbb{N}\times\mathbb{N}\times\cdots\times\mathbb{N}}_{M\text{
+factors}}  &  \rightarrow\left(  \underbrace{\mathbb{N}\times\mathbb{N}%
+\times\cdots\times\mathbb{N}}_{M-1\text{ factors}}\right)  \times\mathbb{N},\\
+\left(  s_{1},s_{2},\ldots,s_{M}\right)   &  \mapsto\left(  \left(
+s_{1},s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right)
+\end{align*}
+is a bijection. Since $\underbrace{\mathbb{N}\times\mathbb{N}\times
+\cdots\times\mathbb{N}}_{M\text{ factors}}=\mathbb{N}^{M}$ and
+$\underbrace{\mathbb{N}\times\mathbb{N}\times\cdots\times\mathbb{N}%
+}_{M-1\text{ factors}}=\mathbb{N}^{M-1}$, this can be rewritten as follows:
+The map%
+\begin{align*}
+\mathbb{N}^{M}  &  \rightarrow\mathbb{N}^{M-1}\times\mathbb{N},\\
+\left(  s_{1},s_{2},\ldots,s_{M}\right)   &  \mapsto\left(  \left(
+s_{1},s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right)
+\end{align*}
+is a bijection. Hence, we can substitute $\left(  \left(  s_{1},s_{2}%
+,\ldots,s_{M-1}\right)  ,s_{M}\right)  $ for $\left(  \left(  k_{1}%
+,k_{2},\ldots,k_{M-1}\right)  ,r\right)  $ in the sum on the right hand side
+of (\ref{sol.multinom2.4}). Thus, we obtain%
+\begin{align*}
+&  \sum_{\substack{\left(  \left(  k_{1},k_{2},\ldots,k_{M-1}\right)
+,r\right)  \in\mathbb{N}^{M-1}\times\mathbb{N};\\k_{1}+k_{2}+\cdots
++k_{M-1}=n-r}}\dbinom{n}{r}\mathbf{m}\left(  k_{1},k_{2},\ldots,k_{M-1}%
+\right)  \left(  \prod_{i=1}^{M-1}a_{i}^{k_{i}}\right)  a_{M}^{r}\\
+&  =\underbrace{\sum_{\substack{\left(  s_{1},s_{2},\ldots,s_{M}\right)
+\in\mathbb{N}^{M};\\s_{1}+s_{2}+\cdots+s_{M-1}=n-s_{M}}}}_{\substack{=\sum
+_{\substack{\left(  s_{1},s_{2},\ldots,s_{M}\right)  \in\mathbb{N}%
+^{M};\\\left(  s_{1}+s_{2}+\cdots+s_{M-1}\right)  +s_{M}=n}}\\\text{(because
+for any }\left(  s_{1},s_{2},\ldots,s_{M}\right)  \in\mathbb{N}^{M}%
+\text{,}\\\text{the condition }\left(  s_{1}+s_{2}+\cdots+s_{M-1}%
+=n-s_{M}\right)  \\\text{is equivalent to}\\\text{the condition }\left(
+\left(  s_{1}+s_{2}+\cdots+s_{M-1}\right)  +s_{M}=n\right)  \text{)}}%
+}\dbinom{n}{s_{M}}\mathbf{m}\left(  s_{1},s_{2},\ldots,s_{M-1}\right)
+\underbrace{\left(  \prod_{i=1}^{M-1}a_{i}^{s_{i}}\right)  a_{M}^{s_{M}}%
+}_{\substack{=\prod_{i=1}^{M}a_{i}^{s_{i}}\\\text{(since }\prod_{i=1}^{M}%
+a_{i}^{s_{i}}=\left(  \prod_{i=1}^{M-1}a_{i}^{s_{i}}\right)  a_{M}^{s_{M}%
+}\\\text{(here, we have split off the}\\\text{factor for }i=M\text{ from the
+product))}}}\\
+&  =\underbrace{\sum_{\substack{\left(  s_{1},s_{2},\ldots,s_{M}\right)
+\in\mathbb{N}^{M};\\\left(  s_{1}+s_{2}+\cdots+s_{M-1}\right)  +s_{M}=n}%
+}}_{\substack{=\sum_{\substack{\left(  s_{1},s_{2},\ldots,s_{M}\right)
+\in\mathbb{N}^{M};\\s_{1}+s_{2}+\cdots+s_{M}=n}}\\\text{(because for any
+}\left(  s_{1},s_{2},\ldots,s_{M}\right)  \in\mathbb{N}^{M}\text{,}\\\text{we
+have }\left(  s_{1}+s_{2}+\cdots+s_{M-1}\right)  +s_{M}=s_{1}+s_{2}%
++\cdots+s_{M}\text{)}}}\dbinom{n}{s_{M}}\mathbf{m}\left(  s_{1},s_{2}%
+,\ldots,s_{M-1}\right)  \prod_{i=1}^{M}a_{i}^{s_{i}}\\
+&  =\sum_{\substack{\left(  s_{1},s_{2},\ldots,s_{M}\right)  \in\mathbb{N}%
+^{M};\\s_{1}+s_{2}+\cdots+s_{M}=n}}\underbrace{\dbinom{n}{s_{M}}%
+\mathbf{m}\left(  s_{1},s_{2},\ldots,s_{M-1}\right)  }_{\substack{=\mathbf{m}%
+\left(  s_{1},s_{2},\ldots,s_{M}\right)  \\\text{(by Lemma
+\ref{lem.sol.multinom2.prod})}}}\prod_{i=1}^{M}a_{i}^{s_{i}}\\
+&  =\sum_{\substack{\left(  s_{1},s_{2},\ldots,s_{M}\right)  \in\mathbb{N}%
+^{M};\\s_{1}+s_{2}+\cdots+s_{M}=n}}\mathbf{m}\left(  s_{1},s_{2},\ldots
+,s_{M}\right)  \prod_{i=1}^{M}a_{i}^{s_{i}}\\
+&  =\sum_{\substack{\left(  k_{1},k_{2},\ldots,k_{M}\right)  \in\mathbb{N}%
+^{M};\\k_{1}+k_{2}+\cdots+k_{M}=n}}\mathbf{m}\left(  k_{1},k_{2},\ldots
+,k_{M}\right)  \prod_{i=1}^{M}a_{i}^{k_{i}}%
+\end{align*}
+(here, we have renamed the summation index $\left(  s_{1},s_{2},\ldots
+,s_{M}\right)  $ as $\left(  k_{1},k_{2},\ldots,k_{M}\right)  $). Hence,
+(\ref{sol.multinom2.4}) becomes%
+\begin{align*}
+&  \left(  a_{1}+a_{2}+\cdots+a_{M}\right)  ^{n}\\
+&  =\sum_{\substack{\left(  \left(  k_{1},k_{2},\ldots,k_{M-1}\right)
+,r\right)  \in\mathbb{N}^{M-1}\times\mathbb{N};\\k_{1}+k_{2}+\cdots
++k_{M-1}=n-r}}\dbinom{n}{r}\mathbf{m}\left(  k_{1},k_{2},\ldots,k_{M-1}%
+\right)  \left(  \prod_{i=1}^{M-1}a_{i}^{k_{i}}\right)  a_{M}^{r}\\
+&  =\sum_{\substack{\left(  k_{1},k_{2},\ldots,k_{M}\right)  \in\mathbb{N}%
+^{M};\\k_{1}+k_{2}+\cdots+k_{M}=n}}\mathbf{m}\left(  k_{1},k_{2},\ldots
+,k_{M}\right)  \prod_{i=1}^{M}a_{i}^{k_{i}}.
+\end{align*}
+This proves Fact 2.]
+\end{verlong}
+
+But Fact 2 is precisely the statement of Exercise \ref{exe.multinom2} for
+$m=M$. Hence, Exercise \ref{exe.multinom2} holds for $m=M$ (since Fact 2 is
+proven). This completes the induction step. Thus, Exercise \ref{exe.multinom2}
+is proven by induction.
+\end{proof}
+
 \subsection{Solution to Exercise \ref{exe.ps4.3}}
 
 \begin{proof}
@@ -43159,291 +44445,6 @@ q_{x}\\
 \end{align*}
 (by (\ref{pf.lem.prodrule.S.n=2.2}) (applied to $\lambda=\sum_{y\in Y}r_{y}%
 $)). This proves Lemma \ref{lem.prodrule.S.n=2}.
-\end{proof}
-\end{verlong}
-
-Next, we state a basic lemma about sets:
-
-\begin{lemma}
-\label{lem.prodrule.prod-assM}Let $M$ be a positive integer. For every
-$i\in\left\{  1,2,\ldots,M\right\}  $, let $Z_{i}$ be a set. Then, the map
-\begin{align*}
-Z_{1}\times Z_{2}\times\cdots\times Z_{M} &  \rightarrow\left(  Z_{1}\times
-Z_{2}\times\cdots\times Z_{M-1}\right)  \times Z_{M},\\
-\left(  s_{1},s_{2},\ldots,s_{M}\right)   &  \mapsto\left(  \left(
-s_{1},s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right)
-\end{align*}
-is a bijection.
-\end{lemma}
-
-\begin{vershort}
-\begin{proof}
-[Proof of Lemma \ref{lem.prodrule.prod-assM}.]This map is simply the canonical
-bijection $Z_{1}\times Z_{2}\times\cdots\times Z_{M}\rightarrow\left(
-Z_{1}\times Z_{2}\times\cdots\times Z_{M-1}\right)  \times Z_{M}$. Its inverse
-map sends each $\left(  \left(  s_{1},s_{2},\ldots,s_{M-1}\right)  ,t\right)
-\in\left(  Z_{1}\times Z_{2}\times\cdots\times Z_{M-1}\right)  \times Z_{M}$
-to $\left(  s_{1},s_{2},\ldots,s_{M-1},t\right)  \in Z_{1}\times Z_{2}%
-\times\cdots\times Z_{M}$.
-\end{proof}
-\end{vershort}
-
-\begin{verlong}
-\begin{proof}
-[Proof of Lemma \ref{lem.prodrule.prod-assM}.]We define a map%
-\[
-\Phi:\left(  Z_{1}\times Z_{2}\times\cdots\times Z_{M-1}\right)  \times
-Z_{M}\rightarrow Z_{1}\times Z_{2}\times\cdots\times Z_{M}%
-\]
-by%
-\begin{equation}
-\left(
-\begin{array}
-[c]{l}%
-\Phi\left(  \left(  s_{1},s_{2},\ldots,s_{M-1}\right)  ,t\right)  =\left(
-s_{1},s_{2},\ldots,s_{M-1},t\right)  \\
-\ \ \ \ \ \ \ \ \ \ \text{for every }\left(  \left(  s_{1},s_{2}%
-,\ldots,s_{M-1}\right)  ,t\right)  \in\left(  Z_{1}\times Z_{2}\times
-\cdots\times Z_{M-1}\right)  \times Z_{M}%
-\end{array}
-\right)  .\label{pf.lem.prodrule.S.Phidef}%
-\end{equation}
-
-
-We also define a map%
-\[
-\Psi:Z_{1}\times Z_{2}\times\cdots\times Z_{M}\rightarrow\left(  Z_{1}\times
-Z_{2}\times\cdots\times Z_{M-1}\right)  \times Z_{M}%
-\]
-by%
-\begin{equation}
-\left(
-\begin{array}
-[c]{l}%
-\Psi\left(  s_{1},s_{2},\ldots,s_{M}\right)  =\left(  \left(  s_{1}%
-,s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right)  \\
-\ \ \ \ \ \ \ \ \ \ \text{for every }\left(  s_{1},s_{2},\ldots,s_{M}\right)
-\in Z_{1}\times Z_{2}\times\cdots\times Z_{M}%
-\end{array}
-\right)  .\label{pf.lem.prodrule.S.Psidef}%
-\end{equation}
-
-
-We now claim that
-\begin{equation}
-\Psi\left(  s_{1},s_{2},\ldots,s_{M-1},t\right)  =\left(  \left(  s_{1}%
-,s_{2},\ldots,s_{M-1}\right)  ,t\right)  \label{pf.lem.prodrule.S.Psi}%
-\end{equation}
-for every $\left(  s_{1},s_{2},\ldots,s_{M-1}\right)  \in Z_{1}\times
-Z_{2}\times\cdots\times Z_{M-1}$ and $t\in Z_{M}$.
-
-[\textit{Proof of (\ref{pf.lem.prodrule.S.Psi}):} Let $\left(  s_{1}%
-,s_{2},\ldots,s_{M-1}\right)  \in Z_{1}\times Z_{2}\times\cdots\times Z_{M-1}$
-and $t\in Z_{M}$. We have $\left(  s_{1},s_{2},\ldots,s_{M-1}\right)  \in
-Z_{1}\times Z_{2}\times\cdots\times Z_{M-1}$; in other words,
-\begin{equation}
-s_{i}\in Z_{i}\ \ \ \ \ \ \ \ \ \ \text{for every }i\in\left\{  1,2,\ldots
-,M-1\right\}  .\label{pf.lem.prodrule.S.Psi.pf.1}%
-\end{equation}
-
-
-For every $i\in\left\{  1,2,\ldots,M\right\}  $, the element $%
-\begin{cases}
-s_{i}, & \text{if }i<M;\\
-t, & \text{if }i=M
-\end{cases}
-$ is a well-defined element of $Z_{i}$\ \ \ \ \footnote{\textit{Proof.} Let
-$i\in\left\{  1,2,\ldots,M\right\}  $. We must prove that
-\begin{equation}%
-\begin{cases}
-s_{i}, & \text{if }i<M;\\
-t, & \text{if }i=M
-\end{cases}
-\text{ is a well-defined element of }Z_{i}%
-.\label{pf.lem.prodrule.S.Psi.pf.fn1.1}%
-\end{equation}
-\par
-We are in one of the following two cases:
-\par
-\textit{Case 1:} We have $i\neq M$.
-\par
-\textit{Case 2:} We have $i=M$.
-\par
-Let us first consider Case 1. In this case, we have $i\neq M$. Combining this
-with $i\in\left\{  1,2,\ldots,M\right\}  $, we obtain $i\in\left\{
-1,2,\ldots,M\right\}  \setminus\left\{  M\right\}  =\left\{  1,2,\ldots
-,M-1\right\}  $. Hence, $s_{i}\in Z_{i}$ (by (\ref{pf.lem.prodrule.S.Psi.pf.1}%
-)). Thus, $s_{i}$ is a well-defined element of $Z_{i}$. In other words, $%
-\begin{cases}
-s_{i}, & \text{if }i<M;\\
-t, & \text{if }i=M
-\end{cases}
-$ is a well-defined element of $Z_{i}$ (since $%
-\begin{cases}
-s_{i}, & \text{if }i<M;\\
-t, & \text{if }i=M
-\end{cases}
-=s_{i}$ (since $i<M$ (since $i\in\left\{  1,2,\ldots,M-1\right\}  $))). Thus,
-(\ref{pf.lem.prodrule.S.Psi.pf.fn1.1}) is proven in Case 1.
-\par
-Let us now consider Case 2. In this case, we have $i=M$. But $t$ is a
-well-defined element of $Z_{M}$. In other words, $%
-\begin{cases}
-s_{i}, & \text{if }i<M;\\
-t, & \text{if }i=M
-\end{cases}
-$ is a well-defined element of $Z_{i}$ (since $%
-\begin{cases}
-s_{i}, & \text{if }i<M;\\
-t, & \text{if }i=M
-\end{cases}
-=t$ (since $i=M$) and $i=M$). Thus, (\ref{pf.lem.prodrule.S.Psi.pf.fn1.1}) is
-proven in Case 2.
-\par
-We have now proven (\ref{pf.lem.prodrule.S.Psi.pf.fn1.1}) in each of the two
-Cases 1 and 2. Thus, (\ref{pf.lem.prodrule.S.Psi.pf.fn1.1}) always holds
-(since Cases 1 and 2 cover all possibilities). In other words, $%
-\begin{cases}
-s_{i}, & \text{if }i<M;\\
-t, & \text{if }i=M
-\end{cases}
-$ is a well-defined element of $Z_{i}$. Qed.}. Hence, we can define an
-$M$-tuple $\left(  q_{1},q_{2},\ldots,q_{M}\right)  \in Z_{1}\times
-Z_{2}\times\cdots\times Z_{M}$ by%
-\[
-\left(  q_{i}=%
-\begin{cases}
-s_{i}, & \text{if }i<M;\\
-t, & \text{if }i=M
-\end{cases}
-\ \ \ \ \ \ \ \ \ \ \text{for every }i\in\left\{  1,2,\ldots,M\right\}
-\right)  .
-\]
-Consider this $M$-tuple $\left(  q_{1},q_{2},\ldots,q_{M}\right)  $. The
-definition of this $M$-tuple shows that%
-\[
-\left(  q_{1},q_{2},\ldots,q_{M}\right)  =\left(  s_{1},s_{2},\ldots
-,s_{M-1},t\right)  .
-\]
-
-
-For every $i\in\left\{  1,2,\ldots,M-1\right\}  $, we have%
-\[
-q_{i}=%
-\begin{cases}
-s_{i}, & \text{if }i<M;\\
-t, & \text{if }i=M
-\end{cases}
-=s_{i}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }i<M\text{ (since }i\in\left\{
-1,2,\ldots,M-1\right\}  \text{)}\right)  .
-\]
-In other words, $\left(  q_{1},q_{2},\ldots,q_{M-1}\right)  =\left(
-s_{1},s_{2},\ldots,s_{M-1}\right)  $. Also, the definition of $q_{M}$ shows
-that $q_{M}=%
-\begin{cases}
-s_{M}, & \text{if }M<M;\\
-t, & \text{if }M=M
-\end{cases}
-=t$ (since $M=M$).
-
-But the definition of $\Psi$ yields
-\[
-\Psi\left(  q_{1},q_{2},\ldots,q_{M}\right)  =\left(  \underbrace{\left(
-q_{1},q_{2},\ldots,q_{M-1}\right)  }_{=\left(  s_{1},s_{2},\ldots
-,s_{M-1}\right)  },\underbrace{q_{M}}_{=t}\right)  =\left(  \left(
-s_{1},s_{2},\ldots,s_{M-1}\right)  ,t\right)  .
-\]
-Comparing this with $\Psi\underbrace{\left(  q_{1},q_{2},\ldots,q_{M}\right)
-}_{=\left(  s_{1},s_{2},\ldots,s_{M-1},t\right)  }=\Psi\left(  s_{1}%
-,s_{2},\ldots,s_{M-1},t\right)  $, we obtain
-\[
-\Psi\left(  s_{1},s_{2},\ldots,s_{M-1},t\right)  =\left(  \left(  s_{1}%
-,s_{2},\ldots,s_{M-1}\right)  ,t\right)  .
-\]
-This proves (\ref{pf.lem.prodrule.S.Psi}).]
-
-Now, we have $\Phi\circ\Psi=\operatorname*{id}$%
-\ \ \ \ \footnote{\textit{Proof.} Let $\alpha\in Z_{1}\times Z_{2}\times
-\cdots\times Z_{M}$. Thus, we can write $\alpha$ in the form $\left(
-s_{1},s_{2},\ldots,s_{M}\right)  $ for some $\left(  s_{1},s_{2},\ldots
-,s_{M}\right)  \in Z_{1}\times Z_{2}\times\cdots\times Z_{M}$. Consider this
-$\left(  s_{1},s_{2},\ldots,s_{M}\right)  $. Hence, $\alpha=\left(
-s_{1},s_{2},\ldots,s_{M}\right)  $.
-\par
-Now,%
-\begin{align*}
-\left(  \Phi\circ\Psi\right)  \left(  \underbrace{\alpha}_{=\left(
-s_{1},s_{2},\ldots,s_{M}\right)  }\right)   &  =\left(  \Phi\circ\Psi\right)
-\left(  s_{1},s_{2},\ldots,s_{M}\right)  =\Phi\left(  \underbrace{\Psi\left(
-s_{1},s_{2},\ldots,s_{M}\right)  }_{\substack{=\left(  \left(  s_{1}%
-,s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right)  \\\text{(by the definition of
-}\Psi\text{)}}}\right)  \\
-&  =\Phi\left(  \left(  s_{1},s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right)
-=\left(  s_{1},s_{2},\ldots,s_{M-1},s_{M}\right)  \\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\Phi\right)  \\
-&  =\left(  s_{1},s_{2},\ldots,s_{M}\right)  =\alpha=\operatorname*{id}\left(
-\alpha\right)  .
-\end{align*}
-\par
-Let us now forget that we fixed $\alpha$. We thus have shown that $\left(
-\Phi\circ\Psi\right)  \left(  \alpha\right)  =\operatorname*{id}\left(
-\alpha\right)  $ for every $\alpha\in Z_{1}\times Z_{2}\times\cdots\times
-Z_{M}$. In other words, $\Phi\circ\Psi=\operatorname*{id}$, qed.} and
-$\Psi\circ\Phi=\operatorname*{id}$\ \ \ \ \footnote{\textit{Proof.} Let
-$\beta\in\left(  Z_{1}\times Z_{2}\times\cdots\times Z_{M-1}\right)  \times
-Z_{M}$. Thus, we can write $\beta$ in the form $\left(  \gamma,t\right)  $ for
-some $\gamma\in Z_{1}\times Z_{2}\times\cdots\times Z_{M-1}$ and $t\in Z_{M}$.
-Consider these $\gamma$ and $t$. Thus, $\beta=\left(  \gamma,t\right)  $.
-\par
-We have $\gamma\in Z_{1}\times Z_{2}\times\cdots\times Z_{M-1}$. Thus, we can
-write $\gamma$ in the form $\left(  s_{1},s_{2},\ldots,s_{M-1}\right)  $ for
-some $\left(  s_{1},s_{2},\ldots,s_{M-1}\right)  \in Z_{1}\times Z_{2}%
-\times\cdots\times Z_{M-1}$. Consider this $\left(  s_{1},s_{2},\ldots
-,s_{M-1}\right)  $. Hence, $\gamma=\left(  s_{1},s_{2},\ldots,s_{M-1}\right)
-$.
-\par
-Now, $\beta=\left(  \underbrace{\gamma}_{=\left(  s_{1},s_{2},\ldots
-,s_{M-1}\right)  },t\right)  =\left(  \left(  s_{1},s_{2},\ldots
-,s_{M-1}\right)  ,t\right)  $. Applying the map $\Psi\circ\Phi$ to both sides
-of this equality, we obtain%
-\begin{align*}
-\left(  \Psi\circ\Phi\right)  \left(  \beta\right)   &  =\left(  \Psi\circ
-\Phi\right)  \left(  \left(  s_{1},s_{2},\ldots,s_{M-1}\right)  ,t\right)
-=\Psi\left(  \underbrace{\Phi\left(  \left(  s_{1},s_{2},\ldots,s_{M-1}%
-\right)  ,t\right)  }_{\substack{=\left(  s_{1},s_{2},\ldots,s_{M-1},t\right)
-\\\text{(by the definition of }\Phi\text{)}}}\right)  \\
-&  =\Psi\left(  s_{1},s_{2},\ldots,s_{M-1},t\right)  =\left(  \left(
-s_{1},s_{2},\ldots,s_{M-1}\right)  ,t\right)  \ \ \ \ \ \ \ \ \ \ \left(
-\text{by (\ref{pf.lem.prodrule.S.Psi})}\right)  \\
-&  =\beta=\operatorname*{id}\left(  \beta\right)  .
-\end{align*}
-\par
-Let us now forget that we fixed $\beta$. We thus have shown that $\left(
-\Psi\circ\Phi\right)  \left(  \beta\right)  =\operatorname*{id}\left(
-\beta\right)  $ for every $\beta\in\left(  Z_{1}\times Z_{2}\times\cdots\times
-Z_{M-1}\right)  \times Z_{M}$. In other words, $\Psi\circ\Phi
-=\operatorname*{id}$, qed.}. These two equalities show that the maps $\Phi$
-and $\Psi$ are mutually inverse. Thus, the map $\Psi$ is invertible. In other
-words, the map $\Psi$ is a bijection.
-
-Now, $\Psi$ is the map
-\begin{align*}
-Z_{1}\times Z_{2}\times\cdots\times Z_{M} &  \rightarrow\left(  Z_{1}\times
-Z_{2}\times\cdots\times Z_{M-1}\right)  \times Z_{M},\\
-\left(  s_{1},s_{2},\ldots,s_{M}\right)   &  \mapsto\left(  \left(
-s_{1},s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right)
-\end{align*}
-(because $\Psi$ is the map $Z_{1}\times Z_{2}\times\cdots\times Z_{M}%
-\rightarrow\left(  Z_{1}\times Z_{2}\times\cdots\times Z_{M-1}\right)  \times
-Z_{M}$ satisfying (\ref{pf.lem.prodrule.S.Psidef})). Thus, the map
-\begin{align*}
-Z_{1}\times Z_{2}\times\cdots\times Z_{M} &  \rightarrow\left(  Z_{1}\times
-Z_{2}\times\cdots\times Z_{M-1}\right)  \times Z_{M},\\
-\left(  s_{1},s_{2},\ldots,s_{M}\right)   &  \mapsto\left(  \left(
-s_{1},s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right)
-\end{align*}
-is a bijection (since $\Psi$ is a bijection). This proves Lemma
-\ref{lem.prodrule.prod-assM}.
 \end{proof}
 \end{verlong}
 
