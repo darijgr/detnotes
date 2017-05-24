@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Wednesday, May 24, 2017 01:24:58}
+%TCIDATA{LastRevised=Thursday, May 25, 2017 00:08:07}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -41406,7 +41406,7 @@ Let us first state a basic lemma about sets:
 \label{lem.prodrule.prod-assM}Let $M$ be a positive integer. For every
 $i\in\left\{  1,2,\ldots,M\right\}  $, let $Z_{i}$ be a set. Then, the map
 \begin{align*}
-Z_{1}\times Z_{2}\times\cdots\times Z_{M} &  \rightarrow\left(  Z_{1}\times
+Z_{1}\times Z_{2}\times\cdots\times Z_{M}  &  \rightarrow\left(  Z_{1}\times
 Z_{2}\times\cdots\times Z_{M-1}\right)  \times Z_{M},\\
 \left(  s_{1},s_{2},\ldots,s_{M}\right)   &  \mapsto\left(  \left(
 s_{1},s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right)
@@ -41439,12 +41439,12 @@ by%
 \begin{array}
 [c]{l}%
 \Phi\left(  \left(  s_{1},s_{2},\ldots,s_{M-1}\right)  ,t\right)  =\left(
-s_{1},s_{2},\ldots,s_{M-1},t\right)  \\
+s_{1},s_{2},\ldots,s_{M-1},t\right) \\
 \ \ \ \ \ \ \ \ \ \ \text{for every }\left(  \left(  s_{1},s_{2}%
 ,\ldots,s_{M-1}\right)  ,t\right)  \in\left(  Z_{1}\times Z_{2}\times
 \cdots\times Z_{M-1}\right)  \times Z_{M}%
 \end{array}
-\right)  .\label{pf.lem.prodrule.S.Phidef}%
+\right)  . \label{pf.lem.prodrule.S.Phidef}%
 \end{equation}
 
 
@@ -41459,11 +41459,11 @@ by%
 \begin{array}
 [c]{l}%
 \Psi\left(  s_{1},s_{2},\ldots,s_{M}\right)  =\left(  \left(  s_{1}%
-,s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right)  \\
+,s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right) \\
 \ \ \ \ \ \ \ \ \ \ \text{for every }\left(  s_{1},s_{2},\ldots,s_{M}\right)
 \in Z_{1}\times Z_{2}\times\cdots\times Z_{M}%
 \end{array}
-\right)  .\label{pf.lem.prodrule.S.Psidef}%
+\right)  . \label{pf.lem.prodrule.S.Psidef}%
 \end{equation}
 
 
@@ -41481,7 +41481,7 @@ and $t\in Z_{M}$. We have $\left(  s_{1},s_{2},\ldots,s_{M-1}\right)  \in
 Z_{1}\times Z_{2}\times\cdots\times Z_{M-1}$; in other words,
 \begin{equation}
 s_{i}\in Z_{i}\ \ \ \ \ \ \ \ \ \ \text{for every }i\in\left\{  1,2,\ldots
-,M-1\right\}  .\label{pf.lem.prodrule.S.Psi.pf.1}%
+,M-1\right\}  . \label{pf.lem.prodrule.S.Psi.pf.1}%
 \end{equation}
 
 
@@ -41497,8 +41497,8 @@ $i\in\left\{  1,2,\ldots,M\right\}  $. We must prove that
 s_{i}, & \text{if }i<M;\\
 t, & \text{if }i=M
 \end{cases}
-\text{ is a well-defined element of }Z_{i}%
-.\label{pf.lem.prodrule.S.Psi.pf.fn1.1}%
+\text{ is a well-defined element of }Z_{i}.
+\label{pf.lem.prodrule.S.Psi.pf.fn1.1}%
 \end{equation}
 \par
 We are in one of the following two cases:
@@ -41615,10 +41615,10 @@ s_{1},s_{2},\ldots,s_{M}\right)  }\right)   &  =\left(  \Phi\circ\Psi\right)
 \left(  s_{1},s_{2},\ldots,s_{M}\right)  =\Phi\left(  \underbrace{\Psi\left(
 s_{1},s_{2},\ldots,s_{M}\right)  }_{\substack{=\left(  \left(  s_{1}%
 ,s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right)  \\\text{(by the definition of
-}\Psi\text{)}}}\right)  \\
+}\Psi\text{)}}}\right) \\
 &  =\Phi\left(  \left(  s_{1},s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right)
-=\left(  s_{1},s_{2},\ldots,s_{M-1},s_{M}\right)  \\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\Phi\right)  \\
+=\left(  s_{1},s_{2},\ldots,s_{M-1},s_{M}\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\Phi\right) \\
 &  =\left(  s_{1},s_{2},\ldots,s_{M}\right)  =\alpha=\operatorname*{id}\left(
 \alpha\right)  .
 \end{align*}
@@ -41649,10 +41649,10 @@ of this equality, we obtain%
 \Phi\right)  \left(  \left(  s_{1},s_{2},\ldots,s_{M-1}\right)  ,t\right)
 =\Psi\left(  \underbrace{\Phi\left(  \left(  s_{1},s_{2},\ldots,s_{M-1}%
 \right)  ,t\right)  }_{\substack{=\left(  s_{1},s_{2},\ldots,s_{M-1},t\right)
-\\\text{(by the definition of }\Phi\text{)}}}\right)  \\
+\\\text{(by the definition of }\Phi\text{)}}}\right) \\
 &  =\Psi\left(  s_{1},s_{2},\ldots,s_{M-1},t\right)  =\left(  \left(
 s_{1},s_{2},\ldots,s_{M-1}\right)  ,t\right)  \ \ \ \ \ \ \ \ \ \ \left(
-\text{by (\ref{pf.lem.prodrule.S.Psi})}\right)  \\
+\text{by (\ref{pf.lem.prodrule.S.Psi})}\right) \\
 &  =\beta=\operatorname*{id}\left(  \beta\right)  .
 \end{align*}
 \par
@@ -41666,7 +41666,7 @@ words, the map $\Psi$ is a bijection.
 
 Now, $\Psi$ is the map
 \begin{align*}
-Z_{1}\times Z_{2}\times\cdots\times Z_{M} &  \rightarrow\left(  Z_{1}\times
+Z_{1}\times Z_{2}\times\cdots\times Z_{M}  &  \rightarrow\left(  Z_{1}\times
 Z_{2}\times\cdots\times Z_{M-1}\right)  \times Z_{M},\\
 \left(  s_{1},s_{2},\ldots,s_{M}\right)   &  \mapsto\left(  \left(
 s_{1},s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right)
@@ -41675,7 +41675,7 @@ s_{1},s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right)
 \rightarrow\left(  Z_{1}\times Z_{2}\times\cdots\times Z_{M-1}\right)  \times
 Z_{M}$ satisfying (\ref{pf.lem.prodrule.S.Psidef})). Thus, the map
 \begin{align*}
-Z_{1}\times Z_{2}\times\cdots\times Z_{M} &  \rightarrow\left(  Z_{1}\times
+Z_{1}\times Z_{2}\times\cdots\times Z_{M}  &  \rightarrow\left(  Z_{1}\times
 Z_{2}\times\cdots\times Z_{M-1}\right)  \times Z_{M},\\
 \left(  s_{1},s_{2},\ldots,s_{M}\right)   &  \mapsto\left(  \left(
 s_{1},s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right)
@@ -41685,9 +41685,8 @@ is a bijection (since $\Psi$ is a bijection). This proves Lemma
 \end{proof}
 \end{verlong}
 
-In the remainder of this section,
-we shall use the notation $\mathbf{m}\left(  k_{1}%
-,k_{2},\ldots,k_{m}\right)  $ as defined in Exercise \ref{exe.multinom2}.
+In the remainder of this section, we shall use the notation $\mathbf{m}\left(
+k_{1},k_{2},\ldots,k_{m}\right)  $ as defined in Exercise \ref{exe.multinom2}.
 
 Before we solve Exercise \ref{exe.multinom2}, let us record some really
 trivial facts:
@@ -42067,7 +42066,7 @@ Taking both sides of this equality to the $n$-th power, we obtain%
 &  =\sum_{k=0}^{n}\dbinom{n}{k}a_{M}^{k}\left(  a_{1}+a_{2}+\cdots
 +a_{M-1}\right)  ^{n-k}\nonumber\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{eq.rings.(a+b)**n}) (applied to
-}a=a_{M}\text{ and }b=a_{1}+a_{2}+\cdots+a_{M-1}\text{)}\right)  \nonumber\\
+}a=a_{M}\text{ and }b=a_{1}+a_{2}+\cdots+a_{M-1}\text{)}\right) \nonumber\\
 &  =\sum_{k=0}^{n}\dbinom{n}{k}\left(  a_{1}+a_{2}+\cdots+a_{M-1}\right)
 ^{n-k}a_{M}^{k}\nonumber\\
 &  =\underbrace{\sum_{r=0}^{n}}_{=\sum_{\substack{r\in\mathbb{N};\\r\leq n}%
@@ -42077,7 +42076,7 @@ Taking both sides of this equality to the $n$-th power, we obtain%
 k_{1},k_{2},\ldots,k_{M-1}\right)  \prod_{i=1}^{M-1}a_{i}^{k_{i}}\\\text{(by
 Fact 1, applied to }n-r\text{ instead of }r\text{)}}}a_{M}^{r}\nonumber\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have renamed the summation index
-}k\text{ as }r\right)  \nonumber\\
+}k\text{ as }r\right) \nonumber\\
 &  =\sum_{\substack{r\in\mathbb{N};\\r\leq n}}\dbinom{n}{r}\left(
 \sum_{\substack{\left(  k_{1},k_{2},\ldots,k_{M-1}\right)  \in\mathbb{N}%
 ^{M-1};\\k_{1}+k_{2}+\cdots+k_{M-1}=n-r}}\mathbf{m}\left(  k_{1},k_{2}%
@@ -42086,8 +42085,8 @@ Fact 1, applied to }n-r\text{ instead of }r\text{)}}}a_{M}^{r}\nonumber\\
 &  =\sum_{\substack{r\in\mathbb{N};\\r\leq n}}\sum_{\substack{\left(
 k_{1},k_{2},\ldots,k_{M-1}\right)  \in\mathbb{N}^{M-1};\\k_{1}+k_{2}%
 +\cdots+k_{M-1}=n-r}}\dbinom{n}{r}\mathbf{m}\left(  k_{1},k_{2},\ldots
-,k_{M-1}\right)  \left(  \prod_{i=1}^{M-1}a_{i}^{k_{i}}\right)  a_{M}%
-^{r}.\label{sol.multinom2.short.3}%
+,k_{M-1}\right)  \left(  \prod_{i=1}^{M-1}a_{i}^{k_{i}}\right)  a_{M}^{r}.
+\label{sol.multinom2.short.3}%
 \end{align}
 
 
@@ -42110,7 +42109,7 @@ Now, we have the following equality of summation signs:%
 \begin{align*}
 \sum_{\substack{r\in\mathbb{N};\\r\leq n}}\sum_{\substack{\left(  k_{1}%
 ,k_{2},\ldots,k_{M-1}\right)  \in\mathbb{N}^{M-1};\\k_{1}+k_{2}+\cdots
-+k_{M-1}=n-r}} &  =\sum_{\left(  k_{1},k_{2},\ldots,k_{M-1}\right)
++k_{M-1}=n-r}}  &  =\sum_{\left(  k_{1},k_{2},\ldots,k_{M-1}\right)
 \in\mathbb{N}^{M-1}}\sum_{\substack{r\in\mathbb{N};\\k_{1}+k_{2}%
 +\cdots+k_{M-1}=n-r;\\r\leq n}}\\
 &  =\sum_{\substack{\left(  \left(  k_{1},k_{2},\ldots,k_{M-1}\right)
@@ -42132,8 +42131,8 @@ k_{1},k_{2},\ldots,k_{M-1}\right)  ,r\right)  \in\mathbb{N}^{M-1}%
 &  =\sum_{\substack{\left(  \left(  k_{1},k_{2},\ldots,k_{M-1}\right)
 ,r\right)  \in\mathbb{N}^{M-1}\times\mathbb{N};\\k_{1}+k_{2}+\cdots
 +k_{M-1}=n-r}}\dbinom{n}{r}\mathbf{m}\left(  k_{1},k_{2},\ldots,k_{M-1}%
-\right)  \left(  \prod_{i=1}^{M-1}a_{i}^{k_{i}}\right)  a_{M}^{r}%
-.\label{sol.multinom2.short.4}%
+\right)  \left(  \prod_{i=1}^{M-1}a_{i}^{k_{i}}\right)  a_{M}^{r}.
+\label{sol.multinom2.short.4}%
 \end{align}
 
 
@@ -42141,7 +42140,7 @@ But Lemma \ref{lem.prodrule.prod-assM} (applied to $Z_{i}=\mathbb{N}$) shows
 that the map%
 \begin{align*}
 \underbrace{\mathbb{N}\times\mathbb{N}\times\cdots\times\mathbb{N}}_{M\text{
-factors}} &  \rightarrow\left(  \underbrace{\mathbb{N}\times\mathbb{N}%
+factors}}  &  \rightarrow\left(  \underbrace{\mathbb{N}\times\mathbb{N}%
 \times\cdots\times\mathbb{N}}_{M-1\text{ factors}}\right)  \times\mathbb{N},\\
 \left(  s_{1},s_{2},\ldots,s_{M}\right)   &  \mapsto\left(  \left(
 s_{1},s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right)
@@ -42152,7 +42151,7 @@ $\underbrace{\mathbb{N}\times\mathbb{N}\times\cdots\times\mathbb{N}%
 }_{M-1\text{ factors}}=\mathbb{N}^{M-1}$, this can be rewritten as follows:
 The map%
 \begin{align*}
-\mathbb{N}^{M} &  \rightarrow\mathbb{N}^{M-1}\times\mathbb{N},\\
+\mathbb{N}^{M}  &  \rightarrow\mathbb{N}^{M-1}\times\mathbb{N},\\
 \left(  s_{1},s_{2},\ldots,s_{M}\right)   &  \mapsto\left(  \left(
 s_{1},s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right)
 \end{align*}
@@ -42211,7 +42210,7 @@ a_{1}+a_{2}+\cdots+a_{M}=\left(  a_{1}+a_{2}+\cdots+a_{M-1}\right)
 \]
 Taking both sides of this equality to the $n$-th power, we obtain%
 \begin{align*}
-\left(  a_{1}+a_{2}+\cdots+a_{M}\right)  ^{n} &  =\left(  a_{M}+\left(
+\left(  a_{1}+a_{2}+\cdots+a_{M}\right)  ^{n}  &  =\left(  a_{M}+\left(
 a_{1}+a_{2}+\cdots+a_{M-1}\right)  \right)  ^{n}\\
 &  =\sum_{k=0}^{n}\dbinom{n}{k}a_{M}^{k}\left(  a_{1}+a_{2}+\cdots
 +a_{M-1}\right)  ^{n-k}%
@@ -42219,12 +42218,12 @@ a_{1}+a_{2}+\cdots+a_{M-1}\right)  \right)  ^{n}\\
 (by (\ref{eq.rings.(a+b)**n}) (applied to $a=a_{M}$ and $b=a_{1}+a_{2}%
 +\cdots+a_{M-1}$)). Thus,%
 \begin{align}
-\left(  a_{1}+a_{2}+\cdots+a_{M}\right)  ^{n} &  =\sum_{k=0}^{n}\dbinom{n}%
+\left(  a_{1}+a_{2}+\cdots+a_{M}\right)  ^{n}  &  =\sum_{k=0}^{n}\dbinom{n}%
 {k}a_{M}^{k}\left(  a_{1}+a_{2}+\cdots+a_{M-1}\right)  ^{n-k}\nonumber\\
 &  =\sum_{k=0}^{n}\dbinom{n}{k}\left(  a_{1}+a_{2}+\cdots+a_{M-1}\right)
 ^{n-k}a_{M}^{k}\nonumber\\
 &  =\sum_{r=0}^{n}\dbinom{n}{r}\left(  a_{1}+a_{2}+\cdots+a_{M-1}\right)
-^{n-r}a_{M}^{r}\label{sol.multinom2.1}%
+^{n-r}a_{M}^{r} \label{sol.multinom2.1}%
 \end{align}
 (here, we have renamed the summation index $k$ as $r$).
 
@@ -44453,7 +44452,7 @@ $)). This proves Lemma \ref{lem.prodrule.S.n=2}.
 \begin{equation}
 \prod_{i=1}^{m}\sum_{k\in Z_{i}}p_{i,k}=\sum_{\left(  k_{1},k_{2},\ldots
 ,k_{m}\right)  \in Z_{1}\times Z_{2}\times\cdots\times Z_{m}}\prod_{i=1}%
-^{m}p_{i,k_{i}}.\label{pf.lem.prodrule.S.claim}%
+^{m}p_{i,k_{i}}. \label{pf.lem.prodrule.S.claim}%
 \end{equation}
 for every $m\in\left\{  0,1,\ldots,n\right\}  $.
 
@@ -44469,7 +44468,7 @@ with%
 \begin{align*}
 \sum_{\left(  k_{1},k_{2},\ldots,k_{0}\right)  \in Z_{1}\times Z_{2}%
 \times\cdots\times Z_{0}}\underbrace{\prod_{i=1}^{0}p_{i,k_{i}}}_{=\left(
-\text{empty product}\right)  =1} &  =\sum_{\left(  k_{1},k_{2},\ldots
+\text{empty product}\right)  =1}  &  =\sum_{\left(  k_{1},k_{2},\ldots
 ,k_{0}\right)  \in Z_{1}\times Z_{2}\times\cdots\times Z_{0}}1\\
 &  =\underbrace{\left\vert Z_{1}\times Z_{2}\times\cdots\times Z_{0}%
 \right\vert }_{\substack{=1\\\text{(since }Z_{1}\times Z_{2}\times\cdots\times
@@ -44489,13 +44488,13 @@ other words, we have%
 \begin{equation}
 \prod_{i=1}^{M-1}\sum_{k\in Z_{i}}p_{i,k}=\sum_{\left(  k_{1},k_{2}%
 ,\ldots,k_{M-1}\right)  \in Z_{1}\times Z_{2}\times\cdots\times Z_{M-1}}%
-\prod_{i=1}^{M-1}p_{i,k_{i}}.\label{pf.lem.prodrule.S.indhyp}%
+\prod_{i=1}^{M-1}p_{i,k_{i}}. \label{pf.lem.prodrule.S.indhyp}%
 \end{equation}
 
 
 Lemma \ref{lem.prodrule.prod-assM} shows that the map
 \begin{align*}
-Z_{1}\times Z_{2}\times\cdots\times Z_{M} &  \rightarrow\left(  Z_{1}\times
+Z_{1}\times Z_{2}\times\cdots\times Z_{M}  &  \rightarrow\left(  Z_{1}\times
 Z_{2}\times\cdots\times Z_{M-1}\right)  \times Z_{M},\\
 \left(  s_{1},s_{2},\ldots,s_{M}\right)   &  \mapsto\left(  \left(
 s_{1},s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right)
@@ -44506,22 +44505,22 @@ For every $\left(  k_{1},k_{2},\ldots,k_{M-1}\right)  \in Z_{1}\times
 Z_{2}\times\cdots\times Z_{M-1}$, we define an element \newline$g_{\left(
 k_{1},k_{2},\ldots,k_{M-1}\right)  }\in\mathbb{K}$ by
 \begin{equation}
-g_{\left(  k_{1},k_{2},\ldots,k_{M-1}\right)  }=\prod_{i=1}^{M-1}p_{i,k_{i}%
-}.\label{pf.lem.prodrule.S.g=}%
+g_{\left(  k_{1},k_{2},\ldots,k_{M-1}\right)  }=\prod_{i=1}^{M-1}p_{i,k_{i}}.
+\label{pf.lem.prodrule.S.g=}%
 \end{equation}
 
 
 Now, (\ref{pf.lem.prodrule.S.indhyp}) becomes%
 \begin{align}
-\prod_{i=1}^{M-1}\sum_{k\in Z_{i}}p_{i,k} &  =\sum_{\left(  k_{1},k_{2}%
-,\ldots,k_{M-1}\right)  \in Z_{1}\times Z_{2}\times\cdots\times Z_{M-1}%
+\prod_{i=1}^{M-1}\sum_{k\in Z_{i}}p_{i,k}  &  =\sum_{\left(  k_{1}%
+,k_{2},\ldots,k_{M-1}\right)  \in Z_{1}\times Z_{2}\times\cdots\times Z_{M-1}%
 }\underbrace{\prod_{i=1}^{M-1}p_{i,k_{i}}}_{\substack{=g_{\left(  k_{1}%
 ,k_{2},\ldots,k_{M-1}\right)  }\\\text{(by (\ref{pf.lem.prodrule.S.g=}))}%
 }}\nonumber\\
 &  =\sum_{\left(  k_{1},k_{2},\ldots,k_{M-1}\right)  \in Z_{1}\times
 Z_{2}\times\cdots\times Z_{M-1}}g_{\left(  k_{1},k_{2},\ldots,k_{M-1}\right)
 }\nonumber\\
-&  =\sum_{x\in Z_{1}\times Z_{2}\times\cdots\times Z_{M-1}}g_{x}%
+&  =\sum_{x\in Z_{1}\times Z_{2}\times\cdots\times Z_{M-1}}g_{x}
 \label{pf.lem.prodrule.S.L1}%
 \end{align}
 (here, we have renamed the summation index $\left(  k_{1},k_{2},\ldots
@@ -44533,7 +44532,7 @@ $\left(  s_{1},s_{2},\ldots,s_{M}\right)  \in Z_{1}\times Z_{2}\times
 \cdots\times Z_{M}$ satisfies%
 \begin{equation}
 \prod_{i=1}^{M}p_{i,s_{i}}=\left(  \prod_{i=1}^{M-1}p_{i,s_{i}}\right)
-p_{M,s_{M}}\label{pf.lem.prodrule.S.splioff}%
+p_{M,s_{M}} \label{pf.lem.prodrule.S.splioff}%
 \end{equation}
 (indeed, this follows by splitting off the factor for $i=M$ from the product
 $\prod_{i=1}^{M}p_{i,s_{i}}$).
@@ -44541,7 +44540,7 @@ $\prod_{i=1}^{M}p_{i,s_{i}}$).
 Now, if we split off the factor for $i=M$ from the product $\prod_{i=1}%
 ^{M}\sum_{k\in Z_{i}}p_{i,k}$, we obtain
 \begin{align*}
-\prod_{i=1}^{M}\sum_{k\in Z_{i}}p_{i,k} &  =\underbrace{\left(  \prod
+\prod_{i=1}^{M}\sum_{k\in Z_{i}}p_{i,k}  &  =\underbrace{\left(  \prod
 _{i=1}^{M-1}\sum_{k\in Z_{i}}p_{i,k}\right)  }_{\substack{=\sum_{x\in
 Z_{1}\times Z_{2}\times\cdots\times Z_{M-1}}g_{x}\\\text{(by
 (\ref{pf.lem.prodrule.S.L1}))}}}\underbrace{\left(  \sum_{k\in Z_{M}}%
@@ -44558,7 +44557,7 @@ x,y\right)  \in\left(  Z_{1}\times Z_{2}\times\cdots\times Z_{M-1}\right)
 X=Z_{1}\times Z_{2}\times\cdots\times Z_{M-1}\text{, }Y=Z_{M}\text{, }%
 q_{x}=g_{x}\text{ and }r_{y}=p_{M,y}%
 \end{array}
-\right)  \\
+\right) \\
 &  =\sum_{\left(  s_{1},s_{2},\ldots,s_{M}\right)  \in Z_{1}\times Z_{2}%
 \times\cdots\times Z_{M}}\underbrace{g_{\left(  s_{1},s_{2},\ldots
 ,s_{M-1}\right)  }}_{\substack{=\prod_{i=1}^{M-1}p_{i,s_{i}}\\\text{(by the
@@ -44568,15 +44567,15 @@ definition of }g_{\left(  s_{1},s_{2},\ldots,s_{M-1}\right)  }\text{)}%
 \begin{array}
 [c]{c}%
 \text{here, we have substituted }\left(  \left(  s_{1},s_{2},\ldots
-,s_{M-1}\right)  ,s_{M}\right)  \text{ for }\left(  x,y\right)  \\
+,s_{M-1}\right)  ,s_{M}\right)  \text{ for }\left(  x,y\right) \\
 \text{in the sum, since the map}\\
 Z_{1}\times Z_{2}\times\cdots\times Z_{M}\rightarrow\left(  Z_{1}\times
 Z_{2}\times\cdots\times Z_{M-1}\right)  \times Z_{M},\\
 \left(  s_{1},s_{2},\ldots,s_{M}\right)  \mapsto\left(  \left(  s_{1}%
-,s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right)  \\
+,s_{2},\ldots,s_{M-1}\right)  ,s_{M}\right) \\
 \text{is a bijection}%
 \end{array}
-\right)  \\
+\right) \\
 &  =\sum_{\left(  s_{1},s_{2},\ldots,s_{M}\right)  \in Z_{1}\times Z_{2}%
 \times\cdots\times Z_{M}}\underbrace{\left(  \prod_{i=1}^{M-1}p_{i,s_{i}%
 }\right)  p_{M,s_{M}}}_{\substack{=\prod_{i=1}^{M}p_{i,s_{i}}\\\text{(by
@@ -47216,7 +47215,7 @@ But Lemma \ref{lem.prodrule.prod-assM} (applied to $M=k$ and $Z_{i}%
 =\mathbb{N}$) shows that the map%
 \begin{align*}
 \underbrace{\mathbb{N}\times\mathbb{N}\times\cdots\times\mathbb{N}}_{k\text{
-factors}} &  \rightarrow\left(  \underbrace{\mathbb{N}\times\mathbb{N}%
+factors}}  &  \rightarrow\left(  \underbrace{\mathbb{N}\times\mathbb{N}%
 \times\cdots\times\mathbb{N}}_{k-1\text{ factors}}\right)  \times\mathbb{N},\\
 \left(  s_{1},s_{2},\ldots,s_{k}\right)   &  \mapsto\left(  \left(
 s_{1},s_{2},\ldots,s_{k-1}\right)  ,s_{k}\right)
@@ -47227,7 +47226,7 @@ $\underbrace{\mathbb{N}\times\mathbb{N}\times\cdots\times\mathbb{N}%
 }_{k-1\text{ factors}}=\mathbb{N}^{k-1}$, this can be rewritten as follows:
 The map%
 \begin{align*}
-\mathbb{N}^{k} &  \rightarrow\mathbb{N}^{k-1}\times\mathbb{N},\\
+\mathbb{N}^{k}  &  \rightarrow\mathbb{N}^{k-1}\times\mathbb{N},\\
 \left(  s_{1},s_{2},\ldots,s_{k}\right)   &  \mapsto\left(  \left(
 s_{1},s_{2},\ldots,s_{k-1}\right)  ,s_{k}\right)
 \end{align*}
@@ -58121,7 +58120,60 @@ element $%
 $ of $\mathbb{K}$.
 \end{definition}
 
-Let us now prove three mostly trivial lemmas:
+Let us now prove four mostly trivial lemmas:
+
+\begin{lemma}
+\label{lem.sol.vander-hook.gauss}Let $n\in\mathbb{N}$. Then,%
+\begin{equation}
+\sum_{r=0}^{n-1}r=\dbinom{n}{2}.\label{sol.vander-hook.gauss}%
+\end{equation}
+
+\end{lemma}
+
+\begin{vershort}
+\begin{proof}
+\item[Proof of Lemma \ref{lem.sol.vander-hook.gauss}.] If $n=0$, then Lemma
+\ref{lem.sol.vander-hook.gauss} holds for obvious reasons. Thus, we WLOG
+assume that $n\neq0$. Hence, $n\geq1$, so that $n-1\in\mathbb{N}$. Now,%
+\begin{align*}
+\sum_{r=0}^{n-1}r &  =\sum_{i=0}^{n-1}i\ \ \ \ \ \ \ \ \ \ \left(  \text{here,
+we have renamed the summation index }r\text{ as }i\right)  \\
+&  =\dfrac{\left(  n-1\right)  \left(  \left(  n-1\right)  +1\right)  }%
+{2}\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{eq.sum.littlegauss1}) (applied
+to }n-1\text{ instead of }n\text{)}\right)  \\
+&  =\dfrac{n\left(  n-1\right)  }{2}=\dbinom{n}{2}.
+\end{align*}
+This proves Lemma \ref{lem.sol.vander-hook.gauss}.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+\item[Proof of Lemma \ref{lem.sol.vander-hook.gauss}.] If $n=0$, then%
+\begin{align*}
+\sum_{r=0}^{n-1}r &  =\sum_{r=0}^{0-1}r=\left(  \text{empty sum}\right)
+=0=\dbinom{0}{2}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\dbinom{0}{2}%
+=\dfrac{0\left(  0-1\right)  }{2}=0\right)  \\
+&  =\dbinom{n}{2}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }0=n\right)  .
+\end{align*}
+Hence, if $n=0$, then Lemma \ref{lem.sol.vander-hook.gauss} holds. Thus, for
+the rest of the proof of Lemma \ref{lem.sol.vander-hook.gauss}, we can WLOG
+assume that we don't have $n=0$. Assume this.
+
+We have $n\neq0$ (since we don't have $n=0$). Thus, $n\geq1$ (since
+$n\in\mathbb{N}$). Therefore, $n-1\in\mathbb{N}$. Now,%
+\begin{align*}
+\sum_{r=0}^{n-1}r &  =\sum_{i=0}^{n-1}i\ \ \ \ \ \ \ \ \ \ \left(  \text{here,
+we have renamed the summation index }r\text{ as }i\right)  \\
+&  =\dfrac{\left(  n-1\right)  \left(  \left(  n-1\right)  +1\right)  }%
+{2}\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{eq.sum.littlegauss1}) (applied
+to }n-1\text{ instead of }n\text{)}\right)  \\
+&  =\dfrac{\left(  n-1\right)  n}{2}=\dfrac{n\left(  n-1\right)  }{2}%
+=\dbinom{n}{2}.
+\end{align*}
+This proves Lemma \ref{lem.sol.vander-hook.gauss}.
+\end{proof}
+\end{verlong}
 
 \begin{lemma}
 \label{lem.sol.vander-hook.deltas}Let $n\in\mathbb{N}$. Let $x_{1}%
@@ -58766,8 +58818,8 @@ A\\\text{(by Lemma \ref{lem.sol.vander-hook.lap2})}}}\nonumber\\
 
 But every $r\in\left\{  0,1,\ldots,n-1\right\}  $ satisfies%
 \begin{equation}
-\sum_{\ell=1}^{r}\dbinom{r}{\ell}t^{\ell}\delta_{\ell,1}=rt
-\label{sol.vander-hook.short.suml}%
+\sum_{\ell=1}^{r}\dbinom{r}{\ell}t^{\ell}\delta_{\ell,1}%
+=rt\label{sol.vander-hook.short.suml}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{sol.vander-hook.short.suml}):} Let
 $r\in\left\{  0,1,\ldots,n-1\right\}  $. We must prove
@@ -58796,23 +58848,7 @@ Proving (\ref{sol.vander-hook.short.suml}) in Case 2 is straightforward and
 left to the reader.
 \par
 We now have proven (\ref{sol.vander-hook.short.suml}) in each of the two Cases
-1 and 2. Thus, (\ref{sol.vander-hook.short.suml}) always holds.}. Furthermore,
-we have%
-\begin{equation}
-\sum_{r=0}^{n-1}r=\dbinom{n}{2} \label{sol.vander-hook.short.gauss}%
-\end{equation}
-\footnote{\textit{Proof of (\ref{sol.vander-hook.short.gauss}):} If $n=0$,
-then (\ref{sol.vander-hook.short.gauss}) holds for obvious reasons. Thus, we
-WLOG assume that $n\neq0$. Hence, $n\geq1$, so that $n-1\in\mathbb{N}$. Now,%
-\begin{align*}
-\sum_{r=0}^{n-1}r  &  =\sum_{i=0}^{n-1}i\ \ \ \ \ \ \ \ \ \ \left(
-\text{here, we have renamed the summation index }r\text{ as }i\right) \\
-&  =\dfrac{\left(  n-1\right)  \left(  \left(  n-1\right)  +1\right)  }%
-{2}\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{eq.sum.littlegauss1}) (applied
-to }n-1\text{ instead of }n\text{)}\right) \\
-&  =\dfrac{n\left(  n-1\right)  }{2}=\dbinom{n}{2}.
-\end{align*}
-This proves (\ref{sol.vander-hook.short.gauss}).}.
+1 and 2. Thus, (\ref{sol.vander-hook.short.suml}) always holds.}.
 
 Now, (\ref{sol.vander-hook.short.3}) becomes%
 \begin{align*}
@@ -58824,7 +58860,7 @@ Now, (\ref{sol.vander-hook.short.3}) becomes%
 }t^{\ell}\delta_{\ell,1}\right)  }_{\substack{=rt\\\text{(by
 (\ref{sol.vander-hook.short.suml}))}}}\det A=\sum_{r=0}^{n-1}rt\det A\\
 &  =\underbrace{\left(  \sum_{r=0}^{n-1}r\right)  }_{\substack{=\dbinom{n}%
-{2}\\\text{(by (\ref{sol.vander-hook.short.gauss}))}}}t\underbrace{\det
+{2}\\\text{(by (\ref{sol.vander-hook.gauss}))}}}t\underbrace{\det
 A}_{\substack{=V\left(  x_{1},x_{2},\ldots,x_{n}\right)  \\\text{(by
 (\ref{eq.lem.sol.vander-hook.V=x.eq}))}}}\\
 &  =\dbinom{n}{2}tV\left(  x_{1},x_{2},\ldots,x_{n}\right)  .
@@ -58892,8 +58928,8 @@ A\\\text{(by Lemma \ref{lem.sol.vander-hook.lap2})}}}\nonumber\\
 
 But every $r\in\left\{  0,1,\ldots,n-1\right\}  $ satisfies%
 \begin{equation}
-\sum_{\ell=1}^{r}\dbinom{r}{\ell}t^{\ell}\delta_{\ell,1}=rt
-\label{sol.vander-hook.suml}%
+\sum_{\ell=1}^{r}\dbinom{r}{\ell}t^{\ell}\delta_{\ell,1}%
+=rt\label{sol.vander-hook.suml}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{sol.vander-hook.suml}):} Let $r\in\left\{
 0,1,\ldots,n-1\right\}  $. We must prove (\ref{sol.vander-hook.suml}).
@@ -58930,33 +58966,7 @@ proven in Case 2.
 \par
 We now have proven (\ref{sol.vander-hook.suml}) in each of the two Cases 1 and
 2. Since these two Cases cover all possibilities, this shows that
-(\ref{sol.vander-hook.suml}) always holds. Qed.}. Furthermore, we have%
-\begin{equation}
-\sum_{r=0}^{n-1}r=\dbinom{n}{2} \label{sol.vander-hook.gauss}%
-\end{equation}
-\footnote{\textit{Proof of (\ref{sol.vander-hook.gauss}):} If $n=0$, then%
-\begin{align*}
-\sum_{r=0}^{n-1}r  &  =\sum_{r=0}^{0-1}r=\left(  \text{empty sum}\right)
-=0=\dbinom{0}{2}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\dbinom{0}{2}%
-=\dfrac{0\left(  0-1\right)  }{2}=0\right) \\
-&  =\dbinom{n}{2}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }0=n\right)  .
-\end{align*}
-Hence, if $n=0$, then (\ref{sol.vander-hook.gauss}) holds. Thus, for the rest
-of the proof of (\ref{sol.vander-hook.gauss}), we can WLOG assume that we
-don't have $n=0$. Assume this.
-\par
-We have $n\neq0$ (since we don't have $n=0$). Thus, $n\geq1$ (since
-$n\in\mathbb{N}$). Therefore, $n-1\in\mathbb{N}$. Now,%
-\begin{align*}
-\sum_{r=0}^{n-1}r  &  =\sum_{i=0}^{n-1}i\ \ \ \ \ \ \ \ \ \ \left(
-\text{here, we have renamed the summation index }r\text{ as }i\right) \\
-&  =\dfrac{\left(  n-1\right)  \left(  \left(  n-1\right)  +1\right)  }%
-{2}\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{eq.sum.littlegauss1}) (applied
-to }n-1\text{ instead of }n\text{)}\right) \\
-&  =\dfrac{\left(  n-1\right)  n}{2}=\dfrac{n\left(  n-1\right)  }{2}%
-=\dbinom{n}{2}.
-\end{align*}
-This proves (\ref{sol.vander-hook.gauss}).}.
+(\ref{sol.vander-hook.suml}) always holds. Qed.}.
 
 Now, (\ref{sol.vander-hook.3}) becomes%
 \begin{align*}
