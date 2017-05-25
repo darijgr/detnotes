@@ -25505,6 +25505,46 @@ p,\sim q}\right)  .
 \end{addexercise}
 
 \begin{addexercise}
+\label{exeadd.powerdet.r1}Let $n\in\mathbb{N}$. Let $a_{1},a_{2},\ldots,a_{n}$
+be $n$ elements of $\mathbb{K}$. Let $b_{1},b_{2},\ldots,b_{n}$ be $n$
+elements of $\mathbb{K}$.
+
+Let $m=\dbinom{n}{2}$.
+
+\textbf{(a)} Prove that%
+\[
+\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\left(  \sum_{i=1}^{n}%
+a_{i}b_{\sigma\left(  i\right)  }\right)  ^{k}=0
+\]
+for each $k\in\left\{  0,1,\ldots,m-1\right\}  $.
+
+\textbf{(b)} Prove that%
+\[
+\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\left(  \sum_{i=1}^{n}%
+a_{i}b_{\sigma\left(  i\right)  }\right)  ^{m}=\mathbf{m}\left(
+0,1,\ldots,n-1\right)  \cdot\prod_{1\leq i<j\leq n}\left(  \left(  a_{i}%
+-a_{j}\right)  \left(  b_{i}-b_{j}\right)  \right)  .
+\]
+Here, we are using the notation introduced in Exercise \ref{exe.multinom2}.
+
+\textbf{(c)} Let $k\in\mathbb{N}$. Prove that%
+\begin{align*}
+&  \sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\left(  \sum_{i=1}%
+^{n}a_{i}b_{\sigma\left(  i\right)  }\right)  ^{k}\\
+&  =\sum_{\substack{\left(  g_{1},g_{2},\ldots,g_{n}\right)  \in\mathbb{N}%
+^{n};\\g_{1}<g_{2}<\cdots<g_{n};\\g_{1}+g_{2}+\cdots+g_{n}=k}}\mathbf{m}%
+\left(  g_{1},g_{2},\ldots,g_{n}\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \cdot\det\left(  \left(  a_{i}^{g_{j}}\right)  _{1\leq
+i\leq n,\ 1\leq j\leq n}\right)  \cdot\det\left(  \left(  b_{i}^{g_{j}%
+}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  .
+\end{align*}
+Here, we are using the notation introduced in Exercise \ref{exe.multinom2}.
+\end{addexercise}
+
+Note that Additional exercise \ref{exeadd.powerdet.r1} generalizes
+\cite[Exercise 12.9]{AndDos}.
+
+\begin{addexercise}
 \label{addexe.jacobi-complement}Let $n\in\mathbb{N}$. For any subset $I$ of
 $\left\{  1,2,\ldots,n\right\}  $, we let $\widetilde{I}$ denote the
 complement $\left\{  1,2,\ldots,n\right\}  \setminus I$ of $I$. (For instance,
@@ -75344,6 +75384,1339 @@ exercise \ref{exeadd.powerdet.gen} \textbf{(a)} follows from Proposition
 
 Additional exercise \ref{exeadd.powerdet.gen} \textbf{(b)} follows from
 Proposition \ref{prop.sol.exeadd.powerdet.gen.b}.
+\end{proof}
+
+\subsection{Solution to Additional exercise \ref{exeadd.powerdet.r1}}
+
+\subsubsection{Solving the exercise}
+
+We prepare for the solution to Additional exercise \ref{exeadd.powerdet.r1} by
+showing a few lemmas.
+
+\begin{lemma}
+\label{lem.sol.exeadd.powerdet.r1.EI}Let $n\in\mathbb{N}$. We let $\mathbf{E}$
+be the subset%
+\[
+\left\{  \left(  k_{1},k_{2},\ldots,k_{n}\right)  \in\mathbb{N}^{n}%
+\ \mid\ \text{the integers }k_{1},k_{2},\ldots,k_{n}\text{ are distinct}%
+\right\}
+\]
+of $\mathbb{N}^{n}$. We let $\mathbf{I}$ be the subset%
+\[
+\left\{  \left(  k_{1},k_{2},\ldots,k_{n}\right)  \in\mathbb{N}^{n}%
+\ \mid\ k_{1}<k_{2}<\cdots<k_{n}\right\}
+\]
+of $\mathbb{N}^{n}$. Then, the map%
+\begin{align*}
+\mathbf{I}\times S_{n}  &  \rightarrow\mathbf{E},\\
+\left(  \left(  g_{1},g_{2},\ldots,g_{n}\right)  ,\sigma\right)   &
+\mapsto\left(  g_{\sigma\left(  1\right)  },g_{\sigma\left(  2\right)
+},\ldots,g_{\sigma\left(  n\right)  }\right)
+\end{align*}
+is well-defined and is a bijection.
+\end{lemma}
+
+Lemma \ref{lem.sol.exeadd.powerdet.r1.EI} is identical to Lemma
+\ref{lem.cauchy-binet.EI} except that it uses the set $\mathbb{N}$ instead of
+the set $\left[  m\right]  $ used in the latter lemma. Thus, it should not be
+a surprise that its proof is the same as the proof of the latter lemma:
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exeadd.powerdet.r1.EI}.]In order to obtain a
+proof of Lemma \ref{lem.sol.exeadd.powerdet.r1.EI}, it is sufficient to
+replace every appearance of \textquotedblleft$\left[  m\right]  $%
+\textquotedblright\ by \textquotedblleft$\mathbb{N}$\textquotedblright\ in the
+proof of Lemma \ref{lem.cauchy-binet.EI}. (Of course, the notation $\left[
+n\right]  $ should be understood to mean the set $\left\{  1,2,\ldots
+,n\right\}  $ in this proof.)
+\end{proof}
+
+\begin{lemma}
+\label{lem.sol.exeadd.powerdet.r1.0}Let $n\in\mathbb{N}$. Let $\left(
+k_{1},k_{2},\ldots,k_{n}\right)  \in\mathbb{N}^{n}$ be such that $k_{1}%
+<k_{2}<\cdots<k_{n}$.
+
+\textbf{(a)} We have $k_{1}+k_{2}+\cdots+k_{n}\geq\dbinom{n}{2}$.
+
+\textbf{(b)} If $k_{1}+k_{2}+\cdots+k_{n}\leq\dbinom{n}{2}$, then $\left(
+k_{1},k_{2},\ldots,k_{n}\right)  =\left(  0,1,\ldots,n-1\right)  $.
+\end{lemma}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exeadd.powerdet.r1.0}.]\textbf{(b)} Assume that
+$k_{1}+k_{2}+\cdots+k_{n}\leq\dbinom{n}{2}$. We must prove that $\left(
+k_{1},k_{2},\ldots,k_{n}\right)  =\left(  0,1,\ldots,n-1\right)  $.
+
+For each $i\in\left\{  1,2,\ldots,n\right\}  $, define an integer $z_{i}$ by
+$z_{i}=k_{i}-i$.
+
+For each $i\in\left\{  1,2,\ldots,n-1\right\}  $, we have $z_{i}\leq z_{i+1}%
+$\ \ \ \ \footnote{\textit{Proof.} Let $i\in\left\{  1,2,\ldots,n-1\right\}
+$. The definition of $z_{i}$ yields $z_{i}=k_{i}-i$. The definition of
+$z_{i+1}$ yields $z_{i+1}=k_{i+1}-\left(  i+1\right)  $. But $k_{i}<k_{i+1}$
+(since $k_{1}<k_{2}<\cdots<k_{n}$), and thus $k_{i}\leq k_{i+1}-1$ (since
+$k_{i}$ and $k_{i+1}$ are integers). Now, $z_{i}=\underbrace{k_{i}}_{\leq
+k_{i+1}-1}-i\leq k_{i+1}-1-i=k_{i+1}-\left(  i+1\right)  =z_{i+1}$. Qed.}. In
+other words, $z_{1}\leq z_{2}\leq\cdots\leq z_{n}$.
+
+For each $j\in\left\{  1,2,\ldots,n\right\}  $, we have%
+\begin{equation}
+k_{j}\geq j-1 \label{pf.lem.sol.exeadd.powerdet.r1.0.short.2}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.sol.exeadd.powerdet.r1.0.short.2}):}
+Let $j\in\left\{  1,2,\ldots,n\right\}  $. Thus, $1\leq j\leq n$. Hence,
+$n\geq1$, so that $1\in\left\{  1,2,\ldots,n\right\}  $. Moreover, $1\leq j$.
+\par
+But recall that $z_{1}\leq z_{2}\leq\cdots\leq z_{n}$. In other words, we have
+$z_{u}\leq z_{v}$ whenever $u$ and $v$ are two elements of $\left\{
+1,2,\ldots,n\right\}  $ satisfying $u\leq v$. Applying this to $u=1$ and
+$v=j$, we obtain $z_{1}\leq z_{j}$ (since $1\leq j$). But the definition of
+$z_{1}$ yields $z_{1}=\underbrace{k_{1}}_{\substack{\geq0\\\text{(since }%
+k_{1}\in\mathbb{N}\text{)}}}-1\geq0-1=-1$. Hence, $-1\leq z_{1}\leq
+z_{j}=k_{j}-j$ (by the definition of $z_{j}$). Hence, $k_{j}-j\geq-1$, so that
+$k_{j}\geq j-1$. This proves (\ref{pf.lem.sol.exeadd.powerdet.r1.0.short.2}).}.
+
+Now, each $j\in\left\{  1,2,\ldots,n\right\}  $ satisfies%
+\begin{equation}
+k_{j}=j-1. \label{pf.lem.sol.exeadd.powerdet.r1.0.short.3}%
+\end{equation}
+
+
+[\textit{Proof of (\ref{pf.lem.sol.exeadd.powerdet.r1.0.short.3}):} Let
+$j\in\left\{  1,2,\ldots,n\right\}  $. We must prove that $k_{j}=j-1$.
+
+Assume the contrary. Thus, $k_{j}\neq j-1$. Combining this with
+(\ref{pf.lem.sol.exeadd.powerdet.r1.0.short.2}), we obtain $k_{j}>j-1$.
+
+Now, $k_{1}+k_{2}+\cdots+k_{n}\leq\dbinom{n}{2}$, so that%
+\begin{align*}
+\dbinom{n}{2}  &  \geq k_{1}+k_{2}+\cdots+k_{n}=\sum_{i\in\left\{
+1,2,\ldots,n\right\}  }k_{i}\\
+&  =\underbrace{k_{j}}_{>j-1}+\sum_{\substack{i\in\left\{  1,2,\ldots
+,n\right\}  ;\\i\neq j}}\underbrace{k_{i}}_{\substack{\geq i-1\\\text{(by
+(\ref{pf.lem.sol.exeadd.powerdet.r1.0.short.2}) (applied}\\\text{to }i\text{
+instead of }j\text{))}}}\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have split off the addend}\\
+\text{for }i=j\text{ from the sum}%
+\end{array}
+\right) \\
+&  >\left(  j-1\right)  +\sum_{\substack{i\in\left\{  1,2,\ldots,n\right\}
+;\\i\neq j}}\left(  i-1\right)  =\sum_{i\in\left\{  1,2,\ldots,n\right\}
+}\left(  i-1\right) \\
+&  =0+1+\cdots+\left(  n-1\right)  =\sum_{r=0}^{n-1}r=\dbinom{n}{2}%
+\end{align*}
+(by Lemma \ref{lem.sol.vander-hook.gauss}). This is absurd. Thus, we have
+found a contradiction. This contradiction shows that our assumption was wrong.
+Hence, $k_{j}=j-1$ is proven. This proves
+(\ref{pf.lem.sol.exeadd.powerdet.r1.0.short.3}).]
+
+Now, (\ref{pf.lem.sol.exeadd.powerdet.r1.0.short.3}) shows that $\left(
+k_{1},k_{2},\ldots,k_{n}\right)  =\left(  1-1,2-1,\ldots,n-1\right)  =\left(
+0,1,\ldots,n-1\right)  $. This proves Lemma \ref{lem.sol.exeadd.powerdet.r1.0}
+\textbf{(b)}.
+
+\textbf{(a)} Assume the contrary. Thus, $k_{1}+k_{2}+\cdots+k_{n}<\dbinom
+{n}{2}$. Hence, $k_{1}+k_{2}+\cdots+k_{n}\leq\dbinom{n}{2}$. Therefore, Lemma
+\ref{lem.sol.exeadd.powerdet.r1.0} \textbf{(b)} shows that $\left(
+k_{1},k_{2},\ldots,k_{n}\right)  =\left(  0,1,\ldots,n-1\right)  $. Thus,%
+\[
+k_{1}+k_{2}+\cdots+k_{n}=0+1+\cdots+\left(  n-1\right)  =\sum_{r=0}%
+^{n-1}r=\dbinom{n}{2}%
+\]
+(by Lemma \ref{lem.sol.vander-hook.gauss}), which contradicts $k_{1}%
++k_{2}+\cdots+k_{n}<\dbinom{n}{2}$. This contradiction shows that our
+assumption was wrong. Hence, Lemma \ref{lem.sol.exeadd.powerdet.r1.0}
+\textbf{(a)} is proven.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exeadd.powerdet.r1.0}.]We have $\left(
+k_{1},k_{2},\ldots,k_{n}\right)  \in\mathbb{N}^{n}$. Thus, $k_{1},k_{2}%
+,\ldots,k_{n}$ are $n$ elements of $\mathbb{N}$, therefore $n$ integers.
+
+We observe that
+\begin{equation}
+0+1+\cdots+\left(  n-1\right)  =\sum_{r=0}^{n-1}r=\dbinom{n}{2}
+\label{pf.lem.sol.exeadd.powerdet.r1.0.sum}%
+\end{equation}
+(by Lemma \ref{lem.sol.vander-hook.gauss}).
+
+\textbf{(b)} Assume that $k_{1}+k_{2}+\cdots+k_{n}\leq\dbinom{n}{2}$. We must
+prove that $\left(  k_{1},k_{2},\ldots,k_{n}\right)  =\left(  0,1,\ldots
+,n-1\right)  $.
+
+For each $i\in\left\{  1,2,\ldots,n\right\}  $, define an integer $z_{i}$ by
+$z_{i}=k_{i}-i$.
+
+For each $i\in\left\{  1,2,\ldots,n-1\right\}  $, we have $z_{i}\leq z_{i+1}%
+$\ \ \ \ \footnote{\textit{Proof.} Let $i\in\left\{  1,2,\ldots,n-1\right\}
+$. Then, both $i$ and $i+1$ are elements of $\left\{  1,2,\ldots,n\right\}  $.
+Hence, the integers $z_{i}$ and $z_{i+1}$ are well-defined.
+\par
+The definition of $z_{i}$ yields $z_{i}=k_{i}-i$. The definition of $z_{i+1}$
+yields $z_{i+1}=k_{i+1}-\left(  i+1\right)  $. But $k_{i}<k_{i+1}$ (since
+$k_{1}<k_{2}<\cdots<k_{n}$), and thus $k_{i}\leq k_{i+1}-1$ (since $k_{i}$ and
+$k_{i+1}$ are integers). Now, $z_{i}=\underbrace{k_{i}}_{\leq k_{i+1}-1}-i\leq
+k_{i+1}-1-i=k_{i+1}-\left(  i+1\right)  =z_{i+1}$. Qed.}. In other words,
+$z_{1}\leq z_{2}\leq\cdots\leq z_{n}$. In other words,%
+\begin{equation}
+z_{i}\leq z_{j} \label{pf.lem.sol.exeadd.powerdet.r1.0.1}%
+\end{equation}
+for every $i\in\left\{  1,2,\ldots,n\right\}  $ and $j\in\left\{
+1,2,\ldots,n\right\}  $ satisfying $i\leq j$.
+
+For each $j\in\left\{  1,2,\ldots,n\right\}  $, we have%
+\begin{equation}
+k_{j}\geq j-1 \label{pf.lem.sol.exeadd.powerdet.r1.0.2}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.sol.exeadd.powerdet.r1.0.2}):} Let
+$j\in\left\{  1,2,\ldots,n\right\}  $. Thus, $1\leq j\leq n$. Hence, $n\geq1$,
+so that $1\in\left\{  1,2,\ldots,n\right\}  $. Moreover, $1\leq j$. Thus,
+(\ref{pf.lem.sol.exeadd.powerdet.r1.0.1}) (applied to $i=1$) yields $z_{1}\leq
+z_{j}$. But the definition of $z_{1}$ yields $z_{1}=\underbrace{k_{1}%
+}_{\substack{\geq0\\\text{(since }k_{1}\in\mathbb{N}\text{)}}}-1\geq0-1=-1$.
+Hence, $-1\leq z_{1}\leq z_{j}=k_{j}-j$ (by the definition of $z_{j}$). Hence,
+$k_{j}-j\geq-1$, so that $k_{j}\geq j-1$. This proves
+(\ref{pf.lem.sol.exeadd.powerdet.r1.0.2}).}.
+
+Now, each $j\in\left\{  1,2,\ldots,n\right\}  $ satisfies%
+\begin{equation}
+k_{j}=j-1. \label{pf.lem.sol.exeadd.powerdet.r1.0.3}%
+\end{equation}
+
+
+[\textit{Proof of (\ref{pf.lem.sol.exeadd.powerdet.r1.0.3}):} Let
+$j\in\left\{  1,2,\ldots,n\right\}  $. We must prove that $k_{j}=j-1$.
+
+Assume the contrary. Thus, $k_{j}\neq j-1$. But $k_{j}\geq j-1$ (by
+(\ref{pf.lem.sol.exeadd.powerdet.r1.0.2})). Combining this with $k_{j}\neq
+j-1$, we obtain $k_{j}>j-1$.
+
+Now, $k_{1}+k_{2}+\cdots+k_{n}\leq\dbinom{n}{2}$, so that%
+\begin{align}
+\dbinom{n}{2}  &  \geq k_{1}+k_{2}+\cdots+k_{n}=\underbrace{\sum_{i=1}^{n}%
+}_{=\sum_{i\in\left\{  1,2,\ldots,n\right\}  }}k_{i}=\sum_{i\in\left\{
+1,2,\ldots,n\right\}  }k_{i}\nonumber\\
+&  =\underbrace{k_{j}}_{>j-1}+\sum_{\substack{i\in\left\{  1,2,\ldots
+,n\right\}  ;\\i\neq j}}\underbrace{k_{i}}_{\substack{\geq i-1\\\text{(by
+(\ref{pf.lem.sol.exeadd.powerdet.r1.0.2}) (applied}\\\text{to }i\text{ instead
+of }j\text{))}}}\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have split off the addend}\\
+\text{for }i=j\text{ from the sum}%
+\end{array}
+\right) \nonumber\\
+&  >\left(  j-1\right)  +\sum_{\substack{i\in\left\{  1,2,\ldots,n\right\}
+;\\i\neq j}}\left(  i-1\right)  .
+\label{pf.lem.sol.exeadd.powerdet.r1.0.3.pf.1}%
+\end{align}
+But
+\begin{align*}
+\dbinom{n}{2}  &  =0+1+\cdots+\left(  n-1\right)  \ \ \ \ \ \ \ \ \ \ \left(
+\text{by (\ref{pf.lem.sol.exeadd.powerdet.r1.0.sum})}\right) \\
+&  =\left(  1-1\right)  +\left(  2-1\right)  +\cdots+\left(  n-1\right)
+=\underbrace{\sum_{i=1}^{n}}_{=\sum_{i\in\left\{  1,2,\ldots,n\right\}  }%
+}\left(  i-1\right)  =\sum_{i\in\left\{  1,2,\ldots,n\right\}  }\left(
+i-1\right) \\
+&  =\left(  j-1\right)  +\sum_{\substack{i\in\left\{  1,2,\ldots,n\right\}
+;\\i\neq j}}\left(  i-1\right)  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have split off the addend}\\
+\text{for }i=j\text{ from the sum}%
+\end{array}
+\right) \\
+&  <\dbinom{n}{2}\ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{pf.lem.sol.exeadd.powerdet.r1.0.3.pf.1})}\right)  .
+\end{align*}
+This is absurd. Thus, we have found a contradiction. This contradiction shows
+that our assumption was wrong. Hence, $k_{j}=j-1$ is proven. This proves
+(\ref{pf.lem.sol.exeadd.powerdet.r1.0.3}).]
+
+Now, (\ref{pf.lem.sol.exeadd.powerdet.r1.0.3}) shows that $\left(  k_{1}%
+,k_{2},\ldots,k_{n}\right)  =\left(  1-1,2-1,\ldots,n-1\right)  =\left(
+0,1,\ldots,n-1\right)  $. This proves Lemma \ref{lem.sol.exeadd.powerdet.r1.0}
+\textbf{(b)}.
+
+\textbf{(a)} Assume the contrary. Thus, $k_{1}+k_{2}+\cdots+k_{n}<\dbinom
+{n}{2}$. Hence, $k_{1}+k_{2}+\cdots+k_{n}\leq\dbinom{n}{2}$. Therefore, Lemma
+\ref{lem.sol.exeadd.powerdet.r1.0} \textbf{(b)} shows that $\left(
+k_{1},k_{2},\ldots,k_{n}\right)  =\left(  0,1,\ldots,n-1\right)  $. Thus,%
+\[
+k_{1}+k_{2}+\cdots+k_{n}=0+1+\cdots+\left(  n-1\right)  =\dbinom{n}%
+{2}\ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{pf.lem.sol.exeadd.powerdet.r1.0.sum})}\right)  ,
+\]
+so that $\dbinom{n}{2}=k_{1}+k_{2}+\cdots+k_{n}<\dbinom{n}{2}$. This is
+absurd. Thus, we have found a contradiction. This contradiction shows that our
+assumption was wrong. Hence, Lemma \ref{lem.sol.exeadd.powerdet.r1.0}
+\textbf{(a)} is proven.
+\end{proof}
+\end{verlong}
+
+\begin{lemma}
+\label{lem.sol.exeadd.powerdet.r1.1}Let $n\in\mathbb{N}$. Let $a_{1}%
+,a_{2},\ldots,a_{n}$ be $n$ elements of $\mathbb{K}$. Let $b_{1},b_{2}%
+,\ldots,b_{n}$ be $n$ elements of $\mathbb{K}$.
+
+Let $\left(  k_{1},k_{2},\ldots,k_{n}\right)  \in\mathbb{N}^{n}$.
+
+\textbf{(a)} We have
+\[
+\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\prod_{i=1}^{n}\left(
+a_{i}b_{\sigma\left(  i\right)  }\right)  ^{k_{i}}=\left(  \prod_{i=1}%
+^{n}a_{i}^{k_{i}}\right)  \det\left(  \left(  b_{i}^{k_{j}}\right)  _{1\leq
+i\leq n,\ 1\leq j\leq n}\right)  .
+\]
+
+
+\textbf{(b)} If the integers $k_{1},k_{2},\ldots,k_{n}$ are not distinct, then%
+\[
+\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\prod_{i=1}^{n}\left(
+a_{i}b_{\sigma\left(  i\right)  }\right)  ^{k_{i}}=0.
+\]
+
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exeadd.powerdet.r1.1}.]\textbf{(a)} Define an
+$n\times n$-matrix $A$ by $A=\left(  b_{j}^{k_{i}}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}$. Then, the equality (\ref{eq.det.eq.2}) (applied to $A$
+and $b_{j}^{k_{i}}$ instead of $A$ and $a_{i,j}$) yields%
+\[
+\det A=\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\prod_{i=1}%
+^{n}b_{\sigma\left(  i\right)  }^{k_{i}}.
+\]
+But $A=\left(  b_{j}^{k_{i}}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$. Thus,
+$A^{T}=\left(  b_{i}^{k_{j}}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ (by the
+definition of the transpose matrix $A^{T}$). Exercise \ref{exe.ps4.4} now
+yields
+\begin{equation}
+\det\left(  A^{T}\right)  =\det A=\sum_{\sigma\in S_{n}}\left(  -1\right)
+^{\sigma}\prod_{i=1}^{n}b_{\sigma\left(  i\right)  }^{k_{i}}.
+\label{pf.lem.sol.exeadd.powerdet.r1.1.1}%
+\end{equation}
+
+
+Now,%
+\begin{align*}
+&  \sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\prod_{i=1}%
+^{n}\underbrace{\left(  a_{i}b_{\sigma\left(  i\right)  }\right)  ^{k_{i}}%
+}_{=a_{i}^{k_{i}}b_{\sigma\left(  i\right)  }^{k_{i}}}\\
+&  =\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\underbrace{\prod
+_{i=1}^{n}\left(  a_{i}^{k_{i}}b_{\sigma\left(  i\right)  }^{k_{i}}\right)
+}_{=\left(  \prod_{i=1}^{n}a_{i}^{k_{i}}\right)  \left(  \prod_{i=1}%
+^{n}b_{\sigma\left(  i\right)  }^{k_{i}}\right)  }=\sum_{\sigma\in S_{n}%
+}\left(  -1\right)  ^{\sigma}\left(  \prod_{i=1}^{n}a_{i}^{k_{i}}\right)
+\left(  \prod_{i=1}^{n}b_{\sigma\left(  i\right)  }^{k_{i}}\right) \\
+&  =\left(  \prod_{i=1}^{n}a_{i}^{k_{i}}\right)  \underbrace{\sum_{\sigma\in
+S_{n}}\left(  -1\right)  ^{\sigma}\prod_{i=1}^{n}b_{\sigma\left(  i\right)
+}^{k_{i}}}_{\substack{=\det\left(  A^{T}\right)  \\\text{(by
+(\ref{pf.lem.sol.exeadd.powerdet.r1.1.1}))}}}=\left(  \prod_{i=1}^{n}%
+a_{i}^{k_{i}}\right)  \det\left(  \underbrace{A^{T}}_{=\left(  b_{i}^{k_{j}%
+}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}}\right) \\
+&  =\left(  \prod_{i=1}^{n}a_{i}^{k_{i}}\right)  \det\left(  \left(
+b_{i}^{k_{j}}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  .
+\end{align*}
+This proves Lemma \ref{lem.sol.exeadd.powerdet.r1.1} \textbf{(a)}.
+
+\begin{vershort}
+\textbf{(b)} Assume that the integers $k_{1},k_{2},\ldots,k_{n}$ are not
+distinct. Thus, there exist two distinct elements $p$ and $q$ of $\left\{
+1,2,\ldots,n\right\}  $ such that $k_{p}=k_{q}$. Consider these $p$ and $q$.
+Now,%
+\begin{align*}
+&  \left(  \text{the }p\text{-th column of the matrix }\left(  b_{i}^{k_{j}%
+}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right) \\
+&  =\left(  b_{i}^{k_{p}}\right)  _{1\leq i\leq n,\ 1\leq j\leq1}=\left(
+b_{i}^{k_{q}}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }k_{p}=k_{q}\right) \\
+&  =\left(  \text{the }q\text{-th column of the matrix }\left(  b_{i}^{k_{j}%
+}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  .
+\end{align*}
+Thus, the matrix $\left(  b_{i}^{k_{j}}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}$ has two equal columns (namely, the $p$-th column and the $q$-th column),
+because $p$ and $q$ are distinct. Therefore, Exercise \ref{exe.ps4.6}
+\textbf{(f)} (applied to $\left(  b_{i}^{k_{j}}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}$ instead of $A$) yields $\det\left(  \left(  b_{i}^{k_{j}%
+}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  =0$.
+
+Now, Lemma \ref{lem.sol.exeadd.powerdet.r1.1} \textbf{(a)} yields%
+\[
+\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\prod_{i=1}^{n}\left(
+a_{i}b_{\sigma\left(  i\right)  }\right)  ^{k_{i}}=\left(  \prod_{i=1}%
+^{n}a_{i}^{k_{i}}\right)  \underbrace{\det\left(  \left(  b_{i}^{k_{j}%
+}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  }_{=0}=0.
+\]
+This proves Lemma \ref{lem.sol.exeadd.powerdet.r1.1} \textbf{(b)}.
+\end{vershort}
+
+\begin{verlong}
+\textbf{(b)} Assume that the integers $k_{1},k_{2},\ldots,k_{n}$ are not
+distinct. Thus, there exist two distinct elements $p$ and $q$ of $\left\{
+1,2,\ldots,n\right\}  $ such that $k_{p}=k_{q}$%
+\ \ \ \ \footnote{\textit{Proof.} Assume the contrary. Thus, there do not
+exist two distinct elements $p$ and $q$ of $\left\{  1,2,\ldots,n\right\}  $
+such that $k_{p}=k_{q}$. In other words, every two distinct elements $p$ and
+$q$ of $\left\{  1,2,\ldots,n\right\}  $ satisfy $k_{p}\neq k_{q}$. In other
+words, the integers $k_{1},k_{2},\ldots,k_{n}$ are distinct. This contradicts
+the fact that the integers $k_{1},k_{2},\ldots,k_{n}$ are not distinct. This
+contradiction proves that our assumption was wrong. Qed.}. Consider these $p$
+and $q$. Now,%
+\begin{align*}
+&  \left(  \text{the }p\text{-th column of the matrix }\left(  b_{i}^{k_{j}%
+}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right) \\
+&  =\left(  b_{i}^{k_{p}}\right)  _{1\leq i\leq n,\ 1\leq j\leq1}=\left(
+b_{i}^{k_{q}}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}%
+\end{align*}
+(since $k_{p}=k_{q}$). Comparing this with%
+\[
+\left(  \text{the }q\text{-th column of the matrix }\left(  b_{i}^{k_{j}%
+}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  =\left(  b_{i}^{k_{q}%
+}\right)  _{1\leq i\leq n,\ 1\leq j\leq n},
+\]
+we conclude that%
+\begin{align*}
+&  \left(  \text{the }p\text{-th column of the matrix }\left(  b_{i}^{k_{j}%
+}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right) \\
+&  =\left(  \text{the }q\text{-th column of the matrix }\left(  b_{i}^{k_{j}%
+}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  .
+\end{align*}
+Thus, the matrix $\left(  b_{i}^{k_{j}}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}$ has two equal columns (namely, the $p$-th column and the $q$-th column),
+because $p$ and $q$ are distinct. Therefore, Exercise \ref{exe.ps4.6}
+\textbf{(f)} (applied to $\left(  b_{i}^{k_{j}}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}$ instead of $A$) yields $\det\left(  \left(  b_{i}^{k_{j}%
+}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  =0$.
+
+Now, Lemma \ref{lem.sol.exeadd.powerdet.r1.1} \textbf{(a)} yields%
+\[
+\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\prod_{i=1}^{n}\left(
+a_{i}b_{\sigma\left(  i\right)  }\right)  ^{k_{i}}=\left(  \prod_{i=1}%
+^{n}a_{i}^{k_{i}}\right)  \underbrace{\det\left(  \left(  b_{i}^{k_{j}%
+}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  }_{=0}=0.
+\]
+This proves Lemma \ref{lem.sol.exeadd.powerdet.r1.1} \textbf{(b)}.
+\end{verlong}
+\end{proof}
+
+We shall use the notation introduced in Exercise \ref{exe.multinom2} from now
+on until the end of the present section.
+
+\begin{lemma}
+\label{lem.sol.exeadd.powerdet.r1.perm-m}Let $n\in\mathbb{N}$. Let $\left(
+g_{1},g_{2},\ldots,g_{n}\right)  \in\mathbb{N}^{n}$ and $\sigma\in S_{n}$.
+
+\textbf{(a)} We have $g_{\sigma\left(  1\right)  }+g_{\sigma\left(  2\right)
+}+\cdots+g_{\sigma\left(  n\right)  }=g_{1}+g_{2}+\cdots+g_{n}$.
+
+\textbf{(b)} We have $\mathbf{m}\left(  g_{\sigma\left(  1\right)  }%
+,g_{\sigma\left(  2\right)  },\ldots,g_{\sigma\left(  n\right)  }\right)
+=\mathbf{m}\left(  g_{1},g_{2},\ldots,g_{n}\right)  $.
+\end{lemma}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exeadd.powerdet.r1.perm-m}.]We have $\sigma\in
+S_{n}$. In other words, $\sigma$ is a permutation of the set $\left\{
+1,2,\ldots,n\right\}  $ (since $S_{n}$ is the set of all permutations of the
+set $\left\{  1,2,\ldots,n\right\}  $). In other words, $\sigma$ is a
+bijection $\left\{  1,2,\ldots,n\right\}  \rightarrow\left\{  1,2,\ldots
+,n\right\}  $. Hence, we can substitute $\sigma\left(  i\right)  $ for $i$ in
+the sum $\sum_{i\in\left\{  1,2,\ldots,n\right\}  }g_{i}$. We thus obtain%
+\[
+\sum_{i\in\left\{  1,2,\ldots,n\right\}  }g_{i}=\sum_{i\in\left\{
+1,2,\ldots,n\right\}  }g_{\sigma\left(  i\right)  }=g_{\sigma\left(  1\right)
+}+g_{\sigma\left(  2\right)  }+\cdots+g_{\sigma\left(  n\right)  }.
+\]
+Hence,%
+\begin{equation}
+g_{\sigma\left(  1\right)  }+g_{\sigma\left(  2\right)  }+\cdots
++g_{\sigma\left(  n\right)  }=\sum_{i\in\left\{  1,2,\ldots,n\right\}  }%
+g_{i}=g_{1}+g_{2}+\cdots+g_{n}.
+\label{pf.lem.sol.exeadd.powerdet.r1.perm-m.short.1}%
+\end{equation}
+This proves Lemma \ref{lem.sol.exeadd.powerdet.r1.perm-m} \textbf{(a)}.
+
+\textbf{(b)} We have proven that $g_{\sigma\left(  1\right)  }+g_{\sigma
+\left(  2\right)  }+\cdots+g_{\sigma\left(  n\right)  }=g_{1}+g_{2}%
++\cdots+g_{n}$. A similar argument shows that
+\begin{equation}
+g_{\sigma\left(  1\right)  }!g_{\sigma\left(  2\right)  }!\cdots
+g_{\sigma\left(  n\right)  }!=g_{1}!g_{2}!\cdots g_{n}!.
+\label{pf.lem.sol.exeadd.powerdet.r1.perm-m.short.2}%
+\end{equation}
+
+
+The definition of $\mathbf{m}\left(  g_{1},g_{2},\ldots,g_{n}\right)  $
+yields
+\[
+\mathbf{m}\left(  g_{1},g_{2},\ldots,g_{n}\right)  =\dfrac{\left(  g_{1}%
++g_{2}+\cdots+g_{n}\right)  !}{g_{1}!g_{2}!\cdots g_{n}!}.
+\]
+
+
+But the definition of $\mathbf{m}\left(  g_{\sigma\left(  1\right)
+},g_{\sigma\left(  2\right)  },\ldots,g_{\sigma\left(  n\right)  }\right)  $
+yields%
+\begin{align*}
+\mathbf{m}\left(  g_{\sigma\left(  1\right)  },g_{\sigma\left(  2\right)
+},\ldots,g_{\sigma\left(  n\right)  }\right)   &  =\dfrac{\left(
+g_{\sigma\left(  1\right)  }+g_{\sigma\left(  2\right)  }+\cdots
++g_{\sigma\left(  n\right)  }\right)  !}{g_{\sigma\left(  1\right)
+}!g_{\sigma\left(  2\right)  }!\cdots g_{\sigma\left(  n\right)  }!}\\
+&  =\dfrac{\left(  g_{1}+g_{2}+\cdots+g_{n}\right)  !}{g_{1}!g_{2}!\cdots
+g_{n}!}\ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{pf.lem.sol.exeadd.powerdet.r1.perm-m.short.1}) and
+(\ref{pf.lem.sol.exeadd.powerdet.r1.perm-m.short.2})}\right) \\
+&  =\mathbf{m}\left(  g_{1},g_{2},\ldots,g_{n}\right)  .
+\end{align*}
+This proves Lemma \ref{lem.sol.exeadd.powerdet.r1.perm-m} \textbf{(b)}.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exeadd.powerdet.r1.perm-m}.]We have $\sigma\in
+S_{n}$. In other words, $\sigma$ is a permutation of the set $\left\{
+1,2,\ldots,n\right\}  $ (since $S_{n}$ is the set of all permutations of the
+set $\left\{  1,2,\ldots,n\right\}  $). In other words, $\sigma$ is a
+bijection $\left\{  1,2,\ldots,n\right\}  \rightarrow\left\{  1,2,\ldots
+,n\right\}  $. Hence, we can substitute $\sigma\left(  i\right)  $ for $i$ in
+the sum $\sum_{i\in\left\{  1,2,\ldots,n\right\}  }g_{i}$. We thus obtain%
+\[
+\sum_{i\in\left\{  1,2,\ldots,n\right\}  }g_{i}=\underbrace{\sum_{i\in\left\{
+1,2,\ldots,n\right\}  }}_{=\sum_{i=1}^{n}}g_{\sigma\left(  i\right)  }%
+=\sum_{i=1}^{n}g_{\sigma\left(  i\right)  }=g_{\sigma\left(  1\right)
+}+g_{\sigma\left(  2\right)  }+\cdots+g_{\sigma\left(  n\right)  }.
+\]
+Comparing this with%
+\[
+\underbrace{\sum_{i\in\left\{  1,2,\ldots,n\right\}  }}_{=\sum_{i=1}^{n}}%
+g_{i}=\sum_{i=1}^{n}g_{i}=g_{1}+g_{2}+\cdots+g_{n},
+\]
+we obtain%
+\[
+g_{\sigma\left(  1\right)  }+g_{\sigma\left(  2\right)  }+\cdots
++g_{\sigma\left(  n\right)  }=g_{1}+g_{2}+\cdots+g_{n}.
+\]
+This proves Lemma \ref{lem.sol.exeadd.powerdet.r1.perm-m} \textbf{(a)}.
+
+\textbf{(b)} Recall that $\sigma$ is a bijection $\left\{  1,2,\ldots
+,n\right\}  \rightarrow\left\{  1,2,\ldots,n\right\}  $. Hence, we can
+substitute $\sigma\left(  i\right)  $ for $i$ in the product $\prod
+_{i\in\left\{  1,2,\ldots,n\right\}  }g_{i}!$. We thus obtain%
+\[
+\prod_{i\in\left\{  1,2,\ldots,n\right\}  }g_{i}!=\underbrace{\prod
+_{i\in\left\{  1,2,\ldots,n\right\}  }}_{=\prod_{i=1}^{n}}g_{\sigma\left(
+i\right)  }!=\prod_{i=1}^{n}g_{\sigma\left(  i\right)  }!=g_{\sigma\left(
+1\right)  }!g_{\sigma\left(  2\right)  }!\cdots g_{\sigma\left(  n\right)
+}!.
+\]
+Comparing this with%
+\[
+\underbrace{\prod_{i\in\left\{  1,2,\ldots,n\right\}  }}_{=\prod_{i=1}^{n}%
+}g_{i}!=\prod_{i=1}^{n}g_{i}!=g_{1}!g_{2}!\cdots g_{n}!,
+\]
+we obtain%
+\[
+g_{\sigma\left(  1\right)  }!g_{\sigma\left(  2\right)  }!\cdots
+g_{\sigma\left(  n\right)  }!=g_{1}!g_{2}!\cdots g_{n}!.
+\]
+
+
+The definition of $\mathbf{m}\left(  g_{1},g_{2},\ldots,g_{n}\right)  $
+yields
+\[
+\mathbf{m}\left(  g_{1},g_{2},\ldots,g_{n}\right)  =\dfrac{\left(  g_{1}%
++g_{2}+\cdots+g_{n}\right)  !}{g_{1}!g_{2}!\cdots g_{n}!}.
+\]
+
+
+But the definition of $\mathbf{m}\left(  g_{\sigma\left(  1\right)
+},g_{\sigma\left(  2\right)  },\ldots,g_{\sigma\left(  n\right)  }\right)  $
+yields%
+\begin{align*}
+\mathbf{m}\left(  g_{\sigma\left(  1\right)  },g_{\sigma\left(  2\right)
+},\ldots,g_{\sigma\left(  n\right)  }\right)   &  =\dfrac{\left(
+g_{\sigma\left(  1\right)  }+g_{\sigma\left(  2\right)  }+\cdots
++g_{\sigma\left(  n\right)  }\right)  !}{g_{\sigma\left(  1\right)
+}!g_{\sigma\left(  2\right)  }!\cdots g_{\sigma\left(  n\right)  }!}\\
+&  =\left(  \underbrace{g_{\sigma\left(  1\right)  }+g_{\sigma\left(
+2\right)  }+\cdots+g_{\sigma\left(  n\right)  }}_{=g_{1}+g_{2}+\cdots+g_{n}%
+}\right)  !/\left(  \underbrace{g_{\sigma\left(  1\right)  }!g_{\sigma\left(
+2\right)  }!\cdots g_{\sigma\left(  n\right)  }!}_{=g_{1}!g_{2}!\cdots g_{n}%
+!}\right) \\
+&  =\left(  g_{1}+g_{2}+\cdots+g_{n}\right)  !/\left(  g_{1}!g_{2}!\cdots
+g_{n}!\right) \\
+&  =\dfrac{\left(  g_{1}+g_{2}+\cdots+g_{n}\right)  !}{g_{1}!g_{2}!\cdots
+g_{n}!}=\mathbf{m}\left(  g_{1},g_{2},\ldots,g_{n}\right)  .
+\end{align*}
+This proves Lemma \ref{lem.sol.exeadd.powerdet.r1.perm-m} \textbf{(b)}.
+\end{proof}
+\end{verlong}
+
+Now, we can attack part \textbf{(c)} of Additional exercise
+\ref{exeadd.powerdet.r1}:
+
+\begin{lemma}
+\label{lem.sol.exeadd.powerdet.r1.c}Let $n\in\mathbb{N}$. Let $a_{1}%
+,a_{2},\ldots,a_{n}$ be $n$ elements of $\mathbb{K}$. Let $b_{1},b_{2}%
+,\ldots,b_{n}$ be $n$ elements of $\mathbb{K}$.
+
+Let $k\in\mathbb{N}$. Then,%
+\begin{align*}
+&  \sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\left(  \sum_{i=1}%
+^{n}a_{i}b_{\sigma\left(  i\right)  }\right)  ^{k}\\
+&  =\sum_{\substack{\left(  g_{1},g_{2},\ldots,g_{n}\right)  \in\mathbb{N}%
+^{n};\\g_{1}<g_{2}<\cdots<g_{n};\\g_{1}+g_{2}+\cdots+g_{n}=k}}\mathbf{m}%
+\left(  g_{1},g_{2},\ldots,g_{n}\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \cdot\det\left(  \left(  a_{i}^{g_{j}}\right)  _{1\leq
+i\leq n,\ 1\leq j\leq n}\right)  \cdot\det\left(  \left(  b_{i}^{g_{j}%
+}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  .
+\end{align*}
+Here, we are using the notation introduced in Exercise \ref{exe.multinom2}.
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exeadd.powerdet.r1.c}.]We shall use the notations
+of Lemma \ref{lem.sol.exeadd.powerdet.r1.EI}. Recall that%
+\begin{align}
+\mathbf{E}  &  =\left\{  \left(  k_{1},k_{2},\ldots,k_{n}\right)
+\in\mathbb{N}^{n}\ \mid\ \text{the integers }k_{1},k_{2},\ldots,k_{n}\text{
+are distinct}\right\} \nonumber\\
+&  =\left\{  \left(  g_{1},g_{2},\ldots,g_{n}\right)  \in\mathbb{N}^{n}%
+\ \mid\ \text{the integers }g_{1},g_{2},\ldots,g_{n}\text{ are distinct}%
+\right\}  \label{pf.lem.sol.exeadd.powerdet.r1.c.E=}%
+\end{align}
+(here, we renamed the index $\left(  k_{1},k_{2},\ldots,k_{n}\right)  $ as
+$\left(  g_{1},g_{2},\ldots,g_{n}\right)  $) and%
+\begin{align}
+\mathbf{I}  &  =\left\{  \left(  k_{1},k_{2},\ldots,k_{n}\right)
+\in\mathbb{N}^{n}\ \mid\ k_{1}<k_{2}<\cdots<k_{n}\right\} \nonumber\\
+&  =\left\{  \left(  g_{1},g_{2},\ldots,g_{n}\right)  \in\mathbb{N}^{n}%
+\ \mid\ g_{1}<g_{2}<\cdots<g_{n}\right\}
+\label{pf.lem.sol.exeadd.powerdet.r1.c.I=}%
+\end{align}
+(here, we renamed the index $\left(  k_{1},k_{2},\ldots,k_{n}\right)  $ as
+$\left(  g_{1},g_{2},\ldots,g_{n}\right)  $).
+
+Lemma \ref{lem.sol.exeadd.powerdet.r1.EI} says that the map%
+\begin{align*}
+\mathbf{I}\times S_{n}  &  \rightarrow\mathbf{E},\\
+\left(  \left(  g_{1},g_{2},\ldots,g_{n}\right)  ,\sigma\right)   &
+\mapsto\left(  g_{\sigma\left(  1\right)  },g_{\sigma\left(  2\right)
+},\ldots,g_{\sigma\left(  n\right)  }\right)
+\end{align*}
+is well-defined and is a bijection.
+
+Next, let us make three observations:
+
+\begin{itemize}
+\item Every $\left(  k_{1},k_{2},\ldots,k_{n}\right)  \in\mathbb{N}^{n}$
+satisfying $\left(  k_{1},k_{2},\ldots,k_{n}\right)  \notin\mathbf{E}$
+satisfies%
+\begin{equation}
+\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\prod_{i=1}^{n}\left(
+a_{i}b_{\sigma\left(  i\right)  }\right)  ^{k_{i}}=0
+\label{pf.lem.sol.exeadd.powerdet.r1.c.notEis0}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.sol.exeadd.powerdet.r1.c.notEis0}):}
+Let $\left(  k_{1},k_{2},\ldots,k_{n}\right)  \in\mathbb{N}^{n}$ be such that
+$\left(  k_{1},k_{2},\ldots,k_{n}\right)  \notin\mathbf{E}$.
+\par
+Let us first show that the integers $k_{1},k_{2},\ldots,k_{n}$ are not
+distinct. Indeed, we assume the contrary. Thus, the integers $k_{1}%
+,k_{2},\ldots,k_{n}$ are distinct. Hence, $\left(  k_{1},k_{2},\ldots
+,k_{n}\right)  $ is an element of $\mathbb{N}^{n}$ having the property that
+the integers $k_{1},k_{2},\ldots,k_{n}$ are distinct. In other words, $\left(
+k_{1},k_{2},\ldots,k_{n}\right)  $ is an element $\left(  g_{1},g_{2}%
+,\ldots,g_{n}\right)  \in\mathbb{N}^{n}$ such that the integers $g_{1}%
+,g_{2},\ldots,g_{n}$ are distinct. In other words,%
+\[
+\left(  k_{1},k_{2},\ldots,k_{n}\right)  \in\left\{  \left(  g_{1}%
+,g_{2},\ldots,g_{n}\right)  \in\mathbb{N}^{n}\ \mid\ \text{the integers }%
+g_{1},g_{2},\ldots,g_{n}\text{ are distinct}\right\}  .
+\]
+In light of (\ref{pf.lem.sol.exeadd.powerdet.r1.c.E=}), this rewrites as
+$\left(  k_{1},k_{2},\ldots,k_{n}\right)  \in\mathbf{E}$. This contradicts
+$\left(  k_{1},k_{2},\ldots,k_{n}\right)  \notin\mathbf{E}$. This
+contradiction proves that our assumption was wrong. Hence, we have proven that
+the integers $k_{1},k_{2},\ldots,k_{n}$ are not distinct. Hence, Lemma
+\ref{lem.sol.exeadd.powerdet.r1.1} \textbf{(b)} yields $\sum_{\sigma\in S_{n}%
+}\left(  -1\right)  ^{\sigma}\prod_{i=1}^{n}\left(  a_{i}b_{\sigma\left(
+i\right)  }\right)  ^{k_{i}}=0$. This proves
+(\ref{pf.lem.sol.exeadd.powerdet.r1.c.notEis0}).}.
+
+\item Every $\left(  g_{1},g_{2},\ldots,g_{n}\right)  \in\mathbb{N}^{n}$ and
+every $\sigma\in S_{n}$ satisfy%
+\begin{equation}
+\det\left(  \left(  b_{i}^{g_{\sigma\left(  j\right)  }}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}\right)  =\left(  -1\right)  ^{\sigma}\cdot\det\left(
+\left(  b_{i}^{g_{j}}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)
+\label{pf.lem.sol.exeadd.powerdet.r1.c.Eis}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.sol.exeadd.powerdet.r1.c.Eis}):} Let
+$\left(  g_{1},g_{2},\ldots,g_{n}\right)  \in\mathbb{N}^{n}$ and $\sigma\in
+S_{n}$. Then, $g_{1},g_{2},\ldots,g_{n}$ are elements of $\mathbb{N}$ (since
+$\left(  g_{1},g_{2},\ldots,g_{n}\right)  \in\mathbb{N}^{n}$). Hence,
+$g_{\sigma\left(  1\right)  },g_{\sigma\left(  2\right)  },\ldots
+,g_{\sigma\left(  n\right)  }$ are elements of $\mathbb{N}$. In other words,
+$\left(  g_{\sigma\left(  1\right)  },g_{\sigma\left(  2\right)  }%
+,\ldots,g_{\sigma\left(  n\right)  }\right)  \in\mathbb{N}^{n}$.
+\par
+Let $\left[  n\right]  $ denote the set $\left\{  1,2,\ldots,n\right\}  $.
+Recall that $\sigma\in S_{n}$. In other words, $\sigma$ is a permutation of
+the set $\left\{  1,2,\ldots,n\right\}  $ (since $S_{n}$ is the set of all
+permutations of the set $\left\{  1,2,\ldots,n\right\}  $). In other words,
+$\sigma$ is a permutation of the set $\left[  n\right]  $ (since $\left\{
+1,2,\ldots,n\right\}  =\left[  n\right]  $). In other words, $\sigma$ is a
+bijective map $\left[  n\right]  \rightarrow\left[  n\right]  $.
+\par
+Define an $n\times n$-matrix $A$ by $A=\left(  b_{j}^{g_{i}}\right)  _{1\leq
+i\leq n,\ 1\leq j\leq n}$. Define an $n\times n$-matrix $A_{\sigma}$ by
+$A_{\sigma}=\left(  b_{j}^{g_{\sigma\left(  i\right)  }}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}$. Lemma \ref{lem.det.sigma} \textbf{(a)} (applied to
+$\sigma$, $A$, $b_{j}^{g_{i}}$ and $A_{\sigma}$ instead of $\kappa$, $B$,
+$b_{i,j}$ and $B_{\kappa}$) then yields $\det\left(  A_{\sigma}\right)
+=\left(  -1\right)  ^{\sigma}\cdot\det A$.
+\par
+But $A=\left(  b_{j}^{g_{i}}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$. Thus,
+$A^{T}=\left(  b_{i}^{g_{j}}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ (by the
+definition of the transpose matrix $A^{T}$). Exercise \ref{exe.ps4.4} now
+yields $\det\left(  A^{T}\right)  =\det A$. Hence,%
+\[
+\det A=\det\left(  \underbrace{A^{T}}_{=\left(  b_{i}^{g_{j}}\right)  _{1\leq
+i\leq n,\ 1\leq j\leq n}}\right)  =\det\left(  \left(  b_{i}^{g_{j}}\right)
+_{1\leq i\leq n,\ 1\leq j\leq n}\right)  .
+\]
+\par
+On the other hand, $A_{\sigma}=\left(  b_{j}^{g_{\sigma\left(  i\right)  }%
+}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$. Hence, $\left(  A_{\sigma
+}\right)  ^{T}=\left(  b_{i}^{g_{\sigma\left(  j\right)  }}\right)  _{1\leq
+i\leq n,\ 1\leq j\leq n}$ (by the definition of the transpose matrix $\left(
+A_{\sigma}\right)  ^{T}$). Exercise \ref{exe.ps4.4} (applied to $A_{\sigma}$
+instead of $A$) now yields $\det\left(  \left(  A_{\sigma}\right)
+^{T}\right)  =\det\left(  A_{\sigma}\right)  $. Since $\left(  A_{\sigma
+}\right)  ^{T}=\left(  b_{i}^{g_{\sigma\left(  j\right)  }}\right)  _{1\leq
+i\leq n,\ 1\leq j\leq n}$, this rewrites as%
+\begin{align*}
+\det\left(  \left(  b_{i}^{g_{\sigma\left(  j\right)  }}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}\right)   &  =\det\left(  A_{\sigma}\right)  =\left(
+-1\right)  ^{\sigma}\cdot\underbrace{\det A}_{=\det\left(  \left(
+b_{i}^{g_{j}}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  }\\
+&  =\left(  -1\right)  ^{\sigma}\cdot\det\left(  \left(  b_{i}^{g_{j}}\right)
+_{1\leq i\leq n,\ 1\leq j\leq n}\right)  .
+\end{align*}
+This proves (\ref{pf.lem.sol.exeadd.powerdet.r1.c.Eis}).}.
+
+\item Every $\left(  g_{1},g_{2},\ldots,g_{n}\right)  \in\mathbb{N}^{n}$
+satisfies%
+\begin{equation}
+\det\left(  \left(  a_{i}^{g_{j}}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}\right)  =\sum_{\sigma\in S_{n}}\left(  \prod_{i=1}^{n}a_{i}^{g_{\sigma
+\left(  i\right)  }}\right)  \left(  -1\right)  ^{\sigma}
+\label{pf.lem.sol.exeadd.powerdet.r1.c.adet}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.sol.exeadd.powerdet.r1.c.adet}):} Let
+$\left(  g_{1},g_{2},\ldots,g_{n}\right)  \in\mathbb{N}^{n}$. The equality
+(\ref{eq.det.eq.2}) (applied to $\left(  a_{i}^{g_{j}}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}$ and $a_{i}^{g_{j}}$ instead of $A$ and $a_{i,j}$) yields%
+\[
+\det\left(  \left(  a_{i}^{g_{j}}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}\right)  =\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\prod_{i=1}%
+^{n}a_{i}^{g_{\sigma\left(  i\right)  }}=\sum_{\sigma\in S_{n}}\left(
+\prod_{i=1}^{n}a_{i}^{g_{\sigma\left(  i\right)  }}\right)  \left(  -1\right)
+^{\sigma}.
+\]
+This proves (\ref{pf.lem.sol.exeadd.powerdet.r1.c.adet}).}.
+\end{itemize}
+
+Now, each $\sigma\in S_{n}$ satisfies%
+\begin{equation}
+\left(  \sum_{i=1}^{n}a_{i}b_{\sigma\left(  i\right)  }\right)  ^{k}%
+=\sum_{\substack{\left(  k_{1},k_{2},\ldots,k_{n}\right)  \in\mathbb{N}%
+^{n};\\k_{1}+k_{2}+\cdots+k_{n}=k}}\mathbf{m}\left(  k_{1},k_{2},\ldots
+,k_{n}\right)  \prod_{i=1}^{n}\left(  a_{i}b_{\sigma\left(  i\right)
+}\right)  ^{k_{i}} \label{pf.lem.sol.exeadd.powerdet.r1.c.mulnom}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.sol.exeadd.powerdet.r1.c.mulnom}):}
+Let $\sigma\in S_{n}$. Then,%
+\begin{align*}
+\left(  \underbrace{\sum_{i=1}^{n}a_{i}b_{\sigma\left(  i\right)  }}%
+_{=a_{1}b_{\sigma\left(  1\right)  }+a_{2}b_{\sigma\left(  2\right)  }%
++\cdots+a_{n}b_{\sigma\left(  n\right)  }}\right)  ^{k}  &  =\left(
+a_{1}b_{\sigma\left(  1\right)  }+a_{2}b_{\sigma\left(  2\right)  }%
++\cdots+a_{n}b_{\sigma\left(  n\right)  }\right)  ^{k}\\
+&  =\sum_{\substack{\left(  k_{1},k_{2},\ldots,k_{n}\right)  \in\mathbb{N}%
+^{n};\\k_{1}+k_{2}+\cdots+k_{n}=k}}\mathbf{m}\left(  k_{1},k_{2},\ldots
+,k_{n}\right)  \prod_{i=1}^{n}\left(  a_{i}b_{\sigma\left(  i\right)
+}\right)  ^{k_{i}}%
+\end{align*}
+(by Exercise \ref{exe.multinom2} (applied to $n$, $k$ and $a_{i}%
+b_{\sigma\left(  i\right)  }$ instead of $m$, $n$ and $a_{i}$)). This proves
+(\ref{pf.lem.sol.exeadd.powerdet.r1.c.mulnom}).}.
+
+Hence,%
+\begin{align*}
+&  \sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\underbrace{\left(
+\sum_{i=1}^{n}a_{i}b_{\sigma\left(  i\right)  }\right)  ^{k}}_{\substack{=\sum
+_{\substack{\left(  k_{1},k_{2},\ldots,k_{n}\right)  \in\mathbb{N}^{n}%
+;\\k_{1}+k_{2}+\cdots+k_{n}=k}}\mathbf{m}\left(  k_{1},k_{2},\ldots
+,k_{n}\right)  \prod_{i=1}^{n}\left(  a_{i}b_{\sigma\left(  i\right)
+}\right)  ^{k_{i}}\\\text{(by (\ref{pf.lem.sol.exeadd.powerdet.r1.c.mulnom}%
+))}}}\\
+&  =\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\sum_{\substack{\left(
+k_{1},k_{2},\ldots,k_{n}\right)  \in\mathbb{N}^{n};\\k_{1}+k_{2}+\cdots
++k_{n}=k}}\mathbf{m}\left(  k_{1},k_{2},\ldots,k_{n}\right)  \prod_{i=1}%
+^{n}\left(  a_{i}b_{\sigma\left(  i\right)  }\right)  ^{k_{i}}\\
+&  =\underbrace{\sum_{\sigma\in S_{n}}\sum_{\substack{\left(  k_{1}%
+,k_{2},\ldots,k_{n}\right)  \in\mathbb{N}^{n};\\k_{1}+k_{2}+\cdots+k_{n}=k}%
+}}_{=\sum_{\substack{\left(  k_{1},k_{2},\ldots,k_{n}\right)  \in
+\mathbb{N}^{n};\\k_{1}+k_{2}+\cdots+k_{n}=k}}\sum_{\sigma\in S_{n}}}\left(
+-1\right)  ^{\sigma}\mathbf{m}\left(  k_{1},k_{2},\ldots,k_{n}\right)
+\prod_{i=1}^{n}\left(  a_{i}b_{\sigma\left(  i\right)  }\right)  ^{k_{i}}\\
+&  =\sum_{\substack{\left(  k_{1},k_{2},\ldots,k_{n}\right)  \in\mathbb{N}%
+^{n};\\k_{1}+k_{2}+\cdots+k_{n}=k}}\sum_{\sigma\in S_{n}}\left(  -1\right)
+^{\sigma}\mathbf{m}\left(  k_{1},k_{2},\ldots,k_{n}\right)  \prod_{i=1}%
+^{n}\left(  a_{i}b_{\sigma\left(  i\right)  }\right)  ^{k_{i}}\\
+&  =\sum_{\substack{\left(  k_{1},k_{2},\ldots,k_{n}\right)  \in\mathbb{N}%
+^{n};\\k_{1}+k_{2}+\cdots+k_{n}=k}}\mathbf{m}\left(  k_{1},k_{2},\ldots
+,k_{n}\right)  \sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\prod
+_{i=1}^{n}\left(  a_{i}b_{\sigma\left(  i\right)  }\right)  ^{k_{i}}\\
+&  =\underbrace{\sum_{\substack{\left(  k_{1},k_{2},\ldots,k_{n}\right)
+\in\mathbb{N}^{n};\\k_{1}+k_{2}+\cdots+k_{n}=k;\\\left(  k_{1},k_{2}%
+,\ldots,k_{n}\right)  \in\mathbf{E}}}}_{\substack{=\sum_{\substack{\left(
+k_{1},k_{2},\ldots,k_{n}\right)  \in\mathbb{N}^{n};\\\left(  k_{1}%
+,k_{2},\ldots,k_{n}\right)  \in\mathbf{E};\\k_{1}+k_{2}+\cdots+k_{n}%
+=k}}\\=\sum_{\substack{\left(  k_{1},k_{2},\ldots,k_{n}\right)  \in
+\mathbf{E};\\k_{1}+k_{2}+\cdots+k_{n}=k}}\\\text{(since }\mathbf{E}%
+\subseteq\mathbb{N}^{n}\text{)}}}\mathbf{m}\left(  k_{1},k_{2},\ldots
+,k_{n}\right)  \underbrace{\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma
+}\prod_{i=1}^{n}\left(  a_{i}b_{\sigma\left(  i\right)  }\right)  ^{k_{i}}%
+}_{\substack{=\left(  \prod_{i=1}^{n}a_{i}^{k_{i}}\right)  \det\left(  \left(
+b_{i}^{k_{j}}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  \\\text{(by
+Lemma \ref{lem.sol.exeadd.powerdet.r1.1} \textbf{(a)})}}}\\
+&  \ \ \ \ \ \ \ \ \ \ +\sum_{\substack{\left(  k_{1},k_{2},\ldots
+,k_{n}\right)  \in\mathbb{N}^{n};\\k_{1}+k_{2}+\cdots+k_{n}=k;\\\left(
+k_{1},k_{2},\ldots,k_{n}\right)  \notin\mathbf{E}}}\mathbf{m}\left(
+k_{1},k_{2},\ldots,k_{n}\right)  \underbrace{\sum_{\sigma\in S_{n}}\left(
+-1\right)  ^{\sigma}\prod_{i=1}^{n}\left(  a_{i}b_{\sigma\left(  i\right)
+}\right)  ^{k_{i}}}_{\substack{=0\\\text{(by
+(\ref{pf.lem.sol.exeadd.powerdet.r1.c.notEis0}))}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since each }\left(  k_{1},k_{2},\ldots,k_{n}\right)  \in\mathbb{N}%
+^{n}\text{ satisfies either }\left(  k_{1},k_{2},\ldots,k_{n}\right)
+\in\mathbf{E}\\
+\text{or }\left(  k_{1},k_{2},\ldots,k_{n}\right)  \notin\mathbf{E}\text{ (but
+not both)}%
+\end{array}
+\right)
+\end{align*}%
+\begin{align}
+&  =\sum_{\substack{\left(  k_{1},k_{2},\ldots,k_{n}\right)  \in
+\mathbf{E};\\k_{1}+k_{2}+\cdots+k_{n}=k}}\mathbf{m}\left(  k_{1},k_{2}%
+,\ldots,k_{n}\right)  \left(  \prod_{i=1}^{n}a_{i}^{k_{i}}\right)  \det\left(
+\left(  b_{i}^{k_{j}}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)
+\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ +\underbrace{\sum_{\substack{\left(  k_{1},k_{2}%
+,\ldots,k_{n}\right)  \in\mathbb{N}^{n};\\k_{1}+k_{2}+\cdots+k_{n}=k;\\\left(
+k_{1},k_{2},\ldots,k_{n}\right)  \notin\mathbf{E}}}\mathbf{m}\left(
+k_{1},k_{2},\ldots,k_{n}\right)  0}_{=0}\nonumber\\
+&  =\sum_{\substack{\left(  k_{1},k_{2},\ldots,k_{n}\right)  \in
+\mathbf{E};\\k_{1}+k_{2}+\cdots+k_{n}=k}}\mathbf{m}\left(  k_{1},k_{2}%
+,\ldots,k_{n}\right)  \left(  \prod_{i=1}^{n}a_{i}^{k_{i}}\right)  \det\left(
+\left(  b_{i}^{k_{j}}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)
+\nonumber\\
+&  =\sum_{\substack{\left(  \left(  g_{1},g_{2},\ldots,g_{n}\right)
+,\sigma\right)  \in\mathbf{I}\times S_{n};\\g_{\sigma\left(  1\right)
+}+g_{\sigma\left(  2\right)  }+\cdots+g_{\sigma\left(  n\right)  }%
+=k}}\mathbf{m}\left(  g_{\sigma\left(  1\right)  },g_{\sigma\left(  2\right)
+},\ldots,g_{\sigma\left(  n\right)  }\right)  \left(  \prod_{i=1}^{n}%
+a_{i}^{g_{\sigma\left(  i\right)  }}\right)  \det\left(  \left(
+b_{i}^{g_{\sigma\left(  j\right)  }}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}\right)  \label{pf.lem.sol.exeadd.powerdet.r1.c.3}%
+\end{align}
+(here, we have substituted $\left(  g_{\sigma\left(  1\right)  }%
+,g_{\sigma\left(  2\right)  },\ldots,g_{\sigma\left(  n\right)  }\right)  $
+for $\left(  k_{1},k_{2},\ldots,k_{n}\right)  $ in the sum, because the map%
+\begin{align*}
+\mathbf{I}\times S_{n}  &  \rightarrow\mathbf{E},\\
+\left(  \left(  g_{1},g_{2},\ldots,g_{n}\right)  ,\sigma\right)   &
+\mapsto\left(  g_{\sigma\left(  1\right)  },g_{\sigma\left(  2\right)
+},\ldots,g_{\sigma\left(  n\right)  }\right)
+\end{align*}
+is a bijection).
+
+But we have the following equality of summation signs:%
+\begin{align*}
+\sum_{\substack{\left(  \left(  g_{1},g_{2},\ldots,g_{n}\right)
+,\sigma\right)  \in\mathbf{I}\times S_{n};\\g_{\sigma\left(  1\right)
+}+g_{\sigma\left(  2\right)  }+\cdots+g_{\sigma\left(  n\right)  }=k}}  &
+=\underbrace{\sum_{\left(  g_{1},g_{2},\ldots,g_{n}\right)  \in\mathbf{I}}%
+}_{\substack{=\sum_{\substack{\left(  g_{1},g_{2},\ldots,g_{n}\right)
+\in\mathbb{N}^{n};\\g_{1}<g_{2}<\cdots<g_{n}}}\\\text{(since }\mathbf{I}%
+=\left\{  \left(  g_{1},g_{2},\ldots,g_{n}\right)  \in\mathbb{N}^{n}%
+\ \mid\ g_{1}<g_{2}<\cdots<g_{n}\right\}  \text{)}}}\underbrace{\sum
+_{\substack{\sigma\in S_{n};\\g_{\sigma\left(  1\right)  }+g_{\sigma\left(
+2\right)  }+\cdots+g_{\sigma\left(  n\right)  }=k}}}_{\substack{=\sum
+_{\substack{\sigma\in S_{n};\\g_{1}+g_{2}+\cdots+g_{n}=k}}\\\text{(since each
+}\sigma\in S_{n}\text{ satisfies}\\g_{\sigma\left(  1\right)  }+g_{\sigma
+\left(  2\right)  }+\cdots+g_{\sigma\left(  n\right)  }=g_{1}+g_{2}%
++\cdots+g_{n}\\\text{(by Lemma \ref{lem.sol.exeadd.powerdet.r1.perm-m}
+\textbf{(a)}))}}}\\
+&  =\sum_{\substack{\left(  g_{1},g_{2},\ldots,g_{n}\right)  \in\mathbb{N}%
+^{n};\\g_{1}<g_{2}<\cdots<g_{n}}}\sum_{\substack{\sigma\in S_{n};\\g_{1}%
++g_{2}+\cdots+g_{n}=k}}=\sum_{\substack{\left(  g_{1},g_{2},\ldots
+,g_{n}\right)  \in\mathbb{N}^{n};\\g_{1}<g_{2}<\cdots<g_{n};\\g_{1}%
++g_{2}+\cdots+g_{n}=k}}\sum_{\sigma\in S_{n}}.
+\end{align*}
+Hence, (\ref{pf.lem.sol.exeadd.powerdet.r1.c.3}) becomes%
+\begin{align*}
+&  \sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\left(  \sum_{i=1}%
+^{n}a_{i}b_{\sigma\left(  i\right)  }\right)  ^{k}\\
+&  =\underbrace{\sum_{\substack{\left(  \left(  g_{1},g_{2},\ldots
+,g_{n}\right)  ,\sigma\right)  \in\mathbf{I}\times S_{n};\\g_{\sigma\left(
+1\right)  }+g_{\sigma\left(  2\right)  }+\cdots+g_{\sigma\left(  n\right)
+}=k}}}_{=\sum_{\substack{\left(  g_{1},g_{2},\ldots,g_{n}\right)
+\in\mathbb{N}^{n};\\g_{1}<g_{2}<\cdots<g_{n};\\g_{1}+g_{2}+\cdots+g_{n}%
+=k}}\sum_{\sigma\in S_{n}}}\mathbf{m}\left(  g_{\sigma\left(  1\right)
+},g_{\sigma\left(  2\right)  },\ldots,g_{\sigma\left(  n\right)  }\right)
+\left(  \prod_{i=1}^{n}a_{i}^{g_{\sigma\left(  i\right)  }}\right)
+\det\left(  \left(  b_{i}^{g_{\sigma\left(  j\right)  }}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}\right) \\
+&  =\sum_{\substack{\left(  g_{1},g_{2},\ldots,g_{n}\right)  \in\mathbb{N}%
+^{n};\\g_{1}<g_{2}<\cdots<g_{n};\\g_{1}+g_{2}+\cdots+g_{n}=k}}\sum_{\sigma\in
+S_{n}}\underbrace{\mathbf{m}\left(  g_{\sigma\left(  1\right)  }%
+,g_{\sigma\left(  2\right)  },\ldots,g_{\sigma\left(  n\right)  }\right)
+}_{\substack{=\mathbf{m}\left(  g_{1},g_{2},\ldots,g_{n}\right)  \\\text{(by
+Lemma \ref{lem.sol.exeadd.powerdet.r1.perm-m} \textbf{(b)})}}}\left(
+\prod_{i=1}^{n}a_{i}^{g_{\sigma\left(  i\right)  }}\right)  \underbrace{\det
+\left(  \left(  b_{i}^{g_{\sigma\left(  j\right)  }}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}\right)  }_{\substack{=\left(  -1\right)  ^{\sigma}\cdot
+\det\left(  \left(  b_{i}^{g_{j}}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}\right)  \\\text{(by (\ref{pf.lem.sol.exeadd.powerdet.r1.c.Eis}))}}}\\
+&  =\sum_{\substack{\left(  g_{1},g_{2},\ldots,g_{n}\right)  \in\mathbb{N}%
+^{n};\\g_{1}<g_{2}<\cdots<g_{n};\\g_{1}+g_{2}+\cdots+g_{n}=k}}\underbrace{\sum
+_{\sigma\in S_{n}}\mathbf{m}\left(  g_{1},g_{2},\ldots,g_{n}\right)  \left(
+\prod_{i=1}^{n}a_{i}^{g_{\sigma\left(  i\right)  }}\right)  \left(  -1\right)
+^{\sigma}\cdot\det\left(  \left(  b_{i}^{g_{j}}\right)  _{1\leq i\leq
+n,\ 1\leq j\leq n}\right)  }_{=\mathbf{m}\left(  g_{1},g_{2},\ldots
+,g_{n}\right)  \cdot\left(  \sum_{\sigma\in S_{n}}\left(  \prod_{i=1}^{n}%
+a_{i}^{g_{\sigma\left(  i\right)  }}\right)  \left(  -1\right)  ^{\sigma
+}\right)  \det\left(  \left(  b_{i}^{g_{j}}\right)  _{1\leq i\leq n,\ 1\leq
+j\leq n}\right)  }\\
+&  =\sum_{\substack{\left(  g_{1},g_{2},\ldots,g_{n}\right)  \in\mathbb{N}%
+^{n};\\g_{1}<g_{2}<\cdots<g_{n};\\g_{1}+g_{2}+\cdots+g_{n}=k}}\mathbf{m}%
+\left(  g_{1},g_{2},\ldots,g_{n}\right)  \cdot\underbrace{\left(  \sum
+_{\sigma\in S_{n}}\left(  \prod_{i=1}^{n}a_{i}^{g_{\sigma\left(  i\right)  }%
+}\right)  \left(  -1\right)  ^{\sigma}\right)  }_{\substack{=\det\left(
+\left(  a_{i}^{g_{j}}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)
+\\\text{(by (\ref{pf.lem.sol.exeadd.powerdet.r1.c.adet}))}}}\det\left(
+\left(  b_{i}^{g_{j}}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right) \\
+&  =\sum_{\substack{\left(  g_{1},g_{2},\ldots,g_{n}\right)  \in\mathbb{N}%
+^{n};\\g_{1}<g_{2}<\cdots<g_{n};\\g_{1}+g_{2}+\cdots+g_{n}=k}}\mathbf{m}%
+\left(  g_{1},g_{2},\ldots,g_{n}\right)  \cdot\det\left(  \left(  a_{i}%
+^{g_{j}}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  \cdot\det\left(
+\left(  b_{i}^{g_{j}}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  .
+\end{align*}
+This proves Lemma \ref{lem.sol.exeadd.powerdet.r1.c}.
+\end{proof}
+
+Next, we can use Lemma \ref{lem.sol.exeadd.powerdet.r1.c} to solve part
+\textbf{(a)} of Additional exercise \ref{exeadd.powerdet.r1}:
+
+\begin{lemma}
+\label{lem.sol.exeadd.powerdet.r1.a}Let $n\in\mathbb{N}$. Let $a_{1}%
+,a_{2},\ldots,a_{n}$ be $n$ elements of $\mathbb{K}$. Let $b_{1},b_{2}%
+,\ldots,b_{n}$ be $n$ elements of $\mathbb{K}$. Let $m=\dbinom{n}{2}$.
+
+Then,
+\[
+\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\left(  \sum_{i=1}^{n}%
+a_{i}b_{\sigma\left(  i\right)  }\right)  ^{k}=0
+\]
+for each $k\in\left\{  0,1,\ldots,m-1\right\}  $.
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exeadd.powerdet.r1.a}.]Let $k\in\left\{
+0,1,\ldots,m-1\right\}  $. Then, $k\in\mathbb{N}$ and $k\leq m-1$.
+
+There exists no $\left(  g_{1},g_{2},\ldots,g_{n}\right)  \in\mathbb{N}^{n}$
+satisfying $g_{1}<g_{2}<\cdots<g_{n}$ and $g_{1}+g_{2}+\cdots+g_{n}%
+=k$\ \ \ \ \footnote{\textit{Proof.} Let $\left(  g_{1},g_{2},\ldots
+,g_{n}\right)  \in\mathbb{N}^{n}$ be such that $g_{1}<g_{2}<\cdots<g_{n}$ and
+$g_{1}+g_{2}+\cdots+g_{n}=k$. We shall derive a contradiction.
+\par
+Lemma \ref{lem.sol.exeadd.powerdet.r1.0} \textbf{(a)} (applied to $k_{i}%
+=g_{i}$) yields $g_{1}+g_{2}+\cdots+g_{n}\geq\dbinom{n}{2}$. This contradicts
+$g_{1}+g_{2}+\cdots+g_{n}=k\leq m-1<m=\dbinom{n}{2}$.
+\par
+Now, let us forget that we fixed $\left(  g_{1},g_{2},\ldots,g_{n}\right)  $.
+We thus have derived a contradiction for each $\left(  g_{1},g_{2}%
+,\ldots,g_{n}\right)  \in\mathbb{N}^{n}$ satisfying $g_{1}<g_{2}<\cdots<g_{n}$
+and $g_{1}+g_{2}+\cdots+g_{n}=k$. Hence, there exists no $\left(  g_{1}%
+,g_{2},\ldots,g_{n}\right)  \in\mathbb{N}^{n}$ satisfying $g_{1}<g_{2}%
+<\cdots<g_{n}$ and $g_{1}+g_{2}+\cdots+g_{n}=k$.}. Thus, the sum
+\[
+\sum_{\substack{\left(  g_{1},g_{2},\ldots,g_{n}\right)  \in\mathbb{N}%
+^{n};\\g_{1}<g_{2}<\cdots<g_{n};\\g_{1}+g_{2}+\cdots+g_{n}=k}}\mathbf{m}%
+\left(  g_{1},g_{2},\ldots,g_{n}\right)  \cdot\det\left(  \left(  a_{i}%
+^{g_{j}}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  \cdot\det\left(
+\left(  b_{i}^{g_{j}}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)
+\]
+is an empty sum. Hence,%
+\begin{align*}
+&  \sum_{\substack{\left(  g_{1},g_{2},\ldots,g_{n}\right)  \in\mathbb{N}%
+^{n};\\g_{1}<g_{2}<\cdots<g_{n};\\g_{1}+g_{2}+\cdots+g_{n}=k}}\mathbf{m}%
+\left(  g_{1},g_{2},\ldots,g_{n}\right)  \cdot\det\left(  \left(  a_{i}%
+^{g_{j}}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  \cdot\det\left(
+\left(  b_{i}^{g_{j}}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right) \\
+&  =\left(  \text{empty sum}\right)  =0.
+\end{align*}
+
+
+Now, Lemma \ref{lem.sol.exeadd.powerdet.r1.c} yields%
+\begin{align*}
+&  \sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\left(  \sum_{i=1}%
+^{n}a_{i}b_{\sigma\left(  i\right)  }\right)  ^{k}\\
+&  =\sum_{\substack{\left(  g_{1},g_{2},\ldots,g_{n}\right)  \in\mathbb{N}%
+^{n};\\g_{1}<g_{2}<\cdots<g_{n};\\g_{1}+g_{2}+\cdots+g_{n}=k}}\mathbf{m}%
+\left(  g_{1},g_{2},\ldots,g_{n}\right)  \cdot\det\left(  \left(  a_{i}%
+^{g_{j}}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  \cdot\det\left(
+\left(  b_{i}^{g_{j}}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right) \\
+&  =0.
+\end{align*}
+This proves Lemma \ref{lem.sol.exeadd.powerdet.r1.a}.
+\end{proof}
+
+Finally, we are ready for part \textbf{(b)} of Additional exercise
+\ref{exeadd.powerdet.r1}:
+
+\begin{lemma}
+\label{lem.sol.exeadd.powerdet.r1.b}Let $n\in\mathbb{N}$. Let $a_{1}%
+,a_{2},\ldots,a_{n}$ be $n$ elements of $\mathbb{K}$. Let $b_{1},b_{2}%
+,\ldots,b_{n}$ be $n$ elements of $\mathbb{K}$.
+
+Let $m=\dbinom{n}{2}$. Then,%
+\[
+\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\left(  \sum_{i=1}^{n}%
+a_{i}b_{\sigma\left(  i\right)  }\right)  ^{m}=\mathbf{m}\left(
+0,1,\ldots,n-1\right)  \cdot\prod_{1\leq i<j\leq n}\left(  \left(  a_{i}%
+-a_{j}\right)  \left(  b_{i}-b_{j}\right)  \right)  .
+\]
+Here, we are using the notation introduced in Exercise \ref{exe.multinom2}.
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exeadd.powerdet.r1.b}.]We have $m=\dbinom{n}%
+{2}=\sum_{r=0}^{n-1}r$ (by Lemma \ref{lem.sol.vander-hook.gauss}), thus
+$m=\sum_{r=0}^{n-1}r\in\mathbb{N}$. Hence, Lemma
+\ref{lem.sol.exeadd.powerdet.r1.c} (applied to $k=m$) yields%
+\begin{align*}
+&  \sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\left(  \sum_{i=1}%
+^{n}a_{i}b_{\sigma\left(  i\right)  }\right)  ^{m}\\
+&  =\sum_{\substack{\left(  g_{1},g_{2},\ldots,g_{n}\right)  \in\mathbb{N}%
+^{n};\\g_{1}<g_{2}<\cdots<g_{n};\\g_{1}+g_{2}+\cdots+g_{n}=m}}\mathbf{m}%
+\left(  g_{1},g_{2},\ldots,g_{n}\right)  \cdot\det\left(  \left(  a_{i}%
+^{g_{j}}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  \cdot\det\left(
+\left(  b_{i}^{g_{j}}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  .
+\end{align*}
+
+
+But we have the following two observations:
+
+\begin{itemize}
+\item The $n$-tuple $\left(  0,1,\ldots,n-1\right)  $ is an $n$-tuple $\left(
+g_{1},g_{2},\ldots,g_{n}\right)  \in\mathbb{N}^{n}$ satisfying $g_{1}%
+<g_{2}<\cdots<g_{n}$ and $g_{1}+g_{2}+\cdots+g_{n}=m$%
+\ \ \ \ \footnote{\textit{Proof.} The $n$-tuple $\left(  0,1,\ldots
+,n-1\right)  $ belongs to $\mathbb{N}^{n}$ and satisfies $0<1<\cdots<n-1$ and
+$0+1+\cdots+\left(  n-1\right)  =m$ (since $0+1+\cdots+\left(  n-1\right)
+=\sum_{r=0}^{n-1}r=m$). In other words, the $n$-tuple $\left(  0,1,\ldots
+,n-1\right)  $ is an $n$-tuple $\left(  g_{1},g_{2},\ldots,g_{n}\right)
+\in\mathbb{N}^{n}$ satisfying $g_{1}<g_{2}<\cdots<g_{n}$ and $g_{1}%
++g_{2}+\cdots+g_{n}=m$.}.
+
+\item Any $n$-tuple $\left(  g_{1},g_{2},\ldots,g_{n}\right)  \in
+\mathbb{N}^{n}$ satisfying $g_{1}<g_{2}<\cdots<g_{n}$ and $g_{1}+g_{2}%
++\cdots+g_{n}=m$\ must be equal to $\left(  0,1,\ldots,n-1\right)
+$\ \ \ \ \footnote{\textit{Proof.} Let $\left(  g_{1},g_{2},\ldots
+,g_{n}\right)  \in\mathbb{N}^{n}$ be any $n$-tuple satisfying $g_{1}%
+<g_{2}<\cdots<g_{n}$ and $g_{1}+g_{2}+\cdots+g_{n}=m$. We shall show that
+$\left(  g_{1},g_{2},\ldots,g_{n}\right)  $ must be equal to $\left(
+0,1,\ldots,n-1\right)  $.
+\par
+We have $g_{1}+g_{2}+\cdots+g_{n}=m\leq m=\dbinom{n}{2}$. Hence, Lemma
+\ref{lem.sol.exeadd.powerdet.r1.0} \textbf{(b)} (applied to $g_{i}$ instead of
+$k_{i}$) shows that $\left(  g_{1},g_{2},\ldots,g_{n}\right)  =\left(
+0,1,\ldots,n-1\right)  $. In other words, $\left(  g_{1},g_{2},\ldots
+,g_{n}\right)  $ must be equal to $\left(  0,1,\ldots,n-1\right)  $. Qed.}.
+\end{itemize}
+
+Combining these two observations, we conclude that there exists exactly one
+$n$-tuple $\left(  g_{1},g_{2},\ldots,g_{n}\right)  \in\mathbb{N}^{n}$
+satisfying $g_{1}<g_{2}<\cdots<g_{n}$ and $g_{1}+g_{2}+\cdots+g_{n}=m$:
+namely, the $n$-tuple $\left(  0,1,\ldots,n-1\right)  $. Hence, the sum%
+\[
+\sum_{\substack{\left(  g_{1},g_{2},\ldots,g_{n}\right)  \in\mathbb{N}%
+^{n};\\g_{1}<g_{2}<\cdots<g_{n};\\g_{1}+g_{2}+\cdots+g_{n}=m}}\mathbf{m}%
+\left(  g_{1},g_{2},\ldots,g_{n}\right)  \cdot\det\left(  \left(  a_{i}%
+^{g_{j}}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  \cdot\det\left(
+\left(  b_{i}^{g_{j}}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)
+\]
+has only one addend: namely, the addend for $\left(  g_{1},g_{2},\ldots
+,g_{n}\right)  =\left(  0,1,\ldots,n-1\right)  $. Therefore, this sum can be
+simplified as follows:%
+\begin{align*}
+&  \sum_{\substack{\left(  g_{1},g_{2},\ldots,g_{n}\right)  \in\mathbb{N}%
+^{n};\\g_{1}<g_{2}<\cdots<g_{n};\\g_{1}+g_{2}+\cdots+g_{n}=m}}\mathbf{m}%
+\left(  g_{1},g_{2},\ldots,g_{n}\right)  \cdot\det\left(  \left(  a_{i}%
+^{g_{j}}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  \cdot\det\left(
+\left(  b_{i}^{g_{j}}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right) \\
+&  =\mathbf{m}\left(  0,1,\ldots,n-1\right)  \cdot\underbrace{\det\left(
+\left(  a_{i}^{j-1}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)
+}_{\substack{=\prod_{1\leq j<i\leq n}\left(  a_{i}-a_{j}\right)  \\\text{(by
+Theorem \ref{thm.vander-det} \textbf{(c)}}\\\text{(applied to }x_{k}%
+=a_{k}\text{))}}}\cdot\underbrace{\det\left(  \left(  b_{i}^{j-1}\right)
+_{1\leq i\leq n,\ 1\leq j\leq n}\right)  }_{\substack{=\prod_{1\leq j<i\leq
+n}\left(  b_{i}-b_{j}\right)  \\\text{(by Theorem \ref{thm.vander-det}
+\textbf{(c)}}\\\text{(applied to }x_{k}=b_{k}\text{))}}}\\
+&  =\mathbf{m}\left(  0,1,\ldots,n-1\right)  \cdot\underbrace{\left(
+\prod_{1\leq j<i\leq n}\left(  a_{i}-a_{j}\right)  \right)  \cdot\left(
+\prod_{1\leq j<i\leq n}\left(  b_{i}-b_{j}\right)  \right)  }%
+_{\substack{=\prod_{1\leq j<i\leq n}\left(  \left(  a_{i}-a_{j}\right)
+\left(  b_{i}-b_{j}\right)  \right)  \\=\prod_{1\leq i<j\leq n}\left(  \left(
+a_{j}-a_{i}\right)  \left(  b_{j}-b_{i}\right)  \right)  \\\text{(here, we
+have renamed the index }\left(  j,i\right)  \text{ as }\left(  i,j\right)
+\\\text{in the product)}}}\\
+&  =\mathbf{m}\left(  0,1,\ldots,n-1\right)  \cdot\prod_{1\leq i<j\leq
+n}\left(  \underbrace{\left(  a_{j}-a_{i}\right)  \left(  b_{j}-b_{i}\right)
+}_{=\left(  a_{i}-a_{j}\right)  \left(  b_{i}-b_{j}\right)  }\right) \\
+&  =\mathbf{m}\left(  0,1,\ldots,n-1\right)  \cdot\prod_{1\leq i<j\leq
+n}\left(  \left(  a_{i}-a_{j}\right)  \left(  b_{i}-b_{j}\right)  \right)  .
+\end{align*}
+Thus,%
+\begin{align*}
+&  \sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\left(  \sum_{i=1}%
+^{n}a_{i}b_{\sigma\left(  i\right)  }\right)  ^{m}\\
+&  =\sum_{\substack{\left(  g_{1},g_{2},\ldots,g_{n}\right)  \in\mathbb{N}%
+^{n};\\g_{1}<g_{2}<\cdots<g_{n};\\g_{1}+g_{2}+\cdots+g_{n}=m}}\mathbf{m}%
+\left(  g_{1},g_{2},\ldots,g_{n}\right)  \cdot\det\left(  \left(  a_{i}%
+^{g_{j}}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  \cdot\det\left(
+\left(  b_{i}^{g_{j}}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right) \\
+&  =\mathbf{m}\left(  0,1,\ldots,n-1\right)  \cdot\prod_{1\leq i<j\leq
+n}\left(  \left(  a_{i}-a_{j}\right)  \left(  b_{i}-b_{j}\right)  \right)  .
+\end{align*}
+This proves Lemma \ref{lem.sol.exeadd.powerdet.r1.b}.
+\end{proof}
+
+\begin{proof}
+[Solution to Additional exercise \ref{exeadd.powerdet.r1}.]Additional exercise
+\ref{exeadd.powerdet.r1} \textbf{(a)} follows from Lemma
+\ref{lem.sol.exeadd.powerdet.r1.a}. Additional exercise
+\ref{exeadd.powerdet.r1} \textbf{(b)} follows from Lemma
+\ref{lem.sol.exeadd.powerdet.r1.b}. Additional exercise
+\ref{exeadd.powerdet.r1} \textbf{(c)} follows from Lemma
+\ref{lem.sol.exeadd.powerdet.r1.c}.
+\end{proof}
+
+\subsubsection{Additional observations}
+
+Let us also record two corollaries of Lemma \ref{lem.sol.exeadd.powerdet.r1.0}:
+
+\begin{corollary}
+\label{cor.sol.exeadd.powerdet.r1.0dist}Let $n\in\mathbb{N}$. Let $\left(
+p_{1},p_{2},\ldots,p_{n}\right)  \in\mathbb{N}^{n}$ be such that $p_{1}%
+,p_{2},\ldots,p_{n}$ are distinct. Then, $p_{1}+p_{2}+\cdots+p_{n}\geq
+\dbinom{n}{2}$.
+\end{corollary}
+
+\begin{proof}
+[Proof of Corollary \ref{cor.sol.exeadd.powerdet.r1.0dist}.]Define the subsets
+$\mathbf{E}$ and $\mathbf{I}$ of $\mathbb{N}^{n}$ as in Lemma
+\ref{lem.sol.exeadd.powerdet.r1.EI}. Then, Lemma
+\ref{lem.sol.exeadd.powerdet.r1.EI} shows that the map%
+\begin{align*}
+\mathbf{I}\times S_{n}  &  \rightarrow\mathbf{E},\\
+\left(  \left(  g_{1},g_{2},\ldots,g_{n}\right)  ,\sigma\right)   &
+\mapsto\left(  g_{\sigma\left(  1\right)  },g_{\sigma\left(  2\right)
+},\ldots,g_{\sigma\left(  n\right)  }\right)
+\end{align*}
+is well-defined and is a bijection. Denote this map by $\Phi$.
+
+Notice that%
+\begin{equation}
+\mathbf{E}=\left\{  \left(  k_{1},k_{2},\ldots,k_{n}\right)  \in\mathbb{N}%
+^{n}\ \mid\ \text{the integers }k_{1},k_{2},\ldots,k_{n}\text{ are
+distinct}\right\}  \label{pf.cor.sol.exeadd.powerdet.r1.0dist.E=}%
+\end{equation}
+(by the definition of $\mathbf{E}$).
+
+\begin{vershort}
+Now, $\left(  p_{1},p_{2},\ldots,p_{n}\right)  $ is an element of
+$\mathbb{N}^{n}$ having the property that the integers $p_{1},p_{2}%
+,\ldots,p_{n}$ are distinct. In other words,%
+\[
+\left(  p_{1},p_{2},\ldots,p_{n}\right)  \in\left\{  \left(  k_{1}%
+,k_{2},\ldots,k_{n}\right)  \in\mathbb{N}^{n}\ \mid\ \text{the integers }%
+k_{1},k_{2},\ldots,k_{n}\text{ are distinct}\right\}  .
+\]
+In view of (\ref{pf.cor.sol.exeadd.powerdet.r1.0dist.E=}), this rewrites as
+$\left(  p_{1},p_{2},\ldots,p_{n}\right)  \in\mathbf{E}$.
+\end{vershort}
+
+\begin{verlong}
+Now, $\left(  p_{1},p_{2},\ldots,p_{n}\right)  $ is an element of
+$\mathbb{N}^{n}$ having the property that the integers $p_{1},p_{2}%
+,\ldots,p_{n}$ are distinct. In other words, $\left(  p_{1},p_{2},\ldots
+,p_{n}\right)  $ is a $\left(  k_{1},k_{2},\ldots,k_{n}\right)  \in
+\mathbb{N}^{n}$ such that the integers $k_{1},k_{2},\ldots,k_{n}$ are
+distinct. In other words,%
+\[
+\left(  p_{1},p_{2},\ldots,p_{n}\right)  \in\left\{  \left(  k_{1}%
+,k_{2},\ldots,k_{n}\right)  \in\mathbb{N}^{n}\ \mid\ \text{the integers }%
+k_{1},k_{2},\ldots,k_{n}\text{ are distinct}\right\}  .
+\]
+In view of (\ref{pf.cor.sol.exeadd.powerdet.r1.0dist.E=}), this rewrites as
+$\left(  p_{1},p_{2},\ldots,p_{n}\right)  \in\mathbf{E}$.
+\end{verlong}
+
+\begin{vershort}
+But the map $\Phi$ is surjective (since $\Phi$ is a bijection). In other
+words, $\mathbf{E}=\Phi\left(  \mathbf{I}\times S_{n}\right)  $. Thus,
+$\left(  p_{1},p_{2},\ldots,p_{n}\right)  \in\mathbf{E}=\Phi\left(
+\mathbf{I}\times S_{n}\right)  $. In other words, there exists some
+\newline$\left(  \left(  k_{1},k_{2},\ldots,k_{n}\right)  ,\sigma\right)
+\in\mathbf{I}\times S_{n}$ such that $\left(  p_{1},p_{2},\ldots,p_{n}\right)
+=\Phi\left(  \left(  \left(  k_{1},k_{2},\ldots,k_{n}\right)  ,\sigma\right)
+\right)  $. Consider this $\left(  \left(  k_{1},k_{2},\ldots,k_{n}\right)
+,\sigma\right)  $.
+\end{vershort}
+
+\begin{verlong}
+But the map $\Phi$ is bijective (since $\Phi$ is a bijection). Hence, $\Phi$
+is surjective. In other words, $\mathbf{E}=\Phi\left(  \mathbf{I}\times
+S_{n}\right)  $. Thus, $\left(  p_{1},p_{2},\ldots,p_{n}\right)  \in
+\mathbf{E}=\Phi\left(  \mathbf{I}\times S_{n}\right)  $. In other words, there
+exists some $\left(  \beta,\sigma\right)  \in\mathbf{I}\times S_{n}$ such that
+$\left(  p_{1},p_{2},\ldots,p_{n}\right)  =\Phi\left(  \left(  \beta
+,\sigma\right)  \right)  $. Consider this $\left(  \beta,\sigma\right)  $.
+
+We have $\left(  \beta,\sigma\right)  \in\mathbf{I}\times S_{n}$. Thus,
+$\beta\in\mathbf{I}$ and $\sigma\in S_{n}$.
+
+We have $\sigma\in S_{n}$. But $S_{n}$ is the set of all permutations of the
+set $\left\{  1,2,\ldots,n\right\}  $. In other words, $S_{n}$ is the set of
+all bijections $\left\{  1,2,\ldots,n\right\}  \rightarrow\left\{
+1,2,\ldots,n\right\}  $ (since the permutations of the set $\left\{
+1,2,\ldots,n\right\}  $ are exactly the bijections $\left\{  1,2,\ldots
+,n\right\}  \rightarrow\left\{  1,2,\ldots,n\right\}  $). Hence, $\sigma$ is a
+bijection $\left\{  1,2,\ldots,n\right\}  \rightarrow\left\{  1,2,\ldots
+,n\right\}  $ (since $\sigma\in S_{n}$).
+
+We have%
+\[
+\beta\in\mathbf{I}=\left\{  \left(  k_{1},k_{2},\ldots,k_{n}\right)
+\in\mathbb{N}^{n}\ \mid\ k_{1}<k_{2}<\cdots<k_{n}\right\}
+\]
+(by the definition of $\mathbf{I}$). Hence, $\beta$ can be written in the form
+$\beta=\left(  k_{1},k_{2},\ldots,k_{n}\right)  $ for some $\left(
+k_{1},k_{2},\ldots,k_{n}\right)  \in\mathbb{N}^{n}$ satisfying $k_{1}%
+<k_{2}<\cdots<k_{n}$. Consider this $\left(  k_{1},k_{2},\ldots,k_{n}\right)
+$.
+\end{verlong}
+
+\begin{vershort}
+We have%
+\[
+\left(  p_{1},p_{2},\ldots,p_{n}\right)  =\Phi\left(  \left(  \left(
+k_{1},k_{2},\ldots,k_{n}\right)  ,\sigma\right)  \right)  =\left(
+k_{\sigma\left(  1\right)  },k_{\sigma\left(  2\right)  },\ldots
+,k_{\sigma\left(  n\right)  }\right)
+\]
+(by the definition of the map $\Phi$). Thus,%
+\begin{align*}
+p_{1}+p_{2}+\cdots+p_{n} &  =k_{\sigma\left(  1\right)  }+k_{\sigma\left(
+2\right)  }+\cdots+k_{\sigma\left(  n\right)  }=k_{1}+k_{2}+\cdots+k_{n}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Lemma
+\ref{lem.sol.exeadd.powerdet.r1.perm-m} \textbf{(a)}, applied to }g_{i}%
+=k_{i}\right)  \\
+&  \geq\dbinom{n}{2}.
+\end{align*}
+This proves Corollary \ref{cor.sol.exeadd.powerdet.r1.0dist}.
+\end{vershort}
+
+\begin{verlong}
+We have%
+\begin{align*}
+\left(  p_{1},p_{2},\ldots,p_{n}\right)   &  =\Phi\left(  \left(
+\underbrace{\beta}_{=\left(  k_{1},k_{2},\ldots,k_{n}\right)  },\sigma\right)
+\right)  =\Phi\left(  \left(  \left(  k_{1},k_{2},\ldots,k_{n}\right)
+,\sigma\right)  \right)  \\
+&  =\left(  k_{\sigma\left(  1\right)  },k_{\sigma\left(  2\right)  }%
+,\ldots,k_{\sigma\left(  n\right)  }\right)  \ \ \ \ \ \ \ \ \ \ \left(
+\text{by the definition of the map }\Phi\right)  .
+\end{align*}
+Thus,%
+\begin{align*}
+p_{1}+p_{2}+\cdots+p_{n} &  =k_{\sigma\left(  1\right)  }+k_{\sigma\left(
+2\right)  }+\cdots+k_{\sigma\left(  n\right)  }=\underbrace{\sum_{i=1}^{n}%
+}_{=\sum_{i\in\left\{  1,2,\ldots,n\right\}  }}k_{\sigma\left(  i\right)  }\\
+&  =\sum_{i\in\left\{  1,2,\ldots,n\right\}  }k_{\sigma\left(  i\right)
+}=\underbrace{\sum_{i\in\left\{  1,2,\ldots,n\right\}  }}_{=\sum_{i=1}^{n}%
+}k_{i}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have substituted }i\text{ for }\sigma\left(  i\right)  \text{
+in the sum, since}\\
+\text{the map }\sigma:\left\{  1,2,\ldots,n\right\}  \rightarrow\left\{
+1,2,\ldots,n\right\}  \text{ is a bijection}%
+\end{array}
+\right)  \\
+&  =\sum_{i=1}^{n}k_{i}=k_{1}+k_{2}+\cdots+k_{n}\geq\dbinom{n}{2}%
+\end{align*}
+(by Lemma \ref{lem.sol.exeadd.powerdet.r1.0} \textbf{(a)}). This proves
+Corollary \ref{cor.sol.exeadd.powerdet.r1.0dist}.
+\end{verlong}
+\end{proof}
+
+\begin{corollary}
+\label{cor.sol.exeadd.powerdet.r1.1c}Let $n\in\mathbb{N}$. Let $a_{1}%
+,a_{2},\ldots,a_{n}$ be $n$ elements of $\mathbb{K}$. Let $b_{1},b_{2}%
+,\ldots,b_{n}$ be $n$ elements of $\mathbb{K}$.
+
+Let $\left(  k_{1},k_{2},\ldots,k_{n}\right)  \in\mathbb{N}^{n}$ be such that
+$k_{1}+k_{2}+\cdots+k_{n}<\dbinom{n}{2}$. Then,%
+\[
+\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\prod_{i=1}^{n}\left(
+a_{i}b_{\sigma\left(  i\right)  }\right)  ^{k_{i}}=0.
+\]
+
+\end{corollary}
+
+\begin{proof}
+[Proof of Corollary \ref{cor.sol.exeadd.powerdet.r1.1c}.]The integers
+$k_{1},k_{2},\ldots,k_{n}$ are not distinct\footnote{\textit{Proof.} Assume
+the contrary. Thus, the integers $k_{1},k_{2},\ldots,k_{n}$ are distinct.
+Hence, Corollary \ref{cor.sol.exeadd.powerdet.r1.0dist} (applied to $k_{i}$
+instead of $p_{i}$) shows that $k_{1}+k_{2}+\cdots+k_{n}\geq\dbinom{n}{2}$.
+This contradicts $k_{1}+k_{2}+\cdots+k_{n}<\dbinom{n}{2}$. This contradiction
+shows that our assumption was wrong. Qed.}. Hence, Lemma
+\ref{lem.sol.exeadd.powerdet.r1.1} \textbf{(b)} yields $\sum_{\sigma\in S_{n}%
+}\left(  -1\right)  ^{\sigma}\prod_{i=1}^{n}\left(  a_{i}b_{\sigma\left(
+i\right)  }\right)  ^{k_{i}}=0$. This proves Corollary
+\ref{cor.sol.exeadd.powerdet.r1.1c}.
 \end{proof}
 
 \subsection{\label{sect.sol.jacobi-complement}Solution to Additional exercise
