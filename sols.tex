@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Monday, October 09, 2017 22:24:23}
+%TCIDATA{LastRevised=Monday, October 09, 2017 23:11:27}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -132,9 +132,9 @@ abstract algebra (i.e., the theory of determinants, and concrete families of
 polynomials). They cover permutations and determinants (from a combinatorial
 viewpoint -- no linear algebra is presumed), as well as some basic material on
 binomial coefficients and recurrent (Fibonacci-like) sequences. The reader is
-assumed to be familiar with (low-level) \textquotedblleft contest
-mathematics\textquotedblright\ (i.e., have a good proficiency with high-school
-mathematics) and mature enough to read combinatorial proofs.
+assumed to be proficient in high-school mathematics and low-level
+\textquotedblleft contest mathematics\textquotedblright, and mature enough to
+read combinatorial proofs.
 
 These notes were originally written for the PRIMES reading project I have
 mentored in 2015. The goal of the project was to become familiar with some
@@ -29908,7 +29908,7 @@ Hence, the equality (\ref{sol.ps2.2.S.goal}) holds. We thus have proven
 Let us now consider Case 2. In this case, we have $N=1$. Thus, $c_{N}=c_{1}%
 =1$. On the other hand, from $N=1$, we obtain%
 \begin{align*}
-\sum_{i=0}^{N-1}\left(  -1\right)  ^{i}\dbinom{N-1-i}{i}r^{N-1-2i} &
+\sum_{i=0}^{N-1}\left(  -1\right)  ^{i}\dbinom{N-1-i}{i}r^{N-1-2i}  &
 =\sum_{i=0}^{1-1}\left(  -1\right)  ^{i}\dbinom{1-1-i}{i}r^{1-1-2i}\\
 &  =\sum_{i=0}^{0}\left(  -1\right)  ^{i}\dbinom{1-1-i}{i}r^{1-1-2i}\\
 &  =\underbrace{\left(  -1\right)  ^{0}}_{=1}\underbrace{\dbinom{1-1-0}{0}%
@@ -29992,9 +29992,9 @@ i-1\right)  !\cdot i=i!\right) \\
 Now, $N\geq2$, so that the recursive definition of the sequence $\left(
 c_{0},c_{1},c_{2},\ldots\right)  $ yields%
 \begin{align*}
-c_{N} &  =r\underbrace{c_{N-1}}_{\substack{=\sum_{i=0}^{N-2}\left(  -1\right)
-^{i}\dbinom{N-2-i}{i}r^{N-2-2i}\\\text{(by (\ref{sol.ps2.2.S.hyp1}))}%
-}}-\underbrace{c_{N-2}}_{\substack{=\sum_{i=0}^{N-3}\left(  -1\right)
+c_{N}  &  =r\underbrace{c_{N-1}}_{\substack{=\sum_{i=0}^{N-2}\left(
+-1\right)  ^{i}\dbinom{N-2-i}{i}r^{N-2-2i}\\\text{(by (\ref{sol.ps2.2.S.hyp1}%
+))}}}-\underbrace{c_{N-2}}_{\substack{=\sum_{i=0}^{N-3}\left(  -1\right)
 ^{i}\dbinom{N-3-i}{i}r^{N-3-2i}\\\text{(by (\ref{sol.ps2.2.S.hyp2}))}}}\\
 &  =r\left(  \sum_{i=0}^{N-2}\left(  -1\right)  ^{i}\dbinom{N-2-i}%
 {i}r^{N-2-2i}\right)  -\sum_{i=0}^{N-3}\left(  -1\right)  ^{i}\dbinom
@@ -30023,7 +30023,7 @@ c_{N} &  =r\underbrace{c_{N-1}}_{\substack{=\sum_{i=0}^{N-2}\left(  -1\right)
 &  =\left(  -1\right)  ^{0}\dbinom{N-1-0}{0}r^{N-1-2\cdot0}+\sum_{i=1}%
 ^{N-2}\left(  -1\right)  ^{i}\dbinom{N-2-i}{i}r^{N-1-2i}\\
 &  \ \ \ \ \ \ \ \ \ \ -\left(  -\sum_{i=1}^{N-2}\left(  -1\right)
-^{i}\dbinom{N-2-i}{i-1}r^{N-1-2i}\right)  \\
+^{i}\dbinom{N-2-i}{i-1}r^{N-1-2i}\right) \\
 &  =\left(  -1\right)  ^{0}\dbinom{N-1-0}{0}r^{N-1-2\cdot0}\\
 &  \ \ \ \ \ \ \ \ \ \ +\underbrace{\sum_{i=1}^{N-2}\left(  -1\right)
 ^{i}\dbinom{N-2-i}{i}r^{N-1-2i}+\sum_{i=1}^{N-2}\left(  -1\right)  ^{i}%
@@ -58381,7 +58381,7 @@ Let us now prove four mostly trivial lemmas:
 
 \begin{vershort}
 \begin{proof}
-\item[Proof of Lemma \ref{lem.sol.vander-hook.gauss}.] If $n=0$, then Lemma
+[Proof of Lemma \ref{lem.sol.vander-hook.gauss}.]If $n=0$, then Lemma
 \ref{lem.sol.vander-hook.gauss} holds for obvious reasons. Thus, we WLOG
 assume that $n\neq0$. Hence, $n\geq1$, so that $n-1\in\mathbb{N}$. Now,%
 \begin{align*}
@@ -58397,12 +58397,8 @@ This proves Lemma \ref{lem.sol.vander-hook.gauss}.
 \end{vershort}
 
 \begin{verlong}
-
-
 \begin{proof}
-
-
-\item[Proof of Lemma \ref{lem.sol.vander-hook.gauss}.] If $n=0$, then%
+[Proof of Lemma \ref{lem.sol.vander-hook.gauss}.]If $n=0$, then%
 \begin{align*}
 \sum_{r=0}^{n-1}r  &  =\sum_{r=0}^{0-1}r=\left(  \text{empty sum}\right)
 =0=\dbinom{0}{2}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\dbinom{0}{2}%
@@ -58441,8 +58437,6 @@ Let $k\in\left\{  1,2,\ldots,n\right\}  $. For each $j\in\left\{
 \end{lemma}
 
 \begin{vershort}
-
-
 \begin{proof}
 [Proof of Lemma \ref{lem.sol.vander-hook.deltas}.]For each $j\in\left\{
 1,2,\ldots,n\right\}  $, we have%
@@ -58488,8 +58482,6 @@ Lemma \ref{lem.sol.vander-hook.deltas}.
 \end{vershort}
 
 \begin{verlong}
-
-
 \begin{proof}
 [Proof of Lemma \ref{lem.sol.vander-hook.deltas}.]If $\alpha$ and $\beta$ are
 two finite lists of elements of $\mathbb{K}$, then we define a new finite list
@@ -58598,8 +58590,6 @@ Then, $B_{\sim k,\sim q}=A_{\sim k,\sim q}$ for every $q\in\left\{
 \end{lemma}
 
 \begin{vershort}
-
-
 \begin{proof}
 [Proof of Lemma \ref{lem.sol.vander-hook.AvsB}.]Let $q\in\left\{
 1,2,\ldots,m\right\}  $. The condition (\ref{eq.lem.sol.vander-hook.AvsB.ass})
@@ -58613,8 +58603,6 @@ proves Lemma \ref{lem.sol.vander-hook.AvsB}.
 \end{vershort}
 
 \begin{verlong}
-
-
 \begin{proof}
 [Proof of Lemma \ref{lem.sol.vander-hook.AvsB}.]Let $q\in\left\{
 1,2,\ldots,m\right\}  $.
@@ -58670,7 +58658,7 @@ $u_{x}\in\left\{  1,2,\ldots,n\right\}  $ and $u_{x}\neq k$. Also,
 1,2,\ldots,m\right\}  \setminus\left\{  q\right\}  \subseteq\left\{
 1,2,\ldots,m\right\}  $. Hence, (\ref{eq.lem.sol.vander-hook.AvsB.ass})
 (applied to $i=u_{x}$ and $j=v_{y}$) yields $a_{u_{x},v_{y}}=b_{u_{x},v_{y}}$.
-This proves (\ref{pf.lem.sol.vander-hook.AvsB.a=b}).}
+This proves (\ref{pf.lem.sol.vander-hook.AvsB.a=b}).}.
 
 The definition of $A_{\sim k,\sim q}$ yields
 \begin{align}
@@ -59042,8 +59030,6 @@ x_{k}^{n-q-\ell+1}\det\left(  A_{\sim k,\sim q}\right)
 \subsubsection{The solution}
 
 \begin{vershort}
-
-
 \begin{proof}
 [Solution to Exercise \ref{exe.vander-hook}.]Let $A$ be the $n\times n$-matrix
 $\left(  x_{i}^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$.
@@ -59143,8 +59129,6 @@ This solves Exercise \ref{exe.vander-hook}.
 \end{vershort}
 
 \begin{verlong}
-
-
 \begin{proof}
 [Solution to Exercise \ref{exe.vander-hook}.]Let $A$ be the $n\times n$-matrix
 $\left(  x_{i}^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$.
@@ -59296,8 +59280,6 @@ k,\sim q}\right)  =0.
 \end{lemma}
 
 \begin{vershort}
-
-
 \begin{proof}
 [Proof of Lemma \ref{lem.sol.vander-hook.lap2.variant}.]Left to the reader.
 (Very similar to the above proof of Lemma \ref{lem.sol.vander-hook.lap2}.)
@@ -59305,8 +59287,6 @@ k,\sim q}\right)  =0.
 \end{vershort}
 
 \begin{verlong}
-
-
 \begin{proof}
 [Proof of Lemma \ref{lem.sol.vander-hook.lap2.variant}.]From $\ell\in\left\{
 1,2,\ldots,n-q\right\}  $, we obtain $\ell\geq1$ and $\ell\leq n-q$. Now,
@@ -59342,8 +59322,6 @@ p,\sim q}\right)  =\sum_{k=1}^{n}\left(  -1\right)  ^{k+q}x_{k}^{n-q-\ell}%
 \end{verlong}
 
 \begin{vershort}
-
-
 \begin{proof}
 [Proof of Proposition \ref{prop.sol.vander-hook.variant}.]This proof is
 similar to our solution of Exercise \ref{exe.vander-hook}, but a lot simpler.
@@ -59352,8 +59330,6 @@ Again, the reader can fill in the details.
 \end{vershort}
 
 \begin{verlong}
-
-
 \begin{proof}
 [Proof of Proposition \ref{prop.sol.vander-hook.variant}.]Let $A$ be the
 $n\times n$-matrix $\left(  x_{i}^{n-j}\right)  _{1\leq i\leq n,\ 1\leq j\leq
@@ -74177,7 +74153,7 @@ k\right]  \right)  $. Hence, we cannot have $\kappa\left(  i\right)
 \notin\left\{  a,b\right\}  $.
 \par
 Combining $\kappa\left(  i\right)  \in\left[  n\right]  $ with $\kappa\left(
-i\right)  \in\left\{  a,b\right\}  $, we obtain $\kappa\left(  i\right)
+i\right)  \notin\left\{  a,b\right\}  $, we obtain $\kappa\left(  i\right)
 \in\left[  n\right]  \setminus\left\{  a,b\right\}  $. But recall that
 $t_{a,b}\left(  j\right)  =j$ for every $j\in\left[  n\right]  \setminus
 \left\{  a,b\right\}  $. Applying this to $j=\kappa\left(  i\right)  $, we
@@ -74228,7 +74204,7 @@ our assumption (that $\kappa\left(  i\right)  \in\left\{  a,b\right\}  $) was
 false. Thus, we have $\kappa\left(  i\right)  \notin\left\{  a,b\right\}  $.
 \par
 Combining $\kappa\left(  i\right)  \in\left[  n\right]  $ with $\kappa\left(
-i\right)  \in\left\{  a,b\right\}  $, we obtain $\kappa\left(  i\right)
+i\right)  \notin\left\{  a,b\right\}  $, we obtain $\kappa\left(  i\right)
 \in\left[  n\right]  \setminus\left\{  a,b\right\}  $. But recall that
 $t_{a,b}\left(  j\right)  =j$ for every $j\in\left[  n\right]  \setminus
 \left\{  a,b\right\}  $. Applying this to $j=\kappa\left(  i\right)  $, we
