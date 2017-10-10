@@ -29726,6 +29726,7 @@ Now, (\ref{sol.ps2.2.3.goal2}) is proven in each of the three Cases 1, 2 and
 
 \subsection{Solution to Exercise \ref{exe.ps2.2.S}}
 
+\begin{vershort}
 \begin{proof}
 [Solution to Exercise \ref{exe.ps2.2.S}.]Let us first explain why the right
 hand side of (\ref{eq.exe.2.S}) is well-defined. In fact, this is not obvious,
@@ -29733,14 +29734,149 @@ because if $r=0$, then $r^{n-1-2i}$ might not always make sense (because
 $n-1-2i$ can be negative). However, it turns out that $\dbinom{n-1-i}{i}=0$
 for every $i\in\left\{  0,1,\ldots,n-1\right\}  $ satisfying $n-1-2i<0$%
 \ \ \ \ \footnote{\textit{Proof.} Let $i\in\left\{  0,1,\ldots,n-1\right\}  $
-be such that $n-1-2i<0$. Then, $n-1-i\geq0$ (since $i\in\left\{
-0,1,\ldots,n-1\right\}  $) but $n-1-i<i$ (since $\left(  n-1-i\right)
--i=n-1-2i<0$), and thus the binomial coefficient $\dbinom{n-1-i}{i}$ is $0$
-(because any binomial coefficient $\dbinom{a}{b}$ with $a\geq0$ and $a<b$ must
-be $0$), qed.}. Hence, we interpret $\dbinom{n-1-i}{i}r^{n-1-2i}$ as $0$
-whenever $n-1-2i<0$ (even if the term $r^{n-1-2i}$ by itself is not
-well-defined), following our convention that any expression of the form
-$a\cdot b$, where $a$ is $0$, has to be interpreted as $0$. Thus, the right
+be such that $n-1-2i<0$. Then, $i\leq n-1$ (since $i\in\left\{  0,1,\ldots
+,n-1\right\}  $), so that $n-1-i\geq0$. In other words, $n-1-i\in\mathbb{N}$.
+But $n-1-i<i$ (since $\left(  n-1-i\right)  -i=n-1-2i<0$). Hence, Proposition
+\ref{prop.binom.0} (applied to $n-1-i$ and $i$ instead of $m$ and $n$) yields
+$\dbinom{n-1-i}{i}=0$. Qed.}. Hence, we interpret $\dbinom{n-1-i}{i}%
+r^{n-1-2i}$ as $0$ whenever $n-1-2i<0$ (even if the term $r^{n-1-2i}$ by
+itself is not well-defined), following our convention that any expression of
+the form $a\cdot b$ with $a=0$ has to be interpreted as $0$. Thus, the right
+hand side of (\ref{eq.exe.2.S}) is well-defined.
+
+Now, we shall prove (\ref{eq.exe.2.S}) by strong induction over $n$. Thus, we
+let $N\in\mathbb{N}$, and we assume (as the induction hypothesis) that
+(\ref{eq.exe.2.S}) is proven for every $n<N$. We need to prove
+(\ref{eq.exe.2.S}) for $n=N$. In other words, we need to prove that
+\begin{equation}
+c_{N}=\sum_{i=0}^{N-1}\left(  -1\right)  ^{i}\dbinom{N-1-i}{i}r^{N-1-2i}.
+\label{sol.ps2.2.S.short.goal}%
+\end{equation}
+
+
+Recall that $N\in\mathbb{N}$. Hence, we are in one of the following three cases:
+
+\textit{Case 1:} We have $N=0$.
+
+\textit{Case 2:} We have $N=1$.
+
+\textit{Case 3:} We have $N\geq2$.
+
+Let us first consider Case 1. In this case, we have $N=0$. Hence, $c_{N}%
+=c_{0}=0$. But also, the sum $\sum_{i=0}^{N-1}\left(  -1\right)  ^{i}%
+\dbinom{N-1-i}{i}r^{N-1-2i}$ is an empty sum (since $N=0$) and thus equals
+$0$. Therefore, both sides of the equality (\ref{sol.ps2.2.S.short.goal})
+equal $0$. Hence, the equality (\ref{sol.ps2.2.S.short.goal}) holds. We thus
+have proven (\ref{sol.ps2.2.S.short.goal}) in Case 1.
+
+Let us now consider Case 2. In this case, we have $N=1$. Thus, $c_{N}=c_{1}%
+=1$. On the other hand, from $N=1$, we obtain%
+\begin{align*}
+\sum_{i=0}^{N-1}\left(  -1\right)  ^{i}\dbinom{N-1-i}{i}r^{N-1-2i}  &
+=\sum_{i=0}^{1-1}\left(  -1\right)  ^{i}\dbinom{1-1-i}{i}r^{1-1-2i}\\
+&  =\underbrace{\left(  -1\right)  ^{0}}_{=1}\underbrace{\dbinom{1-1-0}{0}%
+}_{=1}\underbrace{r^{1-1-2\cdot0}}_{=r^{0}=1}=1=c_{N}.
+\end{align*}
+Hence, (\ref{sol.ps2.2.S.short.goal}) is proven in Case 2.
+
+Let us now consider Case 3. In this case, we have $N\geq2$. Therefore, both
+$N-1$ and $N-2$ belong to $\mathbb{N}$.
+
+So we know that $N-1$ is an element of $\mathbb{N}$ satisfying $N-1<N$. Hence,
+(\ref{eq.exe.2.S}) is proven for $n=N-1$ (by our induction hypothesis). In
+other words,%
+\begin{equation}
+c_{N-1}=\sum_{i=0}^{N-2}\left(  -1\right)  ^{i}\dbinom{N-2-i}{i}r^{N-2-2i}.
+\label{sol.ps2.2.S.short.hyp1}%
+\end{equation}
+
+
+Also, $N-2$ is an element of $\mathbb{N}$ satisfying $N-2<N$. Hence,
+(\ref{eq.exe.2.S}) is proven for $n=N-2$ (by our induction hypothesis). In
+other words,%
+\begin{equation}
+c_{N-2}=\sum_{i=0}^{N-3}\left(  -1\right)  ^{i}\dbinom{N-3-i}{i}r^{N-3-2i}.
+\label{sol.ps2.2.S.short.hyp2}%
+\end{equation}
+
+
+Let us further recall that every positive integer $i$ and every $a\in
+\mathbb{Z}$ satisfy%
+\begin{equation}
+\dbinom{a-1}{i}+\dbinom{a-1}{i-1}=\dbinom{a}{i} \label{sol.ps2.2.S.short.rec1}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.ps2.2.S.short.rec1}):} Let $i$ be a
+positive integer. Let $a\in\mathbb{Z}$. Then, (\ref{eq.binom.rec.m}) (applied
+to $m=a$ and $n=i$) shows that $\dbinom{a}{i}=\dbinom{a-1}{i-1}+\dbinom
+{a-1}{i}=\dbinom{a-1}{i}+\dbinom{a-1}{i-1}$. This proves
+(\ref{sol.ps2.2.S.short.rec1}).}.
+
+Now, $N\geq2$, so that the recursive definition of the sequence $\left(
+c_{0},c_{1},c_{2},\ldots\right)  $ yields%
+\begin{align*}
+c_{N}  &  =r\underbrace{c_{N-1}}_{\substack{=\sum_{i=0}^{N-2}\left(
+-1\right)  ^{i}\dbinom{N-2-i}{i}r^{N-2-2i}\\\text{(by
+(\ref{sol.ps2.2.S.short.hyp1}))}}}-\underbrace{c_{N-2}}_{\substack{=\sum
+_{i=0}^{N-3}\left(  -1\right)  ^{i}\dbinom{N-3-i}{i}r^{N-3-2i}\\\text{(by
+(\ref{sol.ps2.2.S.short.hyp2}))}}}\\
+&  =r\left(  \sum_{i=0}^{N-2}\left(  -1\right)  ^{i}\dbinom{N-2-i}%
+{i}r^{N-2-2i}\right)  -\sum_{i=0}^{N-3}\left(  -1\right)  ^{i}\dbinom
+{N-3-i}{i}r^{N-3-2i}\\
+&  =\sum_{i=0}^{N-2}\left(  -1\right)  ^{i}\dbinom{N-2-i}{i}%
+\underbrace{rr^{N-2-2i}}_{=r^{N-1-2i}}-\underbrace{\sum_{i=0}^{N-3}\left(
+-1\right)  ^{i}\dbinom{N-3-i}{i}r^{N-3-2i}}_{\substack{=\sum_{i=1}%
+^{N-2}\left(  -1\right)  ^{i-1}\dbinom{N-3-\left(  i-1\right)  }%
+{i-1}r^{N-3-2\left(  i-1\right)  }\\\text{(here, we substituted }i-1\text{ for
+}i\text{ in the sum)}}}\\
+&  =\underbrace{\sum_{i=0}^{N-2}\left(  -1\right)  ^{i}\dbinom{N-2-i}%
+{i}r^{N-1-2i}}_{=\left(  -1\right)  ^{0}\dbinom{N-2-0}{0}r^{N-1-2\cdot0}%
++\sum_{i=1}^{N-2}\left(  -1\right)  ^{i}\dbinom{N-2-i}{i}r^{N-1-2i}}\\
+&  \ \ \ \ \ \ \ \ \ \ -\sum_{i=1}^{N-2}\underbrace{\left(  -1\right)  ^{i-1}%
+}_{=-\left(  -1\right)  ^{i}}\underbrace{\dbinom{N-3-\left(  i-1\right)
+}{i-1}}_{=\dbinom{N-2-i}{i-1}}\underbrace{r^{N-3-2\left(  i-1\right)  }%
+}_{=r^{N-1-2i}}%
+\end{align*}%
+\begin{align*}
+&  =\left(  -1\right)  ^{0}\underbrace{\dbinom{N-2-0}{0}}_{=1=\dbinom
+{N-1-0}{0}}r^{N-1-2\cdot0}\\
+&  \ \ \ \ \ \ \ \ \ \ +\underbrace{\sum_{i=1}^{N-2}\left(  -1\right)
+^{i}\dbinom{N-2-i}{i}r^{N-1-2i}-\sum_{i=1}^{N-2}\left(  -\left(  -1\right)
+^{i}\right)  \dbinom{N-2-i}{i-1}r^{N-1-2i}}_{=\sum_{i=1}^{N-2}\left(
+-1\right)  ^{i}\left(  \dbinom{N-2-i}{i}+\dbinom{N-2-i}{i-1}\right)
+r^{N-1-2i}}\\
+&  =\left(  -1\right)  ^{0}\dbinom{N-1-0}{0}r^{N-1-2\cdot0}\\
+&  \ \ \ \ \ \ \ \ \ \ +\sum_{i=1}^{N-2}\left(  -1\right)  ^{i}%
+\underbrace{\left(  \dbinom{N-2-i}{i}+\dbinom{N-2-i}{i-1}\right)
+}_{\substack{=\dbinom{\left(  N-1-i\right)  -1}{i}+\dbinom{\left(
+N-1-i\right)  -1}{i-1}\\=\dbinom{N-1-i}{i}\\\text{(by
+(\ref{sol.ps2.2.S.short.rec1}), applied to }a=N-1-i\text{)}}}r^{N-1-2i}\\
+&  =\left(  -1\right)  ^{0}\dbinom{N-1-0}{0}r^{N-1-2\cdot0}+\sum_{i=1}%
+^{N-2}\left(  -1\right)  ^{i}\dbinom{N-1-i}{i}r^{N-1-2i}\\
+&  =\sum_{i=0}^{N-2}\left(  -1\right)  ^{i}\dbinom{N-1-i}{i}r^{N-1-2i}.
+\end{align*}
+Hence, (\ref{sol.ps2.2.S.short.goal}) is proven in Case 3. We thus have proven
+(\ref{sol.ps2.2.S.short.goal}) in all three Cases 1, 2 and 3, so that we
+conclude that (\ref{sol.ps2.2.S.short.goal}) always holds. This completes our
+proof of (\ref{eq.exe.2.S}).
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Solution to Exercise \ref{exe.ps2.2.S}.]Let us first explain why the right
+hand side of (\ref{eq.exe.2.S}) is well-defined. In fact, this is not obvious,
+because if $r=0$, then $r^{n-1-2i}$ might not always make sense (because
+$n-1-2i$ can be negative). However, it turns out that $\dbinom{n-1-i}{i}=0$
+for every $i\in\left\{  0,1,\ldots,n-1\right\}  $ satisfying $n-1-2i<0$%
+\ \ \ \ \footnote{\textit{Proof.} Let $i\in\left\{  0,1,\ldots,n-1\right\}  $
+be such that $n-1-2i<0$. Then, $i\leq n-1$ (since $i\in\left\{  0,1,\ldots
+,n-1\right\}  $), so that $n-1-i\geq0$. In other words, $n-1-i\in\mathbb{N}$.
+But $n-1-i<i$ (since $\left(  n-1-i\right)  -i=n-1-2i<0$). Hence, Proposition
+\ref{prop.binom.0} (applied to $n-1-i$ and $i$ instead of $m$ and $n$) yields
+$\dbinom{n-1-i}{i}=0$. Qed.}. Hence, we interpret $\dbinom{n-1-i}{i}%
+r^{n-1-2i}$ as $0$ whenever $n-1-2i<0$ (even if the term $r^{n-1-2i}$ by
+itself is not well-defined), following our convention that any expression of
+the form $a\cdot b$ has to be interpreted as $0$ when $a=0$. Thus, the right
 hand side of (\ref{eq.exe.2.S}) is well-defined.
 
 Now, we shall prove (\ref{eq.exe.2.S}) by strong induction over $n$. Thus, we
@@ -29772,7 +29908,8 @@ Let us now consider Case 2. In this case, we have $N=1$. Thus, $c_{N}=c_{1}%
 =1$. On the other hand, from $N=1$, we obtain%
 \begin{align*}
 \sum_{i=0}^{N-1}\left(  -1\right)  ^{i}\dbinom{N-1-i}{i}r^{N-1-2i}  &
-=\sum_{i=0}^{1-1}\left(  -1\right)  ^{i}\dbinom{1-1-i}{i}r^{1-1-2i}\\
+=\sum_{i=0}^{1-1}\left(  -1\right)  ^{i}\dbinom{1-1-i}{i}r^{1-1-2i}=\sum
+_{i=0}^{0}\left(  -1\right)  ^{i}\dbinom{1-1-i}{i}r^{1-1-2i}\\
 &  =\underbrace{\left(  -1\right)  ^{0}}_{=1}\underbrace{\dbinom{1-1-0}{0}%
 }_{=1}\underbrace{r^{1-1-2\cdot0}}_{=r^{0}=1}=1=c_{N}.
 \end{align*}
@@ -29784,6 +29921,11 @@ $N-1$ and $N-2$ belong to $\mathbb{N}$.
 So we know that $N-1$ is an element of $\mathbb{N}$ satisfying $N-1<N$. Hence,
 (\ref{eq.exe.2.S}) is proven for $n=N-1$ (by our induction hypothesis). In
 other words,%
+\[
+c_{N-1}=\sum_{i=0}^{\left(  N-1\right)  -1}\left(  -1\right)  ^{i}%
+\dbinom{\left(  N-1\right)  -1-i}{i}r^{\left(  N-1\right)  -1-2i}.
+\]
+This simplifies to%
 \begin{equation}
 c_{N-1}=\sum_{i=0}^{N-2}\left(  -1\right)  ^{i}\dbinom{N-2-i}{i}r^{N-2-2i}.
 \label{sol.ps2.2.S.hyp1}%
@@ -29793,6 +29935,11 @@ c_{N-1}=\sum_{i=0}^{N-2}\left(  -1\right)  ^{i}\dbinom{N-2-i}{i}r^{N-2-2i}.
 Also, $N-2$ is an element of $\mathbb{N}$ satisfying $N-2<N$. Hence,
 (\ref{eq.exe.2.S}) is proven for $n=N-2$ (by our induction hypothesis). In
 other words,%
+\[
+c_{N-2}=\sum_{i=0}^{\left(  N-2\right)  -1}\left(  -1\right)  ^{i}%
+\dbinom{\left(  N-2\right)  -1-i}{i}r^{\left(  N-2\right)  -1-2i}.
+\]
+This simplifies to%
 \begin{equation}
 c_{N-2}=\sum_{i=0}^{N-3}\left(  -1\right)  ^{i}\dbinom{N-3-i}{i}r^{N-3-2i}.
 \label{sol.ps2.2.S.hyp2}%
@@ -29802,7 +29949,7 @@ c_{N-2}=\sum_{i=0}^{N-3}\left(  -1\right)  ^{i}\dbinom{N-3-i}{i}r^{N-3-2i}.
 Let us further recall that every positive integer $i$ and every $a\in
 \mathbb{Z}$ satisfy%
 \begin{equation}
-\dbinom{a-1}{i}+\dbinom{a-1}{i-1}=\dbinom{a}{i} \label{sol.ps2.2.S.rec1}%
+\dbinom{a}{i}=\dbinom{a-1}{i}+\dbinom{a-1}{i-1} \label{sol.ps2.2.S.rec1}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{sol.ps2.2.S.rec1}):} Let $i$ be a positive
 integer. Let $a\in\mathbb{Z}$. Then, (\ref{eq.binom.rec.m}) (applied to $m=a$
@@ -29852,11 +29999,11 @@ c_{N}  &  =r\underbrace{c_{N-1}}_{\substack{=\sum_{i=0}^{N-2}\left(
 {i}r^{N-2-2i}\right)  -\sum_{i=0}^{N-3}\left(  -1\right)  ^{i}\dbinom
 {N-3-i}{i}r^{N-3-2i}\\
 &  =\sum_{i=0}^{N-2}\left(  -1\right)  ^{i}\dbinom{N-2-i}{i}%
-\underbrace{rr^{N-2-2i}}_{=r^{N-1-2i}}-\underbrace{\sum_{i=0}^{N-3}\left(
--1\right)  ^{i}\dbinom{N-3-i}{i}r^{N-3-2i}}_{\substack{=\sum_{i=1}%
-^{N-2}\left(  -1\right)  ^{i-1}\dbinom{N-3-\left(  i-1\right)  }%
-{i-1}r^{N-3-2\left(  i-1\right)  }\\\text{(here, we substituted }i-1\text{ for
-}i\text{ in the sum)}}}\\
+\underbrace{rr^{N-2-2i}}_{\substack{=r^{\left(  N-2-2i\right)  +1}%
+\\=r^{N-1-2i}}}-\underbrace{\sum_{i=0}^{N-3}\left(  -1\right)  ^{i}%
+\dbinom{N-3-i}{i}r^{N-3-2i}}_{\substack{=\sum_{i=1}^{N-2}\left(  -1\right)
+^{i-1}\dbinom{N-3-\left(  i-1\right)  }{i-1}r^{N-3-2\left(  i-1\right)
+}\\\text{(here, we substituted }i-1\text{ for }i\text{ in the sum)}}}\\
 &  =\underbrace{\sum_{i=0}^{N-2}\left(  -1\right)  ^{i}\dbinom{N-2-i}%
 {i}r^{N-1-2i}}_{=\left(  -1\right)  ^{0}\dbinom{N-2-0}{0}r^{N-1-2\cdot0}%
 +\sum_{i=1}^{N-2}\left(  -1\right)  ^{i}\dbinom{N-2-i}{i}r^{N-1-2i}}\\
@@ -29867,27 +30014,51 @@ c_{N}  &  =r\underbrace{c_{N-1}}_{\substack{=\sum_{i=0}^{N-2}\left(
 \end{align*}%
 \begin{align*}
 &  =\left(  -1\right)  ^{0}\underbrace{\dbinom{N-2-0}{0}}_{=1=\dbinom
-{N-1-0}{0}}r^{N-1-2\cdot0}\\
-&  \ \ \ \ \ \ \ \ \ \ +\underbrace{\sum_{i=1}^{N-2}\left(  -1\right)
-^{i}\dbinom{N-2-i}{i}r^{N-1-2i}-\sum_{i=1}^{N-2}\left(  -\left(  -1\right)
-^{i}\right)  \dbinom{N-2-i}{i-1}r^{N-1-2i}}_{=\sum_{i=1}^{N-2}\left(
--1\right)  ^{i}\left(  \dbinom{N-2-i}{i}+\dbinom{N-2-i}{i-1}\right)
-r^{N-1-2i}}\\
-&  =\left(  -1\right)  ^{0}\dbinom{N-1-0}{0}r^{N-1-2\cdot0}\\
-&  \ \ \ \ \ \ \ \ \ \ +\sum_{i=1}^{N-2}\left(  -1\right)  ^{i}%
-\underbrace{\left(  \dbinom{N-2-i}{i}+\dbinom{N-2-i}{i-1}\right)
-}_{\substack{=\dbinom{\left(  N-1-i\right)  -1}{i}+\dbinom{\left(
-N-1-i\right)  -1}{i-1}\\=\dbinom{N-1-i}{i}\\\text{(by (\ref{sol.ps2.2.S.rec1}%
-), applied to }a=N-1-i\text{)}}}r^{N-1-2i}\\
+{N-1-0}{0}}r^{N-1-2\cdot0}+\sum_{i=1}^{N-2}\left(  -1\right)  ^{i}%
+\dbinom{N-2-i}{i}r^{N-1-2i}\\
+&  \ \ \ \ \ \ \ \ \ \ -\underbrace{\sum_{i=1}^{N-2}\left(  -\left(
+-1\right)  ^{i}\right)  \dbinom{N-2-i}{i-1}r^{N-1-2i}}_{=-\sum_{i=1}%
+^{N-2}\left(  -1\right)  ^{i}\dbinom{N-2-i}{i-1}r^{N-1-2i}}\\
 &  =\left(  -1\right)  ^{0}\dbinom{N-1-0}{0}r^{N-1-2\cdot0}+\sum_{i=1}%
-^{N-2}\left(  -1\right)  ^{i}\dbinom{N-1-i}{i}r^{N-1-2i}\\
-&  =\sum_{i=0}^{N-2}\left(  -1\right)  ^{i}\dbinom{N-1-i}{i}r^{N-1-2i}.
+^{N-2}\left(  -1\right)  ^{i}\dbinom{N-2-i}{i}r^{N-1-2i}\\
+&  \ \ \ \ \ \ \ \ \ \ -\left(  -\sum_{i=1}^{N-2}\left(  -1\right)
+^{i}\dbinom{N-2-i}{i-1}r^{N-1-2i}\right) \\
+&  =\left(  -1\right)  ^{0}\dbinom{N-1-0}{0}r^{N-1-2\cdot0}\\
+&  \ \ \ \ \ \ \ \ \ \ +\underbrace{\sum_{i=1}^{N-2}\left(  -1\right)
+^{i}\dbinom{N-2-i}{i}r^{N-1-2i}+\sum_{i=1}^{N-2}\left(  -1\right)  ^{i}%
+\dbinom{N-2-i}{i-1}r^{N-1-2i}}_{=\sum_{i=1}^{N-2}\left(  -1\right)
+^{i}\left(  \dbinom{N-2-i}{i}+\dbinom{N-2-i}{i-1}\right)  r^{N-1-2i}}\\
+&  =\left(  -1\right)  ^{0}\dbinom{N-1-0}{0}r^{N-1-2\cdot0}\\
+&  \ \ \ \ \ \ \ \ \ \ +\sum_{i=1}^{N-2}\left(  -1\right)  ^{i}\left(
+\dbinom{N-2-i}{i}+\dbinom{N-2-i}{i-1}\right)  r^{N-1-2i}.
 \end{align*}
+Comparing this with%
+\begin{align*}
+&  \sum_{i=0}^{N-2}\left(  -1\right)  ^{i}\dbinom{N-1-i}{i}r^{N-1-2i}\\
+&  =\left(  -1\right)  ^{0}\dbinom{N-1-0}{0}r^{N-1-2\cdot0}+\sum_{i=1}%
+^{N-2}\left(  -1\right)  ^{i}\underbrace{\dbinom{N-1-i}{i}}%
+_{\substack{=\dbinom{\left(  N-1-i\right)  -1}{i}+\dbinom{\left(
+N-1-i\right)  -1}{i-1}\\\text{(by (\ref{sol.ps2.2.S.rec1}), applied to
+}a=N-1-i\text{)}}}r^{N-1-2i}\\
+&  =\left(  -1\right)  ^{0}\dbinom{N-1-0}{0}r^{N-1-2\cdot0}\\
+&  \ \ \ \ \ \ \ \ \ \ +\sum_{i=1}^{N-2}\left(  -1\right)  ^{i}\left(
+\underbrace{\dbinom{\left(  N-1-i\right)  -1}{i}}_{=\dbinom{N-2-i}{i}%
+}+\underbrace{\dbinom{\left(  N-1-i\right)  -1}{i-1}}_{=\dbinom{N-2-i}{i-1}%
+}\right)  r^{N-1-2i}\\
+&  =\left(  -1\right)  ^{0}\dbinom{N-1-0}{0}r^{N-1-2\cdot0}\\
+&  \ \ \ \ \ \ \ \ \ \ +\sum_{i=1}^{N-2}\left(  -1\right)  ^{i}\left(
+\dbinom{N-2-i}{i}+\dbinom{N-2-i}{i-1}\right)  r^{N-1-2i},
+\end{align*}
+we obtain%
+\[
+c_{N}=\sum_{i=0}^{N-1}\left(  -1\right)  ^{i}\dbinom{N-1-i}{i}r^{N-1-2i}.
+\]
 Hence, (\ref{sol.ps2.2.S.goal}) is proven in Case 3. We thus have proven
 (\ref{sol.ps2.2.S.goal}) in all three Cases 1, 2 and 3, so that we conclude
 that (\ref{sol.ps2.2.S.goal}) always holds. This completes our proof of
 (\ref{eq.exe.2.S}).
 \end{proof}
+\end{verlong}
 
 \subsection{Solution to Exercise \ref{exe.ps2.2.4}}
 
