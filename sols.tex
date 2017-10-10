@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, May 25, 2017 01:49:58}
+%TCIDATA{LastRevised=Monday, October 09, 2017 22:24:23}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -119,8 +119,8 @@
 %BeginExpansion
 \today
 %EndExpansion
-\footnote{The numbering in this version is compatible with that in the version of 25 May 2017.}
-}
+\footnote{The numbering in this version is compatible with that in the version
+of 25 May 2017.} }
 \maketitle
 \tableofcontents
 
@@ -1016,7 +1016,7 @@ be a finite set. Let $W$ be a set. Let $f:S\rightarrow W$ be a map. Let
 $a_{s}$ be an element of $\mathbb{A}$ for each $s\in S$. Then,%
 \begin{equation}
 \sum_{s\in S}a_{s}=\sum_{w\in W}\sum_{\substack{s\in S;\\f\left(  s\right)
-=w}}a_{s}.\label{eq.sum.sheph}%
+=w}}a_{s}. \label{eq.sum.sheph}%
 \end{equation}
 The idea behind this formula is the following: The left hand side is the sum
 of all $a_{s}$ for $s\in S$. The right hand side is the same sum, but split in
@@ -1032,7 +1032,7 @@ S$ satisfying $f\left(  s\right)  =w$, and then we take the sum of all these
 \sum_{s\in\left\{  -n,-\left(  n-1\right)  ,\ldots,n\right\}  }s^{3}%
 =\sum_{w\in\left\{  0,1,\ldots,n\right\}  }\sum_{\substack{s\in\left\{
 -n,-\left(  n-1\right)  ,\ldots,n\right\}  ;\\\left\vert s\right\vert
-=w}}s^{3}.\label{eq.sum.sheph.exam1}%
+=w}}s^{3}. \label{eq.sum.sheph.exam1}%
 \end{equation}
 (This follows from (\ref{eq.sum.sheph}), applied to $S=\left\{  -n,-\left(
 n-1\right)  ,\ldots,n\right\}  $, $W=\left\{  0,1,\ldots,n\right\}  $ and
@@ -1068,7 +1068,7 @@ Since $\sum_{s\in S}1=\left\vert S\right\vert \cdot1=\left\vert S\right\vert
 $, this rewrites as follows:%
 \begin{equation}
 \left\vert S\right\vert =\sum_{w\in W}\left\vert \left\{  s\in S\ \mid
-\ f\left(  s\right)  =w\right\}  \right\vert .\label{eq.sum.sheph.exam2}%
+\ f\left(  s\right)  =w\right\}  \right\vert . \label{eq.sum.sheph.exam2}%
 \end{equation}
 This equality is often called the \textit{shepherd's principle}, because it is
 connected to the joke that \textquotedblleft in order to count a flock of
@@ -1096,7 +1096,7 @@ this notation, we can rewrite (\ref{eq.sum.sheph}) as follows:%
 \begin{equation}
 \sum_{s\in S}a_{s}=\sum_{w\in W}\underbrace{\sum_{\substack{s\in S;\\f\left(
 s\right)  =w}}}_{=\sum_{s\in f^{-1}\left(  w\right)  }}a_{s}=\sum_{w\in W}%
-\sum_{s\in f^{-1}\left(  w\right)  }a_{s}.\label{eq.sum.sheph.preimg}%
+\sum_{s\in f^{-1}\left(  w\right)  }a_{s}. \label{eq.sum.sheph.preimg}%
 \end{equation}
 
 
@@ -1116,7 +1116,8 @@ of $\left\{  1,2,\ldots,n\right\}  $) and their union is $S$. (Thus, every
 element of $S$ lies in precisely one of the subsets $S_{1},S_{2},\ldots,S_{n}%
 $.) Let $a_{s}$ be an element of $\mathbb{A}$ for each $s\in S$. Then,%
 \begin{equation}
-\sum_{s\in S}a_{s}=\sum_{w=1}^{n}\sum_{s\in S_{w}}a_{s}.\label{eq.sum.split-n}%
+\sum_{s\in S}a_{s}=\sum_{w=1}^{n}\sum_{s\in S_{w}}a_{s}.
+\label{eq.sum.split-n}%
 \end{equation}
 This is a generalization of (\ref{eq.sum.split}) (indeed, (\ref{eq.sum.split})
 is obtained from (\ref{eq.sum.split-n}) by setting $n=2$, $S_{1}=X$ and
@@ -1147,7 +1148,7 @@ Then,%
 \begin{equation}
 \sum_{x\in X}\sum_{y\in Y}a_{\left(  x,y\right)  }=\sum_{\left(  x,y\right)
 \in X\times Y}a_{\left(  x,y\right)  }=\sum_{y\in Y}\sum_{x\in X}a_{\left(
-x,y\right)  }.\label{eq.sum.fubini}%
+x,y\right)  }. \label{eq.sum.fubini}%
 \end{equation}
 This is called \textit{Fubini's theorem for finite sums}, and is a lot easier
 to prove than what analysts tend to call Fubini's theorem. I shall sketch a
@@ -1179,7 +1180,7 @@ numbers appear in a row or column, but there is still a notion of rows and colum
 \sum_{x=1}^{n}\sum_{y=1}^{m}a_{\left(  x,y\right)  }=\sum_{\left(  x,y\right)
 \in\left\{  1,2,\ldots,n\right\}  \times\left\{  1,2,\ldots,m\right\}
 }a_{\left(  x,y\right)  }=\sum_{y=1}^{m}\sum_{x=1}^{n}a_{\left(  x,y\right)
-}.\label{eq.sum.fubini.nm}%
+}. \label{eq.sum.fubini.nm}%
 \end{equation}
 (This follows from (\ref{eq.sum.fubini}), applied to $X=\left\{
 1,2,\ldots,n\right\}  $ and $Y=\left\{  1,2,\ldots,m\right\}  $.) We can
@@ -1187,19 +1188,19 @@ rewrite the equality (\ref{eq.sum.fubini.nm}) without using $\sum$ signs; it
 then takes the following form:%
 \begin{align*}
 &  \left(  a_{\left(  1,1\right)  }+a_{\left(  1,2\right)  }+\cdots+a_{\left(
-1,m\right)  }\right)  \\
+1,m\right)  }\right) \\
 &  \ \ \ \ \ \ \ \ \ \ +\left(  a_{\left(  2,1\right)  }+a_{\left(
-2,2\right)  }+\cdots+a_{\left(  2,m\right)  }\right)  \\
+2,2\right)  }+\cdots+a_{\left(  2,m\right)  }\right) \\
 &  \ \ \ \ \ \ \ \ \ \ +\cdots\\
 &  \ \ \ \ \ \ \ \ \ \ +\left(  a_{\left(  n,1\right)  }+a_{\left(
-n,2\right)  }+\cdots+a_{\left(  n,m\right)  }\right)  \\
+n,2\right)  }+\cdots+a_{\left(  n,m\right)  }\right) \\
 &  =a_{\left(  1,1\right)  }+a_{\left(  1,2\right)  }+\cdots+a_{\left(
 n,m\right)  }\ \ \ \ \ \ \ \ \ \ \left(  \text{this is the sum of all
-}nm\text{ numbers }a_{\left(  x,y\right)  }\right)  \\
+}nm\text{ numbers }a_{\left(  x,y\right)  }\right) \\
 &  =\left(  a_{\left(  1,1\right)  }+a_{\left(  2,1\right)  }+\cdots
-+a_{\left(  n,1\right)  }\right)  \\
++a_{\left(  n,1\right)  }\right) \\
 &  \ \ \ \ \ \ \ \ \ \ +\left(  a_{\left(  1,2\right)  }+a_{\left(
-2,2\right)  }+\cdots+a_{\left(  n,2\right)  }\right)  \\
+2,2\right)  }+\cdots+a_{\left(  n,2\right)  }\right) \\
 &  \ \ \ \ \ \ \ \ \ \ +\cdots\\
 &  \ \ \ \ \ \ \ \ \ \ +\left(  a_{\left(  1,m\right)  }+a_{\left(
 2,m\right)  }+\cdots+a_{\left(  n,m\right)  }\right)  .
@@ -1235,7 +1236,7 @@ _{\substack{=\sum_{i=1}^{n}i=\dfrac{n\left(  n+1\right)  }{2}\\\text{(by
 (\ref{eq.sum.littlegauss2}))}}}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{eq.sum.linear2}), applied to
 }S=\left\{  1,2,\ldots,n\right\}  \text{, }a_{s}=s\text{ and }\lambda
-=\dfrac{m\left(  m+1\right)  }{2}\right)  \\
+=\dfrac{m\left(  m+1\right)  }{2}\right) \\
 &  =\dfrac{m\left(  m+1\right)  }{2}\cdot\dfrac{n\left(  n+1\right)  }{2}.
 \end{align*}
 
@@ -1250,7 +1251,7 @@ which sends every pair $\left(  x,y\right)  $ to its second entry $y$. Then,
 (\ref{eq.sum.sheph.preimg}) shows that%
 \begin{equation}
 \sum_{s\in X\times Y}a_{s}=\sum_{w\in Y}\sum_{s\in f^{-1}\left(  w\right)
-}a_{s}.\label{eq.sum.fubini.pf.1}%
+}a_{s}. \label{eq.sum.fubini.pf.1}%
 \end{equation}
 But for every given $w\in Y$, the set $f^{-1}\left(  w\right)  $ is simply the
 set of all pairs $\left(  x,w\right)  $ with $x\in X$. Thus, for every given
@@ -1290,7 +1291,7 @@ The first part can be proven similarly.
 \begin{equation}
 \sum_{x=1}^{n}\sum_{y=1}^{m}=\sum_{\left(  x,y\right)  \in\left\{
 1,2,\ldots,n\right\}  \times\left\{  1,2,\ldots,m\right\}  }=\sum_{y=1}%
-^{m}\sum_{x=1}^{n}.\label{eq.sum.fubini.eq-sums}%
+^{m}\sum_{x=1}^{n}. \label{eq.sum.fubini.eq-sums}%
 \end{equation}
 This is an \textquotedblleft equality between summation
 signs\textquotedblright; it should be understood as follows: Every time you
@@ -1314,7 +1315,7 @@ x,y\right)  \in T_{n}$. Then,%
 \begin{equation}
 \sum_{x=1}^{n}\sum_{y=1}^{n-x}a_{\left(  x,y\right)  }=\sum_{\left(
 x,y\right)  \in T_{n}}a_{\left(  x,y\right)  }=\sum_{y=1}^{n}\sum_{x=1}%
-^{n-y}a_{\left(  x,y\right)  }.\label{eq.sum.fubini.triangle}%
+^{n-y}a_{\left(  x,y\right)  }. \label{eq.sum.fubini.triangle}%
 \end{equation}
 
 
@@ -1328,7 +1329,7 @@ x,y\right)  \in T_{n}}a_{\left(  x,y\right)  }=\sum_{y=1}^{n}\sum_{x=1}%
 1,3\right)  }\right)  +\left(  a_{\left(  2,1\right)  }+a_{\left(  2,2\right)
 }\right)  +a_{\left(  3,1\right)  }\\
 &  =\left(  \text{the sum of the }a_{\left(  x,y\right)  }\text{ for all
-}\left(  x,y\right)  \in T_{4}\right)  \\
+}\left(  x,y\right)  \in T_{4}\right) \\
 &  =\left(  a_{\left(  1,1\right)  }+a_{\left(  2,1\right)  }+a_{\left(
 3,1\right)  }\right)  +\left(  a_{\left(  1,2\right)  }+a_{\left(  2,2\right)
 }\right)  +a_{\left(  1,3\right)  }.
@@ -1359,10 +1360,10 @@ so that%
 0,1,\ldots,n-1\right\}  ,\ x\mapsto n-x\\
 \text{is a bijection}%
 \end{array}
-\right)  \\
+\right) \\
 &  =\dfrac{\left(  n-1\right)  \left(  \left(  n-1\right)  +1\right)  }%
 {2}\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{eq.sum.littlegauss1}), applied
-to }n-1\text{ instead of }n\right)  \\
+to }n-1\text{ instead of }n\right) \\
 &  =\dfrac{\left(  n-1\right)  n}{2}.
 \end{align*}
 
@@ -1382,8 +1383,8 @@ $W=\left\{  1,2,\ldots,n\right\}  $, and let $f:S\rightarrow W$ be the map
 which sends every pair $\left(  x,y\right)  $ to its second entry $y$. Then,
 (\ref{eq.sum.sheph.preimg}) shows that%
 \begin{equation}
-\sum_{s\in T_{n}}a_{s}=\sum_{w\in W}\sum_{s\in f^{-1}\left(  w\right)  }%
-a_{s}.\label{eq.sum.fubini.triangle.pf.1}%
+\sum_{s\in T_{n}}a_{s}=\sum_{w\in W}\sum_{s\in f^{-1}\left(  w\right)  }a_{s}.
+\label{eq.sum.fubini.triangle.pf.1}%
 \end{equation}
 But for every given $w\in W$, the set $f^{-1}\left(  w\right)  $ is simply the
 set of all pairs $\left(  x,w\right)  $ with $x\in\left\{  1,2,\ldots
@@ -1880,10 +1881,10 @@ each $s\in\left\{  u-1,u,\ldots,v\right\}  $. Then,%
 \item Let $n$ be a positive integer. Then,%
 \begin{align*}
 \prod_{s=2}^{n}\underbrace{\left(  1-\dfrac{1}{s}\right)  }_{=\dfrac{s-1}%
-{s}=\dfrac{1/s}{1/\left(  s-1\right)  }} &  =\prod_{s=2}^{n}\dfrac
+{s}=\dfrac{1/s}{1/\left(  s-1\right)  }}  &  =\prod_{s=2}^{n}\dfrac
 {1/s}{1/\left(  s-1\right)  }=\dfrac{1/n}{1/\left(  2-1\right)  }\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{eq.prod.telescope}), applied to
-}u=2\text{, }v=n\text{ and }a_{s}=1/s\right)  \\
+}u=2\text{, }v=n\text{ and }a_{s}=1/s\right) \\
 &  =\dfrac{1}{n}.
 \end{align*}
 
@@ -29907,9 +29908,9 @@ Hence, the equality (\ref{sol.ps2.2.S.goal}) holds. We thus have proven
 Let us now consider Case 2. In this case, we have $N=1$. Thus, $c_{N}=c_{1}%
 =1$. On the other hand, from $N=1$, we obtain%
 \begin{align*}
-\sum_{i=0}^{N-1}\left(  -1\right)  ^{i}\dbinom{N-1-i}{i}r^{N-1-2i}  &
-=\sum_{i=0}^{1-1}\left(  -1\right)  ^{i}\dbinom{1-1-i}{i}r^{1-1-2i}=\sum
-_{i=0}^{0}\left(  -1\right)  ^{i}\dbinom{1-1-i}{i}r^{1-1-2i}\\
+\sum_{i=0}^{N-1}\left(  -1\right)  ^{i}\dbinom{N-1-i}{i}r^{N-1-2i} &
+=\sum_{i=0}^{1-1}\left(  -1\right)  ^{i}\dbinom{1-1-i}{i}r^{1-1-2i}\\
+&  =\sum_{i=0}^{0}\left(  -1\right)  ^{i}\dbinom{1-1-i}{i}r^{1-1-2i}\\
 &  =\underbrace{\left(  -1\right)  ^{0}}_{=1}\underbrace{\dbinom{1-1-0}{0}%
 }_{=1}\underbrace{r^{1-1-2\cdot0}}_{=r^{0}=1}=1=c_{N}.
 \end{align*}
@@ -29991,9 +29992,9 @@ i-1\right)  !\cdot i=i!\right) \\
 Now, $N\geq2$, so that the recursive definition of the sequence $\left(
 c_{0},c_{1},c_{2},\ldots\right)  $ yields%
 \begin{align*}
-c_{N}  &  =r\underbrace{c_{N-1}}_{\substack{=\sum_{i=0}^{N-2}\left(
--1\right)  ^{i}\dbinom{N-2-i}{i}r^{N-2-2i}\\\text{(by (\ref{sol.ps2.2.S.hyp1}%
-))}}}-\underbrace{c_{N-2}}_{\substack{=\sum_{i=0}^{N-3}\left(  -1\right)
+c_{N} &  =r\underbrace{c_{N-1}}_{\substack{=\sum_{i=0}^{N-2}\left(  -1\right)
+^{i}\dbinom{N-2-i}{i}r^{N-2-2i}\\\text{(by (\ref{sol.ps2.2.S.hyp1}))}%
+}}-\underbrace{c_{N-2}}_{\substack{=\sum_{i=0}^{N-3}\left(  -1\right)
 ^{i}\dbinom{N-3-i}{i}r^{N-3-2i}\\\text{(by (\ref{sol.ps2.2.S.hyp2}))}}}\\
 &  =r\left(  \sum_{i=0}^{N-2}\left(  -1\right)  ^{i}\dbinom{N-2-i}%
 {i}r^{N-2-2i}\right)  -\sum_{i=0}^{N-3}\left(  -1\right)  ^{i}\dbinom
@@ -30022,7 +30023,7 @@ c_{N}  &  =r\underbrace{c_{N-1}}_{\substack{=\sum_{i=0}^{N-2}\left(
 &  =\left(  -1\right)  ^{0}\dbinom{N-1-0}{0}r^{N-1-2\cdot0}+\sum_{i=1}%
 ^{N-2}\left(  -1\right)  ^{i}\dbinom{N-2-i}{i}r^{N-1-2i}\\
 &  \ \ \ \ \ \ \ \ \ \ -\left(  -\sum_{i=1}^{N-2}\left(  -1\right)
-^{i}\dbinom{N-2-i}{i-1}r^{N-1-2i}\right) \\
+^{i}\dbinom{N-2-i}{i-1}r^{N-1-2i}\right)  \\
 &  =\left(  -1\right)  ^{0}\dbinom{N-1-0}{0}r^{N-1-2\cdot0}\\
 &  \ \ \ \ \ \ \ \ \ \ +\underbrace{\sum_{i=1}^{N-2}\left(  -1\right)
 ^{i}\dbinom{N-2-i}{i}r^{N-1-2i}+\sum_{i=1}^{N-2}\left(  -1\right)  ^{i}%
@@ -30035,11 +30036,11 @@ c_{N}  &  =r\underbrace{c_{N-1}}_{\substack{=\sum_{i=0}^{N-2}\left(
 Comparing this with%
 \begin{align*}
 &  \sum_{i=0}^{N-2}\left(  -1\right)  ^{i}\dbinom{N-1-i}{i}r^{N-1-2i}\\
-&  =\left(  -1\right)  ^{0}\dbinom{N-1-0}{0}r^{N-1-2\cdot0}+\sum_{i=1}%
-^{N-2}\left(  -1\right)  ^{i}\underbrace{\dbinom{N-1-i}{i}}%
-_{\substack{=\dbinom{\left(  N-1-i\right)  -1}{i}+\dbinom{\left(
-N-1-i\right)  -1}{i-1}\\\text{(by (\ref{sol.ps2.2.S.rec1}), applied to
-}a=N-1-i\text{)}}}r^{N-1-2i}\\
+&  =\left(  -1\right)  ^{0}\dbinom{N-1-0}{0}r^{N-1-2\cdot0}\\
+&  \ \ \ \ \ \ \ \ \ \ +\sum_{i=1}^{N-2}\left(  -1\right)  ^{i}%
+\underbrace{\dbinom{N-1-i}{i}}_{\substack{=\dbinom{\left(  N-1-i\right)
+-1}{i}+\dbinom{\left(  N-1-i\right)  -1}{i-1}\\\text{(by
+(\ref{sol.ps2.2.S.rec1}), applied to }a=N-1-i\text{)}}}r^{N-1-2i}\\
 &  =\left(  -1\right)  ^{0}\dbinom{N-1-0}{0}r^{N-1-2\cdot0}\\
 &  \ \ \ \ \ \ \ \ \ \ +\sum_{i=1}^{N-2}\left(  -1\right)  ^{i}\left(
 \underbrace{\dbinom{\left(  N-1-i\right)  -1}{i}}_{=\dbinom{N-2-i}{i}%
@@ -76818,11 +76819,11 @@ k_{\sigma\left(  1\right)  },k_{\sigma\left(  2\right)  },\ldots
 \]
 (by the definition of the map $\Phi$). Thus,%
 \begin{align*}
-p_{1}+p_{2}+\cdots+p_{n} &  =k_{\sigma\left(  1\right)  }+k_{\sigma\left(
+p_{1}+p_{2}+\cdots+p_{n}  &  =k_{\sigma\left(  1\right)  }+k_{\sigma\left(
 2\right)  }+\cdots+k_{\sigma\left(  n\right)  }=k_{1}+k_{2}+\cdots+k_{n}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Lemma
 \ref{lem.sol.exeadd.powerdet.r1.perm-m} \textbf{(a)}, applied to }g_{i}%
-=k_{i}\right)  \\
+=k_{i}\right) \\
 &  \geq\dbinom{n}{2}.
 \end{align*}
 This proves Corollary \ref{cor.sol.exeadd.powerdet.r1.0dist}.
@@ -76834,14 +76835,14 @@ We have%
 \left(  p_{1},p_{2},\ldots,p_{n}\right)   &  =\Phi\left(  \left(
 \underbrace{\beta}_{=\left(  k_{1},k_{2},\ldots,k_{n}\right)  },\sigma\right)
 \right)  =\Phi\left(  \left(  \left(  k_{1},k_{2},\ldots,k_{n}\right)
-,\sigma\right)  \right)  \\
+,\sigma\right)  \right) \\
 &  =\left(  k_{\sigma\left(  1\right)  },k_{\sigma\left(  2\right)  }%
 ,\ldots,k_{\sigma\left(  n\right)  }\right)  \ \ \ \ \ \ \ \ \ \ \left(
 \text{by the definition of the map }\Phi\right)  .
 \end{align*}
 Thus,%
 \begin{align*}
-p_{1}+p_{2}+\cdots+p_{n} &  =k_{\sigma\left(  1\right)  }+k_{\sigma\left(
+p_{1}+p_{2}+\cdots+p_{n}  &  =k_{\sigma\left(  1\right)  }+k_{\sigma\left(
 2\right)  }+\cdots+k_{\sigma\left(  n\right)  }=\underbrace{\sum_{i=1}^{n}%
 }_{=\sum_{i\in\left\{  1,2,\ldots,n\right\}  }}k_{\sigma\left(  i\right)  }\\
 &  =\sum_{i\in\left\{  1,2,\ldots,n\right\}  }k_{\sigma\left(  i\right)
@@ -76855,7 +76856,7 @@ in the sum, since}\\
 \text{the map }\sigma:\left\{  1,2,\ldots,n\right\}  \rightarrow\left\{
 1,2,\ldots,n\right\}  \text{ is a bijection}%
 \end{array}
-\right)  \\
+\right) \\
 &  =\sum_{i=1}^{n}k_{i}=k_{1}+k_{2}+\cdots+k_{n}\geq\dbinom{n}{2}%
 \end{align*}
 (by Lemma \ref{lem.sol.exeadd.powerdet.r1.0} \textbf{(a)}). This proves
