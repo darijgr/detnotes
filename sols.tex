@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Wednesday, October 25, 2017 02:01:14}
+%TCIDATA{LastRevised=Sunday, October 29, 2017 20:16:18}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -57462,21 +57462,21 @@ Now, (\ref{pf.lem.adj(AB).cauchy-binet.short.2}) becomes%
 \det\left(  AB\right)   &  =\sum_{\left(  g_{1},g_{2},\ldots,g_{n-1}\right)
 \in\mathbf{I}}\det\left(  \operatorname*{cols}\nolimits_{g_{1},g_{2}%
 ,\ldots,g_{n-1}}A\right)  \cdot\det\left(  \operatorname*{rows}%
-\nolimits_{g_{1},g_{2},\ldots,g_{n-1}}B\right) \\
+\nolimits_{g_{1},g_{2},\ldots,g_{n-1}}B\right)  \\
 &  =\underbrace{\sum_{k\in\left\{  1,2,\ldots,n\right\}  }}_{=\sum_{k=1}^{n}%
 }\det\left(  \operatorname*{cols}\nolimits_{1,2,\ldots,\widehat{k},\ldots
 ,n}A\right)  \cdot\det\left(  \operatorname*{rows}\nolimits_{1,2,\ldots
-,\widehat{k},\ldots,n}B\right) \\
+,\widehat{k},\ldots,n}B\right)  \\
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
 \text{here, we have substituted }\left(  1,2,\ldots,\widehat{k},\ldots
 ,n\right)  \text{ for}\\
-\left(  g_{1},g_{2},\ldots,g_{n}\right)  \text{ in the sum, since the map}\\
+\left(  g_{1},g_{2},\ldots,g_{n-1}\right)  \text{ in the sum, since the map}\\
 \left\{  1,2,\ldots,n\right\}  \rightarrow\mathbf{I},\ k\mapsto\left(
 1,2,\ldots,\widehat{k},\ldots,n\right)  \text{ is a bijection}%
 \end{array}
-\right) \\
+\right)  \\
 &  =\sum_{k=1}^{n}\det\left(  \operatorname*{cols}\nolimits_{1,2,\ldots
 ,\widehat{k},\ldots,n}A\right)  \cdot\det\left(  \operatorname*{rows}%
 \nolimits_{1,2,\ldots,\widehat{k},\ldots,n}B\right)  .
@@ -57502,7 +57502,7 @@ n\right]  ^{n-1}\ \mid\ k_{1}<k_{2}<\cdots<k_{n-1}\right\}  .
 Theorem \ref{thm.cauchy-binet} (applied to $n-1$ and $n$ instead of $n$ and
 $m$) yields%
 \begin{align}
-&  \det\left(  AB\right) \nonumber\\
+&  \det\left(  AB\right)  \nonumber\\
 &  =\underbrace{\sum_{1\leq g_{1}<g_{2}<\cdots<g_{n-1}\leq n}}%
 _{\substack{=\sum_{\substack{\left(  g_{1},g_{2},\ldots,g_{n-1}\right)
 \in\left\{  1,2,\ldots,n\right\}  ^{n-1};\\g_{1}<g_{2}<\cdots<g_{n-1}}%
@@ -57510,23 +57510,23 @@ _{\substack{=\sum_{\substack{\left(  g_{1},g_{2},\ldots,g_{n-1}\right)
 n\right]  ^{n-1};\\g_{1}<g_{2}<\cdots<g_{n-1}}}\\\text{(since }\left\{
 1,2,\ldots,n-1\right\}  =\left[  n\right]  \text{)}}}\det\left(
 \operatorname*{cols}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}}A\right)  \cdot
-\det\left(  \operatorname*{rows}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}}B\right)
-\nonumber\\
+\det\left(  \operatorname*{rows}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}%
+}B\right)  \nonumber\\
 &  =\underbrace{\sum_{\substack{\left(  g_{1},g_{2},\ldots,g_{n-1}\right)
 \in\left[  n\right]  ^{n-1};\\g_{1}<g_{2}<\cdots<g_{n-1}}}}_{\substack{=\sum
 _{\left(  g_{1},g_{2},\ldots,g_{n-1}\right)  \in\left\{  \left(  k_{1}%
 ,k_{2},\ldots,k_{n-1}\right)  \in\left[  n\right]  ^{n-1}\ \mid\ k_{1}%
 <k_{2}<\cdots<k_{n-1}\right\}  }\\=\sum_{\left(  g_{1},g_{2},\ldots
-,g_{n}\right)  \in\mathbf{I}}\\\text{(since }\left\{  \left(  k_{1}%
+,g_{n-1}\right)  \in\mathbf{I}}\\\text{(since }\left\{  \left(  k_{1}%
 ,k_{2},\ldots,k_{n-1}\right)  \in\left[  n\right]  ^{n-1}\ \mid\ k_{1}%
 <k_{2}<\cdots<k_{n-1}\right\}  =\mathbf{I}\text{)}}}\det\left(
 \operatorname*{cols}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}}A\right)  \cdot
-\det\left(  \operatorname*{rows}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}}B\right)
-\nonumber\\
+\det\left(  \operatorname*{rows}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}%
+}B\right)  \nonumber\\
 &  =\sum_{\left(  g_{1},g_{2},\ldots,g_{n-1}\right)  \in\mathbf{I}}\det\left(
 \operatorname*{cols}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}}A\right)  \cdot
 \det\left(  \operatorname*{rows}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}%
-}B\right)  . \label{pf.lem.adj(AB).cauchy-binet.1}%
+}B\right)  .\label{pf.lem.adj(AB).cauchy-binet.1}%
 \end{align}
 
 
@@ -57809,7 +57809,7 @@ Now, (\ref{pf.lem.adj(AB).cauchy-binet.1}) becomes%
 [c]{c}%
 \text{here, we have substituted }\left(  1,2,\ldots,\widehat{k},\ldots
 ,n\right)  \text{ for}\\
-\left(  g_{1},g_{2},\ldots,g_{n}\right)  \text{ in the sum, since the map}\\
+\left(  g_{1},g_{2},\ldots,g_{n-1}\right)  \text{ in the sum, since the map}\\
 \left\{  1,2,\ldots,n\right\}  \rightarrow\mathbf{I},\ k\mapsto\left(
 1,2,\ldots,\widehat{k},\ldots,n\right)  \text{ is a bijection}%
 \end{array}
