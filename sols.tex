@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Sunday, October 29, 2017 20:16:18}
+%TCIDATA{LastRevised=Friday, November 03, 2017 22:13:29}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -320,6 +320,9 @@ subsets of $S$. This powerset will be denoted by $\mathcal{P}\left(  S\right)
 $. For example, the powerset of $\left\{  1,2\right\}  $ is $\mathcal{P}%
 \left(  \left\{  1,2\right\}  \right)  =\left\{  \varnothing,\left\{
 1\right\}  ,\left\{  2\right\}  ,\left\{  1,2\right\}  \right\}  $.
+
+\item The letter $i$ will \textbf{not} denote the imaginary unit $\sqrt{-1}$
+(except when we explicitly say so).
 \end{itemize}
 
 Further notations will be defined whenever they arise for the first time.
@@ -924,25 +927,25 @@ $s\in\left\{  u-1,u,\ldots,v\right\}  $. Then,%
 nonnegative integer $n$. An easy computation reveals that%
 \begin{equation}
 s=\dfrac{s\left(  s+1\right)  }{2}-\dfrac{\left(  s-1\right)  \left(  \left(
-s-1\right)  +1\right)  }{2} \label{eq.sum.littlegauss2.pf2.1}%
+s-1\right)  +1\right)  }{2}\label{eq.sum.littlegauss2.pf2.1}%
 \end{equation}
 for each $s\in\mathbb{Z}$. Thus,%
 \begin{align*}
-\sum_{i=1}^{n}i  &  =\sum_{s=1}^{n}s=\sum_{s=1}^{n}\left(  \dfrac{s\left(
+\sum_{i=1}^{n}i &  =\sum_{s=1}^{n}s=\sum_{s=1}^{n}\left(  \dfrac{s\left(
 s+1\right)  }{2}-\dfrac{\left(  s-1\right)  \left(  \left(  s-1\right)
 +1\right)  }{2}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
-(\ref{eq.sum.littlegauss2.pf2.1})}\right) \\
+(\ref{eq.sum.littlegauss2.pf2.1})}\right)  \\
 &  =\dfrac{n\left(  n+1\right)  }{2}-\underbrace{\dfrac{\left(  1-1\right)
 \left(  \left(  1-1\right)  +1\right)  }{2}}_{=0}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{eq.sum.telescope}), applied to
-}u=1\text{, }v=n\text{ and }a_{s}=\dfrac{s\left(  s+1\right)  }{2}\right) \\
+}u=1\text{, }v=n\text{ and }a_{s}=\dfrac{s\left(  s+1\right)  }{2}\right)  \\
 &  =\dfrac{n\left(  n+1\right)  }{2}.
 \end{align*}
 Thus, (\ref{eq.sum.littlegauss2}) is proven again. This kind of proof works
 often when we need to prove a formula like (\ref{eq.sum.littlegauss2}); the
 only tricky part was to \textquotedblleft guess\textquotedblright\ the right
 value of $a_{s}$, which is straightforward if you know what you are looking
-for (you want $a_{n}-a_{1}$ to be $\dfrac{n\left(  n+1\right)  }{2}$), but
+for (you want $a_{n}-a_{0}$ to be $\dfrac{n\left(  n+1\right)  }{2}$), but
 rather tricky if you don't.
 
 \item Other examples for the use of (\ref{eq.sum.telescope}) can be found on
@@ -1137,7 +1140,7 @@ S_{w}\right\vert }=\sum_{w=1}^{n}\left\vert S_{w}\right\vert .
 Hence,
 \[
 \sum_{w=1}^{n}\left\vert S_{w}\right\vert =\sum_{s\in S}1=\left\vert
-S\right\vert .
+S\right\vert \cdot1=\left\vert S\right\vert .
 \]
 
 
@@ -5290,12 +5293,12 @@ Thus, if we set $\left(  \lambda_{+},\lambda_{-}\right)  $ to be this
 solution, then $\left(  x_{0},x_{1},x_{2},\ldots\right)  =L_{\lambda
 _{+},\lambda_{-}}$, so that%
 \begin{equation}
-x_{n}=\lambda_{+}q_{+}^{n}+\lambda_{-}q_{-}^{n}
+x_{n}=\lambda_{+}q_{+}^{n}+\lambda_{-}q_{-}^{n}%
 \label{rmk.recursive.binet-general}%
 \end{equation}
 for every nonnegative integer $n$. This is an explicit formula, at least if
-the square roots do not disturb you. When $x_{0}=x_{1}=a=b=1$, you get the
-famous Binet formula (\ref{eq.binet.f}) for the Fibonacci sequence.
+the square roots do not disturb you. When $x_{0}=0$ and $x_{1}=a=b=1$, you get
+the famous Binet formula (\ref{eq.binet.f}) for the Fibonacci sequence.
 \end{remark}
 
 In the next exercise you will see what happens if the $a^{2}+4b\neq0$
@@ -5341,13 +5344,13 @@ going particularly deep here, but we may encounter generalizations later.
 First, an example: If we \textquotedblleft split\textquotedblright\ the
 Fibonacci sequence
 \[
-\left(  f_{0},f_{1},f_{2},\ldots\right)  =\left(  1,1,2,3,5,8,\ldots\right)
+\left(  f_{0},f_{1},f_{2},\ldots\right)  =\left(  0,1,1,2,3,5,8,\ldots\right)
 \]
 into two subsequences
 \[
-\left(  f_{0},f_{2},f_{4},\ldots\right)  =\left(  1,2,5,13,\ldots\right)
-\qquad\text{and} \qquad\left(  f_{1},f_{3},f_{5},\ldots\right)  =\left(
-1,3,8,21,\ldots\right)
+\left(  f_{0},f_{2},f_{4},\ldots\right)  =\left(  0,1,3,8,21,\ldots\right)
+\qquad\text{and}\qquad\left(  f_{1},f_{3},f_{5},\ldots\right)  =\left(
+1,2,5,13,\ldots\right)
 \]
 (each of which contains every other Fibonacci number), then it turns out that
 each of these two subsequences is $\left(  3,-1\right)  $%
@@ -5713,7 +5716,8 @@ $f_{n+a_{t}}$ and $f_{n+s}$ are well-defined.)
 
 \begin{remark}
 Additional exercise \ref{exeadd.fib.zeckendids} \textbf{(c)} is \cite[Theorem
-1]{Gri-zeck}. I'd be delighted to see other proofs!
+1]{Gri-zeck}. It is also a consequence of \cite[Lemma 6.2]{CamFon07} (applied
+to $k=2$). I'd be delighted to see other proofs!
 
 Similarly I am highly interested in analogues of Additional exercises
 \ref{exeadd.fib.zeckendorf} and \ref{exeadd.fib.zeckendids} for other $\left(
@@ -57462,11 +57466,11 @@ Now, (\ref{pf.lem.adj(AB).cauchy-binet.short.2}) becomes%
 \det\left(  AB\right)   &  =\sum_{\left(  g_{1},g_{2},\ldots,g_{n-1}\right)
 \in\mathbf{I}}\det\left(  \operatorname*{cols}\nolimits_{g_{1},g_{2}%
 ,\ldots,g_{n-1}}A\right)  \cdot\det\left(  \operatorname*{rows}%
-\nolimits_{g_{1},g_{2},\ldots,g_{n-1}}B\right)  \\
+\nolimits_{g_{1},g_{2},\ldots,g_{n-1}}B\right) \\
 &  =\underbrace{\sum_{k\in\left\{  1,2,\ldots,n\right\}  }}_{=\sum_{k=1}^{n}%
 }\det\left(  \operatorname*{cols}\nolimits_{1,2,\ldots,\widehat{k},\ldots
 ,n}A\right)  \cdot\det\left(  \operatorname*{rows}\nolimits_{1,2,\ldots
-,\widehat{k},\ldots,n}B\right)  \\
+,\widehat{k},\ldots,n}B\right) \\
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
@@ -57476,7 +57480,7 @@ Now, (\ref{pf.lem.adj(AB).cauchy-binet.short.2}) becomes%
 \left\{  1,2,\ldots,n\right\}  \rightarrow\mathbf{I},\ k\mapsto\left(
 1,2,\ldots,\widehat{k},\ldots,n\right)  \text{ is a bijection}%
 \end{array}
-\right)  \\
+\right) \\
 &  =\sum_{k=1}^{n}\det\left(  \operatorname*{cols}\nolimits_{1,2,\ldots
 ,\widehat{k},\ldots,n}A\right)  \cdot\det\left(  \operatorname*{rows}%
 \nolimits_{1,2,\ldots,\widehat{k},\ldots,n}B\right)  .
@@ -57502,7 +57506,7 @@ n\right]  ^{n-1}\ \mid\ k_{1}<k_{2}<\cdots<k_{n-1}\right\}  .
 Theorem \ref{thm.cauchy-binet} (applied to $n-1$ and $n$ instead of $n$ and
 $m$) yields%
 \begin{align}
-&  \det\left(  AB\right)  \nonumber\\
+&  \det\left(  AB\right) \nonumber\\
 &  =\underbrace{\sum_{1\leq g_{1}<g_{2}<\cdots<g_{n-1}\leq n}}%
 _{\substack{=\sum_{\substack{\left(  g_{1},g_{2},\ldots,g_{n-1}\right)
 \in\left\{  1,2,\ldots,n\right\}  ^{n-1};\\g_{1}<g_{2}<\cdots<g_{n-1}}%
@@ -57510,8 +57514,8 @@ _{\substack{=\sum_{\substack{\left(  g_{1},g_{2},\ldots,g_{n-1}\right)
 n\right]  ^{n-1};\\g_{1}<g_{2}<\cdots<g_{n-1}}}\\\text{(since }\left\{
 1,2,\ldots,n-1\right\}  =\left[  n\right]  \text{)}}}\det\left(
 \operatorname*{cols}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}}A\right)  \cdot
-\det\left(  \operatorname*{rows}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}%
-}B\right)  \nonumber\\
+\det\left(  \operatorname*{rows}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}}B\right)
+\nonumber\\
 &  =\underbrace{\sum_{\substack{\left(  g_{1},g_{2},\ldots,g_{n-1}\right)
 \in\left[  n\right]  ^{n-1};\\g_{1}<g_{2}<\cdots<g_{n-1}}}}_{\substack{=\sum
 _{\left(  g_{1},g_{2},\ldots,g_{n-1}\right)  \in\left\{  \left(  k_{1}%
@@ -57521,12 +57525,12 @@ _{\left(  g_{1},g_{2},\ldots,g_{n-1}\right)  \in\left\{  \left(  k_{1}%
 ,k_{2},\ldots,k_{n-1}\right)  \in\left[  n\right]  ^{n-1}\ \mid\ k_{1}%
 <k_{2}<\cdots<k_{n-1}\right\}  =\mathbf{I}\text{)}}}\det\left(
 \operatorname*{cols}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}}A\right)  \cdot
-\det\left(  \operatorname*{rows}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}%
-}B\right)  \nonumber\\
+\det\left(  \operatorname*{rows}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}}B\right)
+\nonumber\\
 &  =\sum_{\left(  g_{1},g_{2},\ldots,g_{n-1}\right)  \in\mathbf{I}}\det\left(
 \operatorname*{cols}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}}A\right)  \cdot
 \det\left(  \operatorname*{rows}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}%
-}B\right)  .\label{pf.lem.adj(AB).cauchy-binet.1}%
+}B\right)  . \label{pf.lem.adj(AB).cauchy-binet.1}%
 \end{align}
 
 
@@ -80700,8 +80704,8 @@ gbergman/.C.to.L/}
 Bj\"{o}rner, Francesco Brenti, \textit{Combinatorics of Coxeter Groups},
 Graduate Texts in Mathematics \#231, Springer 2005.}
 
-\bibitem[Bona12]{Bona12}Miklos Bona, \textit{Combinatorics of Permutations},
-2nd edition, CRC Press 2012.
+\bibitem[Bona12]{Bona12}Mikl\'{o}s B\'{o}na, \textit{Combinatorics of
+Permutations}, 2nd edition, CRC Press 2012.
 
 \bibitem[Bresso99]{Bresso99}David M. Bressoud, \textit{Proofs and
 Confirmations: The Story of the Alternating Sign Matrix Conjecture}, Cambridge
@@ -80710,10 +80714,15 @@ University Press 1999.
 \bibitem[BruRys91]{BruRys91}Richard A. Brualdi, Herbert J. Ryser,
 \textit{Combinatorial Matrix Theory}, Cambridge University Press 1991.
 
-\bibitem[CaSoSp12]{CaSoSp12}Sergio Caracciolo, Alan D. Sokal, Andrea
-Sportiello, \textit{Algebraic/combinatorial proofs of Cayley-type identities
-for derivatives of determinants and pfaffians}, Advances in Applied
-Mathematics 50, pp. 474--594 (2013). Also appears as arXiv preprint
+\bibitem[CamFon07]{CamFon07}Peter J. Cameron, Dima G. Fon-Der-Flaass,
+\textit{Fibonacci notes}, 1 August 2007.\newline\url{http://www.maths.qmul.ac.uk/~pjc/comb/fibo.pdf}
+
+\bibitem[CaSoSp12]{CaSoSp12}%
+\href{https://doi.org/10.1016/j.aam.2012.12.001}{Sergio Caracciolo, Alan D.
+Sokal, Andrea Sportiello, \textit{Algebraic/combinatorial proofs of
+Cayley-type identities for derivatives of determinants and pfaffians},
+Advances in Applied Mathematics 50, pp. 474--594 (2013).} Also appears as
+arXiv preprint
 \texttt{\href{http://arxiv.org/abs/1105.6270v2}{arXiv:1105.6270v2}}.
 
 \bibitem[Conrad]{Conrad}Keith Conrad, \textit{Sign of permutations},
