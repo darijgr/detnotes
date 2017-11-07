@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, November 03, 2017 22:13:29}
+%TCIDATA{LastRevised=Friday, November 10, 2017 03:21:53}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -4942,6 +4942,9 @@ map which sends every sequence $\left(  f_{0},f_{1},\ldots,f_{N}\right)
 Show that, furthermore, $B\circ W\circ B=W\circ B\circ W$ and $\left(  B\circ
 W\right)  ^{3}=\operatorname*{id}$.
 \end{addexercise}
+
+(For a solution to Additional exercise \ref{exeadd.bininv}, see Section
+\ref{sect.sol.exeadd.bininv} at the end of these notes.)
 
 \begin{addexercise}
 \label{exeadd.AoPS333199}For any $n\in\mathbb{N}$ and $m\in\mathbb{N}$, define
@@ -80655,6 +80658,1585 @@ can be simulated by a sequence of mutations at sinks (by Exercise
 \ref{exe.ps1.1.1} \textbf{(b)}), this yields that $Q^{\prime}$ can be obtained
 from $Q$ by a sequence of mutations at sinks. This solves Exercise
 \ref{exe.ps1.1.1} \textbf{(c)}.
+\end{proof}
+
+\subsection{\label{sect.sol.exeadd.bininv}Solution to Additional exercise
+\ref{exeadd.bininv}}
+
+We shall now prepare for the solution of Additional exercise
+\ref{exeadd.bininv}.\footnote{I have chosen to place this solution here at the
+end of the notes in order not to upset the numbering in the remaining
+sections.}
+
+Let us first fix some notations.
+
+\begin{definition}
+Let $N\in\mathbb{N}$. We shall consider $N$ to be fixed for the whole Section
+\ref{sect.sol.exeadd.bininv}.
+
+Throughout Section \ref{sect.sol.exeadd.bininv}, we shall use the word
+\textquotedblleft list\textquotedblright\ for an $\left(  N+1\right)  $-tuple
+of rational numbers. In other words, a \textquotedblleft
+list\textquotedblright\ will mean an element of $\mathbb{Q}^{N+1}$. Thus, for
+example, when we say \textquotedblleft the list $\left(  1,1,\ldots,1\right)
+$\textquotedblright, we mean the list $\left(  \underbrace{1,1,\ldots
+,1}_{N+1\text{ entries}}\right)  $ (because any list has to be an $\left(
+N+1\right)  $-tuple).
+\end{definition}
+
+\begin{definition}
+\label{def.sol.exeadd.bininv.bintr}The \textit{binomial transform} of a list
+$\left(  f_{0},f_{1},\ldots,f_{N}\right)  \in\mathbb{Q}^{N+1}$ is defined to
+be the list $\left(  g_{0},g_{1},\ldots,g_{N}\right)  $ defined by%
+\[
+\left(  g_{n}=\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n}{i}%
+f_{i}\ \ \ \ \ \ \ \ \ \ \text{for every }n\in\left\{  0,1,\ldots,N\right\}
+\right)  .
+\]
+
+\end{definition}
+
+Clearly, Definition \ref{def.sol.exeadd.bininv.bintr} generalizes the
+definition of the binomial transform we gave in Additional exercise
+\ref{exeadd.bininv} (because any finite sequence $\left(  f_{0},f_{1}%
+,\ldots,f_{N}\right)  \in\mathbb{Z}^{N+1}$ of integers is clearly a list in
+$\mathbb{Q}^{N+1}$).
+
+\begin{definition}
+We shall use the following notation (known as
+\href{https://en.wikipedia.org/wiki/Iverson_bracket}{the \textit{Iverson
+bracket}}): If $\mathcal{A}$ is any logical statement, then $\left[
+\mathcal{A}\right]  $ will mean the integer $%
+\begin{cases}
+1, & \text{if }\mathcal{A}\text{ is true};\\
+0, & \text{if }\mathcal{A}\text{ is false}%
+\end{cases}
+$. For example, $\left[  1+1=2\right]  =1$ (since $1+1=2$ is true), whereas
+$\left[  1+1=1\right]  =0$ (since $1+1=1$ is false). Clearly, if $\mathcal{A}$
+and $\mathcal{B}$ are two equivalent logical statements, then $\left[
+\mathcal{A}\right]  =\left[  \mathcal{B}\right]  $.
+\end{definition}
+
+The following fact is easy:
+
+\begin{proposition}
+\label{prop.binom.1-1}Let $m\in\mathbb{N}$. Then,%
+\[
+\sum_{k=0}^{m}\left(  -1\right)  ^{k}\dbinom{m}{k}=\left[  m=0\right]  .
+\]
+
+\end{proposition}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Proposition \ref{prop.binom.1-1}.]Proposition
+\ref{prop.binom.bin-id} (applied to $n=m$) yields%
+\[
+\sum_{k=0}^{m}\left(  -1\right)  ^{k}\dbinom{m}{k}=%
+\begin{cases}
+1, & \text{if }m=0;\\
+0, & \text{if }m\neq0
+\end{cases}
+=%
+\begin{cases}
+1, & \text{if }m=0\text{ is true};\\
+0, & \text{if }m=0\text{ is false}%
+\end{cases}
+.
+\]
+Comparing this with%
+\[
+\left[  m=0\right]  =%
+\begin{cases}
+1, & \text{if }m=0\text{ is true};\\
+0, & \text{if }m=0\text{ is false}%
+\end{cases}
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\left[  m=0\right]
+\right)  ,
+\]
+we obtain $\sum_{k=0}^{m}\left(  -1\right)  ^{k}\dbinom{m}{k}=\left[
+m=0\right]  $. This proves Proposition \ref{prop.binom.1-1}.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Proposition \ref{prop.binom.1-1}.]Proposition
+\ref{prop.binom.bin-id} (applied to $n=m$) yields%
+\[
+\sum_{k=0}^{m}\left(  -1\right)  ^{k}\dbinom{m}{k}=%
+\begin{cases}
+1, & \text{if }m=0;\\
+0, & \text{if }m\neq0
+\end{cases}
+.
+\]
+Comparing this with%
+\begin{align*}
+\left[  m=0\right]   &  =%
+\begin{cases}
+1, & \text{if }m=0\text{ is true};\\
+0, & \text{if }m=0\text{ is false}%
+\end{cases}
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\left[  m=0\right]
+\right) \\
+&  =%
+\begin{cases}
+1, & \text{if }m=0;\\
+0, & \text{if }m\neq0
+\end{cases}
+\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since \textquotedblleft}m=0\text{ is true\textquotedblright\ means the
+same as \textquotedblleft}m=0\text{\textquotedblright,}\\
+\text{whereas \textquotedblleft}m=0\text{ is false\textquotedblright\ means
+the same as \textquotedblleft}m\neq0\text{\textquotedblright}%
+\end{array}
+\right)  ,
+\end{align*}
+we obtain $\sum_{k=0}^{m}\left(  -1\right)  ^{k}\dbinom{m}{k}=\left[
+m=0\right]  $. This proves Proposition \ref{prop.binom.1-1}.
+\end{proof}
+\end{verlong}
+
+\begin{corollary}
+\label{cor.binom.1-1cor}Let $n\in\mathbb{N}$. Let $i\in\left\{  0,1,\ldots
+,n\right\}  $. Then,%
+\[
+\sum_{j=i}^{n}\left(  -1\right)  ^{j+i}\dbinom{n}{j}\dbinom{j}{i}=\left[
+i=n\right]  .
+\]
+
+\end{corollary}
+
+\begin{proof}
+[Proof of Corollary \ref{cor.binom.1-1cor}.]We have $i\in\left\{
+0,1,\ldots,n\right\}  $. Hence, $i\leq n$. Also, $i\in\left\{  0,1,\ldots
+,n\right\}  \subseteq\mathbb{N}$. From $i\leq n$, we obtain $n-i\geq0$. Thus,
+$n-i\in\mathbb{N}$. Therefore, Proposition \ref{prop.binom.1-1} (applied to
+$m=n-i$) yields%
+\begin{equation}
+\sum_{k=0}^{n-i}\left(  -1\right)  ^{k}\dbinom{n-i}{k}=\left[  n-i=0\right]  .
+\label{pf.cor.binom.1-1cor.0}%
+\end{equation}
+
+
+Let $j\in\left\{  i,i+1,\ldots,n\right\}  $. Then, $j\geq i$, so that $j\geq
+i\geq0$ and thus $j\in\mathbb{N}$. Hence, Proposition
+\ref{prop.binom.trinom-rev} (applied to $n$, $j$ and $i$ instead of $m$, $i$
+and $a$) yields%
+\begin{equation}
+\dbinom{n}{j}\dbinom{j}{i}=\dbinom{n}{i}\dbinom{n-i}{j-i}.
+\label{pf.cor.binom.1-1cor.1}%
+\end{equation}
+Also, $j+i\equiv j-i\operatorname{mod}2$ (since $\left(  j+i\right)  -\left(
+j-i\right)  =2i$ is even). Thus, $\left(  -1\right)  ^{j+i}=\left(  -1\right)
+^{j-i}$. Multiplying this equality with the equality
+(\ref{pf.cor.binom.1-1cor.1}), we obtain%
+\begin{equation}
+\left(  -1\right)  ^{j+i}\dbinom{n}{j}\dbinom{j}{i}=\left(  -1\right)
+^{j-i}\dbinom{n}{i}\dbinom{n-i}{j-i}. \label{pf.cor.binom.1-1cor.2}%
+\end{equation}
+
+
+Now, forget that we fixed $j$. We thus have proven
+(\ref{pf.cor.binom.1-1cor.2}) for each $j\in\left\{  i,i+1,\ldots,n\right\}
+$. Hence,%
+\begin{align}
+&  \sum_{j=i}^{n}\underbrace{\left(  -1\right)  ^{j+i}\dbinom{n}{j}\dbinom
+{j}{i}}_{\substack{=\left(  -1\right)  ^{j-i}\dbinom{n}{i}\dbinom{n-i}%
+{j-i}\\\text{(by (\ref{pf.cor.binom.1-1cor.2}))}}}\nonumber\\
+&  =\sum_{j=i}^{n}\left(  -1\right)  ^{j-i}\dbinom{n}{i}\dbinom{n-i}{j-i}%
+=\sum_{k=0}^{n-i}\left(  -1\right)  ^{k}\dbinom{n}{i}\dbinom{n-i}%
+{k}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }k\text{ for
+}j-i\text{ in the sum}\right) \nonumber\\
+&  =\dbinom{n}{i}\underbrace{\sum_{k=0}^{n-i}\left(  -1\right)  ^{k}%
+\dbinom{n-i}{k}}_{\substack{=\left[  n-i=0\right]  \\\text{(by
+(\ref{pf.cor.binom.1-1cor.0}))}}}=\dbinom{n}{i}\left[  n-i=0\right]  .
+\label{pf.cor.binom.1-1cor.4}%
+\end{align}
+But it is easy to see that%
+\begin{equation}
+\dbinom{n}{i}\left[  n-i=0\right]  =\left[  i=n\right]
+\label{pf.cor.binom.1-1cor.5}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.cor.binom.1-1cor.5}):} We are in one of
+the following two cases:
+\par
+\textit{Case 1:} We have $i\neq n$.
+\par
+\textit{Case 2:} We have $i=n$.
+\par
+Let us consider Case 1 first. In this case, we have $i\neq n$. In other words,
+$n\neq i$. Hence, $n-i\neq0$. Thus, the statement $n-i=0$ is false. Hence,
+$\left[  n-i=0\right]  =0$, so that $\dbinom{n}{i}\underbrace{\left[
+n-i=0\right]  }_{=0}=0$. Comparing this with $\left[  i=n\right]  =0$ (since
+$i\neq n$), we obtain $\dbinom{n}{i}\left[  n-i=0\right]  =\left[  i=n\right]
+$. Hence, (\ref{pf.cor.binom.1-1cor.5}) is proven in Case 1.
+\par
+Now, let us consider Case 2. In this case, we have $i=n$. In other words,
+$n=i$. Thus, $n-i=0$. Thus, $\left[  n-i=0\right]  =1$. Also, from $n=i$, we
+obtain $\dbinom{n}{i}=\dbinom{i}{i}=1$ (by Proposition \ref{prop.binom.mm}
+(applied to $m=i$)). Hence, $\underbrace{\dbinom{n}{i}}_{=1}%
+\underbrace{\left[  n-i=0\right]  }_{=1}=1$. Comparing this with $\left[
+i=n\right]  =1$ (since $i=n$), we obtain $\dbinom{n}{i}\left[  n-i=0\right]
+=\left[  i=n\right]  $. Hence, (\ref{pf.cor.binom.1-1cor.5}) is proven in Case
+2.
+\par
+We thus have proven (\ref{pf.cor.binom.1-1cor.5}) in each of the two Cases 1
+and 2. Thus, (\ref{pf.cor.binom.1-1cor.5}) always holds.}. Thus,
+(\ref{pf.cor.binom.1-1cor.4}) becomes%
+\[
+\sum_{j=i}^{n}\left(  -1\right)  ^{j+i}\dbinom{n}{j}\dbinom{j}{i}=\dbinom
+{n}{i}\left[  n-i=0\right]  =\left[  i=n\right]  .
+\]
+This proves Corollary \ref{cor.binom.1-1cor}.
+\end{proof}
+
+\begin{proposition}
+\label{prop.sol.exeadd.bintra.a0}Let $\left(  a_{0},a_{1},\ldots,a_{N}\right)
+$ and $\left(  b_{0},b_{1},\ldots,b_{N}\right)  $ be two $\left(  N+1\right)
+$-tuples of rational numbers. Assume that
+\[
+b_{n}=\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n}{i}a_{i}%
+\ \ \ \ \ \ \ \ \ \ \text{for each }n\in\left\{  0,1,\ldots,N\right\}  .
+\]
+Then,
+\[
+a_{n}=\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n}{i}b_{i}%
+\ \ \ \ \ \ \ \ \ \ \text{for each }n\in\left\{  0,1,\ldots,N\right\}  .
+\]
+
+\end{proposition}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Proposition \ref{prop.sol.exeadd.bintra.a0}.]We have assumed that%
+\begin{equation}
+b_{n}=\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n}{i}a_{i}
+\label{pf.prop.sol.exeadd.bintra.a0.short.1}%
+\end{equation}
+for each $n\in\left\{  0,1,\ldots,N\right\}  $.
+
+Now, let $n\in\left\{  0,1,\ldots,N\right\}  $. Then,
+\begin{align*}
+&  \sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n}{i}b_{i}\\
+&  =\sum_{j=0}^{n}\left(  -1\right)  ^{j}\dbinom{n}{j}\underbrace{b_{j}%
+}_{\substack{=\sum_{i=0}^{j}\left(  -1\right)  ^{i}\dbinom{j}{i}%
+a_{i}\\\text{(by (\ref{pf.prop.sol.exeadd.bintra.a0.short.1}) (applied to
+}j\\\text{instead of }n\text{))}}}\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have renamed the}\\
+\text{summation index }i\text{ as }j
+\end{array}
+\right) \\
+&  =\sum_{j=0}^{n}\left(  -1\right)  ^{j}\dbinom{n}{j}\sum_{i=0}^{j}\left(
+-1\right)  ^{i}\dbinom{j}{i}a_{i}\\
+&  =\underbrace{\sum_{j=0}^{n}}_{=\sum_{j\in\left\{  0,1,\ldots,n\right\}  }%
+}\underbrace{\sum_{i=0}^{j}}_{\substack{=\sum_{i\in\left\{  0,1,\ldots
+,j\right\}  }=\sum_{\substack{i\in\left\{  0,1,\ldots,n\right\}  ;\\i\leq
+j}}\\\text{(since the elements of }\left\{  0,1,\ldots,j\right\}  \\\text{are
+precisely the elements }i\in\left\{  0,1,\ldots,n\right\}  \\\text{satisfying
+}i\leq j\text{ (because }j\leq n\text{))}}}\left(  -1\right)  ^{j}%
+\underbrace{\dbinom{n}{j}\left(  -1\right)  ^{i}}_{=\left(  -1\right)
+^{i}\dbinom{n}{j}}\dbinom{j}{i}a_{i}\\
+&  =\underbrace{\sum_{j\in\left\{  0,1,\ldots,n\right\}  }\sum_{\substack{i\in
+\left\{  0,1,\ldots,n\right\}  ;\\i\leq j}}}_{=\sum_{i\in\left\{
+0,1,\ldots,n\right\}  }\sum_{\substack{j\in\left\{  0,1,\ldots,n\right\}
+;\\i\leq j}}}\underbrace{\left(  -1\right)  ^{j}\left(  -1\right)  ^{i}%
+}_{=\left(  -1\right)  ^{j+i}}\dbinom{n}{j}\dbinom{j}{i}a_{i}\\
+&  =\sum_{i\in\left\{  0,1,\ldots,n\right\}  }\underbrace{\sum_{\substack{j\in
+\left\{  0,1,\ldots,n\right\}  ;\\i\leq j}}}_{=\sum_{j=i}^{n}}\left(
+-1\right)  ^{j+i}\dbinom{n}{j}\dbinom{j}{i}a_{i}\\
+&  =\sum_{i\in\left\{  0,1,\ldots,n\right\}  }\sum_{j=i}^{n}\left(  -1\right)
+^{j+i}\dbinom{n}{j}\dbinom{j}{i}a_{i}=\sum_{i\in\left\{  0,1,\ldots,n\right\}
+}\underbrace{\left(  \sum_{j=i}^{n}\left(  -1\right)  ^{j+i}\dbinom{n}%
+{j}\dbinom{j}{i}\right)  }_{\substack{=\left[  i=n\right]  \\\text{(by
+Corollary \ref{cor.binom.1-1cor})}}}a_{i}\\
+&  =\sum_{i\in\left\{  0,1,\ldots,n\right\}  }\left[  i=n\right]
+a_{i}=\underbrace{\left[  n=n\right]  }_{\substack{=1\\\text{(since
+}n=n\text{)}}}a_{n}+\sum_{\substack{i\in\left\{  0,1,\ldots,n\right\}
+;\\i\neq n}}\underbrace{\left[  i=n\right]  }_{\substack{=0\\\text{(since
+}i\neq n\text{)}}}a_{i}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have split off the addend for
+}i=n\text{ from the sum}\right) \\
+&  =a_{n}+\underbrace{\sum_{\substack{i\in\left\{  0,1,\ldots,n\right\}
+;\\i\neq n}}0a_{i}}_{=0}=a_{n}.
+\end{align*}
+In other words, $a_{n}=\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n}{i}%
+b_{i}$. This proves Proposition \ref{prop.sol.exeadd.bintra.a0}.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Proposition \ref{prop.sol.exeadd.bintra.a0}.]We have assumed that%
+\begin{equation}
+b_{n}=\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n}{i}a_{i}
+\label{pf.prop.sol.exeadd.bintra.a0.1}%
+\end{equation}
+for each $n\in\left\{  0,1,\ldots,N\right\}  $.
+
+Now, let $n\in\left\{  0,1,\ldots,N\right\}  $. Thus, $n\geq0$ and $n\leq N$.
+
+For each $j\in\left\{  0,1,\ldots,n\right\}  $, we have the following equality
+of summation signs:%
+\begin{equation}
+\sum_{i=0}^{j}=\sum_{\substack{i\in\left\{  0,1,\ldots,n\right\}  ;\\i\leq j}}
+\label{pf.prop.sol.exeadd.bintra.a0.2}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.prop.sol.exeadd.bintra.a0.2}):} Let
+$j\in\left\{  0,1,\ldots,n\right\}  $. Thus, $0\leq j\leq n$. From $j\leq n$,
+we obtain $\left\{  0,1,\ldots,j\right\}  \subseteq\left\{  0,1,\ldots
+,n\right\}  $. Thus, $\left\{  0,1,\ldots,n\right\}  \cap\left\{
+0,1,\ldots,j\right\}  =\left\{  0,1,\ldots,j\right\}  $. Now, we have the
+following equality of summation signs:%
+\begin{align*}
+\sum_{i=0}^{j}  &  =\sum_{i\in\left\{  0,1,\ldots,j\right\}  }=\sum
+_{i\in\left\{  0,1,\ldots,n\right\}  \cap\left\{  0,1,\ldots,j\right\}
+}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left\{  0,1,\ldots,j\right\}
+=\left\{  0,1,\ldots,n\right\}  \cap\left\{  0,1,\ldots,j\right\}  \right) \\
+&  =\sum_{\substack{i\in\left\{  0,1,\ldots,n\right\}  ;\\i\in\left\{
+0,1,\ldots,j\right\}  }}=\sum_{\substack{i\in\left\{  0,1,\ldots,n\right\}
+;\\i\leq j}}
+\end{align*}
+(because for an $i\in\left\{  0,1,\ldots,n\right\}  $, the condition $\left(
+i\in\left\{  0,1,\ldots,j\right\}  \right)  $ is equivalent to the condition
+$\left(  i\leq j\right)  $ (since $i\in\left\{  0,1,\ldots,n\right\}
+\subseteq\mathbb{N}$)). This proves (\ref{pf.prop.sol.exeadd.bintra.a0.2}).}.
+Also, for each $j\in\left\{  0,1,\ldots,n\right\}  $, we have%
+\begin{equation}
+b_{j}=\sum_{\substack{i\in\left\{  0,1,\ldots,n\right\}  ;\\i\leq j}}\left(
+-1\right)  ^{i}\dbinom{j}{i}a_{i} \label{pf.prop.sol.exeadd.bintra.a0.3}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.prop.sol.exeadd.bintra.a0.3}):} Let
+$j\in\left\{  0,1,\ldots,n\right\}  $. Then, $j\in\left\{  0,1,\ldots
+,n\right\}  \subseteq\left\{  0,1,\ldots,N\right\}  $ (since $n\leq N$).
+Hence, (\ref{pf.prop.sol.exeadd.bintra.a0.1}) (applied to $j$ instead of $n$)
+yields%
+\[
+b_{j}=\underbrace{\sum_{i=0}^{j}}_{\substack{=\sum_{\substack{i\in\left\{
+0,1,\ldots,n\right\}  ;\\i\leq j}}\\\text{(by
+(\ref{pf.prop.sol.exeadd.bintra.a0.2}))}}}\left(  -1\right)  ^{i}\dbinom{j}%
+{i}a_{i}=\sum_{\substack{i\in\left\{  0,1,\ldots,n\right\}  ;\\i\leq
+j}}\left(  -1\right)  ^{i}\dbinom{j}{i}a_{i}.
+\]
+This proves (\ref{pf.prop.sol.exeadd.bintra.a0.3}).}.
+
+Now,%
+\begin{align*}
+&  \sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n}{i}b_{i}\\
+&  =\underbrace{\sum_{j=0}^{n}}_{=\sum_{j\in\left\{  0,1,\ldots,n\right\}  }%
+}\left(  -1\right)  ^{j}\dbinom{n}{j}\underbrace{b_{j}}_{\substack{=\sum
+_{\substack{i\in\left\{  0,1,\ldots,n\right\}  ;\\i\leq j}}\left(  -1\right)
+^{i}\dbinom{j}{i}a_{i}\\\text{(by (\ref{pf.prop.sol.exeadd.bintra.a0.3}))}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have renamed the summation index
+}i\text{ as }j\right) \\
+&  =\sum_{j\in\left\{  0,1,\ldots,n\right\}  }\left(  -1\right)  ^{j}%
+\dbinom{n}{j}\sum_{\substack{i\in\left\{  0,1,\ldots,n\right\}  ;\\i\leq
+j}}\left(  -1\right)  ^{i}\dbinom{j}{i}a_{i}\\
+&  =\underbrace{\sum_{j\in\left\{  0,1,\ldots,n\right\}  }\sum_{\substack{i\in
+\left\{  0,1,\ldots,n\right\}  ;\\i\leq j}}}_{=\sum_{i\in\left\{
+0,1,\ldots,n\right\}  }\sum_{\substack{j\in\left\{  0,1,\ldots,n\right\}
+;\\i\leq j}}}\left(  -1\right)  ^{j}\underbrace{\dbinom{n}{j}\left(
+-1\right)  ^{i}}_{=\left(  -1\right)  ^{i}\dbinom{n}{j}}\dbinom{j}{i}a_{i}\\
+&  =\sum_{i\in\left\{  0,1,\ldots,n\right\}  }\underbrace{\sum_{\substack{j\in
+\left\{  0,1,\ldots,n\right\}  ;\\i\leq j}}}_{=\sum_{j=i}^{n}}%
+\underbrace{\left(  -1\right)  ^{j}\left(  -1\right)  ^{i}}_{=\left(
+-1\right)  ^{j+i}}\dbinom{n}{j}\dbinom{j}{i}a_{i}\\
+&  =\sum_{i\in\left\{  0,1,\ldots,n\right\}  }\sum_{j=i}^{n}\left(  -1\right)
+^{j+i}\dbinom{n}{j}\dbinom{j}{i}a_{i}=\sum_{i\in\left\{  0,1,\ldots,n\right\}
+}\underbrace{\left(  \sum_{j=i}^{n}\left(  -1\right)  ^{j+i}\dbinom{n}%
+{j}\dbinom{j}{i}\right)  }_{\substack{=\left[  i=n\right]  \\\text{(by
+Corollary \ref{cor.binom.1-1cor})}}}a_{i}\\
+&  =\sum_{i\in\left\{  0,1,\ldots,n\right\}  }\left[  i=n\right]
+a_{i}=\underbrace{\left[  n=n\right]  }_{\substack{=1\\\text{(since
+}n=n\text{)}}}a_{n}+\sum_{\substack{i\in\left\{  0,1,\ldots,n\right\}
+;\\i\neq n}}\underbrace{\left[  i=n\right]  }_{\substack{=0\\\text{(since
+}i\neq n\text{)}}}a_{i}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have split off the addend for }i=n\text{ from the sum}\\
+\text{(since }n\in\left\{  0,1,\ldots,n\right\}  \text{ (because }%
+n\geq0\text{))}%
+\end{array}
+\right) \\
+&  =a_{n}+\underbrace{\sum_{\substack{i\in\left\{  0,1,\ldots,n\right\}
+;\\i\neq n}}0a_{i}}_{=0}=a_{n}.
+\end{align*}
+In other words, $a_{n}=\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n}{i}%
+b_{i}$. This proves Proposition \ref{prop.sol.exeadd.bintra.a0}.
+\end{proof}
+\end{verlong}
+
+From this, it is easy to derive the following statement, which generalizes
+Additional exercise \ref{exeadd.bininv} \textbf{(a)}:
+
+\begin{corollary}
+\label{cor.sol.exeadd.bininv.a}Let $\left(  f_{0},f_{1},\ldots,f_{N}\right)
+\in\mathbb{Q}^{N+1}$ be a list. Let $\left(  g_{0},g_{1},\ldots,g_{N}\right)
+$ be the binomial transform of $\left(  f_{0},f_{1},\ldots,f_{N}\right)  $.
+Then, $\left(  f_{0},f_{1},\ldots,f_{N}\right)  $ is the binomial transform of
+$\left(  g_{0},g_{1},\ldots,g_{N}\right)  $.
+\end{corollary}
+
+\begin{proof}
+[Proof of Corollary \ref{cor.sol.exeadd.bininv.a}.]We know that $\left(
+g_{0},g_{1},\ldots,g_{N}\right)  $ is the binomial transform of $\left(
+f_{0},f_{1},\ldots,f_{N}\right)  $. In other words, we have%
+\[
+g_{n}=\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n}{i}f_{i}%
+\ \ \ \ \ \ \ \ \ \ \text{for every }n\in\left\{  0,1,\ldots,N\right\}
+\]
+(by the definition of the binomial transform of a list). Hence, Proposition
+\ref{prop.sol.exeadd.bintra.a0} (applied to $a_{i}=f_{i}$ and $b_{i}=g_{i}$)
+yields that%
+\begin{equation}
+f_{n}=\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n}{i}g_{i}%
+\ \ \ \ \ \ \ \ \ \ \text{for each }n\in\left\{  0,1,\ldots,N\right\}  .
+\label{pf.cor.sol.exeadd.bininv.a.1}%
+\end{equation}
+
+
+Let $\left(  h_{0},h_{1},\ldots,h_{N}\right)  $ be the binomial transform of
+$\left(  g_{0},g_{1},\ldots,g_{N}\right)  $. Thus,%
+\begin{equation}
+h_{n}=\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n}{i}g_{i}%
+\ \ \ \ \ \ \ \ \ \ \text{for every }n\in\left\{  0,1,\ldots,N\right\}
+\label{pf.cor.sol.exeadd.bininv.a.2}%
+\end{equation}
+(by the definition of the binomial transform of a list). Hence, each
+$n\in\left\{  0,1,\ldots,N\right\}  $ satisfies%
+\[
+h_{n}=\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n}{i}g_{i}=f_{n}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{pf.cor.sol.exeadd.bininv.a.1}%
+)}\right)  .
+\]
+In other words, $\left(  h_{0},h_{1},\ldots,h_{N}\right)  =\left(  f_{0}%
+,f_{1},\ldots,f_{N}\right)  $.
+
+Recall that $\left(  h_{0},h_{1},\ldots,h_{N}\right)  $ is the binomial
+transform of $\left(  g_{0},g_{1},\ldots,g_{N}\right)  $. In other words,
+$\left(  f_{0},f_{1},\ldots,f_{N}\right)  $ is the binomial transform of
+$\left(  g_{0},g_{1},\ldots,g_{N}\right)  $ (since $\left(  h_{0},h_{1}%
+,\ldots,h_{N}\right)  =\left(  f_{0},f_{1},\ldots,f_{N}\right)  $). This
+proves Corollary \ref{cor.sol.exeadd.bininv.a}.
+\end{proof}
+
+Next, let us state a simple consequence of the binomial formula:
+
+\begin{corollary}
+\label{cor.binom.(1-q)n}Let $n\in\mathbb{N}$ and $q\in\mathbb{Q}$. Then,%
+\[
+\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n}{i}q^{i}=\left(  1-q\right)
+^{n}.
+\]
+
+\end{corollary}
+
+\begin{proof}
+[Proof of Corollary \ref{cor.binom.(1-q)n}.]Substituting $-q$ and $1$ for $X$
+and $Y$ in the equality (\ref{eq.binom.binomial}), we obtain%
+\begin{align*}
+\left(  \left(  -q\right)  +1\right)  ^{n}  &  =\sum_{k=0}^{n}\dbinom{n}%
+{k}\left(  -q\right)  ^{k}\underbrace{1^{n-k}}_{=1}=\sum_{k=0}^{n}\dbinom
+{n}{k}\underbrace{\left(  -q\right)  ^{k}}_{=\left(  -1\right)  ^{k}q^{k}}\\
+&  =\sum_{k=0}^{n}\underbrace{\dbinom{n}{k}\left(  -1\right)  ^{k}}_{=\left(
+-1\right)  ^{k}\dbinom{n}{k}}q^{k}=\sum_{k=0}^{n}\left(  -1\right)
+^{k}\dbinom{n}{k}q^{k}=\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n}{i}q^{i}%
+\end{align*}
+(here, we have renamed the summation index $k$ as $i$). Hence,%
+\[
+\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n}{i}q^{i}=\left(
+\underbrace{\left(  -q\right)  +1}_{=1-q}\right)  ^{n}=\left(  1-q\right)
+^{n}.
+\]
+This proves Corollary \ref{cor.binom.(1-q)n}.
+\end{proof}
+
+Let us next derive an easy corollary from Corollary \ref{cor.binom.1-1cor}:
+
+\begin{corollary}
+\label{cor.binom.1-1cor2}Let $n\in\mathbb{N}$. Let $i\in\mathbb{N}$. Then,%
+\[
+\sum_{j=0}^{n}\left(  -1\right)  ^{j}\dbinom{n}{j}\dbinom{j}{i}=\left(
+-1\right)  ^{i}\left[  n=i\right]  .
+\]
+
+\end{corollary}
+
+\begin{proof}
+[Proof of Corollary \ref{cor.binom.1-1cor2}.]Each $j\in\left\{  0,1,\ldots
+,i-1\right\}  $ satisfies%
+\begin{equation}
+\dbinom{j}{i}=0 \label{pf.cor.binom.1-1cor2.ji=0}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.cor.binom.1-1cor2.ji=0}):} Let
+$j\in\left\{  0,1,\ldots,i-1\right\}  $. Thus, $j\leq i-1<i$ and $j\in\left\{
+0,1,\ldots,i-1\right\}  \subseteq\mathbb{N}$. Hence, Proposition
+\ref{prop.binom.0} (applied to $j$ and $i$ instead of $m$ and $n$) shows that
+$\dbinom{j}{i}=0$. This proves (\ref{pf.cor.binom.1-1cor2.ji=0}).}.
+
+We are in one of the following two cases:
+
+\textit{Case 1:} We have $i\leq n$.
+
+\textit{Case 2:} We have $i>n$.
+
+Let us first consider Case 1. In this case, we have $i\leq n$. Thus,
+$i\in\left\{  0,1,\ldots,n\right\}  $. Now,
+\begin{align*}
+&  \sum_{j=0}^{n}\left(  -1\right)  ^{j}\dbinom{n}{j}\dbinom{j}{i}\\
+&  =\sum_{j=0}^{i-1}\left(  -1\right)  ^{j}\dbinom{n}{j}\underbrace{\dbinom
+{j}{i}}_{\substack{=0\\\text{(by (\ref{pf.cor.binom.1-1cor2.ji=0}))}}%
+}+\sum_{j=i}^{n}\underbrace{\left(  -1\right)  ^{j}}_{\substack{=\left(
+-1\right)  ^{i+\left(  j+i\right)  }\\\text{(since }j\equiv2i+j=i+\left(
+j+i\right)  \operatorname{mod}2\text{)}}}\dbinom{n}{j}\dbinom{j}{i}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have split the sum at
+}j=i\text{, since }0\leq i\leq n\right) \\
+&  =\underbrace{\sum_{j=0}^{i-1}\left(  -1\right)  ^{j}\dbinom{n}{j}0}%
+_{=0}+\sum_{j=i}^{n}\left(  -1\right)  ^{i+\left(  j+i\right)  }\dbinom{n}%
+{j}\dbinom{j}{i}=\sum_{j=i}^{n}\underbrace{\left(  -1\right)  ^{i+\left(
+j+i\right)  }}_{=\left(  -1\right)  ^{i}\left(  -1\right)  ^{j+i}}\dbinom
+{n}{j}\dbinom{j}{i}\\
+&  =\sum_{j=i}^{n}\left(  -1\right)  ^{i}\left(  -1\right)  ^{j+i}\dbinom
+{n}{j}\dbinom{j}{i}=\left(  -1\right)  ^{i}\underbrace{\sum_{j=i}^{n}\left(
+-1\right)  ^{j+i}\dbinom{n}{j}\dbinom{j}{i}}_{\substack{=\left[  i=n\right]
+\\\text{(by Corollary \ref{cor.binom.1-1cor})}}}\\
+&  =\left(  -1\right)  ^{i}\left[  \underbrace{i=n}_{\Longleftrightarrow
+\ \left(  n=i\right)  }\right]  =\left(  -1\right)  ^{i}\left[  n=i\right]  .
+\end{align*}
+Hence, Corollary \ref{cor.binom.1-1cor2} is proven in Case 1.
+
+\begin{vershort}
+Let us now consider Case 2. In this case, we have $i>n$. Thus, $n<i$, so that
+$n\in\left\{  0,1,\ldots,i-1\right\}  $ (since $n\in\mathbb{N}$). But we don't
+have $n=i$ (since we have $n<i$); thus, we have $\left[  n=i\right]  =0$.
+Hence, $\left(  -1\right)  ^{i}\underbrace{\left[  n=i\right]  }_{=0}=0$. But
+\[
+\sum_{j=0}^{n}\left(  -1\right)  ^{j}\dbinom{n}{j}\underbrace{\dbinom{j}{i}%
+}_{\substack{=0\\\text{(by (\ref{pf.cor.binom.1-1cor2.ji=0})}\\\text{(since
+}j\in\left\{  0,1,\ldots,i-1\right\}  \\\text{(because }j\leq n<i\text{ and
+}j\in\mathbb{N}\text{)))}}}=\sum_{j=0}^{n}\left(  -1\right)  ^{j}\dbinom{n}%
+{j}0=0=\left(  -1\right)  ^{i}\left[  n=i\right]  .
+\]
+Hence, Corollary \ref{cor.binom.1-1cor2} is proven in Case 2.
+\end{vershort}
+
+\begin{verlong}
+Let us now consider Case 2. In this case, we have $i>n$. Thus, $n<i$, so that
+$n\leq i-1$ (since $n$ and $i$ are integers). Thus, $n\in\left\{
+0,1,\ldots,i-1\right\}  $ (since $n\in\mathbb{N}$). But we don't have $n=i$
+(since we have $n<i$); thus, we have $\left[  n=i\right]  =0$. Hence, $\left(
+-1\right)  ^{i}\underbrace{\left[  n=i\right]  }_{=0}=0$. But each
+$j\in\left\{  0,1,\ldots,n\right\}  $ satisfies%
+\begin{equation}
+\dbinom{j}{i}=0 \label{pf.cor.binom.1-1cor2.3}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.cor.binom.1-1cor2.3}):} Let $j\in\left\{
+0,1,\ldots,n\right\}  $. Thus, $j\leq n<i$, so that $j\leq i-1$ (since $j$ and
+$i$ are integers). Also, $j\in\left\{  0,1,\ldots,n\right\}  \subseteq
+\mathbb{N}$. Hence, from $j\leq i-1$, we obtain $j\in\left\{  0,1,\ldots
+,i-1\right\}  $. Thus, (\ref{pf.cor.binom.1-1cor2.ji=0}) shows that
+$\dbinom{j}{i}=0$. This proves (\ref{pf.cor.binom.1-1cor2.3}).}. Now,%
+\[
+\sum_{j=0}^{n}\left(  -1\right)  ^{j}\dbinom{n}{j}\underbrace{\dbinom{j}{i}%
+}_{\substack{=0\\\text{(by (\ref{pf.cor.binom.1-1cor2.3}))}}}=\sum_{j=0}%
+^{n}\left(  -1\right)  ^{j}\dbinom{n}{j}0=0=\left(  -1\right)  ^{i}\left[
+n=i\right]  .
+\]
+Hence, Corollary \ref{cor.binom.1-1cor2} is proven in Case 2.
+\end{verlong}
+
+We have now proven Corollary \ref{cor.binom.1-1cor2} in both Cases 1 and 2.
+Hence, Corollary \ref{cor.binom.1-1cor2} always holds.
+\end{proof}
+
+Another simple lemma shall be of use to us:
+
+\begin{lemma}
+\label{lem.sol.exeadd.bininv.pendulum}Let $n\in\mathbb{N}$.
+
+\textbf{(a)} We have $\dfrac{1}{2}\left(  1+\left(  -1\right)  ^{n}\right)  =%
+\begin{cases}
+1, & \text{if }n\text{ is even;}\\
+0, & \text{if }n\text{ is odd}%
+\end{cases}
+$.
+
+\textbf{(b)} We have $\dfrac{1}{2}\left(  0^{n}+2^{n}\right)  =%
+\begin{cases}
+1, & \text{if }n=0;\\
+2^{n-1}, & \text{if }n>0
+\end{cases}
+$.
+\end{lemma}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exeadd.bininv.pendulum}.]Each of the two claims
+of Lemma \ref{lem.sol.exeadd.bininv.pendulum} follows by a straightforward
+case distinction (which we leave to the reader).
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exeadd.bininv.pendulum}.]\textbf{(a)} We are in
+one of the following two cases:
+
+\textit{Case 1:} The integer $n$ is even.
+
+\textit{Case 2:} The integer $n$ is odd.
+
+Let us first consider Case 1. In this case, the integer $n$ is even. Thus,
+$\left(  -1\right)  ^{n}=1$. Hence, $\dfrac{1}{2}\left(  1+\underbrace{\left(
+-1\right)  ^{n}}_{=1}\right)  =\dfrac{1}{2}\left(  1+1\right)  =1$. Comparing
+this with%
+\[%
+\begin{cases}
+1, & \text{if }n\text{ is even;}\\
+0, & \text{if }n\text{ is odd}%
+\end{cases}
+=1\ \ \ \ \ \ \ \ \ \ \left(  \text{since }n\text{ is even}\right)  ,
+\]
+we obtain $\dfrac{1}{2}\left(  1+\left(  -1\right)  ^{n}\right)  =%
+\begin{cases}
+1, & \text{if }n\text{ is even;}\\
+0, & \text{if }n\text{ is odd}%
+\end{cases}
+$. Hence, Lemma \ref{lem.sol.exeadd.bininv.pendulum} \textbf{(a)} holds in
+Case 1.
+
+Let us now consider Case 2. In this case, the integer $n$ is odd. Thus,
+$\left(  -1\right)  ^{n}=-1$. Hence, $\dfrac{1}{2}\left(
+1+\underbrace{\left(  -1\right)  ^{n}}_{=-1}\right)  =\dfrac{1}{2}\left(
+1+\left(  -1\right)  \right)  =0$. Comparing this with%
+\[%
+\begin{cases}
+1, & \text{if }n\text{ is even;}\\
+0, & \text{if }n\text{ is odd}%
+\end{cases}
+=0\ \ \ \ \ \ \ \ \ \ \left(  \text{since }n\text{ is odd}\right)  ,
+\]
+we obtain $\dfrac{1}{2}\left(  1+\left(  -1\right)  ^{n}\right)  =%
+\begin{cases}
+1, & \text{if }n\text{ is even;}\\
+0, & \text{if }n\text{ is odd}%
+\end{cases}
+$. Hence, Lemma \ref{lem.sol.exeadd.bininv.pendulum} \textbf{(a)} holds in
+Case 2.
+
+We thus have proven Lemma \ref{lem.sol.exeadd.bininv.pendulum} \textbf{(a)} in
+each of the two Cases 1 and 2. Since these two Cases cover all possibilities,
+we thus conclude that Lemma \ref{lem.sol.exeadd.bininv.pendulum} \textbf{(a)}
+always holds.
+
+\textbf{(b)} We have $n\geq0$ (since $n\in\mathbb{N}$). Hence, we are in one
+of the following two cases:
+
+\textit{Case 1:} We have $n=0$.
+
+\textit{Case 2:} We have $n>0$.
+
+Let us first consider Case 1. In this case, we have $n=0$. Thus, $0^{n}%
+=0^{0}=1$. Also, from $n=0$, we obtain $2^{n}=2^{0}=1$. Thus, $\dfrac{1}%
+{2}\left(  \underbrace{0^{n}}_{=1}+\underbrace{2^{n}}_{=1}\right)  =\dfrac
+{1}{2}\left(  1+1\right)  =1$. Comparing this with%
+\[%
+\begin{cases}
+1, & \text{if }n=0;\\
+2^{n-1}, & \text{if }n>0
+\end{cases}
+=1\ \ \ \ \ \ \ \ \ \ \left(  \text{since }n=0\right)  ,
+\]
+we obtain $\dfrac{1}{2}\left(  0^{n}+2^{n}\right)  =%
+\begin{cases}
+1, & \text{if }n=0;\\
+2^{n-1}, & \text{if }n>0
+\end{cases}
+$. Hence, Lemma \ref{lem.sol.exeadd.bininv.pendulum} \textbf{(b)} holds in
+Case 1.
+
+Let us now consider Case 2. In this case, we have $n>0$. Thus, $0^{n}=0$.
+Hence, $\dfrac{1}{2}\left(  \underbrace{0^{n}}_{=0}+2^{n}\right)  =\dfrac
+{1}{2}2^{n}=2^{n-1}$. Comparing this with%
+\[%
+\begin{cases}
+1, & \text{if }n=0;\\
+2^{n-1}, & \text{if }n>0
+\end{cases}
+=2^{n-1}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }n>0\right)  ,
+\]
+we obtain $\dfrac{1}{2}\left(  0^{n}+2^{n}\right)  =%
+\begin{cases}
+1, & \text{if }n=0;\\
+2^{n-1}, & \text{if }n>0
+\end{cases}
+$. Hence, Lemma \ref{lem.sol.exeadd.bininv.pendulum} \textbf{(b)} holds in
+Case 2.
+
+We thus have proven Lemma \ref{lem.sol.exeadd.bininv.pendulum} \textbf{(b)} in
+each of the two Cases 1 and 2. Since these two Cases cover all possibilities,
+we thus conclude that Lemma \ref{lem.sol.exeadd.bininv.pendulum} \textbf{(b)}
+always holds.
+\end{proof}
+\end{verlong}
+
+We can now give answers to parts \textbf{(b)}, \textbf{(c)}, \textbf{(d)} and
+\textbf{(e)} of Additional exercise \ref{exeadd.bininv}:
+
+\begin{proposition}
+\label{prop.sol.exeadd.bininv.c}Let $a\in\mathbb{N}$. The binomial transform
+of the list $\left(  \dbinom{0}{a},\dbinom{1}{a},\ldots,\dbinom{N}{a}\right)
+$ is the list
+\[
+\left(  \left(  -1\right)  ^{a}\left[  0=a\right]  ,\left(  -1\right)
+^{a}\left[  1=a\right]  ,\ldots,\left(  -1\right)  ^{a}\left[  N=a\right]
+\right)  .
+\]
+\footnotemark
+\end{proposition}
+
+\footnotetext{This list $\left(  \left(  -1\right)  ^{a}\left[  0=a\right]
+,\left(  -1\right)  ^{a}\left[  1=a\right]  ,\ldots,\left(  -1\right)
+^{a}\left[  N=a\right]  \right)  $ actually has a very simple form:
+\par
+\begin{itemize}
+\item If it has an $\left(  a+1\right)  $-st entry (i.e., if $a\leq N$), then
+this entry is $\left(  -1\right)  ^{a}\underbrace{\left[  a=a\right]
+}_{\substack{=1\\\text{(since }a=a\text{)}}}=\left(  -1\right)  ^{a}$.
+\par
+\item All other entries are $0$ (because if $n\in\left\{  0,1,\ldots
+,N\right\}  $ is such that $n\neq a$, then $\left(  -1\right)  ^{a}%
+\underbrace{\left[  n=a\right]  }_{\substack{=0\\\text{(since }n\neq
+a\text{)}}}=0$).
+\end{itemize}
+\par
+Thus, this list $\left(  \left(  -1\right)  ^{a}\left[  0=a\right]  ,\left(
+-1\right)  ^{a}\left[  1=a\right]  ,\ldots,\left(  -1\right)  ^{a}\left[
+N=a\right]  \right)  $ can be rewritten as $\left(  0,0,\ldots,0,\left(
+-1\right)  ^{a},0,0,\ldots,0\right)  $ (with the $\left(  -1\right)  ^{a}$
+entry being placed in the $\left(  a+1\right)  $-st position) when $a\leq N$,
+and as $\left(  0,0,\ldots,0\right)  $ if $a>N$.}
+
+\begin{proof}
+[Proof of Proposition \ref{prop.sol.exeadd.bininv.c}.]Let $\left(  b_{0}%
+,b_{1},\ldots,b_{N}\right)  $ be the binomial transform of the list
+\newline$\left(  \dbinom{0}{a},\dbinom{1}{a},\ldots,\dbinom{N}{a}\right)  $.
+Thus,%
+\[
+b_{n}=\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n}{i}\dbinom{i}%
+{a}\ \ \ \ \ \ \ \ \ \ \text{for each }n\in\left\{  0,1,\ldots,N\right\}
+\]
+(by the definition of the binomial transform).
+
+Hence, each $n\in\left\{  0,1,\ldots,N\right\}  $ satisfies
+\begin{align*}
+b_{n}  &  =\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n}{i}\dbinom{i}%
+{a}=\sum_{j=0}^{n}\left(  -1\right)  ^{j}\dbinom{n}{j}\dbinom{j}{a}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have renamed the summation index
+}i\text{ as }j\right) \\
+&  =\left(  -1\right)  ^{a}\left[  n=a\right]  \ \ \ \ \ \ \ \ \ \ \left(
+\text{by Corollary \ref{cor.binom.1-1cor2} (applied to }i=a\text{)}\right)  .
+\end{align*}
+In other words,%
+\begin{equation}
+\left(  b_{0},b_{1},\ldots,b_{N}\right)  =\left(  \left(  -1\right)
+^{a}\left[  0=a\right]  ,\left(  -1\right)  ^{a}\left[  1=a\right]
+,\ldots,\left(  -1\right)  ^{a}\left[  N=a\right]  \right)  .
+\label{pf.prop.sol.exeadd.bininv.c.1}%
+\end{equation}
+
+
+But recall that the binomial transform of the list $\left(  \dbinom{0}%
+{a},\dbinom{1}{a},\ldots,\dbinom{N}{a}\right)  $ is \newline$\left(
+b_{0},b_{1},\ldots,b_{N}\right)  $. In view of
+(\ref{pf.prop.sol.exeadd.bininv.c.1}), this rewrites as follows: The binomial
+transform of the list $\left(  \dbinom{0}{a},\dbinom{1}{a},\ldots,\dbinom
+{N}{a}\right)  $ is $\left(  \left(  -1\right)  ^{a}\left[  0=a\right]
+,\left(  -1\right)  ^{a}\left[  1=a\right]  ,\ldots,\left(  -1\right)
+^{a}\left[  N=a\right]  \right)  $. This proves Proposition
+\ref{prop.sol.exeadd.bininv.c}.
+\end{proof}
+
+\begin{proposition}
+\label{prop.sol.exeadd.bininv.b}The binomial transform of the list $\left(
+1,1,\ldots,1\right)  $ (with $N+1$ entries) is the list $\left(
+1,0,0,\ldots,0\right)  $ (with one $1$ and $N$ zeroes).
+\end{proposition}
+
+\begin{proof}
+[Proof of Proposition \ref{prop.sol.exeadd.bininv.b}.]We have $\dbinom{n}%
+{0}=1$ for each $n\in\left\{  0,1,\ldots,N\right\}  $ (by (\ref{eq.binom.00})
+(applied to $m=n$)). Hence,
+\begin{equation}
+\left(  \dbinom{0}{0},\dbinom{1}{0},\ldots,\dbinom{N}{0}\right)  =\left(
+1,1,\ldots,1\right)  \label{pf.prop.sol.exeadd.bininv.b.1}%
+\end{equation}
+(with $N+1$ entries).
+
+But Proposition \ref{prop.sol.exeadd.bininv.c} (applied to $a=0$) shows that
+the binomial transform of the list $\left(  \dbinom{0}{0},\dbinom{1}{0}%
+,\ldots,\dbinom{N}{0}\right)  $ is the list
+\begin{align*}
+&  \left(  \underbrace{\left(  -1\right)  ^{0}}_{=1}\left[  0=0\right]
+,\underbrace{\left(  -1\right)  ^{0}}_{=1}\left[  1=0\right]  ,\ldots
+,\underbrace{\left(  -1\right)  ^{0}}_{=1}\left[  N=0\right]  \right) \\
+&  =\left(  \left[  0=0\right]  ,\left[  1=0\right]  ,\ldots,\left[
+N=0\right]  \right)  =\left(  1,0,0,\ldots,0\right)
+\end{align*}
+(with one $1$ and $N$ zeroes). In view of (\ref{pf.prop.sol.exeadd.bininv.b.1}%
+), this rewrites as follows: The binomial transform of the list $\left(
+1,1,\ldots,1\right)  $ (with $N+1$ entries) is the list $\left(
+1,0,0,\ldots,0\right)  $ (with one $1$ and $N$ zeroes). This proves
+Proposition \ref{prop.sol.exeadd.bininv.b}.
+\end{proof}
+
+\begin{proposition}
+\label{prop.sol.exeadd.bininv.d}Let $q\in\mathbb{Z}$. The binomial transform
+of the list $\left(  q^{0},q^{1},\ldots,q^{N}\right)  $ is $\left(  \left(
+1-q\right)  ^{0},\left(  1-q\right)  ^{1},\ldots,\left(  1-q\right)
+^{N}\right)  $.
+\end{proposition}
+
+\begin{proof}
+[Proof of Proposition \ref{prop.sol.exeadd.bininv.d}.]Let $\left(  b_{0}%
+,b_{1},\ldots,b_{N}\right)  $ be the binomial transform of the list $\left(
+q^{0},q^{1},\ldots,q^{N}\right)  $. Thus,%
+\[
+b_{n}=\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n}{i}q^{i}%
+\ \ \ \ \ \ \ \ \ \ \text{for each }n\in\left\{  0,1,\ldots,N\right\}
+\]
+(by the definition of the binomial transform). Hence, each $n\in\left\{
+0,1,\ldots,N\right\}  $ satisfies%
+\[
+b_{n}=\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n}{i}q^{i}=\left(
+1-q\right)  ^{n}%
+\]
+(by Corollary \ref{cor.binom.(1-q)n}). In other words,
+\begin{equation}
+\left(  b_{0},b_{1},\ldots,b_{N}\right)  =\left(  \left(  1-q\right)
+^{0},\left(  1-q\right)  ^{1},\ldots,\left(  1-q\right)  ^{N}\right)  .
+\label{pf.prop.sol.exeadd.bininv.d.1}%
+\end{equation}
+
+
+Recall that the binomial transform of the list $\left(  q^{0},q^{1}%
+,\ldots,q^{N}\right)  $ is $\left(  b_{0},b_{1},\ldots,b_{N}\right)  $. In
+view of (\ref{pf.prop.sol.exeadd.bininv.d.1}), this rewrites as follows: The
+binomial transform of the list $\left(  q^{0},q^{1},\ldots,q^{N}\right)  $ is
+$\left(  \left(  1-q\right)  ^{0},\left(  1-q\right)  ^{1},\ldots,\left(
+1-q\right)  ^{N}\right)  $. This proves Proposition
+\ref{prop.sol.exeadd.bininv.d}.
+\end{proof}
+
+\begin{proposition}
+\label{prop.sol.exeadd.bininv.e}The binomial transform of the list $\left(
+1,0,1,0,1,0,\ldots\right)  $ (with $N+1$ entries) is $\left(  1,2^{0}%
+,2^{1},\ldots,2^{N-1}\right)  $.
+\end{proposition}
+
+\begin{proof}
+[Proof of Proposition \ref{prop.sol.exeadd.bininv.e}.]Let $\left(  a_{0}%
+,a_{1},\ldots,a_{N}\right)  $ be the list $\left(  1,0,1,0,1,0,\ldots\right)
+$ (with $N+1$ entries). Thus, for each $i\in\left\{  0,1,\ldots,N\right\}  $,
+we have%
+\begin{equation}
+a_{i}=%
+\begin{cases}
+1, & \text{if }i\text{ is even;}\\
+0, & \text{if }i\text{ is odd}%
+\end{cases}
+. \label{pf.prop.sol.exeadd.bininv.e.1}%
+\end{equation}
+
+
+Each $i\in\mathbb{N}$ satisfies%
+\begin{equation}
+\dfrac{1}{2}\left(  1+\left(  -1\right)  ^{i}\right)  =%
+\begin{cases}
+1, & \text{if }i\text{ is even;}\\
+0, & \text{if }i\text{ is odd}%
+\end{cases}
+\label{pf.prop.sol.exeadd.bininv.e.2}%
+\end{equation}
+(by Lemma \ref{lem.sol.exeadd.bininv.pendulum} \textbf{(a)} (applied to
+$n=i$)). Hence, each $i\in\left\{  0,1,\ldots,N\right\}  $ satisfies%
+\begin{align}
+a_{i}  &  =%
+\begin{cases}
+1, & \text{if }i\text{ is even;}\\
+0, & \text{if }i\text{ is odd}%
+\end{cases}
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{pf.prop.sol.exeadd.bininv.e.1}%
+)}\right) \nonumber\\
+&  =\dfrac{1}{2}\left(  1+\left(  -1\right)  ^{i}\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{pf.prop.sol.exeadd.bininv.e.2}%
+)}\right)  . \label{pf.prop.sol.exeadd.bininv.e.3}%
+\end{align}
+
+
+Let $\left(  b_{0},b_{1},\ldots,b_{N}\right)  $ be the binomial transform of
+the list $\left(  1,0,1,0,1,0,\ldots\right)  $ (with $N+1$ entries). In other
+words, $\left(  b_{0},b_{1},\ldots,b_{N}\right)  $ is the binomial transform
+of the list $\left(  a_{0},a_{1},\ldots,a_{N}\right)  $ (because the list
+$\left(  1,0,1,0,1,0,\ldots\right)  $ (with $N+1$ entries) is precisely
+$\left(  a_{0},a_{1},\ldots,a_{N}\right)  $). Hence,%
+\[
+b_{n}=\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n}{i}a_{i}%
+\ \ \ \ \ \ \ \ \ \ \text{for each }n\in\left\{  0,1,\ldots,N\right\}
+\]
+(by the definition of the binomial transform). Thus, for each $n\in\left\{
+0,1,\ldots,N\right\}  $, we obtain%
+\begin{align*}
+b_{n}  &  =\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n}{i}\underbrace{a_{i}%
+}_{\substack{=\dfrac{1}{2}\left(  1+\left(  -1\right)  ^{i}\right)
+\\\text{(by (\ref{pf.prop.sol.exeadd.bininv.e.3}))}}}=\sum_{i=0}%
+^{n}\underbrace{\left(  -1\right)  ^{i}\dbinom{n}{i}\cdot\dfrac{1}{2}\left(
+1+\left(  -1\right)  ^{i}\right)  }_{\substack{=\dfrac{1}{2}\left(  -1\right)
+^{i}\dbinom{n}{i}\left(  1+\left(  -1\right)  ^{i}\right)  \\=\dfrac{1}%
+{2}\left(  -1\right)  ^{i}\dbinom{n}{i}\cdot1+\dfrac{1}{2}\left(  -1\right)
+^{i}\dbinom{n}{i}\left(  -1\right)  ^{i}}}\\
+&  =\sum_{i=0}^{n}\left(  \dfrac{1}{2}\left(  -1\right)  ^{i}\dbinom{n}%
+{i}\cdot1+\dfrac{1}{2}\left(  -1\right)  ^{i}\dbinom{n}{i}\left(  -1\right)
+^{i}\right) \\
+&  =\dfrac{1}{2}\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n}{i}%
+\cdot\underbrace{1}_{=1^{i}}+\dfrac{1}{2}\sum_{i=0}^{n}\left(  -1\right)
+^{i}\dbinom{n}{i}\left(  -1\right)  ^{i}\\
+&  =\dfrac{1}{2}\underbrace{\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n}%
+{i}\cdot1^{i}}_{\substack{=\left(  1-1\right)  ^{n}\\\text{(by Corollary
+\ref{cor.binom.(1-q)n}, applied to }q=1\text{)}}}+\dfrac{1}{2}\underbrace{\sum
+_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n}{i}\left(  -1\right)  ^{i}%
+}_{\substack{=\left(  1-\left(  -1\right)  \right)  ^{n}\\\text{(by Corollary
+\ref{cor.binom.(1-q)n}, applied to }q=-1\text{)}}}\\
+&  =\dfrac{1}{2}\left(  \underbrace{1-1}_{=0}\right)  ^{n}+\dfrac{1}{2}\left(
+\underbrace{1-\left(  -1\right)  }_{=2}\right)  ^{n}=\dfrac{1}{2}0^{n}%
++\dfrac{1}{2}2^{n}\\
+&  =\dfrac{1}{2}\left(  0^{n}+2^{n}\right)  =%
+\begin{cases}
+1, & \text{if }n=0;\\
+2^{n-1}, & \text{if }n>0
+\end{cases}
+\end{align*}
+(by Lemma \ref{lem.sol.exeadd.bininv.pendulum} \textbf{(b)}). In other words,
+\begin{equation}
+\left(  b_{0},b_{1},\ldots,b_{N}\right)  =\left(  1,2^{0},2^{1},\ldots
+,2^{N-1}\right)  . \label{pf.prop.sol.exeadd.bininv.e.7}%
+\end{equation}
+
+
+Recall that the binomial transform of the list $\left(  1,0,1,0,1,0,\ldots
+\right)  $ (with $N+1$ entries) is $\left(  b_{0},b_{1},\ldots,b_{N}\right)
+$. In view of (\ref{pf.prop.sol.exeadd.bininv.e.7}), this rewrites as follows:
+The binomial transform of the list $\left(  1,0,1,0,1,0,\ldots\right)  $ (with
+$N+1$ entries) is $\left(  1,2^{0},2^{1},\ldots,2^{N-1}\right)  $. This proves
+Proposition \ref{prop.sol.exeadd.bininv.e}.
+\end{proof}
+
+Next, we shall arm ourselves with another elementary lemma:
+
+\begin{lemma}
+\label{lem.sol.exeadd.bininv.3.2}Let $N$, $n$ and $j$ be nonnegative integers
+such that $N\geq n$ and $N\geq j$. Then,%
+\[
+\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n}{i}\dbinom{N-i}{j}=\dbinom
+{N-n}{N-j}.
+\]
+
+\end{lemma}
+
+There are two ways to prove Lemma \ref{lem.sol.exeadd.bininv.3.2}. One way is
+combinatorial (using the principle of inclusion and exclusion) and is
+explained in \cite[proof of Identity 17.1]{Galvin}. The other way is
+algebraic; this is the way we shall now present.
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exeadd.bininv.3.2}.]We have $j\leq N$ (since
+$N\geq j$). Thus, Proposition \ref{prop.vandermonde.consequences} \textbf{(e)}
+(applied to $j$, $n$ and $N$ instead of $x$, $y$ and $n$) yields%
+\begin{equation}
+\dbinom{n-j-1}{N-j}=\sum_{k=0}^{N}\left(  -1\right)  ^{k-j}\dbinom{k}%
+{j}\dbinom{n}{N-k}. \label{pf.lem.sol.exeadd.bininv.3.2.1}%
+\end{equation}
+But $N-j\geq0$ (since $N\geq j$), so that $N-j\in\mathbb{N}$. Hence,
+Proposition \ref{prop.binom.upper-neg} (applied to $N-n$ and $N-j$ instead of
+$m$ and $n$) yields%
+\begin{align}
+\dbinom{N-n}{N-j}  &  =\left(  -1\right)  ^{N-j}\underbrace{\dbinom{\left(
+N-j\right)  -\left(  N-n\right)  -1}{N-j}}_{\substack{=\dbinom{n-j-1}%
+{N-j}\\\text{(since }\left(  N-j\right)  -\left(  N-n\right)  -1=n-j-1\text{)}%
+}}\nonumber\\
+&  =\left(  -1\right)  ^{N-j}\underbrace{\dbinom{n-j-1}{N-j}}_{\substack{=\sum
+_{k=0}^{N}\left(  -1\right)  ^{k-j}\dbinom{k}{j}\dbinom{n}{N-k}\\\text{(by
+(\ref{pf.lem.sol.exeadd.bininv.3.2.1}))}}}=\left(  -1\right)  ^{N-j}\sum
+_{k=0}^{N}\left(  -1\right)  ^{k-j}\dbinom{k}{j}\dbinom{n}{N-k}\nonumber\\
+&  =\sum_{k=0}^{N}\underbrace{\left(  -1\right)  ^{N-j}\left(  -1\right)
+^{k-j}}_{\substack{=\left(  -1\right)  ^{\left(  N-j\right)  +\left(
+k-j\right)  }=\left(  -1\right)  ^{N-k}\\\text{(since }\left(  N-j\right)
++\left(  k-j\right)  =N+k-2j\equiv N+k\equiv N-k\operatorname{mod}2\text{)}%
+}}\dbinom{k}{j}\dbinom{n}{N-k}\nonumber\\
+&  =\sum_{k=0}^{N}\left(  -1\right)  ^{N-k}\dbinom{k}{j}\dbinom{n}{N-k}.
+\label{pf.lem.sol.exeadd.bininv.3.2.3}%
+\end{align}
+
+
+If $i$ is an integer satisfying $i\geq n+1$, then%
+\begin{equation}
+\dbinom{n}{i}=0 \label{pf.lem.sol.exeadd.bininv.3.2.triv0}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.sol.exeadd.bininv.3.2.triv0}):} Let
+$i$ be an integer satisfying $i\geq n+1$. Thus, $i\geq n+1>n\geq0$, so that
+$i\in\mathbb{N}$. Also, from $i>n$, we obtain $n<i$. Hence, Proposition
+\ref{prop.binom.0} (applied to $n$ and $i$ instead of $m$ and $n$) yields
+$\dbinom{n}{i}=0$. This proves (\ref{pf.lem.sol.exeadd.bininv.3.2.triv0}).}.
+
+But $0\leq n\leq N$ (since $N\geq n$). Hence, we can split the sum $\sum
+_{i=0}^{N}\left(  -1\right)  ^{i}\dbinom{n}{i}\dbinom{N-i}{j}$ at $i=n$. We
+thus find%
+\begin{align*}
+&  \sum_{i=0}^{N}\left(  -1\right)  ^{i}\dbinom{n}{i}\dbinom{N-i}{j}\\
+&  =\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n}{i}\dbinom{N-i}{j}%
++\sum_{i=n+1}^{N}\left(  -1\right)  ^{i}\underbrace{\dbinom{n}{i}%
+}_{\substack{=0\\\text{(by (\ref{pf.lem.sol.exeadd.bininv.3.2.triv0}))}%
+}}\dbinom{N-i}{j}\\
+&  =\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n}{i}\dbinom{N-i}%
+{j}+\underbrace{\sum_{i=n+1}^{N}\left(  -1\right)  ^{i}0\dbinom{N-i}{j}}%
+_{=0}\\
+&  =\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n}{i}\dbinom{N-i}{j}.
+\end{align*}
+Hence,%
+\begin{align*}
+&  \sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n}{i}\dbinom{N-i}{j}\\
+&  =\sum_{i=0}^{N}\left(  -1\right)  ^{i}\dbinom{n}{i}\dbinom{N-i}{j}%
+=\sum_{k=0}^{N}\left(  -1\right)  ^{N-k}\dbinom{n}{N-k}\underbrace{\dbinom
+{N-\left(  N-k\right)  }{j}}_{\substack{=\dbinom{k}{j}\\\text{(since
+}N-\left(  N-k\right)  =k\text{)}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }N-k\text{ for
+}i\text{ in the sum}\right) \\
+&  =\sum_{k=0}^{N}\left(  -1\right)  ^{N-k}\underbrace{\dbinom{n}{N-k}%
+\dbinom{k}{j}}_{=\dbinom{k}{j}\dbinom{n}{N-k}}=\sum_{k=0}^{N}\left(
+-1\right)  ^{N-k}\dbinom{k}{j}\dbinom{n}{N-k}=\dbinom{N-n}{N-j}%
+\end{align*}
+(by (\ref{pf.lem.sol.exeadd.bininv.3.2.3})). This proves Lemma
+\ref{lem.sol.exeadd.bininv.3.2}.
+\end{proof}
+
+Let us now make two definitions that are slight variations on the definitions
+of $B$ and $W$ made in Additional exercise \ref{exeadd.bininv}:
+
+\begin{definition}
+\label{def.sol.exeadd.bininv.BW}\textbf{(a)} Let $B:\mathbb{Q}^{N+1}%
+\rightarrow\mathbb{Q}^{N+1}$ be the map which sends every list $\left(
+f_{0},f_{1},\ldots,f_{N}\right)  \in\mathbb{Q}^{N+1}$ to its binomial
+transform $\left(  g_{0},g_{1},\ldots,g_{N}\right)  \in\mathbb{Q}^{N+1}$.
+
+\textbf{(b)} Let $W:\mathbb{Q}^{N+1}\rightarrow\mathbb{Q}^{N+1}$ be the map
+which sends every list $\left(  f_{0},f_{1},\ldots,f_{N}\right)  \in
+\mathbb{Q}^{N+1}$ to the list $\left(  \left(  -1\right)  ^{N}f_{N},\left(
+-1\right)  ^{N}f_{N-1},\ldots,\left(  -1\right)  ^{N}f_{0}\right)
+\in\mathbb{Q}^{N+1}$.
+\end{definition}
+
+The maps $B$ and $W$ we have just defined are \textbf{almost} the same as the
+maps $B$ and $W$ from Additional exercise \ref{exeadd.bininv} \textbf{(f)}.
+The only difference is that the former maps are defined on $\mathbb{Q}^{N+1}$
+(and have codomains $\mathbb{Q}^{N+1}$ as well), whereas the latter are
+defined on $\mathbb{Z}^{N+1}$ (and have codomains $\mathbb{Z}^{N+1}$). Thus,
+the latter maps are restrictions of the former maps. Hence, in order to prove
+that the latter maps satisfy the two equalities $B\circ W\circ B=W\circ B\circ
+W$ and $\left(  B\circ W\right)  ^{3}=\operatorname*{id}$ (as demanded by
+Additional exercise \ref{exeadd.bininv} \textbf{(f)}), it is perfectly
+sufficient to show that the former maps satisfy these two equalities. In other
+words, it is perfectly sufficient to prove the following theorem:
+
+\begin{theorem}
+\label{thm.sol.exeadd.bininv.f}The two maps $B$ and $W$ introduced in
+Definition \ref{def.sol.exeadd.bininv.BW} satisfy $B\circ W\circ B=W\circ
+B\circ W$ and $\left(  B\circ W\right)  ^{3}=\operatorname*{id}$.
+\end{theorem}
+
+Before we prove Theorem \ref{thm.sol.exeadd.bininv.f}, let us show three
+simpler facts:
+
+\begin{lemma}
+\label{lem.sol.exeadd.bininv.f.Nn}Let $\mathbf{f}=\left(  f_{0},f_{1}%
+,\ldots,f_{N}\right)  $ and $\mathbf{g}=\left(  g_{0},g_{1},\ldots
+,g_{N}\right)  $ be two lists such that $\mathbf{g}=B\left(  \mathbf{f}%
+\right)  $.
+
+\textbf{(a)} Then,%
+\[
+g_{n}=\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n}{i}f_{i}%
+\ \ \ \ \ \ \ \ \ \ \text{for each }n\in\left\{  0,1,\ldots,N\right\}  .
+\]
+
+
+\textbf{(b)} Also,%
+\[
+g_{n}=\sum_{i=0}^{N}\left(  -1\right)  ^{i}\dbinom{n}{i}f_{i}%
+\ \ \ \ \ \ \ \ \ \ \text{for each }n\in\left\{  0,1,\ldots,N\right\}  .
+\]
+
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exeadd.bininv.f.Nn}.]\textbf{(a)} We know that
+the map $B$ sends the list $\left(  f_{0},f_{1},\ldots,f_{N}\right)  $ to its
+binomial transform (by the definition of $B$). In other words, $B\left(
+\left(  f_{0},f_{1},\ldots,f_{N}\right)  \right)  $ is the binomial transform
+of $\left(  f_{0},f_{1},\ldots,f_{N}\right)  $. In other words, $\left(
+g_{0},g_{1},\ldots,g_{N}\right)  $ is the binomial transform of $\left(
+f_{0},f_{1},\ldots,f_{N}\right)  $ (since $B\left(  \underbrace{\left(
+f_{0},f_{1},\ldots,f_{N}\right)  }_{=\mathbf{f}}\right)  =B\left(
+\mathbf{f}\right)  =\mathbf{g}=\left(  g_{0},g_{1},\ldots,g_{N}\right)  $). In
+other words, we have%
+\[
+g_{n}=\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n}{i}f_{i}%
+\ \ \ \ \ \ \ \ \ \ \text{for each }n\in\left\{  0,1,\ldots,N\right\}
+\]
+(by the definition of the binomial transform). This proves Lemma
+\ref{lem.sol.exeadd.bininv.f.Nn} \textbf{(a)}.
+
+\textbf{(b)} Let $n\in\left\{  0,1,\ldots,N\right\}  $. Thus, $0\leq n\leq N$.
+
+Lemma \ref{lem.sol.exeadd.bininv.f.Nn} \textbf{(a)} yields%
+\begin{equation}
+g_{n}=\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n}{i}f_{i}.
+\label{pf.lem.sol.exeadd.bininv.f.Nn.0}%
+\end{equation}
+
+
+For each integer $i$ satisfying $i\geq n+1$, we have%
+\begin{equation}
+\dbinom{n}{i}=0 \label{pf.lem.sol.exeadd.bininv.f.Nn.1}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.sol.exeadd.bininv.f.Nn.1}):} Let $i$
+be an integer satisfying $i\geq n+1$. We have $i\geq n+1>n\geq0$, so that
+$i\in\mathbb{N}$. Also, $n\in\left\{  0,1,\ldots,n\right\}  \subseteq
+\mathbb{N}$. Also, $n<i$ (since $i>n$). Hence, Proposition \ref{prop.binom.0}
+(applied to $n$ and $i$ instead of $m$ and $n$) yields $\dbinom{n}{i}=0$. This
+proves (\ref{pf.lem.sol.exeadd.bininv.f.Nn.1}).}.
+
+But $0\leq n\leq N$. Hence, we can split the sum $\sum_{i=0}^{N}\left(
+-1\right)  ^{i}\dbinom{n}{i}f_{i}$ at $i=n$. We thus find
+\begin{align*}
+\sum_{i=0}^{N}\left(  -1\right)  ^{i}\dbinom{n}{i}f_{i}  &  =\sum_{i=0}%
+^{n}\left(  -1\right)  ^{i}\dbinom{n}{i}f_{i}+\sum_{i=n+1}^{N}\left(
+-1\right)  ^{i}\underbrace{\dbinom{n}{i}}_{\substack{=0\\\text{(by
+(\ref{pf.lem.sol.exeadd.bininv.f.Nn.1}))}}}f_{i}\\
+&  =\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n}{i}f_{i}+\underbrace{\sum
+_{i=n+1}^{N}\left(  -1\right)  ^{i}0f_{i}}_{=0}=\sum_{i=0}^{n}\left(
+-1\right)  ^{i}\dbinom{n}{i}f_{i}=g_{n}%
+\end{align*}
+(by (\ref{pf.lem.sol.exeadd.bininv.f.Nn.0})). In other words, $g_{n}%
+=\sum_{i=0}^{N}\left(  -1\right)  ^{i}\dbinom{n}{i}f_{i}$. This proves Lemma
+\ref{lem.sol.exeadd.bininv.f.Nn} \textbf{(b)}.
+\end{proof}
+
+\begin{proposition}
+\label{prop.sol.exeadd.bininv.f.BB}The map $B$ introduced in Definition
+\ref{def.sol.exeadd.bininv.BW} satisfies $B\circ B=\operatorname*{id}$.
+\end{proposition}
+
+\begin{proof}
+[Proof of Proposition \ref{prop.sol.exeadd.bininv.f.BB}.]Let $\mathbf{a}$ be a
+list. Write this list $\mathbf{a}$ in the form $\mathbf{a}=\left(  a_{0}%
+,a_{1},\ldots,a_{N}\right)  $.
+
+Write the list $B\left(  \mathbf{a}\right)  $ in the form $B\left(
+\mathbf{a}\right)  =\left(  b_{0},b_{1},\ldots,b_{N}\right)  $.
+
+We know that the map $B$ sends the list $\left(  a_{0},a_{1},\ldots
+,a_{N}\right)  $ to its binomial transform (by the definition of $B$). In
+other words, $B\left(  \left(  a_{0},a_{1},\ldots,a_{N}\right)  \right)  $ is
+the binomial transform of $\left(  a_{0},a_{1},\ldots,a_{N}\right)  $. In
+other words, $\left(  b_{0},b_{1},\ldots,b_{N}\right)  $ is the binomial
+transform of $\left(  a_{0},a_{1},\ldots,a_{N}\right)  $ (since $B\left(
+\underbrace{\mathbf{a}}_{=\left(  a_{0},a_{1},\ldots,a_{N}\right)  }\right)
+=B\left(  \left(  a_{0},a_{1},\ldots,a_{N}\right)  \right)  =\left(
+b_{0},b_{1},\ldots,b_{N}\right)  $). Hence, Corollary
+\ref{cor.sol.exeadd.bininv.a} (applied to $f_{i}=a_{i}$ and $g_{i}=b_{i}$)
+shows that $\left(  a_{0},a_{1},\ldots,a_{N}\right)  $ is the binomial
+transform of $\left(  b_{0},b_{1},\ldots,b_{N}\right)  $.
+
+We know that the map $B$ sends the list $\left(  b_{0},b_{1},\ldots
+,b_{N}\right)  $ to its binomial transform (by the definition of $B$). In
+other words, $B\left(  \left(  b_{0},b_{1},\ldots,b_{N}\right)  \right)  $ is
+the binomial transform of $\left(  b_{0},b_{1},\ldots,b_{N}\right)  $.
+
+The two lists $B\left(  \left(  b_{0},b_{1},\ldots,b_{N}\right)  \right)  $
+and $\left(  a_{0},a_{1},\ldots,a_{N}\right)  $ must be equal, since each of
+them is the binomial transform of $\left(  b_{0},b_{1},\ldots,b_{N}\right)  $
+(as we have proven above). In other words, $B\left(  \left(  b_{0}%
+,b_{1},\ldots,b_{N}\right)  \right)  =\left(  a_{0},a_{1},\ldots,a_{N}\right)
+$. Now,%
+\begin{align*}
+\left(  B\circ B\right)  \left(  \mathbf{a}\right)   &  =B\left(
+\underbrace{B\left(  \mathbf{a}\right)  }_{=\left(  b_{0},b_{1},\ldots
+,b_{N}\right)  }\right)  =B\left(  \left(  b_{0},b_{1},\ldots,b_{N}\right)
+\right)  =\left(  a_{0},a_{1},\ldots,a_{N}\right) \\
+&  =\mathbf{a}=\operatorname*{id}\left(  \mathbf{a}\right)  .
+\end{align*}
+
+
+Now, forget that we fixed $\mathbf{a}$. We thus have shown that $\left(
+B\circ B\right)  \left(  \mathbf{a}\right)  =\operatorname*{id}\left(
+\mathbf{a}\right)  $ for each list $\mathbf{a}$. In other words, $B\circ
+B=\operatorname*{id}$. This proves Proposition
+\ref{prop.sol.exeadd.bininv.f.BB}.
+\end{proof}
+
+\begin{proposition}
+\label{prop.sol.exeadd.bininv.f.WW}The map $W$ introduced in Definition
+\ref{def.sol.exeadd.bininv.BW} satisfies $W\circ W=\operatorname*{id}$.
+\end{proposition}
+
+\begin{proof}
+[Proof of Proposition \ref{prop.sol.exeadd.bininv.f.WW}.]Let $\mathbf{a}$ be a
+list. Write $\mathbf{a}$ in the form $\mathbf{a}=\left(  a_{0},a_{1}%
+,\ldots,a_{N}\right)  $.
+
+The map $W$ sends the list $\left(  a_{0},a_{1},\ldots,a_{N}\right)  $ to
+$\left(  \left(  -1\right)  ^{N}a_{N},\left(  -1\right)  ^{N}a_{N-1}%
+,\ldots,\left(  -1\right)  ^{N}a_{0}\right)  $ (by the definition of $W$). In
+other words,%
+\[
+W\left(  \left(  a_{0},a_{1},\ldots,a_{N}\right)  \right)  =\left(  \left(
+-1\right)  ^{N}a_{N},\left(  -1\right)  ^{N}a_{N-1},\ldots,\left(  -1\right)
+^{N}a_{0}\right)  .
+\]
+
+
+Let $\mathbf{b}$ be the list $W\left(  \mathbf{a}\right)  $. Thus,
+$\mathbf{b}=W\left(  \mathbf{a}\right)  $. Write the list $\mathbf{b}$ in the
+form $\mathbf{b}=\left(  b_{0},b_{1},\ldots,b_{N}\right)  $. Thus,
+\begin{align*}
+\left(  b_{0},b_{1},\ldots,b_{N}\right)   &  =\mathbf{b}=W\left(
+\underbrace{\mathbf{a}}_{=\left(  a_{0},a_{1},\ldots,a_{N}\right)  }\right) \\
+&  =W\left(  \left(  a_{0},a_{1},\ldots,a_{N}\right)  \right)  =\left(
+\left(  -1\right)  ^{N}a_{N},\left(  -1\right)  ^{N}a_{N-1},\ldots,\left(
+-1\right)  ^{N}a_{0}\right)  .
+\end{align*}
+In other words,%
+\begin{equation}
+b_{n}=\left(  -1\right)  ^{N}a_{N-n}\ \ \ \ \ \ \ \ \ \ \text{for each }%
+n\in\left\{  0,1,\ldots,N\right\}  . \label{pf.prop.sol.exeadd.bininv.f.WW.1}%
+\end{equation}
+
+
+Hence, for each $n\in\left\{  0,1,\ldots,N\right\}  $, we have
+\begin{align*}
+\left(  -1\right)  ^{N}\underbrace{b_{N-n}}_{\substack{=\left(  -1\right)
+^{N}a_{N-\left(  N-n\right)  }\\\text{(by
+(\ref{pf.prop.sol.exeadd.bininv.f.WW.1}) (applied}\\\text{to }N-n\text{
+instead of }n\text{))}}}  &  =\underbrace{\left(  -1\right)  ^{N}\left(
+-1\right)  ^{N}}_{=\left(  \left(  -1\right)  \left(  -1\right)  \right)
+^{N}}\underbrace{a_{N-\left(  N-n\right)  }}_{\substack{=a_{n}\\\text{(since
+}N-\left(  N-n\right)  =n\text{)}}}\\
+&  =\left(  \underbrace{\left(  -1\right)  \left(  -1\right)  }_{=1}\right)
+^{N}a_{n}=\underbrace{1^{N}}_{=1}a_{n}=a_{n}.
+\end{align*}
+In other words,
+\[
+\left(  \left(  -1\right)  ^{N}b_{N},\left(  -1\right)  ^{N}b_{N-1}%
+,\ldots,\left(  -1\right)  ^{N}b_{0}\right)  =\left(  a_{0},a_{1},\ldots
+,a_{N}\right)  .
+\]
+
+
+But the map $W$ sends the list $\left(  b_{0},b_{1},\ldots,b_{N}\right)  $ to
+$\left(  \left(  -1\right)  ^{N}b_{N},\left(  -1\right)  ^{N}b_{N-1}%
+,\ldots,\left(  -1\right)  ^{N}b_{0}\right)  $ (by the definition of $W$). In
+other words,%
+\[
+W\left(  \left(  b_{0},b_{1},\ldots,b_{N}\right)  \right)  =\left(  \left(
+-1\right)  ^{N}b_{N},\left(  -1\right)  ^{N}b_{N-1},\ldots,\left(  -1\right)
+^{N}b_{0}\right)  .
+\]
+Hence,%
+\begin{align*}
+\left(  W\circ W\right)  \left(  \mathbf{a}\right)   &  =W\left(
+\underbrace{W\left(  \mathbf{a}\right)  }_{=\mathbf{b}=\left(  b_{0}%
+,b_{1},\ldots,b_{N}\right)  }\right)  =W\left(  \left(  b_{0},b_{1}%
+,\ldots,b_{N}\right)  \right) \\
+&  =\left(  \left(  -1\right)  ^{N}b_{N},\left(  -1\right)  ^{N}b_{N-1}%
+,\ldots,\left(  -1\right)  ^{N}b_{0}\right)  =\left(  a_{0},a_{1},\ldots
+,a_{N}\right) \\
+&  =\mathbf{a}=\operatorname*{id}\left(  \mathbf{a}\right)  .
+\end{align*}
+
+
+Now, forget that we fixed $\mathbf{a}$. We thus have shown that $\left(
+W\circ W\right)  \left(  \mathbf{a}\right)  =\operatorname*{id}\left(
+\mathbf{a}\right)  $ for each list $\mathbf{a}$. In other words, $W\circ
+W=\operatorname*{id}$. This proves Proposition
+\ref{prop.sol.exeadd.bininv.f.WW}.
+\end{proof}
+
+We are now ready to prove Theorem \ref{thm.sol.exeadd.bininv.f}:
+
+\begin{proof}
+[Proof of Theorem \ref{thm.sol.exeadd.bininv.f}.]Let us first focus on proving
+that $B\circ W\circ B=W\circ B\circ W$.
+
+Indeed, let $\mathbf{a}$ be a list. Write $\mathbf{a}$ in the form
+$\mathbf{a}=\left(  a_{0},a_{1},\ldots,a_{N}\right)  $.
+
+Let $\mathbf{b}$ be the list $B\left(  \mathbf{a}\right)  $. Thus,
+$\mathbf{b}=B\left(  \mathbf{a}\right)  $. Write the list $\mathbf{b}$ in the
+form $\mathbf{b}=\left(  b_{0},b_{1},\ldots,b_{N}\right)  $.
+
+Lemma \ref{lem.sol.exeadd.bininv.f.Nn} \textbf{(b)} (applied to $\mathbf{a}$,
+$a_{i}$, $\mathbf{b}$ and $b_{i}$ instead of $\mathbf{f}$, $f_{i}$,
+$\mathbf{g}$ and $g_{i}$) shows that
+\begin{equation}
+b_{n}=\sum_{i=0}^{N}\left(  -1\right)  ^{i}\dbinom{n}{i}a_{i}%
+\ \ \ \ \ \ \ \ \ \ \text{for each }n\in\left\{  0,1,\ldots,N\right\}
+\label{sol.exeadd.bininv.3.sol1.bn=n}%
+\end{equation}
+(since $\mathbf{b}=B\left(  \mathbf{a}\right)  $).
+
+The map $W$ sends the list $\left(  b_{0},b_{1},\ldots,b_{N}\right)  $ to
+$\left(  \left(  -1\right)  ^{N}b_{N},\left(  -1\right)  ^{N}b_{N-1}%
+,\ldots,\left(  -1\right)  ^{N}b_{0}\right)  $ (by the definition of $W$). In
+other words,%
+\[
+W\left(  \left(  b_{0},b_{1},\ldots,b_{N}\right)  \right)  =\left(  \left(
+-1\right)  ^{N}b_{N},\left(  -1\right)  ^{N}b_{N-1},\ldots,\left(  -1\right)
+^{N}b_{0}\right)  .
+\]
+Thus,%
+\begin{align}
+W\left(  \underbrace{\mathbf{b}}_{=\left(  b_{0},b_{1},\ldots,b_{N}\right)
+}\right)   &  =W\left(  \left(  b_{0},b_{1},\ldots,b_{N}\right)  \right)
+\nonumber\\
+&  =\left(  \left(  -1\right)  ^{N}b_{N},\left(  -1\right)  ^{N}b_{N-1}%
+,\ldots,\left(  -1\right)  ^{N}b_{0}\right)  .
+\label{sol.exeadd.bininv.3.sol1.Wb=}%
+\end{align}
+
+
+Now, define a list $\mathbf{c}$ by $\mathbf{c}=B\left(  W\left(
+\mathbf{b}\right)  \right)  $. Write the list $\mathbf{c}$ in the form
+$\mathbf{c}=\left(  c_{0},c_{1},\ldots,c_{N}\right)  $. Hence, Lemma
+\ref{lem.sol.exeadd.bininv.f.Nn} \textbf{(a)} (applied to $W\left(
+\mathbf{b}\right)  $, $\left(  -1\right)  ^{N}b_{N-i}$, $\mathbf{c}$ and
+$c_{i}$ instead of $\mathbf{f}$, $f_{i}$, $\mathbf{g}$ and $g_{i}$) shows
+that
+\begin{equation}
+c_{n}=\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n}{i}\left(  -1\right)
+^{N}b_{N-i}\ \ \ \ \ \ \ \ \ \ \text{for each }n\in\left\{  0,1,\ldots
+,N\right\}  \label{sol.exeadd.bininv.3.sol1.cn=}%
+\end{equation}
+(because $\mathbf{c}=B\left(  W\left(  \mathbf{b}\right)  \right)  $ and
+because of (\ref{sol.exeadd.bininv.3.sol1.Wb=})).
+
+The map $W$ sends the list $\left(  a_{0},a_{1},\ldots,a_{N}\right)  $ to
+$\left(  \left(  -1\right)  ^{N}a_{N},\left(  -1\right)  ^{N}a_{N-1}%
+,\ldots,\left(  -1\right)  ^{N}a_{0}\right)  $ (by the definition of $W$). In
+other words,%
+\[
+W\left(  \left(  a_{0},a_{1},\ldots,a_{N}\right)  \right)  =\left(  \left(
+-1\right)  ^{N}a_{N},\left(  -1\right)  ^{N}a_{N-1},\ldots,\left(  -1\right)
+^{N}a_{0}\right)  .
+\]
+Thus,%
+\begin{align}
+W\left(  \underbrace{\mathbf{a}}_{=\left(  a_{0},a_{1},\ldots,a_{N}\right)
+}\right)   &  =W\left(  \left(  a_{0},a_{1},\ldots,a_{N}\right)  \right)
+\nonumber\\
+&  =\left(  \left(  -1\right)  ^{N}a_{N},\left(  -1\right)  ^{N}a_{N-1}%
+,\ldots,\left(  -1\right)  ^{N}a_{0}\right)  .
+\label{sol.exeadd.bininv.3.sol1.Wa=}%
+\end{align}
+
+
+Define a list $\mathbf{d}$ by $\mathbf{d}=B\left(  W\left(  \mathbf{a}\right)
+\right)  $. Write the list $\mathbf{d}$ in the form $\mathbf{d}=\left(
+d_{0},d_{1},\ldots,d_{N}\right)  $. Hence, Lemma
+\ref{lem.sol.exeadd.bininv.f.Nn} \textbf{(b)} (applied to $W\left(
+\mathbf{a}\right)  $, $\left(  -1\right)  ^{N}a_{N-i}$, $\mathbf{d}$ and
+$d_{i}$ instead of $\mathbf{f}$, $f_{i}$, $\mathbf{g}$ and $g_{i}$) shows that%
+\begin{equation}
+d_{n}=\sum_{i=0}^{N}\left(  -1\right)  ^{i}\dbinom{n}{i}\left(  -1\right)
+^{N}a_{N-i}\ \ \ \ \ \ \ \ \ \ \text{for each }n\in\left\{  0,1,\ldots
+,N\right\}  \label{sol.exeadd.bininv.3.sol1.dn=}%
+\end{equation}
+(because $\mathbf{d}=B\left(  W\left(  \mathbf{a}\right)  \right)  $ and
+because of (\ref{sol.exeadd.bininv.3.sol1.Wa=})).
+
+The map $W$ sends the list $\left(  d_{0},d_{1},\ldots,d_{N}\right)  $ to
+$\left(  \left(  -1\right)  ^{N}d_{N},\left(  -1\right)  ^{N}d_{N-1}%
+,\ldots,\left(  -1\right)  ^{N}d_{0}\right)  $ (by the definition of $W$). In
+other words,%
+\[
+W\left(  \left(  d_{0},d_{1},\ldots,d_{N}\right)  \right)  =\left(  \left(
+-1\right)  ^{N}d_{N},\left(  -1\right)  ^{N}d_{N-1},\ldots,\left(  -1\right)
+^{N}d_{0}\right)  .
+\]
+Thus,%
+\begin{align}
+W\left(  \underbrace{\mathbf{d}}_{=\left(  d_{0},d_{1},\ldots,d_{N}\right)
+}\right)   &  =W\left(  \left(  d_{0},d_{1},\ldots,d_{N}\right)  \right)
+\nonumber\\
+&  =\left(  \left(  -1\right)  ^{N}d_{N},\left(  -1\right)  ^{N}d_{N-1}%
+,\ldots,\left(  -1\right)  ^{N}d_{0}\right)  .
+\label{sol.exeadd.bininv.3.sol1.Wd=}%
+\end{align}
+
+
+We shall now show that $\mathbf{c}=W\left(  \mathbf{d}\right)  $.
+
+Indeed, for any $g\in\left\{  0,1,\ldots,N\right\}  $, we have%
+\begin{align}
+b_{g}  &  =\sum_{i=0}^{N}\left(  -1\right)  ^{i}\dbinom{g}{i}a_{i}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{sol.exeadd.bininv.3.sol1.bn=n}),
+applied to }n=g\right) \nonumber\\
+&  =\sum_{j=0}^{N}\left(  -1\right)  ^{j}\dbinom{g}{j}a_{j}
+\label{pf.thm.sol.exeadd.bininv.f.bg=}%
+\end{align}
+(here, we have renamed the summation index $i$ as $j$).
+
+Now, let $n\in\left\{  0,1,\ldots,N\right\}  $ be arbitrary. Then, $n\leq N$,
+so that $N\geq n$. Hence, $N-n\geq0$, so that $0\leq N-n\leq N$ (since
+$n\geq0$ (since $n\in\left\{  0,1,\ldots,N\right\}  $)). Thus, $N-n\in\left\{
+0,1,\ldots,N\right\}  $. Hence, (\ref{sol.exeadd.bininv.3.sol1.dn=}) (applied
+to $N-n$ instead of $n$) yields%
+\[
+d_{N-n}=\sum_{i=0}^{N}\left(  -1\right)  ^{i}\dbinom{N-n}{i}\left(  -1\right)
+^{N}a_{N-i}.
+\]
+Multiplying both sides of this equality by $\left(  -1\right)  ^{N}$, we
+obtain%
+\begin{align}
+\left(  -1\right)  ^{N}d_{N-n}  &  =\left(  -1\right)  ^{N}\left(  \sum
+_{i=0}^{N}\left(  -1\right)  ^{i}\dbinom{N-n}{i}\left(  -1\right)  ^{N}%
+a_{N-i}\right) \nonumber\\
+&  =\sum_{i=0}^{N}\left(  -1\right)  ^{i}\dbinom{N-n}{i}\underbrace{\left(
+-1\right)  ^{N}\left(  -1\right)  ^{N}}_{\substack{=\left(  \left(  -1\right)
+\left(  -1\right)  \right)  ^{N}=1^{N}\\\text{(since }\left(  -1\right)
+\left(  -1\right)  =1\text{)}}}a_{i}\nonumber\\
+&  =\sum_{i=0}^{N}\left(  -1\right)  ^{i}\dbinom{N-n}{i}\underbrace{1^{N}%
+}_{=1}a_{i}=\sum_{i=0}^{N}\left(  -1\right)  ^{i}\dbinom{N-n}{i}a_{i}.
+\label{pf.thm.sol.exeadd.bininv.f-1NdN-n=}%
+\end{align}
+
+
+For each $i\in\left\{  0,1,\ldots,n\right\}  $, we have%
+\begin{equation}
+b_{N-i}=\sum_{j=0}^{N}\left(  -1\right)  ^{j}\dbinom{N-i}{j}a_{j}
+\label{pf.thm.sol.exeadd.bininv.bN-i=}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.thm.sol.exeadd.bininv.bN-i=}):} Let
+$i\in\left\{  0,1,\ldots,n\right\}  $. Thus, $i\in\left\{  0,1,\ldots
+,n\right\}  \subseteq\left\{  0,1,\ldots,N\right\}  $ (since $n\leq N$).
+Hence, $N-i\in\left\{  0,1,\ldots,N\right\}  $. Thus,
+(\ref{pf.thm.sol.exeadd.bininv.f.bg=}) (applied to $g=N-i$) yields
+$b_{N-i}=\sum_{j=0}^{N}\left(  -1\right)  ^{j}\dbinom{N-i}{j}a_{j}$. This
+proves (\ref{pf.thm.sol.exeadd.bininv.bN-i=}).}.
+
+But (\ref{sol.exeadd.bininv.3.sol1.cn=}) becomes%
+\begin{align*}
+c_{n}  &  =\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n}{i}\left(
+-1\right)  ^{N}\underbrace{b_{N-i}}_{\substack{=\sum_{j=0}^{N}\left(
+-1\right)  ^{j}\dbinom{N-i}{j}a_{j}\\\text{(by
+(\ref{pf.thm.sol.exeadd.bininv.bN-i=}))}}}\\
+&  =\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n}{i}\left(  -1\right)
+^{N}\sum_{j=0}^{N}\left(  -1\right)  ^{j}\dbinom{N-i}{j}a_{j}\\
+&  =\underbrace{\sum_{i=0}^{n}\sum_{j=0}^{N}}_{=\sum_{j=0}^{N}\sum_{i=0}^{n}%
+}\left(  -1\right)  ^{i}\dbinom{n}{i}\left(  -1\right)  ^{N}\left(  -1\right)
+^{j}\dbinom{N-i}{j}a_{j}\\
+&  =\sum_{j=0}^{N}\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n}{i}\left(
+-1\right)  ^{N}\left(  -1\right)  ^{j}\dbinom{N-i}{j}a_{j}\\
+&  =\sum_{j=0}^{N}\underbrace{\left(  -1\right)  ^{N}\left(  -1\right)  ^{j}%
+}_{\substack{=\left(  -1\right)  ^{N+j}=\left(  -1\right)  ^{N-j}%
+\\\text{(since }N+j\equiv N-j\operatorname{mod}2\text{)}}}\underbrace{\left(
+\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n}{i}\dbinom{N-i}{j}\right)
+}_{\substack{=\dbinom{N-n}{N-j}\\\text{(by Lemma
+\ref{lem.sol.exeadd.bininv.3.2} (since }N\geq j\\\text{(since }j\leq
+N\text{)))}}}\underbrace{a_{j}}_{\substack{=a_{N-\left(  N-j\right)
+}\\\text{(since }j=N-\left(  N-j\right)  \text{)}}}\\
+&  =\sum_{j=0}^{N}\left(  -1\right)  ^{N-j}\dbinom{N-n}{N-j}a_{N-\left(
+N-j\right)  }=\sum_{i=0}^{N}\left(  -1\right)  ^{i}\dbinom{N-n}{i}a_{N-i}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }i\text{ for
+}N-j\text{ in the sum}\right) \\
+&  =\left(  -1\right)  ^{N}d_{N-n}\ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{pf.thm.sol.exeadd.bininv.f-1NdN-n=})}\right)  .
+\end{align*}
+
+
+Now, forget that we fixed $n$. We thus have proven that $c_{n}=\left(
+-1\right)  ^{N}d_{N-n}$ for each $n\in\left\{  0,1,\ldots,N\right\}  $. In
+other words,%
+\[
+\left(  c_{0},c_{1},\ldots,c_{N}\right)  =\left(  \left(  -1\right)  ^{N}%
+d_{N},\left(  -1\right)  ^{N}d_{N-1},\ldots,\left(  -1\right)  ^{N}%
+d_{0}\right)  .
+\]
+Thus,%
+\begin{align*}
+\left(  B\circ W\circ B\right)  \left(  \mathbf{a}\right)   &  =B\left(
+W\left(  \underbrace{B\left(  \mathbf{a}\right)  }_{=\mathbf{b}}\right)
+\right)  =B\left(  W\left(  \mathbf{b}\right)  \right)  =\mathbf{c}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\mathbf{c}=B\left(  W\left(
+\mathbf{b}\right)  \right)  \right) \\
+&  =\left(  c_{0},c_{1},\ldots,c_{N}\right)  =\left(  \left(  -1\right)
+^{N}d_{N},\left(  -1\right)  ^{N}d_{N-1},\ldots,\left(  -1\right)  ^{N}%
+d_{0}\right) \\
+&  =W\left(  \underbrace{\mathbf{d}}_{=B\left(  W\left(  \mathbf{a}\right)
+\right)  }\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{sol.exeadd.bininv.3.sol1.Wd=})}\right) \\
+&  =W\left(  B\left(  W\left(  \mathbf{a}\right)  \right)  \right)  =\left(
+W\circ B\circ W\right)  \left(  \mathbf{a}\right)  .
+\end{align*}
+
+
+Now, forget that we fixed $\mathbf{a}$. We thus have proven that $\left(
+B\circ W\circ B\right)  \left(  \mathbf{a}\right)  =\left(  W\circ B\circ
+W\right)  \left(  \mathbf{a}\right)  $ for each list $\mathbf{a}$. In other
+words,%
+\begin{equation}
+B\circ W\circ B=W\circ B\circ W. \label{sol.exeadd.bininv.3.sol1.braid}%
+\end{equation}
+
+
+Hence,%
+\begin{align*}
+\left(  B\circ W\right)  ^{3}  &  =\left(  B\circ W\right)  \circ\left(
+B\circ W\right)  \circ\left(  B\circ W\right) \\
+&  =\underbrace{B\circ W\circ B}_{\substack{=W\circ B\circ W\\\text{(by
+(\ref{sol.exeadd.bininv.3.sol1.braid})) }}}\circ W\circ B\circ W=W\circ
+B\circ\underbrace{W\circ W}_{\substack{=\operatorname*{id}\\\text{(by
+Proposition \ref{prop.sol.exeadd.bininv.f.WW})}}}\circ B\circ W\\
+&  =W\circ\underbrace{B\circ B}_{\substack{=\operatorname*{id}\\\text{(by
+Proposition \ref{prop.sol.exeadd.bininv.f.BB})}}}\circ W=W\circ
+W=\operatorname*{id}\ \ \ \ \ \ \ \ \ \ \left(  \text{by Proposition
+\ref{prop.sol.exeadd.bininv.f.WW}}\right)  .
+\end{align*}
+This completes the proof of Theorem \ref{thm.sol.exeadd.bininv.f}.
+\end{proof}
+
+\begin{proof}
+[Solution to Additional exercise \ref{exeadd.bininv}.]Recall that the
+definition of the binomial transform in Definition
+\ref{def.sol.exeadd.bininv.bintr} generalizes the definition of the binomial
+transform we gave in Additional exercise \ref{exeadd.bininv}. Hence, part
+\textbf{(a)} of Additional exercise \ref{exeadd.bininv} follows from Corollary
+\ref{cor.sol.exeadd.bininv.a}. Part \textbf{(b)} follows from Proposition
+\ref{prop.sol.exeadd.bininv.b}. Part \textbf{(c)} follows from Proposition
+\ref{prop.sol.exeadd.bininv.c}. Part \textbf{(d)} follows from Proposition
+\ref{prop.sol.exeadd.bininv.d}. Part \textbf{(e)} follows from Proposition
+\ref{prop.sol.exeadd.bininv.e}. Finally, part \textbf{(f)} follows from
+Theorem \ref{thm.sol.exeadd.bininv.f} (since the maps $B$ and $W$ from
+Additional exercise \ref{exeadd.bininv} \textbf{(f)} are restrictions of the
+maps $B$ and $W$ from Definition \ref{def.sol.exeadd.bininv.BW}). Hence,
+Additional exercise \ref{exeadd.bininv} is solved.
 \end{proof}
 
 \begin{thebibliography}{999999999}                                                                                        %
