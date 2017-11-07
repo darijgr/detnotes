@@ -927,18 +927,18 @@ $s\in\left\{  u-1,u,\ldots,v\right\}  $. Then,%
 nonnegative integer $n$. An easy computation reveals that%
 \begin{equation}
 s=\dfrac{s\left(  s+1\right)  }{2}-\dfrac{\left(  s-1\right)  \left(  \left(
-s-1\right)  +1\right)  }{2}\label{eq.sum.littlegauss2.pf2.1}%
+s-1\right)  +1\right)  }{2} \label{eq.sum.littlegauss2.pf2.1}%
 \end{equation}
 for each $s\in\mathbb{Z}$. Thus,%
 \begin{align*}
-\sum_{i=1}^{n}i &  =\sum_{s=1}^{n}s=\sum_{s=1}^{n}\left(  \dfrac{s\left(
+\sum_{i=1}^{n}i  &  =\sum_{s=1}^{n}s=\sum_{s=1}^{n}\left(  \dfrac{s\left(
 s+1\right)  }{2}-\dfrac{\left(  s-1\right)  \left(  \left(  s-1\right)
 +1\right)  }{2}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
-(\ref{eq.sum.littlegauss2.pf2.1})}\right)  \\
+(\ref{eq.sum.littlegauss2.pf2.1})}\right) \\
 &  =\dfrac{n\left(  n+1\right)  }{2}-\underbrace{\dfrac{\left(  1-1\right)
 \left(  \left(  1-1\right)  +1\right)  }{2}}_{=0}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{eq.sum.telescope}), applied to
-}u=1\text{, }v=n\text{ and }a_{s}=\dfrac{s\left(  s+1\right)  }{2}\right)  \\
+}u=1\text{, }v=n\text{ and }a_{s}=\dfrac{s\left(  s+1\right)  }{2}\right) \\
 &  =\dfrac{n\left(  n+1\right)  }{2}.
 \end{align*}
 Thus, (\ref{eq.sum.littlegauss2}) is proven again. This kind of proof works
@@ -2952,7 +2952,7 @@ never holds, then it therefore says nothing. And saying nothing is a safe way
 to remain truthful.}
 
 \begin{remark}
-Some authors (for example, those of \cite{LeLeMe16}) use
+Some authors (for example, those of \cite{LeLeMe16} and of \cite{Galvin}) use
 (\ref{eq.binom.subsets}) as the \textit{definition} of $\dbinom{m}{n}$. This
 is a legitimate definition of $\dbinom{m}{n}$ in the case when $m$ and $n$ are
 nonnegative integers (and, of course, equivalent to our definition); but it is
@@ -2963,6 +2963,16 @@ $m$.
 \begin{exercise}
 \label{exe.prop.binom.subsets}Prove Proposition \ref{prop.binom.subsets}.
 \end{exercise}
+
+Proposition \ref{prop.binom.subsets} is one of the most basic facts of
+\textit{enumerative combinatorics}: roughly speaking, the mathematics of
+counting (i.e., the study of the sizes of finite sets). We will encounter some
+further results from enumerative combinatorics below (e.g., Additional
+exercise \ref{exeadd.multichoose} and Exercise \ref{exe.ps2.2.3}); but we
+shall not go deep into this subject. More serious expositions of algebraic
+combinatorics include Loehr's textbook \cite{Loehr-BC}, Galvin's lecture notes
+\cite{Galvin}, Aigner's book \cite{Aigner07}, and Stanley's two-volume
+treatise (\cite{Stanley-EC1} and \cite{Stanley-EC2}).
 
 \subsubsection{Upper negation}
 
@@ -4867,6 +4877,8 @@ $\dbinom{k}{n}$ (as the number of $n$-element subsets of $\left\{
 1,2,\ldots,k\right\}  $) as follows: The number of all $k$-tuples $\left(
 a_{1},a_{2},\ldots,a_{k}\right)  \in\left\{  0,1\right\}  ^{k}$ satisfying
 $a_{1}+a_{2}+\cdots+a_{k}=n$ equals $\dbinom{k}{n}$.
+
+See \cite[\S 13]{Galvin} and \cite[\S 1.11]{Loehr-BC} for more about multisets.
 \end{remark}
 
 \begin{addexercise}
@@ -5293,7 +5305,7 @@ Thus, if we set $\left(  \lambda_{+},\lambda_{-}\right)  $ to be this
 solution, then $\left(  x_{0},x_{1},x_{2},\ldots\right)  =L_{\lambda
 _{+},\lambda_{-}}$, so that%
 \begin{equation}
-x_{n}=\lambda_{+}q_{+}^{n}+\lambda_{-}q_{-}^{n}%
+x_{n}=\lambda_{+}q_{+}^{n}+\lambda_{-}q_{-}^{n}
 \label{rmk.recursive.binet-general}%
 \end{equation}
 for every nonnegative integer $n$. This is an explicit formula, at least if
@@ -80752,6 +80764,9 @@ Press 1997.
 \href{http://www.sciencedirect.com/science/article/pii/S0022000072800163}{David
 Gale, Richard M. Karp, \textit{A phenomenon in the theory of sorting}, Journal
 of Computer and System Sciences, Volume 6, Issue 2, April 1972, pp. 103--115}.
+
+\bibitem[Galvin17]{Galvin}David Galvin, \textit{Basic discrete mathematics}, 5
+November 2017.\newline\url{http://www-users.math.umn.edu/~dgrinber/comb/60610lectures2017-Galvin.pdf}
 
 \bibitem[Gessel79]{Gessel-Vand}Ira Gessel, \textit{Tournaments and
 Vandermonde's Determinant}, Journal of Graph Theory, Vol. 3 (1979), pp. 305--307.
