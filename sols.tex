@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, November 18, 2017 06:53:45}
+%TCIDATA{LastRevised=Saturday, November 18, 2017 13:13:10}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -75944,7 +75944,7 @@ Comparing this with (\ref{pf.lem.noncomm.prodrule2b.0}), we find%
 \begin{equation}
 \prod_{j=1}^{n}\sum_{i\in I}b_{i,j}=\sum_{\kappa:\left[  n\right]
 \rightarrow\left[  m\right]  }\prod_{i=1}^{n}b_{\varphi\left(  \kappa\left(
-i\right)  \right)  ,i}.\label{pf.lem.noncomm.prodrule2b.4}%
+i\right)  \right)  ,i}. \label{pf.lem.noncomm.prodrule2b.4}%
 \end{equation}
 
 
@@ -76265,13 +76265,105 @@ $g\notin H\cup T$ (since $g\notin H$ and $g\notin T$). In other words,
 $g\notin R$ (since $R=H\cup T$). Also, $\left\{  g\right\}  $ is a subset of
 $G$ (since $g\in G$).
 
+\begin{vershort}
+Now, the map%
+\begin{align}
+\left\{  I\subseteq G\ \mid\ R\subseteq I\text{ and }g\in I\right\}   &
+\rightarrow\left\{  I\subseteq G\ \mid\ R\subseteq I\text{ and }g\notin
+I\right\}  ,\nonumber\\
+J &  \mapsto J\setminus\left\{  g\right\}
+\label{pf.lem.sol.exeadd.det.sumdets1.2.short.14}%
+\end{align}
+is well-defined\footnote{This is because every $J\in\left\{  I\subseteq
+G\ \mid\ R\subseteq I\text{ and }g\in I\right\}  $ satisfies $J\setminus
+\left\{  g\right\}  \in\left\{  I\subseteq G\ \mid\ R\subseteq I\text{ and
+}g\notin I\right\}  $. (Proving this is straightforward using the facts that
+$g\in G$ and $g\notin R$.)} and bijective\footnote{Indeed, its inverse is the
+map%
+\begin{align*}
+\left\{  I\subseteq G\ \mid\ R\subseteq I\text{ and }g\notin I\right\}   &
+\rightarrow\left\{  I\subseteq G\ \mid\ R\subseteq I\text{ and }g\in
+I\right\}  ,\\
+J &  \mapsto J\cup\left\{  g\right\}
+\end{align*}
+(which, again, is well-defined because $g\in G$).}.
+
+Hence,%
+\begin{align}
+&  \underbrace{\sum_{\substack{J\subseteq G;\\R\subseteq J;\\g\notin J}%
+}}_{=\sum_{J\in\left\{  I\subseteq G\ \mid\ R\subseteq I\text{ and }g\notin
+I\right\}  }}\left(  -1\right)  ^{\left\vert J\right\vert }\nonumber\\
+&  =\sum_{J\in\left\{  I\subseteq G\ \mid\ R\subseteq I\text{ and }g\notin
+I\right\}  }\left(  -1\right)  ^{\left\vert J\right\vert }=\underbrace{\sum
+_{J\in\left\{  I\subseteq G\ \mid\ R\subseteq I\text{ and }g\in I\right\}  }%
+}_{=\sum_{\substack{J\subseteq G;\\R\subseteq J;\\g\in J}}}\left(  -1\right)
+^{\left\vert J\setminus\left\{  g\right\}  \right\vert }\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have substituted }J\setminus\left\{  g\right\}  \text{ for
+}J\text{ in the sum,}\\
+\text{since the map (\ref{pf.lem.sol.exeadd.det.sumdets1.2.short.14}) is
+bijective}%
+\end{array}
+\right)  \nonumber\\
+&  =\sum_{\substack{J\subseteq G;\\R\subseteq J;\\g\in J}}\underbrace{\left(
+-1\right)  ^{\left\vert J\setminus\left\{  g\right\}  \right\vert }%
+}_{\substack{=\left(  -1\right)  ^{\left\vert J\right\vert -1}\\\text{(since
+}\left\vert J\setminus\left\{  g\right\}  \right\vert =\left\vert J\right\vert
+-1\\\text{(because }g\in J\text{))}}}=\sum_{\substack{J\subseteq
+G;\\R\subseteq J;\\g\in J}}\underbrace{\left(  -1\right)  ^{\left\vert
+J\right\vert -1}}_{=-\left(  -1\right)  ^{\left\vert J\right\vert }}%
+=\sum_{\substack{J\subseteq G;\\R\subseteq J;\\g\in J}}\left(  -\left(
+-1\right)  ^{\left\vert J\right\vert }\right)  \nonumber\\
+&  =-\sum_{\substack{J\subseteq G;\\R\subseteq J;\\g\in J}}\left(  -1\right)
+^{\left\vert J\right\vert }.\label{pf.lem.sol.exeadd.det.sumdets1.2.short.15}%
+\end{align}
+
+
+But (\ref{pf.lem.sol.exeadd.det.sumdets1.2.sumeq2}) yields
+\begin{align*}
+\sum_{\substack{I\subseteq G;\\H\subseteq I;\\T\subseteq I}}\left(  -1\right)
+^{\left\vert I\right\vert }  &  =\sum_{\substack{I\subseteq G;\\R\subseteq
+I}}\left(  -1\right)  ^{\left\vert I\right\vert }=\sum_{\substack{J\subseteq
+G;\\R\subseteq J}}\left(  -1\right)  ^{\left\vert J\right\vert }%
+\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have renamed the}\\
+\text{summation index }I\text{ as }J
+\end{array}
+\right) \\
+&  =\sum_{\substack{J\subseteq G;\\R\subseteq J;\\g\in J}}\left(  -1\right)
+^{\left\vert J\right\vert }+\underbrace{\sum_{\substack{J\subseteq
+G;\\R\subseteq J;\\g\notin J}}\left(  -1\right)  ^{\left\vert J\right\vert }%
+}_{\substack{=-\sum_{\substack{J\subseteq G;\\R\subseteq J;\\g\in J}}\left(
+-1\right)  ^{\left\vert J\right\vert }\\\text{(by
+(\ref{pf.lem.sol.exeadd.det.sumdets1.2.short.15}))}}}=\sum
+_{\substack{J\subseteq G;\\R\subseteq J;\\g\in J}}\left(  -1\right)
+^{\left\vert J\right\vert }-\sum_{\substack{J\subseteq G;\\R\subseteq J;\\g\in
+J}}\left(  -1\right)  ^{\left\vert J\right\vert }=0.
+\end{align*}
+Comparing this with $\left(  -1\right)  ^{\left\vert G\right\vert
+}\underbrace{\left[  G\setminus H\subseteq T\right]  }%
+_{\substack{=0\\\text{(since }G\setminus H\not \subseteq T\text{)}}}=0$, we
+obtain%
+\[
+\sum_{\substack{I\subseteq G;\\H\subseteq I;\\T\subseteq I}}\left(  -1\right)
+^{\left\vert I\right\vert }=\left(  -1\right)  ^{\left\vert G\right\vert
+}\left[  G\setminus H\subseteq T\right]  .
+\]
+Hence, Lemma \ref{lem.sol.exeadd.det.sumdets1.2} is proven in Case 1.
+\end{vershort}
+
+\begin{verlong}
 Let $\mathcal{P}\left(  G\right)  $ be the set of all subsets of $G$. Define
 two subsets $A$ and $B$ of $\mathcal{P}\left(  G\right)  $ by%
 \begin{align*}
-A &  =\left\{  I\in\mathcal{P}\left(  G\right)  \ \mid\ R\subseteq I\text{ and
-}g\in I\right\}  \ \ \ \ \ \ \ \ \ \ \text{and}\\
-B &  =\left\{  I\in\mathcal{P}\left(  G\right)  \ \mid\ R\subseteq I\text{ and
-}g\notin I\right\}  .
+A  &  =\left\{  I\in\mathcal{P}\left(  G\right)  \ \mid\ R\subseteq I\text{
+and }g\in I\right\}  \ \ \ \ \ \ \ \ \ \ \text{and}\\
+B  &  =\left\{  I\in\mathcal{P}\left(  G\right)  \ \mid\ R\subseteq I\text{
+and }g\notin I\right\}  .
 \end{align*}
 
 
@@ -76465,6 +76557,7 @@ with (\ref{pf.lem.sol.exeadd.det.sumdets1.2.6}), we obtain%
 }\left[  G\setminus H\subseteq T\right]  .
 \]
 Hence, Lemma \ref{lem.sol.exeadd.det.sumdets1.2} is proven in Case 1.
+\end{verlong}
 
 Let us now consider Case 2. In this case, we have $G\setminus H\subseteq T$.
 Hence, $T\supseteq G\setminus H$. Now,%
@@ -81760,6 +81853,7 @@ P\right)  }A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(
 \widetilde{K}\right)  }^{w\left(  \widetilde{P}\right)  }A\right)  .
 \label{pf.prop.sol.addexe.jacobi-complement.genform.6b}%
 \end{equation}
+
 
 For any two objects $i$ and $j$, we define $\delta_{i,j}$ to be the element $%
 \begin{cases}
