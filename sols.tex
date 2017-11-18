@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, November 18, 2017 06:47:45}
+%TCIDATA{LastRevised=Saturday, November 18, 2017 06:53:45}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -27683,7 +27683,7 @@ $n!\neq0$).
 
 Any $k\in\left\{  a,a+1,\ldots,n\right\}  $ satisfies%
 \begin{equation}
-\dbinom{n}{a}\dbinom{n-a}{k-a}=\dbinom{n}{n-k}\dbinom{k}{a}%
+\dbinom{n}{a}\dbinom{n-a}{k-a}=\dbinom{n}{n-k}\dbinom{k}{a}
 \label{sol.schmitt-iha-eq9.2.1}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{sol.schmitt-iha-eq9.2.1}):} Let $k\in\left\{
@@ -27717,7 +27717,7 @@ This proves (\ref{sol.schmitt-iha-eq9.2.1}).}. We have%
 }_{\substack{=\dbinom{n}{\left(  n-a\right)  -k}\\\text{(since }n-\left(
 k+a\right)  =\left(  n-a\right)  -k\text{)}}}\dbinom{k+a}{a}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }k+a\text{ for
-}k\text{ in the sum}\right)  \\
+}k\text{ in the sum}\right) \\
 &  =\sum_{k=0}^{n-a}\dfrac{\left(  -1\right)  ^{k}\left(  -1\right)  ^{a}%
 }{k+a}\dbinom{n}{\left(  n-a\right)  -k}\dbinom{k+a}{a}=\left(  -1\right)
 ^{a}\underbrace{\sum_{k=0}^{n-a}\dfrac{\left(  -1\right)  ^{k}}{k+a}\dbinom
@@ -75944,10 +75944,23 @@ Comparing this with (\ref{pf.lem.noncomm.prodrule2b.0}), we find%
 \begin{equation}
 \prod_{j=1}^{n}\sum_{i\in I}b_{i,j}=\sum_{\kappa:\left[  n\right]
 \rightarrow\left[  m\right]  }\prod_{i=1}^{n}b_{\varphi\left(  \kappa\left(
-i\right)  \right)  ,i}. \label{pf.lem.noncomm.prodrule2b.4}%
+i\right)  \right)  ,i}.\label{pf.lem.noncomm.prodrule2b.4}%
 \end{equation}
 
 
+\begin{vershort}
+The map $\varphi$ is a bijection, and thus its inverse $\varphi^{-1}$ exists.
+Hence, the map%
+\[
+\left[  m\right]  ^{\left[  n\right]  }\rightarrow I^{\left[  n\right]
+},\ \ \ \ \ \ \ \ \ \ \kappa\mapsto\varphi\circ\kappa
+\]
+is a bijection (in fact, its inverse is the map $I^{\left[  n\right]
+}\rightarrow\left[  m\right]  ^{\left[  n\right]  },\ f\mapsto\varphi
+^{-1}\circ f$).
+\end{vershort}
+
+\begin{verlong}
 The map $\varphi$ is a bijection, and thus is invertible. Hence, its inverse
 $\varphi^{-1}:I\rightarrow\left[  m\right]  $ exists. Let $A$ be the map%
 \[
@@ -76003,6 +76016,7 @@ is a bijection\footnote{since the map%
 },\ \ \ \ \ \ \ \ \ \ \kappa\mapsto\varphi\circ\kappa
 \]
 is precisely the map $A$}.
+\end{verlong}
 
 Therefore, we can substitute $\varphi\circ\kappa$ for $f$ in the sum
 $\sum_{f\in I^{\left[  n\right]  }}\prod_{j=1}^{n}b_{f\left(  j\right)  ,j}$.
@@ -76254,10 +76268,10 @@ $G$ (since $g\in G$).
 Let $\mathcal{P}\left(  G\right)  $ be the set of all subsets of $G$. Define
 two subsets $A$ and $B$ of $\mathcal{P}\left(  G\right)  $ by%
 \begin{align*}
-A  &  =\left\{  I\in\mathcal{P}\left(  G\right)  \ \mid\ R\subseteq I\text{
-and }g\in I\right\}  \ \ \ \ \ \ \ \ \ \ \text{and}\\
-B  &  =\left\{  I\in\mathcal{P}\left(  G\right)  \ \mid\ R\subseteq I\text{
-and }g\notin I\right\}  .
+A &  =\left\{  I\in\mathcal{P}\left(  G\right)  \ \mid\ R\subseteq I\text{ and
+}g\in I\right\}  \ \ \ \ \ \ \ \ \ \ \text{and}\\
+B &  =\left\{  I\in\mathcal{P}\left(  G\right)  \ \mid\ R\subseteq I\text{ and
+}g\notin I\right\}  .
 \end{align*}
 
 
@@ -81746,7 +81760,6 @@ P\right)  }A\right)  \det\left(  \operatorname*{sub}\nolimits_{w\left(
 \widetilde{K}\right)  }^{w\left(  \widetilde{P}\right)  }A\right)  .
 \label{pf.prop.sol.addexe.jacobi-complement.genform.6b}%
 \end{equation}
-
 
 For any two objects $i$ and $j$, we define $\delta_{i,j}$ to be the element $%
 \begin{cases}
