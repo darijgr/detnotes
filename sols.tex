@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, November 18, 2017 13:13:10}
+%TCIDATA{LastRevised=Saturday, November 18, 2017 17:49:21}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -25528,7 +25528,8 @@ of $\mathbb{K}$. The concept of a permanent is thus similar to the concept of
 a determinant (the only difference is that the factor $\left(  -1\right)
 ^{\sigma}$ is missing from the definition of the permanent); however, it has
 far fewer interesting properties. One of the properties that it does have is
-the so-called \textit{Ryser formula}, which says that%
+the so-called \textit{Ryser formula} (see, e.g., \cite[{\S 4.9, [9e]}%
+]{Comtet74}), which says that%
 \[
 \operatorname*{per}A=\left(  -1\right)  ^{n}\sum_{I\subseteq\left\{
 1,2,\ldots,n\right\}  }\left(  -1\right)  ^{\left\vert I\right\vert }%
@@ -31576,6 +31577,8 @@ Now, (\ref{sol.ps2.2.3.goal2}) is proven in each of the three Cases 1, 2 and
 
 \subsection{Solution to Exercise \ref{exe.ps2.2.S}}
 
+\subsubsection{The solution}
+
 \begin{vershort}
 \begin{proof}
 [Solution to Exercise \ref{exe.ps2.2.S}.]Let us first explain why the right
@@ -31909,6 +31912,860 @@ that (\ref{sol.ps2.2.S.goal}) always holds. This completes our proof of
 (\ref{eq.exe.2.S}).
 \end{proof}
 \end{verlong}
+
+\subsubsection{A corollary}
+
+Having solved Exercise \ref{exe.ps2.2.S}, let us show an identity for binomial
+coefficients that follows from it:
+
+\begin{corollary}
+\label{cor.ps2.2.S.-1}For each $n\in\mathbb{N}$, we have%
+\[
+\sum_{i=0}^{n-1}\left(  -1\right)  ^{i}\dbinom{n-1-i}{i}=\left(  -1\right)
+^{n}\cdot%
+\begin{cases}
+0, & \text{if }n\equiv0\operatorname{mod}3;\\
+-1, & \text{if }n\equiv1\operatorname{mod}3;\\
+1, & \text{if }n\equiv2\operatorname{mod}3
+\end{cases}
+.
+\]
+{}
+\end{corollary}
+
+\begin{proof}
+[Proof of Corollary \ref{cor.ps2.2.S.-1}.]Define $r\in\mathbb{Z}$ by $r=-1$.
+Define a sequence $\left(  c_{0},c_{1},c_{2},\ldots\right)  $ of integers as
+in Exercise \ref{exe.ps2.2.S}. (Thus, $c_{0}=0$, $c_{1}=1$ and $c_{n}%
+=rc_{n-1}-c_{n-2}$ for all $n\geq2$.)
+
+\begin{statement}
+\textit{Observation 1:} We have%
+\[
+c_{n}=%
+\begin{cases}
+0, & \text{if }n\equiv0\operatorname{mod}3;\\
+1, & \text{if }n\equiv1\operatorname{mod}3;\\
+-1, & \text{if }n\equiv2\operatorname{mod}3
+\end{cases}
+\]
+for each $n\in\mathbb{N}$.
+\end{statement}
+
+[\textit{Proof of Observation 1:} We shall prove Observation 1 by strong
+induction over $n$:
+
+\textit{Induction step:} Let $N\in\mathbb{N}$. Assume that Observation 1 holds
+whenever $n<N$. We must now prove that Observation 1 holds for $n=N$. In other
+words, we must prove that%
+\begin{equation}
+c_{N}=%
+\begin{cases}
+0, & \text{if }N\equiv0\operatorname{mod}3;\\
+1, & \text{if }N\equiv1\operatorname{mod}3;\\
+-1, & \text{if }N\equiv2\operatorname{mod}3
+\end{cases}
+. \label{pf.cor.ps2.2.S.-1.o1.pf.goal}%
+\end{equation}
+
+
+\begin{vershort}
+If $N<2$, then this can be checked directly (since $c_{0}=0$ and $c_{1}=1$).
+Thus, for the rest of this proof, we WLOG assume that we don't have $N<2$.
+Hence, $N\geq2$; therefore, $N-1\in\mathbb{N}$ and $N-2\in\mathbb{N}$.
+\end{vershort}
+
+\begin{verlong}
+If $N<2$, then this is easy to check\footnote{\textit{Proof.} Assume that
+$N<2$. We must prove (\ref{pf.cor.ps2.2.S.-1.o1.pf.goal}).
+\par
+We have $N<2$. Thus, $N\leq1$ (since $N$ is an integer), so that $N\in\left\{
+0,1\right\}  $ (since $N\in\mathbb{N}$). In other words, either $N=0$ or
+$N=1$. Hence, we are in one of the following two cases:
+\par
+\textit{Case 1:} We have $N=0$.
+\par
+\textit{Case 2:} We have $N=1$.
+\par
+Let us first consider Case 1. In this case, we have $N=0$. Hence, $c_{N}%
+=c_{0}=0$. But $N=0\equiv0\operatorname{mod}3$, so that $%
+\begin{cases}
+0, & \text{if }N\equiv0\operatorname{mod}3;\\
+1, & \text{if }N\equiv1\operatorname{mod}3;\\
+-1, & \text{if }N\equiv2\operatorname{mod}3
+\end{cases}
+=0$. Comparing this with $c_{N}=0$, we obtain $c_{N}=%
+\begin{cases}
+0, & \text{if }N\equiv0\operatorname{mod}3;\\
+1, & \text{if }N\equiv1\operatorname{mod}3;\\
+-1, & \text{if }N\equiv2\operatorname{mod}3
+\end{cases}
+$. Thus, (\ref{pf.cor.ps2.2.S.-1.o1.pf.goal}) is proven in Case 1.
+\par
+Let us now consider Case 2. In this case, we have $N=1$. Hence, $c_{N}%
+=c_{1}=1$. But $N=1\equiv1\operatorname{mod}3$, so that $%
+\begin{cases}
+0, & \text{if }N\equiv0\operatorname{mod}3;\\
+1, & \text{if }N\equiv1\operatorname{mod}3;\\
+-1, & \text{if }N\equiv2\operatorname{mod}3
+\end{cases}
+=1$. Comparing this with $c_{N}=1$, we obtain $c_{N}=%
+\begin{cases}
+0, & \text{if }N\equiv0\operatorname{mod}3;\\
+1, & \text{if }N\equiv1\operatorname{mod}3;\\
+-1, & \text{if }N\equiv2\operatorname{mod}3
+\end{cases}
+$. Thus, (\ref{pf.cor.ps2.2.S.-1.o1.pf.goal}) is proven in Case 2.
+\par
+We have now proven (\ref{pf.cor.ps2.2.S.-1.o1.pf.goal}) in each of the two
+Cases 1 and 2. Since these two Cases cover all possibilities, we thus conclude
+that (\ref{pf.cor.ps2.2.S.-1.o1.pf.goal}) always holds (under the assumption
+that $N<2$). Qed.}. Thus, for the rest of this proof, we can WLOG assume that
+we don't have $N<2$. Assume this.
+
+We have $N\geq2$ (since we don't have $N<2$). Thus, $N-1\in\mathbb{N}$ and
+$N-2\in\mathbb{N}$.
+\end{verlong}
+
+But the recursive definition of the sequence $\left(  c_{0},c_{1},c_{2}%
+,\ldots\right)  $ yields $c_{n}=rc_{n-1}-c_{n-2}$ for all $n\geq2$. Applying
+this to $n=N$, we find%
+\begin{equation}
+c_{N}=\underbrace{r}_{=-1}c_{N-1}-c_{N-2}=\left(  -1\right)  c_{N-1}%
+-c_{N-2}=-c_{N-1}-c_{N-2}. \label{pf.cor.ps2.2.S.-1.o1.pf.rec}%
+\end{equation}
+
+
+We have assumed that Observation 1 holds whenever $n<N$. Thus, we can apply
+Observation 1 to $n=N-1$ (since $N-1<N$ and $N-1\in\mathbb{N}$). We thus
+conclude that%
+\begin{equation}
+c_{N-1}=%
+\begin{cases}
+0, & \text{if }N-1\equiv0\operatorname{mod}3;\\
+1, & \text{if }N-1\equiv1\operatorname{mod}3;\\
+-1, & \text{if }N-1\equiv2\operatorname{mod}3
+\end{cases}
+. \label{pf.cor.ps2.2.S.-1.o1.pf.1}%
+\end{equation}
+
+
+\begin{vershort}
+Similarly, we obtain%
+\begin{equation}
+c_{N-2}=%
+\begin{cases}
+0, & \text{if }N-2\equiv0\operatorname{mod}3;\\
+1, & \text{if }N-2\equiv1\operatorname{mod}3;\\
+-1, & \text{if }N-2\equiv2\operatorname{mod}3
+\end{cases}
+. \label{pf.cor.ps2.2.S.-1.o1.pf.short.2}%
+\end{equation}
+
+\end{vershort}
+
+\begin{verlong}
+We have assumed that Observation 1 holds whenever $n<N$. Thus, we can apply
+Observation 1 to $n=N-2$ (since $N-2<N$ and $N-2\in\mathbb{N}$). We thus
+conclude that%
+\begin{equation}
+c_{N-2}=%
+\begin{cases}
+0, & \text{if }N-2\equiv0\operatorname{mod}3;\\
+1, & \text{if }N-2\equiv1\operatorname{mod}3;\\
+-1, & \text{if }N-2\equiv2\operatorname{mod}3
+\end{cases}
+. \label{pf.cor.ps2.2.S.-1.o1.pf.2}%
+\end{equation}
+
+\end{verlong}
+
+The remainder upon dividing the integer $N$ by $3$ must be either $0$ or $1$
+or $2$. Hence, we must have either $N\equiv0\operatorname{mod}3$ or
+$N\equiv1\operatorname{mod}3$ or $N\equiv2\operatorname{mod}3$. Thus, we are
+in one of the following three cases:
+
+\textit{Case 1:} We have $N\equiv0\operatorname{mod}3$.
+
+\textit{Case 2:} We have $N\equiv1\operatorname{mod}3$.
+
+\textit{Case 3:} We have $N\equiv2\operatorname{mod}3$.
+
+\begin{vershort}
+We shall only consider Case 1 (and leave the two other cases, which are
+analogous, to the reader). In this case, we have $N\equiv0\operatorname{mod}%
+3$. Hence, $\underbrace{N}_{\equiv0\operatorname{mod}3}-1\equiv0-1\equiv
+2\operatorname{mod}3$. Thus, (\ref{pf.cor.ps2.2.S.-1.o1.pf.1}) simplifies to
+$c_{N-1}=-1$. Also, $\underbrace{N}_{\equiv0\operatorname{mod}3}%
+-2\equiv0-2\equiv1\operatorname{mod}3$. Thus,
+(\ref{pf.cor.ps2.2.S.-1.o1.pf.short.2}) simplifies to $c_{N-2}=1$. Now,
+(\ref{pf.cor.ps2.2.S.-1.o1.pf.rec}) yields%
+\[
+c_{N}=-\underbrace{c_{N-1}}_{=-1}-\underbrace{c_{N-2}}_{=1}=-\left(
+-1\right)  -1=0.
+\]
+Comparing this with%
+\[%
+\begin{cases}
+0, & \text{if }N\equiv0\operatorname{mod}3;\\
+1, & \text{if }N\equiv1\operatorname{mod}3;\\
+-1, & \text{if }N\equiv2\operatorname{mod}3
+\end{cases}
+=0\ \ \ \ \ \ \ \ \ \ \left(  \text{since }N\equiv0\operatorname{mod}3\right)
+,
+\]
+we obtain $c_{N}=%
+\begin{cases}
+0, & \text{if }N\equiv0\operatorname{mod}3;\\
+1, & \text{if }N\equiv1\operatorname{mod}3;\\
+-1, & \text{if }N\equiv2\operatorname{mod}3
+\end{cases}
+$. Thus, (\ref{pf.cor.ps2.2.S.-1.o1.pf.goal}) is proven in Case 1. As we have
+said, the proof in the other two cases is analogous. Hence,
+(\ref{pf.cor.ps2.2.S.-1.o1.pf.goal}) is proven.
+\end{vershort}
+
+\begin{verlong}
+Let us first consider Case 1. In this case, we have $N\equiv
+0\operatorname{mod}3$. Hence, $\underbrace{N}_{\equiv0\operatorname{mod}%
+3}-1\equiv0-1\equiv2\operatorname{mod}3$. Thus,
+(\ref{pf.cor.ps2.2.S.-1.o1.pf.1}) yields%
+\[
+c_{N-1}=%
+\begin{cases}
+0, & \text{if }N-1\equiv0\operatorname{mod}3;\\
+1, & \text{if }N-1\equiv1\operatorname{mod}3;\\
+-1, & \text{if }N-1\equiv2\operatorname{mod}3
+\end{cases}
+=-1
+\]
+(since $N-1\equiv2\operatorname{mod}3$). Also, $\underbrace{N}_{\equiv
+0\operatorname{mod}3}-2\equiv0-2\equiv1\operatorname{mod}3$. Thus,
+(\ref{pf.cor.ps2.2.S.-1.o1.pf.2}) yields%
+\[
+c_{N-2}=%
+\begin{cases}
+0, & \text{if }N-2\equiv0\operatorname{mod}3;\\
+1, & \text{if }N-2\equiv1\operatorname{mod}3;\\
+-1, & \text{if }N-2\equiv2\operatorname{mod}3
+\end{cases}
+=1
+\]
+(since $N-2\equiv1\operatorname{mod}3$). Now,
+(\ref{pf.cor.ps2.2.S.-1.o1.pf.rec}) yields%
+\[
+c_{N}=-\underbrace{c_{N-1}}_{=-1}-\underbrace{c_{N-2}}_{=1}=-\left(
+-1\right)  -1=0.
+\]
+Comparing this with%
+\[%
+\begin{cases}
+0, & \text{if }N\equiv0\operatorname{mod}3;\\
+1, & \text{if }N\equiv1\operatorname{mod}3;\\
+-1, & \text{if }N\equiv2\operatorname{mod}3
+\end{cases}
+=0\ \ \ \ \ \ \ \ \ \ \left(  \text{since }N\equiv0\operatorname{mod}3\right)
+,
+\]
+we obtain $c_{N}=%
+\begin{cases}
+0, & \text{if }N\equiv0\operatorname{mod}3;\\
+1, & \text{if }N\equiv1\operatorname{mod}3;\\
+-1, & \text{if }N\equiv2\operatorname{mod}3
+\end{cases}
+$. Thus, (\ref{pf.cor.ps2.2.S.-1.o1.pf.goal}) is proven in Case 1.
+
+Let us next consider Case 2. In this case, we have $N\equiv1\operatorname{mod}%
+3$. Hence, $\underbrace{N}_{\equiv1\operatorname{mod}3}-1\equiv1-1\equiv
+0\operatorname{mod}3$. Thus, (\ref{pf.cor.ps2.2.S.-1.o1.pf.1}) yields%
+\[
+c_{N-1}=%
+\begin{cases}
+0, & \text{if }N-1\equiv0\operatorname{mod}3;\\
+1, & \text{if }N-1\equiv1\operatorname{mod}3;\\
+-1, & \text{if }N-1\equiv2\operatorname{mod}3
+\end{cases}
+=0
+\]
+(since $N-1\equiv0\operatorname{mod}3$). Also, $\underbrace{N}_{\equiv
+1\operatorname{mod}3}-2\equiv1-2\equiv2\operatorname{mod}3$. Thus,
+(\ref{pf.cor.ps2.2.S.-1.o1.pf.2}) yields%
+\[
+c_{N-2}=%
+\begin{cases}
+0, & \text{if }N-2\equiv0\operatorname{mod}3;\\
+1, & \text{if }N-2\equiv1\operatorname{mod}3;\\
+-1, & \text{if }N-2\equiv2\operatorname{mod}3
+\end{cases}
+=-1
+\]
+(since $N-2\equiv2\operatorname{mod}3$). Now,
+(\ref{pf.cor.ps2.2.S.-1.o1.pf.rec}) yields%
+\[
+c_{N}=-\underbrace{c_{N-1}}_{=0}-\underbrace{c_{N-2}}_{=-1}=-0-\left(
+-1\right)  =1.
+\]
+Comparing this with%
+\[%
+\begin{cases}
+0, & \text{if }N\equiv0\operatorname{mod}3;\\
+1, & \text{if }N\equiv1\operatorname{mod}3;\\
+-1, & \text{if }N\equiv2\operatorname{mod}3
+\end{cases}
+=1\ \ \ \ \ \ \ \ \ \ \left(  \text{since }N\equiv1\operatorname{mod}3\right)
+,
+\]
+we obtain $c_{N}=%
+\begin{cases}
+0, & \text{if }N\equiv0\operatorname{mod}3;\\
+1, & \text{if }N\equiv1\operatorname{mod}3;\\
+-1, & \text{if }N\equiv2\operatorname{mod}3
+\end{cases}
+$. Thus, (\ref{pf.cor.ps2.2.S.-1.o1.pf.goal}) is proven in Case 2.
+
+Let us finally consider Case 3. In this case, we have $N\equiv
+2\operatorname{mod}3$. Hence, $\underbrace{N}_{\equiv2\operatorname{mod}%
+3}-1\equiv2-1=1\operatorname{mod}3$. Thus, (\ref{pf.cor.ps2.2.S.-1.o1.pf.1})
+yields%
+\[
+c_{N-1}=%
+\begin{cases}
+0, & \text{if }N-1\equiv0\operatorname{mod}3;\\
+1, & \text{if }N-1\equiv1\operatorname{mod}3;\\
+-1, & \text{if }N-1\equiv2\operatorname{mod}3
+\end{cases}
+=1
+\]
+(since $N-1\equiv1\operatorname{mod}3$). Also, $\underbrace{N}_{\equiv
+2\operatorname{mod}3}-2\equiv2-2=0\operatorname{mod}3$. Thus,
+(\ref{pf.cor.ps2.2.S.-1.o1.pf.2}) yields%
+\[
+c_{N-2}=%
+\begin{cases}
+0, & \text{if }N-2\equiv0\operatorname{mod}3;\\
+1, & \text{if }N-2\equiv1\operatorname{mod}3;\\
+-1, & \text{if }N-2\equiv2\operatorname{mod}3
+\end{cases}
+=0
+\]
+(since $N-2\equiv0\operatorname{mod}3$). Now,
+(\ref{pf.cor.ps2.2.S.-1.o1.pf.rec}) yields%
+\[
+c_{N}=-\underbrace{c_{N-1}}_{=1}-\underbrace{c_{N-2}}_{=0}=-1-0=-1.
+\]
+Comparing this with%
+\[%
+\begin{cases}
+0, & \text{if }N\equiv0\operatorname{mod}3;\\
+1, & \text{if }N\equiv1\operatorname{mod}3;\\
+-1, & \text{if }N\equiv2\operatorname{mod}3
+\end{cases}
+=-1\ \ \ \ \ \ \ \ \ \ \left(  \text{since }N\equiv2\operatorname{mod}%
+3\right)  ,
+\]
+we obtain $c_{N}=%
+\begin{cases}
+0, & \text{if }N\equiv0\operatorname{mod}3;\\
+1, & \text{if }N\equiv1\operatorname{mod}3;\\
+-1, & \text{if }N\equiv2\operatorname{mod}3
+\end{cases}
+$. Thus, (\ref{pf.cor.ps2.2.S.-1.o1.pf.goal}) is proven in Case 3.
+
+We have thus proven (\ref{pf.cor.ps2.2.S.-1.o1.pf.goal}) in each of the three
+Cases 1, 2 and 3. Since these three Cases cover all possibilities, we thus
+conclude that (\ref{pf.cor.ps2.2.S.-1.o1.pf.goal}) always holds.
+\end{verlong}
+
+In other words, Observation 1 holds for $n=N$. This completes the induction
+step. Thus, Observation 1 is proven.]
+
+Now, let $n\in\mathbb{N}$. Clearly, $\left(  -1\right)  ^{n-1}\left(
+-1\right)  ^{n-1}=\left(  \underbrace{\left(  -1\right)  \left(  -1\right)
+}_{=1}\right)  ^{n-1}=1^{n-1}=1$.
+
+Observation 1 yields%
+\[
+c_{n}=%
+\begin{cases}
+0, & \text{if }n\equiv0\operatorname{mod}3;\\
+1, & \text{if }n\equiv1\operatorname{mod}3;\\
+-1, & \text{if }n\equiv2\operatorname{mod}3
+\end{cases}
+.
+\]
+Thus,%
+\begin{align}
+-c_{n}  &  =-%
+\begin{cases}
+0, & \text{if }n\equiv0\operatorname{mod}3;\\
+1, & \text{if }n\equiv1\operatorname{mod}3;\\
+-1, & \text{if }n\equiv2\operatorname{mod}3
+\end{cases}
+=%
+\begin{cases}
+-0, & \text{if }n\equiv0\operatorname{mod}3;\\
+-1, & \text{if }n\equiv1\operatorname{mod}3;\\
+-\left(  -1\right)  , & \text{if }n\equiv2\operatorname{mod}3
+\end{cases}
+\nonumber\\
+&  =%
+\begin{cases}
+0, & \text{if }n\equiv0\operatorname{mod}3;\\
+-1, & \text{if }n\equiv1\operatorname{mod}3;\\
+1, & \text{if }n\equiv2\operatorname{mod}3
+\end{cases}
+. \label{pf.cor.ps2.2.S.-cn}%
+\end{align}
+
+
+Exercise \ref{exe.ps2.2.S} yields%
+\begin{align*}
+c_{n}  &  =\sum_{i=0}^{n-1}\left(  -1\right)  ^{i}\dbinom{n-1-i}%
+{i}\underbrace{r^{n-1-2i}}_{\substack{=\left(  -1\right)  ^{n-1-2i}%
+\\\text{(since }r=-1\text{)}}}\\
+&  =\sum_{i=0}^{n-1}\left(  -1\right)  ^{i}\dbinom{n-1-i}{i}%
+\underbrace{\left(  -1\right)  ^{n-1-2i}}_{\substack{=\left(  -1\right)
+^{n-1}\\\text{(since }n-1-2i\equiv n-1\operatorname{mod}2\text{)}}}\\
+&  =\sum_{i=0}^{n-1}\left(  -1\right)  ^{i}\dbinom{n-1-i}{i}\left(  -1\right)
+^{n-1}.
+\end{align*}
+Multiplying both sides of this equality by $\left(  -1\right)  ^{n-1}$, we
+obtain%
+\begin{align*}
+\left(  -1\right)  ^{n-1}c_{n}  &  =\left(  -1\right)  ^{n-1}\sum_{i=0}%
+^{n-1}\left(  -1\right)  ^{i}\dbinom{n-1-i}{i}\left(  -1\right)  ^{n-1}\\
+&  =\sum_{i=0}^{n-1}\left(  -1\right)  ^{i}\dbinom{n-1-i}{i}%
+\underbrace{\left(  -1\right)  ^{n-1}\left(  -1\right)  ^{n-1}}_{=1}\\
+&  =\sum_{i=0}^{n-1}\left(  -1\right)  ^{i}\dbinom{n-1-i}{i}.
+\end{align*}
+Therefore,%
+\begin{align*}
+\sum_{i=0}^{n-1}\left(  -1\right)  ^{i}\dbinom{n-1-i}{i}  &
+=\underbrace{\left(  -1\right)  ^{n-1}}_{=-\left(  -1\right)  ^{n}}%
+c_{n}=-\left(  -1\right)  ^{n}c_{n}\\
+&  =\left(  -1\right)  ^{n}\cdot\underbrace{\left(  -c_{n}\right)
+}_{\substack{=%
+\begin{cases}
+0, & \text{if }n\equiv0\operatorname{mod}3;\\
+-1, & \text{if }n\equiv1\operatorname{mod}3;\\
+1, & \text{if }n\equiv2\operatorname{mod}3
+\end{cases}
+\\\text{(by (\ref{pf.cor.ps2.2.S.-cn}))}}}\\
+&  =\left(  -1\right)  ^{n}\cdot%
+\begin{cases}
+0, & \text{if }n\equiv0\operatorname{mod}3;\\
+-1, & \text{if }n\equiv1\operatorname{mod}3;\\
+1, & \text{if }n\equiv2\operatorname{mod}3
+\end{cases}
+.
+\end{align*}
+This proves Corollary \ref{cor.ps2.2.S.-1}.
+\end{proof}
+
+Let us remark that Corollary \ref{cor.ps2.2.S.-1} is better known in the
+following form:
+
+\begin{corollary}
+\label{cor.ps2.2.S.-1alt}Let $n\in\mathbb{N}$. Then,%
+\[
+\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n-i}{i}=%
+\begin{cases}
+1, & \text{if }n\equiv0\operatorname{mod}6\text{ or }n\equiv
+1\operatorname{mod}6;\\
+0, & \text{if }n\equiv2\operatorname{mod}6\text{ or }n\equiv
+5\operatorname{mod}6;\\
+-1, & \text{if }n\equiv3\operatorname{mod}6\text{ or }n\equiv
+4\operatorname{mod}6
+\end{cases}
+.
+\]
+
+\end{corollary}
+
+\begin{proof}
+[Proof of Corollary \ref{cor.ps2.2.S.-1alt}.]Corollary \ref{cor.ps2.2.S.-1}
+(applied to $n+1$ instead of $n$) yields%
+\[
+\sum_{i=0}^{\left(  n+1\right)  -1}\left(  -1\right)  ^{i}\dbinom{\left(
+n+1\right)  -1-i}{i}=\left(  -1\right)  ^{n+1}\cdot%
+\begin{cases}
+0, & \text{if }n+1\equiv0\operatorname{mod}3;\\
+-1, & \text{if }n+1\equiv1\operatorname{mod}3;\\
+1, & \text{if }n+1\equiv2\operatorname{mod}3
+\end{cases}
+.
+\]
+In view of $\left(  n+1\right)  -1=n$, this rewrites as%
+\begin{equation}
+\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n-i}{i}=\left(  -1\right)
+^{n+1}\cdot%
+\begin{cases}
+0, & \text{if }n+1\equiv0\operatorname{mod}3;\\
+-1, & \text{if }n+1\equiv1\operatorname{mod}3;\\
+1, & \text{if }n+1\equiv2\operatorname{mod}3
+\end{cases}
+. \label{pf.cor.ps2.2.S.-1alt.1}%
+\end{equation}
+
+
+\begin{vershort}
+All that remains to be done now is to prove that the right hand side of
+(\ref{pf.cor.ps2.2.S.-1alt.1}) equals
+\[%
+\begin{cases}
+1, & \text{if }n\equiv0\operatorname{mod}6\text{ or }n\equiv
+1\operatorname{mod}6;\\
+0, & \text{if }n\equiv2\operatorname{mod}6\text{ or }n\equiv
+5\operatorname{mod}6;\\
+-1, & \text{if }n\equiv3\operatorname{mod}6\text{ or }n\equiv
+4\operatorname{mod}6
+\end{cases}
+.
+\]
+This can be verified by straightforward computation, distinguishing six
+possible cases (one for each remainder $n$ can leave upon division by $6$).
+\end{vershort}
+
+\begin{verlong}
+The remainder upon dividing the integer $n$ by $6$ must be either $0$ or $1$
+or $2$ or $3$ or $4$ or $5$ or $6$. Hence, we must have either $n\equiv
+0\operatorname{mod}6$ or $n\equiv1\operatorname{mod}6$ or $n\equiv
+2\operatorname{mod}6$ or $n\equiv3\operatorname{mod}6$ or $n\equiv
+4\operatorname{mod}6$ or $n\equiv5\operatorname{mod}6$. Thus, we are in one of
+the following six cases:
+
+\textit{Case 1:} We have $n\equiv0\operatorname{mod}6$.
+
+\textit{Case 2:} We have $n\equiv1\operatorname{mod}6$.
+
+\textit{Case 3:} We have $n\equiv2\operatorname{mod}6$.
+
+\textit{Case 4:} We have $n\equiv3\operatorname{mod}6$.
+
+\textit{Case 5:} We have $n\equiv4\operatorname{mod}6$.
+
+\textit{Case 6:} We have $n\equiv5\operatorname{mod}6$.
+
+Let us first consider Case 1. In this case, we have $n\equiv
+0\operatorname{mod}6$. Thus, $\underbrace{n}_{\equiv0\operatorname{mod}%
+6}+1\equiv0+1=1\operatorname{mod}6$. Therefore, $n+1\equiv1\operatorname{mod}%
+2$ and $n+1\equiv1\operatorname{mod}3$. Now, (\ref{pf.cor.ps2.2.S.-1alt.1})
+becomes%
+\begin{align*}
+\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n-i}{i}  &  =\underbrace{\left(
+-1\right)  ^{n+1}}_{\substack{=-1\\\text{(since }n+1\equiv1\operatorname{mod}%
+2\text{)}}}\cdot\underbrace{%
+\begin{cases}
+0, & \text{if }n+1\equiv0\operatorname{mod}3;\\
+-1, & \text{if }n+1\equiv1\operatorname{mod}3;\\
+1, & \text{if }n+1\equiv2\operatorname{mod}3
+\end{cases}
+}_{\substack{=-1\\\text{(since }n+1\equiv1\operatorname{mod}3\text{)}%
+}}=\left(  -1\right)  \left(  -1\right) \\
+&  =1.
+\end{align*}
+Comparing this with%
+\[%
+\begin{cases}
+1, & \text{if }n\equiv0\operatorname{mod}6\text{ or }n\equiv
+1\operatorname{mod}6;\\
+0, & \text{if }n\equiv2\operatorname{mod}6\text{ or }n\equiv
+5\operatorname{mod}6;\\
+-1, & \text{if }n\equiv3\operatorname{mod}6\text{ or }n\equiv
+4\operatorname{mod}6
+\end{cases}
+=1\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since }n\equiv0\operatorname{mod}6\text{ or }n\equiv1\operatorname{mod}%
+6\\
+\text{(because }n\equiv0\operatorname{mod}6\text{)}%
+\end{array}
+\right)  ,
+\]
+we obtain%
+\[
+\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n-i}{i}=%
+\begin{cases}
+1, & \text{if }n\equiv0\operatorname{mod}6\text{ or }n\equiv
+1\operatorname{mod}6;\\
+0, & \text{if }n\equiv2\operatorname{mod}6\text{ or }n\equiv
+5\operatorname{mod}6;\\
+-1, & \text{if }n\equiv3\operatorname{mod}6\text{ or }n\equiv
+4\operatorname{mod}6
+\end{cases}
+.
+\]
+Hence, Corollary \ref{cor.ps2.2.S.-1alt} is proven in Case 1.
+
+Let us next consider Case 2. In this case, we have $n\equiv1\operatorname{mod}%
+6$. Thus, $\underbrace{n}_{\equiv1\operatorname{mod}6}+1\equiv
+1+1=2\operatorname{mod}6$. Therefore, $n+1\equiv2\equiv0\operatorname{mod}2$
+and $n+1\equiv2\operatorname{mod}3$. Now, (\ref{pf.cor.ps2.2.S.-1alt.1})
+becomes%
+\begin{align*}
+\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n-i}{i}  &  =\underbrace{\left(
+-1\right)  ^{n+1}}_{\substack{=1\\\text{(since }n+1\equiv0\operatorname{mod}%
+2\text{)}}}\cdot\underbrace{%
+\begin{cases}
+0, & \text{if }n+1\equiv0\operatorname{mod}3;\\
+-1, & \text{if }n+1\equiv1\operatorname{mod}3;\\
+1, & \text{if }n+1\equiv2\operatorname{mod}3
+\end{cases}
+}_{\substack{=1\\\text{(since }n+1\equiv2\operatorname{mod}3\text{)}}%
+}=1\cdot1\\
+&  =1.
+\end{align*}
+Comparing this with%
+\[%
+\begin{cases}
+1, & \text{if }n\equiv0\operatorname{mod}6\text{ or }n\equiv
+1\operatorname{mod}6;\\
+0, & \text{if }n\equiv2\operatorname{mod}6\text{ or }n\equiv
+5\operatorname{mod}6;\\
+-1, & \text{if }n\equiv3\operatorname{mod}6\text{ or }n\equiv
+4\operatorname{mod}6
+\end{cases}
+=1\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since }n\equiv0\operatorname{mod}6\text{ or }n\equiv1\operatorname{mod}%
+6\\
+\text{(because }n\equiv1\operatorname{mod}6\text{)}%
+\end{array}
+\right)  ,
+\]
+we obtain%
+\[
+\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n-i}{i}=%
+\begin{cases}
+1, & \text{if }n\equiv0\operatorname{mod}6\text{ or }n\equiv
+1\operatorname{mod}6;\\
+0, & \text{if }n\equiv2\operatorname{mod}6\text{ or }n\equiv
+5\operatorname{mod}6;\\
+-1, & \text{if }n\equiv3\operatorname{mod}6\text{ or }n\equiv
+4\operatorname{mod}6
+\end{cases}
+.
+\]
+Hence, Corollary \ref{cor.ps2.2.S.-1alt} is proven in Case 2.
+
+Let us next consider Case 3. In this case, we have $n\equiv2\operatorname{mod}%
+6$. Thus, $\underbrace{n}_{\equiv2\operatorname{mod}6}+1\equiv
+2+1=3\operatorname{mod}6$. Therefore, $n+1\equiv3\equiv1\operatorname{mod}2$
+and $n+1\equiv3\equiv0\operatorname{mod}3$. Now, (\ref{pf.cor.ps2.2.S.-1alt.1}%
+) becomes%
+\begin{align*}
+\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n-i}{i}  &  =\left(  -1\right)
+^{n+1}\cdot\underbrace{%
+\begin{cases}
+0, & \text{if }n+1\equiv0\operatorname{mod}3;\\
+-1, & \text{if }n+1\equiv1\operatorname{mod}3;\\
+1, & \text{if }n+1\equiv2\operatorname{mod}3
+\end{cases}
+}_{\substack{=0\\\text{(since }n+1\equiv0\operatorname{mod}3\text{)}}}=\left(
+-1\right)  ^{n+1}\cdot0\\
+&  =0.
+\end{align*}
+Comparing this with%
+\[%
+\begin{cases}
+1, & \text{if }n\equiv0\operatorname{mod}6\text{ or }n\equiv
+1\operatorname{mod}6;\\
+0, & \text{if }n\equiv2\operatorname{mod}6\text{ or }n\equiv
+5\operatorname{mod}6;\\
+-1, & \text{if }n\equiv3\operatorname{mod}6\text{ or }n\equiv
+4\operatorname{mod}6
+\end{cases}
+=1\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since }n\equiv2\operatorname{mod}6\text{ or }n\equiv5\operatorname{mod}%
+6\\
+\text{(because }n\equiv2\operatorname{mod}6\text{)}%
+\end{array}
+\right)  ,
+\]
+we obtain%
+\[
+\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n-i}{i}=%
+\begin{cases}
+1, & \text{if }n\equiv0\operatorname{mod}6\text{ or }n\equiv
+1\operatorname{mod}6;\\
+0, & \text{if }n\equiv2\operatorname{mod}6\text{ or }n\equiv
+5\operatorname{mod}6;\\
+-1, & \text{if }n\equiv3\operatorname{mod}6\text{ or }n\equiv
+4\operatorname{mod}6
+\end{cases}
+.
+\]
+Hence, Corollary \ref{cor.ps2.2.S.-1alt} is proven in Case 3.
+
+Let us next consider Case 4. In this case, we have $n\equiv3\operatorname{mod}%
+6$. Thus, $\underbrace{n}_{\equiv3\operatorname{mod}6}+1\equiv
+3+1=4\operatorname{mod}6$. Therefore, $n+1\equiv4\equiv0\operatorname{mod}2$
+and $n+1\equiv4\equiv1\operatorname{mod}3$. Now, (\ref{pf.cor.ps2.2.S.-1alt.1}%
+) becomes%
+\begin{align*}
+\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n-i}{i}  &  =\underbrace{\left(
+-1\right)  ^{n+1}}_{\substack{=1\\\text{(since }n+1\equiv0\operatorname{mod}%
+2\text{)}}}\cdot\underbrace{%
+\begin{cases}
+0, & \text{if }n+1\equiv0\operatorname{mod}3;\\
+-1, & \text{if }n+1\equiv1\operatorname{mod}3;\\
+1, & \text{if }n+1\equiv2\operatorname{mod}3
+\end{cases}
+}_{\substack{=-1\\\text{(since }n+1\equiv1\operatorname{mod}3\text{)}}%
+}=1\cdot\left(  -1\right) \\
+&  =-1.
+\end{align*}
+Comparing this with%
+\[%
+\begin{cases}
+1, & \text{if }n\equiv0\operatorname{mod}6\text{ or }n\equiv
+1\operatorname{mod}6;\\
+0, & \text{if }n\equiv2\operatorname{mod}6\text{ or }n\equiv
+5\operatorname{mod}6;\\
+-1, & \text{if }n\equiv3\operatorname{mod}6\text{ or }n\equiv
+4\operatorname{mod}6
+\end{cases}
+=-1\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since }n\equiv3\operatorname{mod}6\text{ or }n\equiv4\operatorname{mod}%
+6\\
+\text{(because }n\equiv3\operatorname{mod}6\text{)}%
+\end{array}
+\right)  ,
+\]
+we obtain%
+\[
+\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n-i}{i}=%
+\begin{cases}
+1, & \text{if }n\equiv0\operatorname{mod}6\text{ or }n\equiv
+1\operatorname{mod}6;\\
+0, & \text{if }n\equiv2\operatorname{mod}6\text{ or }n\equiv
+5\operatorname{mod}6;\\
+-1, & \text{if }n\equiv3\operatorname{mod}6\text{ or }n\equiv
+4\operatorname{mod}6
+\end{cases}
+.
+\]
+Hence, Corollary \ref{cor.ps2.2.S.-1alt} is proven in Case 4.
+
+Let us next consider Case 5. In this case, we have $n\equiv4\operatorname{mod}%
+6$. Thus, $\underbrace{n}_{\equiv4\operatorname{mod}6}+1\equiv
+4+1=5\operatorname{mod}6$. Therefore, $n+1\equiv5\equiv1\operatorname{mod}2$
+and $n+1\equiv5\equiv2\operatorname{mod}3$. Now, (\ref{pf.cor.ps2.2.S.-1alt.1}%
+) becomes%
+\begin{align*}
+\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n-i}{i}  &  =\underbrace{\left(
+-1\right)  ^{n+1}}_{\substack{=-1\\\text{(since }n+1\equiv1\operatorname{mod}%
+2\text{)}}}\cdot\underbrace{%
+\begin{cases}
+0, & \text{if }n+1\equiv0\operatorname{mod}3;\\
+-1, & \text{if }n+1\equiv1\operatorname{mod}3;\\
+1, & \text{if }n+1\equiv2\operatorname{mod}3
+\end{cases}
+}_{\substack{=1\\\text{(since }n+1\equiv2\operatorname{mod}3\text{)}}}=\left(
+-1\right)  \cdot1\\
+&  =-1.
+\end{align*}
+Comparing this with%
+\[%
+\begin{cases}
+1, & \text{if }n\equiv0\operatorname{mod}6\text{ or }n\equiv
+1\operatorname{mod}6;\\
+0, & \text{if }n\equiv2\operatorname{mod}6\text{ or }n\equiv
+5\operatorname{mod}6;\\
+-1, & \text{if }n\equiv3\operatorname{mod}6\text{ or }n\equiv
+4\operatorname{mod}6
+\end{cases}
+=1\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since }n\equiv3\operatorname{mod}6\text{ or }n\equiv4\operatorname{mod}%
+6\\
+\text{(because }n\equiv4\operatorname{mod}6\text{)}%
+\end{array}
+\right)  ,
+\]
+we obtain%
+\[
+\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n-i}{i}=%
+\begin{cases}
+1, & \text{if }n\equiv0\operatorname{mod}6\text{ or }n\equiv
+1\operatorname{mod}6;\\
+0, & \text{if }n\equiv2\operatorname{mod}6\text{ or }n\equiv
+5\operatorname{mod}6;\\
+-1, & \text{if }n\equiv3\operatorname{mod}6\text{ or }n\equiv
+4\operatorname{mod}6
+\end{cases}
+.
+\]
+Hence, Corollary \ref{cor.ps2.2.S.-1alt} is proven in Case 5.
+
+Let us next consider Case 6. In this case, we have $n\equiv5\operatorname{mod}%
+6$. Thus, $\underbrace{n}_{\equiv5\operatorname{mod}6}+1\equiv5+1\equiv
+0\operatorname{mod}6$. Therefore, $n+1\equiv0\operatorname{mod}2$ and
+$n+1\equiv0\operatorname{mod}3$. Now, (\ref{pf.cor.ps2.2.S.-1alt.1}) becomes%
+\begin{align*}
+\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n-i}{i}  &  =\left(  -1\right)
+^{n+1}\cdot\underbrace{%
+\begin{cases}
+0, & \text{if }n+1\equiv0\operatorname{mod}3;\\
+-1, & \text{if }n+1\equiv1\operatorname{mod}3;\\
+1, & \text{if }n+1\equiv2\operatorname{mod}3
+\end{cases}
+}_{\substack{=0\\\text{(since }n+1\equiv0\operatorname{mod}3\text{)}}}=\left(
+-1\right)  ^{n+1}\cdot0\\
+&  =0.
+\end{align*}
+Comparing this with%
+\[%
+\begin{cases}
+1, & \text{if }n\equiv0\operatorname{mod}6\text{ or }n\equiv
+1\operatorname{mod}6;\\
+0, & \text{if }n\equiv2\operatorname{mod}6\text{ or }n\equiv
+5\operatorname{mod}6;\\
+-1, & \text{if }n\equiv3\operatorname{mod}6\text{ or }n\equiv
+4\operatorname{mod}6
+\end{cases}
+=1\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since }n\equiv2\operatorname{mod}6\text{ or }n\equiv5\operatorname{mod}%
+6\\
+\text{(because }n\equiv5\operatorname{mod}6\text{)}%
+\end{array}
+\right)  ,
+\]
+we obtain%
+\[
+\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n-i}{i}=%
+\begin{cases}
+1, & \text{if }n\equiv0\operatorname{mod}6\text{ or }n\equiv
+1\operatorname{mod}6;\\
+0, & \text{if }n\equiv2\operatorname{mod}6\text{ or }n\equiv
+5\operatorname{mod}6;\\
+-1, & \text{if }n\equiv3\operatorname{mod}6\text{ or }n\equiv
+4\operatorname{mod}6
+\end{cases}
+.
+\]
+Hence, Corollary \ref{cor.ps2.2.S.-1alt} is proven in Case 6.
+
+We have now proven Corollary \ref{cor.ps2.2.S.-1alt} in all six Cases 1, 2, 3,
+4, 5 and 6. Since these six Cases cover all possibilities, we thus conclude
+that Corollary \ref{cor.ps2.2.S.-1alt} always holds.
+\end{verlong}
+
+Thus, Corollary \ref{cor.ps2.2.S.-1alt} is proven.
+\end{proof}
+
+See also \cite[Identity 172]{BenQui03} or \cite{BenQui08} for a combinatorial
+proof of Corollary \ref{cor.ps2.2.S.-1alt}. Also, Corollary
+\ref{cor.ps2.2.S.-1alt} appears in \cite[\S 5.2, Problem 3]{GKP}.
 
 \subsection{Solution to Exercise \ref{exe.ps2.2.4}}
 
@@ -76271,7 +77128,7 @@ Now, the map%
 \left\{  I\subseteq G\ \mid\ R\subseteq I\text{ and }g\in I\right\}   &
 \rightarrow\left\{  I\subseteq G\ \mid\ R\subseteq I\text{ and }g\notin
 I\right\}  ,\nonumber\\
-J &  \mapsto J\setminus\left\{  g\right\}
+J  &  \mapsto J\setminus\left\{  g\right\}
 \label{pf.lem.sol.exeadd.det.sumdets1.2.short.14}%
 \end{align}
 is well-defined\footnote{This is because every $J\in\left\{  I\subseteq
@@ -76284,7 +77141,7 @@ map%
 \left\{  I\subseteq G\ \mid\ R\subseteq I\text{ and }g\notin I\right\}   &
 \rightarrow\left\{  I\subseteq G\ \mid\ R\subseteq I\text{ and }g\in
 I\right\}  ,\\
-J &  \mapsto J\cup\left\{  g\right\}
+J  &  \mapsto J\cup\left\{  g\right\}
 \end{align*}
 (which, again, is well-defined because $g\in G$).}.
 
@@ -76306,7 +77163,7 @@ _{J\in\left\{  I\subseteq G\ \mid\ R\subseteq I\text{ and }g\in I\right\}  }%
 \text{since the map (\ref{pf.lem.sol.exeadd.det.sumdets1.2.short.14}) is
 bijective}%
 \end{array}
-\right)  \nonumber\\
+\right) \nonumber\\
 &  =\sum_{\substack{J\subseteq G;\\R\subseteq J;\\g\in J}}\underbrace{\left(
 -1\right)  ^{\left\vert J\setminus\left\{  g\right\}  \right\vert }%
 }_{\substack{=\left(  -1\right)  ^{\left\vert J\right\vert -1}\\\text{(since
@@ -76315,9 +77172,9 @@ bijective}%
 G;\\R\subseteq J;\\g\in J}}\underbrace{\left(  -1\right)  ^{\left\vert
 J\right\vert -1}}_{=-\left(  -1\right)  ^{\left\vert J\right\vert }}%
 =\sum_{\substack{J\subseteq G;\\R\subseteq J;\\g\in J}}\left(  -\left(
--1\right)  ^{\left\vert J\right\vert }\right)  \nonumber\\
+-1\right)  ^{\left\vert J\right\vert }\right) \nonumber\\
 &  =-\sum_{\substack{J\subseteq G;\\R\subseteq J;\\g\in J}}\left(  -1\right)
-^{\left\vert J\right\vert }.\label{pf.lem.sol.exeadd.det.sumdets1.2.short.15}%
+^{\left\vert J\right\vert }. \label{pf.lem.sol.exeadd.det.sumdets1.2.short.15}%
 \end{align}
 
 
@@ -83608,12 +84465,22 @@ Vandermonde's Determinant}, The American Mathematical Monthly, Vol. 114, No. 4
 (Apr., 2007), pp. 338--341.} \newline(Also available at
 \url{http://scholarship.claremont.edu/hmc_fac_pub/524/} .)
 
+\bibitem[BenQui03]{BenQui03}Arthur T. Benjamin and Jennifer J. Quinn,
+\textit{Proofs that Really Count: The Art of Combinatorial Proof}, The
+Mathematical Association of America, 2003.
+
 \bibitem[BenQui04]{BenQui-fib}%
 \href{https://www.math.hmc.edu/~benjamin/papers/bama.pdf}{Arthur T. Benjamin
 and Jennifer J. Quinn, \textit{Proofs that Really Count: The Magic of
 Fibonacci Numbers and More}, Mathematical Adventures for Students and
 Amateurs, (David F. Hayes and Tatiana Shubin, editors), Spectrum Series of
 MAA, pp. 83--98, 2004.}
+
+\bibitem[BenQui08]{BenQui08}%
+\href{https://www.math.hmc.edu/~benjamin/papers/DIE.pdf}{Arthur T. Benjamin
+and Jennifer J. Quinn, \textit{An Alternate Approach to Alternating Sums: A
+Method to DIE for}, The College Mathematics Journal, Volume 39, Number 3, May
+2008, pp. 191-202(12).}
 
 \bibitem[BerBru08]{BerBru08}%
 \href{http://www.math.ualberta.ca/ijiss/SS-Volume-4-2008/No-1-08/SS-08-01-01.pdf}{Adam
@@ -83654,10 +84521,19 @@ Advances in Applied Mathematics 50, pp. 474--594 (2013).} Also appears as
 arXiv preprint
 \texttt{\href{http://arxiv.org/abs/1105.6270v2}{arXiv:1105.6270v2}}.
 
+\bibitem[Comtet74]{Comtet74}Louis Comtet, \textit{Advanced Combinatorics: The
+Art of Finite and Infinite Expansions}, D. Reidel Publishing Company, 1974.
+
 \bibitem[Conrad]{Conrad}Keith Conrad, \textit{Sign of permutations},
 \newline\url{http://www.math.uconn.edu/~kconrad/blurbs/grouptheory/sign.pdf} .
 
 \bibitem[Conrad2]{Conrad-Pf}Keith Conrad, \textit{Bilinear forms},\newline\url{http://www.math.uconn.edu/~kconrad/blurbs/linmultialg/bilinearform.pdf}
+
+\bibitem[DanRot78]{DanRot78}%
+\href{https://doi.org/10.1016/0097-3165(78)90069-9}{Ottavio D'Antona,
+Gian-Carlo Rota, \textit{Two Rings Connected with the Inclusion-Exclusion
+Principle}, Journal of Combinatorial Theory, Series A, Volume 24, Issue 3, May
+1978, pp. 395--402.}
 
 \bibitem[Day16]{Day-proofs}Martin V. Day, \textit{An Introduction to Proofs
 and the Mathematical Vernacular}, 7 December 2016. \newline%
