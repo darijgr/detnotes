@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Monday, November 13, 2017 21:38:02}
+%TCIDATA{LastRevised=Friday, November 17, 2017 02:05:42}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -120,7 +120,7 @@
 \today
 %EndExpansion
 \footnote{The numbering in this version is compatible with that in the version
-of 25 May 2017.} }
+of 18 November 2017.} }
 \maketitle
 \tableofcontents
 
@@ -25463,6 +25463,86 @@ v_{n}.
 
 [\textbf{Hint:} First, generalize Lemma \ref{lem.prodrule2} to the case of a
 noncommutative ring $\mathbb{K}$.]
+\end{addexercise}
+
+The following exercise generalizes Additional exercise
+\ref{exeadd.noncomm.polarization}:
+
+\begin{addexercise}
+\label{exeadd.det.sumdets1}For every $n\in\mathbb{N}$, let $\left[  n\right]
+$ denote the set $\left\{  1,2,\ldots,n\right\}  $.
+
+Let $\mathbb{L}$ be a noncommutative ring. (Keep in mind that our definition
+of a \textquotedblleft noncommutative ring\textquotedblright\ includes all
+commutative rings.)
+
+Let $G$ be a finite set. Let $H$ be a subset of $G$. Let $n\in\mathbb{N}$.
+
+For each $i\in G$ and $j\in\left[  n\right]  $, let $b_{i,j}$ be an element of
+$\mathbb{L}$. For each $j\in\left[  n\right]  $ and each subset $I$ of $G$, we
+define an element $b_{I,j}\in\mathbb{L}$ by $b_{I,j}=\sum_{i\in I}b_{i,j}$.
+
+\textbf{(a)} Prove that%
+\[
+\sum_{\substack{I\subseteq G;\\H\subseteq I}}\left(  -1\right)  ^{\left\vert
+I\right\vert }b_{I,1}b_{I,2}\cdots b_{I,n}=\left(  -1\right)  ^{\left\vert
+G\right\vert }\sum_{\substack{f:\left[  n\right]  \rightarrow G;\\G\setminus
+H\subseteq f\left(  \left[  n\right]  \right)  }}b_{f\left(  1\right)
+,1}b_{f\left(  2\right)  ,2}\cdots b_{f\left(  n\right)  ,n}.
+\]
+
+
+\textbf{(b)} If $n<\left\vert G\setminus H\right\vert $, then prove that%
+\[
+\sum_{\substack{I\subseteq G;\\H\subseteq I}}\left(  -1\right)  ^{\left\vert
+I\right\vert }b_{I,1}b_{I,2}\cdots b_{I,n}=0.
+\]
+
+
+\textbf{(c)} If $n=\left\vert G\right\vert $, then prove that%
+\[
+\sum_{I\subseteq G}\left(  -1\right)  ^{\left\vert G\setminus I\right\vert
+}b_{I,1}b_{I,2}\cdots b_{I,n}=\sum_{\substack{f:\left[  n\right]  \rightarrow
+G\\\text{is bijective}}}b_{f\left(  1\right)  ,1}b_{f\left(  2\right)
+,2}\cdots b_{f\left(  n\right)  ,n}.
+\]
+
+\end{addexercise}
+
+\begin{remark}
+Let $\mathbb{K}$ be a commutative ring. Let $n\in\mathbb{N}$. Let $A=\left(
+a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\in\mathbb{K}^{n\times n}$ be
+an $n\times n$-matrix. Then, the \textit{permanent} $\operatorname*{per}A$ of
+$A$ is defined to be the element%
+\[
+\sum_{\sigma\in S_{n}}a_{1,\sigma\left(  1\right)  }a_{2,\sigma\left(
+2\right)  }\cdots a_{n,\sigma\left(  n\right)  }%
+\]
+of $\mathbb{K}$. The concept of a permanent is thus similar to the concept of
+a determinant (the only difference is that the factor $\left(  -1\right)
+^{\sigma}$ is missing from the definition of the permanent); however, it has
+far fewer interesting properties. One of the properties that it does have is
+the so-called \textit{Ryser formula}, which says that%
+\[
+\operatorname*{per}A=\left(  -1\right)  ^{n}\sum_{I\subseteq\left\{
+1,2,\ldots,n\right\}  }\left(  -1\right)  ^{\left\vert I\right\vert }%
+\prod_{j=1}^{n}\sum_{i\in I}a_{i,j}.
+\]
+The reader is invited to check that this formula follows from Additional
+exercise \ref{exeadd.det.sumdets1} \textbf{(c)} (applied to $\mathbb{L}%
+=\mathbb{K}$, $G=\left\{  1,2,\ldots,n\right\}  $, $H=\varnothing$ and
+$b_{i,j}=a_{i,j}$).
+\end{remark}
+
+\begin{addexercise}
+\label{exeadd.det.sumdets2}Let $n\in\mathbb{N}$. Let $G$ be a finite set such
+that $n<\left\vert G\right\vert $. For each $i\in G$, let $A_{i}\in
+\mathbb{K}^{n\times n}$ be an $n\times n$-matrix. Prove that%
+\[
+\sum_{I\subseteq G}\left(  -1\right)  ^{\left\vert I\right\vert }\det\left(
+\sum_{i\in I}A_{i}\right)  =0.
+\]
+
 \end{addexercise}
 
 \begin{addexercise}
@@ -72661,7 +72741,119 @@ Y}r_{y}$)). This proves Lemma \ref{lem.prodrule.S.n=2}.
 Thus, Lemma \ref{lem.noncomm.prodrule2} is proven.
 \end{proof}
 
-Now, let us prove three further lemmas:
+Now, let us prove four further lemmas:
+
+\begin{lemma}
+\label{lem.sol.exeadd.noncomm.polarization.1.7}Let $G$ be a finite set. Let
+$I$ be a subset of $G$. Let $m\in\mathbb{N}$. Let $f:\left[  m\right]
+\rightarrow G$ be any map. Then,%
+\[
+\prod_{i=1}^{m}\left[  f\left(  i\right)  \in I\right]  =\left[  f\left(
+\left[  m\right]  \right)  \subseteq I\right]  .
+\]
+
+\end{lemma}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exeadd.noncomm.polarization.1.7}.] We are in one
+of the following two cases:
+
+\textit{Case 1:} We have $f\left(  \left[  m\right]  \right)  \subseteq I$.
+
+\textit{Case 2:} We don't have $f\left(  \left[  m\right]  \right)  \subseteq
+I$.
+
+Let us first consider Case 1. In this case, we have $f\left(  \left[
+m\right]  \right)  \subseteq I$. Thus, $\left[  f\left(  \left[  m\right]
+\right)  \subseteq I\right]  =1$. But each $i\in\left\{  1,2,\ldots,m\right\}
+$ satisfies $\left[  f\left(  i\right)  \in I\right]  =1$ (since $f\left(
+\underbrace{i}_{\in\left[  m\right]  }\right)  \in f\left(  \left[  m\right]
+\right)  \subseteq I$). Hence, $\prod_{i=1}^{m}\underbrace{\left[  f\left(
+i\right)  \in I\right]  }_{=1}=\prod_{i=1}^{m}1=1$. Comparing this with
+$\left[  f\left(  \left[  m\right]  \right)  \subseteq I\right]  =1$, we
+obtain $\prod_{i=1}^{m}\left[  f\left(  i\right)  \in I\right]  =\left[
+f\left(  \left[  m\right]  \right)  \subseteq I\right]  $. Hence, Lemma
+\ref{lem.sol.exeadd.noncomm.polarization.1.7} is proven in Case 1.
+
+Let us now consider Case 2. In this case, we don't have $f\left(  \left[
+m\right]  \right)  \subseteq I$. In other words, not every $p\in\left[
+m\right]  $ satisfies $f\left(  p\right)  \in I$. Thus, there exists some
+$p\in\left[  m\right]  $ such that $f\left(  p\right)  \notin I$. Consider
+this $p$. We have $\left[  f\left(  p\right)  \in I\right]  =0$ (since
+$f\left(  p\right)  \notin I$). Thus, at least one factor of the product
+$\prod_{i=1}^{m}\left[  f\left(  i\right)  \in I\right]  $ equals $0$ (namely,
+the factor for $i=p$ is $\left[  f\left(  p\right)  \in I\right]  =0$).
+Consequently, the whole product $\prod_{i=1}^{m}\left[  f\left(  i\right)  \in
+I\right]  $ equals $0$ (because if at least one factor of a product equals
+$0$, then the whole product equals $0$). In other words, $\prod_{i=1}%
+^{m}\left[  f\left(  i\right)  \in I\right]  =0$. Comparing this with $\left[
+f\left(  \left[  m\right]  \right)  \subseteq I\right]  =0$ (which holds
+because we don't have $f\left(  \left[  m\right]  \right)  \subseteq I$), we
+obtain $\prod_{i=1}^{m}\left[  f\left(  i\right)  \in I\right]  =\left[
+f\left(  \left[  m\right]  \right)  \subseteq I\right]  $. Hence, Lemma
+\ref{lem.sol.exeadd.noncomm.polarization.1.7} is proven in Case 2.
+
+We have now proven Lemma \ref{lem.sol.exeadd.noncomm.polarization.1.7} in both
+Cases 1 and 2. This completes the proof of Lemma
+\ref{lem.sol.exeadd.noncomm.polarization.1.7}.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exeadd.noncomm.polarization.1.7}.] We are in one
+of the following two cases:
+
+\textit{Case 1:} We have $f\left(  \left[  m\right]  \right)  \subseteq I$.
+
+\textit{Case 2:} We don't have $f\left(  \left[  m\right]  \right)  \subseteq
+I$.
+
+Let us first consider Case 1. In this case, we have $f\left(  \left[
+m\right]  \right)  \subseteq I$. Thus, $\left[  f\left(  \left[  m\right]
+\right)  \subseteq I\right]  =1$. But each $i\in\left\{  1,2,\ldots,m\right\}
+$ satisfies $\left[  f\left(  i\right)  \in I\right]  =1$ (since $f\left(
+\underbrace{i}_{\in\left\{  1,2,\ldots,m\right\}  =\left[  m\right]  }\right)
+\in f\left(  \left[  m\right]  \right)  \subseteq I$). Hence, $\prod_{i=1}%
+^{m}\underbrace{\left[  f\left(  i\right)  \in I\right]  }_{=1}=\prod
+_{i=1}^{m}1=1$. Comparing this with $\left[  f\left(  \left[  m\right]
+\right)  \subseteq I\right]  =1$, we obtain $\prod_{i=1}^{m}\left[  f\left(
+i\right)  \in I\right]  =\left[  f\left(  \left[  m\right]  \right)  \subseteq
+I\right]  $. Hence, Lemma \ref{lem.sol.exeadd.noncomm.polarization.1.7} is
+proven in Case 1.
+
+Let us now consider Case 2. In this case, we don't have $f\left(  \left[
+m\right]  \right)  \subseteq I$. Thus, $\left[  f\left(  \left[  m\right]
+\right)  \subseteq I\right]  =0$. But we have $f\left(  \left[  m\right]
+\right)  \not \subseteq I$ (since we don't have $f\left(  \left[  m\right]
+\right)  \subseteq I$). Hence, there exists some $q\in f\left(  \left[
+m\right]  \right)  $ such that $q\notin I$. Consider this $q$. We have $q\in
+f\left(  \left[  m\right]  \right)  $. Thus, there exists some $p\in\left[
+m\right]  $ such that $q=f\left(  p\right)  $. Consider this $p$. We have
+$f\left(  p\right)  =q\notin I$. In other words, we don't have $f\left(
+p\right)  \in I$. Hence, $\left[  f\left(  p\right)  \in I\right]  =0$. But we
+have $p\in\left[  m\right]  =\left\{  1,2,\ldots,m\right\}  $. Hence, $\left[
+f\left(  p\right)  \in I\right]  $ is a factor of the product $\prod_{i=1}%
+^{m}\left[  f\left(  i\right)  \in I\right]  $ (namely, the factor for $i=p$).
+Moreover, this factor equals $0$ (since $\left[  f\left(  p\right)  \in
+I\right]  =0$). Hence, at least one factor of the product $\prod_{i=1}%
+^{m}\left[  f\left(  i\right)  \in I\right]  $ equals $0$ (namely, the factor
+$\left[  f\left(  p\right)  \in I\right]  $). Consequently, the whole product
+$\prod_{i=1}^{m}\left[  f\left(  i\right)  \in I\right]  $ equals $0$ (because
+if at least one factor of a product equals $0$, then the whole product equals
+$0$). In other words, $\prod_{i=1}^{m}\left[  f\left(  i\right)  \in I\right]
+=0$. Comparing this with $\left[  f\left(  \left[  m\right]  \right)
+\subseteq I\right]  =0$, we obtain $\prod_{i=1}^{m}\left[  f\left(  i\right)
+\in I\right]  =\left[  f\left(  \left[  m\right]  \right)  \subseteq I\right]
+$. Hence, Lemma \ref{lem.sol.exeadd.noncomm.polarization.1.7} is proven in
+Case 2.
+
+We have now proven Lemma \ref{lem.sol.exeadd.noncomm.polarization.1.7} in both
+Cases 1 and 2. Since these are the only possible cases, we thus have always
+proven Lemma \ref{lem.sol.exeadd.noncomm.polarization.1.7}.
+\end{proof}
+\end{verlong}
 
 \begin{lemma}
 \label{lem.sol.exeadd.noncomm.polarization.1}Let $\mathbb{L}$ be a
@@ -72691,7 +72883,7 @@ v_{i}\ \ \ \ \ \ \ \ \ \ \left(
 \text{here, we have renamed the}\\
 \text{summation index }i\text{ as }k
 \end{array}
-\right) \nonumber\\
+\right)  \nonumber\\
 &  =\sum_{i\in\left[  n\right]  }\left[  i\in I\right]  v_{i}\nonumber\\
 &  =\underbrace{\sum_{\substack{i\in\left[  n\right]  ;\\i\in I}%
 }}_{\substack{=\sum_{i\in I}\\\text{(since }I\subseteq\left[  n\right]
@@ -72703,8 +72895,8 @@ v_{i}\ \ \ \ \ \ \ \ \ \ \left(
 satisfies either }i\in I\text{ or }i\notin I\text{ (but not both)}\right)
 \nonumber\\
 &  =\sum_{i\in I}1v_{i}+\underbrace{\sum_{\substack{i\in\left[  n\right]
-;\\i\notin I}}0v_{i}}_{=0}=\sum_{i\in I}1v_{i}=\sum_{i\in I}v_{i}.
-\label{pf.lem.sol.exeadd.noncomm.polarization.1.2}%
+;\\i\notin I}}0v_{i}}_{=0}=\sum_{i\in I}1v_{i}=\sum_{i\in I}v_{i}%
+.\label{pf.lem.sol.exeadd.noncomm.polarization.1.2}%
 \end{align}
 
 
@@ -72722,11 +72914,11 @@ $)). Now,%
 \begin{align}
 \left(  \underbrace{\sum_{i\in I}v_{i}}_{\substack{=\sum_{k=1}^{n}\left[  k\in
 I\right]  v_{k}\\\text{(by (\ref{pf.lem.sol.exeadd.noncomm.polarization.1.2}%
-))}}}\right)  ^{m}  &  =\left(  \sum_{k=1}^{n}\left[  k\in I\right]
+))}}}\right)  ^{m} &  =\left(  \sum_{k=1}^{n}\left[  k\in I\right]
 v_{k}\right)  ^{m}\nonumber\\
 &  =\sum_{\kappa:\left[  m\right]  \rightarrow\left[  n\right]  }\prod
 _{i=1}^{m}\left(  \left[  \kappa\left(  i\right)  \in I\right]  v_{\kappa
-\left(  i\right)  }\right) \nonumber\\
+\left(  i\right)  }\right)  \nonumber\\
 &  =\sum_{f:\left[  m\right]  \rightarrow\left[  n\right]  }\prod_{i=1}%
 ^{m}\left(  \left[  f\left(  i\right)  \in I\right]  v_{f\left(  i\right)
 }\right)  \label{pf.lem.sol.exeadd.noncomm.polarization.1.4}%
@@ -72736,12 +72928,12 @@ _{i=1}^{m}\left(  \left[  \kappa\left(  i\right)  \in I\right]  v_{\kappa
 Now, fix any map $f:\left[  m\right]  \rightarrow\left[  n\right]  $. Then,%
 \begin{align}
 &  \prod_{i=1}^{m}\left(  \left[  f\left(  i\right)  \in I\right]  v_{f\left(
-i\right)  }\right) \nonumber\\
+i\right)  }\right)  \nonumber\\
 &  =\left(  \left[  f\left(  1\right)  \in I\right]  v_{f\left(  1\right)
 }\right)  \left(  \left[  f\left(  2\right)  \in I\right]  v_{f\left(
 2\right)  }\right)  \cdots\left(  \left[  f\left(  m\right)  \in I\right]
-v_{f\left(  m\right)  }\right)  .
-\label{pf.lem.sol.exeadd.noncomm.polarization.1.6}%
+v_{f\left(  m\right)  }\right)
+.\label{pf.lem.sol.exeadd.noncomm.polarization.1.6}%
 \end{align}
 The factors $\left[  f\left(  1\right)  \in I\right]  ,\left[  f\left(
 2\right)  \in I\right]  ,\ldots,\left[  f\left(  m\right)  \in I\right]  $ on
@@ -72753,12 +72945,12 @@ Thus, we find%
 &  \left(  \left[  f\left(  1\right)  \in I\right]  v_{f\left(  1\right)
 }\right)  \left(  \left[  f\left(  2\right)  \in I\right]  v_{f\left(
 2\right)  }\right)  \cdots\left(  \left[  f\left(  m\right)  \in I\right]
-v_{f\left(  m\right)  }\right) \\
+v_{f\left(  m\right)  }\right)  \\
 &  =\underbrace{\left(  \left[  f\left(  1\right)  \in I\right]  \left[
 f\left(  2\right)  \in I\right]  \cdots\left[  f\left(  m\right)  \in
 I\right]  \right)  }_{=\prod_{i=1}^{m}\left[  f\left(  i\right)  \in I\right]
 }\left(  v_{f\left(  1\right)  }v_{f\left(  2\right)  }\cdots v_{f\left(
-m\right)  }\right) \\
+m\right)  }\right)  \\
 &  =\left(  \prod_{i=1}^{m}\left[  f\left(  i\right)  \in I\right]  \right)
 \left(  v_{f\left(  1\right)  }v_{f\left(  2\right)  }\cdots v_{f\left(
 m\right)  }\right)  .
@@ -72768,186 +72960,64 @@ Hence, (\ref{pf.lem.sol.exeadd.noncomm.polarization.1.6}) rewrites as%
 \prod_{i=1}^{m}\left(  \left[  f\left(  i\right)  \in I\right]  v_{f\left(
 i\right)  }\right)  =\left(  \prod_{i=1}^{m}\left[  f\left(  i\right)  \in
 I\right]  \right)  \left(  v_{f\left(  1\right)  }v_{f\left(  2\right)
-}\cdots v_{f\left(  m\right)  }\right)  .
-\label{pf.lem.sol.exeadd.noncomm.polarization.1.6b}%
+}\cdots v_{f\left(  m\right)  }\right)
+.\label{pf.lem.sol.exeadd.noncomm.polarization.1.6b}%
 \end{equation}
 
 
-\begin{vershort}
-But
+But Lemma \ref{lem.sol.exeadd.noncomm.polarization.1.7} (applied to $G=\left[
+n\right]  $) yields%
 \begin{equation}
 \prod_{i=1}^{m}\left[  f\left(  i\right)  \in I\right]  =\left[  f\left(
 \left[  m\right]  \right)  \subseteq I\right]
-\label{pf.lem.sol.exeadd.noncomm.polarization.1.short.7}%
+.\label{pf.lem.sol.exeadd.noncomm.polarization.1.7n}%
 \end{equation}
-\footnote{\textit{Proof of
-(\ref{pf.lem.sol.exeadd.noncomm.polarization.1.short.7}):} We are in one of
-the following two cases:
-\par
-\textit{Case 1:} We have $f\left(  \left[  m\right]  \right)  \subseteq I$.
-\par
-\textit{Case 2:} We don't have $f\left(  \left[  m\right]  \right)  \subseteq
-I$.
-\par
-Let us first consider Case 1. In this case, we have $f\left(  \left[
-m\right]  \right)  \subseteq I$. Thus, $\left[  f\left(  \left[  m\right]
-\right)  \subseteq I\right]  =1$. But each $i\in\left\{  1,2,\ldots,m\right\}
-$ satisfies $\left[  f\left(  i\right)  \in I\right]  =1$ (since $f\left(
-\underbrace{i}_{\in\left[  m\right]  }\right)  \in f\left(  \left[  m\right]
-\right)  \subseteq I$). Hence, $\prod_{i=1}^{m}\underbrace{\left[  f\left(
-i\right)  \in I\right]  }_{=1}=\prod_{i=1}^{m}1=1$. Comparing this with
-$\left[  f\left(  \left[  m\right]  \right)  \subseteq I\right]  =1$, we
-obtain $\prod_{i=1}^{m}\left[  f\left(  i\right)  \in I\right]  =\left[
-f\left(  \left[  m\right]  \right)  \subseteq I\right]  $. Hence,
-(\ref{pf.lem.sol.exeadd.noncomm.polarization.1.short.7}) is proven in Case 1.
-\par
-Let us now consider Case 2. In this case, we don't have $f\left(  \left[
-m\right]  \right)  \subseteq I$. In other words, not every $p\in\left[
-m\right]  $ satisfies $f\left(  p\right)  \in I$. Thus, there exists some
-$p\in\left[  m\right]  $ such that $f\left(  p\right)  \notin I$. Consider
-this $p$. We have $\left[  f\left(  p\right)  \in I\right]  =0$ (since
-$f\left(  p\right)  \notin I$). Thus, at least one factor of the product
-$\prod_{i=1}^{m}\left[  f\left(  i\right)  \in I\right]  $ equals $0$ (namely,
-the factor for $i=p$ is $\left[  f\left(  p\right)  \in I\right]  =0$).
-Consequently, the whole product $\prod_{i=1}^{m}\left[  f\left(  i\right)  \in
-I\right]  $ equals $0$ (because if at least one factor of a product equals
-$0$, then the whole product equals $0$). In other words, $\prod_{i=1}%
-^{m}\left[  f\left(  i\right)  \in I\right]  =0$. Comparing this with $\left[
-f\left(  \left[  m\right]  \right)  \subseteq I\right]  =0$ (which holds
-because we don't have $f\left(  \left[  m\right]  \right)  \subseteq I$), we
-obtain $\prod_{i=1}^{m}\left[  f\left(  i\right)  \in I\right]  =\left[
-f\left(  \left[  m\right]  \right)  \subseteq I\right]  $. Hence,
-(\ref{pf.lem.sol.exeadd.noncomm.polarization.1.short.7}) is proven in Case 2.
-\par
-We have now proven (\ref{pf.lem.sol.exeadd.noncomm.polarization.1.short.7}) in
-both Cases 1 and 2. This completes the proof of
-(\ref{pf.lem.sol.exeadd.noncomm.polarization.1.short.7}).}. Thus,
-(\ref{pf.lem.sol.exeadd.noncomm.polarization.1.6b}) becomes%
+
+
+Hence, (\ref{pf.lem.sol.exeadd.noncomm.polarization.1.6b}) becomes%
 \begin{align}
 \prod_{i=1}^{m}\left(  \left[  f\left(  i\right)  \in I\right]  v_{f\left(
 i\right)  }\right)   &  =\underbrace{\left(  \prod_{i=1}^{m}\left[  f\left(
 i\right)  \in I\right]  \right)  }_{\substack{=\left[  f\left(  \left[
 m\right]  \right)  \subseteq I\right]  \\\text{(by
-(\ref{pf.lem.sol.exeadd.noncomm.polarization.1.short.7}))}}}\left(
-v_{f\left(  1\right)  }v_{f\left(  2\right)  }\cdots v_{f\left(  m\right)
-}\right) \nonumber\\
-&  =\left[  f\left(  \left[  m\right]  \right)  \subseteq I\right]  \left(
-v_{f\left(  1\right)  }v_{f\left(  2\right)  }\cdots v_{f\left(  m\right)
-}\right)  . \label{pf.lem.sol.exeadd.noncomm.polarization.1.short.8}%
-\end{align}
-
-\end{vershort}
-
-\begin{verlong}
-But
-\begin{equation}
-\prod_{i=1}^{m}\left[  f\left(  i\right)  \in I\right]  =\left[  f\left(
-\left[  m\right]  \right)  \subseteq I\right]
-\label{pf.lem.sol.exeadd.noncomm.polarization.1.7}%
-\end{equation}
-\footnote{\textit{Proof of (\ref{pf.lem.sol.exeadd.noncomm.polarization.1.7}%
-):} We are in one of the following two cases:
-\par
-\textit{Case 1:} We have $f\left(  \left[  m\right]  \right)  \subseteq I$.
-\par
-\textit{Case 2:} We don't have $f\left(  \left[  m\right]  \right)  \subseteq
-I$.
-\par
-Let us first consider Case 1. In this case, we have $f\left(  \left[
-m\right]  \right)  \subseteq I$. Thus, $\left[  f\left(  \left[  m\right]
-\right)  \subseteq I\right]  =1$. But each $i\in\left\{  1,2,\ldots,m\right\}
-$ satisfies $\left[  f\left(  i\right)  \in I\right]  =1$ (since $f\left(
-\underbrace{i}_{\in\left\{  1,2,\ldots,m\right\}  =\left[  m\right]  }\right)
-\in f\left(  \left[  m\right]  \right)  \subseteq I$). Hence, $\prod_{i=1}%
-^{m}\underbrace{\left[  f\left(  i\right)  \in I\right]  }_{=1}=\prod
-_{i=1}^{m}1=1$. Comparing this with $\left[  f\left(  \left[  m\right]
-\right)  \subseteq I\right]  =1$, we obtain $\prod_{i=1}^{m}\left[  f\left(
-i\right)  \in I\right]  =\left[  f\left(  \left[  m\right]  \right)  \subseteq
-I\right]  $. Hence, (\ref{pf.lem.sol.exeadd.noncomm.polarization.1.7}) is
-proven in Case 1.
-\par
-Let us now consider Case 2. In this case, we don't have $f\left(  \left[
-m\right]  \right)  \subseteq I$. Thus, $\left[  f\left(  \left[  m\right]
-\right)  \subseteq I\right]  =0$. But we have $f\left(  \left[  m\right]
-\right)  \not \subseteq I$ (since we don't have $f\left(  \left[  m\right]
-\right)  \subseteq I$). Hence, there exists some $q\in f\left(  \left[
-m\right]  \right)  $ such that $q\notin I$. Consider this $q$. We have $q\in
-f\left(  \left[  m\right]  \right)  $. Thus, there exists some $p\in\left[
-m\right]  $ such that $q=f\left(  p\right)  $. Consider this $p$. We have
-$f\left(  p\right)  =q\notin I$. In other words, we don't have $f\left(
-p\right)  \in I$. Hence, $\left[  f\left(  p\right)  \in I\right]  =0$. But we
-have $p\in\left[  m\right]  =\left\{  1,2,\ldots,m\right\}  $. Hence, $\left[
-f\left(  p\right)  \in I\right]  $ is a factor of the product $\prod_{i=1}%
-^{m}\left[  f\left(  i\right)  \in I\right]  $ (namely, the factor for $i=p$).
-Moreover, this factor equals $0$ (since $\left[  f\left(  p\right)  \in
-I\right]  =0$). Hence, at least one factor of the product $\prod_{i=1}%
-^{m}\left[  f\left(  i\right)  \in I\right]  $ equals $0$ (namely, the factor
-$\left[  f\left(  p\right)  \in I\right]  $). Consequently, the whole product
-$\prod_{i=1}^{m}\left[  f\left(  i\right)  \in I\right]  $ equals $0$ (because
-if at least one factor of a product equals $0$, then the whole product equals
-$0$). In other words, $\prod_{i=1}^{m}\left[  f\left(  i\right)  \in I\right]
-=0$. Comparing this with $\left[  f\left(  \left[  m\right]  \right)
-\subseteq I\right]  =0$, we obtain $\prod_{i=1}^{m}\left[  f\left(  i\right)
-\in I\right]  =\left[  f\left(  \left[  m\right]  \right)  \subseteq I\right]
-$. Hence, (\ref{pf.lem.sol.exeadd.noncomm.polarization.1.7}) is proven in Case
-2.
-\par
-We have now proven (\ref{pf.lem.sol.exeadd.noncomm.polarization.1.7}) in both
-Cases 1 and 2. Since these are the only possible cases, we thus have always
-proven (\ref{pf.lem.sol.exeadd.noncomm.polarization.1.7}).}. Thus,
-(\ref{pf.lem.sol.exeadd.noncomm.polarization.1.6b}) becomes%
-\begin{align}
-\prod_{i=1}^{m}\left(  \left[  f\left(  i\right)  \in I\right]  v_{f\left(
-i\right)  }\right)   &  =\underbrace{\left(  \prod_{i=1}^{m}\left[  f\left(
-i\right)  \in I\right]  \right)  }_{\substack{=\left[  f\left(  \left[
-m\right]  \right)  \subseteq I\right]  \\\text{(by
-(\ref{pf.lem.sol.exeadd.noncomm.polarization.1.7}))}}}\left(  v_{f\left(
+(\ref{pf.lem.sol.exeadd.noncomm.polarization.1.7n}))}}}\left(  v_{f\left(
 1\right)  }v_{f\left(  2\right)  }\cdots v_{f\left(  m\right)  }\right)
 \nonumber\\
 &  =\left[  f\left(  \left[  m\right]  \right)  \subseteq I\right]  \left(
 v_{f\left(  1\right)  }v_{f\left(  2\right)  }\cdots v_{f\left(  m\right)
-}\right)  . \label{pf.lem.sol.exeadd.noncomm.polarization.1.8}%
+}\right)  .\label{pf.lem.sol.exeadd.noncomm.polarization.1.8}%
 \end{align}
 
-\end{verlong}
 
-\begin{vershort}
-Now, forget that we fixed $f$. We thus have proven
-(\ref{pf.lem.sol.exeadd.noncomm.polarization.1.short.8}) for each map
-$f:\left[  m\right]  \rightarrow\left[  n\right]  $.
-\end{vershort}
-
-\begin{verlong}
 Now, forget that we fixed $f$. We thus have proven
 (\ref{pf.lem.sol.exeadd.noncomm.polarization.1.8}) for each map $f:\left[
 m\right]  \rightarrow\left[  n\right]  $.
-\end{verlong}
 
 \begin{vershort}
 Now, (\ref{pf.lem.sol.exeadd.noncomm.polarization.1.4}) becomes%
 \begin{align*}
-\left(  \sum_{i\in I}v_{i}\right)  ^{m}  &  =\sum_{f:\left[  m\right]
+\left(  \sum_{i\in I}v_{i}\right)  ^{m} &  =\sum_{f:\left[  m\right]
 \rightarrow\left[  n\right]  }\underbrace{\prod_{i=1}^{m}\left(  \left[
 f\left(  i\right)  \in I\right]  v_{f\left(  i\right)  }\right)
 }_{\substack{=\left[  f\left(  \left[  m\right]  \right)  \subseteq I\right]
 \left(  v_{f\left(  1\right)  }v_{f\left(  2\right)  }\cdots v_{f\left(
 m\right)  }\right)  \\\text{(by
-(\ref{pf.lem.sol.exeadd.noncomm.polarization.1.short.8}))}}}\\
+(\ref{pf.lem.sol.exeadd.noncomm.polarization.1.8}))}}}\\
 &  =\sum_{f:\left[  m\right]  \rightarrow\left[  n\right]  }\left[  f\left(
 \left[  m\right]  \right)  \subseteq I\right]  \left(  v_{f\left(  1\right)
-}v_{f\left(  2\right)  }\cdots v_{f\left(  m\right)  }\right) \\
+}v_{f\left(  2\right)  }\cdots v_{f\left(  m\right)  }\right)  \\
 &  =\sum_{\substack{f:\left[  m\right]  \rightarrow\left[  n\right]
 ;\\f\left(  \left[  m\right]  \right)  \subseteq I}}\underbrace{\left[
 f\left(  \left[  m\right]  \right)  \subseteq I\right]  }%
 _{\substack{=1\\\text{(since }f\left(  \left[  m\right]  \right)  \subseteq
 I\text{)}}}\left(  v_{f\left(  1\right)  }v_{f\left(  2\right)  }\cdots
-v_{f\left(  m\right)  }\right) \\
+v_{f\left(  m\right)  }\right)  \\
 &  \ \ \ \ \ \ \ \ \ \ +\sum_{\substack{f:\left[  m\right]  \rightarrow\left[
 n\right]  ;\\\text{not }f\left(  \left[  m\right]  \right)  \subseteq
 I}}\underbrace{\left[  f\left(  \left[  m\right]  \right)  \subseteq I\right]
 }_{\substack{=0\\\text{(since we don't have }f\left(  \left[  m\right]
 \right)  \subseteq I\text{)}}}\left(  v_{f\left(  1\right)  }v_{f\left(
-2\right)  }\cdots v_{f\left(  m\right)  }\right) \\
+2\right)  }\cdots v_{f\left(  m\right)  }\right)  \\
 &  =\sum_{\substack{f:\left[  m\right]  \rightarrow\left[  n\right]
 ;\\f\left(  \left[  m\right]  \right)  \subseteq I}}v_{f\left(  1\right)
 }v_{f\left(  2\right)  }\cdots v_{f\left(  m\right)  }+\underbrace{\sum
@@ -72965,7 +73035,7 @@ This proves Lemma \ref{lem.sol.exeadd.noncomm.polarization.1}.
 \begin{verlong}
 Now, (\ref{pf.lem.sol.exeadd.noncomm.polarization.1.4}) becomes%
 \begin{align*}
-\left(  \sum_{i\in I}v_{i}\right)  ^{m}  &  =\sum_{f:\left[  m\right]
+\left(  \sum_{i\in I}v_{i}\right)  ^{m} &  =\sum_{f:\left[  m\right]
 \rightarrow\left[  n\right]  }\underbrace{\prod_{i=1}^{m}\left(  \left[
 f\left(  i\right)  \in I\right]  v_{f\left(  i\right)  }\right)
 }_{\substack{=\left[  f\left(  \left[  m\right]  \right)  \subseteq I\right]
@@ -72974,19 +73044,19 @@ m\right)  }\right)  \\\text{(by
 (\ref{pf.lem.sol.exeadd.noncomm.polarization.1.8}))}}}\\
 &  =\sum_{f:\left[  m\right]  \rightarrow\left[  n\right]  }\left[  f\left(
 \left[  m\right]  \right)  \subseteq I\right]  \left(  v_{f\left(  1\right)
-}v_{f\left(  2\right)  }\cdots v_{f\left(  m\right)  }\right) \\
+}v_{f\left(  2\right)  }\cdots v_{f\left(  m\right)  }\right)  \\
 &  =\sum_{\substack{f:\left[  m\right]  \rightarrow\left[  n\right]
 ;\\f\left(  \left[  m\right]  \right)  \subseteq I}}\underbrace{\left[
 f\left(  \left[  m\right]  \right)  \subseteq I\right]  }%
 _{\substack{=1\\\text{(since }f\left(  \left[  m\right]  \right)  \subseteq
 I\text{)}}}\left(  v_{f\left(  1\right)  }v_{f\left(  2\right)  }\cdots
-v_{f\left(  m\right)  }\right) \\
+v_{f\left(  m\right)  }\right)  \\
 &  \ \ \ \ \ \ \ \ \ \ +\sum_{\substack{f:\left[  m\right]  \rightarrow\left[
 n\right]  ;\\\text{not }f\left(  \left[  m\right]  \right)  \subseteq
 I}}\underbrace{\left[  f\left(  \left[  m\right]  \right)  \subseteq I\right]
 }_{\substack{=0\\\text{(since we don't have }f\left(  \left[  m\right]
 \right)  \subseteq I\text{)}}}\left(  v_{f\left(  1\right)  }v_{f\left(
-2\right)  }\cdots v_{f\left(  m\right)  }\right) \\
+2\right)  }\cdots v_{f\left(  m\right)  }\right)  \\
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
@@ -72995,7 +73065,7 @@ satisfies either }f\left(  \left[  m\right]  \right)  \subseteq I\\
 \text{or }\left(  \text{not }f\left(  \left[  m\right]  \right)  \subseteq
 I\right)  \text{ (but not both)}%
 \end{array}
-\right) \\
+\right)  \\
 &  =\sum_{\substack{f:\left[  m\right]  \rightarrow\left[  n\right]
 ;\\f\left(  \left[  m\right]  \right)  \subseteq I}}v_{f\left(  1\right)
 }v_{f\left(  2\right)  }\cdots v_{f\left(  m\right)  }+\underbrace{\sum
@@ -73919,7 +73989,7 @@ n\right]  $ and $V=\left[  n\right]  $) shows that if $f:\left[  n\right]
 equivalence:%
 \begin{equation}
 \left(  f\text{ is surjective}\right)  \ \Longleftrightarrow\ \left(  f\text{
-is bijective}\right)  .\label{sol.exeadd.noncomm.polarization.c.3}%
+is bijective}\right)  . \label{sol.exeadd.noncomm.polarization.c.3}%
 \end{equation}
 
 
@@ -74047,9 +74117,1006 @@ v_{n}=n!\cdot v_{1}v_{2}\cdots v_{n}.
 This solves Additional exercise \ref{exeadd.noncomm.polarization} \textbf{(d)}.
 \end{proof}
 
+\subsection{Solution to Additional exercise \ref{exeadd.det.sumdets1}}
+
+In this section, we shall use the same notations that we have introduced in
+Section \ref{sect.sol.exeadd.noncomm.polarization}.
+
+We start by proving a simple restatement of Lemma \ref{lem.noncomm.prodrule2}:
+
+\begin{lemma}
+\label{lem.noncomm.prodrule2b}Let $\mathbb{L}$ be a noncommutative ring.
+
+Let $n\in\mathbb{N}$. Let $I$ be a finite set. For every $i\in I$ and every
+$j\in\left[  n\right]  $, we let $b_{i,j}$ be an element of $\mathbb{L}$.
+Then,%
+\[
+\prod_{j=1}^{n}\sum_{i\in I}b_{i,j}=\sum_{f:\left[  n\right]  \rightarrow
+I}\prod_{j=1}^{n}b_{f\left(  j\right)  ,j}.
+\]
+
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.noncomm.prodrule2b}.]Define an $m\in\mathbb{N}$ by
+$m=\left\vert I\right\vert $. (This is well-defined, since $I$ is a finite
+set.) Now, $\left\vert \left[  m\right]  \right\vert =m=\left\vert
+I\right\vert $. Hence, there exists a bijection $\varphi:\left[  m\right]
+\rightarrow I$. Consider such a $\varphi$.
+
+Lemma \ref{lem.noncomm.prodrule2} (applied to $\mathbb{K}=\mathbb{L}$ and
+$p_{i,k}=b_{\varphi\left(  k\right)  ,i}$) yields%
+\begin{equation}
+\prod_{i=1}^{n}\sum_{k=1}^{m}b_{\varphi\left(  k\right)  ,i}=\sum
+_{\kappa:\left[  n\right]  \rightarrow\left[  m\right]  }\prod_{i=1}%
+^{n}b_{\varphi\left(  \kappa\left(  i\right)  \right)  ,i}.
+\label{pf.lem.noncomm.prodrule2b.0}%
+\end{equation}
+
+
+Every $i\in\left\{  1,2,\ldots,n\right\}  $ satisfies
+\begin{equation}
+\sum_{k=1}^{m}b_{\varphi\left(  k\right)  ,i}=\sum_{t\in I}b_{t,i}
+\label{pf.lem.noncomm.prodrule2b.1}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.noncomm.prodrule2b.1}):} Let
+$i\in\left\{  1,2,\ldots,n\right\}  $. Recall that $\varphi:\left[  m\right]
+\rightarrow I$ is a bijection. Hence, we can substitute $\varphi\left(
+k\right)  $ for $t$ in the sum $\sum_{t\in I}b_{t,i}$. We thus obtain%
+\[
+\sum_{t\in I}b_{t,i}=\underbrace{\sum_{k\in\left[  m\right]  }}%
+_{\substack{=\sum_{k\in\left\{  1,2,\ldots,m\right\}  }\\\text{(since }\left[
+m\right]  =\left\{  1,2,\ldots,m\right\}  \text{)}}}b_{\varphi\left(
+k\right)  ,i}=\underbrace{\sum_{k\in\left\{  1,2,\ldots,m\right\}  }}%
+_{=\sum_{k=1}^{m}}b_{\varphi\left(  k\right)  ,i}=\sum_{k=1}^{m}%
+b_{\varphi\left(  k\right)  ,i}.
+\]
+This proves (\ref{pf.lem.noncomm.prodrule2b.1}).}.
+
+Hence,%
+\begin{align}
+\prod_{i=1}^{n}\underbrace{\sum_{k=1}^{m}b_{\varphi\left(  k\right)  ,i}%
+}_{\substack{=\sum_{t\in I}b_{t,i}\\\text{(by
+(\ref{pf.lem.noncomm.prodrule2b.1}))}}}  &  =\prod_{i=1}^{n}\sum_{t\in
+I}b_{t,i}=\prod_{j=1}^{n}\underbrace{\sum_{t\in I}b_{t,j}}_{\substack{=\sum
+_{i\in I}b_{i,j}\\\text{(here, we have renamed the}\\\text{summation index
+}t\text{ as }i\text{)}}}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have renamed the index }i\text{ as }j\\
+\text{in the product}%
+\end{array}
+\right) \nonumber\\
+&  =\prod_{j=1}^{n}\sum_{i\in I}b_{i,j}. \label{pf.lem.noncomm.prodrule2b.L}%
+\end{align}
+
+
+Comparing this with (\ref{pf.lem.noncomm.prodrule2b.0}), we find%
+\begin{equation}
+\prod_{j=1}^{n}\sum_{i\in I}b_{i,j}=\sum_{\kappa:\left[  n\right]
+\rightarrow\left[  m\right]  }\prod_{i=1}^{n}b_{\varphi\left(  \kappa\left(
+i\right)  \right)  ,i}. \label{pf.lem.noncomm.prodrule2b.4}%
+\end{equation}
+
+
+The map $\varphi$ is a bijection, and thus is invertible. Hence, its inverse
+$\varphi^{-1}:I\rightarrow\left[  m\right]  $ exists. Let $A$ be the map%
+\[
+\left[  m\right]  ^{\left[  n\right]  }\rightarrow I^{\left[  n\right]
+},\ \ \ \ \ \ \ \ \ \ \kappa\mapsto\varphi\circ\kappa.
+\]
+Let $B$ be the map%
+\[
+I^{\left[  n\right]  }\rightarrow\left[  m\right]  ^{\left[  n\right]
+},\ \ \ \ \ \ \ \ \ \ f\mapsto\varphi^{-1}\circ f.
+\]
+Then, $A\circ B=\operatorname*{id}$\ \ \ \ \footnote{\textit{Proof.} Let $f\in
+I^{\left[  n\right]  }$ be arbitrary. The definition of $B$ yields $B\left(
+f\right)  =\varphi^{-1}\circ f$. The definition of $A$ yields%
+\[
+A\left(  B\left(  f\right)  \right)  =\varphi\circ\underbrace{\left(  B\left(
+f\right)  \right)  }_{=\varphi^{-1}\circ f}=\underbrace{\varphi\circ
+\varphi^{-1}}_{=\operatorname*{id}}\circ f=f=\operatorname*{id}\left(
+f\right)  .
+\]
+Thus, $\left(  A\circ B\right)  \left(  f\right)  =A\left(  B\left(  f\right)
+\right)  =\operatorname*{id}\left(  f\right)  $.
+\par
+Now, forget that we fixed $f$. We thus have shown that $\left(  A\circ
+B\right)  \left(  f\right)  =\operatorname*{id}\left(  f\right)  $ for each
+$f\in I^{\left[  n\right]  }$. In other words, $A\circ B=\operatorname*{id}$.}
+and $B\circ A=\operatorname*{id}$\ \ \ \ \footnote{\textit{Proof.} Let
+$\kappa\in\left[  m\right]  ^{\left[  n\right]  }$ be arbitrary. The
+definition of $A$ yields $A\left(  \kappa\right)  =\varphi\circ\kappa$. The
+definition of $B$ yields%
+\[
+B\left(  A\left(  \kappa\right)  \right)  =\varphi^{-1}\circ
+\underbrace{\left(  A\left(  \kappa\right)  \right)  }_{=\varphi\circ\kappa
+}=\underbrace{\varphi^{-1}\circ\varphi}_{=\operatorname*{id}}\circ
+\kappa=\kappa=\operatorname*{id}\left(  \kappa\right)  .
+\]
+Thus, $\left(  B\circ A\right)  \left(  \kappa\right)  =B\left(  A\left(
+\kappa\right)  \right)  =\operatorname*{id}\left(  \kappa\right)  $.
+\par
+Now, forget that we fixed $\kappa$. We thus have shown that $\left(  B\circ
+A\right)  \left(  \kappa\right)  =\operatorname*{id}\left(  \kappa\right)  $
+for each $\kappa\in\left[  m\right]  ^{\left[  n\right]  }$. In other words,
+$B\circ A=\operatorname*{id}$.}. Hence, the maps $A$ and $B$ are mutually
+inverse. Thus, the map $A$ is invertible, and thus a bijection. In other
+words, the map
+\[
+\left[  m\right]  ^{\left[  n\right]  }\rightarrow I^{\left[  n\right]
+},\ \ \ \ \ \ \ \ \ \ \kappa\mapsto\varphi\circ\kappa
+\]
+is a bijection\footnote{since the map%
+\[
+\left[  m\right]  ^{\left[  n\right]  }\rightarrow I^{\left[  n\right]
+},\ \ \ \ \ \ \ \ \ \ \kappa\mapsto\varphi\circ\kappa
+\]
+is precisely the map $A$}.
+
+Therefore, we can substitute $\varphi\circ\kappa$ for $f$ in the sum
+$\sum_{f\in I^{\left[  n\right]  }}\prod_{j=1}^{n}b_{f\left(  j\right)  ,j}$.
+We thus obtain%
+\begin{align*}
+\sum_{f\in I^{\left[  n\right]  }}\prod_{j=1}^{n}b_{f\left(  j\right)  ,j}  &
+=\underbrace{\sum_{\kappa\in\left[  m\right]  ^{\left[  n\right]  }}}%
+_{=\sum_{\kappa:\left[  n\right]  \rightarrow\left[  m\right]  }}\prod
+_{j=1}^{n}\underbrace{b_{\left(  \varphi\circ\kappa\right)  \left(  j\right)
+,j}}_{\substack{=b_{\varphi\left(  \kappa\left(  j\right)  \right)
+,j}\\\text{(since }\left(  \varphi\circ\kappa\right)  \left(  j\right)
+=\varphi\left(  \kappa\left(  j\right)  \right)  \text{)}}}=\sum
+_{\kappa:\left[  n\right]  \rightarrow\left[  m\right]  }\underbrace{\prod
+_{j=1}^{n}b_{\varphi\left(  \kappa\left(  j\right)  \right)  ,j}%
+}_{\substack{=\prod_{i=1}^{n}b_{\varphi\left(  \kappa\left(  i\right)
+\right)  ,i}\\\text{(here, we have renamed}\\\text{the index }j\text{ as
+}i\text{ in}\\\text{the product)}}}\\
+&  =\sum_{\kappa:\left[  n\right]  \rightarrow\left[  m\right]  }\prod
+_{i=1}^{n}b_{\varphi\left(  \kappa\left(  i\right)  \right)  ,i}.
+\end{align*}
+Comparing this with (\ref{pf.lem.noncomm.prodrule2b.4}), we obtain%
+\[
+\prod_{j=1}^{n}\sum_{i\in I}b_{i,j}=\underbrace{\sum_{f\in I^{\left[
+n\right]  }}}_{=\sum_{f:\left[  n\right]  \rightarrow I}}\prod_{j=1}%
+^{n}b_{f\left(  j\right)  ,j}=\sum_{f:\left[  n\right]  \rightarrow I}%
+\prod_{j=1}^{n}b_{f\left(  j\right)  ,j}.
+\]
+This proves Lemma \ref{lem.noncomm.prodrule2b}.
+\end{proof}
+
+Next, we state an analogue of Lemma
+\ref{lem.sol.exeadd.noncomm.polarization.1}:
+
+\begin{lemma}
+\label{lem.sol.exeadd.det.sumdets1.1}Let $\mathbb{L}$ be a noncommutative
+ring. Let $G$ be a finite set. Let $n\in\mathbb{N}$.
+
+For each $i\in G$ and $j\in\left[  n\right]  $, let $b_{i,j}$ be an element of
+$\mathbb{L}$. Let $I$ be a subset of $G$. Then,%
+\[
+\prod_{j=1}^{n}\sum_{i\in I}b_{i,j}=\sum_{\substack{f:\left[  n\right]
+\rightarrow G;\\f\left(  \left[  n\right]  \right)  \subseteq I}}\prod
+_{j=1}^{n}b_{f\left(  j\right)  ,j}.
+\]
+
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exeadd.det.sumdets1.1}.]For each $j\in\left[
+n\right]  $, we have%
+\begin{align}
+&  \sum_{i\in G}\left[  i\in I\right]  b_{i,j}\nonumber\\
+&  =\underbrace{\sum_{\substack{i\in G;\\i\in I}}}_{\substack{=\sum_{i\in
+I}\\\text{(since }I\subseteq G\text{)}}}\underbrace{\left[  i\in I\right]
+}_{\substack{=1\\\text{(since }i\in I\text{ is true)}}}b_{i,j}+\sum
+_{\substack{i\in G;\\i\notin I}}\underbrace{\left[  i\in I\right]
+}_{\substack{=0\\\text{(since }i\in I\text{ is false}\\\text{(because }i\notin
+I\text{))}}}b_{i,j}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since each }i\in G\text{ satisfies either
+}i\in I\text{ or }i\notin I\text{ (but not both)}\right) \nonumber\\
+&  =\sum_{i\in I}1b_{i,j}+\underbrace{\sum_{\substack{i\in G;\\i\notin
+I}}0b_{i,j}}_{=0}=\sum_{i\in I}1b_{i,j}=\sum_{i\in I}b_{i,j}.
+\label{pf.lem.sol.exeadd.det.sumdets1.1.1}%
+\end{align}
+Hence,%
+\[
+\prod_{j=1}^{n}\underbrace{\sum_{i\in G}\left[  i\in I\right]  b_{i,j}%
+}_{\substack{=\sum_{i\in I}b_{i,j}\\\text{(by
+(\ref{pf.lem.sol.exeadd.det.sumdets1.1.1}))}}}=\prod_{j=1}^{n}\sum_{i\in
+I}b_{i,j}.
+\]
+Thus,%
+\begin{equation}
+\prod_{j=1}^{n}\sum_{i\in I}b_{i,j}=\prod_{j=1}^{n}\sum_{i\in G}\left[  i\in
+I\right]  b_{i,j}=\sum_{f:\left[  n\right]  \rightarrow G}\prod_{j=1}%
+^{n}\left(  \left[  f\left(  j\right)  \in I\right]  b_{f\left(  j\right)
+,j}\right)  \label{pf.lem.sol.exeadd.det.sumdets1.1.4}%
+\end{equation}
+(by Lemma \ref{lem.noncomm.prodrule2b} (applied to $G$ and $\left[  i\in
+I\right]  b_{i,j}$ instead of $I$ and $b_{i,j}$)).
+
+Now, fix any map $f:\left[  n\right]  \rightarrow G$. Then,%
+\begin{align}
+&  \prod_{j=1}^{n}\left(  \left[  f\left(  j\right)  \in I\right]  b_{f\left(
+j\right)  ,j}\right) \nonumber\\
+&  =\left(  \left[  f\left(  1\right)  \in I\right]  b_{f\left(  1\right)
+,1}\right)  \left(  \left[  f\left(  2\right)  \in I\right]  b_{f\left(
+2\right)  ,2}\right)  \cdots\left(  \left[  f\left(  n\right)  \in I\right]
+b_{f\left(  n\right)  ,n}\right)  . \label{pf.lem.sol.exeadd.det.sumdets1.1.6}%
+\end{align}
+The factors $\left[  f\left(  1\right)  \in I\right]  ,\left[  f\left(
+2\right)  \in I\right]  ,\ldots,\left[  f\left(  n\right)  \in I\right]  $ on
+the right hand side of this equality are integers, and therefore can be freely
+moved within the product (even though $\mathbb{L}$ is not necessarily
+commutative). In particular, we can move them to the front of the product.
+Thus, we find%
+\begin{align*}
+&  \left(  \left[  f\left(  1\right)  \in I\right]  b_{f\left(  1\right)
+,1}\right)  \left(  \left[  f\left(  2\right)  \in I\right]  b_{f\left(
+2\right)  ,2}\right)  \cdots\left(  \left[  f\left(  n\right)  \in I\right]
+b_{f\left(  n\right)  ,n}\right) \\
+&  =\underbrace{\left(  \left[  f\left(  1\right)  \in I\right]  \left[
+f\left(  2\right)  \in I\right]  \cdots\left[  f\left(  n\right)  \in
+I\right]  \right)  }_{=\prod_{i=1}^{n}\left[  f\left(  i\right)  \in I\right]
+}\left(  b_{f\left(  1\right)  ,1}b_{f\left(  2\right)  ,2}\cdots b_{f\left(
+n\right)  ,n}\right) \\
+&  =\left(  \prod_{i=1}^{n}\left[  f\left(  i\right)  \in I\right]  \right)
+\left(  b_{f\left(  1\right)  ,1}b_{f\left(  2\right)  ,2}\cdots b_{f\left(
+n\right)  ,n}\right)  .
+\end{align*}
+Hence, (\ref{pf.lem.sol.exeadd.det.sumdets1.1.6}) rewrites as%
+\begin{equation}
+\prod_{j=1}^{n}\left(  \left[  f\left(  j\right)  \in I\right]  b_{f\left(
+j\right)  ,j}\right)  =\left(  \prod_{i=1}^{n}\left[  f\left(  i\right)  \in
+I\right]  \right)  \left(  b_{f\left(  1\right)  ,1}b_{f\left(  2\right)
+,2}\cdots b_{f\left(  n\right)  ,n}\right)  .
+\label{pf.lem.sol.exeadd.det.sumdets1.1.6b}%
+\end{equation}
+
+
+But Lemma \ref{lem.sol.exeadd.noncomm.polarization.1.7} (applied to $n$
+instead of $m$) yields%
+\begin{equation}
+\prod_{i=1}^{n}\left[  f\left(  i\right)  \in I\right]  =\left[  f\left(
+\left[  n\right]  \right)  \subseteq I\right]  .
+\label{pf.lem.sol.exeadd.det.sumdets1.1.7n}%
+\end{equation}
+
+
+Hence, (\ref{pf.lem.sol.exeadd.det.sumdets1.1.6b}) becomes%
+\begin{align}
+\prod_{j=1}^{n}\left(  \left[  f\left(  j\right)  \in I\right]  b_{f\left(
+j\right)  ,j}\right)   &  =\underbrace{\left(  \prod_{i=1}^{n}\left[  f\left(
+i\right)  \in I\right]  \right)  }_{\substack{=\left[  f\left(  \left[
+n\right]  \right)  \subseteq I\right]  \\\text{(by
+(\ref{pf.lem.sol.exeadd.det.sumdets1.1.7n}))}}}\left(  b_{f\left(  1\right)
+,1}b_{f\left(  2\right)  ,2}\cdots b_{f\left(  n\right)  ,n}\right)
+\nonumber\\
+&  =\left[  f\left(  \left[  n\right]  \right)  \subseteq I\right]  \left(
+b_{f\left(  1\right)  ,1}b_{f\left(  2\right)  ,2}\cdots b_{f\left(  n\right)
+,n}\right)  . \label{pf.lem.sol.exeadd.det.sumdets1.1.8}%
+\end{align}
+
+
+Now, forget that we fixed $f$. We thus have proven
+(\ref{pf.lem.sol.exeadd.det.sumdets1.1.8}) for each map $f:\left[  n\right]
+\rightarrow G$.
+
+Now, (\ref{pf.lem.sol.exeadd.det.sumdets1.1.4}) becomes%
+\begin{align*}
+\prod_{j=1}^{n}\sum_{i\in I}b_{i,j} &  =\sum_{f:\left[  n\right]  \rightarrow
+G}\underbrace{\prod_{j=1}^{n}\left(  \left[  f\left(  j\right)  \in I\right]
+b_{f\left(  j\right)  ,j}\right)  }_{\substack{=\left[  f\left(  \left[
+n\right]  \right)  \subseteq I\right]  \left(  b_{f\left(  1\right)
+,1}b_{f\left(  2\right)  ,2}\cdots b_{f\left(  n\right)  ,n}\right)
+\\\text{(by (\ref{pf.lem.sol.exeadd.det.sumdets1.1.8}))}}}\\
+&  =\sum_{f:\left[  n\right]  \rightarrow G}\left[  f\left(  \left[  n\right]
+\right)  \subseteq I\right]  \left(  b_{f\left(  1\right)  ,1}b_{f\left(
+2\right)  ,2}\cdots b_{f\left(  n\right)  ,n}\right)  \\
+&  =\sum_{\substack{f:\left[  n\right]  \rightarrow G;\\f\left(  \left[
+n\right]  \right)  \subseteq I}}\underbrace{\left[  f\left(  \left[  n\right]
+\right)  \subseteq I\right]  }_{\substack{=1\\\text{(since }f\left(  \left[
+n\right]  \right)  \subseteq I\text{)}}}\left(  b_{f\left(  1\right)
+,1}b_{f\left(  2\right)  ,2}\cdots b_{f\left(  n\right)  ,n}\right)  \\
+&  \ \ \ \ \ \ \ \ \ \ +\sum_{\substack{f:\left[  n\right]  \rightarrow
+G;\\\text{not }f\left(  \left[  n\right]  \right)  \subseteq I}%
+}\underbrace{\left[  f\left(  \left[  n\right]  \right)  \subseteq I\right]
+}_{\substack{=0\\\text{(since we don't have }f\left(  \left[  n\right]
+\right)  \subseteq I\text{)}}}\left(  b_{f\left(  1\right)  ,1}b_{f\left(
+2\right)  ,2}\cdots b_{f\left(  n\right)  ,n}\right)  \\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since each map }f:\left[  n\right]  \rightarrow G\text{ satisfies either
+}f\left(  \left[  n\right]  \right)  \subseteq I\\
+\text{or }\left(  \text{not }f\left(  \left[  n\right]  \right)  \subseteq
+I\right)  \text{ (but not both)}%
+\end{array}
+\right)  \\
+&  =\sum_{\substack{f:\left[  n\right]  \rightarrow G;\\f\left(  \left[
+n\right]  \right)  \subseteq I}}b_{f\left(  1\right)  ,1}b_{f\left(  2\right)
+,2}\cdots b_{f\left(  n\right)  ,n}+\underbrace{\sum_{\substack{f:\left[
+n\right]  \rightarrow G;\\\text{not }f\left(  \left[  n\right]  \right)
+\subseteq I}}0\left(  b_{f\left(  1\right)  ,1}b_{f\left(  2\right)  ,2}\cdots
+b_{f\left(  n\right)  ,n}\right)  }_{=0}\\
+&  =\sum_{\substack{f:\left[  n\right]  \rightarrow G;\\f\left(  \left[
+n\right]  \right)  \subseteq I}}\underbrace{b_{f\left(  1\right)
+,1}b_{f\left(  2\right)  ,2}\cdots b_{f\left(  n\right)  ,n}}_{=\prod
+_{j=1}^{n}b_{f\left(  j\right)  ,j}}=\sum_{\substack{f:\left[  n\right]
+\rightarrow G;\\f\left(  \left[  n\right]  \right)  \subseteq I}}\prod
+_{j=1}^{n}b_{f\left(  j\right)  ,j}.
+\end{align*}
+This proves Lemma \ref{lem.sol.exeadd.det.sumdets1.1}.
+\end{proof}
+
+The next result we shall use can be viewed as a slight generalization of Lemma
+\ref{lem.sol.exeadd.noncomm.polarization.2}:
+
+\begin{lemma}
+\label{lem.sol.exeadd.det.sumdets1.2}Let $G$ be a finite set. Let $H$ and $T$
+be two subsets of $G$. Then,%
+\[
+\sum_{\substack{I\subseteq G;\\H\subseteq I;\\T\subseteq I}}\left(  -1\right)
+^{\left\vert I\right\vert }=\left(  -1\right)  ^{\left\vert G\right\vert
+}\left[  G\setminus H\subseteq T\right]  .
+\]
+
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exeadd.det.sumdets1.2}.]If $I$ is a subset of
+$G$, then the statement $\left(  H\subseteq I\text{ and }T\subseteq I\right)
+$ is equivalent to the statement $\left(  H\cup T\subseteq I\right)
+$\ \ \ \ \footnote{In fact, this equivalence is a basic fact of set theory,
+which holds for any set $I$.}. Hence, we have the following equality of
+summation signs:%
+\begin{equation}
+\sum_{\substack{I\subseteq G;\\H\subseteq I;\\T\subseteq I}}=\sum
+_{\substack{I\subseteq G;\\H\cup T\subseteq I}}.
+\label{pf.lem.sol.exeadd.det.sumdets1.2.sumeq}%
+\end{equation}
+
+
+Let $R=H\cup T$. Then, $R$ is a subset of $G$ (since $H$ and $T$ are subsets
+of $G$). Moreover, the equality (\ref{pf.lem.sol.exeadd.det.sumdets1.2.sumeq})
+becomes%
+\begin{equation}
+\sum_{\substack{I\subseteq G;\\H\subseteq I;\\T\subseteq I}}=\sum
+_{\substack{I\subseteq G;\\H\cup T\subseteq I}}=\sum_{\substack{I\subseteq
+G;\\R\subseteq I}} \label{pf.lem.sol.exeadd.det.sumdets1.2.sumeq2}%
+\end{equation}
+(since $H\cup T=R$).
+
+We are in one of the following two cases:
+
+\textit{Case 1:} We have $G\setminus H\not \subseteq T$.
+
+\textit{Case 2:} We have $G\setminus H\subseteq T$.
+
+Let us first consider Case 1. In this case, we have $G\setminus
+H\not \subseteq T$. Hence, there exists some $g\in G\setminus H$ such that
+$g\notin T$. Consider this $g$.
+
+We have $g\in G\setminus H$. In other words, $g\in G$ and $g\notin H$. We have
+$g\notin H\cup T$ (since $g\notin H$ and $g\notin T$). In other words,
+$g\notin R$ (since $R=H\cup T$). Also, $\left\{  g\right\}  $ is a subset of
+$G$ (since $g\in G$).
+
+Let $\mathcal{P}\left(  G\right)  $ be the set of all subsets of $G$. Define
+two subsets $A$ and $B$ of $\mathcal{P}\left(  G\right)  $ by%
+\begin{align*}
+A  &  =\left\{  I\in\mathcal{P}\left(  G\right)  \ \mid\ R\subseteq I\text{
+and }g\in I\right\}  \ \ \ \ \ \ \ \ \ \ \text{and}\\
+B  &  =\left\{  I\in\mathcal{P}\left(  G\right)  \ \mid\ R\subseteq I\text{
+and }g\notin I\right\}  .
+\end{align*}
+
+
+For each $J\in A$, we have $J\setminus\left\{  g\right\}  \in B$%
+\ \ \ \ \footnote{\textit{Proof.} Let $J\in A$. Thus, $J\in A=\left\{
+I\in\mathcal{P}\left(  G\right)  \ \mid\ R\subseteq I\text{ and }g\in
+I\right\}  $. In other words, $J$ is an $I\in\mathcal{P}\left(  G\right)  $
+satisfying $R\subseteq I$ and $g\in I$. In other words, $J$ is an element of
+$\mathcal{P}\left(  G\right)  $ and satisfies $R\subseteq J$ and $g\in J$.
+Notice that $J$ is an element of $\mathcal{P}\left(  G\right)  $; in other
+words, $J$ is a subset of $G$ (since $\mathcal{P}\left(  G\right)  $ is the
+set of all subsets of $G$). Hence, $J\setminus\left\{  g\right\}  $ is a
+subset of $G$ (since $J\setminus\left\{  g\right\}  $ is a subset of $J$). In
+other words, $J\setminus\left\{  g\right\}  $ is an element of $\mathcal{P}%
+\left(  G\right)  $ (since $\mathcal{P}\left(  G\right)  $ is the set of all
+subsets of $G$). Also, $R\setminus\left\{  g\right\}  =R$ (since $g\notin R$),
+so that $R=\underbrace{R}_{\subseteq J}\setminus\left\{  g\right\}  \subseteq
+J\setminus\left\{  g\right\}  $. Finally, $g\notin J\setminus\left\{
+g\right\}  $ (since $g\in\left\{  g\right\}  $). Hence, $J\setminus\left\{
+g\right\}  $ is an element of $\mathcal{P}\left(  G\right)  $ and satisfies
+$R\subseteq J\setminus\left\{  g\right\}  $ and $g\notin J\setminus\left\{
+g\right\}  $. In other words, $J\setminus\left\{  g\right\}  $ is an
+$I\in\mathcal{P}\left(  G\right)  $ satisfying $R\subseteq I$ and $g\notin I$.
+In other words, $J\setminus\left\{  g\right\}  \in\left\{  I\in\mathcal{P}%
+\left(  G\right)  \ \mid\ R\subseteq I\text{ and }g\notin I\right\}  $. In
+view of $B=\left\{  I\in\mathcal{P}\left(  G\right)  \ \mid\ R\subseteq
+I\text{ and }g\notin I\right\}  $, this rewrites as $J\setminus\left\{
+g\right\}  \in B$. Qed.}. Hence, we can define a map $\alpha:A\rightarrow B$
+by%
+\[
+\left(  \alpha\left(  J\right)  =J\setminus\left\{  g\right\}
+\ \ \ \ \ \ \ \ \ \ \text{for each }J\in A\right)  .
+\]
+Consider this $\alpha$.
+
+For each $J\in B$, we have $J\cup\left\{  g\right\}  \in A$%
+\ \ \ \ \footnote{\textit{Proof.} Let $J\in B$. Thus, $J\in B=\left\{
+I\in\mathcal{P}\left(  G\right)  \ \mid\ R\subseteq I\text{ and }g\notin
+I\right\}  $. In other words, $J$ is an $I\in\mathcal{P}\left(  G\right)  $
+satisfying $R\subseteq I$ and $g\notin I$. In other words, $J$ is an element
+of $\mathcal{P}\left(  G\right)  $ and satisfies $R\subseteq J$ and $g\notin
+J$. Notice that $J$ is an element of $\mathcal{P}\left(  G\right)  $; in other
+words, $J$ is a subset of $G$ (since $\mathcal{P}\left(  G\right)  $ is the
+set of all subsets of $G$). Hence, $J\cup\left\{  g\right\}  $ is a subset of
+$G$ (since $J$ and $\left\{  g\right\}  $ are subsets of $G$). In other words,
+$J\cup\left\{  g\right\}  $ is an element of $\mathcal{P}\left(  G\right)  $
+(since $\mathcal{P}\left(  G\right)  $ is the set of all subsets of $G$).
+Also, $R\subseteq J\subseteq J\cup\left\{  g\right\}  $ and $g\in\left\{
+g\right\}  \subseteq J\cup\left\{  g\right\}  $. Hence, $J\cup\left\{
+g\right\}  $ is an element of $\mathcal{P}\left(  G\right)  $ and satisfies
+$R\subseteq J\cup\left\{  g\right\}  $ and $g\in J\cup\left\{  g\right\}  $.
+In other words, $J\cup\left\{  g\right\}  $ is an $I\in\mathcal{P}\left(
+G\right)  $ satisfying $R\subseteq I$ and $g\in I$. In other words,
+$J\cup\left\{  g\right\}  \in\left\{  I\in\mathcal{P}\left(  G\right)
+\ \mid\ R\subseteq I\text{ and }g\in I\right\}  $. In view of $A=\left\{
+I\in\mathcal{P}\left(  G\right)  \ \mid\ R\subseteq I\text{ and }g\in
+I\right\}  $, this rewrites as $J\cup\left\{  g\right\}  \in A$. Qed.}. Hence,
+we can define a map $\beta:B\rightarrow A$ by%
+\[
+\left(  \beta\left(  J\right)  =J\cup\left\{  g\right\}
+\ \ \ \ \ \ \ \ \ \ \text{for each }J\in B\right)  .
+\]
+Consider this $\beta$.
+
+We have
+\begin{equation}
+\left(  -1\right)  ^{\left\vert \alpha\left(  J\right)  \right\vert }=-\left(
+-1\right)  ^{\left\vert J\right\vert }
+\label{pf.lem.sol.exeadd.det.sumdets1.2.signrev}%
+\end{equation}
+for each $J\in A$\ \ \ \ \footnote{\textit{Proof of
+(\ref{pf.lem.sol.exeadd.det.sumdets1.2.signrev}):} Let $J\in A$. Thus, $J\in
+A=\left\{  I\in\mathcal{P}\left(  G\right)  \ \mid\ R\subseteq I\text{ and
+}g\in I\right\}  $. In other words, $J$ is an $I\in\mathcal{P}\left(
+G\right)  $ satisfying $R\subseteq I$ and $g\in I$. In other words, $J$ is an
+element of $\mathcal{P}\left(  G\right)  $ and satisfies $R\subseteq J$ and
+$g\in J$. The definition of $\alpha$ yields $\alpha\left(  J\right)
+=J\setminus\left\{  g\right\}  $. Hence, $\left\vert \alpha\left(  J\right)
+\right\vert =\left\vert J\setminus\left\{  g\right\}  \right\vert =\left\vert
+J\right\vert -1$ (since $g\in J$). Thus, $\left(  -1\right)  ^{\left\vert
+\alpha\left(  J\right)  \right\vert }=\left(  -1\right)  ^{\left\vert
+J\right\vert -1}=-\left(  -1\right)  ^{\left\vert J\right\vert }$. This proves
+(\ref{pf.lem.sol.exeadd.det.sumdets1.2.signrev}).}.
+
+Also, we have $\beta\circ\alpha=\operatorname*{id}$%
+\ \ \ \ \footnote{\textit{Proof.} Let $J\in A$. Thus, $J\in A=\left\{
+I\in\mathcal{P}\left(  G\right)  \ \mid\ R\subseteq I\text{ and }g\in
+I\right\}  $. In other words, $J$ is an $I\in\mathcal{P}\left(  G\right)  $
+satisfying $R\subseteq I$ and $g\in I$. In other words, $J$ is an element of
+$\mathcal{P}\left(  G\right)  $ and satisfies $R\subseteq J$ and $g\in J$. The
+definition of $\alpha$ yields $\alpha\left(  J\right)  =J\setminus\left\{
+g\right\}  $. Now,%
+\begin{align*}
+\left(  \beta\circ\alpha\right)  \left(  J\right)   &  =\beta\left(
+\alpha\left(  J\right)  \right)  =\underbrace{\alpha\left(  J\right)
+}_{=J\setminus\left\{  g\right\}  }\cup\left\{  g\right\}
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\beta\right)  \\
+&  =\left(  J\setminus\left\{  g\right\}  \right)  \cup\left\{  g\right\}
+=J\ \ \ \ \ \ \ \ \ \ \left(  \text{since }g\in J\right)  \\
+&  =\operatorname*{id}\left(  J\right)  .
+\end{align*}
+\par
+Now, forget that we fixed $J$. We thus have shown that $\left(  \beta
+\circ\alpha\right)  \left(  J\right)  =\operatorname*{id}\left(  J\right)  $
+for each $J\in A$. In other words, $\beta\circ\alpha=\operatorname*{id}$.} and
+$\alpha\circ\beta=\operatorname*{id}$\ \ \ \ \footnote{\textit{Proof.} Let
+$J\in B$. Thus, $J\in B=\left\{  I\in\mathcal{P}\left(  G\right)
+\ \mid\ R\subseteq I\text{ and }g\notin I\right\}  $. In other words, $J$ is
+an $I\in\mathcal{P}\left(  G\right)  $ satisfying $R\subseteq I$ and $g\notin
+I$. In other words, $J$ is an element of $\mathcal{P}\left(  G\right)  $ and
+satisfies $R\subseteq J$ and $g\notin J$. The definition of $\beta$ yields
+$\beta\left(  J\right)  =J\cup\left\{  g\right\}  $. Now,%
+\begin{align*}
+\left(  \alpha\circ\beta\right)  \left(  J\right)   &  =\alpha\left(
+\beta\left(  J\right)  \right)  =\underbrace{\beta\left(  J\right)  }%
+_{=J\cup\left\{  g\right\}  }\setminus\left\{  g\right\}
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\alpha\right)  \\
+&  =\left(  J\cup\left\{  g\right\}  \right)  \setminus\left\{  g\right\}
+=J\ \ \ \ \ \ \ \ \ \ \left(  \text{since }g\notin J\right)  \\
+&  =\operatorname*{id}\left(  J\right)  .
+\end{align*}
+\par
+Now, forget that we fixed $J$. We thus have shown that $\left(  \alpha
+\circ\beta\right)  \left(  J\right)  =\operatorname*{id}\left(  J\right)  $
+for each $J\in B$. In other words, $\alpha\circ\beta=\operatorname*{id}$.}.
+Combining these two equalities, we conclude that the maps $\alpha$ and $\beta$
+are mutually inverse. Hence, these maps are invertible, i.e., are bijections.
+Thus, in particular, $\alpha$ is a bijection. Hence, we can substitute
+$\alpha\left(  J\right)  $ for $I$ in the sum $\sum_{I\in B}\left(  -1\right)
+^{\left\vert I\right\vert }$. As a result, we find%
+\begin{align*}
+\sum_{I\in B}\left(  -1\right)  ^{\left\vert I\right\vert } &  =\sum_{J\in
+A}\underbrace{\left(  -1\right)  ^{\left\vert \alpha\left(  J\right)
+\right\vert }}_{\substack{=-\left(  -1\right)  ^{\left\vert J\right\vert
+}\\\text{(by (\ref{pf.lem.sol.exeadd.det.sumdets1.2.signrev}))}}}=\sum_{J\in
+A}\left(  -\left(  -1\right)  ^{\left\vert J\right\vert }\right)  =\sum_{I\in
+A}\left(  -\left(  -1\right)  ^{\left\vert I\right\vert }\right)  \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have renamed the summation index
+}J\text{ as }I\right)  \\
+&  =-\sum_{I\in A}\left(  -1\right)  ^{\left\vert I\right\vert }.
+\end{align*}
+In other words,%
+\begin{equation}
+\sum_{I\in A}\left(  -1\right)  ^{\left\vert I\right\vert }+\sum_{I\in
+B}\left(  -1\right)  ^{\left\vert I\right\vert }%
+=0.\label{pf.lem.sol.exeadd.det.sumdets1.2.sum+sum=0}%
+\end{equation}
+
+
+Now,%
+\begin{align}
+\underbrace{\sum_{\substack{I\subseteq G;\\H\subseteq I;\\T\subseteq I}%
+}}_{\substack{=\sum_{\substack{I\subseteq G;\\R\subseteq I}}\\\text{(by
+(\ref{pf.lem.sol.exeadd.det.sumdets1.2.sumeq2}))}}}\left(  -1\right)
+^{\left\vert I\right\vert }  &  =\underbrace{\sum_{\substack{I\subseteq
+G;\\R\subseteq I}}}_{\substack{=\sum_{\substack{I\in\mathcal{P}\left(
+G\right)  ;\\R\subseteq I}}\\\text{(since the subsets of }G\\\text{are
+precisely the elements of }\mathcal{P}\left(  G\right)  \text{)}}}\left(
+-1\right)  ^{\left\vert I\right\vert }=\sum_{\substack{I\in\mathcal{P}\left(
+G\right)  ;\\R\subseteq I}}\left(  -1\right)  ^{\left\vert I\right\vert
+}\nonumber\\
+&  =\underbrace{\sum_{\substack{I\in\mathcal{P}\left(  G\right)  ;\\R\subseteq
+I;\\g\in I}}}_{\substack{=\sum_{I\in A}\\\text{(since }A=\left\{
+I\in\mathcal{P}\left(  G\right)  \ \mid\ R\subseteq I\text{ and }g\in
+I\right\}  }}\left(  -1\right)  ^{\left\vert I\right\vert }+\underbrace{\sum
+_{\substack{I\in\mathcal{P}\left(  G\right)  ;\\R\subseteq I;\\g\notin I}%
+}}_{\substack{=\sum_{I\in B}\\\text{(since }B=\left\{  I\in\mathcal{P}\left(
+G\right)  \ \mid\ R\subseteq I\text{ and }g\notin I\right\}  }}\left(
+-1\right)  ^{\left\vert I\right\vert }\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since each }I\in\mathcal{P}\left(  G\right)  \text{ must satisfy}\\
+\text{either }g\in I\text{ or }g\notin I\text{ (but not both)}%
+\end{array}
+\right) \nonumber\\
+&  =\sum_{I\in A}\left(  -1\right)  ^{\left\vert I\right\vert }+\sum_{I\in
+B}\left(  -1\right)  ^{\left\vert I\right\vert }=0
+\label{pf.lem.sol.exeadd.det.sumdets1.2.6}%
+\end{align}
+(by (\ref{pf.lem.sol.exeadd.det.sumdets1.2.sum+sum=0})).
+
+On the other hand, $G\setminus H\not \subseteq T$. Hence, the statement
+$G\setminus H\subseteq T$ is false. Thus, $\left[  G\setminus H\subseteq
+T\right]  =0$, so that $\left(  -1\right)  ^{\left\vert G\right\vert
+}\underbrace{\left[  G\setminus H\subseteq T\right]  }_{=0}=0$. Comparing this
+with (\ref{pf.lem.sol.exeadd.det.sumdets1.2.6}), we obtain%
+\[
+\sum_{\substack{I\subseteq G;\\H\subseteq I;\\T\subseteq I}}\left(  -1\right)
+^{\left\vert I\right\vert }=\left(  -1\right)  ^{\left\vert G\right\vert
+}\left[  G\setminus H\subseteq T\right]  .
+\]
+Hence, Lemma \ref{lem.sol.exeadd.det.sumdets1.2} is proven in Case 1.
+
+Let us now consider Case 2. In this case, we have $G\setminus H\subseteq T$.
+Hence, $T\supseteq G\setminus H$. Now,%
+\[
+R=H\cup\underbrace{T}_{\supseteq G\setminus H}\supseteq H\cup\left(
+G\setminus H\right)  =G
+\]
+(since $H$ is a subset of $G$). Combining this with $R\subseteq G$, we obtain
+$R=G$.
+
+Now, the equality (\ref{pf.lem.sol.exeadd.det.sumdets1.2.sumeq2}) becomes%
+\begin{align*}
+\sum_{\substack{I\subseteq G;\\H\subseteq I;\\T\subseteq I}}  &
+=\sum_{\substack{I\subseteq G;\\R\subseteq I}}=\sum_{\substack{I\subseteq
+G;\\G\subseteq I}}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }R=G\right) \\
+&  =\sum_{\substack{I\subseteq G;\\I=G}}\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{because for a subset }I\text{ of }G\text{, the}\\
+\text{statement }\left(  G\subseteq I\right)  \text{ is equivalent to }\left(
+I=G\right)
+\end{array}
+\right)  .
+\end{align*}
+Hence,%
+\[
+\underbrace{\sum_{\substack{I\subseteq G;\\H\subseteq I;\\T\subseteq I}%
+}}_{=\sum_{\substack{I\subseteq G;\\I=G}}}\left(  -1\right)  ^{\left\vert
+I\right\vert }=\sum_{\substack{I\subseteq G;\\I=G}}\left(  -1\right)
+^{\left\vert I\right\vert }=\left(  -1\right)  ^{\left\vert G\right\vert
+}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }G\text{ is a subset of }G\right)  .
+\]
+Comparing this with $\left(  -1\right)  ^{\left\vert G\right\vert
+}\underbrace{\left[  G\setminus H\subseteq T\right]  }%
+_{\substack{=1\\\text{(since }G\setminus H\subseteq T\text{)}}}=\left(
+-1\right)  ^{\left\vert G\right\vert }$, we obtain%
+\[
+\sum_{\substack{I\subseteq G;\\H\subseteq I;\\T\subseteq I}}\left(  -1\right)
+^{\left\vert I\right\vert }=\left(  -1\right)  ^{\left\vert G\right\vert
+}\left[  G\setminus H\subseteq T\right]  .
+\]
+Hence, Lemma \ref{lem.sol.exeadd.det.sumdets1.2} is proven in Case 2.
+
+We have thus proven Lemma \ref{lem.sol.exeadd.det.sumdets1.2} in each of the
+two Cases 1 and 2. Since these two Cases cover all possibilities, we thus
+conclude that Lemma \ref{lem.sol.exeadd.det.sumdets1.2} always holds.
+\end{proof}
+
+\begin{proof}
+[Solution to Additional exercise \ref{exeadd.det.sumdets1}.]\textbf{(a)} We
+have%
+\begin{align*}
+&  \sum_{\substack{I\subseteq G;\\H\subseteq I}}\left(  -1\right)
+^{\left\vert I\right\vert }\underbrace{b_{I,1}b_{I,2}\cdots b_{I,n}}%
+_{=\prod_{j=1}^{n}b_{I,j}}\\
+&  =\sum_{\substack{I\subseteq G;\\H\subseteq I}}\left(  -1\right)
+^{\left\vert I\right\vert }\prod_{j=1}^{n}\underbrace{b_{I,j}}%
+_{\substack{=\sum_{i\in I}b_{i,j}\\\text{(by the definition of }%
+b_{I,j}\text{)}}}=\sum_{\substack{I\subseteq G;\\H\subseteq I}}\left(
+-1\right)  ^{\left\vert I\right\vert }\underbrace{\prod_{j=1}^{n}\sum_{i\in
+I}b_{i,j}}_{\substack{=\sum_{\substack{f:\left[  n\right]  \rightarrow
+G;\\f\left(  \left[  n\right]  \right)  \subseteq I}}\prod_{j=1}%
+^{n}b_{f\left(  j\right)  ,j}\\\text{(by Lemma
+\ref{lem.sol.exeadd.det.sumdets1.1})}}}\\
+&  =\sum_{\substack{I\subseteq G;\\H\subseteq I}}\left(  -1\right)
+^{\left\vert I\right\vert }\sum_{\substack{f:\left[  n\right]  \rightarrow
+G;\\f\left(  \left[  n\right]  \right)  \subseteq I}}\prod_{j=1}%
+^{n}b_{f\left(  j\right)  ,j}=\underbrace{\sum_{\substack{I\subseteq
+G;\\H\subseteq I}}\sum_{\substack{f:\left[  n\right]  \rightarrow G;\\f\left(
+\left[  n\right]  \right)  \subseteq I}}}_{=\sum_{f:\left[  n\right]
+\rightarrow G}\sum_{\substack{I\subseteq G;\\H\subseteq I;\\f\left(  \left[
+n\right]  \right)  \subseteq I}}}\left(  -1\right)  ^{\left\vert I\right\vert
+}\prod_{j=1}^{n}b_{f\left(  j\right)  ,j}\\
+&  =\sum_{f:\left[  n\right]  \rightarrow G}\sum_{\substack{I\subseteq
+G;\\H\subseteq I;\\f\left(  \left[  n\right]  \right)  \subseteq I}}\left(
+-1\right)  ^{\left\vert I\right\vert }\prod_{j=1}^{n}b_{f\left(  j\right)
+,j}=\sum_{f:\left[  n\right]  \rightarrow G}\underbrace{\left(  \sum
+_{\substack{I\subseteq G;\\H\subseteq I;\\f\left(  \left[  n\right]  \right)
+\subseteq I}}\left(  -1\right)  ^{\left\vert I\right\vert }\right)
+}_{\substack{=\left(  -1\right)  ^{\left\vert G\right\vert }\left[  G\setminus
+H\subseteq f\left(  \left[  n\right]  \right)  \right]  \\\text{(by Lemma
+\ref{lem.sol.exeadd.det.sumdets1.2}}\\\text{(applied to }T=f\left(  \left[
+n\right]  \right)  \text{))}}}\prod_{j=1}^{n}b_{f\left(  j\right)  ,j}\\
+&  =\sum_{f:\left[  n\right]  \rightarrow G}\left(  -1\right)  ^{\left\vert
+G\right\vert }\left[  G\setminus H\subseteq f\left(  \left[  n\right]
+\right)  \right]  \prod_{j=1}^{n}b_{f\left(  j\right)  ,j}\\
+&  =\sum_{\substack{f:\left[  n\right]  \rightarrow G;\\G\setminus H\subseteq
+f\left(  \left[  n\right]  \right)  }}\left(  -1\right)  ^{\left\vert
+G\right\vert }\underbrace{\left[  G\setminus H\subseteq f\left(  \left[
+n\right]  \right)  \right]  }_{\substack{=1\\\text{(since }G\setminus
+H\subseteq f\left(  \left[  n\right]  \right)  \text{)}}}\prod_{j=1}%
+^{n}b_{f\left(  j\right)  ,j}\\
+&  \ \ \ \ \ \ \ \ \ \ +\sum_{\substack{f:\left[  n\right]  \rightarrow
+G;\\\text{not }G\setminus H\subseteq f\left(  \left[  n\right]  \right)
+}}\left(  -1\right)  ^{\left\vert G\right\vert }\underbrace{\left[  G\setminus
+H\subseteq f\left(  \left[  n\right]  \right)  \right]  }%
+_{\substack{=0\\\text{(since we don't have }G\setminus H\subseteq f\left(
+\left[  n\right]  \right)  \text{)}}}\prod_{j=1}^{n}b_{f\left(  j\right)
+,j}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since each map }f:\left[  n\right]  \rightarrow G\text{ satisfies either
+}\left(  G\setminus H\subseteq f\left(  \left[  n\right]  \right)  \right) \\
+\text{or }\left(  \text{not }G\setminus H\subseteq f\left(  \left[  n\right]
+\right)  \right)  \text{ (but not both)}%
+\end{array}
+\right)
+\end{align*}%
+\begin{align*}
+&  =\sum_{\substack{f:\left[  n\right]  \rightarrow G;\\G\setminus H\subseteq
+f\left(  \left[  n\right]  \right)  }}\left(  -1\right)  ^{\left\vert
+G\right\vert }\prod_{j=1}^{n}b_{f\left(  j\right)  ,j}+\underbrace{\sum
+_{\substack{f:\left[  n\right]  \rightarrow G;\\\text{not }G\setminus
+H\subseteq f\left(  \left[  n\right]  \right)  }}\left(  -1\right)
+^{\left\vert G\right\vert }0\prod_{j=1}^{n}b_{f\left(  j\right)  ,j}}_{=0}\\
+&  =\sum_{\substack{f:\left[  n\right]  \rightarrow G;\\G\setminus H\subseteq
+f\left(  \left[  n\right]  \right)  }}\left(  -1\right)  ^{\left\vert
+G\right\vert }\prod_{j=1}^{n}b_{f\left(  j\right)  ,j}=\left(  -1\right)
+^{\left\vert G\right\vert }\sum_{\substack{f:\left[  n\right]  \rightarrow
+G;\\G\setminus H\subseteq f\left(  \left[  n\right]  \right)  }%
+}\underbrace{\prod_{j=1}^{n}b_{f\left(  j\right)  ,j}}_{=b_{f\left(  1\right)
+,1}b_{f\left(  2\right)  ,2}\cdots b_{f\left(  n\right)  ,n}}\\
+&  =\left(  -1\right)  ^{\left\vert G\right\vert }\sum_{\substack{f:\left[
+n\right]  \rightarrow G;\\G\setminus H\subseteq f\left(  \left[  n\right]
+\right)  }}b_{f\left(  1\right)  ,1}b_{f\left(  2\right)  ,2}\cdots
+b_{f\left(  n\right)  ,n}.
+\end{align*}
+This solves Additional exercise \ref{exeadd.det.sumdets1} \textbf{(a)}.
+
+\textbf{(b)} Assume that $n<\left\vert G\setminus H\right\vert $. Then, there
+exists no $f:\left[  n\right]  \rightarrow G$ satisfying $G\setminus
+H\subseteq f\left(  \left[  n\right]  \right)  $%
+\ \ \ \ \footnote{\textit{Proof.} Let $f:\left[  n\right]  \rightarrow G$ be
+such that $G\setminus H\subseteq f\left(  \left[  n\right]  \right)  $.\ We
+shall derive a contradiction.
+\par
+Clearly, $\left[  n\right]  $ is a subset of the finite set $\left[  n\right]
+$. Thus, Lemma \ref{lem.sol.exeadd.noncomm.polarization.pigeon-inj}
+\textbf{(a)} (applied to $\left[  n\right]  $, $G$ and $\left[  n\right]  $
+instead of $U$, $V$ and $S$) yields $\left\vert f\left(  \left[  n\right]
+\right)  \right\vert \leq\left\vert \left[  n\right]  \right\vert =n$. But
+$G\setminus H\subseteq f\left(  \left[  n\right]  \right)  $; hence,
+$\left\vert G\setminus H\right\vert \leq\left\vert f\left(  \left[  n\right]
+\right)  \right\vert \leq n$. Now, $n<\left\vert G\setminus H\right\vert \leq
+n$. This is absurd. Hence, we have obtained a contradiction.
+\par
+Now, forget that we fixed $f$. We thus have found a contradiction for each
+$f:\left[  n\right]  \rightarrow G$ satisfying $G\setminus H\subseteq f\left(
+\left[  n\right]  \right)  $. Hence, there exists no $f:\left[  n\right]
+\rightarrow G$ satisfying $G\setminus H\subseteq f\left(  \left[  n\right]
+\right)  $.}. Hence, the sum
+\[
+\sum_{\substack{f:\left[  n\right]  \rightarrow G;\\G\setminus H\subseteq
+f\left(  \left[  n\right]  \right)  }}b_{f\left(  1\right)  ,1}b_{f\left(
+2\right)  ,2}\cdots b_{f\left(  n\right)  ,n}%
+\]
+is empty, and thus equals $0$. In other words,%
+\[
+\sum_{\substack{f:\left[  n\right]  \rightarrow G;\\G\setminus H\subseteq
+f\left(  \left[  n\right]  \right)  }}b_{f\left(  1\right)  ,1}b_{f\left(
+2\right)  ,2}\cdots b_{f\left(  n\right)  ,n}=0.
+\]
+Now, Additional exercise \ref{exeadd.det.sumdets1} \textbf{(a)} yields%
+\[
+\sum_{\substack{I\subseteq G;\\H\subseteq I}}\left(  -1\right)  ^{\left\vert
+I\right\vert }b_{I,1}b_{I,2}\cdots b_{I,n}=\left(  -1\right)  ^{\left\vert
+G\right\vert }\underbrace{\sum_{\substack{f:\left[  n\right]  \rightarrow
+G;\\G\setminus H\subseteq f\left(  \left[  n\right]  \right)  }}b_{f\left(
+1\right)  ,1}b_{f\left(  2\right)  ,2}\cdots b_{f\left(  n\right)  ,n}}%
+_{=0}=0.
+\]
+This solves Additional exercise \ref{exeadd.det.sumdets1} \textbf{(b)}.
+
+\textbf{(c)} Assume that $n=\left\vert G\right\vert $. For any map $f:\left[
+n\right]  \rightarrow G$, we have the following logical equivalence:%
+\[
+\left(  G\setminus\varnothing\subseteq f\left(  \left[  n\right]  \right)
+\right)  \ \Longleftrightarrow\ \left(  f\text{ is bijective}\right)
+\]
+\footnote{\textit{Proof.} We know that $\left[  n\right]  $ and $G$ are two
+finite sets such that $\left\vert \left[  n\right]  \right\vert =\left\vert
+G\right\vert $ (since $\left\vert \left[  n\right]  \right\vert =n=\left\vert
+G\right\vert $). Thus, Lemma \ref{lem.sol.exeadd.noncomm.polarization.pigeon}
+(applied to $U=\left[  n\right]  $ and $V=G$) shows that we have the following
+logical equivalence:%
+\[
+\left(  f\text{ is surjective}\right)  \ \Longleftrightarrow\ \left(  f\text{
+is bijective}\right)  .
+\]
+\par
+But we have the following logical equivalence:%
+\begin{align*}
+\left(  \underbrace{G\setminus\varnothing}_{=G}\subseteq f\left(  \left[
+n\right]  \right)  \right)  \  &  \Longleftrightarrow\ \left(  G\subseteq
+f\left(  \left[  n\right]  \right)  \right)  \ \Longleftrightarrow\ \left(
+G=f\left(  \left[  n\right]  \right)  \right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }f\left(  \left[  n\right]
+\right)  \text{ is a subset of }G\right) \\
+&  \Longleftrightarrow\ \left(  f\text{ is surjective}\right)
+\ \Longleftrightarrow\ \left(  f\text{ is bijective}\right)  .
+\end{align*}
+Qed.}. Thus, we have the following equality of summation signs:%
+\begin{equation}
+\sum_{\substack{f:\left[  n\right]  \rightarrow G;\\G\setminus\varnothing
+\subseteq f\left(  \left[  n\right]  \right)  }}=\sum_{\substack{f:\left[
+n\right]  \rightarrow G;\\f\text{ is bijective}}}.
+\label{sol.exeadd.det.sumdets1.c.1}%
+\end{equation}
+
+
+Also, each subset $I$ of $G$ satisfies $\varnothing\subseteq I$. Hence, we
+have the following equality of summation signs:%
+\begin{equation}
+\sum_{\substack{I\subseteq G;\\\varnothing\subseteq I}}=\sum_{I\subseteq G}.
+\label{sol.exeadd.det.sumdets1.c.2}%
+\end{equation}
+
+
+Now, $\varnothing$ is a subset of $G$. Hence, Additional exercise
+\ref{exeadd.det.sumdets1} \textbf{(a)} (applied to $\varnothing$ instead of
+$H$) yields%
+\begin{align}
+\sum_{\substack{I\subseteq G;\\\varnothing\subseteq I}}\left(  -1\right)
+^{\left\vert I\right\vert }b_{I,1}b_{I,2}\cdots b_{I,n}  &  =\left(
+-1\right)  ^{\left\vert G\right\vert }\underbrace{\sum_{\substack{f:\left[
+n\right]  \rightarrow G;\\G\setminus\varnothing\subseteq f\left(  \left[
+n\right]  \right)  }}}_{\substack{=\sum_{\substack{f:\left[  n\right]
+\rightarrow G;\\f\text{ is bijective}}}\\\text{(by
+(\ref{sol.exeadd.det.sumdets1.c.1}))}}}b_{f\left(  1\right)  ,1}b_{f\left(
+2\right)  ,2}\cdots b_{f\left(  n\right)  ,n}\nonumber\\
+&  =\left(  -1\right)  ^{\left\vert G\right\vert }\sum_{\substack{f:\left[
+n\right]  \rightarrow G;\\f\text{ is bijective}}}b_{f\left(  1\right)
+,1}b_{f\left(  2\right)  ,2}\cdots b_{f\left(  n\right)  ,n}.
+\label{sol.exeadd.det.sumdets1.c.4}%
+\end{align}
+
+
+Now,%
+\begin{align*}
+&  \sum_{I\subseteq G}\underbrace{\left(  -1\right)  ^{\left\vert G\setminus
+I\right\vert }}_{\substack{=\left(  -1\right)  ^{\left\vert G\right\vert
+-\left\vert I\right\vert }\\\text{(since }\left\vert G\setminus I\right\vert
+=\left\vert G\right\vert -\left\vert I\right\vert \\\text{(because }I\subseteq
+G\text{))}}}b_{I,1}b_{I,2}\cdots b_{I,n}\\
+&  =\sum_{I\subseteq G}\underbrace{\left(  -1\right)  ^{\left\vert
+G\right\vert -\left\vert I\right\vert }}_{\substack{=\left(  -1\right)
+^{\left\vert G\right\vert +\left\vert I\right\vert }\\\text{(since }\left\vert
+G\right\vert -\left\vert I\right\vert \equiv\left\vert G\right\vert
++\left\vert I\right\vert \operatorname{mod}2\text{)}}}b_{I,1}b_{I,2}\cdots
+b_{I,n}=\underbrace{\sum_{I\subseteq G}}_{\substack{=\sum
+_{\substack{I\subseteq G;\\\varnothing\subseteq I}}\\\text{(by
+(\ref{sol.exeadd.det.sumdets1.c.2}))}}}\underbrace{\left(  -1\right)
+^{\left\vert G\right\vert +\left\vert I\right\vert }}_{=\left(  -1\right)
+^{\left\vert G\right\vert }\left(  -1\right)  ^{\left\vert I\right\vert }%
+}b_{I,1}b_{I,2}\cdots b_{I,n}\\
+&  =\sum_{\substack{I\subseteq G;\\\varnothing\subseteq I}}\left(  -1\right)
+^{\left\vert G\right\vert }\left(  -1\right)  ^{\left\vert I\right\vert
+}b_{I,1}b_{I,2}\cdots b_{I,n}=\left(  -1\right)  ^{\left\vert G\right\vert
+}\underbrace{\sum_{\substack{I\subseteq G;\\\varnothing\subseteq I}}\left(
+-1\right)  ^{\left\vert I\right\vert }b_{I,1}b_{I,2}\cdots b_{I,n}%
+}_{\substack{=\left(  -1\right)  ^{\left\vert G\right\vert }\sum
+_{\substack{f:\left[  n\right]  \rightarrow G;\\f\text{ is bijective}%
+}}b_{f\left(  1\right)  ,1}b_{f\left(  2\right)  ,2}\cdots b_{f\left(
+n\right)  ,n}\\\text{(by (\ref{sol.exeadd.det.sumdets1.c.4}))}}}\\
+&  =\underbrace{\left(  -1\right)  ^{\left\vert G\right\vert }\left(
+-1\right)  ^{\left\vert G\right\vert }}_{\substack{=\left(  \left(  -1\right)
+\left(  -1\right)  \right)  ^{\left\vert G\right\vert }=1^{\left\vert
+G\right\vert }\\\text{(since }\left(  -1\right)  \left(  -1\right)
+=1\text{)}}}\sum_{\substack{f:\left[  n\right]  \rightarrow G;\\f\text{ is
+bijective}}}b_{f\left(  1\right)  ,1}b_{f\left(  2\right)  ,2}\cdots
+b_{f\left(  n\right)  ,n}=\underbrace{1^{\left\vert G\right\vert }}_{=1}%
+\sum_{\substack{f:\left[  n\right]  \rightarrow G;\\f\text{ is bijective}%
+}}b_{f\left(  1\right)  ,1}b_{f\left(  2\right)  ,2}\cdots b_{f\left(
+n\right)  ,n}\\
+&  =\sum_{\substack{f:\left[  n\right]  \rightarrow G;\\f\text{ is bijective}%
+}}b_{f\left(  1\right)  ,1}b_{f\left(  2\right)  ,2}\cdots b_{f\left(
+n\right)  ,n}.
+\end{align*}
+This solves Additional exercise \ref{exeadd.det.sumdets1} \textbf{(c)}.
+\end{proof}
+
+\subsection{Solution to Additional exercise \ref{exeadd.det.sumdets2}}
+
+In this section, we shall use the same notations that we have introduced in
+Section \ref{sect.sol.exeadd.noncomm.polarization}.
+
+Let us begin by stating a simple corollary from Additional exercise
+\ref{exeadd.det.sumdets1} \textbf{(b)}:
+
+\begin{lemma}
+\label{lem.sol.exeadd.det.sumdets2.1}Let $G$ be a finite set. Let
+$n\in\mathbb{N}$ be such that $n<\left\vert G\right\vert $.
+
+For each $i\in G$ and $j\in\left[  n\right]  $, let $b_{i,j}$ be an element of
+$\mathbb{K}$. Then,
+\[
+\sum_{I\subseteq G}\left(  -1\right)  ^{\left\vert I\right\vert }\prod
+_{i=1}^{n}\sum_{g\in I}b_{g,i}=0.
+\]
+
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.sol.exeadd.det.sumdets2.1}.]Clearly, $\varnothing$ is
+a subset of $G$. Also, $G\setminus\varnothing=G$, so that $\left\vert
+G\setminus\varnothing\right\vert =\left\vert G\right\vert $. Thus,
+$n<\left\vert G\right\vert =\left\vert G\setminus\varnothing\right\vert $.
+
+For each $j\in\left[  n\right]  $ and each subset $I$ of $G$, we define an
+element $b_{I,j}\in\mathbb{K}$ by $b_{I,j}=\sum_{i\in I}b_{i,j}$. Thus, for
+each $j\in\left[  n\right]  $ and each subset $I$ of $G$, we have%
+\begin{equation}
+b_{I,j}=\sum_{i\in I}b_{i,j}=\sum_{g\in I}b_{g,j}
+\label{pf.lem.sol.exeadd.det.sumdets2.1.1}%
+\end{equation}
+(here, we have substituted $g$ for $i$ in the sum).
+
+Now, Additional exercise \ref{exeadd.det.sumdets1} \textbf{(b)} (applied to
+$\mathbb{K}$ and $\varnothing$ instead of $\mathbb{L}$ and $H$) yields%
+\begin{equation}
+\sum_{\substack{I\subseteq G;\\\varnothing\subseteq I}}\left(  -1\right)
+^{\left\vert I\right\vert }b_{I,1}b_{I,2}\cdots b_{I,n}=0.
+\label{pf.lem.sol.exeadd.det.sumdets2.1.2}%
+\end{equation}
+But each subset $I$ of $G$ satisfies $\varnothing\subseteq I$. Hence, we have
+the following equality of summation signs:%
+\[
+\sum_{\substack{I\subseteq G;\\\varnothing\subseteq I}}=\sum_{I\subseteq G}.
+\]
+Thus, the equality (\ref{pf.lem.sol.exeadd.det.sumdets2.1.2}) rewrites as
+follows:%
+\[
+\sum_{I\subseteq G}\left(  -1\right)  ^{\left\vert I\right\vert }%
+b_{I,1}b_{I,2}\cdots b_{I,n}=0.
+\]
+Hence,%
+\begin{align*}
+0  &  =\sum_{I\subseteq G}\left(  -1\right)  ^{\left\vert I\right\vert
+}\underbrace{b_{I,1}b_{I,2}\cdots b_{I,n}}_{=\prod_{i=1}^{n}b_{I,i}}%
+=\sum_{I\subseteq G}\left(  -1\right)  ^{\left\vert I\right\vert }\prod
+_{i=1}^{n}\underbrace{b_{I,i}}_{\substack{=\sum_{g\in I}b_{g,i}\\\text{(by
+(\ref{pf.lem.sol.exeadd.det.sumdets2.1.1}) (applied to }j=i\text{))}}}\\
+&  =\sum_{I\subseteq G}\left(  -1\right)  ^{\left\vert I\right\vert }%
+\prod_{i=1}^{n}\sum_{g\in I}b_{g,i}.
+\end{align*}
+This proves Lemma \ref{lem.sol.exeadd.det.sumdets2.1}.
+\end{proof}
+
+\begin{proof}
+[Solution to Additional exercise \ref{exeadd.det.sumdets2}.]For each $g\in G$,
+let us write the $n\times n$-matrix $A_{g}$ in the form
+\begin{equation}
+A_{g}=\left(  a_{g,i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}.
+\label{sol.exeadd.det.sumdets2.1}%
+\end{equation}
+
+
+Let $I$ be any subset of $G$. Then,%
+\[
+\sum_{g\in I}\underbrace{A_{g}}_{\substack{=\left(  a_{g,i,j}\right)  _{1\leq
+i\leq n,\ 1\leq j\leq n}\\\text{(by (\ref{sol.exeadd.det.sumdets2.1}))}}%
+}=\sum_{g\in I}\left(  a_{g,i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq
+n}=\left(  \sum_{g\in I}a_{g,i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}.
+\]
+Hence,%
+\[
+\det\left(  \sum_{g\in I}A_{g}\right)  =\sum_{\sigma\in S_{n}}\left(
+-1\right)  ^{\sigma}\prod_{i=1}^{n}\sum_{g\in I}a_{g,i,\sigma\left(  i\right)
+}%
+\]
+(by (\ref{eq.det.eq.2}) (applied to $\sum_{g\in I}A_{g}$ and $\sum_{g\in
+I}a_{g,i,j}$ instead of $A$ and $a_{i,j}$)). In view of%
+\[
+\sum_{g\in I}A_{g}=\sum_{i\in I}A_{i}\ \ \ \ \ \ \ \ \ \ \left(  \text{here,
+we have renamed the summation index }g\text{ as }i\right)  ,
+\]
+this rewrites as follows:%
+\begin{equation}
+\det\left(  \sum_{i\in I}A_{i}\right)  =\sum_{\sigma\in S_{n}}\left(
+-1\right)  ^{\sigma}\prod_{i=1}^{n}\sum_{g\in I}a_{g,i,\sigma\left(  i\right)
+}. \label{sol.exeadd.det.sumdets2.2}%
+\end{equation}
+
+
+Now, forget that we fixed $I$. We thus have proven
+(\ref{sol.exeadd.det.sumdets2.2}) for each subset $I$ of $G$. Now,%
+\begin{align*}
+&  \sum_{I\subseteq G}\left(  -1\right)  ^{\left\vert I\right\vert
+}\underbrace{\det\left(  \sum_{i\in I}A_{i}\right)  }_{\substack{=\sum
+_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\prod_{i=1}^{n}\sum_{g\in
+I}a_{g,i,\sigma\left(  i\right)  }\\\text{(by (\ref{sol.exeadd.det.sumdets2.2}%
+))}}}\\
+&  =\sum_{I\subseteq G}\left(  -1\right)  ^{\left\vert I\right\vert }%
+\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\prod_{i=1}^{n}\sum_{g\in
+I}a_{g,i,\sigma\left(  i\right)  }=\underbrace{\sum_{I\subseteq G}\sum
+_{\sigma\in S_{n}}}_{=\sum_{\sigma\in S_{n}}\sum_{I\subseteq G}}\left(
+-1\right)  ^{\left\vert I\right\vert }\left(  -1\right)  ^{\sigma}\prod
+_{i=1}^{n}\sum_{g\in I}a_{g,i,\sigma\left(  i\right)  }\\
+&  =\sum_{\sigma\in S_{n}}\sum_{I\subseteq G}\left(  -1\right)  ^{\left\vert
+I\right\vert }\left(  -1\right)  ^{\sigma}\prod_{i=1}^{n}\sum_{g\in
+I}a_{g,i,\sigma\left(  i\right)  }=\sum_{\sigma\in S_{n}}\left(  -1\right)
+^{\sigma}\underbrace{\sum_{I\subseteq G}\left(  -1\right)  ^{\left\vert
+I\right\vert }\prod_{i=1}^{n}\sum_{g\in I}a_{g,i,\sigma\left(  i\right)  }%
+}_{\substack{=0\\\text{(by Lemma \ref{lem.sol.exeadd.det.sumdets2.1}%
+}\\\text{(applied to }b_{i,j}=a_{i,j,\sigma\left(  j\right)  }\text{))}}}\\
+&  =\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}0=0.
+\end{align*}
+This solves Additional exercise \ref{exeadd.det.sumdets2}.
+\end{proof}
+
 \subsection{Solution to Additional exercise \ref{exeadd.powerdet.gen}}
 
-We shall next prove some identities in preparation for the solution to
+We shall first prove some identities in preparation for the solution to
 Additional exercise \ref{exeadd.powerdet.gen}.
 
 First, we introduce a notation: For every $n\in\mathbb{N}$, let $\left[
