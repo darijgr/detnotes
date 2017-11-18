@@ -2967,8 +2967,8 @@ $m$.
 Proposition \ref{prop.binom.subsets} is one of the most basic facts of
 \textit{enumerative combinatorics}: roughly speaking, the mathematics of
 counting (i.e., the study of the sizes of finite sets). We will encounter some
-further results from enumerative combinatorics below (e.g., Additional
-exercise \ref{exeadd.multichoose} and Exercise \ref{exe.ps2.2.3}); but we
+further results from enumerative combinatorics below (e.g.,
+Exercise \ref{exeadd.multichoose} and Exercise \ref{exe.ps2.2.3}); but we
 shall not go deep into this subject. More serious expositions of algebraic
 combinatorics include Loehr's textbook \cite{Loehr-BC}, Galvin's lecture notes
 \cite{Galvin}, Aigner's book \cite{Aigner07}, and Stanley's two-volume
@@ -4823,7 +4823,7 @@ rest of the notes, and they can be skipped at will\footnote{The same, of
 course, can be said for many of the standard exercises.}. I am not planning to
 provide solutions for them.
 
-\begin{addexercise}
+\begin{exercise}
 \label{exeadd.prop.vandermonde.consequences.f}Find a different proof of
 Proposition \ref{prop.vandermonde.consequences} \textbf{(f)} that uses a
 double-counting argument (i.e., counting some combinatorial objects in two
@@ -4834,17 +4834,17 @@ $\left\{  1,2,\ldots,n+1\right\}  $ have? Now, for a given $k\in\left\{
 0,1,\ldots,n\right\}  $, how many $\left(  x+y+1\right)  $-element subsets
 whose $\left(  x+1\right)  $-th smallest element is $k+1$ does the set
 $\left\{  1,2,\ldots,n+1\right\}  $ have?]
-\end{addexercise}
+\end{exercise}
 
-\begin{addexercise}
+\begin{exercise}
 \label{exeadd.multichoose}Let $n\in\mathbb{N}$ and $k\in\mathbb{N}$ be fixed.
 Show that the number of all $k$-tuples $\left(  a_{1},a_{2},\ldots
 ,a_{k}\right)  \in\mathbb{N}^{k}$ satisfying $a_{1}+a_{2}+\cdots+a_{k}=n$
 equals $\dbinom{n+k-1}{k}$.
-\end{addexercise}
+\end{exercise}
 
 \begin{remark}
-Additional exercise \ref{exeadd.multichoose} can be restated in terms of
+Exercise \ref{exeadd.multichoose} can be restated in terms of
 multisets. Namely, let $n\in\mathbb{N}$ and $k\in\mathbb{N}$ be fixed. Also,
 fix a $k$-element set $K$. Then, the number of $n$-element multisets whose
 elements all belong to $K$ is $\dbinom{n+k-1}{k}$. Indeed, we can WLOG assume
@@ -4869,7 +4869,7 @@ and
 \mathbb{N}^{k}$ satisfying $a_{1}+a_{2}+\cdots+a_{k}=n$.
 \end{itemize}
 
-As a consequence, Additional exercise \ref{exeadd.multichoose} shows that the
+As a consequence, Exercise \ref{exeadd.multichoose} shows that the
 number of the former multisets is $\dbinom{n+k-1}{k}$.
 
 Similarly, we can reinterpret the classical combinatorial interpretation of
@@ -4881,21 +4881,21 @@ $a_{1}+a_{2}+\cdots+a_{k}=n$ equals $\dbinom{k}{n}$.
 See \cite[\S 13]{Galvin} and \cite[\S 1.11]{Loehr-BC} for more about multisets.
 \end{remark}
 
-\begin{addexercise}
+\begin{exercise}
 \label{exeadd.multichoose-app}Let $n\in\mathbb{N}$ and $k\in\mathbb{N}$. Prove
 that%
 \[
 \sum_{u=0}^{k}\dbinom{n+u-1}{u}\dbinom{n}{k-2u}=\dbinom{n+k-1}{k}.
 \]
 Here, $\dbinom{a}{b}$ is defined to be $0$ when $b<0$.
-\end{addexercise}
+\end{exercise}
 
 \begin{noncompile}
 See \url{http://www.cip.ifi.lmu.de/~grinberg/QEDMO4P13.pdf} for a solution to
 the preceding exercise.
 \end{noncompile}
 
-\begin{addexercise}
+\begin{exercise}
 \label{exeadd.bininv}Let $N\in\mathbb{N}$. The \textit{binomial transform} of
 a finite sequence $\left(  f_{0},f_{1},\ldots,f_{N}\right)  \in\mathbb{Z}%
 ^{N+1}$ is defined to be the sequence $\left(  g_{0},g_{1},\ldots
@@ -4941,12 +4941,12 @@ map which sends every sequence $\left(  f_{0},f_{1},\ldots,f_{N}\right)
 
 Show that, furthermore, $B\circ W\circ B=W\circ B\circ W$ and $\left(  B\circ
 W\right)  ^{3}=\operatorname*{id}$.
-\end{addexercise}
+\end{exercise}
 
-(For a solution to Additional exercise \ref{exeadd.bininv}, see Section
+(For a solution to Exercise \ref{exeadd.bininv}, see Section
 \ref{sect.sol.exeadd.bininv} at the end of these notes.)
 
-\begin{addexercise}
+\begin{exercise}
 \label{exeadd.AoPS333199}For any $n\in\mathbb{N}$ and $m\in\mathbb{N}$, define
 a polynomial $Z_{m,n}\in\mathbb{Z}\left[  X\right]  $ by%
 \[
@@ -4954,7 +4954,7 @@ Z_{m,n}=\sum_{k=0}^{n}\left(  -1\right)  ^{k}\dbinom{n}{k}\left(
 X^{n-k}-1\right)  ^{m}.
 \]
 Show that $Z_{m,n}=Z_{n,m}$ for any $n\in\mathbb{N}$ and $m\in\mathbb{N}$.
-\end{addexercise}
+\end{exercise}
 
 \begin{noncompile}
 Two solutions to the preceding exercise are sketched in
@@ -4966,7 +4966,7 @@ generally, $Y_{m,n}=Y_{n,m}$, where $Y_{m,n}$ is the polynomial%
 
 \end{noncompile}
 
-\begin{addexercise}
+\begin{exercise}
 \label{exeadd.AoPS262752}Let $n\in\mathbb{N}$. Prove%
 \[
 \sum_{k=0}^{n}\left(  -1\right)  ^{k}\dbinom{X}{k}\dbinom{X}{n-k}=%
@@ -4982,7 +4982,7 @@ nonnegative integer $r$ (why?). Now that you have gotten rid of polynomials,
 introduce new polynomials. Namely, compute the coefficient of $X^{n}$ in
 $\left(  1+X\right)  ^{r}\left(  1-X\right)  ^{r}$. Compare with the
 coefficient of $X^{n}$ in $\left(  1-X^{2}\right)  ^{r}$.]
-\end{addexercise}
+\end{exercise}
 
 \begin{noncompile}
 Source: \cite[(5.55)]{GKP}; see also
@@ -4991,7 +4991,7 @@ Source: \cite[(5.55)]{GKP}; see also
 
 The following exercise is a variation on (\ref{eq.binom.int}):
 
-\begin{addexercise}
+\begin{exercise}
 \label{exeadd.choose.a/b}Let $a$ and $b$ be two integers such that $b\neq0$.
 Let $n\in\mathbb{N}$. Show that there exists some $N\in\mathbb{N}$ such that
 $b^{N}\dbinom{a/b}{n}\in\mathbb{Z}$.
@@ -5006,7 +5006,7 @@ that $b^{c-1}\equiv sb^{c}\operatorname{mod}c$\ \ \ \ \footnotemark. Apply
 this to $c=n!$ and conclude that $b^{n!}\left(  a/b-i\right)  \equiv
 b^{n!}\left(  sa-i\right)  \operatorname{mod}n!$ for every $i\in\mathbb{Z}$.
 Now use $\dbinom{sa}{n}\in\mathbb{Z}$.]
-\end{addexercise}
+\end{exercise}
 
 \footnotetext{To prove this, argue that at least two of $b^{0},b^{1}%
 ,\ldots,b^{c}$ are congruent modulo $c$.}
@@ -5638,14 +5638,14 @@ This section contains some further exercises. As the earlier \textquotedblleft
 additional exercises\textquotedblright, these will not be relied on in the
 rest of this text, and solutions will not be provided.
 
-\begin{addexercise}
+\begin{exercise}
 \label{exeadd.rec.qn-rn}Let $q$ and $r$ be two complex numbers. Prove that the
 sequence $\left(  q^{0}-r^{0},q^{1}-r^{1},q^{2}-r^{2},\ldots\right)  $ is
 $\left(  a,b\right)  $-recurrent for two appropriately chosen $a$ and $b$.
 Find these $a$ and $b$.
-\end{addexercise}
+\end{exercise}
 
-\begin{addexercise}
+\begin{exercise}
 \label{exeadd.fib.floor}Let $\varphi$ be the golden ratio (i.e., the real
 number $\dfrac{1+\sqrt{5}}{2}$). Let $\left(  f_{0},f_{1},f_{2},\ldots\right)
 $ be the Fibonacci sequence.
@@ -5664,12 +5664,12 @@ f_{n}=\operatorname*{round}\left(  \dfrac{1}{\sqrt{5}}\varphi^{n}\right)
 \]
 Here, if $x$ is a real number, then $\operatorname*{round}x$ denotes the
 integer closest to $x$ (where, in case of a tie, we take the higher of the two candidates\footnotemark).
-\end{addexercise}
+\end{exercise}
 
 \footnotetext{This does not really matter in our situation, because $\dfrac
 {1}{\sqrt{5}}\varphi^{n}$ will never be a half-integer.}
 
-\begin{addexercise}
+\begin{exercise}
 \label{exeadd.fib.zeckendorf}Let $\left(  f_{0},f_{1},f_{2},\ldots\right)  $
 be the Fibonacci sequence. A set $I$ of integers is said to be
 \textit{lacunar} if no two elements of $I$ are consecutive (i.e., there exists
@@ -5679,7 +5679,7 @@ such that $n=\sum_{s\in S}f_{s}$.
 
 (For example, if $n=17$, then $S=\left\{  2,4,7\right\}  $, because
 $17=1+3+13=f_{2}+f_{4}+f_{7}$.)
-\end{addexercise}
+\end{exercise}
 
 \begin{remark}
 The representation of $n$ in the form $n=\sum_{s\in S}f_{s}$ in Exercise
@@ -5694,7 +5694,7 @@ multiplication\textquotedblright\ operation on nonnegative integers
 \cite{Knuth-fib}.
 \end{remark}
 
-\begin{addexercise}
+\begin{exercise}
 \label{exeadd.fib.zeckendids}Let $\left(  f_{0},f_{1},f_{2},\ldots\right)  $
 be the Fibonacci sequence.
 
@@ -5709,7 +5709,7 @@ be the Fibonacci sequence.
 
 \textbf{(b)} Notice that the right hand sides of these identities have a
 specific form: they are sums of $f_{n+t}$ for $t$ ranging over a lacunar
-subset of $\mathbb{Z}$. (See Additional exercise \ref{exeadd.fib.zeckendorf}
+subset of $\mathbb{Z}$. (See Exercise \ref{exeadd.fib.zeckendorf}
 for the definition of \textquotedblleft lacunar\textquotedblright.) Try to
 find similar identities for $5f_{n}$ and $6f_{n}$.
 
@@ -5727,19 +5727,19 @@ such that
 (The condition $n\geq\max\left(  \left\{  -a_{t}\mid t\in T\right\}
 \cup\left\{  -s\mid s\in S\right\}  \right)  $ merely ensures that all the
 $f_{n+a_{t}}$ and $f_{n+s}$ are well-defined.)
-\end{addexercise}
+\end{exercise}
 
 \begin{remark}
-Additional exercise \ref{exeadd.fib.zeckendids} \textbf{(c)} is \cite[Theorem
+Exercise \ref{exeadd.fib.zeckendids} \textbf{(c)} is \cite[Theorem
 1]{Gri-zeck}. It is also a consequence of \cite[Lemma 6.2]{CamFon07} (applied
 to $k=2$). I'd be delighted to see other proofs!
 
-Similarly I am highly interested in analogues of Additional exercises
+Similarly I am highly interested in analogues of Exercises
 \ref{exeadd.fib.zeckendorf} and \ref{exeadd.fib.zeckendids} for other $\left(
 a,b\right)  $-recurrent sequences (e.g., Lucas numbers).
 \end{remark}
 
-\begin{addexercise}
+\begin{exercise}
 \label{exeadd.rec.addition}\textbf{(a)} Let $\left(  f_{0},f_{1},f_{2}%
 ,\ldots\right)  $ be the Fibonacci sequence. Prove that $f_{m+n}=f_{m}%
 f_{n+1}+f_{m-1}f_{n}$ for any positive integer $m$ and any $n\in\mathbb{N}$.
@@ -5750,9 +5750,9 @@ arbitrary $a$ and $b$.
 \textbf{(c)} Let $\left(  f_{0},f_{1},f_{2},\ldots\right)  $ be the Fibonacci
 sequence. Prove that $f_{m}\mid f_{mk}$ for any $m\in\mathbb{N}$ and
 $k\in\mathbb{N}$.
-\end{addexercise}
+\end{exercise}
 
-\begin{addexercise}
+\begin{exercise}
 \label{exeadd.rec.fibonomial}\textbf{(a)} Let $\left(  f_{0},f_{1}%
 ,f_{2},\ldots\right)  $ be the Fibonacci sequence. For every $n\in\mathbb{N}$
 and $k\in\mathbb{N}$ satisfying $0\leq k\leq n$, define a rational number
@@ -5772,7 +5772,7 @@ can to Fibonomial coefficients.
 
 \textbf{(c)} Generalize to $\left(  a,b\right)  $-recurrent sequences with
 arbitrary $a$ and $b$.
-\end{addexercise}
+\end{exercise}
 
 \section{\label{chp.perm}Permutations}
 
@@ -8410,7 +8410,7 @@ a haphazard selection of exercises, which are not relevant to the rest of
 these notes (thus can be skipped at will). I am not planning to provide
 solutions for all of them.
 
-\begin{addexercise}
+\begin{exercise}
 \label{exeadd.perm.order}Let $n\in\mathbb{N}$. Let $d=\operatorname{lcm}%
 \left(  1,2,\ldots,n\right)  $.
 
@@ -8418,9 +8418,9 @@ solutions for all of them.
 
 \textbf{(b)} Let $k$ be an integer such that every $\pi\in S_{n}$ satisfies
 $\pi^{k}=\operatorname*{id}$. Show that $d\mid k$.
-\end{addexercise}
+\end{exercise}
 
-\begin{addexercise}
+\begin{exercise}
 \label{exeadd.perm.sigmacrosstau}Let $n\in\mathbb{N}$ and $m\in\mathbb{N}$.
 Let $\sigma\in S_{n}$ and $\tau\in S_{m}$. We define a permutation
 $\sigma\times\tau$ of the set $\left\{  1,2,\ldots,n\right\}  \times\left\{
@@ -8444,9 +8444,9 @@ $\sigma\times\tau$ has a well-defined sign $\left(  -1\right)  ^{\sigma
 \times\tau}$. Prove that $\left(  -1\right)  ^{\sigma\times\tau}=\left(
 \left(  -1\right)  ^{\sigma}\right)  ^{m}\left(  \left(  -1\right)  ^{\tau
 }\right)  ^{n}$.
-\end{addexercise}
+\end{exercise}
 
-The next two additional exercises concern the inversions of a permutation.
+The next two exercises concern the inversions of a permutation.
 They use the following definition:
 
 \begin{definition}
@@ -8460,7 +8460,7 @@ $\ell\left(  \sigma\circ\tau\right)  \leq\ell\left(  \sigma\right)
 +\ell\left(  \tau\right)  $. In the following exercise, we will see when this
 inequality becomes an equality:
 
-\begin{addexercise}
+\begin{exercise}
 \label{exeadd.perm.Inv.sub}Let $n\in\mathbb{N}$. Let $\sigma\in S_{n}$ and
 $\tau\in S_{n}$.
 
@@ -8485,15 +8485,15 @@ $, then $\sigma=\tau$.
 \sigma\right)  +\ell\left(  \tau\right)  $ holds if and only if $\left(
 \operatorname*{Inv}\sigma\right)  \cap\left(  \operatorname*{Inv}\left(
 \tau^{-1}\right)  \right)  =\varnothing$.
-\end{addexercise}
+\end{exercise}
 
-Additional exercise \ref{exeadd.perm.Inv.sub} \textbf{(d)} shows that if two
+Exercise \ref{exeadd.perm.Inv.sub} \textbf{(d)} shows that if two
 permutations in $S_{n}$ have the same set of inversions, then they are equal.
 In other words, a permutation in $S_{n}$ is uniquely determined by its set of
-inversions. The next additional exercise shows what set of inversions a
+inversions. The next exercise shows what set of inversions a
 permutation can have:
 
-\begin{addexercise}
+\begin{exercise}
 \label{exeadd.perm.invset}Let $n\in\mathbb{N}$. Let $G=\left\{  \left(
 i,j\right)  \in\mathbb{Z}^{2}\ \mid\ 1\leq i<j\leq n\right\}  $.
 
@@ -8506,7 +8506,7 @@ $\sigma\in S_{n}$ such that $U=\operatorname*{Inv}\sigma$.
 
 Let $U$ be a subset of $G$. Prove that $U$ is inversive if and only if both
 $U$ and $G\setminus U$ are transitive.
-\end{addexercise}
+\end{exercise}
 
 \section{\label{chp.det}An introduction to determinants}
 
@@ -21342,7 +21342,7 @@ matrix. Let $k\in\left\{  0,1,\ldots,n\right\}  $. Prove that%
 \end{exercise}
 
 Exercise \ref{exe.block2x2.jacobi.rewr} is a particular case of the so-called
-\textit{Jacobi complementary minor theorem} (Additional exercise
+\textit{Jacobi complementary minor theorem} (Exercise
 \ref{addexe.jacobi-complement} further below).
 
 \subsection{\label{sect.noncommring}Noncommutative rings}
@@ -25411,7 +25411,7 @@ $\operatorname*{Tr}A$.
 Here are a few more additional exercises, with no importance to the rest of
 the text (and mostly no solutions given).\Needspace{8cm}
 
-\begin{addexercise}
+\begin{exercise}
 \label{exeadd.noncomm.polarization}For every $n\in\mathbb{N}$, let $\left[
 n\right]  $ denote the set $\left\{  1,2,\ldots,n\right\}  $.
 
@@ -25463,12 +25463,12 @@ v_{n}.
 
 [\textbf{Hint:} First, generalize Lemma \ref{lem.prodrule2} to the case of a
 noncommutative ring $\mathbb{K}$.]
-\end{addexercise}
+\end{exercise}
 
-The following exercise generalizes Additional exercise
+The following exercise generalizes Exercise
 \ref{exeadd.noncomm.polarization}:
 
-\begin{addexercise}
+\begin{exercise}
 \label{exeadd.det.sumdets1}For every $n\in\mathbb{N}$, let $\left[  n\right]
 $ denote the set $\left\{  1,2,\ldots,n\right\}  $.
 
@@ -25507,7 +25507,7 @@ G\\\text{is bijective}}}b_{f\left(  1\right)  ,1}b_{f\left(  2\right)
 ,2}\cdots b_{f\left(  n\right)  ,n}.
 \]
 
-\end{addexercise}
+\end{exercise}
 
 \begin{remark}
 Let $\mathbb{K}$ be a commutative ring. Let $n\in\mathbb{N}$. Let $A=\left(
@@ -25528,13 +25528,13 @@ the so-called \textit{Ryser formula}, which says that%
 1,2,\ldots,n\right\}  }\left(  -1\right)  ^{\left\vert I\right\vert }%
 \prod_{j=1}^{n}\sum_{i\in I}a_{i,j}.
 \]
-The reader is invited to check that this formula follows from Additional
-exercise \ref{exeadd.det.sumdets1} \textbf{(c)} (applied to $\mathbb{L}%
+The reader is invited to check that this formula follows from
+Exercise \ref{exeadd.det.sumdets1} \textbf{(c)} (applied to $\mathbb{L}%
 =\mathbb{K}$, $G=\left\{  1,2,\ldots,n\right\}  $, $H=\varnothing$ and
 $b_{i,j}=a_{i,j}$).
 \end{remark}
 
-\begin{addexercise}
+\begin{exercise}
 \label{exeadd.det.sumdets2}Let $n\in\mathbb{N}$. Let $G$ be a finite set such
 that $n<\left\vert G\right\vert $. For each $i\in G$, let $A_{i}\in
 \mathbb{K}^{n\times n}$ be an $n\times n$-matrix. Prove that%
@@ -25543,9 +25543,9 @@ that $n<\left\vert G\right\vert $. For each $i\in G$, let $A_{i}\in
 \sum_{i\in I}A_{i}\right)  =0.
 \]
 
-\end{addexercise}
+\end{exercise}
 
-\begin{addexercise}
+\begin{exercise}
 \label{exeadd.det.anotherpattern}\textbf{(a)} Compute the determinant of the
 $7\times7$-matrix%
 \[
@@ -25581,9 +25581,9 @@ g & 0 & 0 & d & 0 & 0\\
 \right)  ,
 \]
 where $a,b,c,d,e,f,g,h,k,\ell,m,n$ are elements of $\mathbb{K}$.
-\end{addexercise}
+\end{exercise}
 
-\begin{addexercise}
+\begin{exercise}
 \label{exeadd.powerdet.gen}Let $n\in\mathbb{N}$. Let $A=\left(  a_{i,j}%
 \right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ be an $n\times n$-matrix.
 
@@ -25603,9 +25603,9 @@ p,\sim q}\right)  .
 \]
 (Here, we are using the notation introduced in Definition
 \ref{def.submatrix.minor}.)
-\end{addexercise}
+\end{exercise}
 
-\begin{addexercise}
+\begin{exercise}
 \label{exeadd.powerdet.r1}Let $n\in\mathbb{N}$. Let $a_{1},a_{2},\ldots,a_{n}$
 be $n$ elements of $\mathbb{K}$. Let $b_{1},b_{2},\ldots,b_{n}$ be $n$
 elements of $\mathbb{K}$.
@@ -25640,12 +25640,12 @@ i\leq n,\ 1\leq j\leq n}\right)  \cdot\det\left(  \left(  b_{i}^{g_{j}%
 }\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  .
 \end{align*}
 Here, we are using the notation introduced in Exercise \ref{exe.multinom2}.
-\end{addexercise}
+\end{exercise}
 
-Note that Additional exercise \ref{exeadd.powerdet.r1} generalizes
+Note that Exercise \ref{exeadd.powerdet.r1} generalizes
 \cite[Exercise 12.9]{AndDos}.
 
-\begin{addexercise}
+\begin{exercise}
 \label{addexe.jacobi-complement}Let $n\in\mathbb{N}$. For any subset $I$ of
 $\left\{  1,2,\ldots,n\right\}  $, we let $\widetilde{I}$ denote the
 complement $\left\{  1,2,\ldots,n\right\}  \setminus I$ of $I$. (For instance,
@@ -25667,10 +25667,10 @@ Q\right)  }A\right)  =\left(  -1\right)  ^{\sum P+\sum Q}\det A\cdot
 
 [\textbf{Hint:} Apply Exercise \ref{exe.block2x2.jacobi.rewr} to a matrix
 obtained from $A$ by permuting the rows and permuting the columns.]
-\end{addexercise}
+\end{exercise}
 
 \begin{remark}
-The claim of Additional exercise \ref{addexe.jacobi-complement} is the
+The claim of Exercise \ref{addexe.jacobi-complement} is the
 so-called \textit{Jacobi complementary minor theorem}. It appears, for
 example, in \cite[(1)]{Lalonde} and in \cite[Lemma A.1 (e)]{CaSoSp12}, and is
 used rather often when working with determinants (for example, it is used in
@@ -25694,12 +25694,12 @@ of cardinality $n-1$ (so that $\widetilde{P}$ and $\widetilde{Q}$ are
 $1$-element sets). This particular case turns out to be the statement of
 Theorem \ref{thm.matrices.inverses.square} \textbf{(b)} in disguise.
 
-Exercise \ref{exe.block2x2.jacobi.rewr} is the particular case of Additional
-exercise \ref{addexe.jacobi-complement} obtained when $P=\left\{
+Exercise \ref{exe.block2x2.jacobi.rewr} is the particular case of
+Exercise \ref{addexe.jacobi-complement} obtained when $P=\left\{
 1,2,\ldots,k\right\}  $ and $Q=\left\{  1,2,\ldots,k\right\}  $.
 \end{remark}
 
-\begin{addexercise}
+\begin{exercise}
 \label{exeadd.det.pluecker.multi}Let $n$ and $k$ be positive integers such
 that $k\leq n$. Let $A\in\mathbb{K}^{n\times\left(  n-k\right)  }$ and
 $B\in\mathbb{K}^{n\times\left(  n+k\right)  }$.
@@ -25743,9 +25743,9 @@ I}\right)  =0.
 \]
 (Note that this generalizes Theorem \ref{thm.pluecker.plu}; indeed, the latter
 theorem is the particular case for $k=1$.)
-\end{addexercise}
+\end{exercise}
 
-\begin{addexercise}
+\begin{exercise}
 \label{exeadd.det.delannoy}Recall that the binomial coefficients satisfy the
 recurrence relation (\ref{eq.binom.rec.m}), which (visually) says that every
 entry of Pascal's triangle is the sum of the two entries left-above it and
@@ -25796,7 +25796,7 @@ of the matrix $A$ from Exercise \ref{exe.ps4.pascal}). Show that%
 \det A=2^{n\left(  n-1\right)  /2}.
 \]
 
-\end{addexercise}
+\end{exercise}
 
 \begin{noncompile}
 \textbf{(a)} One can prove $\dbinom{n+m}{n}_{D}=\sum_{i=0}^{n}\dbinom{n}%
@@ -25822,7 +25822,7 @@ of the matrix $A$ from Exercise \ref{exe.ps4.pascal}). Show that%
 {i}2^{i}$ and the same tactic as in Exercise \ref{exe.ps4.pascal}.
 \end{noncompile}
 
-\begin{addexercise}
+\begin{exercise}
 \label{exeadd.det.rk1upd}Let $n\in\mathbb{N}$. Let $u$ be a column vector with
 $n$ entries, and let $v$ be a row vector with $n$ entries. (Thus, $uv$ is an
 $n\times n$-matrix, whereas $vu$ is a $1\times1$-matrix.) Let $A$ be an
@@ -25832,9 +25832,9 @@ $n\times n$-matrix. Prove that%
 \]
 (where we regard the $1\times1$-matrix $v\left(  \operatorname*{adj}A\right)
 u$ as an element of $\mathbb{K}$).
-\end{addexercise}
+\end{exercise}
 
-\begin{addexercise}
+\begin{exercise}
 \label{exeadd.det.resultant}Let $P=\sum_{k=0}^{d}p_{k}X^{k}$ and $Q=\sum
 _{k=0}^{e}q_{k}X^{k}$ be two polynomials over $\mathbb{K}$ (where $p_{0}%
 ,p_{1},\ldots,p_{d}\in\mathbb{K}$ and $q_{0},q_{1},\ldots,q_{e}\in\mathbb{K}$
@@ -25883,10 +25883,10 @@ z\right)  =0$). Show that $\det A=0$.
 [\textbf{Hint:} Find a column vector $v$ with $d+e$ entries satisfying
 $Av=0_{\left(  d+e\right)  \times1}$; then apply Corollary
 \ref{cor.adj.kernel}.]
-\end{addexercise}
+\end{exercise}
 
 \begin{remark}
-The matrix $A$ in Additional exercise \ref{exeadd.det.resultant} is called the
+The matrix $A$ in Exercise \ref{exeadd.det.resultant} is called the
 \href{https://en.wikipedia.org/wiki/Sylvester_matrix}{\textit{Sylvester
 matrix}} of the polynomials $P$ and $Q$ (for degrees $d$ and $e$); its
 determinant $\det A$ is known as their
@@ -27560,9 +27560,9 @@ _{j=0}^{c}d_{j}\dbinom{X}{j}=\sum_{i=0}^{c}d_{i}\dbinom{X}{i}.
 Exercise \ref{exe.ps1.1.3} is thus solved.
 \end{proof}
 
-\subsection{Solution to Additional exercise \ref{exeadd.AoPS333199}}
+\subsection{Solution to Exercise \ref{exeadd.AoPS333199}}
 
-We shall prove the following generalization of Additional exercise
+We shall prove the following generalization of Exercise
 \ref{exeadd.AoPS333199}:
 
 \begin{proposition}
@@ -27632,7 +27632,7 @@ This proves Proposition \ref{prop.AoPS333199.gen}.
 \end{proof}
 
 \begin{proof}
-[Solution to Additional exercise \ref{exeadd.AoPS333199}.]Set $\mathbb{K}%
+[Solution to Exercise \ref{exeadd.AoPS333199}.]Set $\mathbb{K}%
 =\mathbb{Z}\left[  X\right]  $, and define two elements $x$ and $y$ of
 $\mathbb{K}$ by $x=X$ and $y=-1$. For any $n\in\mathbb{N}$ and $m\in
 \mathbb{N}$, define $Y_{m,n}\in\mathbb{K}$ as in Proposition
@@ -27655,7 +27655,7 @@ Now, fix $n\in\mathbb{N}$ and $m\in\mathbb{N}$. Applying
 obtain $Y_{n,m}=Z_{n,m}$. But Proposition \ref{prop.AoPS333199.gen} shows that
 $Y_{m,n}=Y_{n,m}$. Comparing this with (\ref{sol.exeadd.AoPS333199.1}), we
 obtain $Y_{n,m}=Z_{m,n}$. Comparing this with $Y_{n,m}=Z_{n,m}$, we obtain
-$Z_{m,n}=Z_{n,m}$. This solves Additional exercise \ref{exeadd.AoPS333199}.
+$Z_{m,n}=Z_{n,m}$. This solves Exercise \ref{exeadd.AoPS333199}.
 \end{proof}
 
 \begin{remark}
@@ -27665,9 +27665,9 @@ essentially the solution given above (except in lesser generality); the other
 is combinatorial.
 \end{remark}
 
-\subsection{Solution to Additional exercise \ref{exeadd.AoPS262752}}
+\subsection{Solution to Exercise \ref{exeadd.AoPS262752}}
 
-We shall give two solutions to Additional exercise \ref{exeadd.AoPS262752}.
+We shall give two solutions to Exercise \ref{exeadd.AoPS262752}.
 The first solution follows the Hint given in the exercise, and illustrates
 both the use of Lemma \ref{lem.polyeq} \textbf{(b)} and of \textquotedblleft
 generating functions\textquotedblright\ (the strategy of proving identities by
@@ -27693,11 +27693,11 @@ appears in \cite[(5.55)]{GKP}):
 
 \end{lemma}
 
-Thus, Lemma \ref{lem.AoPS262752.r} is obtained from Additional exercise
+Thus, Lemma \ref{lem.AoPS262752.r} is obtained from Exercise
 \ref{exeadd.AoPS262752} by substituting a nonnegative integer $x$ for the
 indeterminate $X$. It thus is clear that Lemma \ref{lem.AoPS262752.r} follows
-from Additional exercise \ref{exeadd.AoPS262752}. However, for us, the
-interest lies in the opposite implication: We shall derive Additional exercise
+from Exercise \ref{exeadd.AoPS262752}. However, for us, the
+interest lies in the opposite implication: We shall derive Exercise
 \ref{exeadd.AoPS262752} from Lemma \ref{lem.AoPS262752.r}. Let us, however,
 prove Lemma \ref{lem.AoPS262752.r} first. But before we do this, let us state
 a version of the binomial theorem:
@@ -27810,7 +27810,7 @@ This proves Lemma \ref{lem.AoPS262752.r}.
 \end{proof}
 
 \begin{proof}
-[First solution to Additional exercise \ref{exeadd.AoPS262752}.]Define two
+[First solution to Exercise \ref{exeadd.AoPS262752}.]Define two
 polynomials $P$ and $Q$ (with rational coefficients) by%
 \begin{equation}
 P=\sum_{k=0}^{n}\left(  -1\right)  ^{k}\dbinom{X}{k}\dbinom{X}{n-k}
@@ -27850,12 +27850,12 @@ this rewrites as
 \end{cases}
 .
 \]
-This solves Additional exercise \ref{exeadd.AoPS262752}.
+This solves Exercise \ref{exeadd.AoPS262752}.
 \end{proof}
 
 \subsubsection{Second solution}
 
-Now let us prepare for the second solution to Additional exercise
+Now let us prepare for the second solution to Exercise
 \ref{exeadd.AoPS262752}. We shall use the following notation (known as
 \href{https://en.wikipedia.org/wiki/Iverson_bracket}{the \textit{Iverson
 bracket}}): If $\mathcal{A}$ is any logical statement, then $\left[
@@ -28172,10 +28172,10 @@ Since these two Cases cover all possibilities, this shows that Lemma
 \ref{lem.exeadd.AoPS262752.2} always holds.
 \end{proof}
 
-Now, we are ready to solve Additional exercise \ref{exeadd.AoPS262752} again:
+Now, we are ready to solve Exercise \ref{exeadd.AoPS262752} again:
 
 \begin{proof}
-[Second solution to Additional exercise \ref{exeadd.AoPS262752}.]Let
+[Second solution to Exercise \ref{exeadd.AoPS262752}.]Let
 $g\in\left\{  0,1,\ldots,n\right\}  $ be arbitrary. Then, Theorem
 \ref{thm.vandermonde} (applied to $n-g$ instead of $n$) yields%
 \[
@@ -28280,12 +28280,12 @@ applied to }a_{i}=\left(  -1\right)  ^{i}\dbinom{X}{n-i}\right) \\
 \end{cases}
 \ \ \ \ \ \ \ \ \ \ \left(  \text{since }n-n/2=n/2\right)  .
 \end{align*}
-This solves Additional exercise \ref{exeadd.AoPS262752}.
+This solves Exercise \ref{exeadd.AoPS262752}.
 \end{proof}
 
 \subsubsection{Addendum}
 
-Let us record a classical result which follows from Additional exercise
+Let us record a classical result which follows from Exercise
 \ref{exeadd.AoPS262752}:
 
 \begin{corollary}
@@ -28302,7 +28302,7 @@ Let us record a classical result which follows from Additional exercise
 \end{corollary}
 
 \begin{proof}
-[Proof of Corollary \ref{cor.AoPS262752.X=n}.]Additional exercise
+[Proof of Corollary \ref{cor.AoPS262752.X=n}.]Exercise
 \ref{exeadd.AoPS262752} shows that%
 \[
 \sum_{k=0}^{n}\left(  -1\right)  ^{k}\dbinom{X}{k}\dbinom{X}{n-k}=%
@@ -28338,11 +28338,11 @@ k\\\text{instead of }m\text{ and }n\text{))}}}\\
 This proves Corollary \ref{cor.AoPS262752.X=n}.
 \end{proof}
 
-\subsection{Solution to Additional exercise \ref{exeadd.choose.a/b}}
+\subsection{Solution to Exercise \ref{exeadd.choose.a/b}}
 
 \subsubsection{First solution}
 
-Before we solve Additional exercise \ref{exeadd.choose.a/b}, let us prove two
+Before we solve Exercise \ref{exeadd.choose.a/b}, let us prove two
 basic facts in modular arithmetic:
 
 \begin{proposition}
@@ -28525,7 +28525,7 @@ This proves Lemma \ref{lem.exeadd.choose.a/b.prod-of-congs}.
 \end{proof}
 
 \begin{proof}
-[First solution to Additional exercise \ref{exeadd.choose.a/b}.]Set $c=n!$.
+[First solution to Exercise \ref{exeadd.choose.a/b}.]Set $c=n!$.
 Notice that $c$ is a positive integer (since $c=n!=1\cdot2\cdot\cdots\cdot
 n$); hence, $c-1\in\mathbb{N}$.
 
@@ -28613,12 +28613,12 @@ b^{n+\left(  c-1\right)  }\dbinom{a/b}{n}  &  =b^{n+\left(  c-1\right)  }%
 \end{align*}
 (by (\ref{sol.exeadd.choose.a/b.divi})). Hence, there exists some
 $N\in\mathbb{N}$ such that $b^{N}\dbinom{a/b}{n}\in\mathbb{Z}$ (namely,
-$N=n+\left(  c-1\right)  $). This solves Additional exercise
+$N=n+\left(  c-1\right)  $). This solves Exercise
 \ref{exeadd.choose.a/b}.
 \end{proof}
 
 \begin{remark}
-Our above solution of Additional exercise \ref{exeadd.choose.a/b} shows that
+Our above solution of Exercise \ref{exeadd.choose.a/b} shows that
 the $N$ in this exercise can be taken to be $n+\left(  n!-1\right)  $. This
 is, however, far from being the best possible value of $N$. A much better
 value that also works is $\max\left\{  0,2n-1\right\}  $. Proving this,
@@ -28629,7 +28629,7 @@ by studying the exponents of primes appearing in $n!$.)
 
 \subsubsection{Second solution}
 
-We shall now prepare to give a second solution to Additional exercise
+We shall now prepare to give a second solution to Exercise
 \ref{exeadd.choose.a/b}. Our main goal is to prove the following fact:
 
 \begin{theorem}
@@ -28638,7 +28638,7 @@ such that $b\neq0$. Let $n$ be a positive integer. Then, $b^{2n-1}\dbinom
 {a/b}{n}\in\mathbb{Z}$.
 \end{theorem}
 
-Clearly, Additional exercise \ref{exeadd.choose.a/b} immediately follows from
+Clearly, Exercise \ref{exeadd.choose.a/b} immediately follows from
 Theorem \ref{thm.sol.exeadd.choose.a/b.sol2.main} in the case when $n\neq0$.
 (In the case when $n=0$, it holds for obvious reasons.)
 
@@ -29264,7 +29264,7 @@ This proves Theorem \ref{thm.sol.exeadd.choose.a/b.sol2.main}.
 \end{verlong}
 
 Now, only some trivial bookkeeping remains to be done in order to solve
-Additional exercise \ref{exeadd.choose.a/b}. To simplify it, we state the
+Exercise \ref{exeadd.choose.a/b}. To simplify it, we state the
 following corollary from Theorem \ref{thm.sol.exeadd.choose.a/b.sol2.main}:
 
 \begin{corollary}
@@ -29336,13 +29336,13 @@ b^{m}\dbinom{a/b}{n}=b^{2n-1}\dbinom{a/b}{n}\in\mathbb{Z}%
 \end{verlong}
 
 \begin{proof}
-[Second solution to Additional exercise \ref{exeadd.choose.a/b}.]Let
+[Second solution to Exercise \ref{exeadd.choose.a/b}.]Let
 $m=\max\left\{  0,2n-1\right\}  $. Then, \newline$m=\max\left\{
 0,2n-1\right\}  \geq0$, so that $m\in\mathbb{N}$. Also, Corollary
 \ref{cor.sol.exeadd.choose.a/b.sol2.main} shows that $b^{m}\dbinom{a/b}{n}%
 \in\mathbb{Z}$. Hence, there exists some $N\in\mathbb{N}$ such that
-$b^{N}\dbinom{a/b}{n}\in\mathbb{Z}$ (namely, $N=m$). This solves Additional
-exercise \ref{exeadd.choose.a/b}.
+$b^{N}\dbinom{a/b}{n}\in\mathbb{Z}$ (namely, $N=m$). This solves
+Exercise \ref{exeadd.choose.a/b}.
 \end{proof}
 
 \subsection{Solution to Exercise \ref{exe.ps2.2.1}}
@@ -39640,9 +39640,9 @@ proof is also the most popular proof, so it is easily found in textbooks.)]
 \end{proof}
 \end{verlong}
 
-\subsection{Solution to Additional exercise \ref{exeadd.perm.Inv.sub}}
+\subsection{Solution to Exercise \ref{exeadd.perm.Inv.sub}}
 
-We shall now prepare for the solution of Additional exercise
+We shall now prepare for the solution of Exercise
 \ref{exeadd.perm.Inv.sub}. First, we introduce a notation:
 
 \begin{definition}
@@ -39932,7 +39932,7 @@ all inversions of }\sigma\text{)}}}\right\vert \\
 This proves Lemma \ref{lem.sol.exeadd.perm.Inv.sub.l}.
 \end{proof}
 
-Before we step to the solution to Additional exercise
+Before we step to the solution to Exercise
 \ref{exeadd.perm.Inv.sub}, let us make a short digression and use Lemma
 \ref{lem.sol.exeadd.perm.Inv.sub.subset} to give a new solution of Exercise
 \ref{exe.ps2.2.5} \textbf{(c)}:
@@ -39983,10 +39983,10 @@ In other words, $\ell\left(  \sigma\circ\tau\right)  \leq\ell\left(
 \textbf{(c)} is solved again.
 \end{proof}
 
-Now, let us finally solve Additional exercise \ref{exeadd.perm.Inv.sub}:
+Now, let us finally solve Exercise \ref{exeadd.perm.Inv.sub}:
 
 \begin{proof}
-[Solution to Additional exercise \ref{exeadd.perm.Inv.sub}.]\textbf{(a)} We
+[Solution to Exercise \ref{exeadd.perm.Inv.sub}.]\textbf{(a)} We
 first observe that%
 \begin{equation}
 \underbrace{\ell\left(  \sigma\circ\tau\right)  }_{\substack{=\left\vert
@@ -40316,7 +40316,7 @@ Combining the two implications (\ref{sol.exeadd.perm.Inv.sub.a.1}) and
 In other words, $\ell\left(  \sigma\circ\tau\right)  =\ell\left(
 \sigma\right)  +\ell\left(  \tau\right)  $ holds if and only if
 $\operatorname*{Inv}\tau\subseteq\operatorname*{Inv}\left(  \sigma\circ
-\tau\right)  $. This solves Additional exercise \ref{exeadd.perm.Inv.sub}
+\tau\right)  $. This solves Exercise \ref{exeadd.perm.Inv.sub}
 \textbf{(a)}.
 
 \textbf{(b)} Exercise \ref{exe.ps2.2.5} \textbf{(f)} (applied to $\sigma
@@ -40332,7 +40332,7 @@ Exercise \ref{exe.ps2.2.5} \textbf{(f)} yields $\ell\left(  \sigma\right)
 ^{-1}\right)  +\ell\left(  \tau^{-1}\right)  =\ell\left(  \tau^{-1}\right)
 +\ell\left(  \sigma^{-1}\right)  $.
 
-Additional exercise \ref{exeadd.perm.Inv.sub} \textbf{(a)} (applied to
+Exercise \ref{exeadd.perm.Inv.sub} \textbf{(a)} (applied to
 $\tau^{-1}$ and $\sigma^{-1}$ instead of $\sigma$ and $\tau$) yields that
 $\ell\left(  \tau^{-1}\circ\sigma^{-1}\right)  =\ell\left(  \tau^{-1}\right)
 +\ell\left(  \sigma^{-1}\right)  $ holds if and only if $\operatorname*{Inv}%
@@ -40347,9 +40347,9 @@ $\ell\left(  \tau^{-1}\right)  +\ell\left(  \sigma^{-1}\right)  =\ell\left(
 \sigma^{-1}\right)  \subseteq\operatorname*{Inv}\left(  \tau^{-1}\circ
 \sigma^{-1}\right)  .
 \]
-This solves Additional exercise \ref{exeadd.perm.Inv.sub} \textbf{(b)}.
+This solves Exercise \ref{exeadd.perm.Inv.sub} \textbf{(b)}.
 
-\textbf{(c)} Additional exercise \ref{exeadd.perm.Inv.sub} \textbf{(a)}
+\textbf{(c)} Exercise \ref{exeadd.perm.Inv.sub} \textbf{(a)}
 (applied to $\tau\circ\sigma^{-1}$ and $\sigma$ instead of $\sigma$ and $\tau
 $) yields that $\ell\left(  \tau\circ\sigma^{-1}\circ\sigma\right)
 =\ell\left(  \tau\circ\sigma^{-1}\right)  +\ell\left(  \sigma\right)  $ holds
@@ -40364,14 +40364,14 @@ if and only if $\operatorname*{Inv}\sigma\subseteq\operatorname*{Inv}\left(
 \]
 In other words, $\operatorname*{Inv}\sigma\subseteq\operatorname*{Inv}\tau$
 holds if and only if $\ell\left(  \tau\right)  =\ell\left(  \tau\circ
-\sigma^{-1}\right)  +\ell\left(  \sigma\right)  $. This solves Additional
-exercise \ref{exeadd.perm.Inv.sub} \textbf{(c)}.
+\sigma^{-1}\right)  +\ell\left(  \sigma\right)  $. This solves
+Exercise \ref{exeadd.perm.Inv.sub} \textbf{(c)}.
 
 \textbf{(d)} Assume that $\operatorname*{Inv}\sigma=\operatorname*{Inv}\tau$.
 We WLOG assume that $\ell\left(  \sigma\right)  \geq\ell\left(  \tau\right)  $
 (since otherwise, we can simply switch $\sigma$ and $\tau$). We have
 $\operatorname*{Inv}\sigma\subseteq\operatorname*{Inv}\tau$ (since
-$\operatorname*{Inv}\sigma=\operatorname*{Inv}\tau$). But Additional exercise
+$\operatorname*{Inv}\sigma=\operatorname*{Inv}\tau$). But Exercise
 \ref{exeadd.perm.Inv.sub} \textbf{(c)} shows that $\operatorname*{Inv}%
 \sigma\subseteq\operatorname*{Inv}\tau$ holds if and only if $\ell\left(
 \tau\right)  =\ell\left(  \tau\circ\sigma^{-1}\right)  +\ell\left(
@@ -40395,7 +40395,7 @@ to $\tau\circ\sigma^{-1}$ instead of $\sigma$) yields $\tau\circ\sigma
 ^{-1}=\operatorname*{id}$. Hence, $\underbrace{\tau\circ\sigma^{-1}%
 }_{=\operatorname*{id}}\circ\sigma=\operatorname*{id}\circ\sigma=\sigma$, so
 that $\sigma=\tau\circ\underbrace{\sigma^{-1}\circ\sigma}_{=\operatorname*{id}%
-}=\tau\circ\operatorname*{id}=\tau$. This solves Additional exercise
+}=\tau\circ\operatorname*{id}=\tau$. This solves Exercise
 \ref{exeadd.perm.Inv.sub} \textbf{(d)}.
 
 \textbf{(e)} Let us first prove the logical implication%
@@ -40652,7 +40652,7 @@ Combining the two implications (\ref{sol.exeadd.perm.Inv.sub.e.1}) and
 \operatorname*{Inv}\sigma\right)  \cap\left(  \operatorname*{Inv}\left(
 \tau^{-1}\right)  \right)  =\varnothing\right)  .
 \]
-On the other hand, Additional exercise \ref{exeadd.perm.Inv.sub} \textbf{(a)}
+On the other hand, Exercise \ref{exeadd.perm.Inv.sub} \textbf{(a)}
 yields that we have the logical equivalence%
 \[
 \left(  \ell\left(  \sigma\circ\tau\right)  =\ell\left(  \sigma\right)
@@ -40675,7 +40675,7 @@ Hence, we have the following chain of logical equivalences:%
 In other words, $\ell\left(  \sigma\circ\tau\right)  =\ell\left(
 \sigma\right)  +\ell\left(  \tau\right)  $ holds if and only if $\left(
 \operatorname*{Inv}\sigma\right)  \cap\left(  \operatorname*{Inv}\left(
-\tau^{-1}\right)  \right)  =\varnothing$. This solves Additional exercise
+\tau^{-1}\right)  \right)  =\varnothing$. This solves Exercise
 \ref{exeadd.perm.Inv.sub} \textbf{(e)}.
 \end{proof}
 
@@ -72556,8 +72556,8 @@ This proves (\ref{eq.cor.det(A+X).2}). The proof of Corollary
 \ref{cor.det(A+X)}. Exercise \ref{exe.det(A+B).diag} is thus solved.
 \end{proof}
 
-\subsection{\label{sect.sol.exeadd.noncomm.polarization}Solution to Additional
-exercise \ref{exeadd.noncomm.polarization}}
+\subsection{\label{sect.sol.exeadd.noncomm.polarization}Solution to
+Exercise \ref{exeadd.noncomm.polarization}}
 
 Let us first prepare some auxiliary results and notations. Throughout Section
 \ref{sect.sol.exeadd.noncomm.polarization}, we shall be using the following conventions:
@@ -73808,7 +73808,7 @@ This proves Lemma \ref{lem.sol.exeadd.noncomm.polarization.pigeon}.
 \end{verlong}
 
 \begin{proof}
-[Solution to Additional exercise \ref{exeadd.noncomm.polarization}%
+[Solution to Exercise \ref{exeadd.noncomm.polarization}%
 .]\textbf{(a)} Let $m\in\mathbb{N}$.
 
 \begin{vershort}
@@ -73871,7 +73871,7 @@ m\right]  \rightarrow\left[  n\right]  ;\\f\text{ is not surjective}%
 ;\\f\text{ is surjective}}}v_{f\left(  1\right)  }v_{f\left(  2\right)
 }\cdots v_{f\left(  m\right)  }.
 \end{align*}
-This solves Additional exercise \ref{exeadd.noncomm.polarization} \textbf{(a)}.
+This solves Exercise \ref{exeadd.noncomm.polarization} \textbf{(a)}.
 \end{vershort}
 
 \begin{verlong}
@@ -73944,7 +73944,7 @@ m\right]  \rightarrow\left[  n\right]  ;\\f\text{ is not surjective}%
 ;\\f\text{ is surjective}}}v_{f\left(  1\right)  }v_{f\left(  2\right)
 }\cdots v_{f\left(  m\right)  }.
 \end{align*}
-This solves Additional exercise \ref{exeadd.noncomm.polarization} \textbf{(a)}.
+This solves Exercise \ref{exeadd.noncomm.polarization} \textbf{(a)}.
 \end{verlong}
 
 \textbf{(b)} Let $m\in\left\{  0,1,\ldots,n-1\right\}  $. Then, there exists
@@ -73970,7 +73970,7 @@ $\sum_{\substack{f:\left[  m\right]  \rightarrow\left[  n\right]  ;\\f\text{
 is surjective}}}v_{f\left(  1\right)  }v_{f\left(  2\right)  }\cdots
 v_{f\left(  m\right)  }=0$.
 
-Now, Additional exercise \ref{exeadd.noncomm.polarization} \textbf{(a)} yields%
+Now, Exercise \ref{exeadd.noncomm.polarization} \textbf{(a)} yields%
 \[
 \sum_{I\subseteq\left[  n\right]  }\left(  -1\right)  ^{n-\left\vert
 I\right\vert }\left(  \sum_{i\in I}v_{i}\right)  ^{m}=\sum
@@ -73978,7 +73978,7 @@ _{\substack{f:\left[  m\right]  \rightarrow\left[  n\right]  ;\\f\text{ is
 surjective}}}v_{f\left(  1\right)  }v_{f\left(  2\right)  }\cdots v_{f\left(
 m\right)  }=0.
 \]
-This solves Additional exercise \ref{exeadd.noncomm.polarization} \textbf{(b)}.
+This solves Exercise \ref{exeadd.noncomm.polarization} \textbf{(b)}.
 
 \textbf{(c)} Clearly, $\left[  n\right]  $ and $\left[  n\right]  $ are two
 finite sets such that $\left\vert \left[  n\right]  \right\vert =\left\vert
@@ -74002,7 +74002,7 @@ surjective}}}=\sum_{\substack{f:\left[  n\right]  \rightarrow\left[  n\right]
 n\right]  }=\sum_{f\in S_{n}}%
 \]
 (since $S_{n}$ is the set of all permutations of $\left[  n\right]  $). Now,
-Additional exercise \ref{exeadd.noncomm.polarization} \textbf{(a)} (applied to
+Exercise \ref{exeadd.noncomm.polarization} \textbf{(a)} (applied to
 $m=n$) yields%
 \begin{align*}
 \sum_{I\subseteq\left[  n\right]  }\left(  -1\right)  ^{n-\left\vert
@@ -74016,11 +74016,11 @@ v_{f\left(  n\right)  }=\sum_{\sigma\in S_{n}}v_{\sigma\left(  1\right)
 }v_{\sigma\left(  2\right)  }\cdots v_{\sigma\left(  n\right)  }%
 \end{align*}
 (here, we have renamed the summation index $f$ as $\sigma$). This solves
-Additional exercise \ref{exeadd.noncomm.polarization} \textbf{(c)}.
+Exercise \ref{exeadd.noncomm.polarization} \textbf{(c)}.
 \end{vershort}
 
 \begin{verlong}
-Now, Additional exercise \ref{exeadd.noncomm.polarization} \textbf{(a)}
+Now, Exercise \ref{exeadd.noncomm.polarization} \textbf{(a)}
 (applied to $m=n$) yields%
 \begin{align}
 \sum_{I\subseteq\left[  n\right]  }\left(  -1\right)  ^{n-\left\vert
@@ -74068,7 +74068,7 @@ bijective}}}}_{\substack{=\sum_{f\in S_{n}}\\\text{(by
 2\right)  }\cdots v_{\sigma\left(  n\right)  }%
 \end{align*}
 (here, we have renamed the summation index $f$ as $\sigma$). This solves
-Additional exercise \ref{exeadd.noncomm.polarization} \textbf{(c)}.
+Exercise \ref{exeadd.noncomm.polarization} \textbf{(c)}.
 \end{verlong}
 
 \textbf{(d)} We have%
@@ -74102,8 +74102,8 @@ in the product,}\\
 \right) \\
 &  =\prod_{i=1}^{n}v_{i}=v_{1}v_{2}\cdots v_{n}.
 \end{align*}
-This proves (\ref{sol.exeadd.noncomm.polarization.d.1}).}. Now, Additional
-exercise \ref{exeadd.noncomm.polarization} \textbf{(c)} yields%
+This proves (\ref{sol.exeadd.noncomm.polarization.d.1}).}. Now,
+Exercise \ref{exeadd.noncomm.polarization} \textbf{(c)} yields%
 \begin{align*}
 \sum_{I\subseteq\left[  n\right]  }\left(  -1\right)  ^{n-\left\vert
 I\right\vert }\left(  \sum_{i\in I}v_{i}\right)  ^{n}  &  =\sum_{\sigma\in
@@ -74114,10 +74114,10 @@ _{\sigma\in S_{n}}v_{1}v_{2}\cdots v_{n}\\
 &  =\underbrace{\left\vert S_{n}\right\vert }_{=n!}v_{1}v_{2}\cdots
 v_{n}=n!\cdot v_{1}v_{2}\cdots v_{n}.
 \end{align*}
-This solves Additional exercise \ref{exeadd.noncomm.polarization} \textbf{(d)}.
+This solves Exercise \ref{exeadd.noncomm.polarization} \textbf{(d)}.
 \end{proof}
 
-\subsection{Solution to Additional exercise \ref{exeadd.det.sumdets1}}
+\subsection{Solution to Exercise \ref{exeadd.det.sumdets1}}
 
 In this section, we shall use the same notations that we have introduced in
 Section \ref{sect.sol.exeadd.noncomm.polarization}.
@@ -74752,7 +74752,7 @@ conclude that Lemma \ref{lem.sol.exeadd.det.sumdets1.2} always holds.
 \end{proof}
 
 \begin{proof}
-[Solution to Additional exercise \ref{exeadd.det.sumdets1}.]\textbf{(a)} We
+[Solution to Exercise \ref{exeadd.det.sumdets1}.]\textbf{(a)} We
 have%
 \begin{align*}
 &  \sum_{\substack{I\subseteq G;\\H\subseteq I}}\left(  -1\right)
@@ -74831,7 +74831,7 @@ n\right]  \rightarrow G;\\G\setminus H\subseteq f\left(  \left[  n\right]
 \right)  }}b_{f\left(  1\right)  ,1}b_{f\left(  2\right)  ,2}\cdots
 b_{f\left(  n\right)  ,n}.
 \end{align*}
-This solves Additional exercise \ref{exeadd.det.sumdets1} \textbf{(a)}.
+This solves Exercise \ref{exeadd.det.sumdets1} \textbf{(a)}.
 
 \textbf{(b)} Assume that $n<\left\vert G\setminus H\right\vert $. Then, there
 exists no $f:\left[  n\right]  \rightarrow G$ satisfying $G\setminus
@@ -74866,7 +74866,7 @@ is empty, and thus equals $0$. In other words,%
 f\left(  \left[  n\right]  \right)  }}b_{f\left(  1\right)  ,1}b_{f\left(
 2\right)  ,2}\cdots b_{f\left(  n\right)  ,n}=0.
 \]
-Now, Additional exercise \ref{exeadd.det.sumdets1} \textbf{(a)} yields%
+Now, Exercise \ref{exeadd.det.sumdets1} \textbf{(a)} yields%
 \[
 \sum_{\substack{I\subseteq G;\\H\subseteq I}}\left(  -1\right)  ^{\left\vert
 I\right\vert }b_{I,1}b_{I,2}\cdots b_{I,n}=\left(  -1\right)  ^{\left\vert
@@ -74875,7 +74875,7 @@ G;\\G\setminus H\subseteq f\left(  \left[  n\right]  \right)  }}b_{f\left(
 1\right)  ,1}b_{f\left(  2\right)  ,2}\cdots b_{f\left(  n\right)  ,n}}%
 _{=0}=0.
 \]
-This solves Additional exercise \ref{exeadd.det.sumdets1} \textbf{(b)}.
+This solves Exercise \ref{exeadd.det.sumdets1} \textbf{(b)}.
 
 \textbf{(c)} Assume that $n=\left\vert G\right\vert $. For any map $f:\left[
 n\right]  \rightarrow G$, we have the following logical equivalence:%
@@ -74922,7 +74922,7 @@ have the following equality of summation signs:%
 \end{equation}
 
 
-Now, $\varnothing$ is a subset of $G$. Hence, Additional exercise
+Now, $\varnothing$ is a subset of $G$. Hence, Exercise
 \ref{exeadd.det.sumdets1} \textbf{(a)} (applied to $\varnothing$ instead of
 $H$) yields%
 \begin{align}
@@ -74982,15 +74982,15 @@ n\right)  ,n}\\
 }}b_{f\left(  1\right)  ,1}b_{f\left(  2\right)  ,2}\cdots b_{f\left(
 n\right)  ,n}.
 \end{align*}
-This solves Additional exercise \ref{exeadd.det.sumdets1} \textbf{(c)}.
+This solves Exercise \ref{exeadd.det.sumdets1} \textbf{(c)}.
 \end{proof}
 
-\subsection{Solution to Additional exercise \ref{exeadd.det.sumdets2}}
+\subsection{Solution to Exercise \ref{exeadd.det.sumdets2}}
 
 In this section, we shall use the same notations that we have introduced in
 Section \ref{sect.sol.exeadd.noncomm.polarization}.
 
-Let us begin by stating a simple corollary from Additional exercise
+Let us begin by stating a simple corollary from Exercise
 \ref{exeadd.det.sumdets1} \textbf{(b)}:
 
 \begin{lemma}
@@ -75021,7 +75021,7 @@ b_{I,j}=\sum_{i\in I}b_{i,j}=\sum_{g\in I}b_{g,j}
 \end{equation}
 (here, we have substituted $g$ for $i$ in the sum).
 
-Now, Additional exercise \ref{exeadd.det.sumdets1} \textbf{(b)} (applied to
+Now, Exercise \ref{exeadd.det.sumdets1} \textbf{(b)} (applied to
 $\mathbb{K}$ and $\varnothing$ instead of $\mathbb{L}$ and $H$) yields%
 \begin{equation}
 \sum_{\substack{I\subseteq G;\\\varnothing\subseteq I}}\left(  -1\right)
@@ -75053,7 +75053,7 @@ This proves Lemma \ref{lem.sol.exeadd.det.sumdets2.1}.
 \end{proof}
 
 \begin{proof}
-[Solution to Additional exercise \ref{exeadd.det.sumdets2}.]For each $g\in G$,
+[Solution to Exercise \ref{exeadd.det.sumdets2}.]For each $g\in G$,
 let us write the $n\times n$-matrix $A_{g}$ in the form
 \begin{equation}
 A_{g}=\left(  a_{g,i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}.
@@ -75111,13 +75111,13 @@ I\right\vert }\prod_{i=1}^{n}\sum_{g\in I}a_{g,i,\sigma\left(  i\right)  }%
 }\\\text{(applied to }b_{i,j}=a_{i,j,\sigma\left(  j\right)  }\text{))}}}\\
 &  =\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}0=0.
 \end{align*}
-This solves Additional exercise \ref{exeadd.det.sumdets2}.
+This solves Exercise \ref{exeadd.det.sumdets2}.
 \end{proof}
 
-\subsection{Solution to Additional exercise \ref{exeadd.powerdet.gen}}
+\subsection{Solution to Exercise \ref{exeadd.powerdet.gen}}
 
 We shall first prove some identities in preparation for the solution to
-Additional exercise \ref{exeadd.powerdet.gen}.
+Exercise \ref{exeadd.powerdet.gen}.
 
 First, we introduce a notation: For every $n\in\mathbb{N}$, let $\left[
 n\right]  $ denote the set $\left\{  1,2,\ldots,n\right\}  $. We shall also
@@ -75399,7 +75399,7 @@ bijection}\right) \\
 This proves Lemma \ref{lem.sol.exeadd.powerdet.gen.toofew}.
 \end{proof}
 
-We can now solve part \textbf{(a)} of Additional exercise
+We can now solve part \textbf{(a)} of Exercise
 \ref{exeadd.powerdet.gen}:
 
 \begin{proposition}
@@ -75469,7 +75469,7 @@ $\mathbb{L}$, provided that we replace the reference to Lemma
 \ref{lem.prodrule2} by a reference to Lemma \ref{lem.noncomm.prodrule2}.
 \end{remark}
 
-Part \textbf{(b)} of Additional exercise \ref{exeadd.powerdet.gen} is
+Part \textbf{(b)} of Exercise \ref{exeadd.powerdet.gen} is
 noticeably harder. We prepare to it by studying permutations in $S_{n}$:
 
 \begin{lemma}
@@ -76458,7 +76458,7 @@ Lemma \ref{lem.sol.exeadd.powerdet.gen.n-1} \textbf{(b)}.
 \end{verlong}
 \end{proof}
 
-Finally, we are approaching part \textbf{(b)} of Additional exercise
+Finally, we are approaching part \textbf{(b)} of Exercise
 \ref{exeadd.powerdet.gen}:
 
 \begin{proposition}
@@ -76613,19 +76613,19 @@ This proves Proposition \ref{prop.sol.exeadd.powerdet.gen.b}.
 \end{proof}
 
 \begin{proof}
-[Solution to Additional exercise \ref{exeadd.powerdet.gen}.]Additional
-exercise \ref{exeadd.powerdet.gen} \textbf{(a)} follows from Proposition
+[Solution to Exercise \ref{exeadd.powerdet.gen}.]Exercise
+\ref{exeadd.powerdet.gen} \textbf{(a)} follows from Proposition
 \ref{prop.sol.exeadd.powerdet.gen.a}.
 
-Additional exercise \ref{exeadd.powerdet.gen} \textbf{(b)} follows from
+Exercise \ref{exeadd.powerdet.gen} \textbf{(b)} follows from
 Proposition \ref{prop.sol.exeadd.powerdet.gen.b}.
 \end{proof}
 
-\subsection{Solution to Additional exercise \ref{exeadd.powerdet.r1}}
+\subsection{Solution to Exercise \ref{exeadd.powerdet.r1}}
 
 \subsubsection{Solving the exercise}
 
-We prepare for the solution to Additional exercise \ref{exeadd.powerdet.r1} by
+We prepare for the solution to Exercise \ref{exeadd.powerdet.r1} by
 showing a few lemmas.
 
 \begin{lemma}
@@ -77197,7 +77197,7 @@ This proves Lemma \ref{lem.sol.exeadd.powerdet.r1.perm-m} \textbf{(b)}.
 \end{proof}
 \end{verlong}
 
-Now, we can attack part \textbf{(c)} of Additional exercise
+Now, we can attack part \textbf{(c)} of Exercise
 \ref{exeadd.powerdet.r1}:
 
 \begin{lemma}
@@ -77567,7 +77567,7 @@ This proves Lemma \ref{lem.sol.exeadd.powerdet.r1.c}.
 \end{proof}
 
 Next, we can use Lemma \ref{lem.sol.exeadd.powerdet.r1.c} to solve part
-\textbf{(a)} of Additional exercise \ref{exeadd.powerdet.r1}:
+\textbf{(a)} of Exercise \ref{exeadd.powerdet.r1}:
 
 \begin{lemma}
 \label{lem.sol.exeadd.powerdet.r1.a}Let $n\in\mathbb{N}$. Let $a_{1}%
@@ -77634,7 +77634,7 @@ Now, Lemma \ref{lem.sol.exeadd.powerdet.r1.c} yields%
 This proves Lemma \ref{lem.sol.exeadd.powerdet.r1.a}.
 \end{proof}
 
-Finally, we are ready for part \textbf{(b)} of Additional exercise
+Finally, we are ready for part \textbf{(b)} of Exercise
 \ref{exeadd.powerdet.r1}:
 
 \begin{lemma}
@@ -77756,11 +77756,11 @@ This proves Lemma \ref{lem.sol.exeadd.powerdet.r1.b}.
 \end{proof}
 
 \begin{proof}
-[Solution to Additional exercise \ref{exeadd.powerdet.r1}.]Additional exercise
+[Solution to Exercise \ref{exeadd.powerdet.r1}.]Exercise
 \ref{exeadd.powerdet.r1} \textbf{(a)} follows from Lemma
-\ref{lem.sol.exeadd.powerdet.r1.a}. Additional exercise
+\ref{lem.sol.exeadd.powerdet.r1.a}. Exercise
 \ref{exeadd.powerdet.r1} \textbf{(b)} follows from Lemma
-\ref{lem.sol.exeadd.powerdet.r1.b}. Additional exercise
+\ref{lem.sol.exeadd.powerdet.r1.b}. Exercise
 \ref{exeadd.powerdet.r1} \textbf{(c)} follows from Lemma
 \ref{lem.sol.exeadd.powerdet.r1.c}.
 \end{proof}
@@ -77957,12 +77957,12 @@ i\right)  }\right)  ^{k_{i}}=0$. This proves Corollary
 \ref{cor.sol.exeadd.powerdet.r1.1c}.
 \end{proof}
 
-\subsection{\label{sect.sol.jacobi-complement}Solution to Additional exercise
+\subsection{\label{sect.sol.jacobi-complement}Solution to Exercise
 \ref{addexe.jacobi-complement}}
 
 \subsubsection{First solution}
 
-Our first solution to Additional exercise \ref{addexe.jacobi-complement}
+Our first solution to Exercise \ref{addexe.jacobi-complement}
 (inspired by \cite[Lemma 9.2.10]{BruRys91}) shall follow the hint given. We
 are going to prepare for it by stating several simple lemmas.
 
@@ -78523,11 +78523,11 @@ $A_{\left[  \gamma,\delta\right]  }$ is $\left(  A_{\left[  \gamma
 \end{verlong}
 \end{proof}
 
-We can finally step to the solution of Additional exercise
+We can finally step to the solution of Exercise
 \ref{addexe.jacobi-complement}:
 
 \begin{proof}
-[First solution to Additional exercise \ref{addexe.jacobi-complement}.]Let
+[First solution to Exercise \ref{addexe.jacobi-complement}.]Let
 $k=\left\vert P\right\vert $. Thus, $k=\left\vert P\right\vert =\left\vert
 Q\right\vert $.
 
@@ -78710,12 +78710,12 @@ Now,%
 \operatorname*{sub}\nolimits_{w\left(  \widetilde{Q}\right)  }^{w\left(
 \widetilde{P}\right)  }\left(  A^{-1}\right)  \right)  .
 \end{align*}
-This solves Additional exercise \ref{addexe.jacobi-complement}.
+This solves Exercise \ref{addexe.jacobi-complement}.
 \end{proof}
 
 \subsubsection{Second solution}
 
-Now, let us give a second solution to Additional exercise
+Now, let us give a second solution to Exercise
 \ref{addexe.jacobi-complement}, following an idea from \cite[Chapter SCHUR,
 proof of (1.9)]{LLPT95}.
 
@@ -79593,7 +79593,7 @@ This proves Corollary \ref{cor.adj(AB).cauchy-binet-general}.
 \end{proof}
 \end{verlong}
 
-Our next step towards solving Additional exercise
+Our next step towards solving Exercise
 \ref{addexe.jacobi-complement} again is the following fact:
 
 \begin{proposition}
@@ -80375,12 +80375,12 @@ This proves Corollary \ref{cor.sol.addexe.jacobi-complement.lidform}.
 \end{proof}
 \end{verlong}
 
-Finally, we obtain Additional exercise \ref{addexe.jacobi-complement} easily
+Finally, we obtain Exercise \ref{addexe.jacobi-complement} easily
 by setting $\lambda=1$ in Corollary
 \ref{cor.sol.addexe.jacobi-complement.lidform}:
 
 \begin{proof}
-[Second solution to Additional exercise \ref{addexe.jacobi-complement}.]The
+[Second solution to Exercise \ref{addexe.jacobi-complement}.]The
 matrix $A\in\mathbb{K}^{n\times n}$ is invertible. Hence, the matrix
 $A^{-1}\in\mathbb{K}^{n\times n}$ is well-defined. Theorem \ref{thm.det(AB)}
 (applied to $B=A^{-1}$) yields $\det\left(  AA^{-1}\right)  =\det A\cdot
@@ -80426,12 +80426,12 @@ Q\right)  }A\right)   &  =\det A\cdot\left(  -1\right)  ^{\sum P+\sum Q}%
 \operatorname*{sub}\nolimits_{w\left(  \widetilde{Q}\right)  }^{w\left(
 \widetilde{P}\right)  }\left(  A^{-1}\right)  \right)  .
 \end{align*}
-Thus, Additional exercise \ref{addexe.jacobi-complement} is solved again.
+Thus, Exercise \ref{addexe.jacobi-complement} is solved again.
 \end{proof}
 
 \subsubsection{Addendum}
 
-As an easy consequence of our Second solution to Additional exercise
+As an easy consequence of our Second solution to Exercise
 \ref{addexe.jacobi-complement}, we can obtain the following fact:
 
 \begin{corollary}
@@ -80471,7 +80471,7 @@ This proves Corollary \ref{cor.sol.addexe.jacobi-complement.adjform}.
 
 Note that we could have also deduced Corollary
 \ref{cor.sol.addexe.jacobi-complement.adjform} from the First solution to
-Additional exercise \ref{addexe.jacobi-complement} (but this would have been
+Exercise \ref{addexe.jacobi-complement} (but this would have been
 more difficult, since we would have to slightly generalize our argument).
 
 It is possible to strengthen Corollary
@@ -80505,7 +80505,7 @@ allowed (for instance, $\det A$ could be $0$, or could be a nonzero
 non-cancellable element). There are ways to justify this cancellation in full
 generality; however, these are not in the scope of these notes.
 
-\subsection{Solution to Additional exercise \ref{exeadd.det.rk1upd}}
+\subsection{Solution to Exercise \ref{exeadd.det.rk1upd}}
 
 In this section, we shall use the following notation:
 
@@ -80521,7 +80521,7 @@ $B$ satisfies $B=\left(
 \right)  $.)
 \end{definition}
 
-We can now restate Additional exercise \ref{exeadd.det.rk1upd} in a form that
+We can now restate Exercise \ref{exeadd.det.rk1upd} in a form that
 uses no abuse of notation (such as identifying $1\times1$-matrices with
 elements of $\mathbb{K}$):
 
@@ -81373,7 +81373,7 @@ $\det\left(  A+uv\right)  =\det A+\operatorname*{ent}\left(  v\left(
 \end{proof}
 
 Now, Theorem \ref{thm.exeadd.det.rk1upd.claim} is proven; in other words,
-Additional exercise \ref{exeadd.det.rk1upd} is solved (since Theorem
+Exercise \ref{exeadd.det.rk1upd} is solved (since Theorem
 \ref{thm.exeadd.det.rk1upd.claim} is just a restatement of the claim of this exercise).
 
 \subsection{Solution to Exercise \ref{exe.ps1.1.1}}
@@ -81727,10 +81727,10 @@ from $Q$ by a sequence of mutations at sinks. This solves Exercise
 \ref{exe.ps1.1.1} \textbf{(c)}.
 \end{proof}
 
-\subsection{\label{sect.sol.exeadd.bininv}Solution to Additional exercise
+\subsection{\label{sect.sol.exeadd.bininv}Solution to Exercise
 \ref{exeadd.bininv}}
 
-We shall now prepare for the solution of Additional exercise
+We shall now prepare for the solution of Exercise
 \ref{exeadd.bininv}.\footnote{I have chosen to place this solution here at the
 end of the notes in order not to upset the numbering in the remaining
 sections.}
@@ -81764,7 +81764,7 @@ f_{i}\ \ \ \ \ \ \ \ \ \ \text{for every }n\in\left\{  0,1,\ldots,N\right\}
 \end{definition}
 
 Clearly, Definition \ref{def.sol.exeadd.bininv.bintr} generalizes the
-definition of the binomial transform we gave in Additional exercise
+definition of the binomial transform we gave in Exercise
 \ref{exeadd.bininv} (because any finite sequence $\left(  f_{0},f_{1}%
 ,\ldots,f_{N}\right)  \in\mathbb{Z}^{N+1}$ of integers is clearly a list in
 $\mathbb{Q}^{N+1}$).
@@ -82142,7 +82142,7 @@ b_{i}$. This proves Proposition \ref{prop.sol.exeadd.bintra.a0}.
 \end{verlong}
 
 From this, it is easy to derive the following statement, which generalizes
-Additional exercise \ref{exeadd.bininv} \textbf{(a)}:
+Exercise \ref{exeadd.bininv} \textbf{(a)}:
 
 \begin{corollary}
 \label{cor.sol.exeadd.bininv.a}Let $\left(  f_{0},f_{1},\ldots,f_{N}\right)
@@ -82456,7 +82456,7 @@ always holds.
 \end{verlong}
 
 We can now give answers to parts \textbf{(b)}, \textbf{(c)}, \textbf{(d)} and
-\textbf{(e)} of Additional exercise \ref{exeadd.bininv}:
+\textbf{(e)} of Exercise \ref{exeadd.bininv}:
 
 \begin{proposition}
 \label{prop.sol.exeadd.bininv.c}Let $a\in\mathbb{N}$. The binomial transform
@@ -82795,7 +82795,7 @@ Hence,%
 \end{proof}
 
 Let us now make two definitions that are slight variations on the definitions
-of $B$ and $W$ made in Additional exercise \ref{exeadd.bininv}:
+of $B$ and $W$ made in Exercise \ref{exeadd.bininv}:
 
 \begin{definition}
 \label{def.sol.exeadd.bininv.BW}\textbf{(a)} Let $B:\mathbb{Q}^{N+1}%
@@ -82811,14 +82811,14 @@ which sends every list $\left(  f_{0},f_{1},\ldots,f_{N}\right)  \in
 \end{definition}
 
 The maps $B$ and $W$ we have just defined are \textbf{almost} the same as the
-maps $B$ and $W$ from Additional exercise \ref{exeadd.bininv} \textbf{(f)}.
+maps $B$ and $W$ from Exercise \ref{exeadd.bininv} \textbf{(f)}.
 The only difference is that the former maps are defined on $\mathbb{Q}^{N+1}$
 (and have codomains $\mathbb{Q}^{N+1}$ as well), whereas the latter are
 defined on $\mathbb{Z}^{N+1}$ (and have codomains $\mathbb{Z}^{N+1}$). Thus,
 the latter maps are restrictions of the former maps. Hence, in order to prove
 that the latter maps satisfy the two equalities $B\circ W\circ B=W\circ B\circ
 W$ and $\left(  B\circ W\right)  ^{3}=\operatorname*{id}$ (as demanded by
-Additional exercise \ref{exeadd.bininv} \textbf{(f)}), it is perfectly
+Exercise \ref{exeadd.bininv} \textbf{(f)}), it is perfectly
 sufficient to show that the former maps satisfy these two equalities. In other
 words, it is perfectly sufficient to prove the following theorem:
 
@@ -83290,20 +83290,20 @@ This completes the proof of Theorem \ref{thm.sol.exeadd.bininv.f}.
 \end{proof}
 
 \begin{proof}
-[Solution to Additional exercise \ref{exeadd.bininv}.]Recall that the
+[Solution to Exercise \ref{exeadd.bininv}.]Recall that the
 definition of the binomial transform in Definition
 \ref{def.sol.exeadd.bininv.bintr} generalizes the definition of the binomial
-transform we gave in Additional exercise \ref{exeadd.bininv}. Hence, part
-\textbf{(a)} of Additional exercise \ref{exeadd.bininv} follows from Corollary
+transform we gave in Exercise \ref{exeadd.bininv}. Hence, part
+\textbf{(a)} of Exercise \ref{exeadd.bininv} follows from Corollary
 \ref{cor.sol.exeadd.bininv.a}. Part \textbf{(b)} follows from Proposition
 \ref{prop.sol.exeadd.bininv.b}. Part \textbf{(c)} follows from Proposition
 \ref{prop.sol.exeadd.bininv.c}. Part \textbf{(d)} follows from Proposition
 \ref{prop.sol.exeadd.bininv.d}. Part \textbf{(e)} follows from Proposition
 \ref{prop.sol.exeadd.bininv.e}. Finally, part \textbf{(f)} follows from
 Theorem \ref{thm.sol.exeadd.bininv.f} (since the maps $B$ and $W$ from
-Additional exercise \ref{exeadd.bininv} \textbf{(f)} are restrictions of the
+Exercise \ref{exeadd.bininv} \textbf{(f)} are restrictions of the
 maps $B$ and $W$ from Definition \ref{def.sol.exeadd.bininv.BW}). Hence,
-Additional exercise \ref{exeadd.bininv} is solved.
+Exercise \ref{exeadd.bininv} is solved.
 \end{proof}
 
 \begin{thebibliography}{999999999}                                                                                        %
