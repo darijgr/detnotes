@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, November 18, 2017 17:49:21}
+%TCIDATA{LastRevised=Saturday, November 18, 2017 19:19:01}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -3053,6 +3053,28 @@ have the following:
 \textquotedblright\ in our proof of Proposition \ref{prop.binom.upper-neg}.
 \end{proof}
 
+\begin{corollary}
+\label{cor.binom.-1}We have%
+\[
+\dbinom{-1}{n}=\left(  -1\right)  ^{n}%
+\]
+for any $n\in\mathbb{N}$.
+\end{corollary}
+
+\begin{proof}
+[Proof of Corollary \ref{cor.binom.-1}.] Proposition
+\ref{prop.binom.upper-neg} (applied to $m=-1$) yields%
+\begin{align*}
+\dbinom{-1}{n}  & =\left(  -1\right)  ^{n}\dbinom{n-\left(  -1\right)  -1}%
+{n}=\left(  -1\right)  ^{n}\underbrace{\dbinom{n}{n}}_{\substack{=1\\\text{(by
+Proposition \ref{prop.binom.mm}}\\\text{(applied to }m=n\text{))}%
+}}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }n-\left(  -1\right)  -1=n\right)
+\\
+& =\left(  -1\right)  ^{n}.
+\end{align*}
+This proves Corollary \ref{cor.binom.-1}.
+\end{proof}
+
 \subsubsection{Binomial coefficients of integers are integers}
 
 \begin{proposition}
@@ -4816,6 +4838,848 @@ proves Proposition \ref{prop.binom.bin-id} \textbf{(g)}.
 Many more examples of equalities with binomial coefficients, as well as
 advanced tactics for proving such equalities, can be found in \cite[Chapter
 5]{GKP}.
+
+\subsection{The principle of inclusion and exclusion}
+
+We shall next discuss the \textit{principle of inclusion and exclusion}, and
+some of its generalizations. This is a crucial result in combinatorics, which
+can help both in answering enumerative questions (i.e., questions of the form
+\textquotedblleft how many objects of a given kind satisfy a certain set of
+properties\textquotedblright) and in proving combinatorial identities (such
+as, to give a simple example, Proposition \ref{prop.binom.bin-id}
+\textbf{(c)}, but also various deeper results). We shall not dwell on the
+applications of this principle; the reader can easily find them in textbooks
+on enumerative combinatorics (such as \cite[\S 5.1]{Aigner07} or
+\cite[\S 16]{Galvin} or \cite[Chapter 4]{Loehr-BC} or \cite[Chapter
+IV]{Comtet74} or \cite[\S 15.9]{LeLeMe16}). We will, however, prove the
+principle and a few of its generalizations.
+
+The principle itself (in one of its most basic forms) answers the following
+simple question: Given $n$ finite sets $A_{1},A_{2},\ldots,A_{n}$, how do we
+compute the size of their union $A_{1}\cup A_{2}\cup\cdots\cup A_{n}$ if we
+know the sizes of all of their intersections (not just the intersection
+$A_{1}\cap A_{2}\cap\cdots\cap A_{n}$, but also the intersections of some of
+the sets only)? Let us first answer this question for specific small values of
+$n$:
+
+\begin{itemize}
+\item For $n=1$, we have the tautological equality%
+\begin{equation}
+\left\vert A_{1}\right\vert =\left\vert A_{1}\right\vert . \label{eq.pie.n=1}%
+\end{equation}
+(Only a true mathematician would begin a study with such a statement.)
+
+\item For $n=2$, we have the known formula%
+\begin{equation}
+\left\vert A_{1}\cup A_{2}\right\vert =\left\vert A_{1}\right\vert +\left\vert
+A_{2}\right\vert -\left\vert A_{1}\cap A_{2}\right\vert . \label{eq.pie.n=2}%
+\end{equation}
+Notice that $\left\vert A_{1}\right\vert $ and $\left\vert A_{2}\right\vert $
+are sizes of intersections of some of the sets $A_{1},A_{2}$: Namely, $A_{1}$
+is the intersection of the single set $A_{1}$, while $A_{2}$ is the
+intersection of the single set $A_{2}$.
+
+\item For $n=3$, we have%
+\begin{align}
+\left\vert A_{1}\cup A_{2}\cup A_{3}\right\vert  &  =\left\vert A_{1}%
+\right\vert +\left\vert A_{2}\right\vert +\left\vert A_{3}\right\vert
+-\left\vert A_{1}\cap A_{2}\right\vert -\left\vert A_{1}\cap A_{3}\right\vert
+-\left\vert A_{2}\cap A_{3}\right\vert \nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ +\left\vert A_{1}\cap A_{2}\cap A_{3}\right\vert .
+\label{eq.pie.n=3}%
+\end{align}
+This is not as well-known as (\ref{eq.pie.n=2}), but can be easily derived by
+applying (\ref{eq.pie.n=2}) twice. (In fact, first apply (\ref{eq.pie.n=2}) to
+$A_{1}\cup A_{2}$ and $A_{3}$ instead of $A_{1}$ and $A_{2}$; then, apply
+(\ref{eq.pie.n=2}) directly to rewrite $\left\vert A_{1}\cup A_{2}\right\vert
+$.)
+
+\item For $n=4$, we have%
+\begin{align}
+&  \left\vert A_{1}\cup A_{2}\cup A_{3}\cup A_{4}\right\vert \nonumber\\
+&  =\left\vert A_{1}\right\vert +\left\vert A_{2}\right\vert +\left\vert
+A_{3}\right\vert +\left\vert A_{4}\right\vert \nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ -\left\vert A_{1}\cap A_{2}\right\vert -\left\vert
+A_{1}\cap A_{3}\right\vert -\left\vert A_{1}\cap A_{4}\right\vert -\left\vert
+A_{2}\cap A_{3}\right\vert -\left\vert A_{2}\cap A_{4}\right\vert -\left\vert
+A_{3}\cap A_{4}\right\vert \nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ +\left\vert A_{1}\cap A_{2}\cap A_{3}\right\vert
++\left\vert A_{1}\cap A_{2}\cap A_{4}\right\vert +\left\vert A_{1}\cap
+A_{3}\cap A_{4}\right\vert +\left\vert A_{2}\cap A_{3}\cap A_{4}\right\vert
+\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ -\left\vert A_{1}\cap A_{2}\cap A_{3}\cap
+A_{4}\right\vert . \label{eq.pie.n=4}%
+\end{align}
+Again, this can be derived by applying (\ref{eq.pie.n=2}) many times.
+\end{itemize}
+
+The four equalities (\ref{eq.pie.n=1}), (\ref{eq.pie.n=2}), (\ref{eq.pie.n=3})
+and (\ref{eq.pie.n=4}) all follow the same pattern: On the left hand side is
+the size $\left\vert A_{1}\cup A_{2}\cup\cdots\cup A_{n}\right\vert $ of the
+union $A_{1}\cup A_{2}\cup\cdots\cup A_{n}$ of all the $n$ sets $A_{1}%
+,A_{2},\ldots,A_{n}$. On the right hand side is an \textquotedblleft
+alternating sum\textquotedblright\ (i.e., a sum, but with minus signs in front
+of some of its addends), whose addends are the sizes of the intersections of
+all possible choices of \textbf{some} of the $n$ sets $A_{1},A_{2}%
+,\ldots,A_{n}$ (except for the choice where none of the $n$ sets are chosen;
+this does not have a well-defined intersection). Notice that there are
+$2^{n}-1$ such choices, so the right hand side is an \textquotedblleft
+alternating sum\textquotedblright\ of $2^{n}-1$ addends. In other words, each
+addend on the right hand side has the form $\left\vert A_{i_{1}}\cap A_{i_{2}%
+}\cap\cdots\cap A_{i_{m}}\right\vert $ for some $m$-tuple $\left(  i_{1}%
+,i_{2},\ldots,i_{m}\right)  $ of integers between $1$ and $n$ (inclusive) such
+that $m\geq1$ and $i_{1}<i_{2}<\cdots<i_{m}$. The sign in front of this addend
+is a plus sign if $m$ is odd, and is a minus sign if $m$ is even. Thus, we can
+replace this sign by a factor of $\left(  -1\right)  ^{m-1}$.
+
+We can try and generalize the pattern as follows:%
+\begin{align}
+&  \left\vert A_{1}\cup A_{2}\cup\cdots\cup A_{n}\right\vert \nonumber\\
+&  =\sum_{m=1}^{n}\sum_{1\leq i_{1}<i_{2}<\cdots<i_{m}\leq n}\left(
+-1\right)  ^{m-1}\left\vert A_{i_{1}}\cap A_{i_{2}}\cap\cdots\cap A_{i_{m}%
+}\right\vert . \label{eq.pie.n=n-basic}%
+\end{align}
+Here, the summation sign \textquotedblleft$\sum_{1\leq i_{1}<i_{2}%
+<\cdots<i_{m}\leq n}$\textquotedblright\ on the right hand side is an
+abbreviation for $\sum_{\substack{\left(  i_{1},i_{2},\ldots,i_{m}\right)
+\in\left\{  1,2,\ldots,n\right\}  ^{m};\\i_{1}<i_{2}<\cdots<i_{m}}}$.
+
+The equality (\ref{eq.pie.n=n-basic}) is indeed correct; it is one of several
+(equivalent) versions of the principle of inclusion and exclusion. For
+example, it appears in \cite[\S 4.7]{Loehr-BC}. We shall, however, state it
+differently, for the sake of better generalizability. First, we will index the
+intersections of \textbf{some} of the $n$ sets $A_{1},A_{2},\ldots,A_{n}$ not
+by $m$-tuples $\left(  i_{1},i_{2},\ldots,i_{m}\right)  \in\left\{
+1,2,\ldots,n\right\}  ^{m}$ satisfying $i_{1}<i_{2}<\cdots<i_{m}$, but rather
+by nonempty subsets of $\left\{  1,2,\ldots,n\right\}  $. Second, our sets
+$A_{1},A_{2},\ldots,A_{n}$ will be labelled not by the numbers $1,2,\ldots,n$,
+but rather by elements of a finite set $G$. This will result in a more
+abstract, but also more flexible version of (\ref{eq.pie.n=n-basic}).
+
+First, we introduce some notations:
+
+\begin{definition}
+Let $I$ be a set. For each $i\in I$, we let $A_{i}$ be a set.
+
+\textbf{(a)} Then, $\bigcup_{i\in I}A_{i}$ denotes the union of all the sets
+$A_{i}$ for $i\in I$. This union is defined by%
+\[
+\bigcup_{i\in I}A_{i}=\left\{  x\ \mid\ \text{there exists an }i\in I\text{
+such that }x\in A_{i}\right\}  .
+\]
+
+
+For example, if $I=\left\{  i_{1},i_{2},\ldots,i_{k}\right\}  $ is a finite
+set, then
+\[
+\bigcup_{i\in I}A_{i}=A_{i_{1}}\cup A_{i_{2}}\cup\cdots\cup A_{i_{k}}.
+\]
+
+
+Notice that $A_{j}\subseteq\bigcup_{i\in I}A_{i}$ for each $j\in I$. If $I$ is
+finite, and if each of the sets $A_{i}$ is finite, then their union
+$\bigcup_{i\in I}A_{i}$ is also finite.
+
+Note that $\bigcup_{i\in\varnothing}A_{i}=\varnothing$.
+
+\textbf{(b)} Assume that $I$ is nonempty. Then, $\bigcap_{i\in I}A_{i}$
+denotes the intersection of all the sets $A_{i}$ for $i\in I$. This
+intersection is defined by%
+\[
+\bigcap_{i\in I}A_{i}=\left\{  x\ \mid\ x\in A_{i}\text{ for all }i\in
+I\right\}  .
+\]
+
+
+For example, if $I=\left\{  i_{1},i_{2},\ldots,i_{k}\right\}  $ is a finite
+set, then
+\[
+\bigcap_{i\in I}A_{i}=A_{i_{1}}\cap A_{i_{2}}\cap\cdots\cap A_{i_{k}}.
+\]
+
+
+Notice that $\bigcap_{i\in I}A_{i}\subseteq A_{j}$ for each $j\in I$. If each
+of the sets $A_{i}$ is finite, then their intersection $\bigcap_{i\in I}A_{i}$
+is also finite.
+
+\textbf{Caution:} The intersection $\bigcap_{i\in I}A_{i}$ is not defined when
+$I$ is empty, because this intersection would have to contain every object in
+the universe (which is impossible for a set).
+\end{definition}
+
+\begin{definition}
+If $G$ is any finite set, then the sign $\sum_{I\subseteq G}$ shall mean
+$\sum_{I\in\mathcal{P}\left(  G\right)  }$, where $\mathcal{P}\left(
+G\right)  $ denotes the powerset of $G$. For example,%
+\begin{align*}
+\sum_{I\subseteq\left\{  7,8\right\}  }\prod_{i\in I}i  &  =\sum
+_{I\in\mathcal{P}\left(  \left\{  7,8\right\}  \right)  }\prod_{i\in
+I}i=\underbrace{\prod_{i\in\varnothing}i}_{=\left(  \text{empty product}%
+\right)  =1}+\underbrace{\prod_{i\in\left\{  7\right\}  }i}_{=7}%
++\underbrace{\prod_{i\in\left\{  8\right\}  }i}_{=8}+\underbrace{\prod
+_{i\in\left\{  7,8\right\}  }i}_{=7\cdot8}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since the subsets of }\left\{
+7,8\right\}  \text{ are }\varnothing,\left\{  7\right\}  ,\left\{  8\right\}
+,\left\{  7,8\right\}  \right) \\
+&  =1+7+8+7\cdot8.
+\end{align*}
+
+\end{definition}
+
+We are now ready to state one of the forms of the principle:
+
+\begin{theorem}
+\label{thm.pie.union}Let $G$ be a finite set. For each $i\in G$, let $A_{i}$
+be a finite set. Then,%
+\[
+\left\vert \bigcup_{i\in G}A_{i}\right\vert =\sum_{\substack{I\subseteq
+G;\\I\neq\varnothing}}\left(  -1\right)  ^{\left\vert I\right\vert
+-1}\left\vert \bigcap_{i\in I}A_{i}\right\vert .
+\]
+
+\end{theorem}
+
+If $G=\left\{  1,2,\ldots,n\right\}  $ for some $n\in\mathbb{N}$, then the
+formula in Theorem \ref{thm.pie.union} is a restatement of
+(\ref{eq.pie.n=n-basic}).
+
+A statement equivalent to Theorem \ref{thm.pie.union} is the following:
+
+\begin{theorem}
+\label{thm.pie.nonunion}Let $S$ be a finite set. Let $G$ be a finite set. For
+each $i\in G$, let $A_{i}$ be a subset of $S$. We define the intersection
+$\bigcap_{i\in\varnothing}A_{i}$ (which would otherwise be undefined, since
+$\varnothing$ is the empty set) to mean the set $S$. (Thus, $\bigcap_{i\in
+I}A_{i}$ is defined for any subset $I$ of $G$, not just for nonempty subsets
+$I$.) Then,%
+\[
+\left\vert S\setminus\left(  \bigcup_{i\in G}A_{i}\right)  \right\vert
+=\sum_{I\subseteq G}\left(  -1\right)  ^{\left\vert I\right\vert }\left\vert
+\bigcap_{i\in I}A_{i}\right\vert .
+\]
+
+\end{theorem}
+
+Theorem \ref{thm.pie.union} and Theorem \ref{thm.pie.nonunion} are commonly
+known as the \textit{principle of inclusion and exclusion}, or as the
+\textit{Sylvester sieve formula}. They are not hard to prove (see, e.g.,
+\cite[\S 16]{Galvin} for two proofs). Rather than proving them directly, we
+shall however generalize them and prove the generalization, from which they
+are easily obtained as particular cases.
+
+We generalize these theorems in two steps. First, we observe that the
+$S\setminus\left(  \bigcup_{i\in G}A_{i}\right)  $ in Theorem
+\ref{thm.pie.nonunion} is simply the set of all elements of $S$ that belong to
+none of the subsets $A_{i}$ (for $i\in G$). In other words,%
+\[
+S\setminus\left(  \bigcup_{i\in G}A_{i}\right)  =\left\{  s\in S\ \mid
+\ \text{the number of }i\in G\text{ satisfying }s\in A_{i}\text{ equals
+}0\right\}  .
+\]
+We can replace the \textquotedblleft$0$\textquotedblright\ here by any number
+$k$, and ask for the size of the resulting set. The answer is given by the
+following result of Charles Jordan (see \cite[\S 4.8, Theorem A]{Comtet74} and
+\cite{DanRot78} for fairly complicated proofs):
+
+\begin{theorem}
+\label{thm.pie.jordan}Let $S$ be a finite set. Let $G$ be a finite set. For
+each $i\in G$, let $A_{i}$ be a subset of $S$. We define the intersection
+$\bigcap_{i\in\varnothing}A_{i}$ (which would otherwise be undefined, since
+$\varnothing$ is the empty set) to mean the set $S$. (Thus, $\bigcap_{i\in
+I}A_{i}$ is defined for any subset $I$ of $G$, not just for nonempty subsets
+$I$.)
+
+Let $k\in\mathbb{N}$. Let
+\[
+S_{k}=\left\{  s\in S\ \mid\ \text{the number of }i\in G\text{ satisfying
+}s\in A_{i}\text{ equals }k\right\}  .
+\]
+(In other words, $S_{k}$ is the set of all elements of $S$ that belong to
+exactly $k$ of the subsets $A_{i}$.) Then,%
+\[
+\left\vert S_{k}\right\vert =\sum_{I\subseteq G}\left(  -1\right)
+^{\left\vert I\right\vert -k}\dbinom{\left\vert I\right\vert }{k}\left\vert
+\bigcap_{i\in I}A_{i}\right\vert .
+\]
+
+\end{theorem}
+
+A different generalization of Theorem \ref{thm.pie.nonunion} (closely related
+to the \textit{Bonferroni inequalities}, for which see \cite[\S 17, problem
+(2)]{Galvin}) explores what happens when the sum on the right hand side of the
+formula is restricted to only those subsets $I$ of $G$ whose size doesn't
+surpass a given integer $m$:
+
+\begin{theorem}
+\label{thm.pie.bonfer}Let $S$ be a finite set. Let $G$ be a finite set. For
+each $i\in G$, let $A_{i}$ be a subset of $S$. We define the intersection
+$\bigcap_{i\in\varnothing}A_{i}$ (which would otherwise be undefined, since
+$\varnothing$ is the empty set) to mean the set $S$. (Thus, $\bigcap_{i\in
+I}A_{i}$ is defined for any subset $I$ of $G$, not just for nonempty subsets
+$I$.)
+
+Let $m\in\mathbb{N}$. For each $s\in S$, let $c\left(  s\right)  $ denote the
+number of $i\in G$ satisfying $s\in A_{i}$. Then,%
+\[
+\left(  -1\right)  ^{m}\sum_{s\in S}\dbinom{c\left(  s\right)  -1}{m}%
+=\sum_{\substack{I\subseteq G;\\\left\vert I\right\vert \leq m}}\left(
+-1\right)  ^{\left\vert I\right\vert }\left\vert \bigcap_{i\in I}%
+A_{i}\right\vert .
+\]
+
+\end{theorem}
+
+Finally, Theorem \ref{thm.pie.jordan} and Theorem \ref{thm.pie.bonfer} can be
+merged into one common general principle:
+
+\begin{theorem}
+\label{thm.pie.merged}Let $S$ be a finite set. Let $G$ be a finite set. For
+each $i\in G$, let $A_{i}$ be a subset of $S$. We define the intersection
+$\bigcap_{i\in\varnothing}A_{i}$ (which would otherwise be undefined, since
+$\varnothing$ is the empty set) to mean the set $S$. (Thus, $\bigcap_{i\in
+I}A_{i}$ is defined for any subset $I$ of $G$, not just for nonempty subsets
+$I$.)
+
+Let $k\in\mathbb{N}$ and $m\in\mathbb{N}$ be such that $m\geq k$. For each
+$s\in S$, let $c\left(  s\right)  $ denote the number of $i\in G$ satisfying
+$s\in A_{i}$. Then,%
+\[
+\left(  -1\right)  ^{m}\sum_{s\in S}\dbinom{c\left(  s\right)  }{k}%
+\dbinom{c\left(  s\right)  -k-1}{m-k}=\sum_{\substack{I\subseteq
+G;\\\left\vert I\right\vert \leq m}}\left(  -1\right)  ^{\left\vert
+I\right\vert }\dbinom{\left\vert I\right\vert }{k}\left\vert \bigcap_{i\in
+I}A_{i}\right\vert .
+\]
+
+\end{theorem}
+
+As we said, we shall first prove Theorem \ref{thm.pie.merged}, and then derive
+all the preceding theorems in this section from it. The proof of Theorem
+\ref{thm.pie.merged} will rely on several ingredients, the first of which is
+the following simple identity:
+
+\begin{lemma}
+\label{lem.pie.binid}Let $n\in\mathbb{N}$ and $k\in\mathbb{N}$. Let
+$m\in\left\{  k,k+1,k+2,\ldots\right\}  $. Then,%
+\[
+\sum_{r=0}^{m}\left(  -1\right)  ^{r}\dbinom{n}{r}\dbinom{r}{k}=\left(
+-1\right)  ^{m}\dbinom{n}{k}\dbinom{n-k-1}{m-k}.
+\]
+
+\end{lemma}
+
+\begin{exercise}
+\label{exe.pie.binid}Prove Lemma \ref{lem.pie.binid}.
+\end{exercise}
+
+Next, we introduce a simple yet immensely helpful notation that will
+facilitate our proof:
+
+\begin{definition}
+\label{def.iverson}If $\mathcal{A}$ is any logical statement, then we define
+an integer $\left[  \mathcal{A}\right]  \in\left\{  0,1\right\}  $ by%
+\[
+\left[  \mathcal{A}\right]  =%
+\begin{cases}
+1, & \text{if }\mathcal{A}\text{ is true};\\
+0, & \text{if }\mathcal{A}\text{ is false}%
+\end{cases}
+.
+\]
+For example, $\left[  1+1=2\right]  =1$ (since $1+1=2$ is true), whereas
+$\left[  1+1=1\right]  =0$ (since $1+1=1$ is false).
+
+If $\mathcal{A}$ is any logical statement, then the integer $\left[
+\mathcal{A}\right]  $ is known as the \textit{truth value} of $\mathcal{A}$.
+The notation $\left[  \mathcal{A}\right]  $ is known as the
+\href{https://en.wikipedia.org/wiki/Iverson_bracket}{the \textit{Iverson
+bracket notation}}.
+\end{definition}
+
+Clearly, if $\mathcal{A}$ and $\mathcal{B}$ are two equivalent logical
+statements, then $\left[  \mathcal{A}\right]  =\left[  \mathcal{B}\right]  $.
+This and a few other useful properties of the Iverson bracket notation are
+collected in the following exercise:
+
+\begin{exercise}
+\label{exe.iverson-prop}Prove the following rules for truth values:
+
+\textbf{(a)} If $\mathcal{A}$ and $\mathcal{B}$ are two equivalent logical
+statements, then $\left[  \mathcal{A}\right]  =\left[  \mathcal{B}\right]  $.
+
+\textbf{(b)} If $\mathcal{A}$ is any logical statement, then $\left[
+\text{not }\mathcal{A}\right]  =1-\left[  \mathcal{A}\right]  $.
+
+\textbf{(c)} If $\mathcal{A}$ and $\mathcal{B}$ are two logical statements,
+then $\left[  \mathcal{A}\wedge\mathcal{B}\right]  =\left[  \mathcal{A}%
+\right]  \left[  \mathcal{B}\right]  $.
+
+\textbf{(d)} If $\mathcal{A}$ and $\mathcal{B}$ are two logical statements,
+then $\left[  \mathcal{A}\vee\mathcal{B}\right]  =\left[  \mathcal{A}\right]
++\left[  \mathcal{B}\right]  -\left[  \mathcal{A}\right]  \left[
+\mathcal{B}\right]  $.
+
+\textbf{(e)} If $\mathcal{A}$, $\mathcal{B}$ and $\mathcal{C}$ are three
+logical statements, then%
+\[
+\left[  \mathcal{A}\vee\mathcal{B}\vee\mathcal{C}\right]  =\left[
+\mathcal{A}\right]  +\left[  \mathcal{B}\right]  +\left[  \mathcal{C}\right]
+-\left[  \mathcal{A}\right]  \left[  \mathcal{B}\right]  -\left[
+\mathcal{A}\right]  \left[  \mathcal{C}\right]  -\left[  \mathcal{B}\right]
+\left[  \mathcal{C}\right]  +\left[  \mathcal{A}\right]  \left[
+\mathcal{B}\right]  \left[  \mathcal{C}\right]  .
+\]
+
+\end{exercise}
+
+A useful property of the Iverson bracket is that it turns cardinalities of
+sets into sums:
+
+\begin{lemma}
+\label{lem.iverson.card}Let $S$ be a finite set. Let $T$ be a subset of $S$.
+Then,%
+\[
+\left\vert T\right\vert =\sum_{s\in S}\left[  s\in T\right]  .
+\]
+
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.iverson.card}.]We have%
+\begin{align*}
+\sum_{s\in S}\left[  s\in T\right]   &  =\underbrace{\sum_{\substack{s\in
+S;\\s\in T}}}_{\substack{=\sum_{s\in T}\\\text{(since }T\text{ is a subset of
+}S\text{)}}}\underbrace{\left[  s\in T\right]  }_{\substack{=1\\\text{(since
+}s\in T\text{ is true)}}}+\sum_{\substack{s\in S;\\s\notin T}%
+}\underbrace{\left[  s\in T\right]  }_{\substack{=0\\\text{(since }s\in
+T\text{ is false}\\\text{(since }s\notin T\text{))}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since each }s\in S\text{ satisfies either }s\in T\text{ or }s\notin T\\
+\text{(but not both)}%
+\end{array}
+\right) \\
+&  =\underbrace{\sum_{s\in T}1}_{=\left\vert T\right\vert \cdot1}%
++\underbrace{\sum_{\substack{s\in S;\\s\notin T}}0}_{=0}=\left\vert
+T\right\vert \cdot1+0=\left\vert T\right\vert .
+\end{align*}
+This proves Lemma \ref{lem.iverson.card}.
+\end{proof}
+
+We can now state the main precursor to Theorem \ref{thm.pie.merged}:
+
+\begin{lemma}
+\label{lem.pie.merged.iverson}Let $S$ be a finite set. Let $G$ be a finite
+set. For each $i\in G$, let $A_{i}$ be a subset of $S$. We define the
+intersection $\bigcap_{i\in\varnothing}A_{i}$ (which would otherwise be
+undefined, since $\varnothing$ is the empty set) to mean the set $S$. (Thus,
+$\bigcap_{i\in I}A_{i}$ is defined for any subset $I$ of $G$, not just for
+nonempty subsets $I$.)
+
+Let $k\in\mathbb{N}$ and $m\in\mathbb{N}$ be such that $m\geq k$.
+
+Let $s\in S$. Let $c\left(  s\right)  $ denote the number of $i\in G$
+satisfying $s\in A_{i}$. Then,%
+\[
+\sum_{\substack{I\subseteq G;\\\left\vert I\right\vert \leq m}}\left(
+-1\right)  ^{\left\vert I\right\vert }\dbinom{\left\vert I\right\vert }%
+{k}\left[  s\in\bigcap_{i\in I}A_{i}\right]  =\left(  -1\right)  ^{m}%
+\dbinom{c\left(  s\right)  }{k}\dbinom{c\left(  s\right)  -k-1}{m-k}.
+\]
+
+\end{lemma}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Lemma \ref{lem.pie.merged.iverson}.]From $m\geq k$ and
+$m\in\mathbb{N}$, we obtain $m\in\left\{  k,k+1,k+2,\ldots\right\}  $.
+
+Define a subset $C$ of $G$ by%
+\[
+C=\left\{  i\in G\ \mid\ s\in A_{i}\right\}  .
+\]
+Thus,%
+\begin{align*}
+\left\vert C\right\vert  &  =\left\vert \left\{  i\in G\ \mid\ s\in
+A_{i}\right\}  \right\vert \\
+&  =\left(  \text{the number of }i\in G\text{ satisfying }s\in A_{i}\right)
+=c\left(  s\right)
+\end{align*}
+(since $c\left(  s\right)  $ was defined as the number of $i\in G$ satisfying
+$s\in A_{i}$). In other words, $C$ is a $c\left(  s\right)  $-element set.
+Hence, for each $r\in\mathbb{N}$, Proposition \ref{prop.binom.subsets}
+(applied to $c\left(  s\right)  $, $r$ and $C$ instead of $m$, $n$ and $S$)
+shows that
+\begin{equation}
+\dbinom{c\left(  s\right)  }{r}\text{ is the number of all }r\text{-element
+subsets of }C. \label{pf.lem.pie.merged.iverson.short.number}%
+\end{equation}
+
+
+Let $I$ be a subset of $G$. We have the following equivalence:%
+\begin{equation}
+\left(  s\in\bigcap_{i\in I}A_{i}\right)  \ \Longleftrightarrow\ \left(  s\in
+A_{i}\text{ for all }i\in I\right)
+\label{pf.lem.pie.merged.iverson.short.equiv1}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.pie.merged.iverson.short.equiv1}):} If
+$I$ is nonempty, then the equivalence
+(\ref{pf.lem.pie.merged.iverson.short.equiv1}) follows immediately from the
+equality
+\[
+\bigcap_{i\in I}A_{i}=\left\{  x\ \mid\ x\in A_{i}\text{ for all }i\in
+I\right\}
+\]
+(which is the definition of the intersection $\bigcap_{i\in I}A_{i}$). Thus,
+for the rest of this proof, we WLOG assume that $I$ is not nonempty.
+\par
+Hence, the set $I$ is empty. In other words, $I=\varnothing$. Hence,
+$\bigcap_{i\in I}A_{i}=\bigcap_{i\in\varnothing}A_{i}=S$. Thus, $s\in
+S=\bigcap_{i\in I}A_{i}$. Hence, the statement $\left(  s\in\bigcap_{i\in
+I}A_{i}\right)  $ is true.
+\par
+Also, there exist no $i\in I$ (since the set $I$ is empty). Hence, the
+statement $\left(  s\in A_{i}\text{ for all }i\in I\right)  $ is vacuously
+true.
+\par
+Thus, the statements $\left(  s\in\bigcap_{i\in I}A_{i}\right)  $ and $\left(
+s\in A_{i}\text{ for all }i\in I\right)  $ are both true, and therefore
+equivalent. This proves the equivalence
+(\ref{pf.lem.pie.merged.iverson.short.equiv1}).}.
+
+But if $i\in I$, then we have the equivalence%
+\begin{equation}
+\left(  i\in C\right)  \ \Longleftrightarrow\ \left(  s\in A_{i}\right)
+\label{pf.lem.pie.merged.iverson.short.equiv2}%
+\end{equation}
+(since $C=\left\{  i\in G\ \mid\ s\in A_{i}\right\}  $).
+
+Hence, the equivalence (\ref{pf.lem.pie.merged.iverson.short.equiv1}) becomes%
+\begin{align*}
+\left(  s\in\bigcap_{i\in I}A_{i}\right)  \  &  \Longleftrightarrow\ \left(
+\underbrace{s\in A_{i}}_{\substack{\Longleftrightarrow\ \left(  i\in C\right)
+\\\text{(by (\ref{pf.lem.pie.merged.iverson.short.equiv2}))}}}\text{ for all
+}i\in I\right) \\
+&  \Longleftrightarrow\ \left(  i\in C\text{ for all }i\in I\right)
+\ \Longleftrightarrow\ \left(  I\subseteq C\right)  .
+\end{align*}
+In other words, the two statements $\left(  s\in\bigcap_{i\in I}A_{i}\right)
+$ and $\left(  I\subseteq C\right)  $ are equivalent. Hence, Exercise
+\ref{exe.iverson-prop} \textbf{(a)} (applied to $\mathcal{A}=\left(
+s\in\bigcap_{i\in I}A_{i}\right)  $ and $\mathcal{B}=\left(  I\subseteq
+C\right)  $) shows that%
+\begin{equation}
+\left[  s\in\bigcap_{i\in I}A_{i}\right]  =\left[  I\subseteq C\right]  .
+\label{pf.lem.pie.merged.iverson.short.iverson-eq}%
+\end{equation}
+
+
+Now, forget that we fixed $I$. We thus have proven the equality
+(\ref{pf.lem.pie.merged.iverson.short.iverson-eq}) for every subset $I$ of $G$.
+
+Now,%
+\begin{align*}
+&  \sum_{\substack{I\subseteq G;\\\left\vert I\right\vert \leq m}}\left(
+-1\right)  ^{\left\vert I\right\vert }\dbinom{\left\vert I\right\vert }%
+{k}\underbrace{\left[  s\in\bigcap_{i\in I}A_{i}\right]  }_{\substack{=\left[
+I\subseteq C\right]  \\\text{(by
+(\ref{pf.lem.pie.merged.iverson.short.iverson-eq}))}}}\\
+&  =\sum_{\substack{I\subseteq G;\\\left\vert I\right\vert \leq m}}\left(
+-1\right)  ^{\left\vert I\right\vert }\dbinom{\left\vert I\right\vert }%
+{k}\left[  I\subseteq C\right] \\
+&  =\underbrace{\sum_{\substack{I\subseteq G;\\\left\vert I\right\vert \leq
+m;\\I\subseteq C}}}_{\substack{=\sum_{\substack{I\subseteq G;\\I\subseteq
+C;\\\left\vert I\right\vert \leq m}}=\sum_{\substack{I\subseteq C;\\\left\vert
+I\right\vert \leq m}}\\\text{(since }C\text{ is a subset of }G\text{)}%
+}}\left(  -1\right)  ^{\left\vert I\right\vert }\dbinom{\left\vert
+I\right\vert }{k}\underbrace{\left[  I\subseteq C\right]  }%
+_{\substack{=1\\\text{(since }I\subseteq C\text{)}}}+\sum
+_{\substack{I\subseteq G;\\\left\vert I\right\vert \leq m;\\\text{not
+}I\subseteq C}}\left(  -1\right)  ^{\left\vert I\right\vert }\dbinom
+{\left\vert I\right\vert }{k}\underbrace{\left[  I\subseteq C\right]
+}_{\substack{=0\\\text{(since we don't have }I\subseteq C\text{)}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since each subset }I\text{ of }G\text{ satisfies either }I\subseteq C\\
+\text{or }\left(  \text{not }I\subseteq C\right)  \text{ (but not both)}%
+\end{array}
+\right) \\
+&  =\sum_{\substack{I\subseteq C;\\\left\vert I\right\vert \leq m}}\left(
+-1\right)  ^{\left\vert I\right\vert }\dbinom{\left\vert I\right\vert }%
+{k}+\underbrace{\sum_{\substack{I\subseteq G;\\\left\vert I\right\vert \leq
+m;\\\text{not }I\subseteq C}}\left(  -1\right)  ^{\left\vert I\right\vert
+}\dbinom{\left\vert I\right\vert }{k}0}_{=0}=\underbrace{\sum
+_{\substack{I\subseteq C;\\\left\vert I\right\vert \leq m}}}_{=\sum_{r=0}%
+^{m}\sum_{\substack{I\subseteq C;\\\left\vert I\right\vert =r}}}\left(
+-1\right)  ^{\left\vert I\right\vert }\dbinom{\left\vert I\right\vert }{k}\\
+&  =\sum_{r=0}^{m}\sum_{\substack{I\subseteq C;\\\left\vert I\right\vert
+=r}}\underbrace{\left(  -1\right)  ^{\left\vert I\right\vert }}%
+_{\substack{=\left(  -1\right)  ^{r}\\\text{(since }\left\vert I\right\vert
+=r\text{)}}}\underbrace{\dbinom{\left\vert I\right\vert }{k}}%
+_{\substack{=\dbinom{r}{k}\\\text{(since }\left\vert I\right\vert =r\text{)}}}
+\end{align*}%
+\begin{align*}
+&  =\sum_{r=0}^{m}\underbrace{\sum_{\substack{I\subseteq C;\\\left\vert
+I\right\vert =r}}\left(  -1\right)  ^{r}\dbinom{r}{k}}_{=\left(  \text{the
+number of all subsets }I\text{ of }C\text{ satisfying }\left\vert I\right\vert
+=r\right)  \left(  -1\right)  ^{r}\dbinom{r}{k}}\\
+&  =\sum_{r=0}^{m}\underbrace{\left(  \text{the number of all subsets }I\text{
+of }C\text{ satisfying }\left\vert I\right\vert =r\right)  }%
+_{\substack{=\left(  \text{the number of all }r\text{-element subsets of
+}C\right)  =\dbinom{c\left(  s\right)  }{r}\\\text{(by
+(\ref{pf.lem.pie.merged.iverson.short.number}))}}}\left(  -1\right)
+^{r}\dbinom{r}{k}\\
+&  =\sum_{r=0}^{m}\dbinom{c\left(  s\right)  }{r}\left(  -1\right)
+^{r}\dbinom{r}{k}=\sum_{r=0}^{m}\left(  -1\right)  ^{r}\dbinom{c\left(
+s\right)  }{r}\dbinom{r}{k}=\left(  -1\right)  ^{m}\dbinom{c\left(  s\right)
+}{k}\dbinom{c\left(  s\right)  -k-1}{m-k}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Lemma \ref{lem.pie.binid} (applied to
+}n=c\left(  s\right)  \text{)}\right)  .
+\end{align*}
+This proves Lemma \ref{lem.pie.merged.iverson}.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Lemma \ref{lem.pie.merged.iverson}.]From $m\geq k$ and
+$m\in\mathbb{N}$, we obtain $m\in\left\{  k,k+1,k+2,\ldots\right\}  $.
+
+Define a subset $C$ of $G$ by%
+\[
+C=\left\{  i\in G\ \mid\ s\in A_{i}\right\}  .
+\]
+Thus,%
+\begin{align*}
+\left\vert C\right\vert  &  =\left\vert \left\{  i\in G\ \mid\ s\in
+A_{i}\right\}  \right\vert \\
+&  =\left(  \text{the number of }i\in G\text{ satisfying }s\in A_{i}\right)
+=c\left(  s\right)
+\end{align*}
+(since the number of $i\in G$ satisfying $s\in A_{i}$ is $c\left(  s\right)  $
+(by the definition of $c\left(  s\right)  $)). In other words, $C$ is a
+$c\left(  s\right)  $-element set.
+
+Let $I$ be a subset of $G$. We have the following equivalence:%
+\begin{equation}
+\left(  s\in\bigcap_{i\in I}A_{i}\right)  \ \Longleftrightarrow\ \left(  s\in
+A_{i}\text{ for all }i\in I\right)  \label{pf.lem.pie.merged.iverson.equiv1}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.pie.merged.iverson.equiv1}):} If $I$
+is nonempty, then the equivalence (\ref{pf.lem.pie.merged.iverson.equiv1})
+follows immediately from the equality
+\[
+\bigcap_{i\in I}A_{i}=\left\{  x\ \mid\ x\in A_{i}\text{ for all }i\in
+I\right\}
+\]
+(which is the definition of the intersection $\bigcap_{i\in I}A_{i}$). Thus,
+for the rest of this proof, we can WLOG assume that $I$ is not nonempty.
+Assume this.
+\par
+The set $I$ is empty (since $I$ is not nonempty). In other words,
+$I=\varnothing$. Hence, $\bigcap_{i\in I}A_{i}=\bigcap_{i\in\varnothing}%
+A_{i}=S$. Thus, $s\in S=\bigcap_{i\in I}A_{i}$. Hence, the statement $\left(
+s\in\bigcap_{i\in I}A_{i}\right)  $ is true.
+\par
+Also, there exist no $i\in I$ (since the set $I$ is empty). Hence, the
+statement $\left(  s\in A_{i}\text{ for all }i\in I\right)  $ is vacuously
+true.
+\par
+Thus, the statements $\left(  s\in\bigcap_{i\in I}A_{i}\right)  $ and $\left(
+s\in A_{i}\text{ for all }i\in I\right)  $ are both true. Hence, these
+statements are equivalent. This proves the equivalence
+(\ref{pf.lem.pie.merged.iverson.equiv1}).}.
+
+But if $i\in I$, then we have the equivalence%
+\begin{equation}
+\left(  i\in C\right)  \ \Longleftrightarrow\ \left(  s\in A_{i}\right)
+\label{pf.lem.pie.merged.iverson.equiv2}%
+\end{equation}
+(since $C=\left\{  i\in G\ \mid\ s\in A_{i}\right\}  $).
+
+Hence, the equivalence (\ref{pf.lem.pie.merged.iverson.equiv1}) becomes%
+\begin{align*}
+\left(  s\in\bigcap_{i\in I}A_{i}\right)  \  &  \Longleftrightarrow\ \left(
+\underbrace{s\in A_{i}}_{\substack{\Longleftrightarrow\ \left(  i\in C\right)
+\\\text{(by (\ref{pf.lem.pie.merged.iverson.equiv2}))}}}\text{ for all }i\in
+I\right) \\
+&  \Longleftrightarrow\ \left(  i\in C\text{ for all }i\in I\right)
+\ \Longleftrightarrow\ \left(  I\subseteq C\right)  .
+\end{align*}
+In other words, the two statements $\left(  s\in\bigcap_{i\in I}A_{i}\right)
+$ and $\left(  I\subseteq C\right)  $ are equivalent. Hence, Exercise
+\ref{exe.iverson-prop} \textbf{(a)} (applied to $\mathcal{A}=\left(
+s\in\bigcap_{i\in I}A_{i}\right)  $ and $\mathcal{B}=\left(  I\subseteq
+C\right)  $) shows that%
+\begin{equation}
+\left[  s\in\bigcap_{i\in I}A_{i}\right]  =\left[  I\subseteq C\right]  .
+\label{pf.lem.pie.merged.iverson.iverson-eq}%
+\end{equation}
+
+
+Now, forget that we fixed $I$. We thus have proven the equality
+(\ref{pf.lem.pie.merged.iverson.iverson-eq}) for every subset $I$ of $G$.
+
+Also, for any $r\in\mathbb{N}$, we have%
+\begin{equation}
+\left(  \text{the number of all subsets }I\text{ of }C\text{ satisfying
+}\left\vert I\right\vert =r\right)  =\dbinom{c\left(  s\right)  }{r}
+\label{pf.lem.pie.merged.iverson.number}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.lem.pie.merged.iverson.number}):} Let
+$r\in\mathbb{N}$. The set $C$ is a $c\left(  s\right)  $-element set. Thus,
+Proposition \ref{prop.binom.subsets} (applied to $c\left(  s\right)  $, $r$
+and $C$ instead of $m$, $n$ and $S$) yields that%
+\[
+\dbinom{c\left(  s\right)  }{r}\text{ is the number of all }r\text{-element
+subsets of }C\text{.}%
+\]
+In other words,%
+\begin{align*}
+\dbinom{c\left(  s\right)  }{r}  &  =\left(  \text{the number of all
+}r\text{-element subsets of }C\right) \\
+&  =\left(  \text{the number of all subsets }I\text{ of }C\text{ such that
+}\underbrace{I\text{ is an }r\text{-element set}}_{\Longleftrightarrow
+\ \left(  \left\vert I\right\vert =r\right)  }\right) \\
+&  =\left(  \text{the number of all subsets }I\text{ of }C\text{ such that
+}\left\vert I\right\vert =r\right)  .
+\end{align*}
+This proves (\ref{pf.lem.pie.merged.iverson.number}).}.
+
+Now,%
+\begin{align*}
+&  \sum_{\substack{I\subseteq G;\\\left\vert I\right\vert \leq m}}\left(
+-1\right)  ^{\left\vert I\right\vert }\dbinom{\left\vert I\right\vert }%
+{k}\underbrace{\left[  s\in\bigcap_{i\in I}A_{i}\right]  }_{\substack{=\left[
+I\subseteq C\right]  \\\text{(by (\ref{pf.lem.pie.merged.iverson.iverson-eq}%
+))}}}\\
+&  =\sum_{\substack{I\subseteq G;\\\left\vert I\right\vert \leq m}}\left(
+-1\right)  ^{\left\vert I\right\vert }\dbinom{\left\vert I\right\vert }%
+{k}\left[  I\subseteq C\right] \\
+&  =\underbrace{\sum_{\substack{I\subseteq G;\\\left\vert I\right\vert \leq
+m;\\I\subseteq C}}}_{\substack{=\sum_{\substack{I\subseteq G;\\I\subseteq
+C;\\\left\vert I\right\vert \leq m}}=\sum_{\substack{I\subseteq C;\\\left\vert
+I\right\vert \leq m}}\\\text{(since }C\text{ is a subset of }G\text{)}%
+}}\left(  -1\right)  ^{\left\vert I\right\vert }\dbinom{\left\vert
+I\right\vert }{k}\underbrace{\left[  I\subseteq C\right]  }%
+_{\substack{=1\\\text{(since }I\subseteq C\text{)}}}+\sum
+_{\substack{I\subseteq G;\\\left\vert I\right\vert \leq m;\\\text{not
+}I\subseteq C}}\left(  -1\right)  ^{\left\vert I\right\vert }\dbinom
+{\left\vert I\right\vert }{k}\underbrace{\left[  I\subseteq C\right]
+}_{\substack{=0\\\text{(since we don't have }I\subseteq C\text{)}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since each subset }I\text{ of }G\text{ satisfies either }I\subseteq C\\
+\text{or }\left(  \text{not }I\subseteq C\right)  \text{ (but not both)}%
+\end{array}
+\right) \\
+&  =\sum_{\substack{I\subseteq C;\\\left\vert I\right\vert \leq m}}\left(
+-1\right)  ^{\left\vert I\right\vert }\dbinom{\left\vert I\right\vert }%
+{k}+\underbrace{\sum_{\substack{I\subseteq G;\\\left\vert I\right\vert \leq
+m;\\\text{not }I\subseteq C}}\left(  -1\right)  ^{\left\vert I\right\vert
+}\dbinom{\left\vert I\right\vert }{k}0}_{=0}=\underbrace{\sum
+_{\substack{I\subseteq C;\\\left\vert I\right\vert \leq m}}}_{\substack{=\sum
+_{\substack{I\subseteq C;\\\left\vert I\right\vert \in\left\{  0,1,\ldots
+,m\right\}  }}\\\text{(because for any subset }I\text{ of }C\text{,}%
+\\\text{the condition }\left(  \left\vert I\right\vert \leq m\right)  \text{
+is equivalent}\\\text{to }\left(  \left\vert I\right\vert \in\left\{
+0,1,\ldots,m\right\}  \right)  \text{ (since }\left\vert I\right\vert
+\in\mathbb{N}\text{))}}}\left(  -1\right)  ^{\left\vert I\right\vert }%
+\dbinom{\left\vert I\right\vert }{k}\\
+&  =\underbrace{\sum_{\substack{I\subseteq C;\\\left\vert I\right\vert
+\in\left\{  0,1,\ldots,m\right\}  }}}_{=\sum_{r\in\left\{  0,1,\ldots
+,m\right\}  }\sum_{\substack{I\subseteq C;\\\left\vert I\right\vert =r}%
+}}\left(  -1\right)  ^{\left\vert I\right\vert }\dbinom{\left\vert
+I\right\vert }{k}=\sum_{r\in\left\{  0,1,\ldots,m\right\}  }\sum
+_{\substack{I\subseteq C;\\\left\vert I\right\vert =r}}\underbrace{\left(
+-1\right)  ^{\left\vert I\right\vert }}_{\substack{=\left(  -1\right)
+^{r}\\\text{(since }\left\vert I\right\vert =r\text{)}}}\underbrace{\dbinom
+{\left\vert I\right\vert }{k}}_{\substack{=\dbinom{r}{k}\\\text{(since
+}\left\vert I\right\vert =r\text{)}}}
+\end{align*}%
+\begin{align*}
+&  =\underbrace{\sum_{r\in\left\{  0,1,\ldots,m\right\}  }}_{=\sum_{r=0}^{m}%
+}\underbrace{\sum_{\substack{I\subseteq C;\\\left\vert I\right\vert
+=r}}\left(  -1\right)  ^{r}\dbinom{r}{k}}_{=\left(  \text{the number of all
+subsets }I\text{ of }C\text{ satisfying }\left\vert I\right\vert =r\right)
+\left(  -1\right)  ^{r}\dbinom{r}{k}}\\
+&  =\sum_{r=0}^{m}\underbrace{\left(  \text{the number of all subsets }I\text{
+of }C\text{ satisfying }\left\vert I\right\vert =r\right)  }%
+_{\substack{=\dbinom{c\left(  s\right)  }{r}\\\text{(by
+(\ref{pf.lem.pie.merged.iverson.number}))}}}\left(  -1\right)  ^{r}\dbinom
+{r}{k}\\
+&  =\sum_{r=0}^{m}\dbinom{c\left(  s\right)  }{r}\left(  -1\right)
+^{r}\dbinom{r}{k}=\sum_{r=0}^{m}\left(  -1\right)  ^{r}\dbinom{c\left(
+s\right)  }{r}\dbinom{r}{k}\\
+&  =\left(  -1\right)  ^{m}\dbinom{c\left(  s\right)  }{k}\dbinom{c\left(
+s\right)  -k-1}{m-k}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Lemma \ref{lem.pie.binid} (applied to
+}n=c\left(  s\right)  \text{)}\right)  .
+\end{align*}
+This proves Lemma \ref{lem.pie.merged.iverson}.
+\end{proof}
+\end{verlong}
+
+We now easily obtain Theorem \ref{thm.pie.merged}:
+
+\begin{proof}
+[Proof of Theorem \ref{thm.pie.merged}.]For each subset $I$ of $G$, the
+intersection $\bigcap_{i\in I}A_{i}$ is a subset of $S$%
+\ \ \ \ \footnote{\textit{Proof.} Let $I$ be a subset of $G$. We must show
+that the intersection $\bigcap_{i\in I}A_{i}$ is a subset of $S$.
+\par
+If $I$ is nonempty, then this is clear (because each of the sets $A_{i}$ is a
+subset of $S$). Hence, for the rest of this proof, we can WLOG assume that $I$
+is not nonempty. Assume this.
+\par
+The set $I$ is empty (since $I$ is not nonempty). Hence, $I=\varnothing$.
+Thus, $\bigcap_{i\in I}A_{i}=\bigcap_{i\in\varnothing}A_{i}=S$ (since we
+defined $\bigcap_{i\in\varnothing}A_{i}$ to be $S$). Hence, $\bigcap
+_{i\in\varnothing}A_{i}$ is a subset of $S$. Qed.}. Hence, for each subset $I$
+of $G$, we obtain%
+\begin{equation}
+\left\vert \bigcap_{i\in I}A_{i}\right\vert =\sum_{s\in S}\left[  s\in
+\bigcap_{i\in I}A_{i}\right]  \label{pf.thm.pie.merged.intersection}%
+\end{equation}
+(by Lemma \ref{lem.iverson.card} (applied to $T=\bigcap_{i\in I}A_{i}$)).
+Hence,%
+\begin{align*}
+&  \sum_{\substack{I\subseteq G;\\\left\vert I\right\vert \leq m}}\left(
+-1\right)  ^{\left\vert I\right\vert }\dbinom{\left\vert I\right\vert }%
+{k}\underbrace{\left\vert \bigcap_{i\in I}A_{i}\right\vert }_{\substack{=\sum
+_{s\in S}\left[  s\in\bigcap_{i\in I}A_{i}\right]  \\\text{(by
+(\ref{pf.thm.pie.merged.intersection}))}}}\\
+&  =\sum_{\substack{I\subseteq G;\\\left\vert I\right\vert \leq m}}\left(
+-1\right)  ^{\left\vert I\right\vert }\dbinom{\left\vert I\right\vert }{k}%
+\sum_{s\in S}\left[  s\in\bigcap_{i\in I}A_{i}\right]  =\underbrace{\sum
+_{\substack{I\subseteq G;\\\left\vert I\right\vert \leq m}}\sum_{s\in S}%
+}_{=\sum_{s\in S}\sum_{\substack{I\subseteq G;\\\left\vert I\right\vert \leq
+m}}}\left(  -1\right)  ^{\left\vert I\right\vert }\dbinom{\left\vert
+I\right\vert }{k}\left[  s\in\bigcap_{i\in I}A_{i}\right] \\
+&  =\sum_{s\in S}\underbrace{\sum_{\substack{I\subseteq G;\\\left\vert
+I\right\vert \leq m}}\left(  -1\right)  ^{\left\vert I\right\vert }%
+\dbinom{\left\vert I\right\vert }{k}\left[  s\in\bigcap_{i\in I}A_{i}\right]
+}_{\substack{=\left(  -1\right)  ^{m}\dbinom{c\left(  s\right)  }{k}%
+\dbinom{c\left(  s\right)  -k-1}{m-k}\\\text{(by Lemma
+\ref{lem.pie.merged.iverson})}}}\\
+&  =\sum_{s\in S}\left(  -1\right)  ^{m}\dbinom{c\left(  s\right)  }{k}%
+\dbinom{c\left(  s\right)  -k-1}{m-k}=\left(  -1\right)  ^{m}\sum_{s\in
+S}\dbinom{c\left(  s\right)  }{k}\dbinom{c\left(  s\right)  -k-1}{m-k}.
+\end{align*}
+This proves Theorem \ref{thm.pie.merged}.
+\end{proof}
+
+Having proven Theorem \ref{thm.pie.merged}, we can now easily derive the other
+(less general) versions of the inclusion-exclusion principle:
+
+\begin{exercise}
+\label{exe.pie.specialize}Prove Theorem \ref{thm.pie.union}, Theorem
+\ref{thm.pie.nonunion}, Theorem \ref{thm.pie.jordan} and Theorem
+\ref{thm.pie.bonfer}.
+\end{exercise}
 
 \subsection{Additional exercises}
 
@@ -27565,6 +28429,839 @@ _{j=0}^{c}d_{j}\dbinom{X}{j}=\sum_{i=0}^{c}d_{i}\dbinom{X}{i}.
 Exercise \ref{exe.ps1.1.3} is thus solved.
 \end{proof}
 
+\subsection{Solution to Exercise \ref{exe.pie.binid}}
+
+There are many ways to solve Exercise \ref{exe.pie.binid}. The following one
+might be the shortest:
+
+\begin{proof}
+[Proof of Lemma \ref{lem.pie.binid}.]We proceed by induction over $m$:
+
+\begin{vershort}
+\textit{Induction base:} We have
+\begin{align*}
+&  \sum_{r=0}^{k}\left(  -1\right)  ^{r}\dbinom{n}{r}\dbinom{r}{k}\\
+&  =\sum_{r=0}^{k-1}\left(  -1\right)  ^{r}\dbinom{n}{r}\underbrace{\dbinom
+{r}{k}}_{\substack{=0\\\text{(by Proposition \ref{prop.binom.0} (applied to
+}r\text{ and }k\\\text{instead of }m\text{ and }n\text{) (since }r\leq
+k-1<k\text{))}}}+\left(  -1\right)  ^{k}\dbinom{n}{k}\underbrace{\dbinom{k}%
+{k}}_{\substack{=1\\\text{(by Proposition \ref{prop.binom.mm}}\\\text{(applied
+to }k\text{ instead of }m\text{))}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have split off the addend for
+}r=k\text{ from the sum}\right) \\
+&  =\underbrace{\sum_{r=0}^{k-1}\left(  -1\right)  ^{r}\dbinom{n}{r}0}%
+_{=0}+\left(  -1\right)  ^{k}\dbinom{n}{k}=\left(  -1\right)  ^{k}\dbinom
+{n}{k}.
+\end{align*}
+Comparing this with%
+\[
+\left(  -1\right)  ^{k}\dbinom{n}{k}\underbrace{\dbinom{n-k-1}{k-k}%
+}_{\substack{=\dbinom{n-k-1}{0}=1\\\text{(by Proposition \ref{prop.binom.00}
+\textbf{(b)}}\\\text{(applied to }n-k-1\text{ instead of }m\text{))}}}=\left(
+-1\right)  ^{k}\dbinom{n}{k},
+\]
+we obtain $\sum_{r=0}^{k}\left(  -1\right)  ^{r}\dbinom{n}{r}\dbinom{r}%
+{k}=\left(  -1\right)  ^{k}\dbinom{n}{k}\dbinom{n-k-1}{k-k}$. In other words,
+Lemma \ref{lem.pie.binid} holds for $m=k$. This completes the induction base.
+\end{vershort}
+
+\begin{verlong}
+\textit{Induction base:} Assume that $m=k$. Notice that%
+\begin{equation}
+\dbinom{r}{k}=0 \label{sol.pie.binid.base.1}%
+\end{equation}
+for each $r\in\left\{  0,1,\ldots,k-1\right\}  $%
+\ \ \ \ \footnote{\textit{Proof of (\ref{sol.pie.binid.base.1}):} Let
+$r\in\left\{  0,1,\ldots,k-1\right\}  $. Thus, $0\leq r\leq k-1$. Also,
+$r\in\left\{  0,1,\ldots,k-1\right\}  \subseteq\mathbb{N}$. We have $r\leq
+k-1<k$. Hence, Proposition \ref{prop.binom.0} (applied to $r$ and $k$ instead
+of $m$ and $n$) yields $\dbinom{r}{k}=0$. This proves
+(\ref{sol.pie.binid.base.1}).}.
+
+But from $m=k$, we obtain%
+\begin{align}
+\sum_{r=0}^{m}\left(  -1\right)  ^{r}\dbinom{n}{r}\dbinom{r}{k}  &
+=\sum_{r=0}^{k}\left(  -1\right)  ^{r}\dbinom{n}{r}\dbinom{r}{k}\nonumber\\
+&  =\sum_{r=0}^{k-1}\left(  -1\right)  ^{r}\dbinom{n}{r}\underbrace{\dbinom
+{r}{k}}_{\substack{=0\\\text{(by (\ref{sol.pie.binid.base.1}))}}}+\left(
+-1\right)  ^{k}\dbinom{n}{k}\underbrace{\dbinom{k}{k}}%
+_{\substack{=1\\\text{(by Proposition \ref{prop.binom.mm}}\\\text{(applied to
+}k\text{ instead of }m\text{))}}}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have split off the addend for
+}r=k\text{ from the sum}\right) \nonumber\\
+&  =\underbrace{\sum_{r=0}^{k-1}\left(  -1\right)  ^{r}\dbinom{n}{r}0}%
+_{=0}+\left(  -1\right)  ^{k}\dbinom{n}{k}=\left(  -1\right)  ^{k}\dbinom
+{n}{k}. \label{sol.pie.binid.base.L}%
+\end{align}
+
+
+On the other hand, $m-k=0$ (since $m=k$), so that%
+\[
+\dbinom{n-k-1}{m-k}=\dbinom{n-k-1}{0}=1
+\]
+(by Proposition \ref{prop.binom.00} \textbf{(b)} (applied to $n-k-1$ instead
+of $m$)). Hence,%
+\[
+\underbrace{\left(  -1\right)  ^{m}}_{\substack{=\left(  -1\right)
+^{k}\\\text{(since }m=k\text{)}}}\dbinom{n}{k}\underbrace{\dbinom{n-k-1}{m-k}%
+}_{=1}=\left(  -1\right)  ^{k}\dbinom{n}{k}.
+\]
+Comparing this with (\ref{sol.pie.binid.base.L}), we find
+\[
+\sum_{r=0}^{m}\left(  -1\right)  ^{r}\dbinom{n}{r}\dbinom{r}{k}=\left(
+-1\right)  ^{m}\dbinom{n}{k}\dbinom{n-k-1}{m-k}.
+\]
+Hence, Lemma \ref{lem.pie.binid} is proven for $m=k$. This completes the
+induction base.
+\end{verlong}
+
+\textit{Induction step:} Let $M$ be an element of $\left\{  k,k+1,k+2,\ldots
+\right\}  $ such that $M>k$. Assume that Lemma \ref{lem.pie.binid} holds for
+$m=M-1$. We must now prove that Lemma \ref{lem.pie.binid} holds for $m=M$.
+
+We have assumed that Lemma \ref{lem.pie.binid} holds for $m=M-1$. In other
+words, we have%
+\[
+\sum_{r=0}^{M-1}\left(  -1\right)  ^{r}\dbinom{n}{r}\dbinom{r}{k}=\left(
+-1\right)  ^{M-1}\dbinom{n}{k}\dbinom{n-k-1}{\left(  M-1\right)  -k}.
+\]
+Hence,%
+\begin{align}
+\sum_{r=0}^{M-1}\left(  -1\right)  ^{r}\dbinom{n}{r}\dbinom{r}{k}  &
+=\underbrace{\left(  -1\right)  ^{M-1}}_{=-\left(  -1\right)  ^{M}}\dbinom
+{n}{k}\underbrace{\dbinom{n-k-1}{\left(  M-1\right)  -k}}_{\substack{=\dbinom
+{n-k-1}{M-k-1}\\\text{(since }\left(  M-1\right)  -k=M-k-1\text{)}%
+}}\nonumber\\
+&  =-\left(  -1\right)  ^{M}\dbinom{n}{k}\dbinom{n-k-1}{M-k-1}.
+\label{sol.pie.binid.step.hyp2}%
+\end{align}
+
+
+On the other hand, $M\geq k$ (since $M>k$). Hence, Proposition
+\ref{prop.binom.trinom-rev} \textbf{(b)} (applied to $n$, $M$ and $k$ instead
+of $m$, $i$ and $a$) yields%
+\begin{equation}
+\dbinom{n}{M}\dbinom{M}{k}=\dbinom{n}{k}\dbinom{n-k}{M-k}.
+\label{sol.pie.binid.step.3}%
+\end{equation}
+
+
+Furthermore, $M-k>0$ (since $M>k$), so that $M-k\in\left\{  1,2,3,\ldots
+\right\}  $ (since $M-k$ is an integer). Hence, Proposition
+\ref{prop.binom.rec} \textbf{(b)} (applied to $n-k$ and $M-k$ instead of $m$
+and $n$) yields%
+\[
+\dbinom{n-k}{M-k}=\dbinom{n-k-1}{M-k-1}+\dbinom{n-k-1}{M-k}.
+\]
+Hence, (\ref{sol.pie.binid.step.3}) becomes%
+\begin{align}
+\dbinom{n}{M}\dbinom{M}{k}  &  =\dbinom{n}{k}\underbrace{\dbinom{n-k}{M-k}%
+}_{=\dbinom{n-k-1}{M-k-1}+\dbinom{n-k-1}{M-k}}\nonumber\\
+&  =\dbinom{n}{k}\left(  \dbinom{n-k-1}{M-k-1}+\dbinom{n-k-1}{M-k}\right)  .
+\label{sol.pie.binid.step.5}%
+\end{align}
+
+
+Now,
+\begin{align*}
+&  \sum_{r=0}^{M}\left(  -1\right)  ^{r}\dbinom{n}{r}\dbinom{r}{k}\\
+&  =\underbrace{\sum_{r=0}^{M-1}\left(  -1\right)  ^{r}\dbinom{n}{r}\dbinom
+{r}{k}}_{\substack{=-\left(  -1\right)  ^{M}\dbinom{n}{k}\dbinom{n-k-1}%
+{M-k-1}\\\text{(by (\ref{sol.pie.binid.step.hyp2}))}}}+\left(  -1\right)
+^{M}\underbrace{\dbinom{n}{M}\dbinom{M}{k}}_{\substack{=\dbinom{n}{k}\left(
+\dbinom{n-k-1}{M-k-1}+\dbinom{n-k-1}{M-k}\right)  \\\text{(by
+(\ref{sol.pie.binid.step.5}))}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have split off the addend for
+}r=M\text{ from the sum}\right) \\
+&  =-\left(  -1\right)  ^{M}\dbinom{n}{k}\dbinom{n-k-1}{M-k-1}%
++\underbrace{\left(  -1\right)  ^{M}\dbinom{n}{k}\left(  \dbinom{n-k-1}%
+{M-k-1}+\dbinom{n-k-1}{M-k}\right)  }_{=\left(  -1\right)  ^{M}\dbinom{n}%
+{k}\dbinom{n-k-1}{M-k-1}+\left(  -1\right)  ^{M}\dbinom{n}{k}\dbinom
+{n-k-1}{M-k}}\\
+&  =-\left(  -1\right)  ^{M}\dbinom{n}{k}\dbinom{n-k-1}{M-k-1}+\left(
+-1\right)  ^{M}\dbinom{n}{k}\dbinom{n-k-1}{M-k-1}+\left(  -1\right)
+^{M}\dbinom{n}{k}\dbinom{n-k-1}{M-k}\\
+&  =\left(  -1\right)  ^{M}\dbinom{n}{k}\dbinom{n-k-1}{M-k}.
+\end{align*}
+In other words, Lemma \ref{lem.pie.binid} holds for $m=M$. This completes the
+induction step. Hence, Lemma \ref{lem.pie.binid} is proven.
+\end{proof}
+
+\begin{proof}
+[Solution to Exercise \ref{exe.pie.binid}.]We have proven Lemma
+\ref{lem.pie.binid}; hence, Exercise \ref{exe.pie.binid} is solved.
+\end{proof}
+
+\subsection{Solution to Exercise \ref{exe.iverson-prop}}
+
+\begin{proof}
+[Solution to Exercise \ref{exe.iverson-prop}.]\textbf{(a)} Let $\mathcal{A}$
+and $\mathcal{B}$ be two equivalent statements.
+
+We have $\left[  \mathcal{A}\right]  =%
+\begin{cases}
+1, & \text{if }\mathcal{A}\text{ is true};\\
+0, & \text{if }\mathcal{A}\text{ is false}%
+\end{cases}
+$ (by the definition of $\left[  \mathcal{A}\right]  $) and $\left[
+\mathcal{B}\right]  =%
+\begin{cases}
+1, & \text{if }\mathcal{B}\text{ is true};\\
+0, & \text{if }\mathcal{B}\text{ is false}%
+\end{cases}
+$ (by the definition of $\left[  \mathcal{B}\right]  $).
+
+But $\mathcal{A}$ and $\mathcal{B}$ are equivalent. Thus, $\mathcal{A}$ is
+true (resp. false) if and only if $\mathcal{B}$ is true (resp. false). Hence,
+$%
+\begin{cases}
+1, & \text{if }\mathcal{A}\text{ is true};\\
+0, & \text{if }\mathcal{A}\text{ is false}%
+\end{cases}
+=%
+\begin{cases}
+1, & \text{if }\mathcal{B}\text{ is true};\\
+0, & \text{if }\mathcal{B}\text{ is false}%
+\end{cases}
+$. Thus,%
+\[
+\left[  \mathcal{A}\right]  =%
+\begin{cases}
+1, & \text{if }\mathcal{A}\text{ is true};\\
+0, & \text{if }\mathcal{A}\text{ is false}%
+\end{cases}
+=%
+\begin{cases}
+1, & \text{if }\mathcal{B}\text{ is true};\\
+0, & \text{if }\mathcal{B}\text{ is false}%
+\end{cases}
+=\left[  \mathcal{B}\right]  .
+\]
+This solves Exercise \ref{exe.iverson-prop} \textbf{(a)}.
+
+\textbf{(b)} Let $\mathcal{A}$ be any logical statement. Then, $\left(
+\text{not }\mathcal{A}\right)  $ is true (resp. false) if and only if
+$\mathcal{A}$ is false (resp. true). Hence,
+\[%
+\begin{cases}
+1, & \text{if }\left(  \text{not }\mathcal{A}\right)  \text{ is true};\\
+0, & \text{if }\left(  \text{not }\mathcal{A}\right)  \text{ is false}%
+\end{cases}
+=%
+\begin{cases}
+1, & \text{if }\mathcal{A}\text{ is false};\\
+0, & \text{if }\mathcal{A}\text{ is true}%
+\end{cases}
+=%
+\begin{cases}
+0, & \text{if }\mathcal{A}\text{ is true};\\
+1, & \text{if }\mathcal{A}\text{ is false}%
+\end{cases}
+.
+\]
+Now, the definition of $\left[  \text{not }\mathcal{A}\right]  $ shows that%
+\[
+\left[  \text{not }\mathcal{A}\right]  =%
+\begin{cases}
+1, & \text{if }\left(  \text{not }\mathcal{A}\right)  \text{ is true};\\
+0, & \text{if }\left(  \text{not }\mathcal{A}\right)  \text{ is false}%
+\end{cases}
+=%
+\begin{cases}
+0, & \text{if }\mathcal{A}\text{ is true};\\
+1, & \text{if }\mathcal{A}\text{ is false}%
+\end{cases}
+.
+\]
+Adding this equality to%
+\[
+\left[  \mathcal{A}\right]  =%
+\begin{cases}
+1, & \text{if }\mathcal{A}\text{ is true};\\
+0, & \text{if }\mathcal{A}\text{ is false}%
+\end{cases}
+,
+\]
+we obtain%
+\begin{align*}
+\left[  \mathcal{A}\right]  +\left[  \text{not }\mathcal{A}\right]   &  =%
+\begin{cases}
+1, & \text{if }\mathcal{A}\text{ is true};\\
+0, & \text{if }\mathcal{A}\text{ is false}%
+\end{cases}
++%
+\begin{cases}
+0, & \text{if }\mathcal{A}\text{ is true};\\
+1, & \text{if }\mathcal{A}\text{ is false}%
+\end{cases}
+=%
+\begin{cases}
+1+0, & \text{if }\mathcal{A}\text{ is true};\\
+0+1, & \text{if }\mathcal{A}\text{ is false}%
+\end{cases}
+\\
+&  =%
+\begin{cases}
+1, & \text{if }\mathcal{A}\text{ is true};\\
+1, & \text{if }\mathcal{A}\text{ is false}%
+\end{cases}
+=1.
+\end{align*}
+Thus, $\left[  \text{not }\mathcal{A}\right]  =1-\left[  \mathcal{A}\right]
+$. This solves Exercise \ref{exe.iverson-prop} \textbf{(b)}.
+
+\textbf{(c)} Let $\mathcal{A}$ and $\mathcal{B}$ be two logical statements. We
+must be in one of the following two cases:
+
+\textit{Case 1:} The statement $\mathcal{A}$ is true.
+
+\textit{Case 2:} The statement $\mathcal{A}$ is false.
+
+Let us consider Case 1 first. In this case, the statement $\mathcal{A}$ is
+true. Hence, the statement $\mathcal{A}\wedge\mathcal{B}$ is equivalent to the
+statement $\mathcal{B}$. Thus, Exercise \ref{exe.iverson-prop} \textbf{(a)}
+(applied to $\mathcal{A}\wedge\mathcal{B}$ instead of $\mathcal{A}$) shows
+that $\left[  \mathcal{A}\wedge\mathcal{B}\right]  =\left[  \mathcal{B}%
+\right]  $. But the definition of $\left[  \mathcal{A}\right]  $ yields
+$\left[  \mathcal{A}\right]  =%
+\begin{cases}
+1, & \text{if }\mathcal{A}\text{ is true};\\
+0, & \text{if }\mathcal{A}\text{ is false}%
+\end{cases}
+=1$ (since $\mathcal{A}$ is true). Hence, $\underbrace{\left[  \mathcal{A}%
+\right]  }_{=1}\left[  \mathcal{B}\right]  =\left[  \mathcal{B}\right]  $.
+Comparing this with $\left[  \mathcal{A}\wedge\mathcal{B}\right]  =\left[
+\mathcal{B}\right]  $, we obtain $\left[  \mathcal{A}\wedge\mathcal{B}\right]
+=\left[  \mathcal{A}\right]  \left[  \mathcal{B}\right]  $. Thus, Exercise
+\ref{exe.iverson-prop} \textbf{(c)} is solved in Case 1.
+
+Let us now consider Case 2. In this case, the statement $\mathcal{A}$ is
+false. Hence, the statement $\mathcal{A}\wedge\mathcal{B}$ is false as well.
+Thus, the definition of $\left[  \mathcal{A}\wedge\mathcal{B}\right]  $ yields
+$\left[  \mathcal{A}\wedge\mathcal{B}\right]  =%
+\begin{cases}
+1, & \text{if }\mathcal{A}\wedge\mathcal{B}\text{ is true};\\
+0, & \text{if }\mathcal{A}\wedge\mathcal{B}\text{ is false}%
+\end{cases}
+=0$ (since $\mathcal{A}\wedge\mathcal{B}$ is false). But the definition of
+$\left[  \mathcal{A}\right]  $ yields $\left[  \mathcal{A}\right]  =%
+\begin{cases}
+1, & \text{if }\mathcal{A}\text{ is true};\\
+0, & \text{if }\mathcal{A}\text{ is false}%
+\end{cases}
+=0$ (since $\mathcal{A}$ is false). Hence, $\underbrace{\left[  \mathcal{A}%
+\right]  }_{=0}\left[  \mathcal{B}\right]  =0\left[  \mathcal{B}\right]  =0$.
+Comparing this with $\left[  \mathcal{A}\wedge\mathcal{B}\right]  =0$, we
+obtain $\left[  \mathcal{A}\wedge\mathcal{B}\right]  =\left[  \mathcal{A}%
+\right]  \left[  \mathcal{B}\right]  $. Thus, Exercise \ref{exe.iverson-prop}
+\textbf{(c)} is solved in Case 2.
+
+We thus have solved Exercise \ref{exe.iverson-prop} \textbf{(c)} in both Cases
+1 and 2. Hence, Exercise \ref{exe.iverson-prop} \textbf{(c)} always holds.
+
+[\textit{Remark:} It is, of course, also possible to get a completely
+straightforward solution to Exercise \ref{exe.iverson-prop} \textbf{(c)} by
+distinguishing four cases, depending on which of the statements $\mathcal{A}$
+and $\mathcal{B}$ are true.]
+
+\textbf{(d)} It is easy to solve Exercise \ref{exe.iverson-prop} \textbf{(d)}
+by a case distinction similarly to Exercise \ref{exe.iverson-prop}
+\textbf{(c)}. However, since we have already solved parts \textbf{(b)} and
+\textbf{(c)}, we can give a simpler solution:
+
+Let $\mathcal{A}$ and $\mathcal{B}$ be two logical statements. One of de
+Morgan's laws says that the statement $\left(  \text{not }\left(
+\mathcal{A}\vee\mathcal{B}\right)  \right)  $ is equivalent to $\left(
+\text{not }\mathcal{A}\right)  \wedge\left(  \text{not }\mathcal{B}\right)  $.
+Hence, Exercise \ref{exe.iverson-prop} \textbf{(a)} (applied to $\left(
+\text{not }\left(  \mathcal{A}\vee\mathcal{B}\right)  \right)  $ and $\left(
+\text{not }\mathcal{A}\right)  \wedge\left(  \text{not }\mathcal{B}\right)  $
+instead of $\mathcal{A}$ and $\mathcal{B}$) shows that%
+\begin{align*}
+\left[  \text{not }\left(  \mathcal{A}\vee\mathcal{B}\right)  \right]   &
+=\left[  \left(  \text{not }\mathcal{A}\right)  \wedge\left(  \text{not
+}\mathcal{B}\right)  \right] \\
+&  =\underbrace{\left[  \text{not }\mathcal{A}\right]  }_{\substack{=1-\left[
+\mathcal{A}\right]  \\\text{(by Exercise \ref{exe.iverson-prop} \textbf{(b)}%
+)}}}\underbrace{\left[  \text{not }\mathcal{B}\right]  }_{\substack{=1-\left[
+\mathcal{B}\right]  \\\text{(by Exercise \ref{exe.iverson-prop} \textbf{(b)}%
+,}\\\text{applied to }\mathcal{B}\text{ instead of }\mathcal{A}\text{)}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{by Exercise \ref{exe.iverson-prop} \textbf{(c)}, applied to}\\
+\left(  \text{not }\mathcal{A}\right)  \text{ and }\left(  \text{not
+}\mathcal{B}\right)  \text{ instead of }\mathcal{A}\text{ and }\mathcal{B}%
+\end{array}
+\right) \\
+&  =\left(  1-\left[  \mathcal{A}\right]  \right)  \left(  1-\left[
+\mathcal{B}\right]  \right)  =1-\left[  \mathcal{A}\right]  -\left[
+\mathcal{B}\right]  +\left[  \mathcal{A}\right]  \left[  \mathcal{B}\right]  .
+\end{align*}
+But Exercise \ref{exe.iverson-prop} \textbf{(b)} (applied to $\mathcal{A}%
+\vee\mathcal{B}$ instead of $\mathcal{A}$) shows that $\left[  \text{not
+}\left(  \mathcal{A}\vee\mathcal{B}\right)  \right]  =1-\left[  \mathcal{A}%
+\vee\mathcal{B}\right]  $. Hence,%
+\begin{align*}
+\left[  \mathcal{A}\vee\mathcal{B}\right]   &  =1-\underbrace{\left[
+\text{not }\left(  \mathcal{A}\vee\mathcal{B}\right)  \right]  }_{=1-\left[
+\mathcal{A}\right]  -\left[  \mathcal{B}\right]  +\left[  \mathcal{A}\right]
+\left[  \mathcal{B}\right]  }=1-\left(  1-\left[  \mathcal{A}\right]  -\left[
+\mathcal{B}\right]  +\left[  \mathcal{A}\right]  \left[  \mathcal{B}\right]
+\right) \\
+&  =\left[  \mathcal{A}\right]  +\left[  \mathcal{B}\right]  -\left[
+\mathcal{A}\right]  \left[  \mathcal{B}\right]  .
+\end{align*}
+This solves Exercise \ref{exe.iverson-prop} \textbf{(d)}.
+
+\textbf{(e)} Let $\mathcal{A}$, $\mathcal{B}$ and $\mathcal{C}$ be three
+logical statements. Then, Exercise \ref{exe.iverson-prop} \textbf{(d)}
+(applied to $\mathcal{A}\vee\mathcal{B}$ and $\mathcal{C}$ instead of
+$\mathcal{A}$ and $\mathcal{B}$) shows that%
+\begin{align*}
+\left[  \left(  \mathcal{A}\vee\mathcal{B}\right)  \vee\mathcal{C}\right]   &
+=\underbrace{\left[  \mathcal{A}\vee\mathcal{B}\right]  }_{\substack{=\left[
+\mathcal{A}\right]  +\left[  \mathcal{B}\right]  -\left[  \mathcal{A}\right]
+\left[  \mathcal{B}\right]  \\\text{(by Exercise \ref{exe.iverson-prop}
+\textbf{(d)})}}}+\left[  \mathcal{C}\right]  -\underbrace{\left[
+\mathcal{A}\vee\mathcal{B}\right]  }_{\substack{=\left[  \mathcal{A}\right]
++\left[  \mathcal{B}\right]  -\left[  \mathcal{A}\right]  \left[
+\mathcal{B}\right]  \\\text{(by Exercise \ref{exe.iverson-prop} \textbf{(d)}%
+)}}}\left[  \mathcal{C}\right] \\
+&  =\left(  \left[  \mathcal{A}\right]  +\left[  \mathcal{B}\right]  -\left[
+\mathcal{A}\right]  \left[  \mathcal{B}\right]  \right)  +\left[
+\mathcal{C}\right]  -\left(  \left[  \mathcal{A}\right]  +\left[
+\mathcal{B}\right]  -\left[  \mathcal{A}\right]  \left[  \mathcal{B}\right]
+\right)  \left[  \mathcal{C}\right] \\
+&  =\left[  \mathcal{A}\right]  +\left[  \mathcal{B}\right]  +\left[
+\mathcal{C}\right]  -\left[  \mathcal{A}\right]  \left[  \mathcal{B}\right]
+-\left[  \mathcal{A}\right]  \left[  \mathcal{C}\right]  -\left[
+\mathcal{B}\right]  \left[  \mathcal{C}\right]  +\left[  \mathcal{A}\right]
+\left[  \mathcal{B}\right]  \left[  \mathcal{C}\right]  .
+\end{align*}
+But the statement $\mathcal{A}\vee\mathcal{B}\vee\mathcal{C}$ is equivalent to
+$\left(  \mathcal{A}\vee\mathcal{B}\right)  \vee\mathcal{C}$. Hence, Exercise
+\ref{exe.iverson-prop} \textbf{(a)} (applied to $\mathcal{A}\vee
+\mathcal{B}\vee\mathcal{C}$ and $\left(  \mathcal{A}\vee\mathcal{B}\right)
+\vee\mathcal{C}$ instead of $\mathcal{A}$ and $\mathcal{B}$) shows that%
+\[
+\left[  \mathcal{A}\vee\mathcal{B}\vee\mathcal{C}\right]  =\left[  \left(
+\mathcal{A}\vee\mathcal{B}\right)  \vee\mathcal{C}\right]  =\left[
+\mathcal{A}\right]  +\left[  \mathcal{B}\right]  +\left[  \mathcal{C}\right]
+-\left[  \mathcal{A}\right]  \left[  \mathcal{B}\right]  -\left[
+\mathcal{A}\right]  \left[  \mathcal{C}\right]  -\left[  \mathcal{B}\right]
+\left[  \mathcal{C}\right]  +\left[  \mathcal{A}\right]  \left[
+\mathcal{B}\right]  \left[  \mathcal{C}\right]  .
+\]
+This solves Exercise \ref{exe.iverson-prop} \textbf{(e)}.
+\end{proof}
+
+\subsection{Solution to Exercise \ref{exe.pie.specialize}}
+
+\begin{vershort}
+\begin{proof}
+[Proof of Theorem \ref{thm.pie.bonfer}.]Clearly, $m\geq0$. Hence, Theorem
+\ref{thm.pie.merged} (applied to $k=0$) yields%
+\begin{align*}
+\left(  -1\right)  ^{m}\sum_{s\in S}\dbinom{c\left(  s\right)  }{0}%
+\dbinom{c\left(  s\right)  -0-1}{m-0}  &  =\sum_{\substack{I\subseteq
+G;\\\left\vert I\right\vert \leq m}}\left(  -1\right)  ^{\left\vert
+I\right\vert }\underbrace{\dbinom{\left\vert I\right\vert }{0}}%
+_{\substack{=1\\\text{(by Proposition \ref{prop.binom.00} \textbf{(b)}%
+}\\\text{(applied to }\left\vert I\right\vert \text{ instead of }m\text{))}%
+}}\left\vert \bigcap_{i\in I}A_{i}\right\vert \\
+&  =\sum_{\substack{I\subseteq G;\\\left\vert I\right\vert \leq m}}\left(
+-1\right)  ^{\left\vert I\right\vert }\left\vert \bigcap_{i\in I}%
+A_{i}\right\vert .
+\end{align*}
+Hence,%
+\begin{align*}
+\sum_{\substack{I\subseteq G;\\\left\vert I\right\vert \leq m}}\left(
+-1\right)  ^{\left\vert I\right\vert }\left\vert \bigcap_{i\in I}%
+A_{i}\right\vert  &  =\left(  -1\right)  ^{m}\sum_{s\in S}\underbrace{\dbinom
+{c\left(  s\right)  }{0}}_{\substack{=1\\\text{(by Proposition
+\ref{prop.binom.00} \textbf{(b)}}\\\text{(applied to }c\left(  s\right)
+\text{ instead of }m\text{))}}}\underbrace{\dbinom{c\left(  s\right)
+-0-1}{m-0}}_{=\dbinom{c\left(  s\right)  -1}{m}}\\
+&  =\left(  -1\right)  ^{m}\sum_{s\in S}\dbinom{c\left(  s\right)  -1}{m}.
+\end{align*}
+This proves Theorem \ref{thm.pie.bonfer}.
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Theorem \ref{thm.pie.bonfer}.]Clearly, $m\geq0$. Hence, Theorem
+\ref{thm.pie.merged} (applied to $k=0$) yields%
+\begin{align*}
+\left(  -1\right)  ^{m}\sum_{s\in S}\dbinom{c\left(  s\right)  }{0}%
+\dbinom{c\left(  s\right)  -0-1}{m-0}  &  =\sum_{\substack{I\subseteq
+G;\\\left\vert I\right\vert \leq m}}\left(  -1\right)  ^{\left\vert
+I\right\vert }\underbrace{\dbinom{\left\vert I\right\vert }{0}}%
+_{\substack{=1\\\text{(by Proposition \ref{prop.binom.00} \textbf{(b)}%
+}\\\text{(applied to }\left\vert I\right\vert \text{ instead of }m\text{))}%
+}}\left\vert \bigcap_{i\in I}A_{i}\right\vert \\
+&  =\sum_{\substack{I\subseteq G;\\\left\vert I\right\vert \leq m}}\left(
+-1\right)  ^{\left\vert I\right\vert }\left\vert \bigcap_{i\in I}%
+A_{i}\right\vert .
+\end{align*}
+Hence,%
+\begin{align*}
+\sum_{\substack{I\subseteq G;\\\left\vert I\right\vert \leq m}}\left(
+-1\right)  ^{\left\vert I\right\vert }\left\vert \bigcap_{i\in I}%
+A_{i}\right\vert  &  =\left(  -1\right)  ^{m}\sum_{s\in S}\underbrace{\dbinom
+{c\left(  s\right)  }{0}}_{\substack{=1\\\text{(by Proposition
+\ref{prop.binom.00} \textbf{(b)}}\\\text{(applied to }c\left(  s\right)
+\text{ instead of }m\text{))}}}\dbinom{c\left(  s\right)  -0-1}{m-0}\\
+&  =\left(  -1\right)  ^{m}\sum_{s\in S}\underbrace{\dbinom{c\left(  s\right)
+-0-1}{m-0}}_{\substack{=\dbinom{c\left(  s\right)  -1}{m}\\\text{(since
+}c\left(  s\right)  -0=c\left(  s\right)  \text{ and }m-0=m\text{)}}}=\left(
+-1\right)  ^{m}\sum_{s\in S}\dbinom{c\left(  s\right)  -1}{m}.
+\end{align*}
+This proves Theorem \ref{thm.pie.bonfer}.
+\end{proof}
+\end{verlong}
+
+\begin{proof}
+[Proof of Theorem \ref{thm.pie.jordan}.]Clearly, $\left\vert G\right\vert
+\in\mathbb{N}$ (since the set $G$ is finite). Define an $m\in\mathbb{N}$ by
+$m=\max\left\{  \left\vert G\right\vert ,k\right\}  $. Thus, $m=\max\left\{
+\left\vert G\right\vert ,k\right\}  \geq\left\vert G\right\vert $ and
+$m=\max\left\{  \left\vert G\right\vert ,k\right\}  \geq k$. Also, every
+subset $I$ of $G$ satisfies $\left\vert I\right\vert \leq m$%
+\ \ \ \ \footnote{\textit{Proof.} Let $I$ be a subset of $G$. Thus,
+$\left\vert I\right\vert \leq\left\vert G\right\vert \leq m$ (since
+$m\geq\left\vert G\right\vert $). Qed.}. Hence, we have the following equality
+of summation signs:%
+\begin{equation}
+\sum_{\substack{I\subseteq G;\\\left\vert I\right\vert \leq m}}=\sum
+_{I\subseteq G}. \label{pf.thm.pie.jordan.sum=sum}%
+\end{equation}
+
+
+For each $s\in S$, let $c\left(  s\right)  $ denote the number of $i\in G$
+satisfying $s\in A_{i}$.
+
+Recall that
+\[
+S_{k}=\left\{  s\in S\ \mid\ \text{the number of }i\in G\text{ satisfying
+}s\in A_{i}\text{ equals }k\right\}  .
+\]
+Hence, for each $s\in S$, we have the following chain of logical equivalences:%
+\begin{align}
+\left(  s\in S_{k}\right)  \  &  \Longleftrightarrow\ \left(
+\underbrace{\text{the number of }i\in G\text{ satisfying }s\in A_{i}%
+}_{\substack{=c\left(  s\right)  \\\text{(since }c\left(  s\right)  \text{ is
+the number of }i\in G\text{ satisfying }s\in A_{i}\\\text{(by the definition
+of }c\left(  s\right)  \text{))}}}\text{ equals }k\right)  \nonumber\\
+\  &  \Longleftrightarrow\ \left(  c\left(  s\right)  \text{ equals }k\right)
+\nonumber\\
+\  &  \Longleftrightarrow\ \left(  c\left(  s\right)  =k\right)
+.\label{pf.thm.pie.jordan.equiv}%
+\end{align}
+
+
+Observe that $m-k\in\mathbb{N}$ (since $m\geq k$).
+
+Next, we notice the following:
+
+\begin{statement}
+\textit{Observation 1:} For any $s\in S$, we have
+\[
+\dbinom{c\left(  s\right)  }{k}\dbinom{c\left(  s\right)  -k-1}{m-k}=\left(
+-1\right)  ^{m-k}\left[  s\in S_{k}\right]  .
+\]
+
+\end{statement}
+
+[\textit{Proof of Observation 1:} Let $s\in S$. Clearly, $c\left(  s\right)
+\in\mathbb{N}$. We are in one of the following three cases:
+
+\textit{Case 1:} We have $c\left(  s\right)  <k$.
+
+\textit{Case 2:} We have $c\left(  s\right)  =k$.
+
+\textit{Case 3:} We have $c\left(  s\right)  >k$.
+
+Let us first consider Case 1. In this case, we have $c\left(  s\right)  <k$.
+Thus, Proposition \ref{prop.binom.0} (applied to $c\left(  s\right)  $ and $k$
+instead of $m$ and $n$) yields $\dbinom{c\left(  s\right)  }{k}=0$. Hence,
+$\underbrace{\dbinom{c\left(  s\right)  }{k}}_{=0}\dbinom{c\left(  s\right)
+-k-1}{m-k}=0$.
+
+But $c\left(  s\right)  \neq k$ (since $c\left(  s\right)  <k$). Thus, we
+don't have $c\left(  s\right)  =k$. Hence, we don't have $s\in S_{k}$ (by the
+equivalence (\ref{pf.thm.pie.jordan.equiv})). Thus, $\left[  s\in
+S_{k}\right]  =0$. Hence, $\left(  -1\right)  ^{m-k}\underbrace{\left[  s\in
+S_{k}\right]  }_{=0}=0$. Comparing this with $\dbinom{c\left(  s\right)  }%
+{k}\dbinom{c\left(  s\right)  -k-1}{m-k}=0$, we obtain $\dbinom{c\left(
+s\right)  }{k}\dbinom{c\left(  s\right)  -k-1}{m-k}=\left(  -1\right)
+^{m-k}\left[  s\in S_{k}\right]  $. Hence, Observation 1 is proven in Case 1.
+
+\begin{vershort}
+Let us now consider Case 2. In this case, we have $c\left(  s\right)  =k$.
+Hence,%
+\[
+\dbinom{c\left(  s\right)  }{k}\dbinom{c\left(  s\right)  -k-1}{m-k}%
+=\underbrace{\dbinom{k}{k}}_{\substack{=1\\\text{(by Proposition
+\ref{prop.binom.mm}}\\\text{(applied to }k\text{ instead of }m\text{))}%
+}}\underbrace{\dbinom{k-k-1}{m-k}}_{=\dbinom{-1}{m-k}}=\dbinom{-1}%
+{m-k}=\left(  -1\right)  ^{m-k}%
+\]
+(by Corollary \ref{cor.binom.-1} (applied to $n=m-k$)).
+\end{vershort}
+
+\begin{verlong}
+Let us now consider Case 2. In this case, we have $c\left(  s\right)  =k$.
+Hence,%
+\begin{align*}
+\dbinom{c\left(  s\right)  }{k}\dbinom{c\left(  s\right)  -k-1}{m-k} &
+=\underbrace{\dbinom{k}{k}}_{\substack{=1\\\text{(by Proposition
+\ref{prop.binom.mm}}\\\text{(applied to }k\text{ instead of }m\text{))}%
+}}\underbrace{\dbinom{k-k-1}{m-k}}_{\substack{=\dbinom{-1}{m-k}\\\text{(since
+}k-k-1=-1\text{)}}}\\
+&  =\dbinom{-1}{m-k}=\left(  -1\right)  ^{m-k}%
+\end{align*}
+(by Corollary \ref{cor.binom.-1} (applied to $n=m-k$)).
+\end{verlong}
+
+But $c\left(  s\right)  =k$. Hence, $s\in S_{k}$ (by the equivalence
+(\ref{pf.thm.pie.jordan.equiv})). Thus, $\left[  s\in S_{k}\right]  =1$.
+Hence, $\left(  -1\right)  ^{m-k}\underbrace{\left[  s\in S_{k}\right]  }%
+_{=1}=\left(  -1\right)  ^{m-k}$. Comparing this with $\dbinom{c\left(
+s\right)  }{k}\dbinom{c\left(  s\right)  -k-1}{m-k}=\left(  -1\right)  ^{m-k}%
+$, we obtain $\dbinom{c\left(  s\right)  }{k}\dbinom{c\left(  s\right)
+-k-1}{m-k}=\left(  -1\right)  ^{m-k}\left[  s\in S_{k}\right]  $. Hence,
+Observation 1 is proven in Case 2.
+
+Let us finally consider Case 3. In this case, we have $c\left(  s\right)  >k$.
+Thus, $c\left(  s\right)  \geq k+1$ (since $c\left(  s\right)  $ and $k$ are
+integers), so that $c\left(  s\right)  -k\geq1$ and thus $c\left(  s\right)
+-k-1\in\mathbb{N}$. But $c\left(  s\right)  $ is the number of $i\in G$
+satisfying $s\in A_{i}$. Hence,
+\[
+c\left(  s\right)  =\left(  \text{the number of }i\in G\text{ satisfying }s\in
+A_{i}\right)  =\left\vert \underbrace{\left\{  i\in G\ \mid\ s\in
+A_{i}\right\}  }_{\subseteq G}\right\vert \leq\left\vert G\right\vert \leq m
+\]
+(since $m\geq\left\vert G\right\vert $). Hence, $\underbrace{c\left(
+s\right)  }_{\leq m}-k-1\leq m-k-1<m-k$. Therefore, Proposition
+\ref{prop.binom.0} (applied to $c\left(  s\right)  -k-1$ and $m-k$ instead of
+$m$ and $n$) yields $\dbinom{c\left(  s\right)  -k-1}{m-k}=0$. Hence,
+$\dbinom{c\left(  s\right)  }{k}\underbrace{\dbinom{c\left(  s\right)
+-k-1}{m-k}}_{=0}=0$.
+
+But $c\left(  s\right)  \neq k$ (since $c\left(  s\right)  >k$). Thus, we
+don't have $c\left(  s\right)  =k$. Hence, we don't have $s\in S_{k}$ (by the
+equivalence (\ref{pf.thm.pie.jordan.equiv})). Thus, $\left[  s\in
+S_{k}\right]  =0$. Hence, $\left(  -1\right)  ^{m-k}\underbrace{\left[  s\in
+S_{k}\right]  }_{=0}=0$. Comparing this with $\dbinom{c\left(  s\right)  }%
+{k}\dbinom{c\left(  s\right)  -k-1}{m-k}=0$, we obtain $\dbinom{c\left(
+s\right)  }{k}\dbinom{c\left(  s\right)  -k-1}{m-k}=\left(  -1\right)
+^{m-k}\left[  s\in S_{k}\right]  $. Hence, Observation 1 is proven in Case 3.
+
+We have now proven Observation 1 in each of the three Cases 1, 2 and 3. Hence,
+Observation 1 always holds.]
+
+Now, Theorem \ref{thm.pie.merged} yields%
+\begin{align*}
+\left(  -1\right)  ^{m}\sum_{s\in S}\dbinom{c\left(  s\right)  }{k}%
+\dbinom{c\left(  s\right)  -k-1}{m-k}  &  =\underbrace{\sum
+_{\substack{I\subseteq G;\\\left\vert I\right\vert \leq m}}}_{\substack{=\sum
+_{I\subseteq G}\\\text{(by (\ref{pf.thm.pie.jordan.sum=sum}))}}}\left(
+-1\right)  ^{\left\vert I\right\vert }\dbinom{\left\vert I\right\vert }%
+{k}\left\vert \bigcap_{i\in I}A_{i}\right\vert \\
+&  =\sum_{I\subseteq G}\left(  -1\right)  ^{\left\vert I\right\vert }%
+\dbinom{\left\vert I\right\vert }{k}\left\vert \bigcap_{i\in I}A_{i}%
+\right\vert .
+\end{align*}
+Thus,%
+\begin{align}
+&  \sum_{I\subseteq G}\left(  -1\right)  ^{\left\vert I\right\vert }%
+\dbinom{\left\vert I\right\vert }{k}\left\vert \bigcap_{i\in I}A_{i}%
+\right\vert \nonumber\\
+&  =\left(  -1\right)  ^{m}\sum_{s\in S}\underbrace{\dbinom{c\left(  s\right)
+}{k}\dbinom{c\left(  s\right)  -k-1}{m-k}}_{\substack{=\left(  -1\right)
+^{m-k}\left[  s\in S_{k}\right]  \\\text{(by Observation 1)}}}\nonumber\\
+&  =\left(  -1\right)  ^{m}\sum_{s\in S}\left(  -1\right)  ^{m-k}\left[  s\in
+S_{k}\right]  =\underbrace{\left(  -1\right)  ^{m}\left(  -1\right)  ^{m-k}%
+}_{\substack{=\left(  -1\right)  ^{m+\left(  m-k\right)  }=\left(  -1\right)
+^{k}\\\text{(since }m+\left(  m-k\right)  =2m-k\equiv-k\equiv
+k\operatorname{mod}2\text{)}}}\sum_{s\in S}\left[  s\in S_{k}\right]
+\nonumber\\
+&  =\left(  -1\right)  ^{k}\sum_{s\in S}\left[  s\in S_{k}\right]  .
+\label{pf.thm.pie.jordan.almost}%
+\end{align}
+Multiplying both sides of this equality by $\left(  -1\right)  ^{k}$, we find%
+\begin{align}
+&  \left(  -1\right)  ^{k}\sum_{I\subseteq G}\left(  -1\right)  ^{\left\vert
+I\right\vert }\dbinom{\left\vert I\right\vert }{k}\left\vert \bigcap_{i\in
+I}A_{i}\right\vert \nonumber\\
+&  =\underbrace{\left(  -1\right)  ^{k}\left(  -1\right)  ^{k}}%
+_{\substack{=\left(  \left(  -1\right)  \left(  -1\right)  \right)  ^{k}%
+=1^{k}\\\text{(since }\left(  -1\right)  \left(  -1\right)  =1\text{)}}%
+}\sum_{s\in S}\left[  s\in S_{k}\right]  =\underbrace{1^{k}}_{=1}\sum_{s\in
+S}\left[  s\in S_{k}\right]  =\sum_{s\in S}\left[  s\in S_{k}\right]  .
+\label{pf.thm.pie.jordan.almos2}%
+\end{align}
+
+
+But $S_{k}$ is a subset of $S$ (by the definition of $S_{k}$). Hence, Lemma
+\ref{lem.iverson.card} (applied to $T=S_{k}$) yields%
+\begin{align*}
+\left\vert S_{k}\right\vert  &  =\sum_{s\in S}\left[  s\in S_{k}\right] \\
+&  =\left(  -1\right)  ^{k}\sum_{I\subseteq G}\left(  -1\right)  ^{\left\vert
+I\right\vert }\dbinom{\left\vert I\right\vert }{k}\left\vert \bigcap_{i\in
+I}A_{i}\right\vert \ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{pf.thm.pie.jordan.almos2})}\right) \\
+&  =\sum_{I\subseteq G}\underbrace{\left(  -1\right)  ^{\left\vert
+I\right\vert }\left(  -1\right)  ^{k}}_{\substack{=\left(  -1\right)
+^{\left\vert I\right\vert +k}=\left(  -1\right)  ^{\left\vert I\right\vert
+-k}\\\text{(since }\left\vert I\right\vert +k\equiv\left\vert I\right\vert
+-k\operatorname{mod}2\text{)}}}\dbinom{\left\vert I\right\vert }{k}\left\vert
+\bigcap_{i\in I}A_{i}\right\vert \\
+&  =\sum_{I\subseteq G}\left(  -1\right)  ^{\left\vert I\right\vert -k}%
+\dbinom{\left\vert I\right\vert }{k}\left\vert \bigcap_{i\in I}A_{i}%
+\right\vert .
+\end{align*}
+This proves Theorem \ref{thm.pie.jordan}.
+\end{proof}
+
+\begin{proof}
+[Proof of Theorem \ref{thm.pie.nonunion}.]We have $\bigcup_{i\in G}%
+A_{i}\subseteq S$ (since all the $A_{i}$ are subsets of $S$). Hence,%
+\begin{align}
+\bigcup_{i\in G}A_{i}  &  =\underbrace{\left(  \bigcup_{i\in G}A_{i}\right)
+}_{\substack{=\left\{  s\ \mid\ \text{there exists an }i\in G\text{ such that
+}s\in A_{i}\right\}  \\\text{(by the definition of the union }\bigcup_{i\in
+G}A_{i}\text{)}}}\cap S\nonumber\\
+&  =\left\{  s\ \mid\ \text{there exists an }i\in G\text{ such that }s\in
+A_{i}\right\}  \cap S\nonumber\\
+&  =\left\{  s\in S\ \mid\ \text{there exists an }i\in G\text{ such that }s\in
+A_{i}\right\}  . \label{pf.thm.pie.nonunion.union}%
+\end{align}
+
+
+Define a $k\in\mathbb{N}$ by $k=0$. Define the set $S_{k}$ as in Theorem
+\ref{thm.pie.jordan}. Then,
+\begin{align*}
+S_{k}  &  =\left\{  s\in S\ \mid\ \text{the number of }i\in G\text{ satisfying
+}s\in A_{i}\text{ equals }k\right\} \\
+&  =\left\{  s\in S\ \mid\ \underbrace{\text{the number of }i\in G\text{
+satisfying }s\in A_{i}\text{ equals }0}_{\Longleftrightarrow\ \left(
+\text{there exists no }i\in G\text{ such that }s\in A_{i}\right)  }\right\} \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }k=0\right) \\
+&  =\left\{  s\in S\ \mid\ \text{there exists no }i\in G\text{ such that }s\in
+A_{i}\right\} \\
+&  =S\setminus\underbrace{\left\{  s\in S\ \mid\ \text{there exists an }i\in
+G\text{ such that }s\in A_{i}\right\}  }_{\substack{=\bigcup_{i\in G}%
+A_{i}\\\text{(by (\ref{pf.thm.pie.nonunion.union}))}}}\\
+&  =S\setminus\left(  \bigcup_{i\in G}A_{i}\right)  .
+\end{align*}
+Hence, $\left\vert S_{k}\right\vert =\left\vert S\setminus\left(
+\bigcup_{i\in G}A_{i}\right)  \right\vert $. Therefore,%
+\begin{align*}
+\left\vert S\setminus\left(  \bigcup_{i\in G}A_{i}\right)  \right\vert  &
+=\left\vert S_{k}\right\vert =\sum_{I\subseteq G}\underbrace{\left(
+-1\right)  ^{\left\vert I\right\vert -k}}_{\substack{=\left(  -1\right)
+^{\left\vert I\right\vert -0}\\\text{(since }k=0\text{)}}}\underbrace{\dbinom
+{\left\vert I\right\vert }{k}}_{\substack{=\dbinom{\left\vert I\right\vert
+}{0}\\\text{(since }k=0\text{)}}}\left\vert \bigcap_{i\in I}A_{i}\right\vert
+\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem \ref{thm.pie.jordan}}\right)
+\\
+&  =\sum_{I\subseteq G}\underbrace{\left(  -1\right)  ^{\left\vert
+I\right\vert -0}}_{=\left(  -1\right)  ^{\left\vert I\right\vert }%
+}\underbrace{\dbinom{\left\vert I\right\vert }{0}}_{\substack{=1\\\text{(by
+Proposition \ref{prop.binom.00} \textbf{(b)}}\\\text{(applied to }\left\vert
+I\right\vert \text{ instead of }m\text{))}}}\left\vert \bigcap_{i\in I}%
+A_{i}\right\vert \\
+&  =\sum_{I\subseteq G}\left(  -1\right)  ^{\left\vert I\right\vert
+}\left\vert \bigcap_{i\in I}A_{i}\right\vert .
+\end{align*}
+This proves Theorem \ref{thm.pie.nonunion}.
+\end{proof}
+
+\begin{proof}
+[Proof of Theorem \ref{thm.pie.union}.]Let $S$ denote the set $\bigcup_{i\in
+G}A_{i}$. Then, $S$ is the union of finitely many finite sets (since the set
+$G$ is finite, and since each of the sets $A_{i}$ is finite), and thus itself
+is a finite set. Moreover, $S=\bigcup_{i\in G}A_{i}$; thus, $A_{i}$ is a
+subset of $S$ for each $i\in G$.
+
+We define the intersection $\bigcap_{i\in\varnothing}A_{i}$ (which would
+otherwise be undefined, since $\varnothing$ is the empty set) to mean the set
+$S$. (Thus, $\bigcap_{i\in I}A_{i}$ is defined for any subset $I$ of $G$, not
+just for nonempty subsets $I$.)
+
+We have $\bigcap_{i\in\varnothing}A_{i}=S$ (since we have defined
+$\bigcap_{i\in\varnothing}A_{i}$ to be $S$).
+
+Theorem \ref{thm.pie.nonunion} yields%
+\begin{align*}
+\left\vert S\setminus\left(  \bigcup_{i\in G}A_{i}\right)  \right\vert  &
+=\sum_{I\subseteq G}\left(  -1\right)  ^{\left\vert I\right\vert }\left\vert
+\bigcap_{i\in I}A_{i}\right\vert \\
+&  =\sum_{\substack{I\subseteq G;\\I\neq\varnothing}}\left(  -1\right)
+^{\left\vert I\right\vert }\left\vert \bigcap_{i\in I}A_{i}\right\vert
++\underbrace{\left(  -1\right)  ^{\left\vert \varnothing\right\vert }%
+}_{\substack{=\left(  -1\right)  ^{0}\\\text{(since }\left\vert \varnothing
+\right\vert =0\text{)}}}\left\vert \underbrace{\bigcap_{i\in\varnothing}A_{i}%
+}_{=S}\right\vert \\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have split off the addend for }I=\varnothing\text{ from the
+sum,}\\
+\text{since }\varnothing\text{ is a subset of }G
+\end{array}
+\right) \\
+&  =\sum_{\substack{I\subseteq G;\\I\neq\varnothing}}\left(  -1\right)
+^{\left\vert I\right\vert }\left\vert \bigcap_{i\in I}A_{i}\right\vert
++\underbrace{\left(  -1\right)  ^{0}}_{=1}\left\vert S\right\vert
+=\sum_{\substack{I\subseteq G;\\I\neq\varnothing}}\left(  -1\right)
+^{\left\vert I\right\vert }\left\vert \bigcap_{i\in I}A_{i}\right\vert
++\left\vert S\right\vert .
+\end{align*}
+Comparing this with%
+\[
+\left\vert S\setminus\underbrace{\left(  \bigcup_{i\in G}A_{i}\right)  }%
+_{=S}\right\vert =\left\vert \underbrace{S\setminus S}_{=\varnothing
+}\right\vert =\left\vert \varnothing\right\vert =0,
+\]
+we obtain%
+\[
+0=\sum_{\substack{I\subseteq G;\\I\neq\varnothing}}\left(  -1\right)
+^{\left\vert I\right\vert }\left\vert \bigcap_{i\in I}A_{i}\right\vert
++\left\vert S\right\vert .
+\]
+Solving this equation for $\left\vert S\right\vert $, we find%
+\[
+\left\vert S\right\vert =-\sum_{\substack{I\subseteq G;\\I\neq\varnothing
+}}\left(  -1\right)  ^{\left\vert I\right\vert }\left\vert \bigcap_{i\in
+I}A_{i}\right\vert =\sum_{\substack{I\subseteq G;\\I\neq\varnothing
+}}\underbrace{\left(  -\left(  -1\right)  ^{\left\vert I\right\vert }\right)
+}_{=\left(  -1\right)  ^{\left\vert I\right\vert -1}}\left\vert \bigcap_{i\in
+I}A_{i}\right\vert =\sum_{\substack{I\subseteq G;\\I\neq\varnothing}}\left(
+-1\right)  ^{\left\vert I\right\vert -1}\left\vert \bigcap_{i\in I}%
+A_{i}\right\vert .
+\]
+In view of $S=\bigcup_{i\in G}A_{i}$, this rewrites as
+\[
+\left\vert \bigcup_{i\in G}A_{i}\right\vert =\sum_{\substack{I\subseteq
+G;\\I\neq\varnothing}}\left(  -1\right)  ^{\left\vert I\right\vert
+-1}\left\vert \bigcap_{i\in I}A_{i}\right\vert .
+\]
+This proves Theorem \ref{thm.pie.union}.
+\end{proof}
+
+\begin{proof}
+[Solution to Exercise \ref{exe.pie.specialize}.]We have proven Theorem
+\ref{thm.pie.union}, Theorem \ref{thm.pie.nonunion}, Theorem
+\ref{thm.pie.jordan} and Theorem \ref{thm.pie.bonfer}. Thus, Exercise
+\ref{exe.pie.specialize} is solved.
+\end{proof}
+
 \subsection{\label{sect.sol.exe.schmitt-iha-eq9.2}Solution to Exercise
 \ref{exe.schmitt-iha-eq9.2}}
 
@@ -27777,20 +29474,8 @@ definition of the binomial transform we gave in Exercise \ref{exeadd.bininv}
 (because any finite sequence $\left(  f_{0},f_{1},\ldots,f_{N}\right)
 \in\mathbb{Z}^{N+1}$ of integers is clearly a list in $\mathbb{Q}^{N+1}$).
 
-\begin{definition}
-We shall use the following notation (known as
-\href{https://en.wikipedia.org/wiki/Iverson_bracket}{the \textit{Iverson
-bracket}}): If $\mathcal{A}$ is any logical statement, then $\left[
-\mathcal{A}\right]  $ will mean the integer $%
-\begin{cases}
-1, & \text{if }\mathcal{A}\text{ is true};\\
-0, & \text{if }\mathcal{A}\text{ is false}%
-\end{cases}
-$. For example, $\left[  1+1=2\right]  =1$ (since $1+1=2$ is true), whereas
-$\left[  1+1=1\right]  =0$ (since $1+1=1$ is false). Clearly, if $\mathcal{A}$
-and $\mathcal{B}$ are two equivalent logical statements, then $\left[
-\mathcal{A}\right]  =\left[  \mathcal{B}\right]  $.
-\end{definition}
+We shall use the Iverson bracket notation introduced in Definition
+\ref{def.iverson}.
 
 The following fact is easy:
 
@@ -29608,18 +31293,8 @@ This solves Exercise \ref{exeadd.AoPS262752}.
 \subsubsection{Second solution}
 
 Now let us prepare for the second solution to Exercise \ref{exeadd.AoPS262752}%
-. We shall use the following notation (known as
-\href{https://en.wikipedia.org/wiki/Iverson_bracket}{the \textit{Iverson
-bracket}}): If $\mathcal{A}$ is any logical statement, then $\left[
-\mathcal{A}\right]  $ will mean the integer $%
-\begin{cases}
-1, & \text{if }\mathcal{A}\text{ is true};\\
-0, & \text{if }\mathcal{A}\text{ is false}%
-\end{cases}
-$. For example, $\left[  1+1=2\right]  =1$ (since $1+1=2$ is true), whereas
-$\left[  1+1=1\right]  =0$ (since $1+1=1$ is false). Clearly, if $\mathcal{A}$
-and $\mathcal{B}$ are two equivalent logical statements, then $\left[
-\mathcal{A}\right]  =\left[  \mathcal{B}\right]  $.
+. We shall use the Iverson bracket notation introduced in Definition
+\ref{def.iverson}.
 
 We notice that every $n\in\mathbb{N}$ satisfies%
 \[
@@ -36884,18 +38559,8 @@ Now, let us forget that we fixed $c$. We thus have proven that every
 $c\in\operatorname*{Inv}\left(  \sigma\right)  $ satisfies $c\in G$. In other
 words, $\operatorname*{Inv}\left(  \sigma\right)  \subseteq G$, qed.}.
 
-We shall use the following notation (known as
-\href{https://en.wikipedia.org/wiki/Iverson_bracket}{the \textit{Iverson
-bracket}}): If $\mathcal{A}$ is any logical statement, then $\left[
-\mathcal{A}\right]  $ will mean the integer $%
-\begin{cases}
-1, & \text{if }\mathcal{A}\text{ is true};\\
-0, & \text{if }\mathcal{A}\text{ is false}%
-\end{cases}
-$. For example, $\left[  1+1=2\right]  =1$ (since $1+1=2$ is true), whereas
-$\left[  1+1=1\right]  =0$ (since $1+1=1$ is false). Clearly, if $\mathcal{A}$
-and $\mathcal{B}$ are two equivalent logical statements, then $\left[
-\mathcal{A}\right]  =\left[  \mathcal{B}\right]  $.
+We shall use the Iverson bracket notation introduced in Definition
+\ref{def.iverson}.
 
 A useful property of the Iverson bracket is that it turns cardinalities of
 sets into sums: Namely, if $S$ is a finite set, and if $T$ is a subset of $S$,
@@ -36904,21 +38569,8 @@ then%
 \left\vert T\right\vert =\sum_{s\in S}\left[  s\in T\right]
 \label{sol.perm.sign.pseudoexplicit.b.iverson.sum}%
 \end{equation}
-\footnote{\textit{Proof of (\ref{sol.perm.sign.pseudoexplicit.b.iverson.sum}%
-):} Let $S$ be a finite set. Let $T$ be a subset of $S$. Then,%
-\begin{align*}
-\sum_{s\in S}\left[  s\in T\right]   &  =\underbrace{\sum_{\substack{s\in
-S;\\s\in T}}}_{\substack{=\sum_{s\in T}\\\text{(since }T\text{ is a subset of
-}S\text{)}}}\underbrace{\left[  s\in T\right]  }_{\substack{=1\\\text{(since
-}s\in T\text{ is true)}}}+\sum_{\substack{s\in S;\\s\notin T}%
-}\underbrace{\left[  s\in T\right]  }_{\substack{=0\\\text{(since }s\in
-T\text{ is false}\\\text{(since }s\notin T\text{))}}}\\
-&  =\underbrace{\sum_{s\in T}1}_{=\left\vert T\right\vert \cdot1}%
-+\underbrace{\sum_{\substack{s\in S;\\s\notin T}}0}_{=0}=\left\vert
-T\right\vert \cdot1+0=\left\vert T\right\vert ,
-\end{align*}
-qed.}. Consequently, if $S$ is a finite set, and if $T$ is a subset of $S$,
-then%
+\footnote{In fact, this is precisely the claim of Lemma \ref{lem.iverson.card}%
+.}. Consequently, if $S$ is a finite set, and if $T$ is a subset of $S$, then%
 \begin{equation}
 \left(  -1\right)  ^{\left\vert T\right\vert }=\prod_{s\in S}\left(
 -1\right)  ^{\left[  s\in T\right]  }
@@ -37862,18 +39514,8 @@ This proves Lemma \ref{lem.sol.exe.Ialbe.Inv=Inv} \textbf{(b)}.
 \end{proof}
 \end{verlong}
 
-In the following, we shall use the following notation (known as
-\href{https://en.wikipedia.org/wiki/Iverson_bracket}{the \textit{Iverson
-bracket}}): If $\mathcal{A}$ is any logical statement, then $\left[
-\mathcal{A}\right]  $ will mean the integer $%
-\begin{cases}
-1, & \text{if }\mathcal{A}\text{ is true};\\
-0, & \text{if }\mathcal{A}\text{ is false}%
-\end{cases}
-$. For example, $\left[  1+1=2\right]  =1$ (since $1+1=2$ is true), whereas
-$\left[  1+1=1\right]  =0$ (since $1+1=1$ is false). Clearly, if $\mathcal{A}$
-and $\mathcal{B}$ are two equivalent logical statements, then $\left[
-\mathcal{A}\right]  =\left[  \mathcal{B}\right]  $.
+In the following, we shall use the Iverson bracket notation introduced in
+Definition \ref{def.iverson}.
 
 Now, let us show some more lemmas:
 
@@ -75176,16 +76818,8 @@ $\left\{  1,2,\ldots,n\right\}  $.
 where $\mathcal{P}\left(  \left[  n\right]  \right)  $ denotes the powerset of
 $\left[  n\right]  $.
 
-\item If $\mathcal{A}$ is any logical statement, then $\left[  \mathcal{A}%
-\right]  $ will mean the integer $%
-\begin{cases}
-1, & \text{if }\mathcal{A}\text{ is true};\\
-0, & \text{if }\mathcal{A}\text{ is false}%
-\end{cases}
-$. For example, $\left[  1+1=2\right]  =1$ (since $1+1=2$ is true), whereas
-$\left[  1+1=1\right]  =0$ (since $1+1=1$ is false). (This notation is known
-as \href{https://en.wikipedia.org/wiki/Iverson_bracket}{the \textit{Iverson
-bracket}}.)
+\item We shall use the Iverson bracket notation introduced in Definition
+\ref{def.iverson}.
 
 \item If $a_{p},a_{p+1},\ldots,a_{q}$ are some elements of a noncommutative
 ring $\mathbb{L}$ (with $p$ and $q$ being integers satisfying $p\leq q+1$),
