@@ -15,7 +15,7 @@
 \usepackage{tabls}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, November 18, 2017 19:19:01}
+%TCIDATA{LastRevised=Sunday, November 26, 2017 01:24:09}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -3062,15 +3062,14 @@ for any $n\in\mathbb{N}$.
 \end{corollary}
 
 \begin{proof}
-[Proof of Corollary \ref{cor.binom.-1}.] Proposition
-\ref{prop.binom.upper-neg} (applied to $m=-1$) yields%
+[Proof of Corollary \ref{cor.binom.-1}.]Proposition \ref{prop.binom.upper-neg}
+(applied to $m=-1$) yields%
 \begin{align*}
-\dbinom{-1}{n}  & =\left(  -1\right)  ^{n}\dbinom{n-\left(  -1\right)  -1}%
+\dbinom{-1}{n}  &  =\left(  -1\right)  ^{n}\dbinom{n-\left(  -1\right)  -1}%
 {n}=\left(  -1\right)  ^{n}\underbrace{\dbinom{n}{n}}_{\substack{=1\\\text{(by
 Proposition \ref{prop.binom.mm}}\\\text{(applied to }m=n\text{))}%
-}}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }n-\left(  -1\right)  -1=n\right)
-\\
-& =\left(  -1\right)  ^{n}.
+}}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }n-\left(  -1\right)  -1=n\right) \\
+&  =\left(  -1\right)  ^{n}.
 \end{align*}
 This proves Corollary \ref{cor.binom.-1}.
 \end{proof}
@@ -5685,8 +5684,8 @@ Having proven Theorem \ref{thm.pie.merged}, we can now easily derive the other
 
 This section contains some further exercises. These will not be used in the
 rest of the notes, and they can be skipped at will\footnote{The same, of
-course, can be said for many of the standard exercises.}. I am not planning to
-provide solutions for them.
+course, can be said for many of the standard exercises.}. I provide
+solutions to only a few of them.
 
 \begin{exercise}
 \label{exeadd.prop.vandermonde.consequences.f}Find a different proof of
@@ -28953,11 +28952,11 @@ Hence, for each $s\in S$, we have the following chain of logical equivalences:%
 \underbrace{\text{the number of }i\in G\text{ satisfying }s\in A_{i}%
 }_{\substack{=c\left(  s\right)  \\\text{(since }c\left(  s\right)  \text{ is
 the number of }i\in G\text{ satisfying }s\in A_{i}\\\text{(by the definition
-of }c\left(  s\right)  \text{))}}}\text{ equals }k\right)  \nonumber\\
+of }c\left(  s\right)  \text{))}}}\text{ equals }k\right) \nonumber\\
 \  &  \Longleftrightarrow\ \left(  c\left(  s\right)  \text{ equals }k\right)
 \nonumber\\
-\  &  \Longleftrightarrow\ \left(  c\left(  s\right)  =k\right)
-.\label{pf.thm.pie.jordan.equiv}%
+\  &  \Longleftrightarrow\ \left(  c\left(  s\right)  =k\right)  .
+\label{pf.thm.pie.jordan.equiv}%
 \end{align}
 
 
@@ -29015,7 +29014,7 @@ Hence,%
 Let us now consider Case 2. In this case, we have $c\left(  s\right)  =k$.
 Hence,%
 \begin{align*}
-\dbinom{c\left(  s\right)  }{k}\dbinom{c\left(  s\right)  -k-1}{m-k} &
+\dbinom{c\left(  s\right)  }{k}\dbinom{c\left(  s\right)  -k-1}{m-k}  &
 =\underbrace{\dbinom{k}{k}}_{\substack{=1\\\text{(by Proposition
 \ref{prop.binom.mm}}\\\text{(applied to }k\text{ instead of }m\text{))}%
 }}\underbrace{\dbinom{k-k-1}{m-k}}_{\substack{=\dbinom{-1}{m-k}\\\text{(since
@@ -29634,8 +29633,9 @@ Let us consider Case 1 first. In this case, we have $i\neq n$. In other words,
 $n\neq i$. Hence, $n-i\neq0$. Thus, the statement $n-i=0$ is false. Hence,
 $\left[  n-i=0\right]  =0$, so that $\dbinom{n}{i}\underbrace{\left[
 n-i=0\right]  }_{=0}=0$. Comparing this with $\left[  i=n\right]  =0$ (since
-$i\neq n$), we obtain $\dbinom{n}{i}\left[  n-i=0\right]  =\left[  i=n\right]
-$. Hence, (\ref{pf.cor.binom.1-1cor.5}) is proven in Case 1.
+we don't have $i=n$ (since $i\neq n$)), we obtain $\dbinom{n}{i}\left[
+n-i=0\right]  =\left[  i=n\right]  $. Hence, (\ref{pf.cor.binom.1-1cor.5}) is
+proven in Case 1.
 \par
 Now, let us consider Case 2. In this case, we have $i=n$. In other words,
 $n=i$. Thus, $n-i=0$. Thus, $\left[  n-i=0\right]  =1$. Also, from $n=i$, we
@@ -30957,12 +30957,12 @@ W\circ B\circ W\right)  \left(  \mathbf{a}\right)  .
 \end{align*}
 
 
-Now, forget that we fixed $\mathbf{a}$. We thus have proven that $\left(
-B\circ W\circ B\right)  \left(  \mathbf{a}\right)  =\left(  W\circ B\circ
-W\right)  \left(  \mathbf{a}\right)  $ for each list $\mathbf{a}$. In other
-words,%
+Now, forget that we fixed $\mathbf{a}$. We thus have proven that
+\newline$\left(  B\circ W\circ B\right)  \left(  \mathbf{a}\right)  =\left(
+W\circ B\circ W\right)  \left(  \mathbf{a}\right)  $ for each list
+$\mathbf{a}$. In other words,%
 \begin{equation}
-B\circ W\circ B=W\circ B\circ W. \label{sol.exeadd.bininv.3.sol1.braid}%
+B\circ W\circ B=W\circ B\circ W.\label{sol.exeadd.bininv.3.sol1.braid}%
 \end{equation}
 
 
@@ -44775,8 +44775,7 @@ $\operatorname*{Inv}\tau\subseteq\operatorname*{Inv}\left(  \sigma\circ
 \tau\right)  $.
 
 Indeed, let $c\in\left(  \operatorname*{Inv}\tau\right)  \setminus\left(
-\operatorname*{Inv}\left(  \sigma\circ\tau\right)  \right)  $. We shall prove
-a contradiction.
+\operatorname*{Inv}\left(  \sigma\circ\tau\right)  \right)  $. We shall prove a contradiction.
 
 We have $c\in\left(  \operatorname*{Inv}\tau\right)  \setminus\left(
 \operatorname*{Inv}\left(  \sigma\circ\tau\right)  \right)  \subseteq
@@ -79019,10 +79018,12 @@ G\right)  ;\\R\subseteq I}}\left(  -1\right)  ^{\left\vert I\right\vert
 &  =\underbrace{\sum_{\substack{I\in\mathcal{P}\left(  G\right)  ;\\R\subseteq
 I;\\g\in I}}}_{\substack{=\sum_{I\in A}\\\text{(since }A=\left\{
 I\in\mathcal{P}\left(  G\right)  \ \mid\ R\subseteq I\text{ and }g\in
-I\right\}  }}\left(  -1\right)  ^{\left\vert I\right\vert }+\underbrace{\sum
+I\right\} \text{)} }}
+\left(  -1\right)  ^{\left\vert I\right\vert }+\underbrace{\sum
 _{\substack{I\in\mathcal{P}\left(  G\right)  ;\\R\subseteq I;\\g\notin I}%
 }}_{\substack{=\sum_{I\in B}\\\text{(since }B=\left\{  I\in\mathcal{P}\left(
-G\right)  \ \mid\ R\subseteq I\text{ and }g\notin I\right\}  }}\left(
+G\right)  \ \mid\ R\subseteq I\text{ and }g\notin I\right\} \text{)}
+}}\left(
 -1\right)  ^{\left\vert I\right\vert }\nonumber\\
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
