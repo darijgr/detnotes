@@ -6,7 +6,7 @@ provides a detailed introduction to permutations and determinants
 (from a combinatorial viewpoint -- no linear algebra is presumed),
 as well as some basic material on binomial coefficients and
 recurrent sequences.
-It contains about 40 exercises with solutions, and about 20 exercises
+It contains about 80 exercises with solutions, and a few exercises
 without.
 
 Up-to-date PDF files can be downloaded from my website:
