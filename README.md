@@ -17,4 +17,8 @@ Up-to-date PDF files can be downloaded from my website:
 (Use this if you want to solve the problems on your own and prefer not to see
 spoilers.)
 
+These notes also appear on the arXiv: [arXiv:2008.09862](https://arxiv.org/abs/2008.09862).
+However, they won't likely be updated frequently on the
+arXiv.
+
 -- Darij Grinberg (*firstname***lastname**@gmail.com)
