@@ -17,7 +17,7 @@
 \usepackage[type={CC}, modifier={zero}, version={1.0},]{doclicense}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, September 15, 2022 09:12:53}
+%TCIDATA{LastRevised=Thursday, May 07, 2026 13:00:28}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -253,8 +253,8 @@ these concepts, facilitating proper learning of abstract algebra later on.
 All in all, these notes are probably more useful as a repository of detailed
 proofs than as a textbook to be read cover-to-cover. Indeed, one of my motives
 in writing them was to have a reference for certain folklore results -- one in
-which these results are proved elementary and without appeal to the reader's
-problem-solving acumen.
+which these results are proved by elementary means and without appeal to the
+reader's problem-solving acumen.
 
 These notes began as worksheets for the PRIMES reading project I have mentored
 in 2015; they have since been greatly expanded with new material (some of it
@@ -265,8 +265,8 @@ The notes are in flux, and probably have their share of misprints. I thank
 Anya Zhang and Karthik Karnik (the two students taking part in the 2015 PRIMES
 project) for finding some errors, and Christian Krattenthaler for comments.
 Thanks also to the PRIMES project at MIT, which gave the impetus for the
-writing of this notes; and to George Lusztig for the sponsorship of my
-mentoring position in this project.
+writing of these notes; and to George Lusztig for the sponsorship of my role
+in this project.
 
 \subsection{Prerequisites}
 
@@ -287,7 +287,7 @@ the free book \cite{LeLeMe16} by Lehman, Leighton and Meyer.
 revisions; thus, the version I am citing below might be outdated by the time
 you are reading this. I therefore suggest searching for possibly newer
 versions on the internet. Unfortunately, you will also find many older
-versions, often as the first google hits. Try searching for the title of the
+versions, often as the first Google hits. Try searching for the title of the
 book along with the current year to find something up-to-date.)
 \par
 Another introduction to proofs and mathematical workmanship is Day's
@@ -301,8 +301,8 @@ popular one is Velleman's \cite{Vellem06}.};
 
 \item knows what a polynomial is (at least over $\mathbb{Z}$ and $\mathbb{Q}$)
 and how polynomials differ from polynomial functions\footnote{This is used
-only in a few sections and exercises, so it is not an unalienable requirement.
-See Section \ref{sect.polynomials-emergency} below for a quick survey of
+only in a few sections and exercises, so it is not a hard requirement. See
+Section \ref{sect.polynomials-emergency} below for a quick survey of
 polynomials, and for references to sources in which precise definitions can be
 found.};
 
@@ -442,7 +442,7 @@ For example:
 \begin{itemize}
 \item The map $\mathbb{Z}\rightarrow\mathbb{Z},\ x\mapsto x+1$ (this is the
 map that sends each integer $x$ to $x+1$) is surjective, because each integer
-$y$ has some integer satisfying $x+1=y$ (namely, $x=y-1$).
+$y$ has some integer $x$ satisfying $x+1=y$ (namely, $x=y-1$).
 
 \item The map $\mathbb{Z}\rightarrow\mathbb{Z},\ x\mapsto2x$ (this is the map
 that sends each integer $x$ to $2x$) is \textbf{not} surjective, because not
@@ -659,7 +659,7 @@ is bijective}\right)  .
 Let us make one additional observation about maps:
 
 \begin{remark}
-Composition of maps is associative: If $X$, $Y$, $Z$ and $W$ are three sets,
+Composition of maps is associative: If $X$, $Y$, $Z$ and $W$ are four sets,
 and if $c:X\rightarrow Y$, $b:Y\rightarrow Z$ and $a:Z\rightarrow W$ are three
 maps, then $\left(  a\circ b\right)  \circ c=a\circ\left(  b\circ c\right)  $.
 (This shall be proven in Proposition \ref{prop.ind.gen-ass-maps.fgh} below.)
@@ -910,6 +910,7 @@ statement \textquotedblleft$s$ is even\textquotedblright.)
 $a_{s}=s^{2}$ for every $s\in S$, then $\sum_{\substack{s\in S;\\s\text{ is
 even}}}a_{s}=a_{2}+a_{4}+\cdots+a_{k}$, where $k$ is the largest even number
 among $1,2,\ldots,n$ (that is, $k=n$ if $n$ is even, and $k=n-1$ otherwise).
+(Of course, if $n \leq1$, then this sum is empty.)
 \end{itemize}
 
 \textbf{Remarks:}
@@ -925,7 +926,7 @@ $s\in S$\textquotedblright\ part (so they simply write $\sum_{\mathcal{A}%
 instance, they would write $\sum_{1\leq s\leq5}s^{2}$ instead of
 $\sum_{\substack{s\in\mathbb{N};\\1\leq s\leq5}}s^{2}$.)
 
-\item The set $S$ needs not be finite in order for $\sum_{\substack{s\in
+\item The set $S$ need not be finite in order for $\sum_{\substack{s\in
 S;\\\mathcal{A}\left(  s\right)  }}a_{s}$ to be defined; it suffices that the
 set $\left\{  t\in S\ \mid\ \mathcal{A}\left(  t\right)  \right\}  $ be finite
 (i.e., that only finitely many $s\in S$ satisfy $\mathcal{A}\left(  s\right)
@@ -986,7 +987,7 @@ whenever it \textquotedblleft ends before it has begun\textquotedblright.
 However, a sum which \textquotedblleft ends right after it
 begins\textquotedblright\ (i.e., a sum $\sum_{s=u}^{v}a_{s}$ with $u=v$) is
 not empty; it just has one addend only. (This is unlike integrals, which are
-$0$ whenever their lower and upper limit are equal.)
+$0$ whenever their lower and upper limits are equal.)
 
 \item Let me stress once again that a sum $\sum_{s=u}^{v}a_{s}$ with $u>v$ is
 empty and equals $0$. It does not matter how much greater $u$ is than $v$. So,
@@ -1103,7 +1104,7 @@ from (\ref{eq.sum.split}), applied to $X=\left\{  s\in S\ \mid\ \mathcal{A}%
 \left(  s\right)  \right\}  $ and $Y=\left\{  s\in S\ \mid\ \text{not
 }\mathcal{A}\left(  s\right)  \right\}  $.
 
-\textbf{Example:} If $S\subseteq\mathbb{Z}$, then%
+\textbf{Example:} If $S$ is a finite subset of $\mathbb{Z}$, then%
 \[
 \sum_{s\in S}a_{s}=\sum_{\substack{s\in S;\\s\text{ is even}}}a_{s}%
 +\sum_{\substack{s\in S;\\s\text{ is odd}}}a_{s}%
@@ -1444,7 +1445,7 @@ telescopes\textquotedblright\ to $a_{v}-a_{u-1}$. A sum like $\sum_{s=u}%
 ^{v}\left(  a_{s}-a_{s-1}\right)  $ is said to be a \textquotedblleft
 telescoping sum\textquotedblright. This terminology references the idea that
 the sum $\sum_{s=u}^{v}\left(  a_{s}-a_{s-1}\right)  $ \textquotedblleft
-shrink\textquotedblright\ to the simple difference $a_{v}-a_{u-1}$ like a
+shrinks\textquotedblright\ to the simple difference $a_{v}-a_{u-1}$ like a
 telescope does when it is collapsed.
 
 \item Here is a \textit{proof of (\ref{eq.sum.telescope}):} Let $u$ and $v$ be
@@ -1605,9 +1606,12 @@ sheep it belongs to.
 is an element of $W$, then it is common to denote the set $\left\{  s\in
 S\ \mid\ f\left(  s\right)  =w\right\}  $ by $f^{-1}\left(  w\right)  $.
 (Formally speaking, this notation might clash with the notation $f^{-1}\left(
-w\right)  $ for the actual preimage of $w$ when $f$ happens to be bijective;
-but in practice, this causes far less confusion than it might seem to.) Using
-this notation, we can rewrite (\ref{eq.sum.sheph}) as follows:%
+w\right)  $ for the image of $w$ under the inverse map $f^{-1}$ when $f$
+happens to be bijective; but in practice, this causes far less confusion than
+you might expect, since the set $f^{-1}\left(  w\right)  $ in this case is a
+one-element set consisting of the single element $f^{-1}\left(  w\right)  $,
+and the context usually makes it clear whether the set or the element is
+meant.) Using this notation, we can rewrite (\ref{eq.sum.sheph}) as follows:%
 \begin{equation}
 \sum_{s\in S}a_{s}=\sum_{w\in W}\ \ \underbrace{\sum_{\substack{s\in
 S;\\f\left(  s\right)  =w}}}_{=\sum_{s\in f^{-1}\left(  w\right)  }}a_{s}%
@@ -1933,7 +1937,8 @@ _{y=1}^{n-x}1}_{=n-x}=\sum_{x=1}^{n}\left(  n-x\right)  =\sum_{i=0}^{n-1}i\\
 to }n-1\text{ instead of }n\right) \\
 &  =\dfrac{\left(  n-1\right)  n}{2}.
 \end{align*}
-
+(Strictly speaking, (\ref{eq.sum.littlegauss1}) cannot be applied to $n-1$
+instead of $n$ when $n=0$; but this case is too easy to waste more words on it.)
 \end{itemize}
 
 \textbf{Remarks:}
@@ -2311,7 +2316,7 @@ called \textquotedblleft the
 \href{https://en.wikipedia.org/wiki/Indeterminate form}{indeterminate form}
 $0^{0}$\textquotedblright, which is a much different story.}
 
-\item The product index (just like a summation index) needs not be a single
+\item The product index (just like a summation index) need not be a single
 letter; it can be a pair or a triple, for example.
 
 \item Mathematicians don't seem to have reached an agreement on the operator
@@ -2757,18 +2762,18 @@ because $\dfrac{3}{2}$ is a rational number). Notice also that a polynomial
 can be a single rational number, since we never said that $X$ must necessarily
 be used; for instance, $-15$ and $0$ are polynomials.
 
-This is, of course, not a valid definition. One problem with it that it does
-not explain what a \textquotedblleft formal expression\textquotedblright\ is.
-For starters, we want an expression that is well-defined -- i.e., into that we
-can substitute a rational number for $X$ and obtain a valid term. For example,
-$X-+\cdot5$ is not well-defined, so it does not fit our bill; neither is the
-\textquotedblleft empty expression\textquotedblright. Furthermore, when do we
-want two \textquotedblleft formal expressions\textquotedblright\ to be viewed
-as one and the same polynomial? Do we want to equate $X\left(  X+2\right)  $
-with $X^{2}+2X$ ? Do we want to equate $0X^{3}+2X+1$ with $2X+1$ ? The answer
-is \textquotedblleft yes\textquotedblright\ both times, but a general rule is
-not easy to give if we keep talking of \textquotedblleft formal
-expressions\textquotedblright.
+This is, of course, not a valid definition. One problem with it is that it
+does not explain what a \textquotedblleft formal expression\textquotedblright%
+\ is. For starters, we want an expression that is well-defined -- i.e., one
+into which we can substitute a rational number for $X$ and obtain a valid
+term. For example, $X-+\cdot5$ is not well-defined, so it does not fit our
+bill; neither does the \textquotedblleft empty expression\textquotedblright.
+Furthermore, when do we want two \textquotedblleft formal
+expressions\textquotedblright\ to be viewed as one and the same polynomial? Do
+we want to equate $X\left(  X+2\right)  $ with $X^{2}+2X$ ? Do we want to
+equate $0X^{3}+2X+1$ with $2X+1$ ? The answer is \textquotedblleft
+yes\textquotedblright\ both times, but a general rule is not easy to give if
+we keep talking of \textquotedblleft formal expressions\textquotedblright.
 
 We \textit{could} define two polynomials $p\left(  X\right)  $ and $q\left(
 X\right)  $ to be equal if and only if, for every number $\alpha\in\mathbb{Q}%
@@ -2854,7 +2859,7 @@ functions.
 polynomials as functions works reasonably well for polynomials with integer,
 rational, real and complex coefficients (as long as one is not too demanding).
 But we will eventually want to consider polynomials with coefficients in any
-arbitrary commutative ring $\mathbb{K}$. An example for a commutative ring
+arbitrary commutative ring $\mathbb{K}$. An example of a commutative ring
 $\mathbb{K}$ is the finite field $\mathbb{F}_{p}$ with $p$ elements, where $p$
 is a prime. (This finite field $\mathbb{F}_{p}$ is better known as the ring of
 integers modulo $p$.) If we define polynomials with coefficients in
@@ -3128,8 +3133,8 @@ If $\alpha$ is a number (or a square matrix, or another polynomial), then
 $p\left(  \alpha\right)  $ is called the result of \textit{evaluating }$p$
 \textit{at }$X=\alpha$ (or, simply, evaluating $p$ at $\alpha$), or the result
 of \textit{substituting }$\alpha$\textit{ for }$X$\textit{ in }$p$. This
-notation, of course, reminds of functions; nevertheless, (as we already said a
-few times) $p$ is \textbf{not a function}.
+notation, of course, reminds us of functions; nevertheless, (as we already
+said a few times) $p$ is \textbf{not a function}.
 
 Probably the simplest three cases of evaluation are the following ones:
 
@@ -3215,7 +3220,7 @@ polynomials precisely and well.}.
 \section{\label{chp.ind}A closer look at induction}
 
 In this chapter, we shall recall several versions of the \textit{induction
-principle} (the principle of mathematical induction) and provide examples for
+principle} (the principle of mathematical induction) and provide examples of
 their use. We assume that the reader is at least somewhat familiar with
 mathematical induction\footnote{If not, introductions can be found in
 \cite[Chapter 5]{LeLeMe16}, \cite{Day-proofs}, \cite[Chapter 6]{Vellem06},
@@ -3279,18 +3284,18 @@ A similar (but longer) argument shows that the statement $\mathcal{A}\left(
 total of $15$ times. It is thus not surprising that $\mathcal{A}\left(
 n\right)  $ holds for each $n\in\mathbb{N}$; but if you don't assume Theorem
 \ref{thm.ind.IP0} as an axiom, you would need to write down a different proof
-for each value of $n$ (which becomes the longer the larger $n$ is), and thus
+for each value of $n$ (which becomes ever longer as $n$ gets larger), and thus
 would never reach the general result (i.e., that $\mathcal{A}\left(  n\right)
 $ holds for \textbf{each} $n\in\mathbb{N}$), because you cannot write down
 infinitely many proofs. What Theorem \ref{thm.ind.IP0} does is, roughly
-speaking, to apply Assumption 2 for you as many times as it is needed for each
+speaking, to apply Assumption 2 for you as many times as needed for each
 $n\in\mathbb{N}$.
 
 (Authors of textbooks like to visualize Theorem \ref{thm.ind.IP0} by
 envisioning an infinite sequence of dominos (numbered $0,1,2,\ldots$) placed
-in row, sufficiently close to each other that if domino $m$ falls, then domino
-$m+1$ will also fall. Now, assume that you kick domino $0$ over. What Theorem
-\ref{thm.ind.IP0} then says is that each domino will fall. See, e.g.,
+in a row, sufficiently close to each other that if domino $m$ falls, then
+domino $m+1$ will also fall. Now, assume that you kick domino $0$ over. What
+Theorem \ref{thm.ind.IP0} then says is that each domino will fall. See, e.g.,
 \cite[Chapter 10]{Hammac15} for a detailed explanation of this metaphor. Here
 is another metaphor for Theorem \ref{thm.ind.IP0}: Assume that there is a
 virus that infects nonnegative integers. Once it has infected some
@@ -3299,18 +3304,18 @@ gets infected. Then, Theorem \ref{thm.ind.IP0} says that each $n\in\mathbb{N}$
 will eventually be infected.)
 
 Theorem \ref{thm.ind.IP0} is called the \textit{principle of induction} or
-\textit{principle of complete induction} or \textit{principle of mathematical
-induction}, and we shall also call it \textit{principle of standard induction}
-in order to distinguish it from several variant \textquotedblleft principles
-of induction\textquotedblright\ that we will see later. Proofs that use this
-principle are called \textit{proofs by induction} or \textit{induction
-proofs}. Usually, in such proofs, we don't explicitly cite Theorem
-\ref{thm.ind.IP0}, but instead say certain words that signal that Theorem
-\ref{thm.ind.IP0} is being applied and that (ideally) also indicate what
-statements $\mathcal{A}\left(  n\right)  $ it is being applied to\footnote{We
-will explain this in Convention \ref{conv.ind.IP0lang} below.}. However, for
-our very first example of a proof by induction, we are going to use Theorem
-\ref{thm.ind.IP0} explicitly. We shall show the following fact:
+\textit{principle of mathematical induction}, and we shall also call it
+\textit{principle of standard induction} in order to distinguish it from
+several variant \textquotedblleft principles of induction\textquotedblright%
+\ that we will see later. Proofs that use this principle are called
+\textit{proofs by induction} or \textit{induction proofs}. Usually, in such
+proofs, we don't explicitly cite Theorem \ref{thm.ind.IP0}, but instead say
+certain words that signal that Theorem \ref{thm.ind.IP0} is being applied and
+that (ideally) also indicate what statements $\mathcal{A}\left(  n\right)  $
+it is being applied to\footnote{We will explain this in Convention
+\ref{conv.ind.IP0lang} below.}. However, for our very first example of a proof
+by induction, we are going to use Theorem \ref{thm.ind.IP0} explicitly. We
+shall show the following fact:
 
 \begin{proposition}
 \label{prop.ind.ari-geo}Let $q$ and $d$ be two real numbers such that $q\neq
@@ -3576,7 +3581,7 @@ induction. This proves Proposition \ref{prop.ind.ari-geo}.
 \subsubsection{Divisibility of integers}
 
 We shall soon give some more examples of inductive proofs, including some that
-will include slightly new tactics. These examples come from the realm of
+will involve slightly new tactics. These examples come from the realm of
 \textit{modular arithmetic}, which is the study of congruences modulo
 integers. Before we come to these examples, we will introduce the definition
 of such congruences. But first, let us recall the definition of divisibility:
@@ -3686,7 +3691,7 @@ $a\mid b$ if and only if $b/a$ is an integer.
 
 \begin{proof}
 [Proof of Proposition \ref{prop.div.frac}.]We first claim the following
-logical implication\footnote{A \textit{logical implication} (or, short,
+logical implication\footnote{A \textit{logical implication} (or, for short,
 \textit{implication}) is a logical statement of the form \textquotedblleft if
 $\mathcal{A}$, then $\mathcal{B}$\textquotedblright\ (where $\mathcal{A}$ and
 $\mathcal{B}$ are two statements).}:%
@@ -4449,7 +4454,7 @@ a\left(  b-\left(  c+d\right)  e\right)  =a\left(  b-\left(  c^{\prime
 \end{equation}
 
 
-\item If $a,b,c,a^{\prime}$ are numbers such that $a=a^{\prime}$, then
+\item If $a,b,a^{\prime}$ are numbers such that $a=a^{\prime}$, then
 \begin{equation}
 \left(  a-b\right)  \left(  a+b\right)  =\left(  a^{\prime}-b\right)  \left(
 a+b\right)  , \label{eq.mod.substitutivity-nums.2}%
@@ -4461,7 +4466,7 @@ $a^{\prime}$. (We can also replace the second $a$ by $a^{\prime}$, of course.)
 
 More generally, we can make several such replacements at the same time.
 
-The principle of substitutivity for equalities is one of the headstones of
+The principle of substitutivity for equalities is one of the cornerstones of
 mathematical logic; it is the essence of what it means for two objects to be equal.
 
 The \textit{principle of substitutivity for congruences} is similar, but far
@@ -4680,7 +4685,7 @@ this.}
 
 We have seen that congruences (like equalities) can be added, subtracted and
 multiplied (but, unlike equalities, they cannot be divided). One other thing
-we can do with congruences is taking powers of them, as long as the exponent
+we can do with congruences is to take powers of them, as long as the exponent
 is a nonnegative integer. This relies on the following fact:
 
 \begin{proposition}
@@ -4973,10 +4978,9 @@ x_{n}  &  =ax_{n-1}+bx_{n-2}\ \ \ \ \ \ \ \ \ \ \text{for each }n\geq2.
 (Note that if $a=1$ and $b=1$, then this sequence $\left(  x_{0},x_{1}%
 ,x_{2},\ldots\right)  $ is precisely the Fibonacci sequence $\left(
 f_{0},f_{1},f_{2},\ldots\right)  $ from Example \ref{exa.rec-seq.fib}. If
-$a=0$ and $b=1$, then our sequence $\left(  x_{0},x_{1},x_{2},\ldots\right)  $
-is the sequence $\left(  0,1,0,b,0,b^{2},0,b^{3},\ldots\right)  $ that
-alternates between $0$'s and powers of $b$. The reader can easily work out
-further examples.)
+$a=0$, then our sequence $\left(  x_{0},x_{1},x_{2},\ldots\right)  $ is the
+sequence $\left(  0,1,0,b,0,b^{2},0,b^{3},\ldots\right)  $ that alternates
+between $0$'s and powers of $b$. The reader can easily work out further examples.)
 
 \textbf{(a)} We have $x_{n+m+1}=bx_{n}x_{m}+x_{n+1}x_{m+1}$ for all
 $n\in\mathbb{N}$ and $m\in\mathbb{N}$.
@@ -6023,7 +6027,7 @@ The set $\left\{  2,4,5\right\}  $ has exactly one minimum: namely, $2$.
 The set $\mathbb{N}=\left\{  0,1,2,\ldots\right\}  $ has exactly one minimum:
 namely, $0$.
 
-The set $\left\{  0,-1,-2,\ldots\right\}  $ has no minimum: If $k$ was a
+The set $\left\{  0,-1,-2,\ldots\right\}  $ has no minimum: If $k$ were a
 minimum of this set, then we would have $k\leq k-1$, which is absurd.
 
 The set $\varnothing$ has no minimum, since a minimum would have to be an
@@ -6883,12 +6887,13 @@ $0^{0-1}=0^{-1}$ is not defined!) In truth, it is easy to convince oneself
 that this is not a serious hindrance, since the expression \textquotedblleft%
 $na^{n-1}$\textquotedblright\ has a meaningful interpretation even when its
 sub-expression \textquotedblleft$a^{n-1}$\textquotedblright\ does not (one
-just has to interpret it as $0$ when $n=0$, without regard to whether
-\textquotedblleft$a^{n-1}$\textquotedblright\ is well-defined). Nevertheless,
-we prefer to rule out the case of $n=0$ by requiring $n$ to be positive, in
-order to avoid having to discuss such questions of interpretation. (Of course,
-this also gives us an excuse to apply Theorem \ref{thm.ind.IPg} instead of the
-old Theorem \ref{thm.ind.IP0}.)
+just has to interpret \textquotedblleft$na^{n-1}$\textquotedblright\ as $0$
+when $n=0$, without regard to whether \textquotedblleft$a^{n-1}$%
+\textquotedblright\ is well-defined). Nevertheless, we prefer to rule out the
+case of $n=0$ by requiring $n$ to be positive, in order to avoid having to
+discuss such questions of interpretation. (Of course, this also gives us an
+excuse to apply Theorem \ref{thm.ind.IPg} instead of the old Theorem
+\ref{thm.ind.IP0}.)
 
 \begin{proof}
 [Proof of Proposition \ref{prop.mod.binom01}.]For each $n\in\mathbb{Z}_{\geq
@@ -7165,7 +7170,11 @@ Of course, this convention applies not only to integers, but to any other
 numbers $a,b,c$.
 
 We can now state the following fact, which is sometimes known as
-\textquotedblleft lifting-the-exponent lemma\textquotedblright:
+\textquotedblleft lifting-the-exponent lemma\textquotedblright\ (or at least
+its easy part\footnote{See, e.g.,
+\href{https://en.wikipedia.org/wiki/Lifting-the-exponent_lemma}{the Wikipedia
+article} for the complete version, which, however, is stated only for prime
+$n$.}):
 
 \begin{corollary}
 \label{cor.mod.lte2}Let $n\in\mathbb{N}$. Let $a$ and $b$ be two integers such
@@ -7390,7 +7399,7 @@ It is easy to see that Theorem \ref{thm.ind.SIP} generalizes Theorem
 \ref{thm.ind.IPg} hold, then so does Assumption 1 of Theorem \ref{thm.ind.SIP}%
 ). More interesting for us is the converse implication: We shall show that
 Theorem \ref{thm.ind.SIP} can be derived from Theorem \ref{thm.ind.IPg}. This
-will allow us to use Theorem \ref{thm.ind.SIP} without having to taking it on trust.
+will allow us to use Theorem \ref{thm.ind.SIP} without having to take it on trust.
 
 Before we derive Theorem \ref{thm.ind.SIP}, let us restate Theorem
 \ref{thm.ind.IPg} as follows:
@@ -7549,7 +7558,7 @@ sequence of statements \newline$\mathcal{B}\left(  0\right)  ,\mathcal{B}%
 \left(  1\right)  ,\mathcal{B}\left(  2\right)  ,\ldots$ using Corollary
 \ref{cor.ind.IPg.renamed} and then deriving the former from the latter.
 
-Theorem \ref{thm.ind.IPg} is called the \textit{principle of strong induction
+Theorem \ref{thm.ind.SIP} is called the \textit{principle of strong induction
 starting at }$g$, and proofs that use it are usually called \textit{proofs by
 strong induction}. We illustrate its use on the following easy property of the
 Fibonacci sequence:
@@ -7790,7 +7799,7 @@ holds for each $n\in\mathbb{Z}_{\geq0}$. This completes our proof of
 Proposition \ref{prop.ind.sip-fib}.
 \end{proof}
 
-The proof that we just showed still has a lot of \textquotedblleft
+The proof that we just shown still has a lot of \textquotedblleft
 boilerplate\textquotedblright\ text that conveys no information. For example,
 we have again explicitly defined the statement $\mathcal{A}\left(  n\right)
 $, which is unnecessary: This statement is exactly what one would expect
@@ -8161,10 +8170,10 @@ defined in Proposition \ref{prop.ind.LP2} is%
 1,1,2,5,13,34,89,233,610,1597,\ldots\right)
 \]
 consisting of all Fibonacci numbers at odd positions (i.e., Fibonacci numbers
-of the form $f_{2n-1}$ for $n\in\mathbb{N}$) with an extra $1$ at the front.
-This, again, can be proven by induction. Also, this sequence satisfies the
-recurrence relation $b_{n}=3b_{n-1}-b_{n-2}$ for all $n\geq2$. This is the
-sequence \href{https://oeis.org/A001519}{A001519 in the OEIS}.
+of the form $f_{2n-1}$ for all positive $n\in\mathbb{N}$) with an extra $1$ at
+the front. This, again, can be proven by induction. Also, this sequence
+satisfies the recurrence relation $b_{n}=3b_{n-1}-b_{n-2}$ for all $n\geq2$.
+This is the sequence \href{https://oeis.org/A001519}{A001519 in the OEIS}.
 
 If $r=3$, then the sequence $\left(  b_{0},b_{1},b_{2},\ldots\right)  $
 defined in Proposition \ref{prop.ind.LP2} is%
@@ -8426,7 +8435,7 @@ Hence, $n\geq2$. Thus, $n-2\geq0$, so that $n-2\in\mathbb{N}$.
 Proposition \ref{prop.ind.LP2} \textbf{(a)} (applied to $n-2$ instead of $n$)
 yields $b_{n-2}\in\mathbb{N}$. Similarly, $b_{n}\in\mathbb{N}$ and $b_{n+1}%
 \in\mathbb{N}$ and $b_{n+2}\in\mathbb{N}$. Thus, all of $b_{n-2}$, $b_{n+1}$,
-$b_{n}$ are $b_{n+2}$ are integers.
+$b_{n}$ and $b_{n+2}$ are integers.
 \end{vershort}
 
 \begin{verlong}
@@ -8438,7 +8447,7 @@ Proposition \ref{prop.ind.LP2} \textbf{(a)} (applied to $n+2$ instead of $n$)
 yields $b_{n+2}\in\mathbb{N}$. Also, $n+1\geq n\geq2$, so that $n+1\in
 \mathbb{N}$. Thus, Proposition \ref{prop.ind.LP2} \textbf{(a)} (applied to
 $n+1$ instead of $n$) yields $b_{n+1}\in\mathbb{N}$. All of the numbers
-$b_{n-2}$, $b_{n+1}$, $b_{n}$ are $b_{n+2}$ are integers (since $b_{n-2}%
+$b_{n-2}$, $b_{n+1}$, $b_{n}$ and $b_{n+2}$ are integers (since $b_{n-2}%
 \in\mathbb{N}\subseteq\mathbb{Z}$, $b_{n+1}\in\mathbb{N}\subseteq\mathbb{Z}$,
 $b_{n}\in\mathbb{N}\subseteq\mathbb{Z}$ and $b_{n+2}\in\mathbb{N}%
 \subseteq\mathbb{Z}$).
@@ -8513,13 +8522,13 @@ integer. The answer turns out to be somewhat disappointing in general: For
 example, if we set $r=3$ and $q=2$, then our sequence $\left(  b_{0}%
 ,b_{1},b_{2},\ldots\right)  $ begins with%
 \begin{align*}
-b_{0} &  =1,\ \ \ \ \ \ \ \ \ \ b_{1}=1,\ \ \ \ \ \ \ \ \ \ b_{2}=\dfrac
-{1^{3}+2}{1}=3,\\
-b_{3} &  =\dfrac{3^{3}+2}{1}=29,\ \ \ \ \ \ \ \ \ \ b_{4}=\dfrac{29^{3}+2}%
+b_{0}  &  =1,\ \ \ \ \ \ \ \ \ \ b_{1}=1,\ \ \ \ \ \ \ \ \ \ b_{2}%
+=\dfrac{1^{3}+2}{1}=3,\\
+b_{3}  &  =\dfrac{3^{3}+2}{1}=29,\ \ \ \ \ \ \ \ \ \ b_{4}=\dfrac{29^{3}+2}%
 {3}=\dfrac{24\,391}{3},
 \end{align*}
 at which point it becomes clear that $b_{n}\in\mathbb{N}$ no longer holds for
-all $n\in\mathbb{N}$. The same happens for all $r>2$ as long as $q=3$. (More
+all $n\in\mathbb{N}$. The same happens for all $r>2$ as long as $q=2$. (More
 precisely, if we take $r>2$ and $q=2$, then the first $n$ that violates
 $b_{n}\in\mathbb{N}$ is $4$ or $5$ depending on whether $r$ is odd or even.
 Proving this is a nice exercise!)
@@ -9525,7 +9534,7 @@ For this example, set $g=3$ and $h=7$. Then, if we set $\left(  b_{3}%
 ,b_{4},b_{5},b_{6},b_{7}\right)  =\left(  4,5,3,4,2\right)  $, then the
 condition (\ref{eq.prop.ind.dcs.ass}) holds for all $p\in\left\{
 g+1,g+2,\ldots,h\right\}  $. (For example, it holds for $p=5$, since
-$b_{5}=3\geq4-1=b_{1}-1$ and $1\in\left\{  g,g+1,\ldots,5-1\right\}  $.) On
+$b_{5}=3\geq4-1=b_{3}-1$ and $3\in\left\{  g,g+1,\ldots,5-1\right\}  $.) On
 the other hand, if we set $\left(  b_{3},b_{4},b_{5},b_{6},b_{7}\right)
 =\left(  4,5,2,4,3\right)  $, then this condition does not hold (indeed, it
 fails for $p=5$, since $b_{5}=2$ is neither $\geq4-1$ nor $\geq5-1$).
@@ -9800,8 +9809,8 @@ b$, $b\circ c$ and $c\circ d$ are well-defined:
 \begin{example}
 \label{exa.ind.gen-ass-maps.abcd}Let $X$, $Y$, $Z$, $W$ and $U$ be five sets.
 Let $d:X\rightarrow Y$, $c:Y\rightarrow Z$, $b:Z\rightarrow W$ and
-$a:W\rightarrow U$ be four maps. Then, there we can construct five
-compositions that use all four of these maps; these five compositions are%
+$a:W\rightarrow U$ be four maps. Then, we can construct five compositions that
+use all four of these maps; these five compositions are%
 \begin{align}
 &  \left(  \left(  a\circ b\right)  \circ c\right)  \circ
 d,\ \ \ \ \ \ \ \ \ \ \left(  a\circ\left(  b\circ c\right)  \right)  \circ
@@ -10054,7 +10063,8 @@ $f_{n}\circ f_{n-1}\circ\cdots\circ f_{1}$, where all the parentheses are
 \textquotedblleft concentrated as far right as possible\textquotedblright%
 \ (i.e., there is an opening parenthesis after each \textquotedblleft$\circ
 $\textquotedblright\ sign except for the last one; and there are $n-2$ closing
-parentheses at the end of the expression). This is merely a visual restatement
+parentheses at the end of the expression\footnote{Unless $n=1$, in which case
+the right hand side is simply $f_{1}$.}). This is merely a visual restatement
 of the recursive definition of $C\left(  f_{n},f_{n-1},\ldots,f_{1}\right)  $
 we gave above.
 \end{example}
@@ -12022,9 +12032,9 @@ $S$-family. Then, the set $\operatorname*{Sums}\left(  \left(  a_{s}\right)
 _{s\in S}\right)  $ is a $1$-element set.
 \end{statement}
 
-Now, we must now prove that Theorem \ref{thm.ind.gen-com.Sums1} holds under
-the condition that $\left\vert S\right\vert =m$. In other words, we must prove
-the following claim:
+Now, we must prove that Theorem \ref{thm.ind.gen-com.Sums1} holds under the
+condition that $\left\vert S\right\vert =m$. In other words, we must prove the
+following claim:
 
 \begin{statement}
 \textit{Claim 2:} Let $S$ be a finite set satisfying $\left\vert S\right\vert
@@ -13361,9 +13371,9 @@ t\in S\ \mid\ f\left(  t\right)  =w\right\}  }a_{s}=\sum_{s\in\varnothing
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
-\text{since }\left\{  t\in S\ \mid\ f\left(  s\right)  =w\right\}
+\text{since }\left\{  t\in S\ \mid\ f\left(  t\right)  =w\right\}
 =\varnothing\\
-\text{(because }\left\{  t\in S\ \mid\ f\left(  s\right)  =w\right\}
+\text{(because }\left\{  t\in S\ \mid\ f\left(  t\right)  =w\right\}
 \subseteq S=\varnothing\text{)}%
 \end{array}
 \right) \\
@@ -14257,7 +14267,7 @@ congruences as follows:
 
 \begin{statement}
 \textit{Principle of substitutivity for congruences (stronger version):} Fix
-an integer $n$. If two numbers $x$ and $x^{\prime}$ are congruent to each
+an integer $n$. If two integers $x$ and $x^{\prime}$ are congruent to each
 other modulo $n$ (that is, $x\equiv x^{\prime}\operatorname{mod}n$), and if we
 have any expression $A$ that involves only integers, addition, subtraction,
 multiplication \textbf{and summation signs}, and involves the object $x$, then
@@ -14767,7 +14777,7 @@ n\right)  $ holds for each $n\in\mathbb{Z}$. This proves Theorem
 \ref{thm.ind.IPg+-}.
 \end{proof}
 
-As an example for the use of Theorem \ref{thm.ind.IPg+-}, we shall prove the
+As an example of the use of Theorem \ref{thm.ind.IPg+-}, we shall prove the
 following fact:
 
 \begin{proposition}
@@ -16791,7 +16801,7 @@ X^{3}-\dfrac{1}{2}X^{2}+\dfrac{1}{3}X.
 
 
 The polynomial $\dbinom{X}{n}$ lets us compute the binomial coefficients
-$\dbinom{m}{n}$ for all $m\in\mathbb{N}$, because of the following:
+$\dbinom{m}{n}$ for all $m\in\mathbb{Q}$, because of the following:
 
 \begin{proposition}
 \label{prop.binom.mn}Let $m\in\mathbb{Q}$ and $n\in\mathbb{N}$. Then, the
@@ -16866,7 +16876,12 @@ Proposition \ref{prop.binom.00} \textbf{(b)}.
 \textbf{(c)} To obtain a proof of Proposition \ref{prop.binom.Xes}
 \textbf{(c)}, replace every appearance of \textquotedblleft$m$%
 \textquotedblright\ by \textquotedblleft$X$\textquotedblright\ in the proof of
-Proposition \ref{prop.binom.rec}.
+Proposition \ref{prop.binom.rec}. This shows that
+\[
+\dbinom{X}{n} =\dbinom{X-1}{n-1}+\dbinom{X-1}{n} =\dbinom{X-1}{n}+\dbinom
+{X-1}{n-1}.
+\]
+Thus, Proposition \ref{prop.binom.Xes} \textbf{(c)} follows.
 
 \textbf{(d)} To obtain a proof of Proposition \ref{prop.binom.Xes}
 \textbf{(d)}, replace every appearance of \textquotedblleft$m$%
@@ -20439,9 +20454,9 @@ or vice versa).}
 
 \subsection{Additional exercises}
 
-This section contains some further exercises. As the earlier \textquotedblleft
-additional exercises\textquotedblright, these will not be relied on in the
-rest of this text, and solutions will not be provided.
+This section contains some further exercises. As with the earlier
+\textquotedblleft additional exercises\textquotedblright, these will not be
+relied on in the rest of this text, and solutions will not be provided.
 
 \begin{exercise}
 \label{exe.rec.qn-rn}Let $q$ and $r$ be two complex numbers. Prove that the
@@ -20455,8 +20470,8 @@ Find these $a$ and $b$.
 $\dfrac{1+\sqrt{5}}{2}$). Let $\left(  f_{0},f_{1},f_{2},\ldots\right)  $ be
 the Fibonacci sequence.
 
-\textbf{(a)} Show that $f_{n+1}-\varphi f_{n}=\dfrac{1}{\sqrt{5}}\psi^{n}$ for
-every $n\in\mathbb{N}$, where $\psi=\dfrac{1-\sqrt{5}}{2}$. (Notice that
+\textbf{(a)} Show that $f_{n+1}-\varphi f_{n}=\psi^{n}$ for every
+$n\in\mathbb{N}$, where $\psi=\dfrac{1-\sqrt{5}}{2}$. (Notice that
 $\psi=\dfrac{1-\sqrt{5}}{2}\approx-0.618$ lies between $-1$ and $0$, and thus
 the powers $\psi^{n}$ converge to $0$ as $n\rightarrow\infty$. So
 $f_{n+1}-\varphi f_{n}\rightarrow0$ as $n\rightarrow\infty$, and consequently
@@ -21056,8 +21071,8 @@ permutation whenever $i\in\left\{  1,2,\ldots,n-1\right\}  $. We shall prove
 both of these facts in one swoop:
 
 \begin{statement}
-\textit{Claim 1:} Let $i\in\left\{  1,2,\ldots,n\right\}  $. Then, $s_{i}$ is
-a permutation in $S_{n}$ and satisfies $s_{i}^{2}=\operatorname*{id}$.
+\textit{Claim 1:} Let $i\in\left\{  1,2,\ldots,n-1\right\}  $. Then, $s_{i}$
+is a permutation in $S_{n}$ and satisfies $s_{i}^{2}=\operatorname*{id}$.
 \end{statement}
 
 [\textit{Proof of Claim 1:} Let $i\in\left\{  1,2,\ldots,n-1\right\}  $. Thus,
@@ -21574,7 +21589,7 @@ define the sign of any permutation $\sigma$ of $X$ as follows:%
 \end{equation}
 Here, the right hand side is well-defined because $\phi\circ\sigma\circ
 \phi^{-1}$ is a permutation of $\left\{  1,2,\ldots,n\right\}  $. What is not
-immediately obvious is that this sign is independent on the choice of $\phi$,
+immediately obvious is that this sign is independent of the choice of $\phi$,
 and that it is a group homomorphism to $\left\{  1,-1\right\}  $ (that is, we
 have $\left(  -1\right)  ^{\operatorname*{id}}=1$ and $\left(  -1\right)
 ^{\sigma\circ\tau}=\left(  -1\right)  ^{\sigma}\cdot\left(  -1\right)  ^{\tau
@@ -22112,12 +22127,12 @@ This proves Proposition \ref{prop.S(infty).group} \textbf{(c)}.
 \end{proof}
 \end{verlong}
 
-In the language of group theorists, Proposition \ref{prop.S(infty).group} show
-that $S_{\left(  \infty\right)  }$ is a subgroup of the group $S_{\infty}$.
-The elements of $S_{\left(  \infty\right)  }$ are called the \textit{finitary
-permutations of }$\left\{  1,2,3,\ldots\right\}  $, and $S_{\left(
-\infty\right)  }$ is called the \textit{finitary symmetric group of }$\left\{
-1,2,3,\ldots\right\}  $.
+In the language of group theorists, Proposition \ref{prop.S(infty).group}
+shows that $S_{\left(  \infty\right)  }$ is a subgroup of the group
+$S_{\infty}$. The elements of $S_{\left(  \infty\right)  }$ are called the
+\textit{finitary permutations of }$\left\{  1,2,3,\ldots\right\}  $, and
+$S_{\left(  \infty\right)  }$ is called the \textit{finitary symmetric group
+of }$\left\{  1,2,3,\ldots\right\}  $.
 
 We now have the following analogue of Exercise \ref{exe.ps2.2.4} (without its
 part \textbf{(c)}):
@@ -22920,7 +22935,7 @@ elements of $\left\{  1,2,\ldots,n\right\}  $. We let $t_{i,j}$ be the
 permutation in $S_{n}$ which swaps $i$ with $j$ while leaving all other
 elements of $\left\{  1,2,\ldots,n\right\}  $ unchanged. Such a permutation is
 called a \textit{transposition} (and is often denoted by $\left(  i,j\right)
-$ in literature; but we prefer not to do so, since it is too similar to
+$ in the literature; but we prefer not to do so, since it is too similar to
 one-line notation).
 \end{definition}
 
@@ -24335,7 +24350,7 @@ determinant\textquotedblright) mean.
 \subsection{\label{sect.commring}Commutative rings}
 
 We begin by defining the concept of commutative rings, and exploring some
-examples for it. This is only a brief introduction; much more can be found in
+examples of it. This is only a brief introduction; much more can be found in
 any text on abstract algebra (e.g., \cite{Artin}, \cite{Goodman},
 \cite{Hungerford}, \cite{Hungerford-03}, \cite{Herstein} or \cite{ZarSam67}).
 
@@ -25086,8 +25101,8 @@ means $\sum_{I\in\mathcal{P}\left(  \left[  n\right]  \right)  }$, where
 $\mathcal{P}\left(  \left[  n\right]  \right)  $ denotes the powerset of
 $\left[  n\right]  $.)
 
-\textbf{(b)} Use Exercise \ref{exe.prod(ai+bi)} to give a new proof of
-(\ref{eq.rings.(a+b)**n}).
+\textbf{(b)} Use Exercise \ref{exe.prod(ai+bi)} \textbf{(a)} to give a new
+proof of (\ref{eq.rings.(a+b)**n}).
 \end{exercise}
 
 \begin{exercise}
@@ -25292,9 +25307,9 @@ m$-matrix, then the $n\times m$-matrix $-A$ is defined to be $0_{n\times m}-A$.
 A sum $\sum_{i\in I}A_{i}$ of finitely many matrices $A_{i}$ is defined in the
 same way as a sum of numbers or of elements of a commutative
 ring\footnote{with the caveat that an empty sum of $n\times m$-matrices is not
-the number $0$, but the $n\times m$-matrix $0_{n,m}$}. However, a product
-$\prod_{i\in I}A_{i}$ of finitely many matrices $A_{i}$ (in general) cannot be
-defined, because the result would depend on the order of multiplication.
+the number $0$, but the $n\times m$-matrix $0_{n\times m}$}. However, a
+product $\prod_{i\in I}A_{i}$ of finitely many matrices $A_{i}$ (in general)
+cannot be defined, because the result would depend on the order of multiplication.
 
 For every $n\in\mathbb{N}$, we let $I_{n}$ denote the $n\times n$-matrix
 $\left(  \delta_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$, where
@@ -25304,7 +25319,7 @@ $\delta_{i,j}$ is defined to be $%
 0, & \text{if }i\neq j
 \end{cases}
 $.\ \ \ \ \footnote{Here, $0$ and $1$ mean the zero and the unity of
-$\mathbb{K}$ (which may and may not be the integers $0$ and $1$).} This matrix
+$\mathbb{K}$ (which may or may not be the integers $0$ and $1$).} This matrix
 $I_{n}$ looks as follows:%
 \[
 I_{n}=\left(
@@ -25966,7 +25981,7 @@ ac+bd
 \end{array}
 \right)  .
 \]
-If we would identify column vectors with row vectors, then this would cause contradictions.
+If we identified column vectors with row vectors, then this would cause contradictions.
 
 The reason to distinguish between row vectors and $n$-tuples is subtler: We
 have defined row vectors only for a commutative ring $\mathbb{K}$, whereas
@@ -26147,7 +26162,7 @@ g & h & i
 \end{array}
 \right)
 \]
-for any $a,b,c,d,e,f\in\mathbb{K}$ and $\lambda\in\mathbb{K}$.
+for any $a,b,c,d,e,f,g,h,i\in\mathbb{K}$ and $\lambda\in\mathbb{K}$.
 
 \textbf{(i)} Set $n=3$ and $k=2$. Set $A=\left(
 \begin{array}
@@ -26394,8 +26409,8 @@ Thus, $\det A=0$ is proven again.
 \label{exam.xmax}Here is another example for the use of Exercise
 \ref{exe.ps4.6k}.
 
-Let $n\in\mathbb{N}$. Let $x_{1},x_{2},\ldots,x_{n}$ be $n$ elements of
-$\mathbb{K}$. Let $A$ be the matrix $\left(  x_{\max\left\{  i,j\right\}
+Let $n$ be a positive integer. Let $x_{1},x_{2},\ldots,x_{n}$ be $n$ elements
+of $\mathbb{K}$. Let $A$ be the matrix $\left(  x_{\max\left\{  i,j\right\}
 }\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$. (Recall that $\max S$ denotes the
 greatest element of a nonempty set $S$.)
 
@@ -26570,7 +26585,7 @@ Finally, recall that $\det A^{\prime}=\det A$, so that%
 
 \subsection{$\det\left(  AB\right)  $}
 
-Next, a lemma that will come handy in a more important proof:
+Next, a lemma that will come in handy in a more important proof:
 
 \begin{lemma}
 \label{lem.det.sigma}Let $n\in\mathbb{N}$. Let $\left[  n\right]  $ denote the
@@ -26903,10 +26918,10 @@ The maps $\Phi$ and $\Psi$ are mutually inverse\footnote{\textit{Proof.} Every
 $\sigma\in A_{n}$ satisfies%
 \begin{align*}
 \left(  \Psi\circ\Phi\right)  \left(  \sigma\right)   &  =\Psi\left(
-\underbrace{\Phi\left(  \sigma\right)  }_{=\sigma\circ\tau_{a,b}}\right)
-=\Psi\left(  \sigma\circ\tau_{a,b}\right)  =\sigma\circ\underbrace{\tau
-_{a,b}\circ\left(  \tau_{a,b}\right)  ^{-1}}_{=\operatorname*{id}%
-}\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\Psi\right) \\
+\underbrace{\Phi\left(  \sigma\right)  }_{=\sigma\circ t_{a,b}}\right)
+=\Psi\left(  \sigma\circ t_{a,b}\right)  =\sigma\circ\underbrace{\tau
+_{a,b}\circ\left(  t_{a,b}\right)  ^{-1}}_{=\operatorname*{id}}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\Psi\right) \\
 &  =\sigma=\operatorname*{id}\left(  \sigma\right)  .
 \end{align*}
 Thus, $\Psi\circ\Phi=\operatorname*{id}$. Similarly, $\Phi\circ\Psi
@@ -27387,12 +27402,13 @@ Now, (\ref{pf.cor.det.product.a.1}) (applied to $u=k$) yields $\det\left(
 B_{1}B_{2}\cdots B_{k}\right)  =\prod_{i=1}^{k}\det\left(  B_{i}\right)  $.
 Corollary \ref{cor.det.product} \textbf{(a)} is thus proven.
 
-\textbf{(b)} Let $B$ be any $n\times n$-matrix. Applying Corollary
-\ref{cor.det.product} \textbf{(a)} to $B_{i}=B$, we obtain $\det\left(
-\underbrace{BB\cdots B}_{k\text{ factors}}\right)  =\prod_{i=1}^{k}\det
-B=\left(  \det B\right)  ^{k}$. Since $\underbrace{BB\cdots B}_{k\text{
-factors}}=B^{k}$, this rewrites as $\det\left(  B^{k}\right)  =\left(  \det
-B\right)  ^{k}$. Corollary \ref{cor.det.product} \textbf{(b)} is thus proven.
+\textbf{(b)} Let $B$ be any $n\times n$-matrix. Let $k \in\mathbb{N}$.
+Applying Corollary \ref{cor.det.product} \textbf{(a)} to $B_{i}=B$, we obtain
+$\det\left(  \underbrace{BB\cdots B}_{k\text{ factors}}\right)  =\prod
+_{i=1}^{k}\det B=\left(  \det B\right)  ^{k}$. Since $\underbrace{BB\cdots
+B}_{k\text{ factors}}=B^{k}$, this rewrites as $\det\left(  B^{k}\right)
+=\left(  \det B\right)  ^{k}$. Corollary \ref{cor.det.product} \textbf{(b)} is
+thus proven.
 \end{proof}
 \end{verlong}
 
@@ -27728,9 +27744,9 @@ determinants can be negative, while areas must always be $\geq0$ (although
 they can be $0$ when $0$, $A$ and $B$ are collinear); however, it makes
 working with areas somewhat awkward. This can be circumvented by the notion of
 a \textit{signed area}. (The signed area of a triangle $ABC$ is its regular
-area if the triangle is \textquotedblleft directed clockwise\textquotedblright%
-, and otherwise it is the negative of its area.) The signed area of the
-triangle $0AB$ is $\dfrac{1}{2}\det\left(
+area if the triangle is \textquotedblleft directed
+counterclockwise\textquotedblright, and otherwise it is the negative of its
+area.) The signed area of the triangle $0AB$ is $\dfrac{1}{2}\det\left(
 \begin{array}
 [c]{cc}%
 x_{A} & x_{B}\\
@@ -27781,7 +27797,7 @@ algebraic definition has its own advantages.
 
 This section is devoted to the Cauchy-Binet formula: a generalization of
 Theorem \ref{thm.det(AB)} which is less well-known than the latter, but still
-comes useful. This formula appears in the literature in various forms; we
+comes in useful. This formula appears in the literature in various forms; we
 follow \href{http://planetmath.org/cauchybinetformula}{the one on PlanetMath}
 (although we use different notations).
 
@@ -27948,7 +27964,7 @@ the one we shall give below) are sketched in \cite[Theorem 2.3 and Problem
 28.7]{Prasolov}. Yet another proof (using characteristic polynomials and block
 matrices) can be found in \cite[(APP.1.2)]{LLPT95}.}.
 
-Before we prove Theorem \ref{thm.cauchy-binet}, let us give some examples for
+Before we prove Theorem \ref{thm.cauchy-binet}, let us give some examples of
 its use. First, here is a simple fact:
 
 \begin{lemma}
@@ -28486,7 +28502,7 @@ $\left(
 \right)  $. The rows of this matrix are still sorted, as the \textquotedblleft
 non-messing-up phenomenon\textquotedblright\ predicts. To prove this
 phenomenon in general, it suffices to show that any entry in the resulting
-matrix is $\leq$ to the entry directly below it (assuming that the latter
+matrix is $\leq$ to the entry directly to its right (assuming that the latter
 exists); but this follows easily from Exercise \ref{exe.sorting.nmu}.
 \end{remark}
 
@@ -28510,7 +28526,7 @@ $\sum_{k=1}^{m}a_{i,k}b_{k,j}$ instead of $A$ and $a_{i,j}$) yields%
 }\prod_{i=1}^{n}\left(  \sum_{k=1}^{m}a_{i,k}b_{k,\sigma\left(  i\right)
 }\right)  . \label{pf.thm.cauchy-binet.short.1}%
 \end{equation}
-But for every $\sigma\in S_{n}$, we have%
+However, for every $\sigma\in S_{n}$, we have%
 \begin{align*}
 \prod_{i=1}^{n}\left(  \sum_{k=1}^{m}a_{i,k}b_{k,\sigma\left(  i\right)
 }\right)   &  =\sum_{\left(  k_{1},k_{2},\ldots,k_{n}\right)  \in\left[
@@ -28519,7 +28535,7 @@ m\right]  ^{n}}\underbrace{\prod_{i=1}^{n}\left(  a_{i,k_{i}}b_{k_{i}%
 }\right)  \left(  \prod_{i=1}^{n}b_{k_{i},\sigma\left(  i\right)  }\right)
 }\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Lemma \ref{lem.prodrule}, applied to
-}m_{i}=n\text{ and }p_{i,k}=a_{i,k}b_{k,\sigma\left(  i\right)  }\right) \\
+}m_{i}=m\text{ and }p_{i,k}=a_{i,k}b_{k,\sigma\left(  i\right)  }\right) \\
 &  =\sum_{\left(  k_{1},k_{2},\ldots,k_{n}\right)  \in\left[  m\right]  ^{n}%
 }\left(  \prod_{i=1}^{n}a_{i,k_{i}}\right)  \left(  \prod_{i=1}^{n}%
 b_{k_{i},\sigma\left(  i\right)  }\right)  .
@@ -28817,7 +28833,7 @@ $\sum_{k=1}^{m}a_{i,k}b_{k,j}$ instead of $A$ and $a_{i,j}$) yields%
 }\prod_{i=1}^{n}\left(  \sum_{k=1}^{m}a_{i,k}b_{k,\sigma\left(  i\right)
 }\right)  . \label{pf.thm.cauchy-binet.1}%
 \end{equation}
-But for every $\sigma\in S_{n}$, we have%
+However, for every $\sigma\in S_{n}$, we have%
 \begin{align*}
 \prod_{i=1}^{n}\left(  \sum_{k=1}^{m}a_{i,k}b_{k,\sigma\left(  i\right)
 }\right)   &  =\sum_{\left(  k_{1},k_{2},\ldots,k_{n}\right)  \in
@@ -28825,7 +28841,7 @@ But for every $\sigma\in S_{n}$, we have%
 \times\left[  m\right]  }_{n\text{ factors}}}\prod_{i=1}^{n}\left(
 a_{i,k_{i}}b_{k_{i},\sigma\left(  i\right)  }\right) \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Lemma \ref{lem.prodrule}, applied to
-}m_{i}=n\text{ and }p_{i,k}=a_{i,k}b_{k,\sigma\left(  i\right)  }\right) \\
+}m_{i}=m\text{ and }p_{i,k}=a_{i,k}b_{k,\sigma\left(  i\right)  }\right) \\
 &  =\sum_{\left(  k_{1},k_{2},\ldots,k_{n}\right)  \in\left[  m\right]  ^{n}%
 }\underbrace{\prod_{i=1}^{n}\left(  a_{i,k_{i}}b_{k_{i},\sigma\left(
 i\right)  }\right)  }_{=\left(  \prod_{i=1}^{n}a_{i,k_{i}}\right)  \left(
@@ -29180,7 +29196,7 @@ n-1,\ 1\leq j\leq n-1}\right)  $.
 
 The assumption (\ref{eq.thm.laplace.pre.ass}) says that the last row of the
 matrix $A$ consists entirely of zeroes, apart from its last entry $a_{n,n}$
-(which may and may not be $0$). Theorem \ref{thm.laplace.pre} states that,
+(which may or may not be $0$). Theorem \ref{thm.laplace.pre} states that,
 under this assumption, the determinant can be obtained by multiplying this
 last entry $a_{n,n}$ with the determinant of the $\left(  n-1\right)
 \times\left(  n-1\right)  $-matrix obtained by removing both the last row and
@@ -30363,7 +30379,7 @@ $n=3$, $x_{1}=x$, $x_{2}=y$ and $x_{3}=z$) yields $\det A=\left(  y-x\right)
 z-y\right)  +zx\left(  x-z\right)  +xy\left(  y-x\right)  .
 \label{eq.exa.vander-det.3.2}%
 \end{equation}
-You might have encountered this curious identity as a trick of use in contest
+You might have encountered this curious identity as a trick used in contest
 problems. When $x,y,z$ are three distinct complex numbers, we can divide
 (\ref{eq.exa.vander-det.3.2}) by $\left(  y-x\right)  \left(  z-x\right)
 \left(  z-y\right)  $, and obtain%
@@ -30544,10 +30560,10 @@ we finally subtract $x_{U}$ times the $U$-th column of the matrix from the
 $\left(  U-1\right)  $-st column\footnote{So, all in all, we subtract the
 $x_{U}$-multiple of each column from its neighbor to its left, but the order
 in which we are doing it (namely, from left to right) is important: It means
-that the column we are subtracting is unchanged from $A_{U}$. (If we would be
-doing these subtractions from right to left instead, then the columns to be
-subtracting would be changed by the preceding steps.)}. The resulting matrix
-is $B$ (according to our definition of $B$). Thus, $\det B=\det\left(
+that the column we are subtracting is unchanged from $A_{U}$. (If we were to
+do these subtractions from right to left instead, then the columns being
+subtracted would be changed by the preceding steps.)}. The resulting matrix is
+$B$ (according to our definition of $B$). Thus, $\det B=\det\left(
 A_{U}\right)  $ (since our subtractions never change the determinant). This
 proves $\det B=\det\left(  A_{U}\right)  $.
 
@@ -30631,7 +30647,7 @@ $\det B=\det\left(  A_{U}\right)  $ again.
 
 \begin{verlong}
 On the other hand, every $\left(  i,j\right)  \in\left\{  1,2,\ldots
-,U\right\}  ^{2}$ satisfy%
+,U\right\}  ^{2}$ satisfies
 \begin{equation}
 b_{i,j}=\sum_{k=1}^{U}x_{i}^{U-k}c_{k,j} \label{pf.thm.vander-det.B=AUC.pf.1}%
 \end{equation}
@@ -30653,7 +30669,7 @@ $j\in\left\{  1,2,\ldots,U-1\right\}  $ (since $j\in\left\{  1,2,\ldots
 \begin{equation}
 b_{i,j}=%
 \begin{cases}
-x_{i}^{U-j}-x_{U}x_{i}^{U-j+1}, & \text{if }j<U;\\
+x_{i}^{U-j}-x_{U}x_{i}^{U-j-1}, & \text{if }j<U;\\
 1, & \text{if }j=U
 \end{cases}
 =x_{i}^{U-j}-x_{U}x_{i}^{U-j-1} \label{pf.thm.vander-det.B=AUC.pf.1.pf.1}%
@@ -30734,7 +30750,7 @@ $b_{i,j}$ yields%
 \begin{equation}
 b_{i,j}=%
 \begin{cases}
-x_{i}^{U-j}-x_{U}x_{i}^{U-j+1}, & \text{if }j<U;\\
+x_{i}^{U-j}-x_{U}x_{i}^{U-j-1}, & \text{if }j<U;\\
 1, & \text{if }j=U
 \end{cases}
 =1 \label{pf.thm.vander-det.B=AUC.pf.1.pf.2}%
@@ -31033,7 +31049,7 @@ Thus, (\ref{pf.thm.vander-det.detB'=}) is proven again.
 
 \begin{verlong}
 On the other hand, every $\left(  i,j\right)  \in\left\{  1,2,\ldots
-,U-1\right\}  ^{2}$ satisfy%
+,U-1\right\}  ^{2}$ satisfies
 \begin{equation}
 b_{i,j}=\sum_{k=1}^{U-1}d_{i,k}x_{k}^{\left(  U-1\right)  -j}
 \label{pf.thm.vander-det.B'=DAU-1.pf.1}%
@@ -31364,7 +31380,7 @@ The element $h_{k}\left(  x_{1},x_{2},\ldots,x_{n}\right)  $ defined in
 Definition \ref{def.vandermonde.factoring.h} is often called the
 $k$\textit{-th complete homogeneous function of the }$n$ \textit{elements
 }$x_{1},x_{2},\ldots,x_{n}$ (although, more often, this notion is reserved for
-a different, more abstract object, of whom $h_{k}\left(  x_{1},x_{2}%
+a different, more abstract object, of which $h_{k}\left(  x_{1},x_{2}%
 ,\ldots,x_{n}\right)  $ is just an evaluation). Let us see some examples:
 
 \begin{example}
@@ -31522,9 +31538,9 @@ h_{0}\left(  x_{1}\right)  & h_{-1}\left(  x_{1},x_{2}\right)  & h_{-2}\left(
 x_{1},x_{2},x_{3}\right)  & h_{-3}\left(  x_{1},x_{2},x_{3},x_{4}\right) \\
 h_{1}\left(  x_{1}\right)  & h_{0}\left(  x_{1},x_{2}\right)  & h_{-1}\left(
 x_{1},x_{2},x_{3}\right)  & h_{-2}\left(  x_{1},x_{2},x_{3},x_{4}\right) \\
-h_{2}\left(  x_{2}\right)  & h_{1}\left(  x_{1},x_{2}\right)  & h_{0}\left(
+h_{2}\left(  x_{1}\right)  & h_{1}\left(  x_{1},x_{2}\right)  & h_{0}\left(
 x_{1},x_{2},x_{3}\right)  & h_{-1}\left(  x_{1},x_{2},x_{3},x_{4}\right) \\
-h_{3}\left(  x_{3}\right)  & h_{2}\left(  x_{1},x_{2}\right)  & h_{1}\left(
+h_{3}\left(  x_{1}\right)  & h_{2}\left(  x_{1},x_{2}\right)  & h_{1}\left(
 x_{1},x_{2},x_{3}\right)  & h_{0}\left(  x_{1},x_{2},x_{3},x_{4}\right)
 \end{array}
 \right) \\
@@ -32348,7 +32364,7 @@ $n\times n$-determinant (the one on the right hand side of
 (\ref{eq.exe.cauchy-det-lem})) to the computation of an $\left(  n-1\right)
 \times\left(  n-1\right)  $-determinant (the one on the left hand side),
 provided that $a_{n,n}$ is invertible. If this reminds you of Remark
-\ref{rmk.laplace.pre.gauss-alg}, you are thinking right...
+\ref{rmk.laplace.pre.gauss-alg}, you are right...
 \end{remark}
 
 \begin{remark}
@@ -32605,7 +32621,7 @@ Exercise \ref{exe.altern.det} \textbf{(b)} provides a really simple formula
 for $\det A$ when $A$ is an alternating $n\times n$-matrix for \textbf{odd}
 $n$. One might wonder what can be said about $\det A$ when $A$ is an
 alternating $n\times n$-matrix for \textbf{even} $n$. The answer is far less
-simple, but more interesting: It turns that $\det A$ is the square of a
+simple, but more interesting: It turns out that $\det A$ is the square of a
 certain element of $\mathbb{K}$, called the \textit{Pfaffian} of $A$. See
 \cite[(5.5)]{Conrad-Pf} for a short introduction into the Pfaffian (although
 at a less elementary level than these notes); see \cite[\S 9.5]{BruRys91} and
@@ -33385,8 +33401,8 @@ g_{p}=s_{p}\circ g_{p+1} \label{pf.lem.laplace.gp.recgp}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{pf.lem.laplace.gp.recgp}):} Let $p\in\left[
 n-1\right]  $. Then, $p\in\left[  n-1\right]  =\left\{  1,2,\ldots
-,p-1\right\}  $, so that $p+1\in\left\{  2,3,\ldots,p\right\}  \subseteq
-\left\{  1,2,\ldots,p\right\}  =\left[  p\right]  $. Hence, $g_{p+1}$ is
+,n-1\right\}  $, so that $p+1\in\left\{  2,3,\ldots,n\right\}  \subseteq
+\left\{  1,2,\ldots,n\right\}  =\left[  n\right]  $. Hence, $g_{p+1}$ is
 well-defined. The definition of $g_{p+1}$ yields $g_{p+1}=s_{p+1}\circ
 s_{\left(  p+1\right)  +1}\circ\cdots\circ s_{n-1}=s_{p+1}\circ s_{p+2}%
 \circ\cdots\circ s_{n-1}$. Now, $p\in\left[  n-1\right]  \subseteq\left[
@@ -34981,7 +34997,7 @@ only on the products $b_{1}c_{1},b_{2}c_{2},\ldots,b_{n-1}c_{n-1}$.
 
 \begin{exercise}
 \label{exe.tridiag.cf}Define $A_{x,y}$ as in Proposition
-\ref{prop.tridiag.rec}. Prove that%
+\ref{prop.tridiag.rec}. Assume that $n \geq1$. Prove that%
 \[
 \dfrac{\det A}{\det\left(  A_{1,n}\right)  }=a_{1}-\dfrac{b_{1}c_{1}}%
 {a_{2}-\dfrac{b_{2}c_{2}}{a_{3}-\dfrac{b_{3}c_{3}}{%
@@ -36021,7 +36037,7 @@ q}\\\text{(by (\ref{pf.prop.laplace.0.b.CA}))}}}\right) \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem \ref{thm.laplace.gen}
 \textbf{(b)}, applied to }C\text{ and }c_{i,j}\text{ instead of }A\text{ and
 }a_{i,j}\right) \\
-&  =\sum_{q=1}^{n}\left(  -1\right)  ^{p+q}a_{p,r}\det\left(  A_{\sim p,\sim
+&  =\sum_{p=1}^{n}\left(  -1\right)  ^{p+q}a_{p,r}\det\left(  A_{\sim p,\sim
 q}\right)  .
 \end{align*}
 This proves Proposition \ref{prop.laplace.0} \textbf{(b)}.
@@ -37253,7 +37269,7 @@ Of course, we also have $\det B\cdot\det A=\det A\cdot\det B=1$. Thus, $\det
 B$ is an inverse of $\det A$ in $\mathbb{K}$. Therefore, the element $\det A$
 is invertible (in $\mathbb{K}$). Therefore, the matrix $A$ is invertible
 (according to the $\Longleftarrow$ direction of Theorem
-\ref{thm.matrices.inverses.square} \textbf{(b)}). Thus, the inverse of $A$
+\ref{thm.matrices.inverses.square} \textbf{(a)}). Thus, the inverse of $A$
 exists. Let $C$ be this inverse. Thus, $C$ is a left inverse of $A$ (since
 every inverse of $A$ is a left inverse of $A$).
 
@@ -37518,7 +37534,7 @@ a & b & c\\
 \end{array}
 \right)  $ (with $a,b,c,d,f\in\mathbb{K}$) is a noncommutative ring (again,
 with the same addition, multiplication, zero and unity as for $\mathbb{K}%
-^{n\times n}$).\ \ \ \ \footnote{To check this, one needs to prove that the
+^{3\times3}$).\ \ \ \ \footnote{To check this, one needs to prove that the
 matrices $0_{3\times3}$ and $I_{3}$ have this form, and that the sum and the
 product of any two matrices of this form is again a matrix of this form. All
 of this is clear, except for the claim about the product. The latter claim
@@ -37678,7 +37694,7 @@ of $a$. (It is easy to check that it is unique.)
 \end{definition}
 
 \begin{definition}
-The element $1_{G}$ of a group $G$ is denoted the \textit{neutral element} (or
+The element $1_{G}$ of a group $G$ is called the \textit{neutral element} (or
 the \textit{identity}) of $G$.
 
 The binary operation $\cdot$ in Definition \ref{def.group} is usually not
@@ -40612,7 +40628,7 @@ A_{r}^{\#}\right)  . \label{eq.rmk.pluecker.pre.col.cramer.1}%
 
 
 Now, forget that we fixed $r$. It is easy to see that every $\left(
-v_{1},v_{2},\ldots,v_{n}\right)  ^{T}\in\mathbb{K}^{1\times n}$ satisfies%
+v_{1},v_{2},\ldots,v_{n}\right)  ^{T}\in\mathbb{K}^{n\times1}$ satisfies%
 \[
 A\cdot\left(  v_{1},v_{2},\ldots,v_{n}\right)  ^{T}=\sum_{r=1}^{n}%
 v_{r}A_{\bullet,r}.
@@ -42047,7 +42063,7 @@ $k\leq n$. Let $A\in\mathbb{K}^{n\times\left(  n-k\right)  }$ and
 $B\in\mathbb{K}^{n\times\left(  n+k\right)  }$.
 
 Let us use the notations from Definition \ref{def.unrows}. For any subset $I$
-of $\left\{  1,2,\ldots,n+k\right\}  $, we introduce the following five notations:
+of $\left\{  1,2,\ldots,n+k\right\}  $, we introduce the following four notations:
 
 \begin{itemize}
 \item Let $\sum I$ denote the sum of all elements of $I$. (Thus, $\sum
@@ -42359,7 +42375,7 @@ The next exercise is \cite[Lemma 6]{Krattenthaler} (with the notations changed):
 
 \begin{exercise}
 \label{exe.det.kratt-lem6}Let $n\in\mathbb{N}$. Let $a_{1},a_{2},\ldots
-,a_{n}\in\mathbb{K}$ and $b_{2},b_{3},\ldots,b_{n}\in\mathbb{K}$. For each
+,a_{n}\in\mathbb{K}$ and $b_{1},b_{2},\ldots,b_{n}\in\mathbb{K}$. For each
 $j\in\left\{  1,2,\ldots,n\right\}  $, we define a polynomial $Q_{j}%
 \in\mathbb{K}\left[  X\right]  $ by setting%
 \[
@@ -42960,7 +42976,7 @@ f\left(  s_{1}\right)  ,f\left(  s_{2}\right)  ,\ldots,f\left(  s_{k}\right)
 But the elements of the set $\left\{  f\left(  s_{1}\right)  ,f\left(
 s_{2}\right)  ,\ldots,f\left(  s_{k}\right)  \right\}  $ are the $k$ elements
 \newline$f\left(  s_{1}\right)  ,f\left(  s_{2}\right)  ,\ldots,f\left(
-s_{k}\right)  $, which may and may not be distinct; in either case, there are
+s_{k}\right)  $, which may or may not be distinct; in either case, there are
 at most $k$ distinct elements among them. Hence, the set $\left\{  f\left(
 s_{1}\right)  ,f\left(  s_{2}\right)  ,\ldots,f\left(  s_{k}\right)  \right\}
 $ has at most $k$ elements. In other words, $\left\vert \left\{  f\left(
@@ -43279,9 +43295,9 @@ q+2\right)  b_{m}+b_{m-1}=0$. Hence,%
 b_{m+1}=\left(  q+2\right)  b_{m}-b_{m-1}.
 \]
 Comparing this with $\left(  q+2\right)  \underbrace{b_{\left(  m+1\right)
--1}}_{=b_{m}}+\underbrace{b_{\left(  m+1\right)  -2}}_{=b_{m-1}}=\left(
+-1}}_{=b_{m}}-\underbrace{b_{\left(  m+1\right)  -2}}_{=b_{m-1}}=\left(
 q+2\right)  b_{m}-b_{m-1}$, we obtain $b_{m+1}=\left(  q+2\right)  b_{\left(
-m+1\right)  -1}+b_{\left(  m+1\right)  -2}$. In other words, Exercise
+m+1\right)  -1}-b_{\left(  m+1\right)  -2}$. In other words, Exercise
 \ref{exe.ind.LP2q} \textbf{(a)} holds for $n=m+1$. This completes the
 induction step. Hence, Exercise \ref{exe.ind.LP2q} \textbf{(a)} is proven by induction.
 
@@ -44837,7 +44853,7 @@ all belong to $\mathbb{N}$ (by (\ref{sol.ind.LP2.another-div.inN})).
 Now, let $n$ be a positive integer. Thus, $n-1\in\mathbb{N}$. Hence,
 (\ref{sol.ind.LP2.another-div.inN}) (applied to $n-1$ instead of $n$) yields
 $b_{n-1}\in\mathbb{N}$. Also, (\ref{sol.ind.LP2.another-div.inN}) (applied to
-$n+2$ instead of $\mathbb{N}$) yields $b_{n+2}\in\mathbb{N}$. Also,
+$n+2$ instead of $n$) yields $b_{n+2}\in\mathbb{N}$. Also,
 (\ref{sol.ind.LP2.another-div.inN}) (applied to $n+1$ instead of $n$) yields
 $b_{n+1}\in\mathbb{N}$. Finally, (\ref{sol.ind.LP2.another-div.inN}) yields
 $b_{n}\in\mathbb{N}$. Hence, $b_{n}\in\mathbb{N}\subseteq\mathbb{Z}$.
@@ -44890,7 +44906,7 @@ b_{n-1}=b_{n-1}b_{n+1}^{r}\equiv0\operatorname{mod}x
 (by (\ref{sol.ind.LP2.another-div.2})). But%
 \begin{align*}
 \underbrace{x}_{=b_{n}+1}b_{n-1}\left(  b_{n+2}+1\right)   &  =\left(
-b_{n}+1\right)  b_{n-1}\left(  b_{n-2}+1\right) \\
+b_{n}+1\right)  b_{n-1}\left(  b_{n+2}+1\right) \\
 &  =\underbrace{b_{n}b_{n-1}\left(  b_{n+2}+1\right)  }_{\equiv
 0\operatorname{mod}x}+b_{n-1}\left(  b_{n-2}+1\right)  \equiv b_{n-1}\left(
 b_{n-2}+1\right)  \operatorname{mod}x.
@@ -44987,7 +45003,7 @@ Let us restate Theorem \ref{thm.ind.IPg-} as follows:
 \begin{corollary}
 \label{cor.ind.IPg-.renamed}Let $h\in\mathbb{Z}$. Let $\mathbb{Z}_{\leq h}$ be
 the set $\left\{  h,h-1,h-2,\ldots\right\}  $ (that is, the set of all
-integers that are $\leq h$). For each $n\in\mathbb{Z}_{\geq h}$, let
+integers that are $\leq h$). For each $n\in\mathbb{Z}_{\leq h}$, let
 $\mathcal{B}\left(  n\right)  $ be a logical statement.
 
 Assume the following:
@@ -45245,7 +45261,7 @@ m/2+1, & \text{if }m\text{ is even};\\
 \]
 Thus, (\ref{sol.exe.sum--2choosek-cases.1st.IG}) holds in Case 1.
 
-Let us next consider Case 1. In this case, the integer $m$ is odd. Thus, the
+Let us next consider Case 2. In this case, the integer $m$ is odd. Thus, the
 integer $m-1$ is even\footnote{\textit{Proof.} Proposition
 \ref{prop.mod.even-odd-mod2} \textbf{(b)} (applied to $n=m$) shows that the
 integer $m$ is odd if and only if $m\equiv1\operatorname{mod}2$. Hence,
@@ -46742,7 +46758,7 @@ $. More precisely: To each $\left(  n-1\right)  $-element subset $U$ of
 $S\setminus\left\{  s\right\}  $, we can assign a unique $n$-element subset of
 $S$ that contains $s$ (namely, $U\cup\left\{  s\right\}  $); and this
 assignment is bijective (i.e., each $n$-element subset of $S$ that contains
-$s$ gets assigned to exactly one $\left(  n-1\right)  $-element subsets of
+$s$ gets assigned to exactly one $\left(  n-1\right)  $-element subset of
 $S\setminus\left\{  s\right\}  $).\ \ \ \ \footnote{Let me restate this in
 even more formal terms:
 \par
@@ -54156,7 +54172,7 @@ $p=\min\left\{  m,n\right\}  =n$ (since $m\geq n$). Hence,%
 (by Observation 1). Hence, Exercise \ref{exe.supercat} \textbf{(h)} is proven
 in Case 1.
 
-Let us first consider Case 2. In this case, we have $m<n$. Hence, $m\leq n$.
+Let us next consider Case 2. In this case, we have $m<n$. Hence, $m\leq n$.
 Now, $p=\min\left\{  m,n\right\}  =m$ (since $m\leq n$). Hence,%
 \[
 \sum_{k=-p}^{p}\left(  -1\right)  ^{k}\dbinom{m+n}{m+k}\dbinom{m+n}{n+k}%
@@ -55578,7 +55594,7 @@ $b^{2n-1}\dbinom{a/b}{n}\in\mathbb{Z}$. If $b>0$, then this follows
 immediately from Lemma \ref{lem.sol.choose.a/b.sol2.pos}. Hence, for the rest
 of this proof, we WLOG assume that we don't have $b>0$. Hence, $b\leq0$, so
 that $b<0$ (since $b\neq0$). Therefore, $-b>0$. Thus, Lemma
-\ref{lem.sol.choose.a/b.sol2.lem} (applied to $-a$ and $-b$ instead of $a$ and
+\ref{lem.sol.choose.a/b.sol2.pos} (applied to $-a$ and $-b$ instead of $a$ and
 $b$) yields $\left(  -b\right)  ^{2n-1}\dbinom{\left(  -a\right)  /\left(
 -b\right)  }{n}\in\mathbb{Z}$. Since $\left(  -a\right)  /\left(  -b\right)
 =a/b$, this rewrites as $\left(  -b\right)  ^{2n-1}\dbinom{a/b}{n}%
@@ -55608,7 +55624,7 @@ immediately from Lemma \ref{lem.sol.choose.a/b.sol2.pos}. Hence, for the rest
 of this proof, we can WLOG assume that we don't have $b>0$. Assume this.
 
 We have $b\leq0$ (since we don't have $b>0$). Combining this with $b\neq0$, we
-obtain $b<0$. Hence, $-b>0$. Thus, Lemma \ref{lem.sol.choose.a/b.sol2.lem}
+obtain $b<0$. Hence, $-b>0$. Thus, Lemma \ref{lem.sol.choose.a/b.sol2.pos}
 (applied to $-a$ and $-b$ instead of $a$ and $b$) yields $\left(  -b\right)
 ^{2n-1}\dbinom{\left(  -a\right)  /\left(  -b\right)  }{n}\in\mathbb{Z}$.
 Since $\left(  -a\right)  /\left(  -b\right)  =a/b$, this rewrites as $\left(
@@ -56471,7 +56487,7 @@ x_{m+2\left(  n-1\right)  }=c_{n-1}x_{m+\left(  n-1\right)  }+\left(
 for every $m\in\mathbb{N}$.
 
 Also, $n-2$ is a nonnegative integer such that $n-2<n$. Hence,
-(\ref{sol.ps2.2.1.claim}) is already proven for $N=n-2$ (by our induction
+(\ref{sol.ps2.2.2.c.claim}) is already proven for $N=n-2$ (by our induction
 hypothesis). In other words, we have%
 \begin{equation}
 x_{m+2\left(  n-2\right)  }=c_{n-2}x_{m+\left(  n-2\right)  }+\left(
@@ -57843,7 +57859,7 @@ Comparing this with%
 -1, & \text{if }n\equiv3\operatorname{mod}6\text{ or }n\equiv
 4\operatorname{mod}6
 \end{cases}
-=1\ \ \ \ \ \ \ \ \ \ \left(
+=0\ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
 \text{since }n\equiv2\operatorname{mod}6\text{ or }n\equiv5\operatorname{mod}%
@@ -59630,34 +59646,34 @@ odd, but not both. In other words, we have $S_{n}=A_{n}\cup C_{n}$ and
 $A_{n}\cap C_{n}=\varnothing$. Therefore, $\left\vert S_{n}\right\vert
 =\left\vert A_{n}\right\vert +\left\vert C_{n}\right\vert $.
 
-Now, for every $\sigma\in A_{n}$, we have $\sigma\circ s_{k}\in C_{n}%
+Now, for every $\sigma\in A_{n}$, we have $\sigma\circ s_{1}\in C_{n}%
 $\ \ \ \ \footnote{\textit{Proof.} Let $\sigma\in A_{n}$. Thus, $\sigma$ is an
 even permutation in $S_{n}$ (since $A_{n}$ is the set of all even permutations
 in $S_{n}$). Since $\sigma$ is even, we have $\left(  -1\right)  ^{\sigma}=1$,
 so that $1=\left(  -1\right)  ^{\sigma}=\left(  -1\right)  ^{\ell\left(
 \sigma\right)  }$. Therefore, $\ell\left(  \sigma\right)  \equiv
-0\operatorname{mod}2$. Now, (\ref{sol.ps2.2.5.b.stepper}) yields $\ell\left(
-\sigma\circ s_{k}\right)  \equiv\underbrace{\ell\left(  \sigma\right)
-}_{\equiv0\operatorname{mod}2}+1\equiv1\operatorname{mod}2$, so that $\left(
--1\right)  ^{\ell\left(  \sigma\circ s_{k}\right)  }=-1$. But now, $\left(
--1\right)  ^{\sigma\circ s_{k}}=\left(  -1\right)  ^{\ell\left(  \sigma\circ
-s_{k}\right)  }=-1$, so that the permutation $\sigma\circ s_{k}$ is odd. In
-other words, $\sigma\circ s_{k}\in C_{n}$ (since $C_{n}$ is the set of all odd
-permutations in $S_{n}$), qed.}. Hence, we can define a map $\Phi
-:A_{n}\rightarrow C_{n}$ by
+0\operatorname{mod}2$. Now, (\ref{sol.ps2.2.5.b.stepper}) (applied to $k = 1$)
+yields $\ell\left(  \sigma\circ s_{1}\right)  \equiv\underbrace{\ell\left(
+\sigma\right)  }_{\equiv0\operatorname{mod}2}+1\equiv1\operatorname{mod}2$, so
+that $\left(  -1\right)  ^{\ell\left(  \sigma\circ s_{1}\right)  }=-1$. But
+now, $\left(  -1\right)  ^{\sigma\circ s_{1}}=\left(  -1\right)  ^{\ell\left(
+\sigma\circ s_{1}\right)  }=-1$, so that the permutation $\sigma\circ s_{1}$
+is odd. In other words, $\sigma\circ s_{1}\in C_{n}$ (since $C_{n}$ is the set
+of all odd permutations in $S_{n}$), qed.}. Hence, we can define a map
+$\Phi:A_{n}\rightarrow C_{n}$ by
 \[
-\Phi\left(  \sigma\right)  =\sigma\circ s_{k}\ \ \ \ \ \ \ \ \ \ \text{for
+\Phi\left(  \sigma\right)  =\sigma\circ s_{1}\ \ \ \ \ \ \ \ \ \ \text{for
 every }\sigma\in A_{n}.
 \]
 Similarly, we can define a map $\Psi:C_{n}\rightarrow A_{n}$ by
 \[
-\Psi\left(  \sigma\right)  =\sigma\circ s_{k}\ \ \ \ \ \ \ \ \ \ \text{for
+\Psi\left(  \sigma\right)  =\sigma\circ s_{1}\ \ \ \ \ \ \ \ \ \ \text{for
 every }\sigma\in C_{n}.
 \]
 These two maps $\Phi$ and $\Psi$ are mutually inverse (since every $\sigma\in
-S_{n}$ satisfies $\sigma\circ\underbrace{s_{k}\circ s_{k}}_{=s_{k}%
+S_{n}$ satisfies $\sigma\circ\underbrace{s_{1}\circ s_{1}}_{=s_{1}%
 ^{2}=\operatorname*{id}}=\sigma$). Therefore, the map $\Phi$ is a bijection.
-Thus, there exists a bijection form $A_{n}$ to $C_{n}$ (namely, $\Phi$), so
+Thus, there exists a bijection from $A_{n}$ to $C_{n}$ (namely, $\Phi$), so
 that we obtain $\left\vert A_{n}\right\vert =\left\vert C_{n}\right\vert $.
 Hence, $\left\vert S_{n}\right\vert =\underbrace{\left\vert A_{n}\right\vert
 }_{=\left\vert C_{n}\right\vert }+\left\vert C_{n}\right\vert =\left\vert
@@ -60354,9 +60370,9 @@ $g\in\left[  n\right]  $ with $g\notin\left[  k\right]  $, we obtain
 $g\in\left[  n\right]  \setminus\left[  k\right]  =\left\{  k+1,k+2,\ldots
 ,n\right\}  $. Hence, (\ref{eq.lem.sol.transpose.code.tij2.ass}) (applied to
 $i=g$) yields $\sigma\left(  g\right)  =g$. Hence, $g=\sigma\left(  g\right)
-=k\in\left[  k\right]  $. This contradicts $\sigma\left(  k\right)
-\notin\left[  k\right]  $. This contradiction shows that our assumption was
-wrong. Hence, Lemma \ref{lem.sol.transpose.code.tij2} \textbf{(a)} is proven.
+=k\in\left[  k\right]  $. This contradicts $g \notin\left[  k\right]  $. This
+contradiction shows that our assumption was wrong. Hence, Lemma
+\ref{lem.sol.transpose.code.tij2} \textbf{(a)} is proven.
 
 \textbf{(b)} Let $i\in\left\{  k,k+1,\ldots,n\right\}  $. We must prove that
 $\left(  \sigma\circ t_{k,g}\right)  \left(  i\right)  =i$.
@@ -60444,8 +60460,7 @@ g\in\left\{  1,2,\ldots,n\right\}  \setminus\left\{  1,2,\ldots,k\right\}
 \]
 Hence, (\ref{eq.lem.sol.transpose.code.tij2.ass}) (applied to $i=g$) yields
 $\sigma\left(  g\right)  =g$. Hence, $g=\sigma\left(  g\right)  =k\in\left[
-k\right]  $. This contradicts $\sigma\left(  k\right)  \notin\left[  k\right]
-$.
+k\right]  $. This contradicts $g \notin\left[  k\right]  $.
 
 This contradiction shows that our assumption was wrong. Hence, Lemma
 \ref{lem.sol.transpose.code.tij2} \textbf{(a)} is proven.
@@ -62458,7 +62473,7 @@ k\right)  <j$.
 \par
 We have $i<k$ (since $k\in\left\{  i+1,i+2,\ldots,j\right\}  $) but
 $t_{i,j}\left(  i\right)  =j>t_{i,j}\left(  k\right)  $ (since we have just
-showed that $t_{i,j}\left(  k\right)  <j$). Thus, $\left(  i,k\right)  $ is an
+shown that $t_{i,j}\left(  k\right)  <j$). Thus, $\left(  i,k\right)  $ is an
 inversion of $t_{i,j}$. In other words, $\left(  i,k\right)  \in
 \operatorname*{Inv}\left(  t_{i,j}\right)  $. Thus, $e=\left(  i,k\right)
 \in\operatorname*{Inv}\left(  t_{i,j}\right)  $.
@@ -62955,7 +62970,7 @@ k\right)  \right)  $. Hence, $t_{i,j}\left(  \sigma\left(  k\right)  \right)
 The proof of $t_{i,j}\left(  \sigma\left(  k\right)  \right)  =\sigma\left(
 s_{1}\left(  k\right)  \right)  $ in Case 2 is similar and left to the reader.
 \par
-Let us first consider Case 3. In this case, we have $k\notin\left\{
+Let us finally consider Case 3. In this case, we have $k\notin\left\{
 1,2\right\}  $. Hence, $s_{1}\left(  k\right)  =k$ (by (\ref{sol.ps4.1ab.b.s1}%
 )). On the other hand, the map $\sigma$ is a permutation (since $\sigma\in
 S_{n}$), thus injective. Now, from $k\neq1$ (since $k\notin\left\{
@@ -63019,7 +63034,7 @@ $t_{i,j}\left(  \sigma\left(  k\right)  \right)  =\sigma\left(  s_{1}\left(
 k\right)  \right)  $. Hence, $t_{i,j}\left(  \sigma\left(  k\right)  \right)
 =\sigma\left(  s_{1}\left(  k\right)  \right)  $ is proven in Case 2.
 \par
-Let us first consider Case 3. In this case, we have $k\notin\left\{
+Let us finally consider Case 3. In this case, we have $k\notin\left\{
 1,2\right\}  $. Hence, $s_{1}\left(  k\right)  =k$ (by (\ref{sol.ps4.1ab.b.s1}%
 )). On the other hand, the map $\sigma$ is a permutation (since $\sigma\in
 S_{n}$), thus injective. Now, from $k\neq1$ (since $k\notin\left\{
@@ -63705,7 +63720,7 @@ This solves Exercise \ref{exe.ps4.2} \textbf{(c)}.
 \begin{vershort}
 \begin{proof}
 [Solution to Exercise \ref{exe.perm.sign.pseudoexplicit}.]\textbf{(b)} We
-start with some trivia on sets and subsets.
+start with some basic facts on sets and subsets.
 
 If $A$ is any set, then $\mathcal{P}_{2}\left(  A\right)  $ shall denote the
 set of all $2$-element subsets of $A$. In other words, $\mathcal{P}_{2}\left(
@@ -65585,7 +65600,7 @@ Also,%
 c_{i}=b_{i-n}\ \ \ \ \ \ \ \ \ \ \text{for every }i\in\left\{  n+1,n+2,\ldots
 ,n+m\right\}  \label{pf.lem.sol.Ialbe.ab.ci.b}%
 \end{equation}
-\footnote{\textit{Proof of (\ref{pf.lem.sol.Ialbe.ab.ci.a}):} Let
+\footnote{\textit{Proof of (\ref{pf.lem.sol.Ialbe.ab.ci.b}):} Let
 $i\in\left\{  n+1,n+2,\ldots,n+m\right\}  $. Then, $n+1\leq i\leq n+m$. Now,
 $\underbrace{n}_{\geq0}+1\geq1$, so that $1\leq n+1\leq i$. Combining this
 with $i\leq n+m$, we obtain $1\leq i\leq n+m$, so that $i\in\left\{
@@ -65867,7 +65882,7 @@ list of all elements of $S$ (with no repetitions). This proves Lemma
 [Proof of Lemma \ref{lem.sol.Ialbe.inclist}.]We have $\left[  s\right]
 =\left\{  1,2,\ldots,s\right\}  $ (by the definition of $\left[  s\right]  $).
 
-The list $\left(  c_{1},c_{2},\ldots,c_{s}\right)  $ be a list of all elements
+The list $\left(  c_{1},c_{2},\ldots,c_{s}\right)  $ is a list of all elements
 of $S$ (with no repetitions). In other words, the list $\left(  c_{1}%
 ,c_{2},\ldots,c_{s}\right)  $ is a list of elements of $S$, and contains each
 element of $S$ exactly once.
@@ -68922,7 +68937,7 @@ over $m$:
 }X\right)  =\operatorname*{id}$. Hence, $\left(  -1\right)  ^{\sigma_{1}%
 \circ\sigma_{2}\circ\cdots\circ\sigma_{0}}=\left(  -1\right)
 ^{\operatorname*{id}}=1$ (by Exercise \ref{exe.ps4.2} \textbf{(b)}). On the
-other hand, from $\left(  -1\right)  ^{\sigma_{1}}\cdot\left(  -1\right)
+other hand, $\left(  -1\right)  ^{\sigma_{1}}\cdot\left(  -1\right)
 ^{\sigma_{2}}\cdot\cdots\cdot\left(  -1\right)  ^{\sigma_{0}}=\left(
 \text{product of }0\text{ integers}\right)  =1$. Compared with $\left(
 -1\right)  ^{\sigma_{1}\circ\sigma_{2}\circ\cdots\circ\sigma_{0}}=1$, this
@@ -68932,10 +68947,10 @@ yields $\left(  -1\right)  ^{\sigma_{1}\circ\sigma_{2}\circ\cdots\circ
 words, (\ref{pf.prop.sol.perm.transX.sign.prod-of-many.goal}) holds for $m=0$.
 The induction base is thus complete.
 
-\textit{Induction step:} Let $M\in\mathbb{N}$. Assume that
-(\ref{pf.prop.sol.perm.transX.sign.prod-of-many.goal}) is proven for $m=M$. We
-need to prove (\ref{pf.prop.sol.perm.transX.sign.prod-of-many.goal}) for
-$m=M+1$.
+\textit{Induction step:} Let $M\in\left\{  0,1,\ldots,k-1\right\}  $. Assume
+that (\ref{pf.prop.sol.perm.transX.sign.prod-of-many.goal}) is proven for
+$m=M$. We need to prove (\ref{pf.prop.sol.perm.transX.sign.prod-of-many.goal})
+for $m=M+1$.
 
 We have assumed that (\ref{pf.prop.sol.perm.transX.sign.prod-of-many.goal}) is
 proven for $m=M$. In other words, we have $\left(  -1\right)  ^{\sigma
@@ -69142,7 +69157,7 @@ holds for $k=K$.
 
 We have $K\neq0$ (since $K$ is positive). Combining this with $K\in\left\{
 0,1,\ldots,m\right\}  $, we obtain $K\in\left\{  0,1,\ldots,m\right\}
-\setminus\left\{  1\right\}  =\left\{  1,2,\ldots,m\right\}  $. Hence,
+\setminus\left\{  0\right\}  =\left\{  1,2,\ldots,m\right\}  $. Hence,
 $K-1\in\left\{  0,1,\ldots,m-1\right\}  \subseteq\left\{  0,1,\ldots
 ,m\right\}  $. But we have assumed that
 (\ref{pf.lem.sol.sigmacrosstau.compose0.goal}) holds for $k=K-1$. In other
@@ -69530,7 +69545,7 @@ for $k=K-1$. We must prove that
 
 We have $K\neq0$ (since $K$ is positive). Combining this with $K\in\left\{
 0,1,\ldots,m\right\}  $, we obtain $K\in\left\{  0,1,\ldots,m\right\}
-\setminus\left\{  1\right\}  =\left\{  1,2,\ldots,m\right\}  $. Hence,
+\setminus\left\{  0\right\}  =\left\{  1,2,\ldots,m\right\}  $. Hence,
 $K-1\in\left\{  0,1,\ldots,m-1\right\}  \subseteq\left\{  0,1,\ldots
 ,m\right\}  $. But we have assumed that
 (\ref{pf.lem.sol.sigmacrosstau.composeall.goal}) holds for $k=K-1$. In other
@@ -70086,7 +70101,7 @@ This solves Exercise \ref{exe.perm.c=ttt}.
 \subsubsection{A particular case}
 
 In this subsection, we shall derive a particular case of Exercise
-\ref{exe.perm.c=ttt} that will come useful later. We make a definition:
+\ref{exe.perm.c=ttt} that will come in useful later. We make a definition:
 
 \begin{definition}
 \label{def.sol.perm.c=ttt.cuv}Let $n\in\mathbb{N}$. Let $u$ and $v$ be two
@@ -72431,7 +72446,7 @@ Now, Lemma \ref{lem.perm.lexico1.lis} \textbf{(b)} yields%
 =i-1\\\text{(since }\left\vert \left[  k\right]  \right\vert =k\\\text{for
 every }k\in\mathbb{N}\text{)}}}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since any two finite sets }A\text{ and
-}B\text{ satisfies }\left\vert A\setminus B\right\vert \geq\left\vert
+}B\text{ satisfy }\left\vert A\setminus B\right\vert \geq\left\vert
 A\right\vert -\left\vert B\right\vert \right) \\
 &  =\left(  \sigma\left(  i\right)  -1\right)  -\left(  i-1\right)
 =\sigma\left(  i\right)  -i.
@@ -73323,7 +73338,7 @@ satisfying $1\leq i\leq n$.
 Also, $i$ is the \textbf{smallest} $k\in\left[  n\right]  $ such that
 $\sigma\left(  k\right)  \neq\tau\left(  k\right)  $. Thus, every $k\in\left[
 n\right]  $ such that $\sigma\left(  k\right)  \neq\tau\left(  k\right)  $
-must be $\leq i$. In other words, if $k\in\left[  n\right]  $ is such that
+must be $\geq i$. In other words, if $k\in\left[  n\right]  $ is such that
 $\sigma\left(  k\right)  \neq\tau\left(  k\right)  $, then%
 \begin{equation}
 k\geq i. \label{pf.prop.perm.lehmer.lex.long.kgeqi}%
@@ -75599,9 +75614,9 @@ _{\substack{=1\\\text{(since }k+1=k+1\text{)}}}\left[  \sigma\left(
 s_{k}\left(  i\right)  \right)  \right] \\
 &  \ \ \ \ \ \ \ \ \ \ +\sum_{\substack{j\in\left[  n\right]  ;\\j\neq
 k+1}}\left[  i=k\right]  \underbrace{\left[  j=k+1\right]  }%
-_{\substack{_{\substack{=0}}\\\text{(since }j\neq k+1\text{)}}}\left[
-\sigma\left(  s_{k}\left(  j\right)  \right)  >\sigma\left(  s_{k}\left(
-i\right)  \right)  \right] \\
+_{\substack{=0\\\text{(since }j\neq k+1\text{)}}}\left[  \sigma\left(
+s_{k}\left(  j\right)  \right)  >\sigma\left(  s_{k}\left(  i\right)  \right)
+\right] \\
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
@@ -77270,7 +77285,7 @@ $i+\underbrace{\ell_{i}\left(  \sigma\right)  }_{\leq n-i}\leq i+n-i=n$, we
 obtain $i+\ell_{i}\left(  \sigma\right)  \in\left\{  1,2,\ldots,n\right\}
 =\left[  n\right]  $. Hence, $i$ and $i+\ell_{i}\left(  \sigma\right)  $ are
 two elements of $\left[  n\right]  $ such that $i\leq i+\ell_{i}\left(
-\sigma\right)  $. Hence, Lemma \ref{cor.sol.perm.c=ttt.cuv1} \textbf{(a)}
+\sigma\right)  $. Hence, Corollary \ref{cor.sol.perm.c=ttt.cuv1} \textbf{(a)}
 (applied to $u=i$ and $v=i+\ell_{i}\left(  \sigma\right)  $) yields that the
 permutation $c_{i,i+\ell_{i}\left(  \sigma\right)  }$ is well-defined. This
 proves Lemma \ref{lem.sol.perm.lehmer.ab} \textbf{(a)}.
@@ -77284,10 +77299,11 @@ obtain $i+\ell_{i}\left(  \sigma\right)  \in\left\{  1,2,\ldots,n\right\}
 =\left[  n\right]  $. Hence, $i$ and $i+\ell_{i}\left(  \sigma\right)  $ are
 two elements of $\left[  n\right]  $ (since $i\in\left[  n\right]  $ and
 $i+\ell_{i}\left(  \sigma\right)  \in\left[  n\right]  $) such that $i\leq
-i+\ell_{i}\left(  \sigma\right)  $. Hence, Lemma \ref{cor.sol.perm.c=ttt.cuv1}
-\textbf{(a)} (applied to $u=i$ and $v=i+\ell_{i}\left(  \sigma\right)  $)
-yields that the permutation $c_{i,i+\ell_{i}\left(  \sigma\right)  }$ is
-well-defined. This proves Lemma \ref{lem.sol.perm.lehmer.ab} \textbf{(a)}.
+i+\ell_{i}\left(  \sigma\right)  $. Hence, Corollary
+\ref{cor.sol.perm.c=ttt.cuv1} \textbf{(a)} (applied to $u=i$ and $v=i+\ell
+_{i}\left(  \sigma\right)  $) yields that the permutation $c_{i,i+\ell
+_{i}\left(  \sigma\right)  }$ is well-defined. This proves Lemma
+\ref{lem.sol.perm.lehmer.ab} \textbf{(a)}.
 \end{verlong}
 
 \textbf{(b)} Let $i^{\prime}=i+\ell_{i}\left(  \sigma\right)  $. We must prove
@@ -78547,8 +78563,9 @@ $i\in\left\{  1,2,\ldots,n\right\}  $ satisfies%
 a_{i}=\left(  \text{a composition of }\ell_{i}\left(  \sigma\right)  \text{
 simple transpositions}\right)  \label{sol.perm.lehmer.rothe.d.ai=}%
 \end{equation}
-(this equality is supposed to mean that $a_{i}$ is a composition of $i$ simple
-transpositions; it does not mean that \textbf{every} composition of $i$ simple
+(this equality is supposed to mean that $a_{i}$ is a composition of $\ell
+_{i}\left(  \sigma\right)  $ simple transpositions; it does not mean that
+\textbf{every} composition of $\ell_{i}\left(  \sigma\right)  $ simple
 transpositions is $a_{i}$).
 
 [\textit{Proof of (\ref{sol.perm.lehmer.rothe.d.ai=}):} Let $i\in\left\{
@@ -86554,7 +86571,7 @@ If you want to prove Fact 1 formally, you need to prove two statements:
 \item The map (\ref{sol.prod(ai+bi).short.a.fact1map}) is well-defined (i.e.,
 we have $U\cup\left\{  s\right\}  \in\mathcal{P}\left(  S\right)
 \setminus\mathcal{P}\left(  S\setminus\left\{  s\right\}  \right)  $ for each
-$U\in\mathcal{P}\left(  S\right)  $).
+$U\in\mathcal{P}\left(  S\setminus\left\{  s\right\}  \right)  $).
 \par
 \item This map is bijective.
 \end{enumerate}
@@ -87927,7 +87944,7 @@ Taking both sides of this equality to the $n$-th power, we obtain%
 }_{\substack{=\sum_{\substack{\left(  k_{1},k_{2},\ldots,k_{M-1}\right)
 \in\mathbb{N}^{M-1};\\k_{1}+k_{2}+\cdots+k_{M-1}=n-r}}\mathbf{m}\left(
 k_{1},k_{2},\ldots,k_{M-1}\right)  \prod_{i=1}^{M-1}a_{i}^{k_{i}}\\\text{(by
-Fact 1, applied to }n-r\text{ instead of }r\text{)}}}a_{M}^{r}\nonumber\\
+Fact 1, applied to }n-r\text{ instead of }n\text{)}}}a_{M}^{r}\nonumber\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have renamed the summation index
 }k\text{ as }r\right) \nonumber\\
 &  =\sum_{\substack{r\in\mathbb{N};\\r\leq n}}\dbinom{n}{r}\left(
@@ -89924,9 +89941,9 @@ a_{i,\sigma\left(  i\right)  }^{\prime}.
 This proves (\ref{sol.ps4.6.i.sigma}).}.
 \end{verlong}
 
-We have $A=\left(  a_{i,j}^{\prime}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$;
-therefore, (\ref{eq.det.eq.2}) (applied to $A^{\prime}$ and $a_{i,j}^{\prime}$
-instead of $A$ and $a_{i,j}$) yields%
+We have $A^{\prime} =\left(  a_{i,j}^{\prime}\right)  _{1\leq i\leq n,\ 1\leq
+j\leq n}$; therefore, (\ref{eq.det.eq.2}) (applied to $A^{\prime}$ and
+$a_{i,j}^{\prime}$ instead of $A$ and $a_{i,j}$) yields%
 \begin{equation}
 \det A^{\prime}=\sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\prod
 _{i=1}^{n}a_{i,\sigma\left(  i\right)  }^{\prime}. \label{sol.ps4.6.i.detA'}%
@@ -90376,7 +90393,7 @@ We have $u=k$ (since we don't have $u\neq k$). Hence,%
 &  =\left(  \text{the }k\text{-th row of }A\right)  +\underbrace{\left(
 \text{the }k\text{-th row of }A^{\prime}\right)  }_{\substack{=w\\\text{(by
 (\ref{sol.ps4.6k.a.6}))}}}\ \ \ \ \ \ \ \ \ \ \left(  \text{by
-(\ref{sol.ps4.6k.lem.2})}\right) \\
+(\ref{sol.ps4.6k.a.12})}\right) \\
 &  =\left(  \text{the }k\text{-th row of }A\right)  +w=\left(  \text{the
 }\underbrace{k}_{=u}\text{-th row of }B\right)  \ \ \ \ \ \ \ \ \ \ \left(
 \text{by (\ref{sol.ps4.6k.a.2})}\right) \\
@@ -92677,8 +92694,8 @@ i\right)  }$. In other words, $g\in\left\{  j\in\left\{  1,2,\ldots,n\right\}
 \ \mid\ a_{j}\leq b_{\tau\left(  i\right)  }\right\}  $.
 \par
 Now, forget that we fixed $g$. We thus have shown that $g\in\left\{
-j\in\left\{  1,2,\ldots,m\right\}  \ \mid\ a_{j}\leq b_{\tau\left(  i\right)
-}\right\}  $ for each $g\in\left\{  j\in\left\{  1,2,\ldots,n\right\}
+j\in\left\{  1,2,\ldots,n\right\}  \ \mid\ a_{j}\leq b_{\tau\left(  i\right)
+}\right\}  $ for each $g\in\left\{  j\in\left\{  1,2,\ldots,m\right\}
 \ \mid\ b_{j}\leq b_{\tau\left(  i\right)  }\right\}  $. In other words,
 $\left\{  j\in\left\{  1,2,\ldots,m\right\}  \ \mid\ b_{j}\leq b_{\tau\left(
 i\right)  }\right\}  \subseteq\left\{  j\in\left\{  1,2,\ldots,n\right\}
@@ -94320,17 +94337,17 @@ c_{i,j}=%
 .
 \]
 Let $C$ be the $U\times U$-matrix $\left(  c_{i,j}\right)  _{1\leq i\leq
-U,\ 1\leq j\leq U}$. Here is how $C$ looks like:%
+U,\ 1\leq j\leq U}$. Here is what $C$ looks like:%
 \[
 C=\left(
 \begin{array}
-[c]{cccccc}%
-1 & 0 & 0 & \cdots & 0 & 0\\
--x_{U}^{2} & 1 & 0 & \cdots & 0 & 0\\
-0 & -x_{U} & 1 & \cdots & 0 & 0\\
-0 & 0 & -x_{U} & \cdots & 0 & 0\\
-\vdots & \vdots & \vdots & \ddots & \vdots & \vdots\\
-0 & 0 & 0 & \cdots & -x_{U} & 1
+[c]{ccccccc}%
+1 & 0 & 0 & 0 & \cdots & 0 & 0\\
+-x_{U}^{2} & 1 & 0 & 0 & \cdots & 0 & 0\\
+0 & -x_{U} & 1 & 0 & \cdots & 0 & 0\\
+0 & 0 & -x_{U} & 1 & \cdots & 0 & 0\\
+\vdots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots\\
+0 & 0 & 0 & 0 & \cdots & -x_{U} & 1
 \end{array}
 \right)  ,
 \]
@@ -94654,9 +94671,13 @@ induction step.
 
 Now, (\ref{sol.vander-det.s1.goal}) is proven by induction.]
 
-Hence, we can apply (\ref{sol.vander-det.s1.goal}) to $u=n$. As the result, we
-obtain $\det\left(  A_{n}\right)  =\left(  x_{1}+x_{2}+\cdots+x_{n}\right)
-\prod_{1\leq i<j\leq n}\left(  x_{i}-x_{j}\right)  $. Since $A_{n}=\left(
+Hence, we can apply (\ref{sol.vander-det.s1.goal}) to $u=n$. As a result, we
+obtain
+\[
+\det\left(  A_{n}\right)  =\left(  x_{1}+x_{2}+\cdots+x_{n}\right)
+\prod_{1\leq i<j\leq n}\left(  x_{i}-x_{j}\right)  .
+\]
+Since $A_{n}=\left(
 \begin{cases}
 x_{i}^{n-j}, & \text{if }j>1;\\
 x_{i}^{n}, & \text{if }j=1
@@ -98367,7 +98388,7 @@ contrary (for the sake of contradiction). Thus,%
 }i=\sigma\left(  i\right)  \text{ or }i\equiv\sigma\left(  i\right)
 +1\operatorname{mod}n. \label{sol.det.2diags.short.exi.pf.ass}%
 \end{equation}
-\footnote{I use the words \textquotedblleft either\textquotedblleft%
+\footnote{I use the words \textquotedblleft either\textquotedblright%
 /\textquotedblleft or\textquotedblright\ in a non-exclusive meaning (i.e.,
 when I say \textquotedblleft either $\mathcal{A}$ or $\mathcal{B}%
 $\textquotedblright, I mean to include also the case when both $\mathcal{A}$
@@ -101017,11 +101038,11 @@ for some lacunar set }I. \label{sol.tridiag.fib.sol2.tauI.surj}%
 Before we can prove this, we shall prove two auxiliary observations:
 
 \textit{Observation 1:} Let $\sigma\in S_{n}$ be short-legged. If
-$i\in\left\{  1,2,\ldots,n\right\}  $ be such that $\sigma\left(  i\right)
+$i\in\left\{  1,2,\ldots,n\right\}  $ is such that $\sigma\left(  i\right)
 =i+1$, then $\sigma\left(  i+1\right)  =i$.
 
 \textit{Observation 2:} Let $\sigma\in S_{n}$ be short-legged. If
-$i\in\left\{  1,2,\ldots,n\right\}  $ be such that $\sigma\left(  i\right)
+$i\in\left\{  1,2,\ldots,n\right\}  $ is such that $\sigma\left(  i\right)
 =i-1$, then $\sigma\left(  i-1\right)  =i$.
 
 [\textit{Proof of Observation 1.} Assume the contrary. Thus, there exists some
@@ -102491,7 +102512,7 @@ A & B\\
 A & B\\
 0_{M\times n} & D
 \end{array}
-\right)  =\left(  u_{i,j}\right)  _{1\leq u\leq n+M,\ 1\leq v\leq n+M}$. Thus,%
+\right)  =\left(  u_{i,j}\right)  _{1\leq i\leq n+M,\ 1\leq j\leq n+M}$. Thus,%
 \begin{equation}
 u_{n+M,q}=0\ \ \ \ \ \ \ \ \ \ \text{for every }q\in\left\{  1,2,\ldots
 ,n\right\}  , \label{sol.block2x2.tridet.short.indstep.u=0}%
@@ -102884,8 +102905,7 @@ n+M\right)  \times\left(  n+M\right)  $-matrix $\left(
 A & B\\
 0_{M\times n} & D
 \end{array}
-\right)  $. Write the matrix $U$ in the form $U=\left(  u_{i,j}\right)
-_{1\leq u\leq n+M,\ 1\leq v\leq n+M}$.
+\right)  $.
 
 Write the $n\times n$-matrix $A$ in the form $A=\left(  a_{i,j}\right)
 _{1\leq i\leq n,\ 1\leq j\leq n}$.
@@ -104978,11 +104998,11 @@ $m$) yields%
 \det\left(  \operatorname*{rows}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}%
 }B\right)  . \label{pf.lem.adj(AB).cauchy-binet.short.1}%
 \end{align}
-Recall that the summation sign $\sum_{1\leq g_{1}<g_{2}<\cdots<g_{n-1}\leq
-n-1}$ is an abbreviation for \newline$\sum_{\substack{\left(  g_{1}%
-,g_{2},\ldots,g_{n-1}\right)  \in\left\{  1,2,\ldots,n\right\}  ^{n-1}%
-;\\g_{1}<g_{2}<\cdots<g_{n-1}}}$, which can be rewritten as $\sum_{\left(
-g_{1},g_{2},\ldots,g_{n-1}\right)  \in\mathbf{I}}$ (because the $\left(
+Recall that the summation sign $\sum_{1\leq g_{1}<g_{2}<\cdots<g_{n-1}\leq n}$
+is an abbreviation for \newline$\sum_{\substack{\left(  g_{1},g_{2}%
+,\ldots,g_{n-1}\right)  \in\left\{  1,2,\ldots,n\right\}  ^{n-1};\\g_{1}%
+<g_{2}<\cdots<g_{n-1}}}$, which can be rewritten as $\sum_{\left(  g_{1}%
+,g_{2},\ldots,g_{n-1}\right)  \in\mathbf{I}}$ (because the $\left(
 n-1\right)  $-tuples $\left(  g_{1},g_{2},\ldots,g_{n-1}\right)  \in\left\{
 1,2,\ldots,n\right\}  ^{n-1}$ satisfying $g_{1}<g_{2}<\cdots<g_{n-1}$ are
 precisely the elements of $\mathbf{I}$). Therefore,
@@ -105154,7 +105174,7 @@ _{\substack{=\sum_{\substack{\left(  g_{1},g_{2},\ldots,g_{n-1}\right)
 \in\left\{  1,2,\ldots,n\right\}  ^{n-1};\\g_{1}<g_{2}<\cdots<g_{n-1}}%
 }\\=\sum_{\substack{\left(  g_{1},g_{2},\ldots,g_{n-1}\right)  \in\left[
 n\right]  ^{n-1};\\g_{1}<g_{2}<\cdots<g_{n-1}}}\\\text{(since }\left\{
-1,2,\ldots,n-1\right\}  =\left[  n\right]  \text{)}}}\det\left(
+1,2,\ldots,n\right\}  =\left[  n\right]  \text{)}}}\det\left(
 \operatorname*{cols}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}}A\right)  \cdot
 \det\left(  \operatorname*{rows}\nolimits_{g_{1},g_{2},\ldots,g_{n-1}}B\right)
 \nonumber\\
@@ -106674,7 +106694,7 @@ $q=q+\ell-1$. Hence, $\delta_{q,q+\ell-1}=1$. Comparing this with
 $\delta_{\ell,1}=1$, we obtain $\delta_{q,q+\ell-1}=\delta_{\ell,1}$. Hence,
 $\delta_{q,q+\ell-1}=\delta_{\ell,1}$ is proven in Case 1.
 \par
-Let us first consider Case 2. In this case, we have $\ell\neq1$. Thus,
+Let us next consider Case 2. In this case, we have $\ell\neq1$. Thus,
 $\delta_{\ell,1}=0$. But $q+\ell-1\neq q$ (since $\left(  q+\ell-1\right)
 -q=\ell-1\neq0$ (since $\ell\neq1$)). In other words, $q\neq q+\ell-1$. Hence,
 $\delta_{q,q+\ell-1}=0$. Comparing this with $\delta_{\ell,1}=0$, we obtain
@@ -108948,7 +108968,7 @@ _{\substack{j\in\left\{  1,2,\ldots,n\right\}  ;\\j\neq i}}x_{j}$. Then,%
 
 \end{proposition}
 
-The proof proceeds similarly as our proof of Proposition
+The proof proceeds similarly to our proof of Proposition
 \ref{prop.sol.vander-hook.N}:
 
 \begin{proof}
@@ -111640,7 +111660,7 @@ _{s-1}\left(  j\right)  \right)  $ always holds. This completes the proof of
 Proposition \ref{prop.sol.unrows.2} \textbf{(c)}.
 \end{proof}
 
-Now, we can step to the proof of Proposition \ref{prop.unrows.basics}:
+Now, we can turn to the proof of Proposition \ref{prop.unrows.basics}:
 
 \begin{proof}
 [Proof of Proposition \ref{prop.unrows.basics}.]Write the matrix
@@ -112619,7 +112639,7 @@ This proves Proposition \ref{prop.desnanot.1n}.
 \end{proof}
 
 \begin{proof}
-[Solution to Exercise \ref{exe.unrows.basics}.]\textbf{(a)} We proven
+[Solution to Exercise \ref{exe.unrows.basics}.]\textbf{(a)} We proved
 Proposition \ref{prop.unrows.basics} and Proposition
 \ref{prop.unrows.basics-I} above. Thus, Exercise \ref{exe.unrows.basics}
 \textbf{(a)} is solved.
@@ -117544,7 +117564,7 @@ This proves Lemma \ref{lem.sol.det.laplace-multi.4} \textbf{(b)}.
 \end{proof}
 \end{verlong}
 
-We can now step to the proof of Theorem \ref{thm.det.laplace-multi}:
+We can now turn to the proof of Theorem \ref{thm.det.laplace-multi}:
 
 \begin{proof}
 [Proof of Theorem \ref{thm.det.laplace-multi}.]Write the $n\times n$-matrix
@@ -122475,24 +122495,27 @@ is the set of all permutations of the set $\left\{  1,2,\ldots,n\right\}  $).
 In other words, $\sigma$ is a bijection $\left\{  1,2,\ldots,n\right\}
 \rightarrow\left\{  1,2,\ldots,n\right\}  $.
 \par
-But%
-\begin{align*}
+But the ring $\mathbb{L}$ is commutative; thus, products of the form
+$\prod_{i\in\left\{  1,2,\ldots,n\right\}  }w_{i}$ for $w_{1},w_{2}%
+,\ldots,w_{n}\in\mathbb{L}$ make sense (rather than only products of the form
+$\prod_{i=1}^{n}w_{i}$). Moreover, these products satisfy the properties of
+$\prod$ signs listed in Section \ref{sect.sums-repetitorium}. In particular,
+we have%
+\[
+\prod_{i\in\left\{  1,2,\ldots,n\right\}  }v_{\sigma\left(  i\right)  }%
+=\prod_{i\in\left\{  1,2,\ldots,n\right\}  }v_{i}%
+\]
+(here, we have substituted $i$ for $\sigma\left(  i\right)  $ in the product,
+since $\sigma$ is a bijection $\left\{  1,2,\ldots,n\right\}  \rightarrow
+\left\{  1,2,\ldots,n\right\}  $). Now,%
+\[
 v_{\sigma\left(  1\right)  }v_{\sigma\left(  2\right)  }\cdots v_{\sigma
-\left(  n\right)  }  &  =\underbrace{\prod_{i=1}^{n}}_{=\prod_{i\in\left\{
+\left(  n\right)  }=\underbrace{\prod_{i=1}^{n}}_{=\prod_{i\in\left\{
 1,2,\ldots,n\right\}  }}v_{\sigma\left(  i\right)  }=\prod_{i\in\left\{
 1,2,\ldots,n\right\}  }v_{\sigma\left(  i\right)  }=\underbrace{\prod
-_{i\in\left\{  1,2,\ldots,n\right\}  }}_{=\prod_{i=1}^{n}}v_{i}\\
-&  \ \ \ \ \ \ \ \ \ \ \left(
-\begin{array}
-[c]{c}%
-\text{here, we have substituted }i\text{ for }\sigma\left(  i\right)  \text{
-in the product,}\\
-\text{since }\sigma\text{ is a bijection }\left\{  1,2,\ldots,n\right\}
-\rightarrow\left\{  1,2,\ldots,n\right\}
-\end{array}
-\right) \\
-&  =\prod_{i=1}^{n}v_{i}=v_{1}v_{2}\cdots v_{n}.
-\end{align*}
+_{i\in\left\{  1,2,\ldots,n\right\}  }}_{=\prod_{i=1}^{n}}v_{i}=\prod
+_{i=1}^{n}v_{i}=v_{1}v_{2}\cdots v_{n}.
+\]
 This proves (\ref{sol.noncomm.polarization.d.1}).}. Now, Exercise
 \ref{exe.noncomm.polarization} \textbf{(c)} yields%
 \begin{align*}
@@ -124249,9 +124272,10 @@ Next, we state a simple lemma:
 
 \begin{lemma}
 \label{lem.sol.powerdet.gen.toofew}Let $n\in\mathbb{N}$ and $k\in\mathbb{N}$.
-Let $\kappa:\left[  k\right]  \rightarrow\left[  n\right]  $ be a map such
-that $\left\vert \kappa\left(  \left[  k\right]  \right)  \right\vert <n-1$.
-Then,%
+Let $A=\left(  a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ be an
+$n\times n$-matrix. Let $\kappa:\left[  k\right]  \rightarrow\left[  n\right]
+$ be a map such that $\left\vert \kappa\left(  \left[  k\right]  \right)
+\right\vert <n-1$. Then,%
 \[
 \sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\prod_{i=1}^{k}%
 a_{\kappa\left(  i\right)  ,\sigma\left(  \kappa\left(  i\right)  \right)
@@ -124492,7 +124516,7 @@ for each $k\in\left\{  0,1,\ldots,n-2\right\}  $.
 
 \begin{proof}
 [Proof of Proposition \ref{prop.sol.powerdet.gen.a}.]Let $k\in\left\{
-0,1,\ldots,n-2\right\}  $. Then, each each map $\kappa:\left[  k\right]
+0,1,\ldots,n-2\right\}  $. Then, each map $\kappa:\left[  k\right]
 \rightarrow\left[  n\right]  $ satisfies%
 \begin{equation}
 \sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\prod_{i=1}^{k}%
@@ -124547,7 +124571,7 @@ $\mathbb{L}$, provided that we replace the reference to Lemma
 \end{remark}
 
 Part \textbf{(b)} of Exercise \ref{exe.powerdet.gen} is noticeably harder. We
-prepare to it by studying permutations in $S_{n}$:
+prepare for it by studying permutations in $S_{n}$:
 
 \begin{lemma}
 \label{lem.sol.powerdet.gen.allbut1}Let $n\in\mathbb{N}$ and $p\in\left[
@@ -125200,8 +125224,9 @@ bijective (since $T$ is bijective). This proves Lemma
 \end{proof}
 
 \begin{lemma}
-\label{lem.sol.powerdet.gen.taures}Let $n\geq1$ be an integer. Let $\tau\in
-S_{n}$. Then,%
+\label{lem.sol.powerdet.gen.taures}Let $n\geq1$ be an integer. Let $A=\left(
+a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}$ be an $n\times n$-matrix.
+Let $\tau\in S_{n}$. Then,%
 \[
 \sum_{\sigma\in S_{n}}\left(  -1\right)  ^{\sigma}\prod_{i=1}^{n-1}a_{\left(
 \tau\mid_{\left[  n-1\right]  }\right)  \left(  i\right)  ,\sigma\left(
@@ -126029,7 +126054,7 @@ Now,%
 &  \left(  \text{the }p\text{-th column of the matrix }\left(  b_{i}^{k_{j}%
 }\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right) \\
 &  =\left(  b_{i}^{k_{p}}\right)  _{1\leq i\leq n,\ 1\leq j\leq1}=\left(
-b_{i}^{k_{q}}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}%
+b_{i}^{k_{q}}\right)  _{1\leq i\leq n,\ 1\leq j\leq1}%
 \ \ \ \ \ \ \ \ \ \ \left(  \text{since }k_{p}=k_{q}\right) \\
 &  =\left(  \text{the }q\text{-th column of the matrix }\left(  b_{i}^{k_{j}%
 }\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  .
@@ -133521,7 +133546,7 @@ n$ and $\deg b\leq n$. Then, $\deg\left(  a-b\right)  \leq n$.
 
 \begin{verlong}
 \begin{proof}
-[Proof of Lemma \ref{lem.sol.det.kratt-lem6.pol-div.1}.]If $m$ is any integer
+[Proof of Lemma \ref{lem.sol.det.kratt-lem6.pol-lem1}.]If $m$ is any integer
 satisfying $m>n$, then
 \[
 \left[  X^{m}\right]  \left(  a-b\right)  =\underbrace{\left[  X^{m}\right]
@@ -133533,7 +133558,7 @@ of the monomial $X^{m}$ in $a-b$ is $0$. In other words, all the monomials
 $X^{n+1},X^{n+2},X^{n+3},\ldots$ appear with coefficient $0$ in the polynomial
 $a-b$. Thus, this polynomial $a-b$ has degree $\leq n$. In other words,
 $\deg\left(  a-b\right)  \leq n$. This proves Lemma
-\ref{lem.sol.det.kratt-lem6.pol-div.1}.
+\ref{lem.sol.det.kratt-lem6.pol-lem1}.
 \end{proof}
 \end{verlong}
 
@@ -134031,7 +134056,7 @@ b_{j}-b_{i}\right) \\
 &  =0.
 \end{align*}
 This proves (\ref{sol.det.kratt-lem6.3a}).}. Furthermore, $R_{j,j}\left(
-b_{j}\right)  =1$\ \ \ \ \footnote{\textit{Proof.} The definition of $R_{j,k}$
+b_{j}\right)  =1$\ \ \ \ \footnote{\textit{Proof.} The definition of $R_{j,j}$
 yields
 \[
 R_{j,j}=\left(  X-b_{j+1}\right)  \left(  X-b_{j+2}\right)  \cdots\left(
@@ -134148,7 +134173,7 @@ their degrees). In other words, $Q_{j}$ is a monic polynomial of degree $n-j$
 (since $\underbrace{1+1+\cdots+1}_{n-j\text{ times}}=\left(  n-j\right)
 \cdot1=n-j$). Thus, the coefficient of $X^{n-j}$ in $Q_{j}$ is $1$. In other
 words, $\left[  X^{n-j}\right]  \left(  Q_{j}\right)  =1$ (since $\left[
-X^{n-j}\right]  \left(  Q_{j}\right)  =1$ was defined to be the coefficient of
+X^{n-j}\right]  \left(  Q_{j}\right)  $ was defined to be the coefficient of
 $X^{n-j}$ in $Q_{j}$). Qed.}. Multiplying these equalities over all
 $j\in\left\{  1,2,\ldots,n\right\}  $, we obtain $\prod_{j=1}^{n}\left[
 X^{n-j}\right]  \left(  Q_{j}\right)  =\prod_{j=1}^{n}1=1$. Now, our above
@@ -134226,9 +134251,11 @@ Thus, Exercise \ref{exe.det.kratt-lem6} is solved.
 \subsection{Solution to Exercise \ref{exe.det.kratt-lem6-app}}
 
 \begin{proof}
-[Solution to Exercise \ref{exe.det.kratt-lem6-app}.]\textbf{(a)} For each
-$j\in\left\{  1,2,\ldots,n\right\}  $, we define a polynomial $Q_{j}%
-\in\mathbb{K}\left[  X\right]  $ by setting%
+[Solution to Exercise \ref{exe.det.kratt-lem6-app}.]Let us set $b_{1} := 0$,
+so that we have $n$ elements $b_{1},b_{2},\ldots,b_{n}$ of $\mathbb{K}$.
+
+\textbf{(a)} For each $j\in\left\{  1,2,\ldots,n\right\}  $, we define a
+polynomial $Q_{j}\in\mathbb{K}\left[  X\right]  $ by setting%
 \begin{equation}
 Q_{j}=\left(  X-b_{j+1}\right)  \left(  X-b_{j+2}\right)  \cdots\left(
 X-b_{n}\right)  . \label{sol.det.kratt-lem6-app.a.Qj=}%
@@ -135338,11 +135365,11 @@ b_{r_{x},k_{i}}, & \text{if }j_{y}=j_{i}\text{ for some }i\in\left\{
 \]
 Since we don't have $j_{y}\notin J$, we can simplify this as follows:%
 \[
-c_{r,j_{y}}=b_{r_{x},k_{i}},\ \ \ \ \ \ \ \ \ \ \text{if }j_{y}=j_{i}\text{
-for some }i\in\left\{  1,2,\ldots,q\right\}  .
+c_{r_{x},j_{y}}=b_{r_{x},k_{i}},\ \ \ \ \ \ \ \ \ \ \text{if }j_{y}%
+=j_{i}\text{ for some }i\in\left\{  1,2,\ldots,q\right\}  .
 \]
 We can apply this to $i=y$ (because we have $j_{y}=j_{i}$ for $i=y$). Thus, we
-obtain $c_{x,j_{y}}=b_{r_{x},k_{y}}$. This proves Claim 1.] \medskip
+obtain $c_{r_{x},j_{y}}=b_{r_{x},k_{y}}$. This proves Claim 1.] \medskip
 
 Now, recall that $w\left(  R\right)  =\left(  r_{1},r_{2},\ldots,r_{s}\right)
 $ (by the definition of $\left(  r_{1},r_{2},\ldots,r_{s}\right)  $) and
@@ -135396,7 +135423,7 @@ $.
 \end{statement}
 
 [\textit{Proof of Claim 2:} Let $x\in\left\{  1,2,\ldots,s\right\}  $ and
-$y\in\left\{  1,2,\ldots,q\right\}  $. Note that $w\left(  \widetilde{J}%
+$y\in\left\{  1,2,\ldots,t\right\}  $. Note that $w\left(  \widetilde{J}%
 \right)  $ is the list of all elements of $\widetilde{J}$ in increasing order
 (with no repetitions) (by the definition of $w\left(  \widetilde{J}\right)
 $). Hence, each entry of $w\left(  \widetilde{J}\right)  $ is an element of
@@ -135979,7 +136006,7 @@ This solves Exercise \ref{exe.det.syl-lem}.
 \subsection{Solution to Exercise \ref{exe.det.muir-col-by-col}}
 
 In this section, we shall use the notations introduced in Definition
-\ref{def.sect.laplace.notations}. We begin with a lemma:
+\ref{def.sect.laplace.notations}.
 
 \begin{proof}
 [Solution to Exercise \ref{exe.det.muir-col-by-col}.]For any subset $I$ of
@@ -137872,8 +137899,8 @@ its Applications, Volume 454, 1 August 2014, pp. 130--137}.
 \href{http://doi.org/10.1007/978-3-540-39035-0}{Martin Aigner, \textit{A
 Course in Enumeration}, Graduate Texts in Mathematics \#238, Springer 2007.}
 
-\bibitem[AigZie14]{AigZie}%
-\href{https://doi.org/10.1007/978-3-662-44205-0}{Martin Aigner, G\"{u}nter M.
+\bibitem[AigZie18]{AigZie}%
+\href{https://doi.org/10.1007/978-3-662-57265-8}{Martin Aigner, G\"{u}nter M.
 Ziegler, \textit{Proofs from the Book}, 6th edition, Springer 2018.}
 
 \bibitem[Aitken56]{Aitken56}A. C. Aitken, \textit{Determinants and Matrices},
@@ -138044,7 +138071,7 @@ arXiv:math/9712261v2.} Published in:
 \href{https://doi.org/10.1006/jcta.1999.3000}{J. Combin. Theory Ser. A 88
 (1999), pp. 368--378}.
 
-\bibitem[Elman19]{Elman18}Richard Elman, \textit{Lectures on Abstract
+\bibitem[Elman21]{Elman18}Richard Elman, \textit{Lectures on Abstract
 Algebra}, 25 September 2021.\newline\url{https://www.math.ucla.edu/~rse/algebra_book.pdf}
 
 \bibitem[FadSom72]{FadSom72}D. Faddeev, I. Sominsky, \textit{Problems in
@@ -138134,7 +138161,7 @@ divisibility}, version of 27 July 2015.\newline\url{http://www.cip.ifi.lmu.de/~g
 
 \bibitem[Grinbe11]{Gri-zeck}Darij Grinberg, \textit{Zeckendorf family
 identities generalized}, arXiv preprint
-\texttt{\href{http://arxiv.org/abs/1103.4507v2}{arXiv:1103.4507v2}}.
+\texttt{\href{http://arxiv.org/abs/1103.4507v3}{arXiv:1103.4507v3}}.
 
 \bibitem[Grinbe16a]{Gri-QEDMO4P13}%
 \href{http://www.cip.ifi.lmu.de/~grinberg/QEDMO4P13.pdf}{Darij Grinberg,
@@ -138263,7 +138290,8 @@ of Jacobi's equality on the cofactors of a matrix}, Discrete Mathematics 158
 
 \bibitem[Lampe13]{Lampe}Philipp Lampe, \textit{Cluster algebras}, 4 December
 2013,\newline%
-\url{http://www.math.uni-bielefeld.de/~lampe/teaching/cluster/cluster.pdf} .
+\url{https://web.archive.org/web/20200826052443/https://www.math.uni-bielefeld.de/~lampe/teaching/cluster/cluster.pdf}
+.
 
 \bibitem[Lang02]{Lang02}%
 \href{http://link.springer.com/book/10.1007/978-1-4613-0041-0}{Serge Lang,
@@ -138298,7 +138326,7 @@ Journal of Combinatorics Vol 11(2) A5 (2006), also available as
 \newline\url{https://courses.csail.mit.edu/6.042/spring18/mcs.pdf} .
 
 \bibitem[Loehr11]{Loehr-BC}%
-\href{http://www.math.vt.edu/people/nloehr/bijbook.html}{Nicholas A. Loehr,
+\href{https://personal.math.vt.edu/nloehr/bijbook.html}{Nicholas A. Loehr,
 \textit{Bijective Combinatorics}, Chapman \& Hall/CRC 2011.}
 
 \bibitem[Manive01]{Manive01}\href{https://bookstore.ams.org/smfams-6/}{Laurent
@@ -138324,7 +138352,7 @@ Mathematical Perspective},\newline\url{http://www.sfu.ca/~jtmulhol/math302/}
 
 \bibitem[MusPro07]{MusPro07}Gregg Musiker, James Propp, \textit{Combinatorial
 Interpretations for Rank-Two Cluster Algebras of Affine Type}, The Electronic
-Journal of Combinatorics \textbf{14} (2007), \#R15.\newline\url{http://www.combinatorics.org/ojs/index.php/eljc/article/view/v14i1r15}
+Journal of Combinatorics \textbf{14} (2007), \#R15.\newline\url{https://doi.org/10.37236/933}
 
 \bibitem[Newste19]{Newste19}Clive Newstead, \textit{An Infinite Descent into
 Pure Mathematics}, version 0.4 (1 January 2020).\newline\url{https://infinitedescent.xyz}
@@ -138393,7 +138421,7 @@ for a preprint version.
 Counting}, Graduate Studies in Mathematics \textbf{210}, 21 September
 2020.\newline\url{https://users.math.msu.edu/users/bsagan/Books/Aoc/final.pdf}
 
-\bibitem[Schmit04]{Schmitt04}William R. Schmitt, \textit{Incidence Hopf
+\bibitem[Schmit94]{Schmitt04}William R. Schmitt, \textit{Incidence Hopf
 algebras}, Journal of Pure and Applied Algebra \textbf{96} (1994), pp.
 299--330, \url{https://doi.org/10.1016/0022-4049(94)90105-8} .
 
@@ -138417,13 +138445,12 @@ Combinatorics, volume 1}, Second edition, Cambridge University Press
 2012.\newline See \url{http://math.mit.edu/~rstan/ec/} for errata and for a
 preprint version (from 2011).
 
-\bibitem[Stanle01]{Stanley-EC2}Richard Stanley, \textit{Enumerative
-Combinatorics, volume 2}, First edition, Cambridge University Press
-2001.\newline See \url{http://math.mit.edu/~rstan/ec/} for errata.
+\bibitem[Stanle24]{Stanley-EC2}Richard Stanley, \textit{Enumerative
+Combinatorics, volume 2}, Second edition, Cambridge University Press
+2024.\newline See \url{http://math.mit.edu/~rstan/ec/} for errata.
 
-\bibitem[Stembr02]{Stembridge}%
-\href{http://www.combinatorics.org/ojs/index.php/eljc/article/view/v9i1n5}{John
-R. Stembridge, \textit{A Concise Proof of the Littlewood-Richardson Rule}, The
+\bibitem[Stembr02]{Stembridge}\href{https://doi.org/10.37236/1666}{John R.
+Stembridge, \textit{A Concise Proof of the Littlewood-Richardson Rule}, The
 Electronic Journal of Combinatorics, Volume 9 (2002), Note \#N5.}
 
 \bibitem[Strick13]{Strick13}Neil Strickland, \textit{MAS201 Linear Mathematics
