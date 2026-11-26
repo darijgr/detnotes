@@ -17,7 +17,7 @@
 \usepackage[type={CC}, modifier={zero}, version={1.0},]{doclicense}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Tuesday, June 30, 2026 23:49:28}
+%TCIDATA{LastRevised=Thursday, November 26, 2026 14:05:47}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -159,7 +159,9 @@ mathematical (usually set-theoretical) language, and are manipulated in
 logically well-defined ways. (In particular, some things that are commonly
 taken for granted in the literature -- e.g., the fact that the sum of $n$
 numbers is well-defined without specifying in what order they are being added
--- are unpacked and proven in a rigorous way.)
+-- are unpacked and proven in a rigorous way.) In a sense, the first five
+chapters of these notes can serve as a rigorous companion to a more standard
+introduction to discrete mathematics, such as \cite{24wd}.
 
 These notes are split into several chapters:
 
@@ -256,8 +258,8 @@ in writing them was to have a reference for certain folklore results -- one in
 which these results are proved by elementary means and without appeal to the
 reader's problem-solving acumen.
 
-These notes began as worksheets for the PRIMES reading project I have mentored
-in 2015; they have since been greatly expanded with new material (some of it
+These notes began as worksheets for the PRIMES reading project I mentored in
+2015; they have since been greatly expanded with new material (some of it
 originally written for my combinatorics classes, some in response to
 \href{https://math.stackexchange.com/}{math.stackexchange} questions).
 
@@ -10071,11 +10073,13 @@ $f_{n}\circ f_{n-1}\circ\cdots\circ f_{1}$, where all the parentheses are
 \textquotedblleft concentrated as far right as possible\textquotedblright%
 \ (i.e., there is an opening parenthesis after each \textquotedblleft$\circ
 $\textquotedblright\ sign except for the last one; and there are $n-2$ closing
-parentheses at the end of the expression\footnote{Unless $n=1$, in which case
-the right hand side is simply $f_{1}$.}). This is merely a visual restatement
-of the recursive definition of $C\left(  f_{n},f_{n-1},\ldots,f_{1}\right)  $
-we gave above.
+parentheses at the end of the expression\footnotemark). This is merely a
+visual restatement of the recursive definition of $C\left(  f_{n}%
+,f_{n-1},\ldots,f_{1}\right)  $ we gave above.
 \end{example}
+
+\footnotetext{Unless $n=1$, in which case the right hand side is simply
+$f_{1}$.}
 
 \subsubsection{The crucial property of $C\left(  f_{n},f_{n-1},\ldots
 ,f_{1}\right)  $}
@@ -16023,7 +16027,7 @@ The formula (\ref{eq.binom.mn}) yields%
 
 Here is a table of the binomial coefficients $\dbinom{n}{k}$ for all values
 $n\in\left\{  -3,-2,-1,\ldots,6\right\}  $ and some of the values
-$k\in\left\{  0,1,2,3,4,5\right\}  $. In the following table, each row
+$k\in\left\{  0,1,\ldots,7\right\}  $. In the following table, each row
 corresponds to a value of $n$, while each southwest-northeast diagonal
 corresponds to a value of $k$:%
 \[
@@ -16055,7 +16059,7 @@ $1$ &  & $0$ &  & $0$ &  & $0$ & \\
 \vphantom{$g^b$} $n=6$ & $\rightarrow$ & $1$ &  & $6$ &  & $15$ &  & $20$ &  &
 $15$ &  & $6$ &  & $1$ &  & $0$ &  &
 \end{tabular}
-\ \ \ \ \ \ \
+\ \ \ \ \ \ \ \
 \]
 
 
@@ -16987,7 +16991,7 @@ coefficients) can only have finitely many roots\footnote{In fact, a stronger
 statement holds: A nonzero polynomial in one variable (with rational
 coefficients) having degree $n\geq0$ has at most $n$ roots. See, for example,
 \cite[Corollary 1.8.24]{Goodman} or \cite[Theorem 1.58]{Joyce17} or
-\cite[Corollary 4.5.10]{Walker87} or \cite[Corollary 33.7]{Elman18} or
+\cite[Corollary 4.5.10]{Walker87} or \cite[Corollary 34.8]{Elman18} or
 \cite[Theorem 2.4.15]{Swanso18} or \cite[Corollary 1.14]{Knapp1} for a proof.
 Note that Swanson, in \cite{Swanso18}, works with polynomial functions instead
 of polynomials; but as far as roots are concerned, the difference does not
@@ -19862,9 +19866,9 @@ x^{m+1}\sum_{k=0}^{n}\dbinom{m+k}{k}y^{k}+y^{n+1}\sum_{k=0}^{m}\dbinom{n+k}%
 Exercise \ref{exe.ISL1975P7} \textbf{(a)} is Problem 7 from the IMO Shortlist
 1975. It is also closely related to the Daubechies identity \cite{Zeilbe93}
 (indeed, the first equality in \cite{Zeilbe93} follows by applying it to $p$,
-$1-p$, $n-1$ and $n-1$ instead of $n$ and $m$). Exercise \ref{exe.ISL1975P7}
-\textbf{(b)} is a fairly well-known identity for binomial coefficients (see,
-e.g., \cite[(5.20)]{GKP}).
+$1-p$, $n-1$ and $n-1$ instead of $x$, $y$, $n$ and $m$). Exercise
+\ref{exe.ISL1975P7} \textbf{(b)} is a fairly well-known identity for binomial
+coefficients (see, e.g., \cite[(5.20)]{GKP}).
 \end{remark}
 
 \section{\label{chp.recur}Recurrent sequences}
@@ -20539,7 +20543,7 @@ integer closest to $x$ (where, in case of a tie, we take the higher of the two c
 the Fibonacci sequence. A set $I$ of integers is said to be \textit{lacunar}
 if no two elements of $I$ are consecutive (i.e., there exists no $i\in I$ such
 that $i+1\in I$). Show that, for every $n\in\mathbb{N}$, there exists a unique
-lacunar subset $S$ of $\left\{  2,3,4,\ldots\right\}  $ such that
+finite lacunar subset $S$ of $\left\{  2,3,4,\ldots\right\}  $ such that
 $n=\sum_{s\in S}f_{s}$.
 
 (For example, if $n=17$, then $S=\left\{  2,4,7\right\}  $, because
@@ -20591,7 +20595,8 @@ $\mathbb{Z}$ such that
 \end{align*}
 (The condition $n\geq\max\left(  \left\{  -a_{t}\mid t\in T\right\}
 \cup\left\{  -s\mid s\in S\right\}  \right)  $ merely ensures that all the
-$f_{n+a_{t}}$ and $f_{n+s}$ are well-defined.)
+$f_{n+a_{t}}$ and $f_{n+s}$ are well-defined. We understand $\max\varnothing$
+to be $0$.)
 \end{exercise}
 
 \begin{remark}
@@ -21454,13 +21459,13 @@ Exercise \ref{exe.ps2.2.4} \textbf{(b)}.
 
 \begin{remark}
 When $n=0$ or $n=1$, we have $\left\{  1,2,\ldots,n-1\right\}  =\varnothing$.
-Hence, Exercise \ref{exe.ps2.2.4} \textbf{(e)} looks strange in the case when
+Hence, Exercise \ref{exe.ps2.2.5} \textbf{(e)} looks strange in the case when
 $n=0$ or $n=1$, because in this case, there are no permutations of the form
 $s_{k}$ to begin with. Nevertheless, it is correct. Indeed, when $n=0$ or
 $n=1$, there is only one permutation $\sigma\in S_{n}$, namely the identity
 permutation $\operatorname*{id}$, and it has length $\ell\left(
 \sigma\right)  =\ell\left(  \operatorname*{id}\right)  =0$. Thus, in this
-case, Exercise \ref{exe.ps2.2.4} \textbf{(e)} claims that $\operatorname*{id}$
+case, Exercise \ref{exe.ps2.2.5} \textbf{(e)} claims that $\operatorname*{id}$
 can be written as a composition of $0$ permutations of the form $s_{k}$ (with
 $k\in\left\{  1,2,\ldots,n-1\right\}  $). This is true: Even from an empty set
 we can always pick $0$ elements; and the composition of $0$ permutations will
@@ -22698,9 +22703,11 @@ as follows:%
 where we are writing permutations in one-line notation (and omitting
 parentheses and commas). The $4$-th right Bruhat graph can be seen
 \href{https://en.wikipedia.org/wiki/File:Symmetric_group_4;_Cayley_graph_1,2,6_%283D%29.svg}{on
-Wikipedia}.\footnote{Don't omit the word \textquotedblleft
-right\textquotedblright\ in \textquotedblleft right Bruhat
-graph\textquotedblright; else it means a different graph with more edges.}
+Wikipedia}.\footnote{Group theorists will recognize the $n$-th right Bruhat
+graph as the undirected Cayley graph of $S_{n}$ for the generating set
+$\left\{  s_{1},s_{2},\ldots,s_{n-1}\right\}  $ acting by right
+multiplication. (The color of an edge $\sigma-\tau$, where $\sigma=\tau\circ
+s_{k}$, is $k$.)}
 
 These graphs have lots of properties. There is a canonical way to direct their
 edges: The edge between $\sigma$ and $\tau$ is directed towards the vertex
@@ -24397,12 +24404,13 @@ approach are \cite[Chapter IX]{BirkMac}, \cite[Chapter 7]{GalQua18},
 Artin, in \cite[Chapter 1]{Artin}, takes a particularly quick approach to
 determinants over a field (although it is quick at the cost of generality: for
 example, the proof he gives for \cite[Theorem 1.4.9]{Artin} does not
-generalize to matrices over commutative rings). A singularly horrible
-treatment of determinants -- defining them only for real and complex matrices
-and in a way that utterly hides their combinatorial structure -- was given in
-the third edition of Axler's \textit{Linear Algebra Done Right} (2015, Chapter
-10B), but in the fourth edition \cite{Axler} has been replaced by a good
-algebraic approach.}.
+generalize to matrices over commutative rings).
+\par
+A singularly horrible treatment of determinants -- defining them only for real
+and complex matrices and in a way that utterly hides their combinatorial
+structure -- was given in the third edition of Axler's \textit{Linear Algebra
+Done Right} (2015, Chapter 10B). But in the fourth edition \cite{Axler}, it
+has been replaced by a good algebraic approach.}.
 
 We shall study determinants of matrices over \textit{commutative
 rings}.\footnote{This is a rather general setup, which includes determinants
@@ -30033,8 +30041,8 @@ this with $\ell\left(  \sigma\right)  =\left\vert \operatorname*{Inv}\left(
 \widehat{\sigma}\right)  \right\vert $, we obtain $\ell\left(  \sigma\right)
 =\ell\left(  \widehat{\sigma}\right)  $, qed.} and%
 \begin{equation}
-\left(  -1\right)  ^{\widehat{\sigma}}=\left(  -1\right)  ^{\sigma
-}\label{pf.lem.laplace.lem.-1}%
+\left(  -1\right)  ^{\widehat{\sigma}}=\left(  -1\right)  ^{\sigma}
+\label{pf.lem.laplace.lem.-1}%
 \end{equation}
 \footnote{\textit{Proof.} Let $\sigma\in S_{n-1}$. We have proven that
 $\ell\left(  \sigma\right)  =\ell\left(  \widehat{\sigma}\right)  $. But the
@@ -30044,16 +30052,16 @@ definition of $\left(  -1\right)  ^{\widehat{\sigma}}$ yields $\left(
 -1\right)  ^{\widehat{\sigma}}=\left(  -1\right)  ^{\ell\left(
 \widehat{\sigma}\right)  }$. Thus,%
 \begin{align*}
-\left(  -1\right)  ^{\sigma} &  =\left(  -1\right)  ^{\ell\left(
+\left(  -1\right)  ^{\sigma}  &  =\left(  -1\right)  ^{\ell\left(
 \sigma\right)  }=\left(  -1\right)  ^{\ell\left(  \widehat{\sigma}\right)
 }\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\ell\left(  \sigma\right)
-=\ell\left(  \widehat{\sigma}\right)  \right)  \\
+=\ell\left(  \widehat{\sigma}\right)  \right) \\
 &  =\left(  -1\right)  ^{\widehat{\sigma}}.
 \end{align*}
 This proves (\ref{pf.lem.laplace.lem.-1}).} and%
 \begin{equation}
 \prod_{i=1}^{n-1}a_{i,\widehat{\sigma}\left(  i\right)  }=\prod_{i=1}%
-^{n-1}a_{i,\sigma\left(  i\right)  }\label{pf.lem.laplace.lem.prod}%
+^{n-1}a_{i,\sigma\left(  i\right)  } \label{pf.lem.laplace.lem.prod}%
 \end{equation}
 \footnote{\textit{Proof.} Let $\sigma\in S_{n-1}$. For every $i\in\left\{
 1,2,\ldots,n-1\right\}  $, the element $\widehat{\sigma}\left(  i\right)  $ is
@@ -30066,7 +30074,7 @@ well-defined (since $i\in\left\{  1,2,\ldots,n-1\right\}  \subseteq\left\{
 n, & \text{if }i=n
 \end{cases}
 \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\widehat{\sigma
-}\right)  \\
+}\right) \\
 &  =\sigma\left(  i\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }i<n\text{
 (since }i\leq n-1\text{ (since }i\in\left\{  1,2,\ldots,n-1\right\}
 \text{))}\right)  .
@@ -31957,15 +31965,17 @@ complex numbers, then%
 \dbinom{x_{i}}{j-1}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\right)  .
 \]
 (This equality is proved, e.g., in \cite[Corollary 11]{GriHyp} and in
-\cite[\S 9, Example 5]{AndDos}, and follows easily from Exercise
+\cite[\S 9, Example 9.5]{AndDos}, and follows easily from Exercise
 \ref{exe.det.vdm-pol}; it also appeared in \cite[exercise 269]{FadSom72}.)
 This equality has the surprising consequence that, whenever $x_{1}%
 ,x_{2},\ldots,x_{n}$ are $n$ integers, the product $\prod_{1\leq i<j\leq
 n}\dfrac{x_{i}-x_{j}}{i-j}$ is an integer as well (because it is the
 determinant of a matrix whose entries are integers). This is a nontrivial
-result! (A more elementary proof appears in \cite[\S 3, Example 8]{AndDos}.
+result! (A more elementary proof appears in \cite[\S 3, Example 3.9]{AndDos}.
 See also \cite{Sury95} for a proof using cyclotomic polynomials, and
-\cite[Theorem 3]{Bharga00} for a placement of this result in a more general context.)
+\cite[Theorem 3]{Bharga00} for a placement of this result in a more general
+context. An overview of some of the places in which this result appears is
+given in my talk \cite{greedtalk-ny2022}.)
 
 Another \textquotedblleft secret integer\textquotedblright\ (i.e., rational
 number which turns out to be an integer for non-obvious reasons) is%
@@ -33305,11 +33315,11 @@ Then, this map $T$ is well-defined and bijective.
 \medskip
 
 \textbf{(b)} Let $p\in\left[  n\right]  $. Exercise \ref{exe.perm.cycles}
-\textbf{(d)} (applied to $k=n-p+1$ and $\left(  i_{1},i_{2},\ldots,i_{k}\right)
-=\left(  p,p+1,\ldots,n\right)  $) yields%
+\textbf{(d)} (applied to $k=n-p+1$ and $\left(  i_{1},i_{2},\ldots
+,i_{k}\right)  =\left(  p,p+1,\ldots,n\right)  $) yields%
 \[
 \left(  -1\right)  ^{\operatorname*{cyc}\nolimits_{p,p+1,\ldots,n}}=\left(
--1\right)  ^{\left(n-p+1\right)  -1}=\left(  -1\right)  ^{n-p}.
+-1\right)  ^{\left(  n-p+1\right)  -1}=\left(  -1\right)  ^{n-p}.
 \]
 Now, $g_{p}=\operatorname*{cyc}\nolimits_{p,p+1,\ldots,n}$, so that $\left(
 -1\right)  ^{g_{p}}=\left(  -1\right)  ^{\operatorname*{cyc}%
@@ -39525,7 +39535,7 @@ _{\bullet,q}=B_{\bullet,q}%
 and $\left(  I_{n}\right)  _{\bullet,u}$ instead of $m$, $A$ and $v$). This
 proves Lemma \ref{lem.desnanot.AB.tech} \textbf{(d)}. \medskip
 
-\textbf{(e)} Let $A\in\mathbb{K}^{n\times \left(  n-1\right)}$. Proposition
+\textbf{(e)} Let $A\in\mathbb{K}^{n\times\left(  n-1\right)  }$. Proposition
 \ref{prop.addcol.props1} \textbf{(b)} (applied to $n-1$, $B$ and $\left(
 I_{n}\right)  _{\bullet,u}$ instead of $m$, $A$ and $v$) yields $\left(
 B\mid\left(  I_{n}\right)  _{\bullet,u}\right)  _{\bullet,\left(  n-1\right)
@@ -40674,7 +40684,8 @@ let us derive Theorem \ref{thm.cramer} \textbf{(a)} from Proposition
 Indeed, let $n$, $A$, $b=\left(  b_{1},b_{2},\ldots,b_{n}\right)  ^{T}$ and
 $A_{j}^{\#}$ be as in Theorem \ref{thm.cramer} \textbf{(a)}. We want to prove
 that $A\cdot\left(  \det\left(  A_{1}^{\#}\right)  ,\det\left(  A_{2}%
-^{\#}\right)  ,\ldots,\det\left(  A_{n}^{\#}\right)  \right)  ^{T}=\det A\cdot b$.
+^{\#}\right)  ,\ldots,\det\left(  A_{n}^{\#}\right)  \right)  ^{T}=\det A\cdot
+b$.
 
 Let $B=\left(  A\mid b\right)  $ (using the notations of Definition
 \ref{def.addcol}); this is an $n\times\left(  n+1\right)  $-matrix.
@@ -49455,7 +49466,15 @@ combinatorics. A combinatorial proof is sketched, e.g., in \cite[proof of
 Proposition 13.3]{Galvin} and in \cite[proof of Identity 143]{BenQui03}. We
 shall give a different proof, using induction instead.
 
-Let us first state a basic lemma about sets:
+Let us first state a basic lemma about sets:\footnote{Recall that there is
+only one $0$-tuple: namely, the empty list $\left(  {}\right)  $. Thus, a
+Cartesian product of $0$ sets is the set $\left\{  \left(  {}\right)
+\right\}  $, consisting of this $0$-tuple only. In the following lemma, this
+situation arises when $M=1$; in this case, $Z_{1}\times Z_{2}\times
+\cdots\times Z_{M-1}$ is a Cartesian product of $0$ sets, thus equals
+$\left\{  \left(  {}\right)  \right\}  $, and the map sends the $1$-tuple
+$\left(  s_{1}\right)  $ to the pair $\left(  \left(  {}\right)
+,s_{1}\right)  $.}
 
 \begin{lemma}
 \label{lem.prodrule.prod-assM}Let $M$ be a positive integer. For every
@@ -51501,6 +51520,7 @@ two lists such that $\mathbf{g}=B\left(  \mathbf{f}\right)  $. \medskip
 g_{n}=\sum_{i=0}^{n}\left(  -1\right)  ^{i}\dbinom{n}{i}f_{i}%
 \ \ \ \ \ \ \ \ \ \ \text{for each }n\in\left\{  0,1,\ldots,N\right\}  .
 \]
+
 
 \textbf{(b)} Also,%
 \[
@@ -56133,7 +56153,7 @@ x^{m+1}\sum_{k=0}^{n}\dbinom{m+k}{k}y^{k}z^{n-k}+y^{n+1}\sum_{k=0}^{m}%
 $k\in\left\{  0,1,\ldots,n\right\}  $. Thus, $k\leq n$, so that $n-k\geq0$ and
 thus $n-k\in\mathbb{N}$. Also, $k\geq0$ (since $k\in\left\{  0,1,\ldots
 ,n\right\}  $), so that $n-\underbrace{k}_{\geq0}\leq n$ and thus $n\geq n-k$.
-Hence, Lemma \ref{lem.sol.ISL1975P7.binom} \textbf{(a)} (applied to $g=n-k$)
+Hence, Lemma \ref{lem.sol.ISL1975P7.binom} \textbf{(b)} (applied to $g=n-k$)
 yields%
 \[
 y^{n-\left(  n-k\right)  }z^{n-k}=\sum_{i=0}^{n}\dbinom{n-k}{i}x^{i}y^{n-i}.
@@ -56924,8 +56944,15 @@ N-1-i\right)  -1}{i-1}\\=\dbinom{N-1-i}{i}\\\text{(by
 (\ref{sol.ps2.2.S.short.rec1}), applied to }a=N-1-i\text{)}}}r^{N-1-2i}\\
 &  =\left(  -1\right)  ^{0}\dbinom{N-1-0}{0}r^{N-1-2\cdot0}+\sum_{i=1}%
 ^{N-2}\left(  -1\right)  ^{i}\dbinom{N-1-i}{i}r^{N-1-2i}\\
-&  =\sum_{i=0}^{N-2}\left(  -1\right)  ^{i}\dbinom{N-1-i}{i}r^{N-1-2i}.
+&  =\sum_{i=0}^{N-2}\left(  -1\right)  ^{i}\dbinom{N-1-i}{i}r^{N-1-2i}\\
+&  =\sum_{i=0}^{N-1}\left(  -1\right)  ^{i}\dbinom{N-1-i}{i}r^{N-1-2i}%
 \end{align*}
+(here, we have extended the range of the sum to include $i=N-1$ as well; this
+does not affect the value of the sum, since the new addend that was thus
+incurred is $\left(  -1\right)  ^{N-1}\underbrace{\dbinom{N-1-\left(
+N-1\right)  }{N-1}}_{\substack{=\dbinom{0}{N-1}=0\\\text{(since }%
+N-1>0\text{)}}}r^{N-1-2\left(  N-1\right)  }=0$).
+
 Hence, (\ref{sol.ps2.2.S.short.goal}) is proven in Case 3. We thus have proven
 (\ref{sol.ps2.2.S.short.goal}) in all three Cases 1, 2 and 3, so that we
 conclude that (\ref{sol.ps2.2.S.short.goal}) always holds. This completes our
@@ -57106,17 +57133,24 @@ c_{N}  &  =r\underbrace{c_{N-1}}_{\substack{=\sum_{i=0}^{N-2}\left(
 \end{align*}
 Comparing this with%
 \begin{align*}
-&  \sum_{i=0}^{N-2}\left(  -1\right)  ^{i}\dbinom{N-1-i}{i}r^{N-1-2i}\\
+&  \sum_{i=0}^{N-1}\left(  -1\right)  ^{i}\dbinom{N-1-i}{i}r^{N-1-2i}\\
 &  =\left(  -1\right)  ^{0}\dbinom{N-1-0}{0}r^{N-1-2\cdot0}\\
 &  \ \ \ \ \ \ \ \ \ \ +\sum_{i=1}^{N-2}\left(  -1\right)  ^{i}%
 \underbrace{\dbinom{N-1-i}{i}}_{\substack{=\dbinom{\left(  N-1-i\right)
 -1}{i}+\dbinom{\left(  N-1-i\right)  -1}{i-1}\\\text{(by
 (\ref{sol.ps2.2.S.rec1}), applied to }a=N-1-i\text{)}}}r^{N-1-2i}\\
+&  \ \ \ \ \ \ \ \ \ \ +\left(  -1\right)  ^{N-1}\underbrace{\dbinom
+{N-1-\left(  N-1\right)  }{N-1}}_{\substack{=\dbinom{0}{N-1}=0\\\text{(by
+Proposition \ref{prop.binom.0}, applied to }0\text{ and }N-1\\\text{instead of
+}m\text{ and }n\text{ (since }0<N-1\text{ (because }N\geq2>1\text{)))}%
+}}r^{N-1-2\left(  N-1\right)  }\\
 &  =\left(  -1\right)  ^{0}\dbinom{N-1-0}{0}r^{N-1-2\cdot0}\\
 &  \ \ \ \ \ \ \ \ \ \ +\sum_{i=1}^{N-2}\left(  -1\right)  ^{i}\left(
 \underbrace{\dbinom{\left(  N-1-i\right)  -1}{i}}_{=\dbinom{N-2-i}{i}%
 }+\underbrace{\dbinom{\left(  N-1-i\right)  -1}{i-1}}_{=\dbinom{N-2-i}{i-1}%
 }\right)  r^{N-1-2i}\\
+&  \ \ \ \ \ \ \ \ \ \ +\underbrace{\left(  -1\right)  ^{N-1}0r^{N-1-2\left(
+N-1\right)  }}_{=0}\\
 &  =\left(  -1\right)  ^{0}\dbinom{N-1-0}{0}r^{N-1-2\cdot0}\\
 &  \ \ \ \ \ \ \ \ \ \ +\sum_{i=1}^{N-2}\left(  -1\right)  ^{i}\left(
 \dbinom{N-2-i}{i}+\dbinom{N-2-i}{i-1}\right)  r^{N-1-2i},
@@ -59846,8 +59880,11 @@ composition of $N$ permutations of the form $s_{k}$ (with $k\in\left\{
 composition of $L$ permutations of the form $s_{k}$ (with $k\in\left\{
 1,2,\ldots,n-1\right\}  $). In other words, there exists an $L$-tuple $\left(
 j_{1},j_{2},\ldots,j_{L}\right)  \in\left\{  1,2,\ldots,n-1\right\}  ^{L}$
-such that $\sigma^{-1}\circ\tau=s_{j_{1}}\circ s_{j_{2}}\circ\cdots\circ
-s_{j_{L}}$. Consider this $\left(  j_{1},j_{2},\ldots,j_{L}\right)  $.
+such that%
+\[
+\sigma^{-1}\circ\tau=s_{j_{1}}\circ s_{j_{2}}\circ\cdots\circ s_{j_{L}}.
+\]
+Consider this $\left(  j_{1},j_{2},\ldots,j_{L}\right)  $.
 
 We have $\underbrace{\sigma\circ\sigma^{-1}}_{=\operatorname*{id}}\circ
 \tau=\tau$, so that $\tau=\sigma\circ\underbrace{\sigma^{-1}\circ\tau
@@ -59882,10 +59919,51 @@ $\gamma_{i}=\gamma_{i-1}\circ s_{k}$ (namely, $k=j_{i}$). In other words, the
 vertices $\gamma_{i}$ and $\gamma_{i-1}$ of the (undirected) $n$-th right
 Bruhat graph are adjacent (by the definition of the edges of this graph).
 Qed.}. Hence, the vertices $\gamma_{0},\gamma_{1},\ldots,\gamma_{L}$ form a
-path. This path connects $\sigma$ to $\tau$ (since it begins at $\gamma
-_{0}=\sigma$ and ends at $\gamma_{L}=\tau$), and has length $L$. Thus, there
-exists a path between $\sigma$ and $\tau$ which has length $L$ (namely, the
-path formed by the vertices $\gamma_{0},\gamma_{1},\ldots,\gamma_{L}$).
+walk on this graph. This walk connects $\sigma$ to $\tau$ (since it begins at
+$\gamma_{0}=\sigma$ and ends at $\gamma_{L}=\tau$), and has length $L$.
+Furthermore, all the vertices $\gamma_{0},\gamma_{1},\ldots,\gamma_{L}$ of
+this walk are distinct\footnote{\textit{Proof.} Assume the contrary. Thus,
+there are two elements $p$ and $q$ of $\left\{  0,1,\ldots,L\right\}  $ such
+that $p<q$ and $\gamma_{p}=\gamma_{q}$. Consider these $p$ and $q$. Recall
+that $\gamma_{p}=\sigma\circ\left(  s_{j_{1}}\circ s_{j_{2}}\circ\cdots\circ
+s_{j_{p}}\right)  $, so that
+\[
+s_{j_{1}}\circ s_{j_{2}}\circ\cdots\circ s_{j_{p}}=\sigma^{-1}\circ\gamma
+_{p}.
+\]
+Similarly,
+\[
+s_{j_{1}}\circ s_{j_{2}}\circ\cdots\circ s_{j_{q}}=\sigma^{-1}\circ\gamma
+_{q}.
+\]
+The right-hand sides of these two equalities are equal (since $\gamma
+_{p}=\gamma_{q}$). Thus, so are their left-hand sides. That is,%
+\[
+s_{j_{1}}\circ s_{j_{2}}\circ\cdots\circ s_{j_{p}}=s_{j_{1}}\circ s_{j_{2}%
+}\circ\cdots\circ s_{j_{q}}.
+\]
+Therefore,%
+\begin{align*}
+\sigma^{-1}\circ\tau &  =s_{j_{1}}\circ s_{j_{2}}\circ\cdots\circ s_{j_{L}}\\
+&  =\underbrace{s_{j_{1}}\circ s_{j_{2}}\circ\cdots\circ s_{j_{q}}}%
+_{=s_{j_{1}}\circ s_{j_{2}}\circ\cdots\circ s_{j_{p}}}\circ\,s_{j_{q+1}}\circ
+s_{j_{q+2}}\circ\cdots\circ s_{j_{L}}\\
+&  =\underbrace{s_{j_{1}}\circ s_{j_{2}}\circ\cdots\circ s_{j_{p}}\circ
+s_{j_{q+1}}\circ s_{j_{q+2}}\circ\cdots\circ s_{j_{L}}}_{\substack{\text{a
+product of }p+\left(  L-q\right)  \text{ permutations of the form }%
+s_{k}\\\text{(with }k\in\left\{  1,2,\ldots,n-1\right\}  \text{)}}}.
+\end{align*}
+This equality shows that $\sigma^{-1}\circ\tau$ can be written as a
+composition of $p+\left(  L-q\right)  $ permutations of the form $s_{k}$ (with
+$k\in\left\{  1,2,\ldots,n-1\right\}  $). Therefore, $p+\left(  L-q\right)
+\geq L$ (since $L$ is the \textbf{smallest} $N\in\mathbb{N}$ such that
+$\sigma^{-1}\circ\tau$ can be written as a composition of $N$ permutations of
+the form $s_{k}$ (with $k\in\left\{  1,2,\ldots,n-1\right\}  $)). But this
+contradicts $\underbrace{p}_{<q}+\left(  L-q\right)  <q+\left(  L-q\right)
+=L$. This contradiction shows that our assumption was false, qed.}, so this
+walk is a path. Thus, there exists a path between $\sigma$ and $\tau$ which
+has length $L$ (namely, the path formed by the vertices $\gamma_{0},\gamma
+_{1},\ldots,\gamma_{L}$).
 
 We shall now show that $L$ is the smallest length of a path between $\sigma$
 and $\tau$. Indeed, let $\mathbf{d}$ be any path between $\sigma$ and $\tau$.
@@ -60053,8 +60131,10 @@ $). In other words, $\sigma^{-1}\circ\tau$ can be written as a composition of
 $L$ permutations of the form $s_{k}$ (with $k\in\left\{  1,2,\ldots
 ,n-1\right\}  $) (since $L=\ell\left(  \sigma^{-1}\circ\tau\right)  $). In
 other words, there exists an $L$-tuple $\left(  j_{1},j_{2},\ldots
-,j_{L}\right)  \in\left\{  1,2,\ldots,n-1\right\}  ^{L}$ such that
-$\sigma^{-1}\circ\tau=s_{j_{1}}\circ s_{j_{2}}\circ\cdots\circ s_{j_{L}}$.
+,j_{L}\right)  \in\left\{  1,2,\ldots,n-1\right\}  ^{L}$ such that%
+\[
+\sigma^{-1}\circ\tau=s_{j_{1}}\circ s_{j_{2}}\circ\cdots\circ s_{j_{L}}.
+\]
 Consider this $\left(  j_{1},j_{2},\ldots,j_{L}\right)  $.
 
 We have $\underbrace{\sigma\circ\sigma^{-1}}_{=\operatorname*{id}}\circ
@@ -60091,10 +60171,51 @@ $\gamma_{i}=\gamma_{i-1}\circ s_{k}$ (namely, $k=j_{i}$). In other words, the
 vertices $\gamma_{i}$ and $\gamma_{i-1}$ of the (undirected) $n$-th right
 Bruhat graph are adjacent (by the definition of the edges of this graph).
 Qed.}. Hence, the vertices $\gamma_{0},\gamma_{1},\ldots,\gamma_{L}$ form a
-path. This path connects $\sigma$ to $\tau$ (since it begins at $\gamma
-_{0}=\sigma$ and ends at $\gamma_{L}=\tau$), and has length $L$. Thus, there
-exists a path between $\sigma$ and $\tau$ which has length $L$ (namely, the
-path formed by the vertices $\gamma_{0},\gamma_{1},\ldots,\gamma_{L}$).
+walk on this graph. This walk connects $\sigma$ to $\tau$ (since it begins at
+$\gamma_{0}=\sigma$ and ends at $\gamma_{L}=\tau$), and has length $L$.
+Furthermore, all the vertices $\gamma_{0},\gamma_{1},\ldots,\gamma_{L}$ of
+this walk are distinct\footnote{\textit{Proof.} Assume the contrary. Thus,
+there are two elements $p$ and $q$ of $\left\{  0,1,\ldots,L\right\}  $ such
+that $p<q$ and $\gamma_{p}=\gamma_{q}$. Consider these $p$ and $q$. Recall
+that $\gamma_{p}=\sigma\circ\left(  s_{j_{1}}\circ s_{j_{2}}\circ\cdots\circ
+s_{j_{p}}\right)  $, so that
+\[
+s_{j_{1}}\circ s_{j_{2}}\circ\cdots\circ s_{j_{p}}=\sigma^{-1}\circ\gamma
+_{p}.
+\]
+Similarly,
+\[
+s_{j_{1}}\circ s_{j_{2}}\circ\cdots\circ s_{j_{q}}=\sigma^{-1}\circ\gamma
+_{q}.
+\]
+The right-hand sides of these two equalities are equal (since $\gamma
+_{p}=\gamma_{q}$). Thus, so are their left-hand sides. That is,%
+\[
+s_{j_{1}}\circ s_{j_{2}}\circ\cdots\circ s_{j_{p}}=s_{j_{1}}\circ s_{j_{2}%
+}\circ\cdots\circ s_{j_{q}}.
+\]
+Therefore,%
+\begin{align*}
+\sigma^{-1}\circ\tau &  =s_{j_{1}}\circ s_{j_{2}}\circ\cdots\circ s_{j_{L}}\\
+&  =\underbrace{s_{j_{1}}\circ s_{j_{2}}\circ\cdots\circ s_{j_{q}}}%
+_{=s_{j_{1}}\circ s_{j_{2}}\circ\cdots\circ s_{j_{p}}}\circ\,s_{j_{q+1}}\circ
+s_{j_{q+2}}\circ\cdots\circ s_{j_{L}}\\
+&  =\underbrace{s_{j_{1}}\circ s_{j_{2}}\circ\cdots\circ s_{j_{p}}\circ
+s_{j_{q+1}}\circ s_{j_{q+2}}\circ\cdots\circ s_{j_{L}}}_{\substack{\text{a
+product of }p+\left(  L-q\right)  \text{ permutations of the form }%
+s_{k}\\\text{(with }k\in\left\{  1,2,\ldots,n-1\right\}  \text{)}}}.
+\end{align*}
+This equality shows that $\sigma^{-1}\circ\tau$ can be written as a
+composition of $p+\left(  L-q\right)  $ permutations of the form $s_{k}$ (with
+$k\in\left\{  1,2,\ldots,n-1\right\}  $). Therefore, $p+\left(  L-q\right)
+\geq L$ (since $L$ is the \textbf{smallest} $N\in\mathbb{N}$ such that
+$\sigma^{-1}\circ\tau$ can be written as a composition of $N$ permutations of
+the form $s_{k}$ (with $k\in\left\{  1,2,\ldots,n-1\right\}  $)). But this
+contradicts $\underbrace{p}_{<q}+\left(  L-q\right)  <q+\left(  L-q\right)
+=L$. This contradiction shows that our assumption was false, qed.}, so this
+walk is a path. Thus, there exists a path between $\sigma$ and $\tau$ which
+has length $L$ (namely, the path formed by the vertices $\gamma_{0},\gamma
+_{1},\ldots,\gamma_{L}$).
 
 We shall now show that $L$ is the smallest length of a path between $\sigma$
 and $\tau$. Indeed, let $\mathbf{d}$ be any path between $\sigma$ and $\tau$.
@@ -70222,6 +70343,8 @@ elements of $\left[  n\right]  $ such that $u\leq v$. Then: \medskip
 \textbf{(a)} The permutation $c_{u,v}$ is well-defined. \medskip
 
 \textbf{(b)} We have $c_{u,v}=s_{v-1}\circ s_{v-2}\circ\cdots\circ s_{u}$.
+(Keep in mind that a composition of $0$ permutations is defined to be
+$\operatorname*{id}$.)
 \end{corollary}
 
 Before we prove this corollary, let us establish an almost trivial lemma:
@@ -77421,7 +77544,7 @@ s_{i^{\prime}-2}\circ\cdots\circ s_{i}$.
 
 We have $i^{\prime}=i+\ell_{i}\left(  \sigma\right)  \geq i$, so that $i\leq
 i^{\prime}$. Also, $i\in\left[  n\right]  $ and $i^{\prime}=i+\ell_{i}\left(
-\sigma\right)  \in\left[  n\right]  $. Hence, Lemma
+\sigma\right)  \in\left[  n\right]  $. Hence, Corollary
 \ref{cor.sol.perm.c=ttt.cuv1} \textbf{(b)} (applied to $u=i$ and $v=i^{\prime
 }$) yields $c_{i,i^{\prime}}=s_{i^{\prime}-1}\circ s_{i^{\prime}-2}\circ
 \cdots\circ s_{i}$. But $i+\ell_{i}\left(  \sigma\right)  =i^{\prime}$ (since
@@ -91168,7 +91291,7 @@ have%
 \end{equation}
 \footnote{\textit{Proof of (\ref{sol.ps4.pascal.4}):} Let $k\in\left\{
 i+1,i+2,\ldots,n\right\}  $. Then, $k>i\geq1$ and thus $k-1\in\mathbb{N}$.
-Also, $k>i$, so that $k-i>i-1$ and thus $i-1<k-1$. Hence, (\ref{eq.binom.0})
+Also, $k>i$, so that $i<k$ and thus $i-1<k-1$. Hence, (\ref{eq.binom.0})
 (applied to $i-1$ and $k-1$ instead of $m$ and $n$) yields $\dbinom{i-1}%
 {k-1}=0$, qed.}. Now, $i\leq n$, so that%
 \begin{align*}
@@ -92810,7 +92933,7 @@ b_{\tau\left(  i\right)  }\right\}  \subseteq\left\{  j\in\left\{
 1,2,\ldots,n\right\}  \ \mid\ a_{j}\leq b_{\tau\left(  i\right)  }\right\}
 $\ \ \ \ \footnote{\textit{Proof.} Let $g\in\left\{  j\in\left\{
 1,2,\ldots,m\right\}  \ \mid\ b_{j}\leq b_{\tau\left(  i\right)  }\right\}  $.
-We shall prove that $g\in\left\{  j\in\left\{  1,2,\ldots,m\right\}
+We shall prove that $g\in\left\{  j\in\left\{  1,2,\ldots,n\right\}
 \ \mid\ a_{j}\leq b_{\tau\left(  i\right)  }\right\}  $.
 \par
 We have $g\in\left\{  j\in\left\{  1,2,\ldots,m\right\}  \ \mid\ b_{j}\leq
@@ -98888,15 +99011,15 @@ n\right]  $ and $\operatorname*{posrem}\left(  \operatorname*{shift}%
 \par
 Now,%
 \begin{align*}
-&  \left(  \operatorname*{shift}\nolimits_{a}\circ\operatorname*{shift}%
-\nolimits_{b}\right)  \left(  g\right) \\
-&  =\operatorname*{posrem}\left(  \operatorname*{shift}\nolimits_{b}\left(
-g\right)  +a\right)  \equiv\underbrace{\operatorname*{shift}\nolimits_{b}%
-\left(  g\right)  }_{=\operatorname*{posrem}\left(  g+b\right)  \equiv
-g+b\operatorname{mod}n}+a\\
+\left(  \operatorname*{shift}\nolimits_{a}\circ\operatorname*{shift}%
+\nolimits_{b}\right)  \left(  g\right)   &  =\operatorname*{posrem}\left(
+\operatorname*{shift}\nolimits_{b}\left(  g\right)  +a\right)  \equiv
+\underbrace{\operatorname*{shift}\nolimits_{b}\left(  g\right)  }%
+_{=\operatorname*{posrem}\left(  g+b\right)  \equiv g+b\operatorname{mod}%
+n}+a\\
 &  \equiv g+b+a=g+a+b\operatorname{mod}n.
 \end{align*}
-Thus, we can apply (\ref{sol.det.2diags.posrem.3}) to $h=g+a+b$ and $k=\left(
+Thus, we can apply (\ref{sol.det.2diags.posrem.2}) to $h=g+a+b$ and $k=\left(
 \operatorname*{shift}\nolimits_{a}\circ\operatorname*{shift}\nolimits_{b}%
 \right)  \left(  g\right)  $ (since $\left(  \operatorname*{shift}%
 \nolimits_{a}\circ\operatorname*{shift}\nolimits_{b}\right)  \left(  g\right)
@@ -99232,16 +99355,16 @@ $J\in\left[  n\right]  $ satisfying $\sigma\left(  J\right)  \neq J$ must
 satisfy $J\geq j$. This proves (\ref{sol.det.2diags.exi.pf.min}).}.
 
 If $j\not \equiv \sigma\left(  j\right)  +1\operatorname{mod}n$, then
-(\ref{sol.det.2diags.exi}) holds\footnote{\textit{Proof.} Assume the contrary.
-Thus, $j\not \equiv \sigma\left(  j\right)  +1\operatorname{mod}n$. So we know
-that $j\neq\sigma\left(  j\right)  $ (since $\sigma\left(  j\right)  \neq j$)
-and $j\not \equiv \sigma\left(  j\right)  +1\operatorname{mod}n$.
-Consequently, there exists an $i\in\left[  n\right]  $ satisfying $i\neq
-\sigma\left(  i\right)  $ and $i\not \equiv \sigma\left(  i\right)
-+1\operatorname{mod}n$ (namely, $i=j$). In other words,
-(\ref{sol.det.2diags.exi}) holds. Qed.}. Hence, for the rest of this proof of
-(\ref{sol.det.2diags.exi}), we can WLOG assume that we don't have
-$j\not \equiv \sigma\left(  j\right)  +1\operatorname{mod}n$. Assume this.
+(\ref{sol.det.2diags.exi}) holds\footnote{\textit{Proof.} Assume that
+$j\not \equiv \sigma\left(  j\right)  +1\operatorname{mod}n$. So we know that
+$j\neq\sigma\left(  j\right)  $ (since $\sigma\left(  j\right)  \neq j$) and
+$j\not \equiv \sigma\left(  j\right)  +1\operatorname{mod}n$. Consequently,
+there exists an $i\in\left[  n\right]  $ satisfying $i\neq\sigma\left(
+i\right)  $ and $i\not \equiv \sigma\left(  i\right)  +1\operatorname{mod}n$
+(namely, $i=j$). In other words, (\ref{sol.det.2diags.exi}) holds. Qed.}.
+Hence, for the rest of this proof of (\ref{sol.det.2diags.exi}), we can WLOG
+assume that we don't have $j\not \equiv \sigma\left(  j\right)
++1\operatorname{mod}n$. Assume this.
 
 We have $j\equiv\sigma\left(  j\right)  +1\operatorname{mod}n$ (since we don't
 have $j\not \equiv \sigma\left(  j\right)  +1\operatorname{mod}n$). In other
@@ -99632,7 +99755,7 @@ n$-matrix. \medskip
 =0$. \medskip
 
 \textbf{(b)} Every $\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}
-^{2}$ satisfy $a_{i,j}=-a_{j,i}$.
+^{2}$ satisfies $a_{i,j}=-a_{j,i}$.
 \end{lemma}
 
 \begin{proof}
@@ -100622,8 +100745,8 @@ Now, $0\leq k-2$ (since $k\geq2$). Hence, Proposition \ref{prop.tridiag.rec}
 \end{align*}
 Comparing this with%
 \begin{align*}
-u_{k}  &  =a_{k}\underbrace{u_{k-1}}_{=\det\left(  A_{0,k-1}\right)  }%
--b_{k-1}\underbrace{u_{k-2}}_{=\det\left(  A_{0,k-2}\right)  }\\
+u_{k}  &  =a_{k}\underbrace{u_{k-1}}_{=\det\left(  A_{0,k-1}\right)
+}-\,b_{k-1}\underbrace{u_{k-2}}_{=\det\left(  A_{0,k-2}\right)  }\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the recursive definition of }\left(
 u_{0},u_{1},\ldots,u_{n}\right)  \right) \\
 &  =a_{k}\det\left(  A_{0,k-1}\right)  -b_{k-1}\det\left(  A_{0,k-2}\right)  ,
@@ -100794,9 +100917,9 @@ p_{n-K}=a_{n-K}-\dfrac{b_{n-K}c_{n-K}}{p_{n-K+1}}.
 
 
 We have $K\leq n-1$ and thus $n-K-1\geq0$. Moreover, $K\geq1$ (since $K$ is
-positive), thus $n-\underbrace{K}_{\geq1}-1\leq n-1-1=n-2$. Hence, Proposition
-\ref{prop.tridiag.rec} \textbf{(d)} (applied to $x=n-K-1$ and $y=n$) shows
-that%
+positive), thus $n-\underbrace{K}_{\geq1}-\,1\leq n-1-1=n-2$. Hence,
+Proposition \ref{prop.tridiag.rec} \textbf{(d)} (applied to $x=n-K-1$ and
+$y=n$) shows that%
 \begin{align*}
 &  \det\left(  A_{n-K-1,n}\right) \\
 &  =\underbrace{a_{\left(  n-K-1\right)  +1}}_{=a_{n-K}}\det\left(
@@ -104455,8 +104578,7 @@ Then,%
 
 Lemma \ref{lem.sol.addexe.jacobi-complement.Agd.det} simply says that if we
 permute the rows and permute the columns of a square matrix, then the
-determinant of this matrix gets multiplied by the product of the signs of the
-two permutations.
+determinant of this matrix gets multiplied by the product of the signs of the two permutations.
 
 \begin{proof}
 [Proof of Lemma \ref{lem.sol.addexe.jacobi-complement.Agd.det}.]Let $\left[
@@ -110614,8 +110736,7 @@ A_{\bullet,\sim v}\right)  _{\bullet,\sim w}=\operatorname*{cols}%
 \nolimits_{1,2,\ldots,\widehat{w},\ldots,\widehat{v},\ldots,m}A$. This proves
 Proposition \ref{prop.unrows.basics} \textbf{(h)}.\footnote{If you found this
 proof insufficiently rigorous, let me show a formal proof of Proposition
-\ref{prop.unrows.basics} \textbf{(h)}. First, we have $r\leq s-1$ (since $r<s$
-and since $r$ and $s$ are integers). Now, I shall introduce two notations:
+\ref{prop.unrows.basics} \textbf{(h)}. First, I shall introduce two notations:
 \par
 \begin{itemize}
 \item For every $j\in\mathbb{Z}$ and $r\in\mathbb{Z}$, let $\mathbf{d}%
@@ -110633,7 +110754,8 @@ j, & \text{if }j<r;\\
 j+1, & \text{if }r\leq j<s-1;\\
 j+2, & \text{if }s-1\leq j
 \end{cases}
-$. (This is well-defined, because $r\leq s-1$.)
+$. (This is well-defined, because $r<s$ entails $r\leq s-1$ (since $r$ and $s$
+are integers).)
 \end{itemize}
 \par
 We make the following three observations:
@@ -110754,8 +110876,8 @@ Observation 3.
 Let us now prove Proposition \ref{prop.unrows.basics} \textbf{(h)}. Indeed,
 let $v\in\left\{  1,2,\ldots,m\right\}  $ and $w\in\left\{  1,2,\ldots
 ,v-1\right\}  $. Then, $w\leq v-1$ (since $w\in\left\{  1,2,\ldots
-,v-1\right\}  $) and thus $w\leq\underbrace{v}_{\leq m}-1\leq m-1$, so that
-$v\in\left\{  1,2,\ldots,m-1\right\}  $.
+,v-1\right\}  $) and thus $w\leq\underbrace{v}_{\leq m}-\,1\leq m-1$, so that
+$w\in\left\{  1,2,\ldots,m-1\right\}  $.
 \par
 Write the matrix $A$ in the form $A=\left(  a_{i,j}\right)  _{1\leq i\leq
 n,\ 1\leq j\leq m}$. Then, Observation 1 shows that $A_{\bullet,\sim
@@ -112326,10 +112448,10 @@ obtain $\left(  A_{\bullet,\sim v}\right)  _{\bullet,\sim w}%
 obtain $w\geq1$ and $w\leq u-1$. Thus, $w\leq u-1<u$, so that $w\leq u\leq n$
 (since $u\in\left\{  1,2,\ldots,n\right\}  $). Also, $w\in\left\{
 1,2,\ldots,u-1\right\}  \subseteq\left\{  1,2,\ldots,n-1\right\}  $ (since
-$\underbrace{u}_{\leq n}-1\leq n-1$). From $w\geq1$ and $w\leq n$, we obtain
+$\underbrace{u}_{\leq n}-\,1\leq n-1$). From $w\geq1$ and $w\leq n$, we obtain
 $w\in\left\{  1,2,\ldots,n\right\}  $. Thus, Proposition
-\ref{prop.sol.unrows.2} \textbf{(b)} (applied to $m$, $w$ and $u$ instead of
-$n$, $r$ and $s$) shows that
+\ref{prop.sol.unrows.2} \textbf{(b)} (applied to $w$ and $u$ instead of $r$
+and $s$) shows that
 \[
 \mathbf{d}_{w,u}\left(  j\right)  =\mathbf{d}_{u}\left(  \mathbf{d}_{w}\left(
 j\right)  \right)  \ \ \ \ \ \ \ \ \ \ \text{for every }j\in\mathbb{Z}.
@@ -112382,8 +112504,8 @@ Thus,%
 n-2\right)  }A=\left(  a_{\mathbf{d}_{w,u}\left(  x\right)  ,j}\right)
 _{1\leq x\leq n-2,\ 1\leq j\leq m}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }%
-\operatorname*{rows}\nolimits_{\mathbf{d}_{w,v}\left(  1\right)
-,\mathbf{d}_{w,v}\left(  2\right)  ,\ldots,\mathbf{d}_{w,v}\left(  n-2\right)
+\operatorname*{rows}\nolimits_{\mathbf{d}_{w,u}\left(  1\right)
+,\mathbf{d}_{w,u}\left(  2\right)  ,\ldots,\mathbf{d}_{w,u}\left(  n-2\right)
 }A\right) \\
 &  =\left(  a_{\mathbf{d}_{w,u}\left(  i\right)  ,j}\right)  _{1\leq i\leq
 n-2,\ 1\leq j\leq m}%
@@ -112569,7 +112691,7 @@ But every $i\in\mathbb{Z}$ satisfies%
 \delta_{\mathbf{d}_{v}\left(  i\right)  ,u}=\delta_{i,u}
 \label{pf.prop.unrows.basics-I.2}%
 \end{equation}
-\footnote{\textit{Proof of (\ref{pf.prop.unrows.basics-I.1}):} Let
+\footnote{\textit{Proof of (\ref{pf.prop.unrows.basics-I.2}):} Let
 $i\in\mathbb{Z}$. We must prove the equality (\ref{pf.prop.unrows.basics-I.2}%
 ).
 \par
@@ -129687,7 +129809,8 @@ of Corollary \ref{cor.sol.addexe.jacobi-complement.adjform} by cancelling
 $\det A$. However, it is not immediately clear that this cancellation is
 allowed (for instance, $\det A$ could be $0$, or could be a nonzero
 non-cancellable element). There are ways to justify this cancellation in full
-generality; however, these are not in the scope of these notes.
+generality (see \cite[Theorem 5.22]{trach}); however, these are not in the
+scope of these notes.
 
 \subsection{Solution to Exercise \ref{exe.det.pluecker.multi}}
 
@@ -133329,7 +133452,7 @@ for upper-triangular matrices):
 \label{lem.det.uptriangular}Let $A=\left(  a_{i,j}\right)  _{1\leq i\leq
 n,\ 1\leq j\leq n}$ be an $n\times n$-matrix. Assume that $a_{i,j}=0$ for
 every $\left(  i,j\right)  \in\left\{  1,2,\ldots,n\right\}  ^{2}$ satisfying
-$i>j$. Show that%
+$i>j$. Then,%
 \[
 \det A=a_{1,1}a_{2,2}\cdots a_{n,n}.
 \]
@@ -137135,7 +137258,7 @@ n-k,\ 1\leq y\leq n-k}.
 
 \begin{vershort}
 \noindent On the other hand, (\ref{sol.det.AB=0-proport.rowswQB=.short})
-becomems%
+becomes%
 \[
 \operatorname*{rows}\nolimits_{w\left(  \widetilde{Q}\right)  }B=\left(
 b_{\widetilde{q}_{x},j}\right)  _{1\leq x\leq n-k,\ 1\leq j\leq n-k}=\left(
@@ -138082,11 +138205,13 @@ numbers}, Journal of Integer Sequences, Vol. 17 (2014), Article 14.10.7}%
 Escher, \textit{Analysis I}, translated from the German by Gary Brookfield,
 Birkh\"{a}user 2005}.
 
-\bibitem[AndDos10]{AndDos}Titu Andreescu, Gabriel Dospinescu, \textit{Problems
-from the Book}, 2nd edition, XYZ Press 2010.
+\bibitem[AndDos10]{AndDos}\href{https://bookstore.ams.org/xyz-54}{Titu
+Andreescu, Gabriel Dospinescu, \textit{Problems from the Book}, 3rd edition,
+XYZ Press 2024.}
 
-\bibitem[AndDos12]{AndDosS}Titu Andreescu, Gabriel Dospinescu,
-\textit{Straight from the Book}, XYZ Press 2012.
+\bibitem[AndDos12]{AndDosS}\href{https://bookstore.ams.org/xyz-6}{Titu
+Andreescu, Gabriel Dospinescu, \textit{Straight from the Book}, XYZ Press
+2012.}
 
 \bibitem[AndFen04]{AndFen04}%
 \href{https://doi.org/10.1007/978-0-8176-8154-8}{Titu Andreescu, Zuming Feng,
@@ -138106,34 +138231,35 @@ Vandermonde's Determinant}, The American Mathematical Monthly, Vol. 114, No. 4
 (Apr., 2007), pp. 338--341.} \newline(Also available at
 \url{http://scholarship.claremont.edu/hmc_fac_pub/524/} .)
 
-\bibitem[BenQui03]{BenQui03}Arthur T. Benjamin and Jennifer J. Quinn,
-\textit{Proofs that Really Count: The Art of Combinatorial Proof}, The
-Mathematical Association of America, 2003.
+\bibitem[BenQui03]{BenQui03}%
+\href{https://matsolin.com/demostraciones_elegantes/fibonacci.pdf}{Arthur T.
+Benjamin and Jennifer J. Quinn, \textit{Proofs that Really Count: The Art of
+Combinatorial Proof}, The Mathematical Association of America, 2003.}
 
 \bibitem[BenQui04]{BenQui-fib}%
-\href{https://www.math.hmc.edu/~benjamin/papers/bama.pdf}{Arthur T. Benjamin
-and Jennifer J. Quinn, \textit{Proofs that Really Count: The Magic of
-Fibonacci Numbers and More}, Mathematical Adventures for Students and
+\href{https://www.cse.iitm.ac.in/~jayalal/teaching/CS6030/2011/counting.pdf}{Arthur
+T. Benjamin and Jennifer J. Quinn, \textit{Proofs that Really Count: The Magic
+of Fibonacci Numbers and More}, Mathematical Adventures for Students and
 Amateurs, (David F. Hayes and Tatiana Shubin, editors), Spectrum Series of
 MAA, pp. 83--98, 2004.}
 
 \bibitem[BenQui08]{BenQui08}%
-\href{https://www.math.hmc.edu/~benjamin/papers/DIE.pdf}{Arthur T. Benjamin
-and Jennifer J. Quinn, \textit{An Alternate Approach to Alternating Sums: A
-Method to DIE for}, The College Mathematics Journal, Volume 39, Number 3, May
-2008, pp. 191-202(12).}
+\href{https://web.archive.org/web/20151005115650/https://www.math.hmc.edu/~benjamin/papers/DIE.pdf}{Arthur
+T. Benjamin and Jennifer J. Quinn, \textit{An Alternate Approach to
+Alternating Sums: A Method to DIE for}, The College Mathematics Journal,
+Volume 39, Number 3, May 2008, pp. 191-202(12).}
 
 \bibitem[BerBru08]{BerBru08}%
-\href{http://www.math.ualberta.ca/ijiss/SS-Volume-4-2008/No-1-08/SS-08-01-01.pdf}{Adam
+\href{https://web.archive.org/web/20170705124943/http://www.math.ualberta.ca/ijiss/SS-Volume-4-2008/No-1-08/SS-08-01-01.pdf}{Adam
 Berliner and Richard A. Brualdi, \textit{A combinatorial proof of the
 Dodgson/Muir determinantal identity}, International Journal of Information and
 Systems Sciences, Volume 4 (2008), Number 1, pp. 1--7.}
 
 \bibitem[Bergma15]{Bergman-Lang}George M. Bergman, \textit{A Companion to
-Lang's Algebra}, website (2015).\newline\url{https://math.berkeley.edu/~gbergman/.C.to.L/}
+Lang's Algebra}, website (2015).\newline\url{https://web.archive.org/web/20210507041223/https://math.berkeley.edu/~gbergman/.C.to.L/}
 
 \bibitem[Bharga00]{Bharga00}%
-\href{https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.585.2265&rep=rep1&type=pdf}{Manjul
+\href{https://web.archive.org/web/20220120092922/https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.585.2265&rep=rep1&type=pdf}{Manjul
 Bhargava, \textit{The Factorial Function and Generalizations}, The American
 Mathematical Monthly, Vol. \textbf{107}, No. 9 (Nov., 2000), pp. 783--799}.
 
@@ -138143,29 +138269,31 @@ Mathematical Monthly, Vol. \textbf{107}, No. 9 (Nov., 2000), pp. 783--799}.
 \bibitem[BjoBre05]{BjoBre05}\href{http://doi.org/10.1007/3-540-27596-7}{Anders
 Bj\"{o}rner, Francesco Brenti, \textit{Combinatorics of Coxeter Groups},
 Graduate Texts in Mathematics \#231, Springer 2005.}\newline See
-\url{https://www.mat.uniroma2.it/~brenti/correct.ps} for errata.
+\url{https://web.archive.org/web/20250402180202/https://www.mat.uniroma2.it/~brenti/correct.ps}
+for errata.
 
 \bibitem[Bona22]{Bona22}Mikl\'{o}s B\'{o}na, \textit{Combinatorics of
 Permutations}, 3rd edition, CRC Press 2022.
 
 \bibitem[Bourba74]{Bourba74}Nicolas Bourbaki, \textit{Algebra I, Chapters
-1-3}, Hermann 1974.\newline\url{https://archive.org/details/ElementsOfMathematics-AlgebraPart1/}
+1-3}, Hermann 1974.\newline\url{https://absinthe.tuxfamily.org/openmathdep/algebra_abstract/Algebra-Bourbaki.pdf}
 
 \bibitem[Bresso99]{Bresso99}%
 \href{https://doi.org/10.1017/CBO9780511613449}{David M. Bressoud,
 \textit{Proofs and Confirmations: The Story of the Alternating Sign Matrix
 Conjecture}, Cambridge University Press 1999}.\newline See
-\url{https://www.macalester.edu/~bressoud/books/PnC/PnCcorrect.html} for errata.
+\url{https://web.archive.org/web/20220531023303/https://www.macalester.edu/~bressoud/books/PnC/PnCcorrect.html}
+or \url{https://www.davidbressoud.org/books-videos} for errata.
 
 \bibitem[BruRys91]{BruRys91}%
 \href{https://doi.org/10.1017/CBO9781107325708}{Richard A. Brualdi, Herbert J.
 Ryser, \textit{Combinatorial Matrix Theory}, Cambridge University Press 1991.}
 
 \bibitem[Bump02]{Bump02}Daniel Bump, \textit{Mathematics of the Rubik's Cube},
-lecture notes (in 2 versions).\newline\url{http://sporadic.stanford.edu/bump/match/rubik.html}
+lecture notes (in 2 versions).\newline\url{https://web.archive.org/web/20201211163417/http://sporadic.stanford.edu/bump/match/rubik.html}
 
 \bibitem[CamFon07]{CamFon07}Peter J. Cameron, Dima G. Fon-Der-Flaass,
-\textit{Fibonacci notes}, 1 August 2007.\newline\url{http://www.maths.qmul.ac.uk/~pjc/comb/fibo.pdf}
+\textit{Fibonacci notes}, 1 August 2007.\newline\url{https://web.archive.org/web/20250724063632/https://webspace.maths.qmul.ac.uk/p.j.cameron/comb/fibo.pdf}
 
 \bibitem[CaSoSp12]{CaSoSp12}%
 \href{https://doi.org/10.1016/j.aam.2012.12.001}{Sergio Caracciolo, Alan D.
@@ -138175,9 +138303,9 @@ Advances in Applied Mathematics 50, pp. 474--594 (2013).} Also appears as
 arXiv preprint
 \texttt{\href{http://arxiv.org/abs/1105.6270v2}{arXiv:1105.6270v2}}.
 
-\bibitem[Clemen22]{Clemen22}\href{http://arxiv.org/abs/2209.01069v1}{Philippe
+\bibitem[Clemen22]{Clemen22}\href{http://arxiv.org/abs/2209.01069v2}{Philippe
 Cl\'{e}ment, \textit{From natural numbers to prime fields and finite fields,
-}arXiv:2209.01069v1}.
+}arXiv:2209.01069v2}.
 
 \bibitem[Comtet74]{Comtet74}%
 \href{https://doi.org/10.1007/978-94-010-2196-8}{Louis Comtet,
@@ -138211,7 +138339,7 @@ and the Mathematical Vernacular}, 7 December 2016. \newline%
 
 \bibitem[DiaGra77]{DiaGra77}Persi Diaconis, R. L. Graham, \textit{Spearman's
 Footrule as a Measure of Disarray}, Journal of the Royal Statistical Society,
-Series B \textbf{39}, No. 2 (1977), pp. 262--268.\newline\url{https://statweb.stanford.edu/~cgates/PERSI/papers/77_04_spearmans.pdf}
+Series B \textbf{39}, No. 2 (1977), pp. 262--268.\newline\url{https://web.archive.org/web/20231130180658/https://statweb.stanford.edu/~cgates/PERSI/papers/77_04_spearmans.pdf}
 
 \bibitem[dilemi17]{dilemi17}Dilemian et al, \textit{math.stackexchange post
 \#2455428 (\textquotedblleft An identity involving binomial coefficients and
@@ -138219,10 +138347,10 @@ rational functions\textquotedblright)},
 \url{https://math.stackexchange.com/q/2455428} .
 
 \bibitem[DouNie19]{DouNie19}Darrin Doud and Pace P. Nielsen, \textit{A
-Transition to Advanced Mathematics}, 10 June 2019.\newline\url{https://math.byu.edu/~pace/Transition-ereader.pdf}
+Transition to Advanced Mathematics}, 26 July 2024.\newline\url{https://mathdept.byu.edu/~pace/Transition_v104.pdf}
 
 \bibitem[EdeStr04]{EdelStrang}%
-\href{https://www.maa.org/sites/default/files/pdf/upload_library/22/Ford/Edelman189-197.pdf}{Alan
+\href{https://web.archive.org/web/20200828003100/https://www.maa.org/sites/default/files/pdf/upload_library/22/Ford/Edelman189-197.pdf}{Alan
 Edelman and Gilbert Strang, \textit{Pascal Matrices}, American Mathematical
 Monthly, Vol. 111, No. 3 (March 2004), pp. 189--197.}
 
@@ -138233,14 +138361,14 @@ arXiv:math/9712261v2.} Published in:
 \href{https://doi.org/10.1006/jcta.1999.3000}{J. Combin. Theory Ser. A 88
 (1999), pp. 368--378}.
 
-\bibitem[Elman21]{Elman18}Richard Elman, \textit{Lectures on Abstract
-Algebra}, 25 September 2021.\newline\url{https://www.math.ucla.edu/~rse/algebra_book.pdf}
+\bibitem[Elman24]{Elman18}Richard Elman, \textit{Lectures on Abstract
+Algebra}, 21 September 2024.\newline\url{https://www.math.ucla.edu/~rse/algebra_book.pdf}
 
 \bibitem[FadSom72]{FadSom72}D. Faddeev, I. Sominsky, \textit{Problems in
 Higher Algebra}, Mir 1972.
 
 \bibitem[Fische01]{Fische01}Hanspeter Fischer, \textit{Linear recurrence
-relations with constant coefficients}, 9 April 2001.\newline\url{http://matematicas.uam.es/~mavi.melian/CURSO_15_16/web_Discreta/recurrence.pdf}
+relations with constant coefficients}, 9 April 2001.\newline\url{https://web.archive.org/web/20260521115504/https://matematicas.uam.es/~mavi.melian/CURSO_15_16/web_Discreta/recurrence.pdf}
 
 \bibitem[FomZel01]{FomZel01}Sergey Fomin, Andrei Zelevinsky, \textit{Cluster
 Algebras I: Foundations}, Journal of the American Mathematical Society, Volume
@@ -138255,9 +138383,9 @@ Algebras I: Foundations}, Journal of the American Mathematical Society, Volume
 Fomin, Lauren Williams, Andrei Zelevinsky, \textit{Introduction to Cluster
 Algebras. Chapters 1-3}, arXiv:1608.05735v2}.
 
-\bibitem[FraYea21]{FraYea21}\href{https://arxiv.org/abs/2109.13401v3}{Melanie
+\bibitem[FraYea21]{FraYea21}\href{https://arxiv.org/abs/2109.13401v4}{Melanie
 Fraser, Karen Yeats, \textit{Column expansion identities and quadratic
-spanning forest identities}, arXiv:2109.13401v3}.
+spanning forest identities}, arXiv:2109.13401v4}.
 
 \bibitem[Fulton97]{Fulton-Young}%
 \href{https://doi.org/10.1017/CBO9780511626241}{William Fulton, \textit{Young
@@ -138279,7 +138407,7 @@ Computer Science and Machine Learning}, 18 March 2022.\newline\url{https://www.c
 
 \bibitem[Galvin17]{Galvin}David Galvin, \textit{Basic discrete mathematics},
 13 December 2017.\newline%
-\url{http://www-users.math.umn.edu/~dgrinber/comb/60610lectures2017-Galvin.pdf}
+\url{https://darijgrinberg.gitlab.io/t/17f/60610lectures2017-Galvin.pdf}
 \newline(The URL might change, and the text may get updated. In order to
 reliably obtain the version of 13 December 2017, you can use the archive.org
 Wayback Machine:
@@ -138304,8 +138432,8 @@ Concrete}, edition 2.6, 1 May 2015.\newline%
 \url{http://homepage.math.uiowa.edu/~goodman/algebrabook.dir/book.2.6.pdf} .
 
 \bibitem[Gorin21]{Gorin21}Vadim Gorin, \textit{Lectures on random lozenge
-tilings}, 10 February 2021, to be published at Cambridge University
-Press.\newline\url{https://people.math.wisc.edu/~vadicgor/Random_tilings.pdf}
+tilings}, 2025, corrected version of a book published at Cambridge University
+Press.\newline\url{https://www.stat.berkeley.edu/~vadicgor/Random_tilings.pdf}
 
 \bibitem[Gould10]{Gould-I}%
 \href{https://web.archive.org/web/20171118022119/http://www.math.wvu.edu/~gould/Vol.4.PDF}{H.
@@ -138314,44 +138442,57 @@ for Summing Finite Series}, Edited and Compiled by Jocelyn Quaintance, May 3,
 2010}.
 
 \bibitem[Grinbe09]{Gri-19.9}%
-\href{http://www.cip.ifi.lmu.de/~grinberg/19-9ML.pdf}{Darij Grinberg,
+\href{https://darijgrinberg.gitlab.io/19-9ML.pdf}{Darij Grinberg,
 \textit{Solution to Problem 19.9 from \textquotedblleft Problems from the
-Book\textquotedblright}}.\newline\url{http://www.cip.ifi.lmu.de/~grinberg/solutions.html}
+Book\textquotedblright}}.\newline\url{https://darijgrinberg.gitlab.io/solutions.html}
 
 \bibitem[Grinbe10]{GriHyp}Darij Grinberg, \textit{A hyperfactorial
-divisibility}, version of 27 July 2015.\newline\url{http://www.cip.ifi.lmu.de/~grinberg/}
+divisibility}, version of 27 July 2015.\newline\url{https://darijgrinberg.gitlab.io/other.html}
 
 \bibitem[Grinbe11]{Gri-zeck}Darij Grinberg, \textit{Zeckendorf family
 identities generalized}, arXiv preprint
 \texttt{\href{http://arxiv.org/abs/1103.4507v3}{arXiv:1103.4507v3}}.
 
 \bibitem[Grinbe16a]{Gri-QEDMO4P13}%
-\href{http://www.cip.ifi.lmu.de/~grinberg/QEDMO4P13.pdf}{Darij Grinberg,
+\href{https://darijgrinberg.gitlab.io/QEDMO4P13.pdf}{Darij Grinberg,
 \textit{4th QEDMO, Problem 13 with solution}}.
 
 \bibitem[Grinbe16b]{Gri-lina}Darij Grinberg, \textit{Notes on linear algebra},
 version of 26 September 2019.\newline\url{https://github.com/darijgr/lina}
 
-\bibitem[Grinbe21]{21s}Darij Grinberg, \textit{An Introduction to Algebraic
-Combinatorics [Math 701, Spring 2021 lecture notes]}, 3 May 2022.\newline\url{https://www.cip.ifi.lmu.de/~grinberg/t/21s/lecs.pdf}
+\bibitem[Grinbe17]{trach}\href{https://arxiv.org/abs/2510.20689v2}{Darij
+Grinberg, \textit{The trace Cayley-Hamilton theorem}, arXiv:2510.20689v2.}
 
-\bibitem[Grinbe22]{17s-lec8}Darij Grinberg, \textit{UMN, Spring 2017, Math
+\bibitem[Grinbe21]{21s}Darij Grinberg, \textit{An Introduction to Algebraic
+Combinatorics [Math 701, Spring 2021 lecture notes]}, 21 November 2026,
+\href{https://arxiv.org/abs/2506.00738v2}{arXiv:2506.00738v2}. \newline\url{https://darijgrinberg.gitlab.io/t/21s/lecs.pdf}
+
+\bibitem[Grinbe22a]{17s-lec8}Darij Grinberg, \textit{UMN, Spring 2017, Math
 5707: Lecture 8 (Vandermonde determinant using tournaments)}, 10 May
-2022.\newline\url{https://www.cip.ifi.lmu.de/~grinberg/t/17s/5707lec8.pdf}
+2022.\newline\url{https://darijgrinberg.gitlab.io/t/17s/5707lec8.pdf}
+
+\bibitem[Grinbe22b]{greedtalk-ny22}%
+\href{https://darijgrinberg.gitlab.io/algebra/greedtalk-ny2022.pdf}{Darij
+Grinberg (joint work with Fedor Petrov), \textit{From the Vandermonde
+determinant to generalized factorials to greedoids and back}, talk slides, New
+York Number Theory Zoom Seminar 2022.}
+
+\bibitem[Grinbe24]{24wd}Darij Grinberg, \textit{An Introduction to Discrete
+Mathematics}, 8 August 2024.\newline\url{https://darijgrinberg.gitlab.io/t/24wd/24wd.pdf}
 
 \bibitem[GriRei20]{Reiner}Darij Grinberg, Victor Reiner, \textit{Hopf algebras
 in Combinatorics}, version of 27 July 2020,
 \href{http://www.arxiv.org/abs/1409.8356v7}{\texttt{arXiv:1409.8356v7}}.
 \newline See also
-\url{http://www.cip.ifi.lmu.de/~grinberg/algebra/HopfComb-sols.pdf} for a
-version that gets updated.
+\url{https://darijgrinberg.gitlab.io/algebra/HopfComb-sols.pdf} for a version
+that gets updated.
 
 \bibitem[GrKnPa94]{GKP}Ronald L. Graham, Donald E. Knuth, Oren Patashnik,
 \textit{Concrete Mathematics, Second Edition}, Addison-Wesley 1994.\newline
 See \url{https://www-cs-faculty.stanford.edu/~knuth/gkp.html} for errata.
 
 \bibitem[Hammac15]{Hammac15}Richard Hammack, \textit{Book of Proof}, 3rd
-edition 2018.\newline\url{https://www.people.vcu.edu/~rhammack/BookOfProof/}
+edition 2018.\newline\url{https://richardhammack.github.io/BookOfProof/}
 
 \bibitem[HanKra00]{HanKra00}%
 \href{https://www.mat.univie.ac.at/~kratt/artikel/scott.html}{Guo-Niu Han and
@@ -138359,7 +138500,9 @@ Christian Krattenthaler, \textit{Rectangular Scott-type permanents},
 S\'{e}minaire Lotharingien Combin. \textbf{43} (2000), Article B43g, 25 pp.}
 
 \bibitem[Heffer20]{Hefferon}Jim Hefferon, \textit{Linear Algebra}, 4th
-edition, 8 May 2020,\newline\url{http://joshua.smcvt.edu/linearalgebra/} .
+edition, 8 May 2020,\newline%
+\url{https://web.archive.org/web/20230103035240/http://joshua.smcvt.edu/linearalgebra/#current_version}
+.
 
 \bibitem[Heinig11]{Heinig}\href{http://arxiv.org/abs/1103.2717v3}{Peter
 Christian Heinig, \textit{Chio Condensation and Random Sign Matrices},
@@ -138373,8 +138516,8 @@ algebra}, 2nd edition, Prentice-Hall 1971.\newline See
 \url{https://math.stackexchange.com/questions/437253/} for errata.
 
 \bibitem[Hunger03]{Hungerford-03}%
-\href{http://link.springer.com/book/10.1007/978-1-4612-6101-8}{Thomas W.
-Hungerford, \textit{Algebra}, 12th printing, Springer 2003.}
+\href{https://doi.org/10.1007/978-1-4612-6101-8}{Thomas W. Hungerford,
+\textit{Algebra}, 12th printing, Springer 2003.}
 
 \bibitem[Hunger14]{Hungerford}Thomas W. Hungerford, \textit{Abstract Algebra:
 An Introduction}, 3rd edition, Brooks/Cole 2014.
@@ -138393,9 +138536,9 @@ cube}, 19 August 2008.\newline%
 (link to the PDF at the bottom).
 
 \bibitem[KarZha16]{KarZha16}%
-\href{http://www.cip.ifi.lmu.de/~grinberg/primes2015/kazh-exp.pdf}{Karthik
-Karnik, Anya Zhang, \textit{Combinatorial proof of Chio Pivotal Condensation},
-25 May 2016.}
+\href{https://darijgrinberg.gitlab.io/primes2015/kazh-exp.pdf}{Karthik Karnik,
+Anya Zhang, \textit{Combinatorial proof of Chio Pivotal Condensation}, 25 May
+2016.}
 
 \bibitem[KenWil14]{KenWil14}\href{http://arxiv.org/abs/1411.7425v3}{Richard W.
 Kenyon, David B. Wilson, \textit{The space of circular planar electrical
@@ -138443,7 +138586,8 @@ proizvedeniya (\textquotedblleft Sums and products\textquotedblright)}, Kvant
 
 \bibitem[LLPT95]{LLPT95}D. Laksov, A. Lascoux, P. Pragacz, and A. Thorup,
 \textit{The LLPT Notes}, edited by A. Thorup, 28 March 2018,\newline%
-\url{http://web.math.ku.dk/noter/filer/sympol.pdf} .
+\url{http://web.archive.org/web/20220322215211/https://web.math.ku.dk/noter/filer/sympol.pdf}
+.
 
 \bibitem[Lalond96]{Lalonde}Pierre Lalonde, \textit{A non-commutative version
 of Jacobi's equality on the cofactors of a matrix}, Discrete Mathematics 158
@@ -138455,14 +138599,14 @@ of Jacobi's equality on the cofactors of a matrix}, Discrete Mathematics 158
 \url{https://web.archive.org/web/20200826052443/https://www.math.uni-bielefeld.de/~lampe/teaching/cluster/cluster.pdf}
 .
 
-\bibitem[Lang02]{Lang02}%
-\href{http://link.springer.com/book/10.1007/978-1-4613-0041-0}{Serge Lang,
-\textit{Algebra}, Revised Third Edition, Graduate Texts in Mathematics \#211,
-Springer 2002.}
+\bibitem[Lang02]{Lang02}\href{https://doi.org/10.1007/978-1-4613-0041-0}{Serge
+Lang, \textit{Algebra}, Revised Third Edition, Graduate Texts in Mathematics
+\#211, Springer 2002.}
 
 \bibitem[Laue15]{Laue-det}Hartmut Laue, \textit{Determinants}, version 17 May
 2015,\newline%
-\url{http://www.math.uni-kiel.de/algebra/laue/homepagetexte/det.pdf} .
+\url{http://web.archive.org/web/20250401010219/https://www.math.uni-kiel.de/algebra/laue/homepagetexte/det.pdf}
+.
 
 \bibitem[LeeSch11]{LS2}%
 \href{https://doi.org/10.1007/s10801-012-0359-z}{Kyungyong Lee, Ralf
@@ -138505,13 +138649,15 @@ October 2017.\newline\url{http://www.sci.brooklyn.cuny.edu/~mate/misc/determinan
 
 \bibitem[Muir30]{Muir}Thomas Muir, \textit{The theory of determinants in the
 historical order of development}, 5 volumes (1906--1930), later reprinted by
-Dover.\newline\url{http://www-igm.univ-mlv.fr/~al/}
+Dover.\newline%
+\url{https://web.archive.org/web/20110410182359/http://www-igm.univ-mlv.fr/~al/}
+(search for ``Muir'').
 
 \bibitem[MuiMet60]{MuiMet60}Thomas Muir, \textit{A Treatise on the Theory of
 Determinants}, revised and enlarged by William H. Metzler, Dover 1960.
 
 \bibitem[Mulhol16]{Mulhol16}Jamie Mulholland, \textit{Permutation Puzzles: A
-Mathematical Perspective},\newline\url{http://www.sfu.ca/~jtmulhol/math302/}
+Mathematical Perspective},\newline\url{https://www.sfu.ca/~jtmulhol/permutationpuzzles/notes/permutation-puzzles-book.pdf}
 
 \bibitem[MusPro07]{MusPro07}Gregg Musiker, James Propp, \textit{Combinatorial
 Interpretations for Rank-Two Cluster Algebras of Affine Type}, The Electronic
@@ -138536,7 +138682,7 @@ Phillips, \textit{Explicit factorization of the Vandermonde matrix}, Linear
 Algebra and its Applications 315 (2000), pp. 113--123.}
 
 \bibitem[PetTen14]{PetTen14}%
-\href{http://dx.doi.org/10.4310/JOC.2015.v6.n1.a9}{T. Kyle Petersen, Bridget
+\href{https://doi.org/10.4310/JOC.2015.v6.n1.a9}{T. Kyle Petersen, Bridget
 Eileen Tenner, \textit{The depth of a permutation}, Journal of Combinatorics
 \textbf{6} (2015), Number 1--2, pp. 145--178},
 \href{https://arxiv.org/abs/1202.4765v3}{arXiv:1202.4765v3}.
@@ -138573,12 +138719,10 @@ Computational Discrete Mathematics, Lecture Notes in Computer Science, Volume
 \bibitem[Rotman15]{Rotman15}Joseph J. Rotman, \textit{Advanced Modern Algebra:
 Part 1}, Graduate Studies in Mathematics \#165, 3rd edition, AMS 2015.
 
-\bibitem[SacUlf11]{SacUlf11}%
-\href{http://www.combinatorics.org/ojs/index.php/eljc/article/view/v19i1p29}{Joshua
-Sack, Henning \'{U}lfarsson, \textit{Refined inversion statistics on
-permutations}, The Electronic Journal of Combinatorics \textbf{19} (2012),
-\#P29}. See also \href{https://arxiv.org/abs/1106.1995v2}{arXiv:1106.1995v2}
-for a preprint version.
+\bibitem[SacUlf11]{SacUlf11}\href{https://doi.org/10.37236/1993}{Joshua Sack,
+Henning \'{U}lfarsson, \textit{Refined inversion statistics on permutations},
+The Electronic Journal of Combinatorics \textbf{19} (2012), \#P29}. See also
+\href{https://arxiv.org/abs/1106.1995v2}{arXiv:1106.1995v2} for a preprint version.
 
 \bibitem[Sagan19]{Sagan19}Bruce Sagan, \textit{Combinatorics: The Art of
 Counting}, Graduate Studies in Mathematics \textbf{210}, 21 September
@@ -138664,8 +138808,7 @@ New York, 1987.}
 Williamson, \textit{Mind your }$P$\textit{ and }$Q$\textit{-symbols: Why the
 Kazhdan-Lusztig basis of the Hecke algebra of type A is cellular}, Honours
 thesis at the University of Sydney, October 2003.}\newline See
-\url{https://www.cip.ifi.lmu.de/~grinberg/algebra/csm-errata.pdf} for
-unofficial errata.
+\url{https://darijgrinberg.gitlab.io/algebra/csm-errata.pdf} for unofficial errata.
 
 \bibitem[Willia15]{Gill15}\href{http://arxiv.org/abs/1505.05486v1}{Stanley
 Gill Williamson, \textit{The common-submatrix Laplace expansion},
@@ -138691,9 +138834,8 @@ p. 487.\newline\url{http://sites.math.rutgers.edu/~zeilberg/mamarim/mamarimhtml/
 \bibitem[Zeilbe98]{zeilberger-twotime}Doron Zeilberger, \textit{Dodgson's
 Determinant-Evaluation Rule proved by Two-Timing Men and Women}, The
 Electronic Journal of Combinatorics, vol. 4, issue 2 (1997) (The Wilf
-Festschrift volume), R22.\newline%
-\url{http://www.combinatorics.org/ojs/index.php/eljc/article/view/v4i2r22}
-\newline Also available as arXiv:math/9808079v1.\newline\url{http://arxiv.org/abs/math/9808079v1}
+Festschrift volume), R22.\newline\url{https://doi.org/10.37236/1337} \newline
+Also available as arXiv:math/9808079v1.\newline\url{http://arxiv.org/abs/math/9808079v1}
 
 \bibitem[Zeng93]{Zeng93}%
 \href{https://doi.org/10.1016/0024-3795(93)90371-T}{Jian Zeng, \textit{A
